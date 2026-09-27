@@ -1,6 +1,7 @@
 # ITPD Course Syllabus & Curriculum Structure
 
-The **IT Product Development (ITPD)** course is designed to provide practical experience working on an IT product in a team environment. The course is designed to prepare students for the Industrial Project course and provide essential skills that are assumed by the Industrial Project but not discussed there.
+The **IT Product Development (ITPD)** course is designed to provide practical experience working on an IT product in a team environment.
+The course is designed to prepare students for the Industrial Project course and provide essential skills that are assumed by the Industrial Project but not discussed there.
 
 <h2>Table of contents</h2>
 
@@ -38,7 +39,10 @@ The **IT Product Development (ITPD)** course is designed to provide practical ex
 - **Weekly Submission Deadline Policy**:
   > [!IMPORTANT]
   > All weekly assignment submissions are **strictly due by Thursday at 23:59**, the night before the next Friday class session.
-  A submission is a reflection on the work done in the repository. All details should be stored in the repo. The submission should be a map to the specific chunk of work. Don't submit audio recordings and other private info to github.
+  > A submission is a reflection on the work done in the repository.
+  > All details should be stored in the repo.
+  > The submission should be a map to the specific chunk of work.
+  > Don't submit audio recordings and other private info to github.
 
 ---
 
@@ -65,25 +69,29 @@ The first two weeks establish the project foundations, team formation, and compe
 
 ## 3. Weekly Curriculum & Milestones
 
-| Week | Date Range | Focus / Key Milestones |
-| :--- | :--- | :--- |
-| **Week 1** | Sep 25 – Oct 1 | Course Kickoff, Project Catalog, Team Formation, **Repository Setup** & **Submission 1 (Initial Research due Oct 1, 23:59)** |
-| **Week 2** | Oct 2 – Oct 8 | Lecture (Planning), Research Review, Issue Tracking & **Submission 2 (due Oct 8, 23:59)** |
-| **Week 3** | Oct 9 – Oct 15 | Lecture (Prototyping), User Stories, Prototypes & **Submission 3 (MUP due Oct 15, 23:59)** |
-| **Week 4** | Oct 16 – Oct 22 | Lecture (Software Quality), Architecture Draft & **Submission 4 (due Oct 22, 23:59)** |
-| **Week 5** | Oct 23 – Oct 29 | Lecture (Testing & Automation), CI/CD, Prod Setup & **Submission 5 (MVP + 7-min Pitch Deck due Oct 29, 23:59)** |
-| **Week 6** | Oct 30 – Nov 5 | Lecture (Analytics), MVP Presentations & **Submission 6 (Analytics Integration due Nov 5, 23:59)** |
-| **Week 7** | Nov 6 – Nov 12 | Lecture (Usability Testing) & **Submission 7 (Usability Test Protocol due Nov 12, 23:59)** |
-| **Week 8** | Nov 13 – Nov 19 | Lecture (Configuration Management) & **Submission 8 (CM Evaluation & Implementation due Nov 19, 23:59)** |
-| **Week 9** | Nov 20 – Nov 26 | Lecture (Project Pitching), Repo Finalization & **Submission 9 (due Nov 26, 23:59)** |
-| **Week 10** | Nov 27 – Dec 3 | Lecture (Course Review) & Final Exam Preparation |
-| **Week 11** | Dec 4 – Dec 10 | **Final Exam: Group Presentations of the Projects** & **Submission 10 (Individual Reflection due Dec 10, 23:59)** |
+| Week        | Date Range      | Focus / Key Milestones                                                                                                       |
+| :---------- | :-------------- | :--------------------------------------------------------------------------------------------------------------------------- |
+| **Week 1**  | Sep 25 – Oct 1  | Course Kickoff, Project Catalog, Team Formation, **Repository Setup** & **Submission 1 (Initial Research due Oct 1, 23:59)** |
+| **Week 2**  | Oct 2 – Oct 8   | Lecture (Planning), Research Review, Issue Tracking & **Submission 2 (due Oct 8, 23:59)**                                    |
+| **Week 3**  | Oct 9 – Oct 15  | Lecture (Prototyping), User Stories, Prototypes & **Submission 3 (MUP due Oct 15, 23:59)**                                   |
+| **Week 4**  | Oct 16 – Oct 22 | Lecture (Software Quality), Architecture Draft & **Submission 4 (due Oct 22, 23:59)**                                        |
+| **Week 5**  | Oct 23 – Oct 29 | Lecture (Testing & Automation), CI/CD, Prod Setup & **Submission 5 (MVP + 7-min Pitch Deck due Oct 29, 23:59)**              |
+| **Week 6**  | Oct 30 – Nov 5  | Lecture (Analytics), MVP Presentations & **Submission 6 (Analytics Integration due Nov 5, 23:59)**                           |
+| **Week 7**  | Nov 6 – Nov 12  | Lecture (Usability Testing) & **Submission 7 (Usability Test Protocol due Nov 12, 23:59)**                                   |
+| **Week 8**  | Nov 13 – Nov 19 | Lecture (Configuration Management) & **Submission 8 (CM Evaluation & Implementation due Nov 19, 23:59)**                     |
+| **Week 9**  | Nov 20 – Nov 26 | Lecture (Project Pitching), Repo Finalization & **Submission 9 (due Nov 26, 23:59)**                                         |
+| **Week 10** | Nov 27 – Dec 3  | Lecture (Course Review) & Final Exam Preparation                                                                             |
+| **Week 11** | Dec 4 – Dec 10  | **Final Exam: Group Presentations of the Projects** & **Submission 10 (Individual Reflection due Dec 10, 23:59)**            |
 
 ### Week 1: Sep 25 – Oct 1 (Kickoff, Project Catalog & Initial Research)
 
-- **Class 1 (Sep 25)**: Course introduction, syllabus overview, rubric orientation, and presentation of the provided project catalog. Team formation begins.
-- **Repository Setup (during Week 1)**: Each team creates one public, MIT-licensed product repository in the course GitHub organization and adds every member as a collaborator. `main` is protected (pull requests required, at least one approval, no self-approval), a pull request template is added, and automated link checking runs on pull requests and on `main` with a green `main` run before submission. See [Repository Requirements](../itpd/requirements/repository-requirements.md).
-- **Customer Kickoff (during Week 1)**: Each team holds one kickoff meeting with its instructor or mentor, who acts as the customer. The team presents its reading of the problem and its proposed direction. The team asks for permission before recording; the recording stays private and is linked from the Moodle submission, while a sanitized transcript is committed to the repository.
+- **Class 1 (Sep 25)**: Course introduction, syllabus overview, rubric orientation, and presentation of the provided project catalog.
+  Team formation begins.
+- **Repository Setup (during Week 1)**: Each team creates one public, MIT-licensed product repository in the course GitHub organization and adds every member as a collaborator. `main` is protected (pull requests required, at least one approval, no self-approval), a pull request template is added, and automated link checking runs on pull requests and on `main` with a green `main` run before submission.
+  See [Repository Requirements](../itpd/requirements/repository-requirements.md).
+- **Customer Kickoff (during Week 1)**: Each team holds one kickoff meeting with its instructor or mentor, who acts as the customer.
+  The team presents its reading of the problem and its proposed direction.
+  The team asks for permission before recording; the recording stays private and is linked from the Moodle submission, while a sanitized transcript is committed to the repository.
 - **Submission 1 (Team Deliverable - Due Oct 1, 23:59)**:
   - **Initial Project Research Report**:
     - Confirmed team members and selected project from the provided catalog.
@@ -104,7 +112,8 @@ The first two weeks establish the project foundations, team formation, and compe
     1. Project work plan (milestone schedule, task breakdown), maintained in the repository.
     2. Issue-based tracking configured in the repository, with issue templates and a first set of planned work items traced back to the Week 1 research.
     3. First implementation steps (initial scaffolding/codebase).
-  - **Note**: The product repository itself is created and configured in Week 1. Week 2 extends it with planning artifacts, issue tracking, and code.
+  - **Note**: The product repository itself is created and configured in Week 1.
+    Week 2 extends it with planning artifacts, issue tracking, and code.
   - **Submission Scope**: Team submission.
   - **Deadline**: **October 8 at 23:59 (Thursday)**.
 
@@ -209,7 +218,7 @@ The first two weeks establish the project foundations, team formation, and compe
 - **Class 10 (Nov 27)**:
   - **Lecture**: **Course Review** (synthesizing core paradigms, architectural decisions, quality verification, configuration management, and retrospective lessons learned).
   - **Final Exam Preparation**: Teams rehearse demonstrations, finalize pitch timings, and prepare for the live examination.
-  - *(No submission due)*.
+  - _(No submission due)_.
 
 ### Week 11: Dec 4 – Dec 10 (Final Exam: Group Presentations of the Projects)
 
@@ -219,7 +228,8 @@ The first two weeks establish the project foundations, team formation, and compe
   - Multi-perspective evaluation (instructor, mentor, and peer grading).
   - Conclusion of the 11-week course lifecycle.
 - **Submission 10 (Individual Deliverable - Due Dec 10, 23:59)**:
-  - **Individual Reflection & Peer Evaluation**: Each student submits a personal reflection on their contributions to the project and a peer evaluation rating their teammates' contributions. This submission is available only if the group delivered the final presentation.
+  - **Individual Reflection & Peer Evaluation**: Each student submits a personal reflection on their contributions to the project and a peer evaluation rating their teammates' contributions.
+    This submission is available only if the group delivered the final presentation.
   - **Submission Scope**: Individual student submission.
   - **Deadline**: **December 10 at 23:59 (Wednesday)**.
 
@@ -229,21 +239,21 @@ The first two weeks establish the project foundations, team formation, and compe
 
 The course evaluation consists of **9 group submissions**, **1 individual reflection & peer evaluation**, and the **Final Exam**:
 
-| # | Assessment Item | Week | Scope | Deadline / Date | Primary Deliverables | Grade Component |
-| :---: | :--- | :--- | :--- | :--- | :--- | :---: |
-| **1** | **Submission 1** | Week 1 | **Group** | Oct 1, 23:59 | **Initial Project Research** (alternatives search, pros & cons, gap analysis, value proposition), product repository setup, customer kickoff transcript | Group (7%) |
-| **2** | **Submission 2** | Week 2 | **Group** | Oct 8, 23:59 | **Plan & Initial Implementation** (work plan, issue tracking, initial code) | Group (7%) |
-| **3** | **Submission 3** | Week 3 | **Group** | Oct 15, 23:59 | **Prototyping & MUP** (user stories, project prototypes, Minimum Usable Product) | Group (7%) |
-| **4** | **Submission 4** | Week 4 | **Group** | Oct 22, 23:59 | **Quality & Architecture** (quality goals, verification plan, success threshold, architecture draft, improved MUP) | Group (7%) |
-| **5** | **Submission 5** | Week 5 | **Group** | Oct 29, 23:59 | **MVP & Delivery** (unit tests, production deployment, CI/CD pipelines, MVP milestone, 7-min pitch deck — *presented in-class during Week 6*) | Group (7%) |
-| **6** | **Submission 6** | Week 6 | **Group** | Nov 5, 23:59 | **Product Analytics** (analytics instrumentation and active event/telemetry collection) | Group (7%) |
-| **7** | **Submission 7** | Week 7 | **Group** | Nov 12, 23:59 | **Usability Testing** (pre/post-test surveys, task facilitation protocol, observation recording strategy) | Group (7%) |
-| **8** | **Submission 8** | Week 8 | **Group** | Nov 19, 23:59 | **Configuration Management** (evaluation of CM practices, improvement plan, and implementation) | Group (7%) |
-| **9** | **Submission 9** | Week 9 | **Group** | Nov 26, 23:59 | **Final Project Submission** (final presentation deck, usability test results & findings, project reflection report, repository code freeze) | Group (7%) |
-| **—** | *Review Class* | Week 10 | *Cohort* | Nov 27 in class | Course retrospective and final exam demo preparation *(no submission due)* | — |
-| **—** | **Class Attendance** | Weeks 1–11 | **Individual** | Ongoing | Active in-class presence, workshop participation, and collaboration across all weekly sessions | Individual (10%) |
-| **10** | **Final Exam** | Week 11 | **Group** | Dec 4 in class | **Group Project Presentations** (live software demos, architectural defense, peer/mentor evaluation) | Final Exam (20%) |
-| **11** | **Submission 10** | Week 11 | **Individual** | Dec 10, 23:59 | **Individual Reflection & Peer Evaluation** (personal reflection on contributions, peer evaluation of teammates) — *available only if the group delivered the final presentation* | Individual (7%) |
+|   #    | Assessment Item      | Week       | Scope          | Deadline / Date | Primary Deliverables                                                                                                                                                              | Grade Component  |
+| :----: | :------------------- | :--------- | :------------- | :-------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :--------------: |
+| **1**  | **Submission 1**     | Week 1     | **Group**      | Oct 1, 23:59    | **Initial Project Research** (alternatives search, pros & cons, gap analysis, value proposition), product repository setup, customer kickoff transcript                           |    Group (7%)    |
+| **2**  | **Submission 2**     | Week 2     | **Group**      | Oct 8, 23:59    | **Plan & Initial Implementation** (work plan, issue tracking, initial code)                                                                                                       |    Group (7%)    |
+| **3**  | **Submission 3**     | Week 3     | **Group**      | Oct 15, 23:59   | **Prototyping & MUP** (user stories, project prototypes, Minimum Usable Product)                                                                                                  |    Group (7%)    |
+| **4**  | **Submission 4**     | Week 4     | **Group**      | Oct 22, 23:59   | **Quality & Architecture** (quality goals, verification plan, success threshold, architecture draft, improved MUP)                                                                |    Group (7%)    |
+| **5**  | **Submission 5**     | Week 5     | **Group**      | Oct 29, 23:59   | **MVP & Delivery** (unit tests, production deployment, CI/CD pipelines, MVP milestone, 7-min pitch deck — _presented in-class during Week 6_)                                     |    Group (7%)    |
+| **6**  | **Submission 6**     | Week 6     | **Group**      | Nov 5, 23:59    | **Product Analytics** (analytics instrumentation and active event/telemetry collection)                                                                                           |    Group (7%)    |
+| **7**  | **Submission 7**     | Week 7     | **Group**      | Nov 12, 23:59   | **Usability Testing** (pre/post-test surveys, task facilitation protocol, observation recording strategy)                                                                         |    Group (7%)    |
+| **8**  | **Submission 8**     | Week 8     | **Group**      | Nov 19, 23:59   | **Configuration Management** (evaluation of CM practices, improvement plan, and implementation)                                                                                   |    Group (7%)    |
+| **9**  | **Submission 9**     | Week 9     | **Group**      | Nov 26, 23:59   | **Final Project Submission** (final presentation deck, usability test results & findings, project reflection report, repository code freeze)                                      |    Group (7%)    |
+| **—**  | _Review Class_       | Week 10    | _Cohort_       | Nov 27 in class | Course retrospective and final exam demo preparation _(no submission due)_                                                                                                        |        —         |
+| **—**  | **Class Attendance** | Weeks 1–11 | **Individual** | Ongoing         | Active in-class presence, workshop participation, and collaboration across all weekly sessions                                                                                    | Individual (10%) |
+| **10** | **Final Exam**       | Week 11    | **Group**      | Dec 4 in class  | **Group Project Presentations** (live software demos, architectural defense, peer/mentor evaluation)                                                                              | Final Exam (20%) |
+| **11** | **Submission 10**    | Week 11    | **Individual** | Dec 10, 23:59   | **Individual Reflection & Peer Evaluation** (personal reflection on contributions, peer evaluation of teammates) — _available only if the group delivered the final presentation_ | Individual (7%)  |
 
 ### Assessment Counts & Components
 
@@ -254,7 +264,8 @@ The course evaluation consists of **9 group submissions**, **1 individual reflec
 - **Total Course Evaluation**: **100% total grade weight** ($63\% + 10\% + 7\% + 20\% = 100\%$)
 
 > [!NOTE]
-> Group submissions and repository updates account for **63% of the course grade in total**, distributed evenly across all 9 group milestones (**7% per milestone**, $9 \times 7\% = 63\%$). Together with **10% for individual class attendance**, **7% for individual reflection & peer evaluation**, and **20% for the Final Exam**, the total course evaluation is **100%** ($63\% + 10\% + 7\% + 20\% = 100\%$).
+> Group submissions and repository updates account for **63% of the course grade in total**, distributed evenly across all 9 group milestones (**7% per milestone**, $9 \times 7\% = 63\%$).
+> Together with **10% for individual class attendance**, **7% for individual reflection & peer evaluation**, and **20% for the Final Exam**, the total course evaluation is **100%** ($63\% + 10\% + 7\% + 20\% = 100\%$).
 
 ---
 
@@ -269,13 +280,13 @@ The course is assessed on a **Pass / Fail** basis:
 
 ### Grade Weight Breakdown
 
-| Component | Weight | Assessment Items | Evaluation Focus |
-| :--- | :---: | :--- | :--- |
-| **Group Submissions & Repository Updates** | **63% total** ($9 \times 7\%$) | Submissions 1–9 & Repository | Cumulative milestone deliverables (7% per assignment), regular code commits, automated tests, CI/CD, documentation, and sustained repository activity across all 9 milestones. |
-| **Individual Class Attendance** | **10%** | Weekly Classes (1–11) | Active individual presence, engagement in lectures, workshops, team breakout activities, and peer discussions throughout the 11-week semester. |
-| **Individual Reflection & Peer Evaluation** | **7%** | Submission 10 (Week 11) | Personal reflection on individual contributions and peer evaluation of teammates. Available only if the group delivered the final presentation. |
-| **Final Exam** | **20%** | Week 11 Presentations | Live software demonstration, architectural defense, quality attribute validation, delivery poise, and Q&A responses. |
-| **Total** | **100%** | All Course Components | Complete course evaluation (Pass threshold: 75%). |
+| Component                                   |             Weight             | Assessment Items             | Evaluation Focus                                                                                                                                                               |
+| :------------------------------------------ | :----------------------------: | :--------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Group Submissions & Repository Updates**  | **63% total** ($9 \times 7\%$) | Submissions 1–9 & Repository | Cumulative milestone deliverables (7% per assignment), regular code commits, automated tests, CI/CD, documentation, and sustained repository activity across all 9 milestones. |
+| **Individual Class Attendance**             |            **10%**             | Weekly Classes (1–11)        | Active individual presence, engagement in lectures, workshops, team breakout activities, and peer discussions throughout the 11-week semester.                                 |
+| **Individual Reflection & Peer Evaluation** |             **7%**             | Submission 10 (Week 11)      | Personal reflection on individual contributions and peer evaluation of teammates. Available only if the group delivered the final presentation.                                |
+| **Final Exam**                              |            **20%**             | Week 11 Presentations        | Live software demonstration, architectural defense, quality attribute validation, delivery poise, and Q&A responses.                                                           |
+| **Total**                                   |            **100%**            | All Course Components        | Complete course evaluation (Pass threshold: 75%).                                                                                                                              |
 
 ---
 
@@ -283,26 +294,30 @@ The course is assessed on a **Pass / Fail** basis:
 
 ### Late Submission Policy
 
-Late submissions incur a **10% grade deduction per calendar day** past the deadline. For example, a submission worth 7% receives a maximum of 6.3% if one day late (after Friday, 23:59), 5.6% if two days late, and so on. Submissions more than 7 days late receive zero credit.
+Late submissions incur a **10% grade deduction per calendar day** past the deadline.
+For example, a submission worth 7% receives a maximum of 6.3% if one day late (after Friday, 23:59), 5.6% if two days late, and so on.
+Submissions more than 7 days late receive zero credit.
 
 ### Attendance Policy
 
-Excused absences (with prior notification or documentation) are not penalized. Unexcused absences reduce the individual attendance grade proportionally.
+Excused absences (with prior notification or documentation) are not penalized.
+Unexcused absences reduce the individual attendance grade proportionally.
 
 ### AI Tools Policy
 
-Students may use any AI tools (e.g., GitHub Copilot, ChatGPT, Claude) for coding and documentation. However, the team bears **full responsibility** for the correctness, quality, and originality of all submitted work.
+Students may use any AI tools (e.g., GitHub Copilot, ChatGPT, Claude) for coding and documentation.
+However, the team bears **full responsibility** for the correctness, quality, and originality of all submitted work.
 
 ---
 
 ## 7. Communication & Platforms
 
-| Purpose | Platform |
-| :--- | :--- |
-| Assignment submissions | **Moodle** |
-| Course chat | **Telegram** |
-| Announcements | **Telegram** and **Moodle** |
-| Project repositories | **GitHub** |
+| Purpose                | Platform                    |
+| :--------------------- | :-------------------------- |
+| Assignment submissions | **Moodle**                  |
+| Course chat            | **Telegram**                |
+| Announcements          | **Telegram** and **Moodle** |
+| Project repositories   | **GitHub**                  |
 
 ---
 
