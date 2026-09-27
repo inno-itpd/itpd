@@ -1,153 +1,200 @@
-# Assignment 1
+# Assignment 1: Initial Project Research
 
-- [Objectives](#objectives)
-- [Preparation](#preparation)
-  - [Form the Team](#form-the-team)
-  - [Set up GitHub](#set-up-github)
-  - [Research existing solutions](#research-existing-solutions)
-  - [Prepare a script for the initial interview with the customer](#prepare-a-script-for-the-initial-interview-with-the-customer)
-  - [Meet with the customer](#meet-with-the-customer)
-  - [Arrive at an initial vision for the MVP](#arrive-at-an-initial-vision-for-the-mvp)
-  - [Add docs](#add-docs)
-  - [Write a README.md](#write-a-readmemd)
-  - [Write a brief report on what you’ve learned](#write-a-brief-report-on-what-youve-learned)
-- [Deliverables](#deliverables)
-- [Guidance and resources](#guidance-and-resources)
-  - [Format and content](#format-and-content)
-  - [Submission in Moodle](#submission-in-moodle)
-  - [Using AI tools](#using-ai-tools)
-  - [GitHub](#github)
-  - [Repository hygiene](#repository-hygiene)
-  - [Resources](#resources)
+**Due:** Thursday, 1 October, 23:59. One submission per team.
+
+Week 1 is a research week. There is no code, no prototype, and nothing to deploy. What you hand in is a defensible understanding of the problem your project lives in, and a proposed direction that is traceable to evidence.
 
 ## Objectives
 
-- Form a team.
-- Identify relevant sources of learning and elicit requirements from them.
-- Explore problem space.
-- Research and learn from the existing solutions.
-- Conduct the first customer interview.
-- Set up GitHub.
+By the end of this week you should be able to show an instructor:
 
-## Preparation
+* Which existing products solve your user's problem, and how well each one does it.
+* Where they all fall short, and which of those shortfalls are worth building on.
+* What your product will do differently, what that costs, and what you are assuming.
+* A public repository that already works the way the course expects it to work.
 
-### Form the Team
+## Before You Start
 
-- [ ] Meet your team
-- [ ] Discuss the project
-- [ ] Arrange a meeting with the customer (e.g. [timeful.fun](https://timeful.fun/)).
-      Plan for a 60-minute or a larger slot if they are available.
-- [ ] Discuss approximate roles each one of you can take
-- [ ] Distribute the responsibilities for this week
+Read these once. They are the rules; this assignment only tells you what this week requires.
 
-### Set up GitHub
+| Read | For |
+| --- | --- |
+| [Course rules](../rules.md) | What is public, what is private, deadlines, AI policy |
+| [Artifact Requirements](../requirements/artifact-requirements.md) | Where things live, the weekly report, transcript and AI report formats |
+| [Repository Requirements](../requirements/repository-requirements.md) | GitHub, pull requests, branch protection, link checking, permalinks, snapshots |
+| [Process Requirements](../requirements/process-requirements.md) | What counts as a valid alternative, gap, and value proposition; the identifier rules |
+| [Guide: researching alternatives](../guides/alternatives-research.md) | How to find and evaluate your set |
+| [Guide: comparison to value proposition](../guides/comparison-and-synthesis.md) | How to build the table, find the gaps, write the proposition |
 
-- [ ] Set up GitHub accounts.
-- [ ] Create an organization for your project.
-- [ ] Create a repository under that organization.
+## Part 1: Form The Team And Choose The Project
 
-### Research existing solutions
+1. Form a team of 3 or 4.
+2. Choose one project from the course catalog.
+3. Note your team number and project name. Both go in your week report and your Moodle submission.
+4. Create the repository in the course GitHub organization, named as your instructor specified, and add every team member as a collaborator with write access. One repository per team, in the organization, not in somebody's personal account.
 
-At this point you should have an approximate idea of what the customer wants to build.
-Now you need to improve your understanding by looking at the existing solutions in the market.
+## Part 2: Set Up The Repository
 
-- [ ] Pick and explore 5 alternatives/products similar to yours.
-- [ ] Take screenshots and notes along the way and merge them on your research board ([example](https://www.figma.com/design/PUc4NFVcLureKzxE3RAGB0/Market-Research)).
-- [ ] Make a qualitative analysis table ([example](https://www.figma.com/design/PUc4NFVcLureKzxE3RAGB0/Market-Research) \- look at the top of the page) for the features/characteristics you discover in the products.
+Complete all requirements under **Required Starting Week 1** in [Repository Requirements](../requirements/repository-requirements.md#required-starting-week-1). In short, this week you must have:
 
-### Prepare a script for the initial interview with the customer
+1. A **public** repository in the course organization, with `main` as the default branch and all members as collaborators.
+2. `LICENSE` with the MIT License text, and a `.gitignore` covering editor state, OS files, `.env` and other secrets, and build output.
+3. A root `README.md` meeting the [minimum contents](../requirements/repository-requirements.md#root-readme).
+4. `main` **protected**: pull requests required, at least one approval, no self-approval. Verify each setting, and screenshot it.
+5. A pull request template at `.github/pull_request_template.md`.
+6. A Lychee link check running on pull requests and on `main`, checking every Markdown file in the repository, and failing on a broken link. The latest `main` run must be green. See [Link Checking](../requirements/repository-requirements.md#link-checking) for a working configuration and the rules on excluding links.
+7. At least one pull request merged into `main` with another member's approval.
+8. Every team member has made at least one commit through a pull request, and has reviewed and approved at least one other member's pull request.
 
-- [ ] With your customer in mind, design an interview script with closed- and open-ended questions that cover the project background and goals.
-      The questions should also explore in depth how that person operates in the problem space.
-- [ ] Apply the three rules of the [Mom test](https://hatrabbits.com/en/the-mom-test/) to improve the script.
-      Provide notes at the end of the script with examples of what exactly you improved.
-- [ ] Commit the script to your repository.
+The repository structure you are building towards:
 
-### Meet with the customer
+```text
+.
+├── README.md
+├── LICENSE
+├── .gitignore
+├── .github/
+│   ├── pull_request_template.md
+│   └── workflows/lychee.yml
+├── docs/
+│   └── research/
+│       ├── alternatives.md
+│       ├── comparison.md
+│       ├── gap-analysis.md
+│       └── value-proposition.md
+└── reports/
+    └── week-01/
+        ├── README.md
+        ├── meeting-transcript.md
+        └── ai-usage.md
+```
 
-- [ ] Record the meeting (audio + video).
-- [ ] Follow the script and ask questions.
+## Part 3: Research The Alternatives
 
-### Arrive at an initial vision for the MVP
+1. Write one sentence defining the problem space: whose problem this is and what they are trying to do. Put it at the top of `docs/research/alternatives.md`.
+2. Research **3 to 4 alternatives**, as a mix of a direct competitor, an adjacent substitute, and an open-source or self-hosted option, per [Process Requirements](../requirements/process-requirements.md#alternatives).
+3. Choose at least 6 properties to compare on, **before** you evaluate anything.
+4. Write one `ALT-nn` section per alternative in `docs/research/alternatives.md`, with the observations, strengths, and at least two weaknesses each, every claim pointing at something you looked at.
+5. Build a board for the screenshots and working notes. Share it view-only and link it from the file. At least two screenshots per alternative, of the screens or flows that matter for your properties. See [Where The Evidence Lives](../guides/alternatives-research.md#where-the-evidence-lives).
 
-- [ ] List all things you would like to see in your product
-- [ ] Decide what features you can and have time to build
+## Part 4: Compare The Alternatives
 
-### Add docs
+Write `docs/research/comparison.md`: a qualitative analysis table, rows are your properties, columns are the alternatives, and every cell is analysis that traces back to an `ALT-nn` observation.
 
-- [ ] *./docs/sprints/sprint-01/script.md* \- A script of the interview with notes on the improvement.
-- [ ] *./docs/sprints/sprint-01/meeting-1.md* \- A file with the following content:
-  - [ ] Meeting date.
-  - [ ] Link to the playable recording with sound.
-  - [ ] Summary of the meeting.
-  - [ ] List of speakers. You may use GitHub usernames and “Customer” to not store personal info.
-  - [ ] Transcript of the recording with timestamps and speaker labels. May be polished if necessary.
-  - [ ] You must add such a file for each meeting if you conducted more than one meeting.
-- [ ] *./docs/ai-usage.md* \- Report on how you used AI during the Sprint 0\. You’ll report there each Sprint.
+Fill it property by property. Make strengths relative, and separate what you observed from what you concluded. See [Step 2: Fill The Table](../guides/comparison-and-synthesis.md#step-2-fill-the-table).
 
-### Write a [README.md](http://README.md)
+## Part 5: Find The Gaps
 
-- [ ] Header section
-  - [ ] Name
-  - [ ] Logo
-  - [ ] One-liner description
-- [ ] Body
-  - [ ] Project goal(s)
-  - [ ] Threshold of Success
-  - [ ] Description
-  - [ ] [Context Diagram](https://miro.com/blog/context-diagram/) (stakeholders, external systems)
-  - [ ] Feature Roadmap (a checklist with both implemented and not)
-- [ ] Documentation
-  - [ ] Links to the ./docs/sprints and ./docs/ai-usage.md with a brief explanation of what's in there.
+Write `docs/research/gap-analysis.md`. Every gap needs a `GAP-nn` ID, and must pass all four tests in [Gap Analysis](../requirements/process-requirements.md#gap-analysis): somebody needs it, the alternatives do not serve it, it is reachable, and a team of 3 or 4 could build it in this course.
 
-### Write a brief report on what you’ve learned
+Also record the gaps you **rejected** and why. That list is not optional; it is the part your customer will argue with, and you want that argument to happen now.
 
-- [ ] In *./docs/sprints/sprint-0/report.md:*
-      - [ ] Write what you have learned during preparation stages (team forming, researching solutions, interview scripts).
-      - [ ] List new questions that need to be clarified with the customer or learned elsewhere.
-      - [ ] Write what you think should be your next steps and focus to deliver the most value for the customer / end-user.
+## Part 6: State Your Value Proposition
 
-## Deliverables
+Write `docs/research/value-proposition.md`. Two or three `VP-nn` entries, each one a short positioning statement, each closing at least one `GAP-nn`, each naming what it costs and how a competitor would respond. End the file with your assumptions table.
 
-- [ ] A PDF including the following sections:
-      - [ ] Title page with team member names, Innopolis emails, GitHub usernames, roles.
-      - [ ] A list of team members and their contributions.
-      - [ ] Link to the qualitative analysis table.
-      - [ ] Link to your project on GitHub. The content of the repository must be accessible by the TA.
-      - [ ] Link to the report on what you’ve learned.
+The rules are in [Value Proposition And Differentiation](../requirements/process-requirements.md#value-proposition-and-differentiation) and the method in [Step 5: Write The Value Proposition](../guides/comparison-and-synthesis.md#step-5-write-the-value-proposition).
 
-## Guidance and resources
+## Part 7: Meet The Customer
 
-### Format and content
+Your instructor or mentor is the customer. Hold one kickoff meeting with them this week: present the project, your reading of the problem, and your proposed direction, and find out where they disagree with you.
 
-The overall length of your PDF-submission should not exceed 4 pages. Keep it structured, easy to read and to the point. Write something you yourself would like to read.
+1. Ask permission before recording. Keep the recording out of the repository.
+2. Write `reports/week-01/meeting-transcript.md` in the format from [Meeting Transcript](../requirements/artifact-requirements.md#meeting-transcript): one sentence per line, timestamped, speaker-labelled, sanitized.
+3. Put the recording link in your Moodle submission only.
+4. If a live meeting is impossible, align asynchronously in writing instead, timestamp the written exchange as the transcript, and declare the substitution in your week report as a deviation.
 
-### Submission in Moodle
+Do not ask the customer to design the product. Present a direction with its evidence, and find out where it is wrong.
 
-It is enough to have one submission from each team.
+## Part 8: Report On Your AI Usage
 
-### Using AI tools
+Write `reports/week-01/ai-usage.md`: which tools, what for, and what you accepted, changed, or rejected. If you used none, one line saying so. See [AI Tools](../rules.md#ai-tools).
 
-It’s okay to use whatever tools, but with two conditions. You have to report that a tool was used. The result must be dense with value and have no water or useless phrases. Using tools without acknowledgement or submitting a low-value AI-generated content means getting a fail for the assignment.
+## What Good Looks Like
 
-### GitHub
+Assume your week report is read by someone who does not know your project. A strong submission has:
 
-You can use the project repository as the “single source of truth” for your project as long as you keep there only relevant information, follow the repository hygiene, and have a meaningful file organization structure.
+* **Claims that can be checked.** Every statement about a product points at a version, a document, or something you did. A grader who follows one reference and finds it is satisfied will trust the rest.
+* **A table that argues.** Cells contain analysis, not adjectives. The reader can disagree with a cell; that is what makes it analysis.
+* **Gaps that cost you something.** You dropped some, and you said why. A file of three excellent gaps beats a file of ten nobody believes.
+* **A proposition with a downside.** You named what your advantage costs and how a competitor would copy it. A moat you did not check for is a risk you did not plan for.
+* **A repository that already works.** Branch protection on, a merged and approved pull request, a green link check, screenshots proving it.
+* **No filler.** A sentence that would survive being pasted into another team's report unchanged should be deleted. This is the single most common reason a strong week scores poorly.
 
-### Repository hygiene
+## Assignment Report In The Repository
 
-Do not commit:
+Write `reports/week-01/README.md`. This is the canonical public report for the week and the index for everything below. Follow the structure in [Weekly Public Report](../requirements/artifact-requirements.md#weekly-public-report), and include:
 
-- Large Gigabyte size files (audio, video, ai training datasets).
-- Personal information. Assume everything you ever add to the repository will be publicly available.
-- Passwords, ssh keys, access tokens, and anything else used for authentication anywhere.
-- Databases.
-- Hidden folders on your computer.
-- Entire libraries from other repositories.
-- AI models you downloaded from the internet.
+1. Project name, team number, and your problem-space sentence.
+2. A link to the root `LICENSE`.
+3. A coverage table mapping each deliverable of this assignment to the artifact that satisfies it.
+4. A short summary of what you found and what you propose. A reader should understand the week from this file alone, then follow links for detail.
+5. Links to `docs/research/alternatives.md`, `comparison.md`, `gap-analysis.md`, and `value-proposition.md`.
+6. A link to your research board.
+7. A link to `meeting-transcript.md`, or a statement that the customer refused publication and it is in the Moodle submission only.
+8. A link to `ai-usage.md`.
+9. Repository evidence: a screenshot of the `main` branch protection settings, a link to a merged pull request approved by another member, and a link to the latest green link check run. Add the justification for every link you excluded, and confirm you opened each one in a browser to check it.
+10. A contribution table mapping each member's GitHub username to their commits, issues, pull requests, and reviews.
+11. Your deviations, if any, with reasons.
+12. One line confirming that no private-only material was committed to the repository.
 
-### Resources
+### Open Questions For The Customer
 
-- You can read about the [Mom test here](https://hatrabbits.com/en/the-mom-test/).
-- You can use the [idea canvas](https://docs.google.com/spreadsheets/d/1Tv9blaeh6V8_gTC577DVObzVuuDJVZ4V0IsYrCd_kO4/edit?gid=505307303#gid=505307303) to describe the product idea.
-- There is an [example of a product research](https://www.figma.com/design/PUc4NFVcLureKzxE3RAGB0/Market-Research) with the qualitative analysis table for the features/characteristics.
+Add a short `## Open questions for the customer` section to the week report: the questions whose answers would change what you build.
+
+These are not requests for the customer to define the scope. The customer defines the scope; you propose and they decide. These are the unknowns that would change your proposal, so put them to them while you are in the room. Three to five of them, each one a question you actually need answered, each tied to a `GAP-nn` or `VP-nn`.
+
+```
+## Open questions for the customer
+
+- Is `GAP-02` (shared rules across tenants) a real constraint for you, or would separate deployments per team be acceptable?
+  It changes whether VP-01 is a gateway feature or a deployment decision.
+- Would you accept a product that is a plugin host rather than a hosted service?
+  VP-01 assumes yes, and it changes the whole delivery shape.
+```
+
+## Assignment Report On Moodle
+
+Create one PDF. It is a map, not a copy: it points at your repository and holds the two things that must not be public. Keep it to two pages.
+
+1. Project name, team number, and the commit hash you are submitting.
+2. A table of team members: GitHub username, real name, and university email. This mapping is private and appears only here.
+3. A one-line summary of contributions per member.
+4. A permalink to `reports/week-01/README.md` at the full commit hash.
+5. A permalink to the repository tree at the same commit.
+6. Live links to your research board and to the four files in `docs/research/`.
+7. A link to the kickoff meeting recording, accessible to instructors. Not in the repository.
+8. The meeting transcript, if the customer refused to let you publish it.
+9. The repository snapshot: `https://github.com/<org>/<repo>/archive/<full-commit-sha>.zip`, downloaded and attached. It must be the same commit as both permalinks.
+10. One line confirming that no private-only material was committed to the repository.
+
+See [Permalinks And Snapshots](../requirements/repository-requirements.md#permalinks-and-snapshots) for how to build these.
+
+> [!IMPORTANT]
+> Verify every link before you submit, and open the two permalinks in a browser. A permalink to the wrong commit is worse than a branch link, because it looks verified. Everything you submit must stay reachable until the course has been graded.
+
+### Submission Procedure
+
+* Submit the PDF and the repository snapshot through Moodle.
+* One submission per team.
+* Due Thursday 1 October, 23:59.
+
+## Checklist
+
+* [ ] Team of 3 or 4, project chosen, team number known.
+* [ ] Public repository in the course organization, all members collaborators, `main` default.
+* [ ] `LICENSE`, `.gitignore`, root `README.md`.
+* [ ] `main` protected: pull requests required, one approval, no self-approval. Screenshot saved.
+* [ ] Pull request template at `.github/pull_request_template.md`.
+* [ ] Lychee link check on pull requests and `main`, green, with justified exclusions.
+* [ ] At least one merged pull request approved by another member.
+* [ ] Every member: at least one commit, at least one review.
+* [ ] `docs/research/alternatives.md` with 3–4 alternatives and `ALT-nn` IDs.
+* [ ] `docs/research/comparison.md` with at least 6 properties and traceable cells.
+* [ ] `docs/research/gap-analysis.md` with `GAP-nn` entries and the rejected list.
+* [ ] `docs/research/value-proposition.md` with `VP-nn` entries and assumptions.
+* [ ] Board linked, view-only, two screenshots per alternative.
+* [ ] Kickoff meeting held, recording permission asked, transcript written.
+* [ ] `reports/week-01/ai-usage.md` written.
+* [ ] `reports/week-01/README.md` complete, including coverage table, evidence, contribution table, and open questions for the customer.
+* [ ] PDF and snapshot ready, permalinks verified at the full commit hash.
