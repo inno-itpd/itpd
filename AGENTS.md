@@ -6,16 +6,17 @@ Operating instructions for coding agents maintaining the student-facing course m
 
 ### Maintained Here
 
-| File                                      | Owns                                                                                                                                          |
-| ----------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
-| `README.md`                               | Student entry point and routing. Nothing else.                                                                                                |
-| `rules.md`                                | The course contract: public vs private, hygiene, AI policy, deadlines, submission channel. Short, and a router rather than a second rulebook. |
-| `requirements/artifact-requirements.md`   | Artifact semantics, the `reports/week-NN/` vs `docs/` split, visibility, recurring artifact structures.                                       |
-| `requirements/process-requirements.md`    | What the product work means: alternatives, properties, gaps, value propositions, identifier and traceability rules.                           |
-| `requirements/repository-requirements.md` | Repository and platform mechanics: GitHub, pull requests, branch protection, link checking, permalinks, snapshots, changelog, CI.             |
-| `guides/alternatives-research.md`         | Method for finding and evaluating alternatives. Explanatory, not normative.                                                                   |
-| `guides/comparison-and-synthesis.md`      | Method for building the comparison, finding gaps, writing the value proposition. Explanatory, not normative.                                  |
-| `assignments/assignment-N.md`             | Learner-facing requirements for one week. Deltas, paths, and evidence only.                                                                   |
+| File                                      | Owns                                                                                                                                                          |
+| ----------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `README.md`                               | Student entry point and routing. Nothing else.                                                                                                                |
+| `syllabus.md`                             | The student-facing schedule: week-by-week focus, dates, and submission deadlines. A formatted copy of the instructors syllabus, not a second source of truth. |
+| `rules.md`                                | The course contract: public vs private, hygiene, AI policy, deadlines, submission channel. Short, and a router rather than a second rulebook.                 |
+| `requirements/artifact-requirements.md`   | Artifact semantics, the `reports/week-NN/` vs `docs/` split, visibility, recurring artifact structures.                                                       |
+| `requirements/process-requirements.md`    | What the product work means: alternatives, properties, gaps, value propositions, identifier and traceability rules.                                           |
+| `requirements/repository-requirements.md` | Repository and platform mechanics: GitHub, pull requests, branch protection, link checking, permalinks, snapshots, changelog, CI.                             |
+| `guides/alternatives-research.md`         | Method for finding and evaluating alternatives. Explanatory, not normative.                                                                                   |
+| `guides/comparison-and-synthesis.md`      | Method for building the comparison, finding gaps, writing the value proposition. Explanatory, not normative.                                                  |
+| `assignments/assignment-N.md`             | Learner-facing requirements for one week. Deltas, paths, and evidence only.                                                                                   |
 
 ### Tooling
 
@@ -39,7 +40,9 @@ Editor diagnostics are advisory; the commands above are the gates.
 
 ### Maintained Elsewhere
 
-- `../itpd-instructors/syllabus.md` is the authoritative course schedule, deadlines, weighting, and policy. `itpd/` must not restate the late-submission or attendance policy, only link to it.
+- `../itpd-instructors/syllabus.md` is the authoritative course schedule, deadlines, weighting, and policy.
+  The local `syllabus.md` is the same content reformatted so it passes the Markdown gates, so edit the source and copy the result rather than editing the local copy.
+  Apart from `syllabus.md` itself, the materials here must not restate the late-submission or attendance policy, only link to it.
 - `../backlog.md` is the working list for this directory.
 - The `docs/` destination map below describes artifacts in **student** repositories.
   Those files do not exist here and must not be created here.
@@ -145,5 +148,5 @@ Do not import Sprint, Product Backlog, PBI, or user-story ceremony from the `swp
 - Do not create files under `docs/` or `reports/` in this directory.
   Those paths belong to student repositories.
 - Do not copy the `swp_26/` promotion convention, its artifact-type vocabulary, or its GitLab support into these materials.
-- Do not restate the syllabus's late-submission, attendance, or weighting policy.
-  Link it.
+- Do not restate the syllabus's late-submission, attendance, or weighting policy in an assignment, a guide, or `rules.md`.
+  Link `syllabus.md`.
