@@ -207,7 +207,8 @@ The defensible part is the logging standard, not the rules themselves.
 
 Assumptions are not questions for the customer.
 The customer decides the scope; you are responsible for knowing which of your beliefs the scope rests on, and for finding out which of them are wrong.
-See [Assignment 1](../assignments/assignment-1.md#open-questions-for-the-customer) for how these surface in the week report.
+The ones you cannot settle yourself belong in the meeting report's open questions, where the customer answers them for you.
+See [Customer Meeting Artifacts](artifact-requirements.md#meeting-report).
 
 ## Identifier Rules
 
@@ -232,14 +233,14 @@ The research you produce in Week 1 is the evidence base for the rest of the cour
 Later weeks cite your Week 1 identifiers rather than restating your findings.
 This is what makes the course a project rather than nine separate assignments.
 
-| Later work                                    | Must cite                                        |
-| --------------------------------------------- | ------------------------------------------------ |
-| Week 2 work plan and scope proposal           | `GAP-nn`, `VP-nn`                                |
-| Week 3 user stories and the product vision    | `GAP-nn` the story serves, `VP-nn` it supports   |
-| Week 4 quality goals and threshold of success | `GAP-nn` the quality attribute protects, `VP-nn` |
-| Week 7 usability test tasks                   | `US-nn` the task tests                           |
-| Week 8 configuration management decisions     | `US-nn` or `GAP-nn` affected by the decision     |
-| Week 9 reflection and final presentation      | the gaps you closed, and the ones you did not    |
+| Later work                                    | Must cite                                                                                                  |
+| --------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| Week 2 work plan and scope proposal           | `GAP-nn`, `VP-nn`, and the kickoff [meeting report](artifact-requirements.md#meeting-report) action points |
+| Week 3 user stories and the product vision    | `GAP-nn` the story serves, `VP-nn` it supports                                                             |
+| Week 4 quality goals and threshold of success | `GAP-nn` the quality attribute protects, `VP-nn`                                                           |
+| Week 7 usability test tasks                   | `US-nn` the task tests                                                                                     |
+| Week 8 configuration management decisions     | `US-nn` or `GAP-nn` affected by the decision                                                               |
+| Week 9 reflection and final presentation      | the gaps you closed, and the ones you did not                                                              |
 
 **Required**
 
@@ -274,8 +275,10 @@ This is what makes the course a project rather than nine separate assignments.
    Present the project, your reading of the problem, and your proposed direction, and hear where they disagree.
 2. Ask for permission before recording.
    Record the meeting if permitted, and keep the recording out of the repository.
-3. Write the transcript as described in [Artifact Requirements](artifact-requirements.md#meeting-transcript).
-4. If a live meeting is impossible, do the alignment asynchronously in writing with the customer.
-   Timestamp the written exchange as the transcript, record a voice or screen note if there is one, and state the substitution in the weekly public report as a deviation.
-5. The customer decides the scope.
+3. Write a [meeting report](artifact-requirements.md#meeting-report), and either a [transcript](artifact-requirements.md#meeting-transcript) or [notes](artifact-requirements.md#meeting-notes).
+4. The meeting report is the only one of the three you always produce, and it is where the week's open questions live.
+   Its `## Decisions` table names the `GAP-nn` or `VP-nn` each decision came from, so the customer is answering your research and not a stranger's.
+5. If a live meeting is impossible, do the alignment asynchronously in writing with the customer.
+   Timestamp the written exchange as the notes, record a voice or screen note if there is one, and state the substitution in the weekly public report as a deviation.
+6. The customer decides the scope.
    Your job in this meeting is to present a direction with its evidence and to find out where it is wrong, not to ask the customer to design the product.

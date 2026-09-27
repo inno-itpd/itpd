@@ -23,10 +23,12 @@ Where it says "see", the linked file is the detailed version, and it wins if the
 | Artifact                                                     | Where it goes                                    |
 | ------------------------------------------------------------ | ------------------------------------------------ |
 | Weekly report, research, maintained documentation, changelog | Public repository                                |
-| Sanitized meeting transcript                                 | Public repository                                |
+| Sanitized meeting report                                     | Public repository                                |
+| Sanitized meeting transcript or notes                        | Public repository                                |
 | AI usage report                                              | Public repository                                |
 | Research board, prototype, diagram tool                      | Public, shared view-only, linked from the report |
 | Meeting recording and its link                               | **Private.** Moodle only                         |
+| A meeting transcript the customer would not publish          | **Private.** Moodle only                         |
 | University email addresses                                   | **Private.** Moodle only                         |
 | Usability test participant data, recordings, consent         | **Private.** Moodle only                         |
 | Passwords, tokens, API keys, `.env` files                    | **Nowhere.** Never commit them at all            |

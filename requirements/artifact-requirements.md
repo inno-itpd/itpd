@@ -17,7 +17,10 @@ It is the short version of this file and states what is expected of you as a stu
   - [Never Commit](#never-commit)
   - [Sensitive Information Reference](#sensitive-information-reference)
 - [Weekly Public Report](#weekly-public-report)
-- [Meeting Transcript](#meeting-transcript)
+- [Customer Meeting Artifacts](#customer-meeting-artifacts)
+  - [Meeting Report](#meeting-report)
+  - [Meeting Transcript](#meeting-transcript)
+  - [Meeting Notes](#meeting-notes)
 - [Screenshot Evidence](#screenshot-evidence)
 - [AI Usage Report](#ai-usage-report)
 - [Private Submission Wrapper](#private-submission-wrapper)
@@ -62,6 +65,9 @@ It is the short version of this file and states what is expected of you as a stu
 7. A **deviation** is a place where your team did something materially different from what an assignment or these requirements describe.
    Deviations are allowed.
    Undeclared deviations are not.
+8. A **meeting report** is your team's own account of a meeting with the customer, written in your own words, at `reports/week-NN/meeting-report.md`.
+9. A **decision** is a conclusion reached in a meeting that changes what you build.
+10. An **action point** is a follow-up that came out of a meeting, with a named owner and a week it falls due in.
 
 ## Visibility Model
 
@@ -80,7 +86,7 @@ It is the short version of this file and states what is expected of you as a stu
 
 - The root `README.md`, `LICENSE`, and the maintained documentation in `docs/`.
 - The weekly public report and every supporting artifact it links.
-- Meeting transcripts, after sanitization.
+- Meeting reports, transcripts, and notes, after sanitization.
 - The AI usage report.
 - External boards, shared view-only.
 
@@ -89,6 +95,7 @@ It is the short version of this file and states what is expected of you as a stu
 **Since: W1**
 
 - Recordings of meetings with the customer, and links to them.
+- A meeting transcript the customer refused to let you publish.
 - University email addresses of team members.
 - Usability test participant data, recordings, and consent evidence.
 - Credentials, tokens, and any other authentication material.
@@ -178,14 +185,14 @@ Nobody lets a team define its own redaction rules, which is the gap our project 
 
 ## Coverage
 
-| Deliverable         | Artifact                                                                    |
-| ------------------- | --------------------------------------------------------------------------- |
-| Alternatives search | [docs/research/alternatives.md](../docs/research/alternatives.md)           |
-| Pros and cons       | [docs/research/comparison.md](../docs/research/comparison.md)               |
-| Gap analysis        | [docs/research/gap-analysis.md](../docs/research/gap-analysis.md)           |
-| Value proposition   | [docs/research/value-proposition.md](../docs/research/value-proposition.md) |
-| Customer kickoff    | [meeting-transcript.md](meeting-transcript.md)                              |
-| AI usage            | [ai-usage.md](ai-usage.md)                                                  |
+| Deliverable         | Artifact                                                                               |
+| ------------------- | -------------------------------------------------------------------------------------- |
+| Alternatives search | [docs/research/alternatives.md](../docs/research/alternatives.md)                      |
+| Pros and cons       | [docs/research/comparison.md](../docs/research/comparison.md)                          |
+| Gap analysis        | [docs/research/gap-analysis.md](../docs/research/gap-analysis.md)                      |
+| Value proposition   | [docs/research/value-proposition.md](../docs/research/value-proposition.md)            |
+| Customer kickoff    | [meeting-report.md](meeting-report.md), [meeting-transcript.md](meeting-transcript.md) |
+| AI usage            | [ai-usage.md](ai-usage.md)                                                             |
 
 ## Contribution
 
@@ -207,18 +214,127 @@ None.
 No private-only material was committed to this repository.
 ```
 
-## Meeting Transcript
+## Customer Meeting Artifacts
 
 **Since: W1**
 
-A meeting transcript is the written form of a meeting you conducted with the customer or with your team.
-It is a public artifact once sanitized.
-The recording is a separate, private-only artifact.
+A meeting with the customer produces a meeting report, and either a transcript or notes.
+A recording is a separate, private-only artifact.
+
+| Artifact                                  | When it exists                                          | Visibility            |
+| ----------------------------------------- | ------------------------------------------------------- | --------------------- |
+| [Meeting Report](#meeting-report)         | Every meeting with the customer                         | Public once sanitized |
+| [Meeting Transcript](#meeting-transcript) | The meeting was recorded and publishing it is permitted | Public once sanitized |
+| [Meeting Notes](#meeting-notes)           | Recording or transcript sharing was refused             | Public once sanitized |
+
+**Required**
+
+1. The meeting report is always required.
+   The transcript and the notes are the same evidence in a different form, so a meeting produces one of them, not both.
+2. A meeting with no recording and no transcript still produces a meeting report.
+3. The meeting report is the team's own account of the meeting.
+   The transcript and the notes are the evidence it is written from, and the report links to them.
+4. Later weeks cite a meeting report by path and heading anchor, for example `reports/week-01/meeting-report.md#decisions`.
+   The report is the record of that meeting and is not rewritten afterwards.
+   If a later meeting reverses a decision, the later report says so and links back to the report it reverses.
+5. Ask the customer three separate permission questions, every time: may we record, may we publish a sanitized transcript in the repository, and may we share a sanitized transcript privately with instructors if publication is refused.
+   Permission is per meeting and is never carried over from an earlier meeting.
+
+### Meeting Report
+
+**Required**
+
+1. Write the report at `reports/week-NN/meeting-report.md`, one per meeting with the customer.
+   If a week holds more than one, number them in chronological order: `meeting-report-2.md`, `meeting-report-3.md`.
+2. Write it in English, in the team's own words, in the past or present tense as suits the entry.
+   A report that restates the transcript line by line, or that a tool generated and the team pasted in unchecked, does not satisfy this.
+3. Declare any tool used to transcribe or draft the report in that week's [AI Usage Report](#ai-usage-report).
+4. It contains exactly the sections below, in this order, and nothing else.
+5. A section with nothing in it says `None` and moves on.
+   The same rule applies to [deviations](#declaring-deviations).
+6. The sections, and what belongs in them:
+
+| Section             | What belongs in it                                                                                                                                                                    |
+| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `## Metadata`       | Date, duration, who was there by GitHub username or `Instructor`, what you presented, the answer to each of the three permission questions, and a link to the transcript or the notes |
+| `## Summary`        | 3 to 5 bullets on what the meeting settled or changed, not on what was on the agenda                                                                                                  |
+| `## Decisions`      | A table, one row per decision                                                                                                                                                         |
+| `## Action points`  | A table, one row per action                                                                                                                                                           |
+| `## Open questions` | A table, one row per question the meeting did not answer                                                                                                                              |
+| `## Disagreements`  | A table, one row per place the customer did not agree with you                                                                                                                        |
+
+7. `## Decisions` has the columns `Decision`, `Made by`, and `Traces to`.
+   `Traces to` names the `GAP-nn` or `VP-nn` the decision came from, or says `None` where it came from nowhere in your research.
+8. `## Action points` has the columns `Action`, `Owner`, and `Due`.
+   The owner is a GitHub username, and the due date falls inside a named week.
+9. `## Open questions` has the columns `Question`, `What it would change`, and `Follow-up`.
+   A question whose answer would change nothing does not belong in the table.
+10. `## Disagreements` has the columns `Your position`, `Customer's position`, and `What you changed`.
+    If you did not change anything, say why you kept your position instead.
+
+**Recommended**
+
+- Scale the report to the meeting.
+  A short check-in does not need the same volume as a two-hour review.
+- Keep each cell to a sentence or two.
+  A cell nobody can argue with is a cell that says nothing.
+
+**Example**
+
+```markdown
+# Kickoff meeting report
+
+## Metadata
+
+**Date:** 2026-09-29
+**Duration:** 50 minutes
+**Attended:** alice, bob, carol, Instructor
+**Presented:** the project choice, our reading of the problem, and the two `VP-nn` directions
+**Recording:** permitted, linked from the Week 01 Moodle submission
+**Transcript publication:** permitted, see [the transcript](meeting-transcript.md)
+**Transcript shared privately:** not applicable
+
+## Summary
+
+- The customer accepted `VP-01` and told us to stop treating `GAP-04` as a differentiator.
+- `GAP-02` survives only if the team-size constraint is real, which we have not checked.
+- Two weeks of work are now contingent on one check we have not done.
+
+## Decisions
+
+| Decision                             | Made by             | Traces to |
+| ------------------------------------ | ------------------- | --------- |
+| Build the gateway core, not the host | Customer            | `VP-01`   |
+| Drop multi-tenant isolation from W3  | Customer            | `GAP-04`  |
+| Keep the plugin model for delivery   | Team, not contested | `VP-01`   |
+
+## Action points
+
+| Action                                           | Owner | Due           |
+| ------------------------------------------------ | ----- | ------------- |
+| Verify the team-size constraint with two sources | bob   | End of Week 2 |
+| Re-cut the comparison without the host property  | carol | End of Week 1 |
+
+## Open questions
+
+| Question                                          | What it would change                                  | Follow-up                |
+| ------------------------------------------------- | ----------------------------------------------------- | ------------------------ |
+| Is shared rules across tenants a real constraint? | Whether `VP-01` is a feature or a deployment decision | bob, carried into Week 2 |
+
+## Disagreements
+
+| Your position                   | Customer's position                  | What you changed                        |
+| ------------------------------- | ------------------------------------ | --------------------------------------- |
+| `GAP-04` is a differentiator    | Isolation is a solved market problem | Dropped it from the value proposition   |
+| You would ship a hosted service | A plugin host is enough              | `VP-01` is now written as a plugin host |
+```
+
+### Meeting Transcript
 
 **Required**
 
 1. Ask the customer for permission before recording starts.
-   Recording permission is asked every time, and a refusal is not a problem: write notes instead and say in the weekly public report that recording was refused.
+   A refusal is not a problem: write [notes](#meeting-notes) instead and say so in the weekly public report.
 2. Write the transcript in English, cleaned for readability without changing the meaning of what was said.
 3. Use one sentence per line, and put a timestamp at the start of the line with a speaker label:
 
@@ -234,6 +350,7 @@ The recording is a separate, private-only artifact.
    Use `[inaudible]` where a word cannot be recovered and `[redacted]` where something was deliberately removed.
 6. If the customer refuses to let the transcript be published, do not commit it.
    Put it in the Moodle submission instead and state that in the weekly public report.
+   The [meeting report](#meeting-report) is still public.
 7. Keep the recording out of the repository and share the link only through Moodle.
 
 **Example**
@@ -250,6 +367,17 @@ The recording is a separate, private-only artifact.
 [00:01:40] Instructor: [redacted]
 [00:02:11] carol: We still need to check whether the team size constraint is real.
 ```
+
+### Meeting Notes
+
+**Required**
+
+1. Write notes instead of a transcript when recording was refused, when the customer refused to let a transcript be shared at all, or when the meeting happened in writing.
+2. Record the discussion chronologically, in the same order it happened, in prose rather than as a dialogue.
+3. Include what was presented, what the customer said about it, what was decided, and what was left open.
+4. Remove personal data and confidential information on the same terms as a [transcript](#meeting-transcript).
+5. Notes are evidence, so the [meeting report](#meeting-report) is still required and still links to them.
+6. Say in the weekly public report which of the three you produced, and why.
 
 ## Screenshot Evidence
 
@@ -357,7 +485,9 @@ The following artifacts are introduced in later weeks.
 Their shared structure belongs here, not in the assignment that first requires them.
 Each assignment states the path and the week-specific evidence.
 
-- Customer meeting transcripts, summaries, and notes for the meetings held in Weeks 2 and 3.
+- Customer meeting reports, transcripts, and notes for the meetings held in Weeks 2 and 3.
+  They follow the same structure as the Week 1 kickoff artifacts.
+  See [Customer Meeting Artifacts](#customer-meeting-artifacts).
 - Prototypes and the product vision from Week 3.
 - Quality requirements, the verification plan, the threshold of success, and architecture documentation from Week 4.
 - Testing and deployment documentation from Week 5.

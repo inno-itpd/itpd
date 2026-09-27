@@ -113,6 +113,7 @@ A later assignment may extend this map, but should not silently move an entry.
 | W9   | `docs/reflection.md`                                                                                              |
 
 Weekly reports live at `reports/week-NN/README.md` in every week, and the Moodle PDF is the private wrapper in every week.
+Meeting artifacts live at `reports/week-NN/meeting-report.md`, plus a `meeting-transcript.md` or a `meeting-notes.md` beside it.
 That shape is fixed; do not redesign it per week.
 
 ## Assignment Authoring Checklist
@@ -135,7 +136,11 @@ Before writing or editing an assignment:
 
 Use these words and do not invent local synonyms:
 
-`weekly report`, `weekly public report`, `supporting artifact`, `private-only artifact`, `external-but-indexed artifact`, `repository-resident artifact`, `deviation`, `customer` (never "client" or "stakeholder" when you mean the instructor), `kickoff meeting`, `alternative`, `property`, `gap`, `value proposition`, `threshold of success`, `minimum usable product` (MUP), `minimum viable product` (MVP), `team number`.
+`weekly report`, `weekly public report`, `supporting artifact`, `private-only artifact`, `external-but-indexed artifact`, `repository-resident artifact`, `deviation`, `customer` (never "client" or "stakeholder" when you mean the instructor), `kickoff meeting`, `meeting report`, `meeting transcript`, `meeting notes`, `decision`, `action point`, `open question`, `alternative`, `property`, `gap`, `value proposition`, `threshold of success`, `minimum usable product` (MUP), `minimum viable product` (MVP), `team number`.
+
+Meeting decisions and action points are **not** identifier families.
+There is no `DEC-nn` or `ACT-nn`.
+A later week cites a meeting report by path and heading anchor, an action point is carried out by a tracked issue, and the identifier families stay `ALT-nn`, `GAP-nn`, `VP-nn`, and `US-nn`.
 
 Note that ITPD has no Scrum.
 Do not import Sprint, Product Backlog, PBI, or user-story ceremony from the `swp_26/` materials. `docs/user-stories.md` in W3 is user stories in the plain product sense.

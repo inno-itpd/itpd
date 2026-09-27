@@ -24,7 +24,6 @@ What you hand in is a defensible understanding of the problem your project lives
 - [Part 8: Report On Your AI Usage](#part-8-report-on-your-ai-usage)
 - [What Good Looks Like](#what-good-looks-like)
 - [Assignment Report In The Repository](#assignment-report-in-the-repository)
-  - [Open Questions For The Customer](#open-questions-for-the-customer)
 - [Assignment Report On Moodle](#assignment-report-on-moodle)
   - [Submission Procedure](#submission-procedure)
 - [Checklist](#checklist)
@@ -43,14 +42,14 @@ By the end of this week you should be able to show an instructor:
 Read these once.
 They are the rules; this assignment only tells you what this week requires.
 
-| Read                                                                            | For                                                                                  |
-| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
-| [Course rules](../rules.md)                                                     | What is public, what is private, deadlines, AI policy                                |
-| [Artifact Requirements](../requirements/artifact-requirements.md)               | Where things live, the weekly report, transcript and AI report formats               |
-| [Repository Requirements](../requirements/repository-requirements.md)           | GitHub, pull requests, branch protection, link checking, permalinks, snapshots       |
-| [Process Requirements](../requirements/process-requirements.md)                 | What counts as a valid alternative, gap, and value proposition; the identifier rules |
-| [Guide: researching alternatives](../guides/alternatives-research.md)           | How to find and evaluate your set                                                    |
-| [Guide: comparison to value proposition](../guides/comparison-and-synthesis.md) | How to build the table, find the gaps, write the proposition                         |
+| Read                                                                            | For                                                                                    |
+| ------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| [Course rules](../rules.md)                                                     | What is public, what is private, deadlines, AI policy                                  |
+| [Artifact Requirements](../requirements/artifact-requirements.md)               | Where things live, the weekly report, meeting report, transcript and AI report formats |
+| [Repository Requirements](../requirements/repository-requirements.md)           | GitHub, pull requests, branch protection, link checking, permalinks, snapshots         |
+| [Process Requirements](../requirements/process-requirements.md)                 | What counts as a valid alternative, gap, and value proposition; the identifier rules   |
+| [Guide: researching alternatives](../guides/alternatives-research.md)           | How to find and evaluate your set                                                      |
+| [Guide: comparison to value proposition](../guides/comparison-and-synthesis.md) | How to build the table, find the gaps, write the proposition                           |
 
 ## Part 1: Form The Team And Choose The Project
 
@@ -97,7 +96,8 @@ The repository structure you are building towards:
 └── reports/
     └── week-01/
         ├── README.md
-        ├── meeting-transcript.md
+        ├── meeting-report.md
+        ├── meeting-transcript.md   # or meeting-notes.md, never both
         └── ai-usage.md
 ```
 
@@ -142,14 +142,19 @@ The rules are in [Value Proposition And Differentiation](../requirements/process
 Your instructor or mentor is the customer.
 Hold one kickoff meeting with them this week: present the project, your reading of the problem, and your proposed direction, and find out where they disagree with you.
 
-1. Ask permission before recording.
-   Keep the recording out of the repository.
-2. Write `reports/week-01/meeting-transcript.md` in the format from [Meeting Transcript](../requirements/artifact-requirements.md#meeting-transcript): one sentence per line, timestamped, speaker-labelled, sanitized.
-3. Put the recording link in your Moodle submission only.
-4. If a live meeting is impossible, align asynchronously in writing instead, timestamp the written exchange as the transcript, and declare the substitution in your week report as a deviation.
+1. Ask the three permission questions before you start, and keep the recording out of the repository.
+2. Write `reports/week-01/meeting-report.md`, plus either `reports/week-01/meeting-transcript.md` or `reports/week-01/meeting-notes.md`, following [Customer Meeting Artifacts](../requirements/artifact-requirements.md#customer-meeting-artifacts).
+   The report is the deliverable this week; the transcript or the notes is its evidence.
+3. Complete all six of the report's sections, and hold it to the week-specific minima:
+   - At least two rows in `## Decisions`, each naming the `GAP-nn` or `VP-nn` it came from.
+   - At least two rows in `## Action points`, each with a named owner and a due date inside Week 2.
+   - `## Disagreements` filled in, or an explicit `None`.
+4. Put the recording link in your Moodle submission only.
+5. If a live meeting is impossible, align asynchronously in writing instead, timestamp the written exchange as the notes, and declare the substitution in your week report as a deviation.
 
 Do not ask the customer to design the product.
 Present a direction with its evidence, and find out where it is wrong.
+Where you were wrong, `## Disagreements` is the most valuable table in the week.
 
 ## Part 8: Report On Your AI Usage
 
@@ -174,6 +179,9 @@ A strong submission has:
 - **A proposition with a downside.**
   You named what your advantage costs and how a competitor would copy it.
   A moat you did not check for is a risk you did not plan for.
+- **A meeting that changed something.**
+  The customer disagreed with at least one of your positions, the report says so, and the value proposition reflects it.
+  A kickoff where nothing was contested is a kickoff you did not test.
 - **A repository that already works.**
   Branch protection on, a merged and approved pull request, a green link check, screenshots proving it.
 - **No filler.**
@@ -193,7 +201,7 @@ Follow the structure in [Weekly Public Report](../requirements/artifact-requirem
    A reader should understand the week from this file alone, then follow links for detail.
 5. Links to `docs/research/alternatives.md`, `comparison.md`, `gap-analysis.md`, and `value-proposition.md`.
 6. A link to your research board.
-7. A link to `meeting-transcript.md`, or a statement that the customer refused publication and it is in the Moodle submission only.
+7. A link to `meeting-report.md`, and a link to `meeting-transcript.md` or `meeting-notes.md`, or a statement that the customer refused publication and it is in the Moodle submission only.
 8. A link to `ai-usage.md`.
 9. Repository evidence: a screenshot of the `main` branch protection settings, a link to a merged pull request approved by another member, and a link to the latest green link check run.
    Add the justification for every link you excluded, and confirm you opened each one in a browser to check it.
@@ -201,23 +209,8 @@ Follow the structure in [Weekly Public Report](../requirements/artifact-requirem
 11. Your deviations, if any, with reasons.
 12. One line confirming that no private-only material was committed to the repository.
 
-### Open Questions For The Customer
-
-Add a short `## Open questions for the customer` section to the week report: the questions whose answers would change what you build.
-
-These are not requests for the customer to define the scope.
-The customer defines the scope; you propose and they decide.
-These are the unknowns that would change your proposal, so put them to them while you are in the room.
-Three to five of them, each one a question you actually need answered, each tied to a `GAP-nn` or `VP-nn`.
-
-```markdown
-## Open questions for the customer
-
-- Is `GAP-02` (shared rules across tenants) a real constraint for you, or would separate deployments per team be acceptable?
-  It changes whether VP-01 is a gateway feature or a deployment decision.
-- Would you accept a product that is a plugin host rather than a hosted service?
-  VP-01 assumes yes, and it changes the whole delivery shape.
-```
+The open questions from the kickoff live in `meeting-report.md`, not here.
+The week report does not repeat them; a reader follows the link.
 
 ## Assignment Report On Moodle
 
@@ -270,7 +263,9 @@ See [Permalinks And Snapshots](../requirements/repository-requirements.md#permal
 - [ ] `docs/research/gap-analysis.md` with `GAP-nn` entries and the rejected list.
 - [ ] `docs/research/value-proposition.md` with `VP-nn` entries and assumptions.
 - [ ] Board linked, view-only, two screenshots per alternative.
-- [ ] Kickoff meeting held, recording permission asked, transcript written.
+- [ ] Kickoff meeting held, all three permissions asked before recording.
+- [ ] `reports/week-01/meeting-report.md` with all six sections, 2+ decisions traced to `GAP-nn`/`VP-nn`, 2+ action points with owner and Week 2 due date, and `## Disagreements` filled or `None`.
+- [ ] `reports/week-01/meeting-transcript.md` or `meeting-notes.md`, sanitized; in the Moodle PDF only if publication was refused.
 - [ ] `reports/week-01/ai-usage.md` written.
-- [ ] `reports/week-01/README.md` complete, including coverage table, evidence, contribution table, and open questions for the customer.
+- [ ] `reports/week-01/README.md` complete, including coverage table, evidence, and contribution table.
 - [ ] PDF and snapshot ready, permalink verified at the full commit hash.
