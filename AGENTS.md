@@ -28,12 +28,14 @@ Run `npm run format:markdown` before committing.
 | `scripts/markdown.mjs`                    | Formats, checks, and lints every tracked `.md` file except `.opencode/` and `.agents/`.     |
 | `prettier/markdown/sentences-per-line.js` | Formatter plugin: one sentence per line, and table rows left on one physical line.          |
 | `eslint/markdown/no-split-sentence.js`    | Lint rule for a sentence split across two lines. Registered but off, so it reports nothing. |
-| `.vscode/tasks.json`                      | Editor tasks for the same two commands. The editor runs neither rule itself.                |
+| `.vscode/tasks.json`                      | Editor tasks for the same two commands.                                                     |
 | `.vscode/keybindings.json`                | Shortcuts for those two tasks. `Ctrl+Alt+M` formats, `Ctrl+Alt+C` checks.                   |
 
 Their fixtures run with `npm run test:markdown-format` and `npm run test:markdown-rules`.
 Both plugins are shared verbatim with `../timeful`, so a change to either belongs in both repositories.
-`.vscode/settings.json` opts the editor out of linting and out of format-on-save, so the commands above are the only path that formats or checks this directory.
+`markdown/no-html` runs with `allowed: ['h2']`, so raw HTML is rejected except for the `<h2 id="...">` anchors that carry the stable permalinks `requirements/repository-requirements.md` requires.
+`.vscode/settings.json` lints Markdown in the editor, so the sentence and `no-html` rules report while you write, and it disables format-on-save because a bundled Prettier extension would format Markdown without the local `sentences-per-line` plugin.
+Editor diagnostics are advisory; the commands above are the gates.
 
 ### Maintained Elsewhere
 
