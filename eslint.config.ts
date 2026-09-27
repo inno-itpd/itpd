@@ -22,6 +22,7 @@ export default [
     rules: {
       'sentences-per-line/one': 'error',
       'local/no-split-sentence': 'off',
+      'markdown/no-html': ['error', { allowed: ['h2'] }],
     },
   },
 ]
