@@ -222,33 +222,35 @@ Three to five of them, each one a question you actually need answered, each tied
 ## Assignment Report On Moodle
 
 Create one PDF.
-It is a map, not a copy: it points at your repository and holds the two things that must not be public.
-Keep it to two pages.
+It is a map, not a copy: it points at your repository and holds the material that must not be public.
+Keep it to two pages, and put nothing in it except the following:
 
-1. Project name, team number, and the commit hash you are submitting.
+1. Project name, team number, and the full commit hash you are submitting.
 2. A table of team members: GitHub username, real name, and university email.
    This mapping is private and appears only here.
-3. A one-line summary of contributions per member.
-4. A permalink to `reports/week-01/README.md` at the full commit hash.
-5. A permalink to the repository tree at the same commit.
-6. Live links to your research board and to the four files in `docs/research/`.
-7. A link to the kickoff meeting recording, accessible to instructors.
-   Not in the repository.
-8. The meeting transcript, if the customer refused to let you publish it.
-9. The repository snapshot: `https://github.com/<org>/<repo>/archive/<full-commit-sha>.zip`, downloaded and attached.
-   It must be the same commit as both permalinks.
-10. One line confirming that no private-only material was committed to the repository.
+3. A permalink to `reports/week-01/README.md` at the full commit hash.
+4. A link to the kickoff meeting recording, accessible to instructors.
+   The recording must not be in the repository.
+5. The meeting transcript, if the customer refused to let you publish it.
+6. One line confirming that no private-only material was committed to the repository.
 
-See [Permalinks And Snapshots](../requirements/repository-requirements.md#permalinks-and-snapshots) for how to build these.
+Nothing else goes in the PDF.
+The summary, the coverage table, the contribution table, the evidence links, the deviations, and the privacy confirmation are all in `reports/week-01/README.md`, and the permalink gets a grader there.
+Do not paste, retype, or reword them.
+If the PDF runs past two pages, you are writing the report a second time, and the second copy is the one that goes stale.
+
+This is the [private submission wrapper](../requirements/artifact-requirements.md#private-submission-wrapper) the course requires: the private material for the week, and links to the public material.
+
+See [Permalinks And Snapshots](../requirements/repository-requirements.md#permalinks-and-snapshots) for how to build the permalink and the snapshot.
 
 > [!IMPORTANT]
-> Verify every link before you submit, and open the two permalinks in a browser.
+> Verify every link before you submit, and open the permalink in a browser.
 > A permalink to the wrong commit is worse than a branch link, because it looks verified.
 > Everything you submit must stay reachable until the course has been graded.
 
 ### Submission Procedure
 
-- Submit the PDF and the repository snapshot through Moodle.
+- Submit the PDF and the repository snapshot (repository page -> Code -> Download ZIP) through Moodle.
 - One submission per team.
 - Due Thursday 1 October, 23:59.
 
@@ -271,4 +273,4 @@ See [Permalinks And Snapshots](../requirements/repository-requirements.md#permal
 - [ ] Kickoff meeting held, recording permission asked, transcript written.
 - [ ] `reports/week-01/ai-usage.md` written.
 - [ ] `reports/week-01/README.md` complete, including coverage table, evidence, contribution table, and open questions for the customer.
-- [ ] PDF and snapshot ready, permalinks verified at the full commit hash.
+- [ ] PDF and snapshot ready, permalink verified at the full commit hash.
