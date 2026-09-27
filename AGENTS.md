@@ -28,9 +28,12 @@ Run `npm run format:markdown` before committing.
 | `scripts/markdown.mjs`                    | Formats, checks, and lints every tracked `.md` file except `.opencode/` and `.agents/`.     |
 | `prettier/markdown/sentences-per-line.js` | Formatter plugin: one sentence per line, and table rows left on one physical line.          |
 | `eslint/markdown/no-split-sentence.js`    | Lint rule for a sentence split across two lines. Registered but off, so it reports nothing. |
+| `.vscode/tasks.json`                      | Editor tasks for the same two commands. The editor runs neither rule itself.                |
+| `.vscode/keybindings.json`                | Shortcuts for those two tasks. `Ctrl+Alt+M` formats, `Ctrl+Alt+C` checks.                   |
 
 Their fixtures run with `npm run test:markdown-format` and `npm run test:markdown-rules`.
 Both plugins are shared verbatim with `../timeful`, so a change to either belongs in both repositories.
+`.vscode/settings.json` opts the editor out of linting and out of format-on-save, so the commands above are the only path that formats or checks this directory.
 
 ### Maintained Elsewhere
 

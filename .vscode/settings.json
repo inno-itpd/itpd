@@ -1,0 +1,6 @@
+{
+  "eslint.validate": [],
+  "[markdown]": {
+    "editor.formatOnSave": false
+  }
+}

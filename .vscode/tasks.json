@@ -1,0 +1,18 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "format:markdown",
+      "type": "shell",
+      "command": "npm run format:markdown",
+      "problemMatcher": [],
+      "group": "none"
+    },
+    {
+      "label": "check:markdown",
+      "type": "shell",
+      "command": "npm run format:markdown:check && npm run lint:markdown",
+      "problemMatcher": []
+    }
+  ]
+}
