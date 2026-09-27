@@ -1,6 +1,10 @@
 # Assignment 1: Initial Project Research
 
-**Due:** Thursday, 1 October, 23:59. One submission per team.
+**Soft deadline:** Thursday, 1 October, 23:59.
+
+**Hard deadline:** Friday, 2 October, 23:59.
+
+One submission per team.
 
 Week 1 is a research week. There is no code, no prototype, and nothing to deploy. What you hand in is a defensible understanding of the problem your project lives in, and a proposed direction that is traceable to evidence.
 
