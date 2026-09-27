@@ -17,6 +17,21 @@ Operating instructions for coding agents maintaining the student-facing course m
 | `guides/comparison-and-synthesis.md`      | Method for building the comparison, finding gaps, writing the value proposition. Explanatory, not normative.                                  |
 | `assignments/assignment-N.md`             | Learner-facing requirements for one week. Deltas, paths, and evidence only.                                                                   |
 
+### Tooling
+
+Markdown in this directory is formatted and linted from Node.
+Run `npm run format:markdown` before committing.
+`npm run format:markdown:check` and `npm run lint:markdown` are the gates.
+
+| File                                      | Owns                                                                                        |
+| ----------------------------------------- | ------------------------------------------------------------------------------------------- |
+| `scripts/markdown.mjs`                    | Formats, checks, and lints every tracked `.md` file except `.opencode/` and `.agents/`.     |
+| `prettier/markdown/sentences-per-line.js` | Formatter plugin: one sentence per line, and table rows left on one physical line.          |
+| `eslint/markdown/no-split-sentence.js`    | Lint rule for a sentence split across two lines. Registered but off, so it reports nothing. |
+
+Their fixtures run with `npm run test:markdown-format` and `npm run test:markdown-rules`.
+Both plugins are shared verbatim with `../timeful`, so a change to either belongs in both repositories.
+
 ### Maintained Elsewhere
 
 - `../itpd-instructors/syllabus.md` is the authoritative course schedule, deadlines, weighting, and policy. `itpd/` must not restate the late-submission or attendance policy, only link to it.
@@ -55,6 +70,10 @@ rules.md       the contract and the router     (short, links into requirements/)
 - **Links** between files in this directory are relative Markdown links, and point at a heading anchor when they refer to a specific rule.
 - Prose is plain and specific.
   No filler, no hedging, no restating a rule that already lives in a linked file.
+- **Prose** puts one sentence on each line.
+  The formatter splits two sentences that share a line, and `sentences-per-line/one` rejects the same case.
+  A sentence is not hand-wrapped across lines.
+  `proseWrap` is `preserve`, so a soft wrap is left as written and is not currently a lint error, and the rule that would catch it, `no-split-sentence`, is registered but off.
 
 ## The Two-Location Rule
 

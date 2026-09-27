@@ -1,6 +1,0 @@
-{
-  "single-h1": false,
-  "line-length": false,
-  "no-emphasis-as-heading": false,
-  "no-inline-html": { "allowed_elements": ["h2"] }
-}
