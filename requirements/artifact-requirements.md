@@ -4,14 +4,31 @@ These requirements define what an artifact is, where it lives, and who may see i
 
 Read [the course rules](../rules.md) first. It is the short version of this file and states what is expected of you as a student.
 
+<h2>Table of contents</h2>
+
+- [How Artifacts Are Placed In The Repository](#how-artifacts-are-placed-in-the-repository)
+- [Artifact Concepts And Terminology](#artifact-concepts-and-terminology)
+- [Visibility Model](#visibility-model)
+  - [Public Artifacts](#public-artifacts)
+  - [Private-Only Artifacts](#private-only-artifacts)
+  - [Never Commit](#never-commit)
+  - [Sensitive Information Reference](#sensitive-information-reference)
+- [Weekly Public Report](#weekly-public-report)
+- [Meeting Transcript](#meeting-transcript)
+- [Screenshot Evidence](#screenshot-evidence)
+- [AI Usage Report](#ai-usage-report)
+- [Private Submission Wrapper](#private-submission-wrapper)
+- [Declaring Deviations](#declaring-deviations)
+- [Later Weeks](#later-weeks)
+
 ## How Artifacts Are Placed In The Repository
 
 **Since: W1**
 
 1. The product repository holds two kinds of content, and every artifact goes in exactly one of them:
 
-   * `reports/week-NN/` holds the evidence for that week. It is a record of what the team did during that week. Week numbers are zero-padded: `reports/week-01/`, `reports/week-02/`.
-   * `docs/` holds maintained project documentation. Anything the project will still refer to in a later week goes here, in its final location, from the week it is created.
+   - `reports/week-NN/` holds the evidence for that week. It is a record of what the team did during that week. Week numbers are zero-padded: `reports/week-01/`, `reports/week-02/`.
+   - `docs/` holds maintained project documentation. Anything the project will still refer to in a later week goes here, in its final location, from the week it is created.
 
 2. There is no third location and no migration step. When you create an artifact, put it where it will live for the rest of the course. Do not create a file in `reports/` and move it to `docs/` later, and do not keep the same content in both places.
 
@@ -44,22 +61,22 @@ Read [the course rules](../rules.md) first. It is the short version of this file
 
 **Since: W1**
 
-* The root `README.md`, `LICENSE`, and the maintained documentation in `docs/`.
-* The weekly public report and every supporting artifact it links.
-* Meeting transcripts, after sanitization.
-* The AI usage report.
-* External boards, shared view-only.
+- The root `README.md`, `LICENSE`, and the maintained documentation in `docs/`.
+- The weekly public report and every supporting artifact it links.
+- Meeting transcripts, after sanitization.
+- The AI usage report.
+- External boards, shared view-only.
 
 ### Private-Only Artifacts
 
 **Since: W1**
 
-* Recordings of meetings with the customer, and links to them.
-* University email addresses of team members.
-* Usability test participant data, recordings, and consent evidence.
-* Credentials, tokens, and any other authentication material.
-* Exact timecodes into private recordings.
-* Anything the customer asks you to keep private.
+- Recordings of meetings with the customer, and links to them.
+- University email addresses of team members.
+- Usability test participant data, recordings, and consent evidence.
+- Credentials, tokens, and any other authentication material.
+- Exact timecodes into private recordings.
+- Anything the customer asks you to keep private.
 
 Never commit any of these, not even "temporarily" and not even in a file you later delete. Once it is in the git history it is public, and deleting the file does not remove it.
 
@@ -67,12 +84,12 @@ Never commit any of these, not even "temporarily" and not even in a file you lat
 
 **Since: W1**
 
-* Passwords, API keys, tokens, private keys, `.env` files, and any other authentication material. Use a sanitized `.env.example` instead.
-* Large files: recordings, video, datasets, model weights, archives. Screenshots and diagrams are fine if they are reasonably sized.
-* Real personal data of other people. Use GitHub usernames, roles, or pseudonyms such as `customer`.
-* Customer-owned or third-party code, data, or media that you are not allowed to redistribute. See [Repository Requirements](repository-requirements.md#licensing).
-* Your own local tooling folders, editor state, and build caches.
-* Files copied wholesale from another repository.
+- Passwords, API keys, tokens, private keys, `.env` files, and any other authentication material. Use a sanitized `.env.example` instead.
+- Large files: recordings, video, datasets, model weights, archives. Screenshots and diagrams are fine if they are reasonably sized.
+- Real personal data of other people. Use GitHub usernames, roles, or pseudonyms such as `customer`.
+- Customer-owned or third-party code, data, or media that you are not allowed to redistribute. See [Repository Requirements](repository-requirements.md#licensing).
+- Your own local tooling folders, editor state, and build caches.
+- Files copied wholesale from another repository.
 
 ### Sensitive Information Reference
 
@@ -80,12 +97,12 @@ Never commit any of these, not even "temporarily" and not even in a file you lat
 
 Treat the following as sensitive and keep it out of public artifacts unless it is genuinely required:
 
-* Real names, email addresses, and phone numbers.
-* University email addresses.
-* Customer-identifying and instructor-identifying details that are not needed for grading.
-* Confidential business or research information.
-* Recording links and exact timecodes into private recordings.
-* Usability test participant identity, consent, and results.
+- Real names, email addresses, and phone numbers.
+- University email addresses.
+- Customer-identifying and instructor-identifying details that are not needed for grading.
+- Confidential business or research information.
+- Recording links and exact timecodes into private recordings.
+- Usability test participant identity, consent, and results.
 
 The team member identity mapping is the deliberate exception. Your public repository identifies people by GitHub username. The mapping from username to real name and university email goes in the Moodle PDF, not in the repository.
 
@@ -108,9 +125,9 @@ The team member identity mapping is the deliberate exception. Your public reposi
 
 **Recommended**
 
-* Use the same section order every week so readers learn it once.
-* Keep it short. If a section is growing, the detail probably belongs in a supporting artifact that the report links.
-* State what a reader should look at first.
+- Use the same section order every week so readers learn it once.
+- Keep it short. If a section is growing, the detail probably belongs in a supporting artifact that the report links.
+- State what a reader should look at first.
 
 **Example**
 
@@ -210,8 +227,8 @@ A meeting transcript is the written form of a meeting you conducted with the cus
 
 Screenshots may live in the repository or on an external board. Both are allowed:
 
-* **External board.** The recommended default. Figma, Miro, Excalidraw, or anything else that makes pasting screenshots painless. Share it view-only, link it from the artifact that uses it, and describe in the text what each screenshot shows.
-* **Repository.** Use a week-local `reports/week-NN/images/` directory when a screenshot is part of the week's evidence. Name files so a reader can tell them apart, for example `branch-protection.png`.
+- **External board.** The recommended default. Figma, Miro, Excalidraw, or anything else that makes pasting screenshots painless. Share it view-only, link it from the artifact that uses it, and describe in the text what each screenshot shows.
+- **Repository.** Use a week-local `reports/week-NN/images/` directory when a screenshot is part of the week's evidence. Name files so a reader can tell them apart, for example `branch-protection.png`.
 
 Wherever a screenshot lives, the text that refers to it must carry the meaning. A screenshot with no explanation is not evidence.
 
@@ -282,10 +299,10 @@ See [Assignment 1](../assignments/assignment-1.md#assignment-report-on-moodle) f
 
 The following artifacts are introduced in later weeks. Their shared structure belongs here, not in the assignment that first requires them. Each assignment states the path and the week-specific evidence.
 
-* Customer meeting transcripts, summaries, and notes for the meetings held in Weeks 2 and 3.
-* Prototypes and the product vision from Week 3.
-* Quality requirements, the verification plan, the threshold of success, and architecture documentation from Week 4.
-* Testing and deployment documentation from Week 5.
-* Usability testing protocols, participant consent evidence, and results from Weeks 7 and 9.
-* Configuration management documentation from Week 8.
-* The project reflection from Week 9.
+- Customer meeting transcripts, summaries, and notes for the meetings held in Weeks 2 and 3.
+- Prototypes and the product vision from Week 3.
+- Quality requirements, the verification plan, the threshold of success, and architecture documentation from Week 4.
+- Testing and deployment documentation from Week 5.
+- Usability testing protocols, participant consent evidence, and results from Weeks 7 and 9.
+- Configuration management documentation from Week 8.
+- The project reflection from Week 9.

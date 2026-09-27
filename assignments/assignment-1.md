@@ -4,14 +4,33 @@
 
 Week 1 is a research week. There is no code, no prototype, and nothing to deploy. What you hand in is a defensible understanding of the problem your project lives in, and a proposed direction that is traceable to evidence.
 
+<h2>Table of contents</h2>
+
+- [Objectives](#objectives)
+- [Before You Start](#before-you-start)
+- [Part 1: Form The Team And Choose The Project](#part-1-form-the-team-and-choose-the-project)
+- [Part 2: Set Up The Repository](#part-2-set-up-the-repository)
+- [Part 3: Research The Alternatives](#part-3-research-the-alternatives)
+- [Part 4: Compare The Alternatives](#part-4-compare-the-alternatives)
+- [Part 5: Find The Gaps](#part-5-find-the-gaps)
+- [Part 6: State Your Value Proposition](#part-6-state-your-value-proposition)
+- [Part 7: Meet The Customer](#part-7-meet-the-customer)
+- [Part 8: Report On Your AI Usage](#part-8-report-on-your-ai-usage)
+- [What Good Looks Like](#what-good-looks-like)
+- [Assignment Report In The Repository](#assignment-report-in-the-repository)
+  - [Open Questions For The Customer](#open-questions-for-the-customer)
+- [Assignment Report On Moodle](#assignment-report-on-moodle)
+  - [Submission Procedure](#submission-procedure)
+- [Checklist](#checklist)
+
 ## Objectives
 
 By the end of this week you should be able to show an instructor:
 
-* Which existing products solve your user's problem, and how well each one does it.
-* Where they all fall short, and which of those shortfalls are worth building on.
-* What your product will do differently, what that costs, and what you are assuming.
-* A public repository that already works the way the course expects it to work.
+- Which existing products solve your user's problem, and how well each one does it.
+- Where they all fall short, and which of those shortfalls are worth building on.
+- What your product will do differently, what that costs, and what you are assuming.
+- A public repository that already works the way the course expects it to work.
 
 ## Before You Start
 
@@ -114,12 +133,12 @@ Write `reports/week-01/ai-usage.md`: which tools, what for, and what you accepte
 
 Assume your week report is read by someone who does not know your project. A strong submission has:
 
-* **Claims that can be checked.** Every statement about a product points at a version, a document, or something you did. A grader who follows one reference and finds it is satisfied will trust the rest.
-* **A table that argues.** Cells contain analysis, not adjectives. The reader can disagree with a cell; that is what makes it analysis.
-* **Gaps that cost you something.** You dropped some, and you said why. A file of three excellent gaps beats a file of ten nobody believes.
-* **A proposition with a downside.** You named what your advantage costs and how a competitor would copy it. A moat you did not check for is a risk you did not plan for.
-* **A repository that already works.** Branch protection on, a merged and approved pull request, a green link check, screenshots proving it.
-* **No filler.** A sentence that would survive being pasted into another team's report unchanged should be deleted. This is the single most common reason a strong week scores poorly.
+- **Claims that can be checked.** Every statement about a product points at a version, a document, or something you did. A grader who follows one reference and finds it is satisfied will trust the rest.
+- **A table that argues.** Cells contain analysis, not adjectives. The reader can disagree with a cell; that is what makes it analysis.
+- **Gaps that cost you something.** You dropped some, and you said why. A file of three excellent gaps beats a file of ten nobody believes.
+- **A proposition with a downside.** You named what your advantage costs and how a competitor would copy it. A moat you did not check for is a risk you did not plan for.
+- **A repository that already works.** Branch protection on, a merged and approved pull request, a green link check, screenshots proving it.
+- **No filler.** A sentence that would survive being pasted into another team's report unchanged should be deleted. This is the single most common reason a strong week scores poorly.
 
 ## Assignment Report In The Repository
 
@@ -175,26 +194,26 @@ See [Permalinks And Snapshots](../requirements/repository-requirements.md#permal
 
 ### Submission Procedure
 
-* Submit the PDF and the repository snapshot through Moodle.
-* One submission per team.
-* Due Thursday 1 October, 23:59.
+- Submit the PDF and the repository snapshot through Moodle.
+- One submission per team.
+- Due Thursday 1 October, 23:59.
 
 ## Checklist
 
-* [ ] Team of 3 or 4, project chosen, team number known.
-* [ ] Public repository in the course organization, all members collaborators, `main` default.
-* [ ] `LICENSE`, `.gitignore`, root `README.md`.
-* [ ] `main` protected: pull requests required, one approval, no self-approval. Screenshot saved.
-* [ ] Pull request template at `.github/pull_request_template.md`.
-* [ ] Lychee link check on pull requests and `main`, green, with justified exclusions.
-* [ ] At least one merged pull request approved by another member.
-* [ ] Every member: at least one commit, at least one review.
-* [ ] `docs/research/alternatives.md` with 3–4 alternatives and `ALT-nn` IDs.
-* [ ] `docs/research/comparison.md` with at least 6 properties and traceable cells.
-* [ ] `docs/research/gap-analysis.md` with `GAP-nn` entries and the rejected list.
-* [ ] `docs/research/value-proposition.md` with `VP-nn` entries and assumptions.
-* [ ] Board linked, view-only, two screenshots per alternative.
-* [ ] Kickoff meeting held, recording permission asked, transcript written.
-* [ ] `reports/week-01/ai-usage.md` written.
-* [ ] `reports/week-01/README.md` complete, including coverage table, evidence, contribution table, and open questions for the customer.
-* [ ] PDF and snapshot ready, permalinks verified at the full commit hash.
+- [ ] Team of 3 or 4, project chosen, team number known.
+- [ ] Public repository in the course organization, all members collaborators, `main` default.
+- [ ] `LICENSE`, `.gitignore`, root `README.md`.
+- [ ] `main` protected: pull requests required, one approval, no self-approval. Screenshot saved.
+- [ ] Pull request template at `.github/pull_request_template.md`.
+- [ ] Lychee link check on pull requests and `main`, green, with justified exclusions.
+- [ ] At least one merged pull request approved by another member.
+- [ ] Every member: at least one commit, at least one review.
+- [ ] `docs/research/alternatives.md` with 3–4 alternatives and `ALT-nn` IDs.
+- [ ] `docs/research/comparison.md` with at least 6 properties and traceable cells.
+- [ ] `docs/research/gap-analysis.md` with `GAP-nn` entries and the rejected list.
+- [ ] `docs/research/value-proposition.md` with `VP-nn` entries and assumptions.
+- [ ] Board linked, view-only, two screenshots per alternative.
+- [ ] Kickoff meeting held, recording permission asked, transcript written.
+- [ ] `reports/week-01/ai-usage.md` written.
+- [ ] `reports/week-01/README.md` complete, including coverage table, evidence, contribution table, and open questions for the customer.
+- [ ] PDF and snapshot ready, permalinks verified at the full commit hash.

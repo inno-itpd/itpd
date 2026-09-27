@@ -4,6 +4,19 @@ These requirements define the product work itself: what counts as good research,
 
 The [guides](../guides/) explain how to do this work in practice. This file defines what "done" means.
 
+<h2>Table of contents</h2>
+
+- [Research Is The Week's Work](#research-is-the-weeks-work)
+- [Alternatives](#alternatives)
+- [Properties And Comparison](#properties-and-comparison)
+- [Gap Analysis](#gap-analysis)
+- [Value Proposition And Differentiation](#value-proposition-and-differentiation)
+- [Assumptions](#assumptions)
+- [Identifier Rules](#identifier-rules)
+- [Traceability Into Later Weeks](#traceability-into-later-weeks)
+- [Quality Rules](#quality-rules)
+- [Meeting With The Customer](#meeting-with-the-customer)
+
 ## Research Is The Week's Work
 
 **Since: W1**
@@ -27,26 +40,26 @@ If you cannot point at the evidence that produced a gap, the gap is not establis
 1. Research **3 to 4 alternatives**. Fewer does not demonstrate a search; more does not leave time to analyse what you found.
 2. The set must be a mix. Include at least one of each:
 
-   * A **direct competitor**: the product a user would choose today to solve this problem.
-   * An **adjacent substitute**: a product from a neighbouring category that a user might switch to.
-   * An **open-source or self-hosted option**: what a technical user would build or run themselves.
+   - A **direct competitor**: the product a user would choose today to solve this problem.
+   - An **adjacent substitute**: a product from a neighbouring category that a user might switch to.
+   - An **open-source or self-hosted option**: what a technical user would build or run themselves.
 
 3. Every alternative gets a stable ID `ALT-01`, `ALT-02`, and so on, in the order you researched them. IDs are never renumbered, reused, or reassigned. If you drop an alternative, keep the ID and mark it removed with a reason.
 4. For each alternative, record:
 
-   * Name, a link to the product, and the version or date you looked at.
-   * What problem it solves and for whom.
-   * The properties you evaluated it on, with your observation for each.
-   * Where you found it: official documentation, a public repository, a pricing page, hands-on use.
-   * Strengths and weaknesses, each tied to something you actually observed.
+   - Name, a link to the product, and the version or date you looked at.
+   - What problem it solves and for whom.
+   - The properties you evaluated it on, with your observation for each.
+   - Where you found it: official documentation, a public repository, a pricing page, hands-on use.
+   - Strengths and weaknesses, each tied to something you actually observed.
 
 5. Every alternative must be something you looked at properly. A product you only read the landing page of does not count as evaluated. Say how deep you went, and be honest when it was shallow.
 
 **Recommended**
 
-* Try the product or read its source before you write about it.
-* Note the version, because products change and a reviewer will check.
-* Record what you could not find out. An unanswered question is a finding.
+- Try the product or read its source before you write about it.
+- Note the version, because products change and a reviewer will check.
+- Record what you could not find out. An unanswered question is a finding.
 
 ## Properties And Comparison
 
@@ -59,9 +72,9 @@ A property is a quality the users of this problem space care about. Not a featur
 1. Choose **at least 6 properties** before you start comparing, and use the same set for every alternative. Choosing properties after seeing the results is how a comparison turns into a list of whichever product happened to look best.
 2. Every property must be:
 
-   * **Relevant**: it affects whether a user can do the job, or whether they trust the product with their work.
-   * **Observable**: you can tell from using the product, its documentation, or its source, rather than from its marketing.
-   * **Independent enough** to differ between products. If two properties always move together, you have one property.
+   - **Relevant**: it affects whether a user can do the job, or whether they trust the product with their work.
+   - **Observable**: you can tell from using the product, its documentation, or its source, rather than from its marketing.
+   - **Independent enough** to differ between products. If two properties always move together, you have one property.
 
 3. Write the comparison as a qualitative analysis table: rows are properties, columns are alternatives, and each cell is your analysis for that pair. A cell that says "good" or "yes" is not an analysis.
 
@@ -97,10 +110,10 @@ A gap is a need that the alternatives do not serve well. It is not a feature you
 
 1. Every gap must satisfy all four tests:
 
-   * **Someone needs it.** Name the user and the job they cannot do well today.
-   * **The alternatives do not serve it.** Show the evidence: usually a property where every alternative scores poorly, or a need nobody addresses at all.
-   * **It is reachable.** You can describe what a product that closed this gap would do, in a sentence, without inventing a new category.
-   * **It is buildable by a team of 3–4 in this course.** A gap you cannot address is still worth recording, but it is not a foundation for your product.
+   - **Someone needs it.** Name the user and the job they cannot do well today.
+   - **The alternatives do not serve it.** Show the evidence: usually a property where every alternative scores poorly, or a need nobody addresses at all.
+   - **It is reachable.** You can describe what a product that closed this gap would do, in a sentence, without inventing a new category.
+   - **It is buildable by a team of 3–4 in this course.** A gap you cannot address is still worth recording, but it is not a foundation for your product.
 
 2. Every gap gets a stable ID `GAP-01`, `GAP-02`, and so on. IDs are never renumbered, reused, or reassigned.
 3. Every gap references the properties and alternatives that established it, by `ALT-nn` and by property name.
@@ -109,8 +122,8 @@ A gap is a need that the alternatives do not serve well. It is not a feature you
 
 **Recommended**
 
-* Sort gaps by how strongly the evidence supports them, and say how strong the evidence is.
-* Where the alternatives all handle something badly, say whether that is a real need or just a shared inconvenience you could live with.
+- Sort gaps by how strongly the evidence supports them, and say how strong the evidence is.
+- Where the alternatives all handle something badly, say whether that is a real need or just a shared inconvenience you could live with.
 
 ## Value Proposition And Differentiation
 
@@ -140,8 +153,8 @@ A gap is a need that the alternatives do not serve well. It is not a feature you
 
 **Recommended**
 
-* Two or three value propositions built on your strongest gaps. More than that and you are listing features.
-* Check each one against the `Won't Have` items: does this conflict with something you decided not to do?
+- Two or three value propositions built on your strongest gaps. More than that and you are listing features.
+- Check each one against the `Won't Have` items: does this conflict with something you decided not to do?
 
 ## Assumptions
 
@@ -175,7 +188,7 @@ Assumptions are not questions for the customer. The customer decides the scope; 
 The research you produce in Week 1 is the evidence base for the rest of the course. Later weeks cite your Week 1 identifiers rather than restating your findings. This is what makes the course a project rather than nine separate assignments.
 
 | Later work | Must cite |
-|---|---|
+| --- | --- |
 | Week 2 work plan and scope proposal | `GAP-nn`, `VP-nn` |
 | Week 3 user stories and the product vision | `GAP-nn` the story serves, `VP-nn` it supports |
 | Week 4 quality goals and threshold of success | `GAP-nn` the quality attribute protects, `VP-nn` |

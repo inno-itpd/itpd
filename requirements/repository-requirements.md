@@ -4,6 +4,25 @@ These requirements cover the mechanics of the product repository: where it lives
 
 Each section states the week it starts applying. Requirements that arrive later are written now so that later weeks do not have to introduce a convention from nothing.
 
+<h2>Table of contents</h2>
+
+- [Required Starting Week 1](#required-starting-week-1)
+- [Repository Setup](#repository-setup)
+  - [Licensing](#licensing)
+  - [Root README](#root-readme)
+- [Branch Protection And Pull Requests](#branch-protection-and-pull-requests)
+- [Link Checking](#link-checking)
+- [Permalinks And Snapshots](#permalinks-and-snapshots)
+- [Configuration And Sensitive Information](#configuration-and-sensitive-information)
+- [Sensitive-Data Incident Response](#sensitive-data-incident-response)
+- [Required Starting Week 2](#required-starting-week-2)
+- [Planning And Issue Tracking](#planning-and-issue-tracking)
+- [Required Starting Week 3](#required-starting-week-3)
+- [Changelog, Releases And Versioning](#changelog-releases-and-versioning)
+- [Required Starting Week 5](#required-starting-week-5)
+- [Continuous Integration](#continuous-integration)
+- [Recommended Throughout The Course](#recommended-throughout-the-course)
+
 ## Required Starting Week 1
 
 ## Repository Setup
@@ -35,11 +54,11 @@ Each section states the week it starts applying. Requirements that arrive later 
 
 The root `README.md` is the public front door of the repository. In Week 1 it must contain:
 
-* The project name from the course catalog, and the team number.
-* A one-line description of what the project is for.
-* A link to the current week's report, currently `reports/week-01/README.md`.
-* A link to the maintained documentation in `docs/`.
-* A note that the project is a work in progress for the ITPD course.
+- The project name from the course catalog, and the team number.
+- A one-line description of what the project is for.
+- A link to the current week's report, currently `reports/week-01/README.md`.
+- A link to the maintained documentation in `docs/`.
+- A note that the project is a work in progress for the ITPD course.
 
 From Week 2 it also carries setup and run instructions for the product as it exists, and from Week 5 the link to the deployed product.
 
@@ -49,9 +68,9 @@ From Week 2 it also carries setup and run instructions for the product as it exi
 
 1. Protect `main` as soon as the first commit lands:
 
-   * Require a pull request before merging. Direct pushes to `main` are blocked.
-   * Require at least one approval from another team member.
-   * Do not allow the author of a pull request to approve it.
+   - Require a pull request before merging. Direct pushes to `main` are blocked.
+   - Require at least one approval from another team member.
+   - Do not allow the author of a pull request to approve it.
 
 2. GitHub enforces all three of these for repositories owned by an organization. If a setting is not available to you, ask in the course chat rather than proceeding without it.
 3. Every change after the first commit goes through a pull request: documentation, configuration, and CI changes included.
@@ -59,20 +78,20 @@ From Week 2 it also carries setup and run instructions for the product as it exi
 5. Name branches with a short lowercase hyphenated description, for example `add-alternatives-research`. From Week 2, when issues exist, use `<issue-number>-<short-description>`, for example `42-add-login-form`.
 6. Add a pull request template at `.github/pull_request_template.md`. It must prompt for:
 
-   * What changed and why.
-   * What you checked, and how.
-   * For the reviewer: what to look at, and whether the linked requirements or acceptance criteria are satisfied.
+   - What changed and why.
+   - What you checked, and how.
+   - For the reviewer: what to look at, and whether the linked requirements or acceptance criteria are satisfied.
 
 7. Do not delete pull requests, reviews, or branches that are used as assignment evidence, and do not rewrite history to tidy it up. The history is part of what is being assessed.
 8. History rewriting is allowed in exactly one case: removing accidentally committed sensitive data. See [Sensitive-Data Incident Response](#sensitive-data-incident-response).
 
 **Required in Week 1**
 
-9. At least one pull request must be merged into `main` with an approval from another team member, and it must be linked from the Week 1 report as evidence.
-10. Every team member must, during Week 1:
+1. At least one pull request must be merged into `main` with an approval from another team member, and it must be linked from the Week 1 report as evidence.
+2. Every team member must, during Week 1:
 
-    * Make at least one commit through a pull request.
-    * Review and approve at least one other team member's pull request.
+    - Make at least one commit through a pull request.
+    - Review and approve at least one other team member's pull request.
 
 ## Link Checking
 
@@ -215,6 +234,6 @@ If credentials, personal data, or confidential material is committed by mistake:
 
 ## Recommended Throughout The Course
 
-* Enable secret scanning and push protection.
-* Provide a Nix flake or a `devenv` configuration so the project can be set up reproducibly.
-* Add `CONTRIBUTING.md` and `AGENTS.md` once the workflow is stable enough to be worth writing down.
+- Enable secret scanning and push protection.
+- Provide a Nix flake or a `devenv` configuration so the project can be set up reproducibly.
+- Add `CONTRIBUTING.md` and `AGENTS.md` once the workflow is stable enough to be worth writing down.

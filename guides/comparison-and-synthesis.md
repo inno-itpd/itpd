@@ -4,6 +4,17 @@ How to turn the alternatives into a comparison, gaps, and a value proposition. T
 
 **Timebox:** about a day. Most of it is arguing about whether the table is honest, which is time well spent.
 
+<h2>Table of contents</h2>
+
+- [What You Produce](#what-you-produce)
+- [Step 1: Freeze The Property Set](#step-1-freeze-the-property-set)
+- [Step 2: Fill The Table](#step-2-fill-the-table)
+- [Step 3: Read The Table For Patterns](#step-3-read-the-table-for-patterns)
+- [Step 4: Turn Patterns Into Gaps](#step-4-turn-patterns-into-gaps)
+- [Step 5: Write The Value Proposition](#step-5-write-the-value-proposition)
+- [Step 6: Write Down What You Are Assuming](#step-6-write-down-what-you-are-assuming)
+- [Common Mistakes](#common-mistakes)
+
 ## What You Produce
 
 ```text
@@ -38,16 +49,16 @@ Nobody can check "good". There is nothing to trace, and the row says nothing you
 
 Two habits that make the table honest:
 
-* **Separate observation from conclusion.** `No. Rules are global patterns (ALT-02). Consequence: a company cannot express "this region is confidential" per call site.` The first is checkable; the second is your reading, and it belongs in the gap analysis.
-* **Make strengths relative.** "No audit log" is a serious weakness for a gateway that routes a company's source code, and irrelevant for a running app. State the condition that makes it matter, or you will be told you are wrong by someone who is right.
+- **Separate observation from conclusion.** `No. Rules are global patterns (ALT-02). Consequence: a company cannot express "this region is confidential" per call site.` The first is checkable; the second is your reading, and it belongs in the gap analysis.
+- **Make strengths relative.** "No audit log" is a serious weakness for a gateway that routes a company's source code, and irrelevant for a running app. State the condition that makes it matter, or you will be told you are wrong by someone who is right.
 
 ## Step 3: Read The Table For Patterns
 
 Now read it as a whole, rather than row by row.
 
-* **Read down a column** to see how strong the strongest product is. That is your real competition, and it is the bar.
-* **Read across a row** to find where every product is weak or absent. That is where the opportunity is.
-* **Look for the diagonal.** If one product is strong on everything, you have found the incumbent to beat, and you should say plainly how you plan to beat it.
+- **Read down a column** to see how strong the strongest product is. That is your real competition, and it is the bar.
+- **Read across a row** to find where every product is weak or absent. That is where the opportunity is.
+- **Look for the diagonal.** If one product is strong on everything, you have found the incumbent to beat, and you should say plainly how you plan to beat it.
 
 Write down three to five candidate patterns before you judge any of them.
 
@@ -104,9 +115,9 @@ in a release. The defensible part is the logging standard, not the rules.
 
 Three things to get right:
 
-* **Say better at what, measured how.** "More modern" is not a claim. "A team can express its own redaction rules without a gateway restart" is a claim someone can check.
-* **Name what you give up.** Every advantage is bought with something: more setup, a narrower feature set, a worse default, a higher price. A differentiation with no cost is a misjudgement, and finding it now is cheaper than finding it in Week 5.
-* **Say how a competitor would respond.** If copying you takes them a week, you do not have a moat, and you should know that before you build on it.
+- **Say better at what, measured how.** "More modern" is not a claim. "A team can express its own redaction rules without a gateway restart" is a claim someone can check.
+- **Name what you give up.** Every advantage is bought with something: more setup, a narrower feature set, a worse default, a higher price. A differentiation with no cost is a misjudgement, and finding it now is cheaper than finding it in Week 5.
+- **Say how a competitor would respond.** If copying you takes them a week, you do not have a moat, and you should know that before you build on it.
 
 Two or three value propositions, built on your strongest gaps. More than that and you are listing features.
 
@@ -127,9 +138,9 @@ The customer decides the scope. This table is not a list of questions for them; 
 
 ## Common Mistakes
 
-* **The feature laundry list.** Everything the products do, in a table, with no analysis. The table should be readable in two minutes and arguable in twenty.
-* **Properties chosen after the fact.** The tell is a property that only one product scores well on and which happens to be your idea.
-* **"Better" without a measure.** Every claim of superiority should name what is better and how anyone could tell.
-* **Gaps that are wishes.** "Nobody does real-time collaboration" is not a gap until you show that somebody needs it and cannot work around its absence.
-* **Ignoring the gaps you dropped.** The rejected list is what makes the accepted list credible.
-* **Confusing difference with advantage.** Being different is a fact. Being better for a named user is the claim worth making.
+- **The feature laundry list.** Everything the products do, in a table, with no analysis. The table should be readable in two minutes and arguable in twenty.
+- **Properties chosen after the fact.** The tell is a property that only one product scores well on and which happens to be your idea.
+- **"Better" without a measure.** Every claim of superiority should name what is better and how anyone could tell.
+- **Gaps that are wishes.** "Nobody does real-time collaboration" is not a gap until you show that somebody needs it and cannot work around its absence.
+- **Ignoring the gaps you dropped.** The rejected list is what makes the accepted list credible.
+- **Confusing difference with advantage.** Being different is a fact. Being better for a named user is the claim worth making.
