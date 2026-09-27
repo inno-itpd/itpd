@@ -88,7 +88,7 @@ The first two weeks establish the project foundations, team formation, and compe
 - **Class 1 (Sep 25)**: Course introduction, syllabus overview, rubric orientation, and presentation of the provided project catalog.
   Team formation begins.
 - **Repository Setup (during Week 1)**: Each team creates one public, MIT-licensed product repository in the course GitHub organization and adds every member as a collaborator. `main` is protected (pull requests required, at least one approval, no self-approval), a pull request template is added, and automated link checking runs on pull requests and on `main` with a green `main` run before submission.
-  See [Repository Requirements](../itpd/requirements/repository-requirements.md).
+  See [Repository Requirements](requirements/repository-requirements.md).
 - **Customer Kickoff (during Week 1)**: Each team holds one kickoff meeting with its instructor or mentor, who acts as the customer.
   The team presents its reading of the problem and its proposed direction.
   The team asks for permission before recording; the recording stays private and is linked from the Moodle submission, while a sanitized transcript is committed to the repository.
@@ -100,7 +100,7 @@ The first two weeks establish the project foundations, team formation, and compe
     - Analysis of useful aspects and gaps unaddressed by existing solutions.
     - Proposed product differentiation and strategy for surpassing existing products.
     - Sanitized transcript of the customer kickoff meeting.
-  - **Detailed requirements**: [Assignment 1](../itpd/assignments/assignment-1.md).
+  - **Detailed requirements**: [Assignment 1](assignments/assignment-1.md).
 
 ### Week 2: Oct 2 – Oct 8 (Project Planning, Issue Tracking & Initial Implementation)
 

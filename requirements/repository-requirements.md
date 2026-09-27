@@ -14,6 +14,7 @@ Requirements that arrive later are written now so that later weeks do not have t
   - [Root README](#root-readme)
 - [Branch Protection And Pull Requests](#branch-protection-and-pull-requests)
 - [Link Checking](#link-checking)
+  - [Pinning Third-Party Actions](#pinning-third-party-actions)
 - [Permalinks And Snapshots](#permalinks-and-snapshots)
 - [Configuration And Sensitive Information](#configuration-and-sensitive-information)
 - [Sensitive-Data Incident Response](#sensitive-data-incident-response)
@@ -154,9 +155,9 @@ jobs:
   lychee:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - name: Check links
-        uses: lycheeverse/lychee-action@v2
+        uses: lycheeverse/lychee-action@e7477775783ea5526144ba13e8db5eec57747ce8 # v2.9.0
         with:
           args: >-
             --no-progress
@@ -175,6 +176,36 @@ https://www.figma.com/design/PUc4NFVcLureKzxE3RAGB0/Market-Research
 ```
 
 The same justification, in prose, goes in the week's report under the link-checking evidence.
+
+### Pinning Third-Party Actions
+
+Every workflow runs code that somebody else wrote.
+Pin it to a commit, not to a name, and let Dependabot move the pin for you.
+
+**Required**
+
+1. Pin every third-party action to the full 40-character commit SHA of a released version, and record that version in a trailing comment on the same line.
+   `uses: actions/checkout@v4` runs whatever the owner publishes next; `uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1` runs the code you reviewed.
+2. Never pin to a tag or to a branch, including a branch of the action's own repository.
+   Both are moving labels that somebody else can repoint.
+3. Add `.github/dependabot.yml` with the `github-actions` ecosystem, so the pins are updated for you.
+   A pin that nobody updates is a pin to a version with a known vulnerability.
+4. Treat a Dependabot pull request as any other pull request: review it, and merge it through a pull request.
+5. Update the SHA and the version comment in the same commit, so the comment never names a different version than the SHA.
+
+**Example**
+
+`.github/dependabot.yml`:
+
+```yaml
+version: 2
+
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+```
 
 ## Permalinks And Snapshots
 
@@ -273,7 +304,8 @@ If credentials, personal data, or confidential material is committed by mistake:
 1. Add continuous integration for your stack: linting, formatting or type checking, build, and automated tests, on pull requests and on `main`.
 2. Keep the link check running.
    It is a baseline, not a substitute for the checks your product needs.
-3. The latest `main` run of every required check must be green before you submit.
+3. Pin the actions you add, as in [Pinning Third-Party Actions](#pinning-third-party-actions).
+4. The latest `main` run of every required check must be green before you submit.
 
 ## Recommended Throughout The Course
 
