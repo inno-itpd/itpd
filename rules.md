@@ -69,10 +69,9 @@ If generated text is submitted unchecked, or filler is passed off as analysis, t
 - Every week has one group submission, due **Thursday at 23:59**, the night before the class.
 - One submission per team.
   Every member's work is assessed through the team submission, and through the individual reflection at the end of the course.
-- The submission is a **PDF in Moodle**.
-  It points at your repository.
-  It does not contain it.
-- Late work loses 10% of that week's grade per day, and nothing after seven days.
+- The submission is a **PDF in Moodle** and a **repository snapshot (ZIP)**.
+  The PDF points at your repository.
+- Late work loses 10% of that week's grade per day, and receives nothing after seven days.
   See the syllabus for the full policy.
 
 The syllabus also covers attendance and the final exam.
