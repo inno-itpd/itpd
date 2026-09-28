@@ -145,7 +145,7 @@ Before writing or editing an assignment:
 
 Use these words and do not invent local synonyms:
 
-`weekly report`, `weekly public report`, `supporting artifact`, `private-only artifact`, `external-but-indexed artifact`, `repository-resident artifact`, `deviation`, `customer`, `kickoff meeting`, `meeting report`, `meeting transcript`, `meeting notes`, `meeting script`, `decision`, `action point`, `open question`, `alternative`, `property`, `pattern`, `gap`, `value proposition`, `threshold of success`, `minimum usable product` (MUP), `minimum viable product` (MVP), `team number`.
+`weekly report`, `weekly public report`, `supporting artifact`, `private-only artifact`, `external-but-indexed artifact`, `repository-resident artifact`, `deviation`, `customer`, `kickoff meeting`, `meeting report`, `meeting transcript`, `meeting notes`, `meeting script`, `decision`, `action point`, `open question`, `alternative`, `property`, `gap`, `value proposition`, `threshold of success`, `minimum usable product` (MUP), `minimum viable product` (MVP), `team number`.
 
 "Customer" is the term for the person your team answers to, who is your instructor.
 Never "client" or "stakeholder" for them.

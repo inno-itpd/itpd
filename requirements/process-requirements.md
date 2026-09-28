@@ -109,11 +109,11 @@ Not a feature name, not a pricing tier, not a marketing adjective.
 6. Distinguish what you observed from what you concluded.
    If a cell contains both, separate them.
 7. Read the finished table as a whole and record what you see in it.
-   Three to five candidate **patterns**: a shape visible across cells, such as a property every alternative scores poorly on, or a property exactly one of them is strong on.
-   Write them in `docs/research/comparison.md` under `## Patterns`, above the table, before you turn any of them into a gap.
-   A pattern is a claim about the shape of the evidence.
+   Three to five candidates: a shape visible across cells, such as a property every alternative scores poorly on, or a property exactly one of them is strong on.
+   A candidate is a claim about the shape of the evidence.
    It is not yet a need, and it does not become one by being plausible.
-   See [Turn Patterns Into Gaps](../guides/comparison-and-synthesis.md#step-4-turn-patterns-into-gaps).
+   Every candidate either becomes a gap, with the shape quoted in its `**Evidence:**` field, or is recorded among the [gaps you chose not to pursue](#gap-analysis).
+   See [Find The Gaps](../guides/comparison-and-synthesis.md#step-4-find-the-gaps).
 
 **Example**
 

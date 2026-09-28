@@ -131,11 +131,11 @@ The repository structure you are building towards:
 
 ## Part 4: Compare The Alternatives
 
-Write `docs/research/comparison.md`: a `## Patterns` section, then a qualitative analysis table whose rows are your properties, whose columns are the alternatives, and whose every cell is analysis that traces back to an `ALT-nn` observation.
+Write `docs/research/comparison.md`: a qualitative analysis table whose rows are your properties, whose columns are the alternatives, and whose every cell is analysis that traces back to an `ALT-nn` observation.
 
 Fill it property by property.
 Make strengths relative, and separate what you observed from what you concluded.
-See [Step 2: Fill The Table](../guides/comparison-and-synthesis.md#step-2-fill-the-table) and [Step 3: Read The Table For Patterns](../guides/comparison-and-synthesis.md#step-3-read-the-table-for-patterns).
+See [Step 2: Fill The Table](../guides/comparison-and-synthesis.md#step-2-fill-the-table) and [Step 3: Read The Table As A Whole](../guides/comparison-and-synthesis.md#step-3-read-the-table-as-a-whole).
 
 ## Part 5: Find The Gaps
 
@@ -301,7 +301,7 @@ See [Permalinks And Snapshots](../requirements/repository-requirements.md#permal
 - [ ] Every member: at least one commit, at least one review.
 - [ ] `docs/research/alternatives.md` with 3–4 alternatives and `ALT-nn` IDs.
 - [ ] `reports/week-01/candidate-list.md` with the full search, including what you cut.
-- [ ] `docs/research/comparison.md` with `## Patterns`, at least 6 properties, and traceable cells.
+- [ ] `docs/research/comparison.md` with at least 6 properties and traceable cells.
 - [ ] `docs/research/gap-analysis.md` with `GAP-nn` entries and the rejected list.
 - [ ] `docs/research/value-proposition.md` with `VP-nn` entries and assumptions.
 - [ ] Board linked, view-only, two screenshots per alternative.
