@@ -228,17 +228,17 @@ Follow the structure in [Weekly Public Report](../requirements/artifact-requirem
 3. A coverage table, one row per deliverable of this assignment, giving the artifact that satisfies it.
    This table is the index, so it is not followed by a second list of the same links.
 
-   | Deliverable              | Artifact                                                                         |
-   | ------------------------ | -------------------------------------------------------------------------------- |
-   | Candidate list           | `candidate-list.md`                                                              |
-   | Alternatives search      | [`docs/research/alternatives.md`](../../docs/research/alternatives.md)           |
-   | Compare the alternatives | [`docs/research/comparison.md`](../../docs/research/comparison.md)               |
-   | Gap analysis             | [`docs/research/gap-analysis.md`](../../docs/research/gap-analysis.md)           |
-   | Value proposition        | [`docs/research/value-proposition.md`](../../docs/research/value-proposition.md) |
-   | Research board           | your external board link                                                         |
-   | Meeting script           | `meeting-script.md`                                                              |
-   | Customer kickoff         | `meeting-report.md`, and `meeting-transcript.md` or `meeting-notes.md`           |
-   | AI usage                 | `ai-usage.md`                                                                    |
+   | Deliverable              | Artifact                                                               |
+   | ------------------------ | ---------------------------------------------------------------------- |
+   | Candidate list           | `candidate-list.md`                                                    |
+   | Alternatives search      | `docs/research/alternatives.md`                                        |
+   | Compare the alternatives | `docs/research/comparison.md`                                          |
+   | Gap analysis             | `docs/research/gap-analysis.md`                                        |
+   | Value proposition        | `docs/research/value-proposition.md`                                   |
+   | Research board           | your external board link                                               |
+   | Meeting script           | `meeting-script.md`                                                    |
+   | Customer kickoff         | `meeting-report.md`, and `meeting-transcript.md` or `meeting-notes.md` |
+   | AI usage                 | `ai-usage.md`                                                          |
 
    If the customer refused publication of the transcript or the notes, that row says so and points at the Moodle submission instead.
 
