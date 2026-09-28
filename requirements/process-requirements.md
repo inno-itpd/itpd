@@ -299,7 +299,7 @@ A later meeting settles one thing or two, and the rules below are enough to prep
 1. Hold one kickoff meeting with the customer, which is your instructor, during Week 1.
    Present the project, your reading of the problem, and your proposed direction, and hear where they disagree.
 2. The script covers five areas: business goals, end users, the current workflow, pain points and constraints, and scope, with at least two questions in each.
-3. Check the open questions against [The Mom Test](https://hatrabbits.com/en/the-mom-test/).
+3. Check the open questions against [The Mom Test](https://www.koji.so/docs/mom-test-methodology).
    A question about what the customer did last time is worth more than a question about what they would like.
 4. Close the script with a `## Key improvements` section naming at least two questions you rewrote and the principle behind each rewrite.
    An improvement you cannot show is not an improvement.
