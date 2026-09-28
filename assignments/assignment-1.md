@@ -57,8 +57,9 @@ They are the rules; this assignment only tells you what this week requires.
 2. Choose one project from the course catalog.
 3. Note your team number and project name.
    Both go in your week report and your Moodle submission.
-4. Create the repository in the course GitHub organization, named as your instructor specified, and add every team member as a collaborator with write access.
-   One repository per team, in the organization, not in somebody's personal account.
+4. Create a GitHub organization.
+5. Create a repository in the organization.
+6. In the repository, invite every team member as a collaborator with write access.
 
 ## Part 2: Set Up The Repository
 
