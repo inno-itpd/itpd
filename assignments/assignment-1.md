@@ -258,7 +258,7 @@ Create one PDF.
 It is a map, not a copy: it points at your repository and holds the material that must not be public.
 Keep it to two pages, and put nothing in it except the following:
 
-1. Project name, team number, and the full commit hash you are submitting.
+1. Project name and the team number.
 2. A table of team members: GitHub username, real name, and university email.
    This mapping is private and appears only here.
 3. A permalink to `reports/week-01/README.md` at the full commit hash.
