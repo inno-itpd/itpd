@@ -78,7 +78,9 @@ describe('no-split-sentence', () => {
     expect(messages).toHaveLength(1)
 
     const result = fix(code)
-    expect(result.output).toBe('The spec references U.S. federal guidance today.\n')
+    expect(result.output).toBe(
+      'The spec references U.S. federal guidance today.\n',
+    )
   })
 
   it('treats digit periods as sentence ends without reporting', () => {
@@ -94,7 +96,9 @@ describe('no-split-sentence', () => {
     expect(messages).toHaveLength(2)
 
     const result = fix(code)
-    expect(result.output).toBe('Alpha began here beta middle chunk gamma wrapped up.\n')
+    expect(result.output).toBe(
+      'Alpha began here beta middle chunk gamma wrapped up.\n',
+    )
   })
 
   it('reports but does not autofix boundaries with unsafe edge characters', () => {
@@ -199,7 +203,9 @@ describe('no-split-sentence', () => {
     expect(messages).toHaveLength(1)
 
     const result = fix(code)
-    expect(result.output).toBe('Stalwart joins the `timeful-edge network` during setup.\n')
+    expect(result.output).toBe(
+      'Stalwart joins the `timeful-edge network` during setup.\n',
+    )
   })
 
   it('reports a closing-paren continuation after a link and fixes it', () => {
@@ -222,11 +228,14 @@ describe('no-split-sentence', () => {
     expect(messages).toHaveLength(1)
 
     const result = fix(code)
-    expect(result.output).toBe('**Available** and **If needed** count equally here.\n')
+    expect(result.output).toBe(
+      '**Available** and **If needed** count equally here.\n',
+    )
   })
 
   it('reports but never fixes boundaries involving pipe table fragments', () => {
-    const code = 'Anonymous initiation requires proof of authority. |\n| Response measure | tests apply.\n'
+    const code =
+      'Anonymous initiation requires proof of authority. |\n| Response measure | tests apply.\n'
 
     const messages = verify(code)
     expect(messages).toHaveLength(1)
