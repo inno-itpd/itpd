@@ -6,17 +6,17 @@ Operating instructions for coding agents maintaining the student-facing course m
 
 ### Maintained Here
 
-| File                                      | Owns                                                                                                                                                          |
-| ----------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `README.md`                               | Student entry point and routing. Nothing else.                                                                                                                |
-| `syllabus.md`                             | The student-facing schedule: week-by-week focus, dates, and submission deadlines. A formatted copy of the instructors syllabus, not a second source of truth. |
-| `rules.md`                                | The course contract: public vs private, hygiene, AI policy, deadlines, submission channel. Short, and a router rather than a second rulebook.                 |
-| `requirements/artifact-requirements.md`   | Artifact semantics, the `reports/week-NN/` vs `docs/` split, visibility, recurring artifact structures.                                                       |
-| `requirements/process-requirements.md`    | What the product work means: alternatives, properties, gaps, value propositions, identifier and traceability rules.                                           |
-| `requirements/repository-requirements.md` | Repository and platform mechanics: GitHub, pull requests, branch protection, link checking, permalinks, snapshots, changelog, CI.                             |
-| `guides/alternatives-research.md`         | Method for finding and evaluating alternatives. Explanatory, not normative.                                                                                   |
-| `guides/comparison-and-synthesis.md`      | Method for building the comparison, finding gaps, writing the value proposition. Explanatory, not normative.                                                  |
-| `assignments/assignment-N.md`             | Learner-facing requirements for one week. Deltas, paths, and evidence only.                                                                                   |
+| File                                      | Owns                                                                                                                                          |
+| ----------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| `README.md`                               | Student entry point and routing. Nothing else.                                                                                                |
+| `syllabus.md`                             | The student-facing schedule: week-by-week focus, dates, and submission deadlines. The only place the course schedule is stated.               |
+| `rules.md`                                | The course contract: public vs private, hygiene, AI policy, deadlines, submission channel. Short, and a router rather than a second rulebook. |
+| `requirements/artifact-requirements.md`   | Artifact semantics, the `reports/week-NN/` vs `docs/` split, visibility, recurring artifact structures.                                       |
+| `requirements/process-requirements.md`    | What the product work means: alternatives, properties, gaps, value propositions, identifier and traceability rules.                           |
+| `requirements/repository-requirements.md` | Repository and platform mechanics: GitHub, pull requests, branch protection, link checking, permalinks, snapshots, changelog, CI.             |
+| `guides/alternatives-research.md`         | Method for finding and evaluating alternatives. Explanatory, not normative.                                                                   |
+| `guides/comparison-and-synthesis.md`      | Method for building the comparison, finding gaps, writing the value proposition. Explanatory, not normative.                                  |
+| `assignments/assignment-N.md`             | Learner-facing requirements for one week. Deltas, paths, and evidence only.                                                                   |
 
 ### Tooling
 
