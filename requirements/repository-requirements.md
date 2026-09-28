@@ -32,8 +32,9 @@ Requirements that arrive later are written now so that later weeks do not have t
 
 **Required**
 
-1. Each team creates **one repository** in the course GitHub organization.
-   The course staff give you the organization name and the repository name to use.
+1. Each team creates **one GitHub organization** and **one repository** inside it.
+   The team names both, and both names carry the team number, so the course staff can find them.
+   The repository belongs to the organization and not to a team member's personal account.
 2. **The repository is public.**
    Assume every commit can be read by anyone, permanently.
 3. The default branch is `main`.
@@ -48,7 +49,7 @@ Requirements that arrive later are written now so that later weeks do not have t
    It is the only commit that ever goes directly to `main`.
    See [Branch Protection And Pull Requests](#branch-protection-and-pull-requests).
 8. Keep the repository reachable for the whole course.
-   Do not archive, transfer, or rename it, and do not make it private.
+   Do not archive, transfer, or rename it, do not delete the organization, and do not make it private.
 
 ### Licensing
 
@@ -89,7 +90,7 @@ From Week 2 it also carries setup and run instructions for the product as it exi
    - Require at least one approval from another team member.
    - Do not allow the author of a pull request to approve it.
 
-2. GitHub enforces all three of these for repositories owned by an organization.
+2. GitHub enforces all three of these for repositories owned by an organization, which is what the repository is.
    If a setting is not available to you, ask in the course chat rather than proceeding without it.
 3. Every change after the first commit goes through a pull request: documentation, configuration, and CI changes included.
 4. Keep each pull request to one change.
