@@ -1,6 +1,7 @@
 {
   "eslint.validate": ["markdown"],
   "[markdown]": {
-    "editor.formatOnSave": false
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   }
 }
