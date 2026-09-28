@@ -34,7 +34,7 @@ Where it says "see", the linked file is the detailed version, and it wins if the
 | Passwords, tokens, API keys, `.env` files                    | **Nowhere.** Never commit them at all            |
 | Anything the customer asks you to keep private               | **Private.** Moodle only                         |
 
-Full detail, including the sensitivity list, is in [Artifact Requirements](requirements/artifact-requirements.md#sensitive-information-reference).
+Full detail, including the sensitivity list, is in [Artifact Requirements](../requirements/artifact-requirements.md#sensitive-information-reference).
 
 ## Repository Hygiene
 
@@ -48,7 +48,7 @@ Do not commit:
   Use a sanitized `.env.example` instead.
 
 Screenshots belong on a board, not in the repository, unless they are evidence for that week.
-See [Artifact Requirements](requirements/artifact-requirements.md#screenshot-evidence).
+See [Artifact Requirements](../requirements/artifact-requirements.md#screenshot-evidence).
 
 ## Identities
 
@@ -78,9 +78,9 @@ A template sentence is one with no product name, no `ALT-nn`, and no date in it.
 - The submission is a **PDF in Moodle** and a **repository snapshot (ZIP)**.
   The PDF points at your repository.
 - Work handed in after the hard deadline loses 10% of that week's grade per day, and receives nothing after seven days.
-  See the syllabus for the full policy.
+  See [the syllabus](syllabus.md#late-submission-policy) for the full policy.
 
-The syllabus also covers attendance and the final exam.
+The syllabus also covers [attendance](syllabus.md#attendance-policy) and the [final exam](syllabus.md#week-11-dec-4--dec-10-final-exam-group-presentations-of-the-projects).
 
 ## Accessibility
 
@@ -91,13 +91,13 @@ Verify every link before you submit, and if a link needs a login you do not cont
 
 ## Where The Rules Live
 
-| File                                                               | What it defines                                                                                           |
-| ------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------- |
-| [Artifact Requirements](requirements/artifact-requirements.md)     | What an artifact is, where it lives, who may see it, and the structure of each recurring artifact         |
-| [Process Requirements](requirements/process-requirements.md)       | What counts as good research, what a gap is, and how your Week 1 identifiers are used later               |
-| [Repository Requirements](requirements/repository-requirements.md) | GitHub, pull requests, branch protection, link checking, permalinks, snapshots, changelog, CI             |
-| [Guides](guides/)                                                  | How to actually do the work: finding alternatives, comparing, finding gaps, writing the value proposition |
-| [Assignments](assignments/)                                        | What this particular week requires, and what you hand in                                                  |
+| File                                                                  | What it defines                                                                                           |
+| --------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
+| [Artifact Requirements](../requirements/artifact-requirements.md)     | What an artifact is, where it lives, who may see it, and the structure of each recurring artifact         |
+| [Process Requirements](../requirements/process-requirements.md)       | What counts as good research, what a gap is, and how your Week 1 identifiers are used later               |
+| [Repository Requirements](../requirements/repository-requirements.md) | GitHub, pull requests, branch protection, link checking, permalinks, snapshots, changelog, CI             |
+| [Guides](../guides/)                                                  | How to actually do the work: finding alternatives, comparing, finding gaps, writing the value proposition |
+| [Assignments](../assignments/)                                        | What this particular week requires, and what you hand in                                                  |
 
 Assignments add the paths and the evidence for their week.
 They do not change the rules above.
@@ -107,4 +107,4 @@ They do not change the rules above.
 Ask in the course chat.
 A question costs you nothing; a silent deviation costs you the deliverable.
 If you do something differently from what an assignment says, that is allowed, provided the week's report says so and explains why.
-See [Artifact Requirements](requirements/artifact-requirements.md#declaring-deviations).
+See [Artifact Requirements](../requirements/artifact-requirements.md#declaring-deviations).

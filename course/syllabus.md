@@ -88,7 +88,7 @@ The first two weeks establish the project foundations, team formation, and compe
 - **Class 1 (Sep 25)**: Course introduction, syllabus overview, rubric orientation, and presentation of the provided project catalog.
   Team formation begins.
 - **Repository Setup (during Week 1)**: Each team creates one public, MIT-licensed product repository in a GitHub organization the team creates, with the team number in both the organization name and the repository name, and adds every member as a collaborator. `main` is protected (pull requests required, at least one approval, no self-approval), a pull request template is added, and automated link checking runs on pull requests and on `main` with a green `main` run before submission.
-  See [Repository Requirements](requirements/repository-requirements.md).
+  See [Repository Requirements](../requirements/repository-requirements.md).
 - **Customer Kickoff (during Week 1)**: Each team holds one kickoff meeting with its instructor, who acts as the customer.
   The team presents its reading of the problem and its proposed direction.
   The team prepares a meeting script in advance, covering business goals, end users, the current workflow, pain points and constraints, and scope, and improves it against [The Mom Test](https://hatrabbits.com/en/the-mom-test/).
@@ -102,7 +102,7 @@ The first two weeks establish the project foundations, team formation, and compe
     - Proposed product differentiation and strategy for surpassing existing products.
     - The prepared meeting script for the customer kickoff.
     - Sanitized transcript of the customer kickoff meeting.
-  - **Detailed requirements**: [Assignment 1](assignments/assignment-1.md).
+  - **Detailed requirements**: [Assignment 1](../assignments/assignment-1.md).
 
 ### Week 2: Oct 2 – Oct 8 (Project Planning, Issue Tracking & Initial Implementation)
 
@@ -330,4 +330,6 @@ However, the team bears **full responsibility** for the correctness, quality, an
 
 ## 8. References & Navigation
 
-- [Instructor Overview & Guidelines](README.md)
+- [Instructor Overview & Guidelines](../README.md)
+- [Course Rules](rules.md)
+- [Teams and Projects](teams-and-projects.md)

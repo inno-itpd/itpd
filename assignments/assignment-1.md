@@ -5,7 +5,7 @@
 - Soft deadline: Thursday 1 October, 23:59
 - Hard deadline: Friday 2 October, 23:59.
 
-See [Deadlines And Submission](../rules.md#deadlines-and-submission).
+See [Deadlines And Submission](../course/rules.md#deadlines-and-submission).
 
 One submission per team.
 
@@ -47,7 +47,7 @@ They are the rules; this assignment only tells you what this week requires.
 
 | Read                                                                            | For                                                                                    |
 | ------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
-| [Course rules](../rules.md)                                                     | What is public, what is private, deadlines, AI policy                                  |
+| [Course rules](../course/rules.md)                                              | What is public, what is private, deadlines, AI policy                                  |
 | [Artifact Requirements](../requirements/artifact-requirements.md)               | Where things live, the weekly report, meeting report, transcript and AI report formats |
 | [Repository Requirements](../requirements/repository-requirements.md)           | GitHub, pull requests, branch protection, link checking, permalinks, snapshots         |
 | [Process Requirements](../requirements/process-requirements.md)                 | What counts as a valid alternative, gap, and value proposition; the identifier rules   |
@@ -184,7 +184,7 @@ A customer who agrees with everything has not been tested.
 
 Write `reports/week-01/ai-usage.md`: which tools, what for, and what you accepted, changed, or rejected.
 If you used none, write one line saying so.
-See [AI Tools](../rules.md#ai-tools).
+See [AI Tools](../course/rules.md#ai-tools).
 
 ## What Good Looks Like
 

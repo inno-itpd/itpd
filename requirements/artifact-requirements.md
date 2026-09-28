@@ -4,7 +4,7 @@ These requirements define what an artifact is, where it lives, and who may see i
 Use [Process Requirements](process-requirements.md) for the meaning of the product work itself, and [Repository Requirements](repository-requirements.md) for GitHub, pull request, and link-checking mechanics.
 Assignment files add only the paths and evidence expectations for a specific week; they must not redefine anything here.
 
-Read [the course rules](../rules.md) first.
+Read [the course rules](../course/rules.md) first.
 It is the short version of this file and states what is expected of you as a student.
 
 <h2>Table of contents</h2>
@@ -525,7 +525,7 @@ A screenshot with no explanation is not evidence.
    This is a valid answer and costs you nothing.
 
 The course allows AI tools.
-See [the course rules](../rules.md#ai-tools).
+See [the course rules](../course/rules.md#ai-tools).
 The report exists so a reader can tell your own work from generated text, not to catch you using tools.
 
 **Example**
