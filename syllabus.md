@@ -60,9 +60,9 @@ The first two weeks establish the project foundations, team formation, and compe
      - **Pros & Cons Analysis**: Detail the strengths, limitations, and trade-offs of each identified alternative.
      - **Gap Analysis**: Uncover useful features, workflows, and user needs that are not adequately addressed by existing alternatives.
      - **Value Proposition & Differentiation**: Clearly articulate how the team's product will be superior, distinctive, and more valuable than existing similar products.
-   - Week 1 also includes **product repository setup** and one **customer kickoff meeting** with the team's instructor or mentor.
+   - Week 1 also includes **product repository setup** and one **customer kickoff meeting** with the team's instructor.
 4. **Repository Setup (Week 1) & Planning (Week 2)**:
-   - The product repository is created and configured during Week 1, alongside the research: a public MIT-licensed repository in the course GitHub organization, a protected `main` branch requiring pull request review, a pull request template, and automated link checking.
+   - The product repository is created and configured during Week 1, alongside the research: a public MIT-licensed repository in a team-created GitHub organization whose name carries the team number, a protected `main` branch requiring pull request review, a pull request template, and automated link checking.
    - Following research submission and feedback, Week 2 transitions into project planning (work breakdown, estimation, scheduling), issue-based tracking, and initial implementation.
 
 ---
@@ -87,10 +87,11 @@ The first two weeks establish the project foundations, team formation, and compe
 
 - **Class 1 (Sep 25)**: Course introduction, syllabus overview, rubric orientation, and presentation of the provided project catalog.
   Team formation begins.
-- **Repository Setup (during Week 1)**: Each team creates one public, MIT-licensed product repository in the course GitHub organization and adds every member as a collaborator. `main` is protected (pull requests required, at least one approval, no self-approval), a pull request template is added, and automated link checking runs on pull requests and on `main` with a green `main` run before submission.
+- **Repository Setup (during Week 1)**: Each team creates one public, MIT-licensed product repository in a GitHub organization the team creates, with the team number in both the organization name and the repository name, and adds every member as a collaborator. `main` is protected (pull requests required, at least one approval, no self-approval), a pull request template is added, and automated link checking runs on pull requests and on `main` with a green `main` run before submission.
   See [Repository Requirements](requirements/repository-requirements.md).
-- **Customer Kickoff (during Week 1)**: Each team holds one kickoff meeting with its instructor or mentor, who acts as the customer.
+- **Customer Kickoff (during Week 1)**: Each team holds one kickoff meeting with its instructor, who acts as the customer.
   The team presents its reading of the problem and its proposed direction.
+  The team prepares an interview script in advance, covering business goals, end users, the current workflow, pain points and constraints, and scope, and improves it against [The Mom Test](https://hatrabbits.com/en/the-mom-test/).
   The team asks for permission before recording; the recording stays private and is linked from the Moodle submission, while a sanitized transcript is committed to the repository.
 - **Submission 1 (Team Deliverable - Due Oct 1, 23:59)**:
   - **Initial Project Research Report**:
@@ -99,6 +100,7 @@ The first two weeks establish the project foundations, team formation, and compe
     - In-depth pros and cons evaluation for each alternative.
     - Analysis of useful aspects and gaps unaddressed by existing solutions.
     - Proposed product differentiation and strategy for surpassing existing products.
+    - The prepared interview script for the customer kickoff.
     - Sanitized transcript of the customer kickoff meeting.
   - **Detailed requirements**: [Assignment 1](assignments/assignment-1.md).
 
@@ -158,6 +160,8 @@ The first two weeks establish the project foundations, team formation, and compe
     2. **Production Instance**: Live accessible deployment instance with verified environment configuration.
     3. **Minimum Viable Product (MVP)**: Working codebase fulfilling core value proposition.
     4. **7-Minute MVP Presentation Deck**: Pitch deck showcasing the MVP, discussing chosen technical approaches, and detailing roadmap plans for the rest of the course.
+       > **To revise:** the deck is currently expected as a Moodle attachment rather than a repository artifact.
+       > Confirm the submission channel and where, if anywhere, it is indexed from.
   - **Submission Scope**: Team submission.
   - **Deadline**: **October 29 at 23:59 (Thursday)** (presented in-class during Week 6).
 
@@ -206,7 +210,8 @@ The first two weeks establish the project foundations, team formation, and compe
   - **Repository Activity Conclusion**: Conclude all repository activities and resolve outstanding tasks (closing remaining issues/PRs, stabilizing the build, ensuring comprehensive documentation, and reaching final code freeze).
 - **Submission 9 (Team Deliverables - Due Nov 26, 23:59)**:
   - **Deliverables**:
-    1. **Final Project Presentation Deck**: Polished presentation deck pitching the completed project, architecture, technical highlights, and demo flow.
+    1. **Final Project Presentation Deck**: Polished presentation deck pitching the completed product, architecture, technical highlights, and demo flow.
+       > **To revise:** the same submission-channel question as the Week 5 deck above.
     2. **Usability Test Results & Findings Report**: Summary of usability tests conducted, participant observations, key friction points identified, and improvement actions taken or recommended.
     3. **Project Reflection Report**: Detailed retrospective reflecting on the team's engineering journey, technical choices, outcomes, quality goals achieved, lessons learned, and team dynamics.
     4. **Finalized Repository State**: Verified repository state with all planned implementation and upkeep tasks concluded.
@@ -231,6 +236,8 @@ The first two weeks establish the project foundations, team formation, and compe
   - **Individual Reflection & Peer Evaluation**: Each student submits a personal reflection on their contributions to the project and a peer evaluation rating their teammates' contributions.
     This submission is available only if the group delivered the final presentation.
   - **Submission Scope**: Individual student submission.
+    Both parts are private and go in the Moodle submission only; neither is a repository artifact.
+    A peer evaluation rates named teammates, so it is never committed to the public repository.
   - **Deadline**: **December 10 at 23:59 (Wednesday)**.
 
 ---

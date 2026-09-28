@@ -1,8 +1,11 @@
 # Assignment 1: Initial Project Research
 
-**Soft deadline:** Thursday, 1 October, 23:59.
+**This week's dates:**
 
-**Hard deadline:** Friday, 2 October, 23:59.
+- Soft deadline: Thursday 1 October, 23:59
+- Hard deadline: Friday 2 October, 23:59.
+
+See [Deadlines And Submission](../rules.md#deadlines-and-submission).
 
 One submission per team.
 
@@ -50,6 +53,7 @@ They are the rules; this assignment only tells you what this week requires.
 | [Process Requirements](../requirements/process-requirements.md)                 | What counts as a valid alternative, gap, and value proposition; the identifier rules   |
 | [Guide: researching alternatives](../guides/alternatives-research.md)           | How to find and evaluate your set                                                      |
 | [Guide: comparison to value proposition](../guides/comparison-and-synthesis.md) | How to build the table, find the gaps, write the proposition                           |
+| [Guide: preparing the customer interview](../guides/customer-interview.md)      | How to write the interview script and run the meeting                                  |
 
 ## Part 1: Form The Team And Choose The Project
 
@@ -63,7 +67,7 @@ They are the rules; this assignment only tells you what this week requires.
 
 ## Part 2: Set Up The Repository
 
-Complete all requirements under **Required Starting Week 1** in [Repository Requirements](../requirements/repository-requirements.md#required-starting-week-1).
+Complete every requirement marked `**Since: W1**` in [Repository Requirements](../requirements/repository-requirements.md).
 In short, this week you must have:
 
 1. A **public** repository in the team's own organization, with `main` as the default branch and all members as collaborators.
@@ -75,8 +79,10 @@ In short, this week you must have:
 6. A Lychee link check running on pull requests and on `main`, checking every Markdown file in the repository, and failing on a broken link.
    The latest `main` run must be green.
    See [Link Checking](../requirements/repository-requirements.md#link-checking) for a working configuration and the rules on excluding links.
-7. At least one pull request merged into `main` with another member's approval.
-8. Every team member has made at least one commit through a pull request, and has reviewed and approved at least one other member's pull request.
+7. Every action pinned to a commit SHA, with `.github/dependabot.yml` keeping the pins current.
+   See [Pinning Third-Party Actions](../requirements/repository-requirements.md#pinning-third-party-actions).
+8. The Week 1 pull-request minimums: one approved and one merged pull request, and every member committing through a pull request and approving someone else's (one approval per PR is enough).
+   See [Branch Protection And Pull Requests](../requirements/repository-requirements.md#branch-protection-and-pull-requests).
 
 The repository structure you are building towards:
 
@@ -85,7 +91,9 @@ The repository structure you are building towards:
 ├── README.md
 ├── LICENSE
 ├── .gitignore
+├── .lycheeignore
 ├── .github/
+│   ├── dependabot.yml
 │   ├── pull_request_template.md
 │   └── workflows/lychee.yml
 ├── docs/
@@ -97,30 +105,37 @@ The repository structure you are building towards:
 └── reports/
     └── week-01/
         ├── README.md
+        ├── candidate-list.md
+        ├── interview-script.md
         ├── meeting-report.md
         ├── meeting-transcript.md   # or meeting-notes.md, never both
-        └── ai-usage.md
+        ├── ai-usage.md
+        └── images/                 # branch-protection.png and other screenshots
 ```
 
 ## Part 3: Research The Alternatives
 
 1. Write one sentence defining the problem space: whose problem this is and what they are trying to do.
    Put it at the top of `docs/research/alternatives.md`.
-2. Research **3 to 4 alternatives**, as a mix of a direct competitor, an adjacent substitute, and an open-source or self-hosted option, per [Process Requirements](../requirements/process-requirements.md#alternatives).
-3. Choose at least 6 properties to compare on, **before** you evaluate anything.
-4. Write one `ALT-nn` section per alternative in `docs/research/alternatives.md`, with the observations, strengths, and at least two weaknesses each, every claim pointing at something you looked at.
-5. Build a board for the screenshots and working notes.
+2. Search widely first, and record the search in `reports/week-01/candidate-list.md`.
+   Collect ten or more candidates with a URL and one line each on why each might be relevant, then commit the whole list.
+   Keep the ones you cut: a later week that needs another product will either reuse one you rejected or spend a day rediscovering it.
+   See [Build A Wide Candidate List](../guides/alternatives-research.md#step-2-build-a-wide-candidate-list).
+3. Research **3 to 4 alternatives**, as a mix of a direct competitor, an adjacent substitute, and an open-source or self-hosted option, per [Process Requirements](../requirements/process-requirements.md#alternatives).
+4. Choose at least 6 properties to compare on, **before** you evaluate anything.
+5. Write one `ALT-nn` section per alternative in `docs/research/alternatives.md`, with the observations, strengths, and at least two weaknesses each, every claim pointing at something you looked at.
+6. Build a board for the screenshots and working notes.
    Share it view-only and link it from the file.
    At least two screenshots per alternative, of the screens or flows that matter for your properties.
    See [Where The Evidence Lives](../guides/alternatives-research.md#where-the-evidence-lives).
 
 ## Part 4: Compare The Alternatives
 
-Write `docs/research/comparison.md`: a qualitative analysis table, rows are your properties, columns are the alternatives, and every cell is analysis that traces back to an `ALT-nn` observation.
+Write `docs/research/comparison.md`: a `## Patterns` section, then a qualitative analysis table whose rows are your properties, whose columns are the alternatives, and whose every cell is analysis that traces back to an `ALT-nn` observation.
 
 Fill it property by property.
 Make strengths relative, and separate what you observed from what you concluded.
-See [Step 2: Fill The Table](../guides/comparison-and-synthesis.md#step-2-fill-the-table).
+See [Step 2: Fill The Table](../guides/comparison-and-synthesis.md#step-2-fill-the-table) and [Step 3: Read The Table For Patterns](../guides/comparison-and-synthesis.md#step-3-read-the-table-for-patterns).
 
 ## Part 5: Find The Gaps
 
@@ -140,27 +155,35 @@ The rules are in [Value Proposition And Differentiation](../requirements/process
 
 ## Part 7: Meet The Customer
 
-Your instructor or mentor is the customer.
+Your customer is a course instructor.
+In every artifact you call them `Customer`, never a real name and never "the instructor".
 Hold one kickoff meeting with them this week: present the project, your reading of the problem, and your proposed direction, and find out where they disagree with you.
 
-1. Ask the three permission questions before you start, and keep the recording out of the repository.
-2. Write `reports/week-01/meeting-report.md`, plus either `reports/week-01/meeting-transcript.md` or `reports/week-01/meeting-notes.md`, following [Customer Meeting Artifacts](../requirements/artifact-requirements.md#customer-meeting-artifacts).
-   The report is the deliverable this week; the transcript or the notes is its evidence.
-3. Complete all six of the report's sections, and hold it to the week-specific minima:
+1. **Write the interview script first**, at `reports/week-01/interview-script.md`.
+   It covers five areas — business goals, end users, the current workflow, pain points and constraints, and scope — with at least two questions in each area.
+   Tag every question open or closed, and close the file with a `## Key improvements` section showing at least two questions you rewrote and the principle behind each rewrite.
+   See [Preparing The Customer Interview](../guides/customer-interview.md).
+2. **Assign the three roles** before the meeting: an interviewer, a note taker, and an observer who records what was not asked.
+   The whole team attends, and you plan for 30 minutes while asking for 60 if the customer can give it.
+3. **Ask the three permission questions** before you start, and keep the recording out of the repository.
+4. **Write `reports/week-01/meeting-report.md`**, plus either `reports/week-01/meeting-transcript.md` or `reports/week-01/meeting-notes.md`, following [Customer Meeting Artifacts](../requirements/artifact-requirements.md#customer-meeting-artifacts).
+   The meeting report is the deliverable this week; the transcript or the notes is its evidence.
+5. **Complete all six of the report's sections**, and hold it to the week-specific minima:
    - At least two rows in `## Decisions`, each naming the `GAP-nn` or `VP-nn` it came from.
    - At least two rows in `## Action points`, each with a named owner and a due date inside Week 2.
    - `## Disagreements` filled in, or an explicit `None`.
-4. Put the recording link in your Moodle submission only.
-5. If a live meeting is impossible, align asynchronously in writing instead, timestamp the written exchange as the notes, and declare the substitution in your week report as a deviation.
+6. **Put the recording link in your Moodle submission only.**
+7. **If a live meeting is impossible**, align asynchronously in writing instead, timestamp the written exchange as the notes, and declare the substitution in your week report as a deviation.
 
 Do not ask the customer to design the product.
 Present a direction with its evidence, and find out where it is wrong.
 Where you were wrong, `## Disagreements` is the most valuable table in the week.
+A customer who agrees with everything has not been tested.
 
 ## Part 8: Report On Your AI Usage
 
 Write `reports/week-01/ai-usage.md`: which tools, what for, and what you accepted, changed, or rejected.
-If you used none, one line saying so.
+If you used none, write one line saying so.
 See [AI Tools](../rules.md#ai-tools).
 
 ## What Good Looks Like
@@ -183,11 +206,14 @@ A strong submission has:
 - **A meeting that changed something.**
   The customer disagreed with at least one of your positions, the report says so, and the value proposition reflects it.
   A kickoff where nothing was contested is a kickoff you did not test.
+- **A script that reads like a script.**
+  The `## Key improvements` section shows a real rewrite, not a claim that you followed the Mom Test.
+  A customer who answers your original question and your rewritten one differently has taught you something a list of questions never will.
 - **A repository that already works.**
   Branch protection on, a merged and approved pull request, a green link check, screenshots proving it.
 - **No filler.**
-  A sentence that would survive being pasted into another team's report unchanged should be deleted.
-  This is the single most common reason a strong week scores poorly.
+  A template sentence has no product name, no `ALT-nn`, and no date in it.
+  If it would survive being pasted into another team's report unchanged, delete it.
 
 ## Assignment Report In The Repository
 
@@ -196,19 +222,32 @@ This is the canonical public report for the week and the index for everything be
 Follow the structure in [Weekly Public Report](../requirements/artifact-requirements.md#weekly-public-report), and include:
 
 1. Project name, team number, and your problem-space sentence.
-2. A link to the root `LICENSE`.
-3. A coverage table mapping each deliverable of this assignment to the artifact that satisfies it.
-4. A short summary of what you found and what you propose.
+   The problem-space sentence leads, because it is the standard every `ALT-nn`, `GAP-nn`, and `VP-nn` in the week is measured against, and it is the one line that orients a reader who has never seen your project.
+2. A short summary of what you found and what you propose.
    A reader should understand the week from this file alone, then follow links for detail.
-5. Links to `docs/research/alternatives.md`, `comparison.md`, `gap-analysis.md`, and `value-proposition.md`.
-6. A link to your research board.
-7. A link to `meeting-report.md`, and a link to `meeting-transcript.md` or `meeting-notes.md`, or a statement that the customer refused publication and it is in the Moodle submission only.
-8. A link to `ai-usage.md`.
-9. Repository evidence: a screenshot of the `main` branch protection settings, a link to a merged pull request approved by another member, and a link to the latest green link check run.
+3. A coverage table, one row per deliverable of this assignment, giving the artifact that satisfies it.
+   This table is the index, so it is not followed by a second list of the same links.
+
+   | Deliverable              | Artifact                                                                         |
+   | ------------------------ | -------------------------------------------------------------------------------- |
+   | Candidate list           | `candidate-list.md`                                                              |
+   | Alternatives search      | [`docs/research/alternatives.md`](../../docs/research/alternatives.md)           |
+   | Compare the alternatives | [`docs/research/comparison.md`](../../docs/research/comparison.md)               |
+   | Gap analysis             | [`docs/research/gap-analysis.md`](../../docs/research/gap-analysis.md)           |
+   | Value proposition        | [`docs/research/value-proposition.md`](../../docs/research/value-proposition.md) |
+   | Research board           | your external board link                                                         |
+   | Interview script         | `interview-script.md`                                                            |
+   | Customer kickoff         | `meeting-report.md`, and `meeting-transcript.md` or `meeting-notes.md`           |
+   | AI usage                 | `ai-usage.md`                                                                    |
+
+   If the customer refused publication of the transcript or the notes, that row says so and points at the Moodle submission instead.
+
+4. Repository evidence: a screenshot of the `main` branch protection settings, a link to a merged pull request approved by another member, and a link to the latest green link check run.
+   These are three, because each proves something only the platform's own interface can prove, and none of them is visible in the repository's files.
    Add the justification for every link you excluded, and confirm you opened each one in a browser to check it.
-10. A contribution table mapping each member's GitHub username to their commits, issues, pull requests, and reviews.
-11. Your deviations, if any, with reasons.
-12. One line confirming that no private-only material was committed to the repository.
+5. A contribution table mapping each member's GitHub username to their commits, issues, pull requests, and reviews.
+6. Your deviations, if any, with reasons.
+7. One line confirming that no private-only material was committed to the repository.
 
 The open questions from the kickoff live in `meeting-report.md`, not here.
 The week report does not repeat them; a reader follows the link.
@@ -254,19 +293,24 @@ See [Permalinks And Snapshots](../requirements/repository-requirements.md#permal
 - [ ] Public repository in the team's own organization, all members collaborators, `main` default.
 - [ ] `LICENSE`, `.gitignore`, root `README.md`.
 - [ ] `main` protected: pull requests required, one approval, no self-approval.
-      Screenshot saved.
+      Screenshot saved in `reports/week-01/images/`.
 - [ ] Pull request template at `.github/pull_request_template.md`.
-- [ ] Lychee link check on pull requests and `main`, green, with justified exclusions.
+- [ ] Lychee link check on pull requests and `main`, green, with justified exclusions in `.lycheeignore`.
+- [ ] Actions pinned to commit SHAs, with `.github/dependabot.yml`.
 - [ ] At least one merged pull request approved by another member.
 - [ ] Every member: at least one commit, at least one review.
 - [ ] `docs/research/alternatives.md` with 3–4 alternatives and `ALT-nn` IDs.
-- [ ] `docs/research/comparison.md` with at least 6 properties and traceable cells.
+- [ ] `reports/week-01/candidate-list.md` with the full search, including what you cut.
+- [ ] `docs/research/comparison.md` with `## Patterns`, at least 6 properties, and traceable cells.
 - [ ] `docs/research/gap-analysis.md` with `GAP-nn` entries and the rejected list.
 - [ ] `docs/research/value-proposition.md` with `VP-nn` entries and assumptions.
 - [ ] Board linked, view-only, two screenshots per alternative.
+- [ ] `reports/week-01/interview-script.md` with five areas, at least two questions each, all tagged open or closed.
+- [ ] `## Key improvements` shows two real rewrites with the principle named.
+- [ ] Three meeting roles assigned, whole team attending.
 - [ ] Kickoff meeting held, all three permissions asked before recording.
 - [ ] `reports/week-01/meeting-report.md` with all six sections, 2+ decisions traced to `GAP-nn`/`VP-nn`, 2+ action points with owner and Week 2 due date, and `## Disagreements` filled or `None`.
 - [ ] `reports/week-01/meeting-transcript.md` or `meeting-notes.md`, sanitized; in the Moodle PDF only if publication was refused.
 - [ ] `reports/week-01/ai-usage.md` written.
-- [ ] `reports/week-01/README.md` complete, including coverage table, evidence, and contribution table.
+- [ ] `reports/week-01/README.md` complete, with the coverage table, evidence, and contribution table.
 - [ ] PDF and snapshot ready, permalink verified at the full commit hash.

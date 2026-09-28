@@ -3,12 +3,12 @@
 These requirements cover the mechanics of the product repository: where it lives, how changes get in, how links get checked, and how you produce the permalinks and the snapshot your assignment asks for.
 Use [Artifact Requirements](artifact-requirements.md) for what the artifacts are and who may see them, and [Process Requirements](process-requirements.md) for the product work.
 
-Each section states the week it starts applying.
+Each requirement carries a `**Since: WN**` marker stating the week it starts applying, so a section can hold requirements that begin in different weeks.
 Requirements that arrive later are written now so that later weeks do not have to introduce a convention from nothing.
+(For the document authors) To move a requirement to a different week, change its own marker and leave the section where it is.
 
 <h2>Table of contents</h2>
 
-- [Required Starting Week 1](#required-starting-week-1)
 - [Repository Setup](#repository-setup)
   - [Licensing](#licensing)
   - [Root README](#root-readme)
@@ -18,17 +18,14 @@ Requirements that arrive later are written now so that later weeks do not have t
 - [Permalinks And Snapshots](#permalinks-and-snapshots)
 - [Configuration And Sensitive Information](#configuration-and-sensitive-information)
 - [Sensitive-Data Incident Response](#sensitive-data-incident-response)
-- [Required Starting Week 2](#required-starting-week-2)
 - [Planning And Issue Tracking](#planning-and-issue-tracking)
-- [Required Starting Week 3](#required-starting-week-3)
 - [Changelog, Releases And Versioning](#changelog-releases-and-versioning)
-- [Required Starting Week 5](#required-starting-week-5)
 - [Continuous Integration](#continuous-integration)
 - [Recommended Throughout The Course](#recommended-throughout-the-course)
 
-## Required Starting Week 1
-
 ## Repository Setup
+
+**Since: W1**
 
 **Required**
 
@@ -66,6 +63,8 @@ Requirements that arrive later are written now so that later weeks do not have t
 
 ### Root README
 
+**Since: W1**
+
 **Required**
 
 The root `README.md` is the public front door of the repository.
@@ -77,9 +76,13 @@ In Week 1 it must contain:
 - A link to the maintained documentation in `docs/`.
 - A note that the project is a work in progress for the ITPD course.
 
-From Week 2 it also carries setup and run instructions for the product as it exists, and from Week 5 the link to the deployed product.
+**Since: W2**
+
+The root `README.md` also carries setup and run instructions for the product as it exists.
 
 ## Branch Protection And Pull Requests
+
+**Since: W1**
 
 **Required**
 
@@ -118,6 +121,8 @@ From Week 2 it also carries setup and run instructions for the product as it exi
    - Review and approve at least one other team member's pull request.
 
 ## Link Checking
+
+**Since: W1**
 
 Broken links make a report unusable.
 The link checker is a required part of the repository from Week 1.
@@ -180,6 +185,8 @@ The same justification, in prose, goes in the week's report under the link-check
 
 ### Pinning Third-Party Actions
 
+**Since: W1**
+
 Every workflow runs code that somebody else wrote.
 Pin it to a commit, not to a name, and let Dependabot move the pin for you.
 
@@ -209,6 +216,8 @@ updates:
 ```
 
 ## Permalinks And Snapshots
+
+**Since: W1**
 
 Every assignment asks you for a permalink and a repository snapshot.
 Both are built from the commit you are submitting, so that what a grader sees is exactly what you handed in, and does not drift when you keep working afterwards.
@@ -245,6 +254,8 @@ Both are built from the commit you are submitting, so that what a grader sees is
 
 ## Configuration And Sensitive Information
 
+**Since: W1**
+
 **Required**
 
 1. If the product needs environment variables or secrets, add a sanitized `.env.example` showing the shape of the configuration, and keep `.env` and other secret files in `.gitignore`.
@@ -259,19 +270,21 @@ Both are built from the commit you are submitting, so that what a grader sees is
 
 ## Sensitive-Data Incident Response
 
+**Since: W1**
+
 If credentials, personal data, or confidential material is committed by mistake:
 
 1. Revoke or rotate the exposed credential immediately.
 2. Make the repository private while you clean up, if the material is serious.
-3. Tell your instructor or mentor as soon as possible.
+3. Tell your instructor as soon as possible.
    You will not be penalised for reporting it; you will be for hiding it.
 4. Remove the material from the files and from the git history.
 5. Write privately what was exposed, when, and what you did about it, and send that to your instructor.
    Do not put that account in the public repository.
 
-## Required Starting Week 2
-
 ## Planning And Issue Tracking
+
+**Since: W2**
 
 **Required**
 
@@ -282,9 +295,9 @@ If credentials, personal data, or confidential material is committed by mistake:
 4. Check the relevant acceptance criteria before merging.
 5. Keep the project plan in `docs/work-plan.md`, and keep it current as the plan changes.
 
-## Required Starting Week 3
-
 ## Changelog, Releases And Versioning
+
+**Since: W3**
 
 **Required**
 
@@ -296,9 +309,9 @@ If credentials, personal data, or confidential material is committed by mistake:
    Protect mapped tags from being moved or deleted.
 6. When you cut a release, move the included entries into a dated section, link the section to the release, and open a new empty `[Unreleased]`.
 
-## Required Starting Week 5
-
 ## Continuous Integration
+
+**Since: W5**
 
 **Required**
 

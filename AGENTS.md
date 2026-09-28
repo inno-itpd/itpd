@@ -16,6 +16,7 @@ Operating instructions for coding agents maintaining the student-facing course m
 | `requirements/repository-requirements.md` | Repository and platform mechanics: GitHub, pull requests, branch protection, link checking, permalinks, snapshots, changelog, CI.                             |
 | `guides/alternatives-research.md`         | Method for finding and evaluating alternatives. Explanatory, not normative.                                                                                   |
 | `guides/comparison-and-synthesis.md`      | Method for building the comparison, finding gaps, writing the value proposition. Explanatory, not normative.                                                  |
+| `guides/customer-interview.md`            | Method for preparing the customer meeting: the interview script, the Mom Test pass, and meeting roles. Explanatory, not normative.                            |
 | `assignments/assignment-N.md`             | Learner-facing requirements for one week. Deltas, paths, and evidence only.                                                                                   |
 
 ### Tooling
@@ -69,11 +70,12 @@ rules.md       the contract and the router     (short, links into requirements/)
 
 - **Filenames** are kebab-case: `assignment-1.md`, `artifact-requirements.md`.
 - **Weeks** are zero-padded: `reports/week-01/`, through `reports/week-09/`.
-- **Identifiers** are zero-padded and stable: `ALT-01`, `GAP-01`, `VP-01`, `US-01`, `Q-01` for quality goals, `U-01` for usability tasks.
+- **Identifiers** are zero-padded and stable: `ALT-01`, `GAP-01`, `VP-01` are the Week 1 families.
+  `US-01` for user stories, `Q-01` for quality goals, and `U-01` for usability tasks are introduced by the assignment that creates them, in W3, W4, and W7.
   IDs are never renumbered or reused, including in example text.
 - **Headings** are Title Case in requirements files and sentence case in guides and assignments.
-- **Applicability markers**: artifact and process semantics carry inline `**Since: W1**` / `**Since: W2**` markers inside a concept-first section.
-  Repository mechanics are grouped under `## Required Starting Week N` headings, because repository mechanics arrive as whole blocks rather than as individual refinements.
+- **Applicability markers**: all three requirements files carry inline `**Since: WN**` markers, so a section can hold requirements that begin in different weeks.
+  To move a requirement to another week, change its own marker and leave the section where it is.
 - **Links** between files in this directory are relative Markdown links, and point at a heading anchor when they refer to a specific rule.
 - Prose is plain and specific.
   No filler, no hedging, no restating a rule that already lives in a linked file.
@@ -107,6 +109,7 @@ A later assignment may extend this map, but should not silently move an entry.
 | W3   | `docs/product-vision.md`, `docs/user-stories.md`, `docs/prototypes/`; `CHANGELOG.md`; SemVer tags begin           |
 | W4   | `docs/quality-requirements.md`, `docs/verification-plan.md`, `docs/threshold-of-success.md`, `docs/architecture/` |
 | W5   | `docs/testing.md`, `docs/deployment.md`                                                                           |
+| W6   | `docs/analytics.md` — provisional, to be confirmed when the W6 assignment is written                              |
 | W7   | `docs/usability-testing.md`                                                                                       |
 | W8   | `docs/configuration-management.md`                                                                                |
 | W9   | `docs/reflection.md`                                                                                              |
@@ -114,6 +117,10 @@ A later assignment may extend this map, but should not silently move an entry.
 Weekly reports live at `reports/week-NN/README.md` in every week, and the Moodle PDF is the private wrapper in every week.
 Meeting artifacts live at `reports/week-NN/meeting-report.md`, plus a `meeting-transcript.md` or a `meeting-notes.md` beside it.
 That shape is fixed; do not redesign it per week.
+
+Week 1 adds two more files beside them, both evidence rather than maintained documentation: `interview-script.md` and `candidate-list.md`.
+They exist only because Week 1 is the week where the customer meeting and the alternatives search happen.
+Later weeks that meet the customer write the script again for that week's meeting, and later weeks that need another alternative add to the comparison rather than reopening the search.
 
 ## Assignment Authoring Checklist
 
@@ -135,11 +142,16 @@ Before writing or editing an assignment:
 
 Use these words and do not invent local synonyms:
 
-`weekly report`, `weekly public report`, `supporting artifact`, `private-only artifact`, `external-but-indexed artifact`, `repository-resident artifact`, `deviation`, `customer` (never "client" or "stakeholder" when you mean the instructor), `kickoff meeting`, `meeting report`, `meeting transcript`, `meeting notes`, `decision`, `action point`, `open question`, `alternative`, `property`, `gap`, `value proposition`, `threshold of success`, `minimum usable product` (MUP), `minimum viable product` (MVP), `team number`.
+`weekly report`, `weekly public report`, `supporting artifact`, `private-only artifact`, `external-but-indexed artifact`, `repository-resident artifact`, `deviation`, `customer`, `kickoff meeting`, `meeting report`, `meeting transcript`, `meeting notes`, `interview script`, `decision`, `action point`, `open question`, `alternative`, `property`, `pattern`, `gap`, `value proposition`, `threshold of success`, `minimum usable product` (MUP), `minimum viable product` (MVP), `team number`.
+
+"Customer" is the term for the person your team answers to, who is your instructor.
+Never "client" or "stakeholder" for them.
+In artifacts, the label is `Customer`, not a real name.
+The word "instructor" is allowed in prose explaining who the customer is, and nowhere else.
 
 Meeting decisions and action points are **not** identifier families.
 There is no `DEC-nn` or `ACT-nn`.
-A later week cites a meeting report by path and heading anchor, an action point is carried out by a tracked issue, and the identifier families stay `ALT-nn`, `GAP-nn`, `VP-nn`, and `US-nn`.
+A later week cites a meeting report by path and heading anchor, an action point is carried out by a tracked issue, and the identifier families stay the ones their own week introduces.
 
 Note that ITPD has no Scrum.
 Do not import Sprint, Product Backlog, PBI, or user-story ceremony from the `swp_26/` materials. `docs/user-stories.md` in W3 is user stories in the plain product sense.
@@ -154,3 +166,4 @@ Do not import Sprint, Product Backlog, PBI, or user-story ceremony from the `swp
 - Do not copy the `swp_26/` promotion convention, its artifact-type vocabulary, or its GitLab support into these materials.
 - Do not restate the syllabus's late-submission, attendance, or weighting policy in an assignment, a guide, or `rules.md`.
   Link `syllabus.md`.
+  The one exception is the soft/hard deadline pair, which `rules.md` states once so that no assignment has to invent its own dates.

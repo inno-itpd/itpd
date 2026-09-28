@@ -52,7 +52,8 @@ See [Artifact Requirements](requirements/artifact-requirements.md#screenshot-evi
 
 ## Identities
 
-Your public repository identifies people by GitHub username and the customer as `Instructor`.
+Your public repository identifies people by GitHub username and your instructor as `Customer`.
+If the customer has a GitHub username and agrees to it being public, use the username instead.
 The mapping from username to real name and university email goes in the Moodle PDF, because that is the only place it belongs.
 
 ## AI Tools
@@ -64,16 +65,19 @@ The only requirement is disclosure: each week you write `reports/week-NN/ai-usag
 If you used nothing, one line saying so is enough.
 
 The test is simple: could a reader tell which parts are yours?
-If generated text is submitted unchecked, or filler is passed off as analysis, the week does not pass.
+If generated text is submitted unchecked, or filler is passed off as analysis, the week's grade is reduced.
+A template sentence is one with no product name, no `ALT-nn`, and no date in it.
 
 ## Deadlines And Submission
 
 - Every week has one group submission, due **Thursday at 23:59**, the night before the class.
+  That is the soft deadline.
+  The hard deadline is **Friday at 23:59**.
 - One submission per team.
   Every member's work is assessed through the team submission, and through the individual reflection at the end of the course.
 - The submission is a **PDF in Moodle** and a **repository snapshot (ZIP)**.
   The PDF points at your repository.
-- Late work loses 10% of that week's grade per day, and receives nothing after seven days.
+- Work handed in after the hard deadline loses 10% of that week's grade per day, and receives nothing after seven days.
   See the syllabus for the full policy.
 
 The syllabus also covers attendance and the final exam.

@@ -21,8 +21,9 @@ If it is taking longer, you are evaluating too deeply for a product you are not 
 ## What You Produce
 
 ```text
-docs/research/alternatives.md      ALT-01, ALT-02, … one section per alternative
-docs/research/comparison.md        the comparison table, built in the next guide
+reports/week-NN/candidate-list.md      the wide search, kept so it is not repeated later
+docs/research/alternatives.md          ALT-01, ALT-02, … one section per alternative
+docs/research/comparison.md            the comparison table, built in the next guide
 ```
 
 Screenshots and working notes go on a board.
@@ -51,8 +52,11 @@ Where to look:
 - Ask two people outside your team for the tool they would use.
   Their answer is often not on any list.
 
-Record each candidate with its URL and one line on why it might be relevant.
-This list is scratch work and does not need to be committed.
+Record each candidate with its URL and one line on why it might be relevant, in `reports/week-NN/candidate-list.md`.
+
+Keep the list you cut down from, not just the survivors.
+It is the record of the search, and a later week that needs another product will either pick one you already rejected or waste a day rediscovering it.
+One line per candidate is enough, and a rejected candidate is worth keeping exactly as much as a chosen one.
 
 ## Step 3: Cut Down To Three Or Four
 

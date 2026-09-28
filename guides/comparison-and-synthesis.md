@@ -1,7 +1,9 @@
 # Guide: From Comparison To Value Proposition
 
 How to turn the alternatives into a comparison, gaps, and a value proposition.
-The rules are in [Process Requirements](../requirements/process-requirements.md); this guide is the method, with a worked shape for each step.
+
+The rules are in [Process Requirements](../requirements/process-requirements.md#properties-and-comparison) and [Gap Analysis](../requirements/process-requirements.md#gap-analysis).
+This guide is the method, with a worked shape for each step.
 
 **Timebox:** about a day.
 Most of it is arguing about whether the table is honest, which is time well spent.
@@ -20,7 +22,7 @@ Most of it is arguing about whether the table is honest, which is time well spen
 ## What You Produce
 
 ```text
-docs/research/comparison.md        properties × alternatives, cell by cell
+docs/research/comparison.md        properties × alternatives, cell by cell, plus ## Patterns
 docs/research/gap-analysis.md      GAP-01, GAP-02, … including the ones you drop
 docs/research/value-proposition.md VP-01, VP-02, … plus your assumptions
 ```
@@ -36,7 +38,7 @@ If you genuinely missed a property, add it and go back and fill that column ever
 Rows are properties, columns are alternatives, cells are your analysis.
 Fill it property by property, not product by product: doing one whole row at a time keeps your standard consistent, while going product by product makes later cells drift into copying earlier ones.
 
-**A cell that works:**
+**A row that works:**
 
 ```markdown
 | Can a team attach redaction rules to specific marked regions of its own code? | No.
@@ -47,7 +49,7 @@ Per-tenant config files exist, but the rule applies to a tenant's traffic, not t
 
 It says what the product does, cites the `ALT-nn` it came from, and lets the reader check.
 
-**A cell that does not:**
+**A row that does not:**
 
 ```markdown
 | Redaction | Good | Missing | Basic |
@@ -64,6 +66,9 @@ Two habits that make the table honest:
 
 ## Step 3: Read The Table For Patterns
 
+A **pattern** is a shape that is visible when you read the table as a whole rather than a cell at a time.
+It is a claim about the shape of the evidence, not yet a need.
+
 Now read it as a whole, rather than row by row.
 
 - **Read down a column** to see how strong the strongest product is.
@@ -73,7 +78,11 @@ Now read it as a whole, rather than row by row.
 - **Look for the diagonal.**
   If one product is strong on everything, you have found the incumbent to beat, and you should say plainly how you plan to beat it.
 
-Write down three to five candidate patterns before you judge any of them.
+Write down three to five candidate patterns before you judge any of them, and put them in `comparison.md` under `## Patterns`, above the table.
+
+A pattern is worth writing down when you can name it in a sentence that a reader could dispute.
+"Nobody is good at X" is a pattern.
+"Most of these products feel unfinished" is not, because you cannot argue with it and you cannot check it.
 
 ## Step 4: Turn Patterns Into Gaps
 
