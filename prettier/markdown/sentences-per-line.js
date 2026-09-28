@@ -1,5 +1,7 @@
 import * as base from 'prettier-plugin-sentences-per-line'
 
+// The two passes below are additive to upstream, which already leaves table
+// rows alone, so they have to skip tables themselves.
 const tableNodeTypes = new Set(['table', 'tableRow', 'tableCell'])
 const gapNodeTypes = new Set(['paragraph', 'heading'])
 const breakNodeType = 'break'
@@ -14,7 +16,6 @@ const digitPeriodPattern = /\d\.$/
 // digitPeriodPattern suppresses a break, this one requires one. Keep them
 // separate so that narrowing either does not silently change the other.
 const numericSentenceEndPattern = /\d\.$/
-const finalWordPeriodPattern = /([A-Za-z]+)\.$/
 const upstreamIgnoredWords = [
   'eg.',
   'e.g.',
@@ -24,25 +25,6 @@ const upstreamIgnoredWords = [
   'i.e.',
   'vs.',
 ]
-const knownAbbreviations = new Set([
-  'mr',
-  'mrs',
-  'ms',
-  'dr',
-  'prof',
-  'sr',
-  'jr',
-  'st',
-  'mt',
-  'vs',
-  'etc',
-  'cf',
-  'al',
-  'approx',
-  'fig',
-  'inc',
-  'ltd',
-])
 
 let sentenceSegmenter
 
@@ -54,21 +36,6 @@ function getSentenceSegmenter() {
         : null
   }
   return sentenceSegmenter
-}
-
-function restoreTableWhitespace(node, insideTable = false) {
-  const nestedInTable = insideTable || tableNodeTypes.has(node.type)
-  if (!Array.isArray(node.children)) return
-
-  for (let index = 0; index < node.children.length; index += 1) {
-    const child = node.children[index]
-    if (nestedInTable && child.type === 'sentenceBreak') {
-      // The upstream plugin removed this whitespace when it inserted the break.
-      node.children[index] = { type: 'whitespace', value: ' ' }
-      continue
-    }
-    restoreTableWhitespace(child, nestedInTable)
-  }
 }
 
 function hasPosition(node) {
@@ -126,15 +93,9 @@ function collectBlankRanges(node, ranges) {
 function endsWithSuppressedTail(tail, customAbbreviations) {
   if (digitPeriodPattern.test(tail)) return true
   const lowered = tail.toLowerCase()
-  if (
-    [...upstreamIgnoredWords, ...customAbbreviations].some((word) =>
-      lowered.endsWith(word.toLowerCase()),
-    )
-  ) {
-    return true
-  }
-  const match = tail.match(finalWordPeriodPattern)
-  return Boolean(match && knownAbbreviations.has(match[1].toLowerCase()))
+  return [...upstreamIgnoredWords, ...customAbbreviations].some((word) =>
+    lowered.endsWith(word.toLowerCase()),
+  )
 }
 
 function trimBoundaryWhitespace(previous, next) {
@@ -308,7 +269,6 @@ export const printers = {
       const processed = await base.printers.mdast.preprocess(ast, options)
       insertGapSentenceBreaks(processed, options)
       splitNumericSentenceEnds(processed)
-      restoreTableWhitespace(processed)
       return processed
     },
   },
