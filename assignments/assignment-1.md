@@ -53,7 +53,7 @@ They are the rules; this assignment only tells you what this week requires.
 | [Process Requirements](../requirements/process-requirements.md)                 | What counts as a valid alternative, gap, and value proposition; the identifier rules   |
 | [Guide: researching alternatives](../guides/alternatives-research.md)           | How to find and evaluate your set                                                      |
 | [Guide: comparison to value proposition](../guides/comparison-and-synthesis.md) | How to build the table, find the gaps, write the proposition                           |
-| [Guide: preparing the customer interview](../guides/customer-interview.md)      | How to write the interview script and run the meeting                                  |
+| [Guide: the kickoff interview](../guides/customer-interview.md)                 | How to write the kickoff meeting script and run the meeting                            |
 
 ## Part 1: Form The Team And Choose The Project
 
@@ -106,7 +106,7 @@ The repository structure you are building towards:
     └── week-01/
         ├── README.md
         ├── candidate-list.md
-        ├── interview-script.md
+        ├── meeting-script.md
         ├── meeting-report.md
         ├── meeting-transcript.md   # or meeting-notes.md, never both
         ├── ai-usage.md
@@ -159,10 +159,10 @@ Your customer is a course instructor.
 In every artifact you call them `Customer`, never a real name and never "the instructor".
 Hold one kickoff meeting with them this week: present the project, your reading of the problem, and your proposed direction, and find out where they disagree with you.
 
-1. **Write the interview script first**, at `reports/week-01/interview-script.md`.
+1. **Write the meeting script first**, at `reports/week-01/meeting-script.md`.
    It covers five areas — business goals, end users, the current workflow, pain points and constraints, and scope — with at least two questions in each area.
    Tag every question open or closed, and close the file with a `## Key improvements` section showing at least two questions you rewrote and the principle behind each rewrite.
-   See [Preparing The Customer Interview](../guides/customer-interview.md).
+   See [The Kickoff Interview](../guides/customer-interview.md).
 2. **Assign the three roles** before the meeting: an interviewer, a note taker, and an observer who records what was not asked.
    The whole team attends, and you plan for 30 minutes while asking for 60 if the customer can give it.
 3. **Ask the three permission questions** before you start, and keep the recording out of the repository.
@@ -236,7 +236,7 @@ Follow the structure in [Weekly Public Report](../requirements/artifact-requirem
    | Gap analysis             | [`docs/research/gap-analysis.md`](../../docs/research/gap-analysis.md)           |
    | Value proposition        | [`docs/research/value-proposition.md`](../../docs/research/value-proposition.md) |
    | Research board           | your external board link                                                         |
-   | Interview script         | `interview-script.md`                                                            |
+   | Meeting script           | `meeting-script.md`                                                              |
    | Customer kickoff         | `meeting-report.md`, and `meeting-transcript.md` or `meeting-notes.md`           |
    | AI usage                 | `ai-usage.md`                                                                    |
 
@@ -305,7 +305,7 @@ See [Permalinks And Snapshots](../requirements/repository-requirements.md#permal
 - [ ] `docs/research/gap-analysis.md` with `GAP-nn` entries and the rejected list.
 - [ ] `docs/research/value-proposition.md` with `VP-nn` entries and assumptions.
 - [ ] Board linked, view-only, two screenshots per alternative.
-- [ ] `reports/week-01/interview-script.md` with five areas, at least two questions each, all tagged open or closed.
+- [ ] `reports/week-01/meeting-script.md` with five areas, at least two questions each, all tagged open or closed.
 - [ ] `## Key improvements` shows two real rewrites with the principle named.
 - [ ] Three meeting roles assigned, whole team attending.
 - [ ] Kickoff meeting held, all three permissions asked before recording.

@@ -37,7 +37,7 @@ If you cannot point at the evidence that produced a gap, the gap is not establis
 If you cannot point at the gaps that produced your value proposition, the value proposition is a wish.
 
 The kickoff meeting sits on top of that chain rather than inside it.
-It is where the customer tests the chain, so the [interview script](#meeting-with-the-customer) is written from it and not from scratch.
+It is where the customer tests the chain, so the [meeting script](#meeting-with-the-customer) is written from it and not from scratch.
 
 ## Alternatives
 
@@ -287,26 +287,58 @@ The Week 11 individual reflection and peer evaluation are private and go in the 
 
 **Since: W1**
 
-**Required**
+A meeting with the customer is where the week's work gets tested.
+Bring a direction and its evidence, and find out where it is wrong.
+
+The kickoff in Week 1 is the meeting with the most to settle, because the problem and the direction are both still open.
+[Guide: preparing the customer interview](../guides/customer-interview.md) is the method behind it.
+A later meeting settles one thing or two, and the rules below are enough to prepare it.
+
+**Required in Week 1**
 
 1. Hold one kickoff meeting with the customer, which is your instructor, during Week 1.
    Present the project, your reading of the problem, and your proposed direction, and hear where they disagree.
-2. Prepare the meeting in writing first, at `reports/week-NN/interview-script.md`, following [Interview Script](artifact-requirements.md#interview-script).
-   The script covers five areas: business goals, end users, the current workflow, pain points and constraints, and scope.
-   Put at least two questions in each area.
-3. Tag every question open or closed, and check the open ones against [The Mom Test](https://hatrabbits.com/en/the-mom-test/).
+2. The script covers five areas: business goals, end users, the current workflow, pain points and constraints, and scope, with at least two questions in each.
+3. Check the open questions against [The Mom Test](https://hatrabbits.com/en/the-mom-test/).
    A question about what the customer did last time is worth more than a question about what they would like.
 4. Close the script with a `## Key improvements` section naming at least two questions you rewrote and the principle behind each rewrite.
    An improvement you cannot show is not an improvement.
-5. Assign roles before the meeting: an interviewer, a note taker, and an observer who records what was not asked and what was not said.
+5. If a live meeting is impossible, do the alignment asynchronously in writing with the customer.
+   Timestamp the written exchange as the notes, record a voice or screen note if there is one, and state the substitution in the weekly public report as a deviation.
+   The rules below still apply, except the role split and the length: a written exchange has no speaking-time floor, and the interviewer is whoever wrote the questions.
+
+**Required for every meeting**
+
+1. Prepare the meeting in writing first, at `reports/week-NN/meeting-script.md`, following [Meeting Script](artifact-requirements.md#meeting-script).
+2. The script covers whatever this meeting has to settle.
+   Derive those areas from the target rather than from a template, and write every question numbered, tagged open or closed.
+3. Plan for 30 minutes and ask for 60 if the customer can give it.
+4. Assign roles before the meeting: an interviewer, a note taker, and an observer who records what was not asked and what was not said.
    The whole team attends.
-6. Plan for 30 minutes and ask for 60 if the customer can give it.
-7. Ask for permission before recording.
-   Record the meeting if permitted, and keep the recording out of the repository.
-8. Write a [meeting report](artifact-requirements.md#meeting-report), and either a [transcript](artifact-requirements.md#meeting-transcript) or [notes](artifact-requirements.md#meeting-notes).
-9. The meeting report is the only one of the three you always produce, and it is where the week's open questions live.
-   Its `## Decisions` table names the `GAP-nn` or `VP-nn` each decision came from, so the customer is answering your research and not a stranger's.
-10. If a live meeting is impossible, do the alignment asynchronously in writing with the customer.
-    Timestamp the written exchange as the notes, record a voice or screen note if there is one, and state the substitution in the weekly public report as a deviation.
-11. The customer decides the scope.
-    Your job in this meeting is to present a direction with its evidence and to find out where it is wrong, not to ask the customer to design the product.
+5. Ask the [three permission questions](artifact-requirements.md#customer-meeting-artifacts) every time.
+   Permission is per meeting and is never carried over from an earlier one, and the recording stays out of the repository.
+6. Write a [meeting report](artifact-requirements.md#meeting-report), and either a [transcript](artifact-requirements.md#meeting-transcript) or [notes](artifact-requirements.md#meeting-notes).
+7. The meeting report is the only one of the three you always produce, and it is where the week's open questions live.
+   Its `## Decisions` table names the identifier family the week owns, per [Traceability Into Later Weeks](#traceability-into-later-weeks), so the customer is answering your research and not a stranger's.
+8. The customer decides the scope.
+   Your job in the meeting is to present a direction with its evidence and to find out where it is wrong, not to ask the customer to design the product.
+
+**Example**
+
+A Week 5 review, which is not a kickoff.
+
+- What it has to settle: whether the release delivers `VP-01`, or something cheaper.
+- The areas that follow from it: scope, and the pain points and constraints that decide it.
+- The question whose answer would change the week: "What would you do first on Monday if this shipped and the rest waited until January?"
+
+**Recommended**
+
+- Do not re-run the kickoff.
+  A later meeting that re-asks the business goals decides nothing, because those were settled weeks ago.
+  Write the meeting's one target at the top and delete every question that does not serve it.
+- Do not ask about the product you are planning.
+  The customer is the only person in the room who cannot be expected to be objective about your idea.
+- Do not bring twenty questions to a thirty-minute meeting.
+  You will get through nine of them well, and the rest will be a list somebody read aloud.
+- Do not treat agreement as a result.
+  A customer who says "that sounds great" to a question about your own idea has told you almost nothing, and `## Disagreements` in the meeting report will be empty when it should not be.

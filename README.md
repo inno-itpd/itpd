@@ -37,7 +37,7 @@ How to actually do the work.
 | -------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
 | [Researching alternatives](guides/alternatives-research.md)                | Finding your set, choosing properties, evaluating consistently, capturing evidence |
 | [From comparison to value proposition](guides/comparison-and-synthesis.md) | Building the table, finding the gaps, writing the proposition and your assumptions |
-| [Preparing the customer interview](guides/customer-interview.md)           | Writing the interview script, the Mom Test pass, and the meeting roles             |
+| [The kickoff interview](guides/customer-interview.md)                      | The five areas, the Mom Test pass, and the meeting roles                           |
 
 ## How Your Repository Is Organised
 

@@ -16,7 +16,7 @@ Operating instructions for coding agents maintaining the student-facing course m
 | `requirements/repository-requirements.md` | Repository and platform mechanics: GitHub, pull requests, branch protection, link checking, permalinks, snapshots, changelog, CI.                             |
 | `guides/alternatives-research.md`         | Method for finding and evaluating alternatives. Explanatory, not normative.                                                                                   |
 | `guides/comparison-and-synthesis.md`      | Method for building the comparison, finding gaps, writing the value proposition. Explanatory, not normative.                                                  |
-| `guides/customer-interview.md`            | Method for preparing the customer meeting: the interview script, the Mom Test pass, and meeting roles. Explanatory, not normative.                            |
+| `guides/customer-interview.md`            | Method for the kickoff: the five areas, the Mom Test pass, and meeting roles. Explanatory, not normative.                                                     |
 | `assignments/assignment-N.md`             | Learner-facing requirements for one week. Deltas, paths, and evidence only.                                                                                   |
 
 ### Tooling
@@ -118,7 +118,7 @@ Weekly reports live at `reports/week-NN/README.md` in every week, and the Moodle
 Meeting artifacts live at `reports/week-NN/meeting-report.md`, plus a `meeting-transcript.md` or a `meeting-notes.md` beside it.
 That shape is fixed; do not redesign it per week.
 
-Week 1 adds two more files beside them, both evidence rather than maintained documentation: `interview-script.md` and `candidate-list.md`.
+Week 1 adds two more files beside them, both evidence rather than maintained documentation: `meeting-script.md` and `candidate-list.md`.
 They exist only because Week 1 is the week where the customer meeting and the alternatives search happen.
 Later weeks that meet the customer write the script again for that week's meeting, and later weeks that need another alternative add to the comparison rather than reopening the search.
 
@@ -142,7 +142,7 @@ Before writing or editing an assignment:
 
 Use these words and do not invent local synonyms:
 
-`weekly report`, `weekly public report`, `supporting artifact`, `private-only artifact`, `external-but-indexed artifact`, `repository-resident artifact`, `deviation`, `customer`, `kickoff meeting`, `meeting report`, `meeting transcript`, `meeting notes`, `interview script`, `decision`, `action point`, `open question`, `alternative`, `property`, `pattern`, `gap`, `value proposition`, `threshold of success`, `minimum usable product` (MUP), `minimum viable product` (MVP), `team number`.
+`weekly report`, `weekly public report`, `supporting artifact`, `private-only artifact`, `external-but-indexed artifact`, `repository-resident artifact`, `deviation`, `customer`, `kickoff meeting`, `meeting report`, `meeting transcript`, `meeting notes`, `meeting script`, `decision`, `action point`, `open question`, `alternative`, `property`, `pattern`, `gap`, `value proposition`, `threshold of success`, `minimum usable product` (MUP), `minimum viable product` (MVP), `team number`.
 
 "Customer" is the term for the person your team answers to, who is your instructor.
 Never "client" or "stakeholder" for them.

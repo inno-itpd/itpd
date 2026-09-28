@@ -66,7 +66,7 @@ Two habits that make the table honest:
 
 ## Step 3: Read The Table For Patterns
 
-A **pattern** is a shape that is visible when you read the table as a whole rather than a cell at a time.
+A **pattern** is a shape that is visible when you read the table as a whole rather than one cell at a time.
 It is a claim about the shape of the evidence, not yet a need.
 
 Now read it as a whole, rather than row by row.

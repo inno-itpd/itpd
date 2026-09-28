@@ -21,7 +21,7 @@ It is the short version of this file and states what is expected of you as a stu
   - [Meeting Report](#meeting-report)
   - [Meeting Transcript](#meeting-transcript)
   - [Meeting Notes](#meeting-notes)
-  - [Interview Script](#interview-script)
+  - [Meeting Script](#meeting-script)
 - [Screenshot Evidence](#screenshot-evidence)
 - [AI Usage Report](#ai-usage-report)
 - [Private Submission Wrapper](#private-submission-wrapper)
@@ -200,7 +200,7 @@ Nobody lets a team define its own redaction rules, which is the gap our project 
 | Gap analysis             | [docs/research/gap-analysis.md](../../docs/research/gap-analysis.md)                   |
 | Value proposition        | [docs/research/value-proposition.md](../../docs/research/value-proposition.md)         |
 | Research board           | [Figma board](https://www.figma.com/design/PUc4NFVcLureKzxE3RAGB0/Market-Research)     |
-| Interview script         | [interview-script.md](interview-script.md)                                             |
+| Meeting script           | [meeting-script.md](meeting-script.md)                                                 |
 | Customer kickoff         | [meeting-report.md](meeting-report.md), [meeting-transcript.md](meeting-transcript.md) |
 | AI usage                 | [ai-usage.md](ai-usage.md)                                                             |
 
@@ -231,12 +231,12 @@ No private-only material was committed to this repository.
 A meeting with the customer produces a meeting report, and either a transcript or notes.
 A recording is a separate, private-only artifact.
 
-| Artifact                                  | When it exists                                          | Visibility            |
-| ----------------------------------------- | ------------------------------------------------------- | --------------------- |
-| [Meeting Report](#meeting-report)         | Every meeting with the customer                         | Public once sanitized |
-| [Meeting Transcript](#meeting-transcript) | The meeting was recorded and publishing it is permitted | Public once sanitized |
-| [Meeting Notes](#meeting-notes)           | Recording or transcript sharing was refused             | Public once sanitized |
-| [Interview Script](#interview-script)     | Before a meeting, as the preparation for it             | Public once sanitized |
+| Artifact                                  | When it exists                                                  | Visibility            |
+| ----------------------------------------- | --------------------------------------------------------------- | --------------------- |
+| [Meeting Report](#meeting-report)         | Every meeting with the customer                                 | Public once sanitized |
+| [Meeting Transcript](#meeting-transcript) | The meeting was recorded and publishing it is permitted         | Public once sanitized |
+| [Meeting Notes](#meeting-notes)           | Recording or transcript sharing was refused                     | Public once sanitized |
+| [Meeting Script](#meeting-script)         | Before any meeting with the customer, as the preparation for it | Public once sanitized |
 
 **Required**
 
@@ -245,7 +245,7 @@ A recording is a separate, private-only artifact.
 2. A meeting with no recording and no transcript still produces a meeting report.
 3. The meeting report is the team's own account of the meeting.
    The transcript and the notes are the evidence it is written from, and the report links to them.
-4. A meeting you prepared in advance also produces an [interview script](#interview-script), which the meeting report links to.
+4. Every meeting with the customer also produces a [meeting script](#meeting-script), which the meeting report links to.
 5. Later weeks cite a meeting report by path and heading anchor, for example `reports/week-01/meeting-report.md#decisions`.
    The report is the record of that meeting and is not rewritten afterwards.
    If a later meeting reverses a decision, the later report says so and links back to the report it reverses.
@@ -269,17 +269,17 @@ A recording is a separate, private-only artifact.
    Use `Customer` for your instructor rather than a real name.
    If the customer has a GitHub username and agrees to it being public, use the username instead.
 
-   | Section             | What belongs in it                                                                                                                                                                                                                                      |
-   | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-   | `## Metadata`       | Date, duration, who was there by GitHub username with the customer shown as `Customer`, what you presented, the answer to each of the three permission questions, and a link to the transcript, the notes, or the [interview script](#interview-script) |
-   | `## Summary`        | 3 to 5 bullets on what the meeting settled or changed, not on what was on the agenda                                                                                                                                                                    |
-   | `## Decisions`      | A table, one row per decision                                                                                                                                                                                                                           |
-   | `## Action points`  | A table, one row per action                                                                                                                                                                                                                             |
-   | `## Open questions` | A table, one row per question the meeting did not answer                                                                                                                                                                                                |
-   | `## Disagreements`  | A table, one row per place the customer did not agree with you                                                                                                                                                                                          |
+   | Section             | What belongs in it                                                                                                                                                                                                                                  |
+   | ------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+   | `## Metadata`       | Date, duration, who was there by GitHub username with the customer shown as `Customer`, what you presented, the answer to each of the three permission questions, and a link to the transcript, the notes, or the [meeting script](#meeting-script) |
+   | `## Summary`        | 3 to 5 bullets on what the meeting settled or changed, not on what was on the agenda                                                                                                                                                                |
+   | `## Decisions`      | A table, one row per decision                                                                                                                                                                                                                       |
+   | `## Action points`  | A table, one row per action                                                                                                                                                                                                                         |
+   | `## Open questions` | A table, one row per question the meeting did not answer                                                                                                                                                                                            |
+   | `## Disagreements`  | A table, one row per place the customer did not agree with you                                                                                                                                                                                      |
 
 7. `## Decisions` has the columns `Decision`, `Made by`, and `Traces to`.
-   `Traces to` names the `GAP-nn` or `VP-nn` the decision came from, or says `None` where it came from nowhere in your research.
+   `Traces to` names the identifier the week owns, per [Traceability Into Later Weeks](process-requirements.md#traceability-into-later-weeks), and says `None` where the decision came from nowhere in your research.
 8. `## Action points` has the columns `Action`, `Owner`, and `Due`.
    The owner is a GitHub username, and the due date falls inside a named week.
 9. `## Open questions` has the columns `Question`, `What it would change`, and `Follow-up`.
@@ -308,7 +308,7 @@ A recording is a separate, private-only artifact.
 **Recording:** permitted, linked from the Week 01 Moodle submission
 **Transcript publication:** permitted, see [the transcript](meeting-transcript.md)
 **Transcript shared privately:** not applicable
-**Script:** [interview-script.md](interview-script.md)
+**Script:** [meeting-script.md](meeting-script.md)
 
 ## Summary
 
@@ -395,27 +395,29 @@ A recording is a separate, private-only artifact.
 5. Notes are evidence, so the [meeting report](#meeting-report) is still required and still links to them.
 6. Say in the weekly public report which of the three you produced, and why.
 
-### Interview Script
+### Meeting Script
 
 **Required**
 
-1. Write the script before the meeting, at `reports/week-NN/interview-script.md`, whenever you are meeting the customer about scope or direction.
-   The method is in [Guide: Preparing The Customer Interview](../guides/customer-interview.md).
-2. It contains exactly the sections below, in this order, and nothing else.
+1. Write the script before the meeting, at `reports/week-NN/meeting-script.md`, for every meeting with the customer.
+   What the meeting has to settle is in [Meeting With The Customer](process-requirements.md#meeting-with-the-customer), and the method behind the kickoff is in [Guide: preparing the customer interview](../guides/customer-interview.md).
+2. It contains exactly the sections below that apply to that kind of meeting, in this order, and nothing else.
 3. A section with nothing in it says `None` and moves on.
 4. The sections, and what belongs in them:
 
-   | Section               | What belongs in it                                                                                                                                              |
-   | --------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-   | `## Context`          | The problem-space sentence you are working from, what you already believe, and which of your beliefs the meeting is meant to test                               |
-   | `## Questions`        | A numbered list, each question tagged open or closed, covering all five areas in [Meeting With The Customer](process-requirements.md#meeting-with-the-customer) |
-   | `## Roles`            | Who interviews, who takes notes, and who observes                                                                                                               |
-   | `## Key improvements` | At least two questions you rewrote, each with the principle behind the rewrite                                                                                  |
+   | Section               | Which meetings | What belongs in it                                                                                             |
+   | --------------------- | -------------- | -------------------------------------------------------------------------------------------------------------- |
+   | `## Context`          | Every meeting  | The problem-space sentence you are working from, what you already believe, and what this meeting has to settle |
+   | `## Questions`        | Every meeting  | A numbered list, each question tagged open or closed, covering the areas this meeting has to settle            |
+   | `## Roles`            | Every meeting  | Who interviews, who takes notes, and who observes                                                              |
+   | `## Key improvements` | The kickoff    | At least two questions you rewrote, each with the principle behind the rewrite                                 |
 
-5. `## Questions` covers business goals, end users, the current workflow, pain points and constraints, and scope, with at least two questions per area.
-6. `## Key improvements` shows a before and an after for each question, and names the principle that changed it.
+5. `## Key improvements` is a kickoff section because it records the Mom Test pass, which is a kickoff requirement.
+   A later meeting's script has the three sections above and nothing more.
+6. `## Questions` has at least two questions per area, and the areas are the ones [Meeting With The Customer](process-requirements.md#meeting-with-the-customer) requires for that kind of meeting: the five areas at the kickoff, and whatever the meeting has to settle later.
+7. `## Key improvements` shows a before and an after for each question, and names the principle that changed it.
    A section that claims improvement without showing the rewrite is not a section.
-7. The script is preparation, so it is not rewritten after the meeting.
+8. The script is preparation, so it is not rewritten after the meeting.
    What the meeting actually produced is the [meeting report](#meeting-report), which links to the script.
 
 **Recommended**
@@ -427,7 +429,7 @@ A recording is a separate, private-only artifact.
 **Example**
 
 ```markdown
-# Kickoff interview script
+# Kickoff meeting script
 
 ## Context
 
@@ -588,8 +590,8 @@ The following artifacts are introduced in later weeks.
 Their shared structure belongs here, not in the assignment that first requires them.
 Each assignment states the path and the week-specific evidence.
 
-- Customer meeting reports, transcripts, notes, and interview scripts for the meetings held in Weeks 2 and 3.
-  They follow the same structure as the Week 1 kickoff artifacts.
+- Customer meeting reports, transcripts, notes, and meeting scripts for the meetings you hold after the kickoff.
+  They follow the same structure as the Week 1 kickoff artifacts, and the same rules for every meeting in [Meeting With The Customer](process-requirements.md#meeting-with-the-customer).
   See [Customer Meeting Artifacts](#customer-meeting-artifacts).
 - Prototypes and the product vision from Week 3.
 - Quality requirements, the verification plan, the threshold of success, and architecture documentation from Week 4.
