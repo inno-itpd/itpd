@@ -18,7 +18,7 @@ const knownAbbreviations = new Set([
   'ltd',
 ])
 
-const closingPairsPattern = /[)"'”’\]]+$/
+const closingPairsPattern = /[)"'”’\]*_]+$/
 const terminalPunctuationPattern = /[.!?]$/
 const digitPeriodPattern = /\d\.$/
 const initialismPattern = /(?:^|[\s("'])(?:[A-Za-z]\.)+$/
@@ -32,7 +32,10 @@ const pipeTailPattern = /\|$/
 const pipeHeadPattern = /^\|/
 
 function isHardBreak(rawTail) {
-  return backslashHardBreakPattern.test(rawTail) || spacingHardBreakPattern.test(rawTail)
+  return (
+    backslashHardBreakPattern.test(rawTail) ||
+    spacingHardBreakPattern.test(rawTail)
+  )
 }
 
 function analyzeTail(rawTail) {
@@ -93,14 +96,17 @@ export default {
           const nextNewline = raw.indexOf('\n', newline + 1)
           const rawTail = raw.slice(lineStart, newline)
           const head =
-            nextNewline === -1 ? raw.slice(newline + 1) : raw.slice(newline + 1, nextNewline)
+            nextNewline === -1
+              ? raw.slice(newline + 1)
+              : raw.slice(newline + 1, nextNewline)
           const analysis = analyzeTail(rawTail)
           if (analysis) {
             const trimmedTail = rawTail.replace(trailingPaddingPattern, '')
             const trimmedHead = head.trim()
             if (trimmedTail && trimmedHead) {
               const tailEnd = base + lineStart + trimmedTail.length
-              const headLead = head.match(leadingPaddingPattern)?.[0].length ?? 0
+              const headLead =
+                head.match(leadingPaddingPattern)?.[0].length ?? 0
               const headStart = base + newline + 1 + headLead
               const fixable =
                 !hyphenTailPattern.test(trimmedTail) &&
@@ -109,7 +115,9 @@ export default {
               context.report({
                 loc: {
                   start: sourceCode.getLocFromIndex(tailEnd),
-                  end: sourceCode.getLocFromIndex(Math.min(headStart, tailEnd + 1)),
+                  end: sourceCode.getLocFromIndex(
+                    Math.min(headStart, tailEnd + 1),
+                  ),
                 },
                 messageId: 'sentenceContinues',
                 ...(fixable

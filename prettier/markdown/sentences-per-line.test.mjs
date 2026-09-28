@@ -10,7 +10,7 @@ function format(markdown, options = {}) {
   })
 }
 
-describe('table-safe sentences-per-line formatter', () => {
+describe('local sentences-per-line corrections', () => {
   it('splits prose sentences onto separate physical lines', async () => {
     await expect(
       format('The first sentence ends here. The second sentence follows.\n'),
@@ -32,7 +32,7 @@ describe('table-safe sentences-per-line formatter', () => {
     ).toHaveLength(3)
   })
 
-  it('round-trips the QR-011 table without splitting its response rows', async () => {
+  it('keeps a long cell with inline links on its row and stays idempotent', async () => {
     const source = [
       '| Scenario element | Requirement |',
       '| --- | --- |',
@@ -144,20 +144,19 @@ describe('table-safe sentences-per-line formatter', () => {
   })
 
   it('keeps list markers and table rows intact when splitting numbers', async () => {
-    await expect(
-      format('1. First item.\n2. Second item.\n'),
-    ).resolves.toBe('1. First item.\n2. Second item.\n')
+    await expect(format('1. First item.\n2. Second item.\n')).resolves.toBe(
+      '1. First item.\n2. Second item.\n',
+    )
     const table = await format(
       '| A | B |\n| --- | --- |\n| x | It ends in Week 1. Then more. |\n',
     )
-    expect(table.split('\n').filter((line) => line.startsWith('|'))).toHaveLength(3)
+    expect(
+      table.split('\n').filter((line) => line.startsWith('|')),
+    ).toHaveLength(3)
     expect(table).toContain('It ends in Week 1. Then more.')
   })
 
-  it('does not split after known or custom abbreviations at structure gaps', async () => {
-    await expect(format('Cite Dr. [Wu](#w) said.\n')).resolves.toBe(
-      'Cite Dr. [Wu](#w) said.\n',
-    )
+  it('does not split at structure gaps after a configured abbreviation', async () => {
     await expect(
       format('Cite Xu. [Wang](#w) said.\n', {
         sentencesPerLineAdditionalAbbreviations: ['Xu.'],

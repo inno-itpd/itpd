@@ -24,18 +24,22 @@ Markdown in this directory is formatted and linted from Node.
 Run `npm run format:markdown` before committing.
 `npm run format:markdown:check` and `npm run lint:markdown` are the gates.
 
-| File                                      | Owns                                                                                        |
-| ----------------------------------------- | ------------------------------------------------------------------------------------------- |
-| `scripts/markdown.mjs`                    | Formats, checks, and lints every tracked `.md` file except `.opencode/` and `.agents/`.     |
-| `prettier/markdown/sentences-per-line.js` | Formatter plugin: one sentence per line, and table rows left on one physical line.          |
-| `eslint/markdown/no-split-sentence.js`    | Lint rule for a sentence split across two lines. Registered but off, so it reports nothing. |
-| `.vscode/tasks.json`                      | Editor tasks for the same two commands.                                                     |
-| `.vscode/keybindings.json`                | Shortcuts for those two tasks. `Ctrl+Alt+M` formats, `Ctrl+Alt+C` checks.                   |
+| File                                      | Owns                                                                                                                           |
+| ----------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| `scripts/markdown.mjs`                    | Formats, checks, and lints every tracked `.md` file except `.opencode/` and `.agents/`.                                        |
+| `prettier/markdown/sentences-per-line.js` | Formatter plugin: one sentence per line, and table rows left on one physical line.                                             |
+| `eslint/markdown/no-split-sentence.js`    | Lint rule for a sentence split across two lines. Registered but off, so it reports nothing.                                    |
+| `eslint.config.ts`                        | Lint rules for Markdown. `@eslint/markdown` for the GFM language, `eslint-markdown` for its rules, plus the two local plugins. |
+| `.vscode/tasks.json`                      | Editor tasks for the same two commands.                                                                                        |
+| `.github/workflows/markdown.yml`          | CI: the format check, the lint, and both plugin fixtures, as three separate jobs.                                              |
 
-Their fixtures run with `npm run test:markdown-format` and `npm run test:markdown-rules`.
+Their fixtures run with `npm run test:markdown-format` and `npm run test:markdown-rules`, and all four gates run in CI on every pull request.
 Both plugins are shared verbatim with `../timeful`, so a change to either belongs in both repositories.
+`eslint.config.ts` enables the `eslint-markdown` `recommended` set, which lints the same GFM AST as `@eslint/markdown` and so adds rules without a second parse.
+Two of its rules are off because they conflict with the house style: `md/no-irregular-dash`, because `syllabus.md` carries the instructor's en and em dashes and the guides use them deliberately, and `md/code-lang-shorthand`, because it rewrites the `markdown`, `text`, and `yaml` fence labels in `requirements/` and `guides/` to their shorthand forms.
+The `markdown/*` built-in rules other than `no-html` are not enabled, because `markdown/no-missing-label-refs` reports the `> [!NOTE]` and `> [!IMPORTANT]` blockquote alerts in `syllabus.md` as undefined label references.
 `markdown/no-html` runs with `allowed: ['h2']`, so raw HTML is rejected except for the `<h2 id="...">` anchors that carry the stable permalinks `requirements/repository-requirements.md` requires.
-`.vscode/settings.json` lints Markdown in the editor, so the sentence and `no-html` rules report while you write, and it disables format-on-save because a bundled Prettier extension would format Markdown without the local `sentences-per-line` plugin.
+`.vscode/settings.json` lints Markdown in the editor, so the sentence, `no-html`, and `md/*` rules report while you write, and it enables format-on-save through `esbenp.prettier-vscode` so editor formatting picks up the local `sentences-per-line` plugin rather than a bundled one.
 Editor diagnostics are advisory; the commands above are the gates.
 
 ### Maintained Elsewhere
