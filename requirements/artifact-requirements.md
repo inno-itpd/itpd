@@ -4,13 +4,13 @@ These requirements define what an artifact is, where it lives, and who may see i
 Use [Process Requirements](process-requirements.md) for the meaning of the product work itself, and [Repository Requirements](repository-requirements.md) for GitHub, pull request, and link-checking mechanics.
 Assignment files add only the paths and evidence expectations for a specific week; they must not redefine anything here.
 
-Read [the course rules](../rules.md) first.
+Read [the course rules](../course/rules.md) first.
 It is the short version of this file and states what is expected of you as a student.
 
 <h2>Table of contents</h2>
 
-- [How Artifacts Are Placed In The Repository](#how-artifacts-are-placed-in-the-repository)
 - [Artifact Concepts And Terminology](#artifact-concepts-and-terminology)
+- [Where Artifacts Live In The Repository](#where-artifacts-live-in-the-repository)
 - [Visibility Model](#visibility-model)
   - [Public Artifacts](#public-artifacts)
   - [Private-Only Artifacts](#private-only-artifacts)
@@ -21,34 +21,12 @@ It is the short version of this file and states what is expected of you as a stu
   - [Meeting Report](#meeting-report)
   - [Meeting Transcript](#meeting-transcript)
   - [Meeting Notes](#meeting-notes)
+  - [Meeting Script](#meeting-script)
 - [Screenshot Evidence](#screenshot-evidence)
 - [AI Usage Report](#ai-usage-report)
 - [Private Submission Wrapper](#private-submission-wrapper)
 - [Declaring Deviations](#declaring-deviations)
 - [Later Weeks](#later-weeks)
-
-## How Artifacts Are Placed In The Repository
-
-**Since: W1**
-
-1. The product repository holds two kinds of content, and every artifact goes in exactly one of them:
-
-   - `reports/week-NN/` holds the evidence for that week.
-     It is a record of what the team did during that week.
-     Week numbers are zero-padded: `reports/week-01/`, `reports/week-02/`.
-   - `docs/` holds maintained project documentation.
-     Anything the project will still refer to in a later week goes here, in its final location, from the week it is created.
-
-2. There is no third location and no migration step.
-   When you create an artifact, put it where it will live for the rest of the course.
-   Do not create a file in `reports/` and move it to `docs/` later, and do not keep the same content in both places.
-
-3. Maintained documentation in `docs/` is expected to stay current.
-   When the product, the plan, or the decisions change, update the file.
-   Week reports in `reports/week-NN/` are a historical record and are not rewritten after their week.
-
-4. The weekly public report is always `reports/week-NN/README.md`.
-   Every week has one, and it is the index for that week.
 
 ## Artifact Concepts And Terminology
 
@@ -66,8 +44,33 @@ It is the short version of this file and states what is expected of you as a stu
    Deviations are allowed.
    Undeclared deviations are not.
 8. A **meeting report** is your team's own account of a meeting with the customer, written in your own words, at `reports/week-NN/meeting-report.md`.
-9. A **decision** is a conclusion reached in a meeting that changes what you build.
-10. An **action point** is a follow-up that came out of a meeting, with a named owner and a week it falls due in.
+9. A **decision** is a conclusion that changes what you build.
+   In a [meeting report](#meeting-report), it is a conclusion the meeting reached.
+   A decision the team takes outside a meeting is recorded in the weekly public report of the week it was made.
+10. An **action point** is a follow-up that came out of a meeting, with a named owner, which is a GitHub username, and a week it falls due in.
+
+## Where Artifacts Live In The Repository
+
+**Since: W1**
+
+1. The product repository holds two kinds of recorded work, and every artifact that records course work goes in exactly one of them:
+
+   - `reports/week-NN/` holds the evidence for that week.
+     It is a record of what the team did during that week.
+     Week numbers are zero-padded: `reports/week-01/`, `reports/week-02/`.
+   - `docs/` holds maintained project documentation.
+     Anything the project will still refer to in a later week goes here, in its final location, from the week it is created.
+
+2. This rule covers artifacts, not repository mechanics.
+   Code, workflows, issue and pull request templates, `LICENSE`, and the files in `.github/` are repository content, not artifacts, and are covered in [Repository Requirements](repository-requirements.md).
+3. There is no third location and no migration step.
+   When you create an artifact, put it where it will live for the rest of the course.
+   Do not create a file in `reports/` and move it to `docs/` later, and do not keep the same content in both places.
+4. Maintained documentation in `docs/` is expected to stay current.
+   When the product, the plan, or the decisions change, update the file.
+   Week reports in `reports/week-NN/` are a historical record and are not rewritten after their week.
+5. The weekly public report is always `reports/week-NN/README.md`.
+   Every week has one, and it is the index for that week.
 
 ## Visibility Model
 
@@ -77,7 +80,7 @@ It is the short version of this file and states what is expected of you as a stu
    Assume that anything you commit can and will be read by anyone, including people outside the course, for the whole time the repository exists.
 2. The repository is licensed MIT.
    See [Repository Requirements](repository-requirements.md#licensing).
-3. Public artifacts must be viewable by instructors and mentors but must not be publicly editable.
+3. Public artifacts must be viewable by instructors and your customer but must not be publicly editable.
 4. Private artifacts are shared only through the Moodle submission, with the people who need them.
 
 ### Public Artifacts
@@ -150,6 +153,7 @@ The mapping from username to real name and university email goes in the Moodle P
 4. It contains a short summary of what the team found, built, or decided, and what is still open.
    A grader should be able to read only this file and understand the week, then follow links for detail.
 5. It contains a coverage table mapping each required deliverable of the assignment to the artifact that satisfies it.
+   The table is the index, so it is not followed by a second list of the same links.
 6. It links the root `LICENSE`.
 7. It contains a contribution table mapping each team member's GitHub username to the work they did, using links to their commits, pull requests, or reviews where possible.
 8. It states any deviation from the assignment or from the shared requirements, and justifies it.
@@ -166,13 +170,16 @@ The mapping from username to real name and university email goes in the Moodle P
 
 **Example**
 
+A Week 01 report, from `reports/week-01/README.md`:
+
 ```markdown
 # Week 01 report
 
 ## Project
 
 Modular LLM Gateway, team 7.
-See [the alternatives research](docs/research/alternatives.md).
+
+Our problem-space sentence: a platform engineer whose company sends marked source code to external model providers needs the code's own classification to follow the request, and no product lets them set that.
 
 ## What we did
 
@@ -185,21 +192,24 @@ Nobody lets a team define its own redaction rules, which is the gap our project 
 
 ## Coverage
 
-| Deliverable         | Artifact                                                                               |
-| ------------------- | -------------------------------------------------------------------------------------- |
-| Alternatives search | [docs/research/alternatives.md](../docs/research/alternatives.md)                      |
-| Pros and cons       | [docs/research/comparison.md](../docs/research/comparison.md)                          |
-| Gap analysis        | [docs/research/gap-analysis.md](../docs/research/gap-analysis.md)                      |
-| Value proposition   | [docs/research/value-proposition.md](../docs/research/value-proposition.md)            |
-| Customer kickoff    | [meeting-report.md](meeting-report.md), [meeting-transcript.md](meeting-transcript.md) |
-| AI usage            | [ai-usage.md](ai-usage.md)                                                             |
+| Deliverable              | Artifact                                                                               |
+| ------------------------ | -------------------------------------------------------------------------------------- |
+| Alternatives search      | [docs/research/alternatives.md](../../docs/research/alternatives.md)                   |
+| Candidate list           | [candidate-list.md](candidate-list.md)                                                 |
+| Compare the alternatives | [docs/research/comparison.md](../../docs/research/comparison.md)                       |
+| Gap analysis             | [docs/research/gap-analysis.md](../../docs/research/gap-analysis.md)                   |
+| Value proposition        | [docs/research/value-proposition.md](../../docs/research/value-proposition.md)         |
+| Research board           | [Figma board](https://www.figma.com/design/PUc4NFVcLureKzxE3RAGB0/Market-Research)     |
+| Meeting script           | [meeting-script.md](meeting-script.md)                                                 |
+| Customer kickoff         | [meeting-report.md](meeting-report.md), [meeting-transcript.md](meeting-transcript.md) |
+| AI usage                 | [ai-usage.md](ai-usage.md)                                                             |
 
 ## Contribution
 
-| Member | Work                    |
-| ------ | ----------------------- |
-| @alice | PR #4, alternatives 1–2 |
-| @bob   | PR #5, comparison table |
+| Member | Work                                                   |
+| ------ | ------------------------------------------------------ |
+| @alice | [PR #4](...), alternatives 1–2, [approved](...) @bob   |
+| @bob   | [PR #5](...), comparison table, [approved](...) @carol |
 
 ## Repository evidence
 
@@ -221,11 +231,12 @@ No private-only material was committed to this repository.
 A meeting with the customer produces a meeting report, and either a transcript or notes.
 A recording is a separate, private-only artifact.
 
-| Artifact                                  | When it exists                                          | Visibility            |
-| ----------------------------------------- | ------------------------------------------------------- | --------------------- |
-| [Meeting Report](#meeting-report)         | Every meeting with the customer                         | Public once sanitized |
-| [Meeting Transcript](#meeting-transcript) | The meeting was recorded and publishing it is permitted | Public once sanitized |
-| [Meeting Notes](#meeting-notes)           | Recording or transcript sharing was refused             | Public once sanitized |
+| Artifact                                  | When it exists                                                  | Visibility            |
+| ----------------------------------------- | --------------------------------------------------------------- | --------------------- |
+| [Meeting Report](#meeting-report)         | Every meeting with the customer                                 | Public once sanitized |
+| [Meeting Transcript](#meeting-transcript) | The meeting was recorded and publishing it is permitted         | Public once sanitized |
+| [Meeting Notes](#meeting-notes)           | Recording or transcript sharing was refused                     | Public once sanitized |
+| [Meeting Script](#meeting-script)         | Before any meeting with the customer, as the preparation for it | Public once sanitized |
 
 **Required**
 
@@ -234,10 +245,11 @@ A recording is a separate, private-only artifact.
 2. A meeting with no recording and no transcript still produces a meeting report.
 3. The meeting report is the team's own account of the meeting.
    The transcript and the notes are the evidence it is written from, and the report links to them.
-4. Later weeks cite a meeting report by path and heading anchor, for example `reports/week-01/meeting-report.md#decisions`.
+4. Every meeting with the customer also produces a [meeting script](#meeting-script), which the meeting report links to.
+5. Later weeks cite a meeting report by path and heading anchor, for example `reports/week-01/meeting-report.md#decisions`.
    The report is the record of that meeting and is not rewritten afterwards.
    If a later meeting reverses a decision, the later report says so and links back to the report it reverses.
-5. Ask the customer three separate permission questions, every time: may we record, may we publish a sanitized transcript in the repository, and may we share a sanitized transcript privately with instructors if publication is refused.
+6. Ask the customer three separate permission questions, every time: may we record, may we publish a sanitized transcript in the repository, and may we share a sanitized transcript privately with instructors if publication is refused.
    Permission is per meeting and is never carried over from an earlier meeting.
 
 ### Meeting Report
@@ -254,17 +266,20 @@ A recording is a separate, private-only artifact.
    The same rule applies to [deviations](#declaring-deviations).
 6. The sections, and what belongs in them:
 
-| Section             | What belongs in it                                                                                                                                                                    |
-| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `## Metadata`       | Date, duration, who was there by GitHub username or `Instructor`, what you presented, the answer to each of the three permission questions, and a link to the transcript or the notes |
-| `## Summary`        | 3 to 5 bullets on what the meeting settled or changed, not on what was on the agenda                                                                                                  |
-| `## Decisions`      | A table, one row per decision                                                                                                                                                         |
-| `## Action points`  | A table, one row per action                                                                                                                                                           |
-| `## Open questions` | A table, one row per question the meeting did not answer                                                                                                                              |
-| `## Disagreements`  | A table, one row per place the customer did not agree with you                                                                                                                        |
+   Use `Customer` for your instructor rather than a real name.
+   If the customer has a GitHub username and agrees to it being public, use the username instead.
+
+   | Section             | What belongs in it                                                                                                                                                                                                                                  |
+   | ------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+   | `## Metadata`       | Date, duration, who was there by GitHub username with the customer shown as `Customer`, what you presented, the answer to each of the three permission questions, and a link to the transcript, the notes, or the [meeting script](#meeting-script) |
+   | `## Summary`        | 3 to 5 bullets on what the meeting settled or changed, not on what was on the agenda                                                                                                                                                                |
+   | `## Decisions`      | A table, one row per decision                                                                                                                                                                                                                       |
+   | `## Action points`  | A table, one row per action                                                                                                                                                                                                                         |
+   | `## Open questions` | A table, one row per question the meeting did not answer                                                                                                                                                                                            |
+   | `## Disagreements`  | A table, one row per place the customer did not agree with you                                                                                                                                                                                      |
 
 7. `## Decisions` has the columns `Decision`, `Made by`, and `Traces to`.
-   `Traces to` names the `GAP-nn` or `VP-nn` the decision came from, or says `None` where it came from nowhere in your research.
+   `Traces to` names the identifier the week owns, per [Traceability Into Later Weeks](process-requirements.md#traceability-into-later-weeks), and says `None` where the decision came from nowhere in your research.
 8. `## Action points` has the columns `Action`, `Owner`, and `Due`.
    The owner is a GitHub username, and the due date falls inside a named week.
 9. `## Open questions` has the columns `Question`, `What it would change`, and `Follow-up`.
@@ -288,11 +303,12 @@ A recording is a separate, private-only artifact.
 
 **Date:** 2026-09-29
 **Duration:** 50 minutes
-**Attended:** alice, bob, carol, Instructor
+**Attended:** alice, bob, carol, Customer
 **Presented:** the project choice, our reading of the problem, and the two `VP-nn` directions
 **Recording:** permitted, linked from the Week 01 Moodle submission
 **Transcript publication:** permitted, see [the transcript](meeting-transcript.md)
 **Transcript shared privately:** not applicable
+**Script:** [meeting-script.md](meeting-script.md)
 
 ## Summary
 
@@ -340,12 +356,12 @@ A recording is a separate, private-only artifact.
 
    ```text
    [00:00:04] alice: We picked the modular LLM gateway from the catalog.
-   [00:00:19] Instructor: What made you choose that one over the running coach?
+   [00:00:19] Customer: What made you choose that one over the running coach?
    ```
 
 4. Label speakers consistently.
    Use GitHub usernames for your team.
-   Use `Instructor` for your instructor or mentor rather than a real name.
+   Use `Customer` for your instructor rather than a real name.
 5. Remove personal data and confidential information.
    Use `[inaudible]` where a word cannot be recovered and `[redacted]` where something was deliberately removed.
 6. If the customer refuses to let the transcript be published, do not commit it.
@@ -359,12 +375,12 @@ A recording is a separate, private-only artifact.
 # Kickoff meeting transcript
 
 **Date:** 2026-09-29
-**Participants:** alice, bob, carol, Instructor
+**Participants:** alice, bob, carol, Customer
 
 [00:00:04] alice: We picked the modular LLM gateway from the catalog.
-[00:00:19] Instructor: What made you choose that one over the running coach?
+[00:00:19] Customer: What made you choose that one over the running coach?
 [00:01:02] bob: The plugin model means we can start with a core and add pieces.
-[00:01:40] Instructor: [redacted]
+[00:01:40] Customer: [redacted]
 [00:02:11] carol: We still need to check whether the team size constraint is real.
 ```
 
@@ -378,6 +394,100 @@ A recording is a separate, private-only artifact.
 4. Remove personal data and confidential information on the same terms as a [transcript](#meeting-transcript).
 5. Notes are evidence, so the [meeting report](#meeting-report) is still required and still links to them.
 6. Say in the weekly public report which of the three you produced, and why.
+
+### Meeting Script
+
+**Required**
+
+1. Write the script before the meeting, at `reports/week-NN/meeting-script.md`, for every meeting with the customer.
+   What the meeting has to settle is in [Meeting With The Customer](process-requirements.md#meeting-with-the-customer), and the method behind the kickoff is in [Guide: preparing the customer interview](../guides/customer-interview.md).
+2. It contains exactly the sections below that apply to that kind of meeting, in this order, and nothing else.
+3. A section with nothing in it says `None` and moves on.
+4. The sections, and what belongs in them:
+
+   | Section               | Which meetings | What belongs in it                                                                                             |
+   | --------------------- | -------------- | -------------------------------------------------------------------------------------------------------------- |
+   | `## Context`          | Every meeting  | The problem-space sentence you are working from, what you already believe, and what this meeting has to settle |
+   | `## Questions`        | Every meeting  | A numbered list, each question tagged open or closed, covering the areas this meeting has to settle            |
+   | `## Roles`            | Every meeting  | Who interviews, who takes notes, and who observes                                                              |
+   | `## Key improvements` | The kickoff    | At least two questions you rewrote, each with the principle behind the rewrite                                 |
+
+5. `## Key improvements` is a kickoff section because it records the Mom Test pass, which is a kickoff requirement.
+   A later meeting's script has the three sections above and nothing more.
+6. The `## Questions` minimum depends on the meeting.
+   At the kickoff, each of the five areas in [Meeting With The Customer](process-requirements.md#meeting-with-the-customer) has at least two questions.
+   A later meeting derives its own areas from its target rather than from the five, so it carries as many questions as its target has to settle, and no per-area floor.
+7. `## Key improvements` shows a before and an after for each question, and names the principle that changed it.
+   A section that claims improvement without showing the rewrite is not a section.
+8. The script is preparation, so it is not rewritten after the meeting.
+   What the meeting actually produced is the [meeting report](#meeting-report), which links to the script.
+9. A meeting held asynchronously in writing instead of live still produces a script, but `## Roles` is not one of its sections.
+   A written exchange has no speaking-time floor, and the interviewer is whoever wrote the questions.
+   Record the substitution as a [deviation](#declaring-deviations).
+
+**Recommended**
+
+- Keep it to a page.
+  A script nobody can follow at speaking pace is a document, not a script.
+- Mark the two or three questions that would change the project most if the answer went the other way, so the team asks them even when time runs short.
+
+**Example**
+
+```markdown
+# Kickoff meeting script
+
+## Context
+
+Our problem-space sentence: a platform engineer whose company sends marked source code to external model providers needs the code's own classification to follow the request, and no product lets them set that.
+
+We believe this is the gap our product targets, and that it is worth two months of work.
+We have not checked whether teams this size hit it, and we do not know whether the customer will accept a plugin-first product rather than a hosted one.
+This meeting tests both.
+
+## Questions
+
+**Business goals**
+
+1. _(open)_ What made you decide to build something rather than buy something?
+2. _(open)_ When this works, what is different about your work?
+
+**End users**
+
+3. _(open)_ Who writes the code that gets sent, and who reviews what comes back?
+4. _(closed)_ Is the reviewer the same person as the author?
+
+**Current workflow**
+
+5. _(open)_ Walk me through the last time a marked file went to an external model.
+   What happened at each step?
+6. _(open)_ Where does the classification of "marked" actually live in your setup today?
+
+**Pain points and constraints**
+
+7. _(open)_ What is the most annoying part of the last time you did this?
+8. _(closed)_ Can anything be sent without a human reading it first?
+
+**Scope**
+
+9. _(open)_ If we could only ship one of these, which one would you keep?
+10. _(closed)_ Is a hosted deployment acceptable to you, or does it have to run inside your network?
+
+## Roles
+
+alice asks, bob takes notes, carol observes and records what we did not ask.
+
+## Key improvements
+
+**"Would you like a dashboard?" -> "What do you look at when you want to know what an external model did with our code?"**
+
+We were offering a solution.
+The rewrite asks for the past, so the answer describes a real routine instead of a preference for our idea.
+
+**"Is latency important to you?" -> "When the round trip got slow last month, what did you do?"**
+
+The original asks about an abstract property.
+The rewrite anchors it to an event the customer will remember, so the answer is a measurement rather than a preference.
+```
 
 ## Screenshot Evidence
 
@@ -420,7 +530,7 @@ A screenshot with no explanation is not evidence.
    This is a valid answer and costs you nothing.
 
 The course allows AI tools.
-See [the course rules](../rules.md#ai-tools).
+See [the course rules](../course/rules.md#ai-tools).
 The report exists so a reader can tell your own work from generated text, not to catch you using tools.
 
 **Example**
@@ -485,8 +595,8 @@ The following artifacts are introduced in later weeks.
 Their shared structure belongs here, not in the assignment that first requires them.
 Each assignment states the path and the week-specific evidence.
 
-- Customer meeting reports, transcripts, and notes for the meetings held in Weeks 2 and 3.
-  They follow the same structure as the Week 1 kickoff artifacts.
+- Customer meeting reports, transcripts, notes, and meeting scripts for the meetings you hold after the kickoff.
+  They follow the same structure as the Week 1 kickoff artifacts, and the same rules for every meeting in [Meeting With The Customer](process-requirements.md#meeting-with-the-customer).
   See [Customer Meeting Artifacts](#customer-meeting-artifacts).
 - Prototypes and the product vision from Week 3.
 - Quality requirements, the verification plan, the threshold of success, and architecture documentation from Week 4.

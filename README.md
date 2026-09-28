@@ -4,7 +4,7 @@ Materials for the **IT Product Development (ITPD)** course: what the course expe
 
 ## Start Here
 
-1. **[Course rules](rules.md)** — read this first.
+1. **[Course rules](course/rules.md)** — read this first.
    What is public, what is private, deadlines, AI policy.
    One page.
 2. **[Assignment 1](assignments/assignment-1.md)** — this week's work.
@@ -37,6 +37,17 @@ How to actually do the work.
 | -------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
 | [Researching alternatives](guides/alternatives-research.md)                | Finding your set, choosing properties, evaluating consistently, capturing evidence |
 | [From comparison to value proposition](guides/comparison-and-synthesis.md) | Building the table, finding the gaps, writing the proposition and your assumptions |
+| [The kickoff interview](guides/customer-interview.md)                      | The five areas, the Mom Test pass, and the meeting roles                           |
+
+## Course Documents
+
+Reference material from the course.
+Neither is a rule you can deviate from, so both live here rather than in `requirements/`.
+
+| Document                                           | What it covers                                                   |
+| -------------------------------------------------- | ---------------------------------------------------------------- |
+| [Syllabus](course/syllabus.md)                     | Weeks, dates, deliverables, grading weights, and course policies |
+| [Teams and projects](course/teams-and-projects.md) | Team numbers and their projects for the current term             |
 
 ## How Your Repository Is Organised
 

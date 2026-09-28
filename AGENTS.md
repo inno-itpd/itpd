@@ -6,17 +6,19 @@ Operating instructions for coding agents maintaining the student-facing course m
 
 ### Maintained Here
 
-| File                                      | Owns                                                                                                                                          |
-| ----------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
-| `README.md`                               | Student entry point and routing. Nothing else.                                                                                                |
-| `syllabus.md`                             | The student-facing schedule: week-by-week focus, dates, and submission deadlines. The only place the course schedule is stated.               |
-| `rules.md`                                | The course contract: public vs private, hygiene, AI policy, deadlines, submission channel. Short, and a router rather than a second rulebook. |
-| `requirements/artifact-requirements.md`   | Artifact semantics, the `reports/week-NN/` vs `docs/` split, visibility, recurring artifact structures.                                       |
-| `requirements/process-requirements.md`    | What the product work means: alternatives, properties, gaps, value propositions, identifier and traceability rules.                           |
-| `requirements/repository-requirements.md` | Repository and platform mechanics: GitHub, pull requests, branch protection, link checking, permalinks, snapshots, changelog, CI.             |
-| `guides/alternatives-research.md`         | Method for finding and evaluating alternatives. Explanatory, not normative.                                                                   |
-| `guides/comparison-and-synthesis.md`      | Method for building the comparison, finding gaps, writing the value proposition. Explanatory, not normative.                                  |
-| `assignments/assignment-N.md`             | Learner-facing requirements for one week. Deltas, paths, and evidence only.                                                                   |
+| File                                      | Owns                                                                                                                                                          |
+| ----------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `README.md`                               | Student entry point and routing. Nothing else.                                                                                                                |
+| `course/syllabus.md`                      | The student-facing schedule: week-by-week focus, dates, and submission deadlines. A formatted copy of the instructors syllabus, not a second source of truth. |
+| `course/rules.md`                         | The course contract: public vs private, hygiene, AI policy, deadlines, submission channel. Short, and a router rather than a second rulebook.                 |
+| `course/teams-and-projects.md`            | Which team number works on which project. Regenerated each term, and a repeated project name is not an error because two teams may share a project name.      |
+| `requirements/artifact-requirements.md`   | Artifact semantics, the `reports/week-NN/` vs `docs/` split, visibility, recurring artifact structures.                                                       |
+| `requirements/process-requirements.md`    | What the product work means: alternatives, properties, gaps, value propositions, identifier and traceability rules.                                           |
+| `requirements/repository-requirements.md` | Repository and platform mechanics: GitHub, pull requests, branch protection, link checking, permalinks, snapshots, changelog, CI.                             |
+| `guides/alternatives-research.md`         | Method for finding and evaluating alternatives. Explanatory, not normative.                                                                                   |
+| `guides/comparison-and-synthesis.md`      | Method for building the comparison, finding gaps, writing the value proposition. Explanatory, not normative.                                                  |
+| `guides/customer-interview.md`            | Method for the kickoff: the five areas, the Mom Test pass, and meeting roles. Explanatory, not normative.                                                     |
+| `assignments/assignment-N.md`             | Learner-facing requirements for one week. Deltas, paths, and evidence only.                                                                                   |
 
 ### Tooling
 
@@ -35,8 +37,8 @@ Run `npm run format:markdown` before committing.
 
 Their fixtures run with `npm run test:markdown-format` and `npm run test:markdown-rules`, and all four gates run in CI on every pull request.
 `eslint.config.ts` enables the `eslint-markdown` `recommended` set, which lints the same GFM AST as `@eslint/markdown` and so adds rules without a second parse.
-Two of its rules are off because they conflict with the house style: `md/no-irregular-dash`, because `syllabus.md` carries the instructor's en and em dashes and the guides use them deliberately, and `md/code-lang-shorthand`, because it rewrites the `markdown`, `text`, and `yaml` fence labels in `requirements/` and `guides/` to their shorthand forms.
-The `markdown/*` built-in rules other than `no-html` are not enabled, because `markdown/no-missing-label-refs` reports the `> [!NOTE]` and `> [!IMPORTANT]` blockquote alerts in `syllabus.md` as undefined label references.
+Two of its rules are off because they conflict with the house style: `md/no-irregular-dash`, because `course/syllabus.md` carries the instructor's en and em dashes and the guides use them deliberately, and `md/code-lang-shorthand`, because it rewrites the `markdown`, `text`, and `yaml` fence labels in `requirements/` and `guides/` to their shorthand forms.
+The `markdown/*` built-in rules other than `no-html` are not enabled, because `markdown/no-missing-label-refs` reports the `> [!NOTE]` and `> [!IMPORTANT]` blockquote alerts in `course/syllabus.md` as undefined label references.
 `markdown/no-html` runs with `allowed: ['h2']`, so raw HTML is rejected except for the `<h2 id="...">` anchors that carry the stable permalinks `requirements/repository-requirements.md` requires.
 `.vscode/settings.json` lints Markdown in the editor, so the sentence, `no-html`, and `md/*` rules report while you write, and it enables format-on-save through `esbenp.prettier-vscode` so editor formatting picks up the local `sentences-per-line` plugin rather than a bundled one.
 Editor diagnostics are advisory; the commands above are the gates.
@@ -52,28 +54,31 @@ Four layers, strictly ordered.
 Each layer links down; none of them restates what is below.
 
 ```text
-assignments/   what this week requires        (deltas only)
-guides/        how to do the work              (explanatory)
-requirements/  the rules                       (normative, authoritative)
-rules.md       the contract and the router     (short, links into requirements/)
+assignments/    what this week requires        (deltas only)
+guides/         how to do the work              (explanatory)
+requirements/   the rules                       (normative, authoritative)
+course/rules.md the contract and the router     (short, links into requirements/)
 ```
+
+The other two files in `course/` are reference material and are deliberately not layers: `course/syllabus.md` and `course/teams-and-projects.md` are the instructor's, and `course/rules.md` links to the syllabus rather than copying it.
 
 1. When a rule already exists in `requirements/`, an assignment points at it and states only the week-specific addition or a stricter minimum.
 2. A guide shows the method.
    It does not define requirements, and it links to the requirement rather than repeating it.
-3. `rules.md` states the student-facing contract and links into `requirements/`.
-   If `rules.md` and a requirements file disagree, fix `rules.md`.
+3. `course/rules.md` states the student-facing contract and links into `requirements/`.
+   If `course/rules.md` and a requirements file disagree, fix `course/rules.md`.
 4. Normative text uses `Required` / `Recommended` / `Example` labels so an example is never mistaken for a rule.
 
 ## Conventions
 
 - **Filenames** are kebab-case: `assignment-1.md`, `artifact-requirements.md`.
 - **Weeks** are zero-padded: `reports/week-01/`, through `reports/week-09/`.
-- **Identifiers** are zero-padded and stable: `ALT-01`, `GAP-01`, `VP-01`, `US-01`, `Q-01` for quality goals, `U-01` for usability tasks.
+- **Identifiers** are zero-padded and stable: `ALT-01`, `GAP-01`, `VP-01` are the Week 1 families.
+  `US-01` for user stories, `Q-01` for quality goals, and `U-01` for usability tasks are introduced by the assignment that creates them, in W3, W4, and W7.
   IDs are never renumbered or reused, including in example text.
 - **Headings** are Title Case in requirements files and sentence case in guides and assignments.
-- **Applicability markers**: artifact and process semantics carry inline `**Since: W1**` / `**Since: W2**` markers inside a concept-first section.
-  Repository mechanics are grouped under `## Required Starting Week N` headings, because repository mechanics arrive as whole blocks rather than as individual refinements.
+- **Applicability markers**: all three requirements files carry inline `**Since: WN**` markers, so a section can hold requirements that begin in different weeks.
+  To move a requirement to another week, change its own marker and leave the section where it is.
 - **Links** between files in this directory are relative Markdown links, and point at a heading anchor when they refer to a specific rule.
 - Prose is plain and specific.
   No filler, no hedging, no restating a rule that already lives in a linked file.
@@ -107,6 +112,7 @@ A later assignment may extend this map, but should not silently move an entry.
 | W3   | `docs/product-vision.md`, `docs/user-stories.md`, `docs/prototypes/`; `CHANGELOG.md`; SemVer tags begin           |
 | W4   | `docs/quality-requirements.md`, `docs/verification-plan.md`, `docs/threshold-of-success.md`, `docs/architecture/` |
 | W5   | `docs/testing.md`, `docs/deployment.md`                                                                           |
+| W6   | `docs/analytics.md` — provisional, to be confirmed when the W6 assignment is written                              |
 | W7   | `docs/usability-testing.md`                                                                                       |
 | W8   | `docs/configuration-management.md`                                                                                |
 | W9   | `docs/reflection.md`                                                                                              |
@@ -115,13 +121,17 @@ Weekly reports live at `reports/week-NN/README.md` in every week, and the Moodle
 Meeting artifacts live at `reports/week-NN/meeting-report.md`, plus a `meeting-transcript.md` or a `meeting-notes.md` beside it.
 That shape is fixed; do not redesign it per week.
 
+Week 1 adds two more files beside them, both evidence rather than maintained documentation: `meeting-script.md` and `candidate-list.md`.
+They exist only because Week 1 is the week where the customer meeting and the alternatives search happen.
+Later weeks that meet the customer write the script again for that week's meeting, and later weeks that need another alternative add to the comparison rather than reopening the search.
+
 ## Assignment Authoring Checklist
 
 Before writing or editing an assignment:
 
-1. Read `rules.md` and the three requirements files.
+1. Read `course/rules.md` and the three requirements files.
    Check whether the rule you are about to write already exists there.
-2. Write the delta, not the rule. "Complete all requirements under **Required Starting Week 3** in `requirements/repository-requirements.md`", plus what this week specifically adds.
+2. Write the delta, not the rule. "Complete every requirement marked `**Since: W3**` in `requirements/repository-requirements.md`", plus what this week specifically adds.
 3. Give the concrete paths and the week-specific minima: how many items, which IDs, which fields.
 4. Give the week report contents as a list of links, not as prose describing what is in each linked file.
 5. Give the Moodle wrapper contents as a list, including the private-only items for that week.
@@ -135,11 +145,16 @@ Before writing or editing an assignment:
 
 Use these words and do not invent local synonyms:
 
-`weekly report`, `weekly public report`, `supporting artifact`, `private-only artifact`, `external-but-indexed artifact`, `repository-resident artifact`, `deviation`, `customer` (never "client" or "stakeholder" when you mean the instructor), `kickoff meeting`, `meeting report`, `meeting transcript`, `meeting notes`, `decision`, `action point`, `open question`, `alternative`, `property`, `gap`, `value proposition`, `threshold of success`, `minimum usable product` (MUP), `minimum viable product` (MVP), `team number`.
+`weekly report`, `weekly public report`, `supporting artifact`, `private-only artifact`, `external-but-indexed artifact`, `repository-resident artifact`, `deviation`, `customer`, `kickoff meeting`, `meeting report`, `meeting transcript`, `meeting notes`, `meeting script`, `decision`, `action point`, `open question`, `alternative`, `property`, `gap`, `value proposition`, `threshold of success`, `minimum usable product` (MUP), `minimum viable product` (MVP), `team number`.
+
+"Customer" is the term for the person your team answers to, who is your instructor.
+Never "client" or "stakeholder" for them.
+In artifacts, the label is `Customer`, not a real name.
+The word "instructor" is allowed in prose explaining who the customer is, and nowhere else.
 
 Meeting decisions and action points are **not** identifier families.
 There is no `DEC-nn` or `ACT-nn`.
-A later week cites a meeting report by path and heading anchor, an action point is carried out by a tracked issue, and the identifier families stay `ALT-nn`, `GAP-nn`, `VP-nn`, and `US-nn`.
+A later week cites a meeting report by path and heading anchor, an action point is carried out by a tracked issue, and the identifier families stay the ones their own week introduces.
 
 Note that ITPD has no Scrum.
 Do not import Sprint, Product Backlog, PBI, or user-story ceremony from the `swp_26/` materials. `docs/user-stories.md` in W3 is user stories in the plain product sense.
@@ -148,9 +163,10 @@ Do not import Sprint, Product Backlog, PBI, or user-story ceremony from the `swp
 
 - Do not restate a rule from `requirements/` inside an assignment.
 - Do not make a requirement file into a guide or a guide into a requirement.
-- Do not add a rule to `rules.md` that is not stated in `requirements/`.
+- Do not add a rule to `course/rules.md` that is not stated in `requirements/`.
 - Do not create files under `docs/` or `reports/` in this directory.
   Those paths belong to student repositories.
 - Do not copy the `swp_26/` promotion convention, its artifact-type vocabulary, or its GitLab support into these materials.
-- Do not restate the syllabus's late-submission, attendance, or weighting policy in an assignment, a guide, or `rules.md`.
-  Link `syllabus.md`.
+- Do not restate the syllabus's late-submission, attendance, or weighting policy in an assignment, a guide, or `course/rules.md`.
+  Link `course/syllabus.md`.
+  The one exception is the soft/hard deadline pair, which `course/rules.md` states once so that no assignment has to invent its own dates.

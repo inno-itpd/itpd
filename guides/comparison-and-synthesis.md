@@ -1,7 +1,9 @@
 # Guide: From Comparison To Value Proposition
 
 How to turn the alternatives into a comparison, gaps, and a value proposition.
-The rules are in [Process Requirements](../requirements/process-requirements.md); this guide is the method, with a worked shape for each step.
+
+The rules are in [Process Requirements](../requirements/process-requirements.md#properties-and-comparison) and [Gap Analysis](../requirements/process-requirements.md#gap-analysis).
+This guide is the method, with a worked shape for each step.
 
 **Timebox:** about a day.
 Most of it is arguing about whether the table is honest, which is time well spent.
@@ -11,8 +13,8 @@ Most of it is arguing about whether the table is honest, which is time well spen
 - [What You Produce](#what-you-produce)
 - [Step 1: Freeze The Property Set](#step-1-freeze-the-property-set)
 - [Step 2: Fill The Table](#step-2-fill-the-table)
-- [Step 3: Read The Table For Patterns](#step-3-read-the-table-for-patterns)
-- [Step 4: Turn Patterns Into Gaps](#step-4-turn-patterns-into-gaps)
+- [Step 3: Read The Table As A Whole](#step-3-read-the-table-as-a-whole)
+- [Step 4: Find The Gaps](#step-4-find-the-gaps)
 - [Step 5: Write The Value Proposition](#step-5-write-the-value-proposition)
 - [Step 6: Write Down What You Are Assuming](#step-6-write-down-what-you-are-assuming)
 - [Common Mistakes](#common-mistakes)
@@ -36,7 +38,7 @@ If you genuinely missed a property, add it and go back and fill that column ever
 Rows are properties, columns are alternatives, cells are your analysis.
 Fill it property by property, not product by product: doing one whole row at a time keeps your standard consistent, while going product by product makes later cells drift into copying earlier ones.
 
-**A cell that works:**
+**A row that works:**
 
 ```markdown
 | Can a team attach redaction rules to specific marked regions of its own code? | No.
@@ -47,7 +49,7 @@ Per-tenant config files exist, but the rule applies to a tenant's traffic, not t
 
 It says what the product does, cites the `ALT-nn` it came from, and lets the reader check.
 
-**A cell that does not:**
+**A row that does not:**
 
 ```markdown
 | Redaction | Good | Missing | Basic |
@@ -62,9 +64,9 @@ Two habits that make the table honest:
 - **Make strengths relative.** "No audit log" is a serious weakness for a gateway that routes a company's source code, and irrelevant for a running app.
   State the condition that makes it matter, or you will be told you are wrong by someone who is right.
 
-## Step 3: Read The Table For Patterns
+## Step 3: Read The Table As A Whole
 
-Now read it as a whole, rather than row by row.
+Read it as a whole, rather than row by row.
 
 - **Read down a column** to see how strong the strongest product is.
   That is your real competition, and it is the bar.
@@ -73,11 +75,15 @@ Now read it as a whole, rather than row by row.
 - **Look for the diagonal.**
   If one product is strong on everything, you have found the incumbent to beat, and you should say plainly how you plan to beat it.
 
-Write down three to five candidate patterns before you judge any of them.
+Write down three to five candidates before you judge any of them.
 
-## Step 4: Turn Patterns Into Gaps
+A candidate is worth writing down when you can name it in a sentence that a reader could dispute.
+"Nobody is good at X" is one.
+"Most of these products feel unfinished" is not, because you cannot argue with it and you cannot check it.
 
-A pattern is not yet a gap.
+## Step 4: Find The Gaps
+
+What you see in the table is not yet a need.
 Each candidate has to pass all four tests from [Process Requirements](../requirements/process-requirements.md#gap-analysis): someone needs it, the alternatives do not serve it, it is reachable, and a team of three or four could build it in this course.
 
 The fourth test does most of the work.
