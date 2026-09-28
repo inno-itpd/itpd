@@ -34,7 +34,6 @@ Run `npm run format:markdown` before committing.
 | `.github/workflows/markdown.yml`          | CI: the format check, the lint, and both plugin fixtures, as three separate jobs.                                              |
 
 Their fixtures run with `npm run test:markdown-format` and `npm run test:markdown-rules`, and all four gates run in CI on every pull request.
-Both plugins are shared verbatim with `../timeful`, so a change to either belongs in both repositories.
 `eslint.config.ts` enables the `eslint-markdown` `recommended` set, which lints the same GFM AST as `@eslint/markdown` and so adds rules without a second parse.
 Two of its rules are off because they conflict with the house style: `md/no-irregular-dash`, because `syllabus.md` carries the instructor's en and em dashes and the guides use them deliberately, and `md/code-lang-shorthand`, because it rewrites the `markdown`, `text`, and `yaml` fence labels in `requirements/` and `guides/` to their shorthand forms.
 The `markdown/*` built-in rules other than `no-html` are not enabled, because `markdown/no-missing-label-refs` reports the `> [!NOTE]` and `> [!IMPORTANT]` blockquote alerts in `syllabus.md` as undefined label references.
@@ -44,10 +43,6 @@ Editor diagnostics are advisory; the commands above are the gates.
 
 ### Maintained Elsewhere
 
-- `../itpd-instructors/syllabus.md` is the authoritative course schedule, deadlines, weighting, and policy.
-  The local `syllabus.md` is the same content reformatted so it passes the Markdown gates, so edit the source and copy the result rather than editing the local copy.
-  Apart from `syllabus.md` itself, the materials here must not restate the late-submission or attendance policy, only link to it.
-- `../backlog.md` is the working list for this directory.
 - The `docs/` destination map below describes artifacts in **student** repositories.
   Those files do not exist here and must not be created here.
 
