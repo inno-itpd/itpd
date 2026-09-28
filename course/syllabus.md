@@ -108,7 +108,7 @@ The first two weeks establish the project foundations, team formation, and compe
 
 - **Class 2 (Oct 2)**:
   - **Lecture**: **Project Planning** (tactical and strategic planning, estimation, tracking progress, risk management).
-  - **Workshop & Feedback**: Instructor and mentor feedback on Week 1 initial research, alignment on scope, and refinement of product requirements.
+  - **Workshop & Feedback**: Instructor feedback on Week 1 initial research, alignment on scope, and refinement of product requirements.
 - **Submission 2 (Team Deliverables - Due Oct 8, 23:59)**:
   - **Deliverables**:
     1. Project work plan (milestone schedule, task breakdown), maintained in the repository.
@@ -230,7 +230,7 @@ The first two weeks establish the project foundations, team formation, and compe
 - **Class 11 (Dec 4) / Final Exam**:
   - **Final Exam Format**: **Group Presentations of the Projects**.
   - Project teams deliver comprehensive project presentations and live software demonstrations, including architectural defense, followed by formal Q&A.
-  - Multi-perspective evaluation (instructor, mentor, and peer grading).
+  - Multi-perspective evaluation (instructor and peer grading).
   - Conclusion of the 11-week course lifecycle.
 - **Submission 10 (Individual Deliverable - Due Dec 10, 23:59)**:
   - **Individual Reflection & Peer Evaluation**: Each student submits a personal reflection on their contributions to the project and a peer evaluation rating their teammates' contributions.
@@ -259,7 +259,7 @@ The course evaluation consists of **9 group submissions**, **1 individual reflec
 | **9**  | **Submission 9**     | Week 9     | **Group**      | Nov 26, 23:59   | **Final Project Submission** (final presentation deck, usability test results & findings, project reflection report, repository code freeze)                                      |    Group (7%)    |
 | **—**  | _Review Class_       | Week 10    | _Cohort_       | Nov 27 in class | Course retrospective and final exam demo preparation _(no submission due)_                                                                                                        |        —         |
 | **—**  | **Class Attendance** | Weeks 1–11 | **Individual** | Ongoing         | Active in-class presence, workshop participation, and collaboration across all weekly sessions                                                                                    | Individual (10%) |
-| **10** | **Final Exam**       | Week 11    | **Group**      | Dec 4 in class  | **Group Project Presentations** (live software demos, architectural defense, peer/mentor evaluation)                                                                              | Final Exam (20%) |
+| **10** | **Final Exam**       | Week 11    | **Group**      | Dec 4 in class  | **Group Project Presentations** (live software demos, architectural defense, peer evaluation)                                                                              | Final Exam (20%) |
 | **11** | **Submission 10**    | Week 11    | **Individual** | Dec 10, 23:59   | **Individual Reflection & Peer Evaluation** (personal reflection on contributions, peer evaluation of teammates) — _available only if the group delivered the final presentation_ | Individual (7%)  |
 
 ### Assessment Counts & Components
