@@ -1,4 +1,5 @@
 import markdown from '@eslint/markdown'
+import md from 'eslint-markdown'
 import sentencesPerLine from 'eslint-plugin-sentences-per-line'
 import noSplitSentence from './eslint/markdown/no-split-sentence.js'
 
@@ -8,6 +9,7 @@ export default [
     ignores: ['.opencode/**', '.agents/**'],
     plugins: {
       markdown,
+      md,
       'sentences-per-line': sentencesPerLine,
       local: {
         rules: {
@@ -20,6 +22,9 @@ export default [
       frontmatter: 'yaml',
     },
     rules: {
+      ...md.configs.recommended.rules,
+      'md/code-lang-shorthand': 'off',
+      'md/no-irregular-dash': 'off',
       'sentences-per-line/one': 'error',
       'local/no-split-sentence': 'off',
       'markdown/no-html': ['error', { allowed: ['h2'] }],
