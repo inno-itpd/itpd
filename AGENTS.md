@@ -60,7 +60,7 @@ requirements/   the rules                       (normative, authoritative)
 course/rules.md the contract and the router     (short, links into requirements/)
 ```
 
-The other two files in `course/` are reference material and are deliberately not layers: `course/syllabus.md` and `course/teams-and-projects.md` are the instructor's, and `rules.md` links to the syllabus rather than copying it.
+The other two files in `course/` are reference material and are deliberately not layers: `course/syllabus.md` and `course/teams-and-projects.md` are the instructor's, and `course/rules.md` links to the syllabus rather than copying it.
 
 1. When a rule already exists in `requirements/`, an assignment points at it and states only the week-specific addition or a stricter minimum.
 2. A guide shows the method.
