@@ -57,8 +57,8 @@ They are the rules; this assignment only tells you what this week requires.
 2. Choose one project from the course catalog.
 3. Note your team number and project name.
    Both go in your week report and your Moodle submission.
-4. Create a GitHub organization.
-5. Create a repository in the organization.
+4. Create a GitHub organization, with your team number in the organization name.
+5. Create a repository in that organization, with your team number in the repository name.
 6. In the repository, invite every team member as a collaborator with write access.
 
 ## Part 2: Set Up The Repository
@@ -66,7 +66,7 @@ They are the rules; this assignment only tells you what this week requires.
 Complete all requirements under **Required Starting Week 1** in [Repository Requirements](../requirements/repository-requirements.md#required-starting-week-1).
 In short, this week you must have:
 
-1. A **public** repository in the course organization, with `main` as the default branch and all members as collaborators.
+1. A **public** repository in the team's own organization, with `main` as the default branch and all members as collaborators.
 2. `LICENSE` with the MIT License text, and a `.gitignore` covering editor state, OS files, `.env` and other secrets, and build output.
 3. A root `README.md` meeting the [minimum contents](../requirements/repository-requirements.md#root-readme).
 4. `main` **protected**: pull requests required, at least one approval, no self-approval.
@@ -251,7 +251,7 @@ See [Permalinks And Snapshots](../requirements/repository-requirements.md#permal
 ## Checklist
 
 - [ ] Team of 3 or 4, project chosen, team number known.
-- [ ] Public repository in the course organization, all members collaborators, `main` default.
+- [ ] Public repository in the team's own organization, all members collaborators, `main` default.
 - [ ] `LICENSE`, `.gitignore`, root `README.md`.
 - [ ] `main` protected: pull requests required, one approval, no self-approval.
       Screenshot saved.
