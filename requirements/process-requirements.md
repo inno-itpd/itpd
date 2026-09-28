@@ -305,7 +305,7 @@ A later meeting settles one thing or two, and the rules below are enough to prep
    An improvement you cannot show is not an improvement.
 5. If a live meeting is impossible, do the alignment asynchronously in writing with the customer.
    Timestamp the written exchange as the notes, record a voice or screen note if there is one, and state the substitution in the weekly public report as a deviation.
-   The rules below still apply, except the role split and the length: a written exchange has no speaking-time floor, and the interviewer is whoever wrote the questions.
+   The rules below still apply, except the role split and the length, per [Meeting Script](artifact-requirements.md#meeting-script).
 
 **Required for every meeting**
 

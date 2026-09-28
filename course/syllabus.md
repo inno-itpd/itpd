@@ -91,7 +91,7 @@ The first two weeks establish the project foundations, team formation, and compe
   See [Repository Requirements](../requirements/repository-requirements.md).
 - **Customer Kickoff (during Week 1)**: Each team holds one kickoff meeting with its instructor, who acts as the customer.
   The team presents its reading of the problem and its proposed direction.
-  The team prepares a meeting script in advance, covering business goals, end users, the current workflow, pain points and constraints, and scope, and improves it against [The Mom Test](https://hatrabbits.com/en/the-mom-test/).
+  The team prepares a meeting script in advance, covering business goals, end users, the current workflow, pain points and constraints, and scope, and improves it against [The Mom Test](https://www.koji.so/docs/mom-test-methodology).
   The team asks for permission before recording; the recording stays private and is linked from the Moodle submission, while a sanitized transcript is committed to the repository.
 - **Submission 1 (Team Deliverable - Due Oct 1, 23:59)**:
   - **Initial Project Research Report**:

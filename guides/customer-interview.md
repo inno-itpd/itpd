@@ -70,7 +70,7 @@ The tag is what you check the question against in Step 3, so do it as you write 
 
 ## Step 3: Break Your Own Questions With The Mom Test
 
-[Read the three rules first](https://hatrabbits.com/en/the-mom-test/).
+[Read the three rules first](https://www.koji.so/docs/mom-test-methodology).
 
 1. **Talk about their life, not your idea.**
 2. **Ask about specifics in the past, not opinions about the future.**

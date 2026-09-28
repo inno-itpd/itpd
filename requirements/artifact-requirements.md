@@ -414,11 +414,16 @@ A recording is a separate, private-only artifact.
 
 5. `## Key improvements` is a kickoff section because it records the Mom Test pass, which is a kickoff requirement.
    A later meeting's script has the three sections above and nothing more.
-6. `## Questions` has at least two questions per area, and the areas are the ones [Meeting With The Customer](process-requirements.md#meeting-with-the-customer) requires for that kind of meeting: the five areas at the kickoff, and whatever the meeting has to settle later.
+6. The `## Questions` minimum depends on the meeting.
+   At the kickoff, each of the five areas in [Meeting With The Customer](process-requirements.md#meeting-with-the-customer) has at least two questions.
+   A later meeting derives its own areas from its target rather than from the five, so it carries as many questions as its target has to settle, and no per-area floor.
 7. `## Key improvements` shows a before and an after for each question, and names the principle that changed it.
    A section that claims improvement without showing the rewrite is not a section.
 8. The script is preparation, so it is not rewritten after the meeting.
    What the meeting actually produced is the [meeting report](#meeting-report), which links to the script.
+9. A meeting held asynchronously in writing instead of live still produces a script, but `## Roles` is not one of its sections.
+   A written exchange has no speaking-time floor, and the interviewer is whoever wrote the questions.
+   Record the substitution as a [deviation](#declaring-deviations).
 
 **Recommended**
 

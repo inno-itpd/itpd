@@ -131,7 +131,7 @@ Before writing or editing an assignment:
 
 1. Read `course/rules.md` and the three requirements files.
    Check whether the rule you are about to write already exists there.
-2. Write the delta, not the rule. "Complete all requirements under **Required Starting Week 3** in `requirements/repository-requirements.md`", plus what this week specifically adds.
+2. Write the delta, not the rule. "Complete every requirement marked `**Since: W3**` in `requirements/repository-requirements.md`", plus what this week specifically adds.
 3. Give the concrete paths and the week-specific minima: how many items, which IDs, which fields.
 4. Give the week report contents as a list of links, not as prose describing what is in each linked file.
 5. Give the Moodle wrapper contents as a list, including the private-only items for that week.
