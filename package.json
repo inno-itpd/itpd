@@ -2,8 +2,9 @@
   "name": "itpd-markdown-tooling",
   "private": true,
   "type": "module",
+  "packageManager": "pnpm@12.3.4",
   "engines": {
-    "node": "^22.12.0 || ^24.0.0 || >=26.0.0"
+    "node": "^26.0.0"
   },
   "scripts": {
     "fmt": "oxfmt scripts prettier eslint eslint.config.ts",

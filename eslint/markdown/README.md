@@ -27,7 +27,7 @@ A boundary stays unfixed while still reporting when its tail ends with a hyphen,
 
 ## Running the fixtures
 
-Run `npm run test:markdown-rules` at the repository root to execute the fixture suite.
+Run `pnpm run test:markdown-rules` at the repository root to execute the fixture suite.
 
 ## Future enablement
 

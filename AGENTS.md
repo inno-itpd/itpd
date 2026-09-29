@@ -23,25 +23,50 @@ Operating instructions for coding agents maintaining the student-facing course m
 ### Tooling
 
 Markdown in this directory is formatted and linted from Node.
-Run `npm run format:markdown` before committing.
-`npm run format:markdown:check` and `npm run lint:markdown` are the gates.
+The toolchain is pinned: Node 26 and pnpm, both from `flake.nix`.
+Run `pnpm run format:markdown` before committing.
+`pnpm run format:markdown:check` and `pnpm run lint:markdown` are the gates.
 
-| File                                      | Owns                                                                                                                           |
-| ----------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
-| `scripts/markdown.mjs`                    | Formats, checks, and lints every tracked `.md` file except `.opencode/` and `.agents/`.                                        |
-| `prettier/markdown/sentences-per-line.js` | Formatter plugin: one sentence per line, and table rows left on one physical line.                                             |
-| `eslint/markdown/no-split-sentence.js`    | Lint rule for a sentence split across two lines. Registered but off, so it reports nothing.                                    |
-| `eslint.config.ts`                        | Lint rules for Markdown. `@eslint/markdown` for the GFM language, `eslint-markdown` for its rules, plus the two local plugins. |
-| `.vscode/tasks.json`                      | Editor tasks for the same two commands.                                                                                        |
-| `.github/workflows/markdown.yml`          | CI: the format check, the lint, and both plugin fixtures, as three separate jobs.                                              |
+| File                                      | Owns                                                                                                                                     |
+| ----------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| `flake.nix`                               | The pinned development shell: Node 26, pnpm, typst, the `backlog` CLI, and ripgrep.                                                      |
+| `.envrc`                                  | `use flake`, so `direnv` loads the shell on entering the directory.                                                                      |
+| `scripts/markdown.mjs`                    | Formats, checks, and lints every tracked `.md` file except `.opencode/`, `.agents/`, and `backlog/`.                                     |
+| `prettier/markdown/sentences-per-line.js` | Formatter plugin: one sentence per line, and table rows left on one physical line.                                                       |
+| `eslint/markdown/no-split-sentence.js`    | Lint rule for a sentence split across two lines. Registered but off, so it reports nothing.                                              |
+| `eslint.config.ts`                        | Lint rules for Markdown. `@eslint/markdown` for the GFM language, `eslint-markdown` for its rules, plus the two local plugins.           |
+| `.vscode/tasks.json`                      | Editor tasks for the same two commands.                                                                                                  |
+| `.github/actions/prepare/action.yml`      | The shared CI setup: pnpm, Node 26, and a frozen-lockfile install. A job checks out before it, because a local action has to be on disk. |
+| `.github/workflows/markdown.yml`          | CI: the format check, the lint, and both plugin fixtures, as three separate jobs.                                                        |
 
-Their fixtures run with `npm run test:markdown-format` and `npm run test:markdown-rules`, and all four gates run in CI on every pull request.
+Their fixtures run with `pnpm run test:markdown-format` and `pnpm run test:markdown-rules`, and all four gates run in CI on every pull request.
 `eslint.config.ts` enables the `eslint-markdown` `recommended` set, which lints the same GFM AST as `@eslint/markdown` and so adds rules without a second parse.
 Two of its rules are off because they conflict with the house style: `md/no-irregular-dash`, because `course/syllabus.md` carries the instructor's en and em dashes and the guides use them deliberately, and `md/code-lang-shorthand`, because it rewrites the `markdown`, `text`, and `yaml` fence labels in `requirements/` and `guides/` to their shorthand forms.
 The `markdown/*` built-in rules other than `no-html` are not enabled, because `markdown/no-missing-label-refs` reports the `> [!NOTE]` and `> [!IMPORTANT]` blockquote alerts in `course/syllabus.md` as undefined label references.
 `markdown/no-html` runs with `allowed: ['h2']`, so raw HTML is rejected except for the `<h2 id="...">` anchors that carry the stable permalinks `requirements/repository-requirements.md` requires.
 `.vscode/settings.json` lints Markdown in the editor, so the sentence, `no-html`, and `md/*` rules report while you write, and it enables format-on-save through `esbenp.prettier-vscode` so editor formatting picks up the local `sentences-per-line` plugin rather than a bundled one.
 Editor diagnostics are advisory; the commands above are the gates.
+`backlog/` is excluded from both gates because the `backlog` CLI owns those files, and formatting them would fight the next `backlog task edit`.
+
+### Work Tracking
+
+The open work is Backlog tasks, not a file in this directory.
+`backlog/config.yml` is the project, the tasks are in `backlog/tasks/`, and IDs are `TASK-001`, zero-padded to three digits.
+Use the `backlog` CLI for every lifecycle action, and do not hand-edit a task file: the CLI keeps the metadata, the relationships, and the history consistent.
+The CLI has `archive` but no `delete`, so removing a task that was never committed means rebuilding the project rather than leaving an archived file behind.
+`BACKLOG_CWD` is set by the shell hook, so the CLI finds the project from the repository root.
+
+| Command                                 | Use it for                                                                              |
+| --------------------------------------- | --------------------------------------------------------------------------------------- |
+| `backlog task list`                     | What is open, and what is in progress                                                   |
+| `backlog task create "<title>"`         | New work, with `--ac` for the acceptance criteria and `--parent` when it needs a stream |
+| `backlog task view <id>`                | The full task, its criteria, and its notes                                              |
+| `backlog task edit <id> --check-ac <n>` | Satisfying a criterion, adding a plan, and recording what the change was                |
+| `backlog doctor`                        | Duplicate IDs, self-referential dependencies, and cycles                                |
+| `backlog instructions overview`         | The CLI's own workflow, before any task lifecycle action                                |
+
+Run `backlog <command> --help` before an unfamiliar command.
+The `Done` criteria come from `definition_of_done` in `backlog/config.yml`, which is this repository's four Markdown gates.
 
 ### Maintained Elsewhere
 

@@ -16,6 +16,7 @@ const files = execFileSync(
     '*.md',
     ':(exclude).opencode/**',
     ':(exclude).agents/**',
+    ':(exclude)backlog/**',
   ],
   { cwd: root },
 )
@@ -76,7 +77,7 @@ for (const file of files) {
 if (command === 'format:check' && unformattedFiles.length > 0) {
   for (const file of unformattedFiles) console.error(file)
   console.error(
-    `Code style issues found in ${unformattedFiles.length} file(s). Run npm run format:markdown.`,
+    `Code style issues found in ${unformattedFiles.length} file(s). Run pnpm run format:markdown.`,
   )
   process.exitCode = 1
 }
