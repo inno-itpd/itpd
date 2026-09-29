@@ -4,14 +4,14 @@
     {
       "label": "format:markdown",
       "type": "shell",
-      "command": "npm run format:markdown",
+      "command": "pnpm run format:markdown",
       "problemMatcher": [],
       "group": "none"
     },
     {
       "label": "check:markdown",
       "type": "shell",
-      "command": "npm run format:markdown:check && npm run lint:markdown",
+      "command": "pnpm run format:markdown:check && pnpm run lint:markdown",
       "problemMatcher": []
     }
   ]

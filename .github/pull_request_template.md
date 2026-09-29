@@ -15,7 +15,7 @@
 
 - [ ] The layering rule in `AGENTS.md` holds: no restated rules, and each layer links down.
 - [ ] Links and heading anchors in the changed files resolve.
-- [ ] `npm run format:markdown:check` and `npm run lint:markdown` pass.
+- [ ] `pnpm run format:markdown:check` and `pnpm run lint:markdown` pass.
 - [ ] CI is green.
 
 ## Reviewer notes
