@@ -27,17 +27,17 @@ The toolchain is pinned: Node 26 and pnpm, both from `flake.nix`.
 Run `pnpm run format:markdown` before committing.
 `pnpm run format:markdown:check` and `pnpm run lint:markdown` are the gates.
 
-| File                                      | Owns                                                                                                                           |
-| ----------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
-| `flake.nix`                               | The pinned development shell: Node 26, pnpm, typst, the `backlog` CLI, and ripgrep.                                            |
-| `.envrc`                                  | `use flake`, so `direnv` loads the shell on entering the directory.                                                            |
-| `scripts/markdown.mjs`                    | Formats, checks, and lints every tracked `.md` file except `.opencode/`, `.agents/`, and `backlog/`.                           |
-| `prettier/markdown/sentences-per-line.js` | Formatter plugin: one sentence per line, and table rows left on one physical line.                                             |
-| `eslint/markdown/no-split-sentence.js`    | Lint rule for a sentence split across two lines. Registered but off, so it reports nothing.                                    |
-| `eslint.config.ts`                        | Lint rules for Markdown. `@eslint/markdown` for the GFM language, `eslint-markdown` for its rules, plus the two local plugins. |
-| `.vscode/tasks.json`                      | Editor tasks for the same two commands.                                                                                        |
-| `.github/actions/prepare/action.yml`      | The shared CI setup: checkout, pnpm, Node 26, and a frozen-lockfile install.                                                   |
-| `.github/workflows/markdown.yml`          | CI: the format check, the lint, and both plugin fixtures, as three separate jobs.                                              |
+| File                                      | Owns                                                                                                                                     |
+| ----------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| `flake.nix`                               | The pinned development shell: Node 26, pnpm, typst, the `backlog` CLI, and ripgrep.                                                      |
+| `.envrc`                                  | `use flake`, so `direnv` loads the shell on entering the directory.                                                                      |
+| `scripts/markdown.mjs`                    | Formats, checks, and lints every tracked `.md` file except `.opencode/`, `.agents/`, and `backlog/`.                                     |
+| `prettier/markdown/sentences-per-line.js` | Formatter plugin: one sentence per line, and table rows left on one physical line.                                                       |
+| `eslint/markdown/no-split-sentence.js`    | Lint rule for a sentence split across two lines. Registered but off, so it reports nothing.                                              |
+| `eslint.config.ts`                        | Lint rules for Markdown. `@eslint/markdown` for the GFM language, `eslint-markdown` for its rules, plus the two local plugins.           |
+| `.vscode/tasks.json`                      | Editor tasks for the same two commands.                                                                                                  |
+| `.github/actions/prepare/action.yml`      | The shared CI setup: pnpm, Node 26, and a frozen-lockfile install. A job checks out before it, because a local action has to be on disk. |
+| `.github/workflows/markdown.yml`          | CI: the format check, the lint, and both plugin fixtures, as three separate jobs.                                                        |
 
 Their fixtures run with `pnpm run test:markdown-format` and `pnpm run test:markdown-rules`, and all four gates run in CI on every pull request.
 `eslint.config.ts` enables the `eslint-markdown` `recommended` set, which lints the same GFM AST as `@eslint/markdown` and so adds rules without a second parse.
