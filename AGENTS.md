@@ -19,6 +19,7 @@ Operating instructions for coding agents maintaining the student-facing course m
 | `guides/comparison-and-synthesis.md`      | Method for building the comparison, finding gaps, writing the value proposition. Explanatory, not normative.                                                  |
 | `guides/customer-interview.md`            | Method for the kickoff: the five areas, the Mom Test pass, and meeting roles. Explanatory, not normative.                                                     |
 | `assignments/assignment-N.md`             | Learner-facing requirements for one week. Deltas, paths, and evidence only.                                                                                   |
+| `lectures/AGENTS.md`                      | The lecture decks: `lecture-N.typ` sources, their generated PDFs, the build, the layout contract, and the conversion method. Not student-facing.              |
 
 ### Tooling
 
@@ -86,6 +87,9 @@ course/rules.md the contract and the router     (short, links into requirements/
 ```
 
 The other two files in `course/` are reference material and are deliberately not layers: `course/syllabus.md` and `course/teams-and-projects.md` are the instructor's, and `course/rules.md` links to the syllabus rather than copying it.
+
+`lectures/` is also the instructor's and is also not a layer.
+It keeps its own rules in `lectures/AGENTS.md`, so this file states only that the decks exist and what the directory owns.
 
 1. When a rule already exists in `requirements/`, an assignment points at it and states only the week-specific addition or a stricter minimum.
 2. A guide shows the method.
@@ -195,3 +199,5 @@ Do not import Sprint, Product Backlog, PBI, or user-story ceremony from the `swp
 - Do not restate the syllabus's late-submission, attendance, or weighting policy in an assignment, a guide, or `course/rules.md`.
   Link `course/syllabus.md`.
   The one exception is the soft/hard deadline pair, which `course/rules.md` states once so that no assignment has to invent its own dates.
+- Do not hand-edit `lectures/*.pdf` or put a deck rule in this file.
+  Those PDFs are build output, and `lectures/AGENTS.md` owns the decks.
