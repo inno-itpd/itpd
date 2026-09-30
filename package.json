@@ -9,6 +9,8 @@
   "scripts": {
     "fmt": "oxfmt scripts prettier eslint eslint.config.ts",
     "fmt:check": "oxfmt --check scripts prettier eslint eslint.config.ts",
+    "build:lectures": "node scripts/lectures.mjs build",
+    "check:lectures": "node scripts/lectures.mjs check",
     "lint:markdown": "node scripts/markdown.mjs lint",
     "format:markdown": "node scripts/markdown.mjs format",
     "format:markdown:check": "node scripts/markdown.mjs format:check",

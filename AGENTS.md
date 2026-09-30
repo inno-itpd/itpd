@@ -27,18 +27,21 @@ Markdown in this directory is formatted and linted from Node.
 The toolchain is pinned: Node 26 and pnpm, both from `flake.nix`.
 Run `pnpm run format:markdown` before committing.
 `pnpm run format:markdown:check` and `pnpm run lint:markdown` are the gates.
+The decks have their own gate, `pnpm run check:lectures`, and `lectures/AGENTS.md` owns it.
 
 | File                                      | Owns                                                                                                                                     |
 | ----------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
 | `flake.nix`                               | The pinned development shell: Node 26, pnpm, typst, the `backlog` CLI, and ripgrep.                                                      |
 | `.envrc`                                  | `use flake`, so `direnv` loads the shell on entering the directory.                                                                      |
 | `scripts/markdown.mjs`                    | Formats, checks, and lints every tracked `.md` file except `.opencode/`, `.agents/`, and `backlog/`.                                     |
+| `scripts/lectures.mjs`                    | Builds and checks every `lectures/lecture-N.typ` against its committed PDF, with the Typst version and the build epoch pinned.           |
 | `prettier/markdown/sentences-per-line.js` | Formatter plugin: one sentence per line, and table rows left on one physical line.                                                       |
 | `eslint/markdown/no-split-sentence.js`    | Lint rule for a sentence split across two lines. Registered but off, so it reports nothing.                                              |
 | `eslint.config.ts`                        | Lint rules for Markdown. `@eslint/markdown` for the GFM language, `eslint-markdown` for its rules, plus the two local plugins.           |
-| `.vscode/tasks.json`                      | Editor tasks for the same two commands.                                                                                                  |
+| `.vscode/tasks.json`                      | Editor tasks for the same commands.                                                                                                      |
 | `.github/actions/prepare/action.yml`      | The shared CI setup: pnpm, Node 26, and a frozen-lockfile install. A job checks out before it, because a local action has to be on disk. |
 | `.github/workflows/markdown.yml`          | CI: the format check, the lint, and both plugin fixtures, as three separate jobs.                                                        |
+| `.github/workflows/lectures.yml`          | CI: the pinned Typst release with a verified checksum, then the deck check, as one job.                                                  |
 
 Their fixtures run with `pnpm run test:markdown-format` and `pnpm run test:markdown-rules`, and all four gates run in CI on every pull request.
 `eslint.config.ts` enables the `eslint-markdown` `recommended` set, which lints the same GFM AST as `@eslint/markdown` and so adds rules without a second parse.
@@ -67,7 +70,7 @@ The CLI has `archive` but no `delete`, so removing a task that was never committ
 | `backlog instructions overview`         | The CLI's own workflow, before any task lifecycle action                                |
 
 Run `backlog <command> --help` before an unfamiliar command.
-The `Done` criteria come from `definition_of_done` in `backlog/config.yml`, which is this repository's four Markdown gates.
+The `Done` criteria come from `definition_of_done` in `backlog/config.yml`, which is this repository's four Markdown gates and the deck check.
 
 ### Maintained Elsewhere
 
@@ -89,7 +92,7 @@ course/rules.md the contract and the router     (short, links into requirements/
 The other two files in `course/` are reference material and are deliberately not layers: `course/syllabus.md` and `course/teams-and-projects.md` are the instructor's, and `course/rules.md` links to the syllabus rather than copying it.
 
 `lectures/` is also the instructor's and is also not a layer.
-It keeps its own rules in `lectures/AGENTS.md`, so this file states only that the decks exist and what the directory owns.
+It keeps its own rules, its build, and its gate in `lectures/AGENTS.md`; this file names the command and the workflow and leaves the rest there.
 
 1. When a rule already exists in `requirements/`, an assignment points at it and states only the week-specific addition or a stricter minimum.
 2. A guide shows the method.
@@ -200,4 +203,4 @@ Do not import Sprint, Product Backlog, PBI, or user-story ceremony from the `swp
   Link `course/syllabus.md`.
   The one exception is the soft/hard deadline pair, which `course/rules.md` states once so that no assignment has to invent its own dates.
 - Do not hand-edit `lectures/*.pdf` or put a deck rule in this file.
-  Those PDFs are build output, and `lectures/AGENTS.md` owns the decks.
+  Those PDFs are build output from `pnpm run build:lectures`, and `lectures/AGENTS.md` owns the decks.

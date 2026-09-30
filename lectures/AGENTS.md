@@ -20,13 +20,36 @@ The slides export a deck was converted from is not committed.
 ## Build
 
 ```text
-typst compile lectures/lecture-N.typ lectures/lecture-N.pdf
+pnpm run build:lectures
 ```
 
-There is no build script and no Typst npm dependency.
+The script compiles every `lecture-N.typ` to its `lecture-N.pdf` and is the only way to produce a deck.
 The PDF is committed beside its source so the deck is readable without a Typst install.
+There is no Typst npm dependency; the compiler comes from the flake.
+Run it from a `nix develop` shell, or from a Typst install that matches the pin below.
 
-If the compile fails with `invalid value '' for '--creation-timestamp'`, then `SOURCE_DATE_EPOCH` is exported but empty, and the command needs an `env -u SOURCE_DATE_EPOCH` prefix.
+`pnpm run check:lectures` compiles the same decks into a temporary directory and compares the result byte for byte with what is committed.
+Both commands work on the decks `git ls-files` reports, so stage a new deck before you check it.
+CI runs the check, so a committed PDF that no longer matches its source is a red build.
+The check is the gate and the build is the fix: run the build, then read the deck diff in the pull request.
+
+Two pins live in `scripts/lectures.mjs`, and both are part of what is committed:
+
+- The Typst version.
+  The check refuses to run on any other version, so a compiler bump surfaces as a message naming the two versions instead of as a byte diff in every deck.
+  The same version is written in `.github/workflows/lectures.yml`, which downloads it, and the guard catches it when only one of the two is moved.
+- The build epoch, passed as `SOURCE_DATE_EPOCH`.
+
+The epoch is what makes the byte comparison possible.
+Typst writes `/CreationDate` and `/ModDate` into every PDF, so a deck built twice differs, and a deck built in another timezone differs again.
+Typst reads `SOURCE_DATE_EPOCH` and then writes the timestamp in UTC, so a pinned epoch makes the output identical everywhere.
+The committed decks all carry the same epoch, which is the author date of the commit that added `lecture-1.typ`; change the pin and rebuild every deck.
+
+The decks set `font: "Liberation Sans"`, which the flake's shell and the CI runner image both provide.
+A runner image that drops the font fails the compile rather than the comparison.
+
+If a shell exports `SOURCE_DATE_EPOCH` but empty, a direct `typst compile` fails with `invalid value '' for '--creation-timestamp'`.
+The script sets the variable itself, so it is unaffected.
 
 ## Layout Contract
 
@@ -56,14 +79,17 @@ There is no PDF-to-Typst converter, and pandoc cannot take a PDF as input, so ne
 
 1. Run `pdftotext -layout` on the export to read the slides, and `pdfimages -list` to see which slides carry images.
 2. Write `lecture-N.typ` against the layout contract above.
-3. Compile, then compare the page count with the number of slides you wrote, because overflow silently adds a page.
+3. Run `pnpm run build:lectures`, then compare the page count with the number of slides you wrote, because overflow silently adds a page.
 4. Render the deck to PNG and read the densest slides, because a merged paragraph or a swallowed list marker leaves the page count unchanged.
 5. Record every deviation from the source in the file header, including anything left alone on purpose.
+6. Run `pnpm run check:lectures` before opening the pull request, so the deck and its source arrive together.
 
 ## Do Not
 
 - Do not hand-edit `lectures/*.pdf`.
-  Change the `.typ` and recompile.
+  Change the `.typ` and rebuild.
+- Do not move the Typst pin or the build epoch in `scripts/lectures.mjs` to make a check pass.
+  Both pins are what the committed bytes were produced with, and a red check after either one changes is a reason to read the deck diff, not to re-record the pin.
 - Do not restate a rule from `requirements/` in a deck.
   A deck explains the week; `requirements/` is what a team is graded against, and the parent `AGENTS.md` layering rules still decide which of the two a sentence belongs to.
 - Do not add deck links to `README.md`.

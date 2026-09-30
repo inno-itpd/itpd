@@ -20,3 +20,4 @@ definition_of_done:
   - "Changed Markdown files are formatted: `pnpm run format:markdown`"
   - "`pnpm run lint:markdown` passes"
   - "`pnpm run test:markdown-format` and `pnpm run test:markdown-rules` pass"
+  - "`pnpm run check:lectures` passes"

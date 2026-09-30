@@ -13,6 +13,18 @@
       "type": "shell",
       "command": "pnpm run format:markdown:check && pnpm run lint:markdown",
       "problemMatcher": []
+    },
+    {
+      "label": "build:lectures",
+      "type": "shell",
+      "command": "pnpm run build:lectures",
+      "problemMatcher": []
+    },
+    {
+      "label": "check:lectures",
+      "type": "shell",
+      "command": "pnpm run check:lectures",
+      "problemMatcher": []
     }
   ]
 }

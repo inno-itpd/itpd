@@ -1,0 +1,29 @@
+name: Lectures
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  decks:
+    name: Decks match their sources
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: ./.github/actions/prepare
+      - name: Install Typst 0.15.1
+        working-directory: ${{ runner.temp }}
+        run: |
+          archive=typst-x86_64-unknown-linux-musl
+          curl -fsSLO "https://github.com/typst/typst/releases/download/v0.15.1/${archive}.tar.xz"
+          echo "a6d077d0a95eed5a2eba715b2dae06be954f624ccbf85758a03f389ded33118c  ${archive}.tar.xz" |
+            sha256sum --check --strict -
+          tar -xJf "${archive}.tar.xz"
+          sudo install -m 0755 "${archive}/typst" /usr/local/bin/typst
+          typst --version
+        shell: bash
+      - run: pnpm run check:lectures
