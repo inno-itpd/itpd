@@ -26,7 +26,7 @@ pnpm run build:lectures
 The script compiles every `lecture-N.typ` to its `lecture-N.pdf` and is the only way to produce a deck.
 The PDF is committed beside its source so the deck is readable without a Typst install.
 There is no Typst npm dependency; the compiler comes from the flake.
-Run it from a `nix develop` shell, or from a Typst install that matches the pin below.
+Run it from a `nix develop` shell, which brings both the compiler and the font, or from a Typst install that matches the pin below on a host that has the same Liberation release.
 
 `pnpm run check:lectures` compiles the same decks into a temporary directory and compares the result byte for byte with what is committed.
 Both commands work on the decks `git ls-files` reports, so stage a new deck before you check it.
@@ -37,7 +37,7 @@ Two pins live in `scripts/lectures.mjs`, and both are part of what is committed:
 
 - The Typst version.
   The check refuses to run on any other version, so a compiler bump surfaces as a message naming the two versions instead of as a byte diff in every deck.
-  The same version is written in `.github/workflows/lectures.yml`, which downloads it, and the guard catches it when only one of the two is moved.
+  `nix develop` is where the compiler comes from, and a nixpkgs bump that moves it fails the same guard, because the pin in the script is the only copy left.
 - The build epoch, passed as `SOURCE_DATE_EPOCH`.
 
 The epoch is what makes the byte comparison possible.
@@ -45,8 +45,10 @@ Typst writes `/CreationDate` and `/ModDate` into every PDF, so a deck built twic
 Typst reads `SOURCE_DATE_EPOCH` and then writes the timestamp in UTC, so a pinned epoch makes the output identical everywhere.
 The committed decks all carry the same epoch, which is the author date of the commit that added `lecture-1.typ`; change the pin and rebuild every deck.
 
-The decks set `font: "Liberation Sans"`, which the flake's shell and the CI runner image both provide.
-A runner image that drops the font fails the compile rather than the comparison.
+The decks set `font: "Liberation Sans"`, and the shell pins that font.
+`flake.nix` puts `liberation_ttf` in the dev shell and points `FONTCONFIG_FILE` at a conf whose only font directory is that package, so the host fonts cannot win and `typst fonts` lists the three Liberation families next to its own built-ins.
+The same `nix develop` shell builds in CI, so a deck that compiles here compiles there.
+The one requirement on a hand-run build is the font: outside `nix develop`, Typst resolves `Liberation Sans` from whatever fontconfig finds, and a host that ships a different Liberation release produces different bytes and a failing check.
 
 If a shell exports `SOURCE_DATE_EPOCH` but empty, a direct `typst compile` fails with `invalid value '' for '--creation-timestamp'`.
 The script sets the variable itself, so it is unaffected.

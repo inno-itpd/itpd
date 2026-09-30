@@ -4,7 +4,7 @@ title: Check that the lecture PDFs match their Typst sources
 status: Done
 assignee: []
 created_date: '2026-09-30 12:58'
-updated_date: '2026-09-30 14:38'
+updated_date: '2026-09-30 14:49'
 labels: []
 dependencies: []
 ordinal: 4000
@@ -46,6 +46,8 @@ Verified on 2026-09-30, outside `nix develop` with the system packages.
 The font is the one thing the check cannot pin: the decks ask for `Liberation Sans`, and the bytes depend on the subset of the installed font files. The runner image ships `fonts-liberation` 2.1.5-3, the same package as the machine that built the deck, so the comparison holds today. A runner image that changed the font would fail the check with a message that points at a rebuild rather than at the source.
 
 Not verifiable locally: the workflow has not run in GitHub Actions, so the download, the checksum verification, and the `sudo install` are unproven until the first pull request runs.
+
+Superseded in part, by TASK-005: the second half of AC #4, the CI job that installed the Typst release itself with a verified SHA-256, is now a `nix develop` run over the pinned flake, so the download, the checksum, and the second copy of the version are gone from the workflow. The half of AC #4 that put the job on the shared `prepare` action is also undone, because the deck check has no npm dependency and `nix develop` brings pnpm. What this task added, the byte check and the version guard, is unchanged.
 <!-- SECTION:NOTES:END -->
 
 ## Final Summary
