@@ -16,17 +16,39 @@
       systems = import systems;
 
       perSystem = { pkgs, system, ... }:
+        let
+          # The decks ask Typst for Liberation Sans, and the bytes a deck check
+          # compares depend on the font file it resolves. The host fonts and
+          # whatever a CI runner image installs are not inputs this repository
+          # controls, so the shell pins the font from the same nixpkgs as the
+          # rest of the toolchain.
+          deckFont = pkgs.liberation_ttf;
+
+          # A hand-written conf rather than pkgs.makeFontsConf: that one is
+          # additive and keeps the system font directories, so the host fonts
+          # would still win. This one lists a single directory.
+          fontconfigConf = pkgs.writeText "fontconfig.xml" ''
+            <?xml version="1.0"?>
+            <!DOCTYPE fontconfig SYSTEM "urn:fontconfig:fonts.dtd">
+            <fontconfig>
+              <dir>${deckFont}</dir>
+              <cachedir>~/.cache/fontconfig</cachedir>
+            </fontconfig>
+          '';
+        in
         {
           devShells.default = pkgs.mkShell {
             packages = [
               pkgs.nodejs_26
               pkgs.pnpm
               pkgs.typst
+              deckFont
               inputs.backlog-md.packages.${system}.default
               pkgs.ripgrep
             ];
             shellHook = ''
               export BACKLOG_CWD="$PWD"
+              export FONTCONFIG_FILE="${fontconfigConf}"
             '';
           };
         };

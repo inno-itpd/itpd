@@ -6,7 +6,7 @@ description: Create a git commit: use when the user explicitly asks to commit ch
 # Commit
 
 - Write conventional commit messages.
-- Use a scope that names the area changed, matching the repository map in `AGENTS.md`: `rules`, `requirements`, `guides`, `assignments`, `syllabus`, `readme`, `lint`, `agents`, `scripts`. A change confined to one week's assignment uses that week's scope (`a1`).
+- Use a scope that names the area changed, matching the repository map in `AGENTS.md`: `rules`, `requirements`, `guides`, `assignments`, `syllabus`, `lectures`, `readme`, `lint`, `agents`, `scripts`. A change confined to one week's assignment uses that week's scope (`a1`).
   Scopes name the subject area, not the directory, so they survive a file moving; `rules` and `syllabus` still apply now that both live in `course/`.
 - Use this required format:
 
