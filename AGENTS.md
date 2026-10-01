@@ -56,6 +56,8 @@ Editor diagnostics are advisory; the commands above are the gates.
 
 The open work is Backlog tasks, not a file in this directory.
 `backlog/config.yml` is the project, the tasks are in `backlog/tasks/`, and IDs are `TASK-001`, zero-padded to three digits.
+An ID is allocated across branches rather than per checkout, because `filesystem_only` is off and `check_active_branches`, `remote_operations`, and `active_branch_days` are set, so a new ID lands above every ID committed on a local or `origin` branch inside that window and above every ID in another worktree of the same repository.
+Only the current branch bypasses the window, and an ID created in another clone stays invisible until the task file is pushed, because the remote refs the CLI reads are the ones its own fetch has seen.
 Use the `backlog` CLI for every lifecycle action, and do not hand-edit a task file: the CLI keeps the metadata, the relationships, and the history consistent.
 The CLI has `archive` but no `delete`, so removing a task that was never committed means rebuilding the project rather than leaving an archived file behind.
 `BACKLOG_CWD` is set by the shell hook, so the CLI finds the project from the repository root.
