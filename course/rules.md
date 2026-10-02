@@ -70,9 +70,18 @@ A template sentence is one with no product name, no `ALT-nn`, and no date in it.
 
 ## Deadlines And Submission
 
-- Every week has one group submission, due **Thursday at 23:59**, the night before the class.
-  That is the soft deadline.
-  The hard deadline is **Friday at 23:59**.
+- Every week has one team submission.
+
+  The **soft deadline** is on **Thursday at 23:59**.
+
+  The **hard deadline** is on **Friday at 23:59**.
+
+  There's no penalty when you submit between the soft deadline and the hard deadline.
+
+  The penalty increases 10% every day after the hard deadline until it reaches 100%.
+  If you submit on Saturday, the penalty is 10% of the assignment grade.
+  If you submit on Sunday, the penalty is 20% and so on.
+
 - One submission per team.
   Every member's work is assessed through the team submission, and through the individual reflection at the end of the course.
 - The submission is a **PDF in Moodle** and a **repository snapshot (ZIP)**.

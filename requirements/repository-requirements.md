@@ -19,6 +19,7 @@ Requirements that arrive later are written now so that later weeks do not have t
 - [Configuration And Sensitive Information](#configuration-and-sensitive-information)
 - [Sensitive-Data Incident Response](#sensitive-data-incident-response)
 - [Planning And Issue Tracking](#planning-and-issue-tracking)
+- [Contributing](#contributing)
 - [Changelog, Releases And Versioning](#changelog-releases-and-versioning)
 - [Continuous Integration](#continuous-integration)
 - [Recommended Throughout The Course](#recommended-throughout-the-course)
@@ -41,7 +42,7 @@ Requirements that arrive later are written now so that later weeks do not have t
    The customer in this course is your instructor, and the public MIT-licensed model is a course-wide decision.
 6. Add a `.gitignore` appropriate to your tooling.
    At minimum it covers editor state, OS files, `.env` and other secret files, and build output.
-   Once you pick a stack in Week 2, extend it for that stack.
+   Once you pick a stack in Week 3, extend it for that stack.
 7. The first commit goes directly to `main`.
    It is the only commit that ever goes directly to `main`.
    See [Branch Protection And Pull Requests](#branch-protection-and-pull-requests).
@@ -76,7 +77,7 @@ In Week 1 it must contain:
 - A link to the maintained documentation in `docs/`.
 - A note that the project is a work in progress for the ITPD course.
 
-**Since: W2**
+**Since: W3**
 
 The root `README.md` also carries setup and run instructions for the product as it exists.
 
@@ -291,9 +292,42 @@ If credentials, personal data, or confidential material is committed by mistake:
 1. Create the issue templates the course requires, in `.github/ISSUE_TEMPLATE/`.
    The course will say which types you need for the week.
 2. Disable blank issue creation.
-3. Create branches from the issue where GitHub supports it, and link every pull request to its issue.
-4. Check the relevant acceptance criteria before merging.
-5. Keep the project plan in `docs/work-plan.md`, and keep it current as the plan changes.
+3. Open one issue per **active** `US-nn` and link each one from its story file, per [User Stories And Acceptance Criteria](process-requirements.md#user-stories-and-acceptance-criteria).
+   The issue is what the team tracks and what the customer can see; the story file is what the requirements are held in.
+   The issue does not copy the acceptance criteria; it links to the story and tracks that story's added value.
+   <!-- TODO wdym tracks added value? -->
+4. Create branches from the issue where GitHub supports it, and link every pull request to its issue.
+5. Check the relevant acceptance criteria before merging.
+
+**Recommended**
+
+- Use a planning or issue-tracking tool that keeps its state in the repository, such as the [`backlog.md`](https://github.com/MrLesk/Backlog.md) command-line tool.
+  Its files are repository content rather than artifacts, per [Where Artifacts Live In The Repository](artifact-requirements.md#where-artifacts-live-in-the-repository), and it is not graded on its own.
+  Whatever you choose, the `US-nn` identifiers and the issue links still have to exist, because those are what a reader follows.
+
+**Since: W3**
+
+6. Keep the project plan in `docs/work-plan.md`, and keep it current as the plan changes.
+
+## Contributing
+
+**Since: W3**
+
+**Required**
+
+1. Add `CONTRIBUTING.md` in the repository root.
+   It is how a new member, or a grader, finds out how the team works, and it is written before the workflow is complicated rather than after.
+2. `CONTRIBUTING.md` states the commit message format the team uses.
+   Any format is allowed; an unstated format is not, because a reviewer cannot judge a commit they cannot parse.
+3. `CONTRIBUTING.md` states how a change gets in: the branch naming rule, what a pull request must contain, and what the reviewer checks.
+4. Keep it current.
+   A contributing guide that describes last month's process is worse than none, because it is believed.
+
+**Recommended**
+
+- Use [Conventional Commits](https://www.conventionalcommits.org/) for commit messages: a type, a scope, and a short description.
+  It is a good default because it is machine-readable, and a changelog can be generated from it if the team ever wants one.
+  It is not required, and a team that writes a clearer format should write it down instead.
 
 ## Changelog, Releases And Versioning
 
@@ -309,20 +343,36 @@ If credentials, personal data, or confidential material is committed by mistake:
    Protect mapped tags from being moved or deleted.
 6. When you cut a release, move the included entries into a dated section, link the section to the release, and open a new empty `[Unreleased]`.
 
+**Compile the changelog from pull requests, not from commits.**
+A commit message records what the team judged important at that moment, and that judgement is usually about the code rather than the product: a rename, a refactor, a fix for a bug nobody outside the team could reach.
+A changelog is a user-facing summary, so it answers a different question.
+The pull request is where the team already writes down what changed and why, which is why the pull request template asks for the changelog line.
+
 ## Continuous Integration
 
-**Since: W5**
+**Since: W2**
 
 **Required**
 
-1. Add continuous integration for your stack: linting, formatting or type checking, build, and automated tests, on pull requests and on `main`.
-2. Keep the link check running.
-   It is a baseline, not a substitute for the checks your product needs.
-3. Pin the actions you add, as in [Pinning Third-Party Actions](#pinning-third-party-actions).
-4. The latest `main` run of every required check must be green before you submit.
+1. Add a Markdown check as a GitHub Actions workflow, on pull requests and on every push to `main`.
+2. The check must fail the build when the Markdown is wrong, and the latest `main` run must be green before you submit.
+3. Any of the common tools is acceptable, and the repository's own conventions decide which: `markdownlint-cli2`, `prettier --check`, or `remark-lint`.
+   Pin it, as in [Pinning Third-Party Actions](#pinning-third-party-actions).
+4. The check must accept the YAML frontmatter the user-story files carry, rather than reporting it as a missing document title or a first-line violation.
+
+Markdown is checked in Week 2 because the week is mostly prose: a product vision, eight stories, and a meeting report.
+A broken link or a heading that drifted out of Title Case is a defect in that work, and a defect you find on Friday evening is a defect you did not fix.
+
+**Since: W3**
+
+5. Add continuous integration for your product code: linting, formatting or type checking, build, and automated tests, on pull requests and on `main`.
+6. Keep the link check and the Markdown check running.
+   They are a baseline, not a substitute for the checks your product needs.
+7. Pin the actions you add, as in [Pinning Third-Party Actions](#pinning-third-party-actions).
+8. The latest `main` run of every required check must be green before you submit.
 
 ## Recommended Throughout The Course
 
 - Enable secret scanning and push protection.
 - Provide a Nix flake or a `devenv` configuration so the project can be set up reproducibly.
-- Add `CONTRIBUTING.md` and `AGENTS.md` once the workflow is stable enough to be worth writing down.
+- Add `AGENTS.md` once the workflow is stable enough to be worth writing down.
