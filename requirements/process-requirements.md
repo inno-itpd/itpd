@@ -244,6 +244,7 @@ It turns the Week 1 research into something you can be held to.
    A vision that has grown into a specification has become the stories, and the two then drift apart.
 
 <!-- TODO don't mention concepts that haven't yet been introduced? (quality goal) -->
+
 **A goal is not a quality goal, and it is not a threshold of success.**
 
 A goal says what the product must achieve: someone can send a marked region to a model without its contents leaving the network under the company's own rules.

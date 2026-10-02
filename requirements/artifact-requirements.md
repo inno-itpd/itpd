@@ -721,8 +721,8 @@ US-02 is the one we drop first, because an unreadable audit trail is a bad produ
 
 ## Inactive stories
 
-| Story                                             | Reason                                                                               | Date       |
-| ------------------------------------------------- | ------------------------------------------------------------------------------------ | ---------- |
+| Story                                             | Reason                                       | Date       |
+| ------------------------------------------------- | -------------------------------------------- | ---------- |
 | [US-09](us/US-09.md) Share a board by public link | won't-have: no evidence that a user needs it | 2026-10-07 |
 ```
 

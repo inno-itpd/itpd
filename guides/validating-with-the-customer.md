@@ -5,7 +5,6 @@ How to run the Week 2 meeting, and how to record what it changed.
 The rules are in [Validation](../requirements/process-requirements.md#validation) and [Meeting With The Customer](../requirements/process-requirements.md#meeting-with-the-customer), and the file shapes are in [Artifact Requirements](../requirements/artifact-requirements.md#customer-meeting-artifacts).
 This guide is the method.
 
-
 <!-- TODO why still "ask about what happened"? Only because of the Mom Test? -->
 
 The preparation method is the same as [The Kickoff Interview](customer-interview.md): you prepare in writing, you ask about what happened rather than what should happen, and you write down what you improved.
@@ -66,6 +65,7 @@ Those are your areas, and each one should be a place where the customer's answer
 For a target about the boundary, the prototype, and the candidate, the areas usually look like this:
 
 <!-- TODO improve examples. Still quite abstract. Or, are these definitions? -->
+
 - **Scope.**
   What does the customer's own process actually look like today, and does our boundary exclude anything they need?
 - **The current workflow.**
@@ -94,6 +94,7 @@ The section is required for every meeting, and this meeting requires at least on
 Two patterns worth using:
 
 <!-- TODO why ask about a problem here? -->
+
 - **Ask about the last time.** "When did you last hit this problem, and what did you do?" beats "how would you like us to handle this?"
 - **Offer the concrete thing and ask what is wrong with it.** "We assumed the product does not infer this itself, and the team's own rules decide.
   Is that right?" is a question with a falsifiable answer.
@@ -104,6 +105,7 @@ Two patterns worth using:
 <!-- TODO explain purpose of each role and why these roles are applicable
 https://support.theaiminstitute.com/en/1.-three-interviewing-roles
 -->
+
 The roles: a moderator (asks questions, controls timing), a note taker, and an observer who records what was not asked and what was not said.
 The whole team attends.
 

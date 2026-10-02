@@ -69,8 +69,9 @@ Follow [Product Vision](../requirements/artifact-requirements.md#product-vision)
 1. State the **goal**: what the product must achieve.
    One short paragraph.
    <!-- TODO example of the goal -->
-   
+
    The goal traces to at least one `VP-nn` in `docs/research/value-proposition.md`, and you link to the section rather than restating it.
+
 2. List the **constraints**, each marked as customer-given, team-given, or derived, and each with what it costs you.
    The deployment target, any language or platform mandate that came with your catalog project, your team size, and the weeks left in the course are all constraints.
    An assumption is not a constraint; assumptions live in your Week 1 assumptions table.
@@ -113,9 +114,10 @@ Complete every requirement marked `**Since: W2**` in [Planning And Issue Trackin
 1. Add the issue templates this week needs, in `.github/ISSUE_TEMPLATE/`, and disable blank issue creation.
 2. Open **one issue per active `US-nn`**, and link each one from its story file.
    The issue links back to the story and does not copy the acceptance criteria.
-   
+
    <!-- TODO how does this issue look like? -->
    <!-- TODO How to track remaining work to complete the user story? -->
+
 3. Create your branches from the issue, and link every pull request to its issue.
 4. Use the `<issue-number>-<short-description>` branch naming rule, per [Branch Protection And Pull Requests](../requirements/repository-requirements.md#branch-protection-and-pull-requests).
 5. A planning or issue-tracking tool (e.g. [`backlog.md`](https://github.com/MrLesk/Backlog.md)) that keeps its state in the repository is recommended, not required.
@@ -159,6 +161,7 @@ Hold a second meeting with your customer this week.
 In every artifact you call them `Customer`, never a real name and never "the instructor".
 
 <!-- TODO improve wording (connect parts of the sentence) -->
+
 The target of the meeting is the prototype, the boundary, and the minimum usable product candidate, and the question is: which of these are wrong?
 Review the remaining user stories only if time allows.
 Write the target at the top of the script and do not replace it with a subject.
@@ -179,9 +182,11 @@ See [Validating With The Customer](../guides/validating-with-the-customer.md).
    - At least two rows in `## Decisions`, because one decision is insufficient evidence that the meeting changed anything.
      Each row names the `US-nn` it changes.
      <!-- TODO what does this mean - "one of them"? -->
+
      The customer's verdict on the minimum usable product candidate is one of them.
-     
+
      A story that did not come from your Week 1 research records that origin in its `sources`; only a contradiction updates the research, per [Traceability Into Later Weeks](../requirements/process-requirements.md#traceability-into-later-weeks).
+
    - At least two rows in `## Action points`, each with a named owner and a due date inside Week 3.
    - `## Disagreements` filled in, or an explicit `None`.
 7. **Something must change as a result**, recorded in all four places:
