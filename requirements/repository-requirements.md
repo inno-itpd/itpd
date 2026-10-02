@@ -292,8 +292,10 @@ If credentials, personal data, or confidential material is committed by mistake:
 1. Create the issue templates the course requires, in `.github/ISSUE_TEMPLATE/`.
    The course will say which types you need for the week.
 2. Disable blank issue creation.
-3. Open one issue per `US-nn` and link each one from its story file, per [User Stories And Acceptance Criteria](process-requirements.md#user-stories-and-acceptance-criteria).
+3. Open one issue per **active** `US-nn` and link each one from its story file, per [User Stories And Acceptance Criteria](process-requirements.md#user-stories-and-acceptance-criteria).
    The issue is what the team tracks and what the customer can see; the story file is what the requirements are held in.
+   The issue does not copy the acceptance criteria; it links to the story and tracks that story's added value.
+   <!-- TODO wdym tracks added value? -->
 4. Create branches from the issue where GitHub supports it, and link every pull request to its issue.
 5. Check the relevant acceptance criteria before merging.
 
@@ -356,17 +358,18 @@ The pull request is where the team already writes down what changed and why, whi
 2. The check must fail the build when the Markdown is wrong, and the latest `main` run must be green before you submit.
 3. Any of the common tools is acceptable, and the repository's own conventions decide which: `markdownlint-cli2`, `prettier --check`, or `remark-lint`.
    Pin it, as in [Pinning Third-Party Actions](#pinning-third-party-actions).
+4. The check must accept the YAML frontmatter the user-story files carry, rather than reporting it as a missing document title or a first-line violation.
 
 Markdown is checked in Week 2 because the week is mostly prose: a product vision, eight stories, and a meeting report.
 A broken link or a heading that drifted out of Title Case is a defect in that work, and a defect you find on Friday evening is a defect you did not fix.
 
 **Since: W3**
 
-4. Add continuous integration for your product code: linting, formatting or type checking, build, and automated tests, on pull requests and on `main`.
-5. Keep the link check and the Markdown check running.
+5. Add continuous integration for your product code: linting, formatting or type checking, build, and automated tests, on pull requests and on `main`.
+6. Keep the link check and the Markdown check running.
    They are a baseline, not a substitute for the checks your product needs.
-6. Pin the actions you add, as in [Pinning Third-Party Actions](#pinning-third-party-actions).
-7. The latest `main` run of every required check must be green before you submit.
+7. Pin the actions you add, as in [Pinning Third-Party Actions](#pinning-third-party-actions).
+8. The latest `main` run of every required check must be green before you submit.
 
 ## Recommended Throughout The Course
 

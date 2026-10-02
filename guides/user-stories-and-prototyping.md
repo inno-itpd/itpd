@@ -23,8 +23,8 @@ Most of it is arguing about which stories are the same story wearing two hats, w
 
 ```text
 docs/product-vision.md         the goal, the constraints, the stakeholders, the boundary, the context diagram
-docs/user-stories/README.md    the index, the MUP candidate, the removed stories
-docs/user-stories/US-01.md     one file per story, with its own criteria
+docs/user-stories/README.md    the index, the MUP candidate, the inactive stories
+docs/user-stories/us/US-01.md  one file per story, with its own criteria
 reports/week-02/prototypes.md  what you showed, what they said, what changed
 ```
 
@@ -97,13 +97,12 @@ You probably do not yet know what the product does in that case, which makes it 
 
 ## Step 4: Prioritize, Then Pick The First Thing To Build
 
-<!-- TODO: introduce MoSCoW somewhere, link to the MoSCoW definition -->
-
-Prioritize every story with MoSCoW.
+<!-- TODO link to section where we explain each value -->
+MoSCoW is a four-way priority scale: `Must Have`, `Should Have`, `Could Have`, and `Won't Have`.
+Prioritize every story with it.
 The point of the exercise is not the label, it is the argument: whoever disagrees with a `Must Have` has to say why the product is not the product without it.
 
-`Won't Have` is the useful one.
-Write it down, with the reason, instead of quietly leaving a story out.
+A `Won't Have` story is inactive by definition, so write it down, with the reason, instead of quietly leaving a story out.
 A reader can argue with a recorded `Won't Have`; they can only guess about a missing one.
 
 Then name the **minimum usable product candidate**: a strict, non-empty subset of your `Must Have` stories that you would build first, plus which one you would drop first if you ran out of time.

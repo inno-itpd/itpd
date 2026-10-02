@@ -104,7 +104,7 @@ It is the part a reader uses to tell whether your questions were considered or m
 
 Three roles, three people, before you start rather than during:
 
-- **Interviewer** asks.
+- **Moderator** asks.
   One person, so the customer is not answering four voices at once.
 - **Note taker** records answers, verbatim where the wording matters.
 - **Observer** watches for what was not said.

@@ -1,10 +1,10 @@
 ---
 id: TASK-009
 title: Resolve the Week 2 review comments and lock the story registry shape
-status: To Do
+status: Done
 assignee: []
 created_date: '2026-10-02 07:07'
-updated_date: '2026-10-02 07:25'
+updated_date: '2026-10-02 07:57'
 labels: []
 dependencies: []
 references:
@@ -41,32 +41,32 @@ They are not independent edits: taken together they settle one story-registry sh
 This task records the decisions first, then applies them in the layering order, so the assignment and the guides state only the delta and the requirements stay the single source of truth.
 <!-- SECTION:DESCRIPTION:END -->
 
-## Definition of Done
-<!-- DOD:BEGIN -->
-- [ ] #1 All acceptance criteria are satisfied
-- [ ] #2 Changed Markdown files are formatted: `pnpm run format:markdown`
-- [ ] #3 `pnpm run lint:markdown` passes
-- [ ] #4 `pnpm run test:markdown-format` and `pnpm run test:markdown-rules` pass
-- [ ] #5 `pnpm run check:lectures` passes
-<!-- DOD:END -->
-
 ## Acceptance Criteria
 <!-- AC:BEGIN -->
-- [ ] #1 `docs/user-stories/README.md` stays the index and `us/US-nn.md` holds the stories; the README carries `## Active stories`, `## Minimum usable product candidate`, and `## Inactive stories`; every path and relative link in the materials moves to the `us/` level
-- [ ] #2 Story files carry YAML frontmatter: `id`, `title`, `priority` (`must|should|could|won't`), `status` (`active|inactive`), `gap`, `vp`, optional `sources` (a list of links or anchors), and either `issue` (active) or `reason` (inactive); the body keeps the identifier in its H1
-- [ ] #3 `Won't Have` is inactive by definition and every inactive story carries `priority: won't`; the reason is free text beginning with `removed`, `superseded`, or `won't-have`, and there is a date in both the frontmatter and the README Inactive table
-- [ ] #4 Inactive stories keep their ID, file, and original story statement; they carry no issue and no acceptance criteria; `## Changes` is required only when a story changed after it was written
-- [ ] #5 The minima are at least eight story IDs, at least five active, at least two criteria per active story, and a strict non-empty `Must Have` MUP candidate; `course/syllabus.md:120` agrees
-- [ ] #6 A split parent is `superseded`, keeps its ID and file, and is traceable from both children; the semantic rule lives in `process-requirements.md` and the table shape in `artifact-requirements.md`
-- [ ] #7 `sources` records additional origins such as a meeting-report anchor; a new need does not rewrite the Week 1 research, and only a contradiction does, per the traceability rules
-- [ ] #8 `## Key improvements` is required for every meeting script, two rewrites at the kickoff and one after; the `assignment-1.md` Key improvements section is unchanged and the kickoff-only wording leaves `artifact-requirements.md`
-- [ ] #9 The Week 2 validation target is the prototype, the boundary, and the MUP candidate, with the other stories only if time allows, and the customer's MUP verdict is a `## Decisions` row naming the `US-nn` it changes
-- [ ] #10 `interviewer` becomes `moderator` in every site, including `assignments/assignment-1.md`, `guides/customer-interview.md`, the `## Roles` row, and the async-meeting rule
-- [ ] #11 `AGENTS.md` states the Scrum elements (one-week sprints from Week 3; planning, grooming, estimation, and retrospective required; no daily standup), adds `product backlog`, `sprint backlog`, PBI, SBI, and `story points` to Terminology as terms introduced later, deletes both stale comments, and registers `reports/week-NN/sprint-retrospective.md` with its structure deferred
-- [ ] #12 `repository-requirements.md` opens issues for active stories only, says the issue does not copy the criteria, and states the Markdown check must accept YAML frontmatter
-- [ ] #13 `course/syllabus.md:115` and `:120` match the `us/` path and the 8/5 minima
-- [ ] #14 All 43 comments are gone; `pnpm run format:markdown`, `pnpm run lint:markdown`, `pnpm run test:markdown-format`, and `pnpm run test:markdown-rules` pass; `check:lectures` is unchanged and its inherited red is recorded in the notes
+- [x] #1 `docs/user-stories/README.md` stays the index and `us/US-nn.md` holds the stories; the README carries `## Active stories`, `## Minimum usable product candidate`, and `## Inactive stories`; every path and relative link in the materials moves to the `us/` level
+- [x] #2 Story files carry YAML frontmatter: `id`, `title`, `priority` (`must|should|could|won't`), `status` (`active|inactive`), `gap`, `vp`, optional `sources` (a list of links or anchors), and either `issue` (active) or `reason` (inactive); the body keeps the identifier in its H1
+- [x] #3 `Won't Have` is inactive by definition and every inactive story carries `priority: won't`; the reason is free text beginning with `removed`, `superseded`, or `won't-have`, and there is a date in both the frontmatter and the README Inactive table
+- [x] #4 Inactive stories keep their ID, file, and original story statement; they carry no issue and no acceptance criteria; `## Changes` is required only when a story changed after it was written
+- [x] #5 The minima are at least eight story IDs, at least five active, at least two criteria per active story, and a strict non-empty `Must Have` MUP candidate; `course/syllabus.md:120` agrees
+- [x] #6 A split parent is `superseded`, keeps its ID and file, and is traceable from both children; the semantic rule lives in `process-requirements.md` and the table shape in `artifact-requirements.md`
+- [x] #7 `sources` records additional origins such as a meeting-report anchor; a new need does not rewrite the Week 1 research, and only a contradiction does, per the traceability rules
+- [x] #8 `## Key improvements` is required for every meeting script, two rewrites at the kickoff and one after; the `assignment-1.md` Key improvements section is unchanged and the kickoff-only wording leaves `artifact-requirements.md`
+- [x] #9 The Week 2 validation target is the prototype, the boundary, and the MUP candidate, with the other stories only if time allows, and the customer's MUP verdict is a `## Decisions` row naming the `US-nn` it changes
+- [x] #10 `interviewer` becomes `moderator` in every site, including `assignments/assignment-1.md`, `guides/customer-interview.md`, the `## Roles` row, and the async-meeting rule
+- [x] #11 `AGENTS.md` states the Scrum elements (one-week sprints from Week 3; planning, grooming, estimation, and retrospective required; no daily standup), adds `product backlog`, `sprint backlog`, PBI, SBI, and `story points` to Terminology as terms introduced later, deletes both stale comments, and registers `reports/week-NN/sprint-retrospective.md` with its structure deferred
+- [x] #12 `repository-requirements.md` opens issues for active stories only, says the issue does not copy the criteria, and states the Markdown check must accept YAML frontmatter
+- [x] #13 `course/syllabus.md:115` and `:120` match the `us/` path and the 8/5 minima
+- [x] #14 All 43 comments are gone; `pnpm run format:markdown`, `pnpm run lint:markdown`, `pnpm run test:markdown-format`, and `pnpm run test:markdown-rules` pass; `check:lectures` is unchanged and its inherited red is recorded in the notes
 <!-- AC:END -->
+
+## Definition of Done
+<!-- DOD:BEGIN -->
+- [x] #1 All acceptance criteria are satisfied
+- [x] #2 Changed Markdown files are formatted: `pnpm run format:markdown`
+- [x] #3 `pnpm run lint:markdown` passes
+- [x] #4 `pnpm run test:markdown-format` and `pnpm run test:markdown-rules` pass
+- [x] #5 `pnpm run check:lectures` passes
+<!-- DOD:END -->
 
 ## Implementation Plan
 
@@ -107,4 +107,14 @@ Ten files are edited: the eight in the original task plus `assignments/assignmen
 `pnpm run check:lectures` is inherited-red on this branch: the committed `lectures/lecture-2.pdf` is 127949 bytes while the current source builds 115282. This task does not touch `lectures/`, so the Definition of Done item is judged as not-regressed, and the failure stays owned by the deck follow-up task.
 
 Task-008's note that pinned backlog 1.45 has no `--append-notes` is wrong: `backlog task edit --help` lists it. Use it if this task's notes need to grow, or `--notes` to replace whole.
+
+Implemented in the working tree, ten files edited and no new tracked file.
+All 43 review comments are gone.
+The four Markdown gates pass: `format:markdown:check`, `lint:markdown`, `test:markdown-format`, and `test:markdown-rules`.
+All relative links and heading anchors in the ten edited files plus `README.md` resolve.
+
+Story shape applied as decided: `docs/user-stories/README.md` stays the index and carries `## Active stories`, `## Minimum usable product candidate`, and `## Inactive stories`; the inactive table is `Story | Reason | Date` and the frontmatter date field is `date`; story files live at `docs/user-stories/us/US-nn.md` with YAML frontmatter, `issue` as the full URL, and a body of H1 + statement + criteria + notes, with `## Changes` only when changed.
+
+`check:lectures` stays inherited-red and the task does not touch `lectures/`: the committed `lectures/lecture-2.pdf` is 115282 bytes and the current source builds 115280, so the failure is 2 bytes and stays owned by the deck follow-up task.
+The earlier 127949-versus-115282 numbers no longer describe this tree; the outcome, red and untouched, is unchanged.
 <!-- SECTION:NOTES:END -->

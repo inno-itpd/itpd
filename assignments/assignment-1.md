@@ -163,7 +163,7 @@ Hold one kickoff meeting with them this week: present the project, your reading 
    It covers five areas — business goals, end users, the current workflow, pain points and constraints, and scope — with at least two questions in each area.
    Tag every question open or closed, and close the file with a `## Key improvements` section showing at least two questions you rewrote and the principle behind each rewrite.
    See [The Kickoff Interview](../guides/customer-interview.md).
-2. **Assign the three roles** before the meeting: an interviewer, a note taker, and an observer who records what was not asked.
+2. **Assign the three roles** before the meeting: a moderator, a note taker, and an observer who records what was not asked.
    The whole team attends, and you plan for 30 minutes while asking for 60 if the customer can give it.
 3. **Ask the three permission questions** before you start, and keep the recording out of the repository.
 4. **Write `reports/week-01/meeting-report.md`**, plus either `reports/week-01/meeting-transcript.md` or `reports/week-01/meeting-notes.md`, following [Customer Meeting Artifacts](../requirements/artifact-requirements.md#customer-meeting-artifacts).

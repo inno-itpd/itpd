@@ -112,12 +112,12 @@ The first two weeks establish the project foundations, team formation, and compe
 - **Submission 2 (Team Deliverables - Due Oct 8, 23:59)**:
   - **Deliverables**:
     1. **Product Vision**: `docs/product-vision.md`, holding the goal, the constraints, the stakeholders, the boundary of what the team will not do, and a system context diagram.
-    2. **User Stories**: `docs/user-stories/`, holding a `README.md` index and one `US-nn.md` file per story, each carrying its own acceptance criteria.
+    2. **User Stories**: `docs/user-stories/`, holding a `README.md` index and one `us/US-nn.md` file per story, each active story carrying its own acceptance criteria.
     3. **Issue Tracking**: issue templates in `.github/ISSUE_TEMPLATE/`, with one issue per `US-nn`.
     4. **Prototypes**: prototypes of the riskiest assumptions, recorded at `reports/week-02/prototypes.md`.
        Prototypes may be paper sketches, view-only design tools, or disposable code spikes.
     5. **Customer Validation Meeting**: a second meeting with the customer, with the full Week 1 artifact set, which changes at least one story.
-  - **Minima**: eight or more user stories, MoSCoW prioritized, at least two acceptance criteria per story, and a named minimum usable product candidate drawn from the Must-Have stories.
+  - **Minima**: at least eight story IDs, at least five of them active, MoSCoW prioritized with inactive stories marked `won't`, at least two acceptance criteria per active story, and a strict non-empty minimum usable product candidate drawn from the Must-Have stories.
     There is no product code this week.
   - **Note**: The product repository itself is created and configured in Week 1.
     Week 2 adds requirements, tracking, and prototypes.

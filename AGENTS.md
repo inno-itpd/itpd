@@ -156,6 +156,7 @@ A later assignment may extend this map, but should not silently move an entry.
 Weekly reports live at `reports/week-NN/README.md` in every week, and the Moodle PDF is the private wrapper in every week.
 Meeting artifacts live at `reports/week-NN/meeting-report.md`, plus a `meeting-transcript.md` or a `meeting-notes.md` beside it.
 That shape is fixed; do not redesign it per week.
+From Week 3, each sprint also produces a retrospective at `reports/week-NN/sprint-retrospective.md`; its structure is deferred to the Week 3 requirements.
 
 Week 1 adds two more files beside them, both evidence rather than maintained documentation: `meeting-script.md` and `candidate-list.md`.
 They exist only because Week 1 is the week where the customer meeting and the alternatives search happen.
@@ -181,7 +182,7 @@ Before writing or editing an assignment:
 
 Use these words and do not invent local synonyms:
 
-`weekly report`, `weekly public report`, `supporting artifact`, `private-only artifact`, `external-but-indexed artifact`, `repository-resident artifact`, `deviation`, `customer`, `kickoff meeting`, `meeting report`, `meeting transcript`, `meeting notes`, `meeting script`, `decision`, `action point`, `open question`, `alternative`, `property`, `gap`, `value proposition`, `threshold of success`, `minimum usable product` (MUP), `minimum viable product` (MVP), `team number`.
+`weekly report`, `weekly public report`, `supporting artifact`, `private-only artifact`, `external-but-indexed artifact`, `repository-resident artifact`, `deviation`, `customer`, `kickoff meeting`, `meeting report`, `meeting transcript`, `meeting notes`, `meeting script`, `decision`, `action point`, `open question`, `alternative`, `property`, `gap`, `value proposition`, `threshold of success`, `minimum usable product` (MUP), `minimum viable product` (MVP), `product backlog`, `sprint backlog`, `PBI`, `SBI`, `story points`, `sprint retrospective`, `team number`.
 
 "Customer" is the term for the person your team answers to, who is your instructor.
 Never "client" or "stakeholder" for them.
@@ -192,12 +193,11 @@ Meeting decisions and action points are **not** identifier families.
 There is no `DEC-nn` or `ACT-nn`.
 A later week cites a meeting report by path and heading anchor, an action point is carried out by a tracked issue, and the identifier families stay the ones their own week introduces.
 
-Note that ITPD has no Scrum.
-<!-- TODO: This is only partially true. We'll require only elements of Scrum -->
-
-Do not import Sprint, Product Backlog, PBI, or user-story ceremony from the `swp_26/` materials. `docs/user-stories/` in W2 is user stories in the plain product sense.
-
-<!-- TODO don't mention this week-specific text here. Better move to tmp/AGENTS.md? -->
+ITPD uses elements of Scrum from Week 3.
+One course week is a sprint, sprints start with planning and grooming, estimation is required with no unit prescribed, and each sprint ends with a retrospective at `reports/week-NN/sprint-retrospective.md`.
+There is no daily standup.
+`product backlog`, `sprint backlog`, PBI, SBI, and `story points` are terms introduced and used later in the course, not banned.
+This paragraph records the vocabulary; the Week 3 requirements define what each one obliges a team to do.
 
 ## Do Not
 

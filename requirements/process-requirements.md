@@ -213,13 +213,11 @@ The defensible part is the logging standard, not the rules themselves.
 
 ## Assumptions
 
-<!-- TODO where to store assumptions -->
-
 **Since: W1**
 
 **Required**
 
-1. List the assumptions your proposal rests on.
+1. List the assumptions your proposal rests on, at the end of `docs/research/value-proposition.md`.
    An assumption is something you believe about the problem, the users, or the constraints that you have not verified.
 2. Trace each assumption to the `GAP-nn` or `VP-nn` it supports.
 3. State how each one could be checked, and when.
@@ -239,19 +237,16 @@ It turns the Week 1 research into something you can be held to.
 **Required**
 
 1. The vision states the **goal** of the product: what it must achieve.
-2. Every goal traces to at least one `VP-nn` from your [value proposition](../guides/comparison-and-synthesis.md#step-5-write-the-value-proposition).
+2. The goal traces to at least one `VP-nn` from your [value proposition](../guides/comparison-and-synthesis.md#step-5-write-the-value-proposition).
    A goal that supports no value proposition is a feature you would like, which is a different thing.
 3. The vision carries the [constraints](#constraints), the [stakeholders, boundary, and context diagram](#stakeholders-boundary-and-context), and a link to the [user stories](#user-stories-and-acceptance-criteria).
 4. Keep it short.
    A vision that has grown into a specification has become the stories, and the two then drift apart.
 
 <!-- TODO don't mention concepts that haven't yet been introduced? (quality goal) -->
-
-**A goal is not a quality goal.**
+**A goal is not a quality goal, and it is not a threshold of success.**
 
 A goal says what the product must achieve: someone can send a marked region to a model without its contents leaving the network under the company's own rules.
-
-<!-- TODO quality - week 3 or week 4? -->
 
 A quality goal says how well, and it is Week 4's work, with its own `Q-nn` identifiers.
 
@@ -273,7 +268,7 @@ A platform engineer at a company that sends marked source code to external model
 
 **Since: W2**
 
-<!-- TODO separate assumptions from constraints? -->
+<!-- TODO where do you store constraints? -->
 
 A constraint is a condition your product has to live inside.
 An assumption is a belief about the problem that you have not verified.
@@ -303,9 +298,7 @@ Keeping the two apart is the whole point of this section: a constraint you canno
 
 **Since: W2**
 
-<!-- TODO use simpler language. "earns its keep"??? -->
-
-The boundary is the part of this section that earns its keep: it is what the team will **not** do.
+The boundary is the part of this section that matters most: it is what the team will **not** do.
 Without it, a context diagram shows a product floating in a void, and no reviewer can tell whether it is right.
 
 **Required**
@@ -334,8 +327,6 @@ A boundary nobody can disagree with is a boundary that is not written down.
 
 ## User Stories And Acceptance Criteria
 
-<!-- are we duplicating artifact requirements here? -->
-
 **Since: W2**
 
 A user story is a small, checkable statement of one thing a user needs.
@@ -343,33 +334,40 @@ Its job is to make a gap concrete enough that a reviewer can tell whether you de
 
 **Required**
 
-1. Write **8 or more** user stories.
+1. Write **8 or more** user stories, and keep at least **5 of them active**.
    Fewer do not cover a product, and more leaves no week to change them once something turns out to be wrong.
+   An **active** story is one you intend to build; an **inactive** story is one you have removed, superseded, or decided not to build.
 2. Every story gets a stable ID `US-01`, `US-02`, and so on.
    IDs are never renumbered, reused, or reassigned, including when the story is edited later in the course.
 3. Every story is a statement of a user's need, not a description of a solution.
    "As a platform engineer, I want to attach redaction rules to a marked region, so that the company's own classification decides what leaves the network" is a need.
    "Add a redaction rule editor" is a feature you have already designed.
 4. Every story names the `GAP-nn` it closes and the `VP-nn` it supports.
+   A need that also came from somewhere else, such as a customer meeting, records that origin in the story's `sources` rather than rewriting your Week 1 research; only a contradiction updates it, per [Traceability Into Later Weeks](#traceability-into-later-weeks).
 5. Every story is prioritized with MoSCoW, relative to the product you intend to finish in this course:
 
    - `Must Have`: the product is not the product without it.
    - `Should Have`: important, and the product is still coherent without it.
    - `Could Have`: valuable, and the first thing to cut.
    - `Won't Have`: a real need you have deliberately excluded.
-     Say why in the story's notes.
+     A `Won't Have` story is **inactive** by definition, and its `reason` records why, beginning with `won't-have`.
 
-6. Every story carries **at least two acceptance criteria**, and each one must be observable and pass/fail.
+6. Every active story carries **at least two acceptance criteria**, and each one must be observable and pass/fail.
    Any notation is allowed, including `Given`/`When`/`Then`; the rules are that somebody other than you can run the check and get the same answer.
    "Works well" is not a criterion.
 7. A story too large to build and verify in one week is two stories.
-   Split it, and keep the parent traceable from both children.
+   Split it: the parent keeps its identifier and its file, becomes inactive with a `reason` beginning with `superseded`, and stays traceable from both children.
 8. Name the **minimum usable product candidate**: a strict, non-empty subset of your `Must Have` stories that you would build first.
    Say which one you would drop first if you ran out of time.
    The candidate is a proposal, not a commitment, and Week 3 schedules and builds it.
-9. Open one issue per `US-nn` and link it from the story.
+9. Open one issue per **active** `US-nn` and link it from the story.
    The issue is what the team tracks and what the customer can see; the story file is what the requirements are held in.
+   The issue does not copy the acceptance criteria; it links to the story and tracks that story's added value.
+   <!-- TODO "tracks that story's added value - how?" -->
    See [Planning And Issue Tracking](repository-requirements.md#planning-and-issue-tracking).
+10. An inactive story keeps its identifier, its file, and its original statement.
+    It carries no issue and no acceptance criteria, and its frontmatter records the `reason` and the `date` it became inactive.
+    <!-- What if an issue has already been created? -->
 
 **Recommended**
 
@@ -382,11 +380,6 @@ Its job is to make a gap concrete enough that a reviewer can tell whether you de
 
 ```markdown
 # US-01: Rules that follow the marked region
-
-**MoSCoW:** Must Have
-**Closes:** GAP-01.
-**Supports:** VP-01.
-**Issue:** #42.
 
 As a platform engineer, I want to attach redaction rules to a marked region of our own code,
 so that our classification of what is marked decides what leaves the network.
@@ -417,7 +410,7 @@ It is not a showcase, and it is not the product.
 
    - `reports/week-NN/prototypes.md` records what you showed, which `US-nn` or `GAP-nn` it tested, and what the customer said.
    - The [meeting report](artifact-requirements.md#meeting-report) `## Decisions` table names the `US-nn` it changes.
-   - The `US-nn.md` file carries a dated note saying what changed.
+   - The `us/US-nn.md` file carries a dated note saying what changed.
    - The weekly public report names the `US-nn` that changed.
 
 4. A prototype is disposable.
@@ -480,6 +473,8 @@ The Week 11 individual reflection and peer evaluation are private and go in the 
    The research is maintained documentation, not a frozen Week 1 submission.
    See [Artifact Requirements](artifact-requirements.md#where-artifacts-live-in-the-repository).
 3. If you drop a gap mid-course, keep it in the gap analysis marked as dropped, and say which value propositions and user stories were affected.
+4. A later need that your Week 1 research did not anticipate does not rewrite the research.
+   Record its additional origin in the story's `sources`; update the research only when the later need contradicts it.
 
 ## Research Honesty Rules
 
@@ -517,9 +512,7 @@ A later meeting settles one thing or two, and the rules below are enough to prep
 2. The script covers five areas: business goals, end users, the current workflow, pain points and constraints, and scope, with at least two questions in each.
 3. Check the open questions against [The Mom Test](https://www.koji.so/docs/mom-test-methodology).
    A question about what the customer did last time is worth more than a question about what they would like.
-4. Close the script with a `## Key improvements` section naming at least two questions you rewrote and the principle behind each rewrite.
-   An improvement you cannot show is not an improvement.
-5. If a live meeting is impossible, do the alignment asynchronously in writing with the customer.
+4. If a live meeting is impossible, do the alignment asynchronously in writing with the customer.
    Timestamp the written exchange as the notes, record a voice or screen note if there is one, and state the substitution in the weekly public report as a deviation.
    The rules below still apply, except the role split and the length, per [Meeting Script](artifact-requirements.md#meeting-script).
 
@@ -529,7 +522,7 @@ A later meeting settles one thing or two, and the rules below are enough to prep
 2. The script covers whatever this meeting has to settle.
    Derive those areas from the target rather than from a template, and write every question numbered, tagged open or closed.
 3. Plan for 30 minutes and ask for 60 if the customer can give it.
-4. Assign roles before the meeting: an interviewer, a note taker, and an observer who records what was not asked and what was not said.
+4. Assign roles before the meeting: a moderator, a note taker, and an observer who records what was not asked and what was not said.
    The whole team attends.
 5. Ask the [three permission questions](artifact-requirements.md#customer-meeting-artifacts) every time.
    Permission is per meeting and is never carried over from an earlier one, and the recording stays out of the repository.
@@ -538,6 +531,8 @@ A later meeting settles one thing or two, and the rules below are enough to prep
    Its `## Decisions` table names the identifier family the week owns, per [Traceability Into Later Weeks](#traceability-into-later-weeks), so the customer is answering your research and not a stranger's.
 8. The customer decides the scope.
    Your job in the meeting is to present a direction with its evidence and to find out where it is wrong, not to ask the customer to design the product.
+9. Close the script with a `## Key improvements` section: at least two questions you rewrote at the kickoff, and at least one at every later meeting, each with the principle behind the rewrite.
+   An improvement you cannot show is not an improvement.
 
 **Example**
 
