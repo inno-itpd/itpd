@@ -221,33 +221,29 @@
 ]
 
 #slide("Constraints and assumptions")[
-  #term[Constraint] a condition you cannot change
+  #term[Constraint] a condition you cannot change.
 
-  #term[Assumption] a belief you have not verified
+  #term[Assumption] a belief you have not verified; you can be wrong about it.
 
   Record every constraint under one of three sources:
-  - *Customer-given*: imposed by the customer or the project catalog
-  - *Team-given*: e.g. the team size, the weeks left in the course, skills
+  - *Customer-given*: imposed by the customer (e.g. integration with a specific API)
+  - *Team-given*: e.g. the team size and skills, the weeks left in the course
+  // TODO any other - based on the environment, e.g. physical?
   - *Derived*: what follows from the other two
 
-  For each constraint, say what it costs you.
-  A constraint that costs nothing is not yet understood.
-
-  // #note[A constraint you cannot change, an assumption you can be wrong about. The assumption is the interesting one, because validation can test it.]
+  If you don't know what a constraint costs you, you don't understand it.
 ]
 
 #slide("The boundary")[
   #term[Boundary] what your product will *not* do.
 
-  It is what makes the context diagram checkable.
-  
+  It makes the context diagram checkable.
+
   With it, a reviewer can point at an actor and ask which of your exclusions
   rules them out.
-  
+
   Without it, a diagram can only be judged as looking reasonable, and
   "reasonable" is not a test.
-
-  // #note[The same list appears as your `Won't Have` stories, from the other direction.]
 ]
 
 #slide("The context diagram")[
@@ -267,7 +263,7 @@
 
 #slide("A user story")[
   #term[User story] captures a need of an actor together with the value.
-  
+
   ```text
   As a <user>
   I want to <action>
@@ -291,22 +287,22 @@
 
   *Not a story:*
 
+  // TODO "in one place" - isn't this value? why not?
   #quoted[As a student, I want a calendar page so that I can see all my study sessions in one place.]
 
-  #note[This is a feature description (a screen)]
+  #note[This is a feature description (a screen).]
 
   *A story:*
 
   #quoted[As a student preparing for an exam, I want to see the sessions I have already missed, so that I can decide which one to reschedule before the week is over.]
-  
-  #note[This one has a person in a situation, an object they need, and a
-  decision they are trying to make.]
+
+  #note[This one has a more precise \<user\> and captures the value they get from what the product allows them to do. It doesn't prescribe the exact design.]
 ]
 
 #slide("Two traps worth naming")[
   #term[Trap 1] a solution wearing a story's clothes.
-  The story names a screen, a button, or a component.
-  You have already designed it, so you are constrained by the design.
+  Example: the story names a screen, a button, or a component.
+  You have already designed it, so you'll be constrained to achieve the chosen design, not the value.
 
   #term[Trap 2] a goal nobody can fail.
   "Be fast", "be reliable", "delight the user".
@@ -316,9 +312,9 @@
 
 #slide("Acceptance criteria")[
   The story says *why*.
-  The criteria say *what success looks like*.
+  The criteria say *what success looks like* (when the story is completed).
 
-  Two or more per story, and the test is simple:
+  Two or more per story, and the test for a good acceptance criterion is simple:
   *could somebody who is not you run the check and get the same answer?*
 
   A criterion may name a screen, a field, or a system state, because that is
@@ -329,9 +325,11 @@
   A criterion you cannot run is a belief.
 
   #note[A criterion that is hard to write is not a writing problem.
-  It means you do not yet know what the product does in that case, which makes
-  it a good thing to prototype.]
+    It means you do not yet know what the product does in that case, which makes
+    it a good thing to prototype.]
 ]
+
+
 
 #slide("Prioritizing with MoSCoW")[
   Priority is a four-way scale, relative to the product you intend to finish:
@@ -341,23 +339,49 @@
   - *Could Have*: valuable, and the first thing to cut if can't implement for some reason
   - *Won't Have*: a real need you have deliberately excluded
 
-  Each label should be chosen deliberately.  
-  Whoever disagrees that a feature/user story is `Must Have` has to say why the product can still be the product without it.
+  Each label should be chosen deliberately to maximize value under constraints.
 
   A `Won't Have` is written down with its reason, not quietly left out.
   A reader can argue with a recorded exclusion; they can only guess about a
   missing one.
 ]
 
+#quiz[
+  - What question does each artifact in the chain answer?
+    #linebreak()
+    #text(weight: "bold")[GAP-nn, VP-nn] -> the vision -> #text(weight: "bold")[US-nn]
+  - What does the chain give you that a list of features does not?
+  - What is the difference between a need and a design?
+  - How do you tell a real acceptance criterion from a wish?
+]
+
+
+#section("Prototyping")
+
+#slide("Proof of concept, prototype, MUP, MVP")[
+  #term[Proof-of-concept] "does this work at all technically?"
+
+  #term[Prototype] "does this deliver the value?" Normally gets thrown away.
+
+  // TODO improve definition
+  #term[Minimum usable product] minimal code that works for the customer.
+
+  #term[Minimum valuable product] real code that delivers value to the customer.
+
+  // TODO improve definition
+  // #term[The product] what you ship, weeks later
+]
+
 #slide("The prototype")[
-  A prototype is an instrument for finding out what is wrong and for killing wrong ideas early.
+  A prototype is an instrument for finding out what is wrong and killing wrong ideas early.
 
-  It is not a showcase, and it is not the product.
+  It is not a showcase, and it is not the product, and not necessarily a part of the product.
 
-  Ask it one question first: *which story am I least sure about?*
-  Then build the cheapest thing that gets a reaction to that question.
+  Ask one question first: *which user stories am I least sure about?*
 
-  // #note[Say which user stories the prototype covers, out loud, in the record. One is fine, as long as you say which one and why that one.]
+  Then build the cheapest thing that gets a reaction to that question from a relevant stakeholder.
+
+  #note[After you have learned with the prototype what you planned, you can throw it away.]
 ]
 
 #slide("Forms of prototype")[
@@ -371,73 +395,11 @@
   A high-fidelity prototype is the wrong tool for "does the customer recognise
   this problem": you will spend two days on it and they will comment on the
   colour.
-
-  // #note[The record is the artifact; the prototype is meant to be thrown away.]
 ]
 
 #quiz[
-  - What question does each artifact in the chain answer?
-    
-    #text(weight: "bold")[GAP-nn, VP-nn] -> the vision -> #text(weight: "bold")[US-nn] -> the prototype
-  - What is the difference between a need and a design?
-  - How do you tell a real acceptance criterion from a wish?
-]
-
-// --- Vocabulary -------------------------------------------------------------
-
-#section("Vocabulary")
-
-#slide("Main terms")[
-  #term[Goal] what the product must achieve
-
-  #term[Boundary] what the team will not do
-
-  #term[Constraint] a condition you cannot change
-
-  #term[Assumption] a belief you have not verified
-
-  #term[Story] one thing a user needs
-
-  #term[Criterion] how you would know you delivered it
-
-  // An assumption is not a constraint.
-  // A constraint you cannot change; an assumption you can be wrong about, and that
-  // is the interesting one.
-]
-
-// #slide("Two distinctions that will cost you")[
-//   *A goal (Week 2) is not a quality goal (Week 4).*
-//   A goal says *what*: a student can see which study sessions they missed and
-//   decide what to reschedule.
-//   A quality goal says *how well*, and it arrives in Week 4 with its own
-//   `Q-nn` identifiers.
-
-//   *A threshold of success (Week 3) is not a goal restated.*
-//   A goal is the outcome.
-//   A threshold is the measurable bar for calling it done.
-//   If you can paste your goals into Week 3 and change nothing, they are not yet
-//   goals.
-// ]
-
-#slide("Prototype, proof-of-concept, MUP, product")[
-  #term[Proof-of-concept] "does this work at all technically?"
-
-  #term[Prototype] "does this deliver the value?" Normally gets thrown away
-
-  #term[Minimum usable product] real code that delivers value to somebody
-
-  #term[The product] what you ship, weeks later
-
-  // A prototype is not an MUP.
-  // If it is going to be code, it goes through planning like everything else.
-
-  // #warn[Be suspicious of a spike that nobody wants to throw away. Engineers are fascinated with the machine, and a spike is not a small feature.]
-]
-
-#quiz[
-  - Which of the six words can be wrong, and how would you find out?
-  // - Give a goal and a quality goal for the same product.
-  - What is the difference between a prototype and a MUP?
+  - What question does the prototype answer?
+  - What is the difference between a prototype and an MUP?
 ]
 
 // --- Validating with the customer -------------------------------------------
@@ -446,11 +408,11 @@
 
 #slide("What the second meeting asks")[
   The target is one sentence: *which of these is wrong?*
-  
+
   The prototype, the boundary, and the candidate for the minimum usable
   product.
-  
-  The rest of the stories only if time allows.
+
+  Discuss the rest of the user stories only if time allows.
 
   Not the business goals. Those were settled last week.
   A later meeting settles one thing or two, and everything else is a
@@ -462,41 +424,15 @@
 
   If the customer agrees with everything, you showed them the answer rather
   than the question.
-  The `Disagreements` table in your meeting report should not be empty.
+
+  Therefore, the `Disagreements` table in your meeting report should not be empty.
 
   #warn[A prototype that validated everything proved nothing, because you chose the parts you were already sure about.]
 ]
 
-// #slide("Trace what changed")[
-//   Something has to change as a result.
-
-//   A decision is not finished when the meeting ends.
-//   It has to reach all four records, or it did not happen:
-
-//   - The *prototype record*: what you showed, and what they said
-//   - The *meeting record*: which `US-nn` the decision changed
-//   - The *story*: what it says now, dated
-//   - The *week report*: what a reader should look at first
-
-//   A decision in the meeting record that never reaches the story has not
-//   changed anything.
-//   That is the step that gets skipped.
-// ]
-
 #quiz[
-  - What is the target of this meeting, in one sentence?
+  - What is the target of the meeting, in one sentence?
   - What do you do when the customer approves everything?
-  // - Where does a change have to be recorded?
-]
-
-// --- Review -----------------------------------------------------------------
-
-#slide("Review questions")[
-  - What does the chain give you that a list of features does not?
-  - What is the boundary for, and what does it make checkable?
-  - How do you tell a real acceptance criterion from a wish?
-  - Which of your stories would you prototype first, and why that one?
-  // - What is the difference between a goal, a quality goal, and a threshold of success?
 ]
 
 #pagebreak(weak: true)
