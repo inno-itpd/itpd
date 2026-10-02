@@ -18,6 +18,8 @@ Operating instructions for coding agents maintaining the student-facing course m
 | `guides/alternatives-research.md`         | Method for finding and evaluating alternatives. Explanatory, not normative.                                                                                   |
 | `guides/comparison-and-synthesis.md`      | Method for building the comparison, finding gaps, writing the value proposition. Explanatory, not normative.                                                  |
 | `guides/customer-interview.md`            | Method for the kickoff: the five areas, the Mom Test pass, and meeting roles. Explanatory, not normative.                                                     |
+| `guides/user-stories-and-prototyping.md`  | Method for turning a gap into stories, writing acceptance criteria, and testing an idea cheaply. Explanatory, not normative.                                  |
+| `guides/validating-with-the-customer.md`  | Method for the Week 2 validation meeting and for recording what it changed. Explanatory, not normative.                                                       |
 | `assignments/assignment-N.md`             | Learner-facing requirements for one week. Deltas, paths, and evidence only.                                                                                   |
 | `lectures/AGENTS.md`                      | The lecture decks: `lecture-N.typ` sources, their generated PDFs, the build, the layout contract, and the conversion method. Not student-facing.              |
 
@@ -108,9 +110,9 @@ It keeps its own rules, its build, and its gate in `lectures/AGENTS.md`; this fi
 - **Filenames** are kebab-case: `assignment-1.md`, `artifact-requirements.md`.
 - **Weeks** are zero-padded: `reports/week-01/`, through `reports/week-09/`.
 - **Identifiers** are zero-padded and stable: `ALT-01`, `GAP-01`, `VP-01` are the Week 1 families.
-  `US-01` for user stories, `Q-01` for quality goals, and `U-01` for usability tasks are introduced by the assignment that creates them, in W3, W4, and W7.
+  `US-01` for user stories, `Q-01` for quality goals, and `U-01` for usability tasks are introduced by the assignment that creates them, in W2, W4, and W7.
   IDs are never renumbered or reused, including in example text.
-- **Headings** are Title Case in requirements files and sentence case in guides and assignments.
+- **Headings** are Title Case in requirements files, guides, and assignments.
 - **Applicability markers**: all three requirements files carry inline `**Since: WN**` markers, so a section can hold requirements that begin in different weeks.
   To move a requirement to another week, change its own marker and leave the section where it is.
 - **Links** between files in this directory are relative Markdown links, and point at a heading anchor when they refer to a specific rule.
@@ -139,17 +141,17 @@ It keeps its own rules, its build, and its gate in `lectures/AGENTS.md`; this fi
 Decided now so no week invents a path.
 A later assignment may extend this map, but should not silently move an entry.
 
-| Week | Maintained artifacts                                                                                              |
-| ---- | ----------------------------------------------------------------------------------------------------------------- |
-| W1   | `docs/research/` — `alternatives.md`, `comparison.md`, `gap-analysis.md`, `value-proposition.md`                  |
-| W2   | `docs/work-plan.md`                                                                                               |
-| W3   | `docs/product-vision.md`, `docs/user-stories.md`, `docs/prototypes/`; `CHANGELOG.md`; SemVer tags begin           |
-| W4   | `docs/quality-requirements.md`, `docs/verification-plan.md`, `docs/threshold-of-success.md`, `docs/architecture/` |
-| W5   | `docs/testing.md`, `docs/deployment.md`                                                                           |
-| W6   | `docs/analytics.md` — provisional, to be confirmed when the W6 assignment is written                              |
-| W7   | `docs/usability-testing.md`                                                                                       |
-| W8   | `docs/configuration-management.md`                                                                                |
-| W9   | `docs/reflection.md`                                                                                              |
+| Week | Maintained artifacts                                                                                      |
+| ---- | --------------------------------------------------------------------------------------------------------- |
+| W1   | `docs/research/` — `alternatives.md`, `comparison.md`, `gap-analysis.md`, `value-proposition.md`          |
+| W2   | `docs/product-vision.md`, `docs/user-stories/`                                                            |
+| W3   | `docs/work-plan.md`, `docs/threshold-of-success.md`; `CONTRIBUTING.md`, `CHANGELOG.md`; SemVer tags begin |
+| W4   | `docs/quality-requirements.md`, `docs/verification-plan.md`, `docs/architecture/`                         |
+| W5   | `docs/testing.md`, `docs/deployment.md`                                                                   |
+| W6   | `docs/analytics.md` — provisional, to be confirmed when the W6 assignment is written                      |
+| W7   | `docs/usability-testing.md`                                                                               |
+| W8   | `docs/configuration-management.md`                                                                        |
+| W9   | `docs/reflection.md`                                                                                      |
 
 Weekly reports live at `reports/week-NN/README.md` in every week, and the Moodle PDF is the private wrapper in every week.
 Meeting artifacts live at `reports/week-NN/meeting-report.md`, plus a `meeting-transcript.md` or a `meeting-notes.md` beside it.
@@ -191,7 +193,11 @@ There is no `DEC-nn` or `ACT-nn`.
 A later week cites a meeting report by path and heading anchor, an action point is carried out by a tracked issue, and the identifier families stay the ones their own week introduces.
 
 Note that ITPD has no Scrum.
-Do not import Sprint, Product Backlog, PBI, or user-story ceremony from the `swp_26/` materials. `docs/user-stories.md` in W3 is user stories in the plain product sense.
+<!-- TODO: This is only partially true. We'll require only elements of Scrum -->
+
+Do not import Sprint, Product Backlog, PBI, or user-story ceremony from the `swp_26/` materials. `docs/user-stories/` in W2 is user stories in the plain product sense.
+
+<!-- TODO don't mention this week-specific text here. Better move to tmp/AGENTS.md? -->
 
 ## Do Not
 

@@ -1,6 +1,6 @@
 # Process Requirements
 
-These requirements define the product work itself: what counts as good research, what a gap is, what makes a value proposition worth building on, and how the identifiers you create in one week are used in later weeks.
+These requirements define the product work itself: what counts as good research, what a gap is, what makes a value proposition worth building on, what a product vision and a user story have to say, and how the identifiers you create in one week are used in later weeks.
 Use [Artifact Requirements](artifact-requirements.md) for where things live and who sees them, and [Repository Requirements](repository-requirements.md) for GitHub mechanics.
 
 The [guides](../guides/) explain how to do this work in practice.
@@ -14,9 +14,14 @@ This file defines what "done" means.
 - [Gap Analysis](#gap-analysis)
 - [Value Proposition And Differentiation](#value-proposition-and-differentiation)
 - [Assumptions](#assumptions)
+- [Product Vision And Goals](#product-vision-and-goals)
+- [Constraints](#constraints)
+- [Stakeholders, Boundary, And Context](#stakeholders-boundary-and-context)
+- [User Stories And Acceptance Criteria](#user-stories-and-acceptance-criteria)
+- [Validation](#validation)
 - [Identifier Rules](#identifier-rules)
 - [Traceability Into Later Weeks](#traceability-into-later-weeks)
-- [Quality Rules](#quality-rules)
+- [Research Honesty Rules](#research-honesty-rules)
 - [Meeting With The Customer](#meeting-with-the-customer)
 
 ## Research Is The Week's Work
@@ -208,6 +213,8 @@ The defensible part is the logging standard, not the rules themselves.
 
 ## Assumptions
 
+<!-- TODO where to store assumptions -->
+
 **Since: W1**
 
 **Required**
@@ -222,6 +229,212 @@ The customer decides the scope; you are responsible for knowing which of your be
 The ones you cannot settle yourself belong in the meeting report's open questions, where the customer answers them for you.
 See [Customer Meeting Artifacts](artifact-requirements.md#meeting-report).
 
+## Product Vision And Goals
+
+**Since: W2**
+
+The product vision is the one page a reader can hold to understand what the team decided to build and why.
+It turns the Week 1 research into something you can be held to.
+
+**Required**
+
+1. The vision states the **goal** of the product: what it must achieve.
+2. Every goal traces to at least one `VP-nn` from your [value proposition](../guides/comparison-and-synthesis.md#step-5-write-the-value-proposition).
+   A goal that supports no value proposition is a feature you would like, which is a different thing.
+3. The vision carries the [constraints](#constraints), the [stakeholders, boundary, and context diagram](#stakeholders-boundary-and-context), and a link to the [user stories](#user-stories-and-acceptance-criteria).
+4. Keep it short.
+   A vision that has grown into a specification has become the stories, and the two then drift apart.
+
+<!-- TODO don't mention concepts that haven't yet been introduced? (quality goal) -->
+
+**A goal is not a quality goal.**
+
+A goal says what the product must achieve: someone can send a marked region to a model without its contents leaving the network under the company's own rules.
+
+<!-- TODO quality - week 3 or week 4? -->
+
+A quality goal says how well, and it is Week 4's work, with its own `Q-nn` identifiers.
+
+Do not write "fast", "reliable", or "user-friendly" as a goal.
+Those are Week 4, and a goal nobody can fail is not a goal.
+
+**Example**
+
+```markdown
+## Goal
+
+A platform engineer at a company that sends marked source code to external models can have the code's own classification of what is marked decide the redaction rules, without those rules leaving the company.
+
+**Supports:** VP-01.
+**Measured by:** the threshold of success, in Week 3.
+```
+
+## Constraints
+
+**Since: W2**
+
+<!-- TODO separate assumptions from constraints? -->
+
+A constraint is a condition your product has to live inside.
+An assumption is a belief about the problem that you have not verified.
+Keeping the two apart is the whole point of this section: a constraint you cannot change, and an assumption you can be wrong about.
+
+**Required**
+
+1. Record every constraint under one of three sources:
+
+   - **Customer-given**: something the customer or the project catalog imposed, including a language, platform, or deployment mandate that came with the project.
+   - **Team-given**: the conditions you do not control, such as the size of the team and the number of weeks left in the course.
+   - **Derived**: something that follows from the other two, such as a consequence of a deployment mandate for the target device.
+
+2. For each constraint, say what it costs you.
+   A constraint that costs nothing is not yet understood.
+3. An assumption is not a constraint and does not belong in this section.
+   Assumptions live in [Assumptions](#assumptions) and are checked through [Validation](#validation).
+4. Do not list a constraint you chose and then describe it as imposed.
+   A technology you picked in Week 3 is a decision, and it belongs in the work plan.
+
+**Recommended**
+
+- Say which constraints are negotiable and who you would have to ask.
+- Note the constraints that your research in Week 1 did not anticipate.
+
+## Stakeholders, Boundary, And Context
+
+**Since: W2**
+
+<!-- TODO use simpler language. "earns its keep"??? -->
+
+The boundary is the part of this section that earns its keep: it is what the team will **not** do.
+Without it, a context diagram shows a product floating in a void, and no reviewer can tell whether it is right.
+
+**Required**
+
+1. Name the stakeholders: who the product is for, who operates it, who pays for it, and who is affected by it without using it.
+   Your customer is one of the stakeholders.
+2. State the **boundary** explicitly, as a list of things the product will not do.
+3. Draw a **system context diagram** showing the product, the external actors, and the external systems it exchanges data with.
+   The diagram must be a picture, not a description of one.
+4. Any format is allowed, as long as the diagram itself is committed, or linked view-only, and the surrounding text says what it must show.
+   Describe the external actors in prose next to the diagram, and do not duplicate the diagram in text.
+5. Do not draw a use case diagram here, and do not draw components, containers, or an internal structure.
+   Those are Week 4, and the context diagram is the one that stays true as the product changes.
+6. Every actor in the diagram must survive your boundary.
+   If an actor has no reason to exchange anything with the product, it is not on the diagram.
+
+**The boundary is what makes the context diagram falsifiable.**
+Without it, a diagram can be judged only on whether it looks reasonable, and "reasonable" is not a test.
+With it, a reviewer can point at an actor and ask which of your boundary items excludes them.
+A boundary nobody can disagree with is a boundary that is not written down.
+
+**Recommended**
+
+- Check the diagram against the `Won't Have` items in your stories, per [Value Proposition And Differentiation](#value-proposition-and-differentiation).
+- Keep the diagram in the same file as the vision, and keep that file the only place a diagram is committed, so there is one version.
+
+## User Stories And Acceptance Criteria
+
+<!-- are we duplicating artifact requirements here? -->
+
+**Since: W2**
+
+A user story is a small, checkable statement of one thing a user needs.
+Its job is to make a gap concrete enough that a reviewer can tell whether you delivered it.
+
+**Required**
+
+1. Write **8 or more** user stories.
+   Fewer do not cover a product, and more leaves no week to change them once something turns out to be wrong.
+2. Every story gets a stable ID `US-01`, `US-02`, and so on.
+   IDs are never renumbered, reused, or reassigned, including when the story is edited later in the course.
+3. Every story is a statement of a user's need, not a description of a solution.
+   "As a platform engineer, I want to attach redaction rules to a marked region, so that the company's own classification decides what leaves the network" is a need.
+   "Add a redaction rule editor" is a feature you have already designed.
+4. Every story names the `GAP-nn` it closes and the `VP-nn` it supports.
+5. Every story is prioritized with MoSCoW, relative to the product you intend to finish in this course:
+
+   - `Must Have`: the product is not the product without it.
+   - `Should Have`: important, and the product is still coherent without it.
+   - `Could Have`: valuable, and the first thing to cut.
+   - `Won't Have`: a real need you have deliberately excluded.
+     Say why in the story's notes.
+
+6. Every story carries **at least two acceptance criteria**, and each one must be observable and pass/fail.
+   Any notation is allowed, including `Given`/`When`/`Then`; the rules are that somebody other than you can run the check and get the same answer.
+   "Works well" is not a criterion.
+7. A story too large to build and verify in one week is two stories.
+   Split it, and keep the parent traceable from both children.
+8. Name the **minimum usable product candidate**: a strict, non-empty subset of your `Must Have` stories that you would build first.
+   Say which one you would drop first if you ran out of time.
+   The candidate is a proposal, not a commitment, and Week 3 schedules and builds it.
+9. Open one issue per `US-nn` and link it from the story.
+   The issue is what the team tracks and what the customer can see; the story file is what the requirements are held in.
+   See [Planning And Issue Tracking](repository-requirements.md#planning-and-issue-tracking).
+
+**Recommended**
+
+- Make the pair of criteria cover the happy path and one failure, empty, or edge case.
+- Keep stories small enough that one person can finish one in a few days.
+- Write the story that is least likely to be built.
+  A story you never write is a decision you made without noticing.
+
+**Example**
+
+```markdown
+# US-01: Rules that follow the marked region
+
+**MoSCoW:** Must Have
+**Closes:** GAP-01.
+**Supports:** VP-01.
+**Issue:** #42.
+
+As a platform engineer, I want to attach redaction rules to a marked region of our own code,
+so that our classification of what is marked decides what leaves the network.
+
+## Acceptance criteria
+
+1. Given a repository with one marked region, when I attach a rule to that region, then the rule applies to
+   every request that includes that region, and the log records which rule fired.
+2. Given a marked region with no rule attached, when a request includes it, then the request is blocked and
+   the reason names the region, and no request content is logged.
+```
+
+## Validation
+
+**Since: W2**
+
+A prototype is an instrument for finding out what is wrong.
+It is not a showcase, and it is not the product.
+
+**Required**
+
+1. Test the assumptions your research and your stories rest on, not the parts you are already sure about.
+   Name the risky part before you build anything, so you cannot quietly choose the easy thing.
+2. Show the prototype to the customer, and record what they said.
+   A prototype nobody reacted to has not been tested.
+3. **Something must change as a result.**
+   Record the change in all four places:
+
+   - `reports/week-NN/prototypes.md` records what you showed, which `US-nn` or `GAP-nn` it tested, and what the customer said.
+   - The [meeting report](artifact-requirements.md#meeting-report) `## Decisions` table names the `US-nn` it changes.
+   - The `US-nn.md` file carries a dated note saying what changed.
+   - The weekly public report names the `US-nn` that changed.
+
+4. A prototype is disposable.
+   A paper sketch, a view-only design tool, and a code spike are equally acceptable, and none of them is product code.
+5. The prototype does not need to be beautiful, and it does not need to work.
+   It needs to be good enough for the customer to react to the thing you are unsure about.
+
+**Do not treat agreement as a result.**
+A customer who says "that sounds great" about your own idea has told you almost nothing, and `## Disagreements` in the meeting report will be empty when it should not be.
+A prototype that validated everything proved nothing, because you chose the parts you were already sure about.
+
+**Recommended**
+
+- Prototype the riskiest assumption first, and only as long as it takes to get a reaction.
+- Test with whoever actually does the job, where that is possible.
+- Keep the loop short: build something, show it, write down what you learned, change the story.
+
 ## Identifier Rules
 
 **Since: W1**
@@ -230,7 +443,7 @@ See [Customer Meeting Artifacts](artifact-requirements.md#meeting-report).
 
 1. The identifier families introduced in Week 1 are `ALT-nn` for alternatives, `GAP-nn` for gaps, and `VP-nn` for value propositions.
    All are zero-padded and case-sensitive.
-   `US-nn` for user stories, `Q-nn` for quality goals, and `U-nn` for usability tasks are introduced by the assignment that creates them, in Weeks 3, 4, and 7.
+   `US-nn` for user stories, `Q-nn` for quality goals, and `U-nn` for usability tasks are introduced by the assignment that creates them, in Weeks 2, 4, and 7.
 2. An identifier, once issued, is never changed, reused, or reassigned, including when the artifact is edited later in the course.
 3. Gaps in a sequence are expected and correct.
    A removed `GAP-03` leaves a hole; it does not cause renumbering.
@@ -246,16 +459,16 @@ The research you produce in Week 1 is the evidence base for the rest of the cour
 Later weeks cite your Week 1 identifiers rather than restating your findings.
 This is what makes the course a project rather than nine separate assignments.
 
-| Later work                                    | Must cite                                                                                                  |
-| --------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| Week 2 work plan and scope proposal           | `GAP-nn`, `VP-nn`, and the kickoff [meeting report](artifact-requirements.md#meeting-report) action points |
-| Week 3 user stories and the product vision    | `US-nn` the story serves, the `GAP-nn` it closes, and the `VP-nn` it supports                              |
-| Week 4 quality goals and threshold of success | `Q-nn` the quality goal, the `GAP-nn` it protects, and the `VP-nn`                                         |
-| Week 5 minimum viable product                 | the `VP-nn` the release delivers                                                                           |
-| Week 6 analytics                              | the `VP-nn` each instrumented event is meant to test                                                       |
-| Week 7 usability testing                      | `U-nn` the task, and the `US-nn` or `GAP-nn` it exercises                                                  |
-| Week 8 configuration management decisions     | the `US-nn` or `GAP-nn` affected by the decision                                                           |
-| Week 9 reflection and final presentation      | the gaps you closed, and the ones you did not                                                              |
+| Later work                                          | Must cite                                                                                              |
+| --------------------------------------------------- | ------------------------------------------------------------------------------------------------------ |
+| Week 2 product vision, user stories, and prototypes | `US-nn`, the `GAP-nn` it closes, the `VP-nn` it supports, and the kickoff action points it carried out |
+| Week 3 work plan and threshold of success           | the `US-nn` it schedules, the `GAP-nn` it serves, and the `VP-nn` it delivers                          |
+| Week 4 quality goals and architecture               | `Q-nn` the quality goal, the `GAP-nn` it protects, and the `VP-nn`                                     |
+| Week 5 minimum viable product                       | the `VP-nn` the release delivers                                                                       |
+| Week 6 analytics                                    | the `VP-nn` each instrumented event is meant to test                                                   |
+| Week 7 usability testing                            | `U-nn` the task, and the `US-nn` or `GAP-nn` it exercises                                              |
+| Week 8 configuration management decisions           | the `US-nn` or `GAP-nn` affected by the decision                                                       |
+| Week 9 reflection and final presentation            | the gaps you closed, and the ones you did not                                                          |
 
 Weeks 10 and 11 produce no repository work that cites a Week 1 identifier.
 The Week 11 individual reflection and peer evaluation are private and go in the Moodle submission only.
@@ -268,9 +481,12 @@ The Week 11 individual reflection and peer evaluation are private and go in the 
    See [Artifact Requirements](artifact-requirements.md#where-artifacts-live-in-the-repository).
 3. If you drop a gap mid-course, keep it in the gap analysis marked as dropped, and say which value propositions and user stories were affected.
 
-## Quality Rules
+## Research Honesty Rules
 
 **Since: W1**
+
+These rules are about the honesty of your research, not about the quality of your software.
+Software quality is Week 4.
 
 **Required**
 

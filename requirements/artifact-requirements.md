@@ -24,6 +24,9 @@ It is the short version of this file and states what is expected of you as a stu
   - [Meeting Script](#meeting-script)
 - [Screenshot Evidence](#screenshot-evidence)
 - [AI Usage Report](#ai-usage-report)
+- [Product Vision](#product-vision)
+- [User Stories](#user-stories)
+- [Prototypes](#prototypes)
 - [Private Submission Wrapper](#private-submission-wrapper)
 - [Declaring Deviations](#declaring-deviations)
 - [Later Weeks](#later-weeks)
@@ -62,7 +65,8 @@ It is the short version of this file and states what is expected of you as a stu
      Anything the project will still refer to in a later week goes here, in its final location, from the week it is created.
 
 2. This rule covers artifacts, not repository mechanics.
-   Code, workflows, issue and pull request templates, `LICENSE`, and the files in `.github/` are repository content, not artifacts, and are covered in [Repository Requirements](repository-requirements.md).
+   Code, workflows, issue and pull request templates, `LICENSE`, the files in `.github/`, and the files a planning or issue-tracking tool writes into the repository are repository content, not artifacts, and are covered in [Repository Requirements](repository-requirements.md).
+   A tool that keeps its state in the repository adds a directory of repository content, not a third location for course work.
 3. There is no third location and no migration step.
    When you create an artifact, put it where it will live for the rest of the course.
    Do not create a file in `reports/` and move it to `docs/` later, and do not keep the same content in both places.
@@ -558,6 +562,229 @@ No AI output was used as a finding.
 No generated text was submitted unchecked.
 ```
 
+## Product Vision
+
+**Since: W2**
+
+The product vision is the maintained document that says what the team decided to build, what it will not do, and what limits it.
+It is created once, in its final place, and then stays current.
+
+**Required**
+
+1. `docs/product-vision.md` is the only file that carries the product vision.
+2. It carries:
+
+   - The **goal**, what the product must achieve, traced to the `VP-nn` it supports.
+      <!-- TODO remind where VP-nn is located -->
+   - The **stakeholders**
+   - The **constraints**, each marked as customer-given, team-given, or derived, with what it costs.
+      <!-- TODO should each constraint have an identifier? -->
+   - The **boundary**, the list of what the product will not do.
+   - A **system context diagram**, committed here or linked view-only from here, with the external actors described in prose beside it.
+   - Links to the [user stories](#user-stories) and to the current week's report.
+
+3. When the product or the decisions change, update this file.
+   It is maintained documentation, not a Week 2 submission, so a contradiction with the stories is a bug rather than a historical record.
+
+**Recommended**
+
+- Keep the goal to a short paragraph.
+  The stories carry the detail, and a vision that has grown into a specification will drift away from them.
+- Link to each `VP-nn` section rather than restating it.
+
+**Example**
+
+```markdown
+# Product vision
+
+Modular LLM gateway
+
+## Goal
+
+A platform engineer at a company that sends marked source code to external models can have the code's own classification of what is marked decide the redaction rules, without those rules leaving the company.
+
+**Supports:** [VP-01](research/value-proposition.md#vp-01-redaction-rules-that-belong-to-the-team).
+
+## Stakeholders
+
+- **Platform engineer** at the customer company: the primary user.
+- **Security lead**: approves the rule format, does not use the product daily.
+- **The customer**: decides the scope, and is the course instructor.
+
+## Constraints
+
+| Constraint                                   | Source         | What it costs                         |
+| -------------------------------------------- | -------------- | ------------------------------------- |
+| Deployed on a single VPS                     | Customer-given | No multi-node failover                |
+| Built and maintained by 3 people for 9 weeks | Team-given     | No component may need a second expert |
+| Runs plugins written by coding agents        | Derived        | The plugin contract must be explicit  |
+
+## Boundary
+
+The product will not:
+
+- Store request content.
+- Decide what is sensitive for the customer.
+- Run outside a single VPS.
+
+## Context
+
+![System context diagram](architecture/context.svg)
+
+The platform engineers and the security lead are the actors.
+The external systems are the external model
+providers, the company's source control, and the audit log sink.
+No actor appears that the boundary excludes.
+
+## Where The Detail Lives
+
+- [User stories](user-stories/README.md)
+- [Week 2 report](../reports/week-02/README.md)
+```
+
+## User Stories
+
+**Since: W2**
+
+User stories are created in Week 2 and stay current for the rest of the course.
+The directory is the registry; the individual files are what the requirements are held in.
+
+**Required**
+
+1. `docs/user-stories/` holds one file per story, named after its identifier: `US-01.md`, `US-02.md`.
+   <!-- TODO put them into docs/user-stories/us/US-01.md etc so that README can be located immediately while browsing files -->
+2. `docs/user-stories/README.md` is the **index and the registry of identifiers**.
+   It is the only place the full list appears, and it carries:
+
+   - A row per story: the `US-nn`, its title, its MoSCoW priority, the `GAP-nn` it closes, the `VP-nn` it supports, and a link to its issue.
+      <!-- TODO should this linking to gaps and vps exist -->
+   - A `## Minimum usable product candidate` section naming the `US-nn` the team would build first, and which one it would drop first if it ran out of time.
+     The candidate is a strict, non-empty subset of the `Must Have` stories, and it is a proposal that Week 3 schedules.
+   - A row for every story that was removed, keeping its identifier, marked removed with the date and the reason.
+     <!-- TODO better move to a separate table below to not confuse agents seeking for up-to-date stories -->
+
+3. Each `US-nn.md` carries:
+   <!-- TODO define what it carries in the frontmatter and what in the body -->
+   - The identifier as its own heading, so the story can be found with a search and linked to permanently.
+   - Its MoSCoW priority.
+   - The `GAP-nn` it closes and the `VP-nn` it supports.
+   - A link to its issue.
+     <!-- TODO the issue doesn't copy the user story text? file is the source of truth? -->
+   - The story statement itself.
+   - A `## Acceptance criteria` section with at least two criteria, each observable and pass/fail.
+   - Notes: constraints, assumptions, open questions, and why a `Won't Have` story is excluded.
+   - A dated note for every change the team made after writing the story, so a reader can see what the validation meeting settled.
+
+4. Do not copy the story text into the index.
+   The index links to the files; the files hold the content.
+5. The issue tracker is where execution state lives.
+   The index carries a link to each issue rather than a second copy of its status.
+
+**Recommended**
+
+- Use `Given`/`When`/`Then` for the criteria if it fits the product, and any other notation if it does not.
+  <!-- TODO mention gherkin -->
+  The rules are that somebody else can run the check and get the same answer.
+- Keep the story files short enough to read in one sitting.
+
+**Example**
+
+`docs/user-stories/README.md`:
+
+<!-- TODO don't mention Modular gateway, team 7 everywhere.
+It's already obvious from their readme which team they are and which project they work on -->
+
+```markdown
+# User stories
+
+Modular LLM gateway, team 7.
+The product goal is in [the vision](../product-vision.md).
+
+| Story                                                 | Priority   | Closes | Supports | Issue                                        |
+| ----------------------------------------------------- | ---------- | ------ | -------- | -------------------------------------------- |
+| [US-01](US-01.md) Rules that follow the marked region | Must Have  | GAP-01 | VP-01    | [#42](https://github.com/org/repo/issues/42) |
+| [US-02](US-02.md) An audit trail a user can read      | Must Have  | GAP-02 | VP-01    | [#43](https://github.com/org/repo/issues/43) |
+| [US-09](US-09.md) Share a board by public link        | Won't Have | GAP-04 | VP-02    | removed 2026-10-07                           |
+
+## Minimum usable product candidate
+
+US-01 and US-02.
+US-02 is the one we drop first, because an unreadable audit trail is a bad product while a missing one is an incomplete product.
+
+## Removed stories
+
+| Story                                          | Removed    | Why                                                                          |
+| ---------------------------------------------- | ---------- | ---------------------------------------------------------------------------- |
+| [US-09](US-09.md) Share a board by public link | 2026-10-07 | No evidence that a user needs it; the two that ranked above it were untested |
+```
+
+`docs/user-stories/US-01.md`:
+
+```markdown
+# US-01: Rules that follow the marked region
+
+**MoSCoW:** Must Have
+**Closes:** [GAP-01](../research/gap-analysis.md#gap-01).
+**Supports:** [VP-01](../research/value-proposition.md#vp-01-redaction-rules-that-belong-to-the-team).
+**Issue:** [#42](https://github.com/org/repo/issues/42).
+
+As a platform engineer, I want to attach redaction rules to a marked region of our own code,
+so that our classification of what is marked decides what leaves the network.
+
+## Acceptance criteria
+
+1. Given a repository with one marked region, when I attach a rule to that region, then the rule applies to
+   every request that includes that region, and the log records which rule fired.
+2. Given a marked region with no rule attached, when a request includes it, then the request is blocked and
+   the reason names the region, and no request content is logged.
+
+## Notes
+
+The customer confirmed on 2026-10-06 that the company's own marking is authoritative and that we may not
+infer it from file paths, which killed an earlier assumption in [the assumptions table](../research/value-proposition.md).
+
+## Changes
+
+- 2026-10-06: criterion 2 added after the validation meeting.
+  The customer will not accept a blocked request with no reason, and the first version of the criterion only said the request is blocked.
+```
+
+<!-- TODO make changes section optional? Or, still needed because commits may not track the change reason?  -->
+
+## Prototypes
+
+**Since: W2**
+
+A prototype is disposable.
+It exists to find out whether something is wrong, and it is not the product.
+
+**Required**
+
+1. A week that tests an idea records it at `reports/week-NN/prototypes.md`.
+   It is week evidence, not maintained documentation, so it is not in `docs/`.
+2. The file carries, for each prototype:
+
+   - What it is and how to view it: a screenshot in `reports/week-NN/images/`, a view-only external link, or a branch name.
+   - Which `US-nn` or `GAP-nn` it tested, and the assumption it was built to put at risk.
+      <!-- wdym assumption it was built to put at risk? -->
+   - What the customer said about it.
+   - What changed as a result, and where that change is recorded.
+
+3. A prototype may be a paper sketch, a static image, a clickable design, or a code spike.
+   Any format is allowed, as long as somebody else can look at it.
+4. **Disposable prototype code does not go on `main`.**
+   If you vibecode a prototype, do it on a branch, show it from there, and then either delete the branch or merge it only when it has become product code.
+   The evidence is the screenshot and `prototypes.md`, not the branch.
+   A branch that is the evidence may not be deleted, per [Branch Protection And Pull Requests](repository-requirements.md#branch-protection-and-pull-requests).
+   <!-- TODO what do you mean by branch that is the evidence? -->
+5. Do not commit a prototype to `docs/`.
+   It will never be the product, and a directory of discarded prototypes in the maintained documentation is a lie about what the team is building.
+
+**Recommended**
+
+- Prototype the riskiest assumption, and stop as soon as you have a reaction.
+- Say which question the prototype answers, in one line, before you show it.
+
 ## Private Submission Wrapper
 
 **Since: W1**
@@ -598,8 +825,9 @@ Each assignment states the path and the week-specific evidence.
 - Customer meeting reports, transcripts, notes, and meeting scripts for the meetings you hold after the kickoff.
   They follow the same structure as the Week 1 kickoff artifacts, and the same rules for every meeting in [Meeting With The Customer](process-requirements.md#meeting-with-the-customer).
   See [Customer Meeting Artifacts](#customer-meeting-artifacts).
-- Prototypes and the product vision from Week 3.
-- Quality requirements, the verification plan, the threshold of success, and architecture documentation from Week 4.
+- The work plan and the threshold of success from Week 3.
+  Their structures are not written yet and belong here before the Week 3 assignment is.
+- Quality requirements, the verification plan, and architecture documentation from Week 4.
 - Testing and deployment documentation from Week 5.
 - Usability testing protocols, participant consent evidence, and results from Weeks 7 and 9.
 - Configuration management documentation from Week 8.

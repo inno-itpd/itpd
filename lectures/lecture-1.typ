@@ -101,6 +101,9 @@
   - Risk management
 
   #note[Not about architecture - you'll have a course next semester]
+  
+  // TODO consider clarifying
+  // #note[Architecture as a subject is next semester. Week 4 draws a sketch, only to show which quality goals are worth reaching for.]
 ]
 
 #slide("Software engineer levels")[

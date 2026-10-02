@@ -6,14 +6,13 @@ Materials for the **IT Product Development (ITPD)** course: what the course expe
 
 1. **[Course rules](course/rules.md)** — read this first.
    What is public, what is private, deadlines, AI policy.
-   One page.
-2. **[Assignment 1](assignments/assignment-1.md)** — this week's work.
 
 ## Assignments
 
-| Week                             | Due              | Deliverable                                                                 |
+| Week                             | Hard deadline    | Deliverable                                                                 |
 | -------------------------------- | ---------------- | --------------------------------------------------------------------------- |
-| [1](assignments/assignment-1.md) | Thu 1 Oct, 23:59 | Initial project research: alternatives, comparison, gaps, value proposition |
+| [1](assignments/assignment-1.md) | Fri 2 Oct, 23:59 | Initial project research: alternatives, comparison, gaps, value proposition |
+| [2](assignments/assignment-2.md) | Fri 9 Oct, 23:59 | Requirements and prototyping: vision, user stories, prototypes, validation  |
 
 Later assignments are added as the course runs.
 Each one adds the paths and evidence for its week, and changes nothing about the rules below.
@@ -38,6 +37,8 @@ How to actually do the work.
 | [Researching alternatives](guides/alternatives-research.md)                | Finding your set, choosing properties, evaluating consistently, capturing evidence |
 | [From comparison to value proposition](guides/comparison-and-synthesis.md) | Building the table, finding the gaps, writing the proposition and your assumptions |
 | [The kickoff interview](guides/customer-interview.md)                      | The five areas, the Mom Test pass, and the meeting roles                           |
+| [User stories and prototyping](guides/user-stories-and-prototyping.md)     | Turning a gap into stories, writing criteria, and testing an idea cheaply          |
+| [Validating with the customer](guides/validating-with-the-customer.md)     | Running the Week 2 meeting and recording what it changed                           |
 
 ## Course Documents
 
