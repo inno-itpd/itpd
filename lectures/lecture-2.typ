@@ -223,13 +223,13 @@
 #slide("Constraints and assumptions")[
   #term[Constraint] a condition you cannot change.
 
-  #term[Assumption] a belief you have not verified; you can be wrong about it.
+  #term[Assumption] a belief you have not verified but treat as true for now; you can be wrong about it.
 
-  Record every constraint under one of three sources:
-  - *Customer-given*: imposed by the customer (e.g. integration with a specific API)
-  - *Team-given*: e.g. the team size and skills, the weeks left in the course
-  // TODO any other - based on the environment, e.g. physical?
-  - *Derived*: what follows from the other two
+  Record every constraint under one of four types:
+  - *Customer-given*: e.g. integration with a specific API, limited budget
+  - *Team-given*: e.g. the team size and skills
+  - *Environmental*: e.g. the weeks left in the course
+  - *Derived*: what follows from the other constraints
 
   If you don't know what a constraint costs you, you don't understand it.
 ]
@@ -274,40 +274,28 @@
   operator or administrator who keeps it running.
 
   It is a *need*, not a design.
-  "See the sessions I missed this week" is a need you can still be wrong about.
-  "Add a calendar page" is a feature you have already built in your head.
+  - "See the sessions I missed this week" is a need.
+  - "Add a calendar page" is a feature you have already built in your head.
 
   Naming design specifics may constrain developers who will work on the user story.
 
   If you cannot finish a user story with a value, you have written a task.
 ]
 
-#slide("One story, twice")[
+#slide("A non-story and a story")[
   Both are about a study group planner. Both are made up.
 
   *Not a story:*
 
-  // TODO "in one place" - isn't this value? why not?
   #quoted[As a student, I want a calendar page so that I can see all my study sessions in one place.]
 
-  #note[This is a feature description (a screen).]
+  #note[This is a feature description ("a calendar page") and presentation description ("in one place"). Which value does having the sessions in one place provide?]
 
   *A story:*
 
   #quoted[As a student preparing for an exam, I want to see the sessions I have already missed, so that I can decide which one to reschedule before the week is over.]
 
   #note[This one has a more precise \<user\> and captures the value they get from what the product allows them to do. It doesn't prescribe the exact design.]
-]
-
-#slide("Two traps worth naming")[
-  #term[Trap 1] a solution wearing a story's clothes.
-  Example: the story names a screen, a button, or a component.
-  You have already designed it, so you'll be constrained to achieve the chosen design, not the value.
-
-  #term[Trap 2] a goal nobody can fail.
-  "Be fast", "be reliable", "delight the user".
-  Nobody can tell on Friday whether you achieved it, so it cannot guide a
-  decision on Wednesday.
 ]
 
 #slide("Acceptance criteria")[
@@ -325,8 +313,7 @@
   A criterion you cannot run is a belief.
 
   #note[A criterion that is hard to write is not a writing problem.
-    It means you do not yet know what the product does in that case, which makes
-    it a good thing to prototype.]
+    It means you do not yet know what the product does in that case, which makes it a good thing to prototype.]
 ]
 
 
@@ -336,14 +323,12 @@
 
   - *Must Have*: the product is not the product without it
   - *Should Have*: important, but the product is still coherent without it
-  - *Could Have*: valuable, and the first thing to cut if can't implement for some reason
+  - *Could Have*: valuable, and the first thing to cut if you can't implement for some reason
   - *Won't Have*: a real need you have deliberately excluded
 
-  Each label should be chosen deliberately to maximize value under constraints.
+  Each label should be justified and account for constraints.
 
-  A `Won't Have` is written down with its reason, not quietly left out.
-  A reader can argue with a recorded exclusion; they can only guess about a
-  missing one.
+  `Won't Have` things outline the boundary.
 ]
 
 #quiz[
@@ -358,30 +343,26 @@
 
 #section("Prototyping")
 
-#slide("Proof of concept, prototype, MUP, MVP")[
-  #term[Proof-of-concept] "does this work at all technically?"
+#slide("Proof of concept (PoC), prototype, MUP, MVP")[
+  #term[Proof-of-concept (PoC)] "Can this work at all technically?"
 
-  #term[Prototype] "does this deliver the value?" Normally gets thrown away.
+  #term[Prototype] "How will this look? Does this user flow make sense?"
 
-  // TODO improve definition
-  #term[Minimum usable product] minimal code that works for the customer.
+  #term[Minimal usable product] "Can the user complete the core tasks without getting frustrated?"
 
-  #term[Minimum valuable product] real code that delivers value to the customer.
-
-  // TODO improve definition
-  // #term[The product] what you ship, weeks later
+  #term[Minimal viable product] "Will people use it?" Minimal, ready-to-ship product that can deliver value to the users.
 ]
 
 #slide("The prototype")[
   A prototype is an instrument for finding out what is wrong and killing wrong ideas early.
 
-  It is not a showcase, and it is not the product, and not necessarily a part of the product.
+  It is not a showcase, and it is not a part of the product.
 
   Ask one question first: *which user stories am I least sure about?*
 
-  Then build the cheapest thing that gets a reaction to that question from a relevant stakeholder.
+  Then build the cheapest thing that gets a reaction to that question from relevant stakeholders (customer - in case of ITPD).
 
-  #note[After you have learned with the prototype what you planned, you can throw it away.]
+  After you have learned with the prototype what you planned, you can throw it away.
 ]
 
 #slide("Forms of prototype")[
@@ -409,25 +390,19 @@
 #slide("What the second meeting asks")[
   The target is one sentence: *which of these is wrong?*
 
-  The prototype, the boundary, and the candidate for the minimum usable
-  product.
+  The prototype, the boundary, and the candidate for the MUP.
 
-  Discuss the rest of the user stories only if time allows.
-
-  Not the business goals. Those were settled last week.
-  A later meeting settles one thing or two, and everything else is a
-  conversation you do not need to have again.
+  Discuss the rest of the user stories if time allows.
 ]
 
 #slide("Do not treat agreement as a result")[
   "That sounds great" about your own idea has told you almost nothing.
 
-  If the customer agrees with everything, you showed them the answer rather
-  than the question.
+  If the customer agrees with everything, you showed them the answer rather than the question.
 
   Therefore, the `Disagreements` table in your meeting report should not be empty.
 
-  #warn[A prototype that validated everything proved nothing, because you chose the parts you were already sure about.]
+  If there are no disagreements, you probably showed what you were already sure about.
 ]
 
 #quiz[
