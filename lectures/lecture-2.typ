@@ -30,8 +30,9 @@
 //   - No screenshots, images, or diagrams carried over from any source deck.
 //     Decks are self-contained Typst with no committed image assets, so they
 //     would have to be redrawn. The context diagram is named, not drawn.
-//   - No Scrum. lecture-2.1.pdf uses Scrum as its tactical example and
-//     lecture-3.pdf is framed around iteration; ITPD has no Scrum.
+//   - No Scrum in this deck. lecture-2.1.pdf uses Scrum as its tactical
+//     example; ITPD covers sprints, planning, estimation, and retrospective
+//     in Week 3, so they are not here.
 //   - No product examples from the 2025 decks. One invented product, a study
 //     group planner, carries every worked example, and it uses the US-01
 //     identifier rather than an identifier that would suggest a real student
@@ -155,7 +156,7 @@
 #slide("Agenda")[
   - Why this week
   - The chain: vision, stories, criteria, prototype
-  - Vocabulary
+  - Prototyping
   - Validating with the customer
 ]
 
@@ -348,9 +349,9 @@
 
   #term[Prototype] "How will this look? Does this user flow make sense?"
 
-  #term[Minimal usable product] "Can the user complete the core tasks without getting frustrated?"
+  #term[Minimum usable product] "Can the user complete the core tasks without getting frustrated?"
 
-  #term[Minimal viable product] "Will people use it?" Minimal, ready-to-ship product that can deliver value to the users.
+  #term[Minimum viable product] "Will people use it?" The minimum ready-to-ship product that can deliver value to the users.
 ]
 
 #slide("The prototype")[

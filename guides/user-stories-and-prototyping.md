@@ -51,10 +51,12 @@ For each `GAP-nn`, ask what a user would be trying to do that they cannot do tod
 The shape is always the same three lines:
 
 ```text
-As a <user or persona>
+As a <user>
 I want to <action>
 so that <value>
 ```
+
+A user is any actor with a goal: the person the product serves, and the operator or administrator who keeps it running.
 
 The third line is the one that catches a story written from a feature rather than from a need.
 If you cannot finish it with a value, you have written a task, not a story, and the story is hiding an assumption you have not checked.
@@ -91,6 +93,8 @@ the next request that includes the
 region has the rule applied, and the
 log names the rule.
 ```
+
+A criterion may name a screen, a field, or a system state, because that is what an observer checks; the story may not, because that would be the design.
 
 When a criterion is hard to write, that is information about the story rather than about your writing.
 You probably do not yet know what the product does in that case, which makes it a good candidate for the prototype.
@@ -148,6 +152,8 @@ Three forms, and all three are acceptable:
 - **Code spike.**
   Good when the risk is technical rather than visual.
   An agent can build a working sketch quickly.
+
+When the question is only whether the idea can work at all, that is a proof of concept; record it the same way.
 
 On a code spike: **keep it off `main`.**
 Do it on a branch, show it from there, and then either delete the branch or merge it only once it has become product code.

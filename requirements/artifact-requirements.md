@@ -577,7 +577,7 @@ It is created once, in its final place, and then stays current.
    - The **goal**, what the product must achieve, traced to the `VP-nn` it supports.
      The `VP-nn` sections live in `docs/research/value-proposition.md`.
    - The **stakeholders**
-   - The **constraints**, each marked as customer-given, team-given, or derived, with what it costs.
+   - The **constraints**, each marked as customer-given, team-given, environmental, or derived, with what it costs.
    - The **boundary**, the list of what the product will not do.
    - A **system context diagram**, committed here or linked view-only from here, with the external actors described in prose beside it.
    - Links to the [user stories](#user-stories) and to the current week's report.
@@ -612,13 +612,12 @@ A platform engineer at a company that sends marked source code to external model
 
 ## Constraints
 
-| Constraint                                   | Source         | What it costs                         |
-| -------------------------------------------- | -------------- | ------------------------------------- |
-| Deployed on a single VPS                     | Customer-given | No multi-node failover                |
-| Built and maintained by 3 people for 9 weeks | Team-given     | No component may need a second expert |
-| Runs plugins written by coding agents        | Derived        | The plugin contract must be explicit  |
-
-<!-- TODO should each constraint have an identifier? -->
+| Constraint                                    | Source         | What it costs                                |
+| --------------------------------------------- | -------------- | -------------------------------------------- |
+| Deployed on a single VPS                      | Customer-given | No multi-node failover                       |
+| Built and maintained by 3 people              | Team-given     | No component may need a second expert        |
+| Eleven-week course                            | Environmental  | Limited scope can be delivered.              |
+| Runs plugins written by coding agents         | Derived        | The plugin contract must be explicit         |
 
 ## Boundary
 

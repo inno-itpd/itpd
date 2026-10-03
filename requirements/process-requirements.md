@@ -269,7 +269,7 @@ A platform engineer at a company that sends marked source code to external model
 
 **Since: W2**
 
-<!-- TODO where do you store constraints? -->
+Constraints live in the [product vision](artifact-requirements.md#product-vision), beside the goal, the stakeholders, and the boundary.
 
 A constraint is a condition your product has to live inside.
 An assumption is a belief about the problem that you have not verified.
@@ -277,11 +277,12 @@ Keeping the two apart is the whole point of this section: a constraint you canno
 
 **Required**
 
-1. Record every constraint under one of three sources:
+1. Record every constraint under one of four sources:
 
    - **Customer-given**: something the customer or the project catalog imposed, including a language, platform, or deployment mandate that came with the project.
-   - **Team-given**: the conditions you do not control, such as the size of the team and the number of weeks left in the course.
-   - **Derived**: something that follows from the other two, such as a consequence of a deployment mandate for the target device.
+   - **Team-given**: a condition that comes from the team itself, such as its size and its skills.
+   - **Environmental**: a condition the setting imposes, such as the weeks left in the course, the academic calendar, or the tools the course provides or requires.
+   - **Derived**: something that follows from the other three, such as a consequence of a deployment mandate for the target device.
 
 2. For each constraint, say what it costs you.
    A constraint that costs nothing is not yet understood.
@@ -331,6 +332,7 @@ A boundary nobody can disagree with is a boundary that is not written down.
 **Since: W2**
 
 A user story is a small, checkable statement of one thing a user needs.
+A user is any actor with a goal: the person the product serves, and the operator or administrator who keeps it running.
 Its job is to make a gap concrete enough that a reviewer can tell whether you delivered it.
 
 **Required**
@@ -343,6 +345,8 @@ Its job is to make a gap concrete enough that a reviewer can tell whether you de
 3. Every story is a statement of a user's need, not a description of a solution.
    "As a platform engineer, I want to attach redaction rules to a marked region, so that the company's own classification decides what leaves the network" is a need.
    "Add a redaction rule editor" is a feature you have already designed.
+   A story does not name a screen, a button, or a component; naming the design decides it for whoever builds the story.
+   An acceptance criterion may name a screen, a field, or a system state, because that is what an observer checks.
 4. Every story names the `GAP-nn` it closes and the `VP-nn` it supports.
    A need that also came from somewhere else, such as a customer meeting, records that origin in the story's `sources` rather than rewriting your Week 1 research; only a contradiction updates it, per [Traceability Into Later Weeks](#traceability-into-later-weeks).
 5. Every story is prioritized with MoSCoW, relative to the product you intend to finish in this course:
@@ -402,11 +406,22 @@ It is not a showcase, and it is not the product.
 
 **Required**
 
-1. Test the assumptions your research and your stories rest on, not the parts you are already sure about.
+1. Use the four terms precisely, because they answer different questions:
+
+   - **Proof of concept (PoC)**: can this work at all technically?
+   - **Prototype**: how will this look, and does this user flow make sense?
+   - **Minimum usable product (MUP)**: can a user complete the core tasks without getting frustrated?
+     Week 3 builds it from the [minimum usable product candidate](#user-stories-and-acceptance-criteria).
+   - **Minimum viable product (MVP)**: will people use it?
+     Week 5 builds it.
+
+   A code spike can answer the PoC question or a prototype question; either way it is recorded as a prototype and thrown away.
+
+2. Test the story or assumption you are least sure about, not the parts you are already sure about.
    Name the risky part before you build anything, so you cannot quietly choose the easy thing.
-2. Show the prototype to the customer, and record what they said.
+3. Show the prototype to the customer, and record what they said.
    A prototype nobody reacted to has not been tested.
-3. **Something must change as a result.**
+4. **Something must change as a result.**
    Record the change in all four places:
 
    - `reports/week-NN/prototypes.md` records what you showed, which `US-nn` or `GAP-nn` it tested, and what the customer said.
@@ -414,9 +429,9 @@ It is not a showcase, and it is not the product.
    - The `us/US-nn.md` file carries a dated note saying what changed.
    - The weekly public report names the `US-nn` that changed.
 
-4. A prototype is disposable.
+5. A prototype is disposable.
    A paper sketch, a view-only design tool, and a code spike are equally acceptable, and none of them is product code.
-5. The prototype does not need to be beautiful, and it does not need to work.
+6. The prototype does not need to be beautiful, and it does not need to work.
    It needs to be good enough for the customer to react to the thing you are unsure about.
 
 **Do not treat agreement as a result.**
@@ -426,7 +441,7 @@ A prototype that validated everything proved nothing, because you chose the part
 **Recommended**
 
 - Prototype the riskiest assumption first, and only as long as it takes to get a reaction.
-- Test with whoever actually does the job, where that is possible.
+- Test with whoever actually does the job, where that is possible; in this course, the customer is the stakeholder who reacts to the prototype.
 - Keep the loop short: build something, show it, write down what you learned, change the story.
 
 ## Identifier Rules

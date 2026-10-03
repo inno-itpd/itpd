@@ -72,8 +72,9 @@ Follow [Product Vision](../requirements/artifact-requirements.md#product-vision)
 
    The goal traces to at least one `VP-nn` in `docs/research/value-proposition.md`, and you link to the section rather than restating it.
 
-2. List the **constraints**, each marked as customer-given, team-given, or derived, and each with what it costs you.
-   The deployment target, any language or platform mandate that came with your catalog project, your team size, and the weeks left in the course are all constraints.
+2. List the **constraints**, each marked as customer-given, team-given, environmental, or derived, and each with what it costs you.
+   The deployment target and any language or platform mandate that came with your catalog project are customer-given.
+   Your team size is team-given, the weeks left in the course are environmental, and anything that follows from the others is derived.
    An assumption is not a constraint; assumptions live in your Week 1 assumptions table.
    See [Constraints](../requirements/process-requirements.md#constraints).
 3. Name the **stakeholders**: who uses the product, who operates it, who is affected by it without using it.
@@ -97,6 +98,7 @@ Quality goals arrive in Week 4 as `Q-nn`, and the threshold of success arrives i
 2. `docs/user-stories/README.md` is the index and the registry of identifiers: an `## Active stories` table with one row per active story, its `US-nn`, title, MoSCoW priority, the `GAP-nn` it closes, the `VP-nn` it supports, and a link to its issue, and an `## Inactive stories` table for the rest.
    Follow [User Stories](../requirements/artifact-requirements.md#user-stories).
 3. Every story is a **user's need**, not a solution, and every active story carries **at least two acceptance criteria**, each observable and pass/fail.
+   A story does not name a screen, a button, or a component; an acceptance criterion may name a screen, a field, or a system state, because that is what an observer checks.
    Any notation works, including `Given`/`When`/`Then`.
    The test is whether somebody who is not you could run the check and get the same answer.
    See [User Stories And Acceptance Criteria](../requirements/process-requirements.md#user-stories-and-acceptance-criteria).
@@ -142,7 +144,7 @@ See [Continuous Integration](../requirements/repository-requirements.md#continuo
 1. Decide which story you are least sure about, and write the question down in one line before you build anything.
 2. Build the cheapest thing that gets the customer's reaction to that question: a paper sketch, a static image, a clickable design, or a code spike.
    Any format is allowed, and none of them needs to be beautiful or working.
-   See [Step 5: Choose What To Prototype](../guides/user-stories-and-prototyping.md#step-5-choose-what-to-prototype).
+   See [Step 5: Choose What To Prototype](../guides/user-stories-and-prototyping.md#step-5-choose-what-to-prototype), and [Validation](../requirements/process-requirements.md#validation) for how a proof of concept, a prototype, an MUP, and an MVP differ.
 3. Show it to the customer, in the meeting in [Part 6](#part-6-validate-with-the-customer).
 4. Record it at `reports/week-02/prototypes.md`: what it is, how to view it, which `US-nn` or `GAP-nn` it tested, what the customer said, and what changed.
    Put screenshots in `reports/week-02/images/`, and share external tools view-only.
@@ -323,7 +325,7 @@ See [Permalinks And Snapshots](../requirements/repository-requirements.md#permal
 ## Checklist
 
 - [ ] `docs/product-vision.md` with the goal, traced to a `VP-nn`.
-- [ ] Constraints table, each marked customer-given, team-given, or derived, each with what it costs.
+- [ ] Constraints table, each marked customer-given, team-given, environmental, or derived, each with what it costs.
 - [ ] Stakeholders named, and the boundary written as a list of things the product will not do.
 - [ ] System context diagram committed or linked view-only, with the actors described in prose.
 - [ ] No use case, container, or component diagrams.
