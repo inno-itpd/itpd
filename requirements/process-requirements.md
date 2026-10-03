@@ -243,17 +243,6 @@ It turns the Week 1 research into something you can be held to.
 4. Keep it short.
    A vision that has grown into a specification has become the stories, and the two then drift apart.
 
-<!-- TODO don't mention concepts that haven't yet been introduced? (quality goal) -->
-
-**A goal is not a quality goal, and it is not a threshold of success.**
-
-A goal says what the product must achieve: someone can send a marked region to a model without its contents leaving the network under the company's own rules.
-
-A quality goal says how well, and it is Week 4's work, with its own `Q-nn` identifiers.
-
-Do not write "fast", "reliable", or "user-friendly" as a goal.
-Those are Week 4, and a goal nobody can fail is not a goal.
-
 **Example**
 
 ```markdown
@@ -262,7 +251,6 @@ Those are Week 4, and a goal nobody can fail is not a goal.
 A platform engineer at a company that sends marked source code to external models can have the code's own classification of what is marked decide the redaction rules, without those rules leaving the company.
 
 **Supports:** VP-01.
-**Measured by:** the threshold of success, in Week 3.
 ```
 
 ## Constraints
@@ -327,6 +315,8 @@ A boundary nobody can disagree with is a boundary that is not written down.
 - Check the diagram against the `Won't Have` items in your stories, per [Value Proposition And Differentiation](#value-proposition-and-differentiation).
 - Keep the diagram in the same file as the vision, and keep that file the only place a diagram is committed, so there is one version.
 
+<!-- TODO a section on MoSCoW prioritization -->
+
 ## User Stories And Acceptance Criteria
 
 **Since: W2**
@@ -366,13 +356,12 @@ Its job is to make a gap concrete enough that a reviewer can tell whether you de
    Say which one you would drop first if you ran out of time.
    The candidate is a proposal, not a commitment, and Week 3 schedules and builds it.
 9. Open one issue per **active** `US-nn` and link it from the story.
-   The issue is what the team tracks and what the customer can see; the story file is what the requirements are held in.
-   The issue does not copy the acceptance criteria; it links to the story and tracks that story's added value.
-   <!-- TODO "tracks that story's added value - how?" -->
+   The issue is what the team tracks and what the customer can see; the story file is the source of truth and holds the long-form context.
+   The issue repeats the story and its acceptance criteria, links back to the story file, and may carry a checklist of the remaining work, so a contributor can work without leaving the issue.
    See [Planning And Issue Tracking](repository-requirements.md#planning-and-issue-tracking).
 10. An inactive story keeps its identifier, its file, and its original statement.
     It carries no issue and no acceptance criteria, and its frontmatter records the `reason` and the `date` it became inactive.
-    <!-- What if an issue has already been created? -->
+    If it already has an issue, close that issue and leave a comment naming the reason and any story that supersedes it.
 
 **Recommended**
 
@@ -538,7 +527,7 @@ A later meeting settles one thing or two, and the rules below are enough to prep
 2. The script covers whatever this meeting has to settle.
    Derive those areas from the target rather than from a template, and write every question numbered, tagged open or closed.
 3. Plan for 30 minutes and ask for 60 if the customer can give it.
-4. Assign roles before the meeting: a moderator, a note taker, and an observer who records what was not asked and what was not said.
+4. Assign roles before the meeting: a moderator who asks the questions and controls the time, a note taker who records what was said, and an observer who records what was not asked and what was not said.
    The whole team attends.
 5. Ask the [three permission questions](artifact-requirements.md#customer-meeting-artifacts) every time.
    Permission is per meeting and is never carried over from an earlier one, and the recording stays out of the repository.
@@ -551,6 +540,8 @@ A later meeting settles one thing or two, and the rules below are enough to prep
    An improvement you cannot show is not an improvement.
 
 **Example**
+
+<!-- TODO use an example for week 2 because week 5 assignment is underdetermined -->
 
 A Week 5 review, which is not a kickoff.
 

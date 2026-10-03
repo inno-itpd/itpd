@@ -36,9 +36,9 @@ How to actually do the work.
 | -------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
 | [Researching alternatives](guides/alternatives-research.md)                | Finding your set, choosing properties, evaluating consistently, capturing evidence |
 | [From comparison to value proposition](guides/comparison-and-synthesis.md) | Building the table, finding the gaps, writing the proposition and your assumptions |
-| [The kickoff interview](guides/customer-interview.md)                      | The five areas, the Mom Test pass, and the meeting roles                           |
+| [The kickoff interview](guides/customer-interview.md)                      | The five areas and the Mom Test pass                                               |
 | [User stories and prototyping](guides/user-stories-and-prototyping.md)     | Turning a gap into stories, writing criteria, and testing an idea cheaply          |
-| [Validating with the customer](guides/validating-with-the-customer.md)     | Running the Week 2 meeting and recording what it changed                           |
+| [Validating with the customer](guides/validating-with-the-customer.md)     | Running a meeting after the kickoff and recording what it changed                  |
 
 ## Course Documents
 

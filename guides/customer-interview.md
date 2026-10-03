@@ -1,5 +1,7 @@
 # Guide: The Kickoff Interview
 
+<!-- TODO rename the file to customer-kickoff-interview -->
+
 How to prepare the one meeting where the problem and the direction are both still open.
 What the meeting has to satisfy is defined in [Process Requirements](../requirements/process-requirements.md#meeting-with-the-customer) and [Artifact Requirements](../requirements/artifact-requirements.md#meeting-script); this guide is the method.
 A later meeting settles one thing or two, and the rules in [Process Requirements](../requirements/process-requirements.md#meeting-with-the-customer) are enough to prepare it.
@@ -102,13 +104,8 @@ It is the part a reader uses to tell whether your questions were considered or m
 
 ## Step 5: Assign Roles
 
-Three roles, three people, before you start rather than during:
-
-- **Moderator** asks.
-  One person, so the customer is not answering four voices at once.
-- **Note taker** records answers, verbatim where the wording matters.
-- **Observer** watches for what was not said.
-  The constraints nobody stated out loud are the ones that surprise you two weeks later, and the observer is the only role positioned to catch them.
+Three roles, three people, before you start rather than during: a moderator, a note taker, and an observer.
+[Meeting With The Customer](../requirements/process-requirements.md#meeting-with-the-customer) says what each role does.
 
 Deviate from the script when an answer opens something better.
 The script is a floor on what you cover, not a ceiling on the meeting.

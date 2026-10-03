@@ -291,11 +291,12 @@ If credentials, personal data, or confidential material is committed by mistake:
 
 1. Create the issue templates the course requires, in `.github/ISSUE_TEMPLATE/`.
    The course will say which types you need for the week.
+   This week that is `.github/ISSUE_TEMPLATE/user-story.md`, with the fields described below.
 2. Disable blank issue creation.
 3. Open one issue per **active** `US-nn` and link each one from its story file, per [User Stories And Acceptance Criteria](process-requirements.md#user-stories-and-acceptance-criteria).
    The issue is what the team tracks and what the customer can see; the story file is what the requirements are held in.
-   The issue does not copy the acceptance criteria; it links to the story and tracks that story's added value.
-   <!-- TODO wdym tracks added value? -->
+   The issue title is `US-nn: <story title>`, and the description carries the story statement, its acceptance criteria, a link to the story file, and an optional checklist of the remaining work.
+   Tick a checklist item as the work completes, and close the issue when every acceptance criterion passes.
 4. Create branches from the issue where GitHub supports it, and link every pull request to its issue.
 5. Check the relevant acceptance criteria before merging.
 

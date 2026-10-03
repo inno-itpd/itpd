@@ -101,9 +101,10 @@ You probably do not yet know what the product does in that case, which makes it 
 
 ## Step 4: Prioritize, Then Pick The First Thing To Build
 
-<!-- TODO link to section where we explain each value -->
-
 MoSCoW is a four-way priority scale: `Must Have`, `Should Have`, `Could Have`, and `Won't Have`.
+<!-- TODO link to the section on priorities -->
+
+[The requirement](../requirements/process-requirements.md#user-stories-and-acceptance-criteria) defines each value.
 Prioritize every story with it.
 The point of the exercise is not the label, it is the argument: whoever disagrees with a `Must Have` has to say why the product is not the product without it.
 

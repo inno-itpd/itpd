@@ -600,6 +600,8 @@ Modular LLM gateway
 
 ## Goal
 
+<!-- TODO use a simpler example -->
+
 A platform engineer at a company that sends marked source code to external models can have the code's own classification of what is marked decide the redaction rules, without those rules leaving the company.
 
 **Supports:** [VP-01](research/value-proposition.md#vp-01-redaction-rules-that-belong-to-the-team).
@@ -612,12 +614,12 @@ A platform engineer at a company that sends marked source code to external model
 
 ## Constraints
 
-| Constraint                                    | Source         | What it costs                                |
-| --------------------------------------------- | -------------- | -------------------------------------------- |
-| Deployed on a single VPS                      | Customer-given | No multi-node failover                       |
-| Built and maintained by 3 people              | Team-given     | No component may need a second expert        |
-| Eleven-week course                            | Environmental  | Limited scope can be delivered.              |
-| Runs plugins written by coding agents         | Derived        | The plugin contract must be explicit         |
+| Constraint                            | Source         | What it costs                         |
+| ------------------------------------- | -------------- | ------------------------------------- |
+| Deployed on a single VPS              | Customer-given | No multi-node failover                |
+| Built and maintained by 3 people      | Team-given     | No component may need a second expert |
+| Eleven-week course                    | Environmental  | Limited scope can be delivered.       |
+| Runs plugins written by coding agents | Derived        | The plugin contract must be explicit  |
 
 ## Boundary
 
@@ -680,7 +682,7 @@ The directory is the registry; the individual files are what the requirements ar
    - The identifier as its own heading, so the story can be found with a search and linked to permanently.
    - The story statement itself.
    - A `## Acceptance criteria` section on an active story, with at least two criteria, each observable and pass/fail.
-   - `## Notes` for constraints, assumptions, open questions, and why a `Won't Have` story is excluded.
+   - `## Notes` for constraints, assumptions, background, open questions, and why a `Won't Have` story is excluded.
    - A `## Changes` section only when the team changed the story after writing it, with a dated note for every change, so a reader can see what the validation meeting settled.
 
    An inactive story keeps its identifier, its file, and its original statement, and carries no issue and no acceptance criteria.
@@ -689,7 +691,7 @@ The directory is the registry; the individual files are what the requirements ar
    The index links to the files; the files hold the content.
 5. The issue tracker is where execution state lives.
    The index carries a link to each issue rather than a second copy of its status.
-   The issue does not copy the acceptance criteria; it links to the story file, which is the source of truth.
+   The story file is the source of truth for the requirement; the issue mirrors the story and its criteria and links back to the file, per [Planning And Issue Tracking](repository-requirements.md#planning-and-issue-tracking).
 
 **Recommended**
 

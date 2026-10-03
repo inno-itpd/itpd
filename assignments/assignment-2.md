@@ -50,16 +50,16 @@ By the end of this week you should be able to show an instructor:
 Read these once.
 They are the rules; this assignment only tells you what this week requires.
 
-| Read                                                                                | For                                                                                      |
-| ----------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
-| [Course rules](../course/rules.md)                                                  | What is public, what is private, deadlines, AI policy                                    |
-| [Artifact Requirements](../requirements/artifact-requirements.md)                   | Where things live, the vision, story and prototype structures, the meeting report format |
-| [Repository Requirements](../requirements/repository-requirements.md)               | Issue templates, the Markdown check, branch protection, permalinks, snapshots            |
-| [Process Requirements](../requirements/process-requirements.md)                     | What a goal, constraint, boundary, story, and validation have to satisfy                 |
-| [Guide: user stories and prototyping](../guides/user-stories-and-prototyping.md)    | How to turn a gap into stories, and how to prototype cheaply                             |
-| [Guide: validating with the customer](../guides/validating-with-the-customer.md)    | How to run the Week 2 meeting and record what it changed                                 |
-| [Guide: the kickoff interview](../guides/customer-interview.md)                     | The method from last week, which does not change: prepare in writing, ask about the past |
-| [Your Week 1 report](../requirements/artifact-requirements.md#weekly-public-report) | What the customer already disagreed with, and what you owe them from the kickoff         |
+| Read                                                                                | For                                                                                       |
+| ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| [Course rules](../course/rules.md)                                                  | What is public, what is private, deadlines, AI policy                                     |
+| [Artifact Requirements](../requirements/artifact-requirements.md)                   | Where things live, the vision, story and prototype structures, the meeting report format  |
+| [Repository Requirements](../requirements/repository-requirements.md)               | Issue templates, the Markdown check, branch protection, permalinks, snapshots             |
+| [Process Requirements](../requirements/process-requirements.md)                     | What a goal, constraint, boundary, story, and validation have to satisfy                  |
+| [Guide: user stories and prototyping](../guides/user-stories-and-prototyping.md)    | How to turn a gap into stories, and how to prototype cheaply                              |
+| [Guide: validating with the customer](../guides/validating-with-the-customer.md)    | How to run a meeting after the kickoff and record what it changed                         |
+| [Guide: the kickoff interview](../guides/customer-interview.md)                     | The kickoff method: the five areas and the Mom Test pass, which this week does not repeat |
+| [Your Week 1 report](../requirements/artifact-requirements.md#weekly-public-report) | What the customer already disagreed with, and what you owe them from the kickoff          |
 
 ## Part 1: State The Product Vision
 
@@ -68,7 +68,7 @@ Follow [Product Vision](../requirements/artifact-requirements.md#product-vision)
 
 1. State the **goal**: what the product must achieve.
    One short paragraph.
-   <!-- TODO example of the goal -->
+   The [Product Vision example](../requirements/artifact-requirements.md#product-vision) shows the shape.
 
    The goal traces to at least one `VP-nn` in `docs/research/value-proposition.md`, and you link to the section rather than restating it.
 
@@ -85,12 +85,6 @@ Follow [Product Vision](../requirements/artifact-requirements.md#product-vision)
    Do not draw containers or components; those are Week 4.
    See [Stakeholders, Boundary, And Context](../requirements/process-requirements.md#stakeholders-boundary-and-context).
 6. Link to `docs/user-stories/README.md` and to your current week report.
-
-<!-- TODO Do we need this clarification about future weeks here? -->
-
-The goal is not a quality goal, and it is not a threshold of success.
-The goal says what the product must achieve.
-Quality goals arrive in Week 4 as `Q-nn`, and the threshold of success arrives in Week 3 as a measurable bar for calling it done.
 
 ## Part 2: Write And Prioritize The User Stories
 
@@ -113,12 +107,11 @@ Quality goals arrive in Week 4 as `Q-nn`, and the threshold of success arrives i
 
 Complete every requirement marked `**Since: W2**` in [Planning And Issue Tracking](../requirements/repository-requirements.md#planning-and-issue-tracking).
 
-1. Add the issue templates this week needs, in `.github/ISSUE_TEMPLATE/`, and disable blank issue creation.
+1. Add `.github/ISSUE_TEMPLATE/user-story.md`, and disable blank issue creation.
 2. Open **one issue per active `US-nn`**, and link each one from its story file.
-   The issue links back to the story and does not copy the acceptance criteria.
-
-   <!-- TODO how does this issue look like? -->
-   <!-- TODO How to track remaining work to complete the user story? -->
+   The issue title is `US-nn: <story title>`.
+   The description carries the story statement, its acceptance criteria, a link to the story file, and an optional checklist of the remaining work.
+   See [Planning And Issue Tracking](../requirements/repository-requirements.md#planning-and-issue-tracking).
 
 3. Create your branches from the issue, and link every pull request to its issue.
 4. Use the `<issue-number>-<short-description>` branch naming rule, per [Branch Protection And Pull Requests](../requirements/repository-requirements.md#branch-protection-and-pull-requests).
@@ -159,20 +152,28 @@ A prototype is a normal form of evidence: the artifact is the record (`prototype
 
 ## Part 6: Validate With The Customer
 
-Hold a second meeting with your customer this week.
-In every artifact you call them `Customer`, never a real name and never "the instructor".
-
-<!-- TODO improve wording (connect parts of the sentence) -->
+Hold a second meeting with your customer this week, and in every artifact call them `Customer`: never a real name, and never "the instructor".
+<!-- TODO improve wording in the following sentence -->
 
 The target of the meeting is the prototype, the boundary, and the minimum usable product candidate, and the question is: which of these are wrong?
 Review the remaining user stories only if time allows.
 Write the target at the top of the script and do not replace it with a subject.
 See [Validating With The Customer](../guides/validating-with-the-customer.md).
 
+**Example**
+
+- **Prototype.**
+  What did you expect it to do that it does not?
+- **Boundary.**
+  The product will not do one thing on this list; which need of yours does that break?
+- **Minimum usable product candidate.**
+  If only these stories shipped, what would you miss first?
+
 1. **Write the meeting script first**, at `reports/week-02/meeting-script.md`.
    Derive the areas from your target; the business goals were settled last week and re-asking them decides nothing.
-   Number every question and tag it open or closed, and close the file with a `## Key improvements` section naming at least one question you rewrote and the principle behind the rewrite.
-   <!-- TODO why need to tag questions? -->
+   Number every question and tag it open or closed: an open question asks the customer to tell you something, and a closed one can be answered yes or no.
+   The tag is what you check the rewrite against: if no likely answer would change the target, the question is cut.
+   Close the file with a `## Key improvements` section naming at least one question you rewrote and the principle behind the rewrite.
 2. **Re-read your Week 1 meeting report first.**
    The open questions are still open, and the customer already answered some of them.
 3. **Ask the [three permission questions](../requirements/artifact-requirements.md#customer-meeting-artifacts)** again before you record.
@@ -182,10 +183,7 @@ See [Validating With The Customer](../guides/validating-with-the-customer.md).
 5. **Write `reports/week-02/meeting-report.md`**, plus either `reports/week-02/meeting-transcript.md` or `reports/week-02/meeting-notes.md`, following [Customer Meeting Artifacts](../requirements/artifact-requirements.md#customer-meeting-artifacts).
 6. **Complete all six sections of the meeting report**, and hold it to the week-specific minima:
    - At least two rows in `## Decisions`, because one decision is insufficient evidence that the meeting changed anything.
-     Each row names the `US-nn` it changes.
-     <!-- TODO what does this mean - "one of them"? -->
-
-     The customer's verdict on the minimum usable product candidate is one of them.
+     Each row names the `US-nn` it changes, and one of the two rows must be the customer's verdict on the minimum usable product candidate.
 
      A story that did not come from your Week 1 research records that origin in its `sources`; only a contradiction updates the research, per [Traceability Into Later Weeks](../requirements/process-requirements.md#traceability-into-later-weeks).
 
@@ -336,8 +334,8 @@ See [Permalinks And Snapshots](../requirements/repository-requirements.md#permal
 - [ ] Every story prioritized MoSCoW, every `Won't Have` inactive with a reason.
 - [ ] `## Minimum usable product candidate` naming a strict, non-empty subset of the `Must Have` stories, and which one to drop first.
 - [ ] `docs/user-stories/README.md` indexing every story, active and inactive, with a link to each active issue.
-- [ ] Issue templates in `.github/ISSUE_TEMPLATE/`, blank issues disabled.
-- [ ] One issue per active `US-nn`, linked from its story file, every pull request linked to its issue.
+- [ ] Issue template at `.github/ISSUE_TEMPLATE/user-story.md`, blank issues disabled.
+- [ ] One issue per active `US-nn`, linked from its story file and carrying the story and criteria, with an optional remaining-work checklist; every pull request linked to its issue.
 - [ ] Branches named `<issue-number>-<short-description>`.
 - [ ] Markdown check in CI on pull requests and `main`, green.
 - [ ] Markdown check pinned to a commit SHA, with `.github/dependabot.yml`.

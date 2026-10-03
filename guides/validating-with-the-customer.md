@@ -1,13 +1,10 @@
 # Guide: Validating With The Customer
 
-How to run the Week 2 meeting, and how to record what it changed.
+How to prepare and run a meeting after the kickoff, and how to record what it changed.
 
 The rules are in [Validation](../requirements/process-requirements.md#validation) and [Meeting With The Customer](../requirements/process-requirements.md#meeting-with-the-customer), and the file shapes are in [Artifact Requirements](../requirements/artifact-requirements.md#customer-meeting-artifacts).
-This guide is the method.
-
-<!-- TODO why still "ask about what happened"? Only because of the Mom Test? -->
-
-The preparation method is the same as [The Kickoff Interview](customer-interview.md): you prepare in writing, you ask about what happened rather than what should happen, and you write down what you improved.
+This guide is the method for every meeting after the kickoff.
+The kickoff is a different meeting, and its method is in [The Kickoff Interview](customer-interview.md).
 
 **Timebox:** the meeting is ~30 minutes, and the writing is most of the work.
 Ask for 60 if the customer can give it.
@@ -17,7 +14,7 @@ Ask for 60 if the customer can give it.
 - [What You Produce](#what-you-produce)
 - [Step 1: Write Down What The Meeting Is For](#step-1-write-down-what-the-meeting-is-for)
 - [Step 2: Derive The Questions From The Target](#step-2-derive-the-questions-from-the-target)
-- [Step 3: Break Your Own Questions](#step-3-break-your-own-questions)
+- [Step 3: Cut Questions That Cannot Change Anything](#step-3-cut-questions-that-cannot-change-anything)
 - [Step 4: Run The Meeting](#step-4-run-the-meeting)
 - [Step 5: Trace What Changed](#step-5-trace-what-changed)
 - [Common Mistakes](#common-mistakes)
@@ -25,88 +22,71 @@ Ask for 60 if the customer can give it.
 ## What You Produce
 
 ```text
-reports/week-02/meeting-script.md     the target, the questions, the roles
-reports/week-02/meeting-report.md     the decisions, the action points, the disagreements
-reports/week-02/meeting-notes.md      or meeting-transcript.md, never both
-docs/user-stories/us/US-nn.md        a dated note on what the meeting changed
-reports/week-02/README.md             the changed US-nn, named
+reports/week-NN/meeting-script.md     the target, the questions, the roles
+reports/week-NN/meeting-report.md     the decisions, the action points, the disagreements
+reports/week-NN/meeting-notes.md      or meeting-transcript.md, never both
+docs/user-stories/us/US-nn.md         a dated note on what the meeting changed
+reports/week-NN/README.md             the changed US-nn, named
 ```
 
 ## Step 1: Write Down What The Meeting Is For
 
-This is not the kickoff again, and the difference is the whole point of the week.
+This is not the kickoff again, and the difference is the whole point of a later meeting.
 In Week 1 the problem and the direction were both open.
-Now you have a vision, a boundary, a prototype, and a candidate for the minimum usable product, and the one question is: **which of these are wrong?**
+By now you have something concrete to test, and the one question is: **which of these is wrong?**
 
 Write the target at the top of the script, in one sentence.
-A good target is specific enough that you could tell afterwards whether you hit it:
-
-```text
-Find out whether the customer accepts our boundary and the prototype, and whether our minimum usable product candidate is the right thing to build first.
-```
-
-The target is the prototype, the boundary, and the minimum usable product candidate; review the other stories only if time allows.
-
+A good target is specific enough that you could tell afterwards whether you hit it.
 A bad target is a subject, not a target: "discuss the product".
 You will spend thirty minutes on the parts you want to talk about and leave with nothing you can change.
 
-Then re-read the kickoff artifacts before you write anything.
-The open questions from `reports/week-01/meeting-report.md` are still open, and if the customer answered one of them in the kickoff you do not need to ask again.
-The action points from the kickoff are due this week, and if you have carried them out, the customer should hear how they went.
+The assignment says what this week's meeting has to settle.
+The target is that content written as the one question the meeting exists to answer.
+
+<!-- TODO why starts with "then" -->
+
+Then re-read the previous meeting report before you write anything.
+Its open questions are still open, and its action points are due; if you have carried one out, the customer should hear how it went.
 
 ## Step 2: Derive The Questions From The Target
 
-Do not use the five kickoff areas.
-The business goals were settled a week ago, and re-asking them decides nothing.
+<!-- TODO don't mention the kickoff -->
+
+The kickoff's five areas are not yours.
+The business goals were settled then, and re-asking them decides nothing.
+
+<!-- TODO write more concretely -->
+<!-- Which "areas"? -->
 
 Take your target and ask what would have to be true for you to be wrong.
 Those are your areas, and each one should be a place where the customer's answer could contradict something you wrote.
-
-For a target about the boundary, the prototype, and the candidate, the areas usually look like this:
-
-<!-- TODO improve examples. Still quite abstract. Or, are these definitions? -->
-
-- **Scope.**
-  What does the customer's own process actually look like today, and does our boundary exclude anything they need?
-- **The current workflow.**
-  What does a user do today when a request goes out that should not have?
-  <!-- TODO improve the example -->
-- **Pain points and constraints.**
-  What would make them reject this outright, whatever it does?
-- **The prototype.**
-  What did they think when they saw it, and what did they expect instead?
-
 Derive them, do not copy them.
-If an area does not serve the target, delete it, even if it was in the kickoff script.
+If an area does not serve the target, delete it, even if it was in an earlier script.
+The assignment gives the content this week's target is made of.
+
+<!-- TODO why tag? -->
+
+Write every question numbered, and tag it open or closed.
+An open question asks the customer to tell you something; a closed one can be answered yes or no.
+The tag is what you check the question against in [Step 3](#step-3-cut-questions-that-cannot-change-anything).
 
 Ask permission before you record, every time.
-Permission is per meeting and is never carried over from the kickoff.
+Permission is per meeting and is never carried over from the previous one.
 The recording stays out of the repository and goes in the Moodle PDF as a private link.
 
-## Step 3: Break Your Own Questions
+## Step 3: Cut Questions That Cannot Change Anything
 
-Run the same pass you ran in the kickoff: for each question, what would the customer say if they were being kind and had no time?
-A question whose most likely answer is "yes, that would be great" is not a question, it is a compliment with a question mark.
+A question earns its place only if an answer could change something in the target.
+For each question, ask what answer you expect, and what you would do differently if the answer went the other way.
+If no answer changes anything, cut the question; asking it costs meeting time and tells you nothing.
 
-Rewrite those, and record the rewrite in a `## Key improvements` section with the principle behind it.
-The section is required for every meeting, and this meeting requires at least one rewrite; an improvement you cannot show is not an improvement.
-
-Two patterns worth using:
-
-<!-- TODO why ask about a problem here? -->
-
-- **Ask about the last time.** "When did you last hit this problem, and what did you do?" beats "how would you like us to handle this?"
-- **Offer the concrete thing and ask what is wrong with it.** "We assumed the product does not infer this itself, and the team's own rules decide.
-  Is that right?" is a question with a falsifiable answer.
-  "Do you like that approach?" is not.
+Rewrite at least one question and record the rewrite in `## Key improvements`, with the principle behind it.
+The section is required for every meeting, and an improvement you cannot show is not an improvement.
+The principle is yours; what matters is that a reader can see the before, the after, and why the second one is better.
 
 ## Step 4: Run The Meeting
 
-<!-- TODO explain purpose of each role and why these roles are applicable
-https://support.theaiminstitute.com/en/1.-three-interviewing-roles
--->
-
-The roles: a moderator (asks questions, controls timing), a note taker, and an observer who records what was not asked and what was not said.
+Assign the three roles before the meeting, per [Meeting With The Customer](../requirements/process-requirements.md#meeting-with-the-customer).
 The whole team attends.
 
 The observer's job is the one that catches the surprise.
@@ -120,6 +100,10 @@ Those are the questions that produce a `## Disagreements` row.
 
 ## Step 5: Trace What Changed
 
+<!-- TODO why table? -->
+<!-- TODO what if a decision doesn't change a user story? -->
+<!-- TODO why should it be related to user stories exactly, not some functional requirements? -->
+
 The meeting report's `## Decisions` table is the record, and it names the `US-nn` each decision changes.
 That table is where a reader looks to see whether the week was a test or a formality.
 
@@ -127,10 +111,10 @@ Then make sure the change reaches all four places, because each one answers a di
 
 | Where                              | Question it answers                                  |
 | ---------------------------------- | ---------------------------------------------------- |
-| `reports/week-02/prototypes.md`    | What did we show, and what did they say?             |
+| `reports/week-NN/prototypes.md`    | What did we show, and what did they say?             |
 | `meeting-report.md` `## Decisions` | What did we decide, and about which story?           |
 | `docs/user-stories/us/US-nn.md`    | What does the story say now, and when did it change? |
-| `reports/week-02/README.md`        | What should a reader look at first?                  |
+| `reports/week-NN/README.md`        | What should a reader look at first?                  |
 
 The story file is the one that is easy to skip, and skipping it is what makes a decision invisible to a reader of the stories.
 Add a dated note to the story saying what changed and why.
