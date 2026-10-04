@@ -248,6 +248,7 @@ Follow the structure in [Weekly Public Report](../requirements/artifact-requirem
 
 The open questions from the kickoff live in `meeting-report.md`, not here.
 The week report does not repeat them; a reader follows the link.
+The kickoff decisions live in `meeting-report.md#decisions`; the week report links them and does not repeat them.
 
 ## Assignment Report On Moodle
 
@@ -309,5 +310,5 @@ See [Permalinks And Snapshots](../requirements/repository-requirements.md#permal
 - [ ] `reports/week-01/meeting-report.md` with all six sections, 2+ decisions each naming what it changed (`GAP-nn`, `VP-nn`, `TBD`, or `None` with the reason), 2+ action points with owner and Week 2 due date, and `## Disagreements` filled or `None`.
 - [ ] `reports/week-01/meeting-transcript.md` or `meeting-notes.md`, sanitized; in the Moodle PDF only if publication was refused.
 - [ ] `reports/week-01/ai-usage.md` written.
-- [ ] `reports/week-01/README.md` complete, with the coverage table, evidence, and contribution table.
+- [ ] `reports/week-01/README.md` complete, with the kickoff decisions linked, the coverage table, evidence, and contribution table.
 - [ ] PDF and snapshot ready, permalink verified at the full commit hash.

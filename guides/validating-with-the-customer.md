@@ -26,7 +26,7 @@ reports/week-NN/meeting-script.md     the target, the questions, the roles
 reports/week-NN/meeting-report.md     the decisions, the action points, the disagreements
 reports/week-NN/meeting-notes.md      or meeting-transcript.md, never both
 the story issue                       a dated comment on what the meeting changed
-reports/week-NN/README.md             the changed US-nn, named
+reports/week-NN/README.md             the meeting decisions linked, the changed US-nn named
 ```
 
 ## Step 1: Write Down What The Meeting Is For
@@ -93,6 +93,7 @@ The meeting report's `## Decisions` table is the record.
 `Changes` names what each decision changed, and links it when the artifact has a stable link: usually a `US-nn`, with the `AC-nn` when a specific criterion changed, or the constraint, assumption, document, or scaffold for anything else, per [Meeting Report](../requirements/artifact-requirements.md#meeting-report).
 A decision whose artifact does not exist yet says `TBD`, and the artifact that later carries it links back to the report.
 That table is where a reader looks to see whether the week was a test or a formality.
+The weekly report links that table rather than copying it; only a decision the team took outside the meeting goes in the weekly report's own `## Decisions` table, per [Weekly Public Report](../requirements/artifact-requirements.md#weekly-public-report).
 
 Cite a decision by quoting its sentence and linking `#decisions`; there is no decision identifier.
 
@@ -103,7 +104,7 @@ Make sure the change reaches every place it affects, because each one answers a 
 | `reports/week-NN/prototypes.md`          | What did we show, and what did they say?      |
 | `meeting-report.md` `## Decisions`       | What did we decide, and what did it change?   |
 | the story issue, or the doc that changed | What does it say now, and when did it change? |
-| `reports/week-NN/README.md`              | What should a reader look at first?           |
+| `reports/week-NN/README.md`              | Where are the decisions, and what changed?    |
 
 The change is required in all four places by [Validation](../requirements/process-requirements.md#validation).
 The issue comment is the one that is easy to skip, and skipping it is what makes a decision invisible to a reader of the stories.

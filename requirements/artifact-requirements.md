@@ -50,6 +50,7 @@ It is the short version of this file and states what is expected of you as a stu
    The change is open-ended: a story or acceptance criterion, a constraint, an assumption, a maintained document, the implementation or the scaffold, or a later requirement.
    In a [meeting report](#meeting-report), it is a conclusion the meeting reached.
    A decision the team takes outside a meeting is recorded in the [weekly public report](#weekly-public-report) of the week it was made.
+   A decision is cited by path and `#decisions` anchor, per [Identifier Rules](process-requirements.md#identifier-rules).
 10. An **action point** is a follow-up that came out of a meeting, with a named owner, which is a GitHub username, and a week it falls due in.
 
 ## Where Artifacts Live In The Repository
@@ -157,8 +158,11 @@ The mapping from username to real name and university email goes in the Moodle P
 3. It identifies the week, the project, the team, and the covered scope clearly enough that a reader knows what body of work it describes.
 4. It contains a short summary of what the team found, built, or decided, and what is still open.
    A grader should be able to read only this file and understand the week, then follow links for detail.
-5. A decision the team took outside a meeting goes in a `## Decisions` table with the same columns and cell rules as the [meeting report](#meeting-report).
-   A week with no such decision does not carry the section.
+5. `## Decisions` is the week's decision index.
+   When the week held a meeting with the customer, the section links the `## Decisions` table of each meeting report.
+   A decision the team took outside a meeting goes in the section's own table, with the same columns and cell rules as the [meeting report](#meeting-report).
+   The section links a meeting's decisions; it never copies their rows.
+   A week with no decision at all does not carry the section.
 6. It contains a coverage table mapping each required deliverable of the assignment to the artifact that satisfies it.
    The table is the index, so it is not followed by a second list of the same links.
 7. It links the root `LICENSE`.
@@ -196,6 +200,10 @@ We researched four alternatives, compared them on six properties, and identified
 
 The strongest products schedule time well and leave payment and materials to integrations or paid tiers.
 Nobody gives an expert one flow from booking to a paid, prepared session, which is the gap our project targets.
+
+## Decisions
+
+The kickoff decisions are in the [meeting report](meeting-report.md#decisions).
 
 ## Coverage
 

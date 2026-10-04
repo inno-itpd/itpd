@@ -187,7 +187,8 @@ The word "instructor" is allowed in prose explaining who the customer is, and no
 
 Meeting decisions and action points are **not** identifier families.
 There is no `DEC-nn` or `ACT-nn`.
-A later week cites a meeting report by path and heading anchor, a decision row names what it changed with `TBD` until its artifact exists, an action point is carried out by a tracked issue, and the identifier families stay the ones their own week introduces.
+A later week cites a meeting report by path and heading anchor, a team decision cites the weekly report's `#decisions` anchor, a decision row names what it changed with `TBD` until its artifact exists, an action point is carried out by a tracked issue, and the identifier families stay the ones their own week introduces.
+The weekly report links a meeting report's `## Decisions` rather than copying it.
 
 ITPD uses elements of Scrum later in the course.
 One course week is then a sprint, sprints start with planning and grooming, estimation is required with no unit prescribed, and each sprint ends with a retrospective at `reports/week-NN/sprint-retrospective.md`.

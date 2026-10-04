@@ -424,7 +424,7 @@ It is not a showcase, and it is not the product.
    - `reports/week-NN/prototypes.md` records what you showed, which `US-nn` or `GAP-nn` it tested, any `AC-nn` it exercised, and what the customer said.
    - The [meeting report](artifact-requirements.md#meeting-report) `## Decisions` table names what each decision changed: the `US-nn` and the `AC-nn` for a story, or the constraint, assumption, document, or scaffold for anything else.
    - The changed artifact carries the record: a story issue gets a dated comment naming any `AC-nn` that changed and linking the meeting report, and a constraint, assumption, or document is updated in place.
-   - The weekly public report names what changed.
+   - The weekly public report names what changed and links the meeting report's `## Decisions`; it does not copy the table.
 
    A decision whose effect cannot be recorded yet says `TBD` in `Changes`; the artifact that later carries it names the decision and links the report.
 
@@ -465,7 +465,8 @@ A prototype that validated everything proved nothing, because you chose the part
    A criterion is referenced by its `AC-nn` together with its story issue, as described in [User Stories And Acceptance Criteria](#user-stories-and-acceptance-criteria).
 7. Decisions and action points are not identifier families.
    There is no `DEC-nn` and no `ACT-nn`.
-   Cite a decision by path and `#decisions` anchor with its sentence quoted; `TBD` and `None` in `Changes` are statuses, not identifiers.
+   Cite a decision by path and `#decisions` anchor with its sentence quoted: a meeting decision cites its meeting report, and a decision made outside a meeting cites the weekly public report of the week it was made.
+   `TBD` and `None` in `Changes` are statuses, not identifiers.
    A later week cites a meeting report by path and heading anchor, per [Customer Meeting Artifacts](artifact-requirements.md#customer-meeting-artifacts).
 
 ## Traceability Into Later Weeks
