@@ -665,8 +665,7 @@ Each story is a GitHub issue, and the `user-story` label identifies story issues
 
    - The title `US-nn: <story title>`.
    - The story statement, its `Traces to` list, and any notes, in the fields the form provides.
-     The list carries exactly one `VP-nn`, the value proposition the story supports, plus any origins: the `GAP-nn` it closes, a customer or team decision, an action point it carries out, or the parent `US-nn` of a split.
-     A story that names no `GAP-nn` and is not a split child says in one line why no existing gap covers it.
+     The list carries exactly one `VP-nn`, the value proposition the story supports, and, optionally, its origins: the `GAP-nn` it closes, a customer or team decision, an action point it carries out, or the parent `US-nn` of a split.
    - The acceptance criteria, at least two on a story you intend to build, each carrying a stable `AC-nn` at the start of the criterion.
    - One `moscow:*` label: `moscow:must`, `moscow:should`, `moscow:could`, or `moscow:won't`.
    - The `user-story` label, applied by the form.

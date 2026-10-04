@@ -293,7 +293,7 @@ If credentials, personal data, or confidential material is committed by mistake:
 **Required**
 
 1. Add `.github/ISSUE_TEMPLATE/user-story.yml`, an Issue Form whose fields carry the story statement, the `Traces to` list, any notes, the acceptance criteria, and an optional remaining-work checklist.
-   The list is required and takes one entry per line, exactly one `VP-nn` plus any origins, per [User Stories And Acceptance Criteria](process-requirements.md#user-stories-and-acceptance-criteria).
+   The list is required and takes one entry per line, exactly one `VP-nn` plus optional origins, per [User Stories And Acceptance Criteria](process-requirements.md#user-stories-and-acceptance-criteria).
    Acceptance criteria are optional in the form, because an inactive story may carry none; the two-criteria floor is required for every active story, and each criterion carries a stable `AC-nn` inside the issue.
 2. Disable blank issue creation in the issue template configuration.
 3. Open one issue per story, from the form, per [User Stories And Acceptance Criteria](process-requirements.md#user-stories-and-acceptance-criteria).

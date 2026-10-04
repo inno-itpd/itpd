@@ -50,7 +50,11 @@ For each `GAP-nn`, ask what a user would be trying to do that they cannot do tod
 
 Not every story starts at a gap.
 A kickoff or validation decision, an action point, or a split of a story too large for one week can all add one.
-Record where it came from in the story's `Traces to` list, and when no existing `GAP-nn` covers it, say so in one line instead of inventing a link.
+When the story has an origin, record it in the story's `Traces to` list, and never invent a `GAP-nn` link to fill the list.
+
+Whatever its origin, a story reaches the vision through its `VP-nn`.
+The vision has one goal and no identifier, so "traces to the vision" would be true of every story and would check nothing; the value proposition says which part of the goal the story serves.
+If a story you want to build supports a `VP-nn` your goal does not cite, the story or the goal is wrong; [User Stories And Acceptance Criteria](../requirements/process-requirements.md#user-stories-and-acceptance-criteria) says how to settle it.
 
 The shape is always the same three lines:
 
@@ -182,7 +186,7 @@ See [Validating With The Customer](validating-with-the-customer.md) for the meet
 - **Writing stories from the feature list.**
   If your story names a component, a screen, or a button, you have already decided the design and stopped learning.
 - **Forcing a story onto a gap that does not cover it.**
-  If the need came from a decision, an action point, or a split, say so in `Traces to` and say why no gap covers it.
+  If the need came from a decision, an action point, or a split, cite that in `Traces to` instead; a story that traces only to its `VP-nn` is fine.
   A false link makes a reader stop trusting the real ones.
 - **One criterion per story.**
   It is the easiest number to hit and the least useful.

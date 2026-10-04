@@ -342,10 +342,11 @@ Each story is a GitHub issue, and the issues are the only place the stories live
    A story does not name a screen, a button, or a component; naming the design decides it for whoever builds the story.
    An acceptance criterion may name a screen, a field, or a system state, because that is what an observer checks.
 4. Every story carries a `Traces to` list.
-   It contains exactly one `VP-nn`, the value proposition the story supports, and may contain any of the story's origins: the `GAP-nn` it closes, a customer decision in a meeting report, a team decision in the weekly public report, an action point it carries out, or the parent `US-nn` of a split.
+   It contains exactly one `VP-nn`, the value proposition the story supports, and, optionally, the story's origins: the `GAP-nn` it closes, a customer decision in a meeting report, a team decision in the weekly public report, an action point it carries out, or the parent `US-nn` of a split.
+   The `VP-nn` is how a story traces to the product vision, so an active story's `VP-nn` is one the vision's [goal](#product-vision-and-goals) traces to.
+   An active story that supports no such value proposition is outside the vision: add its `VP-nn` to the goal as a team decision, or make the story `Won't Have`.
    Cite an identifier by its ID, and a decision or action point by the report path and its `#decisions` or `#action-points` anchor, with the decision sentence or action quoted, per [Identifier Rules](#identifier-rules).
-   A story that names no `GAP-nn` and is not a split child says in one line why no existing gap covers it.
-   A need that came from outside Week 1 research records that origin in the list rather than rewriting the research; only a contradiction updates it, per [Traceability Into Later Weeks](#traceability-into-later-weeks).
+   A need that came from outside Week 1 research does not rewrite the research; only a contradiction updates it, per [Traceability Into Later Weeks](#traceability-into-later-weeks).
 5. Every story is prioritized with MoSCoW, relative to the product you intend to finish in this course:
 
    - `Must Have`: the product is not the product without it.
@@ -500,7 +501,7 @@ This is what makes the course a project rather than nine separate assignments.
    See [Artifact Requirements](artifact-requirements.md#where-artifacts-live-in-the-repository).
 3. If you drop a gap mid-course, keep it in the gap analysis marked as dropped, and say which value propositions and user stories were affected.
 4. A later need that your Week 1 research did not anticipate does not rewrite the research.
-   Record the need's origin in the story's `Traces to` list and say why no existing gap covers it; update the research only when the later need contradicts it.
+   It becomes a story that traces to the `VP-nn` it supports; update the research only when the later need contradicts it.
 5. A decision recorded with `TBD` in `Changes` is finished when the artifact that carries its effect names the decision and links the report that recorded it.
 
 ## Research Honesty Rules

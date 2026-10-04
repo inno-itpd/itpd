@@ -201,7 +201,7 @@
 
   Every link answers one question:
   - The vision: what is this for?
-  - A user story: what does one user need?
+  - A user story: what does one user need, for which `VP-nn` of the goal?
   - Acceptance criteria: how would we know?
   - The prototype: are we guessing?
   - The meeting: where are we wrong?
