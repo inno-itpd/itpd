@@ -15,14 +15,15 @@ Ask for 60 if the customer can give it.
 - [Step 1: Write Down What The Meeting Is For](#step-1-write-down-what-the-meeting-is-for)
 - [Step 2: Derive The Questions From The Target](#step-2-derive-the-questions-from-the-target)
 - [Step 3: Cut Questions That Cannot Change Anything](#step-3-cut-questions-that-cannot-change-anything)
-- [Step 4: Run The Meeting](#step-4-run-the-meeting)
-- [Step 5: Trace What Changed](#step-5-trace-what-changed)
+- [Step 4: Order The Meeting](#step-4-order-the-meeting)
+- [Step 5: Run The Meeting](#step-5-run-the-meeting)
+- [Step 6: Trace What Changed](#step-6-trace-what-changed)
 - [Common Mistakes](#common-mistakes)
 
 ## What You Produce
 
 ```text
-reports/week-NN/meeting-script.md     the target, the questions, the roles
+reports/week-NN/meeting-script.md     the target, the agenda, the questions, the roles
 reports/week-NN/meeting-report.md     the decisions, the action points, the disagreements
 reports/week-NN/meeting-notes.md      or meeting-transcript.md, never both
 the story issue                       a dated comment on what the meeting changed
@@ -40,23 +41,16 @@ A good target is specific enough that you could tell afterwards whether you hit 
 A bad target is a subject, not a target: "discuss the product".
 You will spend thirty minutes on the parts you want to talk about and leave with nothing you can change.
 
-The assignment says what this week's meeting has to settle.
-
-<!-- What does this sentence mean? -->
-
-The target is that content written as the one question the meeting exists to answer.
+The assignment lists what this week's meeting has to settle; your target turns that list into the one question the meeting exists to answer.
 
 Re-read the previous meeting report before you write anything.
 Its open questions are still open, and its action points are due; if you have carried one out, the customer should hear how it went.
 
 ## Step 2: Derive The Questions From The Target
 
-<!-- TODO why call answers as "areas"? "answers" sounds like "assumptions" in this context -->
-
-Take your target and ask what would have to be true for you to be wrong.
-Those answers are your areas: the beliefs the meeting could contradict.
-Each area is a place where the customer's answer could change something you wrote, and an area that does not serve the target is deleted, even if it was in an earlier script.
-The assignment gives the content this week's target is made of.
+Take your target and list what you believe that, if it were false, would make you wrong.
+Each belief on that list is an area: a place where the customer's answer could change something you wrote.
+An area that does not serve the target is deleted, even if it was in an earlier script.
 
 Write every question numbered, and tag it open or closed.
 An open question asks the customer to tell you something; a closed one can be answered yes or no.
@@ -66,14 +60,26 @@ Ask permission before you record, per [Customer Meeting Artifacts](../requiremen
 
 ## Step 3: Cut Questions That Cannot Change Anything
 
-A question earns its place only if an answer could change something in the target.
+A question earns its place only if an answer could change something in the target, which [Meeting Script](../requirements/artifact-requirements.md#meeting-script) requires.
 For each question, ask what answer you expect, and what you would do differently if the answer went the other way.
 If no answer changes anything, cut the question; asking it costs meeting time and tells you nothing.
 
 Rewrite at least one question and record it in `## Key improvements`, per [Meeting Script](../requirements/artifact-requirements.md#meeting-script).
 The principle is yours; what matters is that a reader can see the before, the after, and why the second one is better.
 
-## Step 4: Run The Meeting
+## Step 4: Order The Meeting
+
+Turn the areas into the script's `## Agenda`: the parts of the meeting in the order you will run them, what you show in each, and which questions you ask there, per [Meeting Script](../requirements/artifact-requirements.md#meeting-script).
+
+Open with the permission questions, then the previous meeting's open questions and due action points, because the customer will ask about them if you do not.
+Then show one thing per part, and ask about it while it is on the screen.
+A question about a prototype the customer has not seen yet gets an opinion about your description of it.
+
+Put the part you are least sure of first after that.
+If the meeting runs short, it is the last part that gets cut, and the last part should be the one whose answer you can most nearly predict.
+Keep the final two minutes for reading back the decisions and action points, so the customer hears what you think was settled while they can still correct it.
+
+## Step 5: Run The Meeting
 
 Assign the three roles before the meeting, per [Meeting With The Customer](../requirements/process-requirements.md#meeting-with-the-customer).
 The whole team attends.
@@ -87,7 +93,7 @@ You are not asking permission, and a customer who agrees with everything has tol
 If the customer says "that sounds great" about your own idea, the useful next question is "what would you want to see for that to be true?" or "what is the risk in it?".
 Those are the questions that produce a `## Disagreements` row.
 
-## Step 5: Trace What Changed
+## Step 6: Trace What Changed
 
 The meeting report's `## Decisions` table is the record.
 `Changes` names what each decision changed, and links it when the artifact has a stable link: usually a `US-nn`, with the `AC-nn` when a specific criterion changed, or the constraint, assumption, document, or scaffold for anything else, per [Meeting Report](../requirements/artifact-requirements.md#meeting-report).

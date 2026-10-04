@@ -162,7 +162,7 @@ Hold one kickoff meeting with them this week: present the project, your reading 
 The rules are in [Meeting With The Customer](../requirements/process-requirements.md#meeting-with-the-customer), and the method is in [The Kickoff Meeting](../guides/customer-kickoff-meeting.md).
 This week specifically:
 
-1. **Write `reports/week-01/meeting-script.md` first**, with at least two questions in each of the five kickoff areas and `## Key improvements` showing at least two rewrites, per [Meeting Script](../requirements/artifact-requirements.md#meeting-script).
+1. **Write `reports/week-01/meeting-script.md` first**, with at least two questions in each of the five kickoff areas, an `## Agenda` whose early part presents your reading of the problem and your direction with `docs/research/value-proposition.md` shown, and `## Key improvements` showing at least two rewrites, per [Meeting Script](../requirements/artifact-requirements.md#meeting-script).
 2. **Assign the three roles and ask the three permission questions** before you start, per [Meeting With The Customer](../requirements/process-requirements.md#meeting-with-the-customer), and keep the recording out of the repository.
 3. **Write `reports/week-01/meeting-report.md`**, plus either `meeting-transcript.md` or `meeting-notes.md`, per [Customer Meeting Artifacts](../requirements/artifact-requirements.md#customer-meeting-artifacts).
    Hold the report to the week minima:
@@ -305,7 +305,8 @@ See [Permalinks And Snapshots](../requirements/repository-requirements.md#permal
 - [ ] `docs/research/gap-analysis.md` with `GAP-nn` entries and the rejected list.
 - [ ] `docs/research/value-proposition.md` with `VP-nn` entries and assumptions.
 - [ ] Board linked, view-only, two screenshots per alternative.
-- [ ] `reports/week-01/meeting-script.md` with five areas, at least two questions each, all tagged open or closed.
+- [ ] `reports/week-01/meeting-script.md` with a one-sentence target and five areas, at least two questions each, all tagged open or closed and all serving the target.
+- [ ] `## Agenda` with timeboxes adding up to the meeting, what you show in each part, and every question in exactly one part.
 - [ ] `## Key improvements` shows two real rewrites with the principle named.
 - [ ] Three meeting roles assigned, whole team attending.
 - [ ] Kickoff meeting held, all three permissions asked before recording.

@@ -13,14 +13,15 @@ A script that comes out of an argument between three team members is worse than 
 - [Step 1: Write Down What The Meeting Is For](#step-1-write-down-what-the-meeting-is-for)
 - [Step 2: Build The Questions From Five Areas](#step-2-build-the-questions-from-five-areas)
 - [Step 3: Break Your Own Questions With The Mom Test](#step-3-break-your-own-questions-with-the-mom-test)
-- [Step 4: Record What You Improved](#step-4-record-what-you-improved)
-- [Step 5: Assign Roles](#step-5-assign-roles)
+- [Step 4: Order The Meeting](#step-4-order-the-meeting)
+- [Step 5: Record What You Improved](#step-5-record-what-you-improved)
+- [Step 6: Assign Roles](#step-6-assign-roles)
 - [Common Mistakes](#common-mistakes)
 
 ## What You Produce
 
 ```text
-reports/week-NN/meeting-script.md   what you believe, what the meeting is for, and the questions
+reports/week-NN/meeting-script.md   what you believe, what the meeting is for, the agenda, and the questions
 ```
 
 The meeting itself produces a [meeting report](../requirements/artifact-requirements.md#meeting-report), and a transcript or notes.
@@ -44,6 +45,8 @@ If you cannot finish that sentence, the meeting is not ready to be scheduled.
 
 Two questions per area is the minimum, and it is enough.
 More than about four in an area and you will read them faster than you will listen.
+Every question still has to serve the target from Step 1.
+If a question would not change anything whatever the answer, replace it with one that would, rather than keeping it to make up the count.
 
 **Business goals.**
 Why build rather than buy, and what this changes about their work when it works.
@@ -93,14 +96,30 @@ The rewrite is not only about the words.
 "Would you switch" is untestable, because nobody predicts their own behaviour accurately.
 The switching row becomes a question about a past decision, which already happened and which they remember.
 
-## Step 4: Record What You Improved
+## Step 4: Order The Meeting
+
+The questions say what you will ask; the agenda says what happens in the room, in which order, and what is on the screen while it does.
+Write it after the questions, because its parts are built from them.
+
+Open with the [three permission questions](../requirements/artifact-requirements.md#customer-meeting-artifacts), then present your reading of the problem and your direction, with `docs/research/value-proposition.md` on the screen.
+That is the part the customer most needs to hear, and the business-goal questions belong right after it, while it is fresh.
+
+Then take the screen down.
+The workflow and pain-point questions are about the customer's past, and a diagram of your idea in front of them pulls every answer toward it.
+Bring an artifact back only when a question is about it: the gap table for the scope questions is the usual one.
+
+Put the part you are least sure of early, so the questions that could overturn your direction get the time.
+Give each part a timebox, and make them add up to 30-60 minutes, including the last two minutes for reading back the decisions and action points.
+The moderator watches the clock against those timeboxes; a part that runs over takes its time from the last part, not from the read-back.
+
+## Step 5: Record What You Improved
 
 Close the script with the `## Key improvements` section [Meeting Script](../requirements/artifact-requirements.md#meeting-script) requires, giving each rewritten question's before, after, and principle.
 
 This section is not proof that you read the Mom Test.
 It is the part a reader uses to tell whether your questions were considered or merely collected, and it is the only part of the script that survives into the meeting report.
 
-## Step 5: Assign Roles
+## Step 6: Assign Roles
 
 Three roles, three people, before you start rather than during: a moderator, a note taker, and an observer.
 [Meeting With The Customer](../requirements/process-requirements.md#meeting-with-the-customer) says what each role does.
@@ -113,6 +132,8 @@ The script is a floor on what you cover, not a ceiling on the meeting.
 - **A script with no history in it.**
   "Is security important?" gets you nothing.
   "Walk me through the last time this went wrong" gets you the incident.
+- **An agenda that is the question list again.**
+  If every part says "show: nothing", you planned what to ask but not what to present, and the customer hears your direction for the first time in the scope questions.
 - **No `## Key improvements` section.**
   The section is the assignment.
   The script without it is just notes.

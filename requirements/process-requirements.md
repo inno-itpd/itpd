@@ -561,6 +561,7 @@ A later meeting settles one thing or two; its method is in [Guide: Validating Wi
 1. Prepare the meeting in writing first, at `reports/week-NN/meeting-script.md`, following [Meeting Script](artifact-requirements.md#meeting-script).
 2. The script covers whatever this meeting has to settle.
    Derive those areas from the target rather than from a template, and write every question numbered, tagged open or closed, per [Meeting Script](artifact-requirements.md#meeting-script).
+   Every question serves the target, and the script's agenda says what you show and discuss in which order, per the same section.
 3. Plan for 30 minutes and ask for 60 if the customer can give it.
 4. Assign roles before the meeting: a moderator who asks the questions and controls the time, a note taker who records what was said, and an observer who records what was not asked and what was not said.
    The whole team attends.
@@ -574,6 +575,7 @@ A later meeting settles one thing or two; its method is in [Guide: Validating Wi
 
 1. Hold one kickoff meeting with the customer, which is your instructor, during Week 1.
    Present the project, your reading of the problem, and your proposed direction, and hear where they disagree.
+   The script's agenda says where in the meeting you present each of them.
 2. The script covers five areas: business goals, end users, the current workflow, pain points and constraints, and scope, with at least two questions in each.
 3. Check the open questions against [The Mom Test](https://www.koji.so/docs/mom-test-methodology).
    A question about what the customer did last time is worth more than a question about what they would like.
@@ -587,4 +589,5 @@ A Week 2 validation meeting.
 
 - What it has to settle: whether the prototype, the boundary, and the minimum usable product candidate are right.
 - The areas that follow from it: the prototype's question, the boundary, and the build order.
+- The agenda that follows from them: show the prototype and ask about it, then the boundary, then the minimum usable product candidate.
 - The question whose answer would change the week: "Which of these stories would you miss first if it were not built?"

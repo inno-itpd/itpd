@@ -177,7 +177,7 @@ See [Validating With The Customer](../guides/validating-with-the-customer.md), w
 The rules are in [Meeting With The Customer](../requirements/process-requirements.md#meeting-with-the-customer) and [Validation](../requirements/process-requirements.md#validation), and the file shapes are in [Customer Meeting Artifacts](../requirements/artifact-requirements.md#customer-meeting-artifacts).
 This week specifically:
 
-1. **Write `reports/week-02/meeting-script.md` first**, with the target at the top and `## Key improvements` showing at least one rewrite, per [Meeting Script](../requirements/artifact-requirements.md#meeting-script).
+1. **Write `reports/week-02/meeting-script.md` first**, with the target at the top, an `## Agenda` that shows the prototype, the boundary, and the minimum usable product candidate each in its own part, and `## Key improvements` showing at least one rewrite, per [Meeting Script](../requirements/artifact-requirements.md#meeting-script).
 2. **Write `reports/week-02/meeting-report.md`**, plus either `meeting-transcript.md` or `meeting-notes.md`.
    Hold the report to the week minima: at least two rows in `## Decisions`, each naming what it changed (the `US-nn`, the `AC-nn` when a criterion changed, or the constraint, assumption, or document it settled), with one row the customer's verdict on the minimum usable product candidate, whose `Changes` names each `US-nn` added to or removed from the candidate or says `None` with the reason, per [Minimum Usable Product Candidate](../requirements/process-requirements.md#minimum-usable-product-candidate); at least two rows in `## Action points`, each with a named owner and a due date inside Week 3; and `## Disagreements` filled in, or an explicit `None`.
 3. **Record the change per [Validation](../requirements/process-requirements.md#validation).**
@@ -331,7 +331,8 @@ See [Permalinks And Snapshots](../requirements/repository-requirements.md#permal
 - [ ] `reports/week-02/prototypes.md` with what you showed, which `US-nn` it tested, any `AC-nn` exercised, and what the customer said.
 - [ ] Screenshots in `reports/week-02/images/`, external tools shared view-only.
 - [ ] No disposable prototype code on `main`; any spike done on a branch and then deleted or merged.
-- [ ] `reports/week-02/meeting-script.md` with a one-sentence target, numbered questions tagged open or closed, and `## Key improvements` showing at least one real rewrite.
+- [ ] `reports/week-02/meeting-script.md` with a one-sentence target, numbered questions tagged open or closed and all serving the target, and `## Key improvements` showing at least one real rewrite.
+- [ ] `## Agenda` with timeboxes adding up to the meeting, the prototype, the boundary, and the minimum usable product candidate each shown in its own part, and every question in exactly one part.
 - [ ] Three meeting roles assigned, whole team attending, three permission questions asked before recording.
 - [ ] Validation meeting held, all three permissions asked before recording.
 - [ ] `reports/week-02/meeting-report.md` with all six sections, 2+ decisions naming what each changed (the `US-nn`, and `AC-nn` where a criterion changed), 2+ action points with owner and Week 3 due date, and `## Disagreements` filled or `None`.

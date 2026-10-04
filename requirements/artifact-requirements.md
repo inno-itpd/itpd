@@ -426,27 +426,37 @@ A recording is a separate, private-only artifact.
 3. A section with nothing in it says `None` and moves on.
 4. The sections, and what belongs in them:
 
-   | Section               | Which meetings | What belongs in it                                                                                                                                           |
-   | --------------------- | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-   | `## Context`          | Every meeting  | The problem-space sentence you are working from, what you already believe, and what this meeting has to settle                                               |
-   | `## Questions`        | Every meeting  | A numbered list, each question tagged open or closed, covering the areas this meeting has to settle                                                          |
-   | `## Roles`            | Every meeting  | Who moderates, who takes notes, and who observes                                                                                                             |
-   | `## Key improvements` | Every meeting  | For each question you rewrote, the before, the after, and the principle behind the rewrite: at least two rewrites at the kickoff, one at every later meeting |
+   | Section               | Which meetings | What belongs in it                                                                                                                                            |
+   | --------------------- | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+   | `## Context`          | Every meeting  | The problem-space sentence you are working from, what you already believe, and the target: what this meeting has to settle, in one sentence                   |
+   | `## Agenda`           | Every meeting  | A numbered list of the parts of the meeting, in the order you will run them, each with a timebox, what you show, and the numbers of the questions asked there |
+   | `## Questions`        | Every meeting  | A numbered list, each question tagged open or closed, covering the areas this meeting has to settle                                                           |
+   | `## Roles`            | Every meeting  | Who moderates, who takes notes, and who observes                                                                                                              |
+   | `## Key improvements` | Every meeting  | For each question you rewrote, the before, the after, and the principle behind the rewrite: at least two rewrites at the kickoff, one at every later meeting  |
 
 5. The `## Questions` minimum depends on the meeting.
    At the kickoff, each of the five areas in [Meeting With The Customer](process-requirements.md#meeting-with-the-customer) has at least two questions.
    A later meeting derives its own areas from its target rather than from the five kickoff areas, so it carries as many questions as its target has to settle, and no per-area floor.
-6. The script is preparation, so it is not rewritten after the meeting.
+6. Every question serves the target in `## Context`: an answer to it could change something the team will build, write, or ask next.
+   A question no answer could change is cut, and at the kickoff it is replaced rather than kept to reach the per-area minimum.
+7. `## Agenda` covers the whole meeting.
+   The first part asks the [three permission questions](#customer-meeting-artifacts), the last part reads back the decisions and action points, and the timeboxes add up to the length you planned.
+   Every question appears in exactly one part.
+8. Each part names what you show in it: a link to the artifact, prototype, or screen you put in front of the customer, or says that nothing is shown.
+9. The script is preparation, so it is not rewritten after the meeting.
    What the meeting actually produced is the [meeting report](#meeting-report), which links to the script.
-7. A meeting held asynchronously in writing instead of live still produces a script, but `## Roles` is not one of its sections.
-   A written exchange has no speaking-time floor, and the moderator is whoever wrote the questions.
-   Record the substitution as a [deviation](#declaring-deviations).
+10. A meeting held asynchronously in writing instead of live still produces a script, but `## Roles` is not one of its sections.
+    A written exchange has no speaking-time floor, and the moderator is whoever wrote the questions.
+    Its `## Agenda` gives the order of the exchange and what you send with each part, without timeboxes.
+    Record the substitution as a [deviation](#declaring-deviations).
 
 **Recommended**
 
 - Keep it to a page.
   A script nobody can follow at speaking pace is a document, not a script.
 - Mark the two or three questions that would change the project most if the answer went the other way, so the team asks them even when time runs short.
+- Show your direction early and ask the questions that could overturn it next, so they get the most time.
+  Leave the part you are most sure of for last; it is the one to cut when the meeting runs over.
 
 **Example**
 
@@ -459,7 +469,27 @@ Our problem-space sentence: an expert who sells sessions online needs one link w
 
 We believe this is the gap our product targets, and that it is worth two months of work.
 We have not checked whether clients will pay at booking, and we do not know whether the customer will accept a web page rather than a Telegram bot.
-This meeting tests both.
+
+Target: find out whether one booking link that carries payment and materials is the problem the customer wants solved, and in which form.
+
+## Agenda
+
+1. Permission questions (2 min).
+   Show: nothing.
+2. Our reading of the problem and our direction (5 min).
+   Show: [value-proposition.md](../../docs/research/value-proposition.md).
+   Questions 1–2.
+3. Who books and pays, and how it works today (10 min).
+   Show: nothing, so the answers describe their routine rather than our idea.
+   Questions 3–6.
+4. What went wrong and what cannot change (6 min).
+   Show: nothing.
+   Questions 7–8.
+5. Scope (5 min).
+   Show: [gap-analysis.md](../../docs/research/gap-analysis.md).
+   Questions 9–10.
+6. Read back the decisions and action points (2 min).
+   Show: the note taker's list.
 
 ## Questions
 
