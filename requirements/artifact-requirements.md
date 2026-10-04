@@ -153,24 +153,27 @@ The mapping from username to real name and university email goes in the Moodle P
 **Required**
 
 1. Create `reports/week-NN/README.md` for every week that has a submission.
-2. It is the index for the week.
+2. Merge it, and every repository-resident artifact it links, into `main`, the [default branch](repository-requirements.md#repository-setup), before you submit.
+   The [submission commit](repository-requirements.md#permalinks-and-snapshots) is a `main` commit that contains them.
+   A report or an artifact left on an unmerged pull-request branch has not been submitted.
+3. It is the index for the week.
    It links directly to every supporting artifact, both repository files and external links.
-3. It identifies the week, the project, the team, and the covered scope clearly enough that a reader knows what body of work it describes.
-4. It contains a short summary of what the team found, built, or decided, and what is still open.
+4. It identifies the week, the project, the team, and the covered scope clearly enough that a reader knows what body of work it describes.
+5. It contains a short summary of what the team found, built, or decided, and what is still open.
    A grader should be able to read only this file and understand the week, then follow links for detail.
-5. `## Decisions` is the week's decision index.
+6. `## Decisions` is the week's decision index.
    When the week held a meeting with the customer, the section links the `## Decisions` table of each meeting report.
    A decision the team took outside a meeting goes in the section's own table, with the same columns and cell rules as the [meeting report](#meeting-report).
    The section links a meeting's decisions; it never copies their rows.
    A week with no decision at all does not carry the section.
-6. It contains a coverage table mapping each required deliverable of the assignment to the artifact that satisfies it.
+7. It contains a coverage table mapping each required deliverable of the assignment to the artifact that satisfies it.
    The table is the index, so it is not followed by a second list of the same links.
-7. It links the root `LICENSE`.
-8. It contains a contribution table mapping each team member's GitHub username to the work they did, using links to their commits, pull requests, or reviews where possible.
-9. It states any deviation from the assignment or from the shared requirements, and justifies it.
-   This includes cases where you used a different tool, a different artifact form, or an alternative arrangement.
-10. It states, in one line, that no private-only material was committed to the repository.
-11. It stays accurate and reachable until the course has been graded.
+8. It links the root `LICENSE`.
+9. It contains a contribution table mapping each team member's GitHub username to the work they did, using links to their commits, pull requests, or reviews where possible.
+10. It states any deviation from the assignment or from the shared requirements, and justifies it.
+    This includes cases where you used a different tool, a different artifact form, or an alternative arrangement.
+11. It states, in one line, that no private-only material was committed to the repository.
+12. It stays accurate and reachable until the course has been graded.
 
 **Recommended**
 

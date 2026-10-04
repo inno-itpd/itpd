@@ -10,6 +10,7 @@ Where it says "see", the linked file is the detailed version, and it wins if the
 1. Your product repository is **public** and everything in it is readable by anyone, forever.
 2. Your **weekly report** in the repository is the submission.
    The Moodle PDF is a map that points at it.
+   It counts only once it and the files it links are merged into `main`; see [Weekly Public Report](../requirements/artifact-requirements.md#weekly-public-report).
 3. Detailed content lives in **dedicated files that the report links**.
    The report is an index, not a second copy.
 4. Anything that will still be referenced later lives in **`docs/`**, in its final place, from the week you create it.

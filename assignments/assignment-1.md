@@ -281,6 +281,8 @@ See [Permalinks And Snapshots](../requirements/repository-requirements.md#permal
 
 ### Submission Procedure
 
+- Merge `reports/week-01/README.md` and every file it links into `main`, per [Weekly Public Report](../requirements/artifact-requirements.md#weekly-public-report).
+- Take the permalink and the snapshot from that `main` commit.
 - Submit the PDF and the repository snapshot (repository page -> Code -> Download ZIP) through Moodle.
 - One submission per team.
 - Due Thursday 1 October, 23:59.
@@ -311,4 +313,5 @@ See [Permalinks And Snapshots](../requirements/repository-requirements.md#permal
 - [ ] `reports/week-01/meeting-transcript.md` or `meeting-notes.md`, sanitized; in the Moodle PDF only if publication was refused.
 - [ ] `reports/week-01/ai-usage.md` written.
 - [ ] `reports/week-01/README.md` complete, with the kickoff decisions linked, the coverage table, evidence, and contribution table.
+- [ ] `reports/week-01/README.md` and every file it links merged into `main`, with the permalink and the snapshot taken from that `main` commit.
 - [ ] PDF and snapshot ready, permalink verified at the full commit hash.

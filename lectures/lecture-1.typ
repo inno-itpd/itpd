@@ -192,6 +192,7 @@
 
   *Assignment submission:*
   - Work on the assignment in your repository on GitHub.
+  - Merge the report and everything it links into `main` before you submit.
   - Submit a report and a snapshot of the repository on Moodle.
   - TBD: also submit all your sessions with an agent on Moodle.
 ]
