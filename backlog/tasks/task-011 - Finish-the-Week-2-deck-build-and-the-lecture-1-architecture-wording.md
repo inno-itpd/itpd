@@ -4,6 +4,7 @@ title: Finish the Week 2 deck build and the lecture-1 architecture wording
 status: To Do
 assignee: []
 created_date: '2026-10-02 07:07'
+updated_date: '2026-10-03 20:23'
 labels: []
 dependencies: []
 references:
@@ -38,6 +39,15 @@ The committed `lectures/lecture-2.pdf` is 127949 bytes and the current source bu
 - [ ] #5 `lectures/AGENTS.md` rules are followed, including file-header provenance for borrowed material
 <!-- AC:END -->
 
+## Definition of Done
+<!-- DOD:BEGIN -->
+- [ ] #1 All acceptance criteria are satisfied
+- [ ] #2 Changed Markdown files are formatted: `pnpm run format:markdown`
+- [ ] #3 `pnpm run lint:markdown` passes
+- [ ] #4 `pnpm run test:markdown-format` and `pnpm run test:markdown-rules` pass
+- [ ] #5 `pnpm run check:lectures` passes
+<!-- DOD:END -->
+
 ## Implementation Plan
 
 <!-- SECTION:PLAN:BEGIN -->
@@ -60,13 +70,6 @@ Four rendering-only defects were found in task-008, not by compiling but by rend
 `lectures/lecture-1.typ` line 103 was reverted to `Not about architecture - you'll have a course next semester`, with the replacement sentence kept as a comment under `// TODO consider clarifying`. That is a review decision to reconsider the wording; Week 4 does require an architectural draft, so the sentence still has to change.
 
 This task owns task-008 acceptance criteria 16 and 19. TASK-009 records `check:lectures` as inherited-red and does not regress it.
-<!-- SECTION:NOTES:END -->
 
-## Definition of Done
-<!-- DOD:BEGIN -->
-- [ ] #1 All acceptance criteria are satisfied
-- [ ] #2 Changed Markdown files are formatted: `pnpm run format:markdown`
-- [ ] #3 `pnpm run lint:markdown` passes
-- [ ] #4 `pnpm run test:markdown-format` and `pnpm run test:markdown-rules` pass
-- [ ] #5 `pnpm run check:lectures` passes
-<!-- DOD:END -->
+TASK-014 rebuilt `lectures/lecture-2.pdf` in its tree to clear a one-byte font-subset difference: the committed PDF was 106768 bytes and the pinned Typst 0.15.1 environment builds 106769, with no content change. TASK-011 still owns the deck content decisions and the lecture-1 wording; this note records only the rebuild overlap.
+<!-- SECTION:NOTES:END -->
