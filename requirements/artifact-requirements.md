@@ -641,7 +641,7 @@ No actor appears that the boundary excludes.
 
 ## Where The Detail Lives
 
-- [User stories](user-stories/README.md)
+- [User stories](https://github.com/<organization>/<repo>/issues?q=label%3Auser-story)
 - [Week 2 report](../reports/week-02/README.md)
 ```
 
@@ -650,7 +650,7 @@ No actor appears that the boundary excludes.
 **Since: W2**
 
 User stories are created in Week 2 and stay current for the rest of the course.
-Each story is a GitHub issue, and `docs/user-stories/README.md` is the index and the registry of identifiers.
+Each story is a GitHub issue, and the `user-story` label identifies story issues.
 
 **Required**
 
@@ -672,21 +672,10 @@ Each story is a GitHub issue, and `docs/user-stories/README.md` is the index and
 4. The issue is the record of change.
    A change that follows a customer meeting adds a dated comment saying what changed and linking the meeting report.
    Do not rewrite a story to hide a change; the edit history and the comment are the record.
-5. `docs/user-stories/README.md` is the **index and the registry of identifiers**.
-   It is the only place the full list appears, and it carries three sections in this order:
-
-   - `## Active stories`: a row per active story, with the `US-nn` and title as plain text and a link to its issue.
-   - `## Minimum usable product candidate`: the `US-nn` the team would build first, and which one it would drop first if it ran out of time.
-     The candidate is a strict, non-empty subset of the `Must Have` stories, and it is a proposal that Week 3 schedules.
-     The candidate issues are added to a milestone named `MUP candidate`.
-   - `## Inactive stories`: a row per inactive story, with its `US-nn` and title, the reason it is inactive, the date it became inactive, and a link to its closed issue.
-     The identifier is kept, and the reason is free text beginning with `removed`, `superseded`, or `won't-have`.
-
-6. Do not copy the story text into the index.
-   The index links the issues; the issues hold the content.
-7. The issue tracker is where execution state lives.
-   The index carries a link to each issue rather than a second copy of its status.
-   The issue is the source of truth for the requirement and its criteria, per [Planning And Issue Tracking](repository-requirements.md#planning-and-issue-tracking).
+5. The **registry of identifiers** is the issue list filtered by the `user-story` label.
+   It shows open and closed issues, so an inactive story keeps its `US-nn` and stays findable after it closes.
+6. Do not keep a second list of stories in the repository.
+   The issue is the source of truth for the requirement and its criteria, and the issue tracker is where execution state lives, per [Planning And Issue Tracking](repository-requirements.md#planning-and-issue-tracking).
 
 **Recommended**
 
@@ -695,34 +684,6 @@ Each story is a GitHub issue, and `docs/user-stories/README.md` is the index and
 - Keep each story short enough to read in one sitting.
 
 **Example**
-
-`docs/user-stories/README.md`:
-
-```markdown
-# User stories
-
-The product goal is in [the vision](../product-vision.md).
-
-## Active stories
-
-<!-- TODO  -->
-
-| Story                                      | Issue                                        |
-| ------------------------------------------ | -------------------------------------------- |
-| US-01: Rules that follow the marked region | [#42](https://github.com/org/repo/issues/42) |
-| US-02: An audit trail a user can read      | [#43](https://github.com/org/repo/issues/43) |
-
-## Minimum usable product candidate
-
-US-01 and US-02.
-US-02 is the one we drop first, because an unreadable audit trail is a bad product while a missing one is an incomplete product.
-
-## Inactive stories
-
-| Story                               | Reason                                       | Date       | Issue                                        |
-| ----------------------------------- | -------------------------------------------- | ---------- | -------------------------------------------- |
-| US-09: Share a board by public link | won't-have: no evidence that a user needs it | 2026-10-07 | [#50](https://github.com/org/repo/issues/50) |
-```
 
 Issue #42, an active story:
 

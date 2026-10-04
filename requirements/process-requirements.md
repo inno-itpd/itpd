@@ -324,7 +324,7 @@ A boundary nobody can disagree with is a boundary that is not written down.
 A user story is a small, checkable statement of one thing a user needs.
 A user is any actor with a goal: the person the product serves, and the operator or administrator who keeps it running.
 Its job is to make a gap concrete enough that a reviewer can tell whether you delivered it.
-Each story is a GitHub issue, and the repository holds only the index.
+Each story is a GitHub issue, and the issues are the only place the stories live.
 
 **Required**
 
@@ -355,15 +355,15 @@ Each story is a GitHub issue, and the repository holds only the index.
    An inactive story is not built, so it may carry none.
 7. A story too large to build and verify in one week is two stories.
    Split it: the parent keeps its identifier and its statement, closes as not planned with a comment beginning with `superseded`, and stays traceable from both children.
-8. Name the **minimum usable product candidate**: a strict, non-empty subset of your `Must Have` stories that you would build first.
+8. Name the **minimum usable product candidate** in the Week 2 report: a strict, non-empty subset of your `Must Have` stories that you would build first.
    Say which one you would drop first if you ran out of time.
    The candidate is a proposal, not a commitment, and Week 3 schedules and builds it.
 9. Open one issue per story, from the form in [Planning And Issue Tracking](repository-requirements.md#planning-and-issue-tracking).
-   The issue is the story and the source of truth; the form carries the statement, the acceptance criteria, the `GAP-nn`, the `VP-nn`, and any sources, and the index in `docs/user-stories/README.md` links it.
+   The issue is the story and the source of truth; the form carries the statement, the acceptance criteria, the `GAP-nn`, the `VP-nn`, and any sources.
    The issue may carry a checklist of the remaining work, so a contributor can work without leaving it.
 10. A story becomes inactive by being closed as not planned, with a comment naming the reason and any story that supersedes it.
-    It keeps its identifier and its statement in the issue, and the index records the reason and the date.
-    An active story that is delivered closes as completed and stays in the active registry.
+    It keeps its identifier and its statement in the issue; the closing comment and the close date are the record.
+    An active story that is delivered closes as completed and stays in the list.
 
 **Recommended**
 

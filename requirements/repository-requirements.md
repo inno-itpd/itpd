@@ -294,17 +294,16 @@ If credentials, personal data, or confidential material is committed by mistake:
 1. Add `.github/ISSUE_TEMPLATE/user-story.yml`, an Issue Form whose fields carry the story statement, the acceptance criteria, the `GAP-nn`, the `VP-nn`, any sources, any notes, and an optional remaining-work checklist.
    Acceptance criteria are optional in the form, because an inactive story may carry none; the two-criteria floor is required for every active story.
 2. Disable blank issue creation in the issue template configuration.
-3. Open one issue per story, from the form, and link it from `docs/user-stories/README.md`, per [User Stories And Acceptance Criteria](process-requirements.md#user-stories-and-acceptance-criteria).
-   The issue is the story, and the repository's user-story directory holds only the index.
+3. Open one issue per story, from the form, per [User Stories And Acceptance Criteria](process-requirements.md#user-stories-and-acceptance-criteria).
+   The issue is the story, and the list of stories is the issue list filtered by the `user-story` label.
    The title is `US-nn: <story title>`.
 4. Create the labels the stories use, by any means: `user-story`, and `moscow:must`, `moscow:should`, `moscow:could`, `moscow:won't`.
    The form applies `user-story`; the team applies one MoSCoW label per story.
-5. Add the minimum usable product candidate issues to a milestone named `MUP candidate`.
-6. An inactive story closes as not planned, with a comment naming the reason and any story that supersedes it.
+5. An inactive story closes as not planned, with a comment naming the reason and any story that supersedes it.
    A delivered active story closes as completed.
-7. Create branches from the issue where GitHub supports it, and link every pull request to its issue.
-8. Check the relevant acceptance criteria before merging.
-9. Do not delete an issue or rewrite its body to hide a change; the issue history is part of what a reader follows.
+6. Create branches from the issue where GitHub supports it, and link every pull request to its issue.
+7. Check the relevant acceptance criteria before merging.
+8. Do not delete an issue or rewrite its body to hide a change; the issue history is part of what a reader follows.
 
 **Recommended**
 
@@ -313,9 +312,10 @@ If credentials, personal data, or confidential material is committed by mistake:
   Its files are repository content rather than artifacts, per [Where Artifacts Live In The Repository](artifact-requirements.md#where-artifacts-live-in-the-repository), and it is not graded on its own.
 
 <!-- TODO don't mention in this section about user stories -->
+
 **Since: W3**
 
-10. Keep the project plan in `docs/work-plan.md`, and keep it current as the plan changes.
+9. Keep the project plan in `docs/work-plan.md`, and keep it current as the plan changes.
 
 ## Contributing
 
@@ -367,7 +367,7 @@ The pull request is where the team already writes down what changed and why, whi
 3. Any of the common tools is acceptable, and the repository's own conventions decide which: `markdownlint-cli2`, `prettier --check`, or `remark-lint`.
    Pin it, as in [Pinning Third-Party Actions](#pinning-third-party-actions).
 
-Markdown is checked in Week 2 because the week is mostly prose: a product vision, the story index, and a meeting report.
+Markdown is checked in Week 2 because the week is mostly prose: a product vision, the meeting artifacts, and the week report.
 A broken link or a heading that drifted out of Title Case is a defect in that work, and a defect you find on Friday evening is a defect you did not fix.
 
 **Since: W3**

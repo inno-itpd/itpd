@@ -112,8 +112,8 @@ The first two weeks establish the project foundations, team formation, and compe
 - **Submission 2 (Team Deliverables - Due Oct 8, 23:59)**:
   - **Deliverables**:
     1. **Product Vision**: `docs/product-vision.md`, holding the goal, the constraints, the stakeholders, the boundary of what the team will not do, and a system context diagram.
-    2. **User Stories**: one GitHub issue per story, opened from `.github/ISSUE_TEMPLATE/user-story.yml`, registered in the `docs/user-stories/README.md` index with the minimum usable product candidate and the inactive stories; each active story carries its own acceptance criteria.
-    3. **Issue Tracking**: one issue per `US-nn` with a `moscow:*` label, and the minimum usable product candidate in the `MUP candidate` milestone.
+    2. **User Stories**: one GitHub issue per story, opened from `.github/ISSUE_TEMPLATE/user-story.yml`, listed by the `user-story` label; each active story carries its own acceptance criteria.
+    3. **Issue Tracking**: one issue per `US-nn` with a `moscow:*` label, and the minimum usable product candidate recorded in `reports/week-02/README.md`.
     4. **Prototypes**: prototypes of the riskiest assumptions, recorded at `reports/week-02/prototypes.md`.
        Prototypes may be paper sketches, view-only design tools, or disposable code spikes.
     5. **Customer Validation Meeting**: a second meeting with the customer, with the full Week 1 artifact set, which changes at least one story.

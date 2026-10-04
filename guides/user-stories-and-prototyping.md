@@ -23,8 +23,8 @@ Most of it is arguing about which stories are the same story wearing two hats, w
 
 ```text
 docs/product-vision.md         the goal, the constraints, the stakeholders, the boundary, the context diagram
-docs/user-stories/README.md    the index, the MUP candidate, the inactive stories
 GitHub issues                  one per story, titled US-nn: <title>, with its criteria and labels
+reports/week-02/README.md      the minimum usable product candidate
 reports/week-02/prototypes.md  what you showed, what they said, what changed
 ```
 
@@ -112,8 +112,7 @@ The point of the exercise is not the label, it is the argument: whoever disagree
 A `Won't Have` story is inactive by definition, so write it down as an issue and close it as not planned, with the reason, instead of quietly leaving a story out.
 A reader can argue with a recorded `Won't Have`; they can only guess about a missing one.
 
-Then name the **minimum usable product candidate**: a strict, non-empty subset of your `Must Have` stories that you would build first, plus which one you would drop first if you ran out of time.
-Add the candidate issues to the `MUP candidate` milestone.
+Then name the **minimum usable product candidate** in `reports/week-02/README.md`: a strict, non-empty subset of your `Must Have` stories that you would build first, plus which one you would drop first if you ran out of time.
 
 This is the hardest decision of the week and it belongs here, where the evidence is.
 Week 3 schedules and builds whatever you name here, so a candidate of eight stories is not a commitment, it is a postponement.

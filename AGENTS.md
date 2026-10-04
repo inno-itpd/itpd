@@ -139,21 +139,24 @@ It keeps its own rules, its build, and its gate in `lectures/AGENTS.md`; this fi
 ## `docs/` Destination Map
 
 <!-- TODO don't decide until paths are settled in the assignment -->
+
 Decided now so no week invents a path.
 A later assignment may extend this map, but should not silently move an entry.
 
-| Week | Maintained artifacts                                                                                      |
-| ---- | --------------------------------------------------------------------------------------------------------- |
-| W1   | `docs/research/` — `alternatives.md`, `comparison.md`, `gap-analysis.md`, `value-proposition.md`          |
-| W2   | `docs/product-vision.md`, `docs/user-stories/README.md` (the index; the stories are GitHub issues)        |
+| Week | Maintained artifacts                                                                             |
+| ---- | ------------------------------------------------------------------------------------------------ |
+| W1   | `docs/research/` — `alternatives.md`, `comparison.md`, `gap-analysis.md`, `value-proposition.md` |
+| W2   | `docs/product-vision.md` (the stories are GitHub issues)                                         |
+
 <!-- TODO remove future weeks -->
-| W3   | `docs/work-plan.md`, `docs/threshold-of-success.md`; `CONTRIBUTING.md`, `CHANGELOG.md`; SemVer tags begin |
-| W4   | `docs/quality-requirements.md`, `docs/verification-plan.md`, `docs/architecture/`                         |
-| W5   | `docs/testing.md`, `docs/deployment.md`                                                                   |
-| W6   | `docs/analytics.md` — provisional, to be confirmed when the W6 assignment is written                      |
-| W7   | `docs/usability-testing.md`                                                                               |
-| W8   | `docs/configuration-management.md`                                                                        |
-| W9   | `docs/reflection.md`                                                                                      |
+
+| W3 | `docs/work-plan.md`, `docs/threshold-of-success.md`; `CONTRIBUTING.md`, `CHANGELOG.md`; SemVer tags begin |
+| W4 | `docs/quality-requirements.md`, `docs/verification-plan.md`, `docs/architecture/` |
+| W5 | `docs/testing.md`, `docs/deployment.md` |
+| W6 | `docs/analytics.md` — provisional, to be confirmed when the W6 assignment is written |
+| W7 | `docs/usability-testing.md` |
+| W8 | `docs/configuration-management.md` |
+| W9 | `docs/reflection.md` |
 
 Weekly reports live at `reports/week-NN/README.md` in every week, and the Moodle PDF is the private wrapper in every week.
 Meeting artifacts live at `reports/week-NN/meeting-report.md`, plus a `meeting-transcript.md` or a `meeting-notes.md` beside it.

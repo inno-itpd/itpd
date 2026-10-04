@@ -81,9 +81,9 @@ Follow [Product Vision](../requirements/artifact-requirements.md#product-vision)
    Make it a list, not a paragraph, because a list is something a reader can argue with item by item.
 5. Draw a **system context diagram** showing the product, the external actors, and the external systems it exchanges data with.
    Any format is allowed, as long as the diagram is committed or linked view-only and the text beside it describes the external actors.
-   Do not draw containers or components; those are Week 4.
+   Do not draw containers or components; those are for later weeks.
    See [Stakeholders, Boundary, And Context](../requirements/process-requirements.md#stakeholders-boundary-and-context).
-6. Link to `docs/user-stories/README.md` and to your current week report.
+6. Link to the issue list filtered by the `user-story` label and to your current week report.
 
 ## Part 2: Write And Track The User Stories As Issues
 
@@ -100,24 +100,25 @@ Complete every requirement marked `**Since: W2**` in [Planning And Issue Trackin
    Any notation works, including `Given`/`When`/`Then`.
    The test is whether somebody who is not you could run the check and get the same answer.
    See [User Stories](../requirements/artifact-requirements.md#user-stories) and [User Stories And Acceptance Criteria](../requirements/process-requirements.md#user-stories-and-acceptance-criteria).
-4. `docs/user-stories/README.md` is the index and the registry of identifiers: an `## Active stories` table with one row per active story, its `US-nn`, title, and a link to its issue; a `## Minimum usable product candidate` section; and an `## Inactive stories` table for the rest, with the reason, the date, and a link to the closed issue.
-   The tables do not copy the story text or its fields.
-5. Split any story too large to build and verify in one week: close the parent as not planned with a `superseded` comment, keep its identifier and statement, and link it from both children.
-6. Prioritize every story with **MoSCoW**.
+4. Split any story too large to build and verify in one week: close the parent as not planned with a `superseded` comment, keep its identifier and statement, and link it from both children.
+   <!-- TODO handle epics -->
+5. Prioritize every story with **MoSCoW**.
    Give every `Won't Have` story a reason in its closing comment, beginning with `won't-have`.
    <!-- TODO What does won't-have mean here? -->
-7. Name the **minimum usable product candidate** in the `## Minimum usable product candidate` section of the index: a strict, non-empty subset of your `Must Have` stories that you would build first, and which one you would drop first if you ran out of time.
-   Add the candidate issues to the `MUP candidate` milestone.
+   <!-- Why start with "won't have"? I think the label is enough and the reason should be free-form -->
+6. Name the **minimum usable product candidate** in `reports/week-02/README.md`: a strict, non-empty subset of your `Must Have` stories that you would build first, and which one you would drop first if you ran out of time.
    You will build the MUP in Week 3 based on this candidate set of user stories.
-8. Inactive stories close as not planned with a comment naming the reason and any story that supersedes them, and a delivered story closes as completed.
-9. Create your branches from the issue, and link every pull request to its issue.
+   <!-- TODO don't mention MUP because it can be planned in week 3 -->
+7. Inactive stories close as not planned with a comment naming the reason and any story that supersedes them, and a delivered story closes as completed.
+8. Create your branches from the issue, and link every pull request to its issue.
    Use the `<issue-number>-<short-description>` branch naming rule, per [Branch Protection And Pull Requests](../requirements/repository-requirements.md#branch-protection-and-pull-requests).
-10. The method is in [Step 2: Turn Each Gap Into Stories](../guides/user-stories-and-prototyping.md#step-2-turn-each-gap-into-stories) and [Step 3: Write Criteria Somebody Else Can Run](../guides/user-stories-and-prototyping.md#step-3-write-criteria-somebody-else-can-run).
+9.  The method is in [Step 2: Turn Each Gap Into Stories](../guides/user-stories-and-prototyping.md#step-2-turn-each-gap-into-stories) and [Step 3: Write Criteria Somebody Else Can Run](../guides/user-stories-and-prototyping.md#step-3-write-criteria-somebody-else-can-run).
 
 The issues are what the customer can see and what the team tracks.
 Each issue is the story, and a decision that changes a story has to reach that issue, not only the meeting report.
 
 <!-- TODO don't mention backlog.md here because it's not very relevant? -->
+
 **Recommended**
 
 - Use a task tracker that keeps its state in the repository, such as [`backlog.md`](https://github.com/MrLesk/Backlog.md), for the work around the stories; it does not replace the story issues or the `US-nn` identifiers.
@@ -261,29 +262,29 @@ Follow the structure in [Weekly Public Report](../requirements/artifact-requirem
 3. A coverage table, one row per deliverable of this assignment, giving the artifact that satisfies it.
    This table is the index, so it is not followed by a second list of the same links.
 
-   | Deliverable                      | Artifact                                                                                           |
-   | -------------------------------- | -------------------------------------------------------------------------------------------------- |
-   | Product vision                   | `docs/product-vision.md`                                                                           |
-   | User story index                 | `docs/user-stories/README.md`                                                                      |
-   | User stories                     | the `US-nn` issues, linked from that index                                                         |
-   | Minimum usable product candidate | the `## Minimum usable product candidate` section of that index, and the `MUP candidate` milestone |
-   | Issue form and labels            | `.github/ISSUE_TEMPLATE/user-story.yml`, `user-story`, and the `moscow:*` labels                   |
-   | Markdown check                   | a link to the latest green `main` run                                                              |
-   | Prototypes                       | `reports/week-02/prototypes.md`                                                                    |
-   | Meeting script                   | `meeting-script.md`                                                                                |
-   | Customer validation              | `meeting-report.md`, and `meeting-transcript.md` or `meeting-notes.md`                             |
-   | Kickoff action points            | the outcome per action point, in the artifact it changed                                           |
-   | AI usage                         | `ai-usage.md`                                                                                      |
+   | Deliverable                      | Artifact                                                                         |
+   | -------------------------------- | -------------------------------------------------------------------------------- |
+   | Product vision                   | `docs/product-vision.md`                                                         |
+   | User stories                     | the `US-nn` issues, filtered by the `user-story` label                           |
+   | Minimum usable product candidate | the minimum usable product candidate section of `reports/week-02/README.md`      |
+   | Issue form and labels            | `.github/ISSUE_TEMPLATE/user-story.yml`, `user-story`, and the `moscow:*` labels |
+   | Markdown check                   | a link to the latest green `main` run                                            |
+   | Prototypes                       | `reports/week-02/prototypes.md`                                                  |
+   | Meeting script                   | `meeting-script.md`                                                              |
+   | Customer validation              | `meeting-report.md`, and `meeting-transcript.md` or `meeting-notes.md`           |
+   | Kickoff action points            | the outcome per action point, in the artifact it changed                         |
+   | AI usage                         | `ai-usage.md`                                                                    |
 
    If the customer refused publication of the transcript or the notes, that row says so and points at the Moodle submission instead.
 
-4. **Name the `US-nn` that changed because of the validation meeting**, in one line, and link to its issue.
+4. The minimum usable product candidate: the `US-nn` you would build first, and the one you would drop first if you ran out of time.
+5. **Name the `US-nn` that changed because of the validation meeting**, in one line, and link to its issue.
    This is the row a grader reads first, and it is the reason the week is worth grading.
-5. Repository evidence: a link to one issue per active story and one merged pull request, a link to the latest green Markdown run, and a link to the latest green link check run.
+6. Repository evidence: a link to one issue per active story and one merged pull request, a link to the latest green Markdown run, and a link to the latest green link check run.
    Add the justification for every link you excluded, and confirm you opened each one in a browser to check it.
-6. A contribution table mapping each member's GitHub username to their commits, issues, pull requests, and reviews.
-7. Deviations from the assignment or requirements, if any, with reasons.
-8. One line confirming that no private-only material was committed to the repository.
+7. A contribution table mapping each member's GitHub username to their commits, issues, pull requests, and reviews.
+8. Deviations from the assignment or requirements, if any, with reasons.
+9. One line confirming that no private-only material was committed to the repository.
 
 ## Assignment Report On Moodle
 
@@ -332,9 +333,8 @@ See [Permalinks And Snapshots](../requirements/repository-requirements.md#permal
 - [ ] At least two acceptance criteria per active story, each observable and pass/fail.
 - [ ] Oversized stories split, the parent closed as not planned with a `superseded` comment and traceable from both children.
 - [ ] Every story carries one `moscow:*` label, every `Won't Have` issue closed as not planned with a reason.
-- [ ] `## Minimum usable product candidate` naming a strict, non-empty subset of the `Must Have` stories, which one to drop first, and the candidate issues in the `MUP candidate` milestone.
-- [ ] `docs/user-stories/README.md` indexing every story, active and inactive, with a link to each issue.
-- [ ] One issue per story, titled `US-nn: <story title>`, linked from the index and carrying the story and criteria, with an optional remaining-work checklist; every pull request linked to its issue.
+- [ ] `reports/week-02/README.md` names the minimum usable product candidate: a strict, non-empty subset of the `Must Have` stories, and which one to drop first.
+- [ ] One issue per story, titled `US-nn: <story title>`, carrying the story and criteria, with an optional remaining-work checklist; every pull request linked to its issue.
 - [ ] Branches named `<issue-number>-<short-description>`.
 - [ ] Markdown check in CI on pull requests and `main`, green.
 - [ ] Markdown check pinned to a commit SHA, with `.github/dependabot.yml`.
