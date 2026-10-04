@@ -217,10 +217,11 @@ The defensible part is the single flow and its pricing, not the fields.
 
 **Required**
 
-1. List the assumptions your proposal rests on, at the end of `docs/research/value-proposition.md`.
+1. List the assumptions your proposal rests on, at the end of `docs/research/value-proposition.md`, under the heading `## Assumptions`.
    An assumption is something you believe about the problem, the users, or the constraints that you have not verified.
 2. Trace each assumption to the `GAP-nn` or `VP-nn` it supports.
 3. State how each one could be checked, and when.
+4. When a [decision](artifact-requirements.md#artifact-concepts-and-terminology) settles an assumption, update its entry with the outcome and link the evidence that settled it.
 
 Assumptions are not questions for the customer.
 The customer decides the scope; you are responsible for knowing which of your beliefs the scope rests on, and for finding out which of them are wrong.
@@ -278,6 +279,7 @@ Keeping the two apart is the whole point of this section: a constraint you canno
    Assumptions live in [Assumptions](#assumptions) and are checked through [Validation](#validation).
 4. Do not list a constraint you chose and then describe it as imposed.
    A technology choice is a decision, and a decision is not a constraint.
+   Record it in the week's `## Decisions` table, per [a decision](artifact-requirements.md#artifact-concepts-and-terminology), and let its `Changes` entry name where the choice shows.
 
 **Recommended**
 
@@ -420,9 +422,11 @@ It is not a showcase, and it is not the product.
    Record the change in all four places:
 
    - `reports/week-NN/prototypes.md` records what you showed, which `US-nn` or `GAP-nn` it tested, any `AC-nn` it exercised, and what the customer said.
-   - The [meeting report](artifact-requirements.md#meeting-report) `## Decisions` table names the `US-nn` it changes, and the `AC-nn` when a decision changes a specific criterion.
-   - The story issue carries a dated comment saying what changed, naming any `AC-nn` that changed, and linking the meeting report.
-   - The weekly public report names the `US-nn` and the `AC-nn` that changed.
+   - The [meeting report](artifact-requirements.md#meeting-report) `## Decisions` table names what each decision changed: the `US-nn` and the `AC-nn` for a story, or the constraint, assumption, document, or scaffold for anything else.
+   - The changed artifact carries the record: a story issue gets a dated comment naming any `AC-nn` that changed and linking the meeting report, and a constraint, assumption, or document is updated in place.
+   - The weekly public report names what changed.
+
+   A decision whose effect cannot be recorded yet says `TBD` in `Changes`; the artifact that later carries it names the decision and links the report.
 
 5. A prototype is disposable.
    A paper sketch, a view-only design tool, and a code spike are equally acceptable, and none of them is product code.
@@ -459,6 +463,10 @@ A prototype that validated everything proved nothing, because you chose the part
    An `AC-nn` appears at the start of its criterion inside the story issue; the story issue plus the ID is what identifies it.
 6. Every reference between artifacts uses the identifier, not the title, so that renaming a title does not break the chain.
    A criterion is referenced by its `AC-nn` together with its story issue, as described in [User Stories And Acceptance Criteria](#user-stories-and-acceptance-criteria).
+7. Decisions and action points are not identifier families.
+   There is no `DEC-nn` and no `ACT-nn`.
+   Cite a decision by path and `#decisions` anchor with its sentence quoted; `TBD` and `None` in `Changes` are statuses, not identifiers.
+   A later week cites a meeting report by path and heading anchor, per [Customer Meeting Artifacts](artifact-requirements.md#customer-meeting-artifacts).
 
 ## Traceability Into Later Weeks
 
@@ -481,6 +489,7 @@ This is what makes the course a project rather than nine separate assignments.
 3. If you drop a gap mid-course, keep it in the gap analysis marked as dropped, and say which value propositions and user stories were affected.
 4. A later need that your Week 1 research did not anticipate does not rewrite the research.
    Record its additional origin in the issue's sources field; update the research only when the later need contradicts it.
+5. A decision recorded with `TBD` in `Changes` is finished when the artifact that carries its effect names the decision and links the report that recorded it.
 
 ## Research Honesty Rules
 
@@ -520,7 +529,7 @@ A later meeting settles one thing or two; its method is in [Guide: Validating Wi
    The whole team attends.
 5. Ask the [three permission questions](artifact-requirements.md#customer-meeting-artifacts) every time.
 6. Write a [meeting report](artifact-requirements.md#meeting-report), and either a [transcript](artifact-requirements.md#meeting-transcript) or [notes](artifact-requirements.md#meeting-notes), per [Customer Meeting Artifacts](artifact-requirements.md#customer-meeting-artifacts).
-7. The report is where the week's open questions live, and its `## Decisions` table names the identifier family the week owns, per [Traceability Into Later Weeks](#traceability-into-later-weeks), so the customer is answering your research and not a stranger's.
+7. The report is where the week's open questions live, and its `## Decisions` table names what each decision changed, per [Meeting Report](artifact-requirements.md#meeting-report).
 8. The customer decides the scope.
    Your job in the meeting is to present a direction with its evidence and to find out where it is wrong, not to ask the customer to design the product.
 

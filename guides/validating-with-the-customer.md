@@ -43,6 +43,7 @@ You will spend thirty minutes on the parts you want to talk about and leave with
 The assignment says what this week's meeting has to settle.
 
 <!-- What does this sentence mean? -->
+
 The target is that content written as the one question the meeting exists to answer.
 
 Re-read the previous meeting report before you write anything.
@@ -51,6 +52,7 @@ Its open questions are still open, and its action points are due; if you have ca
 ## Step 2: Derive The Questions From The Target
 
 <!-- TODO why call answers as "areas"? "answers" sounds like "assumptions" in this context -->
+
 Take your target and ask what would have to be true for you to be wrong.
 Those answers are your areas: the beliefs the meeting could contradict.
 Each area is a place where the customer's answer could change something you wrote, and an area that does not serve the target is deleted, even if it was in an earlier script.
@@ -88,8 +90,11 @@ Those are the questions that produce a `## Disagreements` row.
 ## Step 5: Trace What Changed
 
 The meeting report's `## Decisions` table is the record.
-`Traces to` names the identifier each decision changed: usually a `US-nn`, with the `AC-nn` when a specific criterion changed, per [Meeting Report](../requirements/artifact-requirements.md#meeting-report).
+`Changes` names what each decision changed, and links it when the artifact has a stable link: usually a `US-nn`, with the `AC-nn` when a specific criterion changed, or the constraint, assumption, document, or scaffold for anything else, per [Meeting Report](../requirements/artifact-requirements.md#meeting-report).
+A decision whose artifact does not exist yet says `TBD`, and the artifact that later carries it links back to the report.
 That table is where a reader looks to see whether the week was a test or a formality.
+
+Cite a decision by quoting its sentence and linking `#decisions`; there is no decision identifier.
 
 Make sure the change reaches every place it affects, because each one answers a different question:
 
@@ -123,5 +128,7 @@ Write that down too; it is more useful than a week that looks busy.
   A decision in the meeting report that never reaches the story issue has not actually changed anything.
 - **Showing the easy part.**
   If the customer is impressed and you are not surprised, the prototype went to the wrong story.
+- **Every decision `None` or `TBD`.**
+  A week whose decisions changed nothing visible is the same warning as an empty `## Disagreements` table: the meeting tested nothing a reader can point at.
 - **Twelve questions in thirty minutes.**
   You will get through five well, and the rest will be a list somebody read aloud.

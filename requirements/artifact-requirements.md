@@ -46,9 +46,10 @@ It is the short version of this file and states what is expected of you as a stu
    Deviations are allowed.
    Undeclared deviations are not.
 8. A **meeting report** is your team's own account of a meeting with the customer, written in your own words, at `reports/week-NN/meeting-report.md`.
-9. A **decision** is a conclusion that changes what you build.
+9. A **decision** is a conclusion that changes or explicitly settles what you build.
+   The change is open-ended: a story or acceptance criterion, a constraint, an assumption, a maintained document, the implementation or the scaffold, or a later requirement.
    In a [meeting report](#meeting-report), it is a conclusion the meeting reached.
-   A decision the team takes outside a meeting is recorded in the weekly public report of the week it was made.
+   A decision the team takes outside a meeting is recorded in the [weekly public report](#weekly-public-report) of the week it was made.
 10. An **action point** is a follow-up that came out of a meeting, with a named owner, which is a GitHub username, and a week it falls due in.
 
 ## Where Artifacts Live In The Repository
@@ -156,14 +157,16 @@ The mapping from username to real name and university email goes in the Moodle P
 3. It identifies the week, the project, the team, and the covered scope clearly enough that a reader knows what body of work it describes.
 4. It contains a short summary of what the team found, built, or decided, and what is still open.
    A grader should be able to read only this file and understand the week, then follow links for detail.
-5. It contains a coverage table mapping each required deliverable of the assignment to the artifact that satisfies it.
+5. A decision the team took outside a meeting goes in a `## Decisions` table with the same columns and cell rules as the [meeting report](#meeting-report).
+   A week with no such decision does not carry the section.
+6. It contains a coverage table mapping each required deliverable of the assignment to the artifact that satisfies it.
    The table is the index, so it is not followed by a second list of the same links.
-6. It links the root `LICENSE`.
-7. It contains a contribution table mapping each team member's GitHub username to the work they did, using links to their commits, pull requests, or reviews where possible.
-8. It states any deviation from the assignment or from the shared requirements, and justifies it.
+7. It links the root `LICENSE`.
+8. It contains a contribution table mapping each team member's GitHub username to the work they did, using links to their commits, pull requests, or reviews where possible.
+9. It states any deviation from the assignment or from the shared requirements, and justifies it.
    This includes cases where you used a different tool, a different artifact form, or an alternative arrangement.
-9. It states, in one line, that no private-only material was committed to the repository.
-10. It stays accurate and reachable until the course has been graded.
+10. It states, in one line, that no private-only material was committed to the repository.
+11. It stays accurate and reachable until the course has been graded.
 
 **Recommended**
 
@@ -251,7 +254,7 @@ A recording is a separate, private-only artifact.
    The transcript and the notes are the evidence it is written from, and the report links to them.
 4. Later weeks cite a meeting report by path and heading anchor, for example `reports/week-01/meeting-report.md#decisions`.
    The report is the record of that meeting and is not rewritten afterwards.
-   If a later meeting reverses a decision, the later report says so and links back to the report it reverses.
+   If a later meeting reverses a decision, the later report quotes the reversed decision, says so, and links back to the report it reverses.
 5. Ask the customer three separate permission questions, every time: may we record, may we publish a sanitized transcript in the repository, and may we share a sanitized transcript privately with instructors if publication is refused.
    Permission is per meeting and is never carried over from an earlier meeting.
 
@@ -276,14 +279,16 @@ A recording is a separate, private-only artifact.
    | ------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
    | `## Metadata`       | Date, duration, who was there by GitHub username with the customer shown as `Customer`, what you presented, the answer to each of the three permission questions, and a link to the transcript, the notes, or the [meeting script](#meeting-script) |
    | `## Summary`        | 3 to 5 bullets on what the meeting settled or changed, not on what was on the agenda                                                                                                                                                                |
-   | `## Decisions`      | A table, one row per decision                                                                                                                                                                                                                       |
+   | `## Decisions`      | A table, one row per decision, each naming what it changed                                                                                                                                                                                          |
    | `## Action points`  | A table, one row per action                                                                                                                                                                                                                         |
    | `## Open questions` | A table, one row per question the meeting did not answer                                                                                                                                                                                            |
    | `## Disagreements`  | A table, one row per place the customer did not agree with you                                                                                                                                                                                      |
 
-7. `## Decisions` has the columns `Decision`, `Made by`, and `Traces to`.
-   `Traces to` names the identifier the week owns, per [Traceability Into Later Weeks](process-requirements.md#traceability-into-later-weeks), and says `None` where the decision came from nowhere in your research.
-   When a decision changes a specific acceptance criterion, `Traces to` names the `AC-nn` and links its story issue.
+7. `## Decisions` has the columns `Decision`, `Made by`, and `Changes`.
+   `Changes` names what the decision changed, one entry per thing, and links it when the artifact has a stable link.
+   A story change names the `US-nn`, and the `AC-nn` when a specific criterion changed.
+   The same applies to a constraint, an assumption, a maintained document, the implementation or the scaffold, and a later requirement.
+   Write `TBD` when the decision changes something whose artifact does not exist yet, and `None` with the reason when the decision confirmed the current direction and changed nothing.
 8. `## Action points` has the columns `Action`, `Owner`, and `Due`.
    The owner is a GitHub username, and the due date falls inside a named week.
 9. `## Open questions` has the columns `Question`, `What it would change`, and `Follow-up`.
@@ -322,11 +327,12 @@ A recording is a separate, private-only artifact.
 
 ## Decisions
 
-| Decision                                   | Made by             | Traces to |
-| ------------------------------------------ | ------------------- | --------- |
-| Build paid bookings, not the calendar view | Customer            | `VP-01`   |
-| Drop multi-expert scheduling               | Customer            | `GAP-04`  |
-| Keep the web link for delivery             | Team, not contested | `VP-01`   |
+| Decision                                   | Made by             | Changes                                                                                           |
+| ------------------------------------------ | ------------------- | ------------------------------------------------------------------------------------------------- |
+| Build paid bookings, not the calendar view | Customer            | [`VP-01`](../../docs/research/value-proposition.md#vp-01-one-link-that-carries-the-whole-booking) |
+| Drop multi-expert scheduling               | Customer            | `GAP-04`, marked dropped in the [gap analysis](../../docs/research/gap-analysis.md)               |
+| Keep the web link for delivery             | Team, not contested | `None`; kept as is, so `VP-01` is unchanged                                                       |
+| Deploy on a single small VPS               | Customer            | `TBD`; a customer-given constraint, recorded when the vision is written                           |
 
 ## Action points
 

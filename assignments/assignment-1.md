@@ -166,7 +166,7 @@ This week specifically:
 2. **Assign the three roles and ask the three permission questions** before you start, per [Meeting With The Customer](../requirements/process-requirements.md#meeting-with-the-customer), and keep the recording out of the repository.
 3. **Write `reports/week-01/meeting-report.md`**, plus either `meeting-transcript.md` or `meeting-notes.md`, per [Customer Meeting Artifacts](../requirements/artifact-requirements.md#customer-meeting-artifacts).
    Hold the report to the week minima:
-   - At least two rows in `## Decisions`, each naming the `GAP-nn` or `VP-nn` it came from.
+   - At least two rows in `## Decisions`, each naming what it changed: a `GAP-nn`, a `VP-nn`, or `TBD` when the artifact does not exist yet, and `None` with the reason when it kept the direction.
    - At least two rows in `## Action points`, each with a named owner and a due date inside Week 2.
    - `## Disagreements` filled in, or an explicit `None`.
 4. **Put the recording link in your Moodle submission only.**
@@ -306,7 +306,7 @@ See [Permalinks And Snapshots](../requirements/repository-requirements.md#permal
 - [ ] `## Key improvements` shows two real rewrites with the principle named.
 - [ ] Three meeting roles assigned, whole team attending.
 - [ ] Kickoff meeting held, all three permissions asked before recording.
-- [ ] `reports/week-01/meeting-report.md` with all six sections, 2+ decisions traced to `GAP-nn`/`VP-nn`, 2+ action points with owner and Week 2 due date, and `## Disagreements` filled or `None`.
+- [ ] `reports/week-01/meeting-report.md` with all six sections, 2+ decisions each naming what it changed (`GAP-nn`, `VP-nn`, `TBD`, or `None` with the reason), 2+ action points with owner and Week 2 due date, and `## Disagreements` filled or `None`.
 - [ ] `reports/week-01/meeting-transcript.md` or `meeting-notes.md`, sanitized; in the Moodle PDF only if publication was refused.
 - [ ] `reports/week-01/ai-usage.md` written.
 - [ ] `reports/week-01/README.md` complete, with the coverage table, evidence, and contribution table.
