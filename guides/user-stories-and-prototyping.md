@@ -69,6 +69,34 @@ A user is any actor with a goal: the person the product serves, and the operator
 The third line is the one that catches a story written from a feature rather than from a need.
 If you cannot finish it with a value, you have written a task, not a story, and the story is hiding an assumption you have not checked.
 
+**How specific should a story be?**
+A story states the problem precisely and leaves the solution open.
+The test is who settled the detail.
+What only your team would decide, such as a screen, a component, or a library, stays out, because writing it down decides the design for whoever builds the story.
+What the user or the customer has settled is part of the problem, and the story may carry it.
+
+Put a settled detail in an acceptance criterion, and keep the statement open unless the specific thing is itself the need:
+
+```text
+As a coach
+I want booked sessions to appear in the calendar I already use
+so that I do not double-book a slot
+
+AC-01: A session booked by a client appears in the coach's
+Google Calendar, at the booked time.
+```
+
+The customer told you the coach uses Google Calendar, so the criterion names it.
+If the coach later moves to another calendar, the criterion changes and the need does not.
+A detail that holds for the whole product is a constraint in the vision rather than a criterion repeated in every story.
+
+A useful cross-check is the context diagram.
+A specific that sits outside the boundary, such as an external system the user already works with, is usually a fact about the problem.
+A specific that sits inside the boundary is usually your design.
+
+Expect a story to get more specific as it gets closer to being built, because that is when the customer settles the details.
+A detail the customer settles is a story change, and it is recorded like any other; see [Validating With The Customer](validating-with-the-customer.md).
+
 Write **8 or more**, each as a GitHub issue from the issue form.
 A gap often turns into three or four stories, because a single sentence about a need usually covers a happy path, a failure, and a way to undo the thing.
 
@@ -184,7 +212,10 @@ See [Validating With The Customer](validating-with-the-customer.md) for the meet
 ## Common Mistakes
 
 - **Writing stories from the feature list.**
-  If your story names a component, a screen, or a button, you have already decided the design and stopped learning.
+  If your story names a part of your design, such as a component, a screen, or a button, you have already decided the design and stopped learning.
+- **Writing a story too vague to check.**
+  "I want a payment system" names an area, not a need, and no criterion can be written for it.
+  Say who pays, for what, and what goes wrong when they do not.
 - **Forcing a story onto a gap that does not cover it.**
   If the need came from a decision, an action point, or a split, cite that in `Traces to` instead; a story that traces only to its `VP-nn` is fine.
   A false link makes a reader stop trusting the real ones.

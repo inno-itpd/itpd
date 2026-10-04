@@ -325,7 +325,7 @@ A boundary nobody can disagree with is a boundary that is not written down.
 
 A user story is a small, checkable statement of one thing a user needs.
 A user is any actor with a goal: the person the product serves, and the operator or administrator who keeps it running.
-Its job is to make a gap concrete enough that a reviewer can tell whether you delivered it.
+Its job is to make one need concrete enough that a reviewer can tell whether you delivered it.
 Each story is a GitHub issue, and the issues are the only place the stories live.
 
 **Required**
@@ -339,7 +339,10 @@ Each story is a GitHub issue, and the issues are the only place the stories live
 3. Every story is a statement of a user's need, not a description of a solution.
    "As a coach, I want a client to pay when they book, so that an unpaid slot does not block a paying one for the rest of the week" is a need.
    "Add a payment page" is a feature you have already designed.
-   A story does not name a screen, a button, or a component; naming the design decides it for whoever builds the story.
+   A story states the problem precisely and leaves the solution open.
+   It does not carry what only the team decides, such as a screen, a button, a component, or a library; naming the design decides it for whoever builds the story.
+   It may carry a specific that the user or the customer has settled, such as the external system the user already works with.
+   Such a specific goes in an acceptance criterion, or in a [constraint](#constraints) when it holds for the whole product, and goes in the story statement only when the specific thing is itself the need.
    An acceptance criterion may name a screen, a field, or a system state, because that is what an observer checks.
 4. Every story carries a `Traces to` list.
    It contains exactly one `VP-nn`, the value proposition the story supports, and, optionally, the story's origins: the `GAP-nn` it closes, a customer decision in a meeting report, a team decision in the weekly public report, an action point it carries out, or the parent `US-nn` of a split.

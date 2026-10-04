@@ -38,8 +38,10 @@
 //     identifier rather than an identifier that would suggest a real student
 //     repository.
 //   - A user is any actor with a goal, including an operator.
-//   - A story may not name a screen, a button, or a component; an acceptance
-//     criterion may, because an observer sees system state.
+//   - A story states the problem precisely and leaves the solution open. It may
+//     not name what only the team decides, such as a screen, a button, or a
+//     component; a detail the customer has settled goes in an acceptance
+//     criterion, which may also name system state because an observer sees it.
 //   - Estimation and scheduling are not here. They are Week 3.
 //   - Quality attributes, quality goals, and quality attribute scenarios are
 //     not here. They are Week 4, and this deck only says where they go.
@@ -275,15 +277,13 @@
   operator or administrator who keeps it running.
 
   It is a *need*, not a design.
-  - "See the sessions I missed this week" is a need.
+  - "Avoid double-booking a slot" is a need.
   - "Add a calendar page" is a feature you have already built in your head.
 
-  Naming design specifics may constrain developers who will work on the user story.
+  A story states the problem precisely and leaves the solution open.
 
   If you cannot finish a user story with a value, you have written a task.
 ]
-
-// TODO improve examples
 
 #slide("A non-story and a story")[
   Both are about a meeting booking app. Both are made up.
@@ -292,13 +292,26 @@
 
   #quoted[As an expert, I want a booking page with a calendar, so that my clients can see my available time.]
 
-  #note[This is a feature description ("a booking page") and presentation description ("my clients can see my available time"). Which value does showing clients the available time provide?]
+  #note[It names the design ("a booking page with a calendar") and stops at what the screen shows. Why does the expert need clients to see the free time? The value is missing.]
 
   *A story:*
 
   #quoted[As a coach who sells sessions online, I want a client to pay when they book, so that an unpaid slot does not block a paying one for the rest of the week.]
 
-  #note[This one has a more precise \<user\> and captures the value they get from what the product allows them to do. It doesn't prescribe the exact design.]
+  #note[A more precise \<user\>, the value they get, and no design: a payment page, a deposit, or an invoice would all satisfy it.]
+]
+
+#slide("How specific?")[
+  Ask *who settled the detail*.
+  - Only the team would decide it (a screen, a component, a library): leave it out.
+  - The user or the customer settled it: the story may carry it.
+
+  #quoted[As a coach, I want booked sessions to appear in the calendar I already use, so that I do not double-book a slot.]
+
+  The customer says the coach uses Google Calendar, so an *acceptance criterion* names it.
+  The need stays the same if the coach later switches calendars.
+
+  #note[Google Calendar sits outside the boundary on the context diagram: a fact about the problem, not your design. Stories get more specific as they get closer to being built.]
 ]
 
 #slide("Acceptance criteria")[

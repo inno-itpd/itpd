@@ -100,13 +100,12 @@ Complete every requirement marked `**Since: W2**` in [Planning And Issue Trackin
    Every story is a **user's need**, not a solution, and every active story carries **at least two acceptance criteria**, each observable and pass/fail.
    Each criterion carries a stable ID `AC-01`, `AC-02`, and so on, numbered within its issue and never renumbered or reused.
    A citation elsewhere pairs the `AC-nn` with its story issue, as a link or by `US-nn`; the notation is your choice.
-   A story does not name a screen, a button, or a component; an acceptance criterion may name a screen, a field, or a system state, because that is what an observer checks.
+   What a story may name, and where a specific the customer has settled goes, is in [User Stories And Acceptance Criteria](../requirements/process-requirements.md#user-stories-and-acceptance-criteria).
    Any notation works, including `Given`/`When`/`Then`.
    The test is whether somebody who is not you could run the check and get the same answer.
    See [User Stories](../requirements/artifact-requirements.md#user-stories) and [User Stories And Acceptance Criteria](../requirements/process-requirements.md#user-stories-and-acceptance-criteria).
 4. Split any story too large to build and verify in one week: close the parent as not planned with a `superseded` comment, keep its identifier, its statement, and its criteria, and link it from both children.
    Each child names the parent `US-nn` in its `Traces to` list, carries the parent's `VP-nn` and, when the parent had one, the same `GAP-nn`, writes its own criteria, and starts again at `AC-01`.
-   This course has no epic artifact; decomposition happens by splitting a story.
 5. Prioritize every story with **MoSCoW**.
    Give every `Won't Have` story a reason in its closing comment, beginning with `won't-have`.
    <!-- TODO What does won't-have mean here? -->
