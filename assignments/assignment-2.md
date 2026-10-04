@@ -57,7 +57,7 @@ They are the rules; this assignment only tells you what this week requires.
 | [Process Requirements](../requirements/process-requirements.md)                     | What a goal, constraint, boundary, story, and validation have to satisfy                  |
 | [Guide: user stories and prototyping](../guides/user-stories-and-prototyping.md)    | How to turn a gap into stories, and how to prototype cheaply                              |
 | [Guide: validating with the customer](../guides/validating-with-the-customer.md)    | How to run a meeting after the kickoff and record what it changed                         |
-| [Guide: the kickoff interview](../guides/customer-interview.md)                     | The kickoff method: the five areas and the Mom Test pass, which this week does not repeat |
+| [Guide: the kickoff meeting](../guides/customer-kickoff-meeting.md)                 | The kickoff method: the five areas and the Mom Test pass, which this week does not repeat |
 | [Your Week 1 report](../requirements/artifact-requirements.md#weekly-public-report) | What the customer already disagreed with, and what you owe them from the kickoff          |
 
 ## Part 1: State The Product Vision
@@ -155,12 +155,10 @@ A prototype is a normal form of evidence: the artifact is the record (`prototype
 ## Part 5: Validate With The Customer
 
 Hold a second meeting with your customer this week, and in every artifact call them `Customer`: never a real name, and never "the instructor".
-<!-- TODO improve wording in the following sentence -->
 
-The target of the meeting is the prototype, the boundary, and the minimum usable product candidate, and the question is: which of these are wrong?
+The target of the meeting is the prototype, the boundary, and the minimum usable product candidate; the question is which of these are wrong, written at the top of the script as one sentence.
 Review the remaining user stories only if time allows.
-Write the target at the top of the script and do not replace it with a subject.
-See [Validating With The Customer](../guides/validating-with-the-customer.md).
+See [Validating With The Customer](../guides/validating-with-the-customer.md), which also says which earlier artifacts to re-read.
 
 **Example**
 
@@ -171,33 +169,18 @@ See [Validating With The Customer](../guides/validating-with-the-customer.md).
 - **Minimum usable product candidate.**
   If only these stories shipped, what would you miss first?
 
-1. **Write the meeting script first**, at `reports/week-02/meeting-script.md`.
-   Derive the areas from your target; the business goals were settled last week and re-asking them decides nothing.
-   Number every question and tag it open or closed: an open question asks the customer to tell you something, and a closed one can be answered yes or no.
-   The tag is what you check the rewrite against: if no likely answer would change the target, the question is cut.
-   Close the file with a `## Key improvements` section naming at least one question you rewrote and the principle behind the rewrite.
-2. **Re-read your Week 1 meeting report first.**
-   The open questions are still open, and the customer already answered some of them.
-3. **Ask the [three permission questions](../requirements/artifact-requirements.md#customer-meeting-artifacts)** again before you record.
-   Permission is per meeting and is never carried over from an earlier meeting, and the recording stays out of the repository.
-4. **Assign the three roles** before the meeting: a moderator, a note taker, and an observer who records what was not asked and what was not said.
-   The whole team attends, and you plan for 30 minutes while asking for 60 if the customer can give it.
-5. **Write `reports/week-02/meeting-report.md`**, plus either `reports/week-02/meeting-transcript.md` or `reports/week-02/meeting-notes.md`, following [Customer Meeting Artifacts](../requirements/artifact-requirements.md#customer-meeting-artifacts).
-6. **Complete all six sections of the meeting report**, and hold it to the week-specific minima:
-   - At least two rows in `## Decisions`, because one decision is insufficient evidence that the meeting changed anything.
-     Each row names the `US-nn` it changes, plus the `AC-nn` when a specific criterion changed, and one of the two rows must be the customer's verdict on the minimum usable product candidate.
+The rules are in [Meeting With The Customer](../requirements/process-requirements.md#meeting-with-the-customer) and [Validation](../requirements/process-requirements.md#validation), and the file shapes are in [Customer Meeting Artifacts](../requirements/artifact-requirements.md#customer-meeting-artifacts).
+This week specifically:
 
-     A story that did not come from your Week 1 research records that origin in its `sources`; only a contradiction updates the research, per [Traceability Into Later Weeks](../requirements/process-requirements.md#traceability-into-later-weeks).
+1. **Write `reports/week-02/meeting-script.md` first**, with the target at the top and `## Key improvements` showing at least one rewrite, per [Meeting Script](../requirements/artifact-requirements.md#meeting-script).
+2. **Write `reports/week-02/meeting-report.md`**, plus either `meeting-transcript.md` or `meeting-notes.md`.
+   Hold the report to the week minima: at least two rows in `## Decisions`, each naming the `US-nn` it changes and the `AC-nn` when a criterion changed, with one row the customer's verdict on the minimum usable product candidate; at least two rows in `## Action points`, each with a named owner and a due date inside Week 3; and `## Disagreements` filled in, or an explicit `None`.
+3. **Record the change per [Validation](../requirements/process-requirements.md#validation).**
+   This week that means at least one story issue carries a dated comment saying what changed, naming any `AC-nn` that changed, and linking the meeting report, and `reports/week-02/README.md` names the `US-nn` and the `AC-nn` that changed.
 
-   - At least two rows in `## Action points`, each with a named owner and a due date inside Week 3.
-   - `## Disagreements` filled in, or an explicit `None`.
-7. **Something must change as a result**, recorded in all four places:
-   - `reports/week-02/prototypes.md` says what you showed and what they said.
-   - The meeting report's `## Decisions` names the `US-nn` it changes, and the `AC-nn` when a criterion changed.
-   - The story issue carries a dated comment saying what changed, naming any `AC-nn` that changed, and linking the meeting report.
-   - `reports/week-02/README.md` names the `US-nn` and the `AC-nn` that changed.
-8. **Put the recording link in your Moodle submission only.**
-9. **If a live meeting is impossible**, align asynchronously in writing instead, timestamp the written exchange as the notes, and declare the substitution in your week report as a deviation.
+<!-- TODO define "sources" -->
+
+A story that did not come from your Week 1 research records that origin in its `sources`; only a contradiction updates the research, per [Traceability Into Later Weeks](../requirements/process-requirements.md#traceability-into-later-weeks).
 
 Do not ask the customer to design the product, and do not re-run the kickoff.
 If the customer says "that sounds great" about one of your own ideas, the useful next question is what they would want to see for that to be true.

@@ -249,11 +249,10 @@ A recording is a separate, private-only artifact.
 2. A meeting with no recording and no transcript still produces a meeting report.
 3. The meeting report is the team's own account of the meeting.
    The transcript and the notes are the evidence it is written from, and the report links to them.
-4. Every meeting with the customer also produces a [meeting script](#meeting-script), which the meeting report links to.
-5. Later weeks cite a meeting report by path and heading anchor, for example `reports/week-01/meeting-report.md#decisions`.
+4. Later weeks cite a meeting report by path and heading anchor, for example `reports/week-01/meeting-report.md#decisions`.
    The report is the record of that meeting and is not rewritten afterwards.
    If a later meeting reverses a decision, the later report says so and links back to the report it reverses.
-6. Ask the customer three separate permission questions, every time: may we record, may we publish a sanitized transcript in the repository, and may we share a sanitized transcript privately with instructors if publication is refused.
+5. Ask the customer three separate permission questions, every time: may we record, may we publish a sanitized transcript in the repository, and may we share a sanitized transcript privately with instructors if publication is refused.
    Permission is per meeting and is never carried over from an earlier meeting.
 
 ### Meeting Report
@@ -405,28 +404,24 @@ A recording is a separate, private-only artifact.
 **Required**
 
 1. Write the script before the meeting, at `reports/week-NN/meeting-script.md`, for every meeting with the customer.
-   What the meeting has to settle is in [Meeting With The Customer](process-requirements.md#meeting-with-the-customer), and the method behind the kickoff is in [Guide: preparing the customer interview](../guides/customer-interview.md).
+   What the meeting has to settle is in [Meeting With The Customer](process-requirements.md#meeting-with-the-customer), and the method behind the kickoff is in [Guide: The Kickoff Meeting](../guides/customer-kickoff-meeting.md).
 2. It contains exactly the sections below that apply to that kind of meeting, in this order, and nothing else.
 3. A section with nothing in it says `None` and moves on.
 4. The sections, and what belongs in them:
 
-   | Section               | Which meetings | What belongs in it                                                                                                                 |
-   | --------------------- | -------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-   | `## Context`          | Every meeting  | The problem-space sentence you are working from, what you already believe, and what this meeting has to settle                     |
-   | `## Questions`        | Every meeting  | A numbered list, each question tagged open or closed, covering the areas this meeting has to settle                                |
-   | `## Roles`            | Every meeting  | Who moderates, who takes notes, and who observes                                                                                   |
-   | `## Key improvements` | Every meeting  | At least two questions you rewrote at the kickoff, and at least one at a later meeting, each with the principle behind the rewrite |
+   | Section               | Which meetings | What belongs in it                                                                                                                                           |
+   | --------------------- | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+   | `## Context`          | Every meeting  | The problem-space sentence you are working from, what you already believe, and what this meeting has to settle                                               |
+   | `## Questions`        | Every meeting  | A numbered list, each question tagged open or closed, covering the areas this meeting has to settle                                                          |
+   | `## Roles`            | Every meeting  | Who moderates, who takes notes, and who observes                                                                                                             |
+   | `## Key improvements` | Every meeting  | For each question you rewrote, the before, the after, and the principle behind the rewrite: at least two rewrites at the kickoff, one at every later meeting |
 
-5. `## Key improvements` is required for every meeting.
-   The kickoff requires at least two rewrites, and every later meeting requires at least one.
-6. The `## Questions` minimum depends on the meeting.
+5. The `## Questions` minimum depends on the meeting.
    At the kickoff, each of the five areas in [Meeting With The Customer](process-requirements.md#meeting-with-the-customer) has at least two questions.
-   A later meeting derives its own areas from its target rather than from the five, so it carries as many questions as its target has to settle, and no per-area floor.
-7. `## Key improvements` shows a before and an after for each question, and names the principle that changed it.
-   A section that claims improvement without showing the rewrite is not a section.
-8. The script is preparation, so it is not rewritten after the meeting.
+   A later meeting derives its own areas from its target rather than from the five kickoff areas, so it carries as many questions as its target has to settle, and no per-area floor.
+6. The script is preparation, so it is not rewritten after the meeting.
    What the meeting actually produced is the [meeting report](#meeting-report), which links to the script.
-9. A meeting held asynchronously in writing instead of live still produces a script, but `## Roles` is not one of its sections.
+7. A meeting held asynchronously in writing instead of live still produces a script, but `## Roles` is not one of its sections.
    A written exchange has no speaking-time floor, and the moderator is whoever wrote the questions.
    Record the substitution as a [deviation](#declaring-deviations).
 

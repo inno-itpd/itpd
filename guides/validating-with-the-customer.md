@@ -4,7 +4,7 @@ How to prepare and run a meeting after the kickoff, and how to record what it ch
 
 The rules are in [Validation](../requirements/process-requirements.md#validation) and [Meeting With The Customer](../requirements/process-requirements.md#meeting-with-the-customer), and the file shapes are in [Artifact Requirements](../requirements/artifact-requirements.md#customer-meeting-artifacts).
 This guide is the method for every meeting after the kickoff.
-The kickoff is a different meeting, and its method is in [The Kickoff Interview](customer-interview.md).
+The kickoff is a different meeting, and its method is in [The Kickoff Meeting](customer-kickoff-meeting.md).
 
 **Timebox:** the meeting is ~30 minutes, and the writing is most of the work.
 Ask for 60 if the customer can give it.
@@ -41,38 +41,26 @@ A bad target is a subject, not a target: "discuss the product".
 You will spend thirty minutes on the parts you want to talk about and leave with nothing you can change.
 
 The assignment says what this week's meeting has to settle.
+
+<!-- What does this sentence mean? -->
 The target is that content written as the one question the meeting exists to answer.
 
-<!-- TODO why starts with "then" -->
-
-Then re-read the previous meeting report before you write anything.
+Re-read the previous meeting report before you write anything.
 Its open questions are still open, and its action points are due; if you have carried one out, the customer should hear how it went.
 
 ## Step 2: Derive The Questions From The Target
 
-<!-- TODO don't mention the kickoff -->
-
-The kickoff's five areas are not yours.
-The business goals were settled then, and re-asking them decides nothing.
-
-<!-- TODO write more concretely -->
-<!-- Which "areas"? -->
-
+<!-- TODO why call answers as "areas"? "answers" sounds like "assumptions" in this context -->
 Take your target and ask what would have to be true for you to be wrong.
-Those are your areas, and each one should be a place where the customer's answer could contradict something you wrote.
-Derive them, do not copy them.
-If an area does not serve the target, delete it, even if it was in an earlier script.
+Those answers are your areas: the beliefs the meeting could contradict.
+Each area is a place where the customer's answer could change something you wrote, and an area that does not serve the target is deleted, even if it was in an earlier script.
 The assignment gives the content this week's target is made of.
-
-<!-- TODO why tag? -->
 
 Write every question numbered, and tag it open or closed.
 An open question asks the customer to tell you something; a closed one can be answered yes or no.
 The tag is what you check the question against in [Step 3](#step-3-cut-questions-that-cannot-change-anything).
 
-Ask permission before you record, every time.
-Permission is per meeting and is never carried over from the previous one.
-The recording stays out of the repository and goes in the Moodle PDF as a private link.
+Ask permission before you record, per [Customer Meeting Artifacts](../requirements/artifact-requirements.md#customer-meeting-artifacts).
 
 ## Step 3: Cut Questions That Cannot Change Anything
 
@@ -80,8 +68,7 @@ A question earns its place only if an answer could change something in the targe
 For each question, ask what answer you expect, and what you would do differently if the answer went the other way.
 If no answer changes anything, cut the question; asking it costs meeting time and tells you nothing.
 
-Rewrite at least one question and record the rewrite in `## Key improvements`, with the principle behind it.
-The section is required for every meeting, and an improvement you cannot show is not an improvement.
+Rewrite at least one question and record it in `## Key improvements`, per [Meeting Script](../requirements/artifact-requirements.md#meeting-script).
 The principle is yours; what matters is that a reader can see the before, the after, and why the second one is better.
 
 ## Step 4: Run The Meeting
@@ -100,24 +87,22 @@ Those are the questions that produce a `## Disagreements` row.
 
 ## Step 5: Trace What Changed
 
-<!-- TODO why table? -->
-<!-- TODO what if a decision doesn't change a user story? -->
-<!-- TODO why should it be related to user stories exactly, not some functional requirements? -->
-
-The meeting report's `## Decisions` table is the record, and it names the `US-nn` each decision changes, plus the `AC-nn` when a specific criterion is what changed.
+The meeting report's `## Decisions` table is the record.
+`Traces to` names the identifier each decision changed: usually a `US-nn`, with the `AC-nn` when a specific criterion changed, per [Meeting Report](../requirements/artifact-requirements.md#meeting-report).
 That table is where a reader looks to see whether the week was a test or a formality.
 
-Then make sure the change reaches all four places, because each one answers a different question:
+Make sure the change reaches every place it affects, because each one answers a different question:
 
-| Where                              | Question it answers                                     |
-| ---------------------------------- | ------------------------------------------------------- |
-| `reports/week-NN/prototypes.md`    | What did we show, and what did they say?                |
-| `meeting-report.md` `## Decisions` | What did we decide, and about which story or criterion? |
-| the story issue                    | What does the story say now, and when did it change?    |
-| `reports/week-NN/README.md`        | What should a reader look at first?                     |
+| Where                                    | Question it answers                           |
+| ---------------------------------------- | --------------------------------------------- |
+| `reports/week-NN/prototypes.md`          | What did we show, and what did they say?      |
+| `meeting-report.md` `## Decisions`       | What did we decide, and what did it change?   |
+| the story issue, or the doc that changed | What does it say now, and when did it change? |
+| `reports/week-NN/README.md`              | What should a reader look at first?           |
 
+The change is required in all four places by [Validation](../requirements/process-requirements.md#validation).
 The issue comment is the one that is easy to skip, and skipping it is what makes a decision invisible to a reader of the stories.
-Add a dated comment to the issue saying what changed and why, naming the `AC-nn` if a criterion changed, and link the meeting report.
+Add a dated comment to the story issue saying what changed and why, naming the `AC-nn` if a criterion changed, and linking the meeting report.
 A story edited three times with no comment gives a reader no way to tell what the customer actually settled from what the team decided on its own.
 
 If nothing changed, that is itself the finding, and it is a serious one.

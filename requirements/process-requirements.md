@@ -507,8 +507,22 @@ A meeting with the customer is where the week's work gets tested.
 Bring a direction and its evidence, and find out where it is wrong.
 
 The kickoff in Week 1 is the meeting with the most to settle, because the problem and the direction are both still open.
-[Guide: preparing the customer interview](../guides/customer-interview.md) is the method behind it.
-A later meeting settles one thing or two, and the rules below are enough to prepare it.
+Its method is in [Guide: The Kickoff Meeting](../guides/customer-kickoff-meeting.md).
+A later meeting settles one thing or two; its method is in [Guide: Validating With The Customer](../guides/validating-with-the-customer.md), and the rules below are enough to prepare it.
+
+**Required for every meeting**
+
+1. Prepare the meeting in writing first, at `reports/week-NN/meeting-script.md`, following [Meeting Script](artifact-requirements.md#meeting-script).
+2. The script covers whatever this meeting has to settle.
+   Derive those areas from the target rather than from a template, and write every question numbered, tagged open or closed, per [Meeting Script](artifact-requirements.md#meeting-script).
+3. Plan for 30 minutes and ask for 60 if the customer can give it.
+4. Assign roles before the meeting: a moderator who asks the questions and controls the time, a note taker who records what was said, and an observer who records what was not asked and what was not said.
+   The whole team attends.
+5. Ask the [three permission questions](artifact-requirements.md#customer-meeting-artifacts) every time.
+6. Write a [meeting report](artifact-requirements.md#meeting-report), and either a [transcript](artifact-requirements.md#meeting-transcript) or [notes](artifact-requirements.md#meeting-notes), per [Customer Meeting Artifacts](artifact-requirements.md#customer-meeting-artifacts).
+7. The report is where the week's open questions live, and its `## Decisions` table names the identifier family the week owns, per [Traceability Into Later Weeks](#traceability-into-later-weeks), so the customer is answering your research and not a stranger's.
+8. The customer decides the scope.
+   Your job in the meeting is to present a direction with its evidence and to find out where it is wrong, not to ask the customer to design the product.
 
 **Required in Week 1**
 
@@ -519,25 +533,7 @@ A later meeting settles one thing or two, and the rules below are enough to prep
    A question about what the customer did last time is worth more than a question about what they would like.
 4. If a live meeting is impossible, do the alignment asynchronously in writing with the customer.
    Timestamp the written exchange as the notes, record a voice or screen note if there is one, and state the substitution in the weekly public report as a deviation.
-   The rules below still apply, except the role split and the length, per [Meeting Script](artifact-requirements.md#meeting-script).
-
-**Required for every meeting**
-
-1. Prepare the meeting in writing first, at `reports/week-NN/meeting-script.md`, following [Meeting Script](artifact-requirements.md#meeting-script).
-2. The script covers whatever this meeting has to settle.
-   Derive those areas from the target rather than from a template, and write every question numbered, tagged open or closed.
-3. Plan for 30 minutes and ask for 60 if the customer can give it.
-4. Assign roles before the meeting: a moderator who asks the questions and controls the time, a note taker who records what was said, and an observer who records what was not asked and what was not said.
-   The whole team attends.
-5. Ask the [three permission questions](artifact-requirements.md#customer-meeting-artifacts) every time.
-   Permission is per meeting and is never carried over from an earlier one, and the recording stays out of the repository.
-6. Write a [meeting report](artifact-requirements.md#meeting-report), and either a [transcript](artifact-requirements.md#meeting-transcript) or [notes](artifact-requirements.md#meeting-notes).
-7. The meeting report is the only one of the three you always produce, and it is where the week's open questions live.
-   Its `## Decisions` table names the identifier family the week owns, per [Traceability Into Later Weeks](#traceability-into-later-weeks), so the customer is answering your research and not a stranger's.
-8. The customer decides the scope.
-   Your job in the meeting is to present a direction with its evidence and to find out where it is wrong, not to ask the customer to design the product.
-9. Close the script with a `## Key improvements` section: at least two questions you rewrote at the kickoff, and at least one at every later meeting, each with the principle behind the rewrite.
-   An improvement you cannot show is not an improvement.
+   The rules above still apply, except the role split and the length, per [Meeting Script](artifact-requirements.md#meeting-script).
 
 **Example**
 
@@ -546,15 +542,3 @@ A Week 2 validation meeting.
 - What it has to settle: whether the prototype, the boundary, and the minimum usable product candidate are right.
 - The areas that follow from it: the prototype's question, the boundary, and the build order.
 - The question whose answer would change the week: "Which of these stories would you miss first if it were not built?"
-
-**Recommended**
-
-- Do not re-run the kickoff.
-  A later meeting that re-asks the business goals decides nothing, because those were settled weeks ago.
-  Write the meeting's one target at the top and delete every question that does not serve it.
-- Do not ask about the product you are planning.
-  The customer is the only person in the room who cannot be expected to be objective about your idea.
-- Do not bring twenty questions to a thirty-minute meeting.
-  You will get through nine of them well, and the rest will be a list somebody read aloud.
-- Do not treat agreement as a result.
-  A customer who says "that sounds great" to a question about your own idea has told you almost nothing, and `## Disagreements` in the meeting report will be empty when it should not be.

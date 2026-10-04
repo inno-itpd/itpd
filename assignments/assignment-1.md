@@ -53,7 +53,7 @@ They are the rules; this assignment only tells you what this week requires.
 | [Process Requirements](../requirements/process-requirements.md)                 | What counts as a valid alternative, gap, and value proposition; the identifier rules   |
 | [Guide: researching alternatives](../guides/alternatives-research.md)           | How to find and evaluate your set                                                      |
 | [Guide: comparison to value proposition](../guides/comparison-and-synthesis.md) | How to build the table, find the gaps, write the proposition                           |
-| [Guide: the kickoff interview](../guides/customer-interview.md)                 | How to write the kickoff meeting script and run the meeting                            |
+| [Guide: the kickoff meeting](../guides/customer-kickoff-meeting.md)             | How to write the kickoff meeting script and run the meeting                            |
 
 ## Part 1: Form The Team And Choose The Project
 
@@ -157,23 +157,20 @@ The rules are in [Value Proposition And Differentiation](../requirements/process
 
 Your customer is a course instructor.
 In every artifact you call them `Customer`, never a real name and never "the instructor".
-Hold one kickoff meeting with them this week: present the project, your reading of the problem, and your proposed direction, and find out where they disagree with you.
+Hold one kickoff meeting with them this week: present the project, your reading of the problem, and your proposed direction, and find out where they disagree.
 
-1. **Write the meeting script first**, at `reports/week-01/meeting-script.md`.
-   It covers five areas — business goals, end users, the current workflow, pain points and constraints, and scope — with at least two questions in each area.
-   Tag every question open or closed, and close the file with a `## Key improvements` section showing at least two questions you rewrote and the principle behind each rewrite.
-   See [The Kickoff Interview](../guides/customer-interview.md).
-2. **Assign the three roles** before the meeting: a moderator, a note taker, and an observer who records what was not asked.
-   The whole team attends, and you plan for 30 minutes while asking for 60 if the customer can give it.
-3. **Ask the three permission questions** before you start, and keep the recording out of the repository.
-4. **Write `reports/week-01/meeting-report.md`**, plus either `reports/week-01/meeting-transcript.md` or `reports/week-01/meeting-notes.md`, following [Customer Meeting Artifacts](../requirements/artifact-requirements.md#customer-meeting-artifacts).
-   The meeting report is the deliverable this week; the transcript or the notes is its evidence.
-5. **Complete all six of the report's sections**, and hold it to the week-specific minima:
+The rules are in [Meeting With The Customer](../requirements/process-requirements.md#meeting-with-the-customer), and the method is in [The Kickoff Meeting](../guides/customer-kickoff-meeting.md).
+This week specifically:
+
+1. **Write `reports/week-01/meeting-script.md` first**, with at least two questions in each of the five kickoff areas and `## Key improvements` showing at least two rewrites, per [Meeting Script](../requirements/artifact-requirements.md#meeting-script).
+2. **Assign the three roles and ask the three permission questions** before you start, per [Meeting With The Customer](../requirements/process-requirements.md#meeting-with-the-customer), and keep the recording out of the repository.
+3. **Write `reports/week-01/meeting-report.md`**, plus either `meeting-transcript.md` or `meeting-notes.md`, per [Customer Meeting Artifacts](../requirements/artifact-requirements.md#customer-meeting-artifacts).
+   Hold the report to the week minima:
    - At least two rows in `## Decisions`, each naming the `GAP-nn` or `VP-nn` it came from.
    - At least two rows in `## Action points`, each with a named owner and a due date inside Week 2.
    - `## Disagreements` filled in, or an explicit `None`.
-6. **Put the recording link in your Moodle submission only.**
-7. **If a live meeting is impossible**, align asynchronously in writing instead, timestamp the written exchange as the notes, and declare the substitution in your week report as a deviation.
+4. **Put the recording link in your Moodle submission only.**
+5. **If a live meeting is impossible**, follow the asynchronous rule in [Meeting With The Customer](../requirements/process-requirements.md#meeting-with-the-customer) and declare the deviation in your week report.
 
 Do not ask the customer to design the product.
 Present a direction with its evidence, and find out where it is wrong.

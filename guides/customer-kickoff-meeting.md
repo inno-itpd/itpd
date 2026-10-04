@@ -1,6 +1,4 @@
-# Guide: The Kickoff Interview
-
-<!-- TODO rename the file to customer-kickoff-interview -->
+# Guide: The Kickoff Meeting
 
 How to prepare the one meeting where the problem and the direction are both still open.
 What the meeting has to satisfy is defined in [Process Requirements](../requirements/process-requirements.md#meeting-with-the-customer) and [Artifact Requirements](../requirements/artifact-requirements.md#meeting-script); this guide is the method.
@@ -97,7 +95,7 @@ The switching row becomes a question about a past decision, which already happen
 
 ## Step 4: Record What You Improved
 
-Close the script with `## Key improvements`, and for at least two questions give the before, the after, and the principle.
+Close the script with the `## Key improvements` section [Meeting Script](../requirements/artifact-requirements.md#meeting-script) requires, giving each rewritten question's before, after, and principle.
 
 This section is not proof that you read the Mom Test.
 It is the part a reader uses to tell whether your questions were considered or merely collected, and it is the only part of the script that survives into the meeting report.

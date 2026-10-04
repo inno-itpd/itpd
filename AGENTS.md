@@ -17,7 +17,7 @@ Operating instructions for coding agents maintaining the student-facing course m
 | `requirements/repository-requirements.md` | Repository and platform mechanics: GitHub, pull requests, branch protection, link checking, permalinks, snapshots, changelog, CI.                             |
 | `guides/alternatives-research.md`         | Method for finding and evaluating alternatives. Explanatory, not normative.                                                                                   |
 | `guides/comparison-and-synthesis.md`      | Method for building the comparison, finding gaps, writing the value proposition. Explanatory, not normative.                                                  |
-| `guides/customer-interview.md`            | Method for the kickoff: the five areas and the Mom Test pass. Explanatory, not normative.                                                                     |
+| `guides/customer-kickoff-meeting.md`      | Method for the kickoff: the five areas and the Mom Test pass. Explanatory, not normative.                                                                     |
 | `guides/user-stories-and-prototyping.md`  | Method for turning a gap into stories, writing acceptance criteria, and testing an idea cheaply. Explanatory, not normative.                                  |
 | `guides/validating-with-the-customer.md`  | Method for meetings after the kickoff and for recording what they changed. Explanatory, not normative.                                                        |
 | `assignments/assignment-N.md`             | Learner-facing requirements for one week. Deltas, paths, and evidence only.                                                                                   |
