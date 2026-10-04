@@ -110,7 +110,9 @@ It keeps its own rules, its build, and its gate in `lectures/AGENTS.md`; this fi
 - **Filenames** are kebab-case: `assignment-1.md`, `artifact-requirements.md`.
 - **Weeks** are zero-padded: `reports/week-01/`, through `reports/week-09/`.
 - **Identifiers** are zero-padded and stable: `ALT-01`, `GAP-01`, `VP-01` are the Week 1 families.
-  `US-01` for user stories, `Q-01` for quality goals, and `U-01` for usability tasks are introduced by the assignment that creates them, in W2, W4, and W7.
+  <!-- TODO don't mention identifiers introduced in future weeks  -->
+  `US-01` for user stories and `AC-01` for the acceptance criteria of one story are introduced in W2, `Q-01` for quality goals in W4, and `U-01` for usability tasks in W7.
+  An `AC-nn` is scoped to its story issue and is cited together with it; the other families are repository-wide.
   IDs are never renumbered or reused, including in example text.
 - **Headings** are Title Case in requirements files, guides, and assignments.
 - **Applicability markers**: all three requirements files carry inline `**Since: WN**` markers, so a section can hold requirements that begin in different weeks.

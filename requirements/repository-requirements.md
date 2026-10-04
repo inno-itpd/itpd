@@ -107,6 +107,7 @@ The root `README.md` also carries setup and run instructions for the product as 
    - What changed and why.
    - What you checked, and how.
    - For the reviewer: what to look at, and whether the linked requirements or acceptance criteria are satisfied.
+     From Week 2, name the `AC-nn` and its story issue for each criterion the change checks.
 
 7. Do not delete pull requests, reviews, or branches that are used as assignment evidence, and do not rewrite history to tidy it up.
    The history is part of what is being assessed.
@@ -292,7 +293,7 @@ If credentials, personal data, or confidential material is committed by mistake:
 **Required**
 
 1. Add `.github/ISSUE_TEMPLATE/user-story.yml`, an Issue Form whose fields carry the story statement, the acceptance criteria, the `GAP-nn`, the `VP-nn`, any sources, any notes, and an optional remaining-work checklist.
-   Acceptance criteria are optional in the form, because an inactive story may carry none; the two-criteria floor is required for every active story.
+   Acceptance criteria are optional in the form, because an inactive story may carry none; the two-criteria floor is required for every active story, and each criterion carries a stable `AC-nn` inside the issue.
 2. Disable blank issue creation in the issue template configuration.
 3. Open one issue per story, from the form, per [User Stories And Acceptance Criteria](process-requirements.md#user-stories-and-acceptance-criteria).
    The issue is the story, and the list of stories is the issue list filtered by the `user-story` label.
@@ -302,7 +303,7 @@ If credentials, personal data, or confidential material is committed by mistake:
 5. An inactive story closes as not planned, with a comment naming the reason and any story that supersedes it.
    A delivered active story closes as completed.
 6. Create branches from the issue where GitHub supports it, and link every pull request to its issue.
-7. Check the relevant acceptance criteria before merging.
+7. Check the relevant acceptance criteria before merging, and name the `AC-nn` and its story issue in the pull request.
 8. Do not delete an issue or rewrite its body to hide a change; the issue history is part of what a reader follows.
 
 **Recommended**

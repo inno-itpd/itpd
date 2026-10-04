@@ -39,7 +39,7 @@ By the end of this week you should be able to show an instructor:
 
 - What your product must achieve, in one sentence, and which `VP-nn` from Week 1 it serves.
 - What your product will deliberately not do, and why that makes your context diagram checkable.
-- Eight or more user stories, each a GitHub issue, at least five of them active, each active story with acceptance criteria somebody else could run, each traced to a `GAP-nn`.
+- Eight or more user stories, each a GitHub issue, at least five of them active, each active story with acceptance criteria somebody else could run, each criterion carrying a stable `AC-nn` inside its issue, each story traced to a `GAP-nn`.
 - Which story you would build first, and which one you would drop first.
 - One place where the customer told you a story was wrong, and the diff that shows what you changed.
 - A repository where the Markdown is checked automatically and the check is green.
@@ -96,11 +96,14 @@ Complete every requirement marked `**Since: W2**` in [Planning And Issue Trackin
 3. Open **8 or more** stories as issues, one per story, and keep at least **5 of them active**.
    The title is `US-nn: <story title>`.
    Every story is a **user's need**, not a solution, and every active story carries **at least two acceptance criteria**, each observable and pass/fail.
+   Each criterion carries a stable ID `AC-01`, `AC-02`, and so on, numbered within its issue and never renumbered or reused.
+   A citation elsewhere pairs the `AC-nn` with its story issue, as a link or by `US-nn`; the notation is your choice.
    A story does not name a screen, a button, or a component; an acceptance criterion may name a screen, a field, or a system state, because that is what an observer checks.
    Any notation works, including `Given`/`When`/`Then`.
    The test is whether somebody who is not you could run the check and get the same answer.
    See [User Stories](../requirements/artifact-requirements.md#user-stories) and [User Stories And Acceptance Criteria](../requirements/process-requirements.md#user-stories-and-acceptance-criteria).
-4. Split any story too large to build and verify in one week: close the parent as not planned with a `superseded` comment, keep its identifier and statement, and link it from both children.
+4. Split any story too large to build and verify in one week: close the parent as not planned with a `superseded` comment, keep its identifier, its statement, and its criteria, and link it from both children.
+   Each child writes its own criteria and starts again at `AC-01`.
    <!-- TODO handle epics -->
 5. Prioritize every story with **MoSCoW**.
    Give every `Won't Have` story a reason in its closing comment, beginning with `won't-have`.
@@ -112,7 +115,7 @@ Complete every requirement marked `**Since: W2**` in [Planning And Issue Trackin
 7. Inactive stories close as not planned with a comment naming the reason and any story that supersedes them, and a delivered story closes as completed.
 8. Create your branches from the issue, and link every pull request to its issue.
    Use the `<issue-number>-<short-description>` branch naming rule, per [Branch Protection And Pull Requests](../requirements/repository-requirements.md#branch-protection-and-pull-requests).
-9.  The method is in [Step 2: Turn Each Gap Into Stories](../guides/user-stories-and-prototyping.md#step-2-turn-each-gap-into-stories) and [Step 3: Write Criteria Somebody Else Can Run](../guides/user-stories-and-prototyping.md#step-3-write-criteria-somebody-else-can-run).
+9. The method is in [Step 2: Turn Each Gap Into Stories](../guides/user-stories-and-prototyping.md#step-2-turn-each-gap-into-stories) and [Step 3: Write Criteria Somebody Else Can Run](../guides/user-stories-and-prototyping.md#step-3-write-criteria-somebody-else-can-run).
 
 The issues are what the customer can see and what the team tracks.
 Each issue is the story, and a decision that changes a story has to reach that issue, not only the meeting report.
@@ -184,7 +187,7 @@ See [Validating With The Customer](../guides/validating-with-the-customer.md).
 5. **Write `reports/week-02/meeting-report.md`**, plus either `reports/week-02/meeting-transcript.md` or `reports/week-02/meeting-notes.md`, following [Customer Meeting Artifacts](../requirements/artifact-requirements.md#customer-meeting-artifacts).
 6. **Complete all six sections of the meeting report**, and hold it to the week-specific minima:
    - At least two rows in `## Decisions`, because one decision is insufficient evidence that the meeting changed anything.
-     Each row names the `US-nn` it changes, and one of the two rows must be the customer's verdict on the minimum usable product candidate.
+     Each row names the `US-nn` it changes, plus the `AC-nn` when a specific criterion changed, and one of the two rows must be the customer's verdict on the minimum usable product candidate.
 
      A story that did not come from your Week 1 research records that origin in its `sources`; only a contradiction updates the research, per [Traceability Into Later Weeks](../requirements/process-requirements.md#traceability-into-later-weeks).
 
@@ -192,9 +195,9 @@ See [Validating With The Customer](../guides/validating-with-the-customer.md).
    - `## Disagreements` filled in, or an explicit `None`.
 7. **Something must change as a result**, recorded in all four places:
    - `reports/week-02/prototypes.md` says what you showed and what they said.
-   - The meeting report's `## Decisions` names the `US-nn` it changes.
-   - The story issue carries a dated comment saying what changed and linking the meeting report.
-   - `reports/week-02/README.md` names the `US-nn` that changed.
+   - The meeting report's `## Decisions` names the `US-nn` it changes, and the `AC-nn` when a criterion changed.
+   - The story issue carries a dated comment saying what changed, naming any `AC-nn` that changed, and linking the meeting report.
+   - `reports/week-02/README.md` names the `US-nn` and the `AC-nn` that changed.
 8. **Put the recording link in your Moodle submission only.**
 9. **If a live meeting is impossible**, align asynchronously in writing instead, timestamp the written exchange as the notes, and declare the substitution in your week report as a deviation.
 
@@ -330,8 +333,8 @@ See [Permalinks And Snapshots](../requirements/repository-requirements.md#permal
 - [ ] No use case, container, or component diagrams.
 - [ ] One Issue Form at `.github/ISSUE_TEMPLATE/user-story.yml`, blank issues disabled, and **8 or more** story issues with **5 or more** active, `US-nn` IDs never reused.
 - [ ] Every story states a need, not a design, and carries its `GAP-nn` and `VP-nn` in the issue form.
-- [ ] At least two acceptance criteria per active story, each observable and pass/fail.
-- [ ] Oversized stories split, the parent closed as not planned with a `superseded` comment and traceable from both children.
+- [ ] At least two acceptance criteria per active story, each carrying a stable `AC-nn`, each observable and pass/fail.
+- [ ] Oversized stories split, the parent closed as not planned with a `superseded` comment and traceable from both children, each child numbering its criteria from `AC-01`.
 - [ ] Every story carries one `moscow:*` label, every `Won't Have` issue closed as not planned with a reason.
 - [ ] `reports/week-02/README.md` names the minimum usable product candidate: a strict, non-empty subset of the `Must Have` stories, and which one to drop first.
 - [ ] One issue per story, titled `US-nn: <story title>`, carrying the story and criteria, with an optional remaining-work checklist; every pull request linked to its issue.
@@ -339,13 +342,13 @@ See [Permalinks And Snapshots](../requirements/repository-requirements.md#permal
 - [ ] Markdown check in CI on pull requests and `main`, green.
 - [ ] Markdown check pinned to a commit SHA, with `.github/dependabot.yml`.
 - [ ] Week 1 link check still green.
-- [ ] `reports/week-02/prototypes.md` with what you showed, which `US-nn` it tested, and what the customer said.
+- [ ] `reports/week-02/prototypes.md` with what you showed, which `US-nn` it tested, any `AC-nn` exercised, and what the customer said.
 - [ ] Screenshots in `reports/week-02/images/`, external tools shared view-only.
 - [ ] No disposable prototype code on `main`; any spike done on a branch and then deleted or merged.
 - [ ] `reports/week-02/meeting-script.md` with a one-sentence target, numbered questions tagged open or closed, and `## Key improvements` showing at least one real rewrite.
 - [ ] Three meeting roles assigned, whole team attending, three permission questions asked before recording.
 - [ ] Validation meeting held, all three permissions asked before recording.
-- [ ] `reports/week-02/meeting-report.md` with all six sections, 2+ decisions naming the `US-nn` each changed, 2+ action points with owner and Week 3 due date, and `## Disagreements` filled or `None`.
+- [ ] `reports/week-02/meeting-report.md` with all six sections, 2+ decisions naming the `US-nn` (and `AC-nn` where a criterion changed) each changed, 2+ action points with owner and Week 3 due date, and `## Disagreements` filled or `None`.
 - [ ] `reports/week-02/meeting-transcript.md` or `meeting-notes.md`, sanitized; in the Moodle PDF only if publication was refused.
 - [ ] **At least one story issue has a dated comment from the validation meeting.**
 - [ ] Both Week 1 kickoff action points closed, with the outcome written into the artifact it changed.

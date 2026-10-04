@@ -285,6 +285,7 @@ A recording is a separate, private-only artifact.
 
 7. `## Decisions` has the columns `Decision`, `Made by`, and `Traces to`.
    `Traces to` names the identifier the week owns, per [Traceability Into Later Weeks](process-requirements.md#traceability-into-later-weeks), and says `None` where the decision came from nowhere in your research.
+   When a decision changes a specific acceptance criterion, `Traces to` names the `AC-nn` and links its story issue.
 8. `## Action points` has the columns `Action`, `Owner`, and `Due`.
    The owner is a GitHub username, and the due date falls inside a named week.
 9. `## Open questions` has the columns `Question`, `What it would change`, and `Follow-up`.
@@ -659,7 +660,7 @@ Each story is a GitHub issue, and the `user-story` label identifies story issues
 
    - The title `US-nn: <story title>`.
    - The story statement, the `GAP-nn` it closes, the `VP-nn` it supports, any sources, and any notes, in the fields the form provides.
-   - The acceptance criteria, at least two on a story you intend to build.
+   - The acceptance criteria, at least two on a story you intend to build, each carrying a stable `AC-nn` at the start of the criterion.
    - One `moscow:*` label: `moscow:must`, `moscow:should`, `moscow:could`, or `moscow:won't`.
    - The `user-story` label, applied by the form.
       <!-- Alternatively, allow issue type -->
@@ -667,11 +668,13 @@ Each story is a GitHub issue, and the `user-story` label identifies story issues
 2. Active stories are open or closed as completed, and a delivered story closes as completed and stays in the registry.
    Inactive stories are closed as not planned, with a comment naming the reason: `removed`, `superseded`, or `won't have`.
    The reason is free text beginning with one of those three words.
-3. A split parent closes as not planned with a `superseded` comment, keeps its identifier and its statement, and is linked from both children.
+3. A split parent closes as not planned with a `superseded` comment, keeps its identifier, its statement, and its criteria, and is linked from both children.
+   The parent's criteria are not moved or reused; each child writes its own and starts again at `AC-01`.
    <!-- TODO decomposed epic vs split parent -->
 4. The issue is the record of change.
-   A change that follows a customer meeting adds a dated comment saying what changed and linking the meeting report.
+   A change that follows a customer meeting adds a dated comment saying what changed, naming any `AC-nn` that changed, and linking the meeting report.
    Do not rewrite a story to hide a change; the edit history and the comment are the record.
+   A criterion that is removed retires its `AC-nn`, and the ID is never reused.
 5. The **registry of identifiers** is the issue list filtered by the `user-story` label.
    It shows open and closed issues, so an inactive story keeps its `US-nn` and stays findable after it closes.
 6. Do not keep a second list of stories in the repository.
@@ -696,9 +699,9 @@ so that our classification of what is marked decides what leaves the network.
 
 ## Acceptance criteria
 
-1. Given a repository with one marked region, when I attach a rule to that region, then the rule applies to
+1. `AC-01`: Given a repository with one marked region, when I attach a rule to that region, then the rule applies to
    every request that includes that region, and the log records which rule fired.
-2. Given a marked region with no rule attached, when a request includes it, then the request is blocked and
+2. `AC-02`: Given a marked region with no rule attached, when a request includes it, then the request is blocked and
    the reason names the region, and no request content is logged.
 
 ## Notes
@@ -707,8 +710,8 @@ Closes GAP-01 and supports VP-01.
 The customer confirmed on 2026-10-06 that the company's own marking is authoritative and that we may not
 infer it from file paths, which killed an earlier assumption in [the assumptions table](../../research/value-proposition.md).
 
-Comment, 2026-10-06: criterion 2 added after the validation meeting.
-The customer will not accept a blocked request with no reason, and the first version of the criterion only said the request is blocked.
+Comment, 2026-10-06: `AC-02` added after the validation meeting.
+The customer will not accept a blocked request with no reason, and the first version of the story only had `AC-01`, which said the request is blocked.
 ```
 
 <!-- TODO in comments, link to meeting reports -->
@@ -738,7 +741,7 @@ It exists to find out whether something is wrong, and it is not the product.
 2. The file carries, for each prototype:
 
    - What it is and how to view it: a screenshot in `reports/week-NN/images/`, a view-only external link, or a branch name.
-   - Which `US-nn` or `GAP-nn` it tested, and the question it was built to answer.
+   - Which `US-nn` or `GAP-nn` it tested, any `AC-nn` it exercised, and the question it was built to answer.
    - What the customer said about it.
    - What changed as a result, and where that change is recorded.
 

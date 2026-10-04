@@ -23,7 +23,7 @@ Most of it is arguing about which stories are the same story wearing two hats, w
 
 ```text
 docs/product-vision.md         the goal, the constraints, the stakeholders, the boundary, the context diagram
-GitHub issues                  one per story, titled US-nn: <title>, with its criteria and labels
+GitHub issues                  one per story, titled US-nn: <title>, with its AC-nn criteria and labels
 reports/week-02/README.md      the minimum usable product candidate
 reports/week-02/prototypes.md  what you showed, what they said, what changed
 ```
@@ -67,6 +67,7 @@ A gap often turns into three or four stories, because a single sentence about a 
 **Split anything too big to build and verify in a week.**
 A story that takes three weeks is three stories, and splitting it is not a detail: an unbuildable story is one your team will quietly abandon, and an abandoned story is one your `Must Have` list lies about.
 When you split, close the parent as not planned with a `superseded` comment and link it from both children, so a reader can see what the pieces were for.
+The parent's criteria stay with it; each child writes its own and numbers them from `AC-01`.
 
 **Write the story you expect to build last.**
 It is usually the most honest one, because it is the one nobody has an emotional attachment to.
@@ -82,6 +83,11 @@ One criterion for the happy path, and one for what happens when something is mis
 A single criterion per story is easy to satisfy with a line of prose that tests nothing.
 The criteria go in the issue form; an inactive story may carry none.
 
+Number each criterion `AC-01`, `AC-02`, and so on, from the top of the story, and write the ID at the start of the criterion.
+The ID is stable inside the issue: an edit keeps it, a removed criterion retires it, and a criterion added later takes the next free number.
+Another artifact cites a criterion by its `AC-nn` together with the story issue, as a link to the issue or its `US-nn` when the issue is already linked.
+The notation is not fixed; what has to be unambiguous is which story and which criterion.
+
 Any notation works, including `Given`/`When`/`Then`.
 The notation is not the requirement; observability is.
 Compare:
@@ -89,10 +95,10 @@ Compare:
 ```text
 Works properly.                        not a criterion, and not testable
 The user sees a confirmation.          observable, but the answer is a judgement
-After attaching a rule to a region,    observable, and the answer is yes or no
-the next request that includes the
-region has the rule applied, and the
-log names the rule.
+AC-01: After attaching a rule to a     observable, and the answer is yes or no
+region, the next request that includes
+it has the rule applied, and the log
+names the rule.
 ```
 
 A criterion may name a screen, a field, or a system state, because that is what an observer checks; the story may not, because that would be the design.
@@ -134,7 +140,7 @@ Say the question in one line before you build anything, and write it down.
 If you cannot write the question, you are not ready to prototype, and building first is how a team ends up showing a prototype of the easy part.
 
 **Which user stories does your prototype cover?**
-Answer that explicitly, in `prototypes.md`, linking the issue of each story.
+Answer that explicitly, in `prototypes.md`, linking the issue of each story and naming any `AC-nn` it exercises.
 A prototype that covers one story is fine, as long as you say which one and why that one.
 
 ## Step 6: Build The Cheapest Thing That Gets A Reaction

@@ -353,15 +353,21 @@ Each story is a GitHub issue, and the issues are the only place the stories live
    Any notation is allowed, including `Given`/`When`/`Then`; the rules are that somebody other than you can run the check and get the same answer.
    "Works well" is not a criterion.
    An inactive story is not built, so it may carry none.
-7. A story too large to build and verify in one week is two stories.
-   Split it: the parent keeps its identifier and its statement, closes as not planned with a comment beginning with `superseded`, and stays traceable from both children.
-8. Name the **minimum usable product candidate** in the Week 2 report: a strict, non-empty subset of your `Must Have` stories that you would build first.
+7. Every acceptance criterion carries a stable ID `AC-01`, `AC-02`, and so on, numbered within its story and written at the start of the criterion.
+   The ID is unique inside its story issue and is never renumbered or reused there.
+   A criterion edited in place keeps its ID, a criterion that is removed retires its ID, and a criterion added later takes the next free number.
+   Cite a specific criterion from another artifact by its `AC-nn` together with its story issue: a link to the issue, or its `US-nn` when the issue is already linked.
+   The notation is not fixed, as long as the reference identifies both the story and the criterion.
+8. A story too large to build and verify in one week is two stories.
+   Split it: the parent keeps its identifier, its statement, and its criteria, closes as not planned with a comment beginning with `superseded`, and stays traceable from both children.
+   The parent's criteria are not moved, renumbered, or reused; each child writes its own and starts again at `AC-01`.
+9. Name the **minimum usable product candidate** in the Week 2 report: a strict, non-empty subset of your `Must Have` stories that you would build first.
    Say which one you would drop first if you ran out of time.
    The candidate is a proposal, not a commitment, and Week 3 schedules and builds it.
-9. Open one issue per story, from the form in [Planning And Issue Tracking](repository-requirements.md#planning-and-issue-tracking).
-   The issue is the story and the source of truth; the form carries the statement, the acceptance criteria, the `GAP-nn`, the `VP-nn`, and any sources.
-   The issue may carry a checklist of the remaining work, so a contributor can work without leaving it.
-10. A story becomes inactive by being closed as not planned, with a comment naming the reason and any story that supersedes it.
+10. Open one issue per story, from the form in [Planning And Issue Tracking](repository-requirements.md#planning-and-issue-tracking).
+    The issue is the story and the source of truth; the form carries the statement, the acceptance criteria, each with its `AC-nn`, the `GAP-nn`, the `VP-nn`, and any sources.
+    The issue may carry a checklist of the remaining work, so a contributor can work without leaving it.
+11. A story becomes inactive by being closed as not planned, with a comment naming the reason and any story that supersedes it.
     It keeps its identifier and its statement in the issue; the closing comment and the close date are the record.
     An active story that is delivered closes as completed and stays in the list.
 
@@ -382,9 +388,9 @@ so that our classification of what is marked decides what leaves the network.
 
 ## Acceptance criteria
 
-1. Given a repository with one marked region, when I attach a rule to that region, then the rule applies to
+1. AC-01: Given a repository with one marked region, when I attach a rule to that region, then the rule applies to
    every request that includes that region, and the log records which rule fired.
-2. Given a marked region with no rule attached, when a request includes it, then the request is blocked and
+2. AC-02: Given a marked region with no rule attached, when a request includes it, then the request is blocked and
    the reason names the region, and no request content is logged.
 ```
 
@@ -415,10 +421,10 @@ It is not a showcase, and it is not the product.
 4. **Something must change as a result.**
    Record the change in all four places:
 
-   - `reports/week-NN/prototypes.md` records what you showed, which `US-nn` or `GAP-nn` it tested, and what the customer said.
-   - The [meeting report](artifact-requirements.md#meeting-report) `## Decisions` table names the `US-nn` it changes.
-   - The story issue carries a dated comment saying what changed and linking the meeting report.
-   - The weekly public report names the `US-nn` that changed.
+   - `reports/week-NN/prototypes.md` records what you showed, which `US-nn` or `GAP-nn` it tested, any `AC-nn` it exercised, and what the customer said.
+   - The [meeting report](artifact-requirements.md#meeting-report) `## Decisions` table names the `US-nn` it changes, and the `AC-nn` when a decision changes a specific criterion.
+   - The story issue carries a dated comment saying what changed, naming any `AC-nn` that changed, and linking the meeting report.
+   - The weekly public report names the `US-nn` and the `AC-nn` that changed.
 
 5. A prototype is disposable.
    A paper sketch, a view-only design tool, and a code spike are equally acceptable, and none of them is product code.
@@ -441,15 +447,21 @@ A prototype that validated everything proved nothing, because you chose the part
 
 **Required**
 
+<!-- TODO don't mention identifiers introduced in future weeks -->
+
 1. The identifier families introduced in Week 1 are `ALT-nn` for alternatives, `GAP-nn` for gaps, and `VP-nn` for value propositions.
    All are zero-padded and case-sensitive.
-   `US-nn` for user stories, `Q-nn` for quality goals, and `U-nn` for usability tasks are introduced by the assignment that creates them, in Weeks 2, 4, and 7.
+   `US-nn` for user stories and `AC-nn` for their acceptance criteria are introduced in Week 2; `Q-nn` for quality goals in Week 4; and `U-nn` for usability tasks in Week 7.
 2. An identifier, once issued, is never changed, reused, or reassigned, including when the artifact is edited later in the course.
+   `AC-nn` is scoped to its story issue: the same number may appear in another story, so a reference pairs the ID with the issue to be unambiguous.
 3. Gaps in a sequence are expected and correct.
    A removed `GAP-03` leaves a hole; it does not cause renumbering.
 4. A removed item keeps its identifier and its entry, marked as removed with a reason and the date.
+   `AC-nn` is the exception: the issue body is a living record whose edit history and change comment are the record, so a removed criterion's ID is retired rather than kept in place, and it is never reused.
 5. The identifier always appears in the heading of its own section, so `ALT-02` can be found with a search.
+   An `AC-nn` appears at the start of its criterion inside the story issue; the story issue plus the ID is what identifies it.
 6. Every reference between artifacts uses the identifier, not the title, so that renaming a title does not break the chain.
+   A criterion is referenced by its `AC-nn` together with its story issue, as described in [User Stories And Acceptance Criteria](#user-stories-and-acceptance-criteria).
 
 ## Traceability Into Later Weeks
 

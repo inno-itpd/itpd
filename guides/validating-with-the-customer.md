@@ -104,20 +104,20 @@ Those are the questions that produce a `## Disagreements` row.
 <!-- TODO what if a decision doesn't change a user story? -->
 <!-- TODO why should it be related to user stories exactly, not some functional requirements? -->
 
-The meeting report's `## Decisions` table is the record, and it names the `US-nn` each decision changes.
+The meeting report's `## Decisions` table is the record, and it names the `US-nn` each decision changes, plus the `AC-nn` when a specific criterion is what changed.
 That table is where a reader looks to see whether the week was a test or a formality.
 
 Then make sure the change reaches all four places, because each one answers a different question:
 
-| Where                              | Question it answers                                  |
-| ---------------------------------- | ---------------------------------------------------- |
-| `reports/week-NN/prototypes.md`    | What did we show, and what did they say?             |
-| `meeting-report.md` `## Decisions` | What did we decide, and about which story?           |
-| the story issue                    | What does the story say now, and when did it change? |
-| `reports/week-NN/README.md`        | What should a reader look at first?                  |
+| Where                              | Question it answers                                     |
+| ---------------------------------- | ------------------------------------------------------- |
+| `reports/week-NN/prototypes.md`    | What did we show, and what did they say?                |
+| `meeting-report.md` `## Decisions` | What did we decide, and about which story or criterion? |
+| the story issue                    | What does the story say now, and when did it change?    |
+| `reports/week-NN/README.md`        | What should a reader look at first?                     |
 
 The issue comment is the one that is easy to skip, and skipping it is what makes a decision invisible to a reader of the stories.
-Add a dated comment to the issue saying what changed and why, and link the meeting report.
+Add a dated comment to the issue saying what changed and why, naming the `AC-nn` if a criterion changed, and link the meeting report.
 A story edited three times with no comment gives a reader no way to tell what the customer actually settled from what the team decided on its own.
 
 If nothing changed, that is itself the finding, and it is a serious one.
