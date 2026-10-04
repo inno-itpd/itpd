@@ -664,7 +664,9 @@ Each story is a GitHub issue, and the `user-story` label identifies story issues
    It carries:
 
    - The title `US-nn: <story title>`.
-   - The story statement, the `GAP-nn` it closes, the `VP-nn` it supports, any sources, and any notes, in the fields the form provides.
+   - The story statement, its `Traces to` list, and any notes, in the fields the form provides.
+     The list carries exactly one `VP-nn`, the value proposition the story supports, plus any origins: the `GAP-nn` it closes, a customer or team decision, an action point it carries out, or the parent `US-nn` of a split.
+     A story that names no `GAP-nn` and is not a split child says in one line why no existing gap covers it.
    - The acceptance criteria, at least two on a story you intend to build, each carrying a stable `AC-nn` at the start of the criterion.
    - One `moscow:*` label: `moscow:must`, `moscow:should`, `moscow:could`, or `moscow:won't`.
    - The `user-story` label, applied by the form.
@@ -674,8 +676,9 @@ Each story is a GitHub issue, and the `user-story` label identifies story issues
    Inactive stories are closed as not planned, with a comment naming the reason: `removed`, `superseded`, or `won't have`.
    The reason is free text beginning with one of those three words.
 3. A split parent closes as not planned with a `superseded` comment, keeps its identifier, its statement, and its criteria, and is linked from both children.
+   Each child names the parent `US-nn` in its `Traces to` list and carries the parent's `VP-nn` and, when the parent had one, the same `GAP-nn`.
    The parent's criteria are not moved or reused; each child writes its own and starts again at `AC-01`.
-   <!-- TODO decomposed epic vs split parent -->
+   This course has no epic artifact: decomposition happens by splitting a story.
 4. The issue is the record of change.
    A change that follows a customer meeting adds a dated comment saying what changed, naming any `AC-nn` that changed, and linking the meeting report.
    Do not rewrite a story to hide a change; the edit history and the comment are the record.
@@ -702,6 +705,11 @@ Labels: moscow:must, user-story
 As a coach who sells sessions online, I want a client to pay when they book,
 so that an unpaid slot does not block a paying one for the rest of the week.
 
+## Traces to
+
+- `VP-01`
+- `GAP-01`
+
 ## Acceptance criteria
 
 1. `AC-01`: Given a paid meeting type with one free slot, when a client books that slot, then the slot is held
@@ -711,7 +719,6 @@ so that an unpaid slot does not block a paying one for the rest of the week.
 
 ## Notes
 
-Closes GAP-01 and supports VP-01.
 The customer confirmed on 2026-10-06 that payment happens before confirmation, which retired the pay-later
 assumption in [the assumptions table](../../research/value-proposition.md).
 
@@ -728,6 +735,11 @@ Title: US-09: Sell session bundles
 Labels: moscow:won't, user-story
 
 As a coach, I want to sell a bundle of ten sessions, so that a returning client pays once.
+
+## Traces to
+
+- `VP-01`
+- `GAP-01`
 
 Closing comment: won't-have: no evidence that a user needs it; recurring billing is outside the boundary.
 ```

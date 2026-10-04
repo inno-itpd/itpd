@@ -39,7 +39,7 @@ By the end of this week you should be able to show an instructor:
 
 - What your product must achieve, in one sentence, and which `VP-nn` from Week 1 it serves.
 - What your product will deliberately not do, and why that makes your context diagram checkable.
-- Eight or more user stories, each a GitHub issue, at least five of them active, each active story with acceptance criteria somebody else could run, each criterion carrying a stable `AC-nn` inside its issue, each story traced to a `GAP-nn`.
+- Eight or more user stories, each a GitHub issue, at least five of them active, each active story with acceptance criteria somebody else could run, each criterion carrying a stable `AC-nn` inside its issue, each story naming the `VP-nn` it supports and the origins it has in its `Traces to` list.
 - Which story you would build first, and which one you would drop first.
 - One place where the customer told you a story was wrong, and the diff that shows what you changed.
 - A repository where the Markdown is checked automatically and the check is green.
@@ -90,11 +90,14 @@ Follow [Product Vision](../requirements/artifact-requirements.md#product-vision)
 Complete every requirement marked `**Since: W2**` in [Planning And Issue Tracking](../requirements/repository-requirements.md#planning-and-issue-tracking).
 
 1. Add `.github/ISSUE_TEMPLATE/user-story.yml`, an Issue Form, and disable blank issue creation.
-   The form's fields carry the story statement, the acceptance criteria, the `GAP-nn`, the `VP-nn`, any sources, any notes, and an optional remaining-work checklist.
+   The form's fields carry the story statement, the `Traces to` list, any notes, the acceptance criteria, and an optional remaining-work checklist.
+   The list is required, one entry per line: exactly one `VP-nn` plus any origins.
 2. Create the labels the stories use, by any means: `user-story`, and `moscow:must`, `moscow:should`, `moscow:could`, `moscow:won't`.
    The form applies `user-story`; apply one MoSCoW label per story.
 3. Open **8 or more** stories as issues, one per story, and keep at least **5 of them active**.
    The title is `US-nn: <story title>`.
+   Every story names the `VP-nn` it supports and at least one origin in its `Traces to` list: the `GAP-nn` it closes, a customer or team decision, an action point it carries out, or the parent `US-nn` of a split.
+   A story that names no `GAP-nn` and is not a split child says in one line why no existing gap covers it.
    Every story is a **user's need**, not a solution, and every active story carries **at least two acceptance criteria**, each observable and pass/fail.
    Each criterion carries a stable ID `AC-01`, `AC-02`, and so on, numbered within its issue and never renumbered or reused.
    A citation elsewhere pairs the `AC-nn` with its story issue, as a link or by `US-nn`; the notation is your choice.
@@ -103,8 +106,8 @@ Complete every requirement marked `**Since: W2**` in [Planning And Issue Trackin
    The test is whether somebody who is not you could run the check and get the same answer.
    See [User Stories](../requirements/artifact-requirements.md#user-stories) and [User Stories And Acceptance Criteria](../requirements/process-requirements.md#user-stories-and-acceptance-criteria).
 4. Split any story too large to build and verify in one week: close the parent as not planned with a `superseded` comment, keep its identifier, its statement, and its criteria, and link it from both children.
-   Each child writes its own criteria and starts again at `AC-01`.
-   <!-- TODO handle epics -->
+   Each child names the parent `US-nn` in its `Traces to` list, carries the parent's `VP-nn` and, when the parent had one, the same `GAP-nn`, writes its own criteria, and starts again at `AC-01`.
+   This course has no epic artifact; decomposition happens by splitting a story.
 5. Prioritize every story with **MoSCoW**.
    Give every `Won't Have` story a reason in its closing comment, beginning with `won't-have`.
    <!-- TODO What does won't-have mean here? -->
@@ -178,9 +181,7 @@ This week specifically:
 3. **Record the change per [Validation](../requirements/process-requirements.md#validation).**
    This week that means at least one story issue carries a dated comment saying what changed, naming any `AC-nn` that changed, and linking the meeting report, and `reports/week-02/README.md` names what changed and links the meeting report's `## Decisions`.
 
-<!-- TODO define "sources" -->
-
-A story that did not come from your Week 1 research records that origin in its `sources`; only a contradiction updates the research, per [Traceability Into Later Weeks](../requirements/process-requirements.md#traceability-into-later-weeks).
+A story that did not come from your Week 1 research names that origin in its `Traces to` list, and says in one line why no existing gap covers it; only a contradiction updates the research, per [Traceability Into Later Weeks](../requirements/process-requirements.md#traceability-into-later-weeks).
 
 Do not ask the customer to design the product, and do not re-run the kickoff.
 If the customer says "that sounds great" about one of your own ideas, the useful next question is what they would want to see for that to be true.
@@ -193,7 +194,7 @@ They are due now.
 
 1. Close each one, or state in writing why it is not closed.
 2. Carry the outcome into the artifact it affects, which is usually a story, a constraint, or a note in the product vision.
-3. If an action point changed what you were going to build, say so in the story issue and in your week report.
+3. If an action point changed what you were going to build, name it in the story's `Traces to` list and say so in your week report.
    A kickoff action point that is closed in the meeting report and nowhere else has not been carried out.
 
 An action point is not a new identifier family and not a new artifact.
@@ -313,9 +314,9 @@ See [Permalinks And Snapshots](../requirements/repository-requirements.md#permal
 - [ ] System context diagram committed or linked view-only, with the actors described in prose.
 - [ ] No use case, container, or component diagrams.
 - [ ] One Issue Form at `.github/ISSUE_TEMPLATE/user-story.yml`, blank issues disabled, and **8 or more** story issues with **5 or more** active, `US-nn` IDs never reused.
-- [ ] Every story states a need, not a design, and carries its `GAP-nn` and `VP-nn` in the issue form.
+- [ ] Every story states a need, not a design, and carries its `Traces to` list: exactly one `VP-nn` plus any origins; a story with no `GAP-nn` and no split parent says why no gap covers it.
 - [ ] At least two acceptance criteria per active story, each carrying a stable `AC-nn`, each observable and pass/fail.
-- [ ] Oversized stories split, the parent closed as not planned with a `superseded` comment and traceable from both children, each child numbering its criteria from `AC-01`.
+- [ ] Oversized stories split, the parent closed as not planned with a `superseded` comment and traceable from both children, each child naming the parent in `Traces to`, carrying the parent's `VP-nn` and, when the parent had one, the same `GAP-nn`, and numbering its criteria from `AC-01`.
 - [ ] Every story carries one `moscow:*` label, every `Won't Have` issue closed as not planned with a reason.
 - [ ] `reports/week-02/README.md` names the minimum usable product candidate: a strict, non-empty subset of the `Must Have` stories, and which one to drop first.
 - [ ] One issue per story, titled `US-nn: <story title>`, carrying the story and criteria, with an optional remaining-work checklist; every pull request linked to its issue.

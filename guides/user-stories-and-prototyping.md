@@ -23,7 +23,7 @@ Most of it is arguing about which stories are the same story wearing two hats, w
 
 ```text
 docs/product-vision.md         the goal, the constraints, the stakeholders, the boundary, the context diagram
-GitHub issues                  one per story, titled US-nn: <title>, with its AC-nn criteria and labels
+GitHub issues                  one per story, titled US-nn: <title>, with its Traces to list, AC-nn criteria, and labels
 reports/week-02/README.md      the minimum usable product candidate
 reports/week-02/prototypes.md  what you showed, what they said, what changed
 ```
@@ -48,6 +48,10 @@ See [Stakeholders, Boundary, And Context](../requirements/process-requirements.m
 Work gap by gap.
 For each `GAP-nn`, ask what a user would be trying to do that they cannot do today, and write that as a story.
 
+Not every story starts at a gap.
+A kickoff or validation decision, an action point, or a split of a story too large for one week can all add one.
+Record where it came from in the story's `Traces to` list, and when no existing `GAP-nn` covers it, say so in one line instead of inventing a link.
+
 The shape is always the same three lines:
 
 ```text
@@ -67,6 +71,7 @@ A gap often turns into three or four stories, because a single sentence about a 
 **Split anything too big to build and verify in a week.**
 A story that takes three weeks is three stories, and splitting it is not a detail: an unbuildable story is one your team will quietly abandon, and an abandoned story is one your `Must Have` list lies about.
 When you split, close the parent as not planned with a `superseded` comment and link it from both children, so a reader can see what the pieces were for.
+Each child names the parent in its `Traces to` list and carries the parent's `VP-nn` and, when the parent had one, its `GAP-nn`, so the lineage survives the split.
 The parent's criteria stay with it; each child writes its own and numbers them from `AC-01`.
 
 **Write the story you expect to build last.**
@@ -176,6 +181,9 @@ See [Validating With The Customer](validating-with-the-customer.md) for the meet
 
 - **Writing stories from the feature list.**
   If your story names a component, a screen, or a button, you have already decided the design and stopped learning.
+- **Forcing a story onto a gap that does not cover it.**
+  If the need came from a decision, an action point, or a split, say so in `Traces to` and say why no gap covers it.
+  A false link makes a reader stop trusting the real ones.
 - **One criterion per story.**
   It is the easiest number to hit and the least useful.
 - **A `Must Have` list that is everything.**

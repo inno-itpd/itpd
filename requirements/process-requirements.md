@@ -341,8 +341,11 @@ Each story is a GitHub issue, and the issues are the only place the stories live
    "Add a payment page" is a feature you have already designed.
    A story does not name a screen, a button, or a component; naming the design decides it for whoever builds the story.
    An acceptance criterion may name a screen, a field, or a system state, because that is what an observer checks.
-4. Every story names the `GAP-nn` it closes and the `VP-nn` it supports.
-   A need that also came from somewhere else, such as a customer meeting, records that origin in the issue's sources field rather than rewriting your Week 1 research; only a contradiction updates it, per [Traceability Into Later Weeks](#traceability-into-later-weeks).
+4. Every story carries a `Traces to` list.
+   It contains exactly one `VP-nn`, the value proposition the story supports, and may contain any of the story's origins: the `GAP-nn` it closes, a customer decision in a meeting report, a team decision in the weekly public report, an action point it carries out, or the parent `US-nn` of a split.
+   Cite an identifier by its ID, and a decision or action point by the report path and its `#decisions` or `#action-points` anchor, with the decision sentence or action quoted, per [Identifier Rules](#identifier-rules).
+   A story that names no `GAP-nn` and is not a split child says in one line why no existing gap covers it.
+   A need that came from outside Week 1 research records that origin in the list rather than rewriting the research; only a contradiction updates it, per [Traceability Into Later Weeks](#traceability-into-later-weeks).
 5. Every story is prioritized with MoSCoW, relative to the product you intend to finish in this course:
 
    - `Must Have`: the product is not the product without it.
@@ -362,12 +365,13 @@ Each story is a GitHub issue, and the issues are the only place the stories live
    The notation is not fixed, as long as the reference identifies both the story and the criterion.
 8. A story too large to build and verify in one week is two stories.
    Split it: the parent keeps its identifier, its statement, and its criteria, closes as not planned with a comment beginning with `superseded`, and stays traceable from both children.
+   Each child names the parent `US-nn` in its `Traces to` list and carries the parent's `VP-nn` and, when the parent had one, the same `GAP-nn`.
    The parent's criteria are not moved, renumbered, or reused; each child writes its own and starts again at `AC-01`.
 9. Name the **minimum usable product candidate** in the Week 2 report: a strict, non-empty subset of your `Must Have` stories that you would build first.
    Say which one you would drop first if you ran out of time.
    The candidate is a proposal, not a commitment.
 10. Open one issue per story, from the form in [Planning And Issue Tracking](repository-requirements.md#planning-and-issue-tracking).
-    The issue is the story and the source of truth; the form carries the statement, the acceptance criteria, each with its `AC-nn`, the `GAP-nn`, the `VP-nn`, and any sources.
+    The issue is the story and the source of truth; the form carries the statement, the acceptance criteria, each with its `AC-nn`, the `Traces to` list, and any notes.
     The issue may carry a checklist of the remaining work, so a contributor can work without leaving it.
 11. A story becomes inactive by being closed as not planned, with a comment naming the reason and any story that supersedes it.
     It keeps its identifier and its statement in the issue; the closing comment and the close date are the record.
@@ -387,6 +391,11 @@ Each story is a GitHub issue, and the issues are the only place the stories live
 
 As a coach who sells sessions online, I want a client to pay when they book,
 so that an unpaid slot does not block a paying one for the rest of the week.
+
+## Traces to
+
+- `VP-01`
+- `GAP-01`
 
 ## Acceptance criteria
 
@@ -466,6 +475,8 @@ A prototype that validated everything proved nothing, because you chose the part
 7. Decisions and action points are not identifier families.
    There is no `DEC-nn` and no `ACT-nn`.
    Cite a decision by path and `#decisions` anchor with its sentence quoted: a meeting decision cites its meeting report, and a decision made outside a meeting cites the weekly public report of the week it was made.
+   Cite an action point the same way, with its report's `#action-points` anchor and the action quoted.
+   A story's `Traces to` entry for a decision or action point uses this form.
    `TBD` and `None` in `Changes` are statuses, not identifiers.
    A later week cites a meeting report by path and heading anchor, per [Customer Meeting Artifacts](artifact-requirements.md#customer-meeting-artifacts).
 
@@ -477,9 +488,9 @@ The research you produce in Week 1 is the evidence base for the rest of the cour
 Later weeks cite your Week 1 identifiers rather than restating your findings.
 This is what makes the course a project rather than nine separate assignments.
 
-| Later work                                          | Must cite                                                                                              |
-| --------------------------------------------------- | ------------------------------------------------------------------------------------------------------ |
-| Week 2 product vision, user stories, and prototypes | `US-nn`, the `GAP-nn` it closes, the `VP-nn` it supports, and the kickoff action points it carried out |
+| Later work                                          | Must cite                                                                                                                             |
+| --------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
+| Week 2 product vision, user stories, and prototypes | `US-nn` and its `Traces to` list: exactly one `VP-nn` plus each origin (a `GAP-nn`, a decision, an action point, or a parent `US-nn`) |
 
 **Required**
 
@@ -489,7 +500,7 @@ This is what makes the course a project rather than nine separate assignments.
    See [Artifact Requirements](artifact-requirements.md#where-artifacts-live-in-the-repository).
 3. If you drop a gap mid-course, keep it in the gap analysis marked as dropped, and say which value propositions and user stories were affected.
 4. A later need that your Week 1 research did not anticipate does not rewrite the research.
-   Record its additional origin in the issue's sources field; update the research only when the later need contradicts it.
+   Record the need's origin in the story's `Traces to` list and say why no existing gap covers it; update the research only when the later need contradicts it.
 5. A decision recorded with `TBD` in `Changes` is finished when the artifact that carries its effect names the decision and links the report that recorded it.
 
 ## Research Honesty Rules
