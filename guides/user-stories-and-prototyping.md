@@ -24,7 +24,7 @@ Most of it is arguing about which stories are the same story wearing two hats, w
 ```text
 docs/product-vision.md         the goal, the constraints, the stakeholders, the boundary, the context diagram
 docs/user-stories/README.md    the index, the MUP candidate, the inactive stories
-docs/user-stories/us/US-01.md  one file per story, with its own criteria
+GitHub issues                  one per story, titled US-nn: <title>, with its criteria and labels
 reports/week-02/prototypes.md  what you showed, what they said, what changed
 ```
 
@@ -61,12 +61,12 @@ A user is any actor with a goal: the person the product serves, and the operator
 The third line is the one that catches a story written from a feature rather than from a need.
 If you cannot finish it with a value, you have written a task, not a story, and the story is hiding an assumption you have not checked.
 
-Write **8 or more**.
+Write **8 or more**, each as a GitHub issue from the issue form.
 A gap often turns into three or four stories, because a single sentence about a need usually covers a happy path, a failure, and a way to undo the thing.
 
 **Split anything too big to build and verify in a week.**
 A story that takes three weeks is three stories, and splitting it is not a detail: an unbuildable story is one your team will quietly abandon, and an abandoned story is one your `Must Have` list lies about.
-When you split, keep the parent traceable from both children, so a reader can see what the pieces were for.
+When you split, close the parent as not planned with a `superseded` comment and link it from both children, so a reader can see what the pieces were for.
 
 **Write the story you expect to build last.**
 It is usually the most honest one, because it is the one nobody has an emotional attachment to.
@@ -80,6 +80,7 @@ The test is simple: could somebody who is not you run the check and get the same
 Write **at least two** per story.
 One criterion for the happy path, and one for what happens when something is missing, empty, or wrong.
 A single criterion per story is easy to satisfy with a line of prose that tests nothing.
+The criteria go in the issue form; an inactive story may carry none.
 
 Any notation works, including `Given`/`When`/`Then`.
 The notation is not the requirement; observability is.
@@ -108,10 +109,11 @@ MoSCoW is a four-way priority scale: `Must Have`, `Should Have`, `Could Have`, a
 Prioritize every story with it.
 The point of the exercise is not the label, it is the argument: whoever disagrees with a `Must Have` has to say why the product is not the product without it.
 
-A `Won't Have` story is inactive by definition, so write it down, with the reason, instead of quietly leaving a story out.
+A `Won't Have` story is inactive by definition, so write it down as an issue and close it as not planned, with the reason, instead of quietly leaving a story out.
 A reader can argue with a recorded `Won't Have`; they can only guess about a missing one.
 
 Then name the **minimum usable product candidate**: a strict, non-empty subset of your `Must Have` stories that you would build first, plus which one you would drop first if you ran out of time.
+Add the candidate issues to the `MUP candidate` milestone.
 
 This is the hardest decision of the week and it belongs here, where the evidence is.
 Week 3 schedules and builds whatever you name here, so a candidate of eight stories is not a commitment, it is a postponement.
@@ -133,7 +135,7 @@ Say the question in one line before you build anything, and write it down.
 If you cannot write the question, you are not ready to prototype, and building first is how a team ends up showing a prototype of the easy part.
 
 **Which user stories does your prototype cover?**
-Answer that explicitly, in the file you record it in.
+Answer that explicitly, in `prototypes.md`, linking the issue of each story.
 A prototype that covers one story is fine, as long as you say which one and why that one.
 
 ## Step 6: Build The Cheapest Thing That Gets A Reaction

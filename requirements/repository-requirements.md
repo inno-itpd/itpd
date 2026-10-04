@@ -283,32 +283,39 @@ If credentials, personal data, or confidential material is committed by mistake:
 5. Write privately what was exposed, when, and what you did about it, and send that to your instructor.
    Do not put that account in the public repository.
 
+<!-- TODO don't mention planning here, it's only about issues -->
+
 ## Planning And Issue Tracking
 
 **Since: W2**
 
 **Required**
 
-1. Create the issue templates the course requires, in `.github/ISSUE_TEMPLATE/`.
-   The course will say which types you need for the week.
-   This week that is `.github/ISSUE_TEMPLATE/user-story.md`, with the fields described below.
-2. Disable blank issue creation.
-3. Open one issue per **active** `US-nn` and link each one from its story file, per [User Stories And Acceptance Criteria](process-requirements.md#user-stories-and-acceptance-criteria).
-   The issue is what the team tracks and what the customer can see; the story file is what the requirements are held in.
-   The issue title is `US-nn: <story title>`, and the description carries the story statement, its acceptance criteria, a link to the story file, and an optional checklist of the remaining work.
-   Tick a checklist item as the work completes, and close the issue when every acceptance criterion passes.
-4. Create branches from the issue where GitHub supports it, and link every pull request to its issue.
-5. Check the relevant acceptance criteria before merging.
+1. Add `.github/ISSUE_TEMPLATE/user-story.yml`, an Issue Form whose fields carry the story statement, the acceptance criteria, the `GAP-nn`, the `VP-nn`, any sources, any notes, and an optional remaining-work checklist.
+   Acceptance criteria are optional in the form, because an inactive story may carry none; the two-criteria floor is required for every active story.
+2. Disable blank issue creation in the issue template configuration.
+3. Open one issue per story, from the form, and link it from `docs/user-stories/README.md`, per [User Stories And Acceptance Criteria](process-requirements.md#user-stories-and-acceptance-criteria).
+   The issue is the story, and the repository's user-story directory holds only the index.
+   The title is `US-nn: <story title>`.
+4. Create the labels the stories use, by any means: `user-story`, and `moscow:must`, `moscow:should`, `moscow:could`, `moscow:won't`.
+   The form applies `user-story`; the team applies one MoSCoW label per story.
+5. Add the minimum usable product candidate issues to a milestone named `MUP candidate`.
+6. An inactive story closes as not planned, with a comment naming the reason and any story that supersedes it.
+   A delivered active story closes as completed.
+7. Create branches from the issue where GitHub supports it, and link every pull request to its issue.
+8. Check the relevant acceptance criteria before merging.
+9. Do not delete an issue or rewrite its body to hide a change; the issue history is part of what a reader follows.
 
 **Recommended**
 
-- Use a planning or issue-tracking tool that keeps its state in the repository, such as the [`backlog.md`](https://github.com/MrLesk/Backlog.md) command-line tool.
+- Use a planning or issue-tracking tool that keeps its state in the repository, such as the [`backlog.md`](https://github.com/MrLesk/Backlog.md) command-line tool, for tasks.
+  It is a task tracker, not the home of a user story, and a story issue may be mentioned in it.
   Its files are repository content rather than artifacts, per [Where Artifacts Live In The Repository](artifact-requirements.md#where-artifacts-live-in-the-repository), and it is not graded on its own.
-  Whatever you choose, the `US-nn` identifiers and the issue links still have to exist, because those are what a reader follows.
 
+<!-- TODO don't mention in this section about user stories -->
 **Since: W3**
 
-6. Keep the project plan in `docs/work-plan.md`, and keep it current as the plan changes.
+10. Keep the project plan in `docs/work-plan.md`, and keep it current as the plan changes.
 
 ## Contributing
 
@@ -359,18 +366,17 @@ The pull request is where the team already writes down what changed and why, whi
 2. The check must fail the build when the Markdown is wrong, and the latest `main` run must be green before you submit.
 3. Any of the common tools is acceptable, and the repository's own conventions decide which: `markdownlint-cli2`, `prettier --check`, or `remark-lint`.
    Pin it, as in [Pinning Third-Party Actions](#pinning-third-party-actions).
-4. The check must accept the YAML frontmatter the user-story files carry, rather than reporting it as a missing document title or a first-line violation.
 
-Markdown is checked in Week 2 because the week is mostly prose: a product vision, eight stories, and a meeting report.
+Markdown is checked in Week 2 because the week is mostly prose: a product vision, the story index, and a meeting report.
 A broken link or a heading that drifted out of Title Case is a defect in that work, and a defect you find on Friday evening is a defect you did not fix.
 
 **Since: W3**
 
-5. Add continuous integration for your product code: linting, formatting or type checking, build, and automated tests, on pull requests and on `main`.
-6. Keep the link check and the Markdown check running.
+4. Add continuous integration for your product code: linting, formatting or type checking, build, and automated tests, on pull requests and on `main`.
+5. Keep the link check and the Markdown check running.
    They are a baseline, not a substitute for the checks your product needs.
-7. Pin the actions you add, as in [Pinning Third-Party Actions](#pinning-third-party-actions).
-8. The latest `main` run of every required check must be green before you submit.
+6. Pin the actions you add, as in [Pinning Third-Party Actions](#pinning-third-party-actions).
+7. The latest `main` run of every required check must be green before you submit.
 
 ## Recommended Throughout The Course
 

@@ -40,7 +40,7 @@ It is the short version of this file and states what is expected of you as a stu
    It is the canonical public entry point for that week's submission.
 3. A **supporting artifact** is a file, link, or board referenced from the weekly public report that holds the detailed content.
 4. A **repository-resident artifact** is committed to the product repository.
-5. An **external-but-indexed artifact** is hosted outside the repository, for example a Figma or Miro board, and must be linked from the weekly public report.
+5. An **external-but-indexed artifact** is hosted outside the repository, for example a GitHub issue, a Figma or Miro board, and must be linked from the weekly public report.
 6. A **private-only artifact** must never be committed to the public repository.
    It is shared only through the Moodle submission.
 7. A **deviation** is a place where your team did something materially different from what an assignment or these requirements describe.
@@ -67,6 +67,7 @@ It is the short version of this file and states what is expected of you as a stu
 2. This rule covers artifacts, not repository mechanics.
    Code, workflows, issue and pull request templates, `LICENSE`, the files in `.github/`, and the files a planning or issue-tracking tool writes into the repository are repository content, not artifacts, and are covered in [Repository Requirements](repository-requirements.md).
    A tool that keeps its state in the repository adds a directory of repository content, not a third location for course work.
+   GitHub issues themselves are not repository files: they are external-but-indexed artifacts, and the weekly public report indexes them.
 3. There is no third location and no migration step.
    When you create an artifact, put it where it will live for the rest of the course.
    Do not create a file in `reports/` and move it to `docs/` later, and do not keep the same content in both places.
@@ -649,55 +650,49 @@ No actor appears that the boundary excludes.
 **Since: W2**
 
 User stories are created in Week 2 and stay current for the rest of the course.
-The directory is the registry; the individual files are what the requirements are held in.
+Each story is a GitHub issue, and `docs/user-stories/README.md` is the index and the registry of identifiers.
 
 **Required**
 
-1. The story files live in `docs/user-stories/us/`, one file per story, named after its identifier: `US-01.md`, `US-02.md`.
-2. `docs/user-stories/README.md` is the **index and the registry of identifiers**.
+1. Every story is a GitHub issue, opened from the [issue form](repository-requirements.md#planning-and-issue-tracking).
+   It carries:
+
+   - The title `US-nn: <story title>`.
+   - The story statement, the `GAP-nn` it closes, the `VP-nn` it supports, any sources, and any notes, in the fields the form provides.
+   - The acceptance criteria, at least two on a story you intend to build.
+   - One `moscow:*` label: `moscow:must`, `moscow:should`, `moscow:could`, or `moscow:won't`.
+   - The `user-story` label, applied by the form.
+      <!-- Alternatively, allow issue type -->
+
+2. Active stories are open or closed as completed, and a delivered story closes as completed and stays in the registry.
+   Inactive stories are closed as not planned, with a comment naming the reason: `removed`, `superseded`, or `won't have`.
+   The reason is free text beginning with one of those three words.
+3. A split parent closes as not planned with a `superseded` comment, keeps its identifier and its statement, and is linked from both children.
+   <!-- TODO decomposed epic vs split parent -->
+4. The issue is the record of change.
+   A change that follows a customer meeting adds a dated comment saying what changed and linking the meeting report.
+   Do not rewrite a story to hide a change; the edit history and the comment are the record.
+5. `docs/user-stories/README.md` is the **index and the registry of identifiers**.
    It is the only place the full list appears, and it carries three sections in this order:
 
-   - `## Active stories`: a row per active story, with its `US-nn`, title, MoSCoW priority, the `GAP-nn` it closes, the `VP-nn` it supports, and a link to its issue.
+   - `## Active stories`: a row per active story, with the `US-nn` and title as plain text and a link to its issue.
    - `## Minimum usable product candidate`: the `US-nn` the team would build first, and which one it would drop first if it ran out of time.
      The candidate is a strict, non-empty subset of the `Must Have` stories, and it is a proposal that Week 3 schedules.
-   - `## Inactive stories`: a row per inactive story, with its `US-nn` and title, the reason it is inactive, and the date it became inactive.
+     The candidate issues are added to a milestone named `MUP candidate`.
+   - `## Inactive stories`: a row per inactive story, with its `US-nn` and title, the reason it is inactive, the date it became inactive, and a link to its closed issue.
      The identifier is kept, and the reason is free text beginning with `removed`, `superseded`, or `won't-have`.
 
-3. Each `us/US-nn.md` carries YAML frontmatter and a body.
-
-   The frontmatter carries:
-
-   - `id`, the `US-nn`.
-   - `title`.
-   - `priority`: `must`, `should`, `could`, or `won't`.
-   - `status`: `active` or `inactive`.
-   - `gap`, the `GAP-nn` it closes.
-   - `vp`, the `VP-nn` it supports.
-   - `sources`, optional, a list of links or anchors where the need also came from.
-   - `issue`, the full URL of its issue (active story only).
-   - `reason`, free text beginning with `removed`, `superseded`, or `won't-have`, and `date` (inactive story only).
-
-   The body carries:
-
-   - The identifier as its own heading, so the story can be found with a search and linked to permanently.
-   - The story statement itself.
-   - A `## Acceptance criteria` section on an active story, with at least two criteria, each observable and pass/fail.
-   - `## Notes` for constraints, assumptions, background, open questions, and why a `Won't Have` story is excluded.
-   - A `## Changes` section only when the team changed the story after writing it, with a dated note for every change, so a reader can see what the validation meeting settled.
-
-   An inactive story keeps its identifier, its file, and its original statement, and carries no issue and no acceptance criteria.
-
-4. Do not copy the story text into the index.
-   The index links to the files; the files hold the content.
-5. The issue tracker is where execution state lives.
+6. Do not copy the story text into the index.
+   The index links the issues; the issues hold the content.
+7. The issue tracker is where execution state lives.
    The index carries a link to each issue rather than a second copy of its status.
-   The story file is the source of truth for the requirement; the issue mirrors the story and its criteria and links back to the file, per [Planning And Issue Tracking](repository-requirements.md#planning-and-issue-tracking).
+   The issue is the source of truth for the requirement and its criteria, per [Planning And Issue Tracking](repository-requirements.md#planning-and-issue-tracking).
 
 **Recommended**
 
 - Use `Given`/`When`/`Then` (Gherkin) for the criteria if it fits the product, and any other notation if it does not.
   The rules are that somebody else can run the check and get the same answer.
-- Keep the story files short enough to read in one sitting.
+- Keep each story short enough to read in one sitting.
 
 **Example**
 
@@ -710,10 +705,12 @@ The product goal is in [the vision](../product-vision.md).
 
 ## Active stories
 
-| Story                                                    | Priority | Closes | Supports | Issue                                        |
-| -------------------------------------------------------- | -------- | ------ | -------- | -------------------------------------------- |
-| [US-01](us/US-01.md) Rules that follow the marked region | must     | GAP-01 | VP-01    | [#42](https://github.com/org/repo/issues/42) |
-| [US-02](us/US-02.md) An audit trail a user can read      | must     | GAP-02 | VP-01    | [#43](https://github.com/org/repo/issues/43) |
+<!-- TODO  -->
+
+| Story                                      | Issue                                        |
+| ------------------------------------------ | -------------------------------------------- |
+| US-01: Rules that follow the marked region | [#42](https://github.com/org/repo/issues/42) |
+| US-02: An audit trail a user can read      | [#43](https://github.com/org/repo/issues/43) |
 
 ## Minimum usable product candidate
 
@@ -722,27 +719,16 @@ US-02 is the one we drop first, because an unreadable audit trail is a bad produ
 
 ## Inactive stories
 
-| Story                                             | Reason                                       | Date       |
-| ------------------------------------------------- | -------------------------------------------- | ---------- |
-| [US-09](us/US-09.md) Share a board by public link | won't-have: no evidence that a user needs it | 2026-10-07 |
+| Story                               | Reason                                       | Date       | Issue                                        |
+| ----------------------------------- | -------------------------------------------- | ---------- | -------------------------------------------- |
+| US-09: Share a board by public link | won't-have: no evidence that a user needs it | 2026-10-07 | [#50](https://github.com/org/repo/issues/50) |
 ```
 
-`docs/user-stories/us/US-01.md`:
+Issue #42, an active story:
 
 ```markdown
----
-id: US-01
-title: Rules that follow the marked region
-priority: must
-status: active
-gap: GAP-01
-vp: VP-01
-issue: https://github.com/org/repo/issues/42
-sources:
-  - ../../../reports/week-01/meeting-report.md#decisions
----
-
-# US-01: Rules that follow the marked region
+Title: US-01: Rules that follow the marked region
+Labels: moscow:must, user-story
 
 As a platform engineer, I want to attach redaction rules to a marked region of our own code,
 so that our classification of what is marked decides what leaves the network.
@@ -756,32 +742,25 @@ so that our classification of what is marked decides what leaves the network.
 
 ## Notes
 
+Closes GAP-01 and supports VP-01.
 The customer confirmed on 2026-10-06 that the company's own marking is authoritative and that we may not
 infer it from file paths, which killed an earlier assumption in [the assumptions table](../../research/value-proposition.md).
 
-## Changes
-
-- 2026-10-06: criterion 2 added after the validation meeting.
-  The customer will not accept a blocked request with no reason, and the first version of the criterion only said the request is blocked.
+Comment, 2026-10-06: criterion 2 added after the validation meeting.
+The customer will not accept a blocked request with no reason, and the first version of the criterion only said the request is blocked.
 ```
 
-`docs/user-stories/us/US-09.md`, an inactive story:
+<!-- TODO in comments, link to meeting reports -->
+
+Issue #50, an inactive story, closed as not planned:
 
 ```markdown
----
-id: US-09
-title: Share a board by public link
-priority: won't
-status: inactive
-gap: GAP-04
-vp: VP-02
-reason: won't-have: no evidence that a user needs it
-date: 2026-10-07
----
-
-# US-09: Share a board by public link
+Title: US-09: Share a board by public link
+Labels: moscow:won't, user-story
 
 As a platform engineer, I want to share a board by public link, so that a colleague can see it without an account.
+
+Closing comment: won't-have: no evidence that a user needs it.
 ```
 
 ## Prototypes

@@ -324,12 +324,14 @@ A boundary nobody can disagree with is a boundary that is not written down.
 A user story is a small, checkable statement of one thing a user needs.
 A user is any actor with a goal: the person the product serves, and the operator or administrator who keeps it running.
 Its job is to make a gap concrete enough that a reviewer can tell whether you delivered it.
+Each story is a GitHub issue, and the repository holds only the index.
 
 **Required**
 
 1. Write **8 or more** user stories, and keep at least **5 of them active**.
    Fewer do not cover a product, and more leaves no week to change them once something turns out to be wrong.
    An **active** story is one you intend to build; an **inactive** story is one you have removed, superseded, or decided not to build.
+   The close reason carries the distinction for the rest of the course: an inactive story is closed as not planned, and a delivered active story is closed as completed.
 2. Every story gets a stable ID `US-01`, `US-02`, and so on.
    IDs are never renumbered, reused, or reassigned, including when the story is edited later in the course.
 3. Every story is a statement of a user's need, not a description of a solution.
@@ -338,30 +340,30 @@ Its job is to make a gap concrete enough that a reviewer can tell whether you de
    A story does not name a screen, a button, or a component; naming the design decides it for whoever builds the story.
    An acceptance criterion may name a screen, a field, or a system state, because that is what an observer checks.
 4. Every story names the `GAP-nn` it closes and the `VP-nn` it supports.
-   A need that also came from somewhere else, such as a customer meeting, records that origin in the story's `sources` rather than rewriting your Week 1 research; only a contradiction updates it, per [Traceability Into Later Weeks](#traceability-into-later-weeks).
+   A need that also came from somewhere else, such as a customer meeting, records that origin in the issue's sources field rather than rewriting your Week 1 research; only a contradiction updates it, per [Traceability Into Later Weeks](#traceability-into-later-weeks).
 5. Every story is prioritized with MoSCoW, relative to the product you intend to finish in this course:
 
    - `Must Have`: the product is not the product without it.
    - `Should Have`: important, and the product is still coherent without it.
    - `Could Have`: valuable, and the first thing to cut.
    - `Won't Have`: a real need you have deliberately excluded.
-     A `Won't Have` story is **inactive** by definition, and its `reason` records why, beginning with `won't-have`.
+     A `Won't Have` story is **inactive** by definition, and its closing comment records why, beginning with `won't-have`.
 
 6. Every active story carries **at least two acceptance criteria**, and each one must be observable and pass/fail.
    Any notation is allowed, including `Given`/`When`/`Then`; the rules are that somebody other than you can run the check and get the same answer.
    "Works well" is not a criterion.
+   An inactive story is not built, so it may carry none.
 7. A story too large to build and verify in one week is two stories.
-   Split it: the parent keeps its identifier and its file, becomes inactive with a `reason` beginning with `superseded`, and stays traceable from both children.
+   Split it: the parent keeps its identifier and its statement, closes as not planned with a comment beginning with `superseded`, and stays traceable from both children.
 8. Name the **minimum usable product candidate**: a strict, non-empty subset of your `Must Have` stories that you would build first.
    Say which one you would drop first if you ran out of time.
    The candidate is a proposal, not a commitment, and Week 3 schedules and builds it.
-9. Open one issue per **active** `US-nn` and link it from the story.
-   The issue is what the team tracks and what the customer can see; the story file is the source of truth and holds the long-form context.
-   The issue repeats the story and its acceptance criteria, links back to the story file, and may carry a checklist of the remaining work, so a contributor can work without leaving the issue.
-   See [Planning And Issue Tracking](repository-requirements.md#planning-and-issue-tracking).
-10. An inactive story keeps its identifier, its file, and its original statement.
-    It carries no issue and no acceptance criteria, and its frontmatter records the `reason` and the `date` it became inactive.
-    If it already has an issue, close that issue and leave a comment naming the reason and any story that supersedes it.
+9. Open one issue per story, from the form in [Planning And Issue Tracking](repository-requirements.md#planning-and-issue-tracking).
+   The issue is the story and the source of truth; the form carries the statement, the acceptance criteria, the `GAP-nn`, the `VP-nn`, and any sources, and the index in `docs/user-stories/README.md` links it.
+   The issue may carry a checklist of the remaining work, so a contributor can work without leaving it.
+10. A story becomes inactive by being closed as not planned, with a comment naming the reason and any story that supersedes it.
+    It keeps its identifier and its statement in the issue, and the index records the reason and the date.
+    An active story that is delivered closes as completed and stays in the active registry.
 
 **Recommended**
 
@@ -415,7 +417,7 @@ It is not a showcase, and it is not the product.
 
    - `reports/week-NN/prototypes.md` records what you showed, which `US-nn` or `GAP-nn` it tested, and what the customer said.
    - The [meeting report](artifact-requirements.md#meeting-report) `## Decisions` table names the `US-nn` it changes.
-   - The `us/US-nn.md` file carries a dated note saying what changed.
+   - The story issue carries a dated comment saying what changed and linking the meeting report.
    - The weekly public report names the `US-nn` that changed.
 
 5. A prototype is disposable.
@@ -479,7 +481,7 @@ The Week 11 individual reflection and peer evaluation are private and go in the 
    See [Artifact Requirements](artifact-requirements.md#where-artifacts-live-in-the-repository).
 3. If you drop a gap mid-course, keep it in the gap analysis marked as dropped, and say which value propositions and user stories were affected.
 4. A later need that your Week 1 research did not anticipate does not rewrite the research.
-   Record its additional origin in the story's `sources`; update the research only when the later need contradicts it.
+   Record its additional origin in the issue's sources field; update the research only when the later need contradicts it.
 
 ## Research Honesty Rules
 

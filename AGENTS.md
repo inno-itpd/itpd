@@ -138,13 +138,15 @@ It keeps its own rules, its build, and its gate in `lectures/AGENTS.md`; this fi
 
 ## `docs/` Destination Map
 
+<!-- TODO don't decide until paths are settled in the assignment -->
 Decided now so no week invents a path.
 A later assignment may extend this map, but should not silently move an entry.
 
 | Week | Maintained artifacts                                                                                      |
 | ---- | --------------------------------------------------------------------------------------------------------- |
 | W1   | `docs/research/` — `alternatives.md`, `comparison.md`, `gap-analysis.md`, `value-proposition.md`          |
-| W2   | `docs/product-vision.md`, `docs/user-stories/`                                                            |
+| W2   | `docs/product-vision.md`, `docs/user-stories/README.md` (the index; the stories are GitHub issues)        |
+<!-- TODO remove future weeks -->
 | W3   | `docs/work-plan.md`, `docs/threshold-of-success.md`; `CONTRIBUTING.md`, `CHANGELOG.md`; SemVer tags begin |
 | W4   | `docs/quality-requirements.md`, `docs/verification-plan.md`, `docs/architecture/`                         |
 | W5   | `docs/testing.md`, `docs/deployment.md`                                                                   |
@@ -182,7 +184,9 @@ Before writing or editing an assignment:
 
 Use these words and do not invent local synonyms:
 
-`weekly report`, `weekly public report`, `supporting artifact`, `private-only artifact`, `external-but-indexed artifact`, `repository-resident artifact`, `deviation`, `customer`, `kickoff meeting`, `meeting report`, `meeting transcript`, `meeting notes`, `meeting script`, `decision`, `action point`, `open question`, `alternative`, `property`, `gap`, `value proposition`, `threshold of success`, `proof of concept` (PoC), `minimum usable product` (MUP), `minimum viable product` (MVP), `product backlog`, `sprint backlog`, `PBI`, `SBI`, `story points`, `sprint retrospective`, `team number`.
+`weekly report`, `weekly public report`, `supporting artifact`, `private-only artifact`, `external-but-indexed artifact`, `repository-resident artifact`, `deviation`, `customer`, `kickoff meeting`, `meeting report`, `meeting transcript`, `meeting notes`, `meeting script`, `decision`, `action point`, `open question`, `alternative`, `property`, `gap`, `value proposition`, `story issue`, `threshold of success`, `proof of concept` (PoC), `minimum usable product` (MUP), `minimum viable product` (MVP), `product backlog`, `sprint backlog`, `PBI`, `SBI`, `story points`, `sprint retrospective`, `team number`.
+
+<!-- TODO "user story issue"? -->
 
 "Customer" is the term for the person your team answers to, who is your instructor.
 Never "client" or "stakeholder" for them.

@@ -25,7 +25,7 @@ Ask for 60 if the customer can give it.
 reports/week-NN/meeting-script.md     the target, the questions, the roles
 reports/week-NN/meeting-report.md     the decisions, the action points, the disagreements
 reports/week-NN/meeting-notes.md      or meeting-transcript.md, never both
-docs/user-stories/us/US-nn.md         a dated note on what the meeting changed
+the story issue                       a dated comment on what the meeting changed
 reports/week-NN/README.md             the changed US-nn, named
 ```
 
@@ -113,12 +113,12 @@ Then make sure the change reaches all four places, because each one answers a di
 | ---------------------------------- | ---------------------------------------------------- |
 | `reports/week-NN/prototypes.md`    | What did we show, and what did they say?             |
 | `meeting-report.md` `## Decisions` | What did we decide, and about which story?           |
-| `docs/user-stories/us/US-nn.md`    | What does the story say now, and when did it change? |
+| the story issue                    | What does the story say now, and when did it change? |
 | `reports/week-NN/README.md`        | What should a reader look at first?                  |
 
-The story file is the one that is easy to skip, and skipping it is what makes a decision invisible to a reader of the stories.
-Add a dated note to the story saying what changed and why.
-A story edited three times with no dated note gives a reader no way to tell what the customer actually settled from what the team decided on its own.
+The issue comment is the one that is easy to skip, and skipping it is what makes a decision invisible to a reader of the stories.
+Add a dated comment to the issue saying what changed and why, and link the meeting report.
+A story edited three times with no comment gives a reader no way to tell what the customer actually settled from what the team decided on its own.
 
 If nothing changed, that is itself the finding, and it is a serious one.
 Either your prototype tested something the customer already agreed with, or you asked questions whose answers could not have contradicted anything.
@@ -134,8 +134,8 @@ Write that down too; it is more useful than a week that looks busy.
   You are the only person in the room who cannot be objective about it.
 - **Treating approval as the result.**
   The `## Disagreements` table should not be empty.
-- **Deciding but not editing.**
-  A decision in the meeting report that never reaches the story file has not actually changed anything.
+- **Deciding but not commenting.**
+  A decision in the meeting report that never reaches the story issue has not actually changed anything.
 - **Showing the easy part.**
   If the customer is impressed and you are not surprised, the prototype went to the wrong story.
 - **Twelve questions in thirty minutes.**
