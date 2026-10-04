@@ -18,7 +18,8 @@ Requirements that arrive later are written now so that later weeks do not have t
 - [Permalinks And Snapshots](#permalinks-and-snapshots)
 - [Configuration And Sensitive Information](#configuration-and-sensitive-information)
 - [Sensitive-Data Incident Response](#sensitive-data-incident-response)
-- [Planning And Issue Tracking](#planning-and-issue-tracking)
+- [Issue Tracking](#issue-tracking)
+- [Tracking Tasks Inside The Repository](#tracking-tasks-inside-the-repository)
 - [Contributing](#contributing)
 - [Changelog, Releases And Versioning](#changelog-releases-and-versioning)
 - [Continuous Integration](#continuous-integration)
@@ -284,9 +285,7 @@ If credentials, personal data, or confidential material is committed by mistake:
 5. Write privately what was exposed, when, and what you did about it, and send that to your instructor.
    Do not put that account in the public repository.
 
-<!-- TODO don't mention planning here, it's only about issues -->
-
-## Planning And Issue Tracking
+## Issue Tracking
 
 **Since: W2**
 
@@ -307,17 +306,17 @@ If credentials, personal data, or confidential material is committed by mistake:
 7. Check the relevant acceptance criteria before merging, and name the `AC-nn` and its story issue in the pull request.
 8. Do not delete an issue or rewrite its body to hide a change; the issue history is part of what a reader follows.
 
+## Tracking Tasks Inside The Repository
+
+**Since: W2**
+
 **Recommended**
 
-- Use a planning or issue-tracking tool that keeps its state in the repository, such as the [`backlog.md`](https://github.com/MrLesk/Backlog.md) command-line tool, for tasks.
-  It is a task tracker, not the home of a user story, and a story issue may be mentioned in it.
+<!-- TODO why recommended -->
+
+- Use a task tracker that keeps its state in the repository, such as the [`backlog.md`](https://github.com/MrLesk/Backlog.md) command-line tool.
+  It is not the home of a user story, and a story issue may be mentioned in it.
   Its files are repository content rather than artifacts, per [Where Artifacts Live In The Repository](artifact-requirements.md#where-artifacts-live-in-the-repository), and it is not graded on its own.
-
-<!-- TODO don't mention in this section about user stories -->
-
-**Since: W3**
-
-9. Keep the project plan in `docs/work-plan.md`, and keep it current as the plan changes.
 
 ## Contributing
 

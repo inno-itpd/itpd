@@ -372,7 +372,7 @@ Each story is a GitHub issue, and the issues are the only place the stories live
 9. Name the **minimum usable product candidate** in the Week 2 report: a strict, non-empty subset of your `Must Have` stories that you would build first.
    Say which one you would drop first if you ran out of time.
    The candidate is a proposal, not a commitment.
-10. Open one issue per story, from the form in [Planning And Issue Tracking](repository-requirements.md#planning-and-issue-tracking).
+10. Open one issue per story, from the form in [Issue Tracking](repository-requirements.md#issue-tracking).
     The issue is the story and the source of truth; the form carries the statement, the acceptance criteria, each with its `AC-nn`, the `Traces to` list, and any notes.
     The issue may carry a checklist of the remaining work, so a contributor can work without leaving it.
 11. A story becomes inactive by being closed as not planned, with a comment naming the reason.

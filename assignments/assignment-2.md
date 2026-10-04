@@ -87,7 +87,7 @@ Follow [Product Vision](../requirements/artifact-requirements.md#product-vision)
 
 ## Part 2: Write And Track The User Stories As Issues
 
-Complete every requirement marked `**Since: W2**` in [Planning And Issue Tracking](../requirements/repository-requirements.md#planning-and-issue-tracking).
+Complete every requirement marked `**Since: W2**` in [Issue Tracking](../requirements/repository-requirements.md#issue-tracking).
 
 1. Add `.github/ISSUE_TEMPLATE/user-story.yml`, an Issue Form, and disable blank issue creation.
    The form's fields carry the story statement, the `Traces to` list, any notes, the acceptance criteria, and an optional remaining-work checklist.

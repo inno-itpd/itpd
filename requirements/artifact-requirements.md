@@ -660,7 +660,7 @@ Each story is a GitHub issue, and the `user-story` label identifies story issues
 
 **Required**
 
-1. Every story is a GitHub issue, opened from the [issue form](repository-requirements.md#planning-and-issue-tracking).
+1. Every story is a GitHub issue, opened from the [issue form](repository-requirements.md#issue-tracking).
    It carries:
 
    - The title `US-nn: <story title>`.
@@ -681,7 +681,7 @@ Each story is a GitHub issue, and the `user-story` label identifies story issues
 4. The **registry of identifiers** is the issue list filtered by the `user-story` label.
    It shows open and closed issues, so an inactive story keeps its `US-nn` and stays findable after it closes.
 5. Do not keep a second list of stories in the repository.
-   The issue is the source of truth for the requirement and its criteria, and the issue tracker is where execution state lives, per [Planning And Issue Tracking](repository-requirements.md#planning-and-issue-tracking).
+   The issue is the source of truth for the requirement and its criteria, and the issue tracker is where execution state lives, per [Issue Tracking](repository-requirements.md#issue-tracking).
 
 **Recommended**
 
