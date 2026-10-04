@@ -108,7 +108,7 @@ Not a feature name, not a pricing tier, not a marketing adjective.
 4. Every cell must reference the evidence it came from, by link or by pointing at the `ALT-nn` section it was derived from.
    A cell that cannot be traced back to an observation is an opinion.
 
-5. A strength or weakness must be relative. "No audit log" is a weakness for a gateway that routes company code and an irrelevance for a running app.
+5. A strength or weakness must be relative. "No built-in payments" is a weakness for an expert who sells consultations and an irrelevance for a team that books internal meetings.
    State the condition that makes it matter.
 
 6. Distinguish what you observed from what you concluded.
@@ -125,9 +125,9 @@ Not a feature name, not a pricing tier, not a marketing adjective.
 A property row that works:
 
 ```markdown
-| Property                                                                       | LiteLLM                                                                  | OpenRouter                                           |
-| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ---------------------------------------------------- |
-| Can a team define its own redaction rules before a request leaves the network? | No. Only a global set of patterns in config, applied uniformly (ALT-02). | No, requests leave the network immediately (ALT-03). |
+| Property                                                                               | Calendly                                                                                             | Cal.com                                                                                                |
+| -------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------ |
+| Can one booking collect the payment, create the video link, and deliver the materials? | No. Payment and video are integrations on paid plans, and the booking carries no materials (ALT-01). | Partial. Self-hosting and a Stripe setup stand between the expert and the first paid booking (ALT-02). |
 ```
 
 A row that does not:
@@ -193,16 +193,16 @@ It is not a feature you happen to want, and it is not a missing feature that nob
 **Example**
 
 ```markdown
-## VP-01: Redaction rules that belong to the team
+## VP-01: One link that carries the whole booking
 
-**User:** platform engineer at a company that sends marked source code to external models.
-**Problem:** sensitive-code rules are global configuration, so they cannot follow the company's own classification of what is marked.
-**What we do that the alternatives do not:** let a team attach redaction rules to the marked regions of its own code, and keep those rules and their logs under the company's control.
-**Closes:** GAP-01.
-**What it costs:** a plugin author has to learn our rule format.
-This is a real setup cost and we do not hide it.
-**How a competitor would respond:** LiteLLM could add per-request rules in a release.
-The defensible part is the logging standard, not the rules themselves.
+**User:** independent coach who sells one-hour sessions online.
+**Problem:** the booking, the payment, and the meeting materials live in three tools, so unpaid clients block slots and prepared clients are rare.
+**What we do that the alternatives do not:** one link where the client books a slot, pays, and receives the video link and the materials, with no second account.
+**Closes:** [GAP-01](gap-analysis.md#gap-01-bookings-that-arrive-unpaid-and-unprepared).
+**What it costs:** the expert connects a payment provider before the first booking and uploads the materials per meeting type.
+This is a real setup cost.
+**How a competitor would respond:** Calendly or Cal.com could bundle payments and materials into the free tier.
+The defensible part is the single flow and its pricing, not the fields.
 ```
 
 **Recommended**
@@ -248,7 +248,7 @@ It turns the Week 1 research into something you can be held to.
 ```markdown
 ## Goal
 
-A platform engineer at a company that sends marked source code to external models can have the code's own classification of what is marked decide the redaction rules, without those rules leaving the company.
+An independent expert can send one link where a client books a time, pays, and receives the meeting link and materials, without assembling the same session from three tools.
 
 **Supports:** VP-01.
 ```
@@ -335,8 +335,8 @@ Each story is a GitHub issue, and the issues are the only place the stories live
 2. Every story gets a stable ID `US-01`, `US-02`, and so on.
    IDs are never renumbered, reused, or reassigned, including when the story is edited later in the course.
 3. Every story is a statement of a user's need, not a description of a solution.
-   "As a platform engineer, I want to attach redaction rules to a marked region, so that the company's own classification decides what leaves the network" is a need.
-   "Add a redaction rule editor" is a feature you have already designed.
+   "As a coach, I want a client to pay when they book, so that an unpaid slot does not block a paying one for the rest of the week" is a need.
+   "Add a payment page" is a feature you have already designed.
    A story does not name a screen, a button, or a component; naming the design decides it for whoever builds the story.
    An acceptance criterion may name a screen, a field, or a system state, because that is what an observer checks.
 4. Every story names the `GAP-nn` it closes and the `VP-nn` it supports.
@@ -381,17 +381,17 @@ Each story is a GitHub issue, and the issues are the only place the stories live
 **Example**
 
 ```markdown
-# US-01: Rules that follow the marked region
+# US-01: Pay at booking
 
-As a platform engineer, I want to attach redaction rules to a marked region of our own code,
-so that our classification of what is marked decides what leaves the network.
+As a coach who sells sessions online, I want a client to pay when they book,
+so that an unpaid slot does not block a paying one for the rest of the week.
 
 ## Acceptance criteria
 
-1. AC-01: Given a repository with one marked region, when I attach a rule to that region, then the rule applies to
-   every request that includes that region, and the log records which rule fired.
-2. AC-02: Given a marked region with no rule attached, when a request includes it, then the request is blocked and
-   the reason names the region, and no request content is logged.
+1. AC-01: Given a paid meeting type with one free slot, when a client books that slot, then the slot
+   is held while the client pays and is released back to the calendar when the hold expires.
+2. AC-02: Given a client who does not finish payment, when the hold expires, then the booking is not
+   confirmed and no meeting link is created.
 ```
 
 ## Validation

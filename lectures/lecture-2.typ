@@ -33,8 +33,8 @@
 //   - No Scrum in this deck. lecture-2.1.pdf uses Scrum as its tactical
 //     example; ITPD covers sprints, planning, estimation, and retrospective
 //     in Week 3, so they are not here.
-//   - No product examples from the 2025 decks. One invented product, a study
-//     group planner, carries every worked example, and it uses the US-01
+//   - No product examples from the 2025 decks. One invented product, a meeting
+//     booking app, carries every worked example, and it uses the US-01
 //     identifier rather than an identifier that would suggest a real student
 //     repository.
 //   - A user is any actor with a goal, including an operator.
@@ -104,7 +104,7 @@
 )
 
 // Titles are passed as strings, not markup content, on purpose.
-// A markup title like [1. Modular LLM gateway] is parsed as an enumeration
+// A markup title like [1. Meeting booking app] is parsed as an enumeration
 // item, so Typst renders "1." as a list marker and indents the heading.
 // The parameter is deliberately left un-annotated: a type annotation makes the
 // parameter named-only in Typst 0.15, so the call sites have to f(title: ...).
@@ -283,18 +283,20 @@
   If you cannot finish a user story with a value, you have written a task.
 ]
 
+// TODO improve examples
+
 #slide("A non-story and a story")[
-  Both are about a study group planner. Both are made up.
+  Both are about a meeting booking app. Both are made up.
 
   *Not a story:*
 
-  #quoted[As a student, I want a calendar page so that I can see all my study sessions in one place.]
+  #quoted[As an expert, I want a booking page with a calendar, so that my clients can see my available time.]
 
-  #note[This is a feature description ("a calendar page") and presentation description ("in one place"). Which value does having the sessions in one place provide?]
+  #note[This is a feature description ("a booking page") and presentation description ("my clients can see my available time"). Which value does showing clients the available time provide?]
 
   *A story:*
 
-  #quoted[As a student preparing for an exam, I want to see the sessions I have already missed, so that I can decide which one to reschedule before the week is over.]
+  #quoted[As a coach who sells sessions online, I want a client to pay when they book, so that an unpaid slot does not block a paying one for the rest of the week.]
 
   #note[This one has a more precise \<user\> and captures the value they get from what the product allows them to do. It doesn't prescribe the exact design.]
 ]

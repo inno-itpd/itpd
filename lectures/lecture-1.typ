@@ -38,7 +38,7 @@
 )
 
 // Titles are passed as strings, not markup content, on purpose.
-// A markup title like [1. Modular LLM gateway] is parsed as an enumeration
+// A markup title like [1. Meeting booking app] is parsed as an enumeration
 // item, so Typst renders "1." as a list marker and indents the heading.
 // The parameter is deliberately left un-annotated: a type annotation makes the
 // parameter named-only in Typst 0.15, so the call sites have to be f(title: ...).

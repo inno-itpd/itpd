@@ -36,7 +36,7 @@ Open with the belief you are carrying into the room, then the one or two things 
 That last line is the reason the meeting exists, and it is also what the [meeting report](../requirements/artifact-requirements.md#meeting-report)'s `## Open questions` table is drawn from afterwards.
 
 The beliefs worth testing are the ones you would have to change your product for.
-At a kickoff, that is usually the problem-space reading itself: not "do they like dashboards" but "we think nobody lets a team attach its own rules to its own code, and we are about to spend the course building that".
+At a kickoff, that is usually the problem-space reading itself: not "do they like dashboards" but "we think nobody gives an expert one link that carries the whole booking, and we are about to spend the course building that".
 If the customer says no, the answer has to be able to change what you build next.
 
 Write the target down as a single sentence before you write any question.
@@ -51,7 +51,7 @@ More than about four in an area and you will read them faster than you will list
 Why build rather than buy, and what this changes about their work when it works.
 
 **End users.**
-Who touches the code, who reviews the result, and whether those are the same person.
+Who books the session, who pays, and whether those are the same person.
 A gap that only matters to one role is a gap for that role.
 
 **Current workflow.**
@@ -84,12 +84,12 @@ Most bad customer questions are our idea coming back wearing the customer's clot
 The left column is a question a team asks because it has already decided something.
 The right column asks about a past event instead, so the answer is a fact rather than a compliment.
 
-| Instead of                                                      | Ask                                                                          |
-| --------------------------------------------------------------- | ---------------------------------------------------------------------------- |
-| "Would you like a dashboard?"                                   | "What do you look at when you want to know what a model did with your code?" |
-| "Is latency important to you?"                                  | "When the round trip got slow last month, what did you do?"                  |
-| "Do you like our pricing?"                                      | "What are you paying now, and what is annoying about it?"                    |
-| "Would you switch from your current tool for better redaction?" | "What made you pick the running coach over the alternatives?"                |
+| Instead of                                                      | Ask                                                       |
+| --------------------------------------------------------------- | --------------------------------------------------------- |
+| "Would you like a dashboard?"                                   | "What do you look at when a client has not paid yet?"     |
+| "Is latency important to you?"                                  | "When the last payment failed, what did you do?"          |
+| "Do you like our pricing?"                                      | "What are you paying now, and what is annoying about it?" |
+| "Would you switch from your current tool for one booking link?" | "What made you pick Calendly over a shared calendar?"     |
 
 The rewrite is not only about the words.
 "Would you switch" is untestable, because nobody predicts their own behaviour accurately.

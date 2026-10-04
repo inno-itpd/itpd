@@ -182,18 +182,18 @@ A Week 01 report, from `reports/week-01/README.md`:
 
 ## Project
 
-Modular LLM Gateway, team 7.
+Meeting booking app.
 
-Our problem-space sentence: a platform engineer whose company sends marked source code to external model providers needs the code's own classification to follow the request, and no product lets them set that.
+Our problem-space sentence: an expert who sells sessions online needs one link where a client can book, pay, and receive the meeting link and materials, and no product carries all three in one flow.
 
 ## What we did
 
-We researched four alternatives, compared them on seven properties, and identified three gaps worth building on.
+We researched four alternatives, compared them on six properties, and identified three gaps worth building on.
 
 ## Findings
 
-The two strongest products solve routing well and data handling badly.
-Nobody lets a team define its own redaction rules, which is the gap our project targets.
+The strongest products schedule time well and leave payment and materials to integrations or paid tiers.
+Nobody gives an expert one flow from booking to a paid, prepared session, which is the gap our project targets.
 
 ## Coverage
 
@@ -318,37 +318,37 @@ A recording is a separate, private-only artifact.
 
 ## Summary
 
-- The customer accepted `VP-01` and told us to stop treating `GAP-04` as a differentiator.
-- `GAP-02` survives only if the team-size constraint is real, which we have not checked.
-- Two weeks of work are now contingent on one check we have not done.
+- The customer accepted `VP-01` and told us to stop treating reminders as a differentiator.
+- `GAP-02` survives only if experts really lose paid time to unpaid bookings, which we have not checked.
+- The open payment-timing question decides whether payment happens before or after confirmation.
 
 ## Decisions
 
-| Decision                             | Made by             | Traces to |
-| ------------------------------------ | ------------------- | --------- |
-| Build the gateway core, not the host | Customer            | `VP-01`   |
-| Drop multi-tenant isolation from W3  | Customer            | `GAP-04`  |
-| Keep the plugin model for delivery   | Team, not contested | `VP-01`   |
+| Decision                                   | Made by             | Traces to |
+| ------------------------------------------ | ------------------- | --------- |
+| Build paid bookings, not the calendar view | Customer            | `VP-01`   |
+| Drop multi-expert scheduling from W3       | Customer            | `GAP-04`  |
+| Keep the web link for delivery             | Team, not contested | `VP-01`   |
 
 ## Action points
 
-| Action                                           | Owner | Due           |
-| ------------------------------------------------ | ----- | ------------- |
-| Verify the team-size constraint with two sources | bob   | End of Week 2 |
-| Re-cut the comparison without the host property  | carol | End of Week 1 |
+| Action                                               | Owner | Due           |
+| ---------------------------------------------------- | ----- | ------------- |
+| Interview two experts who take payments in chat      | bob   | End of Week 2 |
+| Re-cut the comparison without the reminders property | carol | End of Week 1 |
 
 ## Open questions
 
-| Question                                          | What it would change                                  | Follow-up                |
-| ------------------------------------------------- | ----------------------------------------------------- | ------------------------ |
-| Is shared rules across tenants a real constraint? | Whether `VP-01` is a feature or a deployment decision | bob, carried into Week 2 |
+| Question                                 | What it would change                                 | Follow-up                |
+| ---------------------------------------- | ---------------------------------------------------- | ------------------------ |
+| Do clients pay at booking or on the day? | Whether payment happens before or after confirmation | bob, carried into Week 2 |
 
 ## Disagreements
 
-| Your position                   | Customer's position                  | What you changed                        |
-| ------------------------------- | ------------------------------------ | --------------------------------------- |
-| `GAP-04` is a differentiator    | Isolation is a solved market problem | Dropped it from the value proposition   |
-| You would ship a hosted service | A plugin host is enough              | `VP-01` is now written as a plugin host |
+| Your position                 | Customer's position                         | What you changed                      |
+| ----------------------------- | ------------------------------------------- | ------------------------------------- |
+| `GAP-04` is a differentiator  | Multi-expert scheduling is a solved problem | Dropped it from the value proposition |
+| You would ship a Telegram bot | A web link is enough                        | `VP-01` is now written as a web link  |
 ```
 
 ### Meeting Transcript
@@ -361,8 +361,8 @@ A recording is a separate, private-only artifact.
 3. Use one sentence per line, and put a timestamp at the start of the line with a speaker label:
 
    ```text
-   [00:00:04] alice: We picked the modular LLM gateway from the catalog.
-   [00:00:19] Customer: What made you choose that one over the running coach?
+   [00:00:04] alice: We settled on the meeting booking app after the research.
+   [00:00:19] Customer: What made you choose it over the alternatives?
    ```
 
 4. Label speakers consistently.
@@ -383,11 +383,11 @@ A recording is a separate, private-only artifact.
 **Date:** 2026-09-29
 **Participants:** alice, bob, carol, Customer
 
-[00:00:04] alice: We picked the modular LLM gateway from the catalog.
-[00:00:19] Customer: What made you choose that one over the running coach?
-[00:01:02] bob: The plugin model means we can start with a core and add pieces.
+[00:00:04] alice: We settled on the meeting booking app after the research.
+[00:00:19] Customer: What made you choose it over the alternatives?
+[00:01:02] bob: The paid booking flow is the part the alternatives leave half-done.
 [00:01:40] Customer: [redacted]
-[00:02:11] carol: We still need to check whether the team size constraint is real.
+[00:02:11] carol: We still need to check whether clients will pay before the session.
 ```
 
 ### Meeting Notes
@@ -444,39 +444,39 @@ A recording is a separate, private-only artifact.
 
 ## Context
 
-Our problem-space sentence: a platform engineer whose company sends marked source code to external model providers needs the code's own classification to follow the request, and no product lets them set that.
+Our problem-space sentence: an expert who sells sessions online needs one link where a client can book, pay, and receive the meeting link and materials, and no product carries all three in one flow.
 
 We believe this is the gap our product targets, and that it is worth two months of work.
-We have not checked whether teams this size hit it, and we do not know whether the customer will accept a plugin-first product rather than a hosted one.
+We have not checked whether clients will pay at booking, and we do not know whether the customer will accept a web page rather than a Telegram bot.
 This meeting tests both.
 
 ## Questions
 
 **Business goals**
 
-1. _(open)_ What made you decide to build something rather than buy something?
-2. _(open)_ When this works, what is different about your work?
+1. _(open)_ Why sell sessions online rather than through your existing clients?
+2. _(open)_ When this works, what changes in your week?
 
 **End users**
 
-3. _(open)_ Who writes the code that gets sent, and who reviews what comes back?
-4. _(closed)_ Is the reviewer the same person as the author?
+3. _(open)_ Who books a session, and who pays?
+4. _(closed)_ Are those the same person?
 
 **Current workflow**
 
-5. _(open)_ Walk me through the last time a marked file went to an external model.
+5. _(open)_ Walk me through the last booking and its payment, step by step.
    What happened at each step?
-6. _(open)_ Where does the classification of "marked" actually live in your setup today?
+6. _(open)_ Where do the payment, the meeting link, and the materials live today?
 
 **Pain points and constraints**
 
-7. _(open)_ What is the most annoying part of the last time you did this?
-8. _(closed)_ Can anything be sent without a human reading it first?
+7. _(open)_ What was the most annoying part of the last booking that went wrong?
+8. _(closed)_ Can you accept online payments today?
 
 **Scope**
 
-9. _(open)_ If we could only ship one of these, which one would you keep?
-10. _(closed)_ Is a hosted deployment acceptable to you, or does it have to run inside your network?
+9. _(open)_ If only one of booking, payment, or materials could ship, which one survives?
+10. _(closed)_ Is a Telegram bot acceptable, or does it have to be a web page?
 
 ## Roles
 
@@ -484,12 +484,12 @@ alice asks, bob takes notes, carol observes and records what we did not ask.
 
 ## Key improvements
 
-**"Would you like a dashboard?" -> "What do you look at when you want to know what an external model did with our code?"**
+**"Would you like a dashboard?" -> "What do you look at when a client has not paid yet?"**
 
 We were offering a solution.
 The rewrite asks for the past, so the answer describes a real routine instead of a preference for our idea.
 
-**"Is latency important to you?" -> "When the round trip got slow last month, what did you do?"**
+**"Is latency important to you?" -> "When the last payment failed, what did you do?"**
 
 The original asks about an abstract property.
 The rewrite anchors it to an event the customer will remember, so the answer is a measurement rather than a preference.
@@ -550,7 +550,7 @@ ChatGPT and Claude, both through the web UI.
 
 ## What we used them for
 
-Drafted the property list for the comparison table and summarised the LiteLLM docs.
+Drafted the property list for the comparison table and summarised the Calendly and Cal.com docs.
 
 ## What we did with the output
 
@@ -598,46 +598,43 @@ It is created once, in its final place, and then stays current.
 ```markdown
 # Product vision
 
-Modular LLM gateway
+Meeting booking app
 
 ## Goal
 
-<!-- TODO use a simpler example -->
+An independent expert can send one link where a client books a time, pays, and receives the meeting link and materials, without assembling the same session from three tools.
 
-A platform engineer at a company that sends marked source code to external models can have the code's own classification of what is marked decide the redaction rules, without those rules leaving the company.
-
-**Supports:** [VP-01](research/value-proposition.md#vp-01-redaction-rules-that-belong-to-the-team).
+**Supports:** [VP-01](research/value-proposition.md#vp-01-one-link-that-carries-the-whole-booking).
 
 ## Stakeholders
 
-- **Platform engineer** at the customer company: the primary user.
-- **Security lead**: approves the rule format, does not use the product daily.
+- **Independent expert** (tutor, coach, or consultant) who sells sessions: the primary user.
+- **Client**: books and pays, and uses the product once.
 - **The customer**: decides the scope, and is the course instructor.
 
 ## Constraints
 
-| Constraint                            | Source         | What it costs                         |
-| ------------------------------------- | -------------- | ------------------------------------- |
-| Deployed on a single VPS              | Customer-given | No multi-node failover                |
-| Built and maintained by 3 people      | Team-given     | No component may need a second expert |
-| Eleven-week course                    | Environmental  | Limited scope can be delivered.       |
-| Runs plugins written by coding agents | Derived        | The plugin contract must be explicit  |
+| Constraint                       | Source         | What it costs                         |
+| -------------------------------- | -------------- | ------------------------------------- |
+| Deployed on a single small VPS   | Customer-given | No failover during a demo             |
+| Built and maintained by 3 people | Team-given     | No component may need a second expert |
+| Eleven-week course               | Environmental  | Payment and video stay integrations   |
+| Payment provider sandbox only    | Derived        | No live charges before Week 8         |
 
 ## Boundary
 
 The product will not:
 
-- Store request content.
-- Decide what is sensitive for the customer.
-- Run outside a single VPS.
+- Replace the video call service.
+- Schedule more than one expert at a time.
+- Sell recurring subscriptions or bundles.
 
 ## Context
 
 ![System context diagram](architecture/context.svg)
 
-The platform engineers and the security lead are the actors.
-The external systems are the external model
-providers, the company's source control, and the audit log sink.
+The independent experts and their clients are the actors.
+The external systems are the calendar, the payment provider, and the video service.
 No actor appears that the boundary excludes.
 
 ## Where The Detail Lives
@@ -691,27 +688,27 @@ Each story is a GitHub issue, and the `user-story` label identifies story issues
 Issue #42, an active story:
 
 ```markdown
-Title: US-01: Rules that follow the marked region
+Title: US-01: Pay at booking
 Labels: moscow:must, user-story
 
-As a platform engineer, I want to attach redaction rules to a marked region of our own code,
-so that our classification of what is marked decides what leaves the network.
+As a coach who sells sessions online, I want a client to pay when they book,
+so that an unpaid slot does not block a paying one for the rest of the week.
 
 ## Acceptance criteria
 
-1. `AC-01`: Given a repository with one marked region, when I attach a rule to that region, then the rule applies to
-   every request that includes that region, and the log records which rule fired.
-2. `AC-02`: Given a marked region with no rule attached, when a request includes it, then the request is blocked and
-   the reason names the region, and no request content is logged.
+1. `AC-01`: Given a paid meeting type with one free slot, when a client books that slot, then the slot is held
+   while the client pays and is released back to the calendar when the hold expires.
+2. `AC-02`: Given a client who does not finish payment, when the hold expires, then the booking is not confirmed
+   and no meeting link is created.
 
 ## Notes
 
 Closes GAP-01 and supports VP-01.
-The customer confirmed on 2026-10-06 that the company's own marking is authoritative and that we may not
-infer it from file paths, which killed an earlier assumption in [the assumptions table](../../research/value-proposition.md).
+The customer confirmed on 2026-10-06 that payment happens before confirmation, which retired the pay-later
+assumption in [the assumptions table](../../research/value-proposition.md).
 
 Comment, 2026-10-06: `AC-02` added after the validation meeting.
-The customer will not accept a blocked request with no reason, and the first version of the story only had `AC-01`, which said the request is blocked.
+The customer will not accept a hold that confirms without payment, and the first version of the story only had `AC-01`, which said the slot is held.
 ```
 
 <!-- TODO in comments, link to meeting reports -->
@@ -719,12 +716,12 @@ The customer will not accept a blocked request with no reason, and the first ver
 Issue #50, an inactive story, closed as not planned:
 
 ```markdown
-Title: US-09: Share a board by public link
+Title: US-09: Sell session bundles
 Labels: moscow:won't, user-story
 
-As a platform engineer, I want to share a board by public link, so that a colleague can see it without an account.
+As a coach, I want to sell a bundle of ten sessions, so that a returning client pays once.
 
-Closing comment: won't-have: no evidence that a user needs it.
+Closing comment: won't-have: no evidence that a user needs it; recurring billing is outside the boundary.
 ```
 
 ## Prototypes

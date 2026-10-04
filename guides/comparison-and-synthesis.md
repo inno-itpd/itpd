@@ -40,11 +40,14 @@ Fill it property by property, not product by product: doing one whole row at a t
 
 **A row that works:**
 
+<!-- TODO is this a single row? What are the columns? -->
+
 ```markdown
-| Can a team attach redaction rules to specific marked regions of its own code? | No.
-Rules are global patterns in `general_settings`, applied to every request (ALT-02). | No.
-Requests leave the network as sent (ALT-03). | Partial.
-Per-tenant config files exist, but the rule applies to a tenant's traffic, not to a region of a caller's payload (ALT-04). |
+| What the booking carries | Time and an event type.
+Payment and video are integrations on paid plans, and materials are not part of the booking (ALT-01). | Time and the video link after a Stripe setup.
+Payment and materials are not part of the booking (ALT-02). | Time and a Meet link.
+Payment and materials are not part of the booking (ALT-03). | Time and a Zoom link.
+Payment and materials are not part of the booking (ALT-04). |
 ```
 
 It says what the product does, cites the `ALT-nn` it came from, and lets the reader check.
@@ -52,7 +55,7 @@ It says what the product does, cites the `ALT-nn` it came from, and lets the rea
 **A row that does not:**
 
 ```markdown
-| Redaction | Good | Missing | Basic |
+| Payments | Good | Missing | Basic |
 ```
 
 Nobody can check "good".
@@ -60,8 +63,8 @@ There is nothing to trace, and the row says nothing you could not have written a
 
 Two habits that make the table honest:
 
-- **Separate observation from conclusion.** `No. Rules are global patterns (ALT-02). Consequence: a company cannot express "this region is confidential" per call site.` The first is checkable; the second is your reading, and it belongs in the gap analysis.
-- **Make strengths relative.** "No audit log" is a serious weakness for a gateway that routes a company's source code, and irrelevant for a running app.
+- **Separate observation from conclusion.** `No. Payment and video are integrations on paid plans, and the booking carries no materials (ALT-01). Consequence: the expert still assembles a paid, prepared session from three tools.` The first is checkable; the second is your reading, and it belongs in the gap analysis.
+- **Make strengths relative.** "No built-in payments" is a serious weakness for an expert who sells consultations, and irrelevant for a team that books internal meetings.
   State the condition that makes it matter, or you will be told you are wrong by someone who is right.
 
 ## Step 3: Read The Table As A Whole
@@ -90,28 +93,23 @@ The fourth test does most of the work.
 When you cannot describe what a product closing this gap would do in a sentence, you have a theme, not a gap.
 
 ```markdown
-## GAP-01: Rules that follow the code, not the deployment
+## GAP-01: Bookings that arrive unpaid and unprepared
 
-**Who needs it and what they cannot do:** a platform engineer at a company that sends marked
-source code to external model providers.
-The company classifies code by region and context;
-existing gateways apply one global rule set to whole requests, so the engineer either
-over-redacts and breaks the request or under-redacts and leaks marked code.
+**Who needs it and what they cannot do:** an independent expert who sells one-hour consultations online.
+The client books and pays in one place, and the meeting link and materials arrive with the booking;
+the alternatives schedule the time, and the payment, the video link, and the materials each live somewhere else.
 
-**Evidence:** `Where data goes` and `Extensibility` rows in
-[the comparison](comparison.md) — all three alternatives apply rules per deployment or
-per tenant, none per call site (ALT-02, ALT-03, ALT-04).
+**Evidence:** `What the booking carries` row in
+[the comparison](comparison.md) — no alternative carries payment, video, and materials in the same booking (ALT-01, ALT-02, ALT-03, ALT-04).
 
-**What closing it looks like:** a rule set the caller supplies with the request, matched
-against the caller's own markers, evaluated before the request leaves the network, and logged
-under the company's own standard.
+**What closing it looks like:** one link where the client picks a slot, pays, and receives the video link and the materials, with calendar sync behind it.
 
 **Buildable by us in this course:** yes.
-It is one plugin plus a logging format, and it is
+It is one booking flow, one payment integration, and one upload field, and it is
 the reason the project exists.
 
 **Confidence:** high.
-Consistent across all three alternatives, and two of them are
+Consistent across all four alternatives, and two of them are
 mature enough that this is not an oversight.
 
 **Dropped:** see GAP-04.
@@ -126,24 +124,24 @@ A value proposition is a claim about why your product is worth attention over th
 One short positioning statement, tied to a gap, honest about its cost.
 
 ```markdown
-## VP-01: Redaction rules that belong to the team
+## VP-01: One link that carries the whole booking
 
-**User:** platform engineer at a company sending marked source code to external models.
-**Problem:** sensitive-code rules are global to the gateway, so they cannot follow the
-company's own classification of what is marked.
-**What we do that the alternatives do not:** let a team attach redaction rules to the marked
-regions of its own code, and keep those rules and their logs under the company's control.
-**Closes:** [GAP-01](gap-analysis.md#gap-01-rules-that-follow-the-code-not-the-deployment).
-**What it costs:** a plugin author has to learn our rule format.
+**User:** independent coach who sells one-hour sessions online.
+**Problem:** the booking, the payment, and the meeting materials live in three tools, so unpaid
+clients block slots and prepared clients are rare.
+**What we do that the alternatives do not:** one link where the client books a slot, pays, and
+receives the video link and the materials, with no second account.
+**Closes:** [GAP-01](gap-analysis.md#gap-01-bookings-that-arrive-unpaid-and-unprepared).
+**What it costs:** the expert connects a payment provider before the first booking and uploads the
+materials per meeting type.
 This is a real setup cost.
-**How a competitor would respond:** the open-source incumbent could ship per-request rules
-in a release.
-The defensible part is the logging standard, not the rules.
+**How a competitor would respond:** Calendly or Cal.com could bundle payments and materials into the free tier.
+The defensible part is the single flow and its pricing, not the fields.
 ```
 
 Three things to get right:
 
-- **Say better at what, measured how.** "More modern" is not a claim. "A team can express its own redaction rules without a gateway restart" is a claim someone can check.
+- **Say better at what, measured how.** "More modern" is not a claim. "A client can pay and get the meeting link in one booking, without a second account" is a claim someone can check.
 - **Name what you give up.**
   Every advantage is bought with something: more setup, a narrower feature set, a worse default, a higher price.
   A differentiation with no cost is a misjudgement, and finding it now is cheaper than finding it in Week 5.
@@ -161,10 +159,11 @@ List them, trace each to the `GAP-nn` or `VP-nn` it supports, and say how you wo
 ```markdown
 ## Assumptions
 
-| Assumption                                                                              | Supports      | How to check                                                               |
-| --------------------------------------------------------------------------------------- | ------------- | -------------------------------------------------------------------------- |
-| Marked code is a real problem for teams of this size, not only for regulated companies. | GAP-01, VP-01 | Interview two teams in Week 2 and ask what they do today with marked code. |
-| The course customer will accept a plugin-first product rather than a hosted one.        | VP-01         | Raise it at the Week 1 kickoff.                                            |
+| Assumption                                                                                    | Supports      | How to check                                 |
+| --------------------------------------------------------------------------------------------- | ------------- | -------------------------------------------- |
+| Experts will upload materials per meeting type instead of sending them in chat after booking. | GAP-01, VP-01 | Run the prototype with two tutors in Week 4. |
+| Clients will pay at booking rather than on the day.                                           | VP-01         | Ask at the Week 2 validation meeting.        |
+| The customer will accept a web page rather than a Telegram bot.                               | VP-01         | Raise at the Week 1 kickoff.                 |
 ```
 
 The customer decides the scope.
