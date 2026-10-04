@@ -301,7 +301,7 @@ If credentials, personal data, or confidential material is committed by mistake:
    The title is `US-nn: <story title>`.
 4. Create the labels the stories use, by any means: `user-story`, and `moscow:must`, `moscow:should`, `moscow:could`, `moscow:won't`.
    The form applies `user-story`; the team applies one MoSCoW label per story.
-5. An inactive story closes as not planned, with a comment naming the reason and any story that supersedes it.
+5. An inactive story closes as not planned, with a comment naming the reason.
    A delivered active story closes as completed.
 6. Create branches from the issue where GitHub supports it, and link every pull request to its issue.
 7. Check the relevant acceptance criteria before merging, and name the `AC-nn` and its story issue in the pull request.

@@ -332,7 +332,7 @@ Each story is a GitHub issue, and the issues are the only place the stories live
 
 1. Write **8 or more** user stories, and keep at least **5 of them active**.
    Fewer do not cover a product, and more leaves no week to change them once something turns out to be wrong.
-   An **active** story is one you intend to build; an **inactive** story is one you have removed, superseded, or decided not to build.
+   An **active** story is one you intend to build; an **inactive** story is one you have removed or decided not to build.
    The close reason carries the distinction for the rest of the course: an inactive story is closed as not planned, and a delivered active story is closed as completed.
 2. Every story gets a stable ID `US-01`, `US-02`, and so on.
    IDs are never renumbered, reused, or reassigned, including when the story is edited later in the course.
@@ -345,7 +345,7 @@ Each story is a GitHub issue, and the issues are the only place the stories live
    Such a specific goes in an acceptance criterion, or in a [constraint](#constraints) when it holds for the whole product, and goes in the story statement only when the specific thing is itself the need.
    An acceptance criterion may name a screen, a field, or a system state, because that is what an observer checks.
 4. Every story carries a `Traces to` list.
-   It contains exactly one `VP-nn`, the value proposition the story supports, and, optionally, the story's origins: the `GAP-nn` it closes, a customer decision in a meeting report, a team decision in the weekly public report, an action point it carries out, or the parent `US-nn` of a split.
+   It contains exactly one `VP-nn`, the value proposition the story supports, and, optionally, the story's origins: the `GAP-nn` it closes, a customer decision in a meeting report, a team decision in the weekly public report, or an action point it carries out.
    The `VP-nn` is how a story traces to the product vision, so an active story's `VP-nn` is one the vision's [goal](#product-vision-and-goals) traces to.
    An active story that supports no such value proposition is outside the vision: add its `VP-nn` to the goal as a team decision, or make the story `Won't Have`.
    Cite an identifier by its ID, and a decision or action point by the report path and its `#decisions` or `#action-points` anchor, with the decision sentence or action quoted, per [Identifier Rules](#identifier-rules).
@@ -367,17 +367,15 @@ Each story is a GitHub issue, and the issues are the only place the stories live
    A criterion edited in place keeps its ID, a criterion that is removed retires its ID, and a criterion added later takes the next free number.
    Cite a specific criterion from another artifact by its `AC-nn` together with its story issue: a link to the issue, or its `US-nn` when the issue is already linked.
    The notation is not fixed, as long as the reference identifies both the story and the criterion.
-8. A story too large to build and verify in one week is two stories.
-   Split it: the parent keeps its identifier, its statement, and its criteria, closes as not planned with a comment beginning with `superseded`, and stays traceable from both children.
-   Each child names the parent `US-nn` in its `Traces to` list and carries the parent's `VP-nn` and, when the parent had one, the same `GAP-nn`.
-   The parent's criteria are not moved, renumbered, or reused; each child writes its own and starts again at `AC-01`.
+8. Every active story is small enough to build and verify in one week.
+   A need larger than that is written as two or more stories.
 9. Name the **minimum usable product candidate** in the Week 2 report: a strict, non-empty subset of your `Must Have` stories that you would build first.
    Say which one you would drop first if you ran out of time.
    The candidate is a proposal, not a commitment.
 10. Open one issue per story, from the form in [Planning And Issue Tracking](repository-requirements.md#planning-and-issue-tracking).
     The issue is the story and the source of truth; the form carries the statement, the acceptance criteria, each with its `AC-nn`, the `Traces to` list, and any notes.
     The issue may carry a checklist of the remaining work, so a contributor can work without leaving it.
-11. A story becomes inactive by being closed as not planned, with a comment naming the reason and any story that supersedes it.
+11. A story becomes inactive by being closed as not planned, with a comment naming the reason.
     It keeps its identifier and its statement in the issue; the closing comment and the close date are the record.
     An active story that is delivered closes as completed and stays in the list.
 
@@ -492,9 +490,9 @@ The research you produce in Week 1 is the evidence base for the rest of the cour
 Later weeks cite your Week 1 identifiers rather than restating your findings.
 This is what makes the course a project rather than nine separate assignments.
 
-| Later work                                          | Must cite                                                                                                                             |
-| --------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
-| Week 2 product vision, user stories, and prototypes | `US-nn` and its `Traces to` list: exactly one `VP-nn` plus each origin (a `GAP-nn`, a decision, an action point, or a parent `US-nn`) |
+| Later work                                          | Must cite                                                                                                           |
+| --------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
+| Week 2 product vision, user stories, and prototypes | `US-nn` and its `Traces to` list: exactly one `VP-nn` plus each origin (a `GAP-nn`, a decision, or an action point) |
 
 **Required**
 

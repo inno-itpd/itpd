@@ -665,26 +665,22 @@ Each story is a GitHub issue, and the `user-story` label identifies story issues
 
    - The title `US-nn: <story title>`.
    - The story statement, its `Traces to` list, and any notes, in the fields the form provides.
-     The list carries exactly one `VP-nn`, the value proposition the story supports, and, optionally, its origins: the `GAP-nn` it closes, a customer or team decision, an action point it carries out, or the parent `US-nn` of a split.
+     The list carries exactly one `VP-nn`, the value proposition the story supports, and, optionally, its origins: the `GAP-nn` it closes, a customer or team decision, or an action point it carries out.
    - The acceptance criteria, at least two on a story you intend to build, each carrying a stable `AC-nn` at the start of the criterion.
    - One `moscow:*` label: `moscow:must`, `moscow:should`, `moscow:could`, or `moscow:won't`.
    - The `user-story` label, applied by the form.
       <!-- Alternatively, allow issue type -->
 
 2. Active stories are open or closed as completed, and a delivered story closes as completed and stays in the registry.
-   Inactive stories are closed as not planned, with a comment naming the reason: `removed`, `superseded`, or `won't have`.
-   The reason is free text beginning with one of those three words.
-3. A split parent closes as not planned with a `superseded` comment, keeps its identifier, its statement, and its criteria, and is linked from both children.
-   Each child names the parent `US-nn` in its `Traces to` list and carries the parent's `VP-nn` and, when the parent had one, the same `GAP-nn`.
-   The parent's criteria are not moved or reused; each child writes its own and starts again at `AC-01`.
-   This course has no epic artifact: decomposition happens by splitting a story.
-4. The issue is the record of change.
+   Inactive stories are closed as not planned, with a comment naming the reason: `removed` or `won't have`.
+   The reason is free text beginning with one of those two words.
+3. The issue is the record of change.
    A change that follows a customer meeting adds a dated comment saying what changed, naming any `AC-nn` that changed, and linking the meeting report.
    Do not rewrite a story to hide a change; the edit history and the comment are the record.
    A criterion that is removed retires its `AC-nn`, and the ID is never reused.
-5. The **registry of identifiers** is the issue list filtered by the `user-story` label.
+4. The **registry of identifiers** is the issue list filtered by the `user-story` label.
    It shows open and closed issues, so an inactive story keeps its `US-nn` and stays findable after it closes.
-6. Do not keep a second list of stories in the repository.
+5. Do not keep a second list of stories in the repository.
    The issue is the source of truth for the requirement and its criteria, and the issue tracker is where execution state lives, per [Planning And Issue Tracking](repository-requirements.md#planning-and-issue-tracking).
 
 **Recommended**

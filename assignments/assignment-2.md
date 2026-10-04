@@ -96,7 +96,7 @@ Complete every requirement marked `**Since: W2**` in [Planning And Issue Trackin
    The form applies `user-story`; apply one MoSCoW label per story.
 3. Open **8 or more** stories as issues, one per story, and keep at least **5 of them active**.
    The title is `US-nn: <story title>`.
-   Every story names the `VP-nn` it supports, which for an active story is one your goal traces to, and, optionally, its origins in the `Traces to` list: the `GAP-nn` it closes, a customer or team decision, an action point it carries out, or the parent `US-nn` of a split.
+   Every story names the `VP-nn` it supports, which for an active story is one your goal traces to, and, optionally, its origins in the `Traces to` list: the `GAP-nn` it closes, a customer or team decision, or an action point it carries out.
    Every story is a **user's need**, not a solution, and every active story carries **at least two acceptance criteria**, each observable and pass/fail.
    Each criterion carries a stable ID `AC-01`, `AC-02`, and so on, numbered within its issue and never renumbered or reused.
    A citation elsewhere pairs the `AC-nn` with its story issue, as a link or by `US-nn`; the notation is your choice.
@@ -104,17 +104,15 @@ Complete every requirement marked `**Since: W2**` in [Planning And Issue Trackin
    Any notation works, including `Given`/`When`/`Then`.
    The test is whether somebody who is not you could run the check and get the same answer.
    See [User Stories](../requirements/artifact-requirements.md#user-stories) and [User Stories And Acceptance Criteria](../requirements/process-requirements.md#user-stories-and-acceptance-criteria).
-4. Split any story too large to build and verify in one week: close the parent as not planned with a `superseded` comment, keep its identifier, its statement, and its criteria, and link it from both children.
-   Each child names the parent `US-nn` in its `Traces to` list, carries the parent's `VP-nn` and, when the parent had one, the same `GAP-nn`, writes its own criteria, and starts again at `AC-01`.
-5. Prioritize every story with **MoSCoW**.
+4. Prioritize every story with **MoSCoW**.
    Give every `Won't Have` story a reason in its closing comment, beginning with `won't-have`.
    <!-- TODO What does won't-have mean here? -->
    <!-- Why start with "won't have"? I think the label is enough and the reason should be free-form -->
-6. Name the **minimum usable product candidate** in `reports/week-02/README.md`: a strict, non-empty subset of your `Must Have` stories that you would build first, and which of the stories you would drop first if you ran out of time.
-7. Inactive stories close as not planned with a comment naming the reason and any story that supersedes them, and a delivered story closes as completed.
-8. Create your branches from the issue, and link every pull request to its issue.
+5. Name the **minimum usable product candidate** in `reports/week-02/README.md`: a strict, non-empty subset of your `Must Have` stories that you would build first, and which of the stories you would drop first if you ran out of time.
+6. Inactive stories close as not planned with a comment naming the reason, and a delivered story closes as completed.
+7. Create your branches from the issue, and link every pull request to its issue.
    Use the `<issue-number>-<short-description>` branch naming rule, per [Branch Protection And Pull Requests](../requirements/repository-requirements.md#branch-protection-and-pull-requests).
-9. The method is in [Step 2: Turn Each Gap Into Stories](../guides/user-stories-and-prototyping.md#step-2-turn-each-gap-into-stories) and [Step 3: Write Criteria Somebody Else Can Run](../guides/user-stories-and-prototyping.md#step-3-write-criteria-somebody-else-can-run).
+8. The method is in [Step 2: Turn Each Gap Into Stories](../guides/user-stories-and-prototyping.md#step-2-turn-each-gap-into-stories) and [Step 3: Write Criteria Somebody Else Can Run](../guides/user-stories-and-prototyping.md#step-3-write-criteria-somebody-else-can-run).
 
 The issues are what the customer can see and what the team tracks.
 Each issue is the story, and a decision that changes a story has to reach that issue, not only the meeting report.
@@ -314,7 +312,7 @@ See [Permalinks And Snapshots](../requirements/repository-requirements.md#permal
 - [ ] One Issue Form at `.github/ISSUE_TEMPLATE/user-story.yml`, blank issues disabled, and **8 or more** story issues with **5 or more** active, `US-nn` IDs never reused.
 - [ ] Every story states a need, not a design, and carries its `Traces to` list: exactly one `VP-nn`, for an active story one the goal traces to, plus optional origins.
 - [ ] At least two acceptance criteria per active story, each carrying a stable `AC-nn`, each observable and pass/fail.
-- [ ] Oversized stories split, the parent closed as not planned with a `superseded` comment and traceable from both children, each child naming the parent in `Traces to`, carrying the parent's `VP-nn` and, when the parent had one, the same `GAP-nn`, and numbering its criteria from `AC-01`.
+- [ ] Every active story small enough to build and verify in one week.
 - [ ] Every story carries one `moscow:*` label, every `Won't Have` issue closed as not planned with a reason.
 - [ ] `reports/week-02/README.md` names the minimum usable product candidate: a strict, non-empty subset of the `Must Have` stories, and which one to drop first.
 - [ ] One issue per story, titled `US-nn: <story title>`, carrying the story and criteria, with an optional remaining-work checklist; every pull request linked to its issue.

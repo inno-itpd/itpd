@@ -49,7 +49,7 @@ Work gap by gap.
 For each `GAP-nn`, ask what a user would be trying to do that they cannot do today, and write that as a story.
 
 Not every story starts at a gap.
-A kickoff or validation decision, an action point, or a split of a story too large for one week can all add one.
+A kickoff or validation decision or an action point can add one.
 When the story has an origin, record it in the story's `Traces to` list, and never invent a `GAP-nn` link to fill the list.
 
 Whatever its origin, a story reaches the vision through its `VP-nn`.
@@ -100,11 +100,10 @@ A detail the customer settles is a story change, and it is recorded like any oth
 Write **8 or more**, each as a GitHub issue from the issue form.
 A gap often turns into three or four stories, because a single sentence about a need usually covers a happy path, a failure, and a way to undo the thing.
 
-**Split anything too big to build and verify in a week.**
-A story that takes three weeks is three stories, and splitting it is not a detail: an unbuildable story is one your team will quietly abandon, and an abandoned story is one your `Must Have` list lies about.
-When you split, close the parent as not planned with a `superseded` comment and link it from both children, so a reader can see what the pieces were for.
-Each child names the parent in its `Traces to` list and carries the parent's `VP-nn` and, when the parent had one, its `GAP-nn`, so the lineage survives the split.
-The parent's criteria stay with it; each child writes its own and numbers them from `AC-01`.
+**Write anything too big to build and verify in a week as several stories.**
+A need that takes three weeks is three stories, and sizing it is not a detail: an unbuildable story is one your team will quietly abandon, and an abandoned story is one your `Must Have` list lies about.
+Write the smaller stories from the start rather than one large story you mean to break up later.
+Each one traces to the same `VP-nn`, and to the same `GAP-nn` when there is one, so a reader can see that they belong together.
 
 **Write the story you expect to build last.**
 It is usually the most honest one, because it is the one nobody has an emotional attachment to.
@@ -217,7 +216,7 @@ See [Validating With The Customer](validating-with-the-customer.md) for the meet
   "I want a payment system" names an area, not a need, and no criterion can be written for it.
   Say who pays, for what, and what goes wrong when they do not.
 - **Forcing a story onto a gap that does not cover it.**
-  If the need came from a decision, an action point, or a split, cite that in `Traces to` instead; a story that traces only to its `VP-nn` is fine.
+  If the need came from a decision or an action point, cite that in `Traces to` instead; a story that traces only to its `VP-nn` is fine.
   A false link makes a reader stop trusting the real ones.
 - **One criterion per story.**
   It is the easiest number to hit and the least useful.
