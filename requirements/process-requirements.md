@@ -18,6 +18,7 @@ This file defines what "done" means.
 - [Constraints](#constraints)
 - [Stakeholders, Boundary, And Context](#stakeholders-boundary-and-context)
 - [User Stories And Acceptance Criteria](#user-stories-and-acceptance-criteria)
+- [Minimum Usable Product Candidate](#minimum-usable-product-candidate)
 - [Validation](#validation)
 - [Identifier Rules](#identifier-rules)
 - [Traceability Into Later Weeks](#traceability-into-later-weeks)
@@ -369,15 +370,13 @@ Each story is a GitHub issue, and the issues are the only place the stories live
    The notation is not fixed, as long as the reference identifies both the story and the criterion.
 8. Every active story is small enough to build and verify in one week.
    A need larger than that is written as two or more stories.
-9. Name the **minimum usable product candidate** in the Week 2 report: a strict, non-empty subset of your `Must Have` stories that you would build first.
-   Say which one you would drop first if you ran out of time.
-   The candidate is a proposal, not a commitment.
-10. Open one issue per story, from the form in [Issue Tracking](repository-requirements.md#issue-tracking).
-    The issue is the story and the source of truth; the form carries the statement, the acceptance criteria, each with its `AC-nn`, the `Traces to` list, and any notes.
-    The issue may carry a checklist of the remaining work, so a contributor can work without leaving it.
-11. A story becomes inactive by being closed as not planned, with a comment naming the reason.
+9. Open one issue per story, from the form in [Issue Tracking](repository-requirements.md#issue-tracking).
+   The issue is the story and the source of truth; the form carries the statement, the acceptance criteria, each with its `AC-nn`, the `Traces to` list, and any notes.
+   The issue may carry a checklist of the remaining work, so a contributor can work without leaving it.
+10. A story becomes inactive by being closed as not planned, with a comment naming the reason.
     It keeps its identifier and its statement in the issue; the closing comment and the close date are the record.
     An active story that is delivered closes as completed and stays in the list.
+11. The `Must Have` stories you would build first are the [minimum usable product candidate](#minimum-usable-product-candidate).
 
 **Recommended**
 
@@ -407,6 +406,29 @@ so that an unpaid slot does not block a paying one for the rest of the week.
    confirmed and no meeting link is created.
 ```
 
+## Minimum Usable Product Candidate
+
+**Since: W2**
+
+A **minimum usable product (MUP)** is the smallest product in which a user can complete the core tasks without getting frustrated.
+The candidate is your proposal for it, made before any product code exists, so the customer can argue with it while it is still cheap to change.
+
+**Required**
+
+1. Name the **core task** the candidate serves: one thing a user does from start to finish, written in one line.
+2. The candidate is a strict, non-empty subset of your `Must Have` stories that together let a user complete that core task end to end.
+   Stories that cover only part of the task are not a candidate.
+3. Name one story **inside the candidate** to drop first if you ran out of time.
+   Without it, the rest of the candidate must still complete the core task; if no story can go, say why.
+4. Record the candidate in `reports/week-02/README.md` under `## Minimum Usable Product Candidate`: the core task, then the `US-nn` of each story with its issue linked, then the story to drop first.
+5. The candidate is a proposal, not a commitment.
+   The customer's verdict on it is a row in the meeting report's `## Decisions`, per [Meeting Report](artifact-requirements.md#meeting-report): `Changes` names each `US-nn` added to or removed from the candidate, or says `None` with the reason when the customer accepted it as it is.
+
+**Recommended**
+
+- Two or three stories that a user can finish in one sitting.
+  A long candidate is a postponement, not a priority.
+
 ## Validation
 
 **Since: W2**
@@ -421,6 +443,7 @@ It is not a showcase, and it is not the product.
    - **Proof of concept (PoC)**: can this work at all technically?
    - **Prototype**: how will this look, and does this user flow make sense?
    - **Minimum usable product (MUP)**: can a user complete the core tasks without getting frustrated?
+     See [Minimum Usable Product Candidate](#minimum-usable-product-candidate).
    - **Minimum viable product (MVP)**: will people use it?
 
    A code spike can answer the PoC question or a prototype question; either way it is recorded as a prototype and thrown away.

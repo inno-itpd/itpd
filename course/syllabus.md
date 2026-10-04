@@ -113,11 +113,12 @@ The first two weeks establish the project foundations, team formation, and compe
   - **Deliverables**:
     1. **Product Vision**: `docs/product-vision.md`, holding the goal, the constraints, the stakeholders, the boundary of what the team will not do, and a system context diagram.
     2. **User Stories**: one GitHub issue per story, opened from `.github/ISSUE_TEMPLATE/user-story.yml`, listed by the `user-story` label; each active story carries its own acceptance criteria.
-    3. **Issue Tracking**: one issue per `US-nn` with a `moscow:*` label, and the minimum usable product candidate recorded in `reports/week-02/README.md`.
-    4. **Prototypes**: prototypes of the riskiest assumptions, recorded at `reports/week-02/prototypes.md`.
+    3. **Issue Tracking**: one issue per `US-nn` with a `moscow:*` label.
+    4. **Minimum Usable Product Candidate**: the `Must Have` stories that let a user complete one core task end to end, and the story inside them to drop first, recorded in `reports/week-02/README.md`.
+    5. **Prototypes**: prototypes of the riskiest assumptions, recorded at `reports/week-02/prototypes.md`.
        Prototypes may be paper sketches, view-only design tools, or disposable code spikes.
-    5. **Customer Validation Meeting**: a second meeting with the customer, with the full Week 1 artifact set, which changes at least one story.
-  - **Minima**: at least eight story issues, at least five of them active, each story carrying a `moscow:*` label, inactive stories closed as not planned, at least two acceptance criteria per active story, and a strict non-empty minimum usable product candidate drawn from the Must-Have stories.
+    6. **Customer Validation Meeting**: a second meeting with the customer, with the full Week 1 artifact set, which changes at least one story.
+  - **Minima**: at least eight story issues, at least five of them active, each story carrying a `moscow:*` label, inactive stories closed as not planned, at least two acceptance criteria per active story, and a minimum usable product candidate that is a strict, non-empty subset of the Must-Have stories and completes one core task end to end.
     There is no product code this week.
   - **Note**: The product repository itself is created and configured in Week 1.
     Week 2 adds requirements, tracking, and prototypes.

@@ -24,7 +24,7 @@ Most of it is arguing about which stories are the same story wearing two hats, w
 ```text
 docs/product-vision.md         the goal, the constraints, the stakeholders, the boundary, the context diagram
 GitHub issues                  one per story, titled US-nn: <title>, with its Traces to list, AC-nn criteria, and labels
-reports/week-02/README.md      the minimum usable product candidate
+reports/week-02/README.md      the minimum usable product candidate: core task, stories, drop-first story
 reports/week-02/prototypes.md  what you showed, what they said, what changed
 ```
 
@@ -154,9 +154,18 @@ The point of the exercise is not the label, it is the argument: whoever disagree
 A `Won't Have` story is inactive by definition, so write it down as an issue and close it as not planned, with the reason, instead of quietly leaving a story out.
 A reader can argue with a recorded `Won't Have`; they can only guess about a missing one.
 
-Then name the **minimum usable product candidate** in `reports/week-02/README.md`: a strict, non-empty subset of your `Must Have` stories that you would build first, plus which one you would drop first if you ran out of time.
+Then name the **minimum usable product candidate**, per [the requirement](../requirements/process-requirements.md#minimum-usable-product-candidate).
 
 This is the hardest decision of the week and it belongs here, where the evidence is.
+Work in this order:
+
+1. Pick the core task first: the one thing a user has to be able to finish for the product to be worth opening.
+   Write it as a sentence a user would recognise, not as a feature.
+2. Walk through that task from start to finish and pick the fewest `Must Have` stories that get the user to the end.
+   A story that the task never touches stays out, however important it is.
+3. Test the drop-first story by removing it and walking the task again.
+   If the task no longer finishes, you picked a story the candidate cannot lose, so pick another one.
+
 Whatever you name here is a proposal, not a commitment, so a candidate of eight stories is a postponement.
 Two or three stories that a user can finish in one sitting is a more honest answer.
 
