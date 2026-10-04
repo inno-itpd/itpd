@@ -117,12 +117,6 @@ Complete every requirement marked `**Since: W2**` in [Issue Tracking](../require
 The issues are what the customer can see and what the team tracks.
 Each issue is the story, and a decision that changes a story has to reach that issue, not only the meeting report.
 
-<!-- TODO don't mention backlog.md here because it's not very relevant? -->
-
-**Recommended**
-
-- Use a task tracker that keeps its state in the repository, such as [`backlog.md`](https://github.com/MrLesk/Backlog.md), for the work around the stories; it does not replace the story issues or the `US-nn` identifiers.
-
 ## Part 3: Check The Markdown In CI
 
 1. Add a Markdown check as a GitHub Actions workflow, on pull requests and on every push to `main`.

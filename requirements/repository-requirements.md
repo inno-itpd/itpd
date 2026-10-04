@@ -312,11 +312,33 @@ If credentials, personal data, or confidential material is committed by mistake:
 
 **Recommended**
 
-<!-- TODO why recommended -->
-
 - Use a task tracker that keeps its state in the repository, such as the [`backlog.md`](https://github.com/MrLesk/Backlog.md) command-line tool.
   It is not the home of a user story, and a story issue may be mentioned in it.
   Its files are repository content rather than artifacts, per [Where Artifacts Live In The Repository](artifact-requirements.md#where-artifacts-live-in-the-repository), and it is not graded on its own.
+
+It is recommended for two reasons:
+
+1. **A coding agent can use it.**
+   The tasks are plain files beside the code, and `backlog.md` has a command-line interface and an MCP server, so an agent can read the task it is working on, follow its acceptance criteria, and record what it did, without access to your GitHub account.
+2. **It breaks a bigger task into steps inside one pull request.**
+   A larger piece of work, whether it is an issue or a task in the tracker itself, splits into subtasks, each with its own acceptance criteria.
+   The subtasks change in the same commits as the work, so a reviewer sees the plan and how far it got beside the diff.
+
+It is not required because the course grades the work and its evidence, not the tool the team organised it with.
+
+**Example**
+
+When several members create tasks on different branches, let the tool see the other branches, so that two branches do not allocate the same task ID.
+In `backlog/config.yml`:
+
+```yaml
+filesystem_only: false
+remote_operations: true
+check_active_branches: true
+active_branch_days: 30
+```
+
+A task created in another clone is visible only once its branch is pushed, so push a branch soon after creating a task on it.
 
 ## Contributing
 
