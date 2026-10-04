@@ -42,7 +42,7 @@ Requirements that arrive later are written now so that later weeks do not have t
    The customer in this course is your instructor, and the public MIT-licensed model is a course-wide decision.
 6. Add a `.gitignore` appropriate to your tooling.
    At minimum it covers editor state, OS files, `.env` and other secret files, and build output.
-   Once you pick a stack in Week 3, extend it for that stack.
+   Once you pick a stack, extend it for that stack.
 7. The first commit goes directly to `main`.
    It is the only commit that ever goes directly to `main`.
    See [Branch Protection And Pull Requests](#branch-protection-and-pull-requests).

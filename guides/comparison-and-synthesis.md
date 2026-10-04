@@ -144,7 +144,7 @@ Three things to get right:
 - **Say better at what, measured how.** "More modern" is not a claim. "A client can pay and get the meeting link in one booking, without a second account" is a claim someone can check.
 - **Name what you give up.**
   Every advantage is bought with something: more setup, a narrower feature set, a worse default, a higher price.
-  A differentiation with no cost is a misjudgement, and finding it now is cheaper than finding it in Week 5.
+  A differentiation with no cost is a misjudgement, and finding it now is cheaper than finding it later.
 - **Say how a competitor would respond.**
   If copying you takes them a week, you do not have a moat, and you should know that before you build on it.
 
@@ -159,11 +159,11 @@ List them, trace each to the `GAP-nn` or `VP-nn` it supports, and say how you wo
 ```markdown
 ## Assumptions
 
-| Assumption                                                                                    | Supports      | How to check                                 |
-| --------------------------------------------------------------------------------------------- | ------------- | -------------------------------------------- |
-| Experts will upload materials per meeting type instead of sending them in chat after booking. | GAP-01, VP-01 | Run the prototype with two tutors in Week 4. |
-| Clients will pay at booking rather than on the day.                                           | VP-01         | Ask at the Week 2 validation meeting.        |
-| The customer will accept a web page rather than a Telegram bot.                               | VP-01         | Raise at the Week 1 kickoff.                 |
+| Assumption                                                                                    | Supports      | How to check                          |
+| --------------------------------------------------------------------------------------------- | ------------- | ------------------------------------- |
+| Experts will upload materials per meeting type instead of sending them in chat after booking. | GAP-01, VP-01 | Run the prototype with two tutors.    |
+| Clients will pay at booking rather than on the day.                                           | VP-01         | Ask at the Week 2 validation meeting. |
+| The customer will accept a web page rather than a Telegram bot.                               | VP-01         | Raise at the Week 1 kickoff.          |
 ```
 
 The customer decides the scope.

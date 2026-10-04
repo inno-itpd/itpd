@@ -55,7 +55,7 @@ Where to look:
 Record each candidate with its URL and one line on why it might be relevant, in `reports/week-NN/candidate-list.md`.
 
 Keep the list you cut down from, not just the survivors.
-It is the record of the search, and a later week that needs another product will either pick one you already rejected or waste a day rediscovering it.
+It is the record of the search, and if you need another product later, you will either pick one you already rejected or waste a day rediscovering it.
 One line per candidate is enough, and a rejected candidate is worth keeping exactly as much as a chosen one.
 
 ## Step 3: Cut Down To Three Or Four

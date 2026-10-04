@@ -29,7 +29,6 @@ It is the short version of this file and states what is expected of you as a stu
 - [Prototypes](#prototypes)
 - [Private Submission Wrapper](#private-submission-wrapper)
 - [Declaring Deviations](#declaring-deviations)
-- [Later Weeks](#later-weeks)
 
 ## Artifact Concepts And Terminology
 
@@ -62,7 +61,7 @@ It is the short version of this file and states what is expected of you as a stu
      It is a record of what the team did during that week.
      Week numbers are zero-padded: `reports/week-01/`, `reports/week-02/`.
    - `docs/` holds maintained project documentation.
-     Anything the project will still refer to in a later week goes here, in its final location, from the week it is created.
+     Anything the project will still refer to later goes here, in its final location, from the week it is created.
 
 2. This rule covers artifacts, not repository mechanics.
    Code, workflows, issue and pull request templates, `LICENSE`, the files in `.github/`, and the files a planning or issue-tracking tool writes into the repository are repository content, not artifacts, and are covered in [Repository Requirements](repository-requirements.md).
@@ -327,7 +326,7 @@ A recording is a separate, private-only artifact.
 | Decision                                   | Made by             | Traces to |
 | ------------------------------------------ | ------------------- | --------- |
 | Build paid bookings, not the calendar view | Customer            | `VP-01`   |
-| Drop multi-expert scheduling from W3       | Customer            | `GAP-04`  |
+| Drop multi-expert scheduling               | Customer            | `GAP-04`  |
 | Keep the web link for delivery             | Team, not contested | `VP-01`   |
 
 ## Action points
@@ -614,12 +613,12 @@ An independent expert can send one link where a client books a time, pays, and r
 
 ## Constraints
 
-| Constraint                       | Source         | What it costs                         |
-| -------------------------------- | -------------- | ------------------------------------- |
-| Deployed on a single small VPS   | Customer-given | No failover during a demo             |
-| Built and maintained by 3 people | Team-given     | No component may need a second expert |
-| Eleven-week course               | Environmental  | Payment and video stay integrations   |
-| Payment provider sandbox only    | Derived        | No live charges before Week 8         |
+| Constraint                       | Source         | What it costs                             |
+| -------------------------------- | -------------- | ----------------------------------------- |
+| Deployed on a single small VPS   | Customer-given | No failover during a demo                 |
+| Built and maintained by 3 people | Team-given     | No component may need a second expert     |
+| Single-term course               | Environmental  | Payment and video stay integrations       |
+| Payment provider sandbox only    | Derived        | No live charges, so real fees go untested |
 
 ## Boundary
 
@@ -784,24 +783,3 @@ See [Assignment 1](../assignments/assignment-1.md#assignment-report-on-moodle) f
 2. Declaring a deviation does not excuse a broken requirement.
    Say what you did instead and why it satisfies the intent.
 3. An undeclared deviation is treated as a missing requirement.
-
-## Later Weeks
-
-**Since: W2**
-
-The following artifacts are introduced in later weeks.
-Their shared structure belongs here, not in the assignment that first requires them.
-Each assignment states the path and the week-specific evidence.
-
-- Customer meeting reports, transcripts, notes, and meeting scripts for the meetings you hold after the kickoff.
-  They follow the same structure as the Week 1 kickoff artifacts, and the same rules for every meeting in [Meeting With The Customer](process-requirements.md#meeting-with-the-customer).
-  See [Customer Meeting Artifacts](#customer-meeting-artifacts).
-- The work plan and the threshold of success from Week 3.
-  Their structures are not written yet and belong here before the Week 3 assignment is.
-- The sprint retrospective from Week 3, at `reports/week-NN/sprint-retrospective.md`.
-  Its structure is not written yet and belongs here before the Week 3 assignment is.
-- Quality requirements, the verification plan, and architecture documentation from Week 4.
-- Testing and deployment documentation from Week 5.
-- Usability testing protocols, participant consent evidence, and results from Weeks 7 and 9.
-- Configuration management documentation from Week 8.
-- The project reflection from Week 9.

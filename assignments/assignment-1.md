@@ -119,7 +119,7 @@ The repository structure you are building towards:
    Put it at the top of `docs/research/alternatives.md`.
 2. Search widely first, and record the search in `reports/week-01/candidate-list.md`.
    Collect ten or more candidates with a URL and one line each on why each might be relevant, then commit the whole list.
-   Keep the ones you cut: a later week that needs another product will either reuse one you rejected or spend a day rediscovering it.
+   Keep the ones you cut: if you need another product later, you will either reuse one you rejected or spend a day rediscovering it.
    See [Build A Wide Candidate List](../guides/alternatives-research.md#step-2-build-a-wide-candidate-list).
 3. Research **3 to 4 alternatives**, as a mix of a direct competitor, an adjacent substitute, and an open-source or self-hosted option, per [Process Requirements](../requirements/process-requirements.md#alternatives).
 4. Choose at least 6 properties to compare on, **before** you evaluate anything.

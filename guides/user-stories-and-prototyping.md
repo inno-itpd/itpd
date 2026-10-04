@@ -121,7 +121,7 @@ A reader can argue with a recorded `Won't Have`; they can only guess about a mis
 Then name the **minimum usable product candidate** in `reports/week-02/README.md`: a strict, non-empty subset of your `Must Have` stories that you would build first, plus which one you would drop first if you ran out of time.
 
 This is the hardest decision of the week and it belongs here, where the evidence is.
-Week 3 schedules and builds whatever you name here, so a candidate of eight stories is not a commitment, it is a postponement.
+Whatever you name here is a proposal, not a commitment, so a candidate of eight stories is a postponement.
 Two or three stories that a user can finish in one sitting is a more honest answer.
 
 ## Step 5: Choose What To Prototype
@@ -166,7 +166,7 @@ When the question is only whether the idea can work at all, that is a proof of c
 On a code spike: **keep it off `main`.**
 Do it on a branch, show it from there, and then either delete the branch or merge it only once it has become product code.
 The evidence is the screenshot and your record, not the branch, so the branch is genuinely disposable and the repository does not have to carry it for the rest of the course.
-If you do not prototype at all, say so and name the question you are carrying into Week 3 instead.
+If you do not prototype at all, say so and name the question you are carrying forward instead.
 
 Then show it, and record what happened.
 The recording is the artifact; the prototype is not.
@@ -179,7 +179,7 @@ See [Validating With The Customer](validating-with-the-customer.md) for the meet
 - **One criterion per story.**
   It is the easiest number to hit and the least useful.
 - **A `Must Have` list that is everything.**
-  The label stops meaning anything, and Week 3 inherits a MUP nobody can build.
+  The label stops meaning anything, and a `Must Have` list nobody can build is not a priority.
 - **Prototyping the part you are sure about.**
   It feels productive, it demos well, and it teaches you nothing.
   The customer being impressed is not the same as the customer being surprised.

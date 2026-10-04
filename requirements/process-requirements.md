@@ -277,7 +277,7 @@ Keeping the two apart is the whole point of this section: a constraint you canno
 3. An assumption is not a constraint and does not belong in this section.
    Assumptions live in [Assumptions](#assumptions) and are checked through [Validation](#validation).
 4. Do not list a constraint you chose and then describe it as imposed.
-   A technology you picked in Week 3 is a decision, and it belongs in the work plan.
+   A technology choice is a decision, and a decision is not a constraint.
 
 **Recommended**
 
@@ -301,7 +301,7 @@ Without it, a context diagram shows a product floating in a void, and no reviewe
 4. Any format is allowed, as long as the diagram itself is committed, or linked view-only, and the surrounding text says what it must show.
    Describe the external actors in prose next to the diagram, and do not duplicate the diagram in text.
 5. Do not draw a use case diagram here, and do not draw components, containers, or an internal structure.
-   Those are Week 4, and the context diagram is the one that stays true as the product changes.
+   The context diagram is the one that stays true as the product changes.
 6. Every actor in the diagram must survive your boundary.
    If an actor has no reason to exchange anything with the product, it is not on the diagram.
 
@@ -363,7 +363,7 @@ Each story is a GitHub issue, and the issues are the only place the stories live
    The parent's criteria are not moved, renumbered, or reused; each child writes its own and starts again at `AC-01`.
 9. Name the **minimum usable product candidate** in the Week 2 report: a strict, non-empty subset of your `Must Have` stories that you would build first.
    Say which one you would drop first if you ran out of time.
-   The candidate is a proposal, not a commitment, and Week 3 schedules and builds it.
+   The candidate is a proposal, not a commitment.
 10. Open one issue per story, from the form in [Planning And Issue Tracking](repository-requirements.md#planning-and-issue-tracking).
     The issue is the story and the source of truth; the form carries the statement, the acceptance criteria, each with its `AC-nn`, the `GAP-nn`, the `VP-nn`, and any sources.
     The issue may carry a checklist of the remaining work, so a contributor can work without leaving it.
@@ -408,9 +408,7 @@ It is not a showcase, and it is not the product.
    - **Proof of concept (PoC)**: can this work at all technically?
    - **Prototype**: how will this look, and does this user flow make sense?
    - **Minimum usable product (MUP)**: can a user complete the core tasks without getting frustrated?
-     Week 3 builds it from the [minimum usable product candidate](#user-stories-and-acceptance-criteria).
    - **Minimum viable product (MVP)**: will people use it?
-     Week 5 builds it.
 
    A code spike can answer the PoC question or a prototype question; either way it is recorded as a prototype and thrown away.
 
@@ -447,11 +445,10 @@ A prototype that validated everything proved nothing, because you chose the part
 
 **Required**
 
-<!-- TODO don't mention identifiers introduced in future weeks -->
-
 1. The identifier families introduced in Week 1 are `ALT-nn` for alternatives, `GAP-nn` for gaps, and `VP-nn` for value propositions.
    All are zero-padded and case-sensitive.
-   `US-nn` for user stories and `AC-nn` for their acceptance criteria are introduced in Week 2; `Q-nn` for quality goals in Week 4; and `U-nn` for usability tasks in Week 7.
+   `US-nn` for user stories and `AC-nn` for their acceptance criteria are introduced in Week 2.
+   A later family is introduced only by the requirement that first uses it.
 2. An identifier, once issued, is never changed, reused, or reassigned, including when the artifact is edited later in the course.
    `AC-nn` is scoped to its story issue: the same number may appear in another story, so a reference pairs the ID with the issue to be unambiguous.
 3. Gaps in a sequence are expected and correct.
@@ -474,16 +471,6 @@ This is what makes the course a project rather than nine separate assignments.
 | Later work                                          | Must cite                                                                                              |
 | --------------------------------------------------- | ------------------------------------------------------------------------------------------------------ |
 | Week 2 product vision, user stories, and prototypes | `US-nn`, the `GAP-nn` it closes, the `VP-nn` it supports, and the kickoff action points it carried out |
-| Week 3 work plan and threshold of success           | the `US-nn` it schedules, the `GAP-nn` it serves, and the `VP-nn` it delivers                          |
-| Week 4 quality goals and architecture               | `Q-nn` the quality goal, the `GAP-nn` it protects, and the `VP-nn`                                     |
-| Week 5 minimum viable product                       | the `VP-nn` the release delivers                                                                       |
-| Week 6 analytics                                    | the `VP-nn` each instrumented event is meant to test                                                   |
-| Week 7 usability testing                            | `U-nn` the task, and the `US-nn` or `GAP-nn` it exercises                                              |
-| Week 8 configuration management decisions           | the `US-nn` or `GAP-nn` affected by the decision                                                       |
-| Week 9 reflection and final presentation            | the gaps you closed, and the ones you did not                                                          |
-
-Weeks 10 and 11 produce no repository work that cites a Week 1 identifier.
-The Week 11 individual reflection and peer evaluation are private and go in the Moodle submission only.
 
 **Required**
 
@@ -500,7 +487,6 @@ The Week 11 individual reflection and peer evaluation are private and go in the 
 **Since: W1**
 
 These rules are about the honesty of your research, not about the quality of your software.
-Software quality is Week 4.
 
 **Required**
 
@@ -555,13 +541,11 @@ A later meeting settles one thing or two, and the rules below are enough to prep
 
 **Example**
 
-<!-- TODO use an example for week 2 because week 5 assignment is underdetermined -->
+A Week 2 validation meeting.
 
-A Week 5 review, which is not a kickoff.
-
-- What it has to settle: whether the release delivers `VP-01`, or something cheaper.
-- The areas that follow from it: scope, and the pain points and constraints that decide it.
-- The question whose answer would change the week: "What would you do first on Monday if this shipped and the rest waited until January?"
+- What it has to settle: whether the prototype, the boundary, and the minimum usable product candidate are right.
+- The areas that follow from it: the prototype's question, the boundary, and the build order.
+- The question whose answer would change the week: "Which of these stories would you miss first if it were not built?"
 
 **Recommended**
 

@@ -81,7 +81,7 @@ Follow [Product Vision](../requirements/artifact-requirements.md#product-vision)
    Make it a list, not a paragraph, because a list is something a reader can argue with item by item.
 5. Draw a **system context diagram** showing the product, the external actors, and the external systems it exchanges data with.
    Any format is allowed, as long as the diagram is committed or linked view-only and the text beside it describes the external actors.
-   Do not draw containers or components; those are for later weeks.
+   Do not draw containers or components.
    See [Stakeholders, Boundary, And Context](../requirements/process-requirements.md#stakeholders-boundary-and-context).
 6. Link to the issue list filtered by the `user-story` label and to your current week report.
 
@@ -109,9 +109,7 @@ Complete every requirement marked `**Since: W2**` in [Planning And Issue Trackin
    Give every `Won't Have` story a reason in its closing comment, beginning with `won't-have`.
    <!-- TODO What does won't-have mean here? -->
    <!-- Why start with "won't have"? I think the label is enough and the reason should be free-form -->
-6. Name the **minimum usable product candidate** in `reports/week-02/README.md`: a strict, non-empty subset of your `Must Have` stories that you would build first, and which one you would drop first if you ran out of time.
-   You will build the MUP in Week 3 based on this candidate set of user stories.
-   <!-- TODO don't mention MUP because it can be planned in week 3 -->
+6. Name the **minimum usable product candidate** in `reports/week-02/README.md`: a strict, non-empty subset of your `Must Have` stories that you would build first, and which of the stories you would drop first if you ran out of time.
 7. Inactive stories close as not planned with a comment naming the reason and any story that supersedes them, and a delivered story closes as completed.
 8. Create your branches from the issue, and link every pull request to its issue.
    Use the `<issue-number>-<short-description>` branch naming rule, per [Branch Protection And Pull Requests](../requirements/repository-requirements.md#branch-protection-and-pull-requests).
@@ -241,7 +239,7 @@ A strong submission has:
   If you cannot tell whether it passed, it is not a criterion.
 - **A `Must Have` list you can actually build.**
   Three or four stories, not eight.
-  The label stops meaning anything when everything is a must, and Week 3 inherits whatever you wrote here.
+  The label stops meaning anything when everything is a must.
 - **A prototype of the hard part.**
   You built the thing you were least sure about, not the thing you were most pleased with.
   A prototype of the easy part demos well and teaches nothing.
