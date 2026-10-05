@@ -40,7 +40,7 @@ By the end of this week you should be able to show an instructor:
 
 - What your product must achieve, in one sentence, and which `VP-nn` from Week 1 it serves.
 - What your product will deliberately not do, and why that makes your context diagram checkable.
-- Eight or more user stories, each a GitHub issue, at least five of them active, each active story with acceptance criteria somebody else could run, each criterion carrying a stable `AC-nn` inside its issue, each story naming the `VP-nn` it supports and the origins it has in its `Traces to` list.
+- Eight or more user stories, each a GitHub issue, at least five of them not `Won't Have`, each of those with acceptance criteria somebody else could run, each criterion carrying a stable `AC-nn` inside its issue, each story naming the `VP-nn` it supports and the origins it has in its `Traces to` list.
 - Which `Must Have` stories make up your minimum usable product candidate, which core task they let a user complete, and which one you would drop first.
 - One place where the customer told you a story was wrong, and the diff that shows what you changed.
 - A repository where the Markdown is checked automatically and the check is green.
@@ -95,10 +95,10 @@ Complete every requirement marked `**Since: W2**` in [Issue Tracking](../require
    The list is required, one entry per line: exactly one `VP-nn` plus optional origins.
 2. Create the labels the stories use, by any means: `user-story`, and `moscow:must`, `moscow:should`, `moscow:could`, `moscow:won't`.
    The form applies `user-story`; apply one MoSCoW label per story.
-3. Open **8 or more** stories as issues, one per story, and keep at least **5 of them active**.
+3. Open **8 or more** stories as issues, one per story, and keep at least **5 of them** something other than `Won't Have`.
    The title is `US-nn: <story title>`.
-   Every story names the `VP-nn` it supports, which for an active story is one your goal traces to, and, optionally, its origins in the `Traces to` list: the `GAP-nn` it closes, a customer or team decision, or an action point it carries out.
-   Every story is a **user's need**, not a solution, and every active story carries **at least two acceptance criteria**, each observable and pass/fail.
+   Every story names the `VP-nn` it supports, which for every story except a `Won't Have` story is one your goal traces to, and, optionally, its origins in the `Traces to` list: the `GAP-nn` it closes, a customer or team decision, or an action point it carries out.
+   Every story is a **user's need**, not a solution, and every story except a `Won't Have` story carries **at least two acceptance criteria**, each observable and pass/fail.
    Each criterion carries a stable ID `AC-01`, `AC-02`, and so on, numbered within its issue and never renumbered or reused.
    A citation elsewhere pairs the `AC-nn` with its story issue, as a link or by `US-nn`; the notation is your choice.
    What a story may name, and where a specific the customer has settled goes, is in [User Stories And Acceptance Criteria](../requirements/process-requirements.md#user-stories-and-acceptance-criteria).
@@ -106,7 +106,7 @@ Complete every requirement marked `**Since: W2**` in [Issue Tracking](../require
    The test is whether somebody who is not you could run the check and get the same answer.
    See [User Stories](../requirements/artifact-requirements.md#user-stories) and [User Stories And Acceptance Criteria](../requirements/process-requirements.md#user-stories-and-acceptance-criteria).
 4. Prioritize every story with **MoSCoW**.
-5. Close an inactive story as not planned with a comment giving the reason, and close a delivered story as completed.
+5. Close a `Won't Have` story as not planned with a comment giving the reason, and close a delivered story as completed.
 6. Create your branches from the issue, and link every pull request to its issue.
    Use the `<issue-number>-<short-description>` branch naming rule, per [Branch Protection And Pull Requests](../requirements/repository-requirements.md#branch-protection-and-pull-requests).
 7. The method is in [Step 2: Turn Each Gap Into Stories](../guides/user-stories-and-prototyping.md#step-2-turn-each-gap-into-stories) and [Step 3: Write Criteria Somebody Else Can Run](../guides/user-stories-and-prototyping.md#step-3-write-criteria-somebody-else-can-run).
@@ -264,7 +264,7 @@ Follow the structure in [Weekly Public Report](../requirements/artifact-requirem
 4. `## Minimum Usable Product Candidate`, per [Part 3](#part-3-propose-the-minimum-usable-product-candidate).
 5. **Name the `US-nn` that changed because of the validation meeting**, in one line, link its issue, and link the meeting report's `#decisions`.
    This is the row a grader reads first, and it is the reason the week is worth grading.
-6. Repository evidence: a link to one issue per active story and one merged pull request, a link to the latest green Markdown run, and a link to the latest green link check run.
+6. Repository evidence: a link to one issue per story that is not `Won't Have` and one merged pull request, a link to the latest green Markdown run, and a link to the latest green link check run.
    Add the justification for every link you excluded, and confirm you opened each one in a browser to check it.
 7. A contribution table mapping each member's GitHub username to their commits, issues, pull requests, and reviews.
 8. Deviations from the assignment or requirements, if any, with reasons.
@@ -314,10 +314,10 @@ See [Permalinks And Snapshots](../requirements/repository-requirements.md#permal
 - [ ] Stakeholders named, and the boundary written as a list of things the product will not do.
 - [ ] System context diagram committed or linked view-only, with the actors described in prose.
 - [ ] No use case, container, or component diagrams.
-- [ ] One Issue Form at `.github/ISSUE_TEMPLATE/user-story.yml`, blank issues disabled, and **8 or more** story issues with **5 or more** active, `US-nn` IDs never reused.
-- [ ] Every story states a need, not a design, and carries its `Traces to` list: exactly one `VP-nn`, for an active story one the goal traces to, plus optional origins.
-- [ ] At least two acceptance criteria per active story, each carrying a stable `AC-nn`, each observable and pass/fail.
-- [ ] Every active story small enough to build and verify in one week.
+- [ ] One Issue Form at `.github/ISSUE_TEMPLATE/user-story.yml`, blank issues disabled, and **8 or more** story issues with **5 or more** not `Won't Have`, `US-nn` IDs never reused.
+- [ ] Every story states a need, not a design, and carries its `Traces to` list: exactly one `VP-nn`, for every story except a `Won't Have` story one the goal traces to, plus optional origins.
+- [ ] At least two acceptance criteria per story that is not `Won't Have`, each carrying a stable `AC-nn`, each observable and pass/fail.
+- [ ] Every story that is not `Won't Have` small enough to build and verify in one week.
 - [ ] Every story carries one `moscow:*` label, every `Won't Have` issue closed as not planned with a reason.
 - [ ] `reports/week-02/README.md` has `## Minimum Usable Product Candidate`: the core task, a strict, non-empty subset of the `Must Have` stories that completes it end to end, and the story inside the candidate to drop first.
 - [ ] One issue per story, titled `US-nn: <story title>`, carrying the story and criteria, with an optional remaining-work checklist; every pull request linked to its issue.

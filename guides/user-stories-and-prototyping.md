@@ -117,7 +117,7 @@ The test is simple: could somebody who is not you run the check and get the same
 Write **at least two** per story.
 One criterion for the happy path, and one for what happens when something is missing, empty, or wrong.
 A single criterion per story is easy to satisfy with a line of prose that tests nothing.
-The criteria go in the issue form; an inactive story may carry none.
+The criteria go in the issue form; a `Won't Have` story may carry none.
 
 Number each criterion `AC-01`, `AC-02`, and so on, from the top of the story, and write the ID at the start of the criterion.
 The ID is stable inside the issue: an edit keeps it, a removed criterion retires it, and a criterion added later takes the next free number.
@@ -151,7 +151,7 @@ MoSCoW is a four-way priority scale: `Must Have`, `Should Have`, `Could Have`, a
 Prioritize every story with it.
 The point of the exercise is not the label, it is the argument: whoever disagrees with a `Must Have` has to say why the product is not the product without it.
 
-A `Won't Have` story is inactive by definition, so write it down as an issue and close it as not planned, with the reason, instead of quietly leaving a story out.
+A `Won't Have` story is not built, but write it down as an issue and close it as not planned, with the reason, instead of quietly leaving a story out.
 A reader can argue with a recorded `Won't Have`; they can only guess about a missing one.
 
 Then name the **minimum usable product candidate**, per [the requirement](../requirements/process-requirements.md#minimum-usable-product-candidate).

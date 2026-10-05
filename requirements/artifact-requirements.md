@@ -704,14 +704,13 @@ Each story is a GitHub issue, and the `user-story` label identifies story issues
    - The `user-story` label, applied by the form.
       <!-- Alternatively, allow issue type -->
 
-2. Active stories are open or closed as completed, and a delivered story closes as completed and stays in the registry.
-   An inactive story carries `moscow:won't` and is closed as not planned, with a comment giving the reason.
+2. A story is open until delivered and then closed as completed, or it is a `Won't Have` story closed as not planned, per [User Stories And Acceptance Criteria](process-requirements.md#user-stories-and-acceptance-criteria).
 3. The issue is the record of change.
    A change that follows a customer meeting adds a dated comment saying what changed, naming any `AC-nn` that changed, and linking the meeting report.
    Do not rewrite a story to hide a change; the edit history and the comment are the record.
    A criterion that is removed retires its `AC-nn`, and the ID is never reused.
 4. The **registry of identifiers** is the issue list filtered by the `user-story` label.
-   It shows open and closed issues, so an inactive story keeps its `US-nn` and stays findable after it closes.
+   It shows open and closed issues, so a `Won't Have` story keeps its `US-nn` and stays findable after it closes.
 5. Do not keep a second list of stories in the repository.
    The issue is the source of truth for the requirement and its criteria, and the issue tracker is where execution state lives, per [Issue Tracking](repository-requirements.md#issue-tracking).
 
@@ -723,7 +722,7 @@ Each story is a GitHub issue, and the `user-story` label identifies story issues
 
 **Example**
 
-Issue #42, an active story:
+Issue #42, a `Must Have` story:
 
 ```markdown
 Title: US-01: Pay at booking
@@ -755,7 +754,7 @@ The customer will not accept a hold that confirms without payment, and the first
 
 <!-- TODO in comments, link to meeting reports -->
 
-Issue #50, an inactive story, closed as not planned:
+Issue #50, a `Won't Have` story, closed as not planned:
 
 ```markdown
 Title: US-09: Sell session bundles

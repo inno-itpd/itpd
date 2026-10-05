@@ -331,10 +331,9 @@ Each story is a GitHub issue, and the issues are the only place the stories live
 
 **Required**
 
-1. Write **8 or more** user stories, and keep at least **5 of them active**.
+1. Write **8 or more** user stories, and keep at least **5 of them** something other than `Won't Have`.
    Fewer do not cover a product, and more leaves no week to change them once something turns out to be wrong.
-   An **active** story is one you intend to build; an **inactive** story is one you have decided not to build, and it is a `Won't Have` story.
-   The close reason carries the distinction for the rest of the course: an inactive story is closed as not planned, and a delivered active story is closed as completed.
+   A `Won't Have` story is one you have decided not to build; every other story is one you intend to build.
 2. Every story gets a stable ID `US-01`, `US-02`, and so on.
    IDs are never renumbered, reused, or reassigned, including when the story is edited later in the course.
 3. Every story is a statement of a user's need, not a description of a solution.
@@ -347,8 +346,8 @@ Each story is a GitHub issue, and the issues are the only place the stories live
    An acceptance criterion may name a screen, a field, or a system state, because that is what an observer checks.
 4. Every story carries a `Traces to` list.
    It contains exactly one `VP-nn`, the value proposition the story supports, and, optionally, the story's origins: the `GAP-nn` it closes, a customer decision in a meeting report, a team decision in the weekly public report, or an action point it carries out.
-   The `VP-nn` is how a story traces to the product vision, so an active story's `VP-nn` is one the vision's [goal](#product-vision-and-goals) traces to.
-   An active story that supports no such value proposition is outside the vision: add its `VP-nn` to the goal as a team decision, or make the story `Won't Have`.
+   The `VP-nn` is how a story traces to the product vision, so the `VP-nn` of every story except a `Won't Have` story is one the vision's [goal](#product-vision-and-goals) traces to.
+   A story you intend to build that supports no such value proposition is outside the vision: add its `VP-nn` to the goal as a team decision, or make the story `Won't Have`.
    Cite an identifier by its ID, and a decision or action point by the report path and its `#decisions` or `#action-points` anchor, with the decision sentence or action quoted, per [Identifier Rules](#identifier-rules).
    A need that came from outside Week 1 research does not rewrite the research; only a contradiction updates it, per [Traceability Into Later Weeks](#traceability-into-later-weeks).
 5. Every story is prioritized with MoSCoW, relative to the product you intend to finish in this course:
@@ -357,26 +356,25 @@ Each story is a GitHub issue, and the issues are the only place the stories live
    - `Should Have`: important, and the product is still coherent without it.
    - `Could Have`: valuable, and the first thing to cut.
    - `Won't Have`: a need you have deliberately excluded, including a story you dropped after writing it.
-     A `Won't Have` story is **inactive** by definition, and its closing comment gives the reason.
 
-6. Every active story carries **at least two acceptance criteria**, and each one must be observable and pass/fail.
+6. Every story except a `Won't Have` story carries **at least two acceptance criteria**, and each one must be observable and pass/fail.
    Any notation is allowed, including `Given`/`When`/`Then`; the rules are that somebody other than you can run the check and get the same answer.
    "Works well" is not a criterion.
-   An inactive story is not built, so it may carry none.
+   A `Won't Have` story is not built, so it may carry none.
 7. Every acceptance criterion carries a stable ID `AC-01`, `AC-02`, and so on, numbered within its story and written at the start of the criterion.
    The ID is unique inside its story issue and is never renumbered or reused there.
    A criterion edited in place keeps its ID, a criterion that is removed retires its ID, and a criterion added later takes the next free number.
    Cite a specific criterion from another artifact by its `AC-nn` together with its story issue: a link to the issue, or its `US-nn` when the issue is already linked.
    The notation is not fixed, as long as the reference identifies both the story and the criterion.
-8. Every active story is small enough to build and verify in one week.
+8. Every story except a `Won't Have` story is small enough to build and verify in one week.
    A need larger than that is written as two or more stories.
 9. Open one issue per story, from the form in [Issue Tracking](repository-requirements.md#issue-tracking).
    The issue is the story and the source of truth; the form carries the statement, the acceptance criteria, each with its `AC-nn`, the `Traces to` list, and any notes.
    The issue may carry a checklist of the remaining work, so a contributor can work without leaving it.
-10. A story becomes inactive by being closed as not planned, with a comment naming the reason.
-    Its label becomes `moscow:won't` if it carried another one.
+10. A `Won't Have` story carries the `moscow:won't` label and is closed as not planned, with a comment naming the reason.
+    A story you drop later changes its label to `moscow:won't` and closes the same way.
     It keeps its identifier and its statement in the issue; the closing comment and the close date are the record.
-    An active story that is delivered closes as completed and stays in the list.
+    Every other story stays open until it is delivered, then closes as completed and stays in the list.
 11. The `Must Have` stories you would build first are the [minimum usable product candidate](#minimum-usable-product-candidate).
 
 **Recommended**
