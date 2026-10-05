@@ -86,6 +86,17 @@ A user is any actor with a goal: the person the product serves, and the operator
 The third line is the one that catches a story written from a feature rather than from a need.
 If you cannot finish it with a value, you have written a task, not a story, and the story is hiding an assumption you have not checked.
 
+**Which `US-nn` does a new story take?**
+The next free one in the registry, per [Where Stories Live](../requirements/user-stories-requirements.md#where-stories-live), and not its issue number.
+This prints the highest `US-nn` issued so far, closed stories included:
+
+```text
+gh issue list --label user-story --state all --limit 1000 --json title \
+  --jq '[.[].title | capture("^US-(?<n>[0-9]+)") | .n | tonumber] | max'
+```
+
+A team that marks stories with an issue type or a field instead of the label filters by that marker instead.
+
 **How specific should a story be?**
 A story states the problem precisely and leaves the solution open.
 The test is who settled the detail.

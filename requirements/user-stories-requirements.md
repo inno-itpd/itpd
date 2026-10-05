@@ -44,6 +44,10 @@ Each story is a GitHub issue, and the `user-story` label identifies story issues
    Do not delete an issue or rewrite its body to hide a change; the edit history and the comment are the record.
 4. The **registry of identifiers** is the issue list filtered by the `user-story` label.
    It shows open and closed issues, so a `Won't Have` story keeps its `US-nn` and stays findable after it closes.
+   A new story takes the next free `US-nn`: one above the highest `US-nn` in the registry, open and closed issues alike.
+   The `US-nn` is not the issue number, because issues and pull requests share one sequence of numbers.
+   A `US-nn` is issued when its issue is opened.
+   When two story issues were opened with the same `US-nn`, the one opened later was never issued it, and it takes the next free `US-nn` in its title before any artifact cites it.
 5. Do not keep a second list of stories in the repository.
    The issue is the source of truth for the requirement and its criteria.
 6. The `user-story` and `moscow:*` labels are the default, and these requirements name them.
