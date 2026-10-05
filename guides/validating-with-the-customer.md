@@ -2,8 +2,8 @@
 
 How to prepare and run a meeting after the kickoff, and how to record what it changed.
 
-The rules are in [Validation](../requirements/process-requirements.md#validation) and [Meeting With The Customer](../requirements/process-requirements.md#meeting-with-the-customer), and the file shapes are in [Artifact Requirements](../requirements/artifact-requirements.md#customer-meeting-artifacts).
-This guide is the method for every meeting after the kickoff.
+The rules are in [Meeting With The Customer](../requirements/process-requirements.md#meeting-with-the-customer), and in [Validation](../requirements/process-requirements.md#validation) when you show a prototype; the file shapes are in [Artifact Requirements](../requirements/artifact-requirements.md#customer-meeting-artifacts).
+This guide is the method for every weekly meeting after the kickoff, whatever you bring to it: a prototype, working software, or a question the team cannot settle alone.
 The kickoff is a different meeting, and its method is in [The Kickoff Meeting](customer-kickoff-meeting.md).
 
 **Timebox:** the meeting is ~30 minutes, and the writing is most of the work.
@@ -26,15 +26,17 @@ Ask for 60 if the customer can give it.
 reports/week-NN/meeting-script.md     the target, the agenda, the questions, the roles
 reports/week-NN/meeting-report.md     the decisions, the action points, the disagreements
 reports/week-NN/meeting-notes.md      or meeting-transcript.md, never both
-the story issue                       a dated comment on what the meeting changed
+reports/week-NN/prototypes.md         when you showed a prototype: what it tested, what they said
+the story issue                       a dated comment on what the meeting changed or accepted
 reports/week-NN/README.md             the meeting decisions linked, the changed US-nn named
 ```
 
 ## Step 1: Write Down What The Meeting Is For
 
 This is not the kickoff again, and the difference is the whole point of a later meeting.
-In Week 1 the problem and the direction were both open.
-By now you have something concrete to test, and the one question is: **which of these is wrong?**
+At the kickoff the problem and the direction were both open.
+Now you bring something concrete: a prototype, a story that runs, or a decision you cannot make alone.
+The one question is: **which of these is wrong?**
 
 Write the target at the top of the script, in one sentence.
 A good target is specific enough that you could tell afterwards whether you hit it.
@@ -73,7 +75,8 @@ Turn the areas into the script's `## Agenda`: the parts of the meeting in the or
 
 Open with the permission questions, then the previous meeting's open questions and due action points, because the customer will ask about them if you do not.
 Then show one thing per part, and ask about it while it is on the screen.
-A question about a prototype the customer has not seen yet gets an opinion about your description of it.
+A question about something the customer has not seen yet gets an opinion about your description of it.
+When you show working software, run each story against its acceptance criteria, one `AC-nn` at a time, and ask for the verdict before you move on.
 
 Put the part you are least sure of first after that.
 If the meeting runs short, it is the last part that gets cut, and the last part should be the one whose answer you can most nearly predict.
@@ -105,26 +108,32 @@ Cite a decision by quoting its sentence and linking `#decisions`; there is no de
 
 Make sure the change reaches every place it affects, because each one answers a different question:
 
-| Where                                    | Question it answers                           |
-| ---------------------------------------- | --------------------------------------------- |
-| `reports/week-NN/prototypes.md`          | What did we show, and what did they say?      |
-| `meeting-report.md` `## Decisions`       | What did we decide, and what did it change?   |
-| the story issue, or the doc that changed | What does it say now, and when did it change? |
-| `reports/week-NN/README.md`              | Where are the decisions, and what changed?    |
+| Where                                              | Question it answers                           |
+| -------------------------------------------------- | --------------------------------------------- |
+| `reports/week-NN/prototypes.md`, after a prototype | What did we show, and what did they say?      |
+| `meeting-report.md` `## Decisions`                 | What did we decide, and what did it change?   |
+| the story issue, or the doc that changed           | What does it say now, and when did it change? |
+| `reports/week-NN/README.md`                        | Where are the decisions, and what changed?    |
 
-The change is required in all four places by [Validation](../requirements/process-requirements.md#validation).
+After a prototype, the change is required in all four places by [Validation](../requirements/process-requirements.md#validation).
 The issue comment is the one that is easy to skip, and skipping it is what makes a decision invisible to a reader of the stories.
 Add a dated comment to the story issue saying what changed and why, naming the `AC-nn` if a criterion changed, and linking the meeting report.
 A story edited three times with no comment gives a reader no way to tell what the customer actually settled from what the team decided on its own.
 
-If nothing changed, that is itself the finding, and it is a serious one.
+A story the customer accepted is a decision too.
+Its row names the `US-nn` and says `None` with the reason, and the story issue gets the same dated comment with the verdict, per [Meeting With The Customer](../requirements/process-requirements.md#meeting-with-the-customer).
+A rejected story names the `AC-nn` it failed, in the row and in the comment.
+
+If nothing changed after a prototype, that is itself the finding, and it is a serious one.
 Either your prototype tested something the customer already agreed with, or you asked questions whose answers could not have contradicted anything.
 Write that down too; it is more useful than a week that looks busy.
+A meeting that showed working software may change nothing, because a customer accepting a story you built is a result.
+It is still a warning when the meeting produced no decision at all, or when nobody disagreed with anything you showed.
 
 ## Common Mistakes
 
 - **Re-running the kickoff.**
-  Twenty questions about business goals decides nothing, because those were settled a week ago.
+  Twenty questions about business goals decides nothing, because those were settled at the kickoff.
 - **A target that is a subject.**
   "Discuss the vision" is not a target you can miss.
 - **Asking about the product you planned.**
@@ -134,8 +143,8 @@ Write that down too; it is more useful than a week that looks busy.
 - **Deciding but not commenting.**
   A decision in the meeting report that never reaches the story issue has not actually changed anything.
 - **Showing the easy part.**
-  If the customer is impressed and you are not surprised, the prototype went to the wrong story.
+  If the customer is impressed and you are not surprised, you showed the wrong story.
 - **Every decision `None` or `TBD`.**
-  A week whose decisions changed nothing visible is the same warning as an empty `## Disagreements` table: the meeting tested nothing a reader can point at.
+  Unless the decisions are accepted stories, a week whose decisions changed nothing visible is the same warning as an empty `## Disagreements` table: the meeting tested nothing a reader can point at.
 - **Twelve questions in thirty minutes.**
   You will get through five well, and the rest will be a list somebody read aloud.

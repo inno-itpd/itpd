@@ -436,6 +436,8 @@ The candidate is your proposal for it, made before any product code exists, so t
 A prototype is an instrument for finding out what is wrong.
 It is not a showcase, and it is not the product.
 
+These rules apply to every meeting with the customer where you show a prototype, in any week from Week 2.
+
 **Required**
 
 1. Use the four terms precisely, because they answer different questions:
@@ -554,7 +556,12 @@ Bring a direction and its evidence, and find out where it is wrong.
 
 The kickoff in Week 1 is the meeting with the most to settle, because the problem and the direction are both still open.
 Its method is in [Guide: The Kickoff Meeting](../guides/customer-kickoff-meeting.md).
-A later meeting settles one thing or two; its method is in [Guide: Validating With The Customer](../guides/validating-with-the-customer.md), and the rules below are enough to prepare it.
+Every later meeting settles one thing or two; its method is in [Guide: Validating With The Customer](../guides/validating-with-the-customer.md), and the rules below are enough to prepare it.
+
+**Required every week**
+
+Hold at least one meeting with the customer every week.
+The Week 1 meeting is the kickoff.
 
 **Required for every meeting**
 
@@ -568,6 +575,8 @@ A later meeting settles one thing or two; its method is in [Guide: Validating Wi
 5. Ask the [three permission questions](artifact-requirements.md#customer-meeting-artifacts) every time.
 6. Write a [meeting report](artifact-requirements.md#meeting-report), and either a [transcript](artifact-requirements.md#meeting-transcript) or [notes](artifact-requirements.md#meeting-notes), per [Customer Meeting Artifacts](artifact-requirements.md#customer-meeting-artifacts).
 7. The report is where the week's open questions live, and its `## Decisions` table names what each decision changed, per [Meeting Report](artifact-requirements.md#meeting-report).
+   A decision that confirmed the current direction is a valid row with `None` and the reason.
+   A meeting is required to change something only when it showed a prototype, per [Validation](#validation).
 8. The customer decides the scope.
    Your job in the meeting is to present a direction with its evidence and to find out where it is wrong, not to ask the customer to design the product.
 
@@ -583,6 +592,17 @@ A later meeting settles one thing or two; its method is in [Guide: Validating Wi
    Timestamp the written exchange as the notes, record a voice or screen note if there is one, and state the substitution in the weekly public report as a deviation.
    The rules above still apply, except the role split and the length, per [Meeting Script](artifact-requirements.md#meeting-script).
 
+**Required when you show working software**
+
+**Since: W3**
+
+<!-- TODO refine -->
+
+1. Show each story you present as done against its acceptance criteria, one `AC-nn` at a time, while it runs on the screen.
+2. The customer accepts or rejects each story.
+   Record the verdict as a row in the meeting report's `## Decisions` that names the `US-nn`: an accepted story says `None` in `Changes`, with the reason, and a rejected story names each `AC-nn` it failed.
+3. Add a dated comment to the story issue with the verdict, naming any failed `AC-nn` and linking the meeting report.
+
 **Example**
 
 A Week 2 validation meeting.
@@ -591,3 +611,10 @@ A Week 2 validation meeting.
 - The areas that follow from it: the prototype's question, the boundary, and the build order.
 - The agenda that follows from them: show the prototype and ask about it, then the boundary, then the minimum usable product candidate.
 - The question whose answer would change the week: "Which of these stories would you miss first if it were not built?"
+
+A Week 3 meeting that shows working software.
+
+- What it has to settle: whether the stories finished this week do what the customer needs, and what comes next.
+- The areas that follow from it: each finished story against its acceptance criteria, and the order of the next stories.
+- The agenda that follows from them: run each finished story and ask for its verdict, then the next stories.
+- The question whose answer would change the next week: "What did you expect to happen here that did not?"

@@ -154,7 +154,7 @@ That shape is fixed; do not redesign it per week.
 
 Week 1 adds two more files beside them, both evidence rather than maintained documentation: `meeting-script.md` and `candidate-list.md`.
 They exist only because Week 1 is the week where the customer meeting and the alternatives search happen.
-Later weeks that meet the customer write the script again for that week's meeting, and later weeks that need another alternative add to the comparison rather than reopening the search.
+Every later week writes the script again for that week's meeting, because the customer is met every week, and later weeks that need another alternative add to the comparison rather than reopening the search.
 
 ## Assignment Authoring Checklist
 
