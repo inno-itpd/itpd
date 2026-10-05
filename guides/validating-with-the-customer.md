@@ -54,6 +54,17 @@ Take your target and list what you believe that, if it were false, would make yo
 Each belief on that list is an area: a place where the customer's answer could change something you wrote.
 An area that does not serve the target is deleted, even if it was in an earlier script.
 
+**Example**
+
+A meeting that shows a prototype, the boundary, and the minimum usable product candidate has three areas, and one question that could overturn each:
+
+- **Prototype.**
+  What did you expect it to do that it does not?
+- **Boundary.**
+  The product will not do one thing on this list; which need of yours does that break?
+- **Minimum usable product candidate.**
+  If only these stories shipped, what would you miss first?
+
 Write every question numbered, and tag it open or closed.
 An open question asks the customer to tell you something; a closed one can be answered yes or no.
 The tag is what you check the question against in [Step 3](#step-3-cut-questions-that-cannot-change-anything).

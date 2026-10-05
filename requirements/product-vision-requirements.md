@@ -46,7 +46,7 @@ It is created once, in its final place, and then stays current.
 1. The vision states the **goal** of the product: what it must achieve.
 2. The goal traces to at least one `VP-nn` from your [value proposition](research-requirements.md#value-proposition-and-differentiation).
    A goal that supports no value proposition is a feature you would like, which is a different thing.
-3. Keep it short.
+3. State it in one sentence.
    A vision that has grown into a specification has become the stories, and the two then drift apart.
 
 ## Stakeholders
