@@ -2,7 +2,7 @@
 
 How to turn a gap into something a customer can react to, and something a team can build.
 
-The rules are in [User Stories](../requirements/process-requirements.md#user-stories), [Acceptance Criteria](../requirements/process-requirements.md#acceptance-criteria), [MoSCoW Prioritization](../requirements/process-requirements.md#moscow-prioritization), and [Validation](../requirements/process-requirements.md#validation), and the file shapes are in [Artifact Requirements](../requirements/artifact-requirements.md#user-stories).
+The rules are in [The Story](../requirements/user-stories-requirements.md#the-story), [Acceptance Criteria](../requirements/user-stories-requirements.md#acceptance-criteria), [MoSCoW Prioritization](../requirements/user-stories-requirements.md#moscow-prioritization), and [Validation](../requirements/prototypes-requirements.md#validation), and the file shapes are in [Where Stories Live](../requirements/user-stories-requirements.md#where-stories-live) and [Where Prototypes Live](../requirements/prototypes-requirements.md#where-prototypes-live).
 This guide is the method, with a worked shape for each step.
 
 **Timebox:** about two days.
@@ -59,7 +59,7 @@ A paragraph cannot be disagreed with item by item.
 Then draw the context diagram, with the product, the external actors, and the external systems it exchanges data with.
 The diagram is the same boundary drawn as a picture: every system your list says handles a job is on it, and nothing on it does a job your list leaves to nobody.
 The format is your choice; the diagram has to be a picture that a reader can look at, and the text beside it has to say what the diagram must show.
-See [Stakeholders](../requirements/process-requirements.md#stakeholders), [Boundary](../requirements/process-requirements.md#boundary), and [System Context](../requirements/process-requirements.md#system-context).
+See [Stakeholders](../requirements/product-vision-requirements.md#stakeholders), [Boundary](../requirements/product-vision-requirements.md#boundary), and [System Context](../requirements/product-vision-requirements.md#system-context).
 
 ## Step 2: Turn Each Gap Into Stories
 
@@ -72,7 +72,7 @@ When the story has an origin, record it in the story's `Traces to` list, and nev
 
 Whatever its origin, a story reaches the vision through its `VP-nn`.
 The vision has one goal and no identifier, so "traces to the vision" would be true of every story and would check nothing; the value proposition says which part of the goal the story serves.
-If a story you want to build supports a `VP-nn` your goal does not cite, the story or the goal is wrong; [User Stories](../requirements/process-requirements.md#user-stories) says how to settle it.
+If a story you want to build supports a `VP-nn` your goal does not cite, the story or the goal is wrong; [The Story](../requirements/user-stories-requirements.md#the-story) says how to settle it.
 
 The shape is always the same three lines:
 
@@ -163,7 +163,7 @@ You probably do not yet know what the product does in that case, which makes it 
 ## Step 4: Prioritize, Then Pick The First Thing To Build
 
 MoSCoW is a four-way priority scale: `Must Have`, `Should Have`, `Could Have`, and `Won't Have`.
-[MoSCoW Prioritization](../requirements/process-requirements.md#moscow-prioritization) defines each value and what a priority has to record.
+[MoSCoW Prioritization](../requirements/user-stories-requirements.md#moscow-prioritization) defines each value and what a priority has to record.
 Prioritize every story with it.
 The point of the exercise is not the label, it is the argument: whoever disagrees with a `Must Have` has to say why the product is not the product without it.
 
@@ -174,7 +174,7 @@ If the only reason you can write is the definition of the label, you have not de
 A `Won't Have` story is not built, but write it down as an issue and close it as not planned, with the reason, instead of quietly leaving a story out.
 A reader can argue with a recorded `Won't Have`; they can only guess about a missing one.
 
-Then name the **minimum usable product candidate**, per [the requirement](../requirements/process-requirements.md#minimum-usable-product-candidate).
+Then name the **minimum usable product candidate**, per [the requirement](../requirements/user-stories-requirements.md#minimum-usable-product-candidate).
 
 This is the hardest decision of the week and it belongs here, where the evidence is.
 Work in this order:
@@ -235,7 +235,7 @@ If you do not prototype at all, say so and name the question you are carrying fo
 
 Then show it, and record what happened.
 The recording is the artifact; the prototype is not.
-See [Validating With The Customer](validating-with-the-customer.md) for the meeting, and [Prototypes](../requirements/artifact-requirements.md#prototypes) for the file shape.
+See [Validating With The Customer](validating-with-the-customer.md) for the meeting, and [Where Prototypes Live](../requirements/prototypes-requirements.md#where-prototypes-live) for the file shape.
 
 ## Common Mistakes
 

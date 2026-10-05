@@ -1,10 +1,10 @@
 ---
 id: TASK-039
 title: Regroup process and artifact requirements by artifact
-status: To Do
+status: Done
 assignee: []
 created_date: '2026-10-05 02:09'
-updated_date: '2026-10-05 02:23'
+updated_date: '2026-10-05 02:36'
 labels:
   - docs
 dependencies: []
@@ -20,21 +20,21 @@ process-requirements.md and artifact-requirements.md split rules by kind (what t
 
 ## Acceptance Criteria
 <!-- AC:BEGIN -->
-- [ ] #1 Each artifact group has one requirements file that states where it lives and what each part must say, with Required, Recommended, and Example labels
-- [ ] #2 repository-requirements.md keeps platform mechanics and is not merged
-- [ ] #3 Every inbound anchor from assignments, guides, course, README, and lectures is migrated and resolves
-- [ ] #4 AGENTS.md repository map, layering, and ownership table describe the new structure
-- [ ] #5 process-requirements.md and artifact-requirements.md are deleted, and no tracked file outside backlog/ names them
-- [ ] #6 The change lands on week-2 before Assignment 2 is published
+- [x] #1 Each artifact group has one requirements file that states where it lives and what each part must say, with Required, Recommended, and Example labels
+- [x] #2 repository-requirements.md keeps platform mechanics and is not merged
+- [x] #3 Every inbound anchor from assignments, guides, course, README, and lectures is migrated and resolves
+- [x] #4 AGENTS.md repository map, layering, and ownership table describe the new structure
+- [x] #5 process-requirements.md and artifact-requirements.md are deleted, and no tracked file outside backlog/ names them
+- [x] #6 The change lands on week-2 before Assignment 2 is published
 <!-- AC:END -->
 
 ## Definition of Done
 <!-- DOD:BEGIN -->
-- [ ] #1 All acceptance criteria are satisfied
-- [ ] #2 Changed Markdown files are formatted: `pnpm run format:markdown`
-- [ ] #3 `pnpm run lint:markdown` passes
-- [ ] #4 `pnpm run test:markdown-format` and `pnpm run test:markdown-rules` pass
-- [ ] #5 `pnpm run check:lectures` passes
+- [x] #1 All acceptance criteria are satisfied
+- [x] #2 Changed Markdown files are formatted: `pnpm run format:markdown`
+- [x] #3 `pnpm run lint:markdown` passes
+- [x] #4 `pnpm run test:markdown-format` and `pnpm run test:markdown-rules` pass
+- [x] #5 `pnpm run check:lectures` passes
 <!-- DOD:END -->
 
 ## Implementation Plan
@@ -93,3 +93,9 @@ Verification:
 - Anchors: the lychee CI job runs without `--include-fragments`, so check fragments locally with a scratch script that slugs every heading and `<h2 id>` GitHub-style and resolves every relative `.md#fragment` link.
 - Read `user-stories-requirements.md` end to end, and check that a student can write a story issue without leaving it, apart from the general and visibility links.
 <!-- SECTION:PLAN:END -->
+
+## Implementation Notes
+
+<!-- SECTION:NOTES:BEGIN -->
+Split process- and artifact-requirements.md into eight files by artifact group, moving text verbatim except link targets, link texts that named the old sections, and the sentences that only pointed to the other file (vision Goal rule 3, The Story rule 6, the Constraints and Prototypes pointer lines). Customer Meeting Artifacts rule 5 became its own Permission Questions section, Meeting With The Customer split into Every Meeting, The Kickoff, and Showing Working Software, and the script, report, and transcript examples moved to Full Examples. Research gained a Where Research Lives section naming the four docs/research/ files. Inbound links in assignments, guides, course/rules.md, README.md, and repository-requirements.md were migrated, the split anchors by hand. lectures/*.typ had none. A scratch fragment checker resolved 398 anchored links with 0 problems, and a line diff against HEAD found no lost rule text.
+<!-- SECTION:NOTES:END -->

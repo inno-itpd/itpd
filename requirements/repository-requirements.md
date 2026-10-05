@@ -1,7 +1,7 @@
 # Repository Requirements
 
 These requirements cover the mechanics of the product repository: where it lives, how changes get in, how links get checked, and how you produce the permalinks and the snapshot your assignment asks for.
-Use [Artifact Requirements](artifact-requirements.md) for what the artifacts are and who may see them, and [Process Requirements](process-requirements.md) for the product work.
+Use [General Requirements](general-requirements.md) for what an artifact is, [Visibility Requirements](visibility-requirements.md) for who may see it, and the file for each artifact, listed in [the course rules](../course/rules.md#where-the-rules-live), for the product work.
 
 Each requirement carries a `**Since: WN**` marker stating the week it starts applying, so a section can hold requirements that begin in different weeks.
 Requirements that arrive later are written now so that later weeks do not have to introduce a convention from nothing.
@@ -35,7 +35,7 @@ Requirements that arrive later are written now so that later weeks do not have t
    The team names both, and both names carry the team number, so the course staff can find them.
    The repository belongs to the organization and not to a team member's personal account.
 2. **The repository is public.**
-   What that means for its contents is in [Visibility Model](artifact-requirements.md#visibility-model).
+   What that means for its contents is in [Visibility Model](visibility-requirements.md#visibility-model).
 3. The default branch is `main`.
 4. All team members are added as collaborators, with write access, before any collaborative work starts.
    Nobody works alone in their own account.
@@ -268,7 +268,7 @@ Both are built from the commit you are submitting, so that what a grader sees is
    Ignore the rest.
 4. Keep large binaries, recordings, datasets, and model weights out of normal git history.
    When a file is genuinely required, use approved external storage and link to it.
-5. What may never be committed is in [Sensitive Information Reference](artifact-requirements.md#sensitive-information-reference).
+5. What may never be committed is in [Sensitive Information Reference](visibility-requirements.md#sensitive-information-reference).
 
 ## Sensitive-Data Incident Response
 
@@ -290,16 +290,16 @@ If credentials, personal data, or confidential material is committed by mistake:
 
 **Required**
 
-1. Add `.github/ISSUE_TEMPLATE/user-story.yml`, an Issue Form with a field for each part of a story issue listed in [User Stories](artifact-requirements.md#user-stories), and the `user-story` label applied by the form.
+1. Add `.github/ISSUE_TEMPLATE/user-story.yml`, an Issue Form with a field for each part of a story issue listed in [Where Stories Live](user-stories-requirements.md#where-stories-live), and the `user-story` label applied by the form.
    The statement, the `Traces to` list, and the `Priority reason` field are required, and `Traces to` takes one entry per line.
-   The acceptance criteria field is optional, per [Acceptance Criteria](process-requirements.md#acceptance-criteria).
+   The acceptance criteria field is optional, per [Acceptance Criteria](user-stories-requirements.md#acceptance-criteria).
 2. Disable blank issue creation in the issue template configuration.
-3. Create the labels the stories use, by any means: `user-story`, and the four `moscow:*` labels in [MoSCoW Prioritization](process-requirements.md#moscow-prioritization).
+3. Create the labels the stories use, by any means: `user-story`, and the four `moscow:*` labels in [MoSCoW Prioritization](user-stories-requirements.md#moscow-prioritization).
    The form applies `user-story`; the team applies one MoSCoW label per story.
 4. Create branches from the issue where GitHub supports it, and link every pull request to its issue.
 5. Check the relevant acceptance criteria before merging, and name them in the pull request, per [the pull request template](#branch-protection-and-pull-requests).
 
-The process requirements say [what a story says](process-requirements.md#user-stories), and the artifact requirements say [how its issue is kept](artifact-requirements.md#user-stories).
+The user story requirements say [what a story says](user-stories-requirements.md#the-story) and [how its issue is kept](user-stories-requirements.md#where-stories-live).
 
 ## Tracking Tasks Inside The Repository
 
@@ -309,7 +309,7 @@ The process requirements say [what a story says](process-requirements.md#user-st
 
 - Use a task tracker that keeps its state in the repository, such as the [`backlog.md`](https://github.com/MrLesk/Backlog.md) command-line tool.
   It is not the home of a user story, and a story issue may be mentioned in it.
-  Its files are repository content rather than artifacts, per [Where Artifacts Live In The Repository](artifact-requirements.md#where-artifacts-live-in-the-repository), and it is not graded on its own.
+  Its files are repository content rather than artifacts, per [Where Artifacts Live In The Repository](general-requirements.md#where-artifacts-live-in-the-repository), and it is not graded on its own.
 
 It is recommended for two reasons:
 

@@ -2,7 +2,7 @@
 
 How to prepare and run a meeting after the kickoff, and how to record what it changed.
 
-The rules are in [Meeting With The Customer](../requirements/process-requirements.md#meeting-with-the-customer), and in [Validation](../requirements/process-requirements.md#validation) when you show a prototype; the file shapes are in [Artifact Requirements](../requirements/artifact-requirements.md#customer-meeting-artifacts).
+The rules are in [Every Meeting](../requirements/customer-meetings-requirements.md#every-meeting), and in [Validation](../requirements/prototypes-requirements.md#validation) when you show a prototype; the file shapes are in [Where Meeting Artifacts Live](../requirements/customer-meetings-requirements.md#where-meeting-artifacts-live).
 This guide is the method for every weekly meeting after the kickoff, whatever you bring to it: a prototype, working software, or a question the team cannot settle alone.
 The kickoff is a different meeting, and its method is in [The Kickoff Meeting](customer-kickoff-meeting.md).
 
@@ -58,20 +58,20 @@ Write every question numbered, and tag it open or closed.
 An open question asks the customer to tell you something; a closed one can be answered yes or no.
 The tag is what you check the question against in [Step 3](#step-3-cut-questions-that-cannot-change-anything).
 
-Ask permission before you record, per [Customer Meeting Artifacts](../requirements/artifact-requirements.md#customer-meeting-artifacts).
+Ask permission before you record, per [Permission Questions](../requirements/customer-meetings-requirements.md#permission-questions).
 
 ## Step 3: Cut Questions That Cannot Change Anything
 
-A question earns its place only if an answer could change something in the target, which [Meeting Script](../requirements/artifact-requirements.md#meeting-script) requires.
+A question earns its place only if an answer could change something in the target, which [Meeting Script](../requirements/customer-meetings-requirements.md#meeting-script) requires.
 For each question, ask what answer you expect, and what you would do differently if the answer went the other way.
 If no answer changes anything, cut the question; asking it costs meeting time and tells you nothing.
 
-Rewrite at least one question and record it in `## Key improvements`, per [Meeting Script](../requirements/artifact-requirements.md#meeting-script).
+Rewrite at least one question and record it in `## Key improvements`, per [Meeting Script](../requirements/customer-meetings-requirements.md#meeting-script).
 The principle is yours; what matters is that a reader can see the before, the after, and why the second one is better.
 
 ## Step 4: Order The Meeting
 
-Turn the areas into the script's `## Agenda`: the parts of the meeting in the order you will run them, what you show in each, and which questions you ask there, per [Meeting Script](../requirements/artifact-requirements.md#meeting-script).
+Turn the areas into the script's `## Agenda`: the parts of the meeting in the order you will run them, what you show in each, and which questions you ask there, per [Meeting Script](../requirements/customer-meetings-requirements.md#meeting-script).
 
 Open with the permission questions, then the previous meeting's open questions and due action points, because the customer will ask about them if you do not.
 Then show one thing per part, and ask about it while it is on the screen.
@@ -84,7 +84,7 @@ Keep the final two minutes for reading back the decisions and action points, so 
 
 ## Step 5: Run The Meeting
 
-Assign the three roles before the meeting, per [Meeting With The Customer](../requirements/process-requirements.md#meeting-with-the-customer).
+Assign the three roles before the meeting, per [Every Meeting](../requirements/customer-meetings-requirements.md#every-meeting).
 The whole team attends.
 
 The observer's job is the one that catches the surprise.
@@ -99,10 +99,10 @@ Those are the questions that produce a `## Disagreements` row.
 ## Step 6: Trace What Changed
 
 The meeting report's `## Decisions` table is the record.
-`Changes` names what each decision changed, and links it when the artifact has a stable link: usually a `US-nn`, with the `AC-nn` when a specific criterion changed, or the constraint, assumption, document, or scaffold for anything else, per [Meeting Report](../requirements/artifact-requirements.md#meeting-report).
+`Changes` names what each decision changed, and links it when the artifact has a stable link: usually a `US-nn`, with the `AC-nn` when a specific criterion changed, or the constraint, assumption, document, or scaffold for anything else, per [Meeting Report](../requirements/customer-meetings-requirements.md#meeting-report).
 A decision whose artifact does not exist yet says `TBD`, and the artifact that later carries it links back to the report.
 That table is where a reader looks to see whether the week was a test or a formality.
-The weekly report links that table rather than copying it; only a decision the team took outside the meeting goes in the weekly report's own `## Decisions` table, per [Weekly Public Report](../requirements/artifact-requirements.md#weekly-public-report).
+The weekly report links that table rather than copying it; only a decision the team took outside the meeting goes in the weekly report's own `## Decisions` table, per [Weekly Public Report](../requirements/weekly-report-requirements.md#weekly-public-report).
 
 Cite a decision by quoting its sentence and linking `#decisions`; there is no decision identifier.
 
@@ -115,13 +115,13 @@ Make sure the change reaches every place it affects, because each one answers a 
 | the story issue, or the doc that changed           | What does it say now, and when did it change? |
 | `reports/week-NN/README.md`                        | Where are the decisions, and what changed?    |
 
-After a prototype, the change is required in all four places by [Validation](../requirements/process-requirements.md#validation).
+After a prototype, the change is required in all four places by [Validation](../requirements/prototypes-requirements.md#validation).
 The issue comment is the one that is easy to skip, and skipping it is what makes a decision invisible to a reader of the stories.
 Add a dated comment to the story issue saying what changed and why, naming the `AC-nn` if a criterion changed, and linking the meeting report.
 A story edited three times with no comment gives a reader no way to tell what the customer actually settled from what the team decided on its own.
 
 A story the customer accepted is a decision too.
-Its row names the `US-nn` and says `None` with the reason, and the story issue gets the same dated comment with the verdict, per [Meeting With The Customer](../requirements/process-requirements.md#meeting-with-the-customer).
+Its row names the `US-nn` and says `None` with the reason, and the story issue gets the same dated comment with the verdict, per [Showing Working Software](../requirements/customer-meetings-requirements.md#showing-working-software).
 A rejected story names the `AC-nn` it failed, in the row and in the comment.
 
 If nothing changed after a prototype, that is itself the finding, and it is a serious one.

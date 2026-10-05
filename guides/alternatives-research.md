@@ -1,7 +1,7 @@
 # Guide: Researching Alternatives
 
 How to produce the alternatives evidence for Week 1.
-What the evidence must satisfy is defined in [Process Requirements](../requirements/process-requirements.md#alternatives); this guide is the method.
+What the evidence must satisfy is defined in [Alternatives](../requirements/research-requirements.md#alternatives); this guide is the method.
 
 **Timebox:** about two days for the whole team, split as half a day to find and choose, one day to evaluate, half a day to write up.
 If it is taking longer, you are evaluating too deeply for a product you are not going to build on.

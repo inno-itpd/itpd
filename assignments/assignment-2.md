@@ -50,25 +50,27 @@ By the end of this week you should be able to show an instructor:
 Read these once.
 They are the rules; this assignment only tells you what this week requires.
 
-| Read                                                                                | For                                                                                       |
-| ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| [Course rules](../course/rules.md)                                                  | What is public, what is private, deadlines, AI policy                                     |
-| [Artifact Requirements](../requirements/artifact-requirements.md)                   | Where things live, the vision, story and prototype structures, the meeting report format  |
-| [Repository Requirements](../requirements/repository-requirements.md)               | Issue templates, the Markdown check, branch protection, permalinks, snapshots             |
-| [Process Requirements](../requirements/process-requirements.md)                     | What a goal, constraint, boundary, story, and validation have to satisfy                  |
-| [Guide: user stories and prototyping](../guides/user-stories-and-prototyping.md)    | How to turn a gap into stories, and how to prototype cheaply                              |
-| [Guide: validating with the customer](../guides/validating-with-the-customer.md)    | How to run a meeting after the kickoff and record what it changed                         |
-| [Guide: the kickoff meeting](../guides/customer-kickoff-meeting.md)                 | The kickoff method: the five areas and the Mom Test pass, which this week does not repeat |
-| [Your Week 1 report](../requirements/artifact-requirements.md#weekly-public-report) | What the customer already disagreed with, and what you owe them from the kickoff          |
+| Read                                                                                     | For                                                                                               |
+| ---------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| [Course rules](../course/rules.md)                                                       | What is public, what is private, deadlines, AI policy                                             |
+| [Product Vision Requirements](../requirements/product-vision-requirements.md)            | Where the vision lives, and what its goal, constraints, boundary, and context diagram have to say |
+| [User Story Requirements](../requirements/user-stories-requirements.md)                  | The story issue, its acceptance criteria, its priority, and the minimum usable product candidate  |
+| [Prototype Requirements](../requirements/prototypes-requirements.md)                     | What a prototype must change, and where it is recorded                                            |
+| [Customer Meeting Requirements](../requirements/customer-meetings-requirements.md)       | Every meeting after the kickoff, and the meeting script and report                                |
+| [Repository Requirements](../requirements/repository-requirements.md)                    | Issue templates, the Markdown check, branch protection, permalinks, snapshots                     |
+| [Guide: user stories and prototyping](../guides/user-stories-and-prototyping.md)         | How to turn a gap into stories, and how to prototype cheaply                                      |
+| [Guide: validating with the customer](../guides/validating-with-the-customer.md)         | How to run a meeting after the kickoff and record what it changed                                 |
+| [Guide: the kickoff meeting](../guides/customer-kickoff-meeting.md)                      | The kickoff method: the five areas and the Mom Test pass, which this week does not repeat         |
+| [Your Week 1 report](../requirements/weekly-report-requirements.md#weekly-public-report) | What the customer already disagreed with, and what you owe them from the kickoff                  |
 
 ## Part 1: State The Product Vision
 
 Write `docs/product-vision.md`.
-Follow [Product Vision](../requirements/artifact-requirements.md#product-vision), and read [Product Vision And Goals](../requirements/process-requirements.md#product-vision-and-goals) before you start.
+Follow [Where The Vision Lives](../requirements/product-vision-requirements.md#where-the-vision-lives), and read [Goal](../requirements/product-vision-requirements.md#goal) before you start.
 
 1. State the **goal**: what the product must achieve.
    One short paragraph.
-   The [Product Vision example](../requirements/artifact-requirements.md#product-vision) shows the shape.
+   The [Product Vision example](../requirements/product-vision-requirements.md#full-example) shows the shape.
 
    The goal traces to at least one `VP-nn` in `docs/research/value-proposition.md`, and you link to the section rather than restating it.
 
@@ -76,16 +78,16 @@ Follow [Product Vision](../requirements/artifact-requirements.md#product-vision)
    The deployment target and any language or platform mandate that came with your catalog project are customer-given.
    Your team size is team-given, the weeks left in the course are environmental, and anything that follows from the others is derived.
    An assumption is not a constraint; assumptions live in your Week 1 assumptions table.
-   See [Constraints](../requirements/process-requirements.md#constraints).
+   See [Constraints](../requirements/product-vision-requirements.md#constraints).
 3. Name the **stakeholders**: who uses the product, who operates it, who is affected by it without using it.
-   See [Stakeholders](../requirements/process-requirements.md#stakeholders).
+   See [Stakeholders](../requirements/product-vision-requirements.md#stakeholders).
 4. Write the **boundary**: at least 3 things the product will not do, each saying who handles that job instead and why.
    Make it a list or a table, not a paragraph, because a list is something a reader can argue with item by item.
-   See [Boundary](../requirements/process-requirements.md#boundary).
+   See [Boundary](../requirements/product-vision-requirements.md#boundary).
 5. Draw a **system context diagram** showing the product, the external actors, and the external systems it exchanges data with.
    Any format is allowed, as long as the diagram is committed or linked view-only and the text beside it describes the external actors.
    Do not draw containers or components.
-   See [System Context](../requirements/process-requirements.md#system-context).
+   See [System Context](../requirements/product-vision-requirements.md#system-context).
 6. Link to the issue list filtered by the `user-story` label and to your current week report.
 
 ## Part 2: Write And Track The User Stories As Issues
@@ -103,11 +105,11 @@ Complete every requirement marked `**Since: W2**` in [Issue Tracking](../require
    Every story is a **user's need**, not a solution, and every story except a `Won't Have` story carries **at least two acceptance criteria**, each observable and pass/fail.
    Each criterion carries a stable ID `AC-01`, `AC-02`, and so on, numbered within its issue and never renumbered or reused.
    A citation elsewhere pairs the `AC-nn` with its story issue, as a link or by `US-nn`; the notation is your choice.
-   What a story may name, and where a specific the customer has settled goes, is in [User Stories](../requirements/process-requirements.md#user-stories).
+   What a story may name, and where a specific the customer has settled goes, is in [The Story](../requirements/user-stories-requirements.md#the-story).
    Any notation works, including `Given`/`When`/`Then`.
    The test is whether somebody who is not you could run the check and get the same answer.
-   See [User Stories](../requirements/artifact-requirements.md#user-stories) in the artifact requirements, and [User Stories](../requirements/process-requirements.md#user-stories) and [Acceptance Criteria](../requirements/process-requirements.md#acceptance-criteria) in the process requirements.
-4. Prioritize every story with **MoSCoW**, give each story its priority reason, and keep at least one story you intend to build below `Must Have`, per [MoSCoW Prioritization](../requirements/process-requirements.md#moscow-prioritization).
+   See [Where Stories Live](../requirements/user-stories-requirements.md#where-stories-live), [The Story](../requirements/user-stories-requirements.md#the-story), and [Acceptance Criteria](../requirements/user-stories-requirements.md#acceptance-criteria).
+4. Prioritize every story with **MoSCoW**, give each story its priority reason, and keep at least one story you intend to build below `Must Have`, per [MoSCoW Prioritization](../requirements/user-stories-requirements.md#moscow-prioritization).
 5. Close a `Won't Have` story as not planned with a comment giving the reason, and close a delivered story as completed.
 6. Create your branches from the issue, and link every pull request to its issue.
    Use the `<issue-number>-<short-description>` branch naming rule, per [Branch Protection And Pull Requests](../requirements/repository-requirements.md#branch-protection-and-pull-requests).
@@ -118,7 +120,7 @@ Each issue is the story, and a decision that changes a story has to reach that i
 
 ## Part 3: Propose The Minimum Usable Product Candidate
 
-The rules are in [Minimum Usable Product Candidate](../requirements/process-requirements.md#minimum-usable-product-candidate).
+The rules are in [Minimum Usable Product Candidate](../requirements/user-stories-requirements.md#minimum-usable-product-candidate).
 This week specifically:
 
 1. Write `## Minimum Usable Product Candidate` in `reports/week-02/README.md`.
@@ -143,7 +145,7 @@ See [Continuous Integration](../requirements/repository-requirements.md#continuo
 1. Decide which story you are least sure about, and write the question down in one line before you build anything.
 2. Build the cheapest thing that gets the customer's reaction to that question: a paper sketch, a static image, a clickable design, or a code spike.
    Any format is allowed, and none of them needs to be beautiful or working.
-   See [Step 5: Choose What To Prototype](../guides/user-stories-and-prototyping.md#step-5-choose-what-to-prototype), and [Validation](../requirements/process-requirements.md#validation) for how a proof of concept, a prototype, an MUP, and an MVP differ.
+   See [Step 5: Choose What To Prototype](../guides/user-stories-and-prototyping.md#step-5-choose-what-to-prototype), and [Validation](../requirements/prototypes-requirements.md#validation) for how a proof of concept, a prototype, an MUP, and an MVP differ.
 3. Show it to the customer, in the meeting in [Part 6](#part-6-validate-with-the-customer).
 4. Record it at `reports/week-02/prototypes.md`: what it is, how to view it, which `US-nn` or `GAP-nn` it tested, what the customer said, and what changed.
    Put screenshots in `reports/week-02/images/`, and share external tools view-only.
@@ -153,7 +155,7 @@ See [Continuous Integration](../requirements/repository-requirements.md#continuo
 6. Say which stories the prototype covers.
    One is fine, as long as you say which one and why that one.
 
-See [Prototypes](../requirements/artifact-requirements.md#prototypes).
+See [Where Prototypes Live](../requirements/prototypes-requirements.md#where-prototypes-live).
 A prototype is a normal form of evidence: the artifact is the record (`prototypes.md`), and the prototype itself is expected to be thrown away.
 
 ## Part 6: Validate With The Customer
@@ -173,16 +175,16 @@ See [Validating With The Customer](../guides/validating-with-the-customer.md), w
 - **Minimum usable product candidate.**
   If only these stories shipped, what would you miss first?
 
-The rules are in [Meeting With The Customer](../requirements/process-requirements.md#meeting-with-the-customer) and [Validation](../requirements/process-requirements.md#validation), and the file shapes are in [Customer Meeting Artifacts](../requirements/artifact-requirements.md#customer-meeting-artifacts).
+The rules are in [Every Meeting](../requirements/customer-meetings-requirements.md#every-meeting) and [Validation](../requirements/prototypes-requirements.md#validation), and the file shapes are in [Where Meeting Artifacts Live](../requirements/customer-meetings-requirements.md#where-meeting-artifacts-live).
 This week specifically:
 
-1. **Write `reports/week-02/meeting-script.md` first**, with the target at the top, an `## Agenda` that shows the prototype, the boundary, and the minimum usable product candidate each in its own part, and `## Key improvements` showing at least one rewrite, per [Meeting Script](../requirements/artifact-requirements.md#meeting-script).
+1. **Write `reports/week-02/meeting-script.md` first**, with the target at the top, an `## Agenda` that shows the prototype, the boundary, and the minimum usable product candidate each in its own part, and `## Key improvements` showing at least one rewrite, per [Meeting Script](../requirements/customer-meetings-requirements.md#meeting-script).
 2. **Write `reports/week-02/meeting-report.md`**, plus either `meeting-transcript.md` or `meeting-notes.md`.
-   Hold the report to the week minima: at least two rows in `## Decisions`, each naming what it changed per [Meeting Report](../requirements/artifact-requirements.md#meeting-report), and one of them the customer's verdict on the minimum usable product candidate; at least two rows in `## Action points`, each with a named owner and a due date inside Week 3; and `## Disagreements` filled in, or an explicit `None`.
-3. **Record the change per [Validation](../requirements/process-requirements.md#validation).**
+   Hold the report to the week minima: at least two rows in `## Decisions`, each naming what it changed per [Meeting Report](../requirements/customer-meetings-requirements.md#meeting-report), and one of them the customer's verdict on the minimum usable product candidate; at least two rows in `## Action points`, each with a named owner and a due date inside Week 3; and `## Disagreements` filled in, or an explicit `None`.
+3. **Record the change per [Validation](../requirements/prototypes-requirements.md#validation).**
    This week that means at least one story issue carries a dated comment saying what changed, naming any `AC-nn` that changed, and linking the meeting report, and `reports/week-02/README.md` names what changed and links the meeting report's `## Decisions`.
 
-A story that did not come from your Week 1 research does not rewrite it; only a contradiction updates the research, per [Traceability Into Later Weeks](../requirements/process-requirements.md#traceability-into-later-weeks).
+A story that did not come from your Week 1 research does not rewrite it; only a contradiction updates the research, per [Traceability Into Later Weeks](../requirements/general-requirements.md#traceability-into-later-weeks).
 
 Do not ask the customer to design the product, and do not re-run the kickoff.
 If the customer says "that sounds great" about one of your own ideas, the useful next question is what they would want to see for that to be true.
@@ -241,7 +243,7 @@ A strong submission has:
 
 Write `reports/week-02/README.md`.
 This is the canonical public report for the week and the index for everything below.
-Follow the structure in [Weekly Public Report](../requirements/artifact-requirements.md#weekly-public-report), and include:
+Follow the structure in [Weekly Public Report](../requirements/weekly-report-requirements.md#weekly-public-report), and include:
 
 1. Project name, team number, and your problem-space sentence.
 2. A short summary of what you decided and what you found out you were wrong about.
@@ -292,7 +294,7 @@ The summary, the coverage table, the contribution table, the evidence links, the
 Do not paste, retype, or reword them.
 If the PDF runs past two pages, you are writing the report a second time, and the second copy is the one that goes stale.
 
-This is the [private submission wrapper](../requirements/artifact-requirements.md#private-submission-wrapper) the course requires: the private material for the week, and links to the public material.
+This is the [private submission wrapper](../requirements/weekly-report-requirements.md#private-submission-wrapper) the course requires: the private material for the week, and links to the public material.
 
 See [Permalinks And Snapshots](../requirements/repository-requirements.md#permalinks-and-snapshots) for how to build the permalink and the snapshot.
 
@@ -303,7 +305,7 @@ See [Permalinks And Snapshots](../requirements/repository-requirements.md#permal
 
 ### Submission Procedure
 
-- Merge `reports/week-02/README.md` and every file it links into `main`, per [Weekly Public Report](../requirements/artifact-requirements.md#weekly-public-report).
+- Merge `reports/week-02/README.md` and every file it links into `main`, per [Weekly Public Report](../requirements/weekly-report-requirements.md#weekly-public-report).
 - Take the permalink and the snapshot from that `main` commit.
 - Submit the PDF and the repository snapshot (repository page -> Code -> Download ZIP) through Moodle.
 - One submission per team.

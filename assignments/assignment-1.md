@@ -45,15 +45,18 @@ By the end of this week you should be able to show an instructor:
 Read these once.
 They are the rules; this assignment only tells you what this week requires.
 
-| Read                                                                            | For                                                                                    |
-| ------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
-| [Course rules](../course/rules.md)                                              | What is public, what is private, deadlines, AI policy                                  |
-| [Artifact Requirements](../requirements/artifact-requirements.md)               | Where things live, the weekly report, meeting report, transcript and AI report formats |
-| [Repository Requirements](../requirements/repository-requirements.md)           | GitHub, pull requests, branch protection, link checking, permalinks, snapshots         |
-| [Process Requirements](../requirements/process-requirements.md)                 | What counts as a valid alternative, gap, and value proposition; the identifier rules   |
-| [Guide: researching alternatives](../guides/alternatives-research.md)           | How to find and evaluate your set                                                      |
-| [Guide: comparison to value proposition](../guides/comparison-and-synthesis.md) | How to build the table, find the gaps, write the proposition                           |
-| [Guide: the kickoff meeting](../guides/customer-kickoff-meeting.md)             | How to write the kickoff meeting script and run the meeting                            |
+| Read                                                                               | For                                                                                  |
+| ---------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
+| [Course rules](../course/rules.md)                                                 | What is public, what is private, deadlines, AI policy                                |
+| [General Requirements](../requirements/general-requirements.md)                    | What the terms mean, `docs/` versus `reports/`, and the identifier rules             |
+| [Visibility Requirements](../requirements/visibility-requirements.md)              | What is public, what goes in Moodle only, and screenshots                            |
+| [Research Requirements](../requirements/research-requirements.md)                  | What counts as a valid alternative, gap, and value proposition, and where each lives |
+| [Customer Meeting Requirements](../requirements/customer-meetings-requirements.md) | The kickoff, and the meeting script, report, transcript, and notes                   |
+| [Weekly Report Requirements](../requirements/weekly-report-requirements.md)        | The weekly report, the AI usage report, deviations, and the Moodle PDF               |
+| [Repository Requirements](../requirements/repository-requirements.md)              | GitHub, pull requests, branch protection, link checking, permalinks, snapshots       |
+| [Guide: researching alternatives](../guides/alternatives-research.md)              | How to find and evaluate your set                                                    |
+| [Guide: comparison to value proposition](../guides/comparison-and-synthesis.md)    | How to build the table, find the gaps, write the proposition                         |
+| [Guide: the kickoff meeting](../guides/customer-kickoff-meeting.md)                | How to write the kickoff meeting script and run the meeting                          |
 
 ## Part 1: Form The Team And Choose The Project
 
@@ -121,7 +124,7 @@ The repository structure you are building towards:
    Collect ten or more candidates with a URL and one line each on why each might be relevant, then commit the whole list.
    Keep the ones you cut: if you need another product later, you will either reuse one you rejected or spend a day rediscovering it.
    See [Build A Wide Candidate List](../guides/alternatives-research.md#step-2-build-a-wide-candidate-list).
-3. Research **3 to 4 alternatives**, as a mix of a direct competitor, an adjacent substitute, and an open-source or self-hosted option, per [Process Requirements](../requirements/process-requirements.md#alternatives).
+3. Research **3 to 4 alternatives**, as a mix of a direct competitor, an adjacent substitute, and an open-source or self-hosted option, per [Alternatives](../requirements/research-requirements.md#alternatives).
 4. Choose at least 6 properties to compare on, **before** you evaluate anything.
 5. Write one `ALT-nn` section per alternative in `docs/research/alternatives.md`, with the observations, strengths, and at least two weaknesses each, every claim pointing at something you looked at.
 6. Build a board for the screenshots and working notes.
@@ -140,7 +143,7 @@ See [Step 2: Fill The Table](../guides/comparison-and-synthesis.md#step-2-fill-t
 ## Part 5: Find The Gaps
 
 Write `docs/research/gap-analysis.md`.
-Every gap needs a `GAP-nn` ID, and must pass all four tests in [Gap Analysis](../requirements/process-requirements.md#gap-analysis): somebody needs it, the alternatives do not serve it, it is reachable, and a team of 3 or 4 could build it in this course.
+Every gap needs a `GAP-nn` ID, and must pass all four tests in [Gap Analysis](../requirements/research-requirements.md#gap-analysis): somebody needs it, the alternatives do not serve it, it is reachable, and a team of 3 or 4 could build it in this course.
 
 Also record the gaps you **rejected** and why.
 That list is not optional; it is the part your customer will argue with, and you want that argument to happen now.
@@ -151,7 +154,7 @@ Write `docs/research/value-proposition.md`.
 Two or three `VP-nn` entries, each one a short positioning statement, each closing at least one `GAP-nn`, each naming what it costs and how a competitor would respond.
 End the file with your assumptions table.
 
-The rules are in [Value Proposition And Differentiation](../requirements/process-requirements.md#value-proposition-and-differentiation) and the method in [Step 5: Write The Value Proposition](../guides/comparison-and-synthesis.md#step-5-write-the-value-proposition).
+The rules are in [Value Proposition And Differentiation](../requirements/research-requirements.md#value-proposition-and-differentiation) and the method in [Step 5: Write The Value Proposition](../guides/comparison-and-synthesis.md#step-5-write-the-value-proposition).
 
 ## Part 7: Meet The Customer
 
@@ -159,18 +162,18 @@ Your customer is a course instructor.
 In every artifact you call them `Customer`, never a real name and never "the instructor".
 Hold one kickoff meeting with them this week: present the project, your reading of the problem, and your proposed direction, and find out where they disagree.
 
-The rules are in [Meeting With The Customer](../requirements/process-requirements.md#meeting-with-the-customer), and the method is in [The Kickoff Meeting](../guides/customer-kickoff-meeting.md).
+The rules are in [Every Meeting](../requirements/customer-meetings-requirements.md#every-meeting) and [The Kickoff](../requirements/customer-meetings-requirements.md#the-kickoff), and the method is in [The Kickoff Meeting](../guides/customer-kickoff-meeting.md).
 This week specifically:
 
-1. **Write `reports/week-01/meeting-script.md` first**, with at least two questions in each of the five kickoff areas, an `## Agenda` whose early part presents your reading of the problem and your direction with `docs/research/value-proposition.md` shown, and `## Key improvements` showing at least two rewrites, per [Meeting Script](../requirements/artifact-requirements.md#meeting-script).
-2. **Assign the three roles and ask the three permission questions** before you start, per [Meeting With The Customer](../requirements/process-requirements.md#meeting-with-the-customer), and keep the recording out of the repository.
-3. **Write `reports/week-01/meeting-report.md`**, plus either `meeting-transcript.md` or `meeting-notes.md`, per [Customer Meeting Artifacts](../requirements/artifact-requirements.md#customer-meeting-artifacts).
+1. **Write `reports/week-01/meeting-script.md` first**, with at least two questions in each of the five kickoff areas, an `## Agenda` whose early part presents your reading of the problem and your direction with `docs/research/value-proposition.md` shown, and `## Key improvements` showing at least two rewrites, per [Meeting Script](../requirements/customer-meetings-requirements.md#meeting-script).
+2. **Assign the three roles and ask the three permission questions** before you start, per [Every Meeting](../requirements/customer-meetings-requirements.md#every-meeting) and [Permission Questions](../requirements/customer-meetings-requirements.md#permission-questions), and keep the recording out of the repository.
+3. **Write `reports/week-01/meeting-report.md`**, plus either `meeting-transcript.md` or `meeting-notes.md`, per [Where Meeting Artifacts Live](../requirements/customer-meetings-requirements.md#where-meeting-artifacts-live).
    Hold the report to the week minima:
    - At least two rows in `## Decisions`, each naming what it changed: a `GAP-nn`, a `VP-nn`, or `TBD` when the artifact does not exist yet, and `None` with the reason when it kept the direction.
    - At least two rows in `## Action points`, each with a named owner and a due date inside Week 2.
    - `## Disagreements` filled in, or an explicit `None`.
 4. **Put the recording link in your Moodle submission only.**
-5. **If a live meeting is impossible**, follow the asynchronous rule in [Meeting With The Customer](../requirements/process-requirements.md#meeting-with-the-customer) and declare the deviation in your week report.
+5. **If a live meeting is impossible**, follow the asynchronous rule in [The Kickoff](../requirements/customer-meetings-requirements.md#the-kickoff) and declare the deviation in your week report.
 
 Do not ask the customer to design the product.
 Present a direction with its evidence, and find out where it is wrong.
@@ -216,7 +219,7 @@ A strong submission has:
 
 Write `reports/week-01/README.md`.
 This is the canonical public report for the week and the index for everything below.
-Follow the structure in [Weekly Public Report](../requirements/artifact-requirements.md#weekly-public-report), and include:
+Follow the structure in [Weekly Public Report](../requirements/weekly-report-requirements.md#weekly-public-report), and include:
 
 1. Project name, team number, and your problem-space sentence.
    The problem-space sentence leads, because it is the standard every `ALT-nn`, `GAP-nn`, and `VP-nn` in the week is measured against, and it is the one line that orients a reader who has never seen your project.
@@ -270,7 +273,7 @@ The summary, the coverage table, the contribution table, the evidence links, the
 Do not paste, retype, or reword them.
 If the PDF runs past two pages, you are writing the report a second time, and the second copy is the one that goes stale.
 
-This is the [private submission wrapper](../requirements/artifact-requirements.md#private-submission-wrapper) the course requires: the private material for the week, and links to the public material.
+This is the [private submission wrapper](../requirements/weekly-report-requirements.md#private-submission-wrapper) the course requires: the private material for the week, and links to the public material.
 
 See [Permalinks And Snapshots](../requirements/repository-requirements.md#permalinks-and-snapshots) for how to build the permalink and the snapshot.
 
@@ -281,7 +284,7 @@ See [Permalinks And Snapshots](../requirements/repository-requirements.md#permal
 
 ### Submission Procedure
 
-- Merge `reports/week-01/README.md` and every file it links into `main`, per [Weekly Public Report](../requirements/artifact-requirements.md#weekly-public-report).
+- Merge `reports/week-01/README.md` and every file it links into `main`, per [Weekly Public Report](../requirements/weekly-report-requirements.md#weekly-public-report).
 - Take the permalink and the snapshot from that `main` commit.
 - Submit the PDF and the repository snapshot (repository page -> Code -> Download ZIP) through Moodle.
 - One submission per team.

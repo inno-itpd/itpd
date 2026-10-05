@@ -22,11 +22,17 @@ Each one adds the paths and evidence for its week, and changes nothing about the
 Read once.
 The assignments reference these rather than repeating them.
 
-| File                                                               | What it defines                                                                                                         |
-| ------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------- |
-| [Artifact Requirements](requirements/artifact-requirements.md)     | What an artifact is, where it lives, who may see it, and the structure of each recurring artifact                       |
-| [Process Requirements](requirements/process-requirements.md)       | What counts as a valid alternative, gap, and value proposition, and how your Week 1 identifiers are used in later weeks |
-| [Repository Requirements](requirements/repository-requirements.md) | GitHub, pull requests, branch protection, link checking, permalinks, snapshots, changelog, CI                           |
+| File                                                                            | What it defines                                                                                    |
+| ------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| [General Requirements](requirements/general-requirements.md)                    | What the terms mean, `docs/` versus `reports/`, identifiers, and how later weeks cite earlier work |
+| [Visibility Requirements](requirements/visibility-requirements.md)              | What is public, what goes in Moodle only, what is never committed, and screenshots                 |
+| [Research Requirements](requirements/research-requirements.md)                  | Alternatives, the comparison, gaps, value propositions, assumptions, and research honesty          |
+| [Product Vision Requirements](requirements/product-vision-requirements.md)      | The goal, stakeholders, constraints, boundary, and system context diagram                          |
+| [User Story Requirements](requirements/user-stories-requirements.md)            | Story issues, acceptance criteria, priorities, and the minimum usable product candidate            |
+| [Prototype Requirements](requirements/prototypes-requirements.md)               | What a prototype must change, and where it is recorded                                             |
+| [Customer Meeting Requirements](requirements/customer-meetings-requirements.md) | Meetings with the customer, and their scripts, reports, transcripts, and notes                     |
+| [Weekly Report Requirements](requirements/weekly-report-requirements.md)        | The weekly report, the AI usage report, deviations, and the Moodle PDF                             |
+| [Repository Requirements](requirements/repository-requirements.md)              | GitHub, pull requests, branch protection, link checking, permalinks, snapshots, changelog, CI      |
 
 ## The Guides
 

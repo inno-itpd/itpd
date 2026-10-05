@@ -1,8 +1,8 @@
 # Guide: The Kickoff Meeting
 
 How to prepare the one meeting where the problem and the direction are both still open.
-What the meeting has to satisfy is defined in [Process Requirements](../requirements/process-requirements.md#meeting-with-the-customer) and [Artifact Requirements](../requirements/artifact-requirements.md#meeting-script); this guide is the method.
-A later meeting settles one thing or two, and the rules in [Process Requirements](../requirements/process-requirements.md#meeting-with-the-customer) are enough to prepare it.
+What the meeting has to satisfy is defined in [The Kickoff](../requirements/customer-meetings-requirements.md#the-kickoff) and [Meeting Script](../requirements/customer-meetings-requirements.md#meeting-script); this guide is the method.
+A later meeting settles one thing or two, and the rules in [Every Meeting](../requirements/customer-meetings-requirements.md#every-meeting) are enough to prepare it.
 
 **Timebox:** about two hours of preparation, most of it in Step 1.
 A script that comes out of an argument between three team members is worse than a worse script that comes out of a discussion.
@@ -24,7 +24,7 @@ A script that comes out of an argument between three team members is worse than 
 reports/week-NN/meeting-script.md   what you believe, what the meeting is for, the agenda, and the questions
 ```
 
-The meeting itself produces a [meeting report](../requirements/artifact-requirements.md#meeting-report), and a transcript or notes.
+The meeting itself produces a [meeting report](../requirements/customer-meetings-requirements.md#meeting-report), and a transcript or notes.
 The script is what you wrote before you knew any of the answers.
 
 ## Step 1: Write Down What The Meeting Is For
@@ -32,7 +32,7 @@ The script is what you wrote before you knew any of the answers.
 A script written without a target is a list of things you already want to ask.
 
 Open with the belief you are carrying into the room, then the one or two things the kickoff has to settle, then what a good answer would let you do next.
-That last line is the reason the meeting exists, and it is also what the [meeting report](../requirements/artifact-requirements.md#meeting-report)'s `## Open questions` table is drawn from afterwards.
+That last line is the reason the meeting exists, and it is also what the [meeting report](../requirements/customer-meetings-requirements.md#meeting-report)'s `## Open questions` table is drawn from afterwards.
 
 The beliefs worth testing are the ones you would have to change your product for.
 At a kickoff, that is usually the problem-space reading itself: not "do they like dashboards" but "we think nobody gives an expert one link that carries the whole booking, and we are about to spend the course building that".
@@ -101,7 +101,7 @@ The switching row becomes a question about a past decision, which already happen
 The questions say what you will ask; the agenda says what happens in the room, in which order, and what is on the screen while it does.
 Write it after the questions, because its parts are built from them.
 
-Open with the [three permission questions](../requirements/artifact-requirements.md#customer-meeting-artifacts), then present your reading of the problem and your direction, with `docs/research/value-proposition.md` on the screen.
+Open with the [three permission questions](../requirements/customer-meetings-requirements.md#permission-questions), then present your reading of the problem and your direction, with `docs/research/value-proposition.md` on the screen.
 That is the part the customer most needs to hear, and the business-goal questions belong right after it, while it is fresh.
 
 Then take the screen down.
@@ -114,7 +114,7 @@ The moderator watches the clock against those timeboxes; a part that runs over t
 
 ## Step 5: Record What You Improved
 
-Close the script with the `## Key improvements` section [Meeting Script](../requirements/artifact-requirements.md#meeting-script) requires, giving each rewritten question's before, after, and principle.
+Close the script with the `## Key improvements` section [Meeting Script](../requirements/customer-meetings-requirements.md#meeting-script) requires, giving each rewritten question's before, after, and principle.
 
 This section is not proof that you read the Mom Test.
 It is the part a reader uses to tell whether your questions were considered or merely collected, and it is the only part of the script that survives into the meeting report.
@@ -122,7 +122,7 @@ It is the part a reader uses to tell whether your questions were considered or m
 ## Step 6: Assign Roles
 
 Three roles, three people, before you start rather than during: a moderator, a note taker, and an observer.
-[Meeting With The Customer](../requirements/process-requirements.md#meeting-with-the-customer) says what each role does.
+[Every Meeting](../requirements/customer-meetings-requirements.md#every-meeting) says what each role does.
 
 Deviate from the script when an answer opens something better.
 The script is a floor on what you cover, not a ceiling on the meeting.

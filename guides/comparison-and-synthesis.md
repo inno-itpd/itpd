@@ -2,7 +2,7 @@
 
 How to turn the alternatives into a comparison, gaps, and a value proposition.
 
-The rules are in [Process Requirements](../requirements/process-requirements.md#properties-and-comparison) and [Gap Analysis](../requirements/process-requirements.md#gap-analysis).
+The rules are in [Properties And Comparison](../requirements/research-requirements.md#properties-and-comparison) and [Gap Analysis](../requirements/research-requirements.md#gap-analysis).
 This guide is the method, with a worked shape for each step.
 
 **Timebox:** about a day.
@@ -87,7 +87,7 @@ A candidate is worth writing down when you can name it in a sentence that a read
 ## Step 4: Find The Gaps
 
 What you see in the table is not yet a need.
-Each candidate has to pass all four tests from [Process Requirements](../requirements/process-requirements.md#gap-analysis): someone needs it, the alternatives do not serve it, it is reachable, and a team of three or four could build it in this course.
+Each candidate has to pass all four tests from [Gap Analysis](../requirements/research-requirements.md#gap-analysis): someone needs it, the alternatives do not serve it, it is reachable, and a team of three or four could build it in this course.
 
 The fourth test does most of the work.
 When you cannot describe what a product closing this gap would do in a sentence, you have a theme, not a gap.
