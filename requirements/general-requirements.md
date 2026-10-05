@@ -58,7 +58,7 @@ It is the short version of the requirements, states what is expected of you as a
 
 **Since: W2**
 
-5. A formatting-only change is not a rewrite: whitespace, line breaks, list markers, heading levels, or table alignment, with the words and their meaning unchanged.
+5. A formatting-only change is not a rewrite: whitespace, line breaks, list markers, heading levels, table alignment, or a link repointed at the same section after its anchor changed, with the words and their meaning unchanged.
    It may touch any earlier week's files, including meeting scripts and reports, and goes in a pull request of its own.
 
 ## Identifier Rules
