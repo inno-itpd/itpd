@@ -24,7 +24,7 @@ A script that comes out of an argument between three team members is worse than 
 reports/week-NN/meeting-script.md   what you believe, what the meeting is for, the agenda, and the questions
 ```
 
-The meeting itself produces a [meeting report](../requirements/customer-meetings-requirements.md#meeting-report), and a transcript or notes.
+The meeting itself produces a [meeting report](../requirements/customer-meetings-requirements.md#meeting-report), and a transcript when it was recorded.
 The script is what you wrote before you knew any of the answers.
 
 ## Step 1: Write Down What The Meeting Is For

@@ -145,9 +145,8 @@ The rules:
 - Ask the permission questions before you record: [Permission Questions](../requirements/customer-meetings-requirements.md#permission-questions).
 - Write the script before the meeting: [Meeting Script](../requirements/customer-meetings-requirements.md#meeting-script).
 - Write the report in the team's own words, naming what each decision changed: [Meeting Report](../requirements/customer-meetings-requirements.md#meeting-report).
-- Produce the report, and either a transcript or notes: [Where Meeting Artifacts Live](../requirements/customer-meetings-requirements.md#where-meeting-artifacts-live).
+- Produce the report, and a transcript when the meeting was recorded or held in writing: [Where Meeting Artifacts Live](../requirements/customer-meetings-requirements.md#where-meeting-artifacts-live).
 - Clean and sanitize a transcript before you publish it: [Meeting Transcript](../requirements/customer-meetings-requirements.md#meeting-transcript).
-- Write notes instead when a transcript cannot be made or shared: [Meeting Notes](../requirements/customer-meetings-requirements.md#meeting-notes).
 - Name the customer `Customer`, and keep personal data out of the repository: [Sensitive Information Reference](../requirements/visibility-requirements.md#sensitive-information-reference).
 - Record what the prototype changed, in every place it lands: [Validation](../requirements/prototypes-requirements.md#validation).
 - Add a comment to each story issue the meeting changed: [Where Stories Live](../requirements/user-stories-requirements.md#where-stories-live).
@@ -223,10 +222,10 @@ This week it also carries:
    | Issue forms and labels | `.github/ISSUE_TEMPLATE/user-story.yml`, `.github/ISSUE_TEMPLATE/task.yml`, and `.github/ISSUE_TEMPLATE/config.yml`, `user-story`, `task`, and the `moscow:*` labels |
    | Prototypes             | `reports/week-02/prototypes.md`                                                                                                                                      |
    | Meeting script         | `reports/week-02/meeting-script.md`                                                                                                                                  |
-   | Customer validation    | `reports/week-02/meeting-report.md`, and `reports/week-02/meeting-transcript.md` or `reports/week-02/meeting-notes.md`                                               |
+   | Customer validation    | `reports/week-02/meeting-report.md`, and `reports/week-02/meeting-transcript.md` when there is one                                                                   |
    | AI usage               | `reports/week-02/ai-usage.md`                                                                                                                                        |
 
-   If the customer refused publication of the transcript or the notes, that row says so and points at the Moodle submission instead.
+   If the customer refused publication of the transcript, that row says so and points at the Moodle submission instead.
 
 3. `## Minimum Usable Product Candidate`, per [Part 4](#part-4-propose-the-minimum-usable-product-candidate).
 4. One line naming the `US-nn` that changed because of the validation meeting, and what changed in it, linking its issue and the meeting report's `#decisions`.
@@ -243,7 +242,7 @@ Keep it to two pages, and put nothing in it except the following:
 2. A table of team members: GitHub username, real name, and university email.
 3. A permalink to `reports/week-02/README.md` at the full commit hash.
 4. A link to the validation meeting recording, accessible to instructors, or one line saying the customer refused recording.
-5. The meeting transcript or notes, if the customer refused to let you publish them.
+5. The meeting transcript, if the customer refused to let you publish them.
 6. One line confirming that no private-only material was committed to the repository.
 
 ### Submission Procedure
@@ -263,7 +262,7 @@ Keep it to two pages, and put nothing in it except the following:
 - [ ] `reports/week-02/prototypes.md` with at least one prototype, and no prototype code on `main` ([Part 5](#part-5-prototype-the-riskiest-part)).
 - [ ] `reports/week-02/meeting-script.md` ([Part 6](#part-6-validate-with-the-customer)).
 - [ ] `reports/week-02/meeting-report.md`, with a row per kickoff action point, 2+ decisions including the candidate verdict and 2+ action points due in Week 3 ([Part 6](#part-6-validate-with-the-customer)).
-- [ ] `reports/week-02/meeting-transcript.md` or `meeting-notes.md` ([Part 6](#part-6-validate-with-the-customer)).
+- [ ] `reports/week-02/meeting-transcript.md`, if the meeting was recorded or held in writing ([Part 6](#part-6-validate-with-the-customer)).
 - [ ] **At least one story issue with a comment from the validation meeting** ([Part 6](#part-6-validate-with-the-customer)).
 - [ ] Markdown check and link check green on `main` ([Part 7](#part-7-check-the-markdown-in-ci)).
 - [ ] `reports/week-02/ai-usage.md` ([Part 8](#part-8-report-on-your-ai-usage)).

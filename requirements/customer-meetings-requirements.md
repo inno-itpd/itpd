@@ -7,7 +7,7 @@ The kickoff in Week 1 is the meeting with the most to settle, because the proble
 Its method is in [Guide: The Kickoff Meeting](../guides/customer-kickoff-meeting.md).
 Every later meeting settles one thing or two; its method is in [Guide: Validating With The Customer](../guides/validating-with-the-customer.md), and the rules below are enough to prepare it.
 
-These requirements define how a meeting is prepared and held, and the script, report, transcript, and notes it produces.
+These requirements define how a meeting is prepared and held, and the script, report, and transcript it produces.
 
 <h2>Table of contents</h2>
 
@@ -19,7 +19,6 @@ These requirements define how a meeting is prepared and held, and the script, re
 - [Meeting Script](#meeting-script)
 - [Meeting Report](#meeting-report)
 - [Meeting Transcript](#meeting-transcript)
-- [Meeting Notes](#meeting-notes)
 - [Full Examples](#full-examples)
   - [Example Meeting Script](#example-meeting-script)
   - [Example Meeting Report](#example-meeting-report)
@@ -29,27 +28,25 @@ These requirements define how a meeting is prepared and held, and the script, re
 
 **Since: W1**
 
-A meeting with the customer produces a meeting report, and either a transcript or notes.
+A meeting with the customer produces a meeting report, and a transcript when there is one.
 Who may see each of them, and the recording, is in [Sensitive Information Reference](visibility-requirements.md#sensitive-information-reference).
 
-| Artifact                                  | When it exists                                                                  |
-| ----------------------------------------- | ------------------------------------------------------------------------------- |
-| [Meeting Report](#meeting-report)         | Every meeting with the customer                                                 |
-| [Meeting Transcript](#meeting-transcript) | The meeting was recorded and sharing a transcript is permitted                  |
-| [Meeting Notes](#meeting-notes)           | Recording or transcript sharing was refused, or the meeting was held in writing |
-| [Meeting Script](#meeting-script)         | Before any meeting with the customer, as the preparation for it                 |
+| Artifact                                  | When it exists                                                  |
+| ----------------------------------------- | --------------------------------------------------------------- |
+| [Meeting Report](#meeting-report)         | Every meeting with the customer                                 |
+| [Meeting Transcript](#meeting-transcript) | The meeting was recorded, or held in writing                    |
+| [Meeting Script](#meeting-script)         | Before any meeting with the customer, as the preparation for it |
 
 **Required**
 
 1. The meeting report is always required.
-   The transcript and the notes are the same evidence in a different form, so a meeting produces one of them, not both.
-2. A meeting with no recording and no transcript still produces a meeting report.
+2. A meeting with no recording and no transcript still produces a meeting report, and the report is then the only record of the meeting.
 3. The meeting report is the team's own account of the meeting.
-   The transcript and the notes are the evidence it is written from, and the report links to them.
+   When there is a transcript, it is the evidence the report is written from, and the report links to it.
 4. The report is the record of that meeting and is not rewritten afterwards, apart from a [formatting-only change](general-requirements.md#where-artifacts-live-in-the-repository).
    Later weeks cite it as [Identifier Rules](general-requirements.md#identifier-rules) says.
    If a later meeting reverses a decision, the later report quotes the reversed decision, says so, and links back to the report it reverses.
-5. Say in the weekly public report which evidence the meeting produced, a published transcript, a transcript shared privately, published notes, or notes shared privately, and why.
+5. Say in the weekly public report whether the meeting's transcript was published, shared privately, or not made, and why.
 
 ## Every Meeting
 
@@ -70,13 +67,13 @@ The Week 1 meeting is the kickoff.
 4. Assign roles before the meeting: a moderator who asks the questions and controls the time, a note taker who records what was said, and an observer who records what was not asked and what was not said.
    The whole team attends.
 5. Ask the [three permission questions](#permission-questions) every time.
-6. Write a [meeting report](#meeting-report), and either a [transcript](#meeting-transcript) or [notes](#meeting-notes), per [Where Meeting Artifacts Live](#where-meeting-artifacts-live).
+6. Write a [meeting report](#meeting-report), and a [transcript](#meeting-transcript) when the meeting was recorded or held in writing, per [Where Meeting Artifacts Live](#where-meeting-artifacts-live).
 7. The report is where the week's open questions and decisions live, per [Meeting Report](#meeting-report).
    A meeting is required to change something only when it showed a prototype, per [Validation](prototypes-requirements.md#validation).
 8. The customer decides the scope.
    Your job in the meeting is to present a direction with its evidence and to find out where it is wrong, not to ask the customer to design the product.
 9. If a live meeting is impossible, hold it asynchronously in writing with the customer.
-   Timestamp the written exchange as the [notes](#meeting-notes), record a voice or screen note if there is one, and declare the substitution as a [deviation](weekly-report-requirements.md#declaring-deviations).
+   The written exchange, timestamped, is the [transcript](#meeting-transcript); record a voice or screen note if there is one, and declare the substitution as a [deviation](weekly-report-requirements.md#declaring-deviations).
    The rules above still apply, except the role split and the length; the script's shape for it is in [Meeting Script](#meeting-script).
 
 **Example**
@@ -129,7 +126,7 @@ A Week 3 meeting that shows working software.
 
 **Required**
 
-1. Ask the customer three separate permission questions, every time: may we record, may we publish a sanitized transcript or notes in the repository, and may we share them privately with instructors if publication is refused.
+1. Ask the customer three separate permission questions, every time: may we record, may we publish a sanitized transcript in the repository, and may we share it privately with instructors if publication is refused.
    Permission is per meeting and is never carried over from an earlier meeting.
 
 ## Meeting Script
@@ -191,15 +188,15 @@ A Week 3 meeting that shows working software.
 
    Name people as [Sensitive Information Reference](visibility-requirements.md#sensitive-information-reference) says.
 
-   | Section                     | Which meetings                  | What belongs in it                                                                                                                                                                                                                                           |
-   | --------------------------- | ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-   | `## Metadata`               | Every meeting                   | Date, duration, who was there by GitHub username with the customer shown as `Customer`, what you presented, the answer to each of the three permission questions, a link to the transcript or the notes, and a link to the [meeting script](#meeting-script) |
-   | `## Previous action points` | Every meeting after the kickoff | A table, one row per action point the previous meeting reports set for this week                                                                                                                                                                             |
-   | `## Summary`                | Every meeting                   | 3 to 5 bullets on what the meeting settled or changed, not on what was on the agenda                                                                                                                                                                         |
-   | `## Decisions`              | Every meeting                   | A table, one row per decision, each naming what it changed                                                                                                                                                                                                   |
-   | `## Action points`          | Every meeting                   | A table, one row per action                                                                                                                                                                                                                                  |
-   | `## Open questions`         | Every meeting                   | A table, one row per question the meeting did not answer                                                                                                                                                                                                     |
-   | `## Disagreements`          | Every meeting                   | A table, one row per place the customer did not agree with you                                                                                                                                                                                               |
+   | Section                     | Which meetings                  | What belongs in it                                                                                                                                                                                                                                                        |
+   | --------------------------- | ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+   | `## Metadata`               | Every meeting                   | Date, duration, who was there by GitHub username with the customer shown as `Customer`, what you presented, the answer to each of the three permission questions, a link to the transcript or `None` with the reason, and a link to the [meeting script](#meeting-script) |
+   | `## Previous action points` | Every meeting after the kickoff | A table, one row per action point the previous meeting reports set for this week                                                                                                                                                                                          |
+   | `## Summary`                | Every meeting                   | 3 to 5 bullets on what the meeting settled or changed, not on what was on the agenda                                                                                                                                                                                      |
+   | `## Decisions`              | Every meeting                   | A table, one row per decision, each naming what it changed                                                                                                                                                                                                                |
+   | `## Action points`          | Every meeting                   | A table, one row per action                                                                                                                                                                                                                                               |
+   | `## Open questions`         | Every meeting                   | A table, one row per question the meeting did not answer                                                                                                                                                                                                                  |
+   | `## Disagreements`          | Every meeting                   | A table, one row per place the customer did not agree with you                                                                                                                                                                                                            |
 
 6. `## Decisions` has the columns `Decision`, `Made by`, and `Changes`.
    `Changes` names what the decision changed, one entry per thing, and links it when the artifact has a stable link:
@@ -244,7 +241,8 @@ A Week 3 meeting that shows working software.
 **Required**
 
 1. A transcript needs the customer's permission to record, asked per [Permission Questions](#permission-questions).
-   A refusal is not a problem: write [notes](#meeting-notes) instead.
+   A refusal is not a problem: the [meeting report](#meeting-report) is then the record of the meeting.
+   A meeting held in writing needs no recording, because the written exchange is its transcript.
 2. Write the transcript in English, cleaned for readability without changing the meaning of what was said.
 3. Use one sentence per line, and put a timestamp at the start of the line with a speaker label:
 
@@ -258,20 +256,6 @@ A Week 3 meeting that shows working software.
    Use `[inaudible]` where a word cannot be recovered and `[redacted]` where something was deliberately removed.
 6. If the customer refuses to let the transcript be published, do not commit it.
    The [meeting report](#meeting-report) is still public.
-
-## Meeting Notes
-
-**Since: W1**
-
-**Required**
-
-1. Write notes instead of a transcript when recording was refused, when the customer refused to let a transcript be shared at all, or when the meeting happened in writing.
-2. Record the discussion chronologically, in the same order it happened, in prose rather than as a dialogue.
-3. Include what was presented, what the customer said about it, what was decided, and what was left open.
-4. Remove personal data and confidential information on the same terms as a [transcript](#meeting-transcript).
-5. If the customer refuses to let the notes be published, do not commit them.
-   The [meeting report](#meeting-report) is still public.
-6. Notes are evidence, so the [meeting report](#meeting-report) is still required and still links to them.
 
 ## Full Examples
 

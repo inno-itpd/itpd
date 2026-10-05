@@ -25,7 +25,7 @@ Ask for 60 if the customer can give it.
 ```text
 reports/week-NN/meeting-script.md     the target, the agenda, the questions, the roles
 reports/week-NN/meeting-report.md     the previous action points' outcomes, the decisions, the new action points, the disagreements
-reports/week-NN/meeting-notes.md      or meeting-transcript.md, never both
+reports/week-NN/meeting-transcript.md when the meeting was recorded or held in writing
 reports/week-NN/prototypes.md         when you showed a prototype: what it tested, what they said
 the story issue                       a comment on what the meeting changed or accepted
 reports/week-NN/README.md             the meeting decisions linked, the changed US-nn named
