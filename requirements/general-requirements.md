@@ -103,7 +103,8 @@ This is what makes the course a project rather than nine separate assignments.
 **Required**
 
 1. When a later artifact cites a Week 1 identifier, link to the section it refers to.
-2. If later work contradicts something in your research, update the research and note the change.
+2. If later work contradicts something in your research, update the research.
+   A changed gap or value proposition records the change under `**Changed:**`, per [Gap Analysis](research-requirements.md#gap-analysis), and a dropped item is kept per [Identifier Rules](#identifier-rules).
    The research is maintained documentation, not a frozen Week 1 submission.
    See [Where Artifacts Live In The Repository](#where-artifacts-live-in-the-repository).
 3. A later need that your Week 1 research did not anticipate does not rewrite the research.

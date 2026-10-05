@@ -68,6 +68,7 @@ A [decision](general-requirements.md#artifact-concepts-and-terminology) is a con
 2. Each artifact the decision changed cites its `DEC-nn`, linked, where that artifact records its changes:
 
    - A dropped `GAP-nn` or `VP-nn`, in the reason it was dropped, per [Identifier Rules](general-requirements.md#identifier-rules).
+   - A `GAP-nn` or `VP-nn` the decision changed without dropping it, under its `**Changed:**`, per [Gap Analysis](research-requirements.md#gap-analysis).
    - A settled assumption, in its `**Outcome:**`, per [Checking And Settling](assumptions-requirements.md#checking-and-settling).
 
 3. A decision that changes an artifact which does not exist yet is cited when that artifact is written.

@@ -165,6 +165,7 @@ It is not a feature you happen to want, and it is not a missing feature that nob
 6. A gap dropped after Week 1 stays in the file, marked as dropped per [Identifier Rules](general-requirements.md#identifier-rules), and its entry says which value propositions and user stories the drop affected.
    When a decision dropped it, the reason cites the decision's `DEC-nn`, per [What Cites It](decisions-requirements.md#what-cites-it).
 7. A gap that rests on an [assumption](assumptions-requirements.md#the-assumption) names each `ASM-nn` under `**Rests on:**`, and links each one to its section in `docs/assumptions.md`, per [What Rests On It](assumptions-requirements.md#what-rests-on-it).
+8. A gap that a decision changed without dropping it states its current version, and records each change as one bullet under `**Changed:**`: what changed, and the decision's `DEC-nn`, linked, per [What Cites It](decisions-requirements.md#what-cites-it).
 
 **Recommended**
 
@@ -191,6 +192,7 @@ It is not a feature you happen to want, and it is not a missing feature that nob
    If copying your advantage takes them a week, it is not a moat, and you should know that before you commit to it.
 6. Do not claim you will be "better", "more modern", "more user-friendly", or "more powerful" without saying better at what, measured how.
 7. A value proposition that rests on an [assumption](assumptions-requirements.md#the-assumption) names each `ASM-nn` under `**Rests on:**`, and links each one to its section in `docs/assumptions.md`, per [What Rests On It](assumptions-requirements.md#what-rests-on-it).
+8. A value proposition that a decision changed without dropping it records the change under `**Changed:**`, as a gap does, per [Gap Analysis](#gap-analysis).
 
 **Example**
 
