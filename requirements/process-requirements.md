@@ -67,9 +67,7 @@ This section says what counts as an alternative and what must be recorded about 
    - An **adjacent substitute**: a product from a neighbouring category that a user might switch to.
    - An **open-source or self-hosted option**: what a technical user would build or run themselves.
 
-3. Every alternative gets a stable ID `ALT-01`, `ALT-02`, and so on, in the order you researched them.
-   IDs are never renumbered, reused, or reassigned.
-   If you drop an alternative, keep the ID and mark it removed with a reason.
+3. Every alternative gets a stable ID `ALT-01`, `ALT-02`, and so on, in the order you researched them, per [Identifier Rules](#identifier-rules).
 4. For each alternative, record:
 
    - Name, a link to the product, and the version or date you looked at.
@@ -161,8 +159,7 @@ It is not a feature you happen to want, and it is not a missing feature that nob
    - **It is buildable by a team of 3–4 in this course.**
      A gap you cannot address is still worth recording, but it is not a foundation for your product.
 
-2. Every gap gets a stable ID `GAP-01`, `GAP-02`, and so on.
-   IDs are never renumbered, reused, or reassigned.
+2. Every gap gets a stable ID `GAP-01`, `GAP-02`, and so on, per [Identifier Rules](#identifier-rules).
 3. Every gap references the properties and alternatives that established it, by `ALT-nn` and by property name.
 4. Separately record **gaps you chose not to pursue**, with the reason.
    This is the most useful part of the file, because it is where the customer can see what you decided against and overrule you.
@@ -182,8 +179,7 @@ It is not a feature you happen to want, and it is not a missing feature that nob
 
 1. The value proposition is a claim about why your product is worth someone's attention over the alternatives.
    Write it as a short positioning statement: the user you target, the problem they have, and what your product does about it that the alternatives do not.
-2. Every value proposition gets a stable ID `VP-01`, `VP-02`, and so on.
-   IDs are never renumbered, reused, or reassigned.
+2. Every value proposition gets a stable ID `VP-01`, `VP-02`, and so on, per [Identifier Rules](#identifier-rules).
 3. Every value proposition must reference at least one `GAP-nn` it closes.
    A differentiation that does not trace to a gap is a difference, not an advantage.
    A difference that is worse for the user is not worth claiming.
@@ -322,7 +318,7 @@ That agreement is what makes the scope checkable:
 
 3. Each item says why it is outside: the [constraint](#constraints) that forces it, named; the customer decision that settled it, linked to the meeting report's `## Decisions`; or the team's own reasoning.
 4. An item is cited by its "will not" text, because boundary items are not an identifier family.
-   A customer decision that moves an item in or out of the boundary is a row in the meeting report's `## Decisions`, per [Meeting Report](artifact-requirements.md#meeting-report), whose `Changes` names the item.
+   A customer decision that moves an item in or out of the boundary is recorded per [Meeting Report](artifact-requirements.md#meeting-report).
 
 **Recommended**
 
@@ -378,8 +374,7 @@ Each story carries a priority, per [MoSCoW Prioritization](#moscow-prioritizatio
 1. Write **8 or more** user stories, and keep at least **5 of them** something other than `Won't Have`.
    Fewer do not cover a product, and more leaves no week to change them once something turns out to be wrong.
    A `Won't Have` story is one you have decided not to build; every other story is one you intend to build.
-2. Every story gets a stable ID `US-01`, `US-02`, and so on.
-   IDs are never renumbered, reused, or reassigned, including when the story is edited later in the course.
+2. Every story gets a stable ID `US-01`, `US-02`, and so on, per [Identifier Rules](#identifier-rules).
 3. Every story is a statement of a user's need, not a description of a solution.
    "As a coach, I want a client to pay when they book, so that an unpaid slot does not block a paying one for the rest of the week" is a need.
    "Add a payment page" is a feature you have already designed.
@@ -392,7 +387,7 @@ Each story carries a priority, per [MoSCoW Prioritization](#moscow-prioritizatio
    The `VP-nn` is how a story traces to the product vision, so the `VP-nn` of every story except a `Won't Have` story is one the vision's [goal](#product-vision-and-goals) traces to.
    A story you intend to build that supports no such value proposition is outside the vision: add its `VP-nn` to the goal as a team decision, or make the story `Won't Have`.
    Cite each entry as [Identifier Rules](#identifier-rules) says.
-   A need that came from outside Week 1 research does not rewrite the research; only a contradiction updates it, per [Traceability Into Later Weeks](#traceability-into-later-weeks).
+   A need from outside the Week 1 research is handled per [Traceability Into Later Weeks](#traceability-into-later-weeks).
 5. Every story except a `Won't Have` story is small enough to build and verify in one week.
    A need larger than that is written as two or more stories.
 6. Each story is one GitHub issue.
@@ -455,7 +450,7 @@ Every priority is relative to the product you intend to finish in this course.
    The two are independent otherwise: a boundary item is a decision about the whole product and needs no matching story, and a `Won't Have` story is one written need that you excluded and need not appear in the boundary.
 6. A priority that changes is recorded where the change was made.
    The story issue gets a dated comment naming the old label, the new label, and the reason, and its priority reason is updated.
-   A change the customer decided is a row in the meeting report's `## Decisions`, per [Meeting Report](artifact-requirements.md#meeting-report), whose `Changes` names the `US-nn` and the old and new labels.
+   A change the customer decided is recorded per [Meeting Report](artifact-requirements.md#meeting-report).
    A change the team decided is cited from the weekly public report's `#decisions`, per [Identifier Rules](#identifier-rules).
 7. The `Must Have` stories you would build first are the [minimum usable product candidate](#minimum-usable-product-candidate).
 
@@ -492,9 +487,9 @@ The candidate is your proposal for it, made before any product code exists, so t
    Stories that cover only part of the task are not a candidate.
 3. Name one story **inside the candidate** to drop first if you ran out of time.
    Without it, the rest of the candidate must still complete the core task; if no story can go, say why.
-4. Record the candidate in the weekly public report, under the heading the assignment names: the core task, then the `US-nn` of each story with its issue linked, then the story to drop first.
+4. Record the candidate per [Weekly Public Report](artifact-requirements.md#weekly-public-report).
 5. The candidate is a proposal, not a commitment.
-   The customer's verdict on it is a row in the meeting report's `## Decisions`, per [Meeting Report](artifact-requirements.md#meeting-report): `Changes` names each `US-nn` added to or removed from the candidate, or says `None` with the reason when the customer accepted it as it is.
+   The customer's verdict on it is recorded per [Meeting Report](artifact-requirements.md#meeting-report).
 
 **Recommended**
 
@@ -633,7 +628,7 @@ The Week 1 meeting is the kickoff.
 
 **Required for every meeting**
 
-1. Prepare the meeting in writing first, at `reports/week-NN/meeting-script.md`, following [Meeting Script](artifact-requirements.md#meeting-script).
+1. Prepare the meeting in writing first, in a [meeting script](artifact-requirements.md#meeting-script).
 2. The script covers whatever this meeting has to settle.
    Derive those areas from the target rather than from a template.
    The script's sections, its questions, and its agenda are in [Meeting Script](artifact-requirements.md#meeting-script).

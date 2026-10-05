@@ -35,7 +35,7 @@ Requirements that arrive later are written now so that later weeks do not have t
    The team names both, and both names carry the team number, so the course staff can find them.
    The repository belongs to the organization and not to a team member's personal account.
 2. **The repository is public.**
-   Assume every commit can be read by anyone, permanently.
+   What that means for its contents is in [Visibility Model](artifact-requirements.md#visibility-model).
 3. The default branch is `main`.
 4. All team members are added as collaborators, with write access, before any collaborative work starts.
    Nobody works alone in their own account.
@@ -292,12 +292,12 @@ If credentials, personal data, or confidential material is committed by mistake:
 
 1. Add `.github/ISSUE_TEMPLATE/user-story.yml`, an Issue Form with a field for each part of a story issue listed in [User Stories](artifact-requirements.md#user-stories), and the `user-story` label applied by the form.
    The statement, the `Traces to` list, and the `Priority reason` field are required, and `Traces to` takes one entry per line.
-   The acceptance criteria field is optional, because a `Won't Have` story may carry none.
+   The acceptance criteria field is optional, per [Acceptance Criteria](process-requirements.md#acceptance-criteria).
 2. Disable blank issue creation in the issue template configuration.
-3. Create the labels the stories use, by any means: `user-story`, and `moscow:must`, `moscow:should`, `moscow:could`, `moscow:won't`.
+3. Create the labels the stories use, by any means: `user-story`, and the four `moscow:*` labels in [MoSCoW Prioritization](process-requirements.md#moscow-prioritization).
    The form applies `user-story`; the team applies one MoSCoW label per story.
 4. Create branches from the issue where GitHub supports it, and link every pull request to its issue.
-5. Check the relevant acceptance criteria before merging, and name the `AC-nn` and its story issue in the pull request.
+5. Check the relevant acceptance criteria before merging, and name them in the pull request, per [the pull request template](#branch-protection-and-pull-requests).
 
 The process requirements say [what a story says](process-requirements.md#user-stories), and the artifact requirements say [how its issue is kept](artifact-requirements.md#user-stories).
 

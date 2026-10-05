@@ -85,6 +85,10 @@ It is the short version of this file and states what is expected of you as a stu
    See [Repository Requirements](repository-requirements.md#licensing).
 3. Public artifacts must be viewable by instructors and your customer but must not be publicly editable.
 4. Private artifacts are shared only through the Moodle submission, with the people who need them.
+   Every private link must be reachable by your instructors.
+5. Everything you submit stays openable by your instructors until the course has been graded.
+6. Open every link you submit before you submit it.
+   If a link needs a login you do not control, say so next to the link.
 
 ### Sensitive Information Reference
 
@@ -146,6 +150,10 @@ The mapping from username to real name and university email goes in the Moodle P
     This includes cases where you used a different tool, a different artifact form, or an alternative arrangement.
 11. It states, in one line, that no private-only material was committed to the repository.
 12. It stays accurate and reachable until the course has been graded.
+
+**Since: W2**
+
+13. It records the [minimum usable product candidate](process-requirements.md#minimum-usable-product-candidate) under the heading the assignment names: the core task, then the `US-nn` of each story with its issue linked, then the story to drop first.
 
 **Recommended**
 
@@ -267,12 +275,18 @@ A recording is a separate, private-only artifact.
    | `## Disagreements`  | A table, one row per place the customer did not agree with you                                                                                                                                                                                      |
 
 7. `## Decisions` has the columns `Decision`, `Made by`, and `Changes`.
-   `Changes` names what the decision changed, one entry per thing, and links it when the artifact has a stable link.
-   A story change names the `US-nn`, and the `AC-nn` when a specific criterion changed.
-   The same applies to a constraint, an assumption, a maintained document, the implementation or the scaffold, and a later requirement.
+   `Changes` names what the decision changed, one entry per thing, and links it when the artifact has a stable link:
+
+   - A story change names the `US-nn`, and the `AC-nn` when a specific criterion changed.
+   - A priority change names the `US-nn` and its old and new `moscow:*` labels.
+   - A change to the [boundary](process-requirements.md#boundary) names the item by its "will not" text.
+   - The verdict on the [minimum usable product candidate](process-requirements.md#minimum-usable-product-candidate) names each `US-nn` added to or removed from it, or says `None` with the reason when the customer accepted it as it is.
+   - A constraint, an assumption, a maintained document, the implementation or the scaffold, and a later requirement are named the same way.
+
    Write `TBD` when the decision changes something whose artifact does not exist yet, and `None` with the reason when the decision confirmed the current direction and changed nothing.
    `TBD` and `None` are statuses, not identifiers.
    A `TBD` decision is finished when the artifact that carries its effect names the decision and links the report that recorded it; the report itself is not edited.
+
 8. `## Action points` has the columns `Action`, `Owner`, and `Due`.
    The owner is a GitHub username, and the due date falls inside a named week.
 9. `## Open questions` has the columns `Question`, `What it would change`, and `Follow-up`.
@@ -784,7 +798,7 @@ The Moodle PDF is the canonical private artifact for a week.
 2. It links the public evidence rather than copying it.
    Do not paste the weekly report into the PDF.
 3. It contains the private-only material for that week: private links, university emails, credentials if the week needs them, and any artifact the customer refused to let you publish.
-4. When the assignment requires a permalink, it uses a commit-hash permalink, not a branch name, so the link keeps pointing at the exact content that was submitted.
+4. When the assignment requires a permalink, it uses a commit-hash permalink, per [Permalinks And Snapshots](repository-requirements.md#permalinks-and-snapshots), so the link keeps pointing at the exact content that was submitted.
 5. It stays short.
    It is a map, not a second copy of the repository.
 

@@ -17,54 +17,17 @@ Where it says "see", the linked file is the detailed version, and it wins if the
    Anything that is only that week's evidence lives in **`reports/week-NN/`**.
 5. Recordings, university emails, real names, and usability test participant data are **private** and go in the Moodle PDF only.
    Credentials are never committed, and go in the Moodle PDF only when a week needs them.
+   The repository names people by GitHub username, and the customer as `Customer`.
+   Where every other item goes, and what never goes in the repository, is in [Sensitive Information Reference](../requirements/artifact-requirements.md#sensitive-information-reference).
 6. The course is public and MIT-licensed because the customer is your instructor.
-   There is no consent step.
-
-## Public And Private
-
-| Artifact                                                     | Where it goes                                        |
-| ------------------------------------------------------------ | ---------------------------------------------------- |
-| Weekly report, research, maintained documentation, changelog | Public repository                                    |
-| Sanitized meeting report                                     | Public repository                                    |
-| Sanitized meeting transcript or notes                        | Public repository                                    |
-| AI usage report                                              | Public repository                                    |
-| Research board, prototype, diagram tool                      | Public, shared view-only, linked from the report     |
-| Meeting recording and its link                               | **Private.** Moodle only                             |
-| A meeting transcript the customer would not publish          | **Private.** Moodle only                             |
-| University email addresses                                   | **Private.** Moodle only                             |
-| Usability test participant data, recordings, consent         | **Private.** Moodle only                             |
-| Passwords, tokens, API keys, `.env` files                    | **Never commit.** Moodle only when a week needs them |
-| Anything the customer asks you to keep private               | **Private.** Moodle only                             |
-
-Full detail, including the sensitivity list, is in [Artifact Requirements](../requirements/artifact-requirements.md#sensitive-information-reference).
-
-## Repository Hygiene
-
-Keep the repository small and readable.
-Do not commit:
-
-- Recordings, video, datasets, model weights, or archives.
-- Files copied from another repository, or code you are not allowed to redistribute.
-- Your editor state, local tooling folders, and build caches.
-- Secrets of any kind.
-  Use a sanitized `.env.example` instead.
-
-Screenshots go on a view-only board, which is recommended, or in the repository when they are that week's evidence.
-See [Artifact Requirements](../requirements/artifact-requirements.md#screenshot-evidence).
-
-## Identities
-
-Your public repository identifies people by GitHub username and your instructor as `Customer`.
-If the customer has a GitHub username and agrees to it being public, use the username instead.
-The mapping from username to real name and university email goes in the Moodle PDF, because that is the only place it belongs.
+   There is no consent step; see [Repository Setup](../requirements/repository-requirements.md#repository-setup).
 
 ## AI Tools
 
 You may use any AI tools you like.
 The team is fully responsible for the correctness, quality, and originality of everything you submit.
 
-The only requirement is disclosure: each week you write `reports/week-NN/ai-usage.md` saying which tools you used, what you used them for, and what you accepted, changed, or rejected.
-If you used nothing, one line saying so is enough.
+The only requirement is disclosure, in the week's [AI usage report](../requirements/artifact-requirements.md#ai-usage-report).
 
 The test is simple: could a reader tell which parts are yours?
 Unchecked generated text and filler reduce the week's grade; see [Research Honesty Rules](../requirements/process-requirements.md#research-honesty-rules).
@@ -83,16 +46,13 @@ Unchecked generated text and filler reduce the week's grade; see [Research Hones
 - One submission per team.
   Every member's work is assessed through the team submission, and through the individual reflection at the end of the course.
 - The submission is a **PDF in Moodle** and a **repository snapshot (ZIP)**.
-  The PDF points at your repository.
+  The PDF points at your repository; see [Private Submission Wrapper](../requirements/artifact-requirements.md#private-submission-wrapper) and [Permalinks And Snapshots](../requirements/repository-requirements.md#permalinks-and-snapshots).
 
 The syllabus also covers [attendance](syllabus.md#attendance-policy) and the [final exam](syllabus.md#week-11-dec-4--dec-10-final-exam-group-presentations-of-the-projects).
 
 ## Accessibility
 
-Everything you submit must be openable by your instructors until the course has been graded.
-Public links must be viewable and not editable.
-Private links must be reachable by instructors.
-Verify every link before you submit, and if a link needs a login you do not control, say so.
+Everything you submit must stay openable by your instructors until the course has been graded, and you check every link before you submit; see [Visibility Model](../requirements/artifact-requirements.md#visibility-model).
 
 ## Where The Rules Live
 
