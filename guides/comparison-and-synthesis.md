@@ -104,8 +104,6 @@ It is one booking flow, one payment integration, and one upload field, and it is
 
 **Confidence:** high.
 Consistent across all four alternatives, and two of them are mature enough that this is not an oversight.
-
-**Dropped:** see GAP-04.
 ```
 
 Also record the gaps you rejected, with the reason.

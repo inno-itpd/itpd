@@ -6,7 +6,7 @@ title: >-
 status: Done
 assignee: []
 created_date: '2026-10-05 11:17'
-updated_date: '2026-10-05 11:29'
+updated_date: '2026-10-05 11:32'
 labels:
   - docs
 dependencies: []
@@ -57,5 +57,5 @@ The comparison guide's Step 5 `VP-01` keeps no `**Rests on:**` line, because Ste
 
 Verified with `npx markdownlint-cli2` and the example config: the example meeting script failed on `MD036` and `MD029` before, and all seven full-document examples in `requirements/` pass after.
 
-Decision-citation quoting was postponed into its own task. Not changed: the comparison guide's GAP-01 example ends with `**Dropped:** see GAP-04.`, a dropped field on a gap that is not dropped.
+Decision-citation quoting was postponed into its own task. The comparison guide's GAP-01 example also lost its `**Dropped:** see GAP-04.` line: no rule gives a live gap a dropped field, the drop belongs on GAP-04's own entry, and GAP-04 is dropped only at the kickoff, after the Week 1 state the guide shows.
 <!-- SECTION:NOTES:END -->
