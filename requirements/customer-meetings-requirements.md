@@ -215,6 +215,7 @@ A Week 3 meeting that shows working software.
     `Outcome` says whether it was carried out, and what was found, or why it was not, and links each artifact the outcome changed.
     `Decision` links each `DEC-nn` the outcome produced, or says `None` when the outcome needed no decision.
     The earlier report is not edited; this row is the action point's closing record.
+    An outcome that changes an artifact is carried into that artifact, and an outcome recorded only in this table has not been carried out.
 
 **Recommended**
 

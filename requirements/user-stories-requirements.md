@@ -178,6 +178,8 @@ The candidate is your proposal for it, made before any product code exists, so t
 4. Record the candidate per [Weekly Public Report](weekly-report-requirements.md#weekly-public-report).
 5. The candidate is a proposal, not a commitment.
    The customer's verdict on it is a [decision](decisions-requirements.md#the-decision), and the candidate cites its `DEC-nn`.
+6. A story the verdict drops from the candidate keeps its priority unless the customer also changed it.
+   A priority change is recorded per [MoSCoW Prioritization](#moscow-prioritization).
 
 **Recommended**
 

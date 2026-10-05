@@ -389,6 +389,7 @@ The pull request is where the team already writes down what changed and why, whi
    Pin the action to a commit, per [Pinning Third-Party Actions](#pinning-third-party-actions), and pin the tool's version: an action that bundles the tool pins it with the action, and a tool installed by the workflow pins it in the lockfile.
 4. Fixing what the check reports in an earlier week's files is a formatting-only change, which [Where Artifacts Live In The Repository](general-requirements.md#where-artifacts-live-in-the-repository) allows.
 5. A task tracker's directory may be excluded from the check, per [Tracking Tasks Inside The Repository](#tracking-tasks-inside-the-repository).
+   Nothing else is excluded.
 
 Markdown is checked in Week 2 because the week is mostly prose: a product vision, the meeting artifacts, and the week report.
 A malformed table or a skipped heading level is a defect in that work, and a defect you find on Friday evening is a defect you did not fix.

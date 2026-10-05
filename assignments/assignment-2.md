@@ -57,9 +57,7 @@ The rules:
 
 This week:
 
-1. Before any other Week 2 pull request, add `user-story.yml`, `task.yml`, `config.yml`, and the labels, in one pull request started from a blank issue.
-   From then on, every issue is opened from a form, and every pull request links its issue: a story issue, or a task issue for any other work.
-2. Make `.github/pull_request_template.md` ask for the `AC-nn` and its story issue of each criterion a change checks.
+1. Before any other Week 2 pull request, merge the one that adds `user-story.yml`, `task.yml`, and `config.yml`, and create the labels.
 
 ## Part 2: Move The Week 1 Decisions Into The Decisions Log
 
@@ -75,15 +73,11 @@ This week:
    Give each row its own `DEC-nn` section, the kickoff rows first and then the README rows, numbered in that order:
 
    - `**Date:**` is the kickoff date for a kickoff row, and the date the team decided for a README row.
-   - `**Made by:**` is the row's `Made by`, or `Team, not contested` when the team decided in the meeting and the customer did not object.
-     A README row says `Team`.
-   - `**Source:**` links the kickoff report for a kickoff row, and says "team discussion" in words for a README row.
+   - `**Made by:**` is the field's value for the row's `Made by`, and `Team` for a README row.
+   - `**Source:**` links the kickoff report for a kickoff row.
    - `**Why:**` is written from the kickoff report and its transcript, or from the team's own account when there is no transcript.
-     A decision that only kept the current direction says so, and says what it kept.
 
-2. Then cite each `DEC-nn` from each `GAP-nn` or `VP-nn` the decision dropped or changed.
-   The row's `Traces to` names where to look, and its `None` means only that the decision did not come from the research.
-   A decision about an artifact that does not exist yet is cited when that artifact is written.
+2. To find what each decision changed, read its row's `Traces to`; its `None` means only that the decision did not come from the research.
    Leave both Week 1 files as they are, apart from a [formatting-only change](../requirements/general-requirements.md#where-artifacts-live-in-the-repository).
 
 ## Part 3: Move The Week 1 Assumptions Into The Assumptions Log
@@ -92,13 +86,13 @@ The rules:
 
 - Write each assumption as an entry with its status: [The Assumption](../requirements/assumptions-requirements.md#the-assumption).
 - Cite an assumption from each artifact that rests on it: [What Rests On It](../requirements/assumptions-requirements.md#what-rests-on-it).
+- Settle an assumption with its evidence, citing the `DEC-nn` that settled it: [Checking And Settling](../requirements/assumptions-requirements.md#checking-and-settling).
 
 This week:
 
 1. Before a story cites an assumption, move your Week 1 assumptions table from `docs/research/value-proposition.md` into `docs/assumptions.md`, in one pull request.
    This is the same one-time catch-up as the decisions in [Part 2](#part-2-move-the-week-1-decisions-into-the-decisions-log).
-   Give each row its own `ASM-nn` section, numbered in the table's order, with its current status, cite it under `**Rests on:**` in each gap and value proposition the row traced to, and leave no copy of the table in `value-proposition.md`.
-   An assumption a Week 1 decision settled cites that `DEC-nn` in its `**Outcome:**`.
+   Give each row its own `ASM-nn` section, numbered in the table's order, with its current status, and leave no copy of the table in `value-proposition.md`.
 2. Merge it and `docs/decisions.md` before a story links them, because a story links files on `main`.
 
 ## Part 4: Check The Markdown In CI
@@ -108,12 +102,13 @@ The rules:
 - Add a Markdown check that fails the build, on pull requests and on `main`: [Continuous Integration](../requirements/repository-requirements.md#continuous-integration).
 - Pin the actions the check uses to a commit: [Pinning Third-Party Actions](../requirements/repository-requirements.md#pinning-third-party-actions).
 - Keep the Week 1 link check green: [Link Checking](../requirements/repository-requirements.md#link-checking).
+- Exclude nothing from the check except a task tracker's directory: [Continuous Integration](../requirements/repository-requirements.md#continuous-integration).
+- Change earlier weeks' files only by a formatting-only change, in a pull request of its own: [Where Artifacts Live In The Repository](../requirements/general-requirements.md#where-artifacts-live-in-the-repository).
 
 This week:
 
 1. Run the Markdown tool locally before you add the workflow.
-2. Fix what it reports in earlier weeks' files in a [formatting-only](../requirements/general-requirements.md#where-artifacts-live-in-the-repository) pull request of its own, and merge it before the pull request that adds the workflow, so the check is green on its first run on `main`.
-3. Exclude nothing from the check except the task tracker's directory, when you use one.
+2. Fix what it reports in earlier weeks' files, and merge that pull request before the one that adds the workflow, so the check is green on its first run on `main`.
 
 ## Part 5: State The Product Vision
 
@@ -130,7 +125,6 @@ This week:
 
 1. Write `docs/product-vision.md`.
 2. Give the boundary at least 3 items.
-3. Draw the system context diagram, committed at `docs/architecture/context.<ext>` or linked view-only from the vision.
 
 The method is in [Step 1: Write The Goal And The Boundary](../guides/user-stories-and-prototyping.md#step-1-write-the-goal-and-the-boundary).
 
@@ -153,13 +147,12 @@ The rules:
 
 - Name the core task and the `Must Have` stories that complete it, and cite the customer's verdict on them: [Minimum Usable Product Candidate](../requirements/user-stories-requirements.md#minimum-usable-product-candidate).
 - Record the candidate in the weekly public report: [Weekly Public Report](../requirements/weekly-report-requirements.md#weekly-public-report).
+- Keep the priority of a story the verdict drops from the candidate, unless the customer changed it: [Minimum Usable Product Candidate](../requirements/user-stories-requirements.md#minimum-usable-product-candidate).
 
 This week:
 
-1. Take the candidate to the customer in [Part 10](#part-10-validate-with-the-customer); their verdict is one of the week's decisions.
+1. Take the candidate to the customer in [Part 10](#part-10-validate-with-the-customer).
 2. Submit the candidate as it stands after the verdict, citing the verdict's `DEC-nn`.
-   The verdict's heading says what the customer decided about the candidate, such as accepting it as proposed or dropping a `US-nn` from it, and its `**Why:**` says why.
-   A story the verdict drops from the candidate keeps its `Must Have` unless the customer also changed its priority, and that change is recorded per [MoSCoW Prioritization](../requirements/user-stories-requirements.md#moscow-prioritization).
 
 The method is in [Step 4: Prioritize, Then Pick The First Thing To Build](../guides/user-stories-and-prototyping.md#step-4-prioritize-then-pick-the-first-thing-to-build).
 
@@ -169,6 +162,7 @@ The rules:
 
 - Record each prototype, the story or gap it tested and the assumption when that is the risky part, and what the customer said about it: [Where Prototypes Live](../requirements/prototypes-requirements.md#where-prototypes-live).
 - Prototype the story or assumption you are least sure about: [Validation](../requirements/prototypes-requirements.md#validation).
+- Keep prototype code off `main`: [Where Prototypes Live](../requirements/prototypes-requirements.md#where-prototypes-live).
 - Sanitize every screenshot you publish: [Screenshot Evidence](../requirements/visibility-requirements.md#screenshot-evidence).
 
 This week:
@@ -186,6 +180,7 @@ The rules:
 - Cite an action point by its report and anchor: [Identifier Rules](../requirements/general-requirements.md#identifier-rules).
 - Cite an action point a story carries out as one of its origins: [The Story](../requirements/user-stories-requirements.md#the-story).
 - Record each outcome in the next meeting report, since the kickoff report is not edited: [Meeting Report](../requirements/customer-meetings-requirements.md#meeting-report).
+- Carry each outcome into the artifact it changed: [Meeting Report](../requirements/customer-meetings-requirements.md#meeting-report).
 
 This week:
 
@@ -194,7 +189,6 @@ They are due now, and at the latest before the meeting in [Part 10](#part-10-val
 
 1. Carry out each action point, or find out why it cannot be done.
 2. Carry the outcome into the artifact it affects, which is usually a story, an assumption, the research, or the product vision.
-   An outcome that changes an artifact but appears only in the meeting report has not been carried out.
 
 ## Part 10: Validate With The Customer
 
@@ -203,24 +197,24 @@ The rules:
 - Prepare in writing, assign the roles, and let the customer decide the scope: [Every Meeting](../requirements/customer-meetings-requirements.md#every-meeting).
 - Ask the permission questions before you record: [Permission Questions](../requirements/customer-meetings-requirements.md#permission-questions).
 - Write the script before the meeting: [Meeting Script](../requirements/customer-meetings-requirements.md#meeting-script).
+- State the meeting's target in one sentence, and ask only questions that serve it: [Meeting Script](../requirements/customer-meetings-requirements.md#meeting-script).
+- Open the agenda with the permission questions, and close it with the read-back: [Meeting Script](../requirements/customer-meetings-requirements.md#meeting-script).
 - Write the report in the team's own words: [Meeting Report](../requirements/customer-meetings-requirements.md#meeting-report).
 - Give each decision a `DEC-nn` entry, list it in the report, and cite it from what it changed: [Decision Requirements](../requirements/decisions-requirements.md).
 - Produce the report, and a transcript when the meeting was recorded or held in writing: [Where Meeting Artifacts Live](../requirements/customer-meetings-requirements.md#where-meeting-artifacts-live).
 - Clean and sanitize a transcript before you publish it: [Meeting Transcript](../requirements/customer-meetings-requirements.md#meeting-transcript).
 - Name the customer `Customer`, and keep personal data out of the repository: [Sensitive Information Reference](../requirements/visibility-requirements.md#sensitive-information-reference).
-- Record what the prototype changed, in every place it lands: [Validation](../requirements/prototypes-requirements.md#validation).
+- Change something because of what the customer said about the prototype, and record it in every place it lands: [Validation](../requirements/prototypes-requirements.md#validation).
 - Add a comment to each story issue the meeting changed: [Where Stories Live](../requirements/user-stories-requirements.md#where-stories-live).
 
 This week:
 
 1. The meeting has to settle whether the prototype, the boundary, and the minimum usable product candidate are right.
-   Write your own one-sentence target from that in the script's `## Context`.
-   Walk through each story's acceptance criteria only if time allows, and do not re-run the kickoff.
-2. In `reports/week-02/meeting-script.md`, `## Agenda` opens with the permission questions, then has a part for the kickoff action points that are due and the kickoff's open questions, then shows the prototype, the boundary, and the minimum usable product candidate each in its own part, the one you are least sure of first, per [Step 4: Order The Meeting](../guides/validating-with-the-customer.md#step-4-order-the-meeting), and closes with the read-back.
+   Walk through each story's acceptance criteria only if time allows.
+2. In `reports/week-02/meeting-script.md`, `## Agenda` shows the prototype, the boundary, and the minimum usable product candidate each in its own part, ordered per [Step 4: Order The Meeting](../guides/validating-with-the-customer.md#step-4-order-the-meeting).
    The candidate's part names the core task and lists only the candidate's `US-nn`, each linking its issue, so the script is not a second list of stories.
    It also links the issue list filtered by the `user-story` label, which shows every other story with its `moscow:*` label, so the customer can move a story into or out of the candidate or change its priority.
-3. `reports/week-02/meeting-report.md` has one row per kickoff action point in `## Previous action points`, at least two decisions in `## Decisions`, one of them the customer's verdict on the minimum usable product candidate, and at least two rows in `## Action points`, each due inside Week 3.
-4. At least one artifact the meeting changed records the change and cites the decision's `DEC-nn`: a story issue, by a comment on its statement, an `AC-nn`, or its priority, or the boundary, a constraint, or an assumption, updated in place.
+3. `reports/week-02/meeting-report.md` has at least two decisions in `## Decisions`, one of them the customer's verdict on the minimum usable product candidate, and at least two rows in `## Action points`, each due inside Week 3.
 
 The method is in [Guide: Validating With The Customer](../guides/validating-with-the-customer.md).
 
@@ -246,10 +240,10 @@ A strong submission has:
   If you cannot tell whether it passed, it is not a criterion.
 - **A `Must Have` list you can actually build.**
   Three or four stories, not eight, of which two or three make up the candidate.
-  The label stops meaning anything when everything is a must.
+  A customer can argue with three musts; eight is a wish list.
 - **A prototype of the hard part.**
   You built the thing you were least sure about, not the thing you were most pleased with.
-  A prototype of the easy part demos well and teaches nothing.
+  If you could predict the customer's reaction, the prototype was not worth building.
 - **Something visibly different after the meeting.**
   A story, a boundary item, or an assumption says something else because the customer disagreed.
   This is the single clearest signal that the week was a test rather than a formality.
@@ -281,7 +275,7 @@ This week it also carries:
    If the customer refused publication of the transcript, that row says so and points at the Moodle submission instead.
 
 3. `## Minimum Usable Product Candidate`, per [Part 7](#part-7-propose-the-minimum-usable-product-candidate).
-4. One line naming what changed because of the validation meeting, a `US-nn`, a boundary item, a constraint, or an `ASM-nn`, and what changed in it, linking it and the `DEC-nn` behind the change.
+4. One line naming what changed because of what the customer said about the prototype, a `US-nn`, a boundary item, a constraint, or an `ASM-nn`, and what changed in it, linking it and the `DEC-nn` behind the change.
 5. Repository evidence: one merged pull request linked to its issue, the latest green link check run, and the latest green Markdown check run on `main`.
 6. `## Deviations`: anything you did differently from this assignment, per [Declaring Deviations](../requirements/weekly-report-requirements.md#declaring-deviations).
 
@@ -320,7 +314,7 @@ A transcript under item 5 goes in an appendix, which the two pages do not count.
 - [ ] `reports/week-02/meeting-script.md`, with the candidate's part listing its `US-nn` ([Part 10](#part-10-validate-with-the-customer)).
 - [ ] `reports/week-02/meeting-report.md`, with a row per kickoff action point, 2+ decisions listed by `DEC-nn` including the candidate verdict, and 2+ action points due in Week 3 ([Part 10](#part-10-validate-with-the-customer)).
 - [ ] `reports/week-02/meeting-transcript.md`, if the meeting was recorded or held in writing ([Part 10](#part-10-validate-with-the-customer)).
-- [ ] **At least one artifact the validation meeting changed, citing its `DEC-nn`** ([Part 10](#part-10-validate-with-the-customer)).
+- [ ] **At least one artifact changed because of what the customer said about the prototype, citing its `DEC-nn`** ([Part 10](#part-10-validate-with-the-customer)).
 - [ ] `reports/week-02/ai-usage.md` ([Part 11](#part-11-report-on-your-ai-usage)).
 - [ ] `reports/week-02/README.md` ([Assignment Report In The Repository](#assignment-report-in-the-repository)).
 - [ ] Everything merged into `main`, with the permalink and the snapshot taken from that commit ([Submission Procedure](#submission-procedure)).
