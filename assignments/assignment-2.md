@@ -157,7 +157,7 @@ This week:
 1. The meeting's target is which of the prototype, the boundary, and the minimum usable product candidate are wrong.
    Show the candidate against the issue list filtered by the `user-story` label, which shows every story with its `US-nn` title and `moscow:*` label, so the customer can move a story into or out of the candidate or change its priority.
    Walk through each story's acceptance criteria only if time allows, and do not re-run the kickoff.
-2. In `reports/week-02/meeting-script.md`, `## Agenda` has a part for the kickoff action points that are due, then shows the prototype, the boundary, and the minimum usable product candidate each in its own part.
+2. In `reports/week-02/meeting-script.md`, `## Agenda` has a part for the kickoff action points that are due and the kickoff's open questions, then shows the prototype, the boundary, and the minimum usable product candidate each in its own part, the one you are least sure of first, per [Step 4: Order The Meeting](../guides/validating-with-the-customer.md#step-4-order-the-meeting).
    The candidate's part links that filtered issue list as what it shows, rather than copying the stories into the script.
 3. `reports/week-02/meeting-report.md` has one row per kickoff action point in `## Previous action points`, at least two rows in `## Decisions`, one of them the customer's verdict on the minimum usable product candidate, and at least two rows in `## Action points`, each due inside Week 3.
 4. At least one story issue carries the comment that records what the meeting changed: its statement, an `AC-nn`, or its priority.
@@ -243,7 +243,7 @@ Keep it to two pages, and put nothing in it except the following:
 2. A table of team members: GitHub username, real name, and university email.
 3. A permalink to `reports/week-02/README.md` at the full commit hash.
 4. A link to the validation meeting recording, accessible to instructors, or one line saying the customer refused recording.
-5. The meeting transcript, if the customer refused to let you publish it.
+5. The meeting transcript or notes, if the customer refused to let you publish them.
 6. One line confirming that no private-only material was committed to the repository.
 
 ### Submission Procedure

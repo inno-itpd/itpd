@@ -18,7 +18,8 @@ These requirements define what a prototype is for, what it must change, and wher
    It is week evidence, not maintained documentation, so it is not in `docs/`.
 2. The file carries, for each prototype:
 
-   - What it is and how to view it: a screenshot in `reports/week-NN/images/`, a view-only external link, or a branch name.
+   - What it is and how to view it: a screenshot in `reports/week-NN/images/` or a view-only external link.
+     A code spike is viewed through its screenshot.
    - Which `US-nn` or `GAP-nn` it tested, any `AC-nn` it exercised, and the question it was built to answer.
      When the risky part is an [assumption](assumptions-requirements.md#the-assumption), also cite its `ASM-nn`.
    - What the customer said about it.
@@ -30,7 +31,6 @@ These requirements define what a prototype is for, what it must change, and wher
    If you vibecode a prototype, do it on a branch, show it from there, and do not merge it.
    Week 2 has no product code, so a Week 2 spike is never merged; from Week 3, a spike is merged only once it has become product code for a story.
    The evidence is the screenshot and `prototypes.md`, not the branch, so the branch is genuinely disposable.
-   The one exception is a branch you use as assignment evidence: that branch may not be deleted, per [Branch Protection And Pull Requests](repository-requirements.md#branch-protection-and-pull-requests).
 5. Do not commit a prototype to `docs/`.
    It will never be the product, and a directory of discarded prototypes in the maintained documentation is a lie about what the team is building.
 

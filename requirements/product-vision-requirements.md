@@ -31,7 +31,7 @@ It is created once, in its final place, and then stays current.
    - The **stakeholders**, per [Stakeholders](#stakeholders).
    - The **constraints**, per [Constraints](#constraints).
    - The **boundary**, per [Boundary](#boundary).
-   - The **system context diagram**, per [System Context](#system-context), committed here or linked view-only from here.
+   - The **system context diagram**, per [System Context](#system-context), committed at `docs/architecture/context.<ext>` and shown here, or linked view-only from here.
    - Links to the [user stories](user-stories-requirements.md#where-stories-live) and to the current week's report.
 
 3. When the product or the decisions change, update this file.

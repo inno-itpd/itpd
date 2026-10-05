@@ -268,7 +268,7 @@ Keep it to two pages, and put nothing in it except the following:
 3. A permalink to `reports/week-01/README.md` at the full commit hash.
 4. A link to the kickoff meeting recording, accessible to instructors.
    The recording must not be in the repository.
-5. The meeting transcript, if the customer refused to let you publish it.
+5. The meeting transcript or notes, if the customer refused to let you publish them.
 6. One line confirming that no private-only material was committed to the repository.
 
 Nothing else goes in the PDF.

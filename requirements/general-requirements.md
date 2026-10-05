@@ -95,11 +95,11 @@ The research you produce in Week 1 is the evidence base for the rest of the cour
 Later weeks cite your Week 1 identifiers rather than restating your findings.
 This is what makes the course a project rather than nine separate assignments.
 
-| Later work            | Must cite                                                                                                                         |
-| --------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
-| Week 2 product vision | The `VP-nn` its goal traces to, per [Goal](product-vision-requirements.md#goal)                                                   |
-| Week 2 user stories   | The `VP-nn` and origins in each story's `Traces to` list, per [The Story](user-stories-requirements.md#the-story)                 |
-| Week 2 prototypes     | The `GAP-nn`, `US-nn`, or `ASM-nn` each one tested, per [Where Prototypes Live](prototypes-requirements.md#where-prototypes-live) |
+| Later work            | Must cite                                                                                                                                                                     |
+| --------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Week 2 product vision | The `VP-nn` its goal traces to, per [Goal](product-vision-requirements.md#goal)                                                                                               |
+| Week 2 user stories   | The `VP-nn`, the `ASM-nn` of each assumption the story rests on, and any origins in each story's `Traces to` list, per [The Story](user-stories-requirements.md#the-story)    |
+| Week 2 prototypes     | The `US-nn` or `GAP-nn` each one tested, and the `ASM-nn` when the risky part is an assumption, per [Where Prototypes Live](prototypes-requirements.md#where-prototypes-live) |
 
 **Required**
 
