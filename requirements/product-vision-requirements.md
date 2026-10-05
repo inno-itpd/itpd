@@ -31,7 +31,7 @@ It is created once, in its final place, and then stays current.
    - The **stakeholders**, per [Stakeholders](#stakeholders).
    - The **constraints**, per [Constraints](#constraints).
    - The **boundary**, per [Boundary](#boundary).
-   - The **system context diagram**, per [System Context](#system-context), committed at `docs/architecture/context.<ext>` and shown here, or linked view-only from here.
+   - The **system context diagram**, per [System Context](#system-context), committed at `docs/architecture/context.<ext>` and embedded here as an image.
    - Links to the [user stories](user-stories-requirements.md#where-stories-live) and to the current week's report.
 
 3. When the product or the decisions change, update this file.
@@ -146,11 +146,17 @@ The system context diagram is the picture of the [boundary](#boundary): the prod
 
 1. Draw a **system context diagram** showing the product, the external actors, and the external systems it exchanges data with.
    The diagram must be a picture, not a description of one.
-2. Any format is allowed, as long as the diagram itself is committed at `docs/architecture/context.<ext>`, or linked view-only, and the surrounding text says what it must show.
+2. Commit the diagram at `docs/architecture/context.<ext>` as an image that GitHub renders, such as SVG or PNG, and embed it in `docs/product-vision.md` with an image link.
+   A view-only link does not replace the embedded image, because it is not in the commit you submit.
    Describe the external actors in prose next to the diagram, and do not duplicate the diagram in text.
-3. Do not draw a use case diagram here, and do not draw components, containers, or an internal structure.
+3. The embedded diagram renders correctly on GitHub, legible in both the light and the dark theme.
+   A transparent image with dark lines disappears on the dark theme, so give it a background.
+   Check it on the rendered permalink, per [Permalinks And Snapshots](repository-requirements.md#permalinks-and-snapshots).
+4. The tool and the source format are the team's choice.
+   An editable source may be committed beside the image, or linked view-only, in addition to it.
+5. Do not draw a use case diagram here, and do not draw components, containers, or an internal structure.
    The context diagram is the one that stays true as the product changes.
-4. The diagram agrees with the boundary list:
+6. The diagram agrees with the boundary list:
 
    - Every external system or actor that a boundary item says handles a job appears on the diagram.
    - Everything on the diagram exchanges something with the product.

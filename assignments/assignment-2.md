@@ -263,7 +263,7 @@ This week it also carries:
    | ---------------------- | ------------------------------------------------------------------------------------------------------------------- |
    | Kickoff action points  | `## Previous action points` in `reports/week-02/meeting-report.md`                                                  |
    | Product vision         | `docs/product-vision.md`                                                                                            |
-   | System context diagram | `docs/architecture/context.<ext>`, or its view-only link                                                            |
+   | System context diagram | `docs/architecture/context.<ext>`, embedded in `docs/product-vision.md`                                             |
    | Assumptions            | `docs/assumptions.md`                                                                                               |
    | Decisions              | `docs/decisions.md`                                                                                                 |
    | Story issues           | the `US-nn` issues, filtered by the `user-story` label                                                              |

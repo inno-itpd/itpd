@@ -168,7 +168,7 @@ A later assignment may extend this map, but should not silently move an entry.
 | Week | Maintained artifacts                                                                                                                             |
 | ---- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | W1   | `docs/research/` — `alternatives.md`, `comparison.md`, `gap-analysis.md`, `value-proposition.md`; `docs/assumptions.md`; and `docs/decisions.md` |
-| W2   | `docs/product-vision.md`, and `docs/architecture/context.<ext>` when the context diagram is committed (the stories are GitHub issues)            |
+| W2   | `docs/product-vision.md`, and `docs/architecture/context.<ext>`, the context diagram it embeds (the stories are GitHub issues)                   |
 
 Weekly reports live at `reports/week-NN/README.md` in every week, and the Moodle PDF is the private wrapper in every week.
 Meeting artifacts live at `reports/week-NN/meeting-report.md`, plus a `meeting-transcript.md` beside it when the meeting was recorded or held in writing.
