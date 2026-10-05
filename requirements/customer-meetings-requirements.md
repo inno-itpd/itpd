@@ -185,20 +185,21 @@ A Week 3 meeting that shows working software.
    If a week holds more than one, number them in chronological order: `meeting-report-2.md`, `meeting-report-3.md`.
 2. Write it in English, in the team's own words, in the past or present tense as suits the entry.
    A report that restates the transcript line by line, or that a tool generated and the team pasted in unchecked, does not satisfy this.
-3. It contains exactly the sections below, in this order, and nothing else.
+3. It contains exactly the sections below that apply to that kind of meeting, in this order, and nothing else.
 4. A section with nothing in it says `None` and moves on.
 5. The sections, and what belongs in them:
 
    Name people as [Sensitive Information Reference](visibility-requirements.md#sensitive-information-reference) says.
 
-   | Section             | What belongs in it                                                                                                                                                                                                                                  |
-   | ------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-   | `## Metadata`       | Date, duration, who was there by GitHub username with the customer shown as `Customer`, what you presented, the answer to each of the three permission questions, and a link to the transcript, the notes, or the [meeting script](#meeting-script) |
-   | `## Summary`        | 3 to 5 bullets on what the meeting settled or changed, not on what was on the agenda                                                                                                                                                                |
-   | `## Decisions`      | A table, one row per decision, each naming what it changed                                                                                                                                                                                          |
-   | `## Action points`  | A table, one row per action                                                                                                                                                                                                                         |
-   | `## Open questions` | A table, one row per question the meeting did not answer                                                                                                                                                                                            |
-   | `## Disagreements`  | A table, one row per place the customer did not agree with you                                                                                                                                                                                      |
+   | Section                     | Which meetings                  | What belongs in it                                                                                                                                                                                                                                  |
+   | --------------------------- | ------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+   | `## Metadata`               | Every meeting                   | Date, duration, who was there by GitHub username with the customer shown as `Customer`, what you presented, the answer to each of the three permission questions, and a link to the transcript, the notes, or the [meeting script](#meeting-script) |
+   | `## Previous action points` | Every meeting after the kickoff | A table, one row per action point the previous meeting reports set for this week                                                                                                                                                                    |
+   | `## Summary`                | Every meeting                   | 3 to 5 bullets on what the meeting settled or changed, not on what was on the agenda                                                                                                                                                                |
+   | `## Decisions`              | Every meeting                   | A table, one row per decision, each naming what it changed                                                                                                                                                                                          |
+   | `## Action points`          | Every meeting                   | A table, one row per action                                                                                                                                                                                                                         |
+   | `## Open questions`         | Every meeting                   | A table, one row per question the meeting did not answer                                                                                                                                                                                            |
+   | `## Disagreements`          | Every meeting                   | A table, one row per place the customer did not agree with you                                                                                                                                                                                      |
 
 6. `## Decisions` has the columns `Decision`, `Made by`, and `Changes`.
    `Changes` names what the decision changed, one entry per thing, and links it when the artifact has a stable link:
@@ -219,6 +220,14 @@ A Week 3 meeting that shows working software.
    A question whose answer would change nothing does not belong in the table.
 9. `## Disagreements` has the columns `Your position`, `Customer's position`, and `What you changed`.
    If you did not change anything, say why you kept your position instead.
+
+**Since: W2**
+
+10. `## Previous action points` has the columns `Action`, `Outcome`, and `Changes`.
+    `Action` cites the action point by its report's path and `#action-points` anchor with the action quoted, per [Identifier Rules](general-requirements.md#identifier-rules).
+    `Outcome` says whether it was carried out, and what was found, or why it was not.
+    `Changes` follows the same rules as in `## Decisions`.
+    The earlier report is not edited; this row is the action point's closing record.
 
 **Recommended**
 
@@ -379,7 +388,7 @@ The rewrite anchors it to an event the customer will remember, so the answer is 
 | Action                                               | Owner | Due           |
 | ---------------------------------------------------- | ----- | ------------- |
 | Interview two experts who take payments in chat      | bob   | End of Week 2 |
-| Re-cut the comparison without the reminders property | carol | End of Week 1 |
+| Re-cut the comparison without the reminders property | carol | End of Week 2 |
 
 ## Open questions
 

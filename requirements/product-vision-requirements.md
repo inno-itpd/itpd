@@ -145,7 +145,7 @@ The system context diagram is the picture of the [boundary](#boundary): the prod
 
 1. Draw a **system context diagram** showing the product, the external actors, and the external systems it exchanges data with.
    The diagram must be a picture, not a description of one.
-2. Any format is allowed, as long as the diagram itself is committed, or linked view-only, and the surrounding text says what it must show.
+2. Any format is allowed, as long as the diagram itself is committed at `docs/architecture/context.<ext>`, or linked view-only, and the surrounding text says what it must show.
    Describe the external actors in prose next to the diagram, and do not duplicate the diagram in text.
 3. Do not draw a use case diagram here, and do not draw components, containers, or an internal structure.
    The context diagram is the one that stays true as the product changes.

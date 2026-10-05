@@ -39,7 +39,7 @@ Who may see each item is in [Visibility Requirements](visibility-requirements.md
 
 **Since: W2**
 
-13. It records the [minimum usable product candidate](user-stories-requirements.md#minimum-usable-product-candidate) under the heading the assignment names: the core task, then the `US-nn` of each story with its issue linked, then the story to drop first.
+13. It records the [minimum usable product candidate](user-stories-requirements.md#minimum-usable-product-candidate) under the heading the assignment names: the core task, then the `US-nn` of each story with its issue linked.
 
 **Recommended**
 

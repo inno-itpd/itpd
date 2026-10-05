@@ -24,7 +24,7 @@ Ask for 60 if the customer can give it.
 
 ```text
 reports/week-NN/meeting-script.md     the target, the agenda, the questions, the roles
-reports/week-NN/meeting-report.md     the decisions, the action points, the disagreements
+reports/week-NN/meeting-report.md     the previous action points' outcomes, the decisions, the new action points, the disagreements
 reports/week-NN/meeting-notes.md      or meeting-transcript.md, never both
 reports/week-NN/prototypes.md         when you showed a prototype: what it tested, what they said
 the story issue                       a dated comment on what the meeting changed or accepted
@@ -47,6 +47,7 @@ The assignment lists what this week's meeting has to settle; your target turns t
 
 Re-read the previous meeting report before you write anything.
 Its open questions are still open, and its action points are due; if you have carried one out, the customer should hear how it went.
+This meeting's report records each one's outcome in `## Previous action points`, per [Meeting Report](../requirements/customer-meetings-requirements.md#meeting-report).
 
 ## Step 2: Derive The Questions From The Target
 
@@ -135,9 +136,10 @@ A story the customer accepted is a decision too.
 Its row names the `US-nn` and says `None` with the reason, and the story issue gets the same dated comment with the verdict, per [Showing Working Software](../requirements/customer-meetings-requirements.md#showing-working-software).
 A rejected story names the `AC-nn` it failed, in the row and in the comment.
 
-If nothing changed after a prototype, that is itself the finding, and it is a serious one.
-Either your prototype tested something the customer already agreed with, or you asked questions whose answers could not have contradicted anything.
-Write that down too; it is more useful than a week that looks busy.
+If nothing changed after a prototype, the prototype failed the rule in [Validation](../requirements/prototypes-requirements.md#validation), and that is a serious finding.
+Either it tested something the customer already agreed with, or you asked questions whose answers could not have contradicted anything.
+Declare it as a [deviation](../requirements/weekly-report-requirements.md#declaring-deviations), and name what the next meeting will test instead.
+A change invented only to satisfy the rule is worse than an honest deviation, because it hides the finding.
 A meeting that showed working software may change nothing, because a customer accepting a story you built is a result.
 It is still a warning when the meeting produced no decision at all, or when nobody disagreed with anything you showed.
 

@@ -24,7 +24,7 @@ Most of it is arguing about which stories are the same story wearing two hats, w
 ```text
 docs/product-vision.md         the goal, the constraints, the stakeholders, the boundary, the context diagram
 GitHub issues                  one per story, titled US-nn: <title>, with its Traces to list, AC-nn criteria, and labels
-reports/week-02/README.md      the minimum usable product candidate: core task, stories, drop-first story
+reports/week-02/README.md      the minimum usable product candidate: core task and stories
 reports/week-02/prototypes.md  what you showed, what they said, what changed
 ```
 
@@ -181,8 +181,8 @@ Work in this order:
    Write it as a sentence a user would recognise, not as a feature.
 2. Walk through that task from start to finish and pick the fewest `Must Have` stories that get the user to the end.
    A story that the task never touches stays out, however important it is.
-3. Test the drop-first story by removing it and walking the task again.
-   If the task no longer finishes, you picked a story the candidate cannot lose, so pick another one.
+3. Check each story in the candidate by removing it and walking the task again.
+   If the task still finishes, the story is not part of the candidate.
 
 Whatever you name here is a proposal, not a commitment, so a candidate of eight stories is a postponement.
 Two or three stories that a user can finish in one sitting is a more honest answer.
@@ -227,9 +227,8 @@ Three forms, and all three are acceptable:
 When the question is only whether the idea can work at all, that is a proof of concept; record it the same way.
 
 On a code spike: **keep it off `main`.**
-Do it on a branch, show it from there, and then either delete the branch or merge it only once it has become product code.
+Do it on a branch, show it from there, and do not merge it, per [Where Prototypes Live](../requirements/prototypes-requirements.md#where-prototypes-live).
 The evidence is the screenshot and your record, not the branch, so the branch is genuinely disposable and the repository does not have to carry it for the rest of the course.
-If you do not prototype at all, say so and name the question you are carrying forward instead.
 
 Then show it, and record what happened.
 The recording is the artifact; the prototype is not.

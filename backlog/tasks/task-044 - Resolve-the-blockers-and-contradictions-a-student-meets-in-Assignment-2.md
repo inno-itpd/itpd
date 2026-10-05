@@ -5,7 +5,7 @@ status: In Progress
 assignee:
   - '@claude'
 created_date: '2026-10-05 07:00'
-updated_date: '2026-10-05 07:03'
+updated_date: '2026-10-05 07:04'
 labels:
   - docs
 dependencies: []
@@ -30,7 +30,7 @@ A read-through of assignments/assignment-2.md as a student, following every link
 <!-- AC:BEGIN -->
 - [x] #1 Repository requirements add a task issue form and the blank-issue bootstrap for the forms PR, a markdownlint-cli2 example for the Markdown check without the Title Case and broken-link claims, and allow excluding a task tracker's directory from the Markdown check
 - [x] #2 General requirements allow formatting-only changes to earlier weeks' records
-- [ ] #3 Requirements and guides agree: a prototype must change something, kickoff action point outcomes go in a Previous action points meeting report section, the drop-first rule is gone, the story and kickoff examples follow their rules, a Week 2 spike is never merged, a prototype may cite an assumption through its story or gap, and a committed context diagram lives at docs/architecture/
+- [x] #3 Requirements and guides agree: a prototype must change something, kickoff action point outcomes go in a Previous action points meeting report section, the drop-first rule is gone, the story and kickoff examples follow their rules, a Week 2 spike is never merged, a prototype may cite an assumption through its story or gap, and a committed context diagram lives at docs/architecture/
 - [ ] #4 The syllabus states the Thursday soft and Friday hard deadlines and names the task form
 - [ ] #5 Assignment 2 points at the changed rules, drops the duplicated README items, covers a refused recording in the Moodle PDF, and every anchor it links resolves
 <!-- AC:END -->

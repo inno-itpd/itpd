@@ -162,10 +162,10 @@ A part may keep a small example beside the rule it illustrates, such as the boun
 Each row is added when its assignment is written, so a week's path is decided in the same place as the work that uses it.
 A later assignment may extend this map, but should not silently move an entry.
 
-| Week | Maintained artifacts                                                                             |
-| ---- | ------------------------------------------------------------------------------------------------ |
-| W1   | `docs/research/` — `alternatives.md`, `comparison.md`, `gap-analysis.md`, `value-proposition.md` |
-| W2   | `docs/product-vision.md` (the stories are GitHub issues)                                         |
+| Week | Maintained artifacts                                                                                                                  |
+| ---- | ------------------------------------------------------------------------------------------------------------------------------------- |
+| W1   | `docs/research/` — `alternatives.md`, `comparison.md`, `gap-analysis.md`, `value-proposition.md`                                      |
+| W2   | `docs/product-vision.md`, and `docs/architecture/context.<ext>` when the context diagram is committed (the stories are GitHub issues) |
 
 Weekly reports live at `reports/week-NN/README.md` in every week, and the Moodle PDF is the private wrapper in every week.
 Meeting artifacts live at `reports/week-NN/meeting-report.md`, plus a `meeting-transcript.md` or a `meeting-notes.md` beside it.

@@ -73,7 +73,8 @@ Its job is to make one need concrete enough that a reviewer can tell whether you
    It contains exactly one `VP-nn`, the value proposition the story supports, and, optionally, the story's origins: the `GAP-nn` it closes, a customer decision in a meeting report, a team decision in the weekly public report, or an action point it carries out.
    The `VP-nn` is how a story traces to the product vision, so the `VP-nn` of every story except a `Won't Have` story is one the vision's [goal](product-vision-requirements.md#goal) traces to.
    A story you intend to build that supports no such value proposition is outside the vision: add its `VP-nn` to the goal as a team decision, or make the story `Won't Have`.
-   Cite each entry as [Identifier Rules](general-requirements.md#identifier-rules) says.
+   Cite each entry as [Identifier Rules](general-requirements.md#identifier-rules) says, and link each Week 1 identifier per [Traceability Into Later Weeks](general-requirements.md#traceability-into-later-weeks).
+   A relative link does not resolve in an issue body, so link the file on `main` by its full URL.
    A need from outside the Week 1 research is handled per [Traceability Into Later Weeks](general-requirements.md#traceability-into-later-weeks).
 5. Every story except a `Won't Have` story is small enough to build and verify in one week.
    A need larger than that is written as two or more stories.
@@ -166,8 +167,7 @@ The candidate is your proposal for it, made before any product code exists, so t
 1. Name the **core task** the candidate serves: one thing a user does from start to finish, written in one line.
 2. The candidate is a strict, non-empty subset of your `Must Have` stories that together let a user complete that core task end to end.
    Stories that cover only part of the task are not a candidate.
-3. Name one story **inside the candidate** to drop first if you ran out of time.
-   Without it, the rest of the candidate must still complete the core task; if no story can go, say why.
+3. Every story in the candidate is needed: without any one of them, the core task no longer completes.
 4. Record the candidate per [Weekly Public Report](weekly-report-requirements.md#weekly-public-report).
 5. The candidate is a proposal, not a commitment.
    The customer's verdict on it is recorded per [Meeting Report](customer-meetings-requirements.md#meeting-report).
@@ -190,8 +190,8 @@ so that an unpaid slot does not block a paying one for the rest of the week.
 
 ## Traces to
 
-- `VP-01`
-- `GAP-01`
+- [`VP-01`](https://github.com/<organization>/<repo>/blob/main/docs/research/value-proposition.md#vp-01-one-link-that-carries-the-whole-booking)
+- [`GAP-01`](https://github.com/<organization>/<repo>/blob/main/docs/research/gap-analysis.md#gap-01-bookings-that-arrive-unpaid-and-unprepared)
 
 ## Priority reason
 
@@ -223,8 +223,8 @@ As a coach, I want to sell a bundle of ten sessions, so that a returning client 
 
 ## Traces to
 
-- `VP-01`
-- `GAP-01`
+- [`VP-01`](https://github.com/<organization>/<repo>/blob/main/docs/research/value-proposition.md#vp-01-one-link-that-carries-the-whole-booking)
+- [`GAP-01`](https://github.com/<organization>/<repo>/blob/main/docs/research/gap-analysis.md#gap-01-bookings-that-arrive-unpaid-and-unprepared)
 
 ## Priority reason
 
