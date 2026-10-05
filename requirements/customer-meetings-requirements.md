@@ -198,8 +198,8 @@ A Week 3 meeting that shows working software.
    | `## Disagreements`          | Every meeting                   | A table, one row per place the customer did not agree with you                                                                                                                                                                                                            |
 
 6. Each decision the meeting made has an entry in `docs/decisions.md`, per [Decision Requirements](decisions-requirements.md).
-   `## Decisions` lists them, one bullet each, linking the entry with `DEC-nn: <heading>` as the link text.
-   The heading is never reworded, so the link text stays true.
+   `## Decisions` lists them, one bullet each, linking the entry with `DEC-nn: <the decision>` as the link text, quoting the first line of the entry.
+   An entry's decision is never reworded, per [Where Decisions Live](decisions-requirements.md#where-decisions-live), so the link text stays true.
 
 7. `## Action points` has the columns `Action`, `Owner`, and `Due`.
    The owner is a GitHub username, and the due date falls inside a named week.
@@ -353,10 +353,10 @@ The rewrite anchors it to an event the customer will remember, so the answer is 
 
 ## Decisions
 
-- [DEC-01: Build paid bookings, not the calendar view](../../docs/decisions.md#dec-01-build-paid-bookings-not-the-calendar-view)
-- [DEC-02: Drop multi-expert scheduling](../../docs/decisions.md#dec-02-drop-multi-expert-scheduling)
-- [DEC-03: Keep the web link for delivery](../../docs/decisions.md#dec-03-keep-the-web-link-for-delivery)
-- [DEC-04: Deploy on a single small VPS](../../docs/decisions.md#dec-04-deploy-on-a-single-small-vps)
+- [DEC-01: Build paid bookings, not the calendar view](../../docs/decisions.md#dec-01)
+- [DEC-02: Drop multi-expert scheduling](../../docs/decisions.md#dec-02)
+- [DEC-03: Keep the web link for delivery](../../docs/decisions.md#dec-03)
+- [DEC-04: Deploy on a single small VPS](../../docs/decisions.md#dec-04)
 
 ## Action points
 

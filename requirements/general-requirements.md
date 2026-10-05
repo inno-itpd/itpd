@@ -76,7 +76,8 @@ It is the short version of the requirements, states what is expected of you as a
    A dropped `GAP-03` leaves a hole; it does not cause renumbering.
 4. A dropped item keeps its identifier and its entry, marked as dropped with a reason and the date.
    A decision is dropped by reversing it, per [Reversing A Decision](decisions-requirements.md#reversing-a-decision).
-5. The identifier always appears in the heading of its own section, so `ALT-02` can be found with a search.
+5. The heading of an identifier's section is the identifier alone, such as `## DEC-01`, so the section's anchor is `#dec-01` and a link to it survives rewording the item.
+   The first line under the heading names the item or states it in one sentence.
 6. Every reference between artifacts uses the identifier, not the title, so that renaming a title does not break the chain.
 7. `US-nn` and `AC-nn` are the exceptions to rules 4 and 5, because they live in a story issue rather than in a section of their own.
    [Where Stories Live](user-stories-requirements.md#where-stories-live) says how a dropped story is kept, and [Acceptance Criteria](user-stories-requirements.md#acceptance-criteria) says how a criterion is numbered, retired, and cited.
@@ -102,7 +103,7 @@ This is what makes the course a project rather than nine separate assignments.
 
 **Required**
 
-1. When a later artifact cites a Week 1 identifier, link to the section it refers to.
+1. When a later artifact cites a Week 1 identifier, link to the section it refers to by its identifier anchor, such as `decisions.md#dec-06`, per [Identifier Rules](#identifier-rules).
    From an issue or a pull request, link it on `main`, per [Issue Tracking](repository-requirements.md#issue-tracking).
 2. If later work contradicts something in your research, update the research.
    A changed gap or value proposition records the change under `**Changed:**`, per [Gap Analysis](research-requirements.md#gap-analysis), and a dropped item is kept per [Identifier Rules](#identifier-rules).

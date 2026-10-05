@@ -90,7 +90,9 @@ The third test does most of the work.
 When you cannot describe what a product closing this gap would do in a sentence, you have a theme, not a gap.
 
 ```markdown
-## GAP-01: Bookings that arrive unpaid and unprepared
+## GAP-01
+
+Bookings that arrive unpaid and unprepared.
 
 **Who needs it and what they cannot do:** an independent expert who sells one-hour consultations online.
 The client books and pays in one place, and the meeting link and materials arrive with the booking; the alternatives schedule the time, and the payment, the video link, and the materials each live somewhere else.
@@ -115,12 +117,14 @@ A value proposition is a claim about why your product is worth attention over th
 One short positioning statement, tied to a gap, honest about its cost.
 
 ```markdown
-## VP-01: One link that carries the whole booking
+## VP-01
+
+One link that carries the whole booking.
 
 **User:** independent coach who sells one-hour sessions online.
 **Problem:** the booking, the payment, and the meeting materials live in three tools, so unpaid clients block slots and prepared clients are rare.
 **What we do that the alternatives do not:** one link where the client books a slot, pays, and receives the video link and the materials, with no second account.
-**Closes:** [GAP-01](gap-analysis.md#gap-01-bookings-that-arrive-unpaid-and-unprepared).
+**Closes:** [GAP-01](gap-analysis.md#gap-01).
 **What it costs:** the expert connects a payment provider before the first booking and uploads the materials per meeting type.
 This is a real setup cost.
 **How a competitor would respond:** Calendly or Cal.com could bundle payments and materials into the free tier.
@@ -147,17 +151,23 @@ Then go back to the gaps and value propositions and cite each assumption under `
 Keep only the ones something rests on: if a belief turned out false and nothing would change, it is not worth tracking.
 
 ```markdown
-## ASM-01: Experts will upload materials per meeting type instead of sending them in chat after booking
+## ASM-01
+
+Experts will upload materials per meeting type instead of sending them in chat after booking.
 
 **How to check:** run the materials prototype with two tutors in Week 2.
 **Status:** Open
 
-## ASM-02: Clients will pay at booking rather than on the day
+## ASM-02
+
+Clients will pay at booking rather than on the day.
 
 **How to check:** only the customer can settle it, so it goes in the kickoff report's open questions.
 **Status:** Open
 
-## ASM-03: Clients open the booking link on a phone
+## ASM-03
+
+Clients open the booking link on a phone.
 
 **How to check:** ask two experts where their last ten bookings came from, in Week 2.
 **Status:** Open
@@ -166,8 +176,8 @@ Keep only the ones something rests on: if a belief turned out false and nothing 
 `VP-01` in `docs/research/value-proposition.md` then gains one line, and `GAP-01` gains the same line naming `ASM-01`:
 
 ```markdown
-**Closes:** [GAP-01](gap-analysis.md#gap-01-bookings-that-arrive-unpaid-and-unprepared).
-**Rests on:** [ASM-01](../assumptions.md#asm-01-experts-will-upload-materials-per-meeting-type-instead-of-sending-them-in-chat-after-booking), [ASM-02](../assumptions.md#asm-02-clients-will-pay-at-booking-rather-than-on-the-day), [ASM-03](../assumptions.md#asm-03-clients-open-the-booking-link-on-a-phone).
+**Closes:** [GAP-01](gap-analysis.md#gap-01).
+**Rests on:** [ASM-01](../assumptions.md#asm-01), [ASM-02](../assumptions.md#asm-02), [ASM-03](../assumptions.md#asm-03).
 ```
 
 The customer decides the scope.

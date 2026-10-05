@@ -133,10 +133,12 @@ Either location is acceptable; a board is the default because it keeps the repos
 
 ## Writing The Entry
 
-One section per alternative, ID in the heading:
+One section per alternative, headed by its ID alone, per [Identifier Rules](../requirements/general-requirements.md#identifier-rules):
 
 ```markdown
-## ALT-01: Calendly
+## ALT-01
+
+Calendly
 
 **Kind:** Direct competitor, hosted
 **Link:** https://calendly.com

@@ -197,13 +197,15 @@ It is not a feature you happen to want, and it is not a missing feature that nob
 **Example**
 
 ```markdown
-## VP-01: One link that carries the whole booking
+## VP-01
+
+One link that carries the whole booking.
 
 **User:** independent coach who sells one-hour sessions online.
 **Problem:** the booking, the payment, and the meeting materials live in three tools, so unpaid clients block slots and prepared clients are rare.
 **What we do that the alternatives do not:** one link where the client books a slot, pays, and receives the video link and the materials, with no second account.
-**Closes:** [GAP-01](gap-analysis.md#gap-01-bookings-that-arrive-unpaid-and-unprepared).
-**Rests on:** [ASM-01](../assumptions.md#asm-01-experts-will-upload-materials-per-meeting-type-instead-of-sending-them-in-chat-after-booking), [ASM-02](../assumptions.md#asm-02-clients-will-pay-at-booking-rather-than-on-the-day), [ASM-03](../assumptions.md#asm-03-clients-open-the-booking-link-on-a-phone).
+**Closes:** [GAP-01](gap-analysis.md#gap-01).
+**Rests on:** [ASM-01](../assumptions.md#asm-01), [ASM-02](../assumptions.md#asm-02), [ASM-03](../assumptions.md#asm-03).
 **What it costs:** the expert connects a payment provider before the first booking and uploads the materials per meeting type.
 This is a real setup cost.
 **How a competitor would respond:** Calendly or Cal.com could bundle payments and materials into the free tier.

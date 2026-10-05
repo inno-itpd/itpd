@@ -200,9 +200,9 @@ As a coach who sells sessions online, I want a client to pay when they book, so 
 
 ### Traces to
 
-- [`VP-01`](https://github.com/<organization>/<repo>/blob/main/docs/research/value-proposition.md#vp-01-one-link-that-carries-the-whole-booking)
-- [`GAP-01`](https://github.com/<organization>/<repo>/blob/main/docs/research/gap-analysis.md#gap-01-bookings-that-arrive-unpaid-and-unprepared)
-- [`ASM-02`](https://github.com/<organization>/<repo>/blob/main/docs/assumptions.md#asm-02-clients-will-pay-at-booking-rather-than-on-the-day)
+- [`VP-01`](https://github.com/<organization>/<repo>/blob/main/docs/research/value-proposition.md#vp-01)
+- [`GAP-01`](https://github.com/<organization>/<repo>/blob/main/docs/research/gap-analysis.md#gap-01)
+- [`ASM-02`](https://github.com/<organization>/<repo>/blob/main/docs/assumptions.md#asm-02)
 
 ### Priority reason
 
@@ -222,9 +222,9 @@ Payment happens before confirmation, so there is no pay-later path.
 A comment on issue #42, added after the validation meeting:
 
 ```markdown
-Added `AC-03`, per [`DEC-06`](https://github.com/<organization>/<repo>/blob/main/docs/decisions.md#dec-06-confirm-a-booking-only-after-the-client-has-paid).
+Added `AC-03`, per [`DEC-06`](https://github.com/<organization>/<repo>/blob/main/docs/decisions.md#dec-06).
 The customer will not accept a hold that confirms without payment, and `AC-01` and `AC-02` covered the hold but not the confirmation.
-The same decision settles [`ASM-02`](https://github.com/<organization>/<repo>/blob/main/docs/assumptions.md#asm-02-clients-will-pay-at-booking-rather-than-on-the-day), which this story rests on, as `Confirmed`.
+The same decision settles [`ASM-02`](https://github.com/<organization>/<repo>/blob/main/docs/assumptions.md#asm-02), which this story rests on, as `Confirmed`.
 ```
 
 Issue #50, a `Won't Have` story, closed as not planned:
@@ -239,8 +239,8 @@ As a coach, I want to sell a bundle of ten sessions, so that a returning client 
 
 ### Traces to
 
-- [`VP-01`](https://github.com/<organization>/<repo>/blob/main/docs/research/value-proposition.md#vp-01-one-link-that-carries-the-whole-booking)
-- [`GAP-01`](https://github.com/<organization>/<repo>/blob/main/docs/research/gap-analysis.md#gap-01-bookings-that-arrive-unpaid-and-unprepared)
+- [`VP-01`](https://github.com/<organization>/<repo>/blob/main/docs/research/value-proposition.md#vp-01)
+- [`GAP-01`](https://github.com/<organization>/<repo>/blob/main/docs/research/gap-analysis.md#gap-01)
 
 ### Priority reason
 

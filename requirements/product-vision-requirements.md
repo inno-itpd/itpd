@@ -172,7 +172,7 @@ Meeting booking app
 
 An independent expert can send one link where a client books a time, pays, and receives the meeting link and materials, without assembling the same session from three tools.
 
-**Supports:** [VP-01](research/value-proposition.md#vp-01-one-link-that-carries-the-whole-booking).
+**Supports:** [VP-01](research/value-proposition.md#vp-01).
 
 ## Stakeholders
 
@@ -182,20 +182,20 @@ An independent expert can send one link where a client books a time, pays, and r
 
 ## Constraints
 
-| Constraint                                                                                       | Source         | What it costs                             |
-| ------------------------------------------------------------------------------------------------ | -------------- | ----------------------------------------- |
-| Deployed on a single small VPS, per [`DEC-04`](decisions.md#dec-04-deploy-on-a-single-small-vps) | Customer-given | No failover during a demo                 |
-| Built and maintained by 3 people                                                                 | Team-given     | No component may need a second expert     |
-| Single-term course                                                                               | Environmental  | Payment and video stay integrations       |
-| Payment provider sandbox only                                                                    | Derived        | No live charges, so real fees go untested |
+| Constraint                                                          | Source         | What it costs                             |
+| ------------------------------------------------------------------- | -------------- | ----------------------------------------- |
+| Deployed on a single small VPS, per [`DEC-04`](decisions.md#dec-04) | Customer-given | No failover during a demo                 |
+| Built and maintained by 3 people                                    | Team-given     | No component may need a second expert     |
+| Single-term course                                                  | Environmental  | Payment and video stay integrations       |
+| Payment provider sandbox only                                       | Derived        | No live charges, so real fees go untested |
 
 ## Boundary
 
-| The product will not                    | Handled by    | Why                                                                                  |
-| --------------------------------------- | ------------- | ------------------------------------------------------------------------------------ |
-| Host the video call                     | Video service | The single-term course constraint: video stays an integration                        |
-| Schedule more than one expert at a time | Nobody        | [`DEC-02`](decisions.md#dec-02-drop-multi-expert-scheduling): the experts work alone |
-| Sell recurring subscriptions or bundles | Nobody        | Team reasoning: no user we met pays for sessions in advance                          |
+| The product will not                    | Handled by    | Why                                                           |
+| --------------------------------------- | ------------- | ------------------------------------------------------------- |
+| Host the video call                     | Video service | The single-term course constraint: video stays an integration |
+| Schedule more than one expert at a time | Nobody        | [`DEC-02`](decisions.md#dec-02): the experts work alone       |
+| Sell recurring subscriptions or bundles | Nobody        | Team reasoning: no user we met pays for sessions in advance   |
 
 ## Context
 

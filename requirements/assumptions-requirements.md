@@ -19,7 +19,7 @@ How the `ASM-nn` identifier is issued and cited is in [General Requirements](gen
 **Required**
 
 1. The assumptions are maintained documentation in `docs/assumptions.md`.
-2. Each assumption is a section of its own, headed `## ASM-nn: <the assumption>`, per [Identifier Rules](general-requirements.md#identifier-rules).
+2. Each assumption is a section of its own, headed `## ASM-nn`, per [Identifier Rules](general-requirements.md#identifier-rules).
 3. The file stays current for the rest of the course, per [Where Artifacts Live In The Repository](general-requirements.md#where-artifacts-live-in-the-repository).
 
 ## The Assumption
@@ -82,18 +82,24 @@ See [Meeting Report](customer-meetings-requirements.md#meeting-report).
 ```markdown
 # Assumptions
 
-## ASM-01: Experts will upload materials per meeting type instead of sending them in chat after booking
+## ASM-01
+
+Experts will upload materials per meeting type instead of sending them in chat after booking.
 
 **How to check:** run the materials prototype with two tutors in Week 2.
 **Status:** Open
 
-## ASM-02: Clients will pay at booking rather than on the day
+## ASM-02
+
+Clients will pay at booking rather than on the day.
 
 **How to check:** only the customer can settle it, so it is an [open question](../reports/week-01/meeting-report.md#open-questions) carried into the Week 2 validation meeting.
 **Status:** Confirmed
-**Outcome:** the customer will not accept a hold that confirms without payment, per [`DEC-06`](decisions.md#dec-06-confirm-a-booking-only-after-the-client-has-paid).
+**Outcome:** the customer will not accept a hold that confirms without payment, per [`DEC-06`](decisions.md#dec-06).
 
-## ASM-03: Clients open the booking link on a phone
+## ASM-03
+
+Clients open the booking link on a phone.
 
 **How to check:** ask two experts where their last ten bookings came from, in Week 2.
 **Status:** Open
