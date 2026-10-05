@@ -291,16 +291,17 @@ If credentials, personal data, or confidential material is committed by mistake:
 
 **Required**
 
-1. Add `.github/ISSUE_TEMPLATE/user-story.yml`, an Issue Form whose fields carry the story statement, the `Traces to` list, any notes, the acceptance criteria, and an optional remaining-work checklist.
-   The list is required and takes one entry per line, exactly one `VP-nn` plus optional origins, per [User Stories And Acceptance Criteria](process-requirements.md#user-stories-and-acceptance-criteria).
+1. Add `.github/ISSUE_TEMPLATE/user-story.yml`, an Issue Form whose fields carry the story statement, the `Traces to` list, the priority reason, any notes, the acceptance criteria, and an optional remaining-work checklist.
+   The list is required and takes one entry per line, exactly one `VP-nn` plus optional origins, per [User Stories](process-requirements.md#user-stories).
+   The `Priority reason` field is required, per [MoSCoW Prioritization](process-requirements.md#moscow-prioritization).
    Acceptance criteria are optional in the form, because a `Won't Have` story may carry none; the two-criteria floor is required for every other story, and each criterion carries a stable `AC-nn` inside the issue.
 2. Disable blank issue creation in the issue template configuration.
-3. Open one issue per story, from the form, per [User Stories And Acceptance Criteria](process-requirements.md#user-stories-and-acceptance-criteria).
+3. Open one issue per story, from the form, per [User Stories](process-requirements.md#user-stories).
    The issue is the story, and the list of stories is the issue list filtered by the `user-story` label.
    The title is `US-nn: <story title>`.
 4. Create the labels the stories use, by any means: `user-story`, and `moscow:must`, `moscow:should`, `moscow:could`, `moscow:won't`.
    The form applies `user-story`; the team applies one MoSCoW label per story.
-5. Close a `Won't Have` story as not planned and a delivered story as completed, per [User Stories And Acceptance Criteria](process-requirements.md#user-stories-and-acceptance-criteria).
+5. Close a `Won't Have` story as not planned and a delivered story as completed, per [User Stories](process-requirements.md#user-stories) and [MoSCoW Prioritization](process-requirements.md#moscow-prioritization).
 6. Create branches from the issue where GitHub supports it, and link every pull request to its issue.
 7. Check the relevant acceptance criteria before merging, and name the `AC-nn` and its story issue in the pull request.
 8. Do not delete an issue or rewrite its body to hide a change; the issue history is part of what a reader follows.

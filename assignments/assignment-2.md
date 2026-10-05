@@ -101,11 +101,11 @@ Complete every requirement marked `**Since: W2**` in [Issue Tracking](../require
    Every story is a **user's need**, not a solution, and every story except a `Won't Have` story carries **at least two acceptance criteria**, each observable and pass/fail.
    Each criterion carries a stable ID `AC-01`, `AC-02`, and so on, numbered within its issue and never renumbered or reused.
    A citation elsewhere pairs the `AC-nn` with its story issue, as a link or by `US-nn`; the notation is your choice.
-   What a story may name, and where a specific the customer has settled goes, is in [User Stories And Acceptance Criteria](../requirements/process-requirements.md#user-stories-and-acceptance-criteria).
+   What a story may name, and where a specific the customer has settled goes, is in [User Stories](../requirements/process-requirements.md#user-stories).
    Any notation works, including `Given`/`When`/`Then`.
    The test is whether somebody who is not you could run the check and get the same answer.
-   See [User Stories](../requirements/artifact-requirements.md#user-stories) and [User Stories And Acceptance Criteria](../requirements/process-requirements.md#user-stories-and-acceptance-criteria).
-4. Prioritize every story with **MoSCoW**.
+   See [User Stories](../requirements/artifact-requirements.md#user-stories) in the artifact requirements, and [User Stories](../requirements/process-requirements.md#user-stories) and [Acceptance Criteria](../requirements/process-requirements.md#acceptance-criteria) in the process requirements.
+4. Prioritize every story with **MoSCoW**, give each story its priority reason, and keep at least one story you intend to build below `Must Have`, per [MoSCoW Prioritization](../requirements/process-requirements.md#moscow-prioritization).
 5. Close a `Won't Have` story as not planned with a comment giving the reason, and close a delivered story as completed.
 6. Create your branches from the issue, and link every pull request to its issue.
    Use the `<issue-number>-<short-description>` branch naming rule, per [Branch Protection And Pull Requests](../requirements/repository-requirements.md#branch-protection-and-pull-requests).
@@ -318,7 +318,7 @@ See [Permalinks And Snapshots](../requirements/repository-requirements.md#permal
 - [ ] Every story states a need, not a design, and carries its `Traces to` list: exactly one `VP-nn`, for every story except a `Won't Have` story one the goal traces to, plus optional origins.
 - [ ] At least two acceptance criteria per story that is not `Won't Have`, each carrying a stable `AC-nn`, each observable and pass/fail.
 - [ ] Every story that is not `Won't Have` small enough to build and verify in one week.
-- [ ] Every story carries one `moscow:*` label, every `Won't Have` issue closed as not planned with a reason.
+- [ ] Every story carries one `moscow:*` label and a priority reason, at least one story you intend to build is below `Must Have`, and every `Won't Have` issue is closed as not planned with a reason.
 - [ ] `reports/week-02/README.md` has `## Minimum Usable Product Candidate`: the core task, a strict, non-empty subset of the `Must Have` stories that completes it end to end, and the story inside the candidate to drop first.
 - [ ] One issue per story, titled `US-nn: <story title>`, carrying the story and criteria, with an optional remaining-work checklist; every pull request linked to its issue.
 - [ ] Branches named `<issue-number>-<short-description>`.

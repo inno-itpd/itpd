@@ -17,7 +17,9 @@ This file defines what "done" means.
 - [Product Vision And Goals](#product-vision-and-goals)
 - [Constraints](#constraints)
 - [Stakeholders, Boundary, And Context](#stakeholders-boundary-and-context)
-- [User Stories And Acceptance Criteria](#user-stories-and-acceptance-criteria)
+- [User Stories](#user-stories)
+- [Acceptance Criteria](#acceptance-criteria)
+- [MoSCoW Prioritization](#moscow-prioritization)
 - [Minimum Usable Product Candidate](#minimum-usable-product-candidate)
 - [Validation](#validation)
 - [Identifier Rules](#identifier-rules)
@@ -241,7 +243,7 @@ It turns the Week 1 research into something you can be held to.
 1. The vision states the **goal** of the product: what it must achieve.
 2. The goal traces to at least one `VP-nn` from your [value proposition](../guides/comparison-and-synthesis.md#step-5-write-the-value-proposition).
    A goal that supports no value proposition is a feature you would like, which is a different thing.
-3. The vision carries the [constraints](#constraints), the [stakeholders, boundary, and context diagram](#stakeholders-boundary-and-context), and a link to the [user stories](#user-stories-and-acceptance-criteria).
+3. The vision carries the [constraints](#constraints), the [stakeholders, boundary, and context diagram](#stakeholders-boundary-and-context), and a link to the [user stories](#user-stories).
 4. Keep it short.
    A vision that has grown into a specification has become the stories, and the two then drift apart.
 
@@ -315,12 +317,10 @@ A boundary nobody can disagree with is a boundary that is not written down.
 
 **Recommended**
 
-- Check the diagram against the `Won't Have` items in your stories, per [Value Proposition And Differentiation](#value-proposition-and-differentiation).
+- Check the diagram against the `Won't Have` items in your stories, per [MoSCoW Prioritization](#moscow-prioritization).
 - Keep the diagram in the same file as the vision, and keep that file the only place a diagram is committed, so there is one version.
 
-<!-- TODO a section on MoSCoW prioritization -->
-
-## User Stories And Acceptance Criteria
+## User Stories
 
 **Since: W2**
 
@@ -328,6 +328,7 @@ A user story is a small, checkable statement of one thing a user needs.
 A user is any actor with a goal: the person the product serves, and the operator or administrator who keeps it running.
 Its job is to make one need concrete enough that a reviewer can tell whether you delivered it.
 Each story is a GitHub issue, and the issues are the only place the stories live.
+Each story carries a priority, per [MoSCoW Prioritization](#moscow-prioritization), and, unless it is a `Won't Have` story, its [acceptance criteria](#acceptance-criteria).
 
 **Required**
 
@@ -343,43 +344,22 @@ Each story is a GitHub issue, and the issues are the only place the stories live
    It does not carry what only the team decides, such as a screen, a button, a component, or a library; naming the design decides it for whoever builds the story.
    It may carry a specific that the user or the customer has settled, such as the external system the user already works with.
    Such a specific goes in an acceptance criterion, or in a [constraint](#constraints) when it holds for the whole product, and goes in the story statement only when the specific thing is itself the need.
-   An acceptance criterion may name a screen, a field, or a system state, because that is what an observer checks.
 4. Every story carries a `Traces to` list.
    It contains exactly one `VP-nn`, the value proposition the story supports, and, optionally, the story's origins: the `GAP-nn` it closes, a customer decision in a meeting report, a team decision in the weekly public report, or an action point it carries out.
    The `VP-nn` is how a story traces to the product vision, so the `VP-nn` of every story except a `Won't Have` story is one the vision's [goal](#product-vision-and-goals) traces to.
    A story you intend to build that supports no such value proposition is outside the vision: add its `VP-nn` to the goal as a team decision, or make the story `Won't Have`.
    Cite an identifier by its ID, and a decision or action point by the report path and its `#decisions` or `#action-points` anchor, with the decision sentence or action quoted, per [Identifier Rules](#identifier-rules).
    A need that came from outside Week 1 research does not rewrite the research; only a contradiction updates it, per [Traceability Into Later Weeks](#traceability-into-later-weeks).
-5. Every story is prioritized with MoSCoW, relative to the product you intend to finish in this course:
-
-   - `Must Have`: the product is not the product without it.
-   - `Should Have`: important, and the product is still coherent without it.
-   - `Could Have`: valuable, and the first thing to cut.
-   - `Won't Have`: a need you have deliberately excluded, including a story you dropped after writing it.
-
-6. Every story except a `Won't Have` story carries **at least two acceptance criteria**, and each one must be observable and pass/fail.
-   Any notation is allowed, including `Given`/`When`/`Then`; the rules are that somebody other than you can run the check and get the same answer.
-   "Works well" is not a criterion.
-   A `Won't Have` story is not built, so it may carry none.
-7. Every acceptance criterion carries a stable ID `AC-01`, `AC-02`, and so on, numbered within its story and written at the start of the criterion.
-   The ID is unique inside its story issue and is never renumbered or reused there.
-   A criterion edited in place keeps its ID, a criterion that is removed retires its ID, and a criterion added later takes the next free number.
-   Cite a specific criterion from another artifact by its `AC-nn` together with its story issue: a link to the issue, or its `US-nn` when the issue is already linked.
-   The notation is not fixed, as long as the reference identifies both the story and the criterion.
-8. Every story except a `Won't Have` story is small enough to build and verify in one week.
+5. Every story except a `Won't Have` story is small enough to build and verify in one week.
    A need larger than that is written as two or more stories.
-9. Open one issue per story, from the form in [Issue Tracking](repository-requirements.md#issue-tracking).
-   The issue is the story and the source of truth; the form carries the statement, the acceptance criteria, each with its `AC-nn`, the `Traces to` list, and any notes.
+6. Open one issue per story, from the form in [Issue Tracking](repository-requirements.md#issue-tracking).
+   The issue is the story and the source of truth; the form carries the statement, the acceptance criteria, each with its `AC-nn`, the `Traces to` list, the priority reason, and any notes.
    The issue may carry a checklist of the remaining work, so a contributor can work without leaving it.
-10. A `Won't Have` story carries the `moscow:won't` label and is closed as not planned, with a comment naming the reason.
-    A story you drop later changes its label to `moscow:won't` and closes the same way.
-    It keeps its identifier and its statement in the issue; the closing comment and the close date are the record.
-    Every other story stays open until it is delivered, then closes as completed and stays in the list.
-11. The `Must Have` stories you would build first are the [minimum usable product candidate](#minimum-usable-product-candidate).
+7. A story you intend to build stays open until it is delivered, then closes as completed and stays in the list.
+   A `Won't Have` story closes as not planned, per [MoSCoW Prioritization](#moscow-prioritization).
 
 **Recommended**
 
-- Make the pair of criteria cover the happy path and one failure, empty, or edge case.
 - Keep stories small enough that one person can finish one in a few days.
 - Write the story that is least likely to be built.
   A story you never write is a decision you made without noticing.
@@ -403,6 +383,80 @@ so that an unpaid slot does not block a paying one for the rest of the week.
    is held while the client pays and is released back to the calendar when the hold expires.
 2. AC-02: Given a client who does not finish payment, when the hold expires, then the booking is not
    confirmed and no meeting link is created.
+```
+
+## Acceptance Criteria
+
+**Since: W2**
+
+An acceptance criterion is the check that tells a reviewer whether a [story](#user-stories) was delivered.
+
+**Required**
+
+1. Every story except a `Won't Have` story carries **at least two acceptance criteria**, and each one must be observable and pass/fail.
+   Any notation is allowed, including `Given`/`When`/`Then`; the rules are that somebody other than you can run the check and get the same answer.
+   "Works well" is not a criterion.
+   A `Won't Have` story is not built, so it may carry none.
+2. Every acceptance criterion carries a stable ID `AC-01`, `AC-02`, and so on, numbered within its story and written at the start of the criterion.
+   The ID is unique inside its story issue and is never renumbered or reused there.
+   A criterion edited in place keeps its ID, a criterion that is removed retires its ID, and a criterion added later takes the next free number.
+   Cite a specific criterion from another artifact by its `AC-nn` together with its story issue: a link to the issue, or its `US-nn` when the issue is already linked.
+   The notation is not fixed, as long as the reference identifies both the story and the criterion.
+
+**Recommended**
+
+- Make the pair of criteria cover the happy path and one failure, empty, or edge case.
+
+## MoSCoW Prioritization
+
+**Since: W2**
+
+A priority is a decision about what to build first and what not to build at all, and the customer can argue with it only if it is written down with its reason.
+Every priority is relative to the product you intend to finish in this course.
+
+**Required**
+
+1. Every [story](#user-stories) carries exactly one priority, as one `moscow:*` label:
+
+   - `Must Have`, labelled `moscow:must`: the product is not the product without it.
+   - `Should Have`, labelled `moscow:should`: important, and the product is still coherent without it.
+   - `Could Have`, labelled `moscow:could`: valuable, and the first thing to cut.
+   - `Won't Have`, labelled `moscow:won't`: a need you have deliberately excluded, including a story you dropped after writing it.
+
+2. Every story carries a **priority reason** in the issue form's `Priority reason` field.
+   The reason says why the story has this priority and not the one above or below it, and names the [constraint](#constraints) when one drives it.
+   A reason that restates the definition of the label is not a reason.
+3. Not every story you intend to build is `Must Have`: at least one of them is `Should Have` or `Could Have`.
+   A list where everything is `Must Have` says nothing about what to build first.
+4. A `Won't Have` story carries the `moscow:won't` label and is closed as not planned, with a comment naming the reason.
+   A story you drop later changes its label to `moscow:won't` and closes the same way.
+   It keeps its identifier and its statement in the issue; the closing comment and the close date are the record.
+5. The priorities do not contradict the [boundary](#stakeholders-boundary-and-context).
+   A `Won't Have` reason that rests on the boundary names the boundary item, and no story you intend to build is something the boundary excludes.
+   A boundary item does not need a matching story.
+6. A priority that changes is recorded where the change was made.
+   The story issue gets a dated comment naming the old label, the new label, and the reason, and its priority reason is updated.
+   A change the customer decided is a row in the meeting report's `## Decisions`, per [Meeting Report](artifact-requirements.md#meeting-report), whose `Changes` names the `US-nn` and the old and new labels.
+   A change the team decided is cited from the weekly public report's `#decisions`, per [Identifier Rules](#identifier-rules).
+7. The `Must Have` stories you would build first are the [minimum usable product candidate](#minimum-usable-product-candidate).
+
+**Recommended**
+
+- Test a `Must Have` by removing it: if the product is still the product without it, it is a `Should Have`.
+- Write the reason as a comparison with a neighbouring story or with the core task, because that is what the customer will argue with.
+
+**Example**
+
+```markdown
+## Priority reason
+
+Must Have: without it, an unpaid booking still holds a slot, which is the GAP-01 problem itself; the reminder email can wait, because a client who paid already has the link.
+```
+
+```markdown
+## Priority reason
+
+Could Have: a reminder email reduces no-shows, but a client who paid already has the link, so the core task finishes without it.
 ```
 
 ## Minimum Usable Product Candidate
@@ -497,7 +551,7 @@ A prototype that validated everything proved nothing, because you chose the part
 5. The identifier always appears in the heading of its own section, so `ALT-02` can be found with a search.
    An `AC-nn` appears at the start of its criterion inside the story issue; the story issue plus the ID is what identifies it.
 6. Every reference between artifacts uses the identifier, not the title, so that renaming a title does not break the chain.
-   A criterion is referenced by its `AC-nn` together with its story issue, as described in [User Stories And Acceptance Criteria](#user-stories-and-acceptance-criteria).
+   A criterion is referenced by its `AC-nn` together with its story issue, as described in [Acceptance Criteria](#acceptance-criteria).
 7. Decisions and action points are not identifier families.
    There is no `DEC-nn` and no `ACT-nn`.
    Cite a decision by path and `#decisions` anchor with its sentence quoted: a meeting decision cites its meeting report, and a decision made outside a meeting cites the weekly public report of the week it was made.

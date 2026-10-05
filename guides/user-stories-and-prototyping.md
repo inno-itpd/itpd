@@ -2,7 +2,7 @@
 
 How to turn a gap into something a customer can react to, and something a team can build.
 
-The rules are in [Process Requirements](../requirements/process-requirements.md#user-stories-and-acceptance-criteria) and [Validation](../requirements/process-requirements.md#validation), and the file shapes are in [Artifact Requirements](../requirements/artifact-requirements.md#user-stories).
+The rules are in [User Stories](../requirements/process-requirements.md#user-stories), [Acceptance Criteria](../requirements/process-requirements.md#acceptance-criteria), [MoSCoW Prioritization](../requirements/process-requirements.md#moscow-prioritization), and [Validation](../requirements/process-requirements.md#validation), and the file shapes are in [Artifact Requirements](../requirements/artifact-requirements.md#user-stories).
 This guide is the method, with a worked shape for each step.
 
 **Timebox:** about two days.
@@ -54,7 +54,7 @@ When the story has an origin, record it in the story's `Traces to` list, and nev
 
 Whatever its origin, a story reaches the vision through its `VP-nn`.
 The vision has one goal and no identifier, so "traces to the vision" would be true of every story and would check nothing; the value proposition says which part of the goal the story serves.
-If a story you want to build supports a `VP-nn` your goal does not cite, the story or the goal is wrong; [User Stories And Acceptance Criteria](../requirements/process-requirements.md#user-stories-and-acceptance-criteria) says how to settle it.
+If a story you want to build supports a `VP-nn` your goal does not cite, the story or the goal is wrong; [User Stories](../requirements/process-requirements.md#user-stories) says how to settle it.
 
 The shape is always the same three lines:
 
@@ -145,11 +145,13 @@ You probably do not yet know what the product does in that case, which makes it 
 ## Step 4: Prioritize, Then Pick The First Thing To Build
 
 MoSCoW is a four-way priority scale: `Must Have`, `Should Have`, `Could Have`, and `Won't Have`.
-<!-- TODO link to the section on priorities -->
-
-[The requirement](../requirements/process-requirements.md#user-stories-and-acceptance-criteria) defines each value.
+[MoSCoW Prioritization](../requirements/process-requirements.md#moscow-prioritization) defines each value and what a priority has to record.
 Prioritize every story with it.
 The point of the exercise is not the label, it is the argument: whoever disagrees with a `Must Have` has to say why the product is not the product without it.
+
+The priority reason is where that argument is written down.
+Write it as a comparison, because a comparison is what somebody can disagree with: why this story is above the one you made `Should Have`, or why the core task still finishes without it.
+If the only reason you can write is the definition of the label, you have not decided yet, so put the story next to its neighbours and decide.
 
 A `Won't Have` story is not built, but write it down as an issue and close it as not planned, with the reason, instead of quietly leaving a story out.
 A reader can argue with a recorded `Won't Have`; they can only guess about a missing one.

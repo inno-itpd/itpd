@@ -701,10 +701,11 @@ Each story is a GitHub issue, and the `user-story` label identifies story issues
      The list carries exactly one `VP-nn`, the value proposition the story supports, and, optionally, its origins: the `GAP-nn` it closes, a customer or team decision, or an action point it carries out.
    - The acceptance criteria, at least two on a story you intend to build, each carrying a stable `AC-nn` at the start of the criterion.
    - One `moscow:*` label: `moscow:must`, `moscow:should`, `moscow:could`, or `moscow:won't`.
+   - The priority reason, in the form's `Priority reason` field, per [MoSCoW Prioritization](process-requirements.md#moscow-prioritization).
    - The `user-story` label, applied by the form.
       <!-- Alternatively, allow issue type -->
 
-2. A story is open until delivered and then closed as completed, or it is a `Won't Have` story closed as not planned, per [User Stories And Acceptance Criteria](process-requirements.md#user-stories-and-acceptance-criteria).
+2. A story is open until delivered and then closed as completed, or it is a `Won't Have` story closed as not planned, per [User Stories](process-requirements.md#user-stories) and [MoSCoW Prioritization](process-requirements.md#moscow-prioritization).
 3. The issue is the record of change.
    A change that follows a customer meeting adds a dated comment saying what changed, naming any `AC-nn` that changed, and linking the meeting report.
    Do not rewrite a story to hide a change; the edit history and the comment are the record.
@@ -735,6 +736,10 @@ so that an unpaid slot does not block a paying one for the rest of the week.
 
 - `VP-01`
 - `GAP-01`
+
+## Priority reason
+
+Must Have: without it, an unpaid booking still holds a slot, which is the GAP-01 problem itself; the reminder email can wait, because a client who paid already has the link.
 
 ## Acceptance criteria
 
@@ -767,7 +772,11 @@ As a coach, I want to sell a bundle of ten sessions, so that a returning client 
 - `VP-01`
 - `GAP-01`
 
-Closing comment: No evidence that a user needs it; recurring billing is outside the boundary.
+## Priority reason
+
+Won't Have: the boundary item "no recurring billing" excludes it, and no user we met has asked to pay for sessions in advance.
+
+Closing comment: Not planned, for the priority reason above.
 ```
 
 ## Prototypes
