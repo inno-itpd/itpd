@@ -60,8 +60,9 @@ Your `reports/week-01/README.md` and `reports/week-01/meeting-report.md` record 
 `reports/week-01/meeting-report.md` has at least two action points, each with a named owner and a due date inside Week 2.
 They are due now.
 
-1. Before anything cites a Week 1 decision, move the rows of `## Decisions` in `reports/week-01/meeting-report.md`, and then the rows of the team's own `## Decisions` table in `reports/week-01/README.md` when it has one, into `docs/decisions.md`, in one pull request.
+1. Before anything cites a Week 1 decision, write `docs/decisions.md` from the rows of `## Decisions` in `reports/week-01/meeting-report.md`, and then the rows of the team's own `## Decisions` table in `reports/week-01/README.md` when it has one, in one pull request.
    Give each row its own `DEC-nn` section, numbered in that order, and cite the new `DEC-nn` from each artifact the row's `Changes` named.
+   A row whose `Changes` said `None` gets a `**Why:**` that says it confirmed the current direction, from the row's reason, and a row that said `TBD` is cited when its artifact is written.
    A kickoff row's `**Source:**` links the kickoff report, and its `**Why:**` is written from that report and its transcript.
    A row from the week report says `Team` under `**Made by:**`, and its `**Source:**` says "team discussion" in words.
    Leave both Week 1 files as they are.
@@ -124,7 +125,7 @@ This week:
 1. Write it under `## Minimum Usable Product Candidate` in `reports/week-02/README.md`.
 2. Take the candidate to the customer in [Part 6](#part-6-validate-with-the-customer); their verdict is one of the week's decisions.
 3. Submit the candidate as it stands after the verdict, citing the verdict's `DEC-nn`.
-   The verdict's `**Why:**` says what changed from the proposal, and why.
+   The verdict's heading says what the customer decided about the candidate, such as accepting it as proposed or dropping a `US-nn` from it, and its `**Why:**` says why.
 
 The method is in [Step 4: Prioritize, Then Pick The First Thing To Build](../guides/user-stories-and-prototyping.md#step-4-prioritize-then-pick-the-first-thing-to-build).
 
@@ -261,7 +262,7 @@ Keep it to two pages, and put nothing in it except the following:
 
 ## Checklist
 
-- [ ] `docs/decisions.md` with a `DEC-nn` section for each Week 1 decision, each cited from what it changed ([Part 1](#part-1-carry-out-the-kickoff-action-points)).
+- [ ] `docs/decisions.md` with a `DEC-nn` section for each Week 1 decision, each cited from what it changed, if it changed anything yet ([Part 1](#part-1-carry-out-the-kickoff-action-points)).
 - [ ] Each kickoff action point's outcome in `## Previous action points`, and in the artifact it changed ([Part 1](#part-1-carry-out-the-kickoff-action-points)).
 - [ ] `docs/product-vision.md`, with at least 3 boundary items ([Part 2](#part-2-state-the-product-vision)).
 - [ ] `.github/ISSUE_TEMPLATE/user-story.yml`, `task.yml`, `config.yml`, and the labels, added from a blank issue ([Part 3](#part-3-write-and-track-the-user-stories-as-issues)).
