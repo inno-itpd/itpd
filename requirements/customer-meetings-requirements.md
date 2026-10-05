@@ -213,7 +213,7 @@ A Week 3 meeting that shows working software.
 10. `## Previous action points` has the columns `Action`, `Outcome`, and `Decision`.
     `Action` cites the action point by its report's path and `#action-points` anchor with the action quoted, per [Identifier Rules](general-requirements.md#identifier-rules).
     `Outcome` says whether it was carried out, and what was found, or why it was not, and links each artifact the outcome changed.
-    `Decision` links each `DEC-nn` to the outcome produced, or says `None` when the outcome needed no decision.
+    `Decision` links each `DEC-nn` the outcome produced, or says `None` when the outcome needed no decision.
     The earlier report is not edited; this row is the action point's closing record.
 
 **Recommended**

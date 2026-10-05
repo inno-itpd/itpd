@@ -158,6 +158,6 @@ It is still a warning when the meeting produced no decision at all, or when nobo
 - **Showing the easy part.**
   If the customer is impressed and you are not surprised, you showed the wrong story.
 - **Decisions that nothing cites.**
-  Unless the decisions are accepted stories, a week whose `DEC-nn` appear nowhere else is the same warning as an empty `## Disagreements` table: the meeting tested nothing a reader can point at.
+  Unless every decision confirmed the current direction, a week whose `DEC-nn` appear nowhere else is the same warning as an empty `## Disagreements` table: the meeting tested nothing a reader can point at.
 - **Twelve questions in thirty minutes.**
   You will get through five well, and the rest will be a list somebody read aloud.

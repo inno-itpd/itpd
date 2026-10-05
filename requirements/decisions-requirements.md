@@ -35,7 +35,7 @@ A [decision](general-requirements.md#artifact-concepts-and-terminology) is a con
 **Required**
 
 1. Every decision gets an entry: one the customer made in a meeting, one the customer made outside a meeting, and one the team made on its own.
-   A technology choice is a team decision, per [Constraints](product-vision-requirements.md#constraints).
+   A technology choice the team made is a team decision, not a constraint, per [Constraints](product-vision-requirements.md#constraints).
 2. The heading states what was decided, in one sentence, not what was discussed.
 3. One entry records one decision.
    A verdict that accepts several stories at once is one decision, per [Showing Working Software](customer-meetings-requirements.md#showing-working-software).
