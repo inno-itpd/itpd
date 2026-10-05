@@ -69,7 +69,9 @@ The Week 1 meeting is the kickoff.
 5. Ask the [three permission questions](#permission-questions) every time.
 6. Write a [meeting report](#meeting-report), and a [transcript](#meeting-transcript) when the meeting was recorded or held in writing, per [Where Meeting Artifacts Live](#where-meeting-artifacts-live).
 7. The report is where the week's open questions live, and it lists the decisions the meeting made, per [Meeting Report](#meeting-report).
-   A meeting is required to change something only when it showed a prototype, per [Validation](prototypes-requirements.md#validation).
+   The meeting settles its target: it makes at least one decision.
+   A decision may confirm the current direction, such as a story the customer accepted, per [The Decision](decisions-requirements.md#the-decision).
+   A meeting that showed a prototype must also change something, per [Validation](prototypes-requirements.md#validation).
 8. The customer decides the scope.
    Your job in the meeting is to present a direction with its evidence and to find out where it is wrong, not to ask the customer to design the product.
 9. If a live meeting is impossible, hold it asynchronously in writing with the customer.

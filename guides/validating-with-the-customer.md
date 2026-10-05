@@ -136,12 +136,16 @@ Its entry names the `US-nn`, and its `**Why:**` says what the customer saw; stor
 The story issue gets a comment with the verdict, citing the `DEC-nn`, per [Showing Working Software](../requirements/customer-meetings-requirements.md#showing-working-software).
 A rejected story gets an entry of its own, naming the `AC-nn` it failed, and the comment names it too.
 
-If nothing changed after a prototype, the prototype failed the rule in [Validation](../requirements/prototypes-requirements.md#validation), and that is a serious finding.
+Every meeting settles its target with at least one decision, per [Every Meeting](../requirements/customer-meetings-requirements.md#every-meeting).
+The decision does not have to change anything: an accepted story, or a direction the customer confirmed, settles the target as well.
+A meeting that ends with no decision missed its target.
+Declare it as a [deviation](../requirements/weekly-report-requirements.md#declaring-deviations), and name what the next meeting will settle instead.
+
+A prototype asks for more: something must change, per [Validation](../requirements/prototypes-requirements.md#validation).
+If nothing changed after a prototype, that is a serious finding.
 Either it tested something the customer already agreed with, or you asked questions whose answers could not have contradicted anything.
-Declare it as a [deviation](../requirements/weekly-report-requirements.md#declaring-deviations), and name what the next meeting will test instead.
+Declare it as a deviation too, and name what the next meeting will test instead.
 A change invented only to satisfy the rule is worse than an honest deviation, because it hides the finding.
-A meeting that showed working software may change nothing, because a customer accepting a story you built is a result.
-It is still a warning when the meeting produced no decision at all, or when nobody disagreed with anything you showed.
 
 ## Common Mistakes
 
