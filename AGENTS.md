@@ -9,7 +9,7 @@ Operating instructions for coding agents maintaining the student-facing course m
 | File                                             | Owns                                                                                                                                                             |
 | ------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `README.md`                                      | Student entry point and routing. Nothing else.                                                                                                                   |
-| `course/syllabus.md`                             | The student-facing schedule: week-by-week focus, dates, and submission deadlines. A formatted copy of the instructors syllabus, not a second source of truth.    |
+| `course/syllabus.md`                             | The single source of truth for the schedule: week-by-week focus, dates, submission deadlines, and course policies. Edited here.                                  |
 | `course/rules.md`                                | The course contract: public vs private, hygiene, AI policy, deadlines, submission channel. Short, and a router rather than a second rulebook.                    |
 | `course/teams-and-projects.md`                   | Which team number works on which project. Regenerated each term, and a repeated project name is not an error because two teams may share a project name.         |
 | `requirements/general-requirements.md`           | The rules no single artifact owns: artifact terms, the `reports/week-NN/` vs `docs/` split, identifier rules, traceability into later weeks.                     |
@@ -53,7 +53,7 @@ The decks have their own gate, `pnpm run check:lectures`, and `lectures/AGENTS.m
 
 Their fixtures run with `pnpm run test:markdown-format` and `pnpm run test:markdown-rules`, and all four gates run in CI on every pull request.
 `eslint.config.ts` enables the `eslint-markdown` `recommended` set, which lints the same GFM AST as `@eslint/markdown` and so adds rules without a second parse.
-Two of its rules are off because they conflict with the house style: `md/no-irregular-dash`, because `course/syllabus.md` carries the instructor's en and em dashes and the guides use them deliberately, and `md/code-lang-shorthand`, because it rewrites the `markdown`, `text`, and `yaml` fence labels in `requirements/` and `guides/` to their shorthand forms.
+Two of its rules are off because they conflict with the house style: `md/no-irregular-dash`, because `course/syllabus.md` uses en and em dashes in its dates and titles and the guides use them deliberately, and `md/code-lang-shorthand`, because it rewrites the `markdown`, `text`, and `yaml` fence labels in `requirements/` and `guides/` to their shorthand forms.
 The `markdown/*` built-in rules other than `no-html` are not enabled, because `markdown/no-missing-label-refs` reports the `> [!NOTE]` and `> [!IMPORTANT]` blockquote alerts in `course/syllabus.md` as undefined label references.
 `markdown/no-html` runs with `allowed: ['h2']`, so raw HTML is rejected except for the `<h2 id="...">` anchors that carry the stable permalinks `requirements/repository-requirements.md` requires.
 `.vscode/settings.json` lints Markdown in the editor, so the sentence, `no-html`, and `md/*` rules report while you write, and it enables format-on-save through `esbenp.prettier-vscode` so editor formatting picks up the local `sentences-per-line` plugin rather than a bundled one.
@@ -99,9 +99,9 @@ requirements/   the rules                       (normative, authoritative)
 course/rules.md the contract and the router     (short, links into requirements/)
 ```
 
-The other two files in `course/` are reference material and are deliberately not layers: `course/syllabus.md` and `course/teams-and-projects.md` are the instructor's, and `course/rules.md` links to the syllabus rather than copying it.
+The other two files in `course/` are reference material and are deliberately not layers: `course/syllabus.md` is the single source of truth for the schedule and the course policies, `course/teams-and-projects.md` is regenerated each term, and `course/rules.md` links to the syllabus rather than copying it.
 
-`lectures/` is also the instructor's and is also not a layer.
+`lectures/` is also not a layer.
 It keeps its own rules, its build, and its gate in `lectures/AGENTS.md`; this file names the command and the workflow and leaves the rest there.
 
 1. When a rule already exists in `requirements/`, an assignment points at it and states only the week-specific addition or a stricter minimum.

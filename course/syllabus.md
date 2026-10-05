@@ -338,6 +338,6 @@ However, the team bears **full responsibility** for the correctness, quality, an
 
 ## 8. References & Navigation
 
-- [Instructor Overview & Guidelines](../README.md)
+- [Course README](../README.md)
 - [Course Rules](rules.md)
 - [Teams and Projects](teams-and-projects.md)
