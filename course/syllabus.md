@@ -38,7 +38,8 @@ The course is designed to prepare students for the Industrial Project course and
 - **Class Sessions**: Held weekly on **Fridays** (Classes 1 through 11).
 - **Weekly Submission Deadline Policy**:
   > [!IMPORTANT]
-  > All weekly assignment submissions are **strictly due by Thursday at 23:59**, the night before the next Friday class session.
+  > All weekly assignment submissions have a **soft deadline on Thursday at 23:59**, the night before the next Friday class session, and a **hard deadline on Friday at 23:59**.
+  > There is no penalty between the two; see [Deadlines And Submission](rules.md#deadlines-and-submission) and the [Late Submission Policy](#late-submission-policy).
   > A submission is a reflection on the work done in the repository.
   > All details should be stored in the repo.
   > The submission should be a map to the specific chunk of work.
@@ -68,6 +69,8 @@ The first two weeks establish the project foundations, team formation, and compe
 ---
 
 ## 3. Weekly Curriculum & Milestones
+
+The due dates below are the Thursday soft deadlines; each hard deadline is the following Friday at 23:59.
 
 | Week        | Date Range      | Focus / Key Milestones                                                                                                       |
 | :---------- | :-------------- | :--------------------------------------------------------------------------------------------------------------------------- |
@@ -113,8 +116,8 @@ The first two weeks establish the project foundations, team formation, and compe
   - **Deliverables**:
     1. **Product Vision**: `docs/product-vision.md`, holding the goal, the constraints, the stakeholders, the boundary of what the team will not do, and a system context diagram.
     2. **User Stories**: one GitHub issue per story, opened from `.github/ISSUE_TEMPLATE/user-story.yml`, listed by the `user-story` label; each story except a `Won't Have` story carries its own acceptance criteria.
-    3. **Issue Tracking**: one issue per `US-nn` with a `moscow:*` label.
-    4. **Minimum Usable Product Candidate**: the `Must Have` stories that let a user complete one core task end to end, and the story inside them to drop first, recorded in `reports/week-02/README.md`.
+    3. **Issue Tracking**: one issue per `US-nn` with a `moscow:*` label, and a task issue form, `.github/ISSUE_TEMPLATE/task.yml`, for the work that is not a story.
+    4. **Minimum Usable Product Candidate**: the `Must Have` stories that let a user complete one core task end to end, recorded in `reports/week-02/README.md`.
     5. **Prototypes**: prototypes of the riskiest assumptions, recorded at `reports/week-02/prototypes.md`.
        Prototypes may be paper sketches, view-only design tools, or disposable code spikes.
     6. **Customer Validation Meeting**: a second meeting with the customer, with the full Week 1 artifact set, which changes at least one story.
@@ -123,7 +126,7 @@ The first two weeks establish the project foundations, team formation, and compe
   - **Note**: The product repository itself is created and configured in Week 1.
     Week 2 adds requirements, tracking, and prototypes.
   - **Submission Scope**: Team submission.
-  - **Deadline**: **October 8 at 23:59 (Thursday)**.
+  - **Deadline**: soft **October 8 at 23:59 (Thursday)**, hard **October 9 at 23:59 (Friday)**.
 
 ### Week 3: Oct 9 – Oct 15 (Planning & Minimum Usable Product)
 
@@ -138,7 +141,7 @@ The first two weeks establish the project foundations, team formation, and compe
     5. **Changelog and First Release**: `CHANGELOG.md` compiled from pull requests, and the first SemVer tag.
     6. **Continuous Integration for the product code**: linting, formatting or type checking, build, and tests, on pull requests and on `main`.
   - **Submission Scope**: Team submission.
-  - **Deadline**: **October 15 at 23:59 (Thursday)**.
+  - **Deadline**: soft **October 15 at 23:59 (Thursday)**, hard **October 16 at 23:59 (Friday)**.
 
 ### Week 4: Oct 16 – Oct 22 (Software Quality, Architecture & Improved MUP)
 
@@ -151,7 +154,7 @@ The first two weeks establish the project foundations, team formation, and compe
     3. **Architectural Draft**: Architectural design draft demonstrating how the chosen architecture supports the defined quality goals.
     4. **Improved Minimum Usable Product (MUP)**: Working code iteration following the selected architecture and complying with the defined quality goals.
   - **Submission Scope**: Team submission.
-  - **Deadline**: **October 22 at 23:59 (Thursday)**.
+  - **Deadline**: soft **October 22 at 23:59 (Thursday)**, hard **October 23 at 23:59 (Friday)**.
 
 ### Week 5: Oct 23 – Oct 29 (Testing, Automation, Production Deployment & MVP)
 
@@ -171,7 +174,7 @@ The first two weeks establish the project foundations, team formation, and compe
        > **To revise:** the deck is currently expected as a Moodle attachment rather than a repository artifact.
        > Confirm the submission channel and where, if anywhere, it is indexed from.
   - **Submission Scope**: Team submission.
-  - **Deadline**: **October 29 at 23:59 (Thursday)** (presented in-class during Week 6).
+  - **Deadline**: soft **October 29 at 23:59 (Thursday)**, hard **October 30 at 23:59 (Friday)** (presented in-class during Week 6).
 
 ### Week 6: Oct 30 – Nov 5 (Analytics & In-Class MVP Presentations)
 
@@ -183,7 +186,7 @@ The first two weeks establish the project foundations, team formation, and compe
     1. **Analytics Integration**: Introduce and instrument analytics into the product codebase (event tracking, metrics collection, telemetry).
     2. **Active Data Collection**: Verification that analytics data collection is operational and recording product usage.
   - **Submission Scope**: Team submission.
-  - **Deadline**: **November 5 at 23:59 (Thursday)**.
+  - **Deadline**: soft **November 5 at 23:59 (Thursday)**, hard **November 6 at 23:59 (Friday)**.
 
 ### Week 7: Nov 6 – Nov 12 (Usability Testing Preparation)
 
@@ -196,7 +199,7 @@ The first two weeks establish the project foundations, team formation, and compe
     3. **Observation Recording Strategy**: Written methodology detailing how participant actions, friction points, verbal feedback, and task completion will be captured and recorded.
     4. **Analytics Telemetry Utilization**: Telemetry from the Week 6 analytics integration is utilized to complement observer notes with quantitative usage data.
   - **Submission Scope**: Team submission.
-  - **Deadline**: **November 12 at 23:59 (Thursday)**.
+  - **Deadline**: soft **November 12 at 23:59 (Thursday)**, hard **November 13 at 23:59 (Friday)**.
 
 ### Week 8: Nov 13 – Nov 19 (Project Configuration Management)
 
@@ -208,7 +211,7 @@ The first two weeks establish the project foundations, team formation, and compe
     2. **Configuration Management Improvement Plan**: Actionable roadmap detailing planned improvements to configuration, tooling, and environment stability.
     3. **Implementation**: Enacted improvements within the codebase, configuration files, and CI/CD pipelines.
   - **Submission Scope**: Team submission.
-  - **Deadline**: **November 19 at 23:59 (Thursday)**.
+  - **Deadline**: soft **November 19 at 23:59 (Thursday)**, hard **November 20 at 23:59 (Friday)**.
 
 ### Week 9: Nov 20 – Nov 26 (Project Pitching, Repository Finalization & Reflection)
 
@@ -224,7 +227,7 @@ The first two weeks establish the project foundations, team formation, and compe
     3. **Project Reflection Report**: Detailed retrospective reflecting on the team's engineering journey, technical choices, outcomes, quality goals achieved, lessons learned, and team dynamics.
     4. **Finalized Repository State**: Verified repository state with all planned implementation and upkeep tasks concluded.
   - **Submission Scope**: Team submission.
-  - **Deadline**: **November 26 at 23:59 (Thursday)**.
+  - **Deadline**: soft **November 26 at 23:59 (Thursday)**, hard **November 27 at 23:59 (Friday)**.
 
 ### Week 10: Nov 27 – Dec 3 (Course Review & Final Exam Preparation)
 
@@ -309,7 +312,7 @@ The course is assessed on a **Pass / Fail** basis:
 
 ### Late Submission Policy
 
-Late submissions incur a **10% grade deduction per calendar day** past the deadline.
+Late submissions incur a **10% grade deduction per calendar day** past the hard deadline.
 For example, a submission worth 7% receives a maximum of 6.3% if one day late (after Friday, 23:59), 5.6% if two days late, and so on.
 Submissions more than 7 days late receive zero credit.
 
