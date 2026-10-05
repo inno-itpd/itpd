@@ -31,7 +31,7 @@ It is created once, in its final place, and then stays current.
    - The **stakeholders**, per [Stakeholders](#stakeholders).
    - The **constraints**, per [Constraints](#constraints).
    - The **boundary**, per [Boundary](#boundary).
-   - The **system context diagram**, per [System Context](#system-context), committed at `docs/architecture/context.<ext>` and embedded here as an image.
+   - The **system context diagram**, per [System Context](#system-context), committed at `docs/architecture/context.<ext>`, with its source beside it when it has one, and embedded here as an image.
    - Links to the [user stories](user-stories-requirements.md#where-stories-live) and to the current week's report.
 
 3. When the product or the decisions change, update this file.
@@ -153,7 +153,9 @@ The system context diagram is the picture of the [boundary](#boundary): the prod
    A transparent image with dark lines disappears on the dark theme, so give it a background.
    Check it on the rendered permalink, per [Permalinks And Snapshots](repository-requirements.md#permalinks-and-snapshots).
 4. The tool and the source format are the team's choice.
-   An editable source may be committed beside the image, or linked view-only, in addition to it.
+   When the tool saves the diagram as a file, such as Mermaid, PlantUML, D2, draw.io, or Excalidraw, commit that source beside the image with the same name, for example `docs/architecture/context.mmd` beside `docs/architecture/context.svg`, so the diagram is versioned and can be read as text.
+   Update the source and the image in the same change, so they never disagree.
+   A view-only link to a board may be added, but it does not replace a committed source.
 5. Do not draw a use case diagram here, and do not draw components, containers, or an internal structure.
    The context diagram is the one that stays true as the product changes.
 6. The diagram agrees with the boundary list:
