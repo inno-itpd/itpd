@@ -19,7 +19,6 @@ What you hand in is a description of what your product must do, and a record of 
 <h2>Table of contents</h2>
 
 - [Objectives](#objectives)
-- [Before You Start](#before-you-start)
 - [Part 1: Carry Out The Kickoff Action Points](#part-1-carry-out-the-kickoff-action-points)
 - [Part 2: State The Product Vision](#part-2-state-the-product-vision)
 - [Part 3: Write And Track The User Stories As Issues](#part-3-write-and-track-the-user-stories-as-issues)
@@ -45,26 +44,6 @@ By the end of this week you should be able to show an instructor:
 - One place where the customer told you a story was wrong, and the diff that shows what you changed.
 - A repository where the Markdown is checked automatically and the check is green.
 
-## Before You Start
-
-Read these once.
-They are the rules; this assignment only tells you what this week requires.
-
-| Read                                                                               | For                                                                                    |
-| ---------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
-| [Course rules](../course/rules.md)                                                 | What is public, what is private, deadlines, AI policy                                  |
-| [General Requirements](../requirements/general-requirements.md)                    | The `US-nn` and `AC-nn` identifiers, and how later work cites Week 1                   |
-| [Visibility Requirements](../requirements/visibility-requirements.md)              | What is public, what goes in Moodle only, and screenshots                              |
-| [Product Vision Requirements](../requirements/product-vision-requirements.md)      | The goal, stakeholders, constraints, boundary, and system context diagram              |
-| [User Story Requirements](../requirements/user-stories-requirements.md)            | The story issue, its acceptance criteria, its priority, and the MUP candidate          |
-| [Prototype Requirements](../requirements/prototypes-requirements.md)               | What a prototype must change, and where it is recorded                                 |
-| [Customer Meeting Requirements](../requirements/customer-meetings-requirements.md) | Every meeting after the kickoff, and the meeting script and report                     |
-| [Weekly Report Requirements](../requirements/weekly-report-requirements.md)        | The weekly report, the AI usage report, deviations, and the Moodle PDF                 |
-| [Repository Requirements](../requirements/repository-requirements.md)              | Issue tracking, branch naming, the Markdown check, permalinks, snapshots               |
-| [Guide: user stories and prototyping](../guides/user-stories-and-prototyping.md)   | How to turn a gap into stories, and how to prototype cheaply                           |
-| [Guide: validating with the customer](../guides/validating-with-the-customer.md)   | How to run a meeting after the kickoff and record what it changed                      |
-| Your `reports/week-01/README.md` and `reports/week-01/meeting-report.md`           | What the customer already disagreed with, and the action points you owe them this week |
-
 ## Part 1: Carry Out The Kickoff Action Points
 
 The rules:
@@ -76,6 +55,7 @@ The rules:
 
 This week:
 
+Your `reports/week-01/README.md` and `reports/week-01/meeting-report.md` record what the customer already disagreed with.
 `reports/week-01/meeting-report.md` has at least two action points, each with a named owner and a due date inside Week 2.
 They are due now.
 
