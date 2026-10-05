@@ -64,7 +64,7 @@ See [Meeting Report](customer-meetings-requirements.md#meeting-report).
 2. Each assumption has a `**Status:**`: `Open`, `Confirmed`, `Refuted`, or `Dropped`.
    An assumption starts `Open`.
 3. When a decision or a check settles an assumption, change its status to `Confirmed` or `Refuted` and add an `**Outcome:**` that says what was found and links the evidence that settled it.
-   A decision is cited by its `DEC-nn`, per [What Cites It](decisions-requirements.md#what-cites-it).
+   A decision with an entry is cited by its `DEC-nn`, per [What Cites It](decisions-requirements.md#what-cites-it).
 4. A refuted assumption keeps its entry.
    Change what rested on it, and record that change where the artifact records its changes.
 5. An assumption that nothing rests on any more is `Dropped`, per [Identifier Rules](general-requirements.md#identifier-rules).

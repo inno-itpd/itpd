@@ -204,7 +204,8 @@ Never "client" or "stakeholder" for them.
 In artifacts, the label is `Customer`, not a real name.
 The word "instructor" is allowed in prose explaining who the customer is, and nowhere else.
 
-Every decision, the customer's or the team's, is a `DEC-nn` entry in `docs/decisions.md`, and a later artifact cites the decision by its `DEC-nn`.
+A decision that needs an entry, per `requirements/decisions-requirements.md`, is a `DEC-nn` entry in `docs/decisions.md`, and a later artifact cites the decision by its `DEC-nn`.
+Any other decision is a team decision recorded with its reason in the one artifact it changes.
 The entry does not list what it changed; the artifact it changed cites it, so there is no `Changes` list, `TBD`, or `None`.
 A meeting report lists its meeting's `DEC-nn` under `## Decisions`, and the weekly report has no decisions section.
 Action points are **not** an identifier family: there is no `ACT-nn`, a later week cites one by its report's path and `#action-points` anchor with the action quoted, and it is carried out by a tracked issue.

@@ -1,6 +1,6 @@
 # Decision Requirements
 
-These requirements define a decision: where it lives, what its entry says, what cites it, and how it is reversed.
+These requirements define a decision: which decisions get an entry, where it lives, what its entry says, what cites it, and how it is reversed.
 [Guide: Validating With The Customer](../guides/validating-with-the-customer.md#step-6-trace-what-changed) is the method for recording what a meeting decided.
 How the `DEC-nn` identifier is issued and cited is in [General Requirements](general-requirements.md#identifier-rules).
 
@@ -22,7 +22,7 @@ How the `DEC-nn` identifier is issued and cited is in [General Requirements](gen
 2. Each decision is a section of its own, headed `## DEC-nn: <the decision>`, per [Identifier Rules](general-requirements.md#identifier-rules), and the sections are in identifier order.
 3. A heading is never reworded once it is on `main`, because citations link its anchor.
    A decision that changes is a new decision, per [Reversing A Decision](#reversing-a-decision).
-4. The file stays current for the rest of the course, per [Where Artifacts Live In The Repository](general-requirements.md#where-artifacts-live-in-the-repository): every new decision gets an entry, and every reversal updates a status.
+4. The file stays current for the rest of the course, per [Where Artifacts Live In The Repository](general-requirements.md#where-artifacts-live-in-the-repository): every new decision that needs an entry, per [The Decision](#the-decision), gets one, and every reversal updates a status.
 5. A meeting report lists the decisions its meeting made, per [Meeting Report](customer-meetings-requirements.md#meeting-report).
    The entry is the decision's only full record.
 
@@ -34,12 +34,22 @@ A [decision](general-requirements.md#artifact-concepts-and-terminology) is a con
 
 **Required**
 
-1. Every decision gets an entry: one the customer made in a meeting, one the customer made outside a meeting, and one the team made on its own.
-   A technology choice the team made is a team decision, not a constraint, per [Constraints](product-vision-requirements.md#constraints).
-2. The heading states what was decided, in one sentence, not what was discussed.
-3. One entry records one decision.
+1. A decision gets an entry when any of these holds:
+
+   - The customer made it, in a meeting or outside one.
+   - It was made in a meeting with the customer, including one the team made and the customer did not contest.
+   - It changes more than one artifact, an artifact that does not exist yet, or no artifact at all.
+   - It changes the product vision's goal, a constraint, or a boundary item, or it is a technology choice.
+     A technology choice the team made is a team decision, not a constraint, per [Constraints](product-vision-requirements.md#constraints).
+   - It reverses a decision that has an entry.
+
+2. Any other decision is a team decision that changes one artifact that already exists, and it needs no entry.
+   It is recorded with its reason where that artifact records its changes, per [What Cites It](#what-cites-it).
+   A team may still give it an entry, and the artifact then cites the entry's `DEC-nn`.
+3. The heading states what was decided, in one sentence, not what was discussed.
+4. One entry records one decision.
    A verdict that accepts several stories at once is one decision, per [Showing Working Software](customer-meetings-requirements.md#showing-working-software).
-4. Each entry has these fields, in this order:
+5. Each entry has these fields, in this order:
 
    | Field          | What it says                                                                                                                                                                                                               |
    | -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -49,7 +59,7 @@ A [decision](general-requirements.md#artifact-concepts-and-terminology) is a con
    | `**Why:**`     | The reason, in one or two sentences; a decision that confirmed the current direction says so, and says what it confirmed                                                                                                   |
    | `**Status:**`  | `Active`, or `Reversed by DEC-nn` with the reversing entry linked, per [Reversing A Decision](#reversing-a-decision)                                                                                                       |
 
-5. A decision made in a private channel is recorded in the team's own words, without quoting or linking the channel, per [Sensitive Information Reference](visibility-requirements.md#sensitive-information-reference).
+6. A decision made in a private channel is recorded in the team's own words, without quoting or linking the channel, per [Sensitive Information Reference](visibility-requirements.md#sensitive-information-reference).
 
 **Recommended**
 
@@ -74,10 +84,19 @@ A [decision](general-requirements.md#artifact-concepts-and-terminology) is a con
 3. A decision that changes an artifact which does not exist yet is cited when that artifact is written.
 4. To find what a decision changed, search the repository and the issues for its `DEC-nn`.
    A decision that nothing cites, and whose `**Why:**` does not say it confirmed the current direction, has not changed anything yet.
+5. A decision without an entry is recorded by its reason, which stands where the `DEC-nn` would: in a dropped `GAP-nn` or `VP-nn`'s reason, in its `**Changed:**` bullet, or in a story's change comment.
+
+**Example**
+
+```markdown
+**Changed:**
+
+- Narrowed to experts who take bookings online, because the in-person studios we checked already have a front desk that handles them.
+```
 
 **Since: W2**
 
-5. The Week 2 artifacts cite a decision in the same way:
+6. The Week 2 artifacts cite a decision in the same way:
 
    - A story, in its `Traces to` list when the decision is its origin, per [The Story](user-stories-requirements.md#the-story), and in the comment that records each change, per [Where Stories Live](user-stories-requirements.md#where-stories-live).
    - A constraint or a boundary item in the product vision, per [Constraints](product-vision-requirements.md#constraints) and [Boundary](product-vision-requirements.md#boundary).

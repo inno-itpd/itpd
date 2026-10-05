@@ -30,7 +30,7 @@ It is the short version of the requirements, states what is expected of you as a
    How one is declared is in [Declaring Deviations](weekly-report-requirements.md#declaring-deviations).
 8. A **meeting report** is your team's own account of a meeting with the customer, per [Meeting Report](customer-meetings-requirements.md#meeting-report).
 9. A **decision** is a conclusion that changes or explicitly settles what you build.
-   Every decision, the customer's or the team's, is recorded in `docs/decisions.md`, per [Decision Requirements](decisions-requirements.md).
+   A decision is recorded in `docs/decisions.md` when it needs an entry, per [The Decision](decisions-requirements.md#the-decision), and otherwise in the one artifact it changes.
 10. An **action point** is a follow-up that came out of a meeting, with an owner and a week it falls due in, per [Meeting Report](customer-meetings-requirements.md#meeting-report).
 
 ## Where Artifacts Live In The Repository
@@ -98,7 +98,7 @@ This is what makes the course a project rather than nine separate assignments.
 | Week 2 product vision        | The `VP-nn` its goal traces to, per [Goal](product-vision-requirements.md#goal)                                                                                               |
 | Week 2 user stories          | The `VP-nn`, the `ASM-nn` of each assumption the story rests on, and any origins in each story's `Traces to` list, per [The Story](user-stories-requirements.md#the-story)    |
 | Week 2 prototypes            | The `US-nn` or `GAP-nn` each one tested, and the `ASM-nn` when the risky part is an assumption, per [Where Prototypes Live](prototypes-requirements.md#where-prototypes-live) |
-| Any change a decision caused | The decision's `DEC-nn`, per [What Cites It](decisions-requirements.md#what-cites-it)                                                                                         |
+| Any change a decision caused | The decision's `DEC-nn` when it has an entry, or its reason otherwise, per [What Cites It](decisions-requirements.md#what-cites-it)                                           |
 
 **Required**
 
