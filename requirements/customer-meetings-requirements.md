@@ -208,7 +208,8 @@ A Week 3 meeting that shows working software.
    - A priority change names the `US-nn` and its old and new `moscow:*` labels.
    - A change to the [boundary](product-vision-requirements.md#boundary) names the item by its "will not" text.
    - The verdict on the [minimum usable product candidate](user-stories-requirements.md#minimum-usable-product-candidate) names each `US-nn` added to or removed from it, or says `None` with the reason when the customer accepted it as it is.
-   - A constraint, an assumption, a maintained document, the implementation or the scaffold, and a later requirement are named the same way.
+   - A change to an [assumption](assumptions-requirements.md#checking-and-settling) names the `ASM-nn` and its new status.
+   - A constraint, a maintained document, the implementation or the scaffold, and a later requirement are named the same way.
 
    Write `TBD` when the decision changes something whose artifact does not exist yet, and `None` with the reason when the decision confirmed the current direction and changed nothing.
    `TBD` and `None` are statuses, not identifiers.

@@ -89,6 +89,7 @@ The rules:
 
 - Open each story as an issue, and keep the issue as its record of change: [Where Stories Live](../requirements/user-stories-requirements.md#where-stories-live).
 - Write each story as a user's need, with its `Traces to` list: [The Story](../requirements/user-stories-requirements.md#the-story).
+- Keep each assumption a story rests on as an `ASM-nn` entry, and settle it with its evidence: [Assumption Requirements](../requirements/assumptions-requirements.md).
 - Link each Week 1 identifier a story cites to its section: [Traceability Into Later Weeks](../requirements/general-requirements.md#traceability-into-later-weeks).
 - Give each story acceptance criteria somebody else can run, each with its `AC-nn`: [Acceptance Criteria](../requirements/user-stories-requirements.md#acceptance-criteria).
 - Label each story's priority, and give the reason for it: [MoSCoW Prioritization](../requirements/user-stories-requirements.md#moscow-prioritization).
@@ -99,6 +100,8 @@ The rules:
 This week:
 
 1. Add `user-story.yml`, `task.yml`, `config.yml`, and the labels before you open the first story, so every story is opened from the form and every other pull request has a task issue.
+2. Before a story cites an assumption, move your Week 1 assumptions table from `docs/research/value-proposition.md` into `docs/assumptions.md`, in one pull request.
+   Give each row its own `ASM-nn` section, numbered in the table's order, with its current status, and leave no copy of the table in `value-proposition.md`.
 
 The method is in [Step 2: Turn Each Gap Into Stories](../guides/user-stories-and-prototyping.md#step-2-turn-each-gap-into-stories) and [Step 3: Write Criteria Somebody Else Can Run](../guides/user-stories-and-prototyping.md#step-3-write-criteria-somebody-else-can-run).
 
@@ -215,6 +218,7 @@ This week it also carries:
    | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
    | Kickoff action points  | `## Previous action points` in `reports/week-02/meeting-report.md`, and the artifact each outcome changed                      |
    | Product vision         | `docs/product-vision.md`                                                                                                       |
+   | Assumptions            | `docs/assumptions.md`                                                                                                          |
    | User stories           | the `US-nn` issues, filtered by the `user-story` label                                                                         |
    | Issue forms and labels | `.github/ISSUE_TEMPLATE/user-story.yml` and `.github/ISSUE_TEMPLATE/task.yml`, `user-story`, `task`, and the `moscow:*` labels |
    | Prototypes             | `reports/week-02/prototypes.md`                                                                                                |
@@ -254,6 +258,7 @@ Keep it to two pages, and put nothing in it except the following:
 - [ ] Each kickoff action point's outcome in `## Previous action points`, and in the artifact it changed ([Part 1](#part-1-carry-out-the-kickoff-action-points)).
 - [ ] `docs/product-vision.md`, with at least 3 boundary items ([Part 2](#part-2-state-the-product-vision)).
 - [ ] `.github/ISSUE_TEMPLATE/user-story.yml`, `task.yml`, `config.yml`, and the labels, added from a blank issue ([Part 3](#part-3-write-and-track-the-user-stories-as-issues)).
+- [ ] `docs/assumptions.md` with an `ASM-nn` section for each Week 1 assumption, and no table left in `value-proposition.md` ([Part 3](#part-3-write-and-track-the-user-stories-as-issues)).
 - [ ] The story issues ([Part 3](#part-3-write-and-track-the-user-stories-as-issues)).
 - [ ] `## Minimum Usable Product Candidate` in `reports/week-02/README.md` ([Part 4](#part-4-propose-the-minimum-usable-product-candidate)).
 - [ ] `reports/week-02/prototypes.md` with at least one prototype, and no prototype code on `main` ([Part 5](#part-5-prototype-the-riskiest-part)).

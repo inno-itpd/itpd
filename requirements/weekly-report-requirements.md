@@ -88,6 +88,7 @@ The kickoff decisions are in the [meeting report](meeting-report.md#decisions).
 | Compare the alternatives | [docs/research/comparison.md](../../docs/research/comparison.md)                                                       |
 | Gap analysis             | [docs/research/gap-analysis.md](../../docs/research/gap-analysis.md)                                                   |
 | Value proposition        | [docs/research/value-proposition.md](../../docs/research/value-proposition.md)                                         |
+| Assumptions              | [docs/assumptions.md](../../docs/assumptions.md)                                                                       |
 | Research board           | [Figma board](https://www.figma.com/design/PUc4NFVcLureKzxE3RAGB0/Market-Research)                                     |
 | Meeting script           | [reports/week-01/meeting-script.md](meeting-script.md)                                                                 |
 | Customer kickoff         | [reports/week-01/meeting-report.md](meeting-report.md), [reports/week-01/meeting-transcript.md](meeting-transcript.md) |

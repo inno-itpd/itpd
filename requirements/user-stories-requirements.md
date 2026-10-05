@@ -76,6 +76,7 @@ Its job is to make one need concrete enough that a reviewer can tell whether you
    Such a specific goes in an acceptance criterion, or in a [constraint](product-vision-requirements.md#constraints) when it holds for the whole product, and goes in the story statement only when the specific thing is itself the need.
 4. Every story carries a `Traces to` list.
    It contains exactly one `VP-nn`, the value proposition the story supports, and, optionally, the story's origins: the `GAP-nn` it closes, a customer decision in a meeting report, a team decision in the weekly public report, or an action point it carries out.
+   It also names the `ASM-nn` of each [assumption](assumptions-requirements.md#supports) the story rests on.
    The `VP-nn` is how a story traces to the product vision, so the `VP-nn` of every story except a `Won't Have` story is one the vision's [goal](product-vision-requirements.md#goal) traces to.
    A story you intend to build that supports no such value proposition is outside the vision: add its `VP-nn` to the goal as a team decision, or make the story `Won't Have`.
    Cite each entry as [Identifier Rules](general-requirements.md#identifier-rules) says, and link each Week 1 identifier per [Traceability Into Later Weeks](general-requirements.md#traceability-into-later-weeks).
@@ -196,6 +197,7 @@ so that an unpaid slot does not block a paying one for the rest of the week.
 
 - [`VP-01`](https://github.com/<organization>/<repo>/blob/main/docs/research/value-proposition.md#vp-01-one-link-that-carries-the-whole-booking)
 - [`GAP-01`](https://github.com/<organization>/<repo>/blob/main/docs/research/gap-analysis.md#gap-01-bookings-that-arrive-unpaid-and-unprepared)
+- [`ASM-02`](https://github.com/<organization>/<repo>/blob/main/docs/assumptions.md#asm-02-clients-will-pay-at-booking-rather-than-on-the-day)
 
 ## Priority reason
 
@@ -218,7 +220,7 @@ A comment on issue #42, added after the validation meeting:
 ```markdown
 Added `AC-02`, decided in [the validation meeting](https://github.com/<organization>/<repo>/blob/main/reports/week-02/meeting-report.md#decisions).
 The customer will not accept a hold that confirms without payment, and the story only had `AC-01`, which said the slot is held.
-This retires the pay-later assumption in [the assumptions table](https://github.com/<organization>/<repo>/blob/main/docs/research/value-proposition.md#assumptions).
+The same decision settles [`ASM-02`](https://github.com/<organization>/<repo>/blob/main/docs/assumptions.md#asm-02-clients-will-pay-at-booking-rather-than-on-the-day), which this story rests on, as `Confirmed`.
 ```
 
 Issue #50, a `Won't Have` story, closed as not planned:

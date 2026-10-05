@@ -111,7 +111,7 @@ Those are the questions that produce a `## Disagreements` row.
 ## Step 6: Trace What Changed
 
 The meeting report's `## Decisions` table is the record.
-`Changes` names what each decision changed, and links it when the artifact has a stable link: usually a `US-nn`, with the `AC-nn` when a specific criterion changed, or the constraint, assumption, document, or scaffold for anything else, per [Meeting Report](../requirements/customer-meetings-requirements.md#meeting-report).
+`Changes` names what each decision changed, and links it when the artifact has a stable link: usually a `US-nn`, with the `AC-nn` when a specific criterion changed, the `ASM-nn` when an assumption was settled, or the constraint, document, or scaffold for anything else, per [Meeting Report](../requirements/customer-meetings-requirements.md#meeting-report).
 A decision whose artifact does not exist yet says `TBD`, and the artifact that later carries it links back to the report.
 That table is where a reader looks to see whether the week was a test or a formality.
 The weekly report links that table rather than copying it; only a decision the team took outside the meeting goes in the weekly report's own `## Decisions` table, per [Weekly Public Report](../requirements/weekly-report-requirements.md#weekly-public-report).

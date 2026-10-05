@@ -80,7 +80,7 @@ Keeping the two apart is the whole point of this section: a constraint you canno
 2. For each constraint, say what it costs you.
    A constraint that costs nothing is not yet understood.
 3. An assumption is not a constraint and does not belong in this section.
-   Assumptions live in [Assumptions](research-requirements.md#assumptions) and are checked through [Validation](prototypes-requirements.md#validation).
+   Assumptions live in `docs/assumptions.md`, per [Assumption Requirements](assumptions-requirements.md), and are checked through [Validation](prototypes-requirements.md#validation).
 4. Do not list a constraint you chose and then describe it as imposed.
    A technology choice is a decision, and a decision is not a constraint.
    Record it in the week's `## Decisions` table, per [a decision](general-requirements.md#artifact-concepts-and-terminology), and let its `Changes` entry name where the choice shows.

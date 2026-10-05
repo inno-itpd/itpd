@@ -100,6 +100,7 @@ The repository structure you are building towards:
 │   ├── pull_request_template.md
 │   └── workflows/lychee.yml
 ├── docs/
+│   ├── assumptions.md
 │   └── research/
 │       ├── alternatives.md
 │       ├── comparison.md
@@ -152,9 +153,9 @@ That list is not optional; it is the part your customer will argue with, and you
 
 Write `docs/research/value-proposition.md`.
 Two or three `VP-nn` entries, each one a short positioning statement, each closing at least one `GAP-nn`, each naming what it costs and how a competitor would respond.
-End the file with your assumptions table.
+Then write `docs/assumptions.md`: one `ASM-nn` section for each belief your value propositions rest on that you have not verified.
 
-The rules are in [Value Proposition And Differentiation](../requirements/research-requirements.md#value-proposition-and-differentiation) and the method in [Step 5: Write The Value Proposition](../guides/comparison-and-synthesis.md#step-5-write-the-value-proposition).
+The rules are in [Value Proposition And Differentiation](../requirements/research-requirements.md#value-proposition-and-differentiation) and [Assumption Requirements](../requirements/assumptions-requirements.md), and the method in [Step 5: Write The Value Proposition](../guides/comparison-and-synthesis.md#step-5-write-the-value-proposition) and [Step 6: Write Down What You Are Assuming](../guides/comparison-and-synthesis.md#step-6-write-down-what-you-are-assuming).
 
 ## Part 7: Meet The Customer
 
@@ -236,6 +237,7 @@ Follow the structure in [Weekly Public Report](../requirements/weekly-report-req
    | Compare the alternatives | `docs/research/comparison.md`                                                                                          |
    | Gap analysis             | `docs/research/gap-analysis.md`                                                                                        |
    | Value proposition        | `docs/research/value-proposition.md`                                                                                   |
+   | Assumptions              | `docs/assumptions.md`                                                                                                  |
    | Research board           | your external board link                                                                                               |
    | Meeting script           | `reports/week-01/meeting-script.md`                                                                                    |
    | Customer kickoff         | `reports/week-01/meeting-report.md`, and `reports/week-01/meeting-transcript.md` or `reports/week-01/meeting-notes.md` |
@@ -307,7 +309,8 @@ See [Permalinks And Snapshots](../requirements/repository-requirements.md#permal
 - [ ] `reports/week-01/candidate-list.md` with the full search, including what you cut.
 - [ ] `docs/research/comparison.md` with at least 6 properties and traceable cells.
 - [ ] `docs/research/gap-analysis.md` with `GAP-nn` entries and the rejected list.
-- [ ] `docs/research/value-proposition.md` with `VP-nn` entries and assumptions.
+- [ ] `docs/research/value-proposition.md` with `VP-nn` entries.
+- [ ] `docs/assumptions.md` with `ASM-nn` entries.
 - [ ] Board linked, view-only, two screenshots per alternative.
 - [ ] `reports/week-01/meeting-script.md` with a one-sentence target and five areas, at least two questions each, all tagged open or closed and all serving the target.
 - [ ] `## Agenda` with timeboxes adding up to the meeting, what you show in each part, and every question in exactly one part.

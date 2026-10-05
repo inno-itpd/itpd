@@ -68,7 +68,7 @@ It is the short version of the requirements, states what is expected of you as a
 
 **Required**
 
-1. The identifier families introduced in Week 1 are `ALT-nn` for alternatives, `GAP-nn` for gaps, and `VP-nn` for value propositions.
+1. The identifier families introduced in Week 1 are `ALT-nn` for alternatives, `GAP-nn` for gaps, `VP-nn` for value propositions, and `ASM-nn` for assumptions.
    All are zero-padded and case-sensitive.
    `US-nn` for user stories and `AC-nn` for their acceptance criteria are introduced in Week 2.
    A later family is introduced only by the requirement that first uses it.
@@ -95,11 +95,11 @@ The research you produce in Week 1 is the evidence base for the rest of the cour
 Later weeks cite your Week 1 identifiers rather than restating your findings.
 This is what makes the course a project rather than nine separate assignments.
 
-| Later work            | Must cite                                                                                                              |
-| --------------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| Week 2 product vision | The `VP-nn` its goal traces to, per [Goal](product-vision-requirements.md#goal)                                        |
-| Week 2 user stories   | The `VP-nn` and origins in each story's `Traces to` list, per [The Story](user-stories-requirements.md#the-story)      |
-| Week 2 prototypes     | The `GAP-nn` or `US-nn` each one tested, per [Where Prototypes Live](prototypes-requirements.md#where-prototypes-live) |
+| Later work            | Must cite                                                                                                                         |
+| --------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| Week 2 product vision | The `VP-nn` its goal traces to, per [Goal](product-vision-requirements.md#goal)                                                   |
+| Week 2 user stories   | The `VP-nn` and origins in each story's `Traces to` list, per [The Story](user-stories-requirements.md#the-story)                 |
+| Week 2 prototypes     | The `GAP-nn`, `US-nn`, or `ASM-nn` each one tested, per [Where Prototypes Live](prototypes-requirements.md#where-prototypes-live) |
 
 **Required**
 

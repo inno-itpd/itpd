@@ -1,8 +1,9 @@
 # Research Requirements
 
-These requirements define the Week 1 research: where it lives, what counts as an alternative, a property, a gap, and a value proposition, which assumptions the proposal rests on, and how honest the research has to be.
+These requirements define the Week 1 research: where it lives, what counts as an alternative, a property, a gap, and a value proposition, and how honest the research has to be.
 [Guide: Researching Alternatives](../guides/alternatives-research.md) and [Guide: From Comparison To Value Proposition](../guides/comparison-and-synthesis.md) are the method.
 How identifiers are issued and cited is in [General Requirements](general-requirements.md#identifier-rules).
+The assumptions the research rests on are in [Assumption Requirements](assumptions-requirements.md).
 
 <h2>Table of contents</h2>
 
@@ -12,7 +13,6 @@ How identifiers are issued and cited is in [General Requirements](general-requir
 - [Properties And Comparison](#properties-and-comparison)
 - [Gap Analysis](#gap-analysis)
 - [Value Proposition And Differentiation](#value-proposition-and-differentiation)
-- [Assumptions](#assumptions)
 - [Research Honesty Rules](#research-honesty-rules)
 
 ## Where Research Lives
@@ -26,7 +26,7 @@ How identifiers are issued and cited is in [General Requirements](general-requir
    - `alternatives.md`: the `ALT-nn` sections, per [Alternatives](#alternatives).
    - `comparison.md`: the property table and what you read in it, per [Properties And Comparison](#properties-and-comparison).
    - `gap-analysis.md`: the `GAP-nn` sections and the gaps you chose not to pursue, per [Gap Analysis](#gap-analysis).
-   - `value-proposition.md`: the `VP-nn` sections, then `## Assumptions`, per [Value Proposition And Differentiation](#value-proposition-and-differentiation) and [Assumptions](#assumptions).
+   - `value-proposition.md`: the `VP-nn` sections, per [Value Proposition And Differentiation](#value-proposition-and-differentiation).
 
 2. The research stays current after Week 1, per [Traceability Into Later Weeks](general-requirements.md#traceability-into-later-weeks).
 
@@ -209,23 +209,6 @@ The defensible part is the single flow and its pricing, not the fields.
 - Two or three value propositions built on your strongest gaps.
   More than that and you are listing features.
 - Check each one against what the customer or the team has already ruled out: does it conflict with something you decided not to do?
-
-## Assumptions
-
-**Since: W1**
-
-**Required**
-
-1. List the assumptions your proposal rests on, at the end of `docs/research/value-proposition.md`, under the heading `## Assumptions`.
-   An assumption is something you believe about the problem, the users, or the constraints that you have not verified.
-2. Trace each assumption to the `GAP-nn` or `VP-nn` it supports.
-3. State how each one could be checked, and when.
-4. When a [decision](general-requirements.md#artifact-concepts-and-terminology) settles an assumption, update its entry with the outcome and link the evidence that settled it.
-
-Assumptions are not questions for the customer.
-The customer decides the scope; you are responsible for knowing which of your beliefs the scope rests on, and for finding out which of them are wrong.
-The ones you cannot settle yourself belong in the meeting report's open questions, where the customer answers them for you.
-See [Meeting Report](customer-meetings-requirements.md#meeting-report).
 
 ## Research Honesty Rules
 

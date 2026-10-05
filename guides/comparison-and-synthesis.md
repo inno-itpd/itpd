@@ -24,7 +24,8 @@ Most of it is arguing about whether the table is honest, which is time well spen
 ```text
 docs/research/comparison.md        properties × alternatives, cell by cell
 docs/research/gap-analysis.md      GAP-01, GAP-02, … including the ones you drop
-docs/research/value-proposition.md VP-01, VP-02, … plus your assumptions
+docs/research/value-proposition.md VP-01, VP-02, …
+docs/assumptions.md                ASM-01, ASM-02, …
 ```
 
 ## Step 1: Freeze The Property Set
@@ -154,21 +155,26 @@ More than that and you are listing features.
 ## Step 6: Write Down What You Are Assuming
 
 Every proposition rests on beliefs you have not verified: that the user has the problem you think they have, that nobody is coming for this, that the constraint you were told about is real.
-List them, trace each to the `GAP-nn` or `VP-nn` it supports, and say how you would check it.
+List them in `docs/assumptions.md`, one `ASM-nn` section each, trace each to the `GAP-nn` or `VP-nn` it supports, and say how you would check it.
+Keep only the ones something rests on: if a belief turned out false and nothing would change, it is not worth tracking.
 
 ```markdown
-## Assumptions
+## ASM-01: Experts will upload materials per meeting type instead of sending them in chat after booking
 
-| Assumption                                                                                    | Supports      | How to check                          |
-| --------------------------------------------------------------------------------------------- | ------------- | ------------------------------------- |
-| Experts will upload materials per meeting type instead of sending them in chat after booking. | GAP-01, VP-01 | Run the prototype with two tutors.    |
-| Clients will pay at booking rather than on the day.                                           | VP-01         | Ask at the Week 2 validation meeting. |
-| The customer will accept a web page rather than a Telegram bot.                               | VP-01         | Raise at the Week 1 kickoff.          |
+**Supports:** [GAP-01](research/gap-analysis.md#gap-01-bookings-that-arrive-unpaid-and-unprepared), [VP-01](research/value-proposition.md#vp-01-one-link-that-carries-the-whole-booking).
+**How to check:** run the materials prototype with two tutors in Week 2.
+**Status:** Open
+
+## ASM-02: Clients will pay at booking rather than on the day
+
+**Supports:** [VP-01](research/value-proposition.md#vp-01-one-link-that-carries-the-whole-booking).
+**How to check:** only the customer can settle it, so ask at the kickoff.
+**Status:** Open
 ```
 
 The customer decides the scope.
-This table is not a list of questions for them; it is your own map of what the scope rests on, so that when the scope is decided you know what you are betting on.
-The questions you do put to the customer go in the week report instead.
+This file is not a list of questions for them; it is your own map of what the scope rests on, so that when the scope is decided you know what you are betting on.
+The questions you do put to the customer go in the meeting report's open questions instead.
 
 ## Common Mistakes
 

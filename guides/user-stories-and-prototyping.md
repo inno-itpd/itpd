@@ -67,6 +67,7 @@ For each `GAP-nn`, ask what a user would be trying to do that they cannot do tod
 Not every story starts at a gap.
 A kickoff or validation decision or an action point can add one.
 When the story has an origin, record it in the story's `Traces to` list, and never invent a `GAP-nn` link to fill the list.
+When a story rests on a belief you have not checked, record the belief as an `ASM-nn` in `docs/assumptions.md` and list it in the story's `Traces to` too; see [Assumption Requirements](../requirements/assumptions-requirements.md).
 
 Whatever its origin, a story reaches the vision through its `VP-nn`.
 The vision has one goal and no identifier, so "traces to the vision" would be true of every story and would check nothing; the value proposition says which part of the goal the story serves.
@@ -198,6 +199,8 @@ That is usually:
 - the one where you guessed at the workflow, because you have not watched anyone do the job;
 - the one where the interesting part is a technical risk nobody has tested;
 - the one where the customer said something you did not fully understand in the kickoff.
+
+A story that traces to an `ASM-nn` still `Open` names its own unchecked belief, so read those first.
 
 Say the question in one line before you build anything, and write it down.
 If you cannot write the question, you are not ready to prototype, and building first is how a team ends up showing a prototype of the easy part.

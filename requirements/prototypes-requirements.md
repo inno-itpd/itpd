@@ -20,7 +20,7 @@ These requirements define what a prototype is for, what it must change, and wher
 
    - What it is and how to view it: a screenshot in `reports/week-NN/images/`, a view-only external link, or a branch name.
    - Which `US-nn` or `GAP-nn` it tested, any `AC-nn` it exercised, and the question it was built to answer.
-     When the risky part is an [assumption](research-requirements.md#assumptions), cite the `US-nn` or `GAP-nn` that rests on it and quote the assumption with a link to its entry; assumptions have no identifier of their own.
+     When the risky part is an [assumption](assumptions-requirements.md#the-assumption), also cite its `ASM-nn`.
    - What the customer said about it.
    - What changed as a result, and where that change is recorded.
 
@@ -68,7 +68,7 @@ These rules apply to every meeting with the customer where you show a prototype,
 
    - The prototype record, per [Where Prototypes Live](#where-prototypes-live).
    - A row in the meeting report's `## Decisions`, per [Meeting Report](customer-meetings-requirements.md#meeting-report).
-   - The changed artifact itself: a story issue, per [Where Stories Live](user-stories-requirements.md#where-stories-live), or a constraint, assumption, or document updated in place.
+   - The changed artifact itself: a story issue, per [Where Stories Live](user-stories-requirements.md#where-stories-live), or a constraint, an [assumption](assumptions-requirements.md#checking-and-settling), or a document updated in place.
    - The [weekly public report](weekly-report-requirements.md#weekly-public-report), which links the meeting report's `## Decisions`.
 
 5. A prototype is disposable, and none of it is product code.
