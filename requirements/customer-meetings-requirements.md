@@ -75,6 +75,9 @@ The Week 1 meeting is the kickoff.
    A meeting is required to change something only when it showed a prototype, per [Validation](prototypes-requirements.md#validation).
 8. The customer decides the scope.
    Your job in the meeting is to present a direction with its evidence and to find out where it is wrong, not to ask the customer to design the product.
+9. If a live meeting is impossible, hold it asynchronously in writing with the customer.
+   Timestamp the written exchange as the [notes](#meeting-notes), record a voice or screen note if there is one, and declare the substitution as a [deviation](weekly-report-requirements.md#declaring-deviations).
+   The rules above still apply, except the role split and the length; the script's shape for it is in [Meeting Script](#meeting-script).
 
 **Example**
 
@@ -97,9 +100,6 @@ A Week 2 validation meeting.
 2. The script covers five areas: business goals, end users, the current workflow, pain points and constraints, and scope, with at least two questions in each.
 3. Check the open questions against [The Mom Test](https://www.koji.so/docs/mom-test-methodology).
    A question about what the customer did last time is worth more than a question about what they would like.
-4. If a live meeting is impossible, do the alignment asynchronously in writing with the customer.
-   Timestamp the written exchange as the notes, record a voice or screen note if there is one, and state the substitution in the weekly public report as a deviation.
-   The rules above still apply, except the role split and the length, per [Meeting Script](#meeting-script).
 
 ## Showing Working Software
 
@@ -166,7 +166,6 @@ A Week 3 meeting that shows working software.
 10. A meeting held asynchronously in writing instead of live still produces a script, but `## Roles` is not one of its sections.
     A written exchange has no speaking-time floor, and the moderator is whoever wrote the questions.
     Its `## Agenda` gives the order of the exchange and what you send with each part, without timeboxes.
-    Record the substitution as a [deviation](weekly-report-requirements.md#declaring-deviations).
 
 **Recommended**
 
@@ -188,7 +187,6 @@ A Week 3 meeting that shows working software.
    A report that restates the transcript line by line, or that a tool generated and the team pasted in unchecked, does not satisfy this.
 3. It contains exactly the sections below, in this order, and nothing else.
 4. A section with nothing in it says `None` and moves on.
-   The same rule applies to [deviations](weekly-report-requirements.md#declaring-deviations).
 5. The sections, and what belongs in them:
 
    Name people as [Sensitive Information Reference](visibility-requirements.md#sensitive-information-reference) says.

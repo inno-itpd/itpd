@@ -7,7 +7,7 @@ How identifiers are issued and cited is in [General Requirements](general-requir
 <h2>Table of contents</h2>
 
 - [Where Research Lives](#where-research-lives)
-- [Research Is The Week's Work](#research-is-the-weeks-work)
+- [The Research Chain](#the-research-chain)
 - [Alternatives](#alternatives)
 - [Properties And Comparison](#properties-and-comparison)
 - [Gap Analysis](#gap-analysis)
@@ -21,7 +21,7 @@ How identifiers are issued and cited is in [General Requirements](general-requir
 
 **Required**
 
-1. The research is maintained documentation in `docs/research/`, one file for each step of the [chain](#research-is-the-weeks-work):
+1. The research is maintained documentation in `docs/research/`, one file for each step of the [chain](#the-research-chain):
 
    - `alternatives.md`: the `ALT-nn` sections, per [Alternatives](#alternatives).
    - `comparison.md`: the property table and what you read in it, per [Properties And Comparison](#properties-and-comparison).
@@ -30,13 +30,9 @@ How identifiers are issued and cited is in [General Requirements](general-requir
 
 2. The research stays current after Week 1, per [Traceability Into Later Weeks](general-requirements.md#traceability-into-later-weeks).
 
-## Research Is The Week's Work
+## The Research Chain
 
 **Since: W1**
-
-Week 1 is a research week.
-There is no code, no prototype, and no deployment.
-The deliverable is a defensible understanding of the problem space and a proposed direction.
 
 The chain runs in one direction, and each step depends on the previous one:
 
@@ -166,6 +162,7 @@ It is not a feature you happen to want, and it is not a missing feature that nob
    This is the most useful part of the file, because it is where the customer can see what you decided against and overrule you.
 5. Do not manufacture gaps to justify work.
    A week with two solid gaps is a good week.
+6. A gap dropped after Week 1 stays in the file, marked as dropped per [Identifier Rules](general-requirements.md#identifier-rules), and its entry says which value propositions and user stories the drop affected.
 
 **Recommended**
 
@@ -246,5 +243,4 @@ These rules are about the honesty of your research, not about the quality of you
 5. No filler.
    A sentence that could be pasted into any team's report without changing anything is a sentence to delete.
    A template sentence is one with no product name, no identifier such as `ALT-nn`, and no date in it.
-   Generated text submitted unchecked, or filler passed off as analysis, reduces the week's grade.
 6. A week where you learned that your original idea is wrong, and you can show why, is a better week than a week where nothing was tested.

@@ -30,7 +30,7 @@ The team is fully responsible for the correctness, quality, and originality of e
 The only requirement is disclosure, in the week's [AI usage report](../requirements/weekly-report-requirements.md#ai-usage-report).
 
 The test is simple: could a reader tell which parts are yours?
-Unchecked generated text and filler reduce the week's grade; see [Research Honesty Rules](../requirements/research-requirements.md#research-honesty-rules).
+Unchecked generated text and filler reduce the week's grade; see [AI Usage Report](../requirements/weekly-report-requirements.md#ai-usage-report).
 
 ## Deadlines And Submission
 

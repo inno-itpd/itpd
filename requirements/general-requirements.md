@@ -3,6 +3,7 @@
 These requirements hold the rules that belong to no single artifact: what the course words mean, where an artifact goes in the repository, how identifiers are issued, and how later weeks cite earlier work.
 Every other requirements file covers one artifact group and links here for these rules.
 Assignment files add only the paths and evidence expectations for a specific week; they must not redefine anything in the requirements.
+Each requirement carries a `**Since: WN**` marker naming the week it starts applying, so a section can hold requirements that begin in different weeks.
 
 Read [the course rules](../course/rules.md) first.
 It is the short version of the requirements, states what is expected of you as a student, and lists which file holds which rules.
@@ -99,6 +100,5 @@ This is what makes the course a project rather than nine separate assignments.
 2. If later work contradicts something in your research, update the research and note the change.
    The research is maintained documentation, not a frozen Week 1 submission.
    See [Where Artifacts Live In The Repository](#where-artifacts-live-in-the-repository).
-3. If you drop a gap mid-course, say which value propositions and user stories were affected.
-4. A later need that your Week 1 research did not anticipate does not rewrite the research.
+3. A later need that your Week 1 research did not anticipate does not rewrite the research.
    It becomes a story that traces to the `VP-nn` it supports; update the research only when the later need contradicts it.

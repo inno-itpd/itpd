@@ -173,7 +173,7 @@ This week specifically:
    - At least two rows in `## Action points`, each with a named owner and a due date inside Week 2.
    - `## Disagreements` filled in, or an explicit `None`.
 4. **Put the recording link in your Moodle submission only.**
-5. **If a live meeting is impossible**, follow the asynchronous rule in [The Kickoff](../requirements/customer-meetings-requirements.md#the-kickoff) and declare the deviation in your week report.
+5. **If a live meeting is impossible**, follow the asynchronous rule in [Every Meeting](../requirements/customer-meetings-requirements.md#every-meeting) and declare the deviation in your week report.
 
 Do not ask the customer to design the product.
 Present a direction with its evidence, and find out where it is wrong.

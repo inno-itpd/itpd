@@ -42,7 +42,7 @@ Each story is a GitHub issue, and the `user-story` label identifies story issues
 4. The **registry of identifiers** is the issue list filtered by the `user-story` label.
    It shows open and closed issues, so a `Won't Have` story keeps its `US-nn` and stays findable after it closes.
 5. Do not keep a second list of stories in the repository.
-   The issue is the source of truth for the requirement and its criteria, and the issue tracker is where execution state lives, per [Issue Tracking](repository-requirements.md#issue-tracking).
+   The issue is the source of truth for the requirement and its criteria.
 
 **Recommended**
 

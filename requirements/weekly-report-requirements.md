@@ -33,12 +33,13 @@ Who may see each item is in [Visibility Requirements](visibility-requirements.md
    The table is the index, so it is not followed by a second list of the same links.
 8. It links the root `LICENSE`.
 9. It contains a contribution table mapping each team member's GitHub username to the work they did, using links to their commits, pull requests, or reviews where possible.
-10. It declares every deviation, per [Declaring Deviations](#declaring-deviations).
-11. It states, in one line, that no private-only material was committed to the repository.
+10. It links the repository evidence the assignment asks for, and justifies in prose every link the [link check](repository-requirements.md#link-checking) excludes.
+11. It declares every deviation, per [Declaring Deviations](#declaring-deviations).
+12. It states, in one line, that no private-only material was committed to the repository.
 
 **Since: W2**
 
-12. It records the [minimum usable product candidate](user-stories-requirements.md#minimum-usable-product-candidate) under the heading the assignment names: the core task, then the `US-nn` of each story with its issue linked, then the story to drop first.
+13. It records the [minimum usable product candidate](user-stories-requirements.md#minimum-usable-product-candidate) under the heading the assignment names: the core task, then the `US-nn` of each story with its issue linked, then the story to drop first.
 
 **Recommended**
 
@@ -118,6 +119,7 @@ No private-only material was committed to this repository.
 3. Say what you did with the output: what you accepted, what you changed, what you rejected and why.
 4. If you used no AI tools, say so explicitly in one line.
    This is a valid answer and costs you nothing.
+5. In any artifact, generated text submitted unchecked, or filler passed off as analysis, reduces the week's grade.
 
 The course allows AI tools.
 See [the course rules](../course/rules.md#ai-tools).
@@ -156,6 +158,7 @@ No generated text was submitted unchecked.
 2. Declaring a deviation does not excuse a broken requirement.
    Say what you did instead and why it satisfies the intent.
 3. An undeclared deviation is treated as a missing requirement.
+4. A week with no deviation says `None` under the heading.
 
 ## Private Submission Wrapper
 

@@ -3,10 +3,6 @@
 These requirements cover the mechanics of the product repository: where it lives, how changes get in, how links get checked, and how you produce the permalinks and the snapshot your assignment asks for.
 Use [General Requirements](general-requirements.md) for what an artifact is, [Visibility Requirements](visibility-requirements.md) for who may see it, and the file for each artifact, listed in [the course rules](../course/rules.md#where-the-rules-live), for the product work.
 
-Each requirement carries a `**Since: WN**` marker stating the week it starts applying, so a section can hold requirements that begin in different weeks.
-Requirements that arrive later are written now so that later weeks do not have to introduce a convention from nothing.
-(For the document authors) To move a requirement to a different week, change its own marker and leave the section where it is.
-
 <h2>Table of contents</h2>
 
 - [Repository Setup](#repository-setup)
@@ -183,8 +179,6 @@ Exclusions go in `.lycheeignore` in the repository root, one pattern per line, e
 # Verified manually in a browser on 2026-09-30.
 https://www.figma.com/design/PUc4NFVcLureKzxE3RAGB0/Market-Research
 ```
-
-The same justification, in prose, goes in the week's report under the link-checking evidence.
 
 ### Pinning Third-Party Actions
 
