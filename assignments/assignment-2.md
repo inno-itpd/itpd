@@ -40,7 +40,7 @@ By the end of this week you should be able to show a reader:
 
 - What your product must achieve, in one sentence, and which `VP-nn` from Week 1 it serves.
 - What your product will deliberately not do, and why that makes your context diagram checkable.
-- Eight or more user stories as GitHub issues, each naming the `VP-nn` it supports, with acceptance criteria somebody else could run.
+- Eight or more story issues, each naming the `VP-nn` it supports, with acceptance criteria somebody else could run.
 - Which `Must Have` stories make up your minimum usable product candidate, and which core task they let a user complete.
 - One place where the customer told you something was wrong, and the comment or update that records what you changed.
 - A repository where the Markdown is checked automatically and the check is green.
@@ -96,8 +96,7 @@ They are due now.
    Leave both Week 1 files as they are, apart from a [formatting-only change](../requirements/general-requirements.md#where-artifacts-live-in-the-repository).
 
 2. Carry out each action point, or find out why it cannot be done.
-3. Record each outcome in `## Previous action points` of `reports/week-02/meeting-report.md`, in [Part 6](#part-6-validate-with-the-customer).
-4. Carry the outcome into the artifact it affects, which is usually a story, an assumption, the research, or the product vision.
+3. Carry the outcome into the artifact it affects, which is usually a story, an assumption, the research, or the product vision.
    An outcome that changes an artifact but appears only in the meeting report has not been carried out.
 
 ## Part 2: State The Product Vision
@@ -154,10 +153,10 @@ The rules:
 
 This week:
 
-1. Write it under `## Minimum Usable Product Candidate` in `reports/week-02/README.md`.
-2. Take the candidate to the customer in [Part 6](#part-6-validate-with-the-customer); their verdict is one of the week's decisions.
-3. Submit the candidate as it stands after the verdict, citing the verdict's `DEC-nn`.
+1. Take the candidate to the customer in [Part 6](#part-6-validate-with-the-customer); their verdict is one of the week's decisions.
+2. Submit the candidate as it stands after the verdict, citing the verdict's `DEC-nn`.
    The verdict's heading says what the customer decided about the candidate, such as accepting it as proposed or dropping a `US-nn` from it, and its `**Why:**` says why.
+   A story the verdict drops from the candidate keeps its `Must Have` unless the customer also changed its priority, and that change is recorded per [MoSCoW Prioritization](../requirements/user-stories-requirements.md#moscow-prioritization).
 
 The method is in [Step 4: Prioritize, Then Pick The First Thing To Build](../guides/user-stories-and-prototyping.md#step-4-prioritize-then-pick-the-first-thing-to-build).
 
@@ -166,7 +165,7 @@ The method is in [Step 4: Prioritize, Then Pick The First Thing To Build](../gui
 The rules:
 
 - Record each prototype, the story or gap it tested and the assumption when that is the risky part, and what the customer said about it: [Where Prototypes Live](../requirements/prototypes-requirements.md#where-prototypes-live).
-- Prototype the part you are least sure about, and keep it disposable: [Validation](../requirements/prototypes-requirements.md#validation).
+- Prototype the story or assumption you are least sure about: [Validation](../requirements/prototypes-requirements.md#validation).
 - Sanitize every screenshot you publish: [Screenshot Evidence](../requirements/visibility-requirements.md#screenshot-evidence).
 
 This week:
@@ -197,7 +196,7 @@ This week:
    Write your own one-sentence target from that in the script's `## Context`.
    Walk through each story's acceptance criteria only if time allows, and do not re-run the kickoff.
 2. In `reports/week-02/meeting-script.md`, `## Agenda` opens with the permission questions, then has a part for the kickoff action points that are due and the kickoff's open questions, then shows the prototype, the boundary, and the minimum usable product candidate each in its own part, the one you are least sure of first, per [Step 4: Order The Meeting](../guides/validating-with-the-customer.md#step-4-order-the-meeting), and closes with the read-back.
-   The candidate's part names the core task and lists the candidate's `US-nn`, each linking its issue.
+   The candidate's part names the core task and lists only the candidate's `US-nn`, each linking its issue, so the script is not a second list of stories.
    It also links the issue list filtered by the `user-story` label, which shows every other story with its `moscow:*` label, so the customer can move a story into or out of the candidate or change its priority.
 3. `reports/week-02/meeting-report.md` has one row per kickoff action point in `## Previous action points`, at least two decisions in `## Decisions`, one of them the customer's verdict on the minimum usable product candidate, and at least two rows in `## Action points`, each due inside Week 3.
 4. At least one artifact the meeting changed records the change and cites the decision's `DEC-nn`: a story issue, by a comment on its statement, an `AC-nn`, or its priority, or the boundary, a constraint, or an assumption, updated in place.
@@ -224,11 +223,6 @@ The rules:
 
 - Name the tools you used, what for, and what you did with their output: [AI Usage Report](../requirements/weekly-report-requirements.md#ai-usage-report).
 
-This week:
-
-1. Write `reports/week-02/ai-usage.md`.
-   This is the week where generated text is most tempting, because a story and a set of acceptance criteria are both prose and an agent will write them in seconds.
-
 ## What Good Looks Like
 
 Assume your weekly public report is read by someone who does not know your project.
@@ -244,7 +238,7 @@ A strong submission has:
   Read one criterion without reading the story.
   If you cannot tell whether it passed, it is not a criterion.
 - **A `Must Have` list you can actually build.**
-  Three or four stories, not eight.
+  Three or four stories, not eight, of which two or three make up the candidate.
   The label stops meaning anything when everything is a must.
 - **A prototype of the hard part.**
   You built the thing you were least sure about, not the thing you were most pleased with.
@@ -268,7 +262,7 @@ This week it also carries:
    | System context diagram | `docs/architecture/context.<ext>`, or its view-only link                                                            |
    | Assumptions            | `docs/assumptions.md`                                                                                               |
    | Decisions              | `docs/decisions.md`                                                                                                 |
-   | User stories           | the `US-nn` issues, filtered by the `user-story` label                                                              |
+   | Story issues           | the `US-nn` issues, filtered by the `user-story` label                                                              |
    | Issue forms            | `.github/ISSUE_TEMPLATE/user-story.yml`, `.github/ISSUE_TEMPLATE/task.yml`, and `.github/ISSUE_TEMPLATE/config.yml` |
    | Labels                 | the repository's labels page, with `user-story`, `task`, and the `moscow:*` labels                                  |
    | Pull request template  | `.github/pull_request_template.md`                                                                                  |

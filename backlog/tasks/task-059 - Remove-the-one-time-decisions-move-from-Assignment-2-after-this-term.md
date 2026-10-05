@@ -4,7 +4,7 @@ title: Remove the one-time decisions move from Assignment 2 after this term
 status: To Do
 assignee: []
 created_date: '2026-10-05 12:11'
-updated_date: '2026-10-05 13:00'
+updated_date: '2026-10-05 15:11'
 labels:
   - docs
 dependencies:
@@ -22,7 +22,7 @@ TASK-058 made docs/decisions.md a Week 1 artifact, but this term had already sub
 ## Acceptance Criteria
 <!-- AC:BEGIN -->
 - [ ] #1 assignment-2.md has no step or checklist item that moves decisions out of the Week 1 reports
-- [ ] #2 No file under requirements/, guides/, or assignments/ mentions the ## Decisions table or the Changes column of a Week 1 report
+- [ ] #2 No file under requirements/, guides/, or assignments/ maps the rows of a Week 1 `## Decisions` table to `DEC-nn` sections, as the Part 1 catch-up in assignment-2.md does
 <!-- AC:END -->
 
 ## Definition of Done
