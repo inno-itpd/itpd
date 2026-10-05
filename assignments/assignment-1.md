@@ -101,6 +101,7 @@ The repository structure you are building towards:
 │   └── workflows/lychee.yml
 ├── docs/
 │   ├── assumptions.md
+│   ├── decisions.md
 │   └── research/
 │       ├── alternatives.md
 │       ├── comparison.md
@@ -170,7 +171,7 @@ This week specifically:
 2. **Assign the three roles and ask the three permission questions** before you start, per [Every Meeting](../requirements/customer-meetings-requirements.md#every-meeting) and [Permission Questions](../requirements/customer-meetings-requirements.md#permission-questions), and keep the recording out of the repository.
 3. **Write `reports/week-01/meeting-report.md`**, plus `meeting-transcript.md` when the meeting was recorded, per [Where Meeting Artifacts Live](../requirements/customer-meetings-requirements.md#where-meeting-artifacts-live).
    Hold the report to the week minima:
-   - At least two rows in `## Decisions`, each naming what it changed: a `GAP-nn`, a `VP-nn`, or `TBD` when the artifact does not exist yet, and `None` with the reason when it kept the direction.
+   - At least two decisions, each a `DEC-nn` entry in `docs/decisions.md` listed under `## Decisions`, per [Decision Requirements](../requirements/decisions-requirements.md); a `GAP-nn` or `VP-nn` a decision dropped cites its `DEC-nn`.
    - At least two rows in `## Action points`, each with a named owner and a due date inside Week 2.
    - `## Disagreements` filled in, or an explicit `None`.
 4. **Put the recording link in your Moodle submission only.**
@@ -238,6 +239,7 @@ Follow the structure in [Weekly Public Report](../requirements/weekly-report-req
    | Gap analysis             | `docs/research/gap-analysis.md`                                                                    |
    | Value proposition        | `docs/research/value-proposition.md`                                                               |
    | Assumptions              | `docs/assumptions.md`                                                                              |
+   | Decisions                | `docs/decisions.md`                                                                                |
    | Research board           | your external board link                                                                           |
    | Meeting script           | `reports/week-01/meeting-script.md`                                                                |
    | Customer kickoff         | `reports/week-01/meeting-report.md`, and `reports/week-01/meeting-transcript.md` when there is one |
@@ -254,7 +256,7 @@ Follow the structure in [Weekly Public Report](../requirements/weekly-report-req
 
 The open questions from the kickoff live in `meeting-report.md`, not here.
 The week report does not repeat them; a reader follows the link.
-The kickoff decisions live in `meeting-report.md#decisions`; the week report links them and does not repeat them.
+The kickoff decisions live in `docs/decisions.md`, and the meeting report lists them; the week report does not repeat them.
 
 ## Assignment Report On Moodle
 
@@ -317,9 +319,10 @@ See [Permalinks And Snapshots](../requirements/repository-requirements.md#permal
 - [ ] `## Key improvements` shows two real rewrites with the principle named.
 - [ ] Three meeting roles assigned, whole team attending.
 - [ ] Kickoff meeting held, all three permissions asked before recording.
-- [ ] `reports/week-01/meeting-report.md` with all six sections, 2+ decisions each naming what it changed (`GAP-nn`, `VP-nn`, `TBD`, or `None` with the reason), 2+ action points with owner and Week 2 due date, and `## Disagreements` filled or `None`.
+- [ ] `docs/decisions.md` with a `DEC-nn` entry for each kickoff decision, each with its `**Why:**`.
+- [ ] `reports/week-01/meeting-report.md` with all six sections, 2+ decisions listed by `DEC-nn`, 2+ action points with owner and Week 2 due date, and `## Disagreements` filled or `None`.
 - [ ] `reports/week-01/meeting-transcript.md` if the meeting was recorded, sanitized; in the Moodle PDF only if publication was refused.
 - [ ] `reports/week-01/ai-usage.md` written.
-- [ ] `reports/week-01/README.md` complete, with the kickoff decisions linked, the coverage table, evidence, and contribution table.
+- [ ] `reports/week-01/README.md` complete, with the coverage table, evidence, and contribution table.
 - [ ] `reports/week-01/README.md` and every file it links merged into `main`, with the permalink and the snapshot taken from that `main` commit.
 - [ ] PDF and snapshot ready, permalink verified at the full commit hash.

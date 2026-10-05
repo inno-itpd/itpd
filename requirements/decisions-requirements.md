@@ -1,0 +1,179 @@
+# Decision Requirements
+
+These requirements define a decision: where it lives, what its entry says, what cites it, and how it is reversed.
+[Guide: Validating With The Customer](../guides/validating-with-the-customer.md#step-6-trace-what-changed) is the method for recording what a meeting decided.
+How the `DEC-nn` identifier is issued and cited is in [General Requirements](general-requirements.md#identifier-rules).
+
+<h2>Table of contents</h2>
+
+- [Where Decisions Live](#where-decisions-live)
+- [The Decision](#the-decision)
+- [What Cites It](#what-cites-it)
+- [Reversing A Decision](#reversing-a-decision)
+- [Full Example](#full-example)
+
+## Where Decisions Live
+
+**Since: W1**
+
+**Required**
+
+1. The decisions are maintained documentation in `docs/decisions.md`.
+2. Each decision is a section of its own, headed `## DEC-nn: <the decision>`, per [Identifier Rules](general-requirements.md#identifier-rules), and the sections are in identifier order.
+3. A heading is never reworded once it is on `main`, because citations link its anchor.
+   A decision that changes is a new decision, per [Reversing A Decision](#reversing-a-decision).
+4. The file stays current for the rest of the course, per [Where Artifacts Live In The Repository](general-requirements.md#where-artifacts-live-in-the-repository): every new decision gets an entry, and every reversal updates a status.
+5. A meeting report lists the decisions its meeting made, per [Meeting Report](customer-meetings-requirements.md#meeting-report).
+   The entry is the decision's only full record.
+
+## The Decision
+
+**Since: W1**
+
+A [decision](general-requirements.md#artifact-concepts-and-terminology) is a conclusion that changes or explicitly settles what you build.
+
+**Required**
+
+1. Every decision gets an entry: one the customer made in a meeting, one the customer made outside a meeting, and one the team made on its own.
+   A technology choice is a team decision, per [Constraints](product-vision-requirements.md#constraints).
+2. The heading states what was decided, in one sentence, not what was discussed.
+3. One entry records one decision.
+   A verdict that accepts several stories at once is one decision, per [Showing Working Software](customer-meetings-requirements.md#showing-working-software).
+4. Each entry has these fields, in this order:
+
+   | Field          | What it says                                                                                                                                                                                                               |
+   | -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+   | `**Date:**`    | The date the decision was made                                                                                                                                                                                             |
+   | `**Made by:**` | `Customer`; `Team`; or `Team, not contested` when the team decided in a meeting and the customer did not object                                                                                                            |
+   | `**Source:**`  | Where it was made: a meeting decision links its meeting report, and any other decision says where in words, such as "team discussion" or "customer by email", and links the place only when it is public, such as an issue |
+   | `**Why:**`     | The reason, in one or two sentences; a decision that confirmed the current direction says so, and says what it confirmed                                                                                                   |
+   | `**Status:**`  | `Active`, or `Reversed by DEC-nn` with the reversing entry linked, per [Reversing A Decision](#reversing-a-decision)                                                                                                       |
+
+5. A decision made in a private channel is recorded in the team's own words, without quoting or linking the channel, per [Sensitive Information Reference](visibility-requirements.md#sensitive-information-reference).
+
+**Recommended**
+
+- Write the entries in the same pull request as the meeting report, while the meeting is fresh.
+- Write the reason the customer gave, not "the customer said so".
+  A `**Why:**` nobody could argue with explains nothing.
+
+## What Cites It
+
+**Since: W1**
+
+**Required**
+
+1. The entry does not list what the decision changed.
+   A link between two artifacts is recorded once, in the artifact that rests on the other, as for an [assumption](assumptions-requirements.md#what-rests-on-it).
+2. Each artifact the decision changed cites its `DEC-nn`, linked, where that artifact records its changes:
+
+   - A dropped `GAP-nn` or `VP-nn`, in the reason it was dropped, per [Identifier Rules](general-requirements.md#identifier-rules).
+   - A settled assumption, in its `**Outcome:**`, per [Checking And Settling](assumptions-requirements.md#checking-and-settling).
+
+3. A decision that changes an artifact which does not exist yet is cited when that artifact is written.
+4. To find what a decision changed, search the repository and the issues for its `DEC-nn`.
+   A decision that nothing cites, and whose `**Why:**` does not say it confirmed the current direction, has not changed anything yet.
+
+**Since: W2**
+
+5. The Week 2 artifacts cite a decision in the same way:
+
+   - A story, in its `Traces to` list when the decision is its origin, per [The Story](user-stories-requirements.md#the-story), and in the comment that records each change, per [Where Stories Live](user-stories-requirements.md#where-stories-live).
+   - A constraint or a boundary item in the product vision, per [Constraints](product-vision-requirements.md#constraints) and [Boundary](product-vision-requirements.md#boundary).
+   - The [minimum usable product candidate](user-stories-requirements.md#minimum-usable-product-candidate), which cites the customer's verdict on it.
+
+## Reversing A Decision
+
+**Since: W1**
+
+**Required**
+
+1. A decision is reversed by a new decision, never by editing the old one.
+   The new entry's `**Why:**` names the `DEC-nn` it reverses, linked, and says why.
+2. The reversed entry keeps its heading and its fields, and its `**Status:**` becomes `Reversed by DEC-nn`, linked to the new entry.
+   This is how a decision is dropped, per [Identifier Rules](general-requirements.md#identifier-rules).
+3. An artifact that cited the reversed decision and changes because of the new one cites the new `DEC-nn`, and records the change as that artifact records its changes.
+
+**Example**
+
+```markdown
+## DEC-02: Drop multi-expert scheduling
+
+**Date:** 2026-09-29
+**Made by:** Customer
+**Source:** [the kickoff meeting](../reports/week-01/meeting-report.md)
+**Why:** the experts work alone, so nobody needs two of them booked at once.
+**Status:** Reversed by [DEC-11](#dec-11-schedule-two-experts-for-a-group-session)
+
+## DEC-11: Schedule two experts for a group session
+
+**Date:** 2026-10-27
+**Made by:** Customer
+**Source:** [the Week 5 validation meeting](../reports/week-05/meeting-report.md)
+**Why:** reverses [DEC-02](#dec-02-drop-multi-expert-scheduling), because the customer signed a studio whose group sessions always need two coaches.
+**Status:** Active
+```
+
+## Full Example
+
+`docs/decisions.md` after the Week 2 validation meeting:
+
+```markdown
+# Decisions
+
+## DEC-01: Build paid bookings, not the calendar view
+
+**Date:** 2026-09-29
+**Made by:** Customer
+**Source:** [the kickoff meeting](../reports/week-01/meeting-report.md)
+**Why:** every alternative already has a calendar view, and the paid booking flow is the part they leave half-done.
+**Status:** Active
+
+## DEC-02: Drop multi-expert scheduling
+
+**Date:** 2026-09-29
+**Made by:** Customer
+**Source:** [the kickoff meeting](../reports/week-01/meeting-report.md)
+**Why:** the experts work alone, so nobody needs two of them booked at once.
+**Status:** Active
+
+## DEC-03: Keep the web link for delivery
+
+**Date:** 2026-09-29
+**Made by:** Team, not contested
+**Source:** [the kickoff meeting](../reports/week-01/meeting-report.md)
+**Why:** confirms the current direction: `VP-01` rests on one link that carries the whole booking, and the customer raised no objection to it.
+**Status:** Active
+
+## DEC-04: Deploy on a single small VPS
+
+**Date:** 2026-09-29
+**Made by:** Customer
+**Source:** [the kickoff meeting](../reports/week-01/meeting-report.md)
+**Why:** the customer will run the product after the course and pays for one small server, not for a hosted platform.
+**Status:** Active
+
+## DEC-05: Take payment through the payment provider's hosted checkout page
+
+**Date:** 2026-10-02
+**Made by:** Team
+**Source:** team discussion in [issue #31](https://github.com/<organization>/<repo>/issues/31)
+**Why:** nobody on the team has handled card data, and a hosted page keeps it out of the product.
+**Status:** Active
+
+## DEC-06: Confirm a booking only after the client has paid
+
+**Date:** 2026-10-06
+**Made by:** Customer
+**Source:** [the validation meeting](../reports/week-02/meeting-report.md)
+**Why:** a hold that confirms without payment is the unpaid booking `GAP-01` describes, and the customer will not accept it.
+**Status:** Active
+
+## DEC-07: Accept the minimum usable product candidate as proposed
+
+**Date:** 2026-10-06
+**Made by:** Customer
+**Source:** [the validation meeting](../reports/week-02/meeting-report.md)
+**Why:** confirms the current direction: the candidate's stories take a client from the link to a paid, confirmed booking, and the customer named nothing the core task is missing.
+**Status:** Active
+```

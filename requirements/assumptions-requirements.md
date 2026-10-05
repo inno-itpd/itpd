@@ -63,7 +63,8 @@ See [Meeting Report](customer-meetings-requirements.md#meeting-report).
 1. Each assumption says, under `**How to check:**`, how it could be checked and in which week.
 2. Each assumption has a `**Status:**`: `Open`, `Confirmed`, `Refuted`, or `Dropped`.
    An assumption starts `Open`.
-3. When a [decision](general-requirements.md#artifact-concepts-and-terminology) or a check settles an assumption, change its status to `Confirmed` or `Refuted` and add an `**Outcome:**` that says what was found and links the evidence that settled it.
+3. When a decision or a check settles an assumption, change its status to `Confirmed` or `Refuted` and add an `**Outcome:**` that says what was found and links the evidence that settled it.
+   A decision is cited by its `DEC-nn`, per [What Cites It](decisions-requirements.md#what-cites-it).
 4. A refuted assumption keeps its entry.
    Change what rested on it, and record that change where the artifact records its changes.
 5. An assumption that nothing rests on any more is `Dropped`, per [Identifier Rules](general-requirements.md#identifier-rules).
@@ -90,7 +91,7 @@ See [Meeting Report](customer-meetings-requirements.md#meeting-report).
 
 **How to check:** only the customer can settle it, so it is an [open question](../reports/week-01/meeting-report.md#open-questions) carried into the Week 2 validation meeting.
 **Status:** Confirmed
-**Outcome:** the customer will not accept a hold that confirms without payment, decided in [the validation meeting](../reports/week-02/meeting-report.md#decisions).
+**Outcome:** the customer will not accept a hold that confirms without payment, per [`DEC-06`](decisions.md#dec-06-confirm-a-booking-only-after-the-client-has-paid).
 
 ## ASM-03: Clients open the booking link on a phone
 

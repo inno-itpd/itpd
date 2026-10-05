@@ -16,6 +16,7 @@ Operating instructions for coding agents maintaining the student-facing course m
 | `requirements/visibility-requirements.md`        | Who may see an artifact: the visibility model, where each sensitive item goes, screenshot evidence.                                                       |
 | `requirements/research-requirements.md`          | The Week 1 research: where it lives, alternatives, properties and comparison, gaps, value propositions, research honesty.                                 |
 | `requirements/assumptions-requirements.md`       | `docs/assumptions.md`: where it lives, what an assumption is, what rests on it, how it is checked and settled, and the full example.                      |
+| `requirements/decisions-requirements.md`         | `docs/decisions.md`: where it lives, a decision's entry and fields, what cites it, how it is reversed, and the full example.                              |
 | `requirements/product-vision-requirements.md`    | `docs/product-vision.md`: where it lives, the goal, stakeholders, constraints, boundary, system context, and the full example.                            |
 | `requirements/user-stories-requirements.md`      | Story issues: where they live, the story, acceptance criteria, MoSCoW priorities, the minimum usable product candidate, and the full example.             |
 | `requirements/prototypes-requirements.md`        | Prototypes: where they are recorded, and the validation rules for showing one.                                                                            |
@@ -114,13 +115,13 @@ It keeps its own rules, its build, and its gate in `lectures/AGENTS.md`; this fi
 
 Inside `requirements/`, every rule has one owner, and every other mention is a link without the rule's numbers or lists.
 
-| File                                                                                                                                                                   | Owns                                                                                                                                                                                                      | Links, rather than restates                                              |
-| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------ |
-| `general-requirements.md`                                                                                                                                              | Artifact terms, the `docs/` vs `reports/` split, identifier families and how they are cited, traceability into later weeks                                                                                | Any one artifact's paths, fields, or content                             |
-| `visibility-requirements.md`                                                                                                                                           | Who may see each item: public, Moodle only, or never committed, and how screenshots are published                                                                                                         | Where an artifact lives in the repository                                |
-| One file per artifact group: `research-`, `assumptions-`, `product-vision-`, `user-stories-`, `prototypes-`, `customer-meetings-`, and `weekly-report-requirements.md` | For its artifacts: where each lives, its sections, fields, labels, and close states, how it records a change, what each part must say (counts, quality bars, priority meanings), and the one full example | Identifier, visibility, and platform rules, and another artifact's rules |
-| `repository-requirements.md`                                                                                                                                           | Platform configuration and workflow: the files under `.github/`, labels, branches, pull requests, link checking, and CI                                                                                   | What a story or an artifact must say                                     |
-| `course/rules.md`                                                                                                                                                      | The contract summary and the router                                                                                                                                                                       | Any number or list that a requirement owns                               |
+| File                                                                                                                                                                                 | Owns                                                                                                                                                                                                      | Links, rather than restates                                              |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------ |
+| `general-requirements.md`                                                                                                                                                            | Artifact terms, the `docs/` vs `reports/` split, identifier families and how they are cited, traceability into later weeks                                                                                | Any one artifact's paths, fields, or content                             |
+| `visibility-requirements.md`                                                                                                                                                         | Who may see each item: public, Moodle only, or never committed, and how screenshots are published                                                                                                         | Where an artifact lives in the repository                                |
+| One file per artifact group: `research-`, `assumptions-`, `decisions-`, `product-vision-`, `user-stories-`, `prototypes-`, `customer-meetings-`, and `weekly-report-requirements.md` | For its artifacts: where each lives, its sections, fields, labels, and close states, how it records a change, what each part must say (counts, quality bars, priority meanings), and the one full example | Identifier, visibility, and platform rules, and another artifact's rules |
+| `repository-requirements.md`                                                                                                                                                         | Platform configuration and workflow: the files under `.github/`, labels, branches, pull requests, link checking, and CI                                                                                   | What a story or an artifact must say                                     |
+| `course/rules.md`                                                                                                                                                                    | The contract summary and the router                                                                                                                                                                       | Any number or list that a requirement owns                               |
 
 Each artifact file reads in one order: where the artifact lives, then one section per part, then the full example.
 A part may keep a small example beside the rule it illustrates, such as the boundary table, even when the full example contains it.
@@ -129,7 +130,7 @@ A part may keep a small example beside the rule it illustrates, such as the boun
 
 - **Filenames** are kebab-case: `assignment-1.md`, `user-stories-requirements.md`.
 - **Weeks** are zero-padded: `reports/week-01/`, through `reports/week-09/`.
-- **Identifiers** are zero-padded and stable: `ALT-01`, `GAP-01`, `VP-01`, and `ASM-01` are the Week 1 families.
+- **Identifiers** are zero-padded and stable: `ALT-01`, `GAP-01`, `VP-01`, `ASM-01`, and `DEC-01` are the Week 1 families.
   `US-01` for user stories and `AC-01` for the acceptance criteria of one story are introduced in W2.
   A later identifiers family arrives with the requirement that first uses it, not before.
   An `AC-nn` is scoped to its story issue and is cited together with it; the other families are repository-wide.
@@ -163,10 +164,10 @@ A part may keep a small example beside the rule it illustrates, such as the boun
 Each row is added when its assignment is written, so a week's path is decided in the same place as the work that uses it.
 A later assignment may extend this map, but should not silently move an entry.
 
-| Week | Maintained artifacts                                                                                                                  |
-| ---- | ------------------------------------------------------------------------------------------------------------------------------------- |
-| W1   | `docs/research/` — `alternatives.md`, `comparison.md`, `gap-analysis.md`, `value-proposition.md`; and `docs/assumptions.md`           |
-| W2   | `docs/product-vision.md`, and `docs/architecture/context.<ext>` when the context diagram is committed (the stories are GitHub issues) |
+| Week | Maintained artifacts                                                                                                                             |
+| ---- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| W1   | `docs/research/` — `alternatives.md`, `comparison.md`, `gap-analysis.md`, `value-proposition.md`; `docs/assumptions.md`; and `docs/decisions.md` |
+| W2   | `docs/product-vision.md`, and `docs/architecture/context.<ext>` when the context diagram is committed (the stories are GitHub issues)            |
 
 Weekly reports live at `reports/week-NN/README.md` in every week, and the Moodle PDF is the private wrapper in every week.
 Meeting artifacts live at `reports/week-NN/meeting-report.md`, plus a `meeting-transcript.md` beside it when the meeting was recorded or held in writing.
@@ -205,10 +206,10 @@ Never "client" or "stakeholder" for them.
 In artifacts, the label is `Customer`, not a real name.
 The word "instructor" is allowed in prose explaining who the customer is, and nowhere else.
 
-Meeting decisions and action points are **not** identifier families.
-There is no `DEC-nn` or `ACT-nn`.
-A later week cites a meeting report by path and heading anchor, a team decision cites the weekly report's `#decisions` anchor, a decision row names what it changed with `TBD` until its artifact exists, an action point is carried out by a tracked issue, and the identifier families stay the ones their own week introduces.
-The weekly report links a meeting report's `## Decisions` rather than copying it.
+Every decision, the customer's or the team's, is a `DEC-nn` entry in `docs/decisions.md`, and a later artifact cites the decision by its `DEC-nn`.
+The entry does not list what it changed; the artifact it changed cites it, so there is no `Changes` list, `TBD`, or `None`.
+A meeting report lists its meeting's `DEC-nn` under `## Decisions`, and the weekly report has no decisions section.
+Action points are **not** an identifier family: there is no `ACT-nn`, a later week cites one by its report's path and `#action-points` anchor with the action quoted, and it is carried out by a tracked issue.
 
 ITPD uses elements of Scrum later in the course.
 One course week is then a sprint, sprints start with planning and grooming, estimation is required with no unit prescribed, and each sprint ends with a retrospective at `reports/week-NN/sprint-retrospective.md`.

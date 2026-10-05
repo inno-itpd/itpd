@@ -163,6 +163,7 @@ It is not a feature you happen to want, and it is not a missing feature that nob
 5. Do not manufacture gaps to justify work.
    A week with two solid gaps is a good week.
 6. A gap dropped after Week 1 stays in the file, marked as dropped per [Identifier Rules](general-requirements.md#identifier-rules), and its entry says which value propositions and user stories the drop affected.
+   When a decision dropped it, the reason cites the decision's `DEC-nn`, per [What Cites It](decisions-requirements.md#what-cites-it).
 7. A gap that rests on an [assumption](assumptions-requirements.md#the-assumption) names each `ASM-nn` under `**Rests on:**`, and links each one to its section in `docs/assumptions.md`, per [What Rests On It](assumptions-requirements.md#what-rests-on-it).
 
 **Recommended**

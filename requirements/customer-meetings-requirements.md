@@ -45,7 +45,7 @@ Who may see each of them, and the recording, is in [Sensitive Information Refere
    When there is a transcript, it is the evidence the report is written from, and the report links to it.
 4. The report is the record of that meeting and is not rewritten afterwards, apart from a [formatting-only change](general-requirements.md#where-artifacts-live-in-the-repository).
    Later weeks cite it as [Identifier Rules](general-requirements.md#identifier-rules) says.
-   If a later meeting reverses a decision, the later report quotes the reversed decision, says so, and links back to the report it reverses.
+   If a later meeting reverses a decision, the reversal is a new decision, per [Reversing A Decision](decisions-requirements.md#reversing-a-decision).
 5. Say in the weekly public report whether the meeting's transcript was published, shared privately, or not made, and why.
 
 ## Every Meeting
@@ -68,7 +68,7 @@ The Week 1 meeting is the kickoff.
    The whole team attends.
 5. Ask the [three permission questions](#permission-questions) every time.
 6. Write a [meeting report](#meeting-report), and a [transcript](#meeting-transcript) when the meeting was recorded or held in writing, per [Where Meeting Artifacts Live](#where-meeting-artifacts-live).
-7. The report is where the week's open questions and decisions live, per [Meeting Report](#meeting-report).
+7. The report is where the week's open questions live, and it lists the decisions the meeting made, per [Meeting Report](#meeting-report).
    A meeting is required to change something only when it showed a prototype, per [Validation](prototypes-requirements.md#validation).
 8. The customer decides the scope.
    Your job in the meeting is to present a direction with its evidence and to find out where it is wrong, not to ask the customer to design the product.
@@ -105,9 +105,10 @@ A Week 2 validation meeting.
 **Required**
 
 1. Show each story you present as done against its acceptance criteria, one `AC-nn` at a time, while it runs on the screen.
-2. The customer accepts or rejects each story.
-   Record the verdict as a row in the meeting report's `## Decisions` that names the `US-nn`: an accepted story says `None` in `Changes`, with the reason, and a rejected story names each `AC-nn` it failed.
-3. Add a comment to the story issue with the verdict, naming any failed `AC-nn` and linking the meeting report.
+2. The customer accepts or rejects each story, and each verdict is a [decision](decisions-requirements.md#the-decision) that names the `US-nn`.
+   Stories accepted together may share one decision.
+   Each rejected story gets a decision of its own, naming each `AC-nn` it failed.
+3. Add a comment to the story issue with the verdict, naming any failed `AC-nn` and citing the decision's `DEC-nn`.
 
 **Example**
 
@@ -191,24 +192,14 @@ A Week 3 meeting that shows working software.
    | `## Metadata`               | Every meeting                   | Date, duration, who was there by GitHub username with the customer shown as `Customer`, what you presented, the answer to each of the three permission questions, a link to the transcript or `None` with the reason, and a link to the [meeting script](#meeting-script) |
    | `## Previous action points` | Every meeting after the kickoff | A table, one row per action point the previous meeting reports set for this week                                                                                                                                                                                          |
    | `## Summary`                | Every meeting                   | 3 to 5 bullets on what the meeting settled or changed, not on what was on the agenda                                                                                                                                                                                      |
-   | `## Decisions`              | Every meeting                   | A table, one row per decision, each naming what it changed                                                                                                                                                                                                                |
+   | `## Decisions`              | Every meeting                   | A list of the decisions the meeting made                                                                                                                                                                                                                                  |
    | `## Action points`          | Every meeting                   | A table, one row per action                                                                                                                                                                                                                                               |
    | `## Open questions`         | Every meeting                   | A table, one row per question the meeting did not answer                                                                                                                                                                                                                  |
    | `## Disagreements`          | Every meeting                   | A table, one row per place the customer did not agree with you                                                                                                                                                                                                            |
 
-6. `## Decisions` has the columns `Decision`, `Made by`, and `Changes`.
-   `Changes` names what the decision changed, one entry per thing, and links it when the artifact has a stable link:
-
-   - A story change names the `US-nn`, and the `AC-nn` when a specific criterion changed.
-   - A priority change names the `US-nn` and its old and new `moscow:*` labels.
-   - A change to the [boundary](product-vision-requirements.md#boundary) names the item by its "will not" text.
-   - The verdict on the [minimum usable product candidate](user-stories-requirements.md#minimum-usable-product-candidate) names each `US-nn` added to or removed from it, or says `None` with the reason when the customer accepted it as it is.
-   - A change to an [assumption](assumptions-requirements.md#checking-and-settling) names the `ASM-nn` and its new status.
-   - A constraint, a maintained document, the implementation or the scaffold, and a later requirement are named the same way.
-
-   Write `TBD` when the decision changes something whose artifact does not exist yet, and `None` with the reason when the decision confirmed the current direction and changed nothing.
-   `TBD` and `None` are statuses, not identifiers.
-   A `TBD` decision is finished when the artifact that carries its effect names the decision and links the report that recorded it; the report itself is not edited.
+6. Each decision the meeting made has an entry in `docs/decisions.md`, per [Decision Requirements](decisions-requirements.md).
+   `## Decisions` lists them, one bullet each, linking the entry with `DEC-nn: <heading>` as the link text.
+   The heading is never reworded, so the link text stays true.
 
 7. `## Action points` has the columns `Action`, `Owner`, and `Due`.
    The owner is a GitHub username, and the due date falls inside a named week.
@@ -219,10 +210,10 @@ A Week 3 meeting that shows working software.
 
 **Since: W2**
 
-10. `## Previous action points` has the columns `Action`, `Outcome`, and `Changes`.
+10. `## Previous action points` has the columns `Action`, `Outcome`, and `Decision`.
     `Action` cites the action point by its report's path and `#action-points` anchor with the action quoted, per [Identifier Rules](general-requirements.md#identifier-rules).
-    `Outcome` says whether it was carried out, and what was found, or why it was not.
-    `Changes` follows the same rules as in `## Decisions`.
+    `Outcome` says whether it was carried out, and what was found, or why it was not, and links each artifact the outcome changed.
+    `Decision` links each `DEC-nn` to the outcome produced, or says `None` when the outcome needed no decision.
     The earlier report is not edited; this row is the action point's closing record.
 
 **Recommended**
@@ -356,17 +347,15 @@ The rewrite anchors it to an event the customer will remember, so the answer is 
 ## Summary
 
 - The customer accepted `VP-01` and told us to stop treating reminders as a differentiator.
-- `GAP-02` survives only if experts really lose paid time to unpaid bookings, which we have not checked.
+- `GAP-01` survives only if experts really lose paid time to unpaid bookings, which we have not checked.
 - The open payment-timing question decides whether payment happens before or after confirmation.
 
 ## Decisions
 
-| Decision                                   | Made by             | Changes                                                                                      |
-| ------------------------------------------ | ------------------- | -------------------------------------------------------------------------------------------- |
-| Build paid bookings, not the calendar view | Customer            | `VP-02`, marked dropped in the [value proposition](../../docs/research/value-proposition.md) |
-| Drop multi-expert scheduling               | Customer            | `GAP-04`, marked dropped in the [gap analysis](../../docs/research/gap-analysis.md)          |
-| Keep the web link for delivery             | Team, not contested | `None`; kept as is, so `VP-01` is unchanged                                                  |
-| Deploy on a single small VPS               | Customer            | `TBD`; a customer-given constraint, recorded when the vision is written                      |
+- [DEC-01: Build paid bookings, not the calendar view](../../docs/decisions.md#dec-01-build-paid-bookings-not-the-calendar-view)
+- [DEC-02: Drop multi-expert scheduling](../../docs/decisions.md#dec-02-drop-multi-expert-scheduling)
+- [DEC-03: Keep the web link for delivery](../../docs/decisions.md#dec-03-keep-the-web-link-for-delivery)
+- [DEC-04: Deploy on a single small VPS](../../docs/decisions.md#dec-04-deploy-on-a-single-small-vps)
 
 ## Action points
 
@@ -385,7 +374,7 @@ The rewrite anchors it to an event the customer will remember, so the answer is 
 
 | Your position                  | Customer's position                                             | What you changed                                                         |
 | ------------------------------ | --------------------------------------------------------------- | ------------------------------------------------------------------------ |
-| `GAP-04` is a differentiator   | Our experts work alone, so nobody needs multi-expert scheduling | Dropped it from the value proposition                                    |
+| `GAP-04` is a differentiator   | Our experts work alone, so nobody needs multi-expert scheduling | Dropped `GAP-04` from the gap analysis                                   |
 | Reminders are a differentiator | Reminders are table stakes                                      | Re-cut the comparison without the reminders property, as an action point |
 ```
 

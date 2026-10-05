@@ -30,8 +30,7 @@ It is the short version of the requirements, states what is expected of you as a
    How one is declared is in [Declaring Deviations](weekly-report-requirements.md#declaring-deviations).
 8. A **meeting report** is your team's own account of a meeting with the customer, per [Meeting Report](customer-meetings-requirements.md#meeting-report).
 9. A **decision** is a conclusion that changes or explicitly settles what you build.
-   A meeting's decisions are recorded in its [meeting report](customer-meetings-requirements.md#meeting-report), and the team's own in the [weekly public report](weekly-report-requirements.md#weekly-public-report).
-   How a decision is cited is in [Identifier Rules](#identifier-rules).
+   Every decision, the customer's or the team's, is recorded in `docs/decisions.md`, per [Decision Requirements](decisions-requirements.md).
 10. An **action point** is a follow-up that came out of a meeting, with an owner and a week it falls due in, per [Meeting Report](customer-meetings-requirements.md#meeting-report).
 
 ## Where Artifacts Live In The Repository
@@ -68,7 +67,7 @@ It is the short version of the requirements, states what is expected of you as a
 
 **Required**
 
-1. The identifier families introduced in Week 1 are `ALT-nn` for alternatives, `GAP-nn` for gaps, `VP-nn` for value propositions, and `ASM-nn` for assumptions.
+1. The identifier families introduced in Week 1 are `ALT-nn` for alternatives, `GAP-nn` for gaps, `VP-nn` for value propositions, `ASM-nn` for assumptions, and `DEC-nn` for decisions.
    All are zero-padded and case-sensitive.
    `US-nn` for user stories and `AC-nn` for their acceptance criteria are introduced in Week 2.
    A later family is introduced only by the requirement that first uses it.
@@ -76,16 +75,15 @@ It is the short version of the requirements, states what is expected of you as a
 3. Gaps in a sequence are expected and correct.
    A dropped `GAP-03` leaves a hole; it does not cause renumbering.
 4. A dropped item keeps its identifier and its entry, marked as dropped with a reason and the date.
+   A decision is dropped by reversing it, per [Reversing A Decision](decisions-requirements.md#reversing-a-decision).
 5. The identifier always appears in the heading of its own section, so `ALT-02` can be found with a search.
 6. Every reference between artifacts uses the identifier, not the title, so that renaming a title does not break the chain.
 7. `US-nn` and `AC-nn` are the exceptions to rules 4 and 5, because they live in a story issue rather than in a section of their own.
    [Where Stories Live](user-stories-requirements.md#where-stories-live) says how a dropped story is kept, and [Acceptance Criteria](user-stories-requirements.md#acceptance-criteria) says how a criterion is numbered, retired, and cited.
-8. Decisions and action points are not identifier families.
-   There is no `DEC-nn` and no `ACT-nn`.
-   Cite a decision by path and `#decisions` anchor with its sentence quoted: a meeting decision cites its meeting report, and a decision made outside a meeting cites the weekly public report of the week it was made.
-   Cite an action point the same way, with its report's `#action-points` anchor and the action quoted.
-   A story's `Traces to` entry for a decision or action point uses this form.
-   Any other citation of a meeting report also uses its path and heading anchor, for example `reports/week-01/meeting-report.md#decisions`.
+8. Action points are not an identifier family, and there is no `ACT-nn`.
+   Cite an action point by its meeting report's path and `#action-points` anchor, with the action quoted.
+   A story's `Traces to` entry for an action point uses this form.
+   Any other citation of a meeting report also uses its path and heading anchor, for example `reports/week-01/meeting-report.md#open-questions`.
 
 ## Traceability Into Later Weeks
 
@@ -95,11 +93,12 @@ The research you produce in Week 1 is the evidence base for the rest of the cour
 Later weeks cite your Week 1 identifiers rather than restating your findings.
 This is what makes the course a project rather than nine separate assignments.
 
-| Later work            | Must cite                                                                                                                                                                     |
-| --------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Week 2 product vision | The `VP-nn` its goal traces to, per [Goal](product-vision-requirements.md#goal)                                                                                               |
-| Week 2 user stories   | The `VP-nn`, the `ASM-nn` of each assumption the story rests on, and any origins in each story's `Traces to` list, per [The Story](user-stories-requirements.md#the-story)    |
-| Week 2 prototypes     | The `US-nn` or `GAP-nn` each one tested, and the `ASM-nn` when the risky part is an assumption, per [Where Prototypes Live](prototypes-requirements.md#where-prototypes-live) |
+| Later work                   | Must cite                                                                                                                                                                     |
+| ---------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Week 2 product vision        | The `VP-nn` its goal traces to, per [Goal](product-vision-requirements.md#goal)                                                                                               |
+| Week 2 user stories          | The `VP-nn`, the `ASM-nn` of each assumption the story rests on, and any origins in each story's `Traces to` list, per [The Story](user-stories-requirements.md#the-story)    |
+| Week 2 prototypes            | The `US-nn` or `GAP-nn` each one tested, and the `ASM-nn` when the risky part is an assumption, per [Where Prototypes Live](prototypes-requirements.md#where-prototypes-live) |
+| Any change a decision caused | The decision's `DEC-nn`, per [What Cites It](decisions-requirements.md#what-cites-it)                                                                                         |
 
 **Required**
 

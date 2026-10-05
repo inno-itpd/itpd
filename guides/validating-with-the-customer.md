@@ -24,11 +24,12 @@ Ask for 60 if the customer can give it.
 
 ```text
 reports/week-NN/meeting-script.md     the target, the agenda, the questions, the roles
-reports/week-NN/meeting-report.md     the previous action points' outcomes, the decisions, the new action points, the disagreements
+reports/week-NN/meeting-report.md     the previous action points' outcomes, the decisions listed, the new action points, the disagreements
+docs/decisions.md                     one DEC-nn entry per decision, with who made it and why
 reports/week-NN/meeting-transcript.md when the meeting was recorded or held in writing
 reports/week-NN/prototypes.md         when you showed a prototype: what it tested, what they said
 the story issue                       a comment on what the meeting changed or accepted
-reports/week-NN/README.md             the meeting decisions linked, the changed US-nn named
+reports/week-NN/README.md             the meeting report linked, the changed US-nn named
 ```
 
 ## Step 1: Write Down What The Meeting Is For
@@ -110,31 +111,30 @@ Those are the questions that produce a `## Disagreements` row.
 
 ## Step 6: Trace What Changed
 
-The meeting report's `## Decisions` table is the record.
-`Changes` names what each decision changed, and links it when the artifact has a stable link: usually a `US-nn`, with the `AC-nn` when a specific criterion changed, the `ASM-nn` when an assumption was settled, or the constraint, document, or scaffold for anything else, per [Meeting Report](../requirements/customer-meetings-requirements.md#meeting-report).
-A decision whose artifact does not exist yet says `TBD`, and the artifact that later carries it links back to the report.
-That table is where a reader looks to see whether the week was a test or a formality.
-The weekly report links that table rather than copying it; only a decision the team took outside the meeting goes in the weekly report's own `## Decisions` table, per [Weekly Public Report](../requirements/weekly-report-requirements.md#weekly-public-report).
-
-Cite a decision by quoting its sentence and linking `#decisions`; there is no decision identifier.
+Each decision gets a `DEC-nn` entry in `docs/decisions.md`, with who made it and why, and the meeting report's `## Decisions` lists the meeting's entries, per [Decision Requirements](../requirements/decisions-requirements.md).
+The entry does not list what the decision changed.
+Instead, each thing it changed cites its `DEC-nn`: usually a story, with the `AC-nn` when a specific criterion changed, an assumption it settled, or a constraint or boundary item in the vision, per [What Cites It](../requirements/decisions-requirements.md#what-cites-it).
+A decision about something that does not exist yet is cited when that thing is written.
+Searching for a `DEC-nn` is how a reader sees whether the week was a test or a formality.
 
 Make sure the change reaches every place it affects, because each one answers a different question:
 
 | Where                                              | Question it answers                           |
 | -------------------------------------------------- | --------------------------------------------- |
 | `reports/week-NN/prototypes.md`, after a prototype | What did we show, and what did they say?      |
-| `meeting-report.md` `## Decisions`                 | What did we decide, and what did it change?   |
+| `docs/decisions.md`, listed in the meeting report  | What did we decide, and why?                  |
 | the story issue, or the doc that changed           | What does it say now, and when did it change? |
-| `reports/week-NN/README.md`                        | Where are the decisions, and what changed?    |
+| `reports/week-NN/README.md`                        | Where is the meeting, and what changed?       |
 
 After a prototype, the change is required in all four places by [Validation](../requirements/prototypes-requirements.md#validation).
 The issue comment is the one that is easy to skip, and skipping it is what makes a decision invisible to a reader of the stories.
-Add a comment to the story issue saying what changed and why, naming the `AC-nn` if a criterion changed, and linking the meeting report.
+Add a comment to the story issue saying what changed and why, naming the `AC-nn` if a criterion changed, and citing the `DEC-nn`.
 A story edited three times with no comment gives a reader no way to tell what the customer actually settled from what the team decided on its own.
 
 A story the customer accepted is a decision too.
-Its row names the `US-nn` and says `None` with the reason, and the story issue gets a comment with the verdict, per [Showing Working Software](../requirements/customer-meetings-requirements.md#showing-working-software).
-A rejected story names the `AC-nn` it failed, in the row and in the comment.
+Its entry names the `US-nn`, and its `**Why:**` says what the customer saw; stories accepted together may share one entry.
+The story issue gets a comment with the verdict, citing the `DEC-nn`, per [Showing Working Software](../requirements/customer-meetings-requirements.md#showing-working-software).
+A rejected story gets an entry of its own, naming the `AC-nn` it failed, and the comment names it too.
 
 If nothing changed after a prototype, the prototype failed the rule in [Validation](../requirements/prototypes-requirements.md#validation), and that is a serious finding.
 Either it tested something the customer already agreed with, or you asked questions whose answers could not have contradicted anything.
@@ -154,10 +154,10 @@ It is still a warning when the meeting produced no decision at all, or when nobo
 - **Treating approval as the result.**
   The `## Disagreements` table should not be empty.
 - **Deciding but not commenting.**
-  A decision in the meeting report that never reaches the story issue has not actually changed anything.
+  A decision whose `DEC-nn` never reaches the story issue has not actually changed anything.
 - **Showing the easy part.**
   If the customer is impressed and you are not surprised, you showed the wrong story.
-- **Every decision `None` or `TBD`.**
-  Unless the decisions are accepted stories, a week whose decisions changed nothing visible is the same warning as an empty `## Disagreements` table: the meeting tested nothing a reader can point at.
+- **Decisions that nothing cites.**
+  Unless the decisions are accepted stories, a week whose `DEC-nn` appear nowhere else is the same warning as an empty `## Disagreements` table: the meeting tested nothing a reader can point at.
 - **Twelve questions in thirty minutes.**
   You will get through five well, and the rest will be a list somebody read aloud.

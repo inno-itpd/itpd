@@ -24,26 +24,21 @@ Who may see each item is in [Visibility Requirements](visibility-requirements.md
 4. It identifies the week, the project, the team, and the covered scope clearly enough that a reader knows what body of work it describes.
 5. It contains a short summary of what the team found, built, or decided, and what is still open.
    A grader should be able to read only this file and understand the week, then follow links for detail.
-6. `## Decisions` is the week's decision index.
-   When the week held a meeting with the customer, the section links the `## Decisions` table of each meeting report.
-   A decision the team took outside a meeting goes in the section's own table, with the same columns and cell rules as the [meeting report](customer-meetings-requirements.md#meeting-report).
-   The section links a meeting's decisions; it never copies their rows.
-   A week with no decision at all does not carry the section.
-7. It contains a coverage table mapping each required deliverable of the assignment to the artifact that satisfies it.
+6. It contains a coverage table mapping each required deliverable of the assignment to the artifact that satisfies it.
    The table is the index, so it is not followed by a second list of the same links.
    A deliverable this file records in its own section has no row.
    Each artifact cell links its artifact.
    An assignment's table names each repository file by path, and the report turns that path into a link whose text is the path from the repository root, with the heading anchor when the row names a section.
    Anything else, such as an external board, a filtered issue list, or a CI run, gets descriptive link text.
    A row whose artifact is not public says so instead of linking it.
-8. It contains a contribution table mapping each team member's GitHub username to the work they did, using links to their commits, pull requests, or reviews where possible.
-9. It links the repository evidence the assignment asks for, and justifies in prose every link the [link check](repository-requirements.md#link-checking) excludes.
-10. It declares every deviation, per [Declaring Deviations](#declaring-deviations).
-11. It states, in one line, that no private-only material was committed to the repository.
+7. It contains a contribution table mapping each team member's GitHub username to the work they did, using links to their commits, pull requests, or reviews where possible.
+8. It links the repository evidence the assignment asks for, and justifies in prose every link the [link check](repository-requirements.md#link-checking) excludes.
+9. It declares every deviation, per [Declaring Deviations](#declaring-deviations).
+10. It states, in one line, that no private-only material was committed to the repository.
 
 **Since: W2**
 
-12. It records the [minimum usable product candidate](user-stories-requirements.md#minimum-usable-product-candidate) under the heading the assignment names: the core task, then the `US-nn` of each story with its issue linked.
+11. It records the [minimum usable product candidate](user-stories-requirements.md#minimum-usable-product-candidate) under the heading the assignment names: the core task, then the `US-nn` of each story with its issue linked, and the `DEC-nn` of the customer's verdict on it once they have given it.
 
 **Recommended**
 
@@ -74,10 +69,6 @@ We researched four alternatives, compared them on six properties, and identified
 The strongest products schedule time well and leave payment and materials to integrations or paid tiers.
 Nobody gives an expert one flow from booking to a paid, prepared session, which is the gap our project targets.
 
-## Decisions
-
-The kickoff decisions are in the [meeting report](meeting-report.md#decisions).
-
 ## Coverage
 
 | Deliverable              | Artifact                                                                                                               |
@@ -89,6 +80,7 @@ The kickoff decisions are in the [meeting report](meeting-report.md#decisions).
 | Gap analysis             | [docs/research/gap-analysis.md](../../docs/research/gap-analysis.md)                                                   |
 | Value proposition        | [docs/research/value-proposition.md](../../docs/research/value-proposition.md)                                         |
 | Assumptions              | [docs/assumptions.md](../../docs/assumptions.md)                                                                       |
+| Decisions                | [docs/decisions.md](../../docs/decisions.md)                                                                           |
 | Research board           | [Figma board](https://www.figma.com/design/PUc4NFVcLureKzxE3RAGB0/Market-Research)                                     |
 | Meeting script           | [reports/week-01/meeting-script.md](meeting-script.md)                                                                 |
 | Customer kickoff         | [reports/week-01/meeting-report.md](meeting-report.md), [reports/week-01/meeting-transcript.md](meeting-transcript.md) |
