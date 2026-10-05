@@ -153,7 +153,7 @@ That list is not optional; it is the part your customer will argue with, and you
 
 Write `docs/research/value-proposition.md`.
 Two or three `VP-nn` entries, each one a short positioning statement, each closing at least one `GAP-nn`, each naming what it costs and how a competitor would respond.
-Then write `docs/assumptions.md`: one `ASM-nn` section for each belief your value propositions rest on that you have not verified.
+Then write `docs/assumptions.md`: one `ASM-nn` section for each belief your value propositions rest on that you have not verified, cited under `**Rests on:**` in each gap and value proposition that rests on it.
 
 The rules are in [Value Proposition And Differentiation](../requirements/research-requirements.md#value-proposition-and-differentiation) and [Assumption Requirements](../requirements/assumptions-requirements.md), and the method in [Step 5: Write The Value Proposition](../guides/comparison-and-synthesis.md#step-5-write-the-value-proposition) and [Step 6: Write Down What You Are Assuming](../guides/comparison-and-synthesis.md#step-6-write-down-what-you-are-assuming).
 

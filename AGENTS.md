@@ -15,7 +15,7 @@ Operating instructions for coding agents maintaining the student-facing course m
 | `requirements/general-requirements.md`           | The rules no single artifact owns: artifact terms, the `reports/week-NN/` vs `docs/` split, identifier rules, traceability into later weeks.              |
 | `requirements/visibility-requirements.md`        | Who may see an artifact: the visibility model, where each sensitive item goes, screenshot evidence.                                                       |
 | `requirements/research-requirements.md`          | The Week 1 research: where it lives, alternatives, properties and comparison, gaps, value propositions, research honesty.                                 |
-| `requirements/assumptions-requirements.md`       | `docs/assumptions.md`: where it lives, what an assumption is, what it supports, how it is checked and settled, and the full example.                      |
+| `requirements/assumptions-requirements.md`       | `docs/assumptions.md`: where it lives, what an assumption is, what rests on it, how it is checked and settled, and the full example.                      |
 | `requirements/product-vision-requirements.md`    | `docs/product-vision.md`: where it lives, the goal, stakeholders, constraints, boundary, system context, and the full example.                            |
 | `requirements/user-stories-requirements.md`      | Story issues: where they live, the story, acceptance criteria, MoSCoW priorities, the minimum usable product candidate, and the full example.             |
 | `requirements/prototypes-requirements.md`        | Prototypes: where they are recorded, and the validation rules for showing one.                                                                            |
@@ -196,7 +196,7 @@ Before writing or editing an assignment:
 
 Use these words and do not invent local synonyms:
 
-`weekly report`, `weekly public report`, `supporting artifact`, `private-only artifact`, `external-but-indexed artifact`, `repository-resident artifact`, `deviation`, `customer`, `kickoff meeting`, `meeting report`, `meeting transcript`, `meeting script`, `decision`, `action point`, `open question`, `alternative`, `property`, `gap`, `value proposition`, `assumption`, `story issue`, `traces to`, `threshold of success`, `proof of concept` (PoC), `minimum usable product` (MUP), `minimum viable product` (MVP), `product backlog`, `sprint backlog`, `PBI`, `SBI`, `story points`, `sprint retrospective`, `team number`.
+`weekly report`, `weekly public report`, `supporting artifact`, `private-only artifact`, `external-but-indexed artifact`, `repository-resident artifact`, `deviation`, `customer`, `kickoff meeting`, `meeting report`, `meeting transcript`, `meeting script`, `decision`, `action point`, `open question`, `alternative`, `property`, `gap`, `value proposition`, `assumption`, `story issue`, `traces to`, `rests on`, `threshold of success`, `proof of concept` (PoC), `minimum usable product` (MUP), `minimum viable product` (MVP), `product backlog`, `sprint backlog`, `PBI`, `SBI`, `story points`, `sprint retrospective`, `team number`.
 
 <!-- TODO "user story issue"? -->
 

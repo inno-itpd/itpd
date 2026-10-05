@@ -76,7 +76,7 @@ Its job is to make one need concrete enough that a reviewer can tell whether you
    An [acceptance criterion](#acceptance-criteria) may name the screen, the field, or the system state an observer checks, because that is what makes it runnable.
 4. Every story carries a `Traces to` list.
    It contains exactly one `VP-nn`, the value proposition the story supports, and, optionally, the story's origins: the `GAP-nn` it closes, a customer decision in a meeting report, a team decision in the weekly public report, or an action point it carries out.
-   It also names the `ASM-nn` of each [assumption](assumptions-requirements.md#supports) the story rests on.
+   It also names the `ASM-nn` of each [assumption](assumptions-requirements.md#what-rests-on-it) the story rests on.
    The `VP-nn` is how a story traces to the product vision, so the `VP-nn` of every story except a `Won't Have` story is one the vision's [goal](product-vision-requirements.md#goal) traces to.
    A story you intend to build that supports no such value proposition is outside the vision: add its `VP-nn` to the goal as a team decision, or make the story `Won't Have`.
    Cite each entry as [Identifier Rules](general-requirements.md#identifier-rules) says, and link each Week 1 identifier per [Traceability Into Later Weeks](general-requirements.md#traceability-into-later-weeks).

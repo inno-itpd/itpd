@@ -155,21 +155,27 @@ More than that and you are listing features.
 ## Step 6: Write Down What You Are Assuming
 
 Every proposition rests on beliefs you have not verified: that the user has the problem you think they have, that nobody is coming for this, that the constraint you were told about is real.
-List them in `docs/assumptions.md`, one `ASM-nn` section each, trace each to the `GAP-nn` or `VP-nn` it supports, and say how you would check it.
+List them in `docs/assumptions.md`, one `ASM-nn` section each, and say how you would check each one.
+Then go back to the gaps and value propositions and cite each assumption under `**Rests on:**` in every one that rests on it, so the claim carries its own risks.
 Keep only the ones something rests on: if a belief turned out false and nothing would change, it is not worth tracking.
 
 ```markdown
 ## ASM-01: Experts will upload materials per meeting type instead of sending them in chat after booking
 
-**Supports:** [GAP-01](research/gap-analysis.md#gap-01-bookings-that-arrive-unpaid-and-unprepared), [VP-01](research/value-proposition.md#vp-01-one-link-that-carries-the-whole-booking).
 **How to check:** run the materials prototype with two tutors in Week 2.
 **Status:** Open
 
 ## ASM-02: Clients will pay at booking rather than on the day
 
-**Supports:** [VP-01](research/value-proposition.md#vp-01-one-link-that-carries-the-whole-booking).
 **How to check:** only the customer can settle it, so it goes in the kickoff report's open questions.
 **Status:** Open
+```
+
+`VP-01` in `docs/research/value-proposition.md` then gains one line, and `GAP-01` gains the same line naming `ASM-01`:
+
+```markdown
+**Closes:** [GAP-01](gap-analysis.md#gap-01-bookings-that-arrive-unpaid-and-unprepared).
+**Rests on:** [ASM-01](../assumptions.md#asm-01-experts-will-upload-materials-per-meeting-type-instead-of-sending-them-in-chat-after-booking), [ASM-02](../assumptions.md#asm-02-clients-will-pay-at-booking-rather-than-on-the-day).
 ```
 
 The customer decides the scope.

@@ -163,6 +163,7 @@ It is not a feature you happen to want, and it is not a missing feature that nob
 5. Do not manufacture gaps to justify work.
    A week with two solid gaps is a good week.
 6. A gap dropped after Week 1 stays in the file, marked as dropped per [Identifier Rules](general-requirements.md#identifier-rules), and its entry says which value propositions and user stories the drop affected.
+7. A gap that rests on an [assumption](assumptions-requirements.md#the-assumption) names each `ASM-nn` under `**Rests on:**`, and links each one to its section in `docs/assumptions.md`, per [What Rests On It](assumptions-requirements.md#what-rests-on-it).
 
 **Recommended**
 
@@ -188,6 +189,7 @@ It is not a feature you happen to want, and it is not a missing feature that nob
 5. Say how a competitor would respond.
    If copying your advantage takes them a week, it is not a moat, and you should know that before you commit to it.
 6. Do not claim you will be "better", "more modern", "more user-friendly", or "more powerful" without saying better at what, measured how.
+7. A value proposition that rests on an [assumption](assumptions-requirements.md#the-assumption) names each `ASM-nn` under `**Rests on:**`, and links each one to its section in `docs/assumptions.md`, per [What Rests On It](assumptions-requirements.md#what-rests-on-it).
 
 **Example**
 
@@ -198,6 +200,7 @@ It is not a feature you happen to want, and it is not a missing feature that nob
 **Problem:** the booking, the payment, and the meeting materials live in three tools, so unpaid clients block slots and prepared clients are rare.
 **What we do that the alternatives do not:** one link where the client books a slot, pays, and receives the video link and the materials, with no second account.
 **Closes:** [GAP-01](gap-analysis.md#gap-01-bookings-that-arrive-unpaid-and-unprepared).
+**Rests on:** [ASM-01](../assumptions.md#asm-01-experts-will-upload-materials-per-meeting-type-instead-of-sending-them-in-chat-after-booking), [ASM-02](../assumptions.md#asm-02-clients-will-pay-at-booking-rather-than-on-the-day), [ASM-03](../assumptions.md#asm-03-clients-open-the-booking-link-on-a-phone).
 **What it costs:** the expert connects a payment provider before the first booking and uploads the materials per meeting type.
 This is a real setup cost.
 **How a competitor would respond:** Calendly or Cal.com could bundle payments and materials into the free tier.

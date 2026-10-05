@@ -101,7 +101,7 @@ This week:
 
 1. Add `user-story.yml`, `task.yml`, `config.yml`, and the labels before you open the first story, so every story is opened from the form and every other pull request has a task issue.
 2. Before a story cites an assumption, move your Week 1 assumptions table from `docs/research/value-proposition.md` into `docs/assumptions.md`, in one pull request.
-   Give each row its own `ASM-nn` section, numbered in the table's order, with its current status, and leave no copy of the table in `value-proposition.md`.
+   Give each row its own `ASM-nn` section, numbered in the table's order, with its current status, cite it under `**Rests on:**` in each gap and value proposition the row traced to, and leave no copy of the table in `value-proposition.md`.
 
 The method is in [Step 2: Turn Each Gap Into Stories](../guides/user-stories-and-prototyping.md#step-2-turn-each-gap-into-stories) and [Step 3: Write Criteria Somebody Else Can Run](../guides/user-stories-and-prototyping.md#step-3-write-criteria-somebody-else-can-run).
 

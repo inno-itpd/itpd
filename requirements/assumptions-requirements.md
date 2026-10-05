@@ -1,6 +1,6 @@
 # Assumption Requirements
 
-These requirements define an assumption: where it lives, what counts as one, what it supports, and how it is checked and settled.
+These requirements define an assumption: where it lives, what counts as one, what rests on it, and how it is checked and settled.
 [Guide: From Comparison To Value Proposition](../guides/comparison-and-synthesis.md#step-6-write-down-what-you-are-assuming) and [Guide: User Stories And Prototyping](../guides/user-stories-and-prototyping.md#step-5-choose-what-to-prototype) are the method.
 How the `ASM-nn` identifier is issued and cited is in [General Requirements](general-requirements.md#identifier-rules).
 
@@ -8,7 +8,7 @@ How the `ASM-nn` identifier is issued and cited is in [General Requirements](gen
 
 - [Where Assumptions Live](#where-assumptions-live)
 - [The Assumption](#the-assumption)
-- [Supports](#supports)
+- [What Rests On It](#what-rests-on-it)
 - [Checking And Settling](#checking-and-settling)
 - [Full Example](#full-example)
 
@@ -40,16 +40,15 @@ The customer decides the scope; you are responsible for knowing which of your be
 The ones you cannot settle yourself belong in the meeting report's open questions, where the customer answers them for you.
 See [Meeting Report](customer-meetings-requirements.md#meeting-report).
 
-## Supports
+## What Rests On It
 
 **Since: W1**
 
 **Required**
 
-1. Each assumption names, under `**Supports:**`, the `GAP-nn` or `VP-nn` it supports, and links each one to its section.
-   An assumption that only a story rests on names the `VP-nn` that story traces to.
-2. The entry does not list stories.
-   A link between two artifacts is recorded once, in the later one.
+1. A gap or a value proposition that rests on an assumption cites its `ASM-nn` under `**Rests on:**`, per [Gap Analysis](research-requirements.md#gap-analysis) and [Value Proposition And Differentiation](research-requirements.md#value-proposition-and-differentiation).
+2. The entry does not list what rests on it.
+   A link between two artifacts is recorded once, in the artifact that rests on the other.
 
 **Since: W2**
 
@@ -68,6 +67,7 @@ See [Meeting Report](customer-meetings-requirements.md#meeting-report).
 4. A refuted assumption keeps its entry.
    Change what rested on it, and record that change where the artifact records its changes.
 5. An assumption that nothing rests on any more is `Dropped`, per [Identifier Rules](general-requirements.md#identifier-rules).
+   Search `docs/research/` and the story issues for its `ASM-nn` to find what still rests on it.
 
 **Recommended**
 
@@ -83,20 +83,17 @@ See [Meeting Report](customer-meetings-requirements.md#meeting-report).
 
 ## ASM-01: Experts will upload materials per meeting type instead of sending them in chat after booking
 
-**Supports:** [GAP-01](research/gap-analysis.md#gap-01-bookings-that-arrive-unpaid-and-unprepared), [VP-01](research/value-proposition.md#vp-01-one-link-that-carries-the-whole-booking).
 **How to check:** run the materials prototype with two tutors in Week 2.
 **Status:** Open
 
 ## ASM-02: Clients will pay at booking rather than on the day
 
-**Supports:** [VP-01](research/value-proposition.md#vp-01-one-link-that-carries-the-whole-booking).
 **How to check:** only the customer can settle it, so it is an [open question](../reports/week-01/meeting-report.md#open-questions) carried into the Week 2 validation meeting.
 **Status:** Confirmed
 **Outcome:** the customer will not accept a hold that confirms without payment, decided in [the validation meeting](../reports/week-02/meeting-report.md#decisions).
 
 ## ASM-03: Clients open the booking link on a phone
 
-**Supports:** [VP-01](research/value-proposition.md#vp-01-one-link-that-carries-the-whole-booking).
 **How to check:** ask two experts where their last ten bookings came from, in Week 2.
 **Status:** Open
 ```

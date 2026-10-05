@@ -27,7 +27,7 @@ The assignments reference these rather than repeating them.
 | [General Requirements](requirements/general-requirements.md)                    | What the terms mean, `docs/` versus `reports/`, identifiers, and how later weeks cite earlier work |
 | [Visibility Requirements](requirements/visibility-requirements.md)              | What is public, what goes in Moodle only, what is never committed, and screenshots                 |
 | [Research Requirements](requirements/research-requirements.md)                  | Alternatives, the comparison, gaps, value propositions, and research honesty                       |
-| [Assumption Requirements](requirements/assumptions-requirements.md)             | Where assumptions live, what they support, and how they are checked and settled                    |
+| [Assumption Requirements](requirements/assumptions-requirements.md)             | Where assumptions live, what rests on them, and how they are checked and settled                   |
 | [Product Vision Requirements](requirements/product-vision-requirements.md)      | The goal, stakeholders, constraints, boundary, and system context diagram                          |
 | [User Story Requirements](requirements/user-stories-requirements.md)            | Story issues, acceptance criteria, priorities, and the minimum usable product candidate            |
 | [Prototype Requirements](requirements/prototypes-requirements.md)               | What a prototype must change, and where it is recorded                                             |
