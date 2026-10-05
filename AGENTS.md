@@ -197,10 +197,11 @@ Before writing or editing an assignment:
 
 Use these words and do not invent local synonyms:
 
-`weekly report`, `weekly public report`, `supporting artifact`, `private-only artifact`, `external-but-indexed artifact`, `repository-resident artifact`, `deviation`, `customer`, `kickoff meeting`, `meeting report`, `meeting transcript`, `meeting script`, `decision`, `action point`, `open question`, `alternative`, `property`, `gap`, `value proposition`, `assumption`, `story issue`, `traces to`, `rests on`, `threshold of success`, `proof of concept` (PoC), `minimum usable product` (MUP), `minimum viable product` (MVP), `product backlog`, `sprint backlog`, `PBI`, `SBI`, `story points`, `sprint retrospective`, `team number`.
+`weekly report`, `weekly public report`, `supporting artifact`, `private-only artifact`, `external-but-indexed artifact`, `repository-resident artifact`, `deviation`, `customer`, `stakeholder`, `kickoff meeting`, `meeting report`, `meeting transcript`, `meeting script`, `decision`, `action point`, `open question`, `alternative`, `property`, `gap`, `value proposition`, `assumption`, `story issue`, `traces to`, `rests on`, `threshold of success`, `proof of concept` (PoC), `minimum usable product` (MUP), `minimum viable product` (MVP), `product backlog`, `sprint backlog`, `PBI`, `SBI`, `story points`, `sprint retrospective`, `team number`.
 
 "Customer" is the term for the person your team answers to, who is your instructor.
-Never "client" or "stakeholder" for them.
+Never "client" for them.
+The customer is one of the stakeholders, so "stakeholder" is not wrong, but when a sentence means the customer specifically, write "customer" rather than the generic "stakeholder".
 In artifacts, the label is `Customer`, not a real name.
 The word "instructor" is allowed in prose explaining who the customer is, and nowhere else.
 
