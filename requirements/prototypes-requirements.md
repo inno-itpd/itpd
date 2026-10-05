@@ -69,7 +69,7 @@ These rules apply to every meeting with the customer where you show a prototype,
 
    - The prototype record, per [Where Prototypes Live](#where-prototypes-live).
    - A decision in `docs/decisions.md`, listed in the meeting report, per [Decision Requirements](decisions-requirements.md).
-   - The changed artifact itself, citing the decision's `DEC-nn`: a story issue, per [Where Stories Live](user-stories-requirements.md#where-stories-live), or a constraint, an [assumption](assumptions-requirements.md#checking-and-settling), or a document updated in place.
+   - The changed artifact itself, citing the decision's `DEC-nnn`: a story issue, per [Where Stories Live](user-stories-requirements.md#where-stories-live), or a constraint, an [assumption](assumptions-requirements.md#checking-and-settling), or a document updated in place.
    - The [weekly public report](weekly-report-requirements.md#weekly-public-report), which links the prototype record and the meeting report.
 
 5. A prototype is disposable, and none of it is product code.

@@ -2,7 +2,7 @@
 
 These requirements define a decision: which decisions get an entry, where it lives, what its entry says, what cites it, and how it is reversed.
 [Guide: Validating With The Customer](../guides/validating-with-the-customer.md#step-6-trace-what-changed) is the method for recording what a meeting decided.
-How the `DEC-nn` identifier is issued and cited is in [General Requirements](general-requirements.md#identifier-rules).
+How the `DEC-nnn` identifier is issued and cited is in [General Requirements](general-requirements.md#identifier-rules).
 
 <h2>Table of contents</h2>
 
@@ -19,7 +19,7 @@ How the `DEC-nn` identifier is issued and cited is in [General Requirements](gen
 **Required**
 
 1. The decisions are maintained documentation in `docs/decisions.md`.
-2. Each decision is a section of its own, headed `## DEC-nn`, per [Identifier Rules](general-requirements.md#identifier-rules), and the sections are in identifier order.
+2. Each decision is a section of its own, headed `## DEC-nnn`, per [Identifier Rules](general-requirements.md#identifier-rules), and the sections are in identifier order.
 3. A decision that changes is a new decision, per [Reversing A Decision](#reversing-a-decision), so the decision an entry states is never reworded once it is on `main`.
 4. The file stays current for the rest of the course, per [Where Artifacts Live In The Repository](general-requirements.md#where-artifacts-live-in-the-repository): every new decision that needs an entry, per [The Decision](#the-decision), gets one, and every reversal updates a status.
 5. A meeting report lists the decisions its meeting made, per [Meeting Report](customer-meetings-requirements.md#meeting-report).
@@ -44,7 +44,7 @@ A [decision](general-requirements.md#artifact-concepts-and-terminology) is a con
 
 2. Any other decision is a team decision that changes one artifact that already exists, and it needs no entry.
    It is recorded with its reason where that artifact records its changes, per [What Cites It](#what-cites-it).
-   A team may still give it an entry, and the artifact then cites the entry's `DEC-nn`.
+   A team may still give it an entry, and the artifact then cites the entry's `DEC-nnn`.
 3. The first line under the heading states what was decided, in one sentence, not what was discussed.
 4. One entry records one decision.
    A verdict that accepts several stories at once is one decision, per [Showing Working Software](customer-meetings-requirements.md#showing-working-software).
@@ -56,7 +56,7 @@ A [decision](general-requirements.md#artifact-concepts-and-terminology) is a con
    | `**Made by:**` | `Customer`; `Team`; or `Team, not contested` when the team decided in a meeting and the customer did not object                                                                                                            |
    | `**Source:**`  | Where it was made: a meeting decision links its meeting report, and any other decision says where in words, such as "team discussion" or "customer by email", and links the place only when it is public, such as an issue |
    | `**Why:**`     | The reason, in one or two sentences; a decision that confirmed the current direction says so, and says what it confirmed                                                                                                   |
-   | `**Status:**`  | `Active`, or `Reversed by DEC-nn` with the reversing entry linked, per [Reversing A Decision](#reversing-a-decision)                                                                                                       |
+   | `**Status:**`  | `Active`, or `Reversed by DEC-nnn` with the reversing entry linked, per [Reversing A Decision](#reversing-a-decision)                                                                                                      |
 
 6. A decision made in a private channel is recorded in the team's own words, without quoting or linking the channel, per [Sensitive Information Reference](visibility-requirements.md#sensitive-information-reference).
 
@@ -74,16 +74,16 @@ A [decision](general-requirements.md#artifact-concepts-and-terminology) is a con
 
 1. The entry does not list what the decision changed.
    A link between two artifacts is recorded once, in the artifact that rests on the other, as for an [assumption](assumptions-requirements.md#what-rests-on-it).
-2. Each artifact the decision changed cites its `DEC-nn`, linked, where that artifact records its changes:
+2. Each artifact the decision changed cites its `DEC-nnn`, linked, where that artifact records its changes:
 
    - A dropped `GAP-nn` or `VP-nn`, in the reason it was dropped, per [Identifier Rules](general-requirements.md#identifier-rules).
    - A `GAP-nn` or `VP-nn` the decision changed without dropping it, under its `**Changed:**`, per [Gap Analysis](research-requirements.md#gap-analysis).
    - A settled assumption, in its `**Outcome:**`, per [Checking And Settling](assumptions-requirements.md#checking-and-settling).
 
 3. A decision that changes an artifact which does not exist yet is cited when that artifact is written.
-4. To find what a decision changed, search the repository and the issues for its `DEC-nn`.
+4. To find what a decision changed, search the repository and the issues for its `DEC-nnn`.
    A decision that nothing cites, and whose `**Why:**` does not say it confirmed the current direction, has not changed anything yet.
-5. A decision without an entry is recorded by its reason, which stands where the `DEC-nn` would: in a dropped `GAP-nn` or `VP-nn`'s reason, in its `**Changed:**` bullet, or in a story's change comment.
+5. A decision without an entry is recorded by its reason, which stands where the `DEC-nnn` would: in a dropped `GAP-nn` or `VP-nn`'s reason, in its `**Changed:**` bullet, or in a story's change comment.
 
 **Example**
 
@@ -108,15 +108,15 @@ A [decision](general-requirements.md#artifact-concepts-and-terminology) is a con
 **Required**
 
 1. A decision is reversed by a new decision, never by editing the old one.
-   The new entry's `**Why:**` names the `DEC-nn` it reverses, linked, and says why.
-2. The reversed entry keeps its heading, its statement, and its fields, and its `**Status:**` becomes `Reversed by DEC-nn`, linked to the new entry.
+   The new entry's `**Why:**` names the `DEC-nnn` it reverses, linked, and says why.
+2. The reversed entry keeps its heading, its statement, and its fields, and its `**Status:**` becomes `Reversed by DEC-nnn`, linked to the new entry.
    This is how a decision is dropped, per [Identifier Rules](general-requirements.md#identifier-rules).
-3. An artifact that cited the reversed decision and changes because of the new one cites the new `DEC-nn`, and records the change as that artifact records its changes.
+3. An artifact that cited the reversed decision and changes because of the new one cites the new `DEC-nnn`, and records the change as that artifact records its changes.
 
 **Example**
 
 ```markdown
-## DEC-02
+## DEC-002
 
 Drop multi-expert scheduling.
 
@@ -124,16 +124,16 @@ Drop multi-expert scheduling.
 **Made by:** Customer
 **Source:** [the kickoff meeting](../reports/week-01/meeting-report.md)
 **Why:** the experts work alone, so nobody needs two of them booked at once.
-**Status:** Reversed by [DEC-11](#dec-11)
+**Status:** Reversed by [DEC-011](#dec-011)
 
-## DEC-11
+## DEC-011
 
 Schedule two experts for a group session.
 
 **Date:** 2026-10-27
 **Made by:** Customer
 **Source:** [the Week 5 validation meeting](../reports/week-05/meeting-report.md)
-**Why:** reverses [DEC-02](#dec-02), because the customer signed a studio whose group sessions always need two coaches.
+**Why:** reverses [DEC-002](#dec-002), because the customer signed a studio whose group sessions always need two coaches.
 **Status:** Active
 ```
 
@@ -144,7 +144,7 @@ Schedule two experts for a group session.
 ```markdown
 # Decisions
 
-## DEC-01
+## DEC-001
 
 Build paid bookings, not the calendar view.
 
@@ -154,7 +154,7 @@ Build paid bookings, not the calendar view.
 **Why:** every alternative already has a calendar view, and the paid booking flow is the part they leave half-done.
 **Status:** Active
 
-## DEC-02
+## DEC-002
 
 Drop multi-expert scheduling.
 
@@ -164,7 +164,7 @@ Drop multi-expert scheduling.
 **Why:** the experts work alone, so nobody needs two of them booked at once.
 **Status:** Active
 
-## DEC-03
+## DEC-003
 
 Keep the web link for delivery.
 
@@ -174,7 +174,7 @@ Keep the web link for delivery.
 **Why:** confirms the current direction: `VP-01` rests on one link that carries the whole booking, and the customer raised no objection to it.
 **Status:** Active
 
-## DEC-04
+## DEC-004
 
 Deploy on a single small VPS.
 
@@ -184,7 +184,7 @@ Deploy on a single small VPS.
 **Why:** the customer will run the product after the course and pays for one small server, not for a hosted platform.
 **Status:** Active
 
-## DEC-05
+## DEC-005
 
 Take payment through the payment provider's hosted checkout page.
 
@@ -194,7 +194,7 @@ Take payment through the payment provider's hosted checkout page.
 **Why:** nobody on the team has handled card data, and a hosted page keeps it out of the product.
 **Status:** Active
 
-## DEC-06
+## DEC-006
 
 Confirm a booking only after the client has paid.
 
@@ -204,7 +204,7 @@ Confirm a booking only after the client has paid.
 **Why:** a hold that confirms without payment is the unpaid booking `GAP-01` describes, and the customer will not accept it.
 **Status:** Active
 
-## DEC-07
+## DEC-007
 
 Accept the minimum usable product candidate as proposed.
 

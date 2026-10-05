@@ -38,7 +38,7 @@ Each story is a GitHub issue, and the `user-story` label identifies story issues
    A closed story stays in the list; the closing comment and the close date are its record.
 3. The issue is the record of change.
    Edit the body so it always states the current story, and add a comment for each change to a story part: the title, the statement, `Traces to`, the acceptance criteria, the `moscow:*` label, or the priority reason.
-   The comment says what changed, names each `AC-nn` that changed, gives the reason, and links the `DEC-nn` of the decision behind it when that decision has an entry, per [What Cites It](decisions-requirements.md#what-cites-it).
+   The comment says what changed, names each `AC-nn` that changed, gives the reason, and links the `DEC-nnn` of the decision behind it when that decision has an entry, per [What Cites It](decisions-requirements.md#what-cites-it).
    GitHub dates the comment, so the comment does not need a typed date.
    No comment is needed for edits made before the first meeting with the customer that shows the story, for notes and the checklist, or for a [formatting-only change](general-requirements.md#where-artifacts-live-in-the-repository).
    Do not delete an issue or rewrite its body to hide a change; the edit history and the comment are the record.
@@ -78,7 +78,7 @@ Its job is to make one need concrete enough that a reviewer can tell whether you
    Such a specific goes in an acceptance criterion, or in a [constraint](product-vision-requirements.md#constraints) when it holds for the whole product, and goes in the story statement only when the specific thing is itself the need.
    An [acceptance criterion](#acceptance-criteria) may name the screen, the field, or the system state an observer checks, because that is what makes it runnable.
 4. Every story carries a `Traces to` list.
-   It contains exactly one `VP-nn`, the value proposition the story supports, and, optionally, the story's origins: the `GAP-nn` it closes, the `DEC-nn` of a decision, or an action point it carries out.
+   It contains exactly one `VP-nn`, the value proposition the story supports, and, optionally, the story's origins: the `GAP-nn` it closes, the `DEC-nnn` of a decision, or an action point it carries out.
    It also names the `ASM-nn` of each [assumption](assumptions-requirements.md#what-rests-on-it) the story rests on.
    The `VP-nn` is how a story traces to the product vision, so the `VP-nn` of every story except a `Won't Have` story is one the vision's [goal](product-vision-requirements.md#goal) traces to.
    A story you intend to build that supports no such value proposition is outside the vision: add its `VP-nn` to the goal as a [team decision](decisions-requirements.md#the-decision), or make the story `Won't Have`.
@@ -177,7 +177,7 @@ The candidate is your proposal for it, made before any product code exists, so t
 3. Every story in the candidate is needed: without any one of them, the core task no longer completes.
 4. Record the candidate per [Weekly Public Report](weekly-report-requirements.md#weekly-public-report).
 5. The candidate is a proposal, not a commitment.
-   The customer's verdict on it is a [decision](decisions-requirements.md#the-decision), and the candidate cites its `DEC-nn`.
+   The customer's verdict on it is a [decision](decisions-requirements.md#the-decision), and the candidate cites its `DEC-nnn`.
 6. A story the verdict drops from the candidate keeps its priority unless the customer also changed it.
    A priority change is recorded per [MoSCoW Prioritization](#moscow-prioritization).
 
@@ -222,7 +222,7 @@ Payment happens before confirmation, so there is no pay-later path.
 A comment on issue #42, added after the validation meeting:
 
 ```markdown
-Added `AC-03`, per [`DEC-06`](https://github.com/<organization>/<repo>/blob/main/docs/decisions.md#dec-06).
+Added `AC-03`, per [`DEC-006`](https://github.com/<organization>/<repo>/blob/main/docs/decisions.md#dec-006).
 The customer will not accept a hold that confirms without payment, and `AC-01` and `AC-02` covered the hold but not the confirmation.
 The same decision settles [`ASM-02`](https://github.com/<organization>/<repo>/blob/main/docs/assumptions.md#asm-02), which this story rests on, as `Confirmed`.
 ```

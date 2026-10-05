@@ -110,7 +110,7 @@ A Week 2 validation meeting.
 2. The customer accepts or rejects each story, and each verdict is a [decision](decisions-requirements.md#the-decision) that names the `US-nn`.
    Stories accepted together may share one decision.
    Each rejected story gets a decision of its own, naming each `AC-nn` it failed.
-3. Add a comment to the story issue with the verdict, naming any failed `AC-nn` and citing the decision's `DEC-nn`.
+3. Add a comment to the story issue with the verdict, naming any failed `AC-nn` and citing the decision's `DEC-nnn`.
 
 **Example**
 
@@ -200,7 +200,7 @@ A Week 3 meeting that shows working software.
    | `## Disagreements`          | Every meeting                   | A table, one row per place the customer did not agree with you                                                                                                                                                                                                            |
 
 6. Each decision the meeting made has an entry in `docs/decisions.md`, per [Decision Requirements](decisions-requirements.md).
-   `## Decisions` lists them, one bullet each, linking the entry with `DEC-nn: <the decision>` as the link text, quoting the first line of the entry.
+   `## Decisions` lists them, one bullet each, linking the entry with `DEC-nnn: <the decision>` as the link text, quoting the first line of the entry.
    An entry's decision is never reworded, per [Where Decisions Live](decisions-requirements.md#where-decisions-live), so the link text stays true.
 
 7. `## Action points` has the columns `Action`, `Owner`, and `Due`.
@@ -215,7 +215,7 @@ A Week 3 meeting that shows working software.
 10. `## Previous action points` has the columns `Action`, `Outcome`, and `Decision`.
     `Action` cites the action point by its report's path and `#action-points` anchor with the action quoted, per [Identifier Rules](general-requirements.md#identifier-rules).
     `Outcome` says whether it was carried out, and what was found, or why it was not, and links each artifact the outcome changed.
-    `Decision` links each `DEC-nn` the outcome produced, or says `None` when the outcome needed no decision.
+    `Decision` links each `DEC-nnn` the outcome produced, or says `None` when the outcome needed no decision.
     The earlier report is not edited; this row is the action point's closing record.
     An outcome that changes an artifact is carried into that artifact, and an outcome recorded only in this table has not been carried out.
 
@@ -355,10 +355,10 @@ The rewrite anchors it to an event the customer will remember, so the answer is 
 
 ## Decisions
 
-- [DEC-01: Build paid bookings, not the calendar view](../../docs/decisions.md#dec-01)
-- [DEC-02: Drop multi-expert scheduling](../../docs/decisions.md#dec-02)
-- [DEC-03: Keep the web link for delivery](../../docs/decisions.md#dec-03)
-- [DEC-04: Deploy on a single small VPS](../../docs/decisions.md#dec-04)
+- [DEC-001: Build paid bookings, not the calendar view](../../docs/decisions.md#dec-001)
+- [DEC-002: Drop multi-expert scheduling](../../docs/decisions.md#dec-002)
+- [DEC-003: Keep the web link for delivery](../../docs/decisions.md#dec-003)
+- [DEC-004: Deploy on a single small VPS](../../docs/decisions.md#dec-004)
 
 ## Action points
 

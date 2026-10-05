@@ -25,7 +25,7 @@ Ask for 60 if the customer can give it.
 ```text
 reports/week-NN/meeting-script.md     the target, the agenda, the questions, the roles
 reports/week-NN/meeting-report.md     the previous action points' outcomes, the decisions listed, the new action points, the disagreements
-docs/decisions.md                     one DEC-nn entry per decision, with who made it and why
+docs/decisions.md                     one DEC-nnn entry per decision, with who made it and why
 reports/week-NN/meeting-transcript.md when the meeting was recorded or held in writing
 reports/week-NN/prototypes.md         when you showed a prototype: what it tested, what they said
 the story issue                       a comment on what the meeting changed or accepted
@@ -111,11 +111,11 @@ Those are the questions that produce a `## Disagreements` row.
 
 ## Step 6: Trace What Changed
 
-Each decision gets a `DEC-nn` entry in `docs/decisions.md`, with who made it and why, and the meeting report's `## Decisions` lists the meeting's entries, per [Decision Requirements](../requirements/decisions-requirements.md).
+Each decision gets a `DEC-nnn` entry in `docs/decisions.md`, with who made it and why, and the meeting report's `## Decisions` lists the meeting's entries, per [Decision Requirements](../requirements/decisions-requirements.md).
 The entry does not list what the decision changed.
-Instead, each thing it changed cites its `DEC-nn`: usually a story, with the `AC-nn` when a specific criterion changed, an assumption it settled, or a constraint or boundary item in the vision, per [What Cites It](../requirements/decisions-requirements.md#what-cites-it).
+Instead, each thing it changed cites its `DEC-nnn`: usually a story, with the `AC-nn` when a specific criterion changed, an assumption it settled, or a constraint or boundary item in the vision, per [What Cites It](../requirements/decisions-requirements.md#what-cites-it).
 A decision about something that does not exist yet is cited when that thing is written.
-Searching for a `DEC-nn` is how a reader sees whether the week was a test or a formality.
+Searching for a `DEC-nnn` is how a reader sees whether the week was a test or a formality.
 
 Make sure the change reaches every place it affects, because each one answers a different question:
 
@@ -128,12 +128,12 @@ Make sure the change reaches every place it affects, because each one answers a 
 
 After a prototype, the change is required in all four places by [Validation](../requirements/prototypes-requirements.md#validation).
 The issue comment is the one that is easy to skip, and skipping it is what makes a decision invisible to a reader of the stories.
-Add a comment to the story issue saying what changed and why, naming the `AC-nn` if a criterion changed, and citing the `DEC-nn`.
+Add a comment to the story issue saying what changed and why, naming the `AC-nn` if a criterion changed, and citing the `DEC-nnn`.
 A story edited three times with no comment gives a reader no way to tell what the customer actually settled from what the team decided on its own.
 
 A story the customer accepted is a decision too.
 Its entry names the `US-nn`, and its `**Why:**` says what the customer saw; stories accepted together may share one entry.
-The story issue gets a comment with the verdict, citing the `DEC-nn`, per [Showing Working Software](../requirements/customer-meetings-requirements.md#showing-working-software).
+The story issue gets a comment with the verdict, citing the `DEC-nnn`, per [Showing Working Software](../requirements/customer-meetings-requirements.md#showing-working-software).
 A rejected story gets an entry of its own, naming the `AC-nn` it failed, and the comment names it too.
 
 Every meeting settles its target with at least one decision, per [Every Meeting](../requirements/customer-meetings-requirements.md#every-meeting).
@@ -158,10 +158,10 @@ A change invented only to satisfy the rule is worse than an honest deviation, be
 - **Treating approval as the result.**
   The `## Disagreements` table should not be empty.
 - **Deciding but not commenting.**
-  A decision whose `DEC-nn` never reaches the story issue has not actually changed anything.
+  A decision whose `DEC-nnn` never reaches the story issue has not actually changed anything.
 - **Showing the easy part.**
   If the customer is impressed and you are not surprised, you showed the wrong story.
 - **Decisions that nothing cites.**
-  Unless every decision confirmed the current direction, a week whose `DEC-nn` appear nowhere else is the same warning as an empty `## Disagreements` table: the meeting tested nothing a reader can point at.
+  Unless every decision confirmed the current direction, a week whose `DEC-nnn` appear nowhere else is the same warning as an empty `## Disagreements` table: the meeting tested nothing a reader can point at.
 - **Twelve questions in thirty minutes.**
   You will get through five well, and the rest will be a list somebody read aloud.

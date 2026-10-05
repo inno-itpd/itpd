@@ -10,7 +10,7 @@ See [Deadlines And Submission](../course/rules.md#deadlines-and-submission).
 > [!NOTE]
 > This assignment was revised on 5 October 2026, after the Week 1 deadline.
 > Week 1 is graded against [the version published at the deadline](https://github.com/inno-itpd/itpd/blob/fe58ba70bbd90b92ffd6942d340f1e8b35b4bbb1/assignments/assignment-1.md), so a submission that follows it did nothing wrong and nothing needs resubmitting.
-> The revision adds `docs/decisions.md` with `DEC-nn` entries and `docs/assumptions.md` with `ASM-nn` entries, drops `meeting-notes.md` in favour of the transcript, and adds a target and an `## Agenda` to the meeting script.
+> The revision adds `docs/decisions.md` with `DEC-nnn` entries and `docs/assumptions.md` with `ASM-nn` entries, drops `meeting-notes.md` in favour of the transcript, and adds a target and an `## Agenda` to the meeting script.
 > Do not rewrite your Week 1 files to match it: Assignment 2 moves your decisions and assumptions into the new files in [Part 2](assignment-2.md#part-2-move-the-week-1-decisions-into-the-decisions-log) and [Part 3](assignment-2.md#part-3-move-the-week-1-assumptions-into-the-assumptions-log).
 
 One submission per team.
@@ -177,7 +177,7 @@ This week specifically:
 2. **Assign the three roles and ask the three permission questions** before you start, per [Every Meeting](../requirements/customer-meetings-requirements.md#every-meeting) and [Permission Questions](../requirements/customer-meetings-requirements.md#permission-questions), and keep the recording out of the repository.
 3. **Write `reports/week-01/meeting-report.md`**, plus `meeting-transcript.md` when the meeting was recorded, per [Where Meeting Artifacts Live](../requirements/customer-meetings-requirements.md#where-meeting-artifacts-live).
    Hold the report to the week minima:
-   - At least two decisions, each a `DEC-nn` entry in `docs/decisions.md` listed under `## Decisions`, per [Decision Requirements](../requirements/decisions-requirements.md); a `GAP-nn` or `VP-nn` a decision dropped cites its `DEC-nn`.
+   - At least two decisions, each a `DEC-nnn` entry in `docs/decisions.md` listed under `## Decisions`, per [Decision Requirements](../requirements/decisions-requirements.md); a `GAP-nn` or `VP-nn` a decision dropped cites its `DEC-nnn`.
    - At least two rows in `## Action points`, each with a named owner and a due date inside Week 2.
    - `## Disagreements` filled in, or an explicit `None`.
 4. **Put the recording link in your Moodle submission only.**
@@ -326,8 +326,8 @@ See [Permalinks And Snapshots](../requirements/repository-requirements.md#permal
 - [ ] `## Key improvements` shows two real rewrites with the principle named.
 - [ ] Three meeting roles assigned, whole team attending.
 - [ ] Kickoff meeting held, all three permissions asked before recording.
-- [ ] `docs/decisions.md` with a `DEC-nn` entry for each kickoff decision, each with its `**Why:**`.
-- [ ] `reports/week-01/meeting-report.md` with all six sections, 2+ decisions listed by `DEC-nn`, 2+ action points with owner and Week 2 due date, and `## Disagreements` filled or `None`.
+- [ ] `docs/decisions.md` with a `DEC-nnn` entry for each kickoff decision, each with its `**Why:**`.
+- [ ] `reports/week-01/meeting-report.md` with all six sections, 2+ decisions listed by `DEC-nnn`, 2+ action points with owner and Week 2 due date, and `## Disagreements` filled or `None`.
 - [ ] `reports/week-01/meeting-transcript.md` if the meeting was recorded, sanitized; in the Moodle PDF only if publication was refused.
 - [ ] `reports/week-01/ai-usage.md` written.
 - [ ] `reports/week-01/README.md` complete, with the coverage table, evidence, and contribution table.

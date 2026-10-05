@@ -244,7 +244,7 @@ See [Validating With The Customer](validating-with-the-customer.md) for the meet
   "I want a payment system" names an area, not a need, and no criterion can be written for it.
   Say who pays, for what, and what goes wrong when they do not.
 - **Forcing a story onto a gap that does not cover it.**
-  If the need came from a decision or an action point, cite its `DEC-nn` or the action point in `Traces to` instead; a story that traces only to its `VP-nn` is fine.
+  If the need came from a decision or an action point, cite its `DEC-nnn` or the action point in `Traces to` instead; a story that traces only to its `VP-nn` is fine.
   A false link makes a reader stop trusting the real ones.
 - **One criterion per story.**
   It is the easiest number to hit and the least useful.

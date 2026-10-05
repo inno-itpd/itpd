@@ -70,7 +70,7 @@ This week:
 
 1. Before anything cites a Week 1 decision, write `docs/decisions.md` from your Week 1 decisions, in one pull request.
    This is a one-time catch-up: the decisions log became a Week 1 artifact after you submitted Week 1, so your decisions are still rows of the `## Decisions` table in `reports/week-01/meeting-report.md`, with the columns `Decision`, `Made by`, and `Traces to`, and of the team's own `## Decisions` table in `reports/week-01/README.md` when it has one.
-   Give each row its own `DEC-nn` section, the kickoff rows first and then the README rows, numbered in that order:
+   Give each row its own `DEC-nnn` section, the kickoff rows first and then the README rows, numbered in that order:
 
    - `**Date:**` is the kickoff date for a kickoff row, and the date the team decided for a README row.
    - `**Made by:**` is the field's value for the row's `Made by`, and `Team` for a README row.
@@ -86,7 +86,7 @@ The rules:
 
 - Write each assumption as an entry with its status: [The Assumption](../requirements/assumptions-requirements.md#the-assumption).
 - Cite an assumption from each artifact that rests on it: [What Rests On It](../requirements/assumptions-requirements.md#what-rests-on-it).
-- Settle an assumption with its evidence, citing the `DEC-nn` that settled it: [Checking And Settling](../requirements/assumptions-requirements.md#checking-and-settling).
+- Settle an assumption with its evidence, citing the `DEC-nnn` that settled it: [Checking And Settling](../requirements/assumptions-requirements.md#checking-and-settling).
 
 This week:
 
@@ -155,7 +155,7 @@ The rules:
 This week:
 
 1. Take the candidate to the customer in [Part 10](#part-10-validate-with-the-customer).
-2. Submit the candidate as it stands after the verdict, citing the verdict's `DEC-nn`.
+2. Submit the candidate as it stands after the verdict, citing the verdict's `DEC-nnn`.
 
 The method is in [Step 4: Prioritize, Then Pick The First Thing To Build](../guides/user-stories-and-prototyping.md#step-4-prioritize-then-pick-the-first-thing-to-build).
 
@@ -203,7 +203,7 @@ The rules:
 - State the meeting's target in one sentence, and ask only questions that serve it: [Meeting Script](../requirements/customer-meetings-requirements.md#meeting-script).
 - Open the agenda with the permission questions, and close it with the read-back: [Meeting Script](../requirements/customer-meetings-requirements.md#meeting-script).
 - Write the report in the team's own words: [Meeting Report](../requirements/customer-meetings-requirements.md#meeting-report).
-- Give each decision a `DEC-nn` entry, list it in the report, and cite it from what it changed: [Decision Requirements](../requirements/decisions-requirements.md).
+- Give each decision a `DEC-nnn` entry, list it in the report, and cite it from what it changed: [Decision Requirements](../requirements/decisions-requirements.md).
 - Produce the report, and a transcript when the meeting was recorded or held in writing: [Where Meeting Artifacts Live](../requirements/customer-meetings-requirements.md#where-meeting-artifacts-live).
 - Clean and sanitize a transcript before you publish it: [Meeting Transcript](../requirements/customer-meetings-requirements.md#meeting-transcript).
 - Name the customer `Customer`, and keep personal data out of the repository: [Sensitive Information Reference](../requirements/visibility-requirements.md#sensitive-information-reference).
@@ -278,7 +278,7 @@ This week it also carries:
    If the customer refused publication of the transcript, that row says so and points at the Moodle submission instead.
 
 3. `## Minimum Usable Product Candidate`, per [Part 7](#part-7-propose-the-minimum-usable-product-candidate).
-4. One line naming what changed because of what the customer said about the prototype, a `US-nn`, a boundary item, a constraint, or an `ASM-nn`, and what changed in it, linking it and the `DEC-nn` behind the change.
+4. One line naming what changed because of what the customer said about the prototype, a `US-nn`, a boundary item, a constraint, or an `ASM-nn`, and what changed in it, linking it and the `DEC-nnn` behind the change.
 5. Repository evidence: one merged pull request linked to its issue, the latest green link check run, and the latest green Markdown check run on `main`.
 6. `## Deviations`: anything you did differently from this assignment, per [Declaring Deviations](../requirements/weekly-report-requirements.md#declaring-deviations).
 
@@ -305,7 +305,7 @@ A transcript under item 5 goes in an appendix, which the two pages do not count.
 
 - [ ] `.github/ISSUE_TEMPLATE/user-story.yml`, `task.yml`, `config.yml`, and the labels, in one pull request started from a blank issue ([Part 1](#part-1-track-the-work-as-issues)).
 - [ ] `.github/pull_request_template.md` asks for the `AC-nn` each change checks ([Part 1](#part-1-track-the-work-as-issues)).
-- [ ] `docs/decisions.md` with a `DEC-nn` section for each Week 1 decision, each cited from what it changed, if it changed anything yet ([Part 2](#part-2-move-the-week-1-decisions-into-the-decisions-log)).
+- [ ] `docs/decisions.md` with a `DEC-nnn` section for each Week 1 decision, each cited from what it changed, if it changed anything yet ([Part 2](#part-2-move-the-week-1-decisions-into-the-decisions-log)).
 - [ ] `docs/assumptions.md` with an `ASM-nn` section for each Week 1 assumption, and no table left in `value-proposition.md` ([Part 3](#part-3-move-the-week-1-assumptions-into-the-assumptions-log)).
 - [ ] Earlier weeks' Markdown fixed in a formatting-only pull request, merged before the Markdown check ([Part 4](#part-4-check-the-markdown-in-ci)).
 - [ ] `ALT-nn`, `GAP-nn`, and `VP-nn` headings cut down to their identifiers, with every link to them repointed, in a pull request of its own ([Part 4](#part-4-check-the-markdown-in-ci)).
@@ -316,9 +316,9 @@ A transcript under item 5 goes in an appendix, which the two pages do not count.
 - [ ] `reports/week-02/prototypes.md` with at least one prototype, and no prototype code on `main` ([Part 8](#part-8-prototype-the-riskiest-part)).
 - [ ] Each kickoff action point's outcome in `## Previous action points`, and in the artifact it changed ([Part 9](#part-9-carry-out-the-kickoff-action-points)).
 - [ ] `reports/week-02/meeting-script.md`, with the candidate's part listing its `US-nn` ([Part 10](#part-10-validate-with-the-customer)).
-- [ ] `reports/week-02/meeting-report.md`, with a row per kickoff action point, 2+ decisions listed by `DEC-nn` including the candidate verdict, and 2+ action points due in Week 3 ([Part 10](#part-10-validate-with-the-customer)).
+- [ ] `reports/week-02/meeting-report.md`, with a row per kickoff action point, 2+ decisions listed by `DEC-nnn` including the candidate verdict, and 2+ action points due in Week 3 ([Part 10](#part-10-validate-with-the-customer)).
 - [ ] `reports/week-02/meeting-transcript.md`, if the meeting was recorded or held in writing ([Part 10](#part-10-validate-with-the-customer)).
-- [ ] **At least one artifact changed because of what the customer said about the prototype, citing its `DEC-nn`** ([Part 10](#part-10-validate-with-the-customer)).
+- [ ] **At least one artifact changed because of what the customer said about the prototype, citing its `DEC-nnn`** ([Part 10](#part-10-validate-with-the-customer)).
 - [ ] `reports/week-02/ai-usage.md` ([Part 11](#part-11-report-on-your-ai-usage)).
 - [ ] `reports/week-02/README.md` ([Assignment Report In The Repository](#assignment-report-in-the-repository)).
 - [ ] Everything merged into `main`, with the permalink and the snapshot taken from that commit ([Submission Procedure](#submission-procedure)).

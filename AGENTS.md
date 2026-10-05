@@ -130,9 +130,10 @@ A part may keep a small example beside the rule it illustrates, such as the boun
 
 - **Filenames** are kebab-case: `assignment-1.md`, `user-stories-requirements.md`.
 - **Weeks** are zero-padded: `reports/week-01/`, through `reports/week-09/`.
-- **Identifiers** are zero-padded and stable: `ALT-01`, `GAP-01`, `VP-01`, `ASM-01`, and `DEC-01` are the Week 1 families.
+- **Identifiers** are zero-padded and stable: `ALT-01`, `GAP-01`, `VP-01`, `ASM-01`, and `DEC-001` are the Week 1 families.
   `US-01` for user stories and `AC-01` for the acceptance criteria of one story are introduced in W2.
   A later identifiers family arrives with the requirement that first uses it, not before.
+  Decisions take three digits, because every customer meeting adds to the log; every other family takes two.
   An `AC-nn` is scoped to its story issue and is cited together with it; the other families are repository-wide.
   IDs are never renumbered or reused, including in example text.
 - **Headings** are Title Case in requirements files, guides, and assignments.
@@ -205,10 +206,10 @@ The customer is one of the stakeholders, so "stakeholder" is not wrong, but when
 In artifacts, the label is `Customer`, not a real name.
 The word "instructor" is allowed in prose explaining who the customer is, and nowhere else.
 
-A decision that needs an entry, per `requirements/decisions-requirements.md`, is a `DEC-nn` entry in `docs/decisions.md`, and a later artifact cites the decision by its `DEC-nn`.
+A decision that needs an entry, per `requirements/decisions-requirements.md`, is a `DEC-nnn` entry in `docs/decisions.md`, and a later artifact cites the decision by its `DEC-nnn`.
 Any other decision is a team decision recorded with its reason in the one artifact it changes.
 The entry does not list what it changed; the artifact it changed cites it, so there is no `Changes` list, `TBD`, or `None`.
-A meeting report lists its meeting's `DEC-nn` under `## Decisions`, and the weekly report has no decisions section.
+A meeting report lists its meeting's `DEC-nnn` under `## Decisions`, and the weekly report has no decisions section.
 Action points are **not** an identifier family: there is no `ACT-nn`, a later week cites one by its report's path and `#action-points` anchor with the action quoted, and it is carried out by a tracked issue.
 
 ITPD uses elements of Scrum later in the course.

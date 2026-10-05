@@ -302,7 +302,7 @@ If credentials, personal data, or confidential material is committed by mistake:
 9. In an issue, an issue comment, or a pull request description, link a repository file by its full URL on `main`, because a relative link does not resolve there:
 
    ```text
-   https://github.com/<org>/<repo>/blob/main/docs/decisions.md#dec-06
+   https://github.com/<org>/<repo>/blob/main/docs/decisions.md#dec-006
    ```
 
    Link on `main`, not at a commit hash, so the link shows the file as it is now, such as a decision that has since been reversed.
