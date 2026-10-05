@@ -20,6 +20,7 @@ These requirements define what a prototype is for, what it must change, and wher
 
    - What it is and how to view it: a screenshot in `reports/week-NN/images/` or a view-only external link.
      A code spike is viewed through its screenshot.
+     It may also link its code as a pull request closed without merging, which stays readable after the branch is deleted, rather than linking the branch.
    - Which `US-nn` or `GAP-nn` it tested, any `AC-nn` it exercised, and the question it was built to answer.
      When the risky part is an [assumption](assumptions-requirements.md#the-assumption), also cite its `ASM-nn`.
    - What the customer said about it.
