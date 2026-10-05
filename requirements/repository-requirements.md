@@ -287,11 +287,17 @@ If credentials, personal data, or confidential material is committed by mistake:
 1. Add `.github/ISSUE_TEMPLATE/user-story.yml`, an Issue Form with a field for each part of a story issue listed in [Where Stories Live](user-stories-requirements.md#where-stories-live), and the `user-story` label applied by the form.
    The statement, the `Traces to` list, and the `Priority reason` field are required, and `Traces to` takes one entry per line.
    The acceptance criteria field is optional, per [Acceptance Criteria](user-stories-requirements.md#acceptance-criteria).
-2. Disable blank issue creation in the issue template configuration.
-3. Create the labels the stories use, by any means: `user-story`, and the four `moscow:*` labels in [MoSCoW Prioritization](user-stories-requirements.md#moscow-prioritization).
-   The form applies `user-story`; the team applies one MoSCoW label per story.
-4. Create branches from the issue where GitHub supports it, and link every pull request to its issue.
-5. Check the acceptance criteria a pull request touches before merging it; the [pull request template](#branch-protection-and-pull-requests) asks for them.
+2. Add `.github/ISSUE_TEMPLATE/task.yml`, an Issue Form for work that is not a story, such as documentation, a report, or a workflow, with a description field and the `task` label applied by the form.
+3. Disable blank issue creation with `blank_issues_enabled: false` in `.github/ISSUE_TEMPLATE/config.yml`.
+4. The pull request that adds the two forms and `config.yml` is the only one that starts before a form exists.
+   Open a blank issue for it first, then name its branch and link it like any other pull request.
+   A team that disabled blank issues before it had the task form opens the issue for the pull request that adds `task.yml` with `gh issue create`.
+5. After that pull request, open every issue from a form.
+   This is the team's rule rather than the platform's: `gh issue create` and the API skip the form and the label it applies.
+6. Create the labels the issues use, by any means: `user-story`, `task`, and the four `moscow:*` labels in [MoSCoW Prioritization](user-stories-requirements.md#moscow-prioritization).
+   The forms apply `user-story` and `task`; the team applies one MoSCoW label per story.
+7. Create branches from the issue where GitHub supports it, and link every pull request to its issue.
+8. Check the acceptance criteria a pull request touches before merging it; the [pull request template](#branch-protection-and-pull-requests) asks for them.
 
 The user story requirements say [what a story says](user-stories-requirements.md#the-story) and [how its issue is kept](user-stories-requirements.md#where-stories-live).
 
@@ -304,6 +310,8 @@ The user story requirements say [what a story says](user-stories-requirements.md
 - Use a task tracker that keeps its state in the repository, such as the [`backlog.md`](https://github.com/MrLesk/Backlog.md) command-line tool.
   It is not the home of a user story, and a story issue may be mentioned in it.
   Its files are repository content rather than artifacts, per [Where Artifacts Live In The Repository](general-requirements.md#where-artifacts-live-in-the-repository), and it is not graded on its own.
+- Exclude the tracker's directory from the [Markdown check](#continuous-integration), because the tool rewrites those files and a formatter would fight it.
+  The [link check](#link-checking) still covers the directory, unless you exclude it there with the reason written down, as that section requires of every exclusion.
 
 It is recommended for two reasons:
 
@@ -376,18 +384,59 @@ The pull request is where the team already writes down what changed and why, whi
 
 1. Add a Markdown check as a GitHub Actions workflow, on pull requests and on every push to `main`.
 2. The check must fail the build when the Markdown is wrong, and the latest `main` run must be green before you submit.
-3. Any of the common tools is acceptable, and the repository's own conventions decide which: `markdownlint-cli2`, `prettier --check`, or `remark-lint`.
-   Pin it, as in [Pinning Third-Party Actions](#pinning-third-party-actions).
+3. Any of the common tools is acceptable: `markdownlint-cli2`, `prettier --check`, or `remark-lint`.
+   Pin the action to a commit, per [Pinning Third-Party Actions](#pinning-third-party-actions), and pin the tool's version: an action that bundles the tool pins it with the action, and a tool installed by the workflow pins it in the lockfile.
+4. Fixing what the check reports in an earlier week's files is a formatting-only change, which [Where Artifacts Live In The Repository](general-requirements.md#where-artifacts-live-in-the-repository) allows.
+5. A task tracker's directory may be excluded from the check, per [Tracking Tasks Inside The Repository](#tracking-tasks-inside-the-repository).
 
 Markdown is checked in Week 2 because the week is mostly prose: a product vision, the meeting artifacts, and the week report.
-A broken link or a heading that drifted out of Title Case is a defect in that work, and a defect you find on Friday evening is a defect you did not fix.
+A malformed table or a skipped heading level is a defect in that work, and a defect you find on Friday evening is a defect you did not fix.
+Broken links are the [link check](#link-checking)'s job, not this one's.
+
+**Example**
+
+`.github/workflows/markdown.yml`, with `markdownlint-cli2` bundled by the action:
+
+```yaml
+name: Markdown check
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  markdownlint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Check Markdown
+        uses: DavidAnson/markdownlint-cli2-action@21c1be1b93ad9ed58fa840aacc3f279cde2a72ff # v24.2.0
+        with:
+          globs: "**/*.md"
+```
+
+`.markdownlint-cli2.jsonc` in the repository root turns off the line-length rule, so one sentence per line and long table rows pass, and excludes the task tracker's directory:
+
+```jsonc
+{
+  "config": {
+    "default": true,
+    "MD013": false,
+  },
+  "ignores": ["backlog/**"],
+}
+```
 
 **Since: W3**
 
-4. Add continuous integration for your product code: linting, formatting or type checking, build, and automated tests, on pull requests and on `main`.
-5. Keep the link check and the Markdown check running.
+6. Add continuous integration for your product code: linting, formatting or type checking, build, and automated tests, on pull requests and on `main`.
+7. Keep the link check and the Markdown check running.
    They are a baseline, not a substitute for the checks your product needs.
-6. The latest `main` run of every required check must be green before you submit.
+8. The latest `main` run of every required check must be green before you submit.
 
 ## Recommended Throughout The Course
 

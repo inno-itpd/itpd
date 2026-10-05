@@ -46,7 +46,7 @@ Who may see each of them, and the recording, is in [Sensitive Information Refere
 2. A meeting with no recording and no transcript still produces a meeting report.
 3. The meeting report is the team's own account of the meeting.
    The transcript and the notes are the evidence it is written from, and the report links to them.
-4. The report is the record of that meeting and is not rewritten afterwards.
+4. The report is the record of that meeting and is not rewritten afterwards, apart from a [formatting-only change](general-requirements.md#where-artifacts-live-in-the-repository).
    Later weeks cite it as [Identifier Rules](general-requirements.md#identifier-rules) says.
    If a later meeting reverses a decision, the later report quotes the reversed decision, says so, and links back to the report it reverses.
 5. Say in the weekly public report which evidence the meeting produced, a published transcript, a transcript shared privately, or notes, and why.
@@ -161,7 +161,7 @@ A Week 3 meeting that shows working software.
    The first part asks the [three permission questions](#permission-questions), the last part reads back the decisions and action points, and the timeboxes add up to the length you planned.
    Every question appears in exactly one part.
 8. Each part names what you show in it: a link to the artifact, prototype, or screen you put in front of the customer, or says that nothing is shown.
-9. The script is preparation, so it is not rewritten after the meeting.
+9. The script is preparation, so it is not rewritten after the meeting, apart from a [formatting-only change](general-requirements.md#where-artifacts-live-in-the-repository).
    What the meeting actually produced is the [meeting report](#meeting-report), which links to the script.
 10. A meeting held asynchronously in writing instead of live still produces a script, but `## Roles` is not one of its sections.
     A written exchange has no speaking-time floor, and the moderator is whoever wrote the questions.

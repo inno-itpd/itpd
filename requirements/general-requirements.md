@@ -57,6 +57,11 @@ It is the short version of the requirements, states what is expected of you as a
    When the product, the plan, or the decisions change, update the file.
    Week reports in `reports/week-NN/` are a historical record and are not rewritten after their week.
 
+**Since: W2**
+
+5. A formatting-only change is not a rewrite: whitespace, line breaks, list markers, heading levels, or table alignment, with the words and their meaning unchanged.
+   It may touch any earlier week's files, including meeting scripts and reports, and goes in a pull request of its own.
+
 ## Identifier Rules
 
 **Since: W1**
