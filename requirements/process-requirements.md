@@ -16,7 +16,9 @@ This file defines what "done" means.
 - [Assumptions](#assumptions)
 - [Product Vision And Goals](#product-vision-and-goals)
 - [Constraints](#constraints)
-- [Stakeholders, Boundary, And Context](#stakeholders-boundary-and-context)
+- [Stakeholders](#stakeholders)
+- [Boundary](#boundary)
+- [System Context](#system-context)
 - [User Stories](#user-stories)
 - [Acceptance Criteria](#acceptance-criteria)
 - [MoSCoW Prioritization](#moscow-prioritization)
@@ -243,7 +245,7 @@ It turns the Week 1 research into something you can be held to.
 1. The vision states the **goal** of the product: what it must achieve.
 2. The goal traces to at least one `VP-nn` from your [value proposition](../guides/comparison-and-synthesis.md#step-5-write-the-value-proposition).
    A goal that supports no value proposition is a feature you would like, which is a different thing.
-3. The vision carries the [constraints](#constraints), the [stakeholders, boundary, and context diagram](#stakeholders-boundary-and-context), and a link to the [user stories](#user-stories).
+3. The vision carries the [constraints](#constraints), the [stakeholders](#stakeholders), the [boundary](#boundary), the [system context diagram](#system-context), and a link to the [user stories](#user-stories).
 4. Keep it short.
    A vision that has grown into a specification has become the stories, and the two then drift apart.
 
@@ -289,35 +291,85 @@ Keeping the two apart is the whole point of this section: a constraint you canno
 - Say which constraints are negotiable and who you would have to ask.
 - Note the constraints that your research in Week 1 did not anticipate.
 
-## Stakeholders, Boundary, And Context
+## Stakeholders
 
 **Since: W2**
 
-The boundary is the part of this section that matters most: it is what the team will **not** do.
-Without it, a context diagram shows a product floating in a void, and no reviewer can tell whether it is right.
+Stakeholders are everyone whose interests the product touches, which is wider than the people who use it.
 
 **Required**
 
 1. Name the stakeholders: who the product is for, who operates it, who pays for it, and who is affected by it without using it.
    Your customer is one of the stakeholders.
-2. State the **boundary** explicitly, as a list of things the product will not do.
-3. Draw a **system context diagram** showing the product, the external actors, and the external systems it exchanges data with.
-   The diagram must be a picture, not a description of one.
-4. Any format is allowed, as long as the diagram itself is committed, or linked view-only, and the surrounding text says what it must show.
-   Describe the external actors in prose next to the diagram, and do not duplicate the diagram in text.
-5. Do not draw a use case diagram here, and do not draw components, containers, or an internal structure.
-   The context diagram is the one that stays true as the product changes.
-6. Every actor in the diagram must survive your boundary.
-   If an actor has no reason to exchange anything with the product, it is not on the diagram.
 
-**The boundary is what makes the context diagram falsifiable.**
-Without it, a diagram can be judged only on whether it looks reasonable, and "reasonable" is not a test.
-With it, a reviewer can point at an actor and ask which of your boundary items excludes them.
-A boundary nobody can disagree with is a boundary that is not written down.
+## Boundary
+
+**Since: W2**
+
+The **boundary** of a product is the line between what the product is responsible for and what its environment does: the people, the organisations, and the other systems around it.
+The [system context diagram](#system-context) draws that line, with the product inside and the actors and external systems outside.
+The boundary list writes down the parts of the line somebody could argue with: the jobs a user, the customer, or a competitor could expect of the product that it will not do, and who does each of them instead.
+The goal and the stories already say what is inside, so the list states only what is outside.
+
+The list and the diagram are two views of one decision, and they have to agree.
+That agreement is what makes the scope checkable:
+
+- The customer can disagree with the scope item by item, instead of with a general impression.
+- A reviewer can check the context diagram against the list, per [System Context](#system-context).
+- A reviewer can check the stories and their priorities against the list, per [MoSCoW Prioritization](#moscow-prioritization).
+- A story writer can tell a fact about the problem from a design choice: a specific that sits outside the boundary, such as the calendar a user already works with, belongs to the problem.
+
+**Required**
+
+1. State the boundary as a list of things the product will not do, one item each.
+   An item names a job somebody could expect the product to do, not a quality such as "will not be slow".
+2. Each item says who handles that job instead:
+
+   - An external system or an external actor, which then appears on the context diagram.
+   - The user, by hand.
+   - Nobody, when the need is deliberately left unserved.
+
+3. Each item says why it is outside: the [constraint](#constraints) that forces it, named; the customer decision that settled it, linked to the meeting report's `## Decisions`; or the team's own reasoning.
+4. An item is cited by its "will not" text, because boundary items are not an identifier family.
+   A customer decision that moves an item in or out of the boundary is a row in the meeting report's `## Decisions`, per [Meeting Report](artifact-requirements.md#meeting-report), whose `Changes` names the item.
 
 **Recommended**
 
-- Check the diagram against the `Won't Have` items in your stories, per [MoSCoW Prioritization](#moscow-prioritization).
+- Include at least one item the customer might want.
+  A boundary that excludes nothing anybody wanted has decided nothing.
+- Look for items in three places: what the alternatives you did not follow do, the jobs the external systems already do, and every "no" the customer said at the kickoff.
+
+**Example**
+
+| The product will not                    | Handled by    | Why                                                           |
+| --------------------------------------- | ------------- | ------------------------------------------------------------- |
+| Host the video call                     | Video service | The single-term course constraint: video stays an integration |
+| Schedule more than one expert at a time | Nobody        | Customer decision at the kickoff: the experts work alone      |
+| Sell recurring subscriptions or bundles | Nobody        | Team reasoning: no user we met pays for sessions in advance   |
+
+## System Context
+
+**Since: W2**
+
+The system context diagram is the picture of the [boundary](#boundary): the product as one box, and everything it exchanges data with around it.
+
+**Required**
+
+1. Draw a **system context diagram** showing the product, the external actors, and the external systems it exchanges data with.
+   The diagram must be a picture, not a description of one.
+2. Any format is allowed, as long as the diagram itself is committed, or linked view-only, and the surrounding text says what it must show.
+   Describe the external actors in prose next to the diagram, and do not duplicate the diagram in text.
+3. Do not draw a use case diagram here, and do not draw components, containers, or an internal structure.
+   The context diagram is the one that stays true as the product changes.
+4. The diagram agrees with the boundary list:
+
+   - Every external system or actor that a boundary item says handles a job appears on the diagram.
+   - Everything on the diagram exchanges something with the product.
+     Nothing on it does a job the product claims for itself, and nothing on it does a job the boundary leaves to nobody.
+
+**Recommended**
+
+- Draw the boundary itself, as a frame or a box around the product, so the line the list describes is visible.
 - Keep the diagram in the same file as the vision, and keep that file the only place a diagram is committed, so there is one version.
 
 ## User Stories
@@ -431,9 +483,10 @@ Every priority is relative to the product you intend to finish in this course.
 4. A `Won't Have` story carries the `moscow:won't` label and is closed as not planned, with a comment naming the reason.
    A story you drop later changes its label to `moscow:won't` and closes the same way.
    It keeps its identifier and its statement in the issue; the closing comment and the close date are the record.
-5. The priorities do not contradict the [boundary](#stakeholders-boundary-and-context).
-   A `Won't Have` reason that rests on the boundary names the boundary item, and no story you intend to build is something the boundary excludes.
-   A boundary item does not need a matching story.
+5. The priorities do not contradict the [boundary](#boundary).
+   No story you intend to build is something the boundary excludes.
+   A `Won't Have` reason that rests on the boundary quotes the boundary item.
+   The two are independent otherwise: a boundary item is a decision about the whole product and needs no matching story, and a `Won't Have` story is one written need that you excluded and need not appear in the boundary.
 6. A priority that changes is recorded where the change was made.
    The story issue gets a dated comment naming the old label, the new label, and the reason, and its priority reason is updated.
    A change the customer decided is a row in the meeting report's `## Decisions`, per [Meeting Report](artifact-requirements.md#meeting-report), whose `Changes` names the `US-nn` and the old and new labels.

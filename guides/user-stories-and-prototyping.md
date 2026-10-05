@@ -33,15 +33,33 @@ reports/week-02/prototypes.md  what you showed, what they said, what changed
 Start with the goal, in one sentence: what must be true for this product to have worked.
 Trace it to the `VP-nn` it supports, so a reader can check that the goal is the one your Week 1 research actually argued for.
 
-Then write the boundary, which is the list of things the product will not do.
-This is the step people skip, and the step that pays for itself later: the boundary is what makes the context diagram checkable, and it is what you check your `Won't Have` stories against.
+Then write the boundary.
+The boundary is the line between what your product does and what the people and systems around it do, and every product has one whether or not it is written down.
+Writing it down means listing the jobs somebody could reasonably expect of your product that it will not do, and saying who does each of them instead.
+It is what the context diagram is checked against, and what you check your stories and priorities against.
 
-Write the boundary as a list, not a paragraph.
-A paragraph cannot be disagreed with item by item, and a boundary nobody can disagree with is a boundary that is not written down.
+<!-- TODO "items"? -->
+
+To find the items, look in three places:
+
+- **The alternatives you did not follow.**
+  What does the closest alternative do that you decided not to?
+- **The external systems.**
+  Every system your product talks to already does some job, such as hosting the call or sending the email; that job is outside your product.
+- **The kickoff.**
+  Every "no" or "we already have that" the customer said is a candidate item.
+
+For each item, say who handles the job: an external system, the user by hand, or nobody.
+"Nobody" is a legitimate answer, and it is the one the customer is most likely to argue with, which is why it is worth writing down.
+Then say why, naming the constraint or the decision that put it outside.
+
+Write the boundary as a list or a table, not a paragraph.
+A paragraph cannot be disagreed with item by item.
 
 Then draw the context diagram, with the product, the external actors, and the external systems it exchanges data with.
+The diagram is the same boundary drawn as a picture: every system your list says handles a job is on it, and nothing on it does a job your list leaves to nobody.
 The format is your choice; the diagram has to be a picture that a reader can look at, and the text beside it has to say what the diagram must show.
-See [Stakeholders, Boundary, And Context](../requirements/process-requirements.md#stakeholders-boundary-and-context).
+See [Stakeholders](../requirements/process-requirements.md#stakeholders), [Boundary](../requirements/process-requirements.md#boundary), and [System Context](../requirements/process-requirements.md#system-context).
 
 ## Step 2: Turn Each Gap Into Stories
 
@@ -91,8 +109,8 @@ If the coach later moves to another calendar, the criterion changes and the need
 A detail that holds for the whole product is a constraint in the vision rather than a criterion repeated in every story.
 
 A useful cross-check is the context diagram.
-A specific that sits outside the boundary, such as an external system the user already works with, is usually a fact about the problem.
-A specific that sits inside the boundary is usually your design.
+A specific that sits outside the boundary, on the diagram rather than in the product, such as an external system the user already works with, is usually a fact about the problem.
+A specific that sits inside the product is usually your design.
 
 Expect a story to get more specific as it gets closer to being built, because that is when the customer settles the details.
 A detail the customer settles is a story change, and it is recorded like any other; see [Validating With The Customer](validating-with-the-customer.md).

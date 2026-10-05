@@ -621,7 +621,7 @@ It is created once, in its final place, and then stays current.
      The `VP-nn` sections live in `docs/research/value-proposition.md`.
    - The **stakeholders**
    - The **constraints**, each marked as customer-given, team-given, environmental, or derived, with what it costs.
-   - The **boundary**, the list of what the product will not do.
+   - The **boundary**: what the product will not do, who handles each of those jobs instead, and why, per [Boundary](process-requirements.md#boundary).
    - A **system context diagram**, committed here or linked view-only from here, with the external actors described in prose beside it.
    - Links to the [user stories](#user-stories) and to the current week's report.
 
@@ -664,11 +664,11 @@ An independent expert can send one link where a client books a time, pays, and r
 
 ## Boundary
 
-The product will not:
-
-- Replace the video call service.
-- Schedule more than one expert at a time.
-- Sell recurring subscriptions or bundles.
+| The product will not                    | Handled by    | Why                                                           |
+| --------------------------------------- | ------------- | ------------------------------------------------------------- |
+| Host the video call                     | Video service | The single-term course constraint: video stays an integration |
+| Schedule more than one expert at a time | Nobody        | Customer decision at the kickoff: the experts work alone      |
+| Sell recurring subscriptions or bundles | Nobody        | Team reasoning: no user we met pays for sessions in advance   |
 
 ## Context
 
@@ -676,7 +676,7 @@ The product will not:
 
 The independent experts and their clients are the actors.
 The external systems are the calendar, the payment provider, and the video service.
-No actor appears that the boundary excludes.
+The video service is on the diagram because the boundary hands it the call, and nothing on the diagram does a job the boundary leaves to nobody.
 
 ## Where The Detail Lives
 
@@ -774,7 +774,7 @@ As a coach, I want to sell a bundle of ten sessions, so that a returning client 
 
 ## Priority reason
 
-Won't Have: the boundary item "no recurring billing" excludes it, and no user we met has asked to pay for sessions in advance.
+Won't Have: the boundary item "Sell recurring subscriptions or bundles" excludes it, and no user we met has asked to pay for sessions in advance.
 
 Closing comment: Not planned, for the priority reason above.
 ```

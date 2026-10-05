@@ -78,12 +78,14 @@ Follow [Product Vision](../requirements/artifact-requirements.md#product-vision)
    An assumption is not a constraint; assumptions live in your Week 1 assumptions table.
    See [Constraints](../requirements/process-requirements.md#constraints).
 3. Name the **stakeholders**: who uses the product, who operates it, who is affected by it without using it.
-4. Write the **boundary**: the list of things the product will not do.
-   Make it a list, not a paragraph, because a list is something a reader can argue with item by item.
+   See [Stakeholders](../requirements/process-requirements.md#stakeholders).
+4. Write the **boundary**: at least 3 things the product will not do, each saying who handles that job instead and why.
+   Make it a list or a table, not a paragraph, because a list is something a reader can argue with item by item.
+   See [Boundary](../requirements/process-requirements.md#boundary).
 5. Draw a **system context diagram** showing the product, the external actors, and the external systems it exchanges data with.
    Any format is allowed, as long as the diagram is committed or linked view-only and the text beside it describes the external actors.
    Do not draw containers or components.
-   See [Stakeholders, Boundary, And Context](../requirements/process-requirements.md#stakeholders-boundary-and-context).
+   See [System Context](../requirements/process-requirements.md#system-context).
 6. Link to the issue list filtered by the `user-story` label and to your current week report.
 
 ## Part 2: Write And Track The User Stories As Issues
@@ -311,7 +313,7 @@ See [Permalinks And Snapshots](../requirements/repository-requirements.md#permal
 
 - [ ] `docs/product-vision.md` with the goal, traced to a `VP-nn`.
 - [ ] Constraints table, each marked customer-given, team-given, environmental, or derived, each with what it costs.
-- [ ] Stakeholders named, and the boundary written as a list of things the product will not do.
+- [ ] Stakeholders named, and at least 3 boundary items, each with who handles the job instead and why.
 - [ ] System context diagram committed or linked view-only, with the actors described in prose.
 - [ ] No use case, container, or component diagrams.
 - [ ] One Issue Form at `.github/ISSUE_TEMPLATE/user-story.yml`, blank issues disabled, and **8 or more** story issues with **5 or more** not `Won't Have`, `US-nn` IDs never reused.

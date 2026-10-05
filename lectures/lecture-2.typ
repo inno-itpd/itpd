@@ -216,7 +216,7 @@
   - The *goal*: what the product must achieve
   - The *constraints*: what you cannot change, and what each one costs
   - The *stakeholders*: who uses it, who operates it, who is affected
-  - The *boundary*: what it will not do
+  - The *boundary*: what it will not do, and who does it instead
   - A *system context diagram*: your system in the environment
 
   The goal traces to a `VP-nn`.
@@ -238,15 +238,21 @@
 ]
 
 #slide("The boundary")[
-  #term[Boundary] what your product will *not* do.
+  #term[Boundary] the line between what your product does and what the people and systems around it do.
 
-  It makes the context diagram checkable.
+  The context diagram *draws* the line.
+  The vision *writes down* the parts of it someone could argue with:
+  what the product will not do, who does it instead, and why.
 
-  With it, a reviewer can point at an actor and ask which of your exclusions
-  rules them out.
-
-  Without it, a diagram can only be judged as looking reasonable, and
-  "reasonable" is not a test.
+  #set text(size: 12pt)
+  #table(
+    columns: 3,
+    stroke: 0.5pt + luma(70%),
+    inset: 5pt,
+    [*The product will not*], [*Handled by*], [*Why*],
+    [Host the video call], [Video service], [Single-term course: video stays an integration],
+    [Schedule several experts at once], [Nobody], [Customer decision: the experts work alone],
+  )
 ]
 
 #slide("The context diagram")[
@@ -259,9 +265,9 @@
   It stops there.
   No containers, no components, and no internal structure; that is for later weeks.
 
-  Every actor on the diagram must survive your boundary.
-  If an actor has no reason to exchange anything with the product, it is not on
-  the diagram.
+  The diagram and the boundary must agree:
+  - Whatever the boundary says handles a job is on the diagram.
+  - Nothing on the diagram does a job the boundary leaves to nobody.
 ]
 
 #slide("A user story")[
@@ -311,7 +317,7 @@
   The customer says the coach uses Google Calendar, so an *acceptance criterion* names it.
   The need stays the same if the coach later switches calendars.
 
-  #note[Google Calendar sits outside the boundary on the context diagram: a fact about the problem, not your design. Stories get more specific as they get closer to being built.]
+  #note[Google Calendar is on the context diagram, outside the product: a fact about the problem, not your design. Stories get more specific as they get closer to being built.]
 ]
 
 #slide("Acceptance criteria")[
@@ -344,7 +350,7 @@
 
   Each label should be justified and account for constraints.
 
-  `Won't Have` things outline the boundary.
+  A `Won't Have` reason may cite the boundary; nothing you build contradicts it.
 ]
 
 #quiz[
