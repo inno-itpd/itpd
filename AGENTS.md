@@ -105,6 +105,17 @@ It keeps its own rules, its build, and its gate in `lectures/AGENTS.md`; this fi
    If `course/rules.md` and a requirements file disagree, fix `course/rules.md`.
 4. Normative text uses `Required` / `Recommended` / `Example` labels so an example is never mistaken for a rule.
 
+Inside `requirements/`, every rule has one owner, and every other mention is a link without the rule's numbers or lists.
+
+| File                         | Owns                                                                                                                                           | Links, rather than restates                       |
+| ---------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------- |
+| `process-requirements.md`    | What the work must say and why: counts, quality bars, priority meanings, identifier families, traceability                                     | Paths, sections, fields, labels, and close states |
+| `artifact-requirements.md`   | Where an artifact lives, its sections, fields, and columns, who may see it, how it records a change, and the one full example of each artifact | What the content of a section must say            |
+| `repository-requirements.md` | Platform configuration and workflow: the files under `.github/`, labels, branches, pull requests, link checking, and CI                        | What a story or an artifact must say              |
+| `course/rules.md`            | The contract summary and the router                                                                                                            | Any number or list that a requirement owns        |
+
+A part of an artifact may keep a small example beside the process rule it illustrates, such as the boundary table, even when the artifact's full example contains it.
+
 ## Conventions
 
 - **Filenames** are kebab-case: `assignment-1.md`, `artifact-requirements.md`.

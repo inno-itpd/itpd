@@ -15,25 +15,26 @@ Where it says "see", the linked file is the detailed version, and it wins if the
    The report is an index, not a second copy.
 4. Anything that will still be referenced later lives in **`docs/`**, in its final place, from the week you create it.
    Anything that is only that week's evidence lives in **`reports/week-NN/`**.
-5. Recordings, university emails, names, credentials, and usability test participant data are **private** and go in the Moodle PDF only.
+5. Recordings, university emails, real names, and usability test participant data are **private** and go in the Moodle PDF only.
+   Credentials are never committed, and go in the Moodle PDF only when a week needs them.
 6. The course is public and MIT-licensed because the customer is your instructor.
    There is no consent step.
 
 ## Public And Private
 
-| Artifact                                                     | Where it goes                                    |
-| ------------------------------------------------------------ | ------------------------------------------------ |
-| Weekly report, research, maintained documentation, changelog | Public repository                                |
-| Sanitized meeting report                                     | Public repository                                |
-| Sanitized meeting transcript or notes                        | Public repository                                |
-| AI usage report                                              | Public repository                                |
-| Research board, prototype, diagram tool                      | Public, shared view-only, linked from the report |
-| Meeting recording and its link                               | **Private.** Moodle only                         |
-| A meeting transcript the customer would not publish          | **Private.** Moodle only                         |
-| University email addresses                                   | **Private.** Moodle only                         |
-| Usability test participant data, recordings, consent         | **Private.** Moodle only                         |
-| Passwords, tokens, API keys, `.env` files                    | **Nowhere.** Never commit them at all            |
-| Anything the customer asks you to keep private               | **Private.** Moodle only                         |
+| Artifact                                                     | Where it goes                                        |
+| ------------------------------------------------------------ | ---------------------------------------------------- |
+| Weekly report, research, maintained documentation, changelog | Public repository                                    |
+| Sanitized meeting report                                     | Public repository                                    |
+| Sanitized meeting transcript or notes                        | Public repository                                    |
+| AI usage report                                              | Public repository                                    |
+| Research board, prototype, diagram tool                      | Public, shared view-only, linked from the report     |
+| Meeting recording and its link                               | **Private.** Moodle only                             |
+| A meeting transcript the customer would not publish          | **Private.** Moodle only                             |
+| University email addresses                                   | **Private.** Moodle only                             |
+| Usability test participant data, recordings, consent         | **Private.** Moodle only                             |
+| Passwords, tokens, API keys, `.env` files                    | **Never commit.** Moodle only when a week needs them |
+| Anything the customer asks you to keep private               | **Private.** Moodle only                             |
 
 Full detail, including the sensitivity list, is in [Artifact Requirements](../requirements/artifact-requirements.md#sensitive-information-reference).
 
@@ -48,7 +49,7 @@ Do not commit:
 - Secrets of any kind.
   Use a sanitized `.env.example` instead.
 
-Screenshots belong on a board, not in the repository, unless they are evidence for that week.
+Screenshots go on a view-only board, which is recommended, or in the repository when they are that week's evidence.
 See [Artifact Requirements](../requirements/artifact-requirements.md#screenshot-evidence).
 
 ## Identities
@@ -66,8 +67,7 @@ The only requirement is disclosure: each week you write `reports/week-NN/ai-usag
 If you used nothing, one line saying so is enough.
 
 The test is simple: could a reader tell which parts are yours?
-If generated text is submitted unchecked, or filler is passed off as analysis, the week's grade is reduced.
-A template sentence is one with no product name, no `ALT-nn`, and no date in it.
+Unchecked generated text and filler reduce the week's grade; see [Research Honesty Rules](../requirements/process-requirements.md#research-honesty-rules).
 
 ## Deadlines And Submission
 
@@ -78,17 +78,12 @@ A template sentence is one with no product name, no `ALT-nn`, and no date in it.
   The **hard deadline** is on **Friday at 23:59**.
 
   There's no penalty when you submit between the soft deadline and the hard deadline.
-
-  The penalty increases 10% every day after the hard deadline until it reaches 100%.
-  If you submit on Saturday, the penalty is 10% of the assignment grade.
-  If you submit on Sunday, the penalty is 20% and so on.
+  The penalty after the hard deadline is in [the syllabus](syllabus.md#late-submission-policy).
 
 - One submission per team.
   Every member's work is assessed through the team submission, and through the individual reflection at the end of the course.
 - The submission is a **PDF in Moodle** and a **repository snapshot (ZIP)**.
   The PDF points at your repository.
-- Work handed in after the hard deadline loses 10% of that week's grade per day, and receives nothing after seven days.
-  See [the syllabus](syllabus.md#late-submission-policy) for the full policy.
 
 The syllabus also covers [attendance](syllabus.md#attendance-policy) and the [final exam](syllabus.md#week-11-dec-4--dec-10-final-exam-group-presentations-of-the-projects).
 
@@ -101,13 +96,13 @@ Verify every link before you submit, and if a link needs a login you do not cont
 
 ## Where The Rules Live
 
-| File                                                                  | What it defines                                                                                           |
-| --------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
-| [Artifact Requirements](../requirements/artifact-requirements.md)     | What an artifact is, where it lives, who may see it, and the structure of each recurring artifact         |
-| [Process Requirements](../requirements/process-requirements.md)       | What counts as good research, what a gap is, and how your Week 1 identifiers are used later               |
-| [Repository Requirements](../requirements/repository-requirements.md) | GitHub, pull requests, branch protection, link checking, permalinks, snapshots, changelog, CI             |
-| [Guides](../guides/)                                                  | How to actually do the work: finding alternatives, comparing, finding gaps, writing the value proposition |
-| [Assignments](../assignments/)                                        | What this particular week requires, and what you hand in                                                  |
+| File                                                                  | What it defines                                                                                                                                 |
+| --------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| [Artifact Requirements](../requirements/artifact-requirements.md)     | What an artifact is, where it lives, who may see it, and the structure of each recurring artifact                                               |
+| [Process Requirements](../requirements/process-requirements.md)       | What the product work must say: research, gaps, value propositions, vision, stories, priorities, validation, customer meetings, and identifiers |
+| [Repository Requirements](../requirements/repository-requirements.md) | GitHub, pull requests, branch protection, link checking, permalinks, snapshots, changelog, CI                                                   |
+| [Guides](../guides/)                                                  | How to actually do the work: alternatives, comparison and synthesis, the kickoff, stories and prototyping, and validating with the customer     |
+| [Assignments](../assignments/)                                        | What this particular week requires, and what you hand in                                                                                        |
 
 Assignments add the paths and the evidence for their week.
 They do not change the rules above.

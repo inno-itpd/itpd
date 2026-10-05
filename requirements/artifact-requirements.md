@@ -12,9 +12,6 @@ It is the short version of this file and states what is expected of you as a stu
 - [Artifact Concepts And Terminology](#artifact-concepts-and-terminology)
 - [Where Artifacts Live In The Repository](#where-artifacts-live-in-the-repository)
 - [Visibility Model](#visibility-model)
-  - [Public Artifacts](#public-artifacts)
-  - [Private-Only Artifacts](#private-only-artifacts)
-  - [Never Commit](#never-commit)
   - [Sensitive Information Reference](#sensitive-information-reference)
 - [Weekly Public Report](#weekly-public-report)
 - [Customer Meeting Artifacts](#customer-meeting-artifacts)
@@ -50,7 +47,7 @@ It is the short version of this file and states what is expected of you as a stu
    The change is open-ended: a story or acceptance criterion, a constraint, an assumption, a maintained document, the implementation or the scaffold, or a later requirement.
    In a [meeting report](#meeting-report), it is a conclusion the meeting reached.
    A decision the team takes outside a meeting is recorded in the [weekly public report](#weekly-public-report) of the week it was made.
-   A decision is cited by path and `#decisions` anchor, per [Identifier Rules](process-requirements.md#identifier-rules).
+   How a decision is cited is in [Identifier Rules](process-requirements.md#identifier-rules).
 10. An **action point** is a follow-up that came out of a meeting, with a named owner, which is a GitHub username, and a week it falls due in.
 
 ## Where Artifacts Live In The Repository
@@ -89,61 +86,36 @@ It is the short version of this file and states what is expected of you as a stu
 3. Public artifacts must be viewable by instructors and your customer but must not be publicly editable.
 4. Private artifacts are shared only through the Moodle submission, with the people who need them.
 
-### Public Artifacts
-
-**Since: W1**
-
-- The root `README.md`, `LICENSE`, and the maintained documentation in `docs/`.
-- The weekly public report and every supporting artifact it links.
-- Meeting reports, transcripts, and notes, after sanitization.
-- The AI usage report.
-- External boards, shared view-only.
-
-### Private-Only Artifacts
-
-**Since: W1**
-
-- Recordings of meetings with the customer, and links to them.
-- A meeting transcript the customer refused to let you publish.
-- University email addresses of team members.
-- Usability test participant data, recordings, and consent evidence.
-- Credentials, tokens, and any other authentication material.
-- Exact timecodes into private recordings.
-- Anything the customer asks you to keep private.
-
-Never commit any of these, not even "temporarily" and not even in a file you later delete.
-Once it is in the git history it is public, and deleting the file does not remove it.
-
-### Never Commit
-
-**Since: W1**
-
-- Passwords, API keys, tokens, private keys, `.env` files, and any other authentication material.
-  Use a sanitized `.env.example` instead.
-- Large files: recordings, video, datasets, model weights, archives.
-  Screenshots and diagrams are fine if they are reasonably sized.
-- Real personal data of other people.
-  Use GitHub usernames, roles, or pseudonyms such as `customer`.
-- Customer-owned or third-party code, data, or media that you are not allowed to redistribute.
-  See [Repository Requirements](repository-requirements.md#licensing).
-- Your own local tooling folders, editor state, and build caches.
-- Files copied wholesale from another repository.
-
 ### Sensitive Information Reference
 
 **Since: W1**
 
-Treat the following as sensitive and keep it out of public artifacts unless it is genuinely required:
+Every item below goes in exactly one place.
 
-- Real names, email addresses, and phone numbers.
-- University email addresses.
-- Customer-identifying and instructor-identifying details that are not needed for grading.
-- Confidential business or research information.
-- Recording links and exact timecodes into private recordings.
-- Usability test participant identity, consent, and results.
+| Item                                                                                                                                        | Where it goes                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| The root `README.md`, `LICENSE`, and the maintained documentation in `docs/`                                                                | Public repository                                                                                                                  |
+| The weekly public report and every supporting artifact it links                                                                             | Public repository                                                                                                                  |
+| Meeting reports, scripts, transcripts, and notes                                                                                            | Public repository, after sanitization                                                                                              |
+| The AI usage report                                                                                                                         | Public repository                                                                                                                  |
+| External boards, prototypes, and diagram tools                                                                                              | Public, shared view-only, linked from the report                                                                                   |
+| Screenshots and diagrams of reasonable size                                                                                                 | Public, per [Screenshot Evidence](#screenshot-evidence)                                                                            |
+| Recordings of meetings with the customer, their links, and exact timecodes into them                                                        | Moodle only                                                                                                                        |
+| A meeting transcript the customer refused to let you publish                                                                                | Moodle only                                                                                                                        |
+| Real names, email addresses including university ones, phone numbers, and other personal data of team members, the customer, or anyone else | Moodle only                                                                                                                        |
+| Usability test participant identity, data, recordings, consent, and results                                                                 | Moodle only                                                                                                                        |
+| Confidential business or research information, and anything the customer asks you to keep private                                           | Moodle only                                                                                                                        |
+| Credentials, tokens, API keys, private keys, and `.env` files                                                                               | Never committed; Moodle only when the week needs them. Use a sanitized `.env.example` in the repository                            |
+| Large files: recordings, video, datasets, model weights, archives                                                                           | Never committed; see [Configuration And Sensitive Information](repository-requirements.md#configuration-and-sensitive-information) |
+| Customer-owned or third-party material you may not redistribute                                                                             | Never committed; see [Licensing](repository-requirements.md#licensing)                                                             |
+| Files copied wholesale from another repository                                                                                              | Never committed                                                                                                                    |
+| Local tooling folders, editor state, and build caches                                                                                       | Never committed                                                                                                                    |
 
-The team member identity mapping is the deliberate exception.
-Your public repository identifies people by GitHub username.
+Never commit a Moodle-only item, not even "temporarily" and not even in a file you later delete.
+Once it is in the git history it is public, and deleting the file does not remove it.
+
+The repository identifies people by GitHub username, and the customer as `Customer`.
+If the customer has a GitHub username and agrees to it being public, use the username instead.
 The mapping from username to real name and university email goes in the Moodle PDF, not in the repository.
 
 ## Weekly Public Report
@@ -283,8 +255,7 @@ A recording is a separate, private-only artifact.
    The same rule applies to [deviations](#declaring-deviations).
 6. The sections, and what belongs in them:
 
-   Use `Customer` for your instructor rather than a real name.
-   If the customer has a GitHub username and agrees to it being public, use the username instead.
+   Name people as [Sensitive Information Reference](#sensitive-information-reference) says.
 
    | Section             | What belongs in it                                                                                                                                                                                                                                  |
    | ------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -300,6 +271,8 @@ A recording is a separate, private-only artifact.
    A story change names the `US-nn`, and the `AC-nn` when a specific criterion changed.
    The same applies to a constraint, an assumption, a maintained document, the implementation or the scaffold, and a later requirement.
    Write `TBD` when the decision changes something whose artifact does not exist yet, and `None` with the reason when the decision confirmed the current direction and changed nothing.
+   `TBD` and `None` are statuses, not identifiers.
+   A `TBD` decision is finished when the artifact that carries its effect names the decision and links the report that recorded it; the report itself is not edited.
 8. `## Action points` has the columns `Action`, `Owner`, and `Due`.
    The owner is a GitHub username, and the due date falls inside a named week.
 9. `## Open questions` has the columns `Question`, `What it would change`, and `Follow-up`.
@@ -380,9 +353,7 @@ A recording is a separate, private-only artifact.
    [00:00:19] Customer: What made you choose it over the alternatives?
    ```
 
-4. Label speakers consistently.
-   Use GitHub usernames for your team.
-   Use `Customer` for your instructor rather than a real name.
+4. Label speakers consistently, as [Sensitive Information Reference](#sensitive-information-reference) says.
 5. Remove personal data and confidential information.
    Use `[inaudible]` where a word cannot be recovered and `[redacted]` where something was deliberately removed.
 6. If the customer refuses to let the transcript be published, do not commit it.
@@ -435,7 +406,7 @@ A recording is a separate, private-only artifact.
    | `## Key improvements` | Every meeting  | For each question you rewrote, the before, the after, and the principle behind the rewrite: at least two rewrites at the kickoff, one at every later meeting  |
 
 5. The `## Questions` minimum depends on the meeting.
-   At the kickoff, each of the five areas in [Meeting With The Customer](process-requirements.md#meeting-with-the-customer) has at least two questions.
+   At the kickoff, it is the per-area minimum in [Meeting With The Customer](process-requirements.md#meeting-with-the-customer).
    A later meeting derives its own areas from its target rather than from the five kickoff areas, so it carries as many questions as its target has to settle, and no per-area floor.
 6. Every question serves the target in `## Context`: an answer to it could change something the team will build, write, or ask next.
    A question no answer could change is cut, and at the kickoff it is replaced rather than kept to reach the per-area minimum.
@@ -615,24 +586,17 @@ It is created once, in its final place, and then stays current.
 **Required**
 
 1. `docs/product-vision.md` is the only file that carries the product vision.
-2. It carries:
+2. It carries these parts, and the linked rule says what each one must say:
 
-   - The **goal**, what the product must achieve, traced to the `VP-nn` it supports.
-     The `VP-nn` sections live in `docs/research/value-proposition.md`.
-   - The **stakeholders**
-   - The **constraints**, each marked as customer-given, team-given, environmental, or derived, with what it costs.
-   - The **boundary**: what the product will not do, who handles each of those jobs instead, and why, per [Boundary](process-requirements.md#boundary).
-   - A **system context diagram**, committed here or linked view-only from here, with the external actors described in prose beside it.
+   - The **goal**, per [Product Vision And Goals](process-requirements.md#product-vision-and-goals), linking each `VP-nn` section in `docs/research/value-proposition.md` rather than restating it.
+   - The **stakeholders**, per [Stakeholders](process-requirements.md#stakeholders).
+   - The **constraints**, per [Constraints](process-requirements.md#constraints).
+   - The **boundary**, per [Boundary](process-requirements.md#boundary).
+   - The **system context diagram**, per [System Context](process-requirements.md#system-context), committed here or linked view-only from here.
    - Links to the [user stories](#user-stories) and to the current week's report.
 
 3. When the product or the decisions change, update this file.
    It is maintained documentation, not a Week 2 submission, so a contradiction with the stories is a bug rather than a historical record.
-
-**Recommended**
-
-- Keep the goal to a short paragraph.
-  The stories carry the detail, and a vision that has grown into a specification will drift away from them.
-- Link to each `VP-nn` section rather than restating it.
 
 **Example**
 
@@ -693,23 +657,23 @@ Each story is a GitHub issue, and the `user-story` label identifies story issues
 
 **Required**
 
-1. Every story is a GitHub issue, opened from the [issue form](repository-requirements.md#issue-tracking).
+1. Every story is one GitHub issue, opened from the [issue form](repository-requirements.md#issue-tracking).
    It carries:
 
    - The title `US-nn: <story title>`.
-   - The story statement, its `Traces to` list, and any notes, in the fields the form provides.
-     The list carries exactly one `VP-nn`, the value proposition the story supports, and, optionally, its origins: the `GAP-nn` it closes, a customer or team decision, or an action point it carries out.
-   - The acceptance criteria, at least two on a story you intend to build, each carrying a stable `AC-nn` at the start of the criterion.
-   - One `moscow:*` label: `moscow:must`, `moscow:should`, `moscow:could`, or `moscow:won't`.
-   - The priority reason, in the form's `Priority reason` field, per [MoSCoW Prioritization](process-requirements.md#moscow-prioritization).
+   - The story statement and its `Traces to` list, per [User Stories](process-requirements.md#user-stories).
+   - The acceptance criteria, each starting with its `AC-nn`, per [Acceptance Criteria](process-requirements.md#acceptance-criteria).
+   - The priority reason, in the form's `Priority reason` field, and one `moscow:*` label, per [MoSCoW Prioritization](process-requirements.md#moscow-prioritization).
    - The `user-story` label, applied by the form.
       <!-- Alternatively, allow issue type -->
+   - Optionally, notes and a checklist of the remaining work, so a contributor can work without leaving the issue.
 
-2. A story is open until delivered and then closed as completed, or it is a `Won't Have` story closed as not planned, per [User Stories](process-requirements.md#user-stories) and [MoSCoW Prioritization](process-requirements.md#moscow-prioritization).
+2. A story you intend to build stays open until it is delivered, then closes as completed.
+   A `Won't Have` story, including one dropped after it was written, carries the `moscow:won't` label and is closed as not planned, with a comment naming the reason.
+   A closed story stays in the list; the closing comment and the close date are its record.
 3. The issue is the record of change.
    A change that follows a customer meeting adds a dated comment saying what changed, naming any `AC-nn` that changed, and linking the meeting report.
-   Do not rewrite a story to hide a change; the edit history and the comment are the record.
-   A criterion that is removed retires its `AC-nn`, and the ID is never reused.
+   Do not delete an issue or rewrite its body to hide a change; the edit history and the comment are the record.
 4. The **registry of identifiers** is the issue list filtered by the `user-story` label.
    It shows open and closed issues, so a `Won't Have` story keeps its `US-nn` and stays findable after it closes.
 5. Do not keep a second list of stories in the repository.
@@ -717,8 +681,6 @@ Each story is a GitHub issue, and the `user-story` label identifies story issues
 
 **Recommended**
 
-- Use `Given`/`When`/`Then` (Gherkin) for the criteria if it fits the product, and any other notation if it does not.
-  The rules are that somebody else can run the check and get the same answer.
 - Keep each story short enough to read in one sitting.
 
 **Example**
@@ -751,7 +713,7 @@ Must Have: without it, an unpaid booking still holds a slot, which is the GAP-01
 ## Notes
 
 The customer confirmed on 2026-10-06 that payment happens before confirmation, which retired the pay-later
-assumption in [the assumptions table](../../research/value-proposition.md).
+assumption in [the assumptions table](https://github.com/<organization>/<repo>/blob/main/docs/research/value-proposition.md#assumptions).
 
 Comment, 2026-10-06: `AC-02` added after the validation meeting.
 The customer will not accept a hold that confirms without payment, and the first version of the story only had `AC-01`, which said the slot is held.
@@ -783,8 +745,8 @@ Closing comment: Not planned, for the priority reason above.
 
 **Since: W2**
 
-A prototype is disposable.
-It exists to find out whether something is wrong, and it is not the product.
+This section says where a prototype is recorded and in what form.
+What a prototype is for, and what it must change, is in [Validation](process-requirements.md#validation).
 
 **Required**
 
@@ -808,7 +770,6 @@ It exists to find out whether something is wrong, and it is not the product.
 
 **Recommended**
 
-- Prototype the riskiest assumption, and stop as soon as you have a reaction.
 - Say which question the prototype answers, in one line, before you show it.
 
 ## Private Submission Wrapper

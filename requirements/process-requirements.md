@@ -243,21 +243,12 @@ It turns the Week 1 research into something you can be held to.
 **Required**
 
 1. The vision states the **goal** of the product: what it must achieve.
-2. The goal traces to at least one `VP-nn` from your [value proposition](../guides/comparison-and-synthesis.md#step-5-write-the-value-proposition).
+2. The goal traces to at least one `VP-nn` from your [value proposition](#value-proposition-and-differentiation).
    A goal that supports no value proposition is a feature you would like, which is a different thing.
-3. The vision carries the [constraints](#constraints), the [stakeholders](#stakeholders), the [boundary](#boundary), the [system context diagram](#system-context), and a link to the [user stories](#user-stories).
+3. The vision also carries the [constraints](#constraints), the [stakeholders](#stakeholders), the [boundary](#boundary), and the [system context diagram](#system-context).
+   Where it lives, its sections, and a full example are in [Product Vision](artifact-requirements.md#product-vision).
 4. Keep it short.
    A vision that has grown into a specification has become the stories, and the two then drift apart.
-
-**Example**
-
-```markdown
-## Goal
-
-An independent expert can send one link where a client books a time, pays, and receives the meeting link and materials, without assembling the same session from three tools.
-
-**Supports:** VP-01.
-```
 
 ## Constraints
 
@@ -400,42 +391,18 @@ Each story carries a priority, per [MoSCoW Prioritization](#moscow-prioritizatio
    It contains exactly one `VP-nn`, the value proposition the story supports, and, optionally, the story's origins: the `GAP-nn` it closes, a customer decision in a meeting report, a team decision in the weekly public report, or an action point it carries out.
    The `VP-nn` is how a story traces to the product vision, so the `VP-nn` of every story except a `Won't Have` story is one the vision's [goal](#product-vision-and-goals) traces to.
    A story you intend to build that supports no such value proposition is outside the vision: add its `VP-nn` to the goal as a team decision, or make the story `Won't Have`.
-   Cite an identifier by its ID, and a decision or action point by the report path and its `#decisions` or `#action-points` anchor, with the decision sentence or action quoted, per [Identifier Rules](#identifier-rules).
+   Cite each entry as [Identifier Rules](#identifier-rules) says.
    A need that came from outside Week 1 research does not rewrite the research; only a contradiction updates it, per [Traceability Into Later Weeks](#traceability-into-later-weeks).
 5. Every story except a `Won't Have` story is small enough to build and verify in one week.
    A need larger than that is written as two or more stories.
-6. Open one issue per story, from the form in [Issue Tracking](repository-requirements.md#issue-tracking).
-   The issue is the story and the source of truth; the form carries the statement, the acceptance criteria, each with its `AC-nn`, the `Traces to` list, the priority reason, and any notes.
-   The issue may carry a checklist of the remaining work, so a contributor can work without leaving it.
-7. A story you intend to build stays open until it is delivered, then closes as completed and stays in the list.
-   A `Won't Have` story closes as not planned, per [MoSCoW Prioritization](#moscow-prioritization).
+6. Each story is one GitHub issue.
+   Its title, its fields, its labels, when it closes, and how it records a change are in [User Stories](artifact-requirements.md#user-stories), with an example of a `Must Have` and a `Won't Have` story.
 
 **Recommended**
 
 - Keep stories small enough that one person can finish one in a few days.
 - Write the story that is least likely to be built.
   A story you never write is a decision you made without noticing.
-
-**Example**
-
-```markdown
-# US-01: Pay at booking
-
-As a coach who sells sessions online, I want a client to pay when they book,
-so that an unpaid slot does not block a paying one for the rest of the week.
-
-## Traces to
-
-- `VP-01`
-- `GAP-01`
-
-## Acceptance criteria
-
-1. AC-01: Given a paid meeting type with one free slot, when a client books that slot, then the slot
-   is held while the client pays and is released back to the calendar when the hold expires.
-2. AC-02: Given a client who does not finish payment, when the hold expires, then the booking is not
-   confirmed and no meeting link is created.
-```
 
 ## Acceptance Criteria
 
@@ -480,9 +447,8 @@ Every priority is relative to the product you intend to finish in this course.
    A reason that restates the definition of the label is not a reason.
 3. Not every story you intend to build is `Must Have`: at least one of them is `Should Have` or `Could Have`.
    A list where everything is `Must Have` says nothing about what to build first.
-4. A `Won't Have` story carries the `moscow:won't` label and is closed as not planned, with a comment naming the reason.
-   A story you drop later changes its label to `moscow:won't` and closes the same way.
-   It keeps its identifier and its statement in the issue; the closing comment and the close date are the record.
+4. A story you drop after writing it becomes `Won't Have`.
+   It keeps its `US-nn` and its statement, and its issue closes as [User Stories](artifact-requirements.md#user-stories) says.
 5. The priorities do not contradict the [boundary](#boundary).
    No story you intend to build is something the boundary excludes.
    A `Won't Have` reason that rests on the boundary quotes the boundary item.
@@ -526,7 +492,7 @@ The candidate is your proposal for it, made before any product code exists, so t
    Stories that cover only part of the task are not a candidate.
 3. Name one story **inside the candidate** to drop first if you ran out of time.
    Without it, the rest of the candidate must still complete the core task; if no story can go, say why.
-4. Record the candidate in `reports/week-02/README.md` under `## Minimum Usable Product Candidate`: the core task, then the `US-nn` of each story with its issue linked, then the story to drop first.
+4. Record the candidate in the weekly public report, under the heading the assignment names: the core task, then the `US-nn` of each story with its issue linked, then the story to drop first.
 5. The candidate is a proposal, not a commitment.
    The customer's verdict on it is a row in the meeting report's `## Decisions`, per [Meeting Report](artifact-requirements.md#meeting-report): `Changes` names each `US-nn` added to or removed from the candidate, or says `None` with the reason when the customer accepted it as it is.
 
@@ -563,15 +529,13 @@ These rules apply to every meeting with the customer where you show a prototype,
 4. **Something must change as a result.**
    Record the change in all four places:
 
-   - `reports/week-NN/prototypes.md` records what you showed, which `US-nn` or `GAP-nn` it tested, any `AC-nn` it exercised, and what the customer said.
-   - The [meeting report](artifact-requirements.md#meeting-report) `## Decisions` table names what each decision changed: the `US-nn` and the `AC-nn` for a story, or the constraint, assumption, document, or scaffold for anything else.
-   - The changed artifact carries the record: a story issue gets a dated comment naming any `AC-nn` that changed and linking the meeting report, and a constraint, assumption, or document is updated in place.
-   - The weekly public report names what changed and links the meeting report's `## Decisions`; it does not copy the table.
+   - The prototype record, per [Prototypes](artifact-requirements.md#prototypes).
+   - A row in the meeting report's `## Decisions`, per [Meeting Report](artifact-requirements.md#meeting-report).
+   - The changed artifact itself: a story issue, per [User Stories](artifact-requirements.md#user-stories), or a constraint, assumption, or document updated in place.
+   - The [weekly public report](artifact-requirements.md#weekly-public-report), which links the meeting report's `## Decisions`.
 
-   A decision whose effect cannot be recorded yet says `TBD` in `Changes`; the artifact that later carries it names the decision and links the report.
-
-5. A prototype is disposable.
-   A paper sketch, a view-only design tool, and a code spike are equally acceptable, and none of them is product code.
+5. A prototype is disposable, and none of it is product code.
+   The forms it may take are in [Prototypes](artifact-requirements.md#prototypes).
 6. The prototype does not need to be beautiful, and it does not need to work.
    It needs to be good enough for the customer to react to the thing you are unsure about.
 
@@ -596,21 +560,18 @@ A prototype that validated everything proved nothing, because you chose the part
    `US-nn` for user stories and `AC-nn` for their acceptance criteria are introduced in Week 2.
    A later family is introduced only by the requirement that first uses it.
 2. An identifier, once issued, is never changed, reused, or reassigned, including when the artifact is edited later in the course.
-   `AC-nn` is scoped to its story issue: the same number may appear in another story, so a reference pairs the ID with the issue to be unambiguous.
 3. Gaps in a sequence are expected and correct.
    A removed `GAP-03` leaves a hole; it does not cause renumbering.
 4. A removed item keeps its identifier and its entry, marked as removed with a reason and the date.
-   `AC-nn` is the exception: the issue body is a living record whose edit history and change comment are the record, so a removed criterion's ID is retired rather than kept in place, and it is never reused.
 5. The identifier always appears in the heading of its own section, so `ALT-02` can be found with a search.
-   An `AC-nn` appears at the start of its criterion inside the story issue; the story issue plus the ID is what identifies it.
 6. Every reference between artifacts uses the identifier, not the title, so that renaming a title does not break the chain.
-   A criterion is referenced by its `AC-nn` together with its story issue, as described in [Acceptance Criteria](#acceptance-criteria).
-7. Decisions and action points are not identifier families.
+7. `AC-nn` is the exception to rules 4 and 5, because it lives inside a story issue rather than in a section of its own.
+   [Acceptance Criteria](#acceptance-criteria) says how it is numbered, retired, and cited.
+8. Decisions and action points are not identifier families.
    There is no `DEC-nn` and no `ACT-nn`.
    Cite a decision by path and `#decisions` anchor with its sentence quoted: a meeting decision cites its meeting report, and a decision made outside a meeting cites the weekly public report of the week it was made.
    Cite an action point the same way, with its report's `#action-points` anchor and the action quoted.
    A story's `Traces to` entry for a decision or action point uses this form.
-   `TBD` and `None` in `Changes` are statuses, not identifiers.
    A later week cites a meeting report by path and heading anchor, per [Customer Meeting Artifacts](artifact-requirements.md#customer-meeting-artifacts).
 
 ## Traceability Into Later Weeks
@@ -621,9 +582,9 @@ The research you produce in Week 1 is the evidence base for the rest of the cour
 Later weeks cite your Week 1 identifiers rather than restating your findings.
 This is what makes the course a project rather than nine separate assignments.
 
-| Later work                                          | Must cite                                                                                                           |
-| --------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
-| Week 2 product vision, user stories, and prototypes | `US-nn` and its `Traces to` list: exactly one `VP-nn` plus each origin (a `GAP-nn`, a decision, or an action point) |
+| Later work                                          | Must cite                                                                                   |
+| --------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| Week 2 product vision, user stories, and prototypes | The `VP-nn` and origins in each story's `Traces to` list, per [User Stories](#user-stories) |
 
 **Required**
 
@@ -634,7 +595,6 @@ This is what makes the course a project rather than nine separate assignments.
 3. If you drop a gap mid-course, keep it in the gap analysis marked as dropped, and say which value propositions and user stories were affected.
 4. A later need that your Week 1 research did not anticipate does not rewrite the research.
    It becomes a story that traces to the `VP-nn` it supports; update the research only when the later need contradicts it.
-5. A decision recorded with `TBD` in `Changes` is finished when the artifact that carries its effect names the decision and links the report that recorded it.
 
 ## Research Honesty Rules
 
@@ -651,6 +611,8 @@ These rules are about the honesty of your research, not about the quality of you
 4. State your confidence when the evidence is thin. "Two of the four products do this, and the other two do not document it" is a better sentence than a confident summary.
 5. No filler.
    A sentence that could be pasted into any team's report without changing anything is a sentence to delete.
+   A template sentence is one with no product name, no identifier such as `ALT-nn`, and no date in it.
+   Generated text submitted unchecked, or filler passed off as analysis, reduces the week's grade.
 6. A week where you learned that your original idea is wrong, and you can show why, is a better week than a week where nothing was tested.
 
 ## Meeting With The Customer
@@ -673,15 +635,14 @@ The Week 1 meeting is the kickoff.
 
 1. Prepare the meeting in writing first, at `reports/week-NN/meeting-script.md`, following [Meeting Script](artifact-requirements.md#meeting-script).
 2. The script covers whatever this meeting has to settle.
-   Derive those areas from the target rather than from a template, and write every question numbered, tagged open or closed, per [Meeting Script](artifact-requirements.md#meeting-script).
-   Every question serves the target, and the script's agenda says what you show and discuss in which order, per the same section.
+   Derive those areas from the target rather than from a template.
+   The script's sections, its questions, and its agenda are in [Meeting Script](artifact-requirements.md#meeting-script).
 3. Plan for 30 minutes and ask for 60 if the customer can give it.
 4. Assign roles before the meeting: a moderator who asks the questions and controls the time, a note taker who records what was said, and an observer who records what was not asked and what was not said.
    The whole team attends.
 5. Ask the [three permission questions](artifact-requirements.md#customer-meeting-artifacts) every time.
 6. Write a [meeting report](artifact-requirements.md#meeting-report), and either a [transcript](artifact-requirements.md#meeting-transcript) or [notes](artifact-requirements.md#meeting-notes), per [Customer Meeting Artifacts](artifact-requirements.md#customer-meeting-artifacts).
-7. The report is where the week's open questions live, and its `## Decisions` table names what each decision changed, per [Meeting Report](artifact-requirements.md#meeting-report).
-   A decision that confirmed the current direction is a valid row with `None` and the reason.
+7. The report is where the week's open questions and decisions live, per [Meeting Report](artifact-requirements.md#meeting-report).
    A meeting is required to change something only when it showed a prototype, per [Validation](#validation).
 8. The customer decides the scope.
    Your job in the meeting is to present a direction with its evidence and to find out where it is wrong, not to ask the customer to design the product.

@@ -268,8 +268,7 @@ Both are built from the commit you are submitting, so that what a grader sees is
    Ignore the rest.
 4. Keep large binaries, recordings, datasets, and model weights out of normal git history.
    When a file is genuinely required, use approved external storage and link to it.
-5. Never commit credentials, personal data, confidential customer material, recordings, recording links, or test credentials.
-   See [Artifact Requirements](artifact-requirements.md#sensitive-information-reference) for what counts as personal data.
+5. What may never be committed is in [Sensitive Information Reference](artifact-requirements.md#sensitive-information-reference).
 
 ## Sensitive-Data Incident Response
 
@@ -291,20 +290,16 @@ If credentials, personal data, or confidential material is committed by mistake:
 
 **Required**
 
-1. Add `.github/ISSUE_TEMPLATE/user-story.yml`, an Issue Form whose fields carry the story statement, the `Traces to` list, the priority reason, any notes, the acceptance criteria, and an optional remaining-work checklist.
-   The list is required and takes one entry per line, exactly one `VP-nn` plus optional origins, per [User Stories](process-requirements.md#user-stories).
-   The `Priority reason` field is required, per [MoSCoW Prioritization](process-requirements.md#moscow-prioritization).
-   Acceptance criteria are optional in the form, because a `Won't Have` story may carry none; the two-criteria floor is required for every other story, and each criterion carries a stable `AC-nn` inside the issue.
+1. Add `.github/ISSUE_TEMPLATE/user-story.yml`, an Issue Form with a field for each part of a story issue listed in [User Stories](artifact-requirements.md#user-stories), and the `user-story` label applied by the form.
+   The statement, the `Traces to` list, and the `Priority reason` field are required, and `Traces to` takes one entry per line.
+   The acceptance criteria field is optional, because a `Won't Have` story may carry none.
 2. Disable blank issue creation in the issue template configuration.
-3. Open one issue per story, from the form, per [User Stories](process-requirements.md#user-stories).
-   The issue is the story, and the list of stories is the issue list filtered by the `user-story` label.
-   The title is `US-nn: <story title>`.
-4. Create the labels the stories use, by any means: `user-story`, and `moscow:must`, `moscow:should`, `moscow:could`, `moscow:won't`.
+3. Create the labels the stories use, by any means: `user-story`, and `moscow:must`, `moscow:should`, `moscow:could`, `moscow:won't`.
    The form applies `user-story`; the team applies one MoSCoW label per story.
-5. Close a `Won't Have` story as not planned and a delivered story as completed, per [User Stories](process-requirements.md#user-stories) and [MoSCoW Prioritization](process-requirements.md#moscow-prioritization).
-6. Create branches from the issue where GitHub supports it, and link every pull request to its issue.
-7. Check the relevant acceptance criteria before merging, and name the `AC-nn` and its story issue in the pull request.
-8. Do not delete an issue or rewrite its body to hide a change; the issue history is part of what a reader follows.
+4. Create branches from the issue where GitHub supports it, and link every pull request to its issue.
+5. Check the relevant acceptance criteria before merging, and name the `AC-nn` and its story issue in the pull request.
+
+The process requirements say [what a story says](process-requirements.md#user-stories), and the artifact requirements say [how its issue is kept](artifact-requirements.md#user-stories).
 
 ## Tracking Tasks Inside The Repository
 
