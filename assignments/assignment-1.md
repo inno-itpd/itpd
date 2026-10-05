@@ -7,6 +7,12 @@
 
 See [Deadlines And Submission](../course/rules.md#deadlines-and-submission).
 
+> [!NOTE]
+> This assignment was revised on 5 October 2026, after the Week 1 deadline.
+> Week 1 is graded against [the version published at the deadline](https://github.com/inno-itpd/itpd/blob/fe58ba70bbd90b92ffd6942d340f1e8b35b4bbb1/assignments/assignment-1.md), so a submission that follows it did nothing wrong and nothing needs resubmitting.
+> The revision adds `docs/decisions.md` with `DEC-nn` entries and `docs/assumptions.md` with `ASM-nn` entries, drops `meeting-notes.md` in favour of the transcript, and adds a target and an `## Agenda` to the meeting script.
+> Do not rewrite your Week 1 files to match it: Assignment 2 moves your decisions and assumptions into the new files in [Part 2](assignment-2.md#part-2-move-the-week-1-decisions-into-the-decisions-log) and [Part 3](assignment-2.md#part-3-move-the-week-1-assumptions-into-the-assumptions-log).
+
 One submission per team.
 
 Week 1 is a research week.
