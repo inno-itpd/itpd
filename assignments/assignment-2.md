@@ -155,10 +155,10 @@ The rules:
 This week:
 
 1. The meeting's target is which of the prototype, the boundary, and the minimum usable product candidate are wrong.
-   Show the candidate against a list of every story with its `US-nn`, title, and MoSCoW priority, so the customer can move a story into or out of the candidate or change its priority.
+   Show the candidate against the issue list filtered by the `user-story` label, which shows every story with its `US-nn` title and `moscow:*` label, so the customer can move a story into or out of the candidate or change its priority.
    Walk through each story's acceptance criteria only if time allows, and do not re-run the kickoff.
 2. In `reports/week-02/meeting-script.md`, `## Agenda` has a part for the kickoff action points that are due, then shows the prototype, the boundary, and the minimum usable product candidate each in its own part.
-   The candidate's part shows that list of every story.
+   The candidate's part links that filtered issue list as what it shows, rather than copying the stories into the script.
 3. `reports/week-02/meeting-report.md` has one row per kickoff action point in `## Previous action points`, at least two rows in `## Decisions`, one of them the customer's verdict on the minimum usable product candidate, and at least two rows in `## Action points`, each due inside Week 3.
 4. At least one story issue carries the comment that records what the meeting changed: its statement, an `AC-nn`, or its priority.
 
@@ -214,24 +214,23 @@ This week it also carries:
 1. In the summary, what you found out you were wrong about.
 2. The coverage table, with these rows:
 
-   | Deliverable            | Artifact                                                                                                                       |
-   | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
-   | Kickoff action points  | `## Previous action points` in `reports/week-02/meeting-report.md`, and the artifact each outcome changed                      |
-   | Product vision         | `docs/product-vision.md`                                                                                                       |
-   | Assumptions            | `docs/assumptions.md`                                                                                                          |
-   | User stories           | the `US-nn` issues, filtered by the `user-story` label                                                                         |
-   | Issue forms and labels | `.github/ISSUE_TEMPLATE/user-story.yml` and `.github/ISSUE_TEMPLATE/task.yml`, `user-story`, `task`, and the `moscow:*` labels |
-   | Prototypes             | `reports/week-02/prototypes.md`                                                                                                |
-   | Meeting script         | `reports/week-02/meeting-script.md`                                                                                            |
-   | Customer validation    | `reports/week-02/meeting-report.md`, and `reports/week-02/meeting-transcript.md` or `reports/week-02/meeting-notes.md`         |
-   | Markdown check         | a link to the latest green `main` run                                                                                          |
-   | AI usage               | `reports/week-02/ai-usage.md`                                                                                                  |
+   | Deliverable            | Artifact                                                                                                                                                             |
+   | ---------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+   | Kickoff action points  | `## Previous action points` in `reports/week-02/meeting-report.md`, and the artifact each outcome changed                                                            |
+   | Product vision         | `docs/product-vision.md`                                                                                                                                             |
+   | Assumptions            | `docs/assumptions.md`                                                                                                                                                |
+   | User stories           | the `US-nn` issues, filtered by the `user-story` label                                                                                                               |
+   | Issue forms and labels | `.github/ISSUE_TEMPLATE/user-story.yml`, `.github/ISSUE_TEMPLATE/task.yml`, and `.github/ISSUE_TEMPLATE/config.yml`, `user-story`, `task`, and the `moscow:*` labels |
+   | Prototypes             | `reports/week-02/prototypes.md`                                                                                                                                      |
+   | Meeting script         | `reports/week-02/meeting-script.md`                                                                                                                                  |
+   | Customer validation    | `reports/week-02/meeting-report.md`, and `reports/week-02/meeting-transcript.md` or `reports/week-02/meeting-notes.md`                                               |
+   | AI usage               | `reports/week-02/ai-usage.md`                                                                                                                                        |
 
    If the customer refused publication of the transcript or the notes, that row says so and points at the Moodle submission instead.
 
 3. `## Minimum Usable Product Candidate`, per [Part 4](#part-4-propose-the-minimum-usable-product-candidate).
 4. One line naming the `US-nn` that changed because of the validation meeting, and what changed in it, linking its issue and the meeting report's `#decisions`.
-5. Repository evidence: one issue per story that is not `Won't Have`, one merged pull request linked to its issue, and the latest green link check run.
+5. Repository evidence: one merged pull request linked to its issue, the latest green link check run, and the latest green Markdown check run on `main`.
 6. `## Deviations`: anything you did differently from this assignment, per [Declaring Deviations](../requirements/weekly-report-requirements.md#declaring-deviations).
    A declared deviation is allowed.
 

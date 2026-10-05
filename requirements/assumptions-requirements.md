@@ -47,6 +47,7 @@ See [Meeting Report](customer-meetings-requirements.md#meeting-report).
 **Required**
 
 1. Each assumption names, under `**Supports:**`, the `GAP-nn` or `VP-nn` it supports, and links each one to its section.
+   An assumption that only a story rests on names the `VP-nn` that story traces to.
 2. The entry does not list stories.
    A link between two artifacts is recorded once, in the later one.
 

@@ -41,8 +41,7 @@ Each story is a GitHub issue, and the `user-story` label identifies story issues
    Edit the body so it always states the current story, and add a comment for each change to a story part: the title, the statement, `Traces to`, the acceptance criteria, the `moscow:*` label, or the priority reason.
    The comment says what changed, names each `AC-nn` that changed, gives the reason, and links the decision: a meeting report's `#decisions` for a decision the customer made, or the weekly public report's `#decisions` for one the team made, per [Identifier Rules](general-requirements.md#identifier-rules).
    GitHub dates the comment, so the comment does not need a typed date.
-   <!-- TODO improve wording -->
-   No comment is needed for edits made before the weekly report of the week the story was opened is submitted, for notes and the checklist, or for a [formatting-only change](general-requirements.md#where-artifacts-live-in-the-repository).
+   No comment is needed for edits made before the first meeting with the customer that shows the story, for notes and the checklist, or for a [formatting-only change](general-requirements.md#where-artifacts-live-in-the-repository).
    Do not delete an issue or rewrite its body to hide a change; the edit history and the comment are the record.
 4. The **registry of identifiers** is the issue list filtered by the `user-story` label.
    It shows open and closed issues, so a `Won't Have` story keeps its `US-nn` and stays findable after it closes.
@@ -71,9 +70,10 @@ Its job is to make one need concrete enough that a reviewer can tell whether you
    "As a coach, I want a client to pay when they book, so that an unpaid slot does not block a paying one for the rest of the week" is a need.
    "Add a payment page" is a feature you have already designed.
    A story states the problem precisely and leaves the solution open.
-   It does not carry what only the team decides, such as a screen, a button, a component, or a library; naming the design decides it for whoever builds the story.
+   Its statement does not carry what only the team decides, such as a screen, a button, a component, or a library; naming the design decides it for whoever builds the story.
    It may carry a specific that the user or the customer has settled, such as the external system the user already works with.
    Such a specific goes in an acceptance criterion, or in a [constraint](product-vision-requirements.md#constraints) when it holds for the whole product, and goes in the story statement only when the specific thing is itself the need.
+   An [acceptance criterion](#acceptance-criteria) may name the screen, the field, or the system state an observer checks, because that is what makes it runnable.
 4. Every story carries a `Traces to` list.
    It contains exactly one `VP-nn`, the value proposition the story supports, and, optionally, the story's origins: the `GAP-nn` it closes, a customer decision in a meeting report, a team decision in the weekly public report, or an action point it carries out.
    It also names the `ASM-nn` of each [assumption](assumptions-requirements.md#supports) the story rests on.
@@ -206,8 +206,9 @@ Must Have: without it, an unpaid booking still holds a slot, which is the GAP-01
 ## Acceptance criteria
 
 1. `AC-01`: Given a paid meeting type with one free slot, when a client books that slot, then the slot is held
-   while the client pays and is released back to the calendar when the hold expires.
-2. `AC-02`: Given a client who does not finish payment, when the hold expires, then the booking is not confirmed
+   while the client pays.
+2. `AC-02`: Given a held slot whose client has not paid, when the hold expires, then the slot is released back to the calendar.
+3. `AC-03`: Given a client who does not finish payment, when the hold expires, then the booking is not confirmed
    and no meeting link is created.
 
 ## Notes
@@ -218,8 +219,8 @@ Payment happens before confirmation, so there is no pay-later path.
 A comment on issue #42, added after the validation meeting:
 
 ```markdown
-Added `AC-02`, decided in [the validation meeting](https://github.com/<organization>/<repo>/blob/main/reports/week-02/meeting-report.md#decisions).
-The customer will not accept a hold that confirms without payment, and the story only had `AC-01`, which said the slot is held.
+Added `AC-03`, decided in [the validation meeting](https://github.com/<organization>/<repo>/blob/main/reports/week-02/meeting-report.md#decisions).
+The customer will not accept a hold that confirms without payment, and `AC-01` and `AC-02` covered the hold but not the confirmation.
 The same decision settles [`ASM-02`](https://github.com/<organization>/<repo>/blob/main/docs/assumptions.md#asm-02-clients-will-pay-at-booking-rather-than-on-the-day), which this story rests on, as `Confirmed`.
 ```
 

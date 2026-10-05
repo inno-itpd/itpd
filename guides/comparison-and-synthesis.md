@@ -168,7 +168,7 @@ Keep only the ones something rests on: if a belief turned out false and nothing 
 ## ASM-02: Clients will pay at booking rather than on the day
 
 **Supports:** [VP-01](research/value-proposition.md#vp-01-one-link-that-carries-the-whole-booking).
-**How to check:** only the customer can settle it, so ask at the kickoff.
+**How to check:** only the customer can settle it, so it goes in the kickoff report's open questions.
 **Status:** Open
 ```
 
