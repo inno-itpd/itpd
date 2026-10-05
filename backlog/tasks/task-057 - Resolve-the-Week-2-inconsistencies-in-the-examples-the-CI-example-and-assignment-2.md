@@ -3,10 +3,10 @@ id: TASK-057
 title: >-
   Resolve the Week 2 inconsistencies in the examples, the CI example, and
   assignment 2
-status: In Progress
+status: Done
 assignee: []
 created_date: '2026-10-05 11:17'
-updated_date: '2026-10-05 11:28'
+updated_date: '2026-10-05 11:29'
 labels:
   - docs
 dependencies: []

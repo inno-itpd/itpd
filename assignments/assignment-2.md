@@ -35,7 +35,7 @@ What you hand in is a description of what your product must do, and a record of 
 
 ## Objectives
 
-By the end of this week you should be able to show an instructor:
+By the end of this week you should be able to show a reader:
 
 - What your product must achieve, in one sentence, and which `VP-nn` from Week 1 it serves.
 - What your product will deliberately not do, and why that makes your context diagram checkable.
@@ -61,9 +61,9 @@ They are due now.
 
 1. Carry out each one, or find out why it cannot be done.
 2. Record each outcome in `## Previous action points` of `reports/week-02/meeting-report.md`, in [Part 6](#part-6-validate-with-the-customer).
-3. Carry the outcome into the artifact it affects, which is usually a story, a constraint, or a note in the product vision.
+3. Carry the outcome into the artifact it affects, which is usually a story, an assumption, the research, or the product vision.
    An outcome that changes an artifact but appears only in the meeting report has not been carried out.
-4. If an action point changed what you were going to build, cite it in that story's `Traces to` list.
+4. When a story carries out an action point, cite the action point in that story's `Traces to` list.
 
 ## Part 2: State The Product Vision
 
@@ -126,7 +126,7 @@ The method is in [Step 4: Prioritize, Then Pick The First Thing To Build](../gui
 
 The rules:
 
-- Record each prototype, the story, gap, or assumption it tested, and what the customer said about it: [Where Prototypes Live](../requirements/prototypes-requirements.md#where-prototypes-live).
+- Record each prototype, the story or gap it tested and the assumption when that is the risky part, and what the customer said about it: [Where Prototypes Live](../requirements/prototypes-requirements.md#where-prototypes-live).
 - Prototype the part you are least sure about, and keep it disposable: [Validation](../requirements/prototypes-requirements.md#validation).
 - Sanitize every screenshot you publish: [Screenshot Evidence](../requirements/visibility-requirements.md#screenshot-evidence).
 
@@ -242,7 +242,7 @@ Keep it to two pages, and put nothing in it except the following:
 2. A table of team members: GitHub username, real name, and university email.
 3. A permalink to `reports/week-02/README.md` at the full commit hash.
 4. A link to the validation meeting recording, accessible to instructors, or one line saying the customer refused recording.
-5. The meeting transcript, if the customer refused to let you publish them.
+5. The meeting transcript, if the customer refused to let you publish it.
 6. One line confirming that no private-only material was committed to the repository.
 
 ### Submission Procedure
