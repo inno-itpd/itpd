@@ -262,7 +262,8 @@ The kickoff decisions live in `docs/decisions.md`, and the meeting report lists 
 
 Create one PDF.
 It is a map, not a copy: it points at your repository and holds the material that must not be public.
-Keep it to two pages, and put nothing in it except the following:
+Keep it to two pages, and put nothing in it except the following.
+A transcript under item 5 goes in an appendix, which the two pages do not count.
 
 1. Project name and the team number.
 2. A table of team members: GitHub username, real name, and university email.
@@ -276,7 +277,7 @@ Keep it to two pages, and put nothing in it except the following:
 Nothing else goes in the PDF.
 The summary, the coverage table, the contribution table, the evidence links, the deviations, and the privacy confirmation are all in `reports/week-01/README.md`, and the permalink gets a grader there.
 Do not paste, retype, or reword them.
-If the PDF runs past two pages, you are writing the report a second time, and the second copy is the one that goes stale.
+If the PDF runs past two pages before the appendix, you are writing the report a second time, and the second copy is the one that goes stale.
 
 This is the [private submission wrapper](../requirements/weekly-report-requirements.md#private-submission-wrapper) the course requires: the private material for the week, and links to the public material.
 
