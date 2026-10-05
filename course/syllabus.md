@@ -73,6 +73,7 @@ The first two weeks establish the project foundations, team formation, and compe
 ## 3. Weekly Curriculum & Milestones
 
 The due dates below are the Thursday soft deadlines; each hard deadline is the following Friday at 23:59.
+Week 2 is the exception: its hard deadline is Saturday, October 10 at 23:59.
 
 | Week        | Date Range      | Focus / Key Milestones                                                                                                       |
 | :---------- | :-------------- | :--------------------------------------------------------------------------------------------------------------------------- |
@@ -128,7 +129,7 @@ The due dates below are the Thursday soft deadlines; each hard deadline is the f
   - **Note**: The product repository itself is created and configured in Week 1.
     Week 2 adds requirements, tracking, and prototypes.
   - **Submission Scope**: Team submission.
-  - **Deadline**: soft **October 8 at 23:59 (Thursday)**, hard **October 9 at 23:59 (Friday)**.
+  - **Deadline**: soft **October 8 at 23:59 (Thursday)**, hard **October 10 at 23:59 (Saturday)**.
 
 ### Week 3: Oct 9 – Oct 15 (Planning & Minimum Usable Product)
 
