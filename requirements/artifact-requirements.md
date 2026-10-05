@@ -705,8 +705,7 @@ Each story is a GitHub issue, and the `user-story` label identifies story issues
       <!-- Alternatively, allow issue type -->
 
 2. Active stories are open or closed as completed, and a delivered story closes as completed and stays in the registry.
-   Inactive stories are closed as not planned, with a comment naming the reason: `removed` or `won't have`.
-   The reason is free text beginning with one of those two words.
+   An inactive story carries `moscow:won't` and is closed as not planned, with a comment giving the reason.
 3. The issue is the record of change.
    A change that follows a customer meeting adds a dated comment saying what changed, naming any `AC-nn` that changed, and linking the meeting report.
    Do not rewrite a story to hide a change; the edit history and the comment are the record.
@@ -769,7 +768,7 @@ As a coach, I want to sell a bundle of ten sessions, so that a returning client 
 - `VP-01`
 - `GAP-01`
 
-Closing comment: won't-have: no evidence that a user needs it; recurring billing is outside the boundary.
+Closing comment: No evidence that a user needs it; recurring billing is outside the boundary.
 ```
 
 ## Prototypes

@@ -106,10 +106,7 @@ Complete every requirement marked `**Since: W2**` in [Issue Tracking](../require
    The test is whether somebody who is not you could run the check and get the same answer.
    See [User Stories](../requirements/artifact-requirements.md#user-stories) and [User Stories And Acceptance Criteria](../requirements/process-requirements.md#user-stories-and-acceptance-criteria).
 4. Prioritize every story with **MoSCoW**.
-   Give every `Won't Have` story a reason in its closing comment, beginning with `won't-have`.
-   <!-- TODO What does won't-have mean here? -->
-   <!-- Why start with "won't have"? I think the label is enough and the reason should be free-form -->
-5. Inactive stories close as not planned with a comment naming the reason, and a delivered story closes as completed.
+5. Close an inactive story as not planned with a comment giving the reason, and close a delivered story as completed.
 6. Create your branches from the issue, and link every pull request to its issue.
    Use the `<issue-number>-<short-description>` branch naming rule, per [Branch Protection And Pull Requests](../requirements/repository-requirements.md#branch-protection-and-pull-requests).
 7. The method is in [Step 2: Turn Each Gap Into Stories](../guides/user-stories-and-prototyping.md#step-2-turn-each-gap-into-stories) and [Step 3: Write Criteria Somebody Else Can Run](../guides/user-stories-and-prototyping.md#step-3-write-criteria-somebody-else-can-run).

@@ -333,7 +333,7 @@ Each story is a GitHub issue, and the issues are the only place the stories live
 
 1. Write **8 or more** user stories, and keep at least **5 of them active**.
    Fewer do not cover a product, and more leaves no week to change them once something turns out to be wrong.
-   An **active** story is one you intend to build; an **inactive** story is one you have removed or decided not to build.
+   An **active** story is one you intend to build; an **inactive** story is one you have decided not to build, and it is a `Won't Have` story.
    The close reason carries the distinction for the rest of the course: an inactive story is closed as not planned, and a delivered active story is closed as completed.
 2. Every story gets a stable ID `US-01`, `US-02`, and so on.
    IDs are never renumbered, reused, or reassigned, including when the story is edited later in the course.
@@ -356,8 +356,8 @@ Each story is a GitHub issue, and the issues are the only place the stories live
    - `Must Have`: the product is not the product without it.
    - `Should Have`: important, and the product is still coherent without it.
    - `Could Have`: valuable, and the first thing to cut.
-   - `Won't Have`: a real need you have deliberately excluded.
-     A `Won't Have` story is **inactive** by definition, and its closing comment records why, beginning with `won't-have`.
+   - `Won't Have`: a need you have deliberately excluded, including a story you dropped after writing it.
+     A `Won't Have` story is **inactive** by definition, and its closing comment gives the reason.
 
 6. Every active story carries **at least two acceptance criteria**, and each one must be observable and pass/fail.
    Any notation is allowed, including `Given`/`When`/`Then`; the rules are that somebody other than you can run the check and get the same answer.
@@ -374,6 +374,7 @@ Each story is a GitHub issue, and the issues are the only place the stories live
    The issue is the story and the source of truth; the form carries the statement, the acceptance criteria, each with its `AC-nn`, the `Traces to` list, and any notes.
    The issue may carry a checklist of the remaining work, so a contributor can work without leaving it.
 10. A story becomes inactive by being closed as not planned, with a comment naming the reason.
+    Its label becomes `moscow:won't` if it carried another one.
     It keeps its identifier and its statement in the issue; the closing comment and the close date are the record.
     An active story that is delivered closes as completed and stays in the list.
 11. The `Must Have` stories you would build first are the [minimum usable product candidate](#minimum-usable-product-candidate).
