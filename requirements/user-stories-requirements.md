@@ -209,11 +209,9 @@ Must Have: without it, an unpaid booking still holds a slot, which is the GAP-01
 The customer confirmed on 2026-10-06 that payment happens before confirmation, which retired the pay-later
 assumption in [the assumptions table](https://github.com/<organization>/<repo>/blob/main/docs/research/value-proposition.md#assumptions).
 
-Comment, 2026-10-06: `AC-02` added after the validation meeting.
+Comment, 2026-10-06: `AC-02` added after [the validation meeting](https://github.com/<organization>/<repo>/blob/main/reports/week-02/meeting-report.md#decisions).
 The customer will not accept a hold that confirms without payment, and the first version of the story only had `AC-01`, which said the slot is held.
 ```
-
-<!-- TODO in comments, link to meeting reports -->
 
 Issue #50, a `Won't Have` story, closed as not planned:
 

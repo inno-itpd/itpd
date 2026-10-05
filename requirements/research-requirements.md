@@ -208,7 +208,7 @@ The defensible part is the single flow and its pricing, not the fields.
 
 - Two or three value propositions built on your strongest gaps.
   More than that and you are listing features.
-- Check each one against the `Won't Have` items: does this conflict with something you decided not to do?
+- Check each one against what the customer or the team has already ruled out: does it conflict with something you decided not to do?
 
 ## Assumptions
 

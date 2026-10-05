@@ -73,8 +73,8 @@ It is the short version of the requirements, states what is expected of you as a
 4. A dropped item keeps its identifier and its entry, marked as dropped with a reason and the date.
 5. The identifier always appears in the heading of its own section, so `ALT-02` can be found with a search.
 6. Every reference between artifacts uses the identifier, not the title, so that renaming a title does not break the chain.
-7. `AC-nn` is the exception to rules 4 and 5, because it lives inside a story issue rather than in a section of its own.
-   [Acceptance Criteria](user-stories-requirements.md#acceptance-criteria) says how it is numbered, retired, and cited.
+7. `US-nn` and `AC-nn` are the exceptions to rules 4 and 5, because they live in a story issue rather than in a section of their own.
+   [Where Stories Live](user-stories-requirements.md#where-stories-live) says how a dropped story is kept, and [Acceptance Criteria](user-stories-requirements.md#acceptance-criteria) says how a criterion is numbered, retired, and cited.
 8. Decisions and action points are not identifier families.
    There is no `DEC-nn` and no `ACT-nn`.
    Cite a decision by path and `#decisions` anchor with its sentence quoted: a meeting decision cites its meeting report, and a decision made outside a meeting cites the weekly public report of the week it was made.
@@ -90,9 +90,11 @@ The research you produce in Week 1 is the evidence base for the rest of the cour
 Later weeks cite your Week 1 identifiers rather than restating your findings.
 This is what makes the course a project rather than nine separate assignments.
 
-| Later work                                          | Must cite                                                                                                         |
-| --------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
-| Week 2 product vision, user stories, and prototypes | The `VP-nn` and origins in each story's `Traces to` list, per [The Story](user-stories-requirements.md#the-story) |
+| Later work            | Must cite                                                                                                              |
+| --------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| Week 2 product vision | The `VP-nn` its goal traces to, per [Goal](product-vision-requirements.md#goal)                                        |
+| Week 2 user stories   | The `VP-nn` and origins in each story's `Traces to` list, per [The Story](user-stories-requirements.md#the-story)      |
+| Week 2 prototypes     | The `GAP-nn` or `US-nn` each one tested, per [Where Prototypes Live](prototypes-requirements.md#where-prototypes-live) |
 
 **Required**
 

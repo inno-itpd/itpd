@@ -81,5 +81,5 @@ A prototype that validated everything proved nothing, because you chose the part
 **Recommended**
 
 - Prototype the riskiest assumption first, and only as long as it takes to get a reaction.
-- Test with whoever actually does the job, where that is possible; in this course, the customer is the stakeholder who reacts to the prototype.
+- Test with whoever actually does the job, where that is possible; in this course, the customer is the one who reacts to the prototype.
 - Keep the loop short: build something, show it, write down what you learned, change the story.

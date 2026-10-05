@@ -158,7 +158,7 @@ The system context diagram is the picture of the [boundary](#boundary): the prod
 **Recommended**
 
 - Draw the boundary itself, as a frame or a box around the product, so the line the list describes is visible.
-- Keep the diagram in the same file as the vision, and keep that file the only place a diagram is committed, so there is one version.
+- Reference the diagram from the vision only, so there is one version of it.
 
 ## Full Example
 
@@ -177,7 +177,7 @@ An independent expert can send one link where a client books a time, pays, and r
 
 - **Independent expert** (tutor, coach, or consultant) who sells sessions: the primary user.
 - **Client**: books and pays, and uses the product once.
-- **The customer**: decides the scope, and is the course instructor.
+- **Customer**: decides the scope.
 
 ## Constraints
 
