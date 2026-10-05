@@ -225,7 +225,6 @@ This week it also carries:
 
 3. `## Minimum Usable Product Candidate`, per [Part 4](#part-4-propose-the-minimum-usable-product-candidate).
 4. One line naming the `US-nn` that changed because of the validation meeting, and what changed in it, linking its issue and the meeting report's `#decisions`.
-   This is the line a grader reads first.
 5. Repository evidence: one issue per story that is not `Won't Have`, one merged pull request linked to its issue, and the latest green link check run.
 6. `## Deviations`: anything you did differently from this assignment, per [Declaring Deviations](../requirements/weekly-report-requirements.md#declaring-deviations).
    A declared deviation is allowed.
