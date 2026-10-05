@@ -117,7 +117,7 @@ The moderator watches the clock against those timeboxes; a part that runs over t
 Close the script with the `## Key improvements` section [Meeting Script](../requirements/customer-meetings-requirements.md#meeting-script) requires, giving each rewritten question's before, after, and principle.
 
 This section is not proof that you read the Mom Test.
-It is the part a reader uses to tell whether your questions were considered or merely collected, and it is the only part of the script that survives into the meeting report.
+It is the part a reader uses to tell whether your questions were considered or merely collected.
 
 ## Step 6: Assign Roles
 

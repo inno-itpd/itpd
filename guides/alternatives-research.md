@@ -141,8 +141,7 @@ One section per alternative, ID in the heading:
 **Kind:** Direct competitor, hosted
 **Link:** https://calendly.com
 **Version looked at:** free plan, 2026-09-28
-**Depth of evaluation:** created an account, published two event types, connected a Google
-calendar, read the payment and video integration docs.
+**Depth of evaluation:** created an account, published two event types, connected a Google calendar, read the payment and video integration docs.
 Did not connect a payment provider.
 
 **Problem it solves:** gives an expert one bookable page so clients stop asking when they are free.

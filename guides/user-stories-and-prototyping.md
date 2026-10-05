@@ -99,8 +99,7 @@ As a coach
 I want booked sessions to appear in the calendar I already use
 so that I do not double-book a slot
 
-AC-01: A session booked by a client appears in the coach's
-Google Calendar, at the booked time.
+AC-01: A session booked by a client appears in the coach's Google Calendar, at the booked time.
 ```
 
 The customer told you the coach uses Google Calendar, so the criterion names it.
@@ -145,14 +144,11 @@ Any notation works, including `Given`/`When`/`Then`.
 The notation is not the requirement; observability is.
 Compare:
 
-```text
-Works properly.                        not a criterion, and not testable
-The user sees a confirmation.          observable, but the answer is a judgement
-AC-01: After attaching a rule to a     observable, and the answer is yes or no
-region, the next request that includes
-it has the rule applied, and the log
-names the rule.
-```
+| Criterion                                                                                                                     | Verdict                                   |
+| ----------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------- |
+| Works properly.                                                                                                               | Not a criterion, and not testable         |
+| The client sees a confirmation.                                                                                               | Observable, but the answer is a judgement |
+| `AC-01`: Given a held slot whose client has not paid, when the hold expires, then the slot shows as free on the booking page. | Observable, and the answer is yes or no   |
 
 A criterion may name a screen, a field, or a system state, because that is what an observer checks; the story may not, because that would be the design.
 
@@ -205,9 +201,10 @@ A story that traces to an `ASM-nn` still `Open` names its own unchecked belief, 
 Say the question in one line before you build anything, and write it down.
 If you cannot write the question, you are not ready to prototype, and building first is how a team ends up showing a prototype of the easy part.
 
-**Which user stories does your prototype cover?**
-Answer that explicitly, in `prototypes.md`, linking the issue of each story and naming any `AC-nn` it exercises.
-A prototype that covers one story is fine, as long as you say which one and why that one.
+**Which story or gap does your prototype test?**
+Answer that explicitly, in `prototypes.md`, linking the issue of each story and naming any `AC-nn` it exercises, or naming the `GAP-nn` when no story covers it yet.
+When the risky part is an assumption, cite its `ASM-nn` as well.
+A prototype that tests one story is fine, as long as you say which one and why that one.
 
 ## Step 6: Build The Cheapest Thing That Gets A Reaction
 

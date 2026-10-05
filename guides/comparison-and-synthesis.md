@@ -41,14 +41,10 @@ Fill it property by property, not product by product: doing one whole row at a t
 
 **A row that works:**
 
-<!-- TODO is this a single row? What are the columns? -->
-
 ```markdown
-| What the booking carries | Time and an event type.
-Payment and video are integrations on paid plans, and materials are not part of the booking (ALT-01). | Time and the video link after a Stripe setup.
-Payment and materials are not part of the booking (ALT-02). | Time and a Meet link.
-Payment and materials are not part of the booking (ALT-03). | Time and a Zoom link.
-Payment and materials are not part of the booking (ALT-04). |
+| Property                 | ALT-01 Calendly                                                                                                               | ALT-02 Cal.com                                                                                            | ALT-03 Google Calendar appointment schedules                                      | ALT-04 Zoom Scheduler                                                             |
+| ------------------------ | ----------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| What the booking carries | Time and an event type. Payment and video are integrations on paid plans, and materials are not part of the booking (ALT-01). | Time and the video link after a Stripe setup. Payment and materials are not part of the booking (ALT-02). | Time and a Meet link. Payment and materials are not part of the booking (ALT-03). | Time and a Zoom link. Payment and materials are not part of the booking (ALT-04). |
 ```
 
 It says what the product does, cites the `ALT-nn` it came from, and lets the reader check.
@@ -90,28 +86,24 @@ A candidate is worth writing down when you can name it in a sentence that a read
 What you see in the table is not yet a need.
 Each candidate has to pass all four tests from [Gap Analysis](../requirements/research-requirements.md#gap-analysis): someone needs it, the alternatives do not serve it, it is reachable, and a team of three or four could build it in this course.
 
-The fourth test does most of the work.
+The third test does most of the work.
 When you cannot describe what a product closing this gap would do in a sentence, you have a theme, not a gap.
 
 ```markdown
 ## GAP-01: Bookings that arrive unpaid and unprepared
 
 **Who needs it and what they cannot do:** an independent expert who sells one-hour consultations online.
-The client books and pays in one place, and the meeting link and materials arrive with the booking;
-the alternatives schedule the time, and the payment, the video link, and the materials each live somewhere else.
+The client books and pays in one place, and the meeting link and materials arrive with the booking; the alternatives schedule the time, and the payment, the video link, and the materials each live somewhere else.
 
-**Evidence:** `What the booking carries` row in
-[the comparison](comparison.md) — no alternative carries payment, video, and materials in the same booking (ALT-01, ALT-02, ALT-03, ALT-04).
+**Evidence:** `What the booking carries` row in [the comparison](comparison.md) — no alternative carries payment, video, and materials in the same booking (ALT-01, ALT-02, ALT-03, ALT-04).
 
 **What closing it looks like:** one link where the client picks a slot, pays, and receives the video link and the materials, with calendar sync behind it.
 
 **Buildable by us in this course:** yes.
-It is one booking flow, one payment integration, and one upload field, and it is
-the reason the project exists.
+It is one booking flow, one payment integration, and one upload field, and it is the reason the project exists.
 
 **Confidence:** high.
-Consistent across all four alternatives, and two of them are
-mature enough that this is not an oversight.
+Consistent across all four alternatives, and two of them are mature enough that this is not an oversight.
 
 **Dropped:** see GAP-04.
 ```
@@ -128,13 +120,10 @@ One short positioning statement, tied to a gap, honest about its cost.
 ## VP-01: One link that carries the whole booking
 
 **User:** independent coach who sells one-hour sessions online.
-**Problem:** the booking, the payment, and the meeting materials live in three tools, so unpaid
-clients block slots and prepared clients are rare.
-**What we do that the alternatives do not:** one link where the client books a slot, pays, and
-receives the video link and the materials, with no second account.
+**Problem:** the booking, the payment, and the meeting materials live in three tools, so unpaid clients block slots and prepared clients are rare.
+**What we do that the alternatives do not:** one link where the client books a slot, pays, and receives the video link and the materials, with no second account.
 **Closes:** [GAP-01](gap-analysis.md#gap-01-bookings-that-arrive-unpaid-and-unprepared).
-**What it costs:** the expert connects a payment provider before the first booking and uploads the
-materials per meeting type.
+**What it costs:** the expert connects a payment provider before the first booking and uploads the materials per meeting type.
 This is a real setup cost.
 **How a competitor would respond:** Calendly or Cal.com could bundle payments and materials into the free tier.
 The defensible part is the single flow and its pricing, not the fields.
@@ -169,13 +158,18 @@ Keep only the ones something rests on: if a belief turned out false and nothing 
 
 **How to check:** only the customer can settle it, so it goes in the kickoff report's open questions.
 **Status:** Open
+
+## ASM-03: Clients open the booking link on a phone
+
+**How to check:** ask two experts where their last ten bookings came from, in Week 2.
+**Status:** Open
 ```
 
 `VP-01` in `docs/research/value-proposition.md` then gains one line, and `GAP-01` gains the same line naming `ASM-01`:
 
 ```markdown
 **Closes:** [GAP-01](gap-analysis.md#gap-01-bookings-that-arrive-unpaid-and-unprepared).
-**Rests on:** [ASM-01](../assumptions.md#asm-01-experts-will-upload-materials-per-meeting-type-instead-of-sending-them-in-chat-after-booking), [ASM-02](../assumptions.md#asm-02-clients-will-pay-at-booking-rather-than-on-the-day).
+**Rests on:** [ASM-01](../assumptions.md#asm-01-experts-will-upload-materials-per-meeting-type-instead-of-sending-them-in-chat-after-booking), [ASM-02](../assumptions.md#asm-02-clients-will-pay-at-booking-rather-than-on-the-day), [ASM-03](../assumptions.md#asm-03-clients-open-the-booking-link-on-a-phone).
 ```
 
 The customer decides the scope.
