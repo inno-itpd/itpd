@@ -41,7 +41,7 @@ By the end of this week you should be able to show an instructor:
 - What your product must achieve, in one sentence, and which `VP-nn` from Week 1 it serves.
 - What your product will deliberately not do, and why that makes your context diagram checkable.
 - Eight or more user stories as GitHub issues, each naming the `VP-nn` it supports, with acceptance criteria somebody else could run.
-- Which `Must Have` stories make up your minimum usable product candidate, which core task they let a user complete, and which one you would drop first.
+- Which `Must Have` stories make up your minimum usable product candidate, and which core task they let a user complete.
 - One place where the customer told you a story was wrong, and the diff that shows what you changed.
 - A repository where the Markdown is checked automatically and the check is green.
 
@@ -72,16 +72,18 @@ The rules:
 - Read the action points your kickoff report recorded, with their owners and due weeks: [Meeting Report](../requirements/customer-meetings-requirements.md#meeting-report).
 - Cite an action point by its report and anchor: [Identifier Rules](../requirements/general-requirements.md#identifier-rules).
 - Cite an action point a story carries out as one of its origins: [The Story](../requirements/user-stories-requirements.md#the-story).
+- Record each outcome in the next meeting report, since the kickoff report is not edited: [Meeting Report](../requirements/customer-meetings-requirements.md#meeting-report).
 
 This week:
 
 `reports/week-01/meeting-report.md` has at least two action points, each with a named owner and a due date inside Week 2.
 They are due now.
 
-1. Close each one, or state in writing why it is not closed.
-2. Carry the outcome into the artifact it affects, which is usually a story, a constraint, or a note in the product vision.
-3. If an action point changed what you were going to build, cite it in that story's `Traces to` list and say so in your week report.
-   A kickoff action point that is closed in the meeting report and nowhere else has not been carried out.
+1. Carry out each one, or find out why it cannot be done.
+2. Record each outcome in `## Previous action points` of `reports/week-02/meeting-report.md`, in [Part 6](#part-6-validate-with-the-customer).
+3. Carry the outcome into the artifact it affects, which is usually a story, a constraint, or a note in the product vision.
+   An outcome that changes an artifact but appears only in the meeting report has not been carried out.
+4. If an action point changed what you were going to build, cite it in that story's `Traces to` list.
 
 ## Part 2: State The Product Vision
 
@@ -110,13 +112,13 @@ The rules:
 - Link each Week 1 identifier a story cites to its section: [Traceability Into Later Weeks](../requirements/general-requirements.md#traceability-into-later-weeks).
 - Give each story acceptance criteria somebody else can run, each with its `AC-nn`: [Acceptance Criteria](../requirements/user-stories-requirements.md#acceptance-criteria).
 - Label each story's priority, and give the reason for it: [MoSCoW Prioritization](../requirements/user-stories-requirements.md#moscow-prioritization).
-- Add the Issue Form and the labels, and link every pull request to its issue: [Issue Tracking](../requirements/repository-requirements.md#issue-tracking).
+- Add both issue forms and the labels, start the forms pull request from a blank issue, and link every pull request to its issue: [Issue Tracking](../requirements/repository-requirements.md#issue-tracking).
 - Name branches after their issue, and name in each pull request the `AC-nn` it checks: [Branch Protection And Pull Requests](../requirements/repository-requirements.md#branch-protection-and-pull-requests).
 - Recommended: track the team's tasks inside the repository: [Tracking Tasks Inside The Repository](../requirements/repository-requirements.md#tracking-tasks-inside-the-repository).
 
 This week:
 
-1. Add the Issue Form and the labels before you open the first story, so every story is opened from the form.
+1. Add `user-story.yml`, `task.yml`, `config.yml`, and the labels before you open the first story, so every story is opened from the form and every other pull request has a task issue.
 
 The method is in [Step 2: Turn Each Gap Into Stories](../guides/user-stories-and-prototyping.md#step-2-turn-each-gap-into-stories) and [Step 3: Write Criteria Somebody Else Can Run](../guides/user-stories-and-prototyping.md#step-3-write-criteria-somebody-else-can-run).
 
@@ -124,7 +126,7 @@ The method is in [Step 2: Turn Each Gap Into Stories](../guides/user-stories-and
 
 The rules:
 
-- Name the core task, the `Must Have` stories that complete it, and the one you would drop first: [Minimum Usable Product Candidate](../requirements/user-stories-requirements.md#minimum-usable-product-candidate).
+- Name the core task and the `Must Have` stories that complete it: [Minimum Usable Product Candidate](../requirements/user-stories-requirements.md#minimum-usable-product-candidate).
 - Record the candidate in the week report: [Weekly Public Report](../requirements/weekly-report-requirements.md#weekly-public-report).
 - Record the customer's verdict on it as a decision: [Meeting Report](../requirements/customer-meetings-requirements.md#meeting-report).
 
@@ -132,6 +134,8 @@ This week:
 
 1. Write it under `## Minimum Usable Product Candidate` in `reports/week-02/README.md`.
 2. Take the candidate to the customer in [Part 6](#part-6-validate-with-the-customer); their verdict is one of the week's decisions.
+3. Submit the candidate as it stands after the verdict.
+   The verdict's row in the meeting report's `## Decisions` shows what changed from the proposal.
 
 The method is in [Step 4: Prioritize, Then Pick The First Thing To Build](../guides/user-stories-and-prototyping.md#step-4-prioritize-then-pick-the-first-thing-to-build).
 
@@ -139,13 +143,13 @@ The method is in [Step 4: Prioritize, Then Pick The First Thing To Build](../gui
 
 The rules:
 
-- Record each prototype, what it tested, and what the customer said about it: [Where Prototypes Live](../requirements/prototypes-requirements.md#where-prototypes-live).
+- Record each prototype, the story, gap, or assumption it tested, and what the customer said about it: [Where Prototypes Live](../requirements/prototypes-requirements.md#where-prototypes-live).
 - Prototype the part you are least sure about, and keep it disposable: [Validation](../requirements/prototypes-requirements.md#validation).
 - Sanitize every screenshot you publish: [Screenshot Evidence](../requirements/visibility-requirements.md#screenshot-evidence).
 
 This week:
 
-1. Record the prototype at `reports/week-02/prototypes.md`, with any screenshots in `reports/week-02/images/`.
+1. Record at least one prototype at `reports/week-02/prototypes.md`, with any screenshots in `reports/week-02/images/`.
 2. Show it to the customer in the meeting in [Part 6](#part-6-validate-with-the-customer).
 
 The method is in [Step 5: Choose What To Prototype](../guides/user-stories-and-prototyping.md#step-5-choose-what-to-prototype) and [Step 6: Build The Cheapest Thing That Gets A Reaction](../guides/user-stories-and-prototyping.md#step-6-build-the-cheapest-thing-that-gets-a-reaction).
@@ -169,9 +173,9 @@ This week:
 
 1. The meeting's target is which of the prototype, the boundary, and the minimum usable product candidate are wrong.
    Review the remaining user stories only if time allows, and do not re-run the kickoff.
-2. In `reports/week-02/meeting-script.md`, `## Agenda` shows the prototype, the boundary, and the minimum usable product candidate each in its own part.
-3. `reports/week-02/meeting-report.md` has at least two rows in `## Decisions`, one of them the customer's verdict on the minimum usable product candidate, and at least two rows in `## Action points`, each due inside Week 3.
-4. At least one story issue carries the dated comment that records what the meeting changed.
+2. In `reports/week-02/meeting-script.md`, `## Agenda` has a part for the kickoff action points that are due, then shows the prototype, the boundary, and the minimum usable product candidate each in its own part.
+3. `reports/week-02/meeting-report.md` has one row per kickoff action point in `## Previous action points`, at least two rows in `## Decisions`, one of them the customer's verdict on the minimum usable product candidate, and at least two rows in `## Action points`, each due inside Week 3.
+4. At least one story issue carries the dated comment that records what the meeting changed: its statement, an `AC-nn`, or its priority.
 
 The method is in [Guide: Validating With The Customer](../guides/validating-with-the-customer.md).
 
@@ -200,7 +204,7 @@ Assume your week report is read by someone who does not know your project.
 A strong submission has:
 
 - **A goal that could fail.**
-  Somebody could tell on Friday whether you achieved it.
+  Somebody could tell, at the end of the course, whether you achieved it.
   "Be fast" and "delight the user" are not goals, and a vision whose goal is a feature is a vision with nothing in it.
 - **A boundary somebody argued with.**
   Your list of what the product will not do is specific enough that the customer disagreed with at least one item.
@@ -225,27 +229,26 @@ This week it also carries:
 1. In the summary, what you found out you were wrong about.
 2. The coverage table, with these rows:
 
-   | Deliverable                      | Artifact                                                                         |
-   | -------------------------------- | -------------------------------------------------------------------------------- |
-   | Kickoff action points            | the outcome per action point, in the artifact it changed                         |
-   | Product vision                   | `docs/product-vision.md`                                                         |
-   | User stories                     | the `US-nn` issues, filtered by the `user-story` label                           |
-   | Issue form and labels            | `.github/ISSUE_TEMPLATE/user-story.yml`, `user-story`, and the `moscow:*` labels |
-   | Minimum usable product candidate | `## Minimum Usable Product Candidate` in `reports/week-02/README.md`             |
-   | Prototypes                       | `reports/week-02/prototypes.md`                                                  |
-   | Meeting script                   | `meeting-script.md`                                                              |
-   | Customer validation              | `meeting-report.md`, and `meeting-transcript.md` or `meeting-notes.md`           |
-   | Markdown check                   | a link to the latest green `main` run                                            |
-   | AI usage                         | `ai-usage.md`                                                                    |
+   | Deliverable                      | Artifact                                                                                                |
+   | -------------------------------- | ------------------------------------------------------------------------------------------------------- |
+   | Kickoff action points            | `## Previous action points` in `meeting-report.md`, and the artifact each outcome changed               |
+   | Product vision                   | `docs/product-vision.md`                                                                                |
+   | User stories                     | the `US-nn` issues, filtered by the `user-story` label                                                  |
+   | Issue forms and labels           | `.github/ISSUE_TEMPLATE/user-story.yml` and `task.yml`, `user-story`, `task`, and the `moscow:*` labels |
+   | Minimum usable product candidate | `## Minimum Usable Product Candidate` in `reports/week-02/README.md`                                    |
+   | Prototypes                       | `reports/week-02/prototypes.md`                                                                         |
+   | Meeting script                   | `meeting-script.md`                                                                                     |
+   | Customer validation              | `meeting-report.md`, and `meeting-transcript.md` or `meeting-notes.md`                                  |
+   | Markdown check                   | a link to the latest green `main` run                                                                   |
+   | AI usage                         | `ai-usage.md`                                                                                           |
 
    If the customer refused publication of the transcript or the notes, that row says so and points at the Moodle submission instead.
 
 3. `## Minimum Usable Product Candidate`, per [Part 4](#part-4-propose-the-minimum-usable-product-candidate).
-4. One line naming the `US-nn` that changed because of the validation meeting, linking its issue and the meeting report's `#decisions`.
+4. One line naming the `US-nn` that changed because of the validation meeting, and what changed in it, linking its issue and the meeting report's `#decisions`.
    This is the line a grader reads first.
-5. Repository evidence: one issue per story that is not `Won't Have`, one merged pull request, the latest green Markdown run, and the latest green link check run.
-6. Each kickoff action point that changed a story, per [Part 1](#part-1-carry-out-the-kickoff-action-points).
-7. `## Deviations`: anything you did differently from this assignment, per [Declaring Deviations](../requirements/weekly-report-requirements.md#declaring-deviations).
+5. Repository evidence: one issue per story that is not `Won't Have`, one merged pull request linked to its issue, and the latest green link check run.
+6. `## Deviations`: anything you did differently from this assignment, per [Declaring Deviations](../requirements/weekly-report-requirements.md#declaring-deviations).
    A declared deviation is allowed.
 
 ## Assignment Report On Moodle
@@ -256,7 +259,7 @@ Keep it to two pages, and put nothing in it except the following:
 1. Project name and the team number.
 2. A table of team members: GitHub username, real name, and university email.
 3. A permalink to `reports/week-02/README.md` at the full commit hash.
-4. A link to the validation meeting recording, accessible to instructors.
+4. A link to the validation meeting recording, accessible to instructors, or one line saying the customer refused recording.
 5. The meeting transcript, if the customer refused to let you publish it.
 6. One line confirming that no private-only material was committed to the repository.
 
@@ -268,14 +271,14 @@ Keep it to two pages, and put nothing in it except the following:
 
 ## Checklist
 
-- [ ] Both kickoff action points closed or explained, each outcome in the artifact it changed ([Part 1](#part-1-carry-out-the-kickoff-action-points)).
+- [ ] Each kickoff action point's outcome in `## Previous action points`, and in the artifact it changed ([Part 1](#part-1-carry-out-the-kickoff-action-points)).
 - [ ] `docs/product-vision.md`, with at least 3 boundary items ([Part 2](#part-2-state-the-product-vision)).
-- [ ] `.github/ISSUE_TEMPLATE/user-story.yml` and the labels ([Part 3](#part-3-write-and-track-the-user-stories-as-issues)).
+- [ ] `.github/ISSUE_TEMPLATE/user-story.yml`, `task.yml`, `config.yml`, and the labels, added from a blank issue ([Part 3](#part-3-write-and-track-the-user-stories-as-issues)).
 - [ ] The story issues ([Part 3](#part-3-write-and-track-the-user-stories-as-issues)).
 - [ ] `## Minimum Usable Product Candidate` in `reports/week-02/README.md` ([Part 4](#part-4-propose-the-minimum-usable-product-candidate)).
-- [ ] `reports/week-02/prototypes.md`, and no prototype code on `main` ([Part 5](#part-5-prototype-the-riskiest-part)).
+- [ ] `reports/week-02/prototypes.md` with at least one prototype, and no prototype code on `main` ([Part 5](#part-5-prototype-the-riskiest-part)).
 - [ ] `reports/week-02/meeting-script.md` ([Part 6](#part-6-validate-with-the-customer)).
-- [ ] `reports/week-02/meeting-report.md`, with 2+ decisions including the candidate verdict and 2+ action points due in Week 3 ([Part 6](#part-6-validate-with-the-customer)).
+- [ ] `reports/week-02/meeting-report.md`, with a row per kickoff action point, 2+ decisions including the candidate verdict and 2+ action points due in Week 3 ([Part 6](#part-6-validate-with-the-customer)).
 - [ ] `reports/week-02/meeting-transcript.md` or `meeting-notes.md` ([Part 6](#part-6-validate-with-the-customer)).
 - [ ] **At least one story issue with a dated comment from the validation meeting** ([Part 6](#part-6-validate-with-the-customer)).
 - [ ] Markdown check and link check green on `main` ([Part 7](#part-7-check-the-markdown-in-ci)).
