@@ -129,11 +129,11 @@ That agreement is what makes the scope checkable:
 
 **Example**
 
-| The product will not                    | Handled by    | Why                                                           |
-| --------------------------------------- | ------------- | ------------------------------------------------------------- |
-| Host the video call                     | Video service | The single-term course constraint: video stays an integration |
-| Schedule more than one expert at a time | Nobody        | Customer decision at the kickoff: the experts work alone      |
-| Sell recurring subscriptions or bundles | Nobody        | Team reasoning: no user we met pays for sessions in advance   |
+| The product will not                    | Handled by    | Why                                                                                                     |
+| --------------------------------------- | ------------- | ------------------------------------------------------------------------------------------------------- |
+| Host the video call                     | Video service | The single-term course constraint: video stays an integration                                           |
+| Schedule more than one expert at a time | Nobody        | Customer decision at the kickoff, `reports/week-01/meeting-report.md#decisions`: the experts work alone |
+| Sell recurring subscriptions or bundles | Nobody        | Team reasoning: no user we met pays for sessions in advance                                             |
 
 ## System Context
 
@@ -181,20 +181,20 @@ An independent expert can send one link where a client books a time, pays, and r
 
 ## Constraints
 
-| Constraint                       | Source         | What it costs                             |
-| -------------------------------- | -------------- | ----------------------------------------- |
-| Deployed on a single small VPS   | Customer-given | No failover during a demo                 |
-| Built and maintained by 3 people | Team-given     | No component may need a second expert     |
-| Single-term course               | Environmental  | Payment and video stay integrations       |
-| Payment provider sandbox only    | Derived        | No live charges, so real fees go untested |
+| Constraint                                                                                                 | Source         | What it costs                             |
+| ---------------------------------------------------------------------------------------------------------- | -------------- | ----------------------------------------- |
+| Deployed on a single small VPS, per the [kickoff decision](../reports/week-01/meeting-report.md#decisions) | Customer-given | No failover during a demo                 |
+| Built and maintained by 3 people                                                                           | Team-given     | No component may need a second expert     |
+| Single-term course                                                                                         | Environmental  | Payment and video stay integrations       |
+| Payment provider sandbox only                                                                              | Derived        | No live charges, so real fees go untested |
 
 ## Boundary
 
-| The product will not                    | Handled by    | Why                                                           |
-| --------------------------------------- | ------------- | ------------------------------------------------------------- |
-| Host the video call                     | Video service | The single-term course constraint: video stays an integration |
-| Schedule more than one expert at a time | Nobody        | Customer decision at the kickoff: the experts work alone      |
-| Sell recurring subscriptions or bundles | Nobody        | Team reasoning: no user we met pays for sessions in advance   |
+| The product will not                    | Handled by    | Why                                                                                                        |
+| --------------------------------------- | ------------- | ---------------------------------------------------------------------------------------------------------- |
+| Host the video call                     | Video service | The single-term course constraint: video stays an integration                                              |
+| Schedule more than one expert at a time | Nobody        | [Customer decision at the kickoff](../reports/week-01/meeting-report.md#decisions): the experts work alone |
+| Sell recurring subscriptions or bundles | Nobody        | Team reasoning: no user we met pays for sessions in advance                                                |
 
 ## Context
 

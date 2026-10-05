@@ -4,6 +4,7 @@ title: 'Write the Week 3 sprint, estimation, and retrospective requirements'
 status: To Do
 assignee: []
 created_date: '2026-10-02 07:07'
+updated_date: '2026-10-05 11:28'
 labels: []
 dependencies: []
 references:
@@ -35,6 +36,15 @@ This task adds the process requirements and the artifact structures at the same 
 - [ ] #6 The Week 3 assignment cites these requirements per the authoring checklist in `AGENTS.md`
 <!-- AC:END -->
 
+## Definition of Done
+<!-- DOD:BEGIN -->
+- [ ] #1 All acceptance criteria are satisfied
+- [ ] #2 Changed Markdown files are formatted: `pnpm run format:markdown`
+- [ ] #3 `pnpm run lint:markdown` passes
+- [ ] #4 `pnpm run test:markdown-format` and `pnpm run test:markdown-rules` pass
+- [ ] #5 `pnpm run check:lectures` passes
+<!-- DOD:END -->
+
 ## Implementation Plan
 
 <!-- SECTION:PLAN:BEGIN -->
@@ -57,13 +67,6 @@ C4 continues from the Week 2 context diagram into Week 4 with containers and com
 The retrospective path `reports/week-NN/sprint-retrospective.md` is registered by TASK-009 as a placeholder in `artifact-requirements.md` `## Later Weeks`; this task replaces that placeholder with the real structure.
 
 This task is the follow-up for the estimation gap recorded in `backlog.md`: estimation has no source material anywhere in the 2025 decks and must be written from scratch, and it is the part students will push back on hardest.
-<!-- SECTION:NOTES:END -->
 
-## Definition of Done
-<!-- DOD:BEGIN -->
-- [ ] #1 All acceptance criteria are satisfied
-- [ ] #2 Changed Markdown files are formatted: `pnpm run format:markdown`
-- [ ] #3 `pnpm run lint:markdown` passes
-- [ ] #4 `pnpm run test:markdown-format` and `pnpm run test:markdown-rules` pass
-- [ ] #5 `pnpm run check:lectures` passes
-<!-- DOD:END -->
+Refine the `**Since: W3**` section `## Showing Working Software` in `requirements/customer-meetings-requirements.md` together with the Week 3 assignment. It carried a `TODO refine` comment in the student-facing source, which TASK-057 moved here.
+<!-- SECTION:NOTES:END -->

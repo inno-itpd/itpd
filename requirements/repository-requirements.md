@@ -284,7 +284,7 @@ If credentials, personal data, or confidential material is committed by mistake:
 
 **Required**
 
-1. Add `.github/ISSUE_TEMPLATE/user-story.yml`, an Issue Form with a field for each part of a story issue listed in [Where Stories Live](user-stories-requirements.md#where-stories-live), and the `user-story` label applied by the form.
+1. Add `.github/ISSUE_TEMPLATE/user-story.yml`, an Issue Form with a field for each part of a story issue listed in [Where Stories Live](user-stories-requirements.md#where-stories-live), and the `user-story` label applied by the form, or the issue type or field that rule allows instead.
    The statement, the `Traces to` list, and the `Priority reason` field are required, and `Traces to` takes one entry per line.
    The acceptance criteria field is optional, per [Acceptance Criteria](user-stories-requirements.md#acceptance-criteria).
 2. Add `.github/ISSUE_TEMPLATE/task.yml`, an Issue Form for work that is not a story, such as documentation, a report, or a workflow, with a description field and the `task` label applied by the form.
@@ -296,6 +296,7 @@ If credentials, personal data, or confidential material is committed by mistake:
    This is the team's rule rather than the platform's: `gh issue create` and the API skip the form and the label it applies.
 6. Create the labels the issues use, by any means: `user-story`, `task`, and the four `moscow:*` labels in [MoSCoW Prioritization](user-stories-requirements.md#moscow-prioritization).
    The forms apply `user-story` and `task`; the team applies one MoSCoW label per story.
+   A team that marks stories or priorities with an issue type or field, per [Where Stories Live](user-stories-requirements.md#where-stories-live), creates that type or field instead of the labels it replaces.
 7. Create branches from the issue where GitHub supports it, and link every pull request to its issue.
 8. Check the acceptance criteria a pull request touches before merging it; the [pull request template](#branch-protection-and-pull-requests) asks for them.
 
@@ -419,13 +420,15 @@ jobs:
           globs: "**/*.md"
 ```
 
-`.markdownlint-cli2.jsonc` in the repository root turns off the line-length rule, so one sentence per line and long table rows pass, and excludes the task tracker's directory:
+`.markdownlint-cli2.jsonc` in the repository root turns off the line-length rule, so one sentence per line and long table rows pass, and the list-numbering rule, so a meeting script can number its questions across their area groups for the agenda to cite.
+It also excludes the task tracker's directory:
 
 ```jsonc
 {
   "config": {
     "default": true,
     "MD013": false,
+    "MD029": false,
   },
   "ignores": ["backlog/**"],
 }

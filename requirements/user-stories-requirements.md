@@ -18,7 +18,7 @@ How the `US-nn` and `AC-nn` identifiers are cited is in [General Requirements](g
 **Since: W2**
 
 User stories are created in Week 2 and stay current for the rest of the course.
-Each story is a GitHub issue, and the `user-story` label identifies story issues.
+Each story is a GitHub issue, and the `user-story` label identifies story issues unless the team chose another marker, per rule 6 below.
 
 **Required**
 
@@ -29,8 +29,7 @@ Each story is a GitHub issue, and the `user-story` label identifies story issues
    - The story statement and its `Traces to` list, per [The Story](#the-story).
    - The acceptance criteria, each starting with its `AC-nn`, per [Acceptance Criteria](#acceptance-criteria).
    - The priority reason, in the form's `Priority reason` field, and one `moscow:*` label, per [MoSCoW Prioritization](#moscow-prioritization).
-   - The `user-story` label, applied by the form.
-      <!-- Alternatively, allow issue type -->
+   - The `user-story` label, applied by the form, or the marker the team chose instead, per rule 6.
    - Optionally, notes and a checklist of the remaining work, so a contributor can work without leaving the issue.
 
 2. A story you intend to build stays open until it is delivered, then closes as completed.
@@ -47,6 +46,10 @@ Each story is a GitHub issue, and the `user-story` label identifies story issues
    It shows open and closed issues, so a `Won't Have` story keeps its `US-nn` and stays findable after it closes.
 5. Do not keep a second list of stories in the repository.
    The issue is the source of truth for the requirement and its criteria.
+6. The `user-story` and `moscow:*` labels are the default, and these requirements name them.
+   A team may use GitHub's own issue metadata instead: a `User Story` issue type or an issue field to mark a story, and a single-select issue field with the four [MoSCoW](#moscow-prioritization) values to carry its priority.
+   The form applies the story marker where GitHub supports it, and the team sets it by hand where it does not.
+   The team then filters by its marker wherever a rule says "filtered by the `user-story` label", and sets its field wherever a rule says "the `moscow:*` label".
 
 **Recommended**
 
@@ -122,7 +125,7 @@ Every priority is relative to the product you intend to finish in this course.
 
 **Required**
 
-1. Every [story](#the-story) carries exactly one priority, as one `moscow:*` label:
+1. Every [story](#the-story) carries exactly one priority, as one `moscow:*` label, or as the field [Where Stories Live](#where-stories-live) allows instead:
 
    - `Must Have`, labelled `moscow:must`: the product is not the product without it.
    - `Should Have`, labelled `moscow:should`: important, and the product is still coherent without it.
@@ -140,9 +143,8 @@ Every priority is relative to the product you intend to finish in this course.
    No story you intend to build is something the boundary excludes.
    A `Won't Have` reason that rests on the boundary quotes the boundary item.
    The two are independent otherwise: a boundary item is a decision about the whole product and needs no matching story, and a `Won't Have` story is one written need that you excluded and need not appear in the boundary.
-6. A priority that changes updates the label and the priority reason, and is recorded per [Where Stories Live](#where-stories-live).
-   <!-- TODO: improve wording in the sentence above -->
-   Its comment names the old label and the new label.
+6. To change a priority, change the label and the priority reason together, and record the change per [Where Stories Live](#where-stories-live).
+   The comment names the old priority and the new one.
 7. The `Must Have` stories you would build first are the [minimum usable product candidate](#minimum-usable-product-candidate).
 
 **Recommended**
@@ -155,7 +157,7 @@ Every priority is relative to the product you intend to finish in this course.
 A `Could Have` reason; the `Must Have` one is in the [full example](#full-example).
 
 ```markdown
-## Priority reason
+### Priority reason
 
 Could Have: a reminder email reduces no-shows, but a client who paid already has the link, so the core task finishes without it.
 ```
@@ -190,28 +192,27 @@ Issue #42, a `Must Have` story:
 Title: US-01: Pay at booking
 Labels: moscow:must, user-story
 
-As a coach who sells sessions online, I want a client to pay when they book,
-so that an unpaid slot does not block a paying one for the rest of the week.
+### Story
 
-## Traces to
+As a coach who sells sessions online, I want a client to pay when they book, so that an unpaid slot does not block a paying one for the rest of the week.
+
+### Traces to
 
 - [`VP-01`](https://github.com/<organization>/<repo>/blob/main/docs/research/value-proposition.md#vp-01-one-link-that-carries-the-whole-booking)
 - [`GAP-01`](https://github.com/<organization>/<repo>/blob/main/docs/research/gap-analysis.md#gap-01-bookings-that-arrive-unpaid-and-unprepared)
 - [`ASM-02`](https://github.com/<organization>/<repo>/blob/main/docs/assumptions.md#asm-02-clients-will-pay-at-booking-rather-than-on-the-day)
 
-## Priority reason
+### Priority reason
 
 Must Have: without it, an unpaid booking still holds a slot, which is the GAP-01 problem itself; the reminder email can wait, because a client who paid already has the link.
 
-## Acceptance criteria
+### Acceptance criteria
 
-1. `AC-01`: Given a paid meeting type with one free slot, when a client books that slot, then the slot is held
-   while the client pays.
+1. `AC-01`: Given a paid meeting type with one free slot, when a client books that slot, then the slot is held while the client pays.
 2. `AC-02`: Given a held slot whose client has not paid, when the hold expires, then the slot is released back to the calendar.
-3. `AC-03`: Given a client who does not finish payment, when the hold expires, then the booking is not confirmed
-   and no meeting link is created.
+3. `AC-03`: Given a client who does not finish payment, when the hold expires, then the booking is not confirmed and no meeting link is created.
 
-## Notes
+### Notes
 
 Payment happens before confirmation, so there is no pay-later path.
 ```
@@ -230,14 +231,16 @@ Issue #50, a `Won't Have` story, closed as not planned:
 Title: US-09: Sell session bundles
 Labels: moscow:won't, user-story
 
+### Story
+
 As a coach, I want to sell a bundle of ten sessions, so that a returning client pays once.
 
-## Traces to
+### Traces to
 
 - [`VP-01`](https://github.com/<organization>/<repo>/blob/main/docs/research/value-proposition.md#vp-01-one-link-that-carries-the-whole-booking)
 - [`GAP-01`](https://github.com/<organization>/<repo>/blob/main/docs/research/gap-analysis.md#gap-01-bookings-that-arrive-unpaid-and-unprepared)
 
-## Priority reason
+### Priority reason
 
 Won't Have: the boundary item "Sell recurring subscriptions or bundles" excludes it, and no user we met has asked to pay for sessions in advance.
 ```

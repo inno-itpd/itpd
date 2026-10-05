@@ -102,8 +102,6 @@ A Week 2 validation meeting.
 
 **Since: W3**
 
-<!-- TODO refine -->
-
 **Required**
 
 1. Show each story you present as done against its acceptance criteria, one `AC-nn` at a time, while it runs on the screen.
@@ -296,28 +294,28 @@ Target: find out whether one booking link that carries payment and materials is 
 
 ## Questions
 
-**Business goals**
+### Business goals
 
 1. _(open)_ Why sell sessions online rather than through your existing clients?
 2. _(open)_ When this works, what changes in your week?
 
-**End users**
+### End users
 
 3. _(open)_ Who books a session, and who pays?
 4. _(closed)_ Are those the same person?
 
-**Current workflow**
+### Current workflow
 
 5. _(open)_ Walk me through the last booking and its payment, step by step.
    What happened at each step?
 6. _(open)_ Where do the payment, the meeting link, and the materials live today?
 
-**Pain points and constraints**
+### Pain points and constraints
 
 7. _(open)_ What was the most annoying part of the last booking that went wrong?
 8. _(closed)_ Can you accept online payments today?
 
-**Scope**
+### Scope
 
 9. _(open)_ If only one of booking, payment, or materials could ship, which one survives?
 10. _(closed)_ Is a Telegram bot acceptable, or does it have to be a web page?
@@ -328,12 +326,12 @@ alice asks, bob takes notes, carol observes and records what we did not ask.
 
 ## Key improvements
 
-**"Would you like a dashboard?" -> "What do you look at when a client has not paid yet?"**
+### "Would you like a dashboard?" -> "What do you look at when a client has not paid yet?"
 
 We were offering a solution.
 The rewrite asks for the past, so the answer describes a real routine instead of a preference for our idea.
 
-**"Is latency important to you?" -> "When the last payment failed, what did you do?"**
+### "Is latency important to you?" -> "When the last payment failed, what did you do?"
 
 The original asks about an abstract property.
 The rewrite anchors it to an event the customer will remember, so the answer is a measurement rather than a preference.
@@ -363,12 +361,12 @@ The rewrite anchors it to an event the customer will remember, so the answer is 
 
 ## Decisions
 
-| Decision                                   | Made by             | Changes                                                                                           |
-| ------------------------------------------ | ------------------- | ------------------------------------------------------------------------------------------------- |
-| Build paid bookings, not the calendar view | Customer            | [`VP-01`](../../docs/research/value-proposition.md#vp-01-one-link-that-carries-the-whole-booking) |
-| Drop multi-expert scheduling               | Customer            | `GAP-04`, marked dropped in the [gap analysis](../../docs/research/gap-analysis.md)               |
-| Keep the web link for delivery             | Team, not contested | `None`; kept as is, so `VP-01` is unchanged                                                       |
-| Deploy on a single small VPS               | Customer            | `TBD`; a customer-given constraint, recorded when the vision is written                           |
+| Decision                                   | Made by             | Changes                                                                                      |
+| ------------------------------------------ | ------------------- | -------------------------------------------------------------------------------------------- |
+| Build paid bookings, not the calendar view | Customer            | `VP-02`, marked dropped in the [value proposition](../../docs/research/value-proposition.md) |
+| Drop multi-expert scheduling               | Customer            | `GAP-04`, marked dropped in the [gap analysis](../../docs/research/gap-analysis.md)          |
+| Keep the web link for delivery             | Team, not contested | `None`; kept as is, so `VP-01` is unchanged                                                  |
+| Deploy on a single small VPS               | Customer            | `TBD`; a customer-given constraint, recorded when the vision is written                      |
 
 ## Action points
 
@@ -385,10 +383,10 @@ The rewrite anchors it to an event the customer will remember, so the answer is 
 
 ## Disagreements
 
-| Your position                 | Customer's position                         | What you changed                      |
-| ----------------------------- | ------------------------------------------- | ------------------------------------- |
-| `GAP-04` is a differentiator  | Multi-expert scheduling is a solved problem | Dropped it from the value proposition |
-| You would ship a Telegram bot | A web link is enough                        | `VP-01` is now written as a web link  |
+| Your position                  | Customer's position                                             | What you changed                                                         |
+| ------------------------------ | --------------------------------------------------------------- | ------------------------------------------------------------------------ |
+| `GAP-04` is a differentiator   | Our experts work alone, so nobody needs multi-expert scheduling | Dropped it from the value proposition                                    |
+| Reminders are a differentiator | Reminders are table stakes                                      | Re-cut the comparison without the reminders property, as an action point |
 ```
 
 ### Example Meeting Transcript
