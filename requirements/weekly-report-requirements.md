@@ -32,15 +32,18 @@ Who may see each item is in [Visibility Requirements](visibility-requirements.md
 7. It contains a coverage table mapping each required deliverable of the assignment to the artifact that satisfies it.
    The table is the index, so it is not followed by a second list of the same links.
    A deliverable this file records in its own section has no row.
-8. It links the root `LICENSE`.
-9. It contains a contribution table mapping each team member's GitHub username to the work they did, using links to their commits, pull requests, or reviews where possible.
-10. It links the repository evidence the assignment asks for, and justifies in prose every link the [link check](repository-requirements.md#link-checking) excludes.
-11. It declares every deviation, per [Declaring Deviations](#declaring-deviations).
-12. It states, in one line, that no private-only material was committed to the repository.
+   Each artifact cell links its artifact.
+   An assignment's table names each repository file by path, and the report turns that path into a link whose text is the path from the repository root, with the heading anchor when the row names a section.
+   Anything else, such as an external board, a filtered issue list, or a CI run, gets descriptive link text.
+   A row whose artifact is not public says so instead of linking it.
+8. It contains a contribution table mapping each team member's GitHub username to the work they did, using links to their commits, pull requests, or reviews where possible.
+9. It links the repository evidence the assignment asks for, and justifies in prose every link the [link check](repository-requirements.md#link-checking) excludes.
+10. It declares every deviation, per [Declaring Deviations](#declaring-deviations).
+11. It states, in one line, that no private-only material was committed to the repository.
 
 **Since: W2**
 
-13. It records the [minimum usable product candidate](user-stories-requirements.md#minimum-usable-product-candidate) under the heading the assignment names: the core task, then the `US-nn` of each story with its issue linked.
+12. It records the [minimum usable product candidate](user-stories-requirements.md#minimum-usable-product-candidate) under the heading the assignment names: the core task, then the `US-nn` of each story with its issue linked.
 
 **Recommended**
 
@@ -77,17 +80,18 @@ The kickoff decisions are in the [meeting report](meeting-report.md#decisions).
 
 ## Coverage
 
-| Deliverable              | Artifact                                                                               |
-| ------------------------ | -------------------------------------------------------------------------------------- |
-| Alternatives search      | [docs/research/alternatives.md](../../docs/research/alternatives.md)                   |
-| Candidate list           | [candidate-list.md](candidate-list.md)                                                 |
-| Compare the alternatives | [docs/research/comparison.md](../../docs/research/comparison.md)                       |
-| Gap analysis             | [docs/research/gap-analysis.md](../../docs/research/gap-analysis.md)                   |
-| Value proposition        | [docs/research/value-proposition.md](../../docs/research/value-proposition.md)         |
-| Research board           | [Figma board](https://www.figma.com/design/PUc4NFVcLureKzxE3RAGB0/Market-Research)     |
-| Meeting script           | [meeting-script.md](meeting-script.md)                                                 |
-| Customer kickoff         | [meeting-report.md](meeting-report.md), [meeting-transcript.md](meeting-transcript.md) |
-| AI usage                 | [ai-usage.md](ai-usage.md)                                                             |
+| Deliverable              | Artifact                                                                                                               |
+| ------------------------ | ---------------------------------------------------------------------------------------------------------------------- |
+| License                  | [LICENSE](../../LICENSE)                                                                                               |
+| Alternatives search      | [docs/research/alternatives.md](../../docs/research/alternatives.md)                                                   |
+| Candidate list           | [reports/week-01/candidate-list.md](candidate-list.md)                                                                 |
+| Compare the alternatives | [docs/research/comparison.md](../../docs/research/comparison.md)                                                       |
+| Gap analysis             | [docs/research/gap-analysis.md](../../docs/research/gap-analysis.md)                                                   |
+| Value proposition        | [docs/research/value-proposition.md](../../docs/research/value-proposition.md)                                         |
+| Research board           | [Figma board](https://www.figma.com/design/PUc4NFVcLureKzxE3RAGB0/Market-Research)                                     |
+| Meeting script           | [reports/week-01/meeting-script.md](meeting-script.md)                                                                 |
+| Customer kickoff         | [reports/week-01/meeting-report.md](meeting-report.md), [reports/week-01/meeting-transcript.md](meeting-transcript.md) |
+| AI usage                 | [reports/week-01/ai-usage.md](ai-usage.md)                                                                             |
 
 ## Contribution
 

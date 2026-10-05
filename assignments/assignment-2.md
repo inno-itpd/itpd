@@ -209,17 +209,17 @@ This week it also carries:
 1. In the summary, what you found out you were wrong about.
 2. The coverage table, with these rows:
 
-   | Deliverable            | Artifact                                                                                                |
-   | ---------------------- | ------------------------------------------------------------------------------------------------------- |
-   | Kickoff action points  | `## Previous action points` in `meeting-report.md`, and the artifact each outcome changed               |
-   | Product vision         | `docs/product-vision.md`                                                                                |
-   | User stories           | the `US-nn` issues, filtered by the `user-story` label                                                  |
-   | Issue forms and labels | `.github/ISSUE_TEMPLATE/user-story.yml` and `task.yml`, `user-story`, `task`, and the `moscow:*` labels |
-   | Prototypes             | `reports/week-02/prototypes.md`                                                                         |
-   | Meeting script         | `meeting-script.md`                                                                                     |
-   | Customer validation    | `meeting-report.md`, and `meeting-transcript.md` or `meeting-notes.md`                                  |
-   | Markdown check         | a link to the latest green `main` run                                                                   |
-   | AI usage               | `ai-usage.md`                                                                                           |
+   | Deliverable            | Artifact                                                                                                                       |
+   | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+   | Kickoff action points  | `## Previous action points` in `reports/week-02/meeting-report.md`, and the artifact each outcome changed                      |
+   | Product vision         | `docs/product-vision.md`                                                                                                       |
+   | User stories           | the `US-nn` issues, filtered by the `user-story` label                                                                         |
+   | Issue forms and labels | `.github/ISSUE_TEMPLATE/user-story.yml` and `.github/ISSUE_TEMPLATE/task.yml`, `user-story`, `task`, and the `moscow:*` labels |
+   | Prototypes             | `reports/week-02/prototypes.md`                                                                                                |
+   | Meeting script         | `reports/week-02/meeting-script.md`                                                                                            |
+   | Customer validation    | `reports/week-02/meeting-report.md`, and `reports/week-02/meeting-transcript.md` or `reports/week-02/meeting-notes.md`         |
+   | Markdown check         | a link to the latest green `main` run                                                                                          |
+   | AI usage               | `reports/week-02/ai-usage.md`                                                                                                  |
 
    If the customer refused publication of the transcript or the notes, that row says so and points at the Moodle submission instead.
 
