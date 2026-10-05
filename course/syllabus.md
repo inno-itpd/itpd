@@ -36,6 +36,8 @@ The course is designed to prepare students for the Industrial Project course and
 
 - **Duration**: **11 weeks** (September 25, 2026 – December 10, 2026).
 - **Class Sessions**: Held weekly on **Fridays** (Classes 1 through 11).
+- **Customer Meetings**: Each team meets its customer, the team's instructor, at least once every week from Week 1, and the Week 1 meeting is the kickoff.
+  See [Every Meeting](../requirements/customer-meetings-requirements.md#every-meeting).
 - **Weekly Submission Deadline Policy**:
   > [!IMPORTANT]
   > All weekly assignment submissions have a **soft deadline on Thursday at 23:59**, the night before the next Friday class session, and a **hard deadline on Friday at 23:59**.
@@ -61,10 +63,10 @@ The first two weeks establish the project foundations, team formation, and compe
      - **Pros & Cons Analysis**: Detail the strengths, limitations, and trade-offs of each identified alternative.
      - **Gap Analysis**: Uncover useful features, workflows, and user needs that are not adequately addressed by existing alternatives.
      - **Value Proposition & Differentiation**: Clearly articulate how the team's product will be superior, distinctive, and more valuable than existing similar products.
-   - Week 1 also includes **product repository setup** and one **customer kickoff meeting** with the team's instructor.
+   - Week 1 also includes **product repository setup** and the **customer kickoff meeting**, the first of the weekly meetings with the customer.
 4. **Repository Setup (Week 1) & Requirements (Week 2)**:
    - The product repository is created and configured during Week 1, alongside the research: a public MIT-licensed repository in the team's own GitHub organization, a protected `main` branch requiring pull request review, a pull request template, and automated link checking.
-   - Following research submission and feedback, Week 2 turns the research into requirements: a product vision, prioritized user stories with acceptance criteria, prototypes that test the riskiest assumptions, issue tracking, and a second customer meeting that changes something.
+   - Following research submission and feedback, Week 2 turns the research into requirements: a product vision, prioritized user stories with acceptance criteria, prototypes that test the riskiest assumptions, issue tracking, and the Week 2 customer meeting, which changes something.
 
 ---
 
@@ -120,7 +122,7 @@ The due dates below are the Thursday soft deadlines; each hard deadline is the f
     4. **Minimum Usable Product Candidate**: the `Must Have` stories that let a user complete one core task end to end, recorded in `reports/week-02/README.md`.
     5. **Prototypes**: prototypes of the riskiest assumptions, recorded at `reports/week-02/prototypes.md`.
        Prototypes may be paper sketches, view-only design tools, or disposable code spikes.
-    6. **Customer Validation Meeting**: a second meeting with the customer, with the full Week 1 artifact set, which changes at least one story.
+    6. **Customer Validation Meeting**: the Week 2 meeting with the customer, with the full Week 1 artifact set, which changes at least one story.
   - **Minima**: at least eight story issues, at least five of them not `Won't Have`, each story carrying a `moscow:*` label, `Won't Have` stories closed as not planned, at least two acceptance criteria per story that is not `Won't Have`, and a minimum usable product candidate that is a strict, non-empty subset of the Must-Have stories and completes one core task end to end.
     There is no product code this week.
   - **Note**: The product repository itself is created and configured in Week 1.
