@@ -31,6 +31,7 @@ Who may see each item is in [Visibility Requirements](visibility-requirements.md
    A week with no decision at all does not carry the section.
 7. It contains a coverage table mapping each required deliverable of the assignment to the artifact that satisfies it.
    The table is the index, so it is not followed by a second list of the same links.
+   A deliverable this file records in its own section has no row.
 8. It links the root `LICENSE`.
 9. It contains a contribution table mapping each team member's GitHub username to the work they did, using links to their commits, pull requests, or reviews where possible.
 10. It links the repository evidence the assignment asks for, and justifies in prose every link the [link check](repository-requirements.md#link-checking) excludes.
