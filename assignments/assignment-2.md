@@ -93,7 +93,7 @@ This week:
 1. Before a story cites an assumption, move your Week 1 assumptions table from `docs/research/value-proposition.md` into `docs/assumptions.md`, in one pull request.
    This is the same one-time catch-up as the decisions in [Part 2](#part-2-move-the-week-1-decisions-into-the-decisions-log).
    Give each row its own `ASM-nn` section, numbered in the table's order, with its current status, and leave no copy of the table in `value-proposition.md`.
-2. Merge it and `docs/decisions.md` before a story links them, because a story links files on `main`.
+2. Merge it and `docs/decisions.md` before a story links them, because a story [links files on `main`](../requirements/repository-requirements.md#issue-tracking).
 
 ## Part 4: Check The Markdown In CI
 

@@ -299,6 +299,19 @@ If credentials, personal data, or confidential material is committed by mistake:
    A team that marks stories or priorities with an issue type or field, per [Where Stories Live](user-stories-requirements.md#where-stories-live), creates that type or field instead of the labels it replaces.
 7. Create branches from the issue where GitHub supports it, and link every pull request to its issue.
 8. Check the acceptance criteria a pull request touches before merging it; the [pull request template](#branch-protection-and-pull-requests) asks for them.
+9. In an issue, an issue comment, or a pull request description, link a repository file by its full URL on `main`, because a relative link does not resolve there:
+
+   ```text
+   https://github.com/<org>/<repo>/blob/main/docs/decisions.md#dec-06-confirm-a-booking-only-after-the-client-has-paid
+   ```
+
+   Link on `main`, not at a commit hash, so the link shows the file as it is now, such as a decision that has since been reversed.
+   The commit-hash permalink is for the submission, per [Permalinks And Snapshots](#permalinks-and-snapshots).
+   Merge the file into `main` before an issue links it.
+
+**Recommended**
+
+- Put the URL pattern in the description of the `Traces to` field in `user-story.yml`, so whoever fills in the form sees it.
 
 The user story requirements say [what a story says](user-stories-requirements.md#the-story) and [how its issue is kept](user-stories-requirements.md#where-stories-live).
 

@@ -83,7 +83,7 @@ Its job is to make one need concrete enough that a reviewer can tell whether you
    The `VP-nn` is how a story traces to the product vision, so the `VP-nn` of every story except a `Won't Have` story is one the vision's [goal](product-vision-requirements.md#goal) traces to.
    A story you intend to build that supports no such value proposition is outside the vision: add its `VP-nn` to the goal as a [team decision](decisions-requirements.md#the-decision), or make the story `Won't Have`.
    Cite each entry as [Identifier Rules](general-requirements.md#identifier-rules) says, and link each Week 1 identifier per [Traceability Into Later Weeks](general-requirements.md#traceability-into-later-weeks).
-   A relative link does not resolve in an issue body, so link the file on `main` by its full URL.
+   Link each file on `main`, per [Issue Tracking](repository-requirements.md#issue-tracking).
    A need from outside the Week 1 research is handled per [Traceability Into Later Weeks](general-requirements.md#traceability-into-later-weeks).
 5. Every story except a `Won't Have` story is small enough to build and verify in one week.
    A need larger than that is written as two or more stories.
