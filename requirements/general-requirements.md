@@ -19,23 +19,19 @@ It is the short version of the requirements, states what is expected of you as a
 **Since: W1**
 
 1. An **artifact** is any file, external board, link, recording, or other preserved evidence used to plan, deliver, verify, or submit course work.
-2. The **weekly public report** is `reports/week-NN/README.md`.
-   It is the canonical public entry point for that week's submission.
+2. The **weekly public report** is the canonical public entry point for a week's submission, per [Weekly Public Report](weekly-report-requirements.md#weekly-public-report).
 3. A **supporting artifact** is a file, link, or board referenced from the weekly public report that holds the detailed content.
 4. A **repository-resident artifact** is committed to the product repository.
 5. An **external-but-indexed artifact** is hosted outside the repository, for example a GitHub issue, a Figma or Miro board, and must be linked from the weekly public report.
 6. A **private-only artifact** must never be committed to the public repository.
    It is shared only through the Moodle submission.
 7. A **deviation** is a place where your team did something materially different from what an assignment or these requirements describe.
-   Deviations are allowed.
-   Undeclared deviations are not.
-8. A **meeting report** is your team's own account of a meeting with the customer, written in your own words, at `reports/week-NN/meeting-report.md`.
+   How one is declared is in [Declaring Deviations](weekly-report-requirements.md#declaring-deviations).
+8. A **meeting report** is your team's own account of a meeting with the customer, per [Meeting Report](customer-meetings-requirements.md#meeting-report).
 9. A **decision** is a conclusion that changes or explicitly settles what you build.
-   The change is open-ended: a story or acceptance criterion, a constraint, an assumption, a maintained document, the implementation or the scaffold, or a later requirement.
-   In a [meeting report](customer-meetings-requirements.md#meeting-report), it is a conclusion the meeting reached.
-   A decision the team takes outside a meeting is recorded in the [weekly public report](weekly-report-requirements.md#weekly-public-report) of the week it was made.
+   A meeting's decisions are recorded in its [meeting report](customer-meetings-requirements.md#meeting-report), and the team's own in the [weekly public report](weekly-report-requirements.md#weekly-public-report).
    How a decision is cited is in [Identifier Rules](#identifier-rules).
-10. An **action point** is a follow-up that came out of a meeting, with a named owner, which is a GitHub username, and a week it falls due in.
+10. An **action point** is a follow-up that came out of a meeting, with an owner and a week it falls due in, per [Meeting Report](customer-meetings-requirements.md#meeting-report).
 
 ## Where Artifacts Live In The Repository
 
@@ -59,8 +55,6 @@ It is the short version of the requirements, states what is expected of you as a
 4. Maintained documentation in `docs/` is expected to stay current.
    When the product, the plan, or the decisions change, update the file.
    Week reports in `reports/week-NN/` are a historical record and are not rewritten after their week.
-5. The weekly public report is always `reports/week-NN/README.md`.
-   Every week has one, and it is the index for that week.
 
 ## Identifier Rules
 
@@ -74,8 +68,8 @@ It is the short version of the requirements, states what is expected of you as a
    A later family is introduced only by the requirement that first uses it.
 2. An identifier, once issued, is never changed, reused, or reassigned, including when the artifact is edited later in the course.
 3. Gaps in a sequence are expected and correct.
-   A removed `GAP-03` leaves a hole; it does not cause renumbering.
-4. A removed item keeps its identifier and its entry, marked as removed with a reason and the date.
+   A dropped `GAP-03` leaves a hole; it does not cause renumbering.
+4. A dropped item keeps its identifier and its entry, marked as dropped with a reason and the date.
 5. The identifier always appears in the heading of its own section, so `ALT-02` can be found with a search.
 6. Every reference between artifacts uses the identifier, not the title, so that renaming a title does not break the chain.
 7. `AC-nn` is the exception to rules 4 and 5, because it lives inside a story issue rather than in a section of its own.
@@ -85,7 +79,7 @@ It is the short version of the requirements, states what is expected of you as a
    Cite a decision by path and `#decisions` anchor with its sentence quoted: a meeting decision cites its meeting report, and a decision made outside a meeting cites the weekly public report of the week it was made.
    Cite an action point the same way, with its report's `#action-points` anchor and the action quoted.
    A story's `Traces to` entry for a decision or action point uses this form.
-   A later week cites a meeting report by path and heading anchor, per [Where Meeting Artifacts Live](customer-meetings-requirements.md#where-meeting-artifacts-live).
+   Any other citation of a meeting report also uses its path and heading anchor, for example `reports/week-01/meeting-report.md#decisions`.
 
 ## Traceability Into Later Weeks
 
@@ -105,6 +99,6 @@ This is what makes the course a project rather than nine separate assignments.
 2. If later work contradicts something in your research, update the research and note the change.
    The research is maintained documentation, not a frozen Week 1 submission.
    See [Where Artifacts Live In The Repository](#where-artifacts-live-in-the-repository).
-3. If you drop a gap mid-course, keep it in the gap analysis marked as dropped, and say which value propositions and user stories were affected.
+3. If you drop a gap mid-course, say which value propositions and user stories were affected.
 4. A later need that your Week 1 research did not anticipate does not rewrite the research.
    It becomes a story that traces to the `VP-nn` it supports; update the research only when the later need contradicts it.

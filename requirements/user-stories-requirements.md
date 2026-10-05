@@ -34,7 +34,7 @@ Each story is a GitHub issue, and the `user-story` label identifies story issues
    - Optionally, notes and a checklist of the remaining work, so a contributor can work without leaving the issue.
 
 2. A story you intend to build stays open until it is delivered, then closes as completed.
-   A `Won't Have` story, including one dropped after it was written, carries the `moscow:won't` label and is closed as not planned, with a comment naming the reason.
+   A `Won't Have` story is closed as not planned, with a comment naming the reason.
    A closed story stays in the list; the closing comment and the close date are its record.
 3. The issue is the record of change.
    A change that follows a customer meeting adds a dated comment saying what changed, naming any `AC-nn` that changed, and linking the meeting report.
@@ -55,14 +55,12 @@ Each story is a GitHub issue, and the `user-story` label identifies story issues
 A user story is a small, checkable statement of one thing a user needs.
 A user is any actor with a goal: the person the product serves, and the operator or administrator who keeps it running.
 Its job is to make one need concrete enough that a reviewer can tell whether you delivered it.
-Each story is a GitHub issue, and the issues are the only place the stories live.
-Each story carries a priority, per [MoSCoW Prioritization](#moscow-prioritization), and, unless it is a `Won't Have` story, its [acceptance criteria](#acceptance-criteria).
 
 **Required**
 
 1. Write **8 or more** user stories, and keep at least **5 of them** something other than `Won't Have`.
    Fewer do not cover a product, and more leaves no week to change them once something turns out to be wrong.
-   A `Won't Have` story is one you have decided not to build; every other story is one you intend to build.
+   Every story that is not [`Won't Have`](#moscow-prioritization) is one you intend to build.
 2. Every story gets a stable ID `US-01`, `US-02`, and so on, per [Identifier Rules](general-requirements.md#identifier-rules).
 3. Every story is a statement of a user's need, not a description of a solution.
    "As a coach, I want a client to pay when they book, so that an unpaid slot does not block a paying one for the rest of the week" is a need.
@@ -122,7 +120,7 @@ Every priority is relative to the product you intend to finish in this course.
    - `Must Have`, labelled `moscow:must`: the product is not the product without it.
    - `Should Have`, labelled `moscow:should`: important, and the product is still coherent without it.
    - `Could Have`, labelled `moscow:could`: valuable, and the first thing to cut.
-   - `Won't Have`, labelled `moscow:won't`: a need you have deliberately excluded, including a story you dropped after writing it.
+   - `Won't Have`, labelled `moscow:won't`: a need you have deliberately excluded.
 
 2. Every story carries a **priority reason** in the issue form's `Priority reason` field.
    The reason says why the story has this priority and not the one above or below it, and names the [constraint](product-vision-requirements.md#constraints) when one drives it.
@@ -148,11 +146,7 @@ Every priority is relative to the product you intend to finish in this course.
 
 **Example**
 
-```markdown
-## Priority reason
-
-Must Have: without it, an unpaid booking still holds a slot, which is the GAP-01 problem itself; the reminder email can wait, because a client who paid already has the link.
-```
+A `Could Have` reason; the `Must Have` one is in the [full example](#full-example).
 
 ```markdown
 ## Priority reason

@@ -18,8 +18,7 @@ Who may see each item is in [Visibility Requirements](visibility-requirements.md
 
 1. Create `reports/week-NN/README.md` for every week that has a submission.
 2. Merge it, and every repository-resident artifact it links, into `main`, the [default branch](repository-requirements.md#repository-setup), before you submit.
-   The [submission commit](repository-requirements.md#permalinks-and-snapshots) is a `main` commit that contains them.
-   A report or an artifact left on an unmerged pull-request branch has not been submitted.
+   A report or an artifact left on an unmerged pull-request branch is not in the [submission commit](repository-requirements.md#permalinks-and-snapshots), so it has not been submitted.
 3. It is the index for the week.
    It links directly to every supporting artifact, both repository files and external links.
 4. It identifies the week, the project, the team, and the covered scope clearly enough that a reader knows what body of work it describes.
@@ -34,14 +33,12 @@ Who may see each item is in [Visibility Requirements](visibility-requirements.md
    The table is the index, so it is not followed by a second list of the same links.
 8. It links the root `LICENSE`.
 9. It contains a contribution table mapping each team member's GitHub username to the work they did, using links to their commits, pull requests, or reviews where possible.
-10. It states any deviation from the assignment or from the shared requirements, and justifies it.
-    This includes cases where you used a different tool, a different artifact form, or an alternative arrangement.
+10. It declares every deviation, per [Declaring Deviations](#declaring-deviations).
 11. It states, in one line, that no private-only material was committed to the repository.
-12. It stays accurate and reachable until the course has been graded.
 
 **Since: W2**
 
-13. It records the [minimum usable product candidate](user-stories-requirements.md#minimum-usable-product-candidate) under the heading the assignment names: the core task, then the `US-nn` of each story with its issue linked, then the story to drop first.
+12. It records the [minimum usable product candidate](user-stories-requirements.md#minimum-usable-product-candidate) under the heading the assignment names: the core task, then the `US-nn` of each story with its issue linked, then the story to drop first.
 
 **Recommended**
 
@@ -171,7 +168,7 @@ The Moodle PDF is the canonical private artifact for a week.
 1. It identifies the project, the team, and the week clearly enough for an instructor to match it to the repository state.
 2. It links the public evidence rather than copying it.
    Do not paste the weekly report into the PDF.
-3. It contains the private-only material for that week: private links, university emails, credentials if the week needs them, and any artifact the customer refused to let you publish.
+3. It contains that week's private-only material: every item [Sensitive Information Reference](visibility-requirements.md#sensitive-information-reference) sends to Moodle only.
 4. When the assignment requires a permalink, it uses a commit-hash permalink, per [Permalinks And Snapshots](repository-requirements.md#permalinks-and-snapshots), so the link keeps pointing at the exact content that was submitted.
 5. It stays short.
    It is a map, not a second copy of the repository.

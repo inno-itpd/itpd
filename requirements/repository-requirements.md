@@ -297,7 +297,7 @@ If credentials, personal data, or confidential material is committed by mistake:
 3. Create the labels the stories use, by any means: `user-story`, and the four `moscow:*` labels in [MoSCoW Prioritization](user-stories-requirements.md#moscow-prioritization).
    The form applies `user-story`; the team applies one MoSCoW label per story.
 4. Create branches from the issue where GitHub supports it, and link every pull request to its issue.
-5. Check the relevant acceptance criteria before merging, and name them in the pull request, per [the pull request template](#branch-protection-and-pull-requests).
+5. Check the acceptance criteria a pull request touches before merging it; the [pull request template](#branch-protection-and-pull-requests) asks for them.
 
 The user story requirements say [what a story says](user-stories-requirements.md#the-story) and [how its issue is kept](user-stories-requirements.md#where-stories-live).
 
@@ -393,8 +393,7 @@ A broken link or a heading that drifted out of Title Case is a defect in that wo
 4. Add continuous integration for your product code: linting, formatting or type checking, build, and automated tests, on pull requests and on `main`.
 5. Keep the link check and the Markdown check running.
    They are a baseline, not a substitute for the checks your product needs.
-6. Pin the actions you add, as in [Pinning Third-Party Actions](#pinning-third-party-actions).
-7. The latest `main` run of every required check must be green before you submit.
+6. The latest `main` run of every required check must be green before you submit.
 
 ## Recommended Throughout The Course
 

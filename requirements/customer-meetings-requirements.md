@@ -30,14 +30,14 @@ These requirements define how a meeting is prepared and held, and the script, re
 **Since: W1**
 
 A meeting with the customer produces a meeting report, and either a transcript or notes.
-A recording is a separate, private-only artifact.
+Who may see each of them, and the recording, is in [Sensitive Information Reference](visibility-requirements.md#sensitive-information-reference).
 
-| Artifact                                  | When it exists                                                  | Visibility            |
-| ----------------------------------------- | --------------------------------------------------------------- | --------------------- |
-| [Meeting Report](#meeting-report)         | Every meeting with the customer                                 | Public once sanitized |
-| [Meeting Transcript](#meeting-transcript) | The meeting was recorded and publishing it is permitted         | Public once sanitized |
-| [Meeting Notes](#meeting-notes)           | Recording or transcript sharing was refused                     | Public once sanitized |
-| [Meeting Script](#meeting-script)         | Before any meeting with the customer, as the preparation for it | Public once sanitized |
+| Artifact                                  | When it exists                                                  |
+| ----------------------------------------- | --------------------------------------------------------------- |
+| [Meeting Report](#meeting-report)         | Every meeting with the customer                                 |
+| [Meeting Transcript](#meeting-transcript) | The meeting was recorded and sharing a transcript is permitted  |
+| [Meeting Notes](#meeting-notes)           | Recording or transcript sharing was refused                     |
+| [Meeting Script](#meeting-script)         | Before any meeting with the customer, as the preparation for it |
 
 **Required**
 
@@ -46,9 +46,10 @@ A recording is a separate, private-only artifact.
 2. A meeting with no recording and no transcript still produces a meeting report.
 3. The meeting report is the team's own account of the meeting.
    The transcript and the notes are the evidence it is written from, and the report links to them.
-4. Later weeks cite a meeting report by path and heading anchor, for example `reports/week-01/meeting-report.md#decisions`.
-   The report is the record of that meeting and is not rewritten afterwards.
+4. The report is the record of that meeting and is not rewritten afterwards.
+   Later weeks cite it as [Identifier Rules](general-requirements.md#identifier-rules) says.
    If a later meeting reverses a decision, the later report quotes the reversed decision, says so, and links back to the report it reverses.
+5. Say in the weekly public report which evidence the meeting produced, a published transcript, a transcript shared privately, or notes, and why.
 
 ## Every Meeting
 
@@ -185,11 +186,10 @@ A Week 3 meeting that shows working software.
    If a week holds more than one, number them in chronological order: `meeting-report-2.md`, `meeting-report-3.md`.
 2. Write it in English, in the team's own words, in the past or present tense as suits the entry.
    A report that restates the transcript line by line, or that a tool generated and the team pasted in unchecked, does not satisfy this.
-3. Declare any tool used to transcribe or draft the report in that week's [AI Usage Report](weekly-report-requirements.md#ai-usage-report).
-4. It contains exactly the sections below, in this order, and nothing else.
-5. A section with nothing in it says `None` and moves on.
+3. It contains exactly the sections below, in this order, and nothing else.
+4. A section with nothing in it says `None` and moves on.
    The same rule applies to [deviations](weekly-report-requirements.md#declaring-deviations).
-6. The sections, and what belongs in them:
+5. The sections, and what belongs in them:
 
    Name people as [Sensitive Information Reference](visibility-requirements.md#sensitive-information-reference) says.
 
@@ -202,7 +202,7 @@ A Week 3 meeting that shows working software.
    | `## Open questions` | A table, one row per question the meeting did not answer                                                                                                                                                                                            |
    | `## Disagreements`  | A table, one row per place the customer did not agree with you                                                                                                                                                                                      |
 
-7. `## Decisions` has the columns `Decision`, `Made by`, and `Changes`.
+6. `## Decisions` has the columns `Decision`, `Made by`, and `Changes`.
    `Changes` names what the decision changed, one entry per thing, and links it when the artifact has a stable link:
 
    - A story change names the `US-nn`, and the `AC-nn` when a specific criterion changed.
@@ -215,12 +215,12 @@ A Week 3 meeting that shows working software.
    `TBD` and `None` are statuses, not identifiers.
    A `TBD` decision is finished when the artifact that carries its effect names the decision and links the report that recorded it; the report itself is not edited.
 
-8. `## Action points` has the columns `Action`, `Owner`, and `Due`.
+7. `## Action points` has the columns `Action`, `Owner`, and `Due`.
    The owner is a GitHub username, and the due date falls inside a named week.
-9. `## Open questions` has the columns `Question`, `What it would change`, and `Follow-up`.
+8. `## Open questions` has the columns `Question`, `What it would change`, and `Follow-up`.
    A question whose answer would change nothing does not belong in the table.
-10. `## Disagreements` has the columns `Your position`, `Customer's position`, and `What you changed`.
-    If you did not change anything, say why you kept your position instead.
+9. `## Disagreements` has the columns `Your position`, `Customer's position`, and `What you changed`.
+   If you did not change anything, say why you kept your position instead.
 
 **Recommended**
 
@@ -235,8 +235,8 @@ A Week 3 meeting that shows working software.
 
 **Required**
 
-1. Ask the customer for permission before recording starts.
-   A refusal is not a problem: write [notes](#meeting-notes) instead and say so in the weekly public report.
+1. A transcript needs the customer's permission to record, asked per [Permission Questions](#permission-questions).
+   A refusal is not a problem: write [notes](#meeting-notes) instead.
 2. Write the transcript in English, cleaned for readability without changing the meaning of what was said.
 3. Use one sentence per line, and put a timestamp at the start of the line with a speaker label:
 
@@ -246,12 +246,10 @@ A Week 3 meeting that shows working software.
    ```
 
 4. Label speakers consistently, as [Sensitive Information Reference](visibility-requirements.md#sensitive-information-reference) says.
-5. Remove personal data and confidential information.
+5. Remove everything [Sensitive Information Reference](visibility-requirements.md#sensitive-information-reference) keeps out of the repository.
    Use `[inaudible]` where a word cannot be recovered and `[redacted]` where something was deliberately removed.
 6. If the customer refuses to let the transcript be published, do not commit it.
-   Put it in the Moodle submission instead and state that in the weekly public report.
    The [meeting report](#meeting-report) is still public.
-7. Keep the recording out of the repository and share the link only through Moodle.
 
 ## Meeting Notes
 
@@ -264,7 +262,6 @@ A Week 3 meeting that shows working software.
 3. Include what was presented, what the customer said about it, what was decided, and what was left open.
 4. Remove personal data and confidential information on the same terms as a [transcript](#meeting-transcript).
 5. Notes are evidence, so the [meeting report](#meeting-report) is still required and still links to them.
-6. Say in the weekly public report which of the three you produced, and why.
 
 ## Full Examples
 
