@@ -27,7 +27,7 @@ reports/week-NN/meeting-script.md     the target, the agenda, the questions, the
 reports/week-NN/meeting-report.md     the previous action points' outcomes, the decisions, the new action points, the disagreements
 reports/week-NN/meeting-notes.md      or meeting-transcript.md, never both
 reports/week-NN/prototypes.md         when you showed a prototype: what it tested, what they said
-the story issue                       a dated comment on what the meeting changed or accepted
+the story issue                       a comment on what the meeting changed or accepted
 reports/week-NN/README.md             the meeting decisions linked, the changed US-nn named
 ```
 
@@ -129,11 +129,11 @@ Make sure the change reaches every place it affects, because each one answers a 
 
 After a prototype, the change is required in all four places by [Validation](../requirements/prototypes-requirements.md#validation).
 The issue comment is the one that is easy to skip, and skipping it is what makes a decision invisible to a reader of the stories.
-Add a dated comment to the story issue saying what changed and why, naming the `AC-nn` if a criterion changed, and linking the meeting report.
+Add a comment to the story issue saying what changed and why, naming the `AC-nn` if a criterion changed, and linking the meeting report.
 A story edited three times with no comment gives a reader no way to tell what the customer actually settled from what the team decided on its own.
 
 A story the customer accepted is a decision too.
-Its row names the `US-nn` and says `None` with the reason, and the story issue gets the same dated comment with the verdict, per [Showing Working Software](../requirements/customer-meetings-requirements.md#showing-working-software).
+Its row names the `US-nn` and says `None` with the reason, and the story issue gets a comment with the verdict, per [Showing Working Software](../requirements/customer-meetings-requirements.md#showing-working-software).
 A rejected story names the `AC-nn` it failed, in the row and in the comment.
 
 If nothing changed after a prototype, the prototype failed the rule in [Validation](../requirements/prototypes-requirements.md#validation), and that is a serious finding.

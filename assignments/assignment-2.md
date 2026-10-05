@@ -147,7 +147,7 @@ The rules:
 - Write notes instead when a transcript cannot be made or shared: [Meeting Notes](../requirements/customer-meetings-requirements.md#meeting-notes).
 - Name the customer `Customer`, and keep personal data out of the repository: [Sensitive Information Reference](../requirements/visibility-requirements.md#sensitive-information-reference).
 - Record what the prototype changed, in every place it lands: [Validation](../requirements/prototypes-requirements.md#validation).
-- Add a dated comment to each story issue the meeting changed: [Where Stories Live](../requirements/user-stories-requirements.md#where-stories-live).
+- Add a comment to each story issue the meeting changed: [Where Stories Live](../requirements/user-stories-requirements.md#where-stories-live).
 
 This week:
 
@@ -157,7 +157,7 @@ This week:
 2. In `reports/week-02/meeting-script.md`, `## Agenda` has a part for the kickoff action points that are due, then shows the prototype, the boundary, and the minimum usable product candidate each in its own part.
    The candidate's part shows that list of every story.
 3. `reports/week-02/meeting-report.md` has one row per kickoff action point in `## Previous action points`, at least two rows in `## Decisions`, one of them the customer's verdict on the minimum usable product candidate, and at least two rows in `## Action points`, each due inside Week 3.
-4. At least one story issue carries the dated comment that records what the meeting changed: its statement, an `AC-nn`, or its priority.
+4. At least one story issue carries the comment that records what the meeting changed: its statement, an `AC-nn`, or its priority.
 
 The method is in [Guide: Validating With The Customer](../guides/validating-with-the-customer.md).
 
@@ -260,7 +260,7 @@ Keep it to two pages, and put nothing in it except the following:
 - [ ] `reports/week-02/meeting-script.md` ([Part 6](#part-6-validate-with-the-customer)).
 - [ ] `reports/week-02/meeting-report.md`, with a row per kickoff action point, 2+ decisions including the candidate verdict and 2+ action points due in Week 3 ([Part 6](#part-6-validate-with-the-customer)).
 - [ ] `reports/week-02/meeting-transcript.md` or `meeting-notes.md` ([Part 6](#part-6-validate-with-the-customer)).
-- [ ] **At least one story issue with a dated comment from the validation meeting** ([Part 6](#part-6-validate-with-the-customer)).
+- [ ] **At least one story issue with a comment from the validation meeting** ([Part 6](#part-6-validate-with-the-customer)).
 - [ ] Markdown check and link check green on `main` ([Part 7](#part-7-check-the-markdown-in-ci)).
 - [ ] `reports/week-02/ai-usage.md` ([Part 8](#part-8-report-on-your-ai-usage)).
 - [ ] `reports/week-02/README.md` ([Assignment Report In The Repository](#assignment-report-in-the-repository)).

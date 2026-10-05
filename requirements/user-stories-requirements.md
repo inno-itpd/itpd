@@ -35,9 +35,14 @@ Each story is a GitHub issue, and the `user-story` label identifies story issues
 
 2. A story you intend to build stays open until it is delivered, then closes as completed.
    A `Won't Have` story is closed as not planned, with a comment naming the reason.
+   When the story was dropped, the comment that records the priority change may be the closing comment.
    A closed story stays in the list; the closing comment and the close date are its record.
 3. The issue is the record of change.
-   A change that follows a customer meeting adds a dated comment saying what changed, naming any `AC-nn` that changed, and linking the meeting report.
+   Edit the body so it always states the current story, and add a comment for each change to a story part: the title, the statement, `Traces to`, the acceptance criteria, the `moscow:*` label, or the priority reason.
+   The comment says what changed, names each `AC-nn` that changed, gives the reason, and links the decision: a meeting report's `#decisions` for a decision the customer made, or the weekly public report's `#decisions` for one the team made, per [Identifier Rules](general-requirements.md#identifier-rules).
+   GitHub dates the comment, so the comment does not need a typed date.
+   <!-- TODO improve wording -->
+   No comment is needed for edits made before the weekly report of the week the story was opened is submitted, for notes and the checklist, or for a [formatting-only change](general-requirements.md#where-artifacts-live-in-the-repository).
    Do not delete an issue or rewrite its body to hide a change; the edit history and the comment are the record.
 4. The **registry of identifiers** is the issue list filtered by the `user-story` label.
    It shows open and closed issues, so a `Won't Have` story keeps its `US-nn` and stays findable after it closes.
@@ -134,10 +139,9 @@ Every priority is relative to the product you intend to finish in this course.
    No story you intend to build is something the boundary excludes.
    A `Won't Have` reason that rests on the boundary quotes the boundary item.
    The two are independent otherwise: a boundary item is a decision about the whole product and needs no matching story, and a `Won't Have` story is one written need that you excluded and need not appear in the boundary.
-6. A priority that changes is recorded where the change was made.
-   The story issue gets a dated comment naming the old label, the new label, and the reason, and its priority reason is updated.
-   A change the customer decided is recorded per [Meeting Report](customer-meetings-requirements.md#meeting-report).
-   A change the team decided is cited from the weekly public report's `#decisions`, per [Identifier Rules](general-requirements.md#identifier-rules).
+6. A priority that changes updates the label and the priority reason, and is recorded per [Where Stories Live](#where-stories-live).
+   <!-- TODO: improve wording in the sentence above -->
+   Its comment names the old label and the new label.
 7. The `Must Have` stories you would build first are the [minimum usable product candidate](#minimum-usable-product-candidate).
 
 **Recommended**
@@ -206,11 +210,15 @@ Must Have: without it, an unpaid booking still holds a slot, which is the GAP-01
 
 ## Notes
 
-The customer confirmed on 2026-10-06 that payment happens before confirmation, which retired the pay-later
-assumption in [the assumptions table](https://github.com/<organization>/<repo>/blob/main/docs/research/value-proposition.md#assumptions).
+Payment happens before confirmation, so there is no pay-later path.
+```
 
-Comment, 2026-10-06: `AC-02` added after [the validation meeting](https://github.com/<organization>/<repo>/blob/main/reports/week-02/meeting-report.md#decisions).
-The customer will not accept a hold that confirms without payment, and the first version of the story only had `AC-01`, which said the slot is held.
+A comment on issue #42, added after the validation meeting:
+
+```markdown
+Added `AC-02`, decided in [the validation meeting](https://github.com/<organization>/<repo>/blob/main/reports/week-02/meeting-report.md#decisions).
+The customer will not accept a hold that confirms without payment, and the story only had `AC-01`, which said the slot is held.
+This retires the pay-later assumption in [the assumptions table](https://github.com/<organization>/<repo>/blob/main/docs/research/value-proposition.md#assumptions).
 ```
 
 Issue #50, a `Won't Have` story, closed as not planned:
@@ -229,6 +237,10 @@ As a coach, I want to sell a bundle of ten sessions, so that a returning client 
 ## Priority reason
 
 Won't Have: the boundary item "Sell recurring subscriptions or bundles" excludes it, and no user we met has asked to pay for sessions in advance.
+```
 
-Closing comment: Not planned, for the priority reason above.
+The closing comment on issue #50:
+
+```markdown
+Not planned, for the priority reason above.
 ```

@@ -112,7 +112,7 @@ A Week 2 validation meeting.
 1. Show each story you present as done against its acceptance criteria, one `AC-nn` at a time, while it runs on the screen.
 2. The customer accepts or rejects each story.
    Record the verdict as a row in the meeting report's `## Decisions` that names the `US-nn`: an accepted story says `None` in `Changes`, with the reason, and a rejected story names each `AC-nn` it failed.
-3. Add a dated comment to the story issue with the verdict, naming any failed `AC-nn` and linking the meeting report.
+3. Add a comment to the story issue with the verdict, naming any failed `AC-nn` and linking the meeting report.
 
 **Example**
 
