@@ -38,7 +38,7 @@
 )
 
 // Titles are passed as strings, not markup content, on purpose.
-// A markup title like [1. Modular LLM gateway] is parsed as an enumeration
+// A markup title like [1. Meeting booking app] is parsed as an enumeration
 // item, so Typst renders "1." as a list marker and indents the heading.
 // The parameter is deliberately left un-annotated: a type annotation makes the
 // parameter named-only in Typst 0.15, so the call sites have to be f(title: ...).
@@ -101,6 +101,9 @@
   - Risk management
 
   #note[Not about architecture - you'll have a course next semester]
+  
+  // TODO consider clarifying
+  // #note[Architecture as a subject is next semester. Week 4 draws a sketch, only to show which quality goals are worth reaching for.]
 ]
 
 #slide("Software engineer levels")[
@@ -189,6 +192,7 @@
 
   *Assignment submission:*
   - Work on the assignment in your repository on GitHub.
+  - Merge the report and everything it links into `main` before you submit.
   - Submit a report and a snapshot of the repository on Moodle.
   - TBD: also submit all your sessions with an agent on Moodle.
 ]

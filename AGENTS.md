@@ -6,20 +6,30 @@ Operating instructions for coding agents maintaining the student-facing course m
 
 ### Maintained Here
 
-| File                                      | Owns                                                                                                                                                          |
-| ----------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `README.md`                               | Student entry point and routing. Nothing else.                                                                                                                |
-| `course/syllabus.md`                      | The student-facing schedule: week-by-week focus, dates, and submission deadlines. A formatted copy of the instructors syllabus, not a second source of truth. |
-| `course/rules.md`                         | The course contract: public vs private, hygiene, AI policy, deadlines, submission channel. Short, and a router rather than a second rulebook.                 |
-| `course/teams-and-projects.md`            | Which team number works on which project. Regenerated each term, and a repeated project name is not an error because two teams may share a project name.      |
-| `requirements/artifact-requirements.md`   | Artifact semantics, the `reports/week-NN/` vs `docs/` split, visibility, recurring artifact structures.                                                       |
-| `requirements/process-requirements.md`    | What the product work means: alternatives, properties, gaps, value propositions, identifier and traceability rules.                                           |
-| `requirements/repository-requirements.md` | Repository and platform mechanics: GitHub, pull requests, branch protection, link checking, permalinks, snapshots, changelog, CI.                             |
-| `guides/alternatives-research.md`         | Method for finding and evaluating alternatives. Explanatory, not normative.                                                                                   |
-| `guides/comparison-and-synthesis.md`      | Method for building the comparison, finding gaps, writing the value proposition. Explanatory, not normative.                                                  |
-| `guides/customer-interview.md`            | Method for the kickoff: the five areas, the Mom Test pass, and meeting roles. Explanatory, not normative.                                                     |
-| `assignments/assignment-N.md`             | Learner-facing requirements for one week. Deltas, paths, and evidence only.                                                                                   |
-| `lectures/AGENTS.md`                      | The lecture decks: `lecture-N.typ` sources, their generated PDFs, the build, the layout contract, and the conversion method. Not student-facing.              |
+| File                                             | Owns                                                                                                                                                      |
+| ------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `README.md`                                      | Student entry point and routing. Nothing else.                                                                                                            |
+| `course/syllabus.md`                             | The single source of truth for the schedule: week-by-week focus, dates, submission deadlines, and course policies. Edited here.                           |
+| `course/rules.md`                                | The course contract: public vs private, hygiene, AI policy, deadlines, submission channel. Short, and a router rather than a second rulebook.             |
+| `course/teams-and-projects.md`                   | Which team number works on which project. Regenerated each term, and a repeated project name is not an error because two teams may share a project name.  |
+| `requirements/general-requirements.md`           | The rules no single artifact owns: artifact terms, the `reports/week-NN/` vs `docs/` split, identifier rules, traceability into later weeks.              |
+| `requirements/visibility-requirements.md`        | Who may see an artifact: the visibility model, where each sensitive item goes, screenshot evidence.                                                       |
+| `requirements/research-requirements.md`          | The Week 1 research: where it lives, alternatives, properties and comparison, gaps, value propositions, research honesty.                                 |
+| `requirements/assumptions-requirements.md`       | `docs/assumptions.md`: where it lives, what an assumption is, what rests on it, how it is checked and settled, and the full example.                      |
+| `requirements/decisions-requirements.md`         | `docs/decisions.md`: where it lives, a decision's entry and fields, what cites it, how it is reversed, and the full example.                              |
+| `requirements/product-vision-requirements.md`    | `docs/product-vision.md`: where it lives, the goal, stakeholders, constraints, boundary, system context, and the full example.                            |
+| `requirements/user-stories-requirements.md`      | Story issues: where they live, the story, acceptance criteria, MoSCoW priorities, the minimum usable product candidate, and the full example.             |
+| `requirements/prototypes-requirements.md`        | Prototypes: where they are recorded, and the validation rules for showing one.                                                                            |
+| `requirements/customer-meetings-requirements.md` | Meetings with the customer: every meeting, the kickoff, showing working software, permission, and the script, report, and transcript with their examples. |
+| `requirements/weekly-report-requirements.md`     | What is handed in each week: the weekly public report, the AI usage report, deviations, the Moodle PDF.                                                   |
+| `requirements/repository-requirements.md`        | Repository and platform mechanics: GitHub, pull requests, branch protection, link checking, permalinks, snapshots, changelog, CI.                         |
+| `guides/alternatives-research.md`                | Method for finding and evaluating alternatives. Explanatory, not normative.                                                                               |
+| `guides/comparison-and-synthesis.md`             | Method for building the comparison, finding gaps, writing the value proposition. Explanatory, not normative.                                              |
+| `guides/customer-kickoff-meeting.md`             | Method for the kickoff: the five areas and the Mom Test pass. Explanatory, not normative.                                                                 |
+| `guides/user-stories-and-prototyping.md`         | Method for turning a gap into stories, writing acceptance criteria, and testing an idea cheaply. Explanatory, not normative.                              |
+| `guides/validating-with-the-customer.md`         | Method for meetings after the kickoff and for recording what they changed. Explanatory, not normative.                                                    |
+| `assignments/assignment-N.md`                    | Learner-facing requirements for one week. Deltas, paths, and evidence only.                                                                               |
+| `lectures/AGENTS.md`                             | The lecture decks: `lecture-N.typ` sources, their generated PDFs, the build, the layout contract, and the conversion method. Not student-facing.          |
 
 ### Tooling
 
@@ -45,7 +55,7 @@ The decks have their own gate, `pnpm run check:lectures`, and `lectures/AGENTS.m
 
 Their fixtures run with `pnpm run test:markdown-format` and `pnpm run test:markdown-rules`, and all four gates run in CI on every pull request.
 `eslint.config.ts` enables the `eslint-markdown` `recommended` set, which lints the same GFM AST as `@eslint/markdown` and so adds rules without a second parse.
-Two of its rules are off because they conflict with the house style: `md/no-irregular-dash`, because `course/syllabus.md` carries the instructor's en and em dashes and the guides use them deliberately, and `md/code-lang-shorthand`, because it rewrites the `markdown`, `text`, and `yaml` fence labels in `requirements/` and `guides/` to their shorthand forms.
+Two of its rules are off because they conflict with the house style: `md/no-irregular-dash`, because `course/syllabus.md` uses en and em dashes in its dates and titles and the guides use them deliberately, and `md/code-lang-shorthand`, because it rewrites the `markdown`, `text`, and `yaml` fence labels in `requirements/` and `guides/` to their shorthand forms.
 The `markdown/*` built-in rules other than `no-html` are not enabled, because `markdown/no-missing-label-refs` reports the `> [!NOTE]` and `> [!IMPORTANT]` blockquote alerts in `course/syllabus.md` as undefined label references.
 `markdown/no-html` runs with `allowed: ['h2']`, so raw HTML is rejected except for the `<h2 id="...">` anchors that carry the stable permalinks `requirements/repository-requirements.md` requires.
 `.vscode/settings.json` lints Markdown in the editor, so the sentence, `no-html`, and `md/*` rules report while you write, and it enables format-on-save through `esbenp.prettier-vscode` so editor formatting picks up the local `sentences-per-line` plugin rather than a bundled one.
@@ -91,9 +101,9 @@ requirements/   the rules                       (normative, authoritative)
 course/rules.md the contract and the router     (short, links into requirements/)
 ```
 
-The other two files in `course/` are reference material and are deliberately not layers: `course/syllabus.md` and `course/teams-and-projects.md` are the instructor's, and `course/rules.md` links to the syllabus rather than copying it.
+The other two files in `course/` are reference material and are deliberately not layers: `course/syllabus.md` is the single source of truth for the schedule and the course policies, `course/teams-and-projects.md` is regenerated each term, and `course/rules.md` links to the syllabus rather than copying it.
 
-`lectures/` is also the instructor's and is also not a layer.
+`lectures/` is also not a layer.
 It keeps its own rules, its build, and its gate in `lectures/AGENTS.md`; this file names the command and the workflow and leaves the rest there.
 
 1. When a rule already exists in `requirements/`, an assignment points at it and states only the week-specific addition or a stricter minimum.
@@ -103,15 +113,31 @@ It keeps its own rules, its build, and its gate in `lectures/AGENTS.md`; this fi
    If `course/rules.md` and a requirements file disagree, fix `course/rules.md`.
 4. Normative text uses `Required` / `Recommended` / `Example` labels so an example is never mistaken for a rule.
 
+Inside `requirements/`, every rule has one owner, and every other mention is a link without the rule's numbers or lists.
+
+| File                                                                                                                                                                                 | Owns                                                                                                                                                                                                      | Links, rather than restates                                              |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------ |
+| `general-requirements.md`                                                                                                                                                            | Artifact terms, the `docs/` vs `reports/` split, identifier families and how they are cited, traceability into later weeks                                                                                | Any one artifact's paths, fields, or content                             |
+| `visibility-requirements.md`                                                                                                                                                         | Who may see each item: public, Moodle only, or never committed, and how screenshots are published                                                                                                         | Where an artifact lives in the repository                                |
+| One file per artifact group: `research-`, `assumptions-`, `decisions-`, `product-vision-`, `user-stories-`, `prototypes-`, `customer-meetings-`, and `weekly-report-requirements.md` | For its artifacts: where each lives, its sections, fields, labels, and close states, how it records a change, what each part must say (counts, quality bars, priority meanings), and the one full example | Identifier, visibility, and platform rules, and another artifact's rules |
+| `repository-requirements.md`                                                                                                                                                         | Platform configuration and workflow: the files under `.github/`, labels, branches, pull requests, link checking, and CI                                                                                   | What a story or an artifact must say                                     |
+| `course/rules.md`                                                                                                                                                                    | The contract summary and the router                                                                                                                                                                       | Any number or list that a requirement owns                               |
+
+Each artifact file reads in one order: where the artifact lives, then one section per part, then the full example.
+A part may keep a small example beside the rule it illustrates, such as the boundary table, even when the full example contains it.
+
 ## Conventions
 
-- **Filenames** are kebab-case: `assignment-1.md`, `artifact-requirements.md`.
+- **Filenames** are kebab-case: `assignment-1.md`, `user-stories-requirements.md`.
 - **Weeks** are zero-padded: `reports/week-01/`, through `reports/week-09/`.
-- **Identifiers** are zero-padded and stable: `ALT-01`, `GAP-01`, `VP-01` are the Week 1 families.
-  `US-01` for user stories, `Q-01` for quality goals, and `U-01` for usability tasks are introduced by the assignment that creates them, in W3, W4, and W7.
+- **Identifiers** are zero-padded and stable: `ALT-01`, `GAP-01`, `VP-01`, `ASM-01`, and `DEC-001` are the Week 1 families.
+  `US-01` for user stories and `AC-01` for the acceptance criteria of one story are introduced in W2.
+  A later identifiers family arrives with the requirement that first uses it, not before.
+  Decisions take three digits, because every customer meeting adds to the log; every other family takes two.
+  An `AC-nn` is scoped to its story issue and is cited together with it; the other families are repository-wide.
   IDs are never renumbered or reused, including in example text.
-- **Headings** are Title Case in requirements files and sentence case in guides and assignments.
-- **Applicability markers**: all three requirements files carry inline `**Since: WN**` markers, so a section can hold requirements that begin in different weeks.
+- **Headings** are Title Case in requirements files, guides, and assignments.
+- **Applicability markers**: every requirements file carries inline `**Since: WN**` markers, so a section can hold requirements that begin in different weeks.
   To move a requirement to another week, change its own marker and leave the section where it is.
 - **Links** between files in this directory are relative Markdown links, and point at a heading anchor when they refer to a specific rule.
 - Prose is plain and specific.
@@ -136,36 +162,29 @@ It keeps its own rules, its build, and its gate in `lectures/AGENTS.md`; this fi
 
 ## `docs/` Destination Map
 
-Decided now so no week invents a path.
+Each row is added when its assignment is written, so a week's path is decided in the same place as the work that uses it.
 A later assignment may extend this map, but should not silently move an entry.
 
-| Week | Maintained artifacts                                                                                              |
-| ---- | ----------------------------------------------------------------------------------------------------------------- |
-| W1   | `docs/research/` — `alternatives.md`, `comparison.md`, `gap-analysis.md`, `value-proposition.md`                  |
-| W2   | `docs/work-plan.md`                                                                                               |
-| W3   | `docs/product-vision.md`, `docs/user-stories.md`, `docs/prototypes/`; `CHANGELOG.md`; SemVer tags begin           |
-| W4   | `docs/quality-requirements.md`, `docs/verification-plan.md`, `docs/threshold-of-success.md`, `docs/architecture/` |
-| W5   | `docs/testing.md`, `docs/deployment.md`                                                                           |
-| W6   | `docs/analytics.md` — provisional, to be confirmed when the W6 assignment is written                              |
-| W7   | `docs/usability-testing.md`                                                                                       |
-| W8   | `docs/configuration-management.md`                                                                                |
-| W9   | `docs/reflection.md`                                                                                              |
+| Week | Maintained artifacts                                                                                                                             |
+| ---- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| W1   | `docs/research/` — `alternatives.md`, `comparison.md`, `gap-analysis.md`, `value-proposition.md`; `docs/assumptions.md`; and `docs/decisions.md` |
+| W2   | `docs/product-vision.md`, and the context diagram it embeds, `docs/architecture/context.<ext>` with its source (the stories are GitHub issues)   |
 
 Weekly reports live at `reports/week-NN/README.md` in every week, and the Moodle PDF is the private wrapper in every week.
-Meeting artifacts live at `reports/week-NN/meeting-report.md`, plus a `meeting-transcript.md` or a `meeting-notes.md` beside it.
+Meeting artifacts live at `reports/week-NN/meeting-report.md`, plus a `meeting-transcript.md` beside it when the meeting was recorded or held in writing.
 That shape is fixed; do not redesign it per week.
 
 Week 1 adds two more files beside them, both evidence rather than maintained documentation: `meeting-script.md` and `candidate-list.md`.
 They exist only because Week 1 is the week where the customer meeting and the alternatives search happen.
-Later weeks that meet the customer write the script again for that week's meeting, and later weeks that need another alternative add to the comparison rather than reopening the search.
+Every later week writes the script again for that week's meeting, because the customer is met every week, and later weeks that need another alternative add to the comparison rather than reopening the search.
 
 ## Assignment Authoring Checklist
 
 Before writing or editing an assignment:
 
-1. Read `course/rules.md` and the three requirements files.
+1. Read `course/rules.md`, `requirements/general-requirements.md`, `requirements/repository-requirements.md`, and the requirements file of every artifact the week touches.
    Check whether the rule you are about to write already exists there.
-2. Write the delta, not the rule. "Complete every requirement marked `**Since: W3**` in `requirements/repository-requirements.md`", plus what this week specifically adds.
+2. Write the delta, not the rule. "Complete every requirement marked `**Since: WN**` for the current week in `requirements/repository-requirements.md`", plus what this week specifically adds.
 3. Give the concrete paths and the week-specific minima: how many items, which IDs, which fields.
 4. Give the week report contents as a list of links, not as prose describing what is in each linked file.
 5. Give the Moodle wrapper contents as a list, including the private-only items for that week.
@@ -179,19 +198,25 @@ Before writing or editing an assignment:
 
 Use these words and do not invent local synonyms:
 
-`weekly report`, `weekly public report`, `supporting artifact`, `private-only artifact`, `external-but-indexed artifact`, `repository-resident artifact`, `deviation`, `customer`, `kickoff meeting`, `meeting report`, `meeting transcript`, `meeting notes`, `meeting script`, `decision`, `action point`, `open question`, `alternative`, `property`, `gap`, `value proposition`, `threshold of success`, `minimum usable product` (MUP), `minimum viable product` (MVP), `team number`.
+`weekly report`, `weekly public report`, `supporting artifact`, `private-only artifact`, `external-but-indexed artifact`, `repository-resident artifact`, `deviation`, `customer`, `stakeholder`, `kickoff meeting`, `meeting report`, `meeting transcript`, `meeting script`, `decision`, `action point`, `open question`, `alternative`, `property`, `gap`, `value proposition`, `assumption`, `story issue`, `traces to`, `rests on`, `threshold of success`, `proof of concept` (PoC), `minimum usable product` (MUP), `minimum viable product` (MVP), `product backlog`, `sprint backlog`, `PBI`, `SBI`, `story points`, `sprint retrospective`, `team number`.
 
 "Customer" is the term for the person your team answers to, who is your instructor.
-Never "client" or "stakeholder" for them.
+Never "client" for them.
+The customer is one of the stakeholders, so "stakeholder" is not wrong, but when a sentence means the customer specifically, write "customer" rather than the generic "stakeholder".
 In artifacts, the label is `Customer`, not a real name.
 The word "instructor" is allowed in prose explaining who the customer is, and nowhere else.
 
-Meeting decisions and action points are **not** identifier families.
-There is no `DEC-nn` or `ACT-nn`.
-A later week cites a meeting report by path and heading anchor, an action point is carried out by a tracked issue, and the identifier families stay the ones their own week introduces.
+A decision that needs an entry, per `requirements/decisions-requirements.md`, is a `DEC-nnn` entry in `docs/decisions.md`, and a later artifact cites the decision by its `DEC-nnn`.
+Any other decision is a team decision recorded with its reason in the one artifact it changes.
+The entry does not list what it changed; the artifact it changed cites it, so there is no `Changes` list, `TBD`, or `None`.
+A meeting report lists its meeting's `DEC-nnn` under `## Decisions`, and the weekly report has no decisions section.
+Action points are **not** an identifier family: there is no `ACT-nn`, a later week cites one by its report's path and `#action-points` anchor with the action quoted, and it is carried out by a tracked issue.
 
-Note that ITPD has no Scrum.
-Do not import Sprint, Product Backlog, PBI, or user-story ceremony from the `swp_26/` materials. `docs/user-stories.md` in W3 is user stories in the plain product sense.
+ITPD uses elements of Scrum later in the course.
+One course week is then a sprint, sprints start with planning and grooming, estimation is required with no unit prescribed, and each sprint ends with a retrospective at `reports/week-NN/sprint-retrospective.md`.
+There is no daily standup.
+`product backlog`, `sprint backlog`, PBI, SBI, and `story points` are terms introduced and used later in the course, not banned.
+This paragraph records the vocabulary; the requirements of the week that introduces each term define what it obliges a team to do.
 
 ## Do Not
 

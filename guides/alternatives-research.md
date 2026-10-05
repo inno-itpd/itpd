@@ -1,7 +1,7 @@
 # Guide: Researching Alternatives
 
 How to produce the alternatives evidence for Week 1.
-What the evidence must satisfy is defined in [Process Requirements](../requirements/process-requirements.md#alternatives); this guide is the method.
+What the evidence must satisfy is defined in [Alternatives](../requirements/research-requirements.md#alternatives); this guide is the method.
 
 **Timebox:** about two days for the whole team, split as half a day to find and choose, one day to evaluate, half a day to write up.
 If it is taking longer, you are evaluating too deeply for a product you are not going to build on.
@@ -55,7 +55,7 @@ Where to look:
 Record each candidate with its URL and one line on why it might be relevant, in `reports/week-NN/candidate-list.md`.
 
 Keep the list you cut down from, not just the survivors.
-It is the record of the search, and a later week that needs another product will either pick one you already rejected or waste a day rediscovering it.
+It is the record of the search, and if you need another product later, you will either pick one you already rejected or waste a day rediscovering it.
 One line per candidate is enough, and a rejected candidate is worth keeping exactly as much as a chosen one.
 
 ## Step 3: Cut Down To Three Or Four
@@ -124,7 +124,7 @@ Share it **view-only**.
   A pricing page screenshot is evidence of nothing.
 - Crop anything that is not needed.
   Emails, names, API keys, and account identifiers do not belong in a public board.
-- Name the board frames so a reader can navigate: `ALT-01 LiteLLM — redaction config`, not `Screenshot 3`.
+- Name the board frames so a reader can navigate: `ALT-01 Calendly — paid event setup`, not `Screenshot 3`.
 - Write in the board what each screenshot shows, and link the board from the `ALT-nn` section in `alternatives.md`.
   A screenshot with no explanation is not evidence.
 
@@ -133,39 +133,42 @@ Either location is acceptable; a board is the default because it keeps the repos
 
 ## Writing The Entry
 
-One section per alternative, ID in the heading:
+One section per alternative, headed by its ID alone, per [Identifier Rules](../requirements/general-requirements.md#identifier-rules):
 
 ```markdown
-## ALT-02: LiteLLM
+## ALT-01
 
-**Kind:** Open-source, self-hosted (LiteLLM or a hosted provider)
-**Link:** https://github.com/BerriAI/litellm
-**Version looked at:** v1.60, 2026-09-28
-**Depth of evaluation:** installed locally, ran a proxy request, read the routing and config docs.
-Did not test the enterprise key-management features.
+Calendly
 
-**Problem it solves:** gives an application one OpenAI-shaped interface in front of many model providers, so switching models is a config change.
+**Kind:** Direct competitor, hosted
+**Link:** https://calendly.com
+**Version looked at:** free plan, 2026-09-28
+**Depth of evaluation:** created an account, published two event types, connected a Google calendar, read the payment and video integration docs.
+Did not connect a payment provider.
+
+**Problem it solves:** gives an expert one bookable page so clients stop asking when they are free.
 
 **Observations by property**
 
-| Property        | Observation                                                                                               |
-| --------------- | --------------------------------------------------------------------------------------------------------- |
-| Where data goes | Proxies to whichever provider you configure; no intermediate storage by default (config docs, "Logging"). |
-| Extensibility   | Custom providers and custom guards are Python classes you register in a process; no plugin boundary.      |
-| Cost model      | Open source; you pay the model provider.                                                                  |
-| Onboarding      | Working proxy in about 15 minutes, if you already have Python and a provider key.                         |
+| Property                 | Observation                                                                                                       |
+| ------------------------ | ----------------------------------------------------------------------------------------------------------------- |
+| What the booking carries | Time and an event type; the video link is an integration, and materials are not part of the booking (product UI). |
+| Payment                  | Stripe and PayPal on paid plans, not on the free plan (pricing and payment integration docs).                     |
+| Calendar sync            | Google, Microsoft, and iCloud; double bookings are prevented after the first connection (account setup).          |
+| Cost model               | The free tier is functional; payments, teams, and routing are paid tiers (pricing page).                          |
+| Onboarding               | Published an event type in about ten minutes (hands-on).                                                          |
 
 **Strengths**
 
-- Provider switching is genuinely a config change, not a rewrite.
-  Verified by changing providers on a local instance.
-- Guard hooks are ordinary Python, so anything expressible in Python is possible.
+- The booking flow is mature and predictable.
+  Verified by publishing two event types and walking through a booking.
+- Calendar sync works after the first connection.
+  Verified by connecting a Google calendar and taking a test booking.
 
 **Weaknesses**
 
-- Redaction patterns are global to the process.
-  A rule cannot be attached to a specific marked region of a caller's code, which is what a company with its own classification needs (see GAP-01).
-- No per-tenant configuration: two teams sharing one gateway share one rule set.
+- A paid plan and a separate payment account stand between the expert and a paid booking (see GAP-01).
+- The booking carries no materials, so the client arrives without the agenda.
 ```
 
 The weaknesses are the useful part of this file.

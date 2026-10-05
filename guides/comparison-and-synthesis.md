@@ -2,7 +2,7 @@
 
 How to turn the alternatives into a comparison, gaps, and a value proposition.
 
-The rules are in [Process Requirements](../requirements/process-requirements.md#properties-and-comparison) and [Gap Analysis](../requirements/process-requirements.md#gap-analysis).
+The rules are in [Properties And Comparison](../requirements/research-requirements.md#properties-and-comparison) and [Gap Analysis](../requirements/research-requirements.md#gap-analysis).
 This guide is the method, with a worked shape for each step.
 
 **Timebox:** about a day.
@@ -24,7 +24,8 @@ Most of it is arguing about whether the table is honest, which is time well spen
 ```text
 docs/research/comparison.md        properties × alternatives, cell by cell
 docs/research/gap-analysis.md      GAP-01, GAP-02, … including the ones you drop
-docs/research/value-proposition.md VP-01, VP-02, … plus your assumptions
+docs/research/value-proposition.md VP-01, VP-02, …
+docs/assumptions.md                ASM-01, ASM-02, …
 ```
 
 ## Step 1: Freeze The Property Set
@@ -41,10 +42,9 @@ Fill it property by property, not product by product: doing one whole row at a t
 **A row that works:**
 
 ```markdown
-| Can a team attach redaction rules to specific marked regions of its own code? | No.
-Rules are global patterns in `general_settings`, applied to every request (ALT-02). | No.
-Requests leave the network as sent (ALT-03). | Partial.
-Per-tenant config files exist, but the rule applies to a tenant's traffic, not to a region of a caller's payload (ALT-04). |
+| Property                 | ALT-01 Calendly                                                                                                               | ALT-02 Cal.com                                                                                            | ALT-03 Google Calendar appointment schedules                                      | ALT-04 Zoom Scheduler                                                             |
+| ------------------------ | ----------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| What the booking carries | Time and an event type. Payment and video are integrations on paid plans, and materials are not part of the booking (ALT-01). | Time and the video link after a Stripe setup. Payment and materials are not part of the booking (ALT-02). | Time and a Meet link. Payment and materials are not part of the booking (ALT-03). | Time and a Zoom link. Payment and materials are not part of the booking (ALT-04). |
 ```
 
 It says what the product does, cites the `ALT-nn` it came from, and lets the reader check.
@@ -52,7 +52,7 @@ It says what the product does, cites the `ALT-nn` it came from, and lets the rea
 **A row that does not:**
 
 ```markdown
-| Redaction | Good | Missing | Basic |
+| Payments | Good | Missing | Basic |
 ```
 
 Nobody can check "good".
@@ -60,8 +60,8 @@ There is nothing to trace, and the row says nothing you could not have written a
 
 Two habits that make the table honest:
 
-- **Separate observation from conclusion.** `No. Rules are global patterns (ALT-02). Consequence: a company cannot express "this region is confidential" per call site.` The first is checkable; the second is your reading, and it belongs in the gap analysis.
-- **Make strengths relative.** "No audit log" is a serious weakness for a gateway that routes a company's source code, and irrelevant for a running app.
+- **Separate observation from conclusion.** `No. Payment and video are integrations on paid plans, and the booking carries no materials (ALT-01). Consequence: the expert still assembles a paid, prepared session from three tools.` The first is checkable; the second is your reading, and it belongs in the gap analysis.
+- **Make strengths relative.** "No built-in payments" is a serious weakness for an expert who sells consultations, and irrelevant for a team that books internal meetings.
   State the condition that makes it matter, or you will be told you are wrong by someone who is right.
 
 ## Step 3: Read The Table As A Whole
@@ -84,37 +84,28 @@ A candidate is worth writing down when you can name it in a sentence that a read
 ## Step 4: Find The Gaps
 
 What you see in the table is not yet a need.
-Each candidate has to pass all four tests from [Process Requirements](../requirements/process-requirements.md#gap-analysis): someone needs it, the alternatives do not serve it, it is reachable, and a team of three or four could build it in this course.
+Each candidate has to pass all four tests from [Gap Analysis](../requirements/research-requirements.md#gap-analysis): someone needs it, the alternatives do not serve it, it is reachable, and a team of three or four could build it in this course.
 
-The fourth test does most of the work.
+The third test does most of the work.
 When you cannot describe what a product closing this gap would do in a sentence, you have a theme, not a gap.
 
 ```markdown
-## GAP-01: Rules that follow the code, not the deployment
+## GAP-01
 
-**Who needs it and what they cannot do:** a platform engineer at a company that sends marked
-source code to external model providers.
-The company classifies code by region and context;
-existing gateways apply one global rule set to whole requests, so the engineer either
-over-redacts and breaks the request or under-redacts and leaks marked code.
+Bookings that arrive unpaid and unprepared.
 
-**Evidence:** `Where data goes` and `Extensibility` rows in
-[the comparison](comparison.md) — all three alternatives apply rules per deployment or
-per tenant, none per call site (ALT-02, ALT-03, ALT-04).
+**Who needs it and what they cannot do:** an independent expert who sells one-hour consultations online.
+The client books and pays in one place, and the meeting link and materials arrive with the booking; the alternatives schedule the time, and the payment, the video link, and the materials each live somewhere else.
 
-**What closing it looks like:** a rule set the caller supplies with the request, matched
-against the caller's own markers, evaluated before the request leaves the network, and logged
-under the company's own standard.
+**Evidence:** `What the booking carries` row in [the comparison](comparison.md) — no alternative carries payment, video, and materials in the same booking (ALT-01, ALT-02, ALT-03, ALT-04).
+
+**What closing it looks like:** one link where the client picks a slot, pays, and receives the video link and the materials, with calendar sync behind it.
 
 **Buildable by us in this course:** yes.
-It is one plugin plus a logging format, and it is
-the reason the project exists.
+It is one booking flow, one payment integration, and one upload field, and it is the reason the project exists.
 
 **Confidence:** high.
-Consistent across all three alternatives, and two of them are
-mature enough that this is not an oversight.
-
-**Dropped:** see GAP-04.
+Consistent across all four alternatives, and two of them are mature enough that this is not an oversight.
 ```
 
 Also record the gaps you rejected, with the reason.
@@ -126,27 +117,26 @@ A value proposition is a claim about why your product is worth attention over th
 One short positioning statement, tied to a gap, honest about its cost.
 
 ```markdown
-## VP-01: Redaction rules that belong to the team
+## VP-01
 
-**User:** platform engineer at a company sending marked source code to external models.
-**Problem:** sensitive-code rules are global to the gateway, so they cannot follow the
-company's own classification of what is marked.
-**What we do that the alternatives do not:** let a team attach redaction rules to the marked
-regions of its own code, and keep those rules and their logs under the company's control.
-**Closes:** [GAP-01](gap-analysis.md#gap-01-rules-that-follow-the-code-not-the-deployment).
-**What it costs:** a plugin author has to learn our rule format.
+One link that carries the whole booking.
+
+**User:** independent coach who sells one-hour sessions online.
+**Problem:** the booking, the payment, and the meeting materials live in three tools, so unpaid clients block slots and prepared clients are rare.
+**What we do that the alternatives do not:** one link where the client books a slot, pays, and receives the video link and the materials, with no second account.
+**Closes:** [GAP-01](gap-analysis.md#gap-01).
+**What it costs:** the expert connects a payment provider before the first booking and uploads the materials per meeting type.
 This is a real setup cost.
-**How a competitor would respond:** the open-source incumbent could ship per-request rules
-in a release.
-The defensible part is the logging standard, not the rules.
+**How a competitor would respond:** Calendly or Cal.com could bundle payments and materials into the free tier.
+The defensible part is the single flow and its pricing, not the fields.
 ```
 
 Three things to get right:
 
-- **Say better at what, measured how.** "More modern" is not a claim. "A team can express its own redaction rules without a gateway restart" is a claim someone can check.
+- **Say better at what, measured how.** "More modern" is not a claim. "A client can pay and get the meeting link in one booking, without a second account" is a claim someone can check.
 - **Name what you give up.**
   Every advantage is bought with something: more setup, a narrower feature set, a worse default, a higher price.
-  A differentiation with no cost is a misjudgement, and finding it now is cheaper than finding it in Week 5.
+  A differentiation with no cost is a misjudgement, and finding it now is cheaper than finding it later.
 - **Say how a competitor would respond.**
   If copying you takes them a week, you do not have a moat, and you should know that before you build on it.
 
@@ -156,20 +146,43 @@ More than that and you are listing features.
 ## Step 6: Write Down What You Are Assuming
 
 Every proposition rests on beliefs you have not verified: that the user has the problem you think they have, that nobody is coming for this, that the constraint you were told about is real.
-List them, trace each to the `GAP-nn` or `VP-nn` it supports, and say how you would check it.
+List them in `docs/assumptions.md`, one `ASM-nn` section each, and say how you would check each one.
+Then go back to the gaps and value propositions and cite each assumption under `**Rests on:**` in every one that rests on it, so the claim carries its own risks.
+Keep only the ones something rests on: if a belief turned out false and nothing would change, it is not worth tracking.
 
 ```markdown
-## Assumptions
+## ASM-01
 
-| Assumption                                                                              | Supports      | How to check                                                               |
-| --------------------------------------------------------------------------------------- | ------------- | -------------------------------------------------------------------------- |
-| Marked code is a real problem for teams of this size, not only for regulated companies. | GAP-01, VP-01 | Interview two teams in Week 2 and ask what they do today with marked code. |
-| The course customer will accept a plugin-first product rather than a hosted one.        | VP-01         | Raise it at the Week 1 kickoff.                                            |
+Experts will upload materials per meeting type instead of sending them in chat after booking.
+
+**How to check:** run the materials prototype with two tutors in Week 2.
+**Status:** Open
+
+## ASM-02
+
+Clients will pay at booking rather than on the day.
+
+**How to check:** only the customer can settle it, so it goes in the kickoff report's open questions.
+**Status:** Open
+
+## ASM-03
+
+Clients open the booking link on a phone.
+
+**How to check:** ask two experts where their last ten bookings came from, in Week 2.
+**Status:** Open
+```
+
+`VP-01` in `docs/research/value-proposition.md` then gains one line, and `GAP-01` gains the same line naming `ASM-01`:
+
+```markdown
+**Closes:** [GAP-01](gap-analysis.md#gap-01).
+**Rests on:** [ASM-01](../assumptions.md#asm-01), [ASM-02](../assumptions.md#asm-02), [ASM-03](../assumptions.md#asm-03).
 ```
 
 The customer decides the scope.
-This table is not a list of questions for them; it is your own map of what the scope rests on, so that when the scope is decided you know what you are betting on.
-The questions you do put to the customer go in the week report instead.
+This file is not a list of questions for them; it is your own map of what the scope rests on, so that when the scope is decided you know what you are betting on.
+The questions you do put to the customer go in the meeting report's open questions instead.
 
 ## Common Mistakes
 

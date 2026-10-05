@@ -16,6 +16,7 @@ Nothing here is a layer, and nothing here is routed from `README.md`: students a
 
 `N` is unpadded, so the first deck is `lecture-1.typ`.
 The slides export a deck was converted from is not committed.
+Once a deck is converted, its `lecture-N.typ` is the source of truth: later edits change the deck directly and are not recorded as deviations from the export.
 
 ## Build
 
@@ -65,8 +66,8 @@ The helpers `slide`, `section`, `title-slide`, `term`, `note`, and `tag` are def
 
 The first one produces wrong output rather than an error, so a clean compile does not mean the deck is right.
 
-Pass a slide title as a **string**, as in `#slide("1. Modular LLM gateway")`.
-A markup title such as `#slide[1. Modular LLM gateway]` is parsed as an enumeration item, so Typst renders the `1.` as a list marker and indents the heading.
+Pass a slide title as a **string**, as in `#slide("1. Meeting booking app")`.
+A markup title such as `#slide[1. Meeting booking app]` is parsed as an enumeration item, so Typst renders the `1.` as a list marker and indents the heading.
 Any title beginning with a digit, `*`, `-`, `+`, or `#` is affected.
 
 The second one fails loudly, so it is only confusing.

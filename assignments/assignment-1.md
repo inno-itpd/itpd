@@ -7,6 +7,12 @@
 
 See [Deadlines And Submission](../course/rules.md#deadlines-and-submission).
 
+> [!NOTE]
+> This assignment was revised on 5 October 2026, after the Week 1 deadline.
+> Week 1 is graded against [the version published at the deadline](https://github.com/inno-itpd/itpd/blob/fe58ba70bbd90b92ffd6942d340f1e8b35b4bbb1/assignments/assignment-1.md), so a submission that follows it did nothing wrong and nothing needs resubmitting.
+> The revision adds `docs/decisions.md` with `DEC-nnn` entries and `docs/assumptions.md` with `ASM-nn` entries, drops `meeting-notes.md` in favour of the transcript, and adds a target and an `## Agenda` to the meeting script.
+> Do not rewrite your Week 1 files to match it: Assignment 2 moves your decisions and assumptions into the new files in [Part 2](assignment-2.md#part-2-move-the-week-1-decisions-into-the-decisions-log) and [Part 3](assignment-2.md#part-3-move-the-week-1-assumptions-into-the-assumptions-log).
+
 One submission per team.
 
 Week 1 is a research week.
@@ -45,15 +51,18 @@ By the end of this week you should be able to show an instructor:
 Read these once.
 They are the rules; this assignment only tells you what this week requires.
 
-| Read                                                                            | For                                                                                    |
-| ------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
-| [Course rules](../course/rules.md)                                              | What is public, what is private, deadlines, AI policy                                  |
-| [Artifact Requirements](../requirements/artifact-requirements.md)               | Where things live, the weekly report, meeting report, transcript and AI report formats |
-| [Repository Requirements](../requirements/repository-requirements.md)           | GitHub, pull requests, branch protection, link checking, permalinks, snapshots         |
-| [Process Requirements](../requirements/process-requirements.md)                 | What counts as a valid alternative, gap, and value proposition; the identifier rules   |
-| [Guide: researching alternatives](../guides/alternatives-research.md)           | How to find and evaluate your set                                                      |
-| [Guide: comparison to value proposition](../guides/comparison-and-synthesis.md) | How to build the table, find the gaps, write the proposition                           |
-| [Guide: the kickoff interview](../guides/customer-interview.md)                 | How to write the kickoff meeting script and run the meeting                            |
+| Read                                                                               | For                                                                                  |
+| ---------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
+| [Course rules](../course/rules.md)                                                 | What is public, what is private, deadlines, AI policy                                |
+| [General Requirements](../requirements/general-requirements.md)                    | What the terms mean, `docs/` versus `reports/`, and the identifier rules             |
+| [Visibility Requirements](../requirements/visibility-requirements.md)              | What is public, what goes in Moodle only, and screenshots                            |
+| [Research Requirements](../requirements/research-requirements.md)                  | What counts as a valid alternative, gap, and value proposition, and where each lives |
+| [Customer Meeting Requirements](../requirements/customer-meetings-requirements.md) | The kickoff, and the meeting script, report, and transcript                          |
+| [Weekly Report Requirements](../requirements/weekly-report-requirements.md)        | The weekly report, the AI usage report, deviations, and the Moodle PDF               |
+| [Repository Requirements](../requirements/repository-requirements.md)              | GitHub, pull requests, branch protection, link checking, permalinks, snapshots       |
+| [Guide: researching alternatives](../guides/alternatives-research.md)              | How to find and evaluate your set                                                    |
+| [Guide: comparison to value proposition](../guides/comparison-and-synthesis.md)    | How to build the table, find the gaps, write the proposition                         |
+| [Guide: the kickoff meeting](../guides/customer-kickoff-meeting.md)                | How to write the kickoff meeting script and run the meeting                          |
 
 ## Part 1: Form The Team And Choose The Project
 
@@ -97,6 +106,8 @@ The repository structure you are building towards:
 │   ├── pull_request_template.md
 │   └── workflows/lychee.yml
 ├── docs/
+│   ├── assumptions.md
+│   ├── decisions.md
 │   └── research/
 │       ├── alternatives.md
 │       ├── comparison.md
@@ -108,7 +119,7 @@ The repository structure you are building towards:
         ├── candidate-list.md
         ├── meeting-script.md
         ├── meeting-report.md
-        ├── meeting-transcript.md   # or meeting-notes.md, never both
+        ├── meeting-transcript.md   # when the meeting was recorded
         ├── ai-usage.md
         └── images/                 # branch-protection.png and other screenshots
 ```
@@ -119,9 +130,9 @@ The repository structure you are building towards:
    Put it at the top of `docs/research/alternatives.md`.
 2. Search widely first, and record the search in `reports/week-01/candidate-list.md`.
    Collect ten or more candidates with a URL and one line each on why each might be relevant, then commit the whole list.
-   Keep the ones you cut: a later week that needs another product will either reuse one you rejected or spend a day rediscovering it.
+   Keep the ones you cut: if you need another product later, you will either reuse one you rejected or spend a day rediscovering it.
    See [Build A Wide Candidate List](../guides/alternatives-research.md#step-2-build-a-wide-candidate-list).
-3. Research **3 to 4 alternatives**, as a mix of a direct competitor, an adjacent substitute, and an open-source or self-hosted option, per [Process Requirements](../requirements/process-requirements.md#alternatives).
+3. Research **3 to 4 alternatives**, as a mix of a direct competitor, an adjacent substitute, and an open-source or self-hosted option, per [Alternatives](../requirements/research-requirements.md#alternatives).
 4. Choose at least 6 properties to compare on, **before** you evaluate anything.
 5. Write one `ALT-nn` section per alternative in `docs/research/alternatives.md`, with the observations, strengths, and at least two weaknesses each, every claim pointing at something you looked at.
 6. Build a board for the screenshots and working notes.
@@ -140,7 +151,7 @@ See [Step 2: Fill The Table](../guides/comparison-and-synthesis.md#step-2-fill-t
 ## Part 5: Find The Gaps
 
 Write `docs/research/gap-analysis.md`.
-Every gap needs a `GAP-nn` ID, and must pass all four tests in [Gap Analysis](../requirements/process-requirements.md#gap-analysis): somebody needs it, the alternatives do not serve it, it is reachable, and a team of 3 or 4 could build it in this course.
+Every gap needs a `GAP-nn` ID, and must pass all four tests in [Gap Analysis](../requirements/research-requirements.md#gap-analysis): somebody needs it, the alternatives do not serve it, it is reachable, and a team of 3 or 4 could build it in this course.
 
 Also record the gaps you **rejected** and why.
 That list is not optional; it is the part your customer will argue with, and you want that argument to happen now.
@@ -149,31 +160,28 @@ That list is not optional; it is the part your customer will argue with, and you
 
 Write `docs/research/value-proposition.md`.
 Two or three `VP-nn` entries, each one a short positioning statement, each closing at least one `GAP-nn`, each naming what it costs and how a competitor would respond.
-End the file with your assumptions table.
+Then write `docs/assumptions.md`: one `ASM-nn` section for each belief your value propositions rest on that you have not verified, cited under `**Rests on:**` in each gap and value proposition that rests on it.
 
-The rules are in [Value Proposition And Differentiation](../requirements/process-requirements.md#value-proposition-and-differentiation) and the method in [Step 5: Write The Value Proposition](../guides/comparison-and-synthesis.md#step-5-write-the-value-proposition).
+The rules are in [Value Proposition And Differentiation](../requirements/research-requirements.md#value-proposition-and-differentiation) and [Assumption Requirements](../requirements/assumptions-requirements.md), and the method in [Step 5: Write The Value Proposition](../guides/comparison-and-synthesis.md#step-5-write-the-value-proposition) and [Step 6: Write Down What You Are Assuming](../guides/comparison-and-synthesis.md#step-6-write-down-what-you-are-assuming).
 
 ## Part 7: Meet The Customer
 
 Your customer is a course instructor.
 In every artifact you call them `Customer`, never a real name and never "the instructor".
-Hold one kickoff meeting with them this week: present the project, your reading of the problem, and your proposed direction, and find out where they disagree with you.
+Hold one kickoff meeting with them this week: present the project, your reading of the problem, and your proposed direction, and find out where they disagree.
 
-1. **Write the meeting script first**, at `reports/week-01/meeting-script.md`.
-   It covers five areas — business goals, end users, the current workflow, pain points and constraints, and scope — with at least two questions in each area.
-   Tag every question open or closed, and close the file with a `## Key improvements` section showing at least two questions you rewrote and the principle behind each rewrite.
-   See [The Kickoff Interview](../guides/customer-interview.md).
-2. **Assign the three roles** before the meeting: an interviewer, a note taker, and an observer who records what was not asked.
-   The whole team attends, and you plan for 30 minutes while asking for 60 if the customer can give it.
-3. **Ask the three permission questions** before you start, and keep the recording out of the repository.
-4. **Write `reports/week-01/meeting-report.md`**, plus either `reports/week-01/meeting-transcript.md` or `reports/week-01/meeting-notes.md`, following [Customer Meeting Artifacts](../requirements/artifact-requirements.md#customer-meeting-artifacts).
-   The meeting report is the deliverable this week; the transcript or the notes is its evidence.
-5. **Complete all six of the report's sections**, and hold it to the week-specific minima:
-   - At least two rows in `## Decisions`, each naming the `GAP-nn` or `VP-nn` it came from.
+The rules are in [Every Meeting](../requirements/customer-meetings-requirements.md#every-meeting) and [The Kickoff](../requirements/customer-meetings-requirements.md#the-kickoff), and the method is in [The Kickoff Meeting](../guides/customer-kickoff-meeting.md).
+This week specifically:
+
+1. **Write `reports/week-01/meeting-script.md` first**, with at least two questions in each of the five kickoff areas, an `## Agenda` whose early part presents your reading of the problem and your direction with `docs/research/value-proposition.md` shown, and `## Key improvements` showing at least two rewrites, per [Meeting Script](../requirements/customer-meetings-requirements.md#meeting-script).
+2. **Assign the three roles and ask the three permission questions** before you start, per [Every Meeting](../requirements/customer-meetings-requirements.md#every-meeting) and [Permission Questions](../requirements/customer-meetings-requirements.md#permission-questions), and keep the recording out of the repository.
+3. **Write `reports/week-01/meeting-report.md`**, plus `meeting-transcript.md` when the meeting was recorded, per [Where Meeting Artifacts Live](../requirements/customer-meetings-requirements.md#where-meeting-artifacts-live).
+   Hold the report to the week minima:
+   - At least two decisions, each a `DEC-nnn` entry in `docs/decisions.md` listed under `## Decisions`, per [Decision Requirements](../requirements/decisions-requirements.md); a `GAP-nn` or `VP-nn` a decision dropped cites its `DEC-nnn`.
    - At least two rows in `## Action points`, each with a named owner and a due date inside Week 2.
    - `## Disagreements` filled in, or an explicit `None`.
-6. **Put the recording link in your Moodle submission only.**
-7. **If a live meeting is impossible**, align asynchronously in writing instead, timestamp the written exchange as the notes, and declare the substitution in your week report as a deviation.
+4. **Put the recording link in your Moodle submission only.**
+5. **If a live meeting is impossible**, follow the asynchronous rule in [Every Meeting](../requirements/customer-meetings-requirements.md#every-meeting) and declare the deviation in your week report.
 
 Do not ask the customer to design the product.
 Present a direction with its evidence, and find out where it is wrong.
@@ -219,7 +227,7 @@ A strong submission has:
 
 Write `reports/week-01/README.md`.
 This is the canonical public report for the week and the index for everything below.
-Follow the structure in [Weekly Public Report](../requirements/artifact-requirements.md#weekly-public-report), and include:
+Follow the structure in [Weekly Public Report](../requirements/weekly-report-requirements.md#weekly-public-report), and include:
 
 1. Project name, team number, and your problem-space sentence.
    The problem-space sentence leads, because it is the standard every `ALT-nn`, `GAP-nn`, and `VP-nn` in the week is measured against, and it is the one line that orients a reader who has never seen your project.
@@ -228,19 +236,22 @@ Follow the structure in [Weekly Public Report](../requirements/artifact-requirem
 3. A coverage table, one row per deliverable of this assignment, giving the artifact that satisfies it.
    This table is the index, so it is not followed by a second list of the same links.
 
-   | Deliverable              | Artifact                                                               |
-   | ------------------------ | ---------------------------------------------------------------------- |
-   | Candidate list           | `candidate-list.md`                                                    |
-   | Alternatives search      | `docs/research/alternatives.md`                                        |
-   | Compare the alternatives | `docs/research/comparison.md`                                          |
-   | Gap analysis             | `docs/research/gap-analysis.md`                                        |
-   | Value proposition        | `docs/research/value-proposition.md`                                   |
-   | Research board           | your external board link                                               |
-   | Meeting script           | `meeting-script.md`                                                    |
-   | Customer kickoff         | `meeting-report.md`, and `meeting-transcript.md` or `meeting-notes.md` |
-   | AI usage                 | `ai-usage.md`                                                          |
+   | Deliverable              | Artifact                                                                                           |
+   | ------------------------ | -------------------------------------------------------------------------------------------------- |
+   | License                  | `LICENSE`                                                                                          |
+   | Candidate list           | `reports/week-01/candidate-list.md`                                                                |
+   | Alternatives search      | `docs/research/alternatives.md`                                                                    |
+   | Compare the alternatives | `docs/research/comparison.md`                                                                      |
+   | Gap analysis             | `docs/research/gap-analysis.md`                                                                    |
+   | Value proposition        | `docs/research/value-proposition.md`                                                               |
+   | Assumptions              | `docs/assumptions.md`                                                                              |
+   | Decisions                | `docs/decisions.md`                                                                                |
+   | Research board           | your external board link                                                                           |
+   | Meeting script           | `reports/week-01/meeting-script.md`                                                                |
+   | Customer kickoff         | `reports/week-01/meeting-report.md`, and `reports/week-01/meeting-transcript.md` when there is one |
+   | AI usage                 | `reports/week-01/ai-usage.md`                                                                      |
 
-   If the customer refused publication of the transcript or the notes, that row says so and points at the Moodle submission instead.
+   If the customer refused publication of the transcript, that row says so and points at the Moodle submission instead.
 
 4. Repository evidence: a screenshot of the `main` branch protection settings, a link to a merged pull request approved by another member, and a link to the latest green link check run.
    These are three, because each proves something only the platform's own interface can prove, and none of them is visible in the repository's files.
@@ -251,12 +262,14 @@ Follow the structure in [Weekly Public Report](../requirements/artifact-requirem
 
 The open questions from the kickoff live in `meeting-report.md`, not here.
 The week report does not repeat them; a reader follows the link.
+The kickoff decisions live in `docs/decisions.md`, and the meeting report lists them; the week report does not repeat them.
 
 ## Assignment Report On Moodle
 
 Create one PDF.
 It is a map, not a copy: it points at your repository and holds the material that must not be public.
-Keep it to two pages, and put nothing in it except the following:
+Keep it to two pages, and put nothing in it except the following.
+A transcript under item 5 goes in an appendix, which the two pages do not count.
 
 1. Project name and the team number.
 2. A table of team members: GitHub username, real name, and university email.
@@ -264,15 +277,15 @@ Keep it to two pages, and put nothing in it except the following:
 3. A permalink to `reports/week-01/README.md` at the full commit hash.
 4. A link to the kickoff meeting recording, accessible to instructors.
    The recording must not be in the repository.
-5. The meeting transcript, if the customer refused to let you publish it.
+5. The meeting transcript, if the customer refused to let you publish it on GitHub.
 6. One line confirming that no private-only material was committed to the repository.
 
 Nothing else goes in the PDF.
 The summary, the coverage table, the contribution table, the evidence links, the deviations, and the privacy confirmation are all in `reports/week-01/README.md`, and the permalink gets a grader there.
 Do not paste, retype, or reword them.
-If the PDF runs past two pages, you are writing the report a second time, and the second copy is the one that goes stale.
+If the PDF runs past two pages before the appendix, you are writing the report a second time, and the second copy is the one that goes stale.
 
-This is the [private submission wrapper](../requirements/artifact-requirements.md#private-submission-wrapper) the course requires: the private material for the week, and links to the public material.
+This is the [private submission wrapper](../requirements/weekly-report-requirements.md#private-submission-wrapper) the course requires: the private material for the week, and links to the public material.
 
 See [Permalinks And Snapshots](../requirements/repository-requirements.md#permalinks-and-snapshots) for how to build the permalink and the snapshot.
 
@@ -283,6 +296,8 @@ See [Permalinks And Snapshots](../requirements/repository-requirements.md#permal
 
 ### Submission Procedure
 
+- Merge `reports/week-01/README.md` and every file it links into `main`, per [Weekly Public Report](../requirements/weekly-report-requirements.md#weekly-public-report).
+- Take the permalink and the snapshot from that `main` commit.
 - Submit the PDF and the repository snapshot (repository page -> Code -> Download ZIP) through Moodle.
 - One submission per team.
 - Due Thursday 1 October, 23:59.
@@ -303,14 +318,18 @@ See [Permalinks And Snapshots](../requirements/repository-requirements.md#permal
 - [ ] `reports/week-01/candidate-list.md` with the full search, including what you cut.
 - [ ] `docs/research/comparison.md` with at least 6 properties and traceable cells.
 - [ ] `docs/research/gap-analysis.md` with `GAP-nn` entries and the rejected list.
-- [ ] `docs/research/value-proposition.md` with `VP-nn` entries and assumptions.
+- [ ] `docs/research/value-proposition.md` with `VP-nn` entries.
+- [ ] `docs/assumptions.md` with `ASM-nn` entries.
 - [ ] Board linked, view-only, two screenshots per alternative.
-- [ ] `reports/week-01/meeting-script.md` with five areas, at least two questions each, all tagged open or closed.
+- [ ] `reports/week-01/meeting-script.md` with a one-sentence target and five areas, at least two questions each, all tagged open or closed and all serving the target.
+- [ ] `## Agenda` with timeboxes adding up to the meeting, what you show in each part, and every question in exactly one part.
 - [ ] `## Key improvements` shows two real rewrites with the principle named.
 - [ ] Three meeting roles assigned, whole team attending.
 - [ ] Kickoff meeting held, all three permissions asked before recording.
-- [ ] `reports/week-01/meeting-report.md` with all six sections, 2+ decisions traced to `GAP-nn`/`VP-nn`, 2+ action points with owner and Week 2 due date, and `## Disagreements` filled or `None`.
-- [ ] `reports/week-01/meeting-transcript.md` or `meeting-notes.md`, sanitized; in the Moodle PDF only if publication was refused.
+- [ ] `docs/decisions.md` with a `DEC-nnn` entry for each kickoff decision, each with its `**Why:**`.
+- [ ] `reports/week-01/meeting-report.md` with all six sections, 2+ decisions listed by `DEC-nnn`, 2+ action points with owner and Week 2 due date, and `## Disagreements` filled or `None`.
+- [ ] `reports/week-01/meeting-transcript.md` if the meeting was recorded, sanitized; in the Moodle PDF only if publication was refused.
 - [ ] `reports/week-01/ai-usage.md` written.
 - [ ] `reports/week-01/README.md` complete, with the coverage table, evidence, and contribution table.
+- [ ] `reports/week-01/README.md` and every file it links merged into `main`, with the permalink and the snapshot taken from that `main` commit.
 - [ ] PDF and snapshot ready, permalink verified at the full commit hash.

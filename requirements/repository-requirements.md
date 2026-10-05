@@ -1,11 +1,7 @@
 # Repository Requirements
 
 These requirements cover the mechanics of the product repository: where it lives, how changes get in, how links get checked, and how you produce the permalinks and the snapshot your assignment asks for.
-Use [Artifact Requirements](artifact-requirements.md) for what the artifacts are and who may see them, and [Process Requirements](process-requirements.md) for the product work.
-
-Each requirement carries a `**Since: WN**` marker stating the week it starts applying, so a section can hold requirements that begin in different weeks.
-Requirements that arrive later are written now so that later weeks do not have to introduce a convention from nothing.
-(For the document authors) To move a requirement to a different week, change its own marker and leave the section where it is.
+Use [General Requirements](general-requirements.md) for what an artifact is, [Visibility Requirements](visibility-requirements.md) for who may see it, and the file for each artifact, listed in [the course rules](../course/rules.md#where-the-rules-live), for the product work.
 
 <h2>Table of contents</h2>
 
@@ -18,7 +14,9 @@ Requirements that arrive later are written now so that later weeks do not have t
 - [Permalinks And Snapshots](#permalinks-and-snapshots)
 - [Configuration And Sensitive Information](#configuration-and-sensitive-information)
 - [Sensitive-Data Incident Response](#sensitive-data-incident-response)
-- [Planning And Issue Tracking](#planning-and-issue-tracking)
+- [Issue Tracking](#issue-tracking)
+- [Tracking Tasks Inside The Repository](#tracking-tasks-inside-the-repository)
+- [Contributing](#contributing)
 - [Changelog, Releases And Versioning](#changelog-releases-and-versioning)
 - [Continuous Integration](#continuous-integration)
 - [Recommended Throughout The Course](#recommended-throughout-the-course)
@@ -33,7 +31,7 @@ Requirements that arrive later are written now so that later weeks do not have t
    The team names both, and both names carry the team number, so the course staff can find them.
    The repository belongs to the organization and not to a team member's personal account.
 2. **The repository is public.**
-   Assume every commit can be read by anyone, permanently.
+   What that means for its contents is in [Visibility Model](visibility-requirements.md#visibility-model).
 3. The default branch is `main`.
 4. All team members are added as collaborators, with write access, before any collaborative work starts.
    Nobody works alone in their own account.
@@ -41,7 +39,7 @@ Requirements that arrive later are written now so that later weeks do not have t
    The customer in this course is your instructor, and the public MIT-licensed model is a course-wide decision.
 6. Add a `.gitignore` appropriate to your tooling.
    At minimum it covers editor state, OS files, `.env` and other secret files, and build output.
-   Once you pick a stack in Week 2, extend it for that stack.
+   Once you pick a stack, extend it for that stack.
 7. The first commit goes directly to `main`.
    It is the only commit that ever goes directly to `main`.
    See [Branch Protection And Pull Requests](#branch-protection-and-pull-requests).
@@ -76,7 +74,7 @@ In Week 1 it must contain:
 - A link to the maintained documentation in `docs/`.
 - A note that the project is a work in progress for the ITPD course.
 
-**Since: W2**
+**Since: W3**
 
 The root `README.md` also carries setup and run instructions for the product as it exists.
 
@@ -106,6 +104,7 @@ The root `README.md` also carries setup and run instructions for the product as 
    - What changed and why.
    - What you checked, and how.
    - For the reviewer: what to look at, and whether the linked requirements or acceptance criteria are satisfied.
+     From Week 2, name the `AC-nn` and its story issue for each criterion the change checks.
 
 7. Do not delete pull requests, reviews, or branches that are used as assignment evidence, and do not rewrite history to tidy it up.
    The history is part of what is being assessed.
@@ -180,8 +179,6 @@ Exclusions go in `.lycheeignore` in the repository root, one pattern per line, e
 # Verified manually in a browser on 2026-09-30.
 https://www.figma.com/design/PUc4NFVcLureKzxE3RAGB0/Market-Research
 ```
-
-The same justification, in prose, goes in the week's report under the link-checking evidence.
 
 ### Pinning Third-Party Actions
 
@@ -265,8 +262,7 @@ Both are built from the commit you are submitting, so that what a grader sees is
    Ignore the rest.
 4. Keep large binaries, recordings, datasets, and model weights out of normal git history.
    When a file is genuinely required, use approved external storage and link to it.
-5. Never commit credentials, personal data, confidential customer material, recordings, recording links, or test credentials.
-   See [Artifact Requirements](artifact-requirements.md#sensitive-information-reference) for what counts as personal data.
+5. What may never be committed is in [Sensitive Information Reference](visibility-requirements.md#sensitive-information-reference).
 
 ## Sensitive-Data Incident Response
 
@@ -282,18 +278,98 @@ If credentials, personal data, or confidential material is committed by mistake:
 5. Write privately what was exposed, when, and what you did about it, and send that to your instructor.
    Do not put that account in the public repository.
 
-## Planning And Issue Tracking
+## Issue Tracking
 
 **Since: W2**
 
 **Required**
 
-1. Create the issue templates the course requires, in `.github/ISSUE_TEMPLATE/`.
-   The course will say which types you need for the week.
-2. Disable blank issue creation.
-3. Create branches from the issue where GitHub supports it, and link every pull request to its issue.
-4. Check the relevant acceptance criteria before merging.
-5. Keep the project plan in `docs/work-plan.md`, and keep it current as the plan changes.
+1. Add `.github/ISSUE_TEMPLATE/user-story.yml`, an Issue Form with a field for each part of a story issue listed in [Where Stories Live](user-stories-requirements.md#where-stories-live), and the `user-story` label applied by the form, or the issue type or field that rule allows instead.
+   The statement, the `Traces to` list, and the `Priority reason` field are required, and `Traces to` takes one entry per line.
+   The acceptance criteria field is optional, per [Acceptance Criteria](user-stories-requirements.md#acceptance-criteria).
+2. Add `.github/ISSUE_TEMPLATE/task.yml`, an Issue Form for work that is not a story, such as documentation, a report, or a workflow, with a description field and the `task` label applied by the form.
+3. Disable blank issue creation with `blank_issues_enabled: false` in `.github/ISSUE_TEMPLATE/config.yml`.
+4. The pull request that adds the two forms and `config.yml` is the only one that starts before a form exists.
+   Open a blank issue for it first, then name its branch and link it like any other pull request.
+   A team that disabled blank issues before it had the task form opens the issue for the pull request that adds `task.yml` with `gh issue create`.
+5. After that pull request, open every issue from a form.
+   This is the team's rule rather than the platform's: `gh issue create` and the API skip the form and the label it applies.
+6. Create the labels the issues use, by any means: `user-story`, `task`, and the four `moscow:*` labels in [MoSCoW Prioritization](user-stories-requirements.md#moscow-prioritization).
+   The forms apply `user-story` and `task`; the team applies one MoSCoW label per story.
+   A team that marks stories or priorities with an issue type or field, per [Where Stories Live](user-stories-requirements.md#where-stories-live), creates that type or field instead of the labels it replaces.
+7. Create branches from the issue where GitHub supports it, and link every pull request to its issue.
+8. Check the acceptance criteria a pull request touches before merging it; the [pull request template](#branch-protection-and-pull-requests) asks for them.
+9. In an issue, an issue comment, or a pull request description, link a repository file by its full URL on `main`, because a relative link does not resolve there:
+
+   ```text
+   https://github.com/<org>/<repo>/blob/main/docs/decisions.md#dec-006
+   ```
+
+   Link on `main`, not at a commit hash, so the link shows the file as it is now, such as a decision that has since been reversed.
+   The commit-hash permalink is for the submission, per [Permalinks And Snapshots](#permalinks-and-snapshots).
+   Merge the file into `main` before an issue links it.
+
+**Recommended**
+
+- Put the URL pattern in the description of the `Traces to` field in `user-story.yml`, so whoever fills in the form sees it.
+
+The user story requirements say [what a story says](user-stories-requirements.md#the-story) and [how its issue is kept](user-stories-requirements.md#where-stories-live).
+
+## Tracking Tasks Inside The Repository
+
+**Since: W2**
+
+**Recommended**
+
+- Use a task tracker that keeps its state in the repository, such as the [`backlog.md`](https://github.com/MrLesk/Backlog.md) command-line tool.
+  It is not the home of a user story, and a story issue may be mentioned in it.
+  Its files are repository content rather than artifacts, per [Where Artifacts Live In The Repository](general-requirements.md#where-artifacts-live-in-the-repository), and it is not graded on its own.
+- Exclude the tracker's directory from the [Markdown check](#continuous-integration), because the tool rewrites those files and a formatter would fight it.
+  The [link check](#link-checking) still covers the directory, unless you exclude it there with the reason written down, as that section requires of every exclusion.
+
+It is recommended for two reasons:
+
+1. **A coding agent can use it.**
+   The tasks are plain files beside the code, and `backlog.md` has a command-line interface and an MCP server, so an agent can read the task it is working on, follow its acceptance criteria, and record what it did, without access to your GitHub account.
+2. **It breaks a bigger task into steps inside one pull request.**
+   A larger piece of work, whether it is an issue or a task in the tracker itself, splits into subtasks, each with its own acceptance criteria.
+   The subtasks change in the same commits as the work, so a reviewer sees the plan and how far it got beside the diff.
+
+It is not required because the course grades the work and its evidence, not the tool the team organised it with.
+
+**Example**
+
+When several members create tasks on different branches, let the tool see the other branches, so that two branches do not allocate the same task ID.
+In `backlog/config.yml`:
+
+```yaml
+filesystem_only: false
+remote_operations: true
+check_active_branches: true
+active_branch_days: 30
+```
+
+A task created in another clone is visible only once its branch is pushed, so push a branch soon after creating a task on it.
+
+## Contributing
+
+**Since: W3**
+
+**Required**
+
+1. Add `CONTRIBUTING.md` in the repository root.
+   It is how a new member, or a grader, finds out how the team works, and it is written before the workflow is complicated rather than after.
+2. `CONTRIBUTING.md` states the commit message format the team uses.
+   Any format is allowed; an unstated format is not, because a reviewer cannot judge a commit they cannot parse.
+3. `CONTRIBUTING.md` states how a change gets in: the branch naming rule, what a pull request must contain, and what the reviewer checks.
+4. Keep it current.
+   A contributing guide that describes last month's process is worse than none, because it is believed.
+
+**Recommended**
+
+- Use [Conventional Commits](https://www.conventionalcommits.org/) for commit messages: a type, a scope, and a short description.
+  It is a good default because it is machine-readable, and a changelog can be generated from it if the team ever wants one.
+  It is not required, and a team that writes a clearer format should write it down instead.
 
 ## Changelog, Releases And Versioning
 
@@ -309,20 +385,78 @@ If credentials, personal data, or confidential material is committed by mistake:
    Protect mapped tags from being moved or deleted.
 6. When you cut a release, move the included entries into a dated section, link the section to the release, and open a new empty `[Unreleased]`.
 
+**Compile the changelog from pull requests, not from commits.**
+A commit message records what the team judged important at that moment, and that judgement is usually about the code rather than the product: a rename, a refactor, a fix for a bug nobody outside the team could reach.
+A changelog is a user-facing summary, so it answers a different question.
+The pull request is where the team already writes down what changed and why, which is why the pull request template asks for the changelog line.
+
 ## Continuous Integration
 
-**Since: W5**
+**Since: W2**
 
 **Required**
 
-1. Add continuous integration for your stack: linting, formatting or type checking, build, and automated tests, on pull requests and on `main`.
-2. Keep the link check running.
-   It is a baseline, not a substitute for the checks your product needs.
-3. Pin the actions you add, as in [Pinning Third-Party Actions](#pinning-third-party-actions).
-4. The latest `main` run of every required check must be green before you submit.
+1. Add a Markdown check as a GitHub Actions workflow, on pull requests and on every push to `main`.
+2. The check must fail the build when the Markdown is wrong, and the latest `main` run must be green before you submit.
+3. Any of the common tools is acceptable: `markdownlint-cli2`, `prettier --check`, or `remark-lint`.
+   Pin the action to a commit, per [Pinning Third-Party Actions](#pinning-third-party-actions), and pin the tool's version: an action that bundles the tool pins it with the action, and a tool installed by the workflow pins it in the lockfile.
+4. Fixing what the check reports in an earlier week's files is a formatting-only change, which [Where Artifacts Live In The Repository](general-requirements.md#where-artifacts-live-in-the-repository) allows.
+5. A task tracker's directory may be excluded from the check, per [Tracking Tasks Inside The Repository](#tracking-tasks-inside-the-repository).
+   Nothing else is excluded.
+
+Markdown is checked in Week 2 because the week is mostly prose: a product vision, the meeting artifacts, and the week report.
+A malformed table or a skipped heading level is a defect in that work, and a defect you find on Friday evening is a defect you did not fix.
+Broken links are the [link check](#link-checking)'s job, not this one's.
+
+**Example**
+
+`.github/workflows/markdown.yml`, with `markdownlint-cli2` bundled by the action:
+
+```yaml
+name: Markdown check
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  markdownlint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Check Markdown
+        uses: DavidAnson/markdownlint-cli2-action@21c1be1b93ad9ed58fa840aacc3f279cde2a72ff # v24.2.0
+        with:
+          globs: "**/*.md"
+```
+
+`.markdownlint-cli2.jsonc` in the repository root turns off the line-length rule, so one sentence per line and long table rows pass, and the list-numbering rule, so a meeting script can number its questions across their area groups for the agenda to cite.
+It also excludes the task tracker's directory:
+
+```jsonc
+{
+  "config": {
+    "default": true,
+    "MD013": false,
+    "MD029": false,
+  },
+  "ignores": ["backlog/**"],
+}
+```
+
+**Since: W3**
+
+6. Add continuous integration for your product code: linting, formatting or type checking, build, and automated tests, on pull requests and on `main`.
+7. Keep the link check and the Markdown check running.
+   They are a baseline, not a substitute for the checks your product needs.
+8. The latest `main` run of every required check must be green before you submit.
 
 ## Recommended Throughout The Course
 
 - Enable secret scanning and push protection.
 - Provide a Nix flake or a `devenv` configuration so the project can be set up reproducibly.
-- Add `CONTRIBUTING.md` and `AGENTS.md` once the workflow is stable enough to be worth writing down.
+- Add `AGENTS.md` once the workflow is stable enough to be worth writing down.

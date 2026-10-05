@@ -1,0 +1,139 @@
+# Guide: The Kickoff Meeting
+
+How to prepare the one meeting where the problem and the direction are both still open.
+What the meeting has to satisfy is defined in [The Kickoff](../requirements/customer-meetings-requirements.md#the-kickoff) and [Meeting Script](../requirements/customer-meetings-requirements.md#meeting-script); this guide is the method.
+A later meeting settles one thing or two, and the rules in [Every Meeting](../requirements/customer-meetings-requirements.md#every-meeting) are enough to prepare it.
+
+**Timebox:** about two hours of preparation, most of it in Step 1.
+A script that comes out of an argument between three team members is worse than a worse script that comes out of a discussion.
+
+<h2>Table of contents</h2>
+
+- [What You Produce](#what-you-produce)
+- [Step 1: Write Down What The Meeting Is For](#step-1-write-down-what-the-meeting-is-for)
+- [Step 2: Build The Questions From Five Areas](#step-2-build-the-questions-from-five-areas)
+- [Step 3: Break Your Own Questions With The Mom Test](#step-3-break-your-own-questions-with-the-mom-test)
+- [Step 4: Order The Meeting](#step-4-order-the-meeting)
+- [Step 5: Record What You Improved](#step-5-record-what-you-improved)
+- [Step 6: Assign Roles](#step-6-assign-roles)
+- [Common Mistakes](#common-mistakes)
+
+## What You Produce
+
+```text
+reports/week-NN/meeting-script.md   what you believe, what the meeting is for, the agenda, and the questions
+```
+
+The meeting itself produces a [meeting report](../requirements/customer-meetings-requirements.md#meeting-report), and a transcript when it was recorded.
+The script is what you wrote before you knew any of the answers.
+
+## Step 1: Write Down What The Meeting Is For
+
+A script written without a target is a list of things you already want to ask.
+
+Open with the belief you are carrying into the room, then the one or two things the kickoff has to settle, then what a good answer would let you do next.
+That last line is the reason the meeting exists, and it is also what the [meeting report](../requirements/customer-meetings-requirements.md#meeting-report)'s `## Open questions` table is drawn from afterwards.
+
+The beliefs worth testing are the ones you would have to change your product for.
+At a kickoff, that is usually the problem-space reading itself: not "do they like dashboards" but "we think nobody gives an expert one link that carries the whole booking, and we are about to spend the course building that".
+If the customer says no, the answer has to be able to change what you build next.
+
+Write the target down as a single sentence before you write any question.
+If you cannot finish that sentence, the meeting is not ready to be scheduled.
+
+## Step 2: Build The Questions From Five Areas
+
+Two questions per area is the minimum, and it is enough.
+More than about four in an area and you will read them faster than you will listen.
+Every question still has to serve the target from Step 1.
+If a question would not change anything whatever the answer, replace it with one that would, rather than keeping it to make up the count.
+
+**Business goals.**
+Why build rather than buy, and what this changes about their work when it works.
+
+**End users.**
+Who books the session, who pays, and whether those are the same person.
+A gap that only matters to one role is a gap for that role.
+
+**Current workflow.**
+The past tense is the whole trick here.
+Ask them to walk through the last time it happened, step by step.
+The steps they describe are the real process, and it is often not the one on their wiki.
+
+**Pain points and constraints.**
+What was most annoying last time, and what cannot change.
+Constraints are worth more here than desires, because a constraint you discover late is a redesign.
+
+**Scope.**
+If only one thing shipped, which one survives, and what is out.
+Customers say yes to more than they mean, so ask about the out-of-scope answer directly.
+
+Write each question down numbered, and tag it open or closed.
+The tag is what you check the question against in Step 3, so do it as you write rather than afterwards.
+
+## Step 3: Break Your Own Questions With The Mom Test
+
+[Read the three rules first](https://www.koji.so/docs/mom-test-methodology).
+
+1. **Talk about their life, not your idea.**
+2. **Ask about specifics in the past, not opinions about the future.**
+3. **Talk less.**
+
+They are short because they are mostly a warning.
+Most bad customer questions are our idea coming back wearing the customer's clothes.
+
+The left column is a question a team asks because it has already decided something.
+The right column asks about a past event instead, so the answer is a fact rather than a compliment.
+
+| Instead of                                                      | Ask                                                       |
+| --------------------------------------------------------------- | --------------------------------------------------------- |
+| "Would you like a dashboard?"                                   | "What do you look at when a client has not paid yet?"     |
+| "Is latency important to you?"                                  | "When the last payment failed, what did you do?"          |
+| "Do you like our pricing?"                                      | "What are you paying now, and what is annoying about it?" |
+| "Would you switch from your current tool for one booking link?" | "What made you pick Calendly over a shared calendar?"     |
+
+The rewrite is not only about the words.
+"Would you switch" is untestable, because nobody predicts their own behaviour accurately.
+The switching row becomes a question about a past decision, which already happened and which they remember.
+
+## Step 4: Order The Meeting
+
+The questions say what you will ask; the agenda says what happens in the room, in which order, and what is on the screen while it does.
+Write it after the questions, because its parts are built from them.
+
+Open with the [three permission questions](../requirements/customer-meetings-requirements.md#permission-questions), then present your reading of the problem and your direction, with `docs/research/value-proposition.md` on the screen.
+That is the part the customer most needs to hear, and the business-goal questions belong right after it, while it is fresh.
+
+Then take the screen down.
+The workflow and pain-point questions are about the customer's past, and a diagram of your idea in front of them pulls every answer toward it.
+Bring an artifact back only when a question is about it: the gap table for the scope questions is the usual one.
+
+Put the part you are least sure of early, so the questions that could overturn your direction get the time.
+Give each part a timebox, and make them add up to 30-60 minutes, including the last two minutes for reading back the decisions and action points.
+The moderator watches the clock against those timeboxes; a part that runs over takes its time from the last part, not from the read-back.
+
+## Step 5: Record What You Improved
+
+Close the script with the `## Key improvements` section [Meeting Script](../requirements/customer-meetings-requirements.md#meeting-script) requires, giving each rewritten question's before, after, and principle.
+
+This section is not proof that you read the Mom Test.
+It is the part a reader uses to tell whether your questions were considered or merely collected.
+
+## Step 6: Assign Roles
+
+Three roles, three people, before you start rather than during: a moderator, a note taker, and an observer.
+[Every Meeting](../requirements/customer-meetings-requirements.md#every-meeting) says what each role does.
+
+Deviate from the script when an answer opens something better.
+The script is a floor on what you cover, not a ceiling on the meeting.
+
+## Common Mistakes
+
+- **A script with no history in it.**
+  "Is security important?" gets you nothing.
+  "Walk me through the last time this went wrong" gets you the incident.
+- **An agenda that is the question list again.**
+  If every part says "show: nothing", you planned what to ask but not what to present, and the customer hears your direction for the first time in the scope questions.
+- **No `## Key improvements` section.**
+  The section is the assignment.
+  The script without it is just notes.

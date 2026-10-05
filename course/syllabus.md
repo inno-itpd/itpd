@@ -9,8 +9,8 @@ The course is designed to prepare students for the Industrial Project course and
 - [2. Project Selection \& Team Formation Protocol (Weeks 1–2)](#2-project-selection--team-formation-protocol-weeks-12)
 - [3. Weekly Curriculum \& Milestones](#3-weekly-curriculum--milestones)
   - [Week 1: Sep 25 – Oct 1 (Kickoff, Project Catalog \& Initial Research)](#week-1-sep-25--oct-1-kickoff-project-catalog--initial-research)
-  - [Week 2: Oct 2 – Oct 8 (Project Planning, Issue Tracking \& Initial Implementation)](#week-2-oct-2--oct-8-project-planning-issue-tracking--initial-implementation)
-  - [Week 3: Oct 9 – Oct 15 (Prototyping \& Minimum Usable Product)](#week-3-oct-9--oct-15-prototyping--minimum-usable-product)
+  - [Week 2: Oct 2 – Oct 8 (Requirements \& Prototyping)](#week-2-oct-2--oct-8-requirements--prototyping)
+  - [Week 3: Oct 9 – Oct 15 (Planning \& Minimum Usable Product)](#week-3-oct-9--oct-15-planning--minimum-usable-product)
   - [Week 4: Oct 16 – Oct 22 (Software Quality, Architecture \& Improved MUP)](#week-4-oct-16--oct-22-software-quality-architecture--improved-mup)
   - [Week 5: Oct 23 – Oct 29 (Testing, Automation, Production Deployment \& MVP)](#week-5-oct-23--oct-29-testing-automation-production-deployment--mvp)
   - [Week 6: Oct 30 – Nov 5 (Analytics \& In-Class MVP Presentations)](#week-6-oct-30--nov-5-analytics--in-class-mvp-presentations)
@@ -36,9 +36,12 @@ The course is designed to prepare students for the Industrial Project course and
 
 - **Duration**: **11 weeks** (September 25, 2026 – December 10, 2026).
 - **Class Sessions**: Held weekly on **Fridays** (Classes 1 through 11).
+- **Customer Meetings**: Each team meets its customer, the team's instructor, at least once every week from Week 1, and the Week 1 meeting is the kickoff.
+  See [Every Meeting](../requirements/customer-meetings-requirements.md#every-meeting).
 - **Weekly Submission Deadline Policy**:
   > [!IMPORTANT]
-  > All weekly assignment submissions are **strictly due by Thursday at 23:59**, the night before the next Friday class session.
+  > All weekly assignment submissions have a **soft deadline on Thursday at 23:59**, the night before the next Friday class session, and a **hard deadline on Friday at 23:59**.
+  > There is no penalty between the two; see [Deadlines And Submission](rules.md#deadlines-and-submission) and the [Late Submission Policy](#late-submission-policy).
   > A submission is a reflection on the work done in the repository.
   > All details should be stored in the repo.
   > The submission should be a map to the specific chunk of work.
@@ -60,20 +63,23 @@ The first two weeks establish the project foundations, team formation, and compe
      - **Pros & Cons Analysis**: Detail the strengths, limitations, and trade-offs of each identified alternative.
      - **Gap Analysis**: Uncover useful features, workflows, and user needs that are not adequately addressed by existing alternatives.
      - **Value Proposition & Differentiation**: Clearly articulate how the team's product will be superior, distinctive, and more valuable than existing similar products.
-   - Week 1 also includes **product repository setup** and one **customer kickoff meeting** with the team's instructor.
-4. **Repository Setup (Week 1) & Planning (Week 2)**:
+   - Week 1 also includes **product repository setup** and the **customer kickoff meeting**, the first of the weekly meetings with the customer.
+4. **Repository Setup (Week 1) & Requirements (Week 2)**:
    - The product repository is created and configured during Week 1, alongside the research: a public MIT-licensed repository in the team's own GitHub organization, a protected `main` branch requiring pull request review, a pull request template, and automated link checking.
-   - Following research submission and feedback, Week 2 transitions into project planning (work breakdown, estimation, scheduling), issue-based tracking, and initial implementation.
+   - Following research submission and feedback, Week 2 turns the research into requirements: a product vision, prioritized user stories with acceptance criteria, prototypes that test the riskiest assumptions, issue tracking, and the Week 2 customer meeting, which changes something.
 
 ---
 
 ## 3. Weekly Curriculum & Milestones
 
+The due dates below are the Thursday soft deadlines; each hard deadline is the following Friday at 23:59.
+Week 2 is the exception: its hard deadline is Saturday, October 10 at 23:59.
+
 | Week        | Date Range      | Focus / Key Milestones                                                                                                       |
 | :---------- | :-------------- | :--------------------------------------------------------------------------------------------------------------------------- |
 | **Week 1**  | Sep 25 – Oct 1  | Course Kickoff, Project Catalog, Team Formation, **Repository Setup** & **Submission 1 (Initial Research due Oct 1, 23:59)** |
-| **Week 2**  | Oct 2 – Oct 8   | Lecture (Planning), Research Review, Issue Tracking & **Submission 2 (due Oct 8, 23:59)**                                    |
-| **Week 3**  | Oct 9 – Oct 15  | Lecture (Prototyping), User Stories, Prototypes & **Submission 3 (MUP due Oct 15, 23:59)**                                   |
+| **Week 2**  | Oct 2 – Oct 8   | Lecture (Requirements & Prototyping), Research Review, Issue Tracking & **Submission 2 (due Oct 8, 23:59)**                  |
+| **Week 3**  | Oct 9 – Oct 15  | Lecture (Planning), Work Plan & **Submission 3 (MUP due Oct 15, 23:59)**                                                     |
 | **Week 4**  | Oct 16 – Oct 22 | Lecture (Software Quality), Architecture Draft & **Submission 4 (due Oct 22, 23:59)**                                        |
 | **Week 5**  | Oct 23 – Oct 29 | Lecture (Testing & Automation), CI/CD, Prod Setup & **Submission 5 (MVP + 7-min Pitch Deck due Oct 29, 23:59)**              |
 | **Week 6**  | Oct 30 – Nov 5  | Lecture (Analytics), MVP Presentations & **Submission 6 (Analytics Integration due Nov 5, 23:59)**                           |
@@ -104,46 +110,54 @@ The first two weeks establish the project foundations, team formation, and compe
     - Sanitized transcript of the customer kickoff meeting.
   - **Detailed requirements**: [Assignment 1](../assignments/assignment-1.md).
 
-### Week 2: Oct 2 – Oct 8 (Project Planning, Issue Tracking & Initial Implementation)
+### Week 2: Oct 2 – Oct 8 (Requirements & Prototyping)
 
 - **Class 2 (Oct 2)**:
-  - **Lecture**: **Project Planning** (tactical and strategic planning, estimation, tracking progress, risk management).
-  - **Workshop & Feedback**: Instructor feedback on Week 1 initial research, alignment on scope, and refinement of product requirements.
+  - **Lecture**: **Requirements and prototyping** (product vision, user stories, acceptance criteria, validating an idea before you build it).
+  - Research from Week 1 is reviewed in class.
 - **Submission 2 (Team Deliverables - Due Oct 8, 23:59)**:
   - **Deliverables**:
-    1. Project work plan (milestone schedule, task breakdown), maintained in the repository.
-    2. Issue-based tracking configured in the repository, with issue templates and a first set of planned work items traced back to the Week 1 research.
-    3. First implementation steps (initial scaffolding/codebase).
+    1. **Product Vision**: `docs/product-vision.md`, holding the goal, the constraints, the stakeholders, the boundary of what the team will not do, and a system context diagram.
+    2. **User Stories**: one GitHub issue per story, opened from `.github/ISSUE_TEMPLATE/user-story.yml`, listed by the `user-story` label; each story except a `Won't Have` story carries its own acceptance criteria.
+    3. **Issue Tracking**: one issue per `US-nn` with a `moscow:*` label, and a task issue form, `.github/ISSUE_TEMPLATE/task.yml`, for the work that is not a story.
+    4. **Minimum Usable Product Candidate**: the `Must Have` stories that let a user complete one core task end to end, recorded in `reports/week-02/README.md`.
+    5. **Prototypes**: prototypes of the riskiest assumptions, recorded at `reports/week-02/prototypes.md`.
+       Prototypes may be paper sketches, view-only design tools, or disposable code spikes.
+    6. **Customer Validation Meeting**: the Week 2 meeting with the customer, with the full Week 1 artifact set, which changes at least one story.
+  - **Minima**: at least eight story issues, at least five of them not `Won't Have`, each story carrying a `moscow:*` label, `Won't Have` stories closed as not planned, at least two acceptance criteria per story that is not `Won't Have`, and a minimum usable product candidate that is a strict, non-empty subset of the Must-Have stories and completes one core task end to end.
+    There is no product code this week.
   - **Note**: The product repository itself is created and configured in Week 1.
-    Week 2 extends it with planning artifacts, issue tracking, and code.
+    Week 2 adds requirements, tracking, and prototypes.
   - **Submission Scope**: Team submission.
-  - **Deadline**: **October 8 at 23:59 (Thursday)**.
+  - **Deadline**: soft **October 8 at 23:59 (Thursday)**, hard **October 10 at 23:59 (Saturday)**.
 
-### Week 3: Oct 9 – Oct 15 (Prototyping & Minimum Usable Product)
+### Week 3: Oct 9 – Oct 15 (Planning & Minimum Usable Product)
 
 - **Class 3 (Oct 9)**:
-  - **Lecture**: **Prototyping** (prototyping fidelity, rapid validation, synchronizing product vision, hypothesis testing).
+  - **Lecture**: **Planning** (tactical and strategic planning, estimation, tracking progress, risk management).
 - **Submission 3 (Team Deliverables - Due Oct 15, 23:59)**:
   - **Deliverables**:
-    1. **Refined Product Vision**: Structured user stories detailing persona needs, flows, and acceptance criteria.
-    2. **Project-Specific Prototypes**: Custom prototypes aligned with project risks (interactive UI wireframes, interactive mockups, architecture spikes, API contracts).
-    3. **Minimum Usable Product (MUP)**: Working vertical slice demonstrating core end-to-end usability.
+    1. **Project Work Plan**: milestone schedule and task breakdown, maintained in the repository at `docs/work-plan.md`.
+    2. **Threshold of Success**: explicit, measurable criteria for calling the course a success, at `docs/threshold-of-success.md`.
+    3. **Minimum Usable Product (MUP)**: a first working vertical slice built from the minimum usable product candidate named in Week 2.
+    4. **Contributing Guide**: `CONTRIBUTING.md`, stating the commit message format the team uses.
+    5. **Changelog and First Release**: `CHANGELOG.md` compiled from pull requests, and the first SemVer tag.
+    6. **Continuous Integration for the product code**: linting, formatting or type checking, build, and tests, on pull requests and on `main`.
   - **Submission Scope**: Team submission.
-  - **Deadline**: **October 15 at 23:59 (Thursday)**.
+  - **Deadline**: soft **October 15 at 23:59 (Thursday)**, hard **October 16 at 23:59 (Friday)**.
 
 ### Week 4: Oct 16 – Oct 22 (Software Quality, Architecture & Improved MUP)
 
 - **Class 4 (Oct 16)**:
-  - **Lecture**: **Software Quality** (quality attributes, architectural drivers, verification strategies, and thresholds of success).
+  - **Lecture**: **Software Quality** (quality attributes, architectural drivers, verification strategies).
 - **Submission 4 (Team Deliverables - Due Oct 22, 23:59)**:
   - **Deliverables**:
     1. **Quality Goals Specification**: Detailed description of quality goals for the project (business goals, non-functional quality attributes, constraints).
     2. **Verification Plan**: Description of how the team plans to verify that the quality goals are achieved.
-    3. **Threshold of Success**: Explicit criteria defining acceptable success thresholds for the project.
-    4. **Architectural Draft**: Architectural design draft demonstrating how the chosen architecture supports the defined quality goals.
-    5. **Improved Minimum Usable Product (MUP)**: Working code iteration following the selected architecture and complying with the defined quality goals.
+    3. **Architectural Draft**: Architectural design draft demonstrating how the chosen architecture supports the defined quality goals.
+    4. **Improved Minimum Usable Product (MUP)**: Working code iteration following the selected architecture and complying with the defined quality goals.
   - **Submission Scope**: Team submission.
-  - **Deadline**: **October 22 at 23:59 (Thursday)**.
+  - **Deadline**: soft **October 22 at 23:59 (Thursday)**, hard **October 23 at 23:59 (Friday)**.
 
 ### Week 5: Oct 23 – Oct 29 (Testing, Automation, Production Deployment & MVP)
 
@@ -163,7 +177,7 @@ The first two weeks establish the project foundations, team formation, and compe
        > **To revise:** the deck is currently expected as a Moodle attachment rather than a repository artifact.
        > Confirm the submission channel and where, if anywhere, it is indexed from.
   - **Submission Scope**: Team submission.
-  - **Deadline**: **October 29 at 23:59 (Thursday)** (presented in-class during Week 6).
+  - **Deadline**: soft **October 29 at 23:59 (Thursday)**, hard **October 30 at 23:59 (Friday)** (presented in-class during Week 6).
 
 ### Week 6: Oct 30 – Nov 5 (Analytics & In-Class MVP Presentations)
 
@@ -175,7 +189,7 @@ The first two weeks establish the project foundations, team formation, and compe
     1. **Analytics Integration**: Introduce and instrument analytics into the product codebase (event tracking, metrics collection, telemetry).
     2. **Active Data Collection**: Verification that analytics data collection is operational and recording product usage.
   - **Submission Scope**: Team submission.
-  - **Deadline**: **November 5 at 23:59 (Thursday)**.
+  - **Deadline**: soft **November 5 at 23:59 (Thursday)**, hard **November 6 at 23:59 (Friday)**.
 
 ### Week 7: Nov 6 – Nov 12 (Usability Testing Preparation)
 
@@ -188,7 +202,7 @@ The first two weeks establish the project foundations, team formation, and compe
     3. **Observation Recording Strategy**: Written methodology detailing how participant actions, friction points, verbal feedback, and task completion will be captured and recorded.
     4. **Analytics Telemetry Utilization**: Telemetry from the Week 6 analytics integration is utilized to complement observer notes with quantitative usage data.
   - **Submission Scope**: Team submission.
-  - **Deadline**: **November 12 at 23:59 (Thursday)**.
+  - **Deadline**: soft **November 12 at 23:59 (Thursday)**, hard **November 13 at 23:59 (Friday)**.
 
 ### Week 8: Nov 13 – Nov 19 (Project Configuration Management)
 
@@ -200,7 +214,7 @@ The first two weeks establish the project foundations, team formation, and compe
     2. **Configuration Management Improvement Plan**: Actionable roadmap detailing planned improvements to configuration, tooling, and environment stability.
     3. **Implementation**: Enacted improvements within the codebase, configuration files, and CI/CD pipelines.
   - **Submission Scope**: Team submission.
-  - **Deadline**: **November 19 at 23:59 (Thursday)**.
+  - **Deadline**: soft **November 19 at 23:59 (Thursday)**, hard **November 20 at 23:59 (Friday)**.
 
 ### Week 9: Nov 20 – Nov 26 (Project Pitching, Repository Finalization & Reflection)
 
@@ -216,7 +230,7 @@ The first two weeks establish the project foundations, team formation, and compe
     3. **Project Reflection Report**: Detailed retrospective reflecting on the team's engineering journey, technical choices, outcomes, quality goals achieved, lessons learned, and team dynamics.
     4. **Finalized Repository State**: Verified repository state with all planned implementation and upkeep tasks concluded.
   - **Submission Scope**: Team submission.
-  - **Deadline**: **November 26 at 23:59 (Thursday)**.
+  - **Deadline**: soft **November 26 at 23:59 (Thursday)**, hard **November 27 at 23:59 (Friday)**.
 
 ### Week 10: Nov 27 – Dec 3 (Course Review & Final Exam Preparation)
 
@@ -249,16 +263,16 @@ The course evaluation consists of **9 group submissions**, **1 individual reflec
 |   #    | Assessment Item      | Week       | Scope          | Deadline / Date | Primary Deliverables                                                                                                                                                              | Grade Component  |
 | :----: | :------------------- | :--------- | :------------- | :-------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :--------------: |
 | **1**  | **Submission 1**     | Week 1     | **Group**      | Oct 1, 23:59    | **Initial Project Research** (alternatives search, pros & cons, gap analysis, value proposition), product repository setup, customer kickoff transcript                           |    Group (7%)    |
-| **2**  | **Submission 2**     | Week 2     | **Group**      | Oct 8, 23:59    | **Plan & Initial Implementation** (work plan, issue tracking, initial code)                                                                                                       |    Group (7%)    |
-| **3**  | **Submission 3**     | Week 3     | **Group**      | Oct 15, 23:59   | **Prototyping & MUP** (user stories, project prototypes, Minimum Usable Product)                                                                                                  |    Group (7%)    |
-| **4**  | **Submission 4**     | Week 4     | **Group**      | Oct 22, 23:59   | **Quality & Architecture** (quality goals, verification plan, success threshold, architecture draft, improved MUP)                                                                |    Group (7%)    |
+| **2**  | **Submission 2**     | Week 2     | **Group**      | Oct 8, 23:59    | **Requirements & Prototyping** (product vision, user stories with acceptance criteria, issue tracking, prototypes, customer validation)                                           |    Group (7%)    |
+| **3**  | **Submission 3**     | Week 3     | **Group**      | Oct 15, 23:59   | **Plan & MUP** (work plan, threshold of success, minimum usable product, changelog, first SemVer tag, code CI)                                                                    |    Group (7%)    |
+| **4**  | **Submission 4**     | Week 4     | **Group**      | Oct 22, 23:59   | **Quality & Architecture** (quality goals, verification plan, architecture draft, improved MUP)                                                                                   |    Group (7%)    |
 | **5**  | **Submission 5**     | Week 5     | **Group**      | Oct 29, 23:59   | **MVP & Delivery** (unit tests, production deployment, CI/CD pipelines, MVP milestone, 7-min pitch deck — _presented in-class during Week 6_)                                     |    Group (7%)    |
 | **6**  | **Submission 6**     | Week 6     | **Group**      | Nov 5, 23:59    | **Product Analytics** (analytics instrumentation and active event/telemetry collection)                                                                                           |    Group (7%)    |
 | **7**  | **Submission 7**     | Week 7     | **Group**      | Nov 12, 23:59   | **Usability Testing** (pre/post-test surveys, task facilitation protocol, observation recording strategy)                                                                         |    Group (7%)    |
 | **8**  | **Submission 8**     | Week 8     | **Group**      | Nov 19, 23:59   | **Configuration Management** (evaluation of CM practices, improvement plan, and implementation)                                                                                   |    Group (7%)    |
 | **9**  | **Submission 9**     | Week 9     | **Group**      | Nov 26, 23:59   | **Final Project Submission** (final presentation deck, usability test results & findings, project reflection report, repository code freeze)                                      |    Group (7%)    |
 | **—**  | _Review Class_       | Week 10    | _Cohort_       | Nov 27 in class | Course retrospective and final exam demo preparation _(no submission due)_                                                                                                        |        —         |
-| **—**  | **Class Attendance** | Weeks 1–11 | **Individual** | Ongoing         | Active in-class presence, workshop participation, and collaboration across all weekly sessions                                                                                    | Individual (10%) |
+| **—**  | **Class Attendance** | Weeks 1–11 | **Individual** | Ongoing         | Active in-class presence and collaboration across all weekly class sessions                                                                                                       | Individual (10%) |
 | **10** | **Final Exam**       | Week 11    | **Group**      | Dec 4 in class  | **Group Project Presentations** (live software demos, architectural defense, peer evaluation)                                                                                     | Final Exam (20%) |
 | **11** | **Submission 10**    | Week 11    | **Individual** | Dec 10, 23:59   | **Individual Reflection & Peer Evaluation** (personal reflection on contributions, peer evaluation of teammates) — _available only if the group delivered the final presentation_ | Individual (7%)  |
 
@@ -290,7 +304,7 @@ The course is assessed on a **Pass / Fail** basis:
 | Component                                   |             Weight             | Assessment Items             | Evaluation Focus                                                                                                                                                               |
 | :------------------------------------------ | :----------------------------: | :--------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Group Submissions & Repository Updates**  | **63% total** ($9 \times 7\%$) | Submissions 1–9 & Repository | Cumulative milestone deliverables (7% per assignment), regular code commits, automated tests, CI/CD, documentation, and sustained repository activity across all 9 milestones. |
-| **Individual Class Attendance**             |            **10%**             | Weekly Classes (1–11)        | Active individual presence, engagement in lectures, workshops, team breakout activities, and peer discussions throughout the 11-week semester.                                 |
+| **Individual Class Attendance**             |            **10%**             | Weekly Classes (1–11)        | Active individual presence, engagement in lectures, and peer discussions throughout the 11-week semester.                                                                      |
 | **Individual Reflection & Peer Evaluation** |             **7%**             | Submission 10 (Week 11)      | Personal reflection on individual contributions and peer evaluation of teammates. Available only if the group delivered the final presentation.                                |
 | **Final Exam**                              |            **20%**             | Week 11 Presentations        | Live software demonstration, architectural defense, quality attribute validation, delivery poise, and Q&A responses.                                                           |
 | **Total**                                   |            **100%**            | All Course Components        | Complete course evaluation (Pass threshold: 75%).                                                                                                                              |
@@ -301,7 +315,7 @@ The course is assessed on a **Pass / Fail** basis:
 
 ### Late Submission Policy
 
-Late submissions incur a **10% grade deduction per calendar day** past the deadline.
+Late submissions incur a **10% grade deduction per calendar day** past the hard deadline.
 For example, a submission worth 7% receives a maximum of 6.3% if one day late (after Friday, 23:59), 5.6% if two days late, and so on.
 Submissions more than 7 days late receive zero credit.
 
@@ -330,6 +344,6 @@ However, the team bears **full responsibility** for the correctness, quality, an
 
 ## 8. References & Navigation
 
-- [Instructor Overview & Guidelines](../README.md)
+- [Course README](../README.md)
 - [Course Rules](rules.md)
 - [Teams and Projects](teams-and-projects.md)
