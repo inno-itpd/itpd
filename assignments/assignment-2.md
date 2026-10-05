@@ -152,8 +152,10 @@ The rules:
 This week:
 
 1. The meeting's target is which of the prototype, the boundary, and the minimum usable product candidate are wrong.
-   Review the remaining user stories only if time allows, and do not re-run the kickoff.
+   Show the candidate against a list of every story with its `US-nn`, title, and MoSCoW priority, so the customer can move a story into or out of the candidate or change its priority.
+   Walk through each story's acceptance criteria only if time allows, and do not re-run the kickoff.
 2. In `reports/week-02/meeting-script.md`, `## Agenda` has a part for the kickoff action points that are due, then shows the prototype, the boundary, and the minimum usable product candidate each in its own part.
+   The candidate's part shows that list of every story.
 3. `reports/week-02/meeting-report.md` has one row per kickoff action point in `## Previous action points`, at least two rows in `## Decisions`, one of them the customer's verdict on the minimum usable product candidate, and at least two rows in `## Action points`, each due inside Week 3.
 4. At least one story issue carries the dated comment that records what the meeting changed: its statement, an `AC-nn`, or its priority.
 

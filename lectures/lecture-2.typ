@@ -414,7 +414,9 @@
 
   The prototype, the boundary, and the candidate for the MUP.
 
-  Discuss the rest of the user stories if time allows.
+  Show the candidate next to every user story and its priority, so the customer can move a story into or out of it.
+
+  Walk through each story's acceptance criteria if time allows.
 ]
 
 #slide("Do not treat agreement as a result")[
