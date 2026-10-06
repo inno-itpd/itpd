@@ -4,7 +4,7 @@ title: 'Introduce epics: decomposition and superseding'
 status: To Do
 assignee: []
 created_date: '2026-10-04 22:33'
-updated_date: '2026-10-06 12:26'
+updated_date: '2026-10-06 13:21'
 labels:
   - docs
 dependencies: []
@@ -35,6 +35,7 @@ TASK-026 removed superseding and split parents from Week 2, because W2 is about 
 - [ ] #3 `pnpm run lint:markdown` passes
 - [ ] #4 `pnpm run test:markdown-format` and `pnpm run test:markdown-rules` pass
 - [ ] #5 `pnpm run check:lectures` passes
+- [ ] #6 Implementation notes record the decisions made and the validation results
 <!-- DOD:END -->
 
 ## Implementation Notes

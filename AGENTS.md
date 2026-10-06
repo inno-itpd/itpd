@@ -82,7 +82,7 @@ The CLI has `archive` but no `delete`, so removing a task that was never committ
 | `backlog instructions overview`         | The CLI's own workflow, before any task lifecycle action                                |
 
 Run `backlog <command> --help` before an unfamiliar command.
-The `Done` criteria come from `definition_of_done` in `backlog/config.yml`, which is this repository's four Markdown gates and the deck check.
+The `Done` criteria come from `definition_of_done` in `backlog/config.yml`, which is this repository's four Markdown gates, the deck check, and implementation notes that record the decisions made and the validation results.
 
 ### Maintained Elsewhere
 

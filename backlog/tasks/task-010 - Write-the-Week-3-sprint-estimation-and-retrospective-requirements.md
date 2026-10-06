@@ -4,7 +4,7 @@ title: 'Write the Week 3 sprint, estimation, and retrospective requirements'
 status: To Do
 assignee: []
 created_date: '2026-10-02 07:07'
-updated_date: '2026-10-06 12:26'
+updated_date: '2026-10-06 13:21'
 labels: []
 dependencies: []
 references:
@@ -43,6 +43,7 @@ This task adds the process requirements and the artifact structures at the same 
 - [ ] #3 `pnpm run lint:markdown` passes
 - [ ] #4 `pnpm run test:markdown-format` and `pnpm run test:markdown-rules` pass
 - [ ] #5 `pnpm run check:lectures` passes
+- [ ] #6 Implementation notes record the decisions made and the validation results
 <!-- DOD:END -->
 
 ## Implementation Plan

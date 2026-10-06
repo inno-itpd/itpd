@@ -4,6 +4,7 @@ title: Remove the one-time assumptions move from Assignment 2 after this term
 status: To Do
 assignee: []
 created_date: '2026-10-05 09:14'
+updated_date: '2026-10-06 13:21'
 labels:
   - docs
 dependencies:
@@ -31,4 +32,5 @@ TASK-050 moved assumptions to docs/assumptions.md as a Week 1 artifact, but this
 - [ ] #3 `pnpm run lint:markdown` passes
 - [ ] #4 `pnpm run test:markdown-format` and `pnpm run test:markdown-rules` pass
 - [ ] #5 `pnpm run check:lectures` passes
+- [ ] #6 Implementation notes record the decisions made and the validation results
 <!-- DOD:END -->
