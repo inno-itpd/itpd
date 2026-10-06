@@ -67,11 +67,11 @@ A [decision](general-requirements.md#artifact-concepts-and-terminology) is a con
 
 Build paid bookings, not the calendar view.
 
-**Status:** Active
-**Date:** 2026-09-29
-**Made by:** Customer
-**Source:** [the kickoff meeting](../reports/week-01/meeting-report.md)
-**Why:** every alternative already has a calendar view, and the paid booking flow is the part they leave half-done.
+- **Status:** Active
+- **Date:** 2026-09-29
+- **Made by:** Customer
+- **Source:** [the kickoff meeting](../reports/week-01/meeting-report.md)
+- **Why:** every alternative already has a calendar view, and the paid booking flow is the part they leave half-done.
 ```
 
 The whole file is in [Full Example](#full-example).
@@ -105,9 +105,8 @@ The whole file is in [Full Example](#full-example).
 **Example**
 
 ```markdown
-**Changed:**
-
-- Narrowed to experts who take bookings online, because the in-person studios we checked already have a front desk that handles them.
+- **Changed:**
+  - Narrowed to experts who take bookings online, because the in-person studios we checked already have a front desk that handles them.
 ```
 
 **Since: W2**
@@ -137,21 +136,21 @@ The whole file is in [Full Example](#full-example).
 
 Drop multi-expert scheduling.
 
-**Status:** Reversed by [DEC-011](#dec-011)
-**Date:** 2026-09-29
-**Made by:** Customer
-**Source:** [the kickoff meeting](../reports/week-01/meeting-report.md)
-**Why:** the experts work alone, so nobody needs two of them booked at once.
+- **Status:** Reversed by [DEC-011](#dec-011)
+- **Date:** 2026-09-29
+- **Made by:** Customer
+- **Source:** [the kickoff meeting](../reports/week-01/meeting-report.md)
+- **Why:** the experts work alone, so nobody needs two of them booked at once.
 
 ## DEC-011
 
 Schedule two experts for a group session.
 
-**Status:** Active
-**Date:** 2026-10-27
-**Made by:** Customer
-**Source:** [the Week 5 validation meeting](../reports/week-05/meeting-report.md)
-**Why:** reverses [DEC-002](#dec-002), because the customer signed a studio whose group sessions always need two coaches.
+- **Status:** Active
+- **Date:** 2026-10-27
+- **Made by:** Customer
+- **Source:** [the Week 5 validation meeting](../reports/week-05/meeting-report.md)
+- **Why:** reverses [DEC-002](#dec-002), because the customer signed a studio whose group sessions always need two coaches.
 ```
 
 ## Full Example
@@ -165,69 +164,69 @@ Schedule two experts for a group session.
 
 Build paid bookings, not the calendar view.
 
-**Status:** Active
-**Date:** 2026-09-29
-**Made by:** Customer
-**Source:** [the kickoff meeting](../reports/week-01/meeting-report.md)
-**Why:** every alternative already has a calendar view, and the paid booking flow is the part they leave half-done.
+- **Status:** Active
+- **Date:** 2026-09-29
+- **Made by:** Customer
+- **Source:** [the kickoff meeting](../reports/week-01/meeting-report.md)
+- **Why:** every alternative already has a calendar view, and the paid booking flow is the part they leave half-done.
 
 ## DEC-002
 
 Drop multi-expert scheduling.
 
-**Status:** Active
-**Date:** 2026-09-29
-**Made by:** Customer
-**Source:** [the kickoff meeting](../reports/week-01/meeting-report.md)
-**Why:** the experts work alone, so nobody needs two of them booked at once.
+- **Status:** Active
+- **Date:** 2026-09-29
+- **Made by:** Customer
+- **Source:** [the kickoff meeting](../reports/week-01/meeting-report.md)
+- **Why:** the experts work alone, so nobody needs two of them booked at once.
 
 ## DEC-003
 
 Keep the web link for delivery.
 
-**Status:** Active
-**Date:** 2026-09-29
-**Made by:** Team, not contested
-**Source:** [the kickoff meeting](../reports/week-01/meeting-report.md)
-**Why:** confirms the current direction: `VP-01` rests on one link that carries the whole booking, and the customer raised no objection to it.
+- **Status:** Active
+- **Date:** 2026-09-29
+- **Made by:** Team, not contested
+- **Source:** [the kickoff meeting](../reports/week-01/meeting-report.md)
+- **Why:** confirms the current direction: `VP-01` rests on one link that carries the whole booking, and the customer raised no objection to it.
 
 ## DEC-004
 
 Deploy on a single small VPS.
 
-**Status:** Active
-**Date:** 2026-09-29
-**Made by:** Customer
-**Source:** [the kickoff meeting](../reports/week-01/meeting-report.md)
-**Why:** the customer will run the product after the course and pays for one small server, not for a hosted platform.
+- **Status:** Active
+- **Date:** 2026-09-29
+- **Made by:** Customer
+- **Source:** [the kickoff meeting](../reports/week-01/meeting-report.md)
+- **Why:** the customer will run the product after the course and pays for one small server, not for a hosted platform.
 
 ## DEC-005
 
 Take payment through the payment provider's hosted checkout page.
 
-**Status:** Active
-**Date:** 2026-10-02
-**Made by:** Team
-**Source:** team discussion in [issue #31](https://github.com/<organization>/<repo>/issues/31)
-**Why:** nobody on the team has handled card data, and a hosted page keeps it out of the product.
+- **Status:** Active
+- **Date:** 2026-10-02
+- **Made by:** Team
+- **Source:** team discussion in [issue #31](https://github.com/<organization>/<repo>/issues/31)
+- **Why:** nobody on the team has handled card data, and a hosted page keeps it out of the product.
 
 ## DEC-006
 
 Confirm a booking only after the client has paid.
 
-**Status:** Active
-**Date:** 2026-10-06
-**Made by:** Customer
-**Source:** [the validation meeting](../reports/week-02/meeting-report.md)
-**Why:** a hold that confirms without payment is the unpaid booking `GAP-01` describes, and the customer will not accept it.
+- **Status:** Active
+- **Date:** 2026-10-06
+- **Made by:** Customer
+- **Source:** [the validation meeting](../reports/week-02/meeting-report.md)
+- **Why:** a hold that confirms without payment is the unpaid booking `GAP-01` describes, and the customer will not accept it.
 
 ## DEC-007
 
 Accept the minimum usable product candidate as proposed.
 
-**Status:** Active
-**Date:** 2026-10-06
-**Made by:** Customer
-**Source:** [the validation meeting](../reports/week-02/meeting-report.md)
-**Why:** confirms the current direction: the candidate's stories take a client from the link to a paid, confirmed booking, and the customer named nothing the core task is missing.
+- **Status:** Active
+- **Date:** 2026-10-06
+- **Made by:** Customer
+- **Source:** [the validation meeting](../reports/week-02/meeting-report.md)
+- **Why:** confirms the current direction: the candidate's stories take a client from the link to a paid, confirmed booking, and the customer named nothing the core task is missing.
 ```

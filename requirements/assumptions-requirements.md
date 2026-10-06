@@ -86,21 +86,21 @@ See [Meeting Report](customer-meetings-requirements.md#meeting-report).
 
 Experts will upload materials per meeting type instead of sending them in chat after booking.
 
-**Status:** Open
-**How to check:** run the materials prototype with two tutors in Week 2.
+- **Status:** Open
+- **How to check:** run the materials prototype with two tutors in Week 2.
 
 ## ASM-02
 
 Clients will pay at booking rather than on the day.
 
-**Status:** Confirmed
-**How to check:** only the customer can settle it, so it is an [open question](../reports/week-01/meeting-report.md#open-questions) carried into the Week 2 validation meeting.
-**Outcome:** the customer will not accept a hold that confirms without payment, per [`DEC-006`](decisions.md#dec-006).
+- **Status:** Confirmed
+- **How to check:** only the customer can settle it, so it is an [open question](../reports/week-01/meeting-report.md#open-questions) carried into the Week 2 validation meeting.
+- **Outcome:** the customer will not accept a hold that confirms without payment, per [`DEC-006`](decisions.md#dec-006).
 
 ## ASM-03
 
 Clients open the booking link on a phone.
 
-**Status:** Open
-**How to check:** ask two experts where their last ten bookings came from, in Week 2.
+- **Status:** Open
+- **How to check:** ask two experts where their last ten bookings came from, in Week 2.
 ```

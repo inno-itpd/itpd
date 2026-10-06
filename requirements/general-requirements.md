@@ -87,6 +87,11 @@ It is the short version of the requirements, states what is expected of you as a
    A story's `Traces to` entry for an action point uses this form.
    Any other citation of a meeting report also uses its path and heading anchor, for example `reports/week-01/meeting-report.md#open-questions`.
 
+**Since: W2**
+
+9. The fields of an identifier's section, such as `**Status:**` or `**Rests on:**`, follow its first line as a bulleted list, one `- **Label:** value` bullet per field, so that each field renders on a line of its own.
+   A value of several sentences continues on indented lines inside its bullet, and a field whose value is a list, such as `**Changed:**`, nests that list under its bullet.
+
 ## Traceability Into Later Weeks
 
 **Since: W1**

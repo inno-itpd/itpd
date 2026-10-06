@@ -219,6 +219,8 @@ A Week 3 meeting that shows working software.
     The earlier report is not edited; this row is the action point's closing record.
     An outcome that changes an artifact is carried into that artifact, and an outcome recorded only in this table has not been carried out.
 
+11. `## Metadata` is a bulleted list, one `- **Label:** value` bullet per item, so that each item renders on a line of its own, as an identifier's fields do per [Identifier Rules](general-requirements.md#identifier-rules).
+
 **Recommended**
 
 - Scale the report to the meeting.
@@ -248,6 +250,10 @@ A Week 3 meeting that shows working software.
    Use `[inaudible]` where a word cannot be recovered and `[redacted]` where something was deliberately removed.
 6. If the customer refuses to let the transcript be published, do not commit it.
    The [meeting report](#meeting-report) is still public.
+
+**Since: W2**
+
+7. The date and the participants, above the first timestamped line, are a bulleted list, one `- **Label:** value` bullet each, as the meeting report's `## Metadata` is.
 
 ## Full Examples
 
@@ -338,14 +344,14 @@ The rewrite anchors it to an event the customer will remember, so the answer is 
 
 ## Metadata
 
-**Date:** 2026-09-29
-**Duration:** 50 minutes
-**Attended:** alice, bob, carol, Customer
-**Presented:** the project choice, our reading of the problem, and the two `VP-nn` directions
-**Recording:** permitted, linked from the Week 01 Moodle submission
-**Transcript publication:** permitted, see [the transcript](meeting-transcript.md)
-**Transcript shared privately:** not applicable
-**Script:** [meeting-script.md](meeting-script.md)
+- **Date:** 2026-09-29
+- **Duration:** 50 minutes
+- **Attended:** alice, bob, carol, Customer
+- **Presented:** the project choice, our reading of the problem, and the two `VP-nn` directions
+- **Recording:** permitted, linked from the Week 01 Moodle submission
+- **Transcript publication:** permitted, see [the transcript](meeting-transcript.md)
+- **Transcript shared privately:** not applicable
+- **Script:** [meeting-script.md](meeting-script.md)
 
 ## Summary
 
@@ -386,8 +392,8 @@ The rewrite anchors it to an event the customer will remember, so the answer is 
 ```markdown
 # Kickoff meeting transcript
 
-**Date:** 2026-09-29
-**Participants:** alice, bob, carol, Customer
+- **Date:** 2026-09-29
+- **Participants:** alice, bob, carol, Customer
 
 [00:00:04] alice: We settled on the meeting booking app after the research.
 [00:00:19] Customer: What made you choose it over the alternatives?
