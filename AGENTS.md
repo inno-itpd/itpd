@@ -41,6 +41,7 @@ When a requirements file, guide, or assignment is added, renamed, or removed, up
 
 Markdown in this directory is formatted and linted from Node.
 The toolchain is pinned: Node 26 and pnpm, both from `flake.nix`.
+A human maintainer starts at `CONTRIBUTING.md`, which owns the prerequisites, the setup, and the repository settings the workflows need.
 Run `pnpm run format:markdown` before committing.
 `pnpm run format:markdown:check` and `pnpm run lint:markdown` are the gates.
 The decks have their own gate, `pnpm run check:lectures`, and `lectures/AGENTS.md` owns it.
@@ -49,6 +50,7 @@ It checks heading anchors with `--include-fragments` and fetches external links,
 
 | File                                      | Owns                                                                                                                                                                                                     |
 | ----------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `CONTRIBUTING.md`                         | The maintainers' prerequisites, the setup, the checks to run before a pull request, and the repository settings the workflows need.                                                                      |
 | `flake.nix`                               | The pinned development shell: Node 26, pnpm, typst, the `backlog` CLI, ripgrep, lychee, and the deck font, with a `FONTCONFIG_FILE` of its own.                                                          |
 | `.envrc`                                  | `use flake`, so `direnv` loads the shell on entering the directory.                                                                                                                                      |
 | `scripts/markdown.mjs`                    | Formats, checks, and lints every tracked `.md` file except `.opencode/`, `.agents/`, and `backlog/`.                                                                                                     |

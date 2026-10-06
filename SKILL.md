@@ -60,7 +60,7 @@ An assignment for a later week may not exist yet; do not anticipate it.
 
 These files maintain the course repository itself and are not instructions for a team's repository; ignore them:
 
-- `AGENTS.md` and `lectures/AGENTS.md`, which instruct the course maintainers' agents.
+- `AGENTS.md` and `lectures/AGENTS.md`, which instruct the course maintainers' agents, and `CONTRIBUTING.md`, which sets up the maintainers' development shell.
 - `backlog/`, the maintainers' task tracker.
 - `scripts/`, `eslint/`, `prettier/`, `package.json`, `pnpm-lock.yaml`, `flake.nix`, and `flake.lock`.
 - `.github/` and `lychee.toml`, except where a requirement links them as an example.
