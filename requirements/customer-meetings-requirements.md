@@ -111,6 +111,7 @@ A Week 2 validation meeting.
    Stories accepted together may share one decision.
    Each rejected story gets a decision of its own, naming each `AC-nn` it failed.
 3. Add a comment to the story issue with the verdict, naming any failed `AC-nn` and citing the decision's `DEC-nnn`.
+   An accepted story then closes, and a rejected one stays open, per [Where Stories Live](user-stories-requirements.md#where-stories-live).
 
 **Example**
 

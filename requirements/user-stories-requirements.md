@@ -32,7 +32,9 @@ Each story is a GitHub issue, and the `user-story` label identifies story issues
    - The `user-story` label, applied by the form, or the marker the team chose instead, per rule 6.
    - Optionally, notes and a checklist of the remaining work, so a contributor can work without leaving the issue.
 
-2. A story you intend to build stays open until it is delivered, then closes as completed.
+2. A story you intend to build stays open until the customer accepts it, per [Showing Working Software](customer-meetings-requirements.md#showing-working-software), then closes as completed.
+   The closing comment cites the `DEC-nnn` of the verdict that accepted it, and the verdict comment may be the closing comment.
+   A story the customer rejected stays open, and a merged pull request does not close it.
    A `Won't Have` story is closed as not planned, with a comment naming the reason.
    When the story was dropped, the comment that records the priority change may be the closing comment.
    A closed story stays in the list; the closing comment and the close date are its record.
@@ -177,7 +179,7 @@ The candidate is your proposal for it, made before any product code exists, so t
 **Required**
 
 1. Name the **core task** the candidate serves: one thing a user does from start to finish, written in one line.
-2. The candidate is a strict, non-empty subset of your `Must Have` stories that together let a user complete that core task end to end.
+2. The candidate is a non-empty subset of your `Must Have` stories that together let a user complete that core task end to end.
    Stories that cover only part of the task are not a candidate.
 3. Every story in the candidate is needed: without any one of them, the core task no longer completes.
 4. Record the candidate per [Weekly Public Report](weekly-report-requirements.md#weekly-public-report).
