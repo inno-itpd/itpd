@@ -22,7 +22,7 @@ Each story is a GitHub issue, and the `user-story` label identifies story issues
 
 **Required**
 
-1. Every story is one GitHub issue, opened from the [issue form](repository-requirements.md#issue-tracking).
+1. Every story is one GitHub issue, opened from the [issue form](repository-requirements.md#story-issues).
    It carries:
 
    - The title `US-nn: <story title>`.
@@ -30,12 +30,12 @@ Each story is a GitHub issue, and the `user-story` label identifies story issues
    - The acceptance criteria, each starting with its `AC-nn`, per [Acceptance Criteria](#acceptance-criteria).
    - The priority reason, in the form's `Priority reason` field, and one `moscow:*` label, per [MoSCoW Prioritization](#moscow-prioritization).
    - The `user-story` label, applied by the form, or the marker the team chose instead, per rule 6.
-   - Optionally, notes and a task list of its task issues, per [Issue Tracking](repository-requirements.md#issue-tracking), so a contributor can work without leaving the issue.
+   - Optionally, notes and a task list of its task issues, per [Story Issues](repository-requirements.md#story-issues), so a contributor can work without leaving the issue.
 
 2. A story you intend to build stays open until the customer accepts it, per [Showing Working Software](customer-meetings-requirements.md#showing-working-software), then closes as completed.
    The closing comment cites the `DEC-nnn` of the verdict that accepted it, and the verdict comment may be the closing comment.
    A story the customer rejected stays open, and closing its tasks does not close it.
-   The rework is a new task issue that names the story and each failed `AC-nn` and cites the rejection's `DEC-nnn`; a closed task is not reopened.
+   The rework is a new task issue, per [Task Issues](repository-requirements.md#task-issues).
    A `Won't Have` story is closed as not planned, with a comment naming the reason.
    When the story was dropped, the comment that records the priority change may be the closing comment.
    A closed story stays in the list; the closing comment and the close date are its record.

@@ -240,7 +240,7 @@ When the question is only whether the idea can work at all, that is a proof of c
 On a code spike: **keep it off `main`.**
 Do it on a branch, show it from there, and do not merge it, per [Where Prototypes Live](../requirements/prototypes-requirements.md#where-prototypes-live).
 The evidence is the screenshot and your record, not the branch, so the branch is genuinely disposable and the repository does not have to carry it for the rest of the course.
-If you want a reader to see the code, open a pull request from the branch, with its task issue like any other, and close it without merging.
+If you want a reader to see the code, open a pull request from the branch, with its [task issue](../requirements/repository-requirements.md#task-issues) like any other, and close it without merging.
 Link that pull request from your record rather than the branch: the pull request keeps the commits after the branch is deleted, and a branch link breaks.
 
 Then show it, and record what happened.
