@@ -15,8 +15,6 @@ Use [General Requirements](general-requirements.md) for what an artifact is, [Vi
 - [Configuration And Sensitive Information](#configuration-and-sensitive-information)
 - [Sensitive-Data Incident Response](#sensitive-data-incident-response)
 - [Issue Tracking](#issue-tracking)
-  - [Story Issues](#story-issues)
-  - [Task Issues](#task-issues)
 - [Tracking Tasks Inside The Repository](#tracking-tasks-inside-the-repository)
 - [Contributing](#contributing)
 - [Changelog, Releases And Versioning](#changelog-releases-and-versioning)
@@ -99,14 +97,14 @@ The root `README.md` also carries setup and run instructions for the product as 
 4. Keep each pull request to one change.
    A pull request that fixes a broken link and reformats three files is hard to review, and review is the point.
 5. Name branches with a short lowercase hyphenated description, for example `add-alternatives-research`.
-   From Week 2, use the number of the [task issue](#task-issues) the branch works on: `<issue-number>-<short-description>`, for example `12-hold-a-slot-while-the-client-pays`.
+   From Week 2, use the number of the [task issue](task-issues-requirements.md#where-task-issues-live) the branch works on: `<issue-number>-<short-description>`, for example `12-hold-a-slot-while-the-client-pays`.
 6. Add a pull request template at `.github/pull_request_template.md`.
    It must prompt for:
 
    - What changed and why.
    - What you checked, and how.
    - For the reviewer: what to look at, and whether the linked requirements or acceptance criteria are satisfied.
-     From Week 2, link the [task issue](#task-issues) the pull request closes, and name the `AC-nn` and its story issue for each criterion the change checks unless the task's fields name them.
+     From Week 2, link the [task issue](task-issues-requirements.md#closing-a-task) the pull request closes, and name the `AC-nn` and its story issue for each criterion the change checks unless the task's fields name them.
 
 7. Do not delete pull requests, reviews, or branches that are used as assignment evidence, and do not rewrite history to tidy it up.
    The history is part of what is being assessed.
@@ -284,7 +282,8 @@ If credentials, personal data, or confidential material is committed by mistake:
 
 **Since: W2**
 
-The repository's issues are of two kinds, [story issues](#story-issues) and [task issues](#task-issues), and each kind is opened from its own Issue Form.
+The repository's issues are of two kinds, story issues and task issues, and each kind is opened from its own Issue Form.
+The form and the labels of each kind are in its own requirements: [the story issue form](user-stories-requirements.md#the-issue-form) and [the task issue form](task-issues-requirements.md#the-issue-form).
 The rules in this section apply to both.
 
 **Required**
@@ -305,86 +304,6 @@ https://github.com/<org>/<repo>/blob/main/docs/decisions.md#dec-006
 Link on `main`, not at a commit hash, so the link shows the file as it is now, such as a decision that has since been reversed.
 The commit-hash permalink is for the submission, per [Permalinks And Snapshots](#permalinks-and-snapshots).
 Merge the file into `main` before an issue links it.
-
-### Story Issues
-
-**Since: W2**
-
-A [story issue](user-stories-requirements.md#where-stories-live) holds one user story.
-The user story requirements say [what a story says](user-stories-requirements.md#the-story) and [how its issue is kept](user-stories-requirements.md#where-stories-live); this section covers its form, its labels, and why no pull request closes it.
-
-**Required**
-
-1. Add `.github/ISSUE_TEMPLATE/user-story.yml`, an Issue Form with a field for each part of a story issue listed in [Where Stories Live](user-stories-requirements.md#where-stories-live), and the `user-story` label applied by the form, or the issue type or field that rule allows instead.
-   The statement, the `Traces to` list, and the `Priority reason` field are required, and the `Rests on` list is optional.
-   `Traces to` and `Rests on` take one entry per line.
-   The acceptance criteria field is optional, per [Acceptance Criteria](user-stories-requirements.md#acceptance-criteria).
-2. Create the `user-story` label and the four `moscow:*` labels in [MoSCoW Prioritization](user-stories-requirements.md#moscow-prioritization), by any means.
-   The form applies `user-story`; the team applies one MoSCoW label per story.
-   A team that marks stories or priorities with an issue type or field, per [Where Stories Live](user-stories-requirements.md#where-stories-live), creates that type or field instead of the labels it replaces.
-3. A story issue is never a pull request's issue.
-   A story closes only on the customer's acceptance, per [Where Stories Live](user-stories-requirements.md#where-stories-live), and GitHub closes on merge an issue that a pull request names with a closing keyword, that its branch was created from, or that its Development sidebar links.
-   Work on a story is done in [task issues](#task-issues).
-
-**Recommended**
-
-- Put the URL pattern in the descriptions of the `Traces to` and `Rests on` fields in `user-story.yml`, so whoever fills in the form sees it.
-- List a story's tasks in its body as a task list, such as `- [ ] #12`, so the story shows which of its tasks are closed.
-  Use the list rather than GitHub sub-issues: a sub-issue has one parent, so a task that serves several stories could sit under only one of them.
-  Closing the last task does not close the story.
-
-### Task Issues
-
-**Since: W2**
-
-A **task issue** holds one unit of work, such as building part of a story, documentation, a report, or a workflow, and one pull request closes it.
-
-**Required**
-
-1. Add `.github/ISSUE_TEMPLATE/task.yml`, an Issue Form for every unit of work, with the `task` label applied by the form.
-   The description field is required.
-   The `Story` field is optional and takes each story issue the task works toward, one per line, such as `#42`, because one task may serve several stories.
-   The `Acceptance criteria` field is optional and takes each `AC-nn` the task works toward, one per line, with its story when the task names more than one.
-   A task that is not work on a story, such as a workflow or a report, leaves both empty.
-2. Create the `task` label, by any means.
-3. Every pull request closes exactly one task issue, with a closing keyword in its description such as `Closes #12`.
-   Create its branch from that task where GitHub supports it.
-   A task that needs more than one pull request is split into more tasks.
-   A Dependabot pull request has no task issue, because the bot opens it; [Pinning Third-Party Actions](#pinning-third-party-actions) says how it is handled.
-4. Work on a story is one or more task issues whose `Story` field names it, and a story small enough for one pull request has one task.
-   The rework on a story the customer rejected is a new task issue that names the story and each failed `AC-nn` and cites the rejection's `DEC-nnn`; a closed task is not reopened.
-5. Check the acceptance criteria a pull request touches before merging it; the [pull request template](#branch-protection-and-pull-requests) asks for them.
-6. A task closes as completed when its pull request merges.
-   A task whose pull request was closed without merging, or that the team abandoned, is closed as not planned, with a comment that gives the reason and links the pull request when there is one.
-7. An action point that changes the repository is carried out by a task issue whose description cites the action point, per [Identifier Rules](general-requirements.md#identifier-rules).
-
-**Recommended**
-
-- Give a task a short imperative title, such as `Hold a slot while the client pays`, and reuse it as its branch's description.
-
-**Example**
-
-Issue #12, a task on the story in [the user story example](user-stories-requirements.md#full-example):
-
-```markdown
-Title: Hold a slot while the client pays
-Labels: task
-
-### Description
-
-Hold a booked slot while the client pays, and release it when the hold expires.
-
-### Story
-
-#42
-
-### Acceptance criteria
-
-AC-01
-AC-02
-```
-
-Its branch is `12-hold-a-slot-while-the-client-pays`, and its pull request's description says `Closes #12`.
 
 ## Tracking Tasks Inside The Repository
 

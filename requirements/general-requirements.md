@@ -47,6 +47,7 @@ It is the short version of the requirements, states what is expected of you as a
 
 2. This rule covers artifacts, not repository mechanics.
    Code, workflows, issue and pull request templates, `LICENSE`, the files in `.github/`, and the files a planning or issue-tracking tool writes into the repository are repository content, not artifacts, and are covered in [Repository Requirements](repository-requirements.md).
+   The one exception is an issue form, which the requirements of the issue it opens cover: [the story issue form](user-stories-requirements.md#the-issue-form) and [the task issue form](task-issues-requirements.md#the-issue-form).
    A tool that keeps its state in the repository adds a directory of repository content, not a third location for course work.
    GitHub issues themselves are not repository files: they are external-but-indexed artifacts, and the weekly public report indexes them.
 3. There is no third location and no migration step.

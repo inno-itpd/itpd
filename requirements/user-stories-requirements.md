@@ -1,12 +1,13 @@
 # User Story Requirements
 
-These requirements define a user story: where it lives, what it must say, its acceptance criteria, its priority, and the minimum usable product candidate the priorities produce.
+These requirements define a user story: where it lives, its issue form, what it must say, its acceptance criteria, its priority, and the minimum usable product candidate the priorities produce.
 [Guide: User Stories And Prototyping](../guides/user-stories-and-prototyping.md) is the method.
 How the `US-nn` and `AC-nn` identifiers are cited is in [General Requirements](general-requirements.md#identifier-rules).
 
 <h2>Table of contents</h2>
 
 - [Where Stories Live](#where-stories-live)
+- [The Issue Form](#the-issue-form)
 - [The Story](#the-story)
 - [Acceptance Criteria](#acceptance-criteria)
 - [MoSCoW Prioritization](#moscow-prioritization)
@@ -22,7 +23,7 @@ Each story is a GitHub issue, and the `user-story` label identifies story issues
 
 **Required**
 
-1. Every story is one GitHub issue, opened from the [issue form](repository-requirements.md#story-issues).
+1. Every story is one GitHub issue, opened from the [issue form](#the-issue-form).
    It carries:
 
    - The title `US-nn: <story title>`.
@@ -30,12 +31,12 @@ Each story is a GitHub issue, and the `user-story` label identifies story issues
    - The acceptance criteria, each starting with its `AC-nn`, per [Acceptance Criteria](#acceptance-criteria).
    - The priority reason, in the form's `Priority reason` field, and one `moscow:*` label, per [MoSCoW Prioritization](#moscow-prioritization).
    - The `user-story` label, applied by the form, or the marker the team chose instead, per rule 6.
-   - Optionally, notes and a task list of its task issues, per [Story Issues](repository-requirements.md#story-issues), so a contributor can work without leaving the issue.
+   - Optionally, notes and a task list of its task issues, per [The Issue Form](#the-issue-form), so a contributor can work without leaving the issue.
 
 2. A story you intend to build stays open until the customer accepts it, per [Showing Working Software](customer-meetings-requirements.md#showing-working-software), then closes as completed.
    The closing comment cites the `DEC-nnn` of the verdict that accepted it, and the verdict comment may be the closing comment.
    A story the customer rejected stays open, and closing its tasks does not close it.
-   The rework is a new task issue, per [Task Issues](repository-requirements.md#task-issues).
+   The rework is a new task issue, per [Closing A Task](task-issues-requirements.md#closing-a-task).
    A `Won't Have` story is closed as not planned, with a comment naming the reason.
    When the story was dropped, the comment that records the priority change may be the closing comment.
    A closed story stays in the list; the closing comment and the close date are its record.
@@ -61,6 +62,32 @@ Each story is a GitHub issue, and the `user-story` label identifies story issues
 **Recommended**
 
 - Keep each story short enough to read in one sitting.
+
+## The Issue Form
+
+**Since: W2**
+
+The rules every issue shares, such as disabling blank issues, are in [Issue Tracking](repository-requirements.md#issue-tracking).
+
+**Required**
+
+1. Add `.github/ISSUE_TEMPLATE/user-story.yml`, an Issue Form with a field for each part of a story issue listed in [Where Stories Live](#where-stories-live), and the `user-story` label applied by the form, or the issue type or field that rule allows instead.
+   The statement, the `Traces to` list, and the `Priority reason` field are required, and the `Rests on` list is optional.
+   `Traces to` and `Rests on` take one entry per line.
+   The acceptance criteria field is optional, per [Acceptance Criteria](#acceptance-criteria).
+2. Create the `user-story` label and the four `moscow:*` labels in [MoSCoW Prioritization](#moscow-prioritization), by any means.
+   The form applies `user-story`; the team applies one MoSCoW label per story.
+   A team that marks stories or priorities with an issue type or field, per [Where Stories Live](#where-stories-live), creates that type or field instead of the labels it replaces.
+3. A story issue is never a pull request's issue.
+   A story closes only on the customer's acceptance, per [Where Stories Live](#where-stories-live), and GitHub closes on merge an issue that a pull request names with a closing keyword, that its branch was created from, or that its Development sidebar links.
+   Work on a story is done in [task issues](task-issues-requirements.md#where-task-issues-live).
+
+**Recommended**
+
+- Put the URL pattern in the descriptions of the `Traces to` and `Rests on` fields in `user-story.yml`, so whoever fills in the form sees it.
+- List a story's tasks in its body as a task list, such as `- [ ] #12`, so the story shows which of its tasks are closed.
+  Use the list rather than GitHub sub-issues: a sub-issue has one parent, so a task that serves several stories could sit under only one of them.
+  Closing the last task does not close the story.
 
 ## The Story
 

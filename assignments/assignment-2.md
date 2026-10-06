@@ -52,20 +52,20 @@ By the end of this week you should be able to show a reader:
 The rules:
 
 - Start the forms pull request from a blank issue: [Issue Tracking](../requirements/repository-requirements.md#issue-tracking).
-- Add both issue forms and their labels: [Story Issues](../requirements/repository-requirements.md#story-issues) and [Task Issues](../requirements/repository-requirements.md#task-issues).
-- Close exactly one task issue from each pull request, and close a task whose pull request was not merged as not planned: [Task Issues](../requirements/repository-requirements.md#task-issues).
+- Add both issue forms and their labels: [the story issue form](../requirements/user-stories-requirements.md#the-issue-form) and [the task issue form](../requirements/task-issues-requirements.md#the-issue-form).
+- Close exactly one task issue from each pull request, and close a task whose pull request was not merged as not planned: [Closing A Task](../requirements/task-issues-requirements.md#closing-a-task).
 - Name branches after their task issue, and link in each pull request its task issue, naming the `AC-nn` it checks unless the task names them: [Branch Protection And Pull Requests](../requirements/repository-requirements.md#branch-protection-and-pull-requests).
 - Recommended: track the team's tasks inside the repository: [Tracking Tasks Inside The Repository](../requirements/repository-requirements.md#tracking-tasks-inside-the-repository).
 
 This week:
 
 1. Before any other Week 2 pull request, merge the one that adds `user-story.yml`, `task.yml`, and `config.yml`, and create the labels.
-2. If your `user-story.yml` has no `Rests on` field, add it in a pull request of its own, per [Story Issues](../requirements/repository-requirements.md#story-issues).
+2. If your `user-story.yml` has no `Rests on` field, add it in a pull request of its own, per [The Issue Form](../requirements/user-stories-requirements.md#the-issue-form).
    Then move each `ASM-nn` in an existing story's `Traces to` list into a `### Rests on` section of the same issue.
    This is a one-time catch-up: the field was added after the forms were due, and the move needs no comment, per [Where Stories Live](../requirements/user-stories-requirements.md#where-stories-live).
-3. If your `task.yml` has no `Story` or `Acceptance criteria` field, add them in a pull request of its own, per [Task Issues](../requirements/repository-requirements.md#task-issues).
+3. If your `task.yml` has no `Story` or `Acceptance criteria` field, add them in a pull request of its own, per [The Issue Form](../requirements/task-issues-requirements.md#the-issue-form).
    This is a one-time catch-up too: from now on, a pull request closes a task issue rather than referencing a story, and a pull request already merged with a reference to a story needs no change.
-4. Apply the `task` label to the blank issue that the forms pull request closed, and close as not planned, with a comment giving the reason, any task left open by a pull request that was closed without merging, per [Task Issues](../requirements/repository-requirements.md#task-issues).
+4. Apply the `task` label to the blank issue that the forms pull request closed, and close as not planned, with a comment giving the reason, any task left open by a pull request that was closed without merging, per [Closing A Task](../requirements/task-issues-requirements.md#closing-a-task).
    This is a one-time catch-up too: both rules were added after the forms were due.
 
 ## Part 2: Move The Week 1 Decisions Into The Decisions Log
