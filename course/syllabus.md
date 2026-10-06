@@ -119,12 +119,12 @@ Week 2 is the exception: its hard deadline is Saturday, October 10 at 23:59.
   - **Deliverables**:
     1. **Product Vision**: `docs/product-vision.md`, holding the goal, the constraints, the stakeholders, the boundary of what the team will not do, and a system context diagram.
     2. **User Stories**: one GitHub issue per story, opened from `.github/ISSUE_TEMPLATE/user-story.yml`, listed by the `user-story` label; each story except a `Won't Have` story carries its own acceptance criteria.
-    3. **Issue Tracking**: one issue per `US-nn` with a `moscow:*` label, and a task issue form, `.github/ISSUE_TEMPLATE/task.yml`, for the work that is not a story.
+    3. **Issue Tracking**: one issue per `US-nn` with a `moscow:*` label, and a task issue form, `.github/ISSUE_TEMPLATE/task.yml`, for every unit of work, including work on a story, so that each pull request closes a task issue rather than a story.
     4. **Minimum Usable Product Candidate**: the `Must Have` stories that let a user complete one core task end to end, recorded in `reports/week-02/README.md`.
     5. **Prototypes**: prototypes of the riskiest assumptions, recorded at `reports/week-02/prototypes.md`.
        Prototypes may be paper sketches, view-only design tools, or disposable code spikes.
     6. **Customer Validation Meeting**: the Week 2 meeting with the customer, with the full Week 1 artifact set, which changes at least one story.
-  - **Minima**: at least eight story issues, at least five of them not `Won't Have`, each story carrying a `moscow:*` label, `Won't Have` stories closed as not planned, at least two acceptance criteria per story that is not `Won't Have`, and a minimum usable product candidate that is a strict, non-empty subset of the Must-Have stories and completes one core task end to end.
+  - **Minima**: at least eight story issues, at least five of them not `Won't Have`, each story carrying a `moscow:*` label, `Won't Have` stories closed as not planned, at least two acceptance criteria per story that is not `Won't Have`, and a minimum usable product candidate that is a non-empty subset of the Must-Have stories and completes one core task end to end.
     There is no product code this week.
   - **Note**: The product repository itself is created and configured in Week 1.
     Week 2 adds requirements, tracking, and prototypes.

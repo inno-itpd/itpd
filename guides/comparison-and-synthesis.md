@@ -94,18 +94,15 @@ When you cannot describe what a product closing this gap would do in a sentence,
 
 Bookings that arrive unpaid and unprepared.
 
-**Who needs it and what they cannot do:** an independent expert who sells one-hour consultations online.
-The client books and pays in one place, and the meeting link and materials arrive with the booking; the alternatives schedule the time, and the payment, the video link, and the materials each live somewhere else.
-
-**Evidence:** `What the booking carries` row in [the comparison](comparison.md) — no alternative carries payment, video, and materials in the same booking (ALT-01, ALT-02, ALT-03, ALT-04).
-
-**What closing it looks like:** one link where the client picks a slot, pays, and receives the video link and the materials, with calendar sync behind it.
-
-**Buildable by us in this course:** yes.
-It is one booking flow, one payment integration, and one upload field, and it is the reason the project exists.
-
-**Confidence:** high.
-Consistent across all four alternatives, and two of them are mature enough that this is not an oversight.
+- **Status:** Active
+- **Who needs it and what they cannot do:** an independent expert who sells one-hour consultations online.
+  The client books and pays in one place, and the meeting link and materials arrive with the booking; the alternatives schedule the time, and the payment, the video link, and the materials each live somewhere else.
+- **Evidence:** `What the booking carries` row in [the comparison](comparison.md) — no alternative carries payment, video, and materials in the same booking (ALT-01, ALT-02, ALT-03, ALT-04).
+- **What closing it looks like:** one link where the client picks a slot, pays, and receives the video link and the materials, with calendar sync behind it.
+- **Buildable by us in this course:** yes.
+  It is one booking flow, one payment integration, and one upload field, and it is the reason the project exists.
+- **Confidence:** high.
+  Consistent across all four alternatives, and two of them are mature enough that this is not an oversight.
 ```
 
 Also record the gaps you rejected, with the reason.
@@ -121,14 +118,15 @@ One short positioning statement, tied to a gap, honest about its cost.
 
 One link that carries the whole booking.
 
-**User:** independent coach who sells one-hour sessions online.
-**Problem:** the booking, the payment, and the meeting materials live in three tools, so unpaid clients block slots and prepared clients are rare.
-**What we do that the alternatives do not:** one link where the client books a slot, pays, and receives the video link and the materials, with no second account.
-**Closes:** [GAP-01](gap-analysis.md#gap-01).
-**What it costs:** the expert connects a payment provider before the first booking and uploads the materials per meeting type.
-This is a real setup cost.
-**How a competitor would respond:** Calendly or Cal.com could bundle payments and materials into the free tier.
-The defensible part is the single flow and its pricing, not the fields.
+- **Status:** Active
+- **User:** independent coach who sells one-hour sessions online.
+- **Problem:** the booking, the payment, and the meeting materials live in three tools, so unpaid clients block slots and prepared clients are rare.
+- **What we do that the alternatives do not:** one link where the client books a slot, pays, and receives the video link and the materials, with no second account.
+- **Closes:** [GAP-01](gap-analysis.md#gap-01).
+- **What it costs:** the expert connects a payment provider before the first booking and uploads the materials per meeting type.
+  This is a real setup cost.
+- **How a competitor would respond:** Calendly or Cal.com could bundle payments and materials into the free tier.
+  The defensible part is the single flow and its pricing, not the fields.
 ```
 
 Three things to get right:
@@ -155,29 +153,29 @@ Keep only the ones something rests on: if a belief turned out false and nothing 
 
 Experts will upload materials per meeting type instead of sending them in chat after booking.
 
-**How to check:** run the materials prototype with two tutors in Week 2.
-**Status:** Open
+- **Status:** Open
+- **How to check:** run the materials prototype with two tutors in Week 2.
 
 ## ASM-02
 
 Clients will pay at booking rather than on the day.
 
-**How to check:** only the customer can settle it, so it goes in the kickoff report's open questions.
-**Status:** Open
+- **Status:** Open
+- **How to check:** only the customer can settle it, so it goes in the kickoff report's open questions.
 
 ## ASM-03
 
 Clients open the booking link on a phone.
 
-**How to check:** ask two experts where their last ten bookings came from, in Week 2.
-**Status:** Open
+- **Status:** Open
+- **How to check:** ask two experts where their last ten bookings came from, in Week 2.
 ```
 
-`VP-01` in `docs/research/value-proposition.md` then gains one line, and `GAP-01` gains the same line naming `ASM-01`:
+`VP-01` in `docs/research/value-proposition.md` then gains one field, and `GAP-01` gains the same field naming `ASM-01`:
 
 ```markdown
-**Closes:** [GAP-01](gap-analysis.md#gap-01).
-**Rests on:** [ASM-01](../assumptions.md#asm-01), [ASM-02](../assumptions.md#asm-02), [ASM-03](../assumptions.md#asm-03).
+- **Closes:** [GAP-01](gap-analysis.md#gap-01).
+- **Rests on:** [ASM-01](../assumptions.md#asm-01), [ASM-02](../assumptions.md#asm-02), [ASM-03](../assumptions.md#asm-03).
 ```
 
 The customer decides the scope.

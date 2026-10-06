@@ -4,7 +4,7 @@ title: 'Write the Week 3 sprint, estimation, and retrospective requirements'
 status: To Do
 assignee: []
 created_date: '2026-10-02 07:07'
-updated_date: '2026-10-05 11:28'
+updated_date: '2026-10-06 13:21'
 labels: []
 dependencies: []
 references:
@@ -43,6 +43,7 @@ This task adds the process requirements and the artifact structures at the same 
 - [ ] #3 `pnpm run lint:markdown` passes
 - [ ] #4 `pnpm run test:markdown-format` and `pnpm run test:markdown-rules` pass
 - [ ] #5 `pnpm run check:lectures` passes
+- [ ] #6 Implementation notes record the decisions made and the validation results
 <!-- DOD:END -->
 
 ## Implementation Plan
@@ -69,4 +70,6 @@ The retrospective path `reports/week-NN/sprint-retrospective.md` is registered b
 This task is the follow-up for the estimation gap recorded in `backlog.md`: estimation has no source material anywhere in the 2025 decks and must be written from scratch, and it is the part students will push back on hardest.
 
 Refine the `**Since: W3**` section `## Showing Working Software` in `requirements/customer-meetings-requirements.md` together with the Week 3 assignment. It carried a `TODO refine` comment in the student-facing source, which TASK-057 moved here.
+
+2026-10-06: decided in TASK-083 and TASK-084. In Week 3 meetings, a story closes as completed only on the customer's accepting verdict. Every meeting report after the kickoff closes earlier action points and open questions. The Week 3 assignment should cite both rules rather than restate them.
 <!-- SECTION:NOTES:END -->

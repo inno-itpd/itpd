@@ -6,42 +6,53 @@ Operating instructions for coding agents maintaining the student-facing course m
 
 ### Maintained Here
 
-| File                                             | Owns                                                                                                                                                      |
-| ------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `README.md`                                      | Student entry point and routing. Nothing else.                                                                                                            |
-| `course/syllabus.md`                             | The single source of truth for the schedule: week-by-week focus, dates, submission deadlines, and course policies. Edited here.                           |
-| `course/rules.md`                                | The course contract: public vs private, hygiene, AI policy, deadlines, submission channel. Short, and a router rather than a second rulebook.             |
-| `course/teams-and-projects.md`                   | Which team number works on which project. Regenerated each term, and a repeated project name is not an error because two teams may share a project name.  |
-| `requirements/general-requirements.md`           | The rules no single artifact owns: artifact terms, the `reports/week-NN/` vs `docs/` split, identifier rules, traceability into later weeks.              |
-| `requirements/visibility-requirements.md`        | Who may see an artifact: the visibility model, where each sensitive item goes, screenshot evidence.                                                       |
-| `requirements/research-requirements.md`          | The Week 1 research: where it lives, alternatives, properties and comparison, gaps, value propositions, research honesty.                                 |
-| `requirements/assumptions-requirements.md`       | `docs/assumptions.md`: where it lives, what an assumption is, what rests on it, how it is checked and settled, and the full example.                      |
-| `requirements/decisions-requirements.md`         | `docs/decisions.md`: where it lives, a decision's entry and fields, what cites it, how it is reversed, and the full example.                              |
-| `requirements/product-vision-requirements.md`    | `docs/product-vision.md`: where it lives, the goal, stakeholders, constraints, boundary, system context, and the full example.                            |
-| `requirements/user-stories-requirements.md`      | Story issues: where they live, the story, acceptance criteria, MoSCoW priorities, the minimum usable product candidate, and the full example.             |
-| `requirements/prototypes-requirements.md`        | Prototypes: where they are recorded, and the validation rules for showing one.                                                                            |
-| `requirements/customer-meetings-requirements.md` | Meetings with the customer: every meeting, the kickoff, showing working software, permission, and the script, report, and transcript with their examples. |
-| `requirements/weekly-report-requirements.md`     | What is handed in each week: the weekly public report, the AI usage report, deviations, the Moodle PDF.                                                   |
-| `requirements/repository-requirements.md`        | Repository and platform mechanics: GitHub, pull requests, branch protection, link checking, permalinks, snapshots, changelog, CI.                         |
-| `guides/alternatives-research.md`                | Method for finding and evaluating alternatives. Explanatory, not normative.                                                                               |
-| `guides/comparison-and-synthesis.md`             | Method for building the comparison, finding gaps, writing the value proposition. Explanatory, not normative.                                              |
-| `guides/customer-kickoff-meeting.md`             | Method for the kickoff: the five areas and the Mom Test pass. Explanatory, not normative.                                                                 |
-| `guides/user-stories-and-prototyping.md`         | Method for turning a gap into stories, writing acceptance criteria, and testing an idea cheaply. Explanatory, not normative.                              |
-| `guides/validating-with-the-customer.md`         | Method for meetings after the kickoff and for recording what they changed. Explanatory, not normative.                                                    |
-| `assignments/assignment-N.md`                    | Learner-facing requirements for one week. Deltas, paths, and evidence only.                                                                               |
-| `lectures/AGENTS.md`                             | The lecture decks: `lecture-N.typ` sources, their generated PDFs, the build, the layout contract, and the conversion method. Not student-facing.          |
+| File                                                  | Owns                                                                                                                                                                            |
+| ----------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `README.md`                                           | Student entry point and routing. Nothing else.                                                                                                                                  |
+| `SKILL.md`                                            | The entry point for a student's coding agent when a team installs this repository as a skill. A router, like `README.md`, and kept in step with it.                             |
+| `course/syllabus.md`                                  | The single source of truth for the schedule: week-by-week focus, dates, submission deadlines, and course policies. Edited here.                                                 |
+| `course/rules.md`                                     | The course contract: public vs private, hygiene, AI policy, deadlines, submission channel. Short, and a router rather than a second rulebook.                                   |
+| `course/teams-and-projects.md`                        | Which team number works on which project. Regenerated each term, and a repeated project name is not an error because two teams may share a project name.                        |
+| `requirements/general-requirements.md`                | The rules no single artifact owns: artifact terms, the `reports/week-NN/` vs `docs/` split, identifier rules, traceability into later weeks.                                    |
+| `requirements/visibility-requirements.md`             | Who may see an artifact: the visibility model, where each sensitive item goes, screenshot evidence.                                                                             |
+| `requirements/research-requirements.md`               | The Week 1 research: where it lives, alternatives, properties and comparison, gaps, value propositions, research honesty.                                                       |
+| `requirements/assumptions-requirements.md`            | `docs/assumptions.md`: where it lives, what an assumption is, what rests on it, how it is checked and settled, and the full example.                                            |
+| `requirements/decisions-requirements.md`              | `docs/decisions.md`: where it lives, a decision's entry and fields, what cites it, how it is reversed, and the full example.                                                    |
+| `requirements/product-vision-requirements.md`         | `docs/product-vision.md`: where it lives, the goal, stakeholders, constraints, boundary, system context, and the full example.                                                  |
+| `requirements/user-stories-requirements.md`           | Story issues: where they live, the issue form and its labels, the story, acceptance criteria, MoSCoW priorities, and the full example.                                          |
+| `requirements/task-issues-requirements.md`            | Task issues: where they live, the issue form and its label, how a pull request closes one, and the full example.                                                                |
+| `requirements/local-task-tracking-requirements.md`    | Tracking tasks inside the repository: a task tracker with its configuration and Definition of Done, a `TODO.md` checklist, and the workflow that moves Done tasks to completed. |
+| `requirements/minimum-usable-product-requirements.md` | The minimum usable product candidate: where it is recorded, the candidate, and the full example.                                                                                |
+| `requirements/prototypes-requirements.md`             | Prototypes: where they are recorded, and the validation rules for showing one.                                                                                                  |
+| `requirements/customer-meetings-requirements.md`      | Meetings with the customer: every meeting, the kickoff, showing working software, permission, and the script, report, and transcript with their examples.                       |
+| `requirements/weekly-report-requirements.md`          | What is handed in each week: the weekly public report, the AI usage report, deviations, the Moodle PDF.                                                                         |
+| `requirements/repository-requirements.md`             | Repository and platform mechanics: GitHub, the rules every issue shares, pull requests, branch protection, link checking, permalinks, snapshots, changelog, CI.                 |
+| `guides/alternatives-research.md`                     | Method for finding and evaluating alternatives. Explanatory, not normative.                                                                                                     |
+| `guides/comparison-and-synthesis.md`                  | Method for building the comparison, finding gaps, writing the value proposition. Explanatory, not normative.                                                                    |
+| `guides/customer-kickoff-meeting.md`                  | Method for the kickoff: the five areas and the Mom Test pass. Explanatory, not normative.                                                                                       |
+| `guides/user-stories-and-prototyping.md`              | Method for turning a gap into stories, writing acceptance criteria, and testing an idea cheaply. Explanatory, not normative.                                                    |
+| `guides/validating-with-the-customer.md`              | Method for meetings after the kickoff and for recording what they changed. Explanatory, not normative.                                                                          |
+| `assignments/assignment-N.md`                         | Learner-facing requirements for one week. Deltas, paths, and evidence only.                                                                                                     |
+| `lectures/AGENTS.md`                                  | The lecture decks: `lecture-N.typ` sources, their generated PDFs, the build, the layout contract, and the conversion method. Not student-facing.                                |
+
+`SKILL.md` makes a checkout of this repository a skill named `itpd`, which a team installs as a Git submodule per `requirements/repository-requirements.md`.
+When a requirements file, guide, or assignment is added, renamed, or removed, update the routing in `SKILL.md` in the same change, as in `README.md`.
 
 ### Tooling
 
 Markdown in this directory is formatted and linted from Node.
 The toolchain is pinned: Node 26 and pnpm, both from `flake.nix`.
+A human maintainer starts at `CONTRIBUTING.md`, which owns the prerequisites, the setup, and the repository settings the workflows need.
 Run `pnpm run format:markdown` before committing.
 `pnpm run format:markdown:check` and `pnpm run lint:markdown` are the gates.
 The decks have their own gate, `pnpm run check:lectures`, and `lectures/AGENTS.md` owns it.
+Links have theirs, `pnpm run check:links`, which runs `lychee` from the shell over the directory, so it skips gitignored paths such as `tmp/`.
+It checks heading anchors with `--include-fragments` and fetches external links, so it needs network.
 
 | File                                      | Owns                                                                                                                                                                                                     |
 | ----------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `flake.nix`                               | The pinned development shell: Node 26, pnpm, typst, the `backlog` CLI, ripgrep, and the deck font, with a `FONTCONFIG_FILE` of its own.                                                                  |
+| `CONTRIBUTING.md`                         | The maintainers' prerequisites, the setup, the checks to run before a pull request, and the repository settings the workflows need.                                                                      |
+| `flake.nix`                               | The pinned development shell: Node 26, pnpm, typst, the `backlog` CLI, ripgrep, lychee, and the deck font, with a `FONTCONFIG_FILE` of its own.                                                          |
 | `.envrc`                                  | `use flake`, so `direnv` loads the shell on entering the directory.                                                                                                                                      |
 | `scripts/markdown.mjs`                    | Formats, checks, and lints every tracked `.md` file except `.opencode/`, `.agents/`, and `backlog/`.                                                                                                     |
 | `scripts/lectures.mjs`                    | Builds and checks every `lectures/lecture-N.typ` against its committed PDF, with the Typst version and the build epoch pinned.                                                                           |
@@ -52,8 +63,13 @@ The decks have their own gate, `pnpm run check:lectures`, and `lectures/AGENTS.m
 | `.github/actions/prepare/action.yml`      | The shared CI setup for the Markdown jobs: pnpm, Node 26, and a frozen-lockfile install. A job checks out before it, because a local action has to be on disk. The lectures job does not use it.         |
 | `.github/workflows/markdown.yml`          | CI: the format check, the lint, and both plugin fixtures, as three separate jobs, all through `prepare`.                                                                                                 |
 | `.github/workflows/lectures.yml`          | CI: Nix installed by a SHA-pinned action, the shell closure restored by `nix-community/cache-nix-action`, then the deck check through `nix develop`. The Markdown jobs use `prepare`; this one does not. |
+| `.github/workflows/lychee.yml`            | CI: the link check through `lycheeverse/lychee-action` on pull requests and `main`, without `--include-fragments`, so anchors are checked only by `pnpm run check:links`.                                |
+| `.github/workflows/backlog-cleanup.yml`   | CI: every Sunday and on demand, moves the Done tasks to `backlog/completed/` with `backlog task complete` and opens or refreshes one pull request from `chore/backlog-weekly-completed`. Not a gate.     |
+| `lychee.toml`                             | Link check settings that `pnpm run check:links` and CI share: the concurrency, the accepted statuses, and the excluded paths and URLs, each with a comment saying why.                                   |
 
 Their fixtures run with `pnpm run test:markdown-format` and `pnpm run test:markdown-rules`, and all four gates run in CI on every pull request.
+`requirements/repository-requirements.md` links `.github/workflows/lychee.yml` and `lychee.toml` as the students' link-check example, so a change to either is a change to student-facing material.
+`requirements/local-task-tracking-requirements.md` links `.github/workflows/backlog-cleanup.yml` as the students' example of the workflow that moves Done tasks, so a change to it is a change to student-facing material.
 `eslint.config.ts` enables the `eslint-markdown` `recommended` set, which lints the same GFM AST as `@eslint/markdown` and so adds rules without a second parse.
 Two of its rules are off because they conflict with the house style: `md/no-irregular-dash`, because `course/syllabus.md` uses en and em dashes in its dates and titles and the guides use them deliberately, and `md/code-lang-shorthand`, because it rewrites the `markdown`, `text`, and `yaml` fence labels in `requirements/` and `guides/` to their shorthand forms.
 The `markdown/*` built-in rules other than `no-html` are not enabled, because `markdown/no-missing-label-refs` reports the `> [!NOTE]` and `> [!IMPORTANT]` blockquote alerts in `course/syllabus.md` as undefined label references.
@@ -82,7 +98,7 @@ The CLI has `archive` but no `delete`, so removing a task that was never committ
 | `backlog instructions overview`         | The CLI's own workflow, before any task lifecycle action                                |
 
 Run `backlog <command> --help` before an unfamiliar command.
-The `Done` criteria come from `definition_of_done` in `backlog/config.yml`, which is this repository's four Markdown gates and the deck check.
+The `Done` criteria come from `definition_of_done` in `backlog/config.yml`, which is this repository's four Markdown gates, the deck check, the link check, and implementation notes that record the decisions made and the validation results.
 
 ### Maintained Elsewhere
 
@@ -115,13 +131,14 @@ It keeps its own rules, its build, and its gate in `lectures/AGENTS.md`; this fi
 
 Inside `requirements/`, every rule has one owner, and every other mention is a link without the rule's numbers or lists.
 
-| File                                                                                                                                                                                 | Owns                                                                                                                                                                                                      | Links, rather than restates                                              |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------ |
-| `general-requirements.md`                                                                                                                                                            | Artifact terms, the `docs/` vs `reports/` split, identifier families and how they are cited, traceability into later weeks                                                                                | Any one artifact's paths, fields, or content                             |
-| `visibility-requirements.md`                                                                                                                                                         | Who may see each item: public, Moodle only, or never committed, and how screenshots are published                                                                                                         | Where an artifact lives in the repository                                |
-| One file per artifact group: `research-`, `assumptions-`, `decisions-`, `product-vision-`, `user-stories-`, `prototypes-`, `customer-meetings-`, and `weekly-report-requirements.md` | For its artifacts: where each lives, its sections, fields, labels, and close states, how it records a change, what each part must say (counts, quality bars, priority meanings), and the one full example | Identifier, visibility, and platform rules, and another artifact's rules |
-| `repository-requirements.md`                                                                                                                                                         | Platform configuration and workflow: the files under `.github/`, labels, branches, pull requests, link checking, and CI                                                                                   | What a story or an artifact must say                                     |
-| `course/rules.md`                                                                                                                                                                    | The contract summary and the router                                                                                                                                                                       | Any number or list that a requirement owns                               |
+| File                                                                                                                                                                                                                            | Owns                                                                                                                                                                                                      | Links, rather than restates                                              |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------ |
+| `general-requirements.md`                                                                                                                                                                                                       | Artifact terms, the `docs/` vs `reports/` split, identifier families and how they are cited, traceability into later weeks                                                                                | Any one artifact's paths, fields, or content                             |
+| `visibility-requirements.md`                                                                                                                                                                                                    | Who may see each item: public, Moodle only, or never committed, and how screenshots are published                                                                                                         | Where an artifact lives in the repository                                |
+| One file per artifact group: `research-`, `assumptions-`, `decisions-`, `product-vision-`, `user-stories-`, `task-issues-`, `minimum-usable-product-`, `prototypes-`, `customer-meetings-`, and `weekly-report-requirements.md` | For its artifacts: where each lives, its sections, fields, labels, and close states, how it records a change, what each part must say (counts, quality bars, priority meanings), and the one full example | Identifier, visibility, and platform rules, and another artifact's rules |
+| `repository-requirements.md`                                                                                                                                                                                                    | Platform configuration and workflow: the files under `.github/` other than the issue forms, the rules every issue shares, branches, pull requests, link checking, and CI                                  | What a story or an artifact must say                                     |
+| `local-task-tracking-requirements.md`                                                                                                                                                                                           | The in-repository task tracker, its configuration and Definition of Done, a `TODO.md` checklist, and the workflow that moves Done tasks out of the active list                                            | Task issues, and the Markdown check, link check, and pull request rules  |
+| `course/rules.md`                                                                                                                                                                                                               | The contract summary and the router                                                                                                                                                                       | Any number or list that a requirement owns                               |
 
 Each artifact file reads in one order: where the artifact lives, then one section per part, then the full example.
 A part may keep a small example beside the rule it illustrates, such as the boundary table, even when the full example contains it.
@@ -131,10 +148,10 @@ A part may keep a small example beside the rule it illustrates, such as the boun
 - **Filenames** are kebab-case: `assignment-1.md`, `user-stories-requirements.md`.
 - **Weeks** are zero-padded: `reports/week-01/`, through `reports/week-09/`.
 - **Identifiers** are zero-padded and stable: `ALT-01`, `GAP-01`, `VP-01`, `ASM-01`, and `DEC-001` are the Week 1 families.
-  `US-01` for user stories and `AC-01` for the acceptance criteria of one story are introduced in W2.
+  `US-01` for user stories, `AC-01` for the acceptance criteria of one story or task issue, `CON-01` for constraints, and `BND-01` for boundary items are introduced in W2.
   A later identifiers family arrives with the requirement that first uses it, not before.
   Decisions take three digits, because every customer meeting adds to the log; every other family takes two.
-  An `AC-nn` is scoped to its story issue and is cited together with it; the other families are repository-wide.
+  An `AC-nn` is scoped to its issue and is cited together with it; the other families are repository-wide.
   IDs are never renumbered or reused, including in example text.
 - **Headings** are Title Case in requirements files, guides, and assignments.
 - **Applicability markers**: every requirements file carries inline `**Since: WN**` markers, so a section can hold requirements that begin in different weeks.
@@ -198,7 +215,7 @@ Before writing or editing an assignment:
 
 Use these words and do not invent local synonyms:
 
-`weekly report`, `weekly public report`, `supporting artifact`, `private-only artifact`, `external-but-indexed artifact`, `repository-resident artifact`, `deviation`, `customer`, `stakeholder`, `kickoff meeting`, `meeting report`, `meeting transcript`, `meeting script`, `decision`, `action point`, `open question`, `alternative`, `property`, `gap`, `value proposition`, `assumption`, `story issue`, `traces to`, `rests on`, `threshold of success`, `proof of concept` (PoC), `minimum usable product` (MUP), `minimum viable product` (MVP), `product backlog`, `sprint backlog`, `PBI`, `SBI`, `story points`, `sprint retrospective`, `team number`.
+`weekly report`, `weekly public report`, `supporting artifact`, `private-only artifact`, `external-but-indexed artifact`, `repository-resident artifact`, `deviation`, `customer`, `stakeholder`, `kickoff meeting`, `meeting report`, `meeting transcript`, `meeting script`, `decision`, `action point`, `open question`, `alternative`, `property`, `gap`, `value proposition`, `assumption`, `story issue`, `task issue`, `traces to`, `rests on`, `threshold of success`, `proof of concept` (PoC), `minimum usable product` (MUP), `minimum viable product` (MVP), `product backlog`, `sprint backlog`, `PBI`, `SBI`, `story points`, `sprint retrospective`, `team number`.
 
 "Customer" is the term for the person your team answers to, who is your instructor.
 Never "client" for them.
@@ -210,7 +227,7 @@ A decision that needs an entry, per `requirements/decisions-requirements.md`, is
 Any other decision is a team decision recorded with its reason in the one artifact it changes.
 The entry does not list what it changed; the artifact it changed cites it, so there is no `Changes` list, `TBD`, or `None`.
 A meeting report lists its meeting's `DEC-nnn` under `## Decisions`, and the weekly report has no decisions section.
-Action points are **not** an identifier family: there is no `ACT-nn`, a later week cites one by its report's path and `#action-points` anchor with the action quoted, and it is carried out by a tracked issue.
+Action points are **not** an identifier family: there is no `ACT-nn`, a later week cites one by its report's path and `#action-points` anchor with the action quoted, and when it changes the repository, it is carried out by a task issue.
 
 ITPD uses elements of Scrum later in the course.
 One course week is then a sprint, sprints start with planning and grooming, estimation is required with no unit prescribed, and each sprint ends with a retrospective at `reports/week-NN/sprint-retrospective.md`.

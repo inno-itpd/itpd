@@ -4,7 +4,7 @@ title: Hand technology choices from the decisions log to ADRs
 status: To Do
 assignee: []
 created_date: '2026-10-05 16:47'
-updated_date: '2026-10-05 19:57'
+updated_date: '2026-10-06 13:21'
 labels: []
 dependencies: []
 ordinal: 66000
@@ -31,4 +31,11 @@ Decided on 2026-10-05: a DEC-nnn entry does not record the options it turned dow
 - [ ] #3 `pnpm run lint:markdown` passes
 - [ ] #4 `pnpm run test:markdown-format` and `pnpm run test:markdown-rules` pass
 - [ ] #5 `pnpm run check:lectures` passes
+- [ ] #6 Implementation notes record the decisions made and the validation results
 <!-- DOD:END -->
+
+## Implementation Notes
+
+<!-- SECTION:NOTES:BEGIN -->
+2026-10-06: TASK-081 rewords Constraint rule 4. A team's technology choice is a decision, not a constraint. A customer's mandate is a customer-given `CON-nn` that cites the DEC-nnn recording it. The DEC-004 VPS mandate becomes a CON section that cites DEC-004. When ADRs take over technology choices, the CON `Decision` field and AC #3 here must cite the ADR or the DEC consistently.
+<!-- SECTION:NOTES:END -->

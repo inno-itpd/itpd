@@ -23,7 +23,7 @@ Most of it is arguing about which stories are the same story wearing two hats, w
 
 ```text
 docs/product-vision.md         the goal, the constraints, the stakeholders, the boundary, the context diagram
-GitHub issues                  one per story, titled US-nn: <title>, with its Traces to list, AC-nn criteria, and labels
+GitHub issues                  one per story, titled US-nn: <title>, with its value proposition, Traces to and Rests on lists, AC-nn criteria, and labels
 reports/week-02/README.md      the minimum usable product candidate: core task and stories
 reports/week-02/prototypes.md  what you showed, what they said, what changed
 ```
@@ -52,8 +52,8 @@ When you decide who handles an item, take "nobody" seriously.
 It is a legitimate answer, and it is the one the customer is most likely to argue with, which is why it is worth writing down.
 If the only reason you can give for an item is that it felt out of scope, you have not decided it yet, so take it to the customer.
 
-Keep one item per row or bullet, never a paragraph.
-A paragraph cannot be disagreed with item by item.
+Give each item its own `BND-nn` section, with one job in it, never a paragraph of several.
+A paragraph cannot be disagreed with item by item, and a story or a decision cannot cite half of one.
 
 Then draw the context diagram from the list rather than from memory.
 Start with every system and actor that the list says handles a job, then check the diagram against the list the other way.
@@ -67,7 +67,7 @@ For each `GAP-nn`, ask what a user would be trying to do that they cannot do tod
 Not every story starts at a gap.
 A decision from `docs/decisions.md` or an action point can add one.
 When the story has an origin, record it in the story's `Traces to` list, and never invent a `GAP-nn` link to fill the list.
-When a story rests on a belief you have not checked, record the belief as an `ASM-nn` in `docs/assumptions.md` and list it in the story's `Traces to` too; see [Assumption Requirements](../requirements/assumptions-requirements.md).
+When a story rests on a belief you have not checked, record the belief as an `ASM-nn` in `docs/assumptions.md` and list it in the story's `Rests on`; see [Assumption Requirements](../requirements/assumptions-requirements.md).
 
 Whatever its origin, a story reaches the vision through its `VP-nn`.
 The vision has one goal and no identifier, so "traces to the vision" would be true of every story and would check nothing; the value proposition says which part of the goal the story serves.
@@ -155,11 +155,11 @@ Any notation works, including `Given`/`When`/`Then`.
 The notation is not the requirement; observability is.
 Compare:
 
-| Criterion                                                                                                                     | Verdict                                   |
-| ----------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------- |
-| Works properly.                                                                                                               | Not a criterion, and not testable         |
-| The client sees a confirmation.                                                                                               | Observable, but the answer is a judgement |
-| `AC-01`: Given a held slot whose client has not paid, when the hold expires, then the slot shows as free on the booking page. | Observable, and the answer is yes or no   |
+| Criterion                                                                                                                   | Verdict                                   |
+| --------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------- |
+| Works properly.                                                                                                             | Not a criterion, and not testable         |
+| The client sees a confirmation.                                                                                             | Observable, but the answer is a judgement |
+| AC-01: Given a held slot whose client has not paid, when the hold expires, then the slot shows as free on the booking page. | Observable, and the answer is yes or no   |
 
 A criterion may name a screen, a field, or a system state, because that is what an observer checks; the story may not, because that would be the design.
 
@@ -180,7 +180,7 @@ If the only reason you can write is the definition of the label, you have not de
 A `Won't Have` story is not built, but write it down as an issue and close it as not planned, with the reason, instead of quietly leaving a story out.
 A reader can argue with a recorded `Won't Have`; they can only guess about a missing one.
 
-Then name the **minimum usable product candidate**, per [the requirement](../requirements/user-stories-requirements.md#minimum-usable-product-candidate).
+Then name the **minimum usable product candidate**, per [the requirement](../requirements/minimum-usable-product-requirements.md#the-candidate).
 
 This is the hardest decision of the week and it belongs here, where the evidence is.
 Work in this order:
@@ -240,7 +240,7 @@ When the question is only whether the idea can work at all, that is a proof of c
 On a code spike: **keep it off `main`.**
 Do it on a branch, show it from there, and do not merge it, per [Where Prototypes Live](../requirements/prototypes-requirements.md#where-prototypes-live).
 The evidence is the screenshot and your record, not the branch, so the branch is genuinely disposable and the repository does not have to carry it for the rest of the course.
-If you want a reader to see the code, open a pull request from the branch, with its task issue like any other, and close it without merging.
+If you want a reader to see the code, open a pull request from the branch, with its [task issue](../requirements/task-issues-requirements.md#closing-a-task) like any other, and close it without merging.
 Link that pull request from your record rather than the branch: the pull request keeps the commits after the branch is deleted, and a branch link breaks.
 
 Then show it, and record what happened.
@@ -255,7 +255,7 @@ See [Validating With The Customer](validating-with-the-customer.md) for the meet
   "I want a payment system" names an area, not a need, and no criterion can be written for it.
   Say who pays, for what, and what goes wrong when they do not.
 - **Forcing a story onto a gap that does not cover it.**
-  If the need came from a decision or an action point, cite its `DEC-nnn` or the action point in `Traces to` instead; a story that traces only to its `VP-nn` is fine.
+  If the need came from a decision or an action point, cite its `DEC-nnn` or the action point in `Traces to` instead; a story with no `Traces to` list, only its `VP-nn`, is fine.
   A false link makes a reader stop trusting the real ones.
 - **One criterion per story.**
   It is the easiest number to hit and the least useful.

@@ -27,7 +27,7 @@ What you hand in is a description of what your product must do, and a record of 
 - [Part 6: Write The User Stories As Issues](#part-6-write-the-user-stories-as-issues)
 - [Part 7: Propose The Minimum Usable Product Candidate](#part-7-propose-the-minimum-usable-product-candidate)
 - [Part 8: Prototype The Riskiest Part](#part-8-prototype-the-riskiest-part)
-- [Part 9: Carry Out The Kickoff Action Points](#part-9-carry-out-the-kickoff-action-points)
+- [Part 9: Carry Out The Kickoff Action Points And Open Questions](#part-9-carry-out-the-kickoff-action-points-and-open-questions)
 - [Part 10: Validate With The Customer](#part-10-validate-with-the-customer)
 - [Part 11: Report On Your AI Usage](#part-11-report-on-your-ai-usage)
 - [What Good Looks Like](#what-good-looks-like)
@@ -51,13 +51,23 @@ By the end of this week you should be able to show a reader:
 
 The rules:
 
-- Add both issue forms and the labels, start the forms pull request from a blank issue, and link every pull request to its issue: [Issue Tracking](../requirements/repository-requirements.md#issue-tracking).
-- Name branches after their issue, and name in each pull request the `AC-nn` it checks: [Branch Protection And Pull Requests](../requirements/repository-requirements.md#branch-protection-and-pull-requests).
-- Recommended: track the team's tasks inside the repository: [Tracking Tasks Inside The Repository](../requirements/repository-requirements.md#tracking-tasks-inside-the-repository).
+- Start the forms pull request from a blank issue: [Issue Tracking](../requirements/repository-requirements.md#issue-tracking).
+- Add both issue forms and their labels: [the story issue form](../requirements/user-stories-requirements.md#the-issue-form) and [the task issue form](../requirements/task-issues-requirements.md#the-issue-form).
+- Close exactly one task issue from each pull request, and close a task whose pull request was not merged as not planned: [Closing A Task](../requirements/task-issues-requirements.md#closing-a-task).
+- Give each task its own acceptance criteria, which the reviewer ticks before approving: [Acceptance Criteria](../requirements/task-issues-requirements.md#acceptance-criteria).
+- Name branches after their task issue, and link in each pull request its task issue: [Branch Protection And Pull Requests](../requirements/repository-requirements.md#branch-protection-and-pull-requests).
+- Recommended: track the team's tasks inside the repository, with a task tracker, a `TODO.md` checklist, and a workflow that moves Done tasks out of the active list: [Local Task Tracking Requirements](../requirements/local-task-tracking-requirements.md).
 
 This week:
 
 1. Before any other Week 2 pull request, merge the one that adds `user-story.yml`, `task.yml`, and `config.yml`, and create the labels.
+2. If your `user-story.yml` has no `Rests on` field, add it in a pull request of its own, per [The Issue Form](../requirements/user-stories-requirements.md#the-issue-form).
+   Then move each `ASM-nn` in an existing story's `Traces to` list into a `### Rests on` section of the same issue.
+   This is a one-time catch-up: the field was added after the forms were due, and the move needs no comment, per [Where Stories Live](../requirements/user-stories-requirements.md#where-stories-live).
+3. If your `task.yml` has no `Story` or `Acceptance criteria` field, add them in a pull request of its own, per [The Issue Form](../requirements/task-issues-requirements.md#the-issue-form).
+   This is a one-time catch-up too: from now on, a pull request closes a task issue rather than referencing a story, and a pull request already merged with a reference to a story needs no change.
+4. Apply the `task` label to the blank issue that the forms pull request closed, and close as not planned, with a comment giving the reason, any task left open by a pull request that was closed without merging, per [Closing A Task](../requirements/task-issues-requirements.md#closing-a-task).
+   This is a one-time catch-up too: both rules were added after the forms were due.
 
 ## Part 2: Move The Week 1 Decisions Into The Decisions Log
 
@@ -112,6 +122,12 @@ This week:
 3. In a pull request of its own, merged before a story links a `VP-nn`, cut each `ALT-nn`, `GAP-nn`, and `VP-nn` heading in `docs/research/` down to its identifier, per [Identifier Rules](../requirements/general-requirements.md#identifier-rules), and put its title on the line under it.
    Repoint every link to those sections at the new anchor, including the links in `reports/week-01/`, where it is a [formatting-only change](../requirements/general-requirements.md#where-artifacts-live-in-the-repository).
    This is a one-time catch-up: Week 1 headed them `## GAP-01: <title>`, and the rule changed after you submitted it.
+4. In the same pull request, write the fields of each section in `docs/research/` as a bulleted list, per [Identifier Rules](../requirements/general-requirements.md#identifier-rules).
+   Leave `reports/week-01/` in its Week 1 form, apart from the repointed links.
+   `docs/decisions.md`, `docs/assumptions.md`, and every report from Week 2 on use the list from the start.
+5. In the same pull request, or in a pull request of its own when that one is already merged, start the fields of each `ALT-nn`, `GAP-nn`, and `VP-nn` section with `**Status:**`, and move the reason and the date of each one you dropped into its `**Dropped:**` field, per [Where Research Lives](../requirements/research-requirements.md#where-research-lives) and [Identifier Rules](../requirements/general-requirements.md#identifier-rules).
+   A dropped gap no longer lists the value propositions it affected; record the drop under `**Changed:**` of each value proposition that closes it instead, per [Value Proposition And Differentiation](../requirements/research-requirements.md#value-proposition-and-differentiation).
+   Rename each field to the label the requirements give it, in their order, per [Alternatives](../requirements/research-requirements.md#alternatives), [Gap Analysis](../requirements/research-requirements.md#gap-analysis), and [Value Proposition And Differentiation](../requirements/research-requirements.md#value-proposition-and-differentiation), and add a `**Confidence:**` to each gap that has none.
 
 ## Part 5: State The Product Vision
 
@@ -127,7 +143,7 @@ The rules:
 This week:
 
 1. Write `docs/product-vision.md`.
-2. Give the boundary at least 3 items.
+2. Give the boundary at least 3 `BND-nn` items.
 
 The method is in [Step 1: Write The Goal And The Boundary](../guides/user-stories-and-prototyping.md#step-1-write-the-goal-and-the-boundary).
 
@@ -136,7 +152,7 @@ The method is in [Step 1: Write The Goal And The Boundary](../guides/user-storie
 The rules:
 
 - Open each story as an issue, and keep the issue as its record of change: [Where Stories Live](../requirements/user-stories-requirements.md#where-stories-live).
-- Write each story as a user's need, with its `Traces to` list: [The Story](../requirements/user-stories-requirements.md#the-story).
+- Write each story as a user's need, with its `Value proposition`, its `Traces to` list when it has an origin, and its `Rests on` list when it rests on an assumption: [The Story](../requirements/user-stories-requirements.md#the-story).
 - Keep each assumption a story rests on as an `ASM-nn` entry, and settle it with its evidence: [Assumption Requirements](../requirements/assumptions-requirements.md).
 - Link each Week 1 identifier a story cites to its section: [Traceability Into Later Weeks](../requirements/general-requirements.md#traceability-into-later-weeks).
 - Give each story acceptance criteria somebody else can run, each with its `AC-nn`: [Acceptance Criteria](../requirements/user-stories-requirements.md#acceptance-criteria).
@@ -148,9 +164,9 @@ The method is in [Step 2: Turn Each Gap Into Stories](../guides/user-stories-and
 
 The rules:
 
-- Name the core task and the `Must Have` stories that complete it, and cite the customer's verdict on them: [Minimum Usable Product Candidate](../requirements/user-stories-requirements.md#minimum-usable-product-candidate).
-- Record the candidate in the weekly public report: [Weekly Public Report](../requirements/weekly-report-requirements.md#weekly-public-report).
-- Keep the priority of a story the verdict drops from the candidate, unless the customer changed it: [Minimum Usable Product Candidate](../requirements/user-stories-requirements.md#minimum-usable-product-candidate).
+- Name the core task and the `Must Have` stories that complete it, and cite the customer's verdict on them: [The Candidate](../requirements/minimum-usable-product-requirements.md#the-candidate).
+- Record the candidate in the weekly public report: [Where The Candidate Lives](../requirements/minimum-usable-product-requirements.md#where-the-candidate-lives).
+- Keep the priority of a story the verdict drops from the candidate, unless the customer changed it: [The Candidate](../requirements/minimum-usable-product-requirements.md#the-candidate).
 
 This week:
 
@@ -175,7 +191,7 @@ This week:
 
 The method is in [Step 5: Choose What To Prototype](../guides/user-stories-and-prototyping.md#step-5-choose-what-to-prototype) and [Step 6: Build The Cheapest Thing That Gets A Reaction](../guides/user-stories-and-prototyping.md#step-6-build-the-cheapest-thing-that-gets-a-reaction).
 
-## Part 9: Carry Out The Kickoff Action Points
+## Part 9: Carry Out The Kickoff Action Points And Open Questions
 
 The rules:
 
@@ -184,6 +200,7 @@ The rules:
 - Cite an action point a story carries out as one of its origins: [The Story](../requirements/user-stories-requirements.md#the-story).
 - Record each outcome in the next meeting report, since the kickoff report is not edited: [Meeting Report](../requirements/customer-meetings-requirements.md#meeting-report).
 - Carry each outcome into the artifact it changed: [Meeting Report](../requirements/customer-meetings-requirements.md#meeting-report).
+- Close each kickoff open question in the next meeting report, or carry it forward: [Meeting Report](../requirements/customer-meetings-requirements.md#meeting-report).
 
 This week:
 
@@ -192,6 +209,7 @@ They are due now, and at the latest before the meeting in [Part 10](#part-10-val
 
 1. Carry out each action point, or find out why it cannot be done.
 2. Carry the outcome into the artifact it affects, which is usually a story, an assumption, the research, or the product vision.
+3. Put each row of `## Open questions` in `reports/week-01/meeting-report.md` to the customer in Part 10, unless the work since has answered it.
 
 ## Part 10: Validate With The Customer
 
@@ -262,6 +280,7 @@ This week it also carries:
    | Deliverable            | Artifact                                                                                                            |
    | ---------------------- | ------------------------------------------------------------------------------------------------------------------- |
    | Kickoff action points  | `## Previous action points` in `reports/week-02/meeting-report.md`                                                  |
+   | Kickoff open questions | `## Previous open questions` in `reports/week-02/meeting-report.md`                                                 |
    | Product vision         | `docs/product-vision.md`                                                                                            |
    | System context diagram | `docs/architecture/context.<ext>` and its source, embedded in `docs/product-vision.md`                              |
    | Assumptions            | `docs/assumptions.md`                                                                                               |
@@ -279,7 +298,7 @@ This week it also carries:
 
 3. `## Minimum Usable Product Candidate`, per [Part 7](#part-7-propose-the-minimum-usable-product-candidate).
 4. One line naming what changed because of what the customer said about the prototype, a `US-nn`, a boundary item, a constraint, or an `ASM-nn`, and what changed in it, linking it and the `DEC-nnn` behind the change.
-5. Repository evidence: one merged pull request linked to its issue, the latest green link check run, and the latest green Markdown check run on `main`.
+5. Repository evidence: one merged pull request that closed its task issue, the latest green link check run, and the latest green Markdown check run on `main`.
 6. `## Deviations`: anything you did differently from this assignment, per [Declaring Deviations](../requirements/weekly-report-requirements.md#declaring-deviations).
 
 ## Assignment Report On Moodle
@@ -304,17 +323,20 @@ A transcript under item 5 goes in an appendix, which the two pages do not count.
 ## Checklist
 
 - [ ] `.github/ISSUE_TEMPLATE/user-story.yml`, `task.yml`, `config.yml`, and the labels, in one pull request started from a blank issue ([Part 1](#part-1-track-the-work-as-issues)).
-- [ ] `.github/pull_request_template.md` asks for the `AC-nn` each change checks ([Part 1](#part-1-track-the-work-as-issues)).
+- [ ] `Story` and `Acceptance criteria` fields in `task.yml`, and every pull request closing one task issue ([Part 1](#part-1-track-the-work-as-issues)).
+- [ ] A `Rests on` field in `user-story.yml`, and every story's `ASM-nn` in its `Rests on` list rather than its `Traces to` list ([Part 1](#part-1-track-the-work-as-issues)).
+- [ ] `.github/pull_request_template.md` links the task issue each pull request closes ([Part 1](#part-1-track-the-work-as-issues)).
 - [ ] `docs/decisions.md` with a `DEC-nnn` section for each Week 1 decision, each cited from what it changed, if it changed anything yet ([Part 2](#part-2-move-the-week-1-decisions-into-the-decisions-log)).
 - [ ] `docs/assumptions.md` with an `ASM-nn` section for each Week 1 assumption, and no table left in `value-proposition.md` ([Part 3](#part-3-move-the-week-1-assumptions-into-the-assumptions-log)).
 - [ ] Earlier weeks' Markdown fixed in a formatting-only pull request, merged before the Markdown check ([Part 4](#part-4-check-the-markdown-in-ci)).
-- [ ] `ALT-nn`, `GAP-nn`, and `VP-nn` headings cut down to their identifiers, with every link to them repointed, in a pull request of its own ([Part 4](#part-4-check-the-markdown-in-ci)).
+- [ ] `ALT-nn`, `GAP-nn`, and `VP-nn` headings cut down to their identifiers, their fields written as bulleted lists starting with `**Status:**`, and every link to them repointed, in a pull request of its own ([Part 4](#part-4-check-the-markdown-in-ci)).
 - [ ] Markdown check and link check green on `main` ([Part 4](#part-4-check-the-markdown-in-ci)).
-- [ ] `docs/product-vision.md`, with at least 3 boundary items and the system context diagram ([Part 5](#part-5-state-the-product-vision)).
+- [ ] `docs/product-vision.md`, with its constraints as `CON-nn` sections, at least 3 `BND-nn` boundary items, and the system context diagram ([Part 5](#part-5-state-the-product-vision)).
 - [ ] The story issues ([Part 6](#part-6-write-the-user-stories-as-issues)).
 - [ ] `## Minimum Usable Product Candidate` in `reports/week-02/README.md` ([Part 7](#part-7-propose-the-minimum-usable-product-candidate)).
 - [ ] `reports/week-02/prototypes.md` with at least one prototype, and no prototype code on `main` ([Part 8](#part-8-prototype-the-riskiest-part)).
-- [ ] Each kickoff action point's outcome in `## Previous action points`, and in the artifact it changed ([Part 9](#part-9-carry-out-the-kickoff-action-points)).
+- [ ] Each kickoff action point's outcome in `## Previous action points`, and in the artifact it changed ([Part 9](#part-9-carry-out-the-kickoff-action-points-and-open-questions)).
+- [ ] Each kickoff open question answered or carried forward in `## Previous open questions` ([Part 9](#part-9-carry-out-the-kickoff-action-points-and-open-questions)).
 - [ ] `reports/week-02/meeting-script.md`, with the candidate's part listing its `US-nn` ([Part 10](#part-10-validate-with-the-customer)).
 - [ ] `reports/week-02/meeting-report.md`, with a row per kickoff action point, 2+ decisions listed by `DEC-nnn` including the candidate verdict, and 2+ action points due in Week 3 ([Part 10](#part-10-validate-with-the-customer)).
 - [ ] `reports/week-02/meeting-transcript.md`, if the meeting was recorded or held in writing ([Part 10](#part-10-validate-with-the-customer)).

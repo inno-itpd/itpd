@@ -15,10 +15,10 @@ Use [General Requirements](general-requirements.md) for what an artifact is, [Vi
 - [Configuration And Sensitive Information](#configuration-and-sensitive-information)
 - [Sensitive-Data Incident Response](#sensitive-data-incident-response)
 - [Issue Tracking](#issue-tracking)
-- [Tracking Tasks Inside The Repository](#tracking-tasks-inside-the-repository)
 - [Contributing](#contributing)
 - [Changelog, Releases And Versioning](#changelog-releases-and-versioning)
 - [Continuous Integration](#continuous-integration)
+- [The Course Materials As An Agent Skill](#the-course-materials-as-an-agent-skill)
 - [Recommended Throughout The Course](#recommended-throughout-the-course)
 
 ## Repository Setup
@@ -96,15 +96,16 @@ The root `README.md` also carries setup and run instructions for the product as 
 3. Every change after the first commit goes through a pull request: documentation, configuration, and CI changes included.
 4. Keep each pull request to one change.
    A pull request that fixes a broken link and reformats three files is hard to review, and review is the point.
+   Adding, ticking, or deleting items in a committed `TODO.md` may ride along in any pull request, per [A TODO.md Checklist](local-task-tracking-requirements.md#a-todomd-checklist).
 5. Name branches with a short lowercase hyphenated description, for example `add-alternatives-research`.
-   From Week 2, when issues exist, use `<issue-number>-<short-description>`, for example `42-add-login-form`.
+   From Week 2, use the number of the [task issue](task-issues-requirements.md#where-task-issues-live) the branch works on: `<issue-number>-<short-description>`, for example `12-hold-a-slot-while-the-client-pays`.
 6. Add a pull request template at `.github/pull_request_template.md`.
    It must prompt for:
 
    - What changed and why.
    - What you checked, and how.
    - For the reviewer: what to look at, and whether the linked requirements or acceptance criteria are satisfied.
-     From Week 2, name the `AC-nn` and its story issue for each criterion the change checks.
+     From Week 2, link the [task issue](task-issues-requirements.md#closing-a-task) the pull request closes, whose acceptance criteria the reviewer ticks before approving.
 
 7. Do not delete pull requests, reviews, or branches that are used as assignment evidence, and do not rewrite history to tidy it up.
    The history is part of what is being assessed.
@@ -131,6 +132,7 @@ The link checker is a required part of the repository from Week 1.
 1. Configure link checking with [Lychee](https://lychee.cli.rs/continuous-integration/github/) as a GitHub Actions workflow.
 2. Check every Markdown file in the repository, including everything under `reports/` and `docs/`.
    Do not check only the files you edited.
+   The one directory you may leave out is the course materials', per [The Course Materials As An Agent Skill](#the-course-materials-as-an-agent-skill).
 3. Run it on pull requests and on every push to `main`.
 4. The workflow must fail the check when a link is broken.
    A check that reports and passes anyway is not a check.
@@ -141,44 +143,20 @@ The link checker is a required part of the repository from Week 1.
 7. Every excluded link must be justified in the file that excludes it, and confirmed to work by opening it in a browser before you submit.
    A silent exclusion is a broken link you chose not to notice.
 
+**Recommended**
+
+- Keep Lychee's settings and exclusions in `lychee.toml` in the repository root, not in the workflow's `args`.
+  Lychee reads it by default, so the workflow and a local `lychee .` run check the same links the same way, and each exclusion keeps its reason in a comment beside it.
+
 **Example**
 
-`.github/workflows/lychee.yml`:
+The link check of this course's own repository is a working configuration to start from:
 
-```yaml
-name: Link check
+- [`.github/workflows/lychee.yml`](../.github/workflows/lychee.yml) runs Lychee on pull requests and on `main`, with its actions pinned per [Pinning Third-Party Actions](#pinning-third-party-actions).
+- [`lychee.toml`](../lychee.toml) holds the concurrency, the accepted statuses, and the exclusions, each with a comment saying why.
 
-on:
-  pull_request:
-  push:
-    branches: [main]
-
-permissions:
-  contents: read
-
-jobs:
-  lychee:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-      - name: Check links
-        uses: lycheeverse/lychee-action@e7477775783ea5526144ba13e8db5eec57747ce8 # v2.9.0
-        with:
-          args: >-
-            --no-progress
-            --max-concurrency 2
-            --accept 200,206,429
-            './**/*.md'
-          fail: true
-```
-
-Exclusions go in `.lycheeignore` in the repository root, one pattern per line, each with a comment saying why:
-
-```text
-# The Figma board requires a browser session and returns 403 to the checker.
-# Verified manually in a browser on 2026-09-30.
-https://www.figma.com/design/PUc4NFVcLureKzxE3RAGB0/Market-Research
-```
+Its exclusions are this repository's own.
+Start with none, and add yours with their reasons as you need them.
 
 ### Pinning Third-Party Actions
 
@@ -282,74 +260,28 @@ If credentials, personal data, or confidential material is committed by mistake:
 
 **Since: W2**
 
+The repository's issues are of two kinds, story issues and task issues, and each kind is opened from its own Issue Form.
+The form and the labels of each kind are in its own requirements: [the story issue form](user-stories-requirements.md#the-issue-form) and [the task issue form](task-issues-requirements.md#the-issue-form).
+The rules in this section apply to both.
+
 **Required**
 
-1. Add `.github/ISSUE_TEMPLATE/user-story.yml`, an Issue Form with a field for each part of a story issue listed in [Where Stories Live](user-stories-requirements.md#where-stories-live), and the `user-story` label applied by the form, or the issue type or field that rule allows instead.
-   The statement, the `Traces to` list, and the `Priority reason` field are required, and `Traces to` takes one entry per line.
-   The acceptance criteria field is optional, per [Acceptance Criteria](user-stories-requirements.md#acceptance-criteria).
-2. Add `.github/ISSUE_TEMPLATE/task.yml`, an Issue Form for work that is not a story, such as documentation, a report, or a workflow, with a description field and the `task` label applied by the form.
-3. Disable blank issue creation with `blank_issues_enabled: false` in `.github/ISSUE_TEMPLATE/config.yml`.
-4. The pull request that adds the two forms and `config.yml` is the only one that starts before a form exists.
-   Open a blank issue for it first, then name its branch and link it like any other pull request.
+1. Disable blank issue creation with `blank_issues_enabled: false` in `.github/ISSUE_TEMPLATE/config.yml`.
+2. The pull request that adds the two forms and `config.yml` is the only one that starts before a form exists.
+   Open a blank issue for it first, then name its branch and close that issue like any other pull request's task.
+   Once the `task` label exists, apply it to that issue, so that every task issue carries the label.
    A team that disabled blank issues before it had the task form opens the issue for the pull request that adds `task.yml` with `gh issue create`.
-5. After that pull request, open every issue from a form.
+3. After that pull request, open every issue from a form.
    This is the team's rule rather than the platform's: `gh issue create` and the API skip the form and the label it applies.
-6. Create the labels the issues use, by any means: `user-story`, `task`, and the four `moscow:*` labels in [MoSCoW Prioritization](user-stories-requirements.md#moscow-prioritization).
-   The forms apply `user-story` and `task`; the team applies one MoSCoW label per story.
-   A team that marks stories or priorities with an issue type or field, per [Where Stories Live](user-stories-requirements.md#where-stories-live), creates that type or field instead of the labels it replaces.
-7. Create branches from the issue where GitHub supports it, and link every pull request to its issue.
-8. Check the acceptance criteria a pull request touches before merging it; the [pull request template](#branch-protection-and-pull-requests) asks for them.
-9. In an issue, an issue comment, or a pull request description, link a repository file by its full URL on `main`, because a relative link does not resolve there:
+4. In an issue, an issue comment, or a pull request description, link a repository file by its full URL on `main`, because a relative link does not resolve there:
 
-   ```text
-   https://github.com/<org>/<repo>/blob/main/docs/decisions.md#dec-006
-   ```
-
-   Link on `main`, not at a commit hash, so the link shows the file as it is now, such as a decision that has since been reversed.
-   The commit-hash permalink is for the submission, per [Permalinks And Snapshots](#permalinks-and-snapshots).
-   Merge the file into `main` before an issue links it.
-
-**Recommended**
-
-- Put the URL pattern in the description of the `Traces to` field in `user-story.yml`, so whoever fills in the form sees it.
-
-The user story requirements say [what a story says](user-stories-requirements.md#the-story) and [how its issue is kept](user-stories-requirements.md#where-stories-live).
-
-## Tracking Tasks Inside The Repository
-
-**Since: W2**
-
-**Recommended**
-
-- Use a task tracker that keeps its state in the repository, such as the [`backlog.md`](https://github.com/MrLesk/Backlog.md) command-line tool.
-  It is not the home of a user story, and a story issue may be mentioned in it.
-  Its files are repository content rather than artifacts, per [Where Artifacts Live In The Repository](general-requirements.md#where-artifacts-live-in-the-repository), and it is not graded on its own.
-- Exclude the tracker's directory from the [Markdown check](#continuous-integration), because the tool rewrites those files and a formatter would fight it.
-  The [link check](#link-checking) still covers the directory, unless you exclude it there with the reason written down, as that section requires of every exclusion.
-
-It is recommended for two reasons:
-
-1. **A coding agent can use it.**
-   The tasks are plain files beside the code, and `backlog.md` has a command-line interface and an MCP server, so an agent can read the task it is working on, follow its acceptance criteria, and record what it did, without access to your GitHub account.
-2. **It breaks a bigger task into steps inside one pull request.**
-   A larger piece of work, whether it is an issue or a task in the tracker itself, splits into subtasks, each with its own acceptance criteria.
-   The subtasks change in the same commits as the work, so a reviewer sees the plan and how far it got beside the diff.
-
-It is not required because the course grades the work and its evidence, not the tool the team organised it with.
-
-**Example**
-
-When several members create tasks on different branches, let the tool see the other branches, so that two branches do not allocate the same task ID.
-In `backlog/config.yml`:
-
-```yaml
-filesystem_only: false
-remote_operations: true
-check_active_branches: true
-active_branch_days: 30
+```text
+https://github.com/<org>/<repo>/blob/main/docs/decisions.md#dec-006
 ```
 
-A task created in another clone is visible only once its branch is pushed, so push a branch soon after creating a task on it.
+Link on `main`, not at a commit hash, so the link shows the file as it is now, such as a decision that has since been reversed.
+The commit-hash permalink is for the submission, per [Permalinks And Snapshots](#permalinks-and-snapshots).
+Merge the file into `main` before an issue links it.
 
 ## Contributing
 
@@ -401,7 +333,7 @@ The pull request is where the team already writes down what changed and why, whi
 3. Any of the common tools is acceptable: `markdownlint-cli2`, `prettier --check`, or `remark-lint`.
    Pin the action to a commit, per [Pinning Third-Party Actions](#pinning-third-party-actions), and pin the tool's version: an action that bundles the tool pins it with the action, and a tool installed by the workflow pins it in the lockfile.
 4. Fixing what the check reports in an earlier week's files is a formatting-only change, which [Where Artifacts Live In The Repository](general-requirements.md#where-artifacts-live-in-the-repository) allows.
-5. A task tracker's directory may be excluded from the check, per [Tracking Tasks Inside The Repository](#tracking-tasks-inside-the-repository).
+5. A task tracker's directory may be excluded from the check, per [A Task Tracker In The Repository](local-task-tracking-requirements.md#a-task-tracker-in-the-repository), and so may the course materials' directory, per [The Course Materials As An Agent Skill](#the-course-materials-as-an-agent-skill).
    Nothing else is excluded.
 
 Markdown is checked in Week 2 because the week is mostly prose: a product vision, the meeting artifacts, and the week report.
@@ -435,7 +367,7 @@ jobs:
 ```
 
 `.markdownlint-cli2.jsonc` in the repository root turns off the line-length rule, so one sentence per line and long table rows pass, and the list-numbering rule, so a meeting script can number its questions across their area groups for the agenda to cite.
-It also excludes the task tracker's directory:
+It also skips the files that `.gitignore` lists, so a local run checks the same files as CI, which never has them, and it excludes the task tracker's directory:
 
 ```jsonc
 {
@@ -444,6 +376,7 @@ It also excludes the task tracker's directory:
     "MD013": false,
     "MD029": false,
   },
+  "gitignore": true,
   "ignores": ["backlog/**"],
 }
 ```
@@ -454,6 +387,83 @@ It also excludes the task tracker's directory:
 7. Keep the link check and the Markdown check running.
    They are a baseline, not a substitute for the checks your product needs.
 8. The latest `main` run of every required check must be green before you submit.
+
+## The Course Materials As An Agent Skill
+
+**Since: W2**
+
+**Recommended**
+
+- If your team works with a coding agent, install these course materials in your repository as a skill, so the agent reads the rules your work is checked against instead of guessing them.
+  The course repository has a `SKILL.md` in its root, so a copy of the whole repository is the skill.
+- Add it as a Git submodule in the directory your agent reads skills from, under the name `itpd`, which must match the skill's name.
+  Many agents read `.agents/skills/`, and Claude Code reads `.claude/skills/`; check your agent's documentation.
+- Move it to the latest course materials when a new assignment is published, and commit the change so the whole team moves together.
+- Exclude its directory from the [Markdown check](#continuous-integration) and the [link check](#link-checking).
+  Its files are the course's, and the course repository checks them.
+- Disclose the agent's work in the week's [AI usage report](weekly-report-requirements.md#ai-usage-report), as for any other AI tool.
+
+A submodule is another Git repository placed inside yours.
+Your repository does not store its files: it stores the submodule's URL in `.gitmodules` and a pointer to one commit of it.
+Everyone who checks out your repository gets the course materials at that commit, until someone moves the pointer and commits the move.
+
+**Example**
+
+One member adds the submodule once, and commits it:
+
+```sh
+git submodule add https://github.com/inno-itpd/itpd .agents/skills/itpd
+git commit -m "chore: add the ITPD course materials as an agent skill"
+```
+
+Every member clones with the submodule:
+
+```sh
+git clone --recurse-submodules <your repository URL>
+```
+
+In a clone made without `--recurse-submodules`, the directory is empty until you run:
+
+```sh
+git submodule update --init
+```
+
+A plain `git pull` moves the pointer when a teammate has moved it, but leaves the files at the old commit.
+Pull with `git pull --recurse-submodules`, or set this once in your clone so `pull` and `checkout` update the submodule themselves:
+
+```sh
+git config submodule.recurse true
+```
+
+To move to the latest course materials, fetch them and commit the new pointer:
+
+```sh
+git submodule update --remote .agents/skills/itpd
+git add .agents/skills/itpd
+git commit -m "chore: update the ITPD course materials"
+```
+
+If the submodule's files were changed by hand or no longer match the pointer, force them back to the commit your repository records.
+This discards any change inside the submodule:
+
+```sh
+git submodule update --init --force .agents/skills/itpd
+```
+
+`actions/checkout` does not fetch submodules unless asked, so the directory is empty in CI.
+It is not empty in a local clone, so exclude it from both checks anyway.
+In `.markdownlint-cli2.jsonc`, beside the task tracker's directory:
+
+```jsonc
+  "ignores": ["backlog/**", ".agents/skills/itpd/**"],
+```
+
+In `lychee.toml`:
+
+```toml
+# The ITPD course materials, a submodule that the course repository checks.
+exclude_path = ['^(\./)?\.agents/skills/itpd/']
+```
 
 ## Recommended Throughout The Course
 

@@ -38,7 +38,7 @@ Who may see each item is in [Visibility Requirements](visibility-requirements.md
 
 **Since: W2**
 
-11. It records the [minimum usable product candidate](user-stories-requirements.md#minimum-usable-product-candidate) under the heading the assignment names: the core task, then the `US-nn` of each story with its issue linked, and the `DEC-nnn` of the customer's verdict on it once they have given it.
+11. It records the minimum usable product candidate, per [Where The Candidate Lives](minimum-usable-product-requirements.md#where-the-candidate-lives).
 
 **Recommended**
 

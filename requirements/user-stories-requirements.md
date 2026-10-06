@@ -1,46 +1,49 @@
 # User Story Requirements
 
-These requirements define a user story: where it lives, what it must say, its acceptance criteria, its priority, and the minimum usable product candidate the priorities produce.
+These requirements define a user story: where it lives, its issue form, what it must say, its acceptance criteria, and its priority.
 [Guide: User Stories And Prototyping](../guides/user-stories-and-prototyping.md) is the method.
 How the `US-nn` and `AC-nn` identifiers are cited is in [General Requirements](general-requirements.md#identifier-rules).
 
 <h2>Table of contents</h2>
 
 - [Where Stories Live](#where-stories-live)
+- [The Issue Form](#the-issue-form)
 - [The Story](#the-story)
 - [Acceptance Criteria](#acceptance-criteria)
 - [MoSCoW Prioritization](#moscow-prioritization)
-- [Minimum Usable Product Candidate](#minimum-usable-product-candidate)
 - [Full Example](#full-example)
 
 ## Where Stories Live
 
 **Since: W2**
 
-User stories are created in Week 2 and stay current for the rest of the course.
+User stories are created from Week 2 onward and stay current for the rest of the course.
 Each story is a GitHub issue, and the `user-story` label identifies story issues unless the team chose another marker, per rule 6 below.
 
 **Required**
 
-1. Every story is one GitHub issue, opened from the [issue form](repository-requirements.md#issue-tracking).
+1. Every story is one GitHub issue, opened from the [issue form](#the-issue-form).
    It carries:
 
    - The title `US-nn: <story title>`.
-   - The story statement and its `Traces to` list, per [The Story](#the-story).
+   - The story statement, its `Value proposition`, its `Traces to` list when it has an origin, and its `Rests on` list when it rests on an assumption, per [The Story](#the-story).
    - The acceptance criteria, each starting with its `AC-nn`, per [Acceptance Criteria](#acceptance-criteria).
    - The priority reason, in the form's `Priority reason` field, and one `moscow:*` label, per [MoSCoW Prioritization](#moscow-prioritization).
    - The `user-story` label, applied by the form, or the marker the team chose instead, per rule 6.
-   - Optionally, notes and a checklist of the remaining work, so a contributor can work without leaving the issue.
+   - Optionally, notes and a list of its task issues, per [The Issue Form](#the-issue-form), so a contributor can work without leaving the issue.
 
-2. A story you intend to build stays open until it is delivered, then closes as completed.
+2. A story you intend to build stays open until the customer accepts it, per [Showing Working Software](customer-meetings-requirements.md#showing-working-software), then closes as completed.
+   The closing comment cites the `DEC-nnn` of the verdict that accepted it, and the verdict comment may be the closing comment.
+   A story the customer rejected stays open, and closing its tasks does not close it.
+   The rework is a new task issue, per [Closing A Task](task-issues-requirements.md#closing-a-task).
    A `Won't Have` story is closed as not planned, with a comment naming the reason.
    When the story was dropped, the comment that records the priority change may be the closing comment.
    A closed story stays in the list; the closing comment and the close date are its record.
 3. The issue is the record of change.
-   Edit the body so it always states the current story, and add a comment for each change to a story part: the title, the statement, `Traces to`, the acceptance criteria, the `moscow:*` label, or the priority reason.
+   Edit the body so it always states the current story, and add a comment for each change to a story part: the title, the statement, the `Value proposition`, `Traces to`, `Rests on`, the acceptance criteria, the `moscow:*` label, or the priority reason.
    The comment says what changed, names each `AC-nn` that changed, gives the reason, and links the `DEC-nnn` of the decision behind it when that decision has an entry, per [What Cites It](decisions-requirements.md#what-cites-it).
    GitHub dates the comment, so the comment does not need a typed date.
-   No comment is needed for edits made before the first meeting with the customer that shows the story, for notes and the checklist, or for a [formatting-only change](general-requirements.md#where-artifacts-live-in-the-repository).
+   No comment is needed for edits made before the first meeting with the customer that shows the story, for notes and the list of tasks, for a [formatting-only change](general-requirements.md#where-artifacts-live-in-the-repository), or for moving an `ASM-nn` from `Traces to` into `Rests on`, which leaves the link unchanged.
    Do not delete an issue or rewrite its body to hide a change; the edit history and the comment are the record.
 4. The **registry of identifiers** is the issue list filtered by the `user-story` label.
    It shows open and closed issues, so a `Won't Have` story keeps its `US-nn` and stays findable after it closes.
@@ -58,6 +61,32 @@ Each story is a GitHub issue, and the `user-story` label identifies story issues
 **Recommended**
 
 - Keep each story short enough to read in one sitting.
+
+## The Issue Form
+
+**Since: W2**
+
+The rules every issue shares, such as disabling blank issues, are in [Issue Tracking](repository-requirements.md#issue-tracking).
+
+**Required**
+
+1. Add `.github/ISSUE_TEMPLATE/user-story.yml`, an Issue Form with a field for each part of a story issue listed in [Where Stories Live](#where-stories-live), and the `user-story` label applied by the form, or the issue type or field that rule allows instead.
+   The statement, the `Value proposition` field, and the `Priority reason` field are required, and the `Traces to` and `Rests on` lists are optional.
+   `Value proposition` is a single-line input that takes one `VP-nn`, and `Traces to` and `Rests on` take one entry per line.
+   The acceptance criteria field is optional, per [Acceptance Criteria](#acceptance-criteria).
+2. Create the `user-story` label and the four `moscow:*` labels in [MoSCoW Prioritization](#moscow-prioritization), by any means.
+   The form applies `user-story`; the team applies one MoSCoW label per story.
+   A team that marks stories or priorities with an issue type or field, per [Where Stories Live](#where-stories-live), creates that type or field instead of the labels it replaces.
+3. A story issue is never a pull request's issue.
+   A story closes only on the customer's acceptance, per [Where Stories Live](#where-stories-live), and GitHub closes on merge an issue that a pull request names with a closing keyword, that its branch was created from, or that its Development sidebar links.
+   Work on a story is done in [task issues](task-issues-requirements.md#where-task-issues-live).
+
+**Recommended**
+
+- Put the URL pattern in the descriptions of the `Value proposition`, `Traces to`, and `Rests on` fields in `user-story.yml`, so whoever fills in the form sees it.
+- List a story's tasks in its body as a bullet list, such as `- #12`, so GitHub renders each task's title and whether it is open or closed.
+  Use the list rather than GitHub sub-issues: a sub-issue has one parent, so a task that serves several stories could sit under only one of them.
+  Closing the last task does not close the story.
 
 ## The Story
 
@@ -81,12 +110,13 @@ Its job is to make one need concrete enough that a reviewer can tell whether you
    It may carry a specific that the user or the customer has settled, such as the external system the user already works with.
    Such a specific goes in an acceptance criterion, or in a [constraint](product-vision-requirements.md#constraints) when it holds for the whole product, and goes in the story statement only when the specific thing is itself the need.
    An [acceptance criterion](#acceptance-criteria) may name the screen, the field, or the system state an observer checks, because that is what makes it runnable.
-4. Every story carries a `Traces to` list.
-   It contains exactly one `VP-nn`, the value proposition the story supports, and, optionally, the story's origins: the `GAP-nn` it closes, the `DEC-nnn` of a decision, or an action point it carries out.
-   It also names the `ASM-nn` of each [assumption](assumptions-requirements.md#what-rests-on-it) the story rests on.
+4. Every story names exactly one `VP-nn` in its `Value proposition` field, the value proposition the story supports.
+   A story with an origin carries a `Traces to` list of its origins: the `GAP-nn` it closes, the `DEC-nnn` of a decision, or an action point it carries out.
+   A `GAP-nn` in `Traces to` is one that the story's `VP-nn` names under `**Closes:**`, so the story, its value proposition, and its gap form one chain.
+   A story that rests on an [assumption](assumptions-requirements.md#what-rests-on-it) carries a separate `Rests on` list, naming the `ASM-nn` of each assumption it rests on, as a gap or a value proposition does.
    The `VP-nn` is how a story traces to the product vision, so the `VP-nn` of every story except a `Won't Have` story is one the vision's [goal](product-vision-requirements.md#goal) traces to.
    A story you intend to build that supports no such value proposition is outside the vision: add its `VP-nn` to the goal as a [team decision](decisions-requirements.md#the-decision), or make the story `Won't Have`.
-   Cite each entry as [Identifier Rules](general-requirements.md#identifier-rules) says, and link each Week 1 identifier per [Traceability Into Later Weeks](general-requirements.md#traceability-into-later-weeks).
+   Cite the `VP-nn` and each entry of both lists as [Identifier Rules](general-requirements.md#identifier-rules) says, and link each Week 1 identifier per [Traceability Into Later Weeks](general-requirements.md#traceability-into-later-weeks).
    Link each file on `main`, per [Issue Tracking](repository-requirements.md#issue-tracking).
    A need from outside the Week 1 research is handled per [Traceability Into Later Weeks](general-requirements.md#traceability-into-later-weeks).
 5. Every story except a `Won't Have` story is small enough to build and verify in one week.
@@ -137,7 +167,7 @@ Every priority is relative to the product you intend to finish in this course.
    - `Won't Have`, labelled `moscow:won't`: a need you have deliberately excluded.
 
 2. Every story carries a **priority reason** in the issue form's `Priority reason` field.
-   The reason says why the story has this priority and not the one above or below it, and names the [constraint](product-vision-requirements.md#constraints) when one drives it.
+   The reason says why the story has this priority and not the one above or below it, and cites the `CON-nn` of the [constraint](product-vision-requirements.md#constraints) that drives it, linked, when one does.
    A reason that restates the definition of the label is not a reason.
 3. Not every story you intend to build is `Must Have`: at least one of them is `Should Have` or `Could Have`.
    A list where everything is `Must Have` says nothing about what to build first.
@@ -145,11 +175,11 @@ Every priority is relative to the product you intend to finish in this course.
    It keeps its `US-nn` and its statement, and its issue closes as [Where Stories Live](#where-stories-live) says.
 5. The priorities do not contradict the [boundary](product-vision-requirements.md#boundary).
    No story you intend to build is something the boundary excludes.
-   A `Won't Have` reason that rests on the boundary quotes the boundary item.
+   A `Won't Have` reason that rests on the boundary cites the item's `BND-nn`, linked.
    The two are independent otherwise: a boundary item is a decision about the whole product and needs no matching story, and a `Won't Have` story is one written need that you excluded and need not appear in the boundary.
 6. To change a priority, change the label and the priority reason together, and record the change per [Where Stories Live](#where-stories-live).
    The comment names the old priority and the new one.
-7. The `Must Have` stories you would build first are the [minimum usable product candidate](#minimum-usable-product-candidate).
+7. The `Must Have` stories you would build first are the [minimum usable product candidate](minimum-usable-product-requirements.md#the-candidate).
 
 **Recommended**
 
@@ -166,30 +196,6 @@ A `Could Have` reason; the `Must Have` one is in the [full example](#full-exampl
 Could Have: a reminder email reduces no-shows, but a client who paid already has the link, so the core task finishes without it.
 ```
 
-## Minimum Usable Product Candidate
-
-**Since: W2**
-
-A **minimum usable product (MUP)** is the smallest product in which a user can complete the core tasks without getting frustrated.
-The candidate is your proposal for it, made before any product code exists, so the customer can argue with it while it is still cheap to change.
-
-**Required**
-
-1. Name the **core task** the candidate serves: one thing a user does from start to finish, written in one line.
-2. The candidate is a strict, non-empty subset of your `Must Have` stories that together let a user complete that core task end to end.
-   Stories that cover only part of the task are not a candidate.
-3. Every story in the candidate is needed: without any one of them, the core task no longer completes.
-4. Record the candidate per [Weekly Public Report](weekly-report-requirements.md#weekly-public-report).
-5. The candidate is a proposal, not a commitment.
-   The customer's verdict on it is a [decision](decisions-requirements.md#the-decision), and the candidate cites its `DEC-nnn`.
-6. A story the verdict drops from the candidate keeps its priority unless the customer also changed it.
-   A priority change is recorded per [MoSCoW Prioritization](#moscow-prioritization).
-
-**Recommended**
-
-- Two or three stories that a user can finish in one sitting.
-  A long candidate is a postponement, not a priority.
-
 ## Full Example
 
 Issue #42, a `Must Have` story:
@@ -202,10 +208,16 @@ Labels: moscow:must, user-story
 
 As a coach who sells sessions online, I want a client to pay when they book, so that an unpaid slot does not block a paying one for the rest of the week.
 
+### Value proposition
+
+[`VP-01`](https://github.com/<organization>/<repo>/blob/main/docs/research/value-proposition.md#vp-01)
+
 ### Traces to
 
-- [`VP-01`](https://github.com/<organization>/<repo>/blob/main/docs/research/value-proposition.md#vp-01)
 - [`GAP-01`](https://github.com/<organization>/<repo>/blob/main/docs/research/gap-analysis.md#gap-01)
+
+### Rests on
+
 - [`ASM-02`](https://github.com/<organization>/<repo>/blob/main/docs/assumptions.md#asm-02)
 
 ### Priority reason
@@ -214,9 +226,9 @@ Must Have: without it, an unpaid booking still holds a slot, which is the GAP-01
 
 ### Acceptance criteria
 
-1. `AC-01`: Given a paid meeting type with one free slot, when a client books that slot, then the slot is held while the client pays.
-2. `AC-02`: Given a held slot whose client has not paid, when the hold expires, then the slot is released back to the calendar.
-3. `AC-03`: Given a client who does not finish payment, when the hold expires, then the booking is not confirmed and no meeting link is created.
+1. AC-01: Given a paid meeting type with one free slot, when a client books that slot, then the slot is held while the client pays.
+2. AC-02: Given a held slot whose client has not paid, when the hold expires, then the slot is released back to the calendar.
+3. AC-03: Given a client who does not finish payment, when the hold expires, then the booking is not confirmed and no meeting link is created.
 
 ### Notes
 
@@ -241,14 +253,17 @@ Labels: moscow:won't, user-story
 
 As a coach, I want to sell a bundle of ten sessions, so that a returning client pays once.
 
+### Value proposition
+
+[`VP-01`](https://github.com/<organization>/<repo>/blob/main/docs/research/value-proposition.md#vp-01)
+
 ### Traces to
 
-- [`VP-01`](https://github.com/<organization>/<repo>/blob/main/docs/research/value-proposition.md#vp-01)
 - [`GAP-01`](https://github.com/<organization>/<repo>/blob/main/docs/research/gap-analysis.md#gap-01)
 
 ### Priority reason
 
-Won't Have: the boundary item "Sell recurring subscriptions or bundles" excludes it, and no user we met has asked to pay for sessions in advance.
+Won't Have: [`BND-03`](https://github.com/<organization>/<repo>/blob/main/docs/product-vision.md#bnd-03) excludes selling bundles, and no user we met has asked to pay for sessions in advance.
 ```
 
 The closing comment on issue #50:

@@ -52,7 +52,7 @@ See [Meeting Report](customer-meetings-requirements.md#meeting-report).
 
 **Since: W2**
 
-3. A story that rests on an assumption cites its `ASM-nn` in its `Traces to` list, per [The Story](user-stories-requirements.md#the-story).
+3. A story that rests on an assumption cites its `ASM-nn` in its `Rests on` list, per [The Story](user-stories-requirements.md#the-story).
 
 ## Checking And Settling
 
@@ -60,14 +60,15 @@ See [Meeting Report](customer-meetings-requirements.md#meeting-report).
 
 **Required**
 
-1. Each assumption says, under `**How to check:**`, how it could be checked and in which week.
-2. Each assumption has a `**Status:**`: `Open`, `Confirmed`, `Refuted`, or `Dropped`.
+1. Each assumption has a `**Status:**` as its first field: `Open`, `Confirmed`, `Refuted`, or `Dropped`.
    An assumption starts `Open`.
+2. Each assumption says, under `**How to check:**`, how it could be checked and in which week.
 3. When a decision or a check settles an assumption, change its status to `Confirmed` or `Refuted` and add an `**Outcome:**` that says what was found and links the evidence that settled it.
    A decision with an entry is cited by its `DEC-nnn`, per [What Cites It](decisions-requirements.md#what-cites-it).
-4. A refuted assumption keeps its entry.
+4. A refuted assumption keeps its entry, and `Refuted` is final.
    Change what rested on it, and record that change where the artifact records its changes.
-5. An assumption that nothing rests on any more is `Dropped`, per [Identifier Rules](general-requirements.md#identifier-rules).
+   The entry stays `Refuted` after nothing rests on it any more, because what was found matters more than what still cites it.
+5. An `Open` or `Confirmed` assumption that nothing rests on any more is `Dropped`, per [Identifier Rules](general-requirements.md#identifier-rules).
    Search `docs/research/` and the story issues for its `ASM-nn` to find what still rests on it.
 
 **Recommended**
@@ -86,21 +87,21 @@ See [Meeting Report](customer-meetings-requirements.md#meeting-report).
 
 Experts will upload materials per meeting type instead of sending them in chat after booking.
 
-**How to check:** run the materials prototype with two tutors in Week 2.
-**Status:** Open
+- **Status:** Open
+- **How to check:** run the materials prototype with two tutors in Week 2.
 
 ## ASM-02
 
 Clients will pay at booking rather than on the day.
 
-**How to check:** only the customer can settle it, so it is an [open question](../reports/week-01/meeting-report.md#open-questions) carried into the Week 2 validation meeting.
-**Status:** Confirmed
-**Outcome:** the customer will not accept a hold that confirms without payment, per [`DEC-006`](decisions.md#dec-006).
+- **Status:** Confirmed
+- **How to check:** only the customer can settle it, so it is an [open question](../reports/week-01/meeting-report.md#open-questions) carried into the Week 2 validation meeting.
+- **Outcome:** the customer will not accept a hold that confirms without payment, per [`DEC-006`](decisions.md#dec-006).
 
 ## ASM-03
 
 Clients open the booking link on a phone.
 
-**How to check:** ask two experts where their last ten bookings came from, in Week 2.
-**Status:** Open
+- **Status:** Open
+- **How to check:** ask two experts where their last ten bookings came from, in Week 2.
 ```

@@ -140,13 +140,13 @@ One section per alternative, headed by its ID alone, per [Identifier Rules](../r
 
 Calendly
 
-**Kind:** Direct competitor, hosted
-**Link:** https://calendly.com
-**Version looked at:** free plan, 2026-09-28
-**Depth of evaluation:** created an account, published two event types, connected a Google calendar, read the payment and video integration docs.
-Did not connect a payment provider.
-
-**Problem it solves:** gives an expert one bookable page so clients stop asking when they are free.
+- **Status:** Active
+- **Kind:** Direct competitor, hosted
+- **Link:** https://calendly.com
+- **Version looked at:** free plan, 2026-09-28
+- **Depth of evaluation:** created an account, published two event types, connected a Google calendar, read the payment and video integration docs.
+  Did not connect a payment provider.
+- **Problem it solves:** gives an expert one bookable page so clients stop asking when they are free.
 
 **Observations by property**
 
@@ -157,6 +157,7 @@ Did not connect a payment provider.
 | Calendar sync            | Google, Microsoft, and iCloud; double bookings are prevented after the first connection (account setup).          |
 | Cost model               | The free tier is functional; payments, teams, and routing are paid tiers (pricing page).                          |
 | Onboarding               | Published an event type in about ten minutes (hands-on).                                                          |
+| Client account           | The client books without an account and receives an email confirmation (hands-on booking).                        |
 
 **Strengths**
 

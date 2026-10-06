@@ -14,6 +14,7 @@ The assumptions the research rests on are in [Assumption Requirements](assumptio
 - [Gap Analysis](#gap-analysis)
 - [Value Proposition And Differentiation](#value-proposition-and-differentiation)
 - [Research Honesty Rules](#research-honesty-rules)
+- [Full Example](#full-example)
 
 ## Where Research Lives
 
@@ -29,6 +30,11 @@ The assumptions the research rests on are in [Assumption Requirements](assumptio
    - `value-proposition.md`: the `VP-nn` sections, per [Value Proposition And Differentiation](#value-proposition-and-differentiation).
 
 2. The research stays current after Week 1, per [Traceability Into Later Weeks](general-requirements.md#traceability-into-later-weeks).
+
+**Since: W2**
+
+3. The `**Status:**` of an `ALT-nn`, a `GAP-nn`, or a `VP-nn` is `Active` or `Dropped`, and a dropped one is kept per [Identifier Rules](general-requirements.md#identifier-rules).
+   An alternative is dropped when it turns out not to be an alternative for this problem, such as a product for another kind of user.
 
 ## The Research Chain
 
@@ -76,6 +82,24 @@ This section says what counts as an alternative and what must be recorded about 
 5. Every alternative must be something you looked at properly.
    A product you only read the landing page of does not count as evaluated.
    Say how deep you went, and be honest when it was shallow.
+
+**Since: W2**
+
+6. An `ALT-nn` section records rule 4 in these parts, in this order, after the product's name on its first line:
+
+   | Part                              | What it says                                                                                                            |
+   | --------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
+   | `**Status:**`                     | `Active` or `Dropped`, per [Where Research Lives](#where-research-lives)                                                |
+   | `**Kind:**`                       | Which of the three kinds in rule 2 it is, and how it is run, such as hosted or self-hosted                              |
+   | `**Link:**`                       | The product                                                                                                             |
+   | `**Version looked at:**`          | The version or plan, and the date you looked at it                                                                      |
+   | `**Depth of evaluation:**`        | What you did with it, and what you did not, per rule 5                                                                  |
+   | `**Problem it solves:**`          | What problem it solves and for whom                                                                                     |
+   | `**Dropped:**`                    | Only on a dropped alternative, per [Identifier Rules](general-requirements.md#identifier-rules)                         |
+   | `**Observations by property**`    | A table with the columns `Property` and `Observation`, one row per property, each observation naming where it was found |
+   | `**Strengths**`, `**Weaknesses**` | Two lists, each item tied to something you observed                                                                     |
+
+   The fields are a bulleted list, per [Identifier Rules](general-requirements.md#identifier-rules), with `**Dropped:**` last in it; the table and the two lists follow it under their bold labels, so that `**Dropped:**` does not render as an item of `**Weaknesses**`.
 
 **Recommended**
 
@@ -162,14 +186,30 @@ It is not a feature you happen to want, and it is not a missing feature that nob
    This is the most useful part of the file, because it is where the customer can see what you decided against and overrule you.
 5. Do not manufacture gaps to justify work.
    A week with two solid gaps is a good week.
-6. A gap dropped after Week 1 stays in the file, marked as dropped per [Identifier Rules](general-requirements.md#identifier-rules), and its entry says which value propositions and user stories the drop affected.
-   When a decision dropped it, the reason cites the decision's `DEC-nnn` when it has an entry, or gives the decision's reason otherwise, per [What Cites It](decisions-requirements.md#what-cites-it).
+6. A gap dropped after Week 1 stays in the file, marked as dropped per [Identifier Rules](general-requirements.md#identifier-rules), which also says how the reason cites the decision that dropped it.
+   The gap does not list what cited it; each value proposition and story that did records the drop.
 7. A gap that rests on an [assumption](assumptions-requirements.md#the-assumption) names each `ASM-nn` under `**Rests on:**`, and links each one to its section in `docs/assumptions.md`, per [What Rests On It](assumptions-requirements.md#what-rests-on-it).
 8. A gap that a decision changed without dropping it states its current version, and records each change as one bullet under `**Changed:**`: what changed, and the decision's `DEC-nnn`, linked, when it has an entry, or its reason otherwise, per [What Cites It](decisions-requirements.md#what-cites-it).
 
+**Since: W2**
+
+9. A `GAP-nn` section states the gap on its first line, and records the four tests in these fields, in this order:
+
+   | Field                                       | What it says                                                                                                                                                |
+   | ------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+   | `**Status:**`                               | `Active` or `Dropped`, per [Where Research Lives](#where-research-lives)                                                                                    |
+   | `**Who needs it and what they cannot do:**` | The user and the job they cannot do well today                                                                                                              |
+   | `**Evidence:**`                             | The properties and the `ALT-nn` that established it, with the shape from the comparison quoted, per [Properties And Comparison](#properties-and-comparison) |
+   | `**What closing it looks like:**`           | What a product that closed it would do, in a sentence                                                                                                       |
+   | `**Buildable by us in this course:**`       | Whether a team of 3–4 can build it in the course, and why                                                                                                   |
+   | `**Confidence:**`                           | How strongly the evidence supports it, and why                                                                                                              |
+   | `**Rests on:**`                             | Each `ASM-nn`, per rule 7, only when it rests on one                                                                                                        |
+   | `**Changed:**`                              | Each change, per rule 8, only when a decision changed it                                                                                                    |
+   | `**Dropped:**`                              | Only on a dropped gap, per rule 6                                                                                                                           |
+
 **Recommended**
 
-- Sort gaps by how strongly the evidence supports them, and say how strong the evidence is.
+- Sort gaps by how strongly the evidence supports them.
 - Where the alternatives all handle something badly, say whether that is a real need or just a shared inconvenience you could live with.
 
 ## Value Proposition And Differentiation
@@ -194,6 +234,26 @@ It is not a feature you happen to want, and it is not a missing feature that nob
 7. A value proposition that rests on an [assumption](assumptions-requirements.md#the-assumption) names each `ASM-nn` under `**Rests on:**`, and links each one to its section in `docs/assumptions.md`, per [What Rests On It](assumptions-requirements.md#what-rests-on-it).
 8. A value proposition that a decision changed without dropping it records the change under `**Changed:**`, as a gap does, per [Gap Analysis](#gap-analysis).
 
+**Since: W2**
+
+9. A `VP-nn` section states the claim on its first line, and records it in these fields, in this order:
+
+   | Field                                          | What it says                                                                                          |
+   | ---------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
+   | `**Status:**`                                  | `Active` or `Dropped`, per [Where Research Lives](#where-research-lives)                              |
+   | `**User:**`                                    | The user you target, per rule 1                                                                       |
+   | `**Problem:**`                                 | The problem they have                                                                                 |
+   | `**What we do that the alternatives do not:**` | What your product does about it, per rule 6                                                           |
+   | `**Closes:**`                                  | Each `GAP-nn`, linked, per rule 3                                                                     |
+   | `**Rests on:**`                                | Each `ASM-nn`, per rule 7, only when it rests on one                                                  |
+   | `**What it costs:**`                           | The trade-off, per rule 4                                                                             |
+   | `**How a competitor would respond:**`          | Per rule 5                                                                                            |
+   | `**Changed:**`                                 | Each change, per rule 8, only when a decision changed it                                              |
+   | `**Dropped:**`                                 | Only on a dropped value proposition, per [Identifier Rules](general-requirements.md#identifier-rules) |
+
+10. A value proposition keeps a dropped `GAP-nn` under `**Closes:**`, and records the drop as a bullet under `**Changed:**` that cites the decision as rule 8 says.
+    A value proposition that closes no gap that is still `Active` is dropped too, per [Identifier Rules](general-requirements.md#identifier-rules).
+
 **Example**
 
 ```markdown
@@ -201,15 +261,16 @@ It is not a feature you happen to want, and it is not a missing feature that nob
 
 One link that carries the whole booking.
 
-**User:** independent coach who sells one-hour sessions online.
-**Problem:** the booking, the payment, and the meeting materials live in three tools, so unpaid clients block slots and prepared clients are rare.
-**What we do that the alternatives do not:** one link where the client books a slot, pays, and receives the video link and the materials, with no second account.
-**Closes:** [GAP-01](gap-analysis.md#gap-01).
-**Rests on:** [ASM-01](../assumptions.md#asm-01), [ASM-02](../assumptions.md#asm-02), [ASM-03](../assumptions.md#asm-03).
-**What it costs:** the expert connects a payment provider before the first booking and uploads the materials per meeting type.
-This is a real setup cost.
-**How a competitor would respond:** Calendly or Cal.com could bundle payments and materials into the free tier.
-The defensible part is the single flow and its pricing, not the fields.
+- **Status:** Active
+- **User:** independent coach who sells one-hour sessions online.
+- **Problem:** the booking, the payment, and the meeting materials live in three tools, so unpaid clients block slots and prepared clients are rare.
+- **What we do that the alternatives do not:** one link where the client books a slot, pays, and receives the video link and the materials, with no second account.
+- **Closes:** [GAP-01](gap-analysis.md#gap-01).
+- **Rests on:** [ASM-01](../assumptions.md#asm-01), [ASM-02](../assumptions.md#asm-02), [ASM-03](../assumptions.md#asm-03).
+- **What it costs:** the expert connects a payment provider before the first booking and uploads the materials per meeting type.
+  This is a real setup cost.
+- **How a competitor would respond:** Calendly or Cal.com could bundle payments and materials into the free tier.
+  The defensible part is the single flow and its pricing, not the fields.
 ```
 
 **Recommended**
@@ -235,3 +296,85 @@ These rules are about the honesty of your research, not about the quality of you
    A sentence that could be pasted into any team's report without changing anything is a sentence to delete.
    A template sentence is one with no product name, no identifier such as `ALT-nn`, and no date in it.
 6. A week where you learned that your original idea is wrong, and you can show why, is a better week than a week where nothing was tested.
+
+## Full Example
+
+One section from each of three files in `docs/research/`, after the Week 2 validation meeting.
+`comparison.md` is in [Properties And Comparison](#properties-and-comparison).
+
+From `docs/research/alternatives.md`:
+
+```markdown
+## ALT-01
+
+Calendly
+
+- **Status:** Active
+- **Kind:** Direct competitor, hosted
+- **Link:** https://calendly.com
+- **Version looked at:** free plan, 2026-09-28
+- **Depth of evaluation:** created an account, published two event types, connected a Google calendar, read the payment and video integration docs.
+  Did not connect a payment provider.
+- **Problem it solves:** gives an expert one bookable page so clients stop asking when they are free.
+
+**Observations by property**
+
+| Property                 | Observation                                                                                                       |
+| ------------------------ | ----------------------------------------------------------------------------------------------------------------- |
+| What the booking carries | Time and an event type; the video link is an integration, and materials are not part of the booking (product UI). |
+| Payment                  | Stripe and PayPal on paid plans, not on the free plan (pricing and payment integration docs).                     |
+| Calendar sync            | Google, Microsoft, and iCloud; double bookings are prevented after the first connection (account setup).          |
+| Cost model               | The free tier is functional; payments, teams, and routing are paid tiers (pricing page).                          |
+| Onboarding               | Published an event type in about ten minutes (hands-on).                                                          |
+| Client account           | The client books without an account and receives an email confirmation (hands-on booking).                        |
+
+**Strengths**
+
+- The booking flow is mature and predictable.
+  Verified by publishing two event types and walking through a booking.
+- Calendar sync works after the first connection.
+  Verified by connecting a Google calendar and taking a test booking.
+
+**Weaknesses**
+
+- A paid plan and a separate payment account stand between the expert and a paid booking (see GAP-01).
+- The booking carries no materials, so the client arrives without the agenda.
+```
+
+From `docs/research/gap-analysis.md`:
+
+```markdown
+## GAP-01
+
+Bookings that arrive unpaid and unprepared.
+
+- **Status:** Active
+- **Who needs it and what they cannot do:** an independent expert who sells one-hour consultations online.
+  The client books and pays in one place, and the meeting link and materials arrive with the booking; the alternatives schedule the time, and the payment, the video link, and the materials each live somewhere else.
+- **Evidence:** `What the booking carries` row in [the comparison](comparison.md): no alternative carries payment, video, and materials in the same booking ([ALT-01](alternatives.md#alt-01), [ALT-02](alternatives.md#alt-02), [ALT-03](alternatives.md#alt-03), [ALT-04](alternatives.md#alt-04)).
+- **What closing it looks like:** one link where the client picks a slot, pays, and receives the video link and the materials, with calendar sync behind it.
+- **Buildable by us in this course:** yes.
+  It is one booking flow, one payment integration, and one upload field, and it is the reason the project exists.
+- **Confidence:** high.
+  Consistent across all four alternatives, and two of them are mature enough that this is not an oversight.
+- **Rests on:** [ASM-02](../assumptions.md#asm-02).
+```
+
+From `docs/research/value-proposition.md`:
+
+```markdown
+## VP-01
+
+One link that carries the whole booking.
+
+- **Status:** Active
+- **User:** independent coach who sells one-hour sessions online.
+- **Problem:** the booking, the payment, and the meeting materials live in three tools, so unpaid clients block slots and prepared clients are rare.
+- **What we do that the alternatives do not:** one link where the client books a slot, pays, and receives the video link and the materials, with no second account.
+- **Closes:** [GAP-01](gap-analysis.md#gap-01).
+- **Rests on:** [ASM-01](../assumptions.md#asm-01), [ASM-02](../assumptions.md#asm-02), [ASM-03](../assumptions.md#asm-03).
+- **What it costs:** the expert connects a payment provider before the first booking and uploads the materials per meeting type.
+  This is a real setup cost.
+- **How a competitor would respond:** Calendly or Cal.com could bundle payments and materials into the free tier.
+  The defensible part is the single flow and its pricing, not the fields.
+```

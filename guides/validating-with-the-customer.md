@@ -48,7 +48,7 @@ The assignment lists what this week's meeting has to settle; your target turns t
 
 Re-read the previous meeting report before you write anything.
 Its open questions are still open, and its action points are due; if you have carried one out, the customer should hear how it went.
-This meeting's report records each one's outcome in `## Previous action points`, per [Meeting Report](../requirements/customer-meetings-requirements.md#meeting-report).
+This meeting's report records each action point's outcome in `## Previous action points` and each question's answer in `## Previous open questions`, per [Meeting Report](../requirements/customer-meetings-requirements.md#meeting-report).
 
 ## Step 2: Derive The Questions From The Target
 
@@ -113,7 +113,7 @@ Those are the questions that produce a `## Disagreements` row.
 
 Each decision gets a `DEC-nnn` entry in `docs/decisions.md`, with who made it and why, and the meeting report's `## Decisions` lists the meeting's entries, per [Decision Requirements](../requirements/decisions-requirements.md).
 The entry does not list what the decision changed.
-Instead, each thing it changed cites its `DEC-nnn`: usually a story, with the `AC-nn` when a specific criterion changed, an assumption it settled, or a constraint or boundary item in the vision, per [What Cites It](../requirements/decisions-requirements.md#what-cites-it).
+Instead, each thing it changed cites its `DEC-nnn`: usually a story, with the `AC-nn` when a specific criterion changed, an assumption it settled, or a `CON-nn` or `BND-nn` in the vision, per [What Cites It](../requirements/decisions-requirements.md#what-cites-it).
 A decision about something that does not exist yet is cited when that thing is written.
 Searching for a `DEC-nnn` is how a reader sees whether the week was a test or a formality.
 
