@@ -45,6 +45,7 @@
               deckFont
               inputs.backlog-md.packages.${system}.default
               pkgs.ripgrep
+              pkgs.lychee
             ];
             shellHook = ''
               export BACKLOG_CWD="$PWD"

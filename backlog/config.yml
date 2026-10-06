@@ -2,7 +2,7 @@ project_name: "ITPD"
 default_status: "To Do"
 statuses: ["To Do", "In Progress", "Done"]
 labels: []
-definition_of_done: ["All acceptance criteria are satisfied", "Changed Markdown files are formatted: `pnpm run format:markdown`", "`pnpm run lint:markdown` passes", "`pnpm run test:markdown-format` and `pnpm run test:markdown-rules` pass", "`pnpm run check:lectures` passes", "Implementation notes record the decisions made and the validation results"]
+definition_of_done: ["All acceptance criteria are satisfied", "Changed Markdown files are formatted: `pnpm run format:markdown`", "`pnpm run lint:markdown` passes", "`pnpm run test:markdown-format` and `pnpm run test:markdown-rules` pass", "`pnpm run check:lectures` passes", "`pnpm run check:links` passes", "Implementation notes record the decisions made and the validation results"]
 date_format: yyyy-mm-dd
 max_column_width: 20
 default_editor: "vim"

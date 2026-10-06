@@ -11,6 +11,7 @@
     "fmt:check": "oxfmt --check scripts prettier eslint eslint.config.ts",
     "build:lectures": "node scripts/lectures.mjs build",
     "check:lectures": "node scripts/lectures.mjs check",
+    "check:links": "lychee --no-progress --include-fragments --max-concurrency 2 --accept 200,206,429 .",
     "lint:markdown": "node scripts/markdown.mjs lint",
     "format:markdown": "node scripts/markdown.mjs format",
     "format:markdown:check": "node scripts/markdown.mjs format:check",

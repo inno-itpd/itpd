@@ -25,6 +25,12 @@
       "type": "shell",
       "command": "pnpm run check:lectures",
       "problemMatcher": []
+    },
+    {
+      "label": "check:links",
+      "type": "shell",
+      "command": "pnpm run check:links",
+      "problemMatcher": []
     }
   ]
 }

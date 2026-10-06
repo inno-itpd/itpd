@@ -1,0 +1,5 @@
+# Backlog task files and the local backlog.md notes are not course material.
+exclude_path = ['^(\./)?backlog(/|\.md$)']
+
+# semver.org takes about 17 s to answer, close to lychee's 20 s timeout.
+exclude = ['^https://semver\.org/']

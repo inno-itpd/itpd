@@ -40,10 +40,12 @@ The toolchain is pinned: Node 26 and pnpm, both from `flake.nix`.
 Run `pnpm run format:markdown` before committing.
 `pnpm run format:markdown:check` and `pnpm run lint:markdown` are the gates.
 The decks have their own gate, `pnpm run check:lectures`, and `lectures/AGENTS.md` owns it.
+Links have theirs, `pnpm run check:links`, which runs `lychee` from the shell over the directory, so it skips gitignored paths such as `tmp/`.
+It checks heading anchors with `--include-fragments` and fetches external links, so it needs network.
 
 | File                                      | Owns                                                                                                                                                                                                     |
 | ----------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `flake.nix`                               | The pinned development shell: Node 26, pnpm, typst, the `backlog` CLI, ripgrep, and the deck font, with a `FONTCONFIG_FILE` of its own.                                                                  |
+| `flake.nix`                               | The pinned development shell: Node 26, pnpm, typst, the `backlog` CLI, ripgrep, lychee, and the deck font, with a `FONTCONFIG_FILE` of its own.                                                          |
 | `.envrc`                                  | `use flake`, so `direnv` loads the shell on entering the directory.                                                                                                                                      |
 | `scripts/markdown.mjs`                    | Formats, checks, and lints every tracked `.md` file except `.opencode/`, `.agents/`, and `backlog/`.                                                                                                     |
 | `scripts/lectures.mjs`                    | Builds and checks every `lectures/lecture-N.typ` against its committed PDF, with the Typst version and the build epoch pinned.                                                                           |
@@ -54,6 +56,8 @@ The decks have their own gate, `pnpm run check:lectures`, and `lectures/AGENTS.m
 | `.github/actions/prepare/action.yml`      | The shared CI setup for the Markdown jobs: pnpm, Node 26, and a frozen-lockfile install. A job checks out before it, because a local action has to be on disk. The lectures job does not use it.         |
 | `.github/workflows/markdown.yml`          | CI: the format check, the lint, and both plugin fixtures, as three separate jobs, all through `prepare`.                                                                                                 |
 | `.github/workflows/lectures.yml`          | CI: Nix installed by a SHA-pinned action, the shell closure restored by `nix-community/cache-nix-action`, then the deck check through `nix develop`. The Markdown jobs use `prepare`; this one does not. |
+| `.github/workflows/lychee.yml`            | CI: the link check through `lycheeverse/lychee-action` on pull requests and `main`, without `--include-fragments`, so anchors are checked only by `pnpm run check:links`.                                |
+| `lychee.toml`                             | Link check configuration that both `pnpm run check:links` and CI load: the excluded paths, `backlog/` and `backlog.md`, and the excluded URLs, each with a comment saying why.                           |
 
 Their fixtures run with `pnpm run test:markdown-format` and `pnpm run test:markdown-rules`, and all four gates run in CI on every pull request.
 `eslint.config.ts` enables the `eslint-markdown` `recommended` set, which lints the same GFM AST as `@eslint/markdown` and so adds rules without a second parse.
@@ -84,7 +88,7 @@ The CLI has `archive` but no `delete`, so removing a task that was never committ
 | `backlog instructions overview`         | The CLI's own workflow, before any task lifecycle action                                |
 
 Run `backlog <command> --help` before an unfamiliar command.
-The `Done` criteria come from `definition_of_done` in `backlog/config.yml`, which is this repository's four Markdown gates, the deck check, and implementation notes that record the decisions made and the validation results.
+The `Done` criteria come from `definition_of_done` in `backlog/config.yml`, which is this repository's four Markdown gates, the deck check, the link check, and implementation notes that record the decisions made and the validation results.
 
 ### Maintained Elsewhere
 
