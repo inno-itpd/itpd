@@ -94,6 +94,7 @@ When you cannot describe what a product closing this gap would do in a sentence,
 
 Bookings that arrive unpaid and unprepared.
 
+- **Status:** Active
 - **Who needs it and what they cannot do:** an independent expert who sells one-hour consultations online.
   The client books and pays in one place, and the meeting link and materials arrive with the booking; the alternatives schedule the time, and the payment, the video link, and the materials each live somewhere else.
 - **Evidence:** `What the booking carries` row in [the comparison](comparison.md) — no alternative carries payment, video, and materials in the same booking (ALT-01, ALT-02, ALT-03, ALT-04).
@@ -117,6 +118,7 @@ One short positioning statement, tied to a gap, honest about its cost.
 
 One link that carries the whole booking.
 
+- **Status:** Active
 - **User:** independent coach who sells one-hour sessions online.
 - **Problem:** the booking, the payment, and the meeting materials live in three tools, so unpaid clients block slots and prepared clients are rare.
 - **What we do that the alternatives do not:** one link where the client books a slot, pays, and receives the video link and the materials, with no second account.

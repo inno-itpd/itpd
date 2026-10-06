@@ -115,6 +115,8 @@ This week:
 4. In the same pull request, write the fields of each section in `docs/research/` as a bulleted list, per [Identifier Rules](../requirements/general-requirements.md#identifier-rules).
    Leave `reports/week-01/` in its Week 1 form, apart from the repointed links.
    `docs/decisions.md`, `docs/assumptions.md`, and every report from Week 2 on use the list from the start.
+5. In the same pull request, start the fields of each `ALT-nn`, `GAP-nn`, and `VP-nn` section with `**Status:**`, and move the reason and the date of each one you dropped into its `**Dropped:**` field, per [Where Research Lives](../requirements/research-requirements.md#where-research-lives) and [Identifier Rules](../requirements/general-requirements.md#identifier-rules).
+   A dropped gap no longer lists the value propositions it affected.
 
 ## Part 5: State The Product Vision
 
@@ -311,7 +313,7 @@ A transcript under item 5 goes in an appendix, which the two pages do not count.
 - [ ] `docs/decisions.md` with a `DEC-nnn` section for each Week 1 decision, each cited from what it changed, if it changed anything yet ([Part 2](#part-2-move-the-week-1-decisions-into-the-decisions-log)).
 - [ ] `docs/assumptions.md` with an `ASM-nn` section for each Week 1 assumption, and no table left in `value-proposition.md` ([Part 3](#part-3-move-the-week-1-assumptions-into-the-assumptions-log)).
 - [ ] Earlier weeks' Markdown fixed in a formatting-only pull request, merged before the Markdown check ([Part 4](#part-4-check-the-markdown-in-ci)).
-- [ ] `ALT-nn`, `GAP-nn`, and `VP-nn` headings cut down to their identifiers, their fields written as bulleted lists, and every link to them repointed, in a pull request of its own ([Part 4](#part-4-check-the-markdown-in-ci)).
+- [ ] `ALT-nn`, `GAP-nn`, and `VP-nn` headings cut down to their identifiers, their fields written as bulleted lists starting with `**Status:**`, and every link to them repointed, in a pull request of its own ([Part 4](#part-4-check-the-markdown-in-ci)).
 - [ ] Markdown check and link check green on `main` ([Part 4](#part-4-check-the-markdown-in-ci)).
 - [ ] `docs/product-vision.md`, with at least 3 boundary items and the system context diagram ([Part 5](#part-5-state-the-product-vision)).
 - [ ] The story issues ([Part 6](#part-6-write-the-user-stories-as-issues)).

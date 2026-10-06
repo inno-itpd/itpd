@@ -93,14 +93,14 @@ The whole file is in [Full Example](#full-example).
    A link between two artifacts is recorded once, in the artifact that rests on the other, as for an [assumption](assumptions-requirements.md#what-rests-on-it).
 2. Each artifact the decision changed cites its `DEC-nnn`, linked, where that artifact records its changes:
 
-   - A dropped `GAP-nn` or `VP-nn`, in the reason it was dropped, per [Identifier Rules](general-requirements.md#identifier-rules).
+   - A dropped item, such as a `GAP-nn` or a `VP-nn`, in the reason it was dropped, per [Identifier Rules](general-requirements.md#identifier-rules).
    - A `GAP-nn` or `VP-nn` the decision changed without dropping it, under its `**Changed:**`, per [Gap Analysis](research-requirements.md#gap-analysis).
    - A settled assumption, in its `**Outcome:**`, per [Checking And Settling](assumptions-requirements.md#checking-and-settling).
 
 3. A decision that changes an artifact which does not exist yet is cited when that artifact is written.
 4. To find what a decision changed, search the repository and the issues for its `DEC-nnn`.
    A decision that nothing cites, and whose `**Why:**` does not say it confirmed the current direction, has not changed anything yet.
-5. A decision without an entry is recorded by its reason, which stands where the `DEC-nnn` would: in a dropped `GAP-nn` or `VP-nn`'s reason, in its `**Changed:**` bullet, or in a story's change comment.
+5. A decision without an entry is recorded by its reason, which stands where the `DEC-nnn` would: in a dropped item's reason, in its `**Changed:**` bullet, or in a story's change comment.
 
 **Example**
 

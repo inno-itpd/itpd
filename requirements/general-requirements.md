@@ -75,12 +75,12 @@ It is the short version of the requirements, states what is expected of you as a
 2. An identifier, once issued, is never changed, reused, or reassigned, including when the artifact is edited later in the course.
 3. Gaps in a sequence are expected and correct.
    A dropped `GAP-03` leaves a hole; it does not cause renumbering.
-4. A dropped item keeps its identifier and its entry, marked as dropped with a reason and the date.
+4. A dropped item keeps its identifier and its entry, marked as dropped with a reason and the date, in the form rule 11 gives.
    A decision is dropped by reversing it, per [Reversing A Decision](decisions-requirements.md#reversing-a-decision).
 5. The heading of an identifier's section is the identifier alone, such as `## DEC-001`, so the section's anchor is `#dec-001` and a link to it survives rewording the item.
    The first line under the heading names the item or states it in one sentence.
 6. Every reference between artifacts uses the identifier, not the title, so that renaming a title does not break the chain.
-7. `US-nn` and `AC-nn` are the exceptions to rules 4 and 5, because they live in a story issue rather than in a section of their own.
+7. `US-nn` and `AC-nn` are the exceptions to rules 4 and 5, and to rules 10 to 12, because they live in a story issue rather than in a section of their own.
    [Where Stories Live](user-stories-requirements.md#where-stories-live) says how a dropped story is kept, and [Acceptance Criteria](user-stories-requirements.md#acceptance-criteria) says how a criterion is numbered, retired, and cited.
 8. Action points are not an identifier family, and there is no `ACT-nn`.
    Cite an action point by its meeting report's path and `#action-points` anchor, with the action quoted.
@@ -91,6 +91,27 @@ It is the short version of the requirements, states what is expected of you as a
 
 9. The fields of an identifier's section, such as `**Status:**` or `**Rests on:**`, follow its first line as a bulleted list, one `- **Label:** value` bullet per field, so that each field renders on a line of its own.
    A value of several sentences continues on indented lines inside its bullet, and a field whose value is a list, such as `**Changed:**`, nests that list under its bullet.
+10. Every identifier with a section of its own carries `**Status:**` as its first field.
+    The file that owns the family lists its values.
+    A decision's are in [The Decision](decisions-requirements.md#the-decision), and every other family has a `Dropped` value.
+11. A dropped item keeps its heading, its first line, and its other fields.
+    Its `**Status:**` becomes `Dropped`, and a `**Dropped:**` field, after the others, gives the date and the reason.
+    When a decision dropped it, the reason cites the decision's `DEC-nnn`, linked, when it has an entry, or gives the decision's reason otherwise, per [What Cites It](decisions-requirements.md#what-cites-it).
+12. A dropped item does not list what its drop affected.
+    Each artifact that rested on it records the change where that artifact records its changes, so the link is recorded once, in the artifact that rests on the other.
+
+**Example**
+
+A gap the kickoff dropped, in `docs/research/gap-analysis.md`, with its other fields left out:
+
+```markdown
+## GAP-04
+
+Experts who need two of them booked for one session.
+
+- **Status:** Dropped
+- **Dropped:** 2026-09-29, per [`DEC-002`](../decisions.md#dec-002): the experts work alone, so nobody needs two of them booked at once.
+```
 
 ## Traceability Into Later Weeks
 

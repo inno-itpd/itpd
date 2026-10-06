@@ -65,9 +65,10 @@ See [Meeting Report](customer-meetings-requirements.md#meeting-report).
 2. Each assumption says, under `**How to check:**`, how it could be checked and in which week.
 3. When a decision or a check settles an assumption, change its status to `Confirmed` or `Refuted` and add an `**Outcome:**` that says what was found and links the evidence that settled it.
    A decision with an entry is cited by its `DEC-nnn`, per [What Cites It](decisions-requirements.md#what-cites-it).
-4. A refuted assumption keeps its entry.
+4. A refuted assumption keeps its entry, and `Refuted` is final.
    Change what rested on it, and record that change where the artifact records its changes.
-5. An assumption that nothing rests on any more is `Dropped`, per [Identifier Rules](general-requirements.md#identifier-rules).
+   The entry stays `Refuted` after nothing rests on it any more, because what was found matters more than what still cites it.
+5. An `Open` or `Confirmed` assumption that nothing rests on any more is `Dropped`, per [Identifier Rules](general-requirements.md#identifier-rules).
    Search `docs/research/` and the story issues for its `ASM-nn` to find what still rests on it.
 
 **Recommended**

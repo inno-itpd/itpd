@@ -140,6 +140,7 @@ One section per alternative, headed by its ID alone, per [Identifier Rules](../r
 
 Calendly
 
+- **Status:** Active
 - **Kind:** Direct competitor, hosted
 - **Link:** https://calendly.com
 - **Version looked at:** free plan, 2026-09-28

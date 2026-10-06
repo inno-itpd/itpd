@@ -30,6 +30,11 @@ The assumptions the research rests on are in [Assumption Requirements](assumptio
 
 2. The research stays current after Week 1, per [Traceability Into Later Weeks](general-requirements.md#traceability-into-later-weeks).
 
+**Since: W2**
+
+3. The `**Status:**` of an `ALT-nn`, a `GAP-nn`, or a `VP-nn` is `Active` or `Dropped`, and a dropped one is kept per [Identifier Rules](general-requirements.md#identifier-rules).
+   An alternative is dropped when it turns out not to be an alternative for this problem, such as a product for another kind of user.
+
 ## The Research Chain
 
 **Since: W1**
@@ -162,8 +167,8 @@ It is not a feature you happen to want, and it is not a missing feature that nob
    This is the most useful part of the file, because it is where the customer can see what you decided against and overrule you.
 5. Do not manufacture gaps to justify work.
    A week with two solid gaps is a good week.
-6. A gap dropped after Week 1 stays in the file, marked as dropped per [Identifier Rules](general-requirements.md#identifier-rules), and its entry says which value propositions and user stories the drop affected.
-   When a decision dropped it, the reason cites the decision's `DEC-nnn` when it has an entry, or gives the decision's reason otherwise, per [What Cites It](decisions-requirements.md#what-cites-it).
+6. A gap dropped after Week 1 stays in the file, marked as dropped per [Identifier Rules](general-requirements.md#identifier-rules), which also says how the reason cites the decision that dropped it.
+   The gap does not list what rested on it; each value proposition and story that did records the drop.
 7. A gap that rests on an [assumption](assumptions-requirements.md#the-assumption) names each `ASM-nn` under `**Rests on:**`, and links each one to its section in `docs/assumptions.md`, per [What Rests On It](assumptions-requirements.md#what-rests-on-it).
 8. A gap that a decision changed without dropping it states its current version, and records each change as one bullet under `**Changed:**`: what changed, and the decision's `DEC-nnn`, linked, when it has an entry, or its reason otherwise, per [What Cites It](decisions-requirements.md#what-cites-it).
 
@@ -201,6 +206,7 @@ It is not a feature you happen to want, and it is not a missing feature that nob
 
 One link that carries the whole booking.
 
+- **Status:** Active
 - **User:** independent coach who sells one-hour sessions online.
 - **Problem:** the booking, the payment, and the meeting materials live in three tools, so unpaid clients block slots and prepared clients are rare.
 - **What we do that the alternatives do not:** one link where the client books a slot, pays, and receives the video link and the materials, with no second account.
