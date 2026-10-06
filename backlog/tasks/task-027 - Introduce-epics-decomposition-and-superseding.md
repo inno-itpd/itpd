@@ -4,6 +4,7 @@ title: 'Introduce epics: decomposition and superseding'
 status: To Do
 assignee: []
 created_date: '2026-10-04 22:33'
+updated_date: '2026-10-06 12:26'
 labels:
   - docs
 dependencies: []
@@ -35,3 +36,9 @@ TASK-026 removed superseding and split parents from Week 2, because W2 is about 
 - [ ] #4 `pnpm run test:markdown-format` and `pnpm run test:markdown-rules` pass
 - [ ] #5 `pnpm run check:lectures` passes
 <!-- DOD:END -->
+
+## Implementation Notes
+
+<!-- SECTION:NOTES:BEGIN -->
+2026-10-06: TASK-083 makes a story close as completed only on the customer's accepting verdict, citing its DEC-nnn, while a rejected story stays open. TASK-082 moves ASM-nn out of `Traces to` into `Rests on`. "Superseded" will be a third close state beside completed and not planned. The parent US-nn origin in AC #4 goes in `Traces to`, not `Rests on`.
+<!-- SECTION:NOTES:END -->
