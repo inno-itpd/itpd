@@ -79,6 +79,7 @@ They may be narrower or more technical than the criteria of the story it works t
    Create its branch from that task where GitHub supports it.
    A task that needs more than one pull request is split into more tasks.
    A Dependabot pull request has no task issue, because the bot opens it; [Pinning Third-Party Actions](repository-requirements.md#pinning-third-party-actions) says how it is handled.
+   Neither has the pull request of a workflow that moves Done tracker tasks, because a workflow opens it; [Moving Done Tasks Out Of The Active List](local-task-tracking-requirements.md#moving-done-tasks-out-of-the-active-list) says how it is handled.
 2. Work on a story is one or more task issues whose `Story` field names it, and a story small enough for one pull request has one task.
    The rework on a story the customer rejected is a new task issue whose `Story` field names the story and each failed `AC-nn`, and whose description cites the rejection's `DEC-nnn`; a closed task is not reopened.
 3. Before approving a pull request, the reviewer ticks each of its task's acceptance criteria in the task issue.

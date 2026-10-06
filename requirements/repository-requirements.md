@@ -15,7 +15,6 @@ Use [General Requirements](general-requirements.md) for what an artifact is, [Vi
 - [Configuration And Sensitive Information](#configuration-and-sensitive-information)
 - [Sensitive-Data Incident Response](#sensitive-data-incident-response)
 - [Issue Tracking](#issue-tracking)
-- [Tracking Tasks Inside The Repository](#tracking-tasks-inside-the-repository)
 - [Contributing](#contributing)
 - [Changelog, Releases And Versioning](#changelog-releases-and-versioning)
 - [Continuous Integration](#continuous-integration)
@@ -97,6 +96,7 @@ The root `README.md` also carries setup and run instructions for the product as 
 3. Every change after the first commit goes through a pull request: documentation, configuration, and CI changes included.
 4. Keep each pull request to one change.
    A pull request that fixes a broken link and reformats three files is hard to review, and review is the point.
+   Adding, ticking, or deleting items in a committed `TODO.md` may ride along in any pull request, per [A TODO.md Checklist](local-task-tracking-requirements.md#a-todomd-checklist).
 5. Name branches with a short lowercase hyphenated description, for example `add-alternatives-research`.
    From Week 2, use the number of the [task issue](task-issues-requirements.md#where-task-issues-live) the branch works on: `<issue-number>-<short-description>`, for example `12-hold-a-slot-while-the-client-pays`.
 6. Add a pull request template at `.github/pull_request_template.md`.
@@ -283,62 +283,6 @@ Link on `main`, not at a commit hash, so the link shows the file as it is now, s
 The commit-hash permalink is for the submission, per [Permalinks And Snapshots](#permalinks-and-snapshots).
 Merge the file into `main` before an issue links it.
 
-## Tracking Tasks Inside The Repository
-
-**Since: W2**
-
-**Recommended**
-
-- Use a task tracker that keeps its state in the repository, such as the [`backlog.md`](https://github.com/MrLesk/Backlog.md) command-line tool.
-  It is not the home of a user story, and a story issue may be mentioned in it.
-  Its files are repository content rather than artifacts, per [Where Artifacts Live In The Repository](general-requirements.md#where-artifacts-live-in-the-repository), and it is not graded on its own.
-- Exclude the tracker's directory from the [Markdown check](#continuous-integration), because the tool rewrites those files and a formatter would fight it.
-  The [link check](#link-checking) still covers the directory, unless you exclude it there with the reason written down, as that section requires of every exclusion.
-- Give the tracker a Definition of Done, so every task carries the checks it must pass before it is marked Done.
-  Make one of its items require implementation notes that record the decisions made and how the change was checked.
-  The acceptance criteria say what was done, and the notes say why and how it was verified, which the next member, a reviewer, or a coding agent otherwise has to reconstruct.
-  The other items are the team's own: start from the example below and adapt it to the checks your project has.
-
-It is recommended for two reasons:
-
-1. **A coding agent can use it.**
-   The tasks are plain files beside the code, and `backlog.md` has a command-line interface and an MCP server, so an agent can read the task it is working on, follow its acceptance criteria, and record what it did, without access to your GitHub account.
-2. **It breaks a bigger task into steps inside one pull request.**
-   A larger piece of work, whether it is an issue or a task in the tracker itself, splits into subtasks, each with its own acceptance criteria.
-   The subtasks change in the same commits as the work, so a reviewer sees the plan and how far it got beside the diff.
-
-It is not required because the course grades the work and its evidence, not the tool the team organised it with.
-
-**Example**
-
-When several members create tasks on different branches, let the tool see the other branches, so that two branches do not allocate the same task ID.
-In `backlog/config.yml`:
-
-```yaml
-filesystem_only: false
-remote_operations: true
-check_active_branches: true
-active_branch_days: 30
-```
-
-A task created in another clone is visible only once its branch is pushed, so push a branch soon after creating a task on it.
-
-A starting Definition of Done, in the same file:
-
-```yaml
-definition_of_done:
-  - "All acceptance criteria are satisfied"
-  - "The Markdown check passes locally"
-  - "Links in changed files resolve"
-  - "No secret or private-only item is committed"
-  - "Implementation notes record the decisions made and how the change was checked"
-```
-
-The items name checks that other sections own: the [Markdown check](#continuous-integration), the [link check](#link-checking), and [what may be committed](visibility-requirements.md).
-Add your project's own checks as it gains them, such as a build or a test run, and drop an item your project has no use for.
-Write each item without a comma, because the `backlog.md` MCP server rejects an item that contains one.
-The list applies only to tasks created after it changes, so add a new item to an open task with `backlog task edit <id> --dod "<item>"`.
-
 ## Contributing
 
 **Since: W3**
@@ -389,7 +333,7 @@ The pull request is where the team already writes down what changed and why, whi
 3. Any of the common tools is acceptable: `markdownlint-cli2`, `prettier --check`, or `remark-lint`.
    Pin the action to a commit, per [Pinning Third-Party Actions](#pinning-third-party-actions), and pin the tool's version: an action that bundles the tool pins it with the action, and a tool installed by the workflow pins it in the lockfile.
 4. Fixing what the check reports in an earlier week's files is a formatting-only change, which [Where Artifacts Live In The Repository](general-requirements.md#where-artifacts-live-in-the-repository) allows.
-5. A task tracker's directory may be excluded from the check, per [Tracking Tasks Inside The Repository](#tracking-tasks-inside-the-repository), and so may the course materials' directory, per [The Course Materials As An Agent Skill](#the-course-materials-as-an-agent-skill).
+5. A task tracker's directory may be excluded from the check, per [A Task Tracker In The Repository](local-task-tracking-requirements.md#a-task-tracker-in-the-repository), and so may the course materials' directory, per [The Course Materials As An Agent Skill](#the-course-materials-as-an-agent-skill).
    Nothing else is excluded.
 
 Markdown is checked in Week 2 because the week is mostly prose: a product vision, the meeting artifacts, and the week report.
@@ -423,7 +367,7 @@ jobs:
 ```
 
 `.markdownlint-cli2.jsonc` in the repository root turns off the line-length rule, so one sentence per line and long table rows pass, and the list-numbering rule, so a meeting script can number its questions across their area groups for the agenda to cite.
-It also excludes the task tracker's directory:
+It also skips the files that `.gitignore` lists, so a local run checks the same files as CI, which never has them, and it excludes the task tracker's directory:
 
 ```jsonc
 {
@@ -432,6 +376,7 @@ It also excludes the task tracker's directory:
     "MD013": false,
     "MD029": false,
   },
+  "gitignore": true,
   "ignores": ["backlog/**"],
 }
 ```

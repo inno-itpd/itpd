@@ -44,6 +44,7 @@ An assignment for a later week may not exist yet; do not anticipate it.
 | `docs/product-vision.md` and its context diagram | [Product vision](requirements/product-vision-requirements.md) | |
 | Story issues and acceptance criteria | [User stories](requirements/user-stories-requirements.md) | [User stories and prototyping](guides/user-stories-and-prototyping.md) |
 | Task issues | [Task issues](requirements/task-issues-requirements.md) | |
+| A task tracker in the repository, `TODO.md`, moving Done tasks | [Local task tracking](requirements/local-task-tracking-requirements.md) | |
 | The minimum usable product candidate | [Minimum usable product](requirements/minimum-usable-product-requirements.md) | |
 | Prototypes | [Prototypes](requirements/prototypes-requirements.md) | [User stories and prototyping](guides/user-stories-and-prototyping.md) |
 | Meeting scripts, reports, and transcripts | [Customer meetings](requirements/customer-meetings-requirements.md) | [The kickoff meeting](guides/customer-kickoff-meeting.md), [Validating with the customer](guides/validating-with-the-customer.md) |
@@ -55,6 +56,8 @@ An assignment for a later week may not exist yet; do not anticipate it.
 - Findings, quotes, and evidence come from the team's own research and meetings, never from an example here; see [Research Honesty Rules](requirements/research-requirements.md#research-honesty-rules).
 - Before writing anything that names a person or could be private, check [Sensitive Information Reference](requirements/visibility-requirements.md#sensitive-information-reference).
 - Your work is disclosed in the week's [AI usage report](requirements/weekly-report-requirements.md#ai-usage-report).
+- Follow-up work you notice outside the task you were given is a candidate task: record it where the team keeps its candidates, per [A TODO.md Checklist](requirements/local-task-tracking-requirements.md#a-todomd-checklist), rather than doing it unasked or opening an issue for it.
+  If the team keeps no list of candidates, name the follow-up in your reply.
 
 ## Files That Are Not Course Material
 

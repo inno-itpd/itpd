@@ -56,7 +56,7 @@ The rules:
 - Close exactly one task issue from each pull request, and close a task whose pull request was not merged as not planned: [Closing A Task](../requirements/task-issues-requirements.md#closing-a-task).
 - Give each task its own acceptance criteria, which the reviewer ticks before approving: [Acceptance Criteria](../requirements/task-issues-requirements.md#acceptance-criteria).
 - Name branches after their task issue, and link in each pull request its task issue: [Branch Protection And Pull Requests](../requirements/repository-requirements.md#branch-protection-and-pull-requests).
-- Recommended: track the team's tasks inside the repository: [Tracking Tasks Inside The Repository](../requirements/repository-requirements.md#tracking-tasks-inside-the-repository).
+- Recommended: track the team's tasks inside the repository, with a task tracker, a `TODO.md` checklist, and a workflow that moves Done tasks out of the active list: [Local Task Tracking Requirements](../requirements/local-task-tracking-requirements.md).
 
 This week:
 
