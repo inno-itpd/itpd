@@ -329,6 +329,10 @@ The user story requirements say [what a story says](user-stories-requirements.md
   Its files are repository content rather than artifacts, per [Where Artifacts Live In The Repository](general-requirements.md#where-artifacts-live-in-the-repository), and it is not graded on its own.
 - Exclude the tracker's directory from the [Markdown check](#continuous-integration), because the tool rewrites those files and a formatter would fight it.
   The [link check](#link-checking) still covers the directory, unless you exclude it there with the reason written down, as that section requires of every exclusion.
+- Give the tracker a Definition of Done, so every task carries the checks it must pass before it is marked Done.
+  Make one of its items require implementation notes that record the decisions made and how the change was checked.
+  The acceptance criteria say what was done, and the notes say why and how it was verified, which the next member, a reviewer, or a coding agent otherwise has to reconstruct.
+  The other items are the team's own: start from the example below and adapt it to the checks your project has.
 
 It is recommended for two reasons:
 
@@ -353,6 +357,22 @@ active_branch_days: 30
 ```
 
 A task created in another clone is visible only once its branch is pushed, so push a branch soon after creating a task on it.
+
+A starting Definition of Done, in the same file:
+
+```yaml
+definition_of_done:
+  - "All acceptance criteria are satisfied"
+  - "The Markdown check passes locally"
+  - "Links in changed files resolve"
+  - "No secret or private-only item is committed"
+  - "Implementation notes record the decisions made and how the change was checked"
+```
+
+The items name checks that other sections own: the [Markdown check](#continuous-integration), the [link check](#link-checking), and [what may be committed](visibility-requirements.md).
+Add your project's own checks as it gains them, such as a build or a test run, and drop an item your project has no use for.
+Write each item without a comma, because the `backlog.md` MCP server rejects an item that contains one.
+The list applies only to tasks created after it changes, so add a new item to an open task with `backlog task edit <id> --dod "<item>"`.
 
 ## Contributing
 
