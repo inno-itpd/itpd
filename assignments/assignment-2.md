@@ -27,7 +27,7 @@ What you hand in is a description of what your product must do, and a record of 
 - [Part 6: Write The User Stories As Issues](#part-6-write-the-user-stories-as-issues)
 - [Part 7: Propose The Minimum Usable Product Candidate](#part-7-propose-the-minimum-usable-product-candidate)
 - [Part 8: Prototype The Riskiest Part](#part-8-prototype-the-riskiest-part)
-- [Part 9: Carry Out The Kickoff Action Points](#part-9-carry-out-the-kickoff-action-points)
+- [Part 9: Carry Out The Kickoff Action Points And Open Questions](#part-9-carry-out-the-kickoff-action-points-and-open-questions)
 - [Part 10: Validate With The Customer](#part-10-validate-with-the-customer)
 - [Part 11: Report On Your AI Usage](#part-11-report-on-your-ai-usage)
 - [What Good Looks Like](#what-good-looks-like)
@@ -51,7 +51,7 @@ By the end of this week you should be able to show a reader:
 
 The rules:
 
-- Add both issue forms and the labels, start the forms pull request from a blank issue, and link every pull request to its issue: [Issue Tracking](../requirements/repository-requirements.md#issue-tracking).
+- Add both issue forms and the labels, start the forms pull request from a blank issue, and reference each pull request's issue in its description: [Issue Tracking](../requirements/repository-requirements.md#issue-tracking).
 - Name branches after their issue, and name in each pull request the `AC-nn` it checks: [Branch Protection And Pull Requests](../requirements/repository-requirements.md#branch-protection-and-pull-requests).
 - Recommended: track the team's tasks inside the repository: [Tracking Tasks Inside The Repository](../requirements/repository-requirements.md#tracking-tasks-inside-the-repository).
 
@@ -60,7 +60,7 @@ This week:
 1. Before any other Week 2 pull request, merge the one that adds `user-story.yml`, `task.yml`, and `config.yml`, and create the labels.
 2. If your `user-story.yml` has no `Rests on` field, add it in a pull request of its own, per [Issue Tracking](../requirements/repository-requirements.md#issue-tracking).
    Then move each `ASM-nn` in an existing story's `Traces to` list into a `### Rests on` section of the same issue.
-   This is a one-time catch-up: the field was added after the forms were due, and the move is a [formatting-only change](../requirements/general-requirements.md#where-artifacts-live-in-the-repository), so it needs no comment.
+   This is a one-time catch-up: the field was added after the forms were due, and the move needs no comment, per [Where Stories Live](../requirements/user-stories-requirements.md#where-stories-live).
 
 ## Part 2: Move The Week 1 Decisions Into The Decisions Log
 
@@ -118,8 +118,8 @@ This week:
 4. In the same pull request, write the fields of each section in `docs/research/` as a bulleted list, per [Identifier Rules](../requirements/general-requirements.md#identifier-rules).
    Leave `reports/week-01/` in its Week 1 form, apart from the repointed links.
    `docs/decisions.md`, `docs/assumptions.md`, and every report from Week 2 on use the list from the start.
-5. In the same pull request, start the fields of each `ALT-nn`, `GAP-nn`, and `VP-nn` section with `**Status:**`, and move the reason and the date of each one you dropped into its `**Dropped:**` field, per [Where Research Lives](../requirements/research-requirements.md#where-research-lives) and [Identifier Rules](../requirements/general-requirements.md#identifier-rules).
-   A dropped gap no longer lists the value propositions it affected.
+5. In the same pull request, or in a pull request of its own when that one is already merged, start the fields of each `ALT-nn`, `GAP-nn`, and `VP-nn` section with `**Status:**`, and move the reason and the date of each one you dropped into its `**Dropped:**` field, per [Where Research Lives](../requirements/research-requirements.md#where-research-lives) and [Identifier Rules](../requirements/general-requirements.md#identifier-rules).
+   A dropped gap no longer lists the value propositions it affected; record the drop under `**Changed:**` of each value proposition that closes it instead, per [Value Proposition And Differentiation](../requirements/research-requirements.md#value-proposition-and-differentiation).
    Rename each field to the label the requirements give it, in their order, per [Alternatives](../requirements/research-requirements.md#alternatives), [Gap Analysis](../requirements/research-requirements.md#gap-analysis), and [Value Proposition And Differentiation](../requirements/research-requirements.md#value-proposition-and-differentiation), and add a `**Confidence:**` to each gap that has none.
 
 ## Part 5: State The Product Vision
@@ -184,7 +184,7 @@ This week:
 
 The method is in [Step 5: Choose What To Prototype](../guides/user-stories-and-prototyping.md#step-5-choose-what-to-prototype) and [Step 6: Build The Cheapest Thing That Gets A Reaction](../guides/user-stories-and-prototyping.md#step-6-build-the-cheapest-thing-that-gets-a-reaction).
 
-## Part 9: Carry Out The Kickoff Action Points
+## Part 9: Carry Out The Kickoff Action Points And Open Questions
 
 The rules:
 
@@ -202,6 +202,7 @@ They are due now, and at the latest before the meeting in [Part 10](#part-10-val
 
 1. Carry out each action point, or find out why it cannot be done.
 2. Carry the outcome into the artifact it affects, which is usually a story, an assumption, the research, or the product vision.
+3. Put each row of `## Open questions` in `reports/week-01/meeting-report.md` to the customer in Part 10, unless the work since has answered it.
 
 ## Part 10: Validate With The Customer
 
@@ -326,8 +327,8 @@ A transcript under item 5 goes in an appendix, which the two pages do not count.
 - [ ] The story issues ([Part 6](#part-6-write-the-user-stories-as-issues)).
 - [ ] `## Minimum Usable Product Candidate` in `reports/week-02/README.md` ([Part 7](#part-7-propose-the-minimum-usable-product-candidate)).
 - [ ] `reports/week-02/prototypes.md` with at least one prototype, and no prototype code on `main` ([Part 8](#part-8-prototype-the-riskiest-part)).
-- [ ] Each kickoff action point's outcome in `## Previous action points`, and in the artifact it changed ([Part 9](#part-9-carry-out-the-kickoff-action-points)).
-- [ ] Each kickoff open question answered or carried forward in `## Previous open questions` ([Part 9](#part-9-carry-out-the-kickoff-action-points)).
+- [ ] Each kickoff action point's outcome in `## Previous action points`, and in the artifact it changed ([Part 9](#part-9-carry-out-the-kickoff-action-points-and-open-questions)).
+- [ ] Each kickoff open question answered or carried forward in `## Previous open questions` ([Part 9](#part-9-carry-out-the-kickoff-action-points-and-open-questions)).
 - [ ] `reports/week-02/meeting-script.md`, with the candidate's part listing its `US-nn` ([Part 10](#part-10-validate-with-the-customer)).
 - [ ] `reports/week-02/meeting-report.md`, with a row per kickoff action point, 2+ decisions listed by `DEC-nnn` including the candidate verdict, and 2+ action points due in Week 3 ([Part 10](#part-10-validate-with-the-customer)).
 - [ ] `reports/week-02/meeting-transcript.md`, if the meeting was recorded or held in writing ([Part 10](#part-10-validate-with-the-customer)).

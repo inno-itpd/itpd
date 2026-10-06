@@ -129,10 +129,10 @@ That agreement is what makes the scope checkable:
    | `**Handled by:**` | Who handles the job instead: an external system or an external actor, which then appears on the context diagram; the user, by hand; or `Nobody`, when the need is deliberately left unserved |
    | `**Why:**`        | Why it is outside: the `CON-nn` that forces it, linked; the `DEC-nnn` of the decision that settled it, linked; or the team's own reasoning                                                   |
    | `**Changed:**`    | Each change, recorded as a gap records it, per [Gap Analysis](research-requirements.md#gap-analysis), only when it changed                                                                   |
-   | `**Dropped:**`    | Only on a job the product now does, per [Identifier Rules](general-requirements.md#identifier-rules)                                                                                         |
+   | `**Dropped:**`    | Only on a dropped item, such as a job the product now does, per [Identifier Rules](general-requirements.md#identifier-rules)                                                                 |
 
 3. Cite a boundary item by its `BND-nn`, linked.
-4. A decision that moves a job into or out of the boundary is a [decision](decisions-requirements.md#the-decision) with an entry.
+4. A decision that moves a job into or out of the boundary has an entry, per [The Decision](decisions-requirements.md#the-decision).
    A job moved out is a new `BND-nn` whose `**Why:**` cites it.
    A job moved in keeps its `BND-nn`, marked as dropped, and its `**Dropped:**` cites it.
 

@@ -95,11 +95,11 @@ This section says what counts as an alternative and what must be recorded about 
    | `**Version looked at:**`          | The version or plan, and the date you looked at it                                                                      |
    | `**Depth of evaluation:**`        | What you did with it, and what you did not, per rule 5                                                                  |
    | `**Problem it solves:**`          | What problem it solves and for whom                                                                                     |
+   | `**Dropped:**`                    | Only on a dropped alternative, per [Identifier Rules](general-requirements.md#identifier-rules)                         |
    | `**Observations by property**`    | A table with the columns `Property` and `Observation`, one row per property, each observation naming where it was found |
    | `**Strengths**`, `**Weaknesses**` | Two lists, each item tied to something you observed                                                                     |
-   | `**Dropped:**`                    | Only on a dropped alternative, per [Identifier Rules](general-requirements.md#identifier-rules)                         |
 
-   The fields are a bulleted list, per [Identifier Rules](general-requirements.md#identifier-rules); the table and the two lists follow it under their bold labels.
+   The fields are a bulleted list, per [Identifier Rules](general-requirements.md#identifier-rules), with `**Dropped:**` last in it; the table and the two lists follow it under their bold labels, so that `**Dropped:**` does not render as an item of `**Weaknesses**`.
 
 **Recommended**
 
@@ -187,7 +187,7 @@ It is not a feature you happen to want, and it is not a missing feature that nob
 5. Do not manufacture gaps to justify work.
    A week with two solid gaps is a good week.
 6. A gap dropped after Week 1 stays in the file, marked as dropped per [Identifier Rules](general-requirements.md#identifier-rules), which also says how the reason cites the decision that dropped it.
-   The gap does not list what rested on it; each value proposition and story that did records the drop.
+   The gap does not list what cited it; each value proposition and story that did records the drop.
 7. A gap that rests on an [assumption](assumptions-requirements.md#the-assumption) names each `ASM-nn` under `**Rests on:**`, and links each one to its section in `docs/assumptions.md`, per [What Rests On It](assumptions-requirements.md#what-rests-on-it).
 8. A gap that a decision changed without dropping it states its current version, and records each change as one bullet under `**Changed:**`: what changed, and the decision's `DEC-nnn`, linked, when it has an entry, or its reason otherwise, per [What Cites It](decisions-requirements.md#what-cites-it).
 
@@ -250,6 +250,9 @@ It is not a feature you happen to want, and it is not a missing feature that nob
    | `**How a competitor would respond:**`          | Per rule 5                                                                                            |
    | `**Changed:**`                                 | Each change, per rule 8, only when a decision changed it                                              |
    | `**Dropped:**`                                 | Only on a dropped value proposition, per [Identifier Rules](general-requirements.md#identifier-rules) |
+
+10. A value proposition keeps a dropped `GAP-nn` under `**Closes:**`, and records the drop as a bullet under `**Changed:**` that cites the decision as rule 8 says.
+    A value proposition that closes no gap that is still `Active` is dropped too, per [Identifier Rules](general-requirements.md#identifier-rules).
 
 **Example**
 

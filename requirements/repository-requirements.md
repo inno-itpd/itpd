@@ -298,9 +298,9 @@ If credentials, personal data, or confidential material is committed by mistake:
 6. Create the labels the issues use, by any means: `user-story`, `task`, and the four `moscow:*` labels in [MoSCoW Prioritization](user-stories-requirements.md#moscow-prioritization).
    The forms apply `user-story` and `task`; the team applies one MoSCoW label per story.
    A team that marks stories or priorities with an issue type or field, per [Where Stories Live](user-stories-requirements.md#where-stories-live), creates that type or field instead of the labels it replaces.
-7. Link every pull request to its issue.
+7. Reference every pull request's issue in its description.
    Create a task's branch from its issue where GitHub supports it, and close the task with a closing keyword such as `Closes #12`.
-   A story closes only on the customer's acceptance, per [Where Stories Live](user-stories-requirements.md#where-stories-live), so a pull request for a story references it without a closing keyword, such as `Refs #42`, and its branch is not created from the issue, because GitHub closes an issue linked that way when the pull request merges.
+   A story closes only on the customer's acceptance, per [Where Stories Live](user-stories-requirements.md#where-stories-live), so a pull request for a story references it without a closing keyword, such as `Refs #42`, its branch is not created from the issue, and the story is not linked from the pull request's Development sidebar, because GitHub closes the issue on merge in each of those three cases.
 8. Check the acceptance criteria a pull request touches before merging it; the [pull request template](#branch-protection-and-pull-requests) asks for them.
 9. In an issue, an issue comment, or a pull request description, link a repository file by its full URL on `main`, because a relative link does not resolve there:
 

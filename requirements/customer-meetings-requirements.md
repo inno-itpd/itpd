@@ -22,6 +22,7 @@ These requirements define how a meeting is prepared and held, and the script, re
 - [Full Examples](#full-examples)
   - [Example Meeting Script](#example-meeting-script)
   - [Example Meeting Report](#example-meeting-report)
+  - [Example Week 2 Meeting Report](#example-week-2-meeting-report)
   - [Example Meeting Transcript](#example-meeting-transcript)
 
 ## Where Meeting Artifacts Live
@@ -193,7 +194,7 @@ A Week 3 meeting that shows working software.
    | Section                      | Which meetings                  | What belongs in it                                                                                                                                                                                                                                                        |
    | ---------------------------- | ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
    | `## Metadata`                | Every meeting                   | Date, duration, who was there by GitHub username with the customer shown as `Customer`, what you presented, the answer to each of the three permission questions, a link to the transcript or `None` with the reason, and a link to the [meeting script](#meeting-script) |
-   | `## Previous action points`  | Every meeting after the kickoff | A table, one row per action point of an earlier report that is due by this meeting and not yet closed                                                                                                                                                                     |
+   | `## Previous action points`  | Every meeting after the kickoff | A table, one row per action point of an earlier report that is due by this meeting, or already carried out, and not yet closed                                                                                                                                            |
    | `## Previous open questions` | Every meeting after the kickoff | A table, one row per open question of an earlier report that is not yet closed                                                                                                                                                                                            |
    | `## Summary`                 | Every meeting                   | 3 to 5 bullets on what the meeting settled or changed, not on what was on the agenda                                                                                                                                                                                      |
    | `## Decisions`               | Every meeting                   | A list of the decisions the meeting made                                                                                                                                                                                                                                  |
@@ -220,16 +221,17 @@ A Week 3 meeting that shows working software.
     `Decision` links each `DEC-nnn` the outcome produced, or says `None` when the outcome needed no decision.
     The earlier report is not edited; this row is the action point's closing record.
     An outcome that changes an artifact is carried into that artifact, and an outcome recorded only in this table has not been carried out.
+    An action point carried out before its due week may be closed in the first report after it was carried out.
     An action point that was not carried out says why in `Outcome`, and reappears in this report's `## Action points` with a new due week, unless the team or the customer dropped it, which `Outcome` then says.
 
-11. `## Metadata` is a bulleted list, one `- **Label:** value` bullet per item, so that each item renders on a line of its own, as an identifier's fields do per [Identifier Rules](general-requirements.md#identifier-rules).
-
-12. `## Previous open questions` has the columns `Question`, `Answer`, and `Decision`.
+11. `## Previous open questions` has the columns `Question`, `Answer`, and `Decision`.
     `Question` cites the open question by its report's path and `#open-questions` anchor with the question quoted, as an action point is cited per [Identifier Rules](general-requirements.md#identifier-rules).
     `Answer` says what the meeting or the work since found, and links each artifact the answer changed.
     `Decision` links each `DEC-nnn` the answer produced, or says `None`.
     The earlier report is not edited; this row is the question's closing record.
     A question still unanswered says so in `Answer`, and reappears in this report's `## Open questions`.
+
+12. `## Metadata` is a bulleted list, one `- **Label:** value` bullet per item, so that each item renders on a line of its own, as an identifier's fields do per [Identifier Rules](general-requirements.md#identifier-rules).
 
 **Recommended**
 
@@ -267,7 +269,7 @@ A Week 3 meeting that shows working software.
 
 ## Full Examples
 
-The script, the report, and the transcript of one kickoff meeting.
+The script, the report, and the transcript of one kickoff meeting, and the report of the Week 2 validation meeting that followed it.
 
 ### Example Meeting Script
 
@@ -395,6 +397,69 @@ The rewrite anchors it to an event the customer will remember, so the answer is 
 | ------------------------------ | --------------------------------------------------------------- | ------------------------------------------------------------------------ |
 | `GAP-04` is a differentiator   | Our experts work alone, so nobody needs multi-expert scheduling | Dropped `GAP-04` from the gap analysis                                   |
 | Reminders are a differentiator | Reminders are table stakes                                      | Re-cut the comparison without the reminders property, as an action point |
+```
+
+### Example Week 2 Meeting Report
+
+`reports/week-02/meeting-report.md`, closing the kickoff's action points and open question:
+
+```markdown
+# Week 2 validation meeting report
+
+## Metadata
+
+- **Date:** 2026-10-06
+- **Duration:** 35 minutes
+- **Attended:** alice, bob, carol, Customer
+- **Presented:** the product vision, the stories with their priorities, the minimum usable product candidate, and the pay-before-confirm prototype
+- **Recording:** not permitted
+- **Transcript publication:** not applicable
+- **Transcript shared privately:** not applicable
+- **Transcript:** None, because recording was not permitted
+- **Script:** [meeting-script.md](meeting-script.md)
+
+## Previous action points
+
+| Action                                                                                                                                    | Outcome                                                                                                                                                   | Decision |
+| ----------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
+| [`reports/week-01/meeting-report.md`](../week-01/meeting-report.md#action-points): "Interview two experts who take payments in chat"      | Carried out: both had lost a paid slot to an unpaid booking in the last month, so [`GAP-01`](../../docs/research/gap-analysis.md#gap-01) stands unchanged | None     |
+| [`reports/week-01/meeting-report.md`](../week-01/meeting-report.md#action-points): "Re-cut the comparison without the reminders property" | Carried out: the reminders row is gone from [the comparison](../../docs/research/comparison.md)                                                           | None     |
+
+## Previous open questions
+
+| Question                                                                                                                       | Answer                                                                                                                                                                                             | Decision                                     |
+| ------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------- |
+| [`reports/week-01/meeting-report.md`](../week-01/meeting-report.md#open-questions): "Do clients pay at booking or on the day?" | At booking: a booking confirms only after payment, so [`US-01`](https://github.com/<organization>/<repo>/issues/42) gained `AC-03` and [`ASM-02`](../../docs/assumptions.md#asm-02) is `Confirmed` | [`DEC-006`](../../docs/decisions.md#dec-006) |
+
+## Summary
+
+- The customer accepted the minimum usable product candidate as proposed.
+- A booking confirms only after the client has paid; a held slot is fine, a confirmed unpaid one is not.
+- The interviews bore out `GAP-01`: both experts had lost a paid slot to an unpaid booking.
+
+## Decisions
+
+- [DEC-006: Confirm a booking only after the client has paid](../../docs/decisions.md#dec-006)
+- [DEC-007: Accept the minimum usable product candidate as proposed](../../docs/decisions.md#dec-007)
+
+## Action points
+
+| Action                                                  | Owner | Due           |
+| ------------------------------------------------------- | ----- | ------------- |
+| Ask two experts where their last ten bookings came from | bob   | End of Week 3 |
+| Open a sandbox account with the payment provider        | alice | End of Week 3 |
+
+## Open questions
+
+| Question                                            | What it would change                                    | Follow-up                  |
+| --------------------------------------------------- | ------------------------------------------------------- | -------------------------- |
+| Does a client who cancels a day ahead get a refund? | Whether a refund story is `Should Have` or `Won't Have` | carol, carried into Week 3 |
+
+## Disagreements
+
+| Your position                           | Customer's position                                                  | What you changed                                                                                                               |
+| --------------------------------------- | -------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| A booking may confirm and be paid later | A booking that confirms before payment is the unpaid booking to stop | [`US-01`](https://github.com/<organization>/<repo>/issues/42) gained `AC-03`, per [`DEC-006`](../../docs/decisions.md#dec-006) |
 ```
 
 ### Example Meeting Transcript

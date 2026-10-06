@@ -91,7 +91,7 @@ The whole file is in [Full Example](#full-example).
 **Required**
 
 1. The entry does not list what the decision changed.
-   A link between two artifacts is recorded once, in the artifact that rests on the other, as for an [assumption](assumptions-requirements.md#what-rests-on-it).
+   A link between two artifacts is recorded once, in the artifact that cites the other, as for an [assumption](assumptions-requirements.md#what-rests-on-it).
 2. Each artifact the decision changed cites its `DEC-nnn`, linked, where that artifact records its changes:
 
    - A dropped item, such as a `GAP-nn` or a `VP-nn`, in the reason it was dropped, per [Identifier Rules](general-requirements.md#identifier-rules).

@@ -5,7 +5,8 @@
 // The deck teaches the week's concepts rather than the files a team writes to.
 // It was reframed in the 2026 review: slides no longer name a path, and the
 // identifiers US-nn, GAP-nn, Q-nn, and VP-nn remain because traceability is a
-// concept. See TASK-012.
+// concept. See TASK-012. The boundary slide shows two BND-nn items, which cite
+// a CON-nn and a DEC-nnn, from the product vision example. See TASK-086.
 //
 // Reused from the 2025 decks, which live in tmp/itpd-2025/lectures/ as PDFs only:
 //   - the Quiz opener, from lecture-2.2.pdf
@@ -242,16 +243,31 @@
 
   The context diagram *draws* the line.
   The vision *writes down* the parts of it someone could argue with:
-  what the product will not do, who does it instead, and why.
+  one item per job the product will not do, who does it instead, and why.
+  Each item has its own identifier, so a story or a decision can cite it.
 
   #set text(size: 12pt)
-  #table(
-    columns: 3,
-    stroke: 0.5pt + luma(70%),
-    inset: 5pt,
-    [*The product will not*], [*Handled by*], [*Why*],
-    [Host the video call], [Video service], [Single-term course: video stays an integration],
-    [Schedule several experts at once], [Nobody], [Customer decision: the experts work alone],
+  #grid(
+    columns: (1fr, 1fr),
+    gutter: 16pt,
+    ```text
+    BND-01
+    Host the video call.
+
+    - Status: Active
+    - Handled by: Video service
+    - Why: CON-03, the single-term course:
+      video stays an integration.
+    ```,
+    ```text
+    BND-02
+    Schedule more than one expert at a time.
+
+    - Status: Active
+    - Handled by: Nobody
+    - Why: DEC-002, the customer's decision:
+      the experts work alone.
+    ```,
   )
 ]
 

@@ -60,7 +60,6 @@ It is the short version of the requirements, states what is expected of you as a
 
 5. A formatting-only change is not a rewrite: whitespace, line breaks, list markers, heading levels, table alignment, or a link repointed at the same section after its anchor changed, with the words and their meaning unchanged.
    It may touch any earlier week's files, including meeting scripts and reports, and goes in a pull request of its own.
-6. Moving an `ASM-nn` from a story's `Traces to` list into its `Rests on` list is also a formatting-only change, because the link it records is unchanged, and it needs no change comment on the issue.
 
 ## Identifier Rules
 
@@ -99,7 +98,7 @@ It is the short version of the requirements, states what is expected of you as a
     Its `**Status:**` becomes `Dropped`, and a `**Dropped:**` field, after the others, gives the date and the reason.
     When a decision dropped it, the reason cites the decision's `DEC-nnn`, linked, when it has an entry, or gives the decision's reason otherwise, per [What Cites It](decisions-requirements.md#what-cites-it).
 12. A dropped item does not list what its drop affected.
-    Each artifact that rested on it records the change where that artifact records its changes, so the link is recorded once, in the artifact that rests on the other.
+    Each artifact that cited it records the change where that artifact records its changes, so the link is recorded once, in the artifact that cites the other.
 
 **Example**
 

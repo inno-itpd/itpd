@@ -42,7 +42,7 @@ Each story is a GitHub issue, and the `user-story` label identifies story issues
    Edit the body so it always states the current story, and add a comment for each change to a story part: the title, the statement, `Traces to`, `Rests on`, the acceptance criteria, the `moscow:*` label, or the priority reason.
    The comment says what changed, names each `AC-nn` that changed, gives the reason, and links the `DEC-nnn` of the decision behind it when that decision has an entry, per [What Cites It](decisions-requirements.md#what-cites-it).
    GitHub dates the comment, so the comment does not need a typed date.
-   No comment is needed for edits made before the first meeting with the customer that shows the story, for notes and the checklist, or for a [formatting-only change](general-requirements.md#where-artifacts-live-in-the-repository).
+   No comment is needed for edits made before the first meeting with the customer that shows the story, for notes and the checklist, for a [formatting-only change](general-requirements.md#where-artifacts-live-in-the-repository), or for moving an `ASM-nn` from `Traces to` into `Rests on`, which leaves the link unchanged.
    Do not delete an issue or rewrite its body to hide a change; the edit history and the comment are the record.
 4. The **registry of identifiers** is the issue list filtered by the `user-story` label.
    It shows open and closed issues, so a `Won't Have` story keeps its `US-nn` and stays findable after it closes.
