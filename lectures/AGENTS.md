@@ -2,6 +2,7 @@
 
 Operating instructions for coding agents maintaining the lecture decks in `lectures/`.
 The parent `AGENTS.md` owns the repository map and the student-facing rules; this file owns the decks.
+When the course is installed as a skill inside a team's repository, ignore this file and follow `SKILL.md`.
 
 ## What This Directory Owns
 

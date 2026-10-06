@@ -11,17 +11,14 @@ The requirements here are what the team's work is checked against, so look a rul
 
 ## How The Materials Are Layered
 
-| Path | What it is |
-| -------------------------------------------------------------- | ---------------------------------------------- ----------------------------------------------------------------- |
-| [`course/rules.md`](course/rules.md) | The course contract and the router into the requirements.
-Read it first. |
-| `assignments/assignment-N.md` | What week N requires, as additions to the requirements |
-| `requirements/` | The rules.
-Each is labelled `Required`, `Recommended`, or `Example`, and carries a `**Since: WN**` week marker. |
-| `guides/` | How to do the work.
-A guide explains a method and is not a rule. |
-| [`course/syllabus.md`](course/syllabus.md) | Weeks, dates, deliverables, grading, and course policies |
-| [`course/teams-and-projects.md`](course/teams-and-projects.md) | Team numbers and their projects |
+| Path                                                           | What it is                                                                                                      |
+| -------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| [`course/rules.md`](course/rules.md)                           | The course contract and the router into the requirements. Read it first.                                        |
+| `assignments/assignment-N.md`                                  | What week N requires, as additions to the requirements                                                          |
+| `requirements/`                                                | The rules. Each is labelled `Required`, `Recommended`, or `Example`, and carries a `**Since: WN**` week marker. |
+| `guides/`                                                      | How to do the work. A guide explains a method and is not a rule.                                                |
+| [`course/syllabus.md`](course/syllabus.md)                     | Weeks, dates, deliverables, grading, and course policies                                                        |
+| [`course/teams-and-projects.md`](course/teams-and-projects.md) | Team numbers and their projects                                                                                 |
 
 An assignment links the requirements it builds on; follow those links rather than working from the assignment alone.
 An `Example` shows the shape of an artifact, not the team's content.
@@ -31,25 +28,26 @@ An `Example` shows the shape of an artifact, not the team's content.
 Find today's date in [the weekly schedule](course/syllabus.md#3-weekly-curriculum--milestones), then read that week's assignment from [the assignment table](README.md#assignments).
 A requirement applies from the week its `**Since: WN**` marker names.
 An assignment for a later week may not exist yet; do not anticipate it.
+If the current week has no assignment file here, this copy may be older than the course: ask the user to update the submodule, per [The Course Materials As An Agent Skill](requirements/repository-requirements.md#the-course-materials-as-an-agent-skill), before treating the assignment as unpublished.
 
 ## Where Each Kind Of Work Is Ruled
 
-| Work | Requirements | Guide |
-| ------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ------------------------------------ --------------------------------------------------------------------------------------------------- |
-| Terms, `docs/` versus `reports/`, identifiers, citing earlier weeks | [General](requirements/general-requirements.md) | |
-| What may be public, what goes in Moodle only, screenshots | [Visibility](requirements/visibility-requirements.md) | |
-| Alternatives, comparison, gaps, value propositions | [Research](requirements/research-requirements.md) | [Researching alternatives](guides/alternatives-research.md), [From comparison to value proposition](guides/comparison-and-synthesis.md) |
-| `docs/assumptions.md` | [Assumptions](requirements/assumptions-requirements.md) | [From comparison to value proposition](guides/comparison-and-synthesis.md) |
-| `docs/decisions.md` | [Decisions](requirements/decisions-requirements.md) | [Validating with the customer](guides/validating-with-the-customer.md) |
-| `docs/product-vision.md` and its context diagram | [Product vision](requirements/product-vision-requirements.md) | |
-| Story issues and acceptance criteria | [User stories](requirements/user-stories-requirements.md) | [User stories and prototyping](guides/user-stories-and-prototyping.md) |
-| Task issues | [Task issues](requirements/task-issues-requirements.md) | |
-| A task tracker in the repository, `TODO.md`, moving Done tasks | [Local task tracking](requirements/local-task-tracking-requirements.md) | |
-| The minimum usable product candidate | [Minimum usable product](requirements/minimum-usable-product-requirements.md) | |
-| Prototypes | [Prototypes](requirements/prototypes-requirements.md) | [User stories and prototyping](guides/user-stories-and-prototyping.md) |
-| Meeting scripts, reports, and transcripts | [Customer meetings](requirements/customer-meetings-requirements.md) | [The kickoff meeting](guides/customer-kickoff-meeting.md), [Validating with the customer](guides/validating-with-the-customer.md) |
-| The weekly report, the AI usage report, deviations, the Moodle PDF | [Weekly report](requirements/weekly-report-requirements.md) | |
-| GitHub, issues, pull requests, link checking, CI, permalinks | [Repository](requirements/repository-requirements.md) | |
+| Work                                                                | Requirements                                                                  | Guide                                                                                                                                   |
+| ------------------------------------------------------------------- | ----------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
+| Terms, `docs/` versus `reports/`, identifiers, citing earlier weeks | [General](requirements/general-requirements.md)                               |                                                                                                                                         |
+| What may be public, what goes in Moodle only, screenshots           | [Visibility](requirements/visibility-requirements.md)                         |                                                                                                                                         |
+| Alternatives, comparison, gaps, value propositions                  | [Research](requirements/research-requirements.md)                             | [Researching alternatives](guides/alternatives-research.md), [From comparison to value proposition](guides/comparison-and-synthesis.md) |
+| `docs/assumptions.md`                                               | [Assumptions](requirements/assumptions-requirements.md)                       | [From comparison to value proposition](guides/comparison-and-synthesis.md)                                                              |
+| `docs/decisions.md`                                                 | [Decisions](requirements/decisions-requirements.md)                           | [Validating with the customer](guides/validating-with-the-customer.md)                                                                  |
+| `docs/product-vision.md` and its context diagram                    | [Product vision](requirements/product-vision-requirements.md)                 |                                                                                                                                         |
+| Story issues and acceptance criteria                                | [User stories](requirements/user-stories-requirements.md)                     | [User stories and prototyping](guides/user-stories-and-prototyping.md)                                                                  |
+| Task issues                                                         | [Task issues](requirements/task-issues-requirements.md)                       |                                                                                                                                         |
+| A task tracker in the repository, `TODO.md`, moving Done tasks      | [Local task tracking](requirements/local-task-tracking-requirements.md)       |                                                                                                                                         |
+| The minimum usable product candidate                                | [Minimum usable product](requirements/minimum-usable-product-requirements.md) |                                                                                                                                         |
+| Prototypes                                                          | [Prototypes](requirements/prototypes-requirements.md)                         | [User stories and prototyping](guides/user-stories-and-prototyping.md)                                                                  |
+| Meeting scripts, reports, and transcripts                           | [Customer meetings](requirements/customer-meetings-requirements.md)           | [The kickoff meeting](guides/customer-kickoff-meeting.md), [Validating with the customer](guides/validating-with-the-customer.md)       |
+| The weekly report, the AI usage report, deviations, the Moodle PDF  | [Weekly report](requirements/weekly-report-requirements.md)                   |                                                                                                                                         |
+| GitHub, issues, pull requests, link checking, CI, permalinks        | [Repository](requirements/repository-requirements.md)                         |                                                                                                                                         |
 
 ## Working In The Team's Repository
 
@@ -63,9 +61,11 @@ An assignment for a later week may not exist yet; do not anticipate it.
 
 These files maintain the course repository itself and are not instructions for a team's repository; ignore them:
 
-- `AGENTS.md` and `lectures/AGENTS.md`, which instruct the course maintainers' agents, and `CONTRIBUTING.md`, which sets up the maintainers' development shell.
-- `backlog/`, the maintainers' task tracker.
-- `scripts/`, `eslint/`, `prettier/`, `package.json`, `pnpm-lock.yaml`, `flake.nix`, and `flake.lock`.
+- `AGENTS.md` and `lectures/AGENTS.md`, which instruct the course maintainers' agents, even when your harness attaches them on reading a file here, and `CONTRIBUTING.md`, which sets up the maintainers' development shell.
+- `backlog/`, the maintainers' task tracker, and `TODO.md`, the maintainers' checklist.
+  The team's candidates are in the team's own repository, never in this directory.
+- `.agents/` and `.opencode/`, the maintainers' agent skill and command.
+- `scripts/`, `eslint/`, `prettier/`, `eslint.config.ts`, `.prettierrc`, `.oxfmtrc.json`, `package.json`, `pnpm-lock.yaml`, `flake.nix`, `flake.lock`, `.envrc`, and `.vscode/`.
 - `.github/` and `lychee.toml`, except where a requirement links them as an example.
 
 The lecture slides are `lectures/lecture-N.pdf`, and `lectures/lecture-N.typ` holds the same content as text.

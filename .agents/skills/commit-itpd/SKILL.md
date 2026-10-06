@@ -1,5 +1,5 @@
 ---
-name: commit
+name: commit-itpd
 description: Create a git commit: use when the user explicitly asks to commit changes.
 ---
 
