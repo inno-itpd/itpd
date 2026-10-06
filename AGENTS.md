@@ -1,6 +1,8 @@
 # AGENTS.md
 
 Operating instructions for coding agents maintaining the student-facing course materials in `itpd/`.
+They apply only in the course repository itself.
+When this directory is installed as a skill inside a team's repository, ignore this file and follow `SKILL.md`.
 
 ## Repository Map
 

@@ -28,6 +28,7 @@ An `Example` shows the shape of an artifact, not the team's content.
 Find today's date in [the weekly schedule](course/syllabus.md#3-weekly-curriculum--milestones), then read that week's assignment from [the assignment table](README.md#assignments).
 A requirement applies from the week its `**Since: WN**` marker names.
 An assignment for a later week may not exist yet; do not anticipate it.
+If the current week has no assignment file here, this copy may be older than the course: ask the user to update the submodule, per [The Course Materials As An Agent Skill](requirements/repository-requirements.md#the-course-materials-as-an-agent-skill), before treating the assignment as unpublished.
 
 ## Where Each Kind Of Work Is Ruled
 
@@ -60,9 +61,11 @@ An assignment for a later week may not exist yet; do not anticipate it.
 
 These files maintain the course repository itself and are not instructions for a team's repository; ignore them:
 
-- `AGENTS.md` and `lectures/AGENTS.md`, which instruct the course maintainers' agents, and `CONTRIBUTING.md`, which sets up the maintainers' development shell.
-- `backlog/`, the maintainers' task tracker.
-- `scripts/`, `eslint/`, `prettier/`, `package.json`, `pnpm-lock.yaml`, `flake.nix`, and `flake.lock`.
+- `AGENTS.md` and `lectures/AGENTS.md`, which instruct the course maintainers' agents, even when your harness attaches them on reading a file here, and `CONTRIBUTING.md`, which sets up the maintainers' development shell.
+- `backlog/`, the maintainers' task tracker, and `TODO.md`, the maintainers' checklist.
+  The team's candidates are in the team's own repository, never in this directory.
+- `.agents/` and `.opencode/`, the maintainers' agent skill and command.
+- `scripts/`, `eslint/`, `prettier/`, `eslint.config.ts`, `.prettierrc`, `.oxfmtrc.json`, `package.json`, `pnpm-lock.yaml`, `flake.nix`, `flake.lock`, `.envrc`, and `.vscode/`.
 - `.github/` and `lychee.toml`, except where a requirement links them as an example.
 
 The lecture slides are `lectures/lecture-N.pdf`, and `lectures/lecture-N.typ` holds the same content as text.
