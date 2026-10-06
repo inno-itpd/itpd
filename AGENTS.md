@@ -61,6 +61,7 @@ It checks heading anchors with `--include-fragments` and fetches external links,
 | `.github/workflows/markdown.yml`          | CI: the format check, the lint, and both plugin fixtures, as three separate jobs, all through `prepare`.                                                                                                 |
 | `.github/workflows/lectures.yml`          | CI: Nix installed by a SHA-pinned action, the shell closure restored by `nix-community/cache-nix-action`, then the deck check through `nix develop`. The Markdown jobs use `prepare`; this one does not. |
 | `.github/workflows/lychee.yml`            | CI: the link check through `lycheeverse/lychee-action` on pull requests and `main`, without `--include-fragments`, so anchors are checked only by `pnpm run check:links`.                                |
+| `.github/workflows/backlog-cleanup.yml`   | CI: every Sunday and on demand, moves the Done tasks to `backlog/completed/` with `backlog task complete` and opens or refreshes one pull request from `chore/backlog-weekly-completed`. Not a gate.     |
 | `lychee.toml`                             | Link check settings that `pnpm run check:links` and CI share: the concurrency, the accepted statuses, and the excluded paths and URLs, each with a comment saying why.                                   |
 
 Their fixtures run with `pnpm run test:markdown-format` and `pnpm run test:markdown-rules`, and all four gates run in CI on every pull request.
