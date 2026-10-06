@@ -48,15 +48,16 @@ A [decision](general-requirements.md#artifact-concepts-and-terminology) is a con
 3. The first line under the heading states what was decided, in one sentence, not what was discussed.
 4. One entry records one decision.
    A verdict that accepts several stories at once is one decision, per [Showing Working Software](customer-meetings-requirements.md#showing-working-software).
-5. Each entry has these fields, in this order:
+5. Each entry has these fields, in this order, and `**Reverses:**` only when it reverses a decision:
 
-   | Field          | What it says                                                                                                                                                                                                               |
-   | -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-   | `**Status:**`  | `Active`, or `Reversed by DEC-nnn` with the reversing entry linked, per [Reversing A Decision](#reversing-a-decision)                                                                                                      |
-   | `**Date:**`    | The date the decision was made                                                                                                                                                                                             |
-   | `**Made by:**` | `Customer`; `Team`; or `Team, not contested` when the team decided in a meeting and the customer did not object                                                                                                            |
-   | `**Source:**`  | Where it was made: a meeting decision links its meeting report, and any other decision says where in words, such as "team discussion" or "customer by email", and links the place only when it is public, such as an issue |
-   | `**Why:**`     | The reason; a decision that confirmed the current direction says so, and says what it confirmed                                                                                                                            |
+   | Field           | What it says                                                                                                                                                                                                               |
+   | --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+   | `**Status:**`   | `Active`, or `Reversed by DEC-nnn` with the reversing entry linked, per [Reversing A Decision](#reversing-a-decision)                                                                                                      |
+   | `**Reverses:**` | Only on an entry that reverses a decision: the `DEC-nnn` it reverses, linked, per [Reversing A Decision](#reversing-a-decision)                                                                                            |
+   | `**Date:**`     | The date the decision was made                                                                                                                                                                                             |
+   | `**Made by:**`  | `Customer`; `Team`; or `Team, not contested` when the team decided in a meeting and the customer did not object                                                                                                            |
+   | `**Source:**`   | Where it was made: a meeting decision links its meeting report, and any other decision says where in words, such as "team discussion" or "customer by email", and links the place only when it is public, such as an issue |
+   | `**Why:**`      | The reason; a decision that confirmed the current direction says so, and says what it confirmed                                                                                                                            |
 
 6. A decision made in a private channel is recorded in the team's own words, without quoting or linking the channel, per [Sensitive Information Reference](visibility-requirements.md#sensitive-information-reference).
 
@@ -124,7 +125,7 @@ The whole file is in [Full Example](#full-example).
 **Required**
 
 1. A decision is reversed by a new decision, never by editing the old one.
-   The new entry's `**Why:**` names the `DEC-nnn` it reverses, linked, and says why.
+   The new entry's `**Reverses:**` names the `DEC-nnn` it reverses, linked, and its `**Why:**` says why.
 2. The reversed entry keeps its heading, its statement, and its fields, and its `**Status:**` becomes `Reversed by DEC-nnn`, linked to the new entry.
    This is how a decision is dropped, per [Identifier Rules](general-requirements.md#identifier-rules).
 3. An artifact that cited the reversed decision and changes because of the new one cites the new `DEC-nnn`, and records the change as that artifact records its changes.
@@ -147,10 +148,11 @@ Drop multi-expert scheduling.
 Schedule two experts for a group session.
 
 - **Status:** Active
+- **Reverses:** [DEC-002](#dec-002)
 - **Date:** 2026-10-27
 - **Made by:** Customer
 - **Source:** [the Week 5 validation meeting](../reports/week-05/meeting-report.md)
-- **Why:** reverses [DEC-002](#dec-002), because the customer signed a studio whose group sessions always need two coaches.
+- **Why:** the customer signed a studio whose group sessions always need two coaches.
 ```
 
 ## Full Example
