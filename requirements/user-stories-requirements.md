@@ -30,11 +30,12 @@ Each story is a GitHub issue, and the `user-story` label identifies story issues
    - The acceptance criteria, each starting with its `AC-nn`, per [Acceptance Criteria](#acceptance-criteria).
    - The priority reason, in the form's `Priority reason` field, and one `moscow:*` label, per [MoSCoW Prioritization](#moscow-prioritization).
    - The `user-story` label, applied by the form, or the marker the team chose instead, per rule 6.
-   - Optionally, notes and a checklist of the remaining work, so a contributor can work without leaving the issue.
+   - Optionally, notes and a task list of its task issues, per [Issue Tracking](repository-requirements.md#issue-tracking), so a contributor can work without leaving the issue.
 
 2. A story you intend to build stays open until the customer accepts it, per [Showing Working Software](customer-meetings-requirements.md#showing-working-software), then closes as completed.
    The closing comment cites the `DEC-nnn` of the verdict that accepted it, and the verdict comment may be the closing comment.
-   A story the customer rejected stays open, and a merged pull request does not close it.
+   A story the customer rejected stays open, and closing its tasks does not close it.
+   The rework is a new task issue that names the story and each failed `AC-nn` and cites the rejection's `DEC-nnn`; a closed task is not reopened.
    A `Won't Have` story is closed as not planned, with a comment naming the reason.
    When the story was dropped, the comment that records the priority change may be the closing comment.
    A closed story stays in the list; the closing comment and the close date are its record.
@@ -42,7 +43,7 @@ Each story is a GitHub issue, and the `user-story` label identifies story issues
    Edit the body so it always states the current story, and add a comment for each change to a story part: the title, the statement, `Traces to`, `Rests on`, the acceptance criteria, the `moscow:*` label, or the priority reason.
    The comment says what changed, names each `AC-nn` that changed, gives the reason, and links the `DEC-nnn` of the decision behind it when that decision has an entry, per [What Cites It](decisions-requirements.md#what-cites-it).
    GitHub dates the comment, so the comment does not need a typed date.
-   No comment is needed for edits made before the first meeting with the customer that shows the story, for notes and the checklist, for a [formatting-only change](general-requirements.md#where-artifacts-live-in-the-repository), or for moving an `ASM-nn` from `Traces to` into `Rests on`, which leaves the link unchanged.
+   No comment is needed for edits made before the first meeting with the customer that shows the story, for notes and the task list, for a [formatting-only change](general-requirements.md#where-artifacts-live-in-the-repository), or for moving an `ASM-nn` from `Traces to` into `Rests on`, which leaves the link unchanged.
    Do not delete an issue or rewrite its body to hide a change; the edit history and the comment are the record.
 4. The **registry of identifiers** is the issue list filtered by the `user-story` label.
    It shows open and closed issues, so a `Won't Have` story keeps its `US-nn` and stays findable after it closes.

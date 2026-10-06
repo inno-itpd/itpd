@@ -51,8 +51,8 @@ By the end of this week you should be able to show a reader:
 
 The rules:
 
-- Add both issue forms and the labels, start the forms pull request from a blank issue, and reference each pull request's issue in its description: [Issue Tracking](../requirements/repository-requirements.md#issue-tracking).
-- Name branches after their issue, and name in each pull request the `AC-nn` it checks: [Branch Protection And Pull Requests](../requirements/repository-requirements.md#branch-protection-and-pull-requests).
+- Add both issue forms and the labels, start the forms pull request from a blank issue, and close exactly one task issue from each pull request: [Issue Tracking](../requirements/repository-requirements.md#issue-tracking).
+- Name branches after their task issue, and name in each pull request the `AC-nn` it checks, or link the task that names them: [Branch Protection And Pull Requests](../requirements/repository-requirements.md#branch-protection-and-pull-requests).
 - Recommended: track the team's tasks inside the repository: [Tracking Tasks Inside The Repository](../requirements/repository-requirements.md#tracking-tasks-inside-the-repository).
 
 This week:
@@ -61,6 +61,8 @@ This week:
 2. If your `user-story.yml` has no `Rests on` field, add it in a pull request of its own, per [Issue Tracking](../requirements/repository-requirements.md#issue-tracking).
    Then move each `ASM-nn` in an existing story's `Traces to` list into a `### Rests on` section of the same issue.
    This is a one-time catch-up: the field was added after the forms were due, and the move needs no comment, per [Where Stories Live](../requirements/user-stories-requirements.md#where-stories-live).
+3. If your `task.yml` has no `Story` or `Acceptance criteria` field, add them in a pull request of its own, per [Issue Tracking](../requirements/repository-requirements.md#issue-tracking).
+   This is a one-time catch-up too: from now on, a pull request closes a task issue rather than referencing a story, and a pull request already merged with a reference to a story needs no change.
 
 ## Part 2: Move The Week 1 Decisions Into The Decisions Log
 
@@ -291,7 +293,7 @@ This week it also carries:
 
 3. `## Minimum Usable Product Candidate`, per [Part 7](#part-7-propose-the-minimum-usable-product-candidate).
 4. One line naming what changed because of what the customer said about the prototype, a `US-nn`, a boundary item, a constraint, or an `ASM-nn`, and what changed in it, linking it and the `DEC-nnn` behind the change.
-5. Repository evidence: one merged pull request linked to its issue, the latest green link check run, and the latest green Markdown check run on `main`.
+5. Repository evidence: one merged pull request that closed its task issue, the latest green link check run, and the latest green Markdown check run on `main`.
 6. `## Deviations`: anything you did differently from this assignment, per [Declaring Deviations](../requirements/weekly-report-requirements.md#declaring-deviations).
 
 ## Assignment Report On Moodle
@@ -316,6 +318,7 @@ A transcript under item 5 goes in an appendix, which the two pages do not count.
 ## Checklist
 
 - [ ] `.github/ISSUE_TEMPLATE/user-story.yml`, `task.yml`, `config.yml`, and the labels, in one pull request started from a blank issue ([Part 1](#part-1-track-the-work-as-issues)).
+- [ ] `Story` and `Acceptance criteria` fields in `task.yml`, and every pull request closing one task issue ([Part 1](#part-1-track-the-work-as-issues)).
 - [ ] A `Rests on` field in `user-story.yml`, and every story's `ASM-nn` in its `Rests on` list rather than its `Traces to` list ([Part 1](#part-1-track-the-work-as-issues)).
 - [ ] `.github/pull_request_template.md` asks for the `AC-nn` each change checks ([Part 1](#part-1-track-the-work-as-issues)).
 - [ ] `docs/decisions.md` with a `DEC-nnn` section for each Week 1 decision, each cited from what it changed, if it changed anything yet ([Part 2](#part-2-move-the-week-1-decisions-into-the-decisions-log)).

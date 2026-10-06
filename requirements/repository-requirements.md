@@ -104,7 +104,7 @@ The root `README.md` also carries setup and run instructions for the product as 
    - What changed and why.
    - What you checked, and how.
    - For the reviewer: what to look at, and whether the linked requirements or acceptance criteria are satisfied.
-     From Week 2, name the `AC-nn` and its story issue for each criterion the change checks.
+     From Week 2, name the `AC-nn` and its story issue for each criterion the change checks, or link the task issue that names them.
 
 7. Do not delete pull requests, reviews, or branches that are used as assignment evidence, and do not rewrite history to tidy it up.
    The history is part of what is being assessed.
@@ -288,33 +288,44 @@ If credentials, personal data, or confidential material is committed by mistake:
    The statement, the `Traces to` list, and the `Priority reason` field are required, and the `Rests on` list is optional.
    `Traces to` and `Rests on` take one entry per line.
    The acceptance criteria field is optional, per [Acceptance Criteria](user-stories-requirements.md#acceptance-criteria).
-2. Add `.github/ISSUE_TEMPLATE/task.yml`, an Issue Form for work that is not a story, such as documentation, a report, or a workflow, with a description field and the `task` label applied by the form.
+2. Add `.github/ISSUE_TEMPLATE/task.yml`, an Issue Form for every unit of work, such as building part of a story, documentation, a report, or a workflow, with the `task` label applied by the form.
+   The description field is required.
+   The `Story` field is optional and takes each story issue the task works toward, one per line, such as `#42`, because one task may serve several stories.
+   The `Acceptance criteria` field is optional and takes each `AC-nn` the task works toward, one per line, with its story when the task names more than one.
+   A task that is not work on a story, such as a workflow or a report, leaves both empty.
 3. Disable blank issue creation with `blank_issues_enabled: false` in `.github/ISSUE_TEMPLATE/config.yml`.
 4. The pull request that adds the two forms and `config.yml` is the only one that starts before a form exists.
-   Open a blank issue for it first, then name its branch and link it like any other pull request.
+   Open a blank issue for it first, then name its branch and close that issue like any other pull request's task.
    A team that disabled blank issues before it had the task form opens the issue for the pull request that adds `task.yml` with `gh issue create`.
 5. After that pull request, open every issue from a form.
    This is the team's rule rather than the platform's: `gh issue create` and the API skip the form and the label it applies.
 6. Create the labels the issues use, by any means: `user-story`, `task`, and the four `moscow:*` labels in [MoSCoW Prioritization](user-stories-requirements.md#moscow-prioritization).
    The forms apply `user-story` and `task`; the team applies one MoSCoW label per story.
    A team that marks stories or priorities with an issue type or field, per [Where Stories Live](user-stories-requirements.md#where-stories-live), creates that type or field instead of the labels it replaces.
-7. Reference every pull request's issue in its description.
-   Create a task's branch from its issue where GitHub supports it, and close the task with a closing keyword such as `Closes #12`.
-   A story closes only on the customer's acceptance, per [Where Stories Live](user-stories-requirements.md#where-stories-live), so a pull request for a story references it without a closing keyword, such as `Refs #42`, its branch is not created from the issue, and the story is not linked from the pull request's Development sidebar, because GitHub closes the issue on merge in each of those three cases.
-8. Check the acceptance criteria a pull request touches before merging it; the [pull request template](#branch-protection-and-pull-requests) asks for them.
-9. In an issue, an issue comment, or a pull request description, link a repository file by its full URL on `main`, because a relative link does not resolve there:
+7. Every pull request closes exactly one task issue, with a closing keyword in its description such as `Closes #12`.
+   Create its branch from that task where GitHub supports it.
+   A task that needs more than one pull request is split into more tasks.
+   A Dependabot pull request has no task issue, because the bot opens it; [Pinning Third-Party Actions](#pinning-third-party-actions) says how it is handled.
+8. A story issue is never a pull request's issue.
+   A story closes only on the customer's acceptance, per [Where Stories Live](user-stories-requirements.md#where-stories-live), and GitHub closes on merge an issue that a pull request names with a closing keyword, that its branch was created from, or that its Development sidebar links.
+   Work on a story is one or more task issues whose `Story` field names it, and a story small enough for one pull request has one task.
+9. Check the acceptance criteria a pull request touches before merging it; the [pull request template](#branch-protection-and-pull-requests) asks for them.
+10. In an issue, an issue comment, or a pull request description, link a repository file by its full URL on `main`, because a relative link does not resolve there:
 
-   ```text
-   https://github.com/<org>/<repo>/blob/main/docs/decisions.md#dec-006
-   ```
+```text
+https://github.com/<org>/<repo>/blob/main/docs/decisions.md#dec-006
+```
 
-   Link on `main`, not at a commit hash, so the link shows the file as it is now, such as a decision that has since been reversed.
-   The commit-hash permalink is for the submission, per [Permalinks And Snapshots](#permalinks-and-snapshots).
-   Merge the file into `main` before an issue links it.
+Link on `main`, not at a commit hash, so the link shows the file as it is now, such as a decision that has since been reversed.
+The commit-hash permalink is for the submission, per [Permalinks And Snapshots](#permalinks-and-snapshots).
+Merge the file into `main` before an issue links it.
 
 **Recommended**
 
 - Put the URL pattern in the descriptions of the `Traces to` and `Rests on` fields in `user-story.yml`, so whoever fills in the form sees it.
+- List a story's tasks in its body as a task list, such as `- [ ] #12`, so the story shows which of its tasks are closed.
+  Use the list rather than GitHub sub-issues: a sub-issue has one parent, so a task that serves several stories could sit under only one of them.
+  Closing the last task does not close the story.
 
 The user story requirements say [what a story says](user-stories-requirements.md#the-story) and [how its issue is kept](user-stories-requirements.md#where-stories-live).
 
