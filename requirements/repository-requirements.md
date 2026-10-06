@@ -401,6 +401,9 @@ It also skips the files that `.gitignore` lists, so a local run checks the same 
 - Move it to the latest course materials when a new assignment is published, and commit the change so the whole team moves together.
 - Exclude its directory from the [Markdown check](#continuous-integration) and the [link check](#link-checking).
   Its files are the course's, and the course repository checks them.
+- If your agent is opencode, deny the `commit-itpd` skill in `opencode.json`.
+  opencode loads every `SKILL.md` inside the submodule as a skill of its own, and `commit-itpd` is the course maintainers' commit skill, written for the course repository rather than yours.
+  The deny keeps your agent from loading it, but opencode still lists it under `/skills` and still runs it when you pick it there or type `/commit-itpd`, so do neither.
 - Disclose the agent's work in the week's [AI usage report](weekly-report-requirements.md#ai-usage-report), as for any other AI tool.
 
 A submodule is another Git repository placed inside yours.
@@ -463,6 +466,15 @@ In `lychee.toml`:
 ```toml
 # The ITPD course materials, a submodule that the course repository checks.
 exclude_path = ['^(\./)?\.agents/skills/itpd/']
+```
+
+For opencode, in `opencode.json`:
+
+```json
+{
+  "$schema": "https://opencode.ai/config.json",
+  "permission": { "skill": { "commit-itpd": "deny" } }
+}
 ```
 
 ## Recommended Throughout The Course

@@ -35,7 +35,7 @@ pnpm run check:links   # needs network
 ```
 
 Fill in [the pull request template](.github/pull_request_template.md).
-Commit messages follow [the commit skill](.agents/skills/commit/SKILL.md).
+Commit messages follow [the `commit-itpd` skill](.agents/skills/commit-itpd/SKILL.md).
 What each file and check owns is in [AGENTS.md](AGENTS.md#tooling).
 
 ## Work Tracking
