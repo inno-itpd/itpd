@@ -104,7 +104,7 @@ The root `README.md` also carries setup and run instructions for the product as 
    - What changed and why.
    - What you checked, and how.
    - For the reviewer: what to look at, and whether the linked requirements or acceptance criteria are satisfied.
-     From Week 2, link the [task issue](task-issues-requirements.md#closing-a-task) the pull request closes, and name the `AC-nn` and its story issue for each criterion the change checks unless the task's fields name them.
+     From Week 2, link the [task issue](task-issues-requirements.md#closing-a-task) the pull request closes, whose acceptance criteria the reviewer ticks before approving.
 
 7. Do not delete pull requests, reviews, or branches that are used as assignment evidence, and do not rewrite history to tidy it up.
    The history is part of what is being assessed.

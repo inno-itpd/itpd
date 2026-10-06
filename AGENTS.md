@@ -133,10 +133,10 @@ A part may keep a small example beside the rule it illustrates, such as the boun
 - **Filenames** are kebab-case: `assignment-1.md`, `user-stories-requirements.md`.
 - **Weeks** are zero-padded: `reports/week-01/`, through `reports/week-09/`.
 - **Identifiers** are zero-padded and stable: `ALT-01`, `GAP-01`, `VP-01`, `ASM-01`, and `DEC-001` are the Week 1 families.
-  `US-01` for user stories, `AC-01` for the acceptance criteria of one story, `CON-01` for constraints, and `BND-01` for boundary items are introduced in W2.
+  `US-01` for user stories, `AC-01` for the acceptance criteria of one story or task issue, `CON-01` for constraints, and `BND-01` for boundary items are introduced in W2.
   A later identifiers family arrives with the requirement that first uses it, not before.
   Decisions take three digits, because every customer meeting adds to the log; every other family takes two.
-  An `AC-nn` is scoped to its story issue and is cited together with it; the other families are repository-wide.
+  An `AC-nn` is scoped to its issue and is cited together with it; the other families are repository-wide.
   IDs are never renumbered or reused, including in example text.
 - **Headings** are Title Case in requirements files, guides, and assignments.
 - **Applicability markers**: every requirements file carries inline `**Since: WN**` markers, so a section can hold requirements that begin in different weeks.

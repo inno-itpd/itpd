@@ -71,7 +71,7 @@ It is the short version of the requirements, states what is expected of you as a
 1. The identifier families introduced in Week 1 are `ALT-nn` for alternatives, `GAP-nn` for gaps, `VP-nn` for value propositions, `ASM-nn` for assumptions, and `DEC-nnn` for decisions.
    All are zero-padded and case-sensitive.
    `DEC-nnn` has three digits, because a decision is made at every customer meeting and the log can pass 99 entries; every other family has two.
-   `US-nn` for user stories, `AC-nn` for their acceptance criteria, `CON-nn` for constraints, and `BND-nn` for boundary items are introduced in Week 2.
+   `US-nn` for user stories, `AC-nn` for the acceptance criteria of a story issue or a task issue, `CON-nn` for constraints, and `BND-nn` for boundary items are introduced in Week 2.
    A later family is introduced only by the requirement that first uses it.
 2. An identifier, once issued, is never changed, reused, or reassigned, including when the artifact is edited later in the course.
 3. Gaps in a sequence are expected and correct.
@@ -81,8 +81,8 @@ It is the short version of the requirements, states what is expected of you as a
 5. The heading of an identifier's section is the identifier alone, such as `## DEC-001`, so the section's anchor is `#dec-001` and a link to it survives rewording the item.
    The first line under the heading names the item or states it in one sentence.
 6. Every reference between artifacts uses the identifier, not the title, so that renaming a title does not break the chain.
-7. `US-nn` and `AC-nn` are the exceptions to rules 4 and 5, and to rules 10 to 12, because they live in a story issue rather than in a section of their own.
-   [Where Stories Live](user-stories-requirements.md#where-stories-live) says how a dropped story is kept, and [Acceptance Criteria](user-stories-requirements.md#acceptance-criteria) says how a criterion is numbered, retired, and cited.
+7. `US-nn` and `AC-nn` are the exceptions to rules 4 and 5, and to rules 10 to 12, because they live in an issue rather than in a section of their own.
+   [Where Stories Live](user-stories-requirements.md#where-stories-live) says how a dropped story is kept, [Acceptance Criteria](user-stories-requirements.md#acceptance-criteria) says how a story's criterion is numbered, retired, and cited, and the task's [Acceptance Criteria](task-issues-requirements.md#acceptance-criteria) says the same for a task's criterion.
 8. Action points are not an identifier family, and there is no `ACT-nn`.
    Cite an action point by its meeting report's path and `#action-points` anchor, with the action quoted.
    A story's `Traces to` entry for an action point uses this form.
@@ -122,12 +122,12 @@ The research you produce in Week 1 is the evidence base for the rest of the cour
 Later weeks cite your Week 1 identifiers rather than restating your findings.
 This is what makes the course a project rather than nine separate assignments.
 
-| Later work                   | Must cite                                                                                                                                                                                     |
-| ---------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Week 2 product vision        | The `VP-nn` its goal traces to, per [Goal](product-vision-requirements.md#goal)                                                                                                               |
-| Week 2 user stories          | The `VP-nn` and any origins in each story's `Traces to` list, and the `ASM-nn` of each assumption it rests on in its `Rests on` list, per [The Story](user-stories-requirements.md#the-story) |
-| Week 2 prototypes            | The `US-nn` or `GAP-nn` each one tested, and the `ASM-nn` when the risky part is an assumption, per [Where Prototypes Live](prototypes-requirements.md#where-prototypes-live)                 |
-| Any change a decision caused | The decision's `DEC-nnn` when it has an entry, or its reason otherwise, per [What Cites It](decisions-requirements.md#what-cites-it)                                                          |
+| Later work                   | Must cite                                                                                                                                                                                                                   |
+| ---------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Week 2 product vision        | The `VP-nn` its goal traces to, per [Goal](product-vision-requirements.md#goal)                                                                                                                                             |
+| Week 2 user stories          | The `VP-nn` in each story's `Value proposition` field, any origins in its `Traces to` list, and the `ASM-nn` of each assumption it rests on in its `Rests on` list, per [The Story](user-stories-requirements.md#the-story) |
+| Week 2 prototypes            | The `US-nn` or `GAP-nn` each one tested, and the `ASM-nn` when the risky part is an assumption, per [Where Prototypes Live](prototypes-requirements.md#where-prototypes-live)                                               |
+| Any change a decision caused | The decision's `DEC-nnn` when it has an entry, or its reason otherwise, per [What Cites It](decisions-requirements.md#what-cites-it)                                                                                        |
 
 **Required**
 

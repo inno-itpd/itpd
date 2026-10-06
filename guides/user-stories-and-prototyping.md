@@ -23,7 +23,7 @@ Most of it is arguing about which stories are the same story wearing two hats, w
 
 ```text
 docs/product-vision.md         the goal, the constraints, the stakeholders, the boundary, the context diagram
-GitHub issues                  one per story, titled US-nn: <title>, with its Traces to and Rests on lists, AC-nn criteria, and labels
+GitHub issues                  one per story, titled US-nn: <title>, with its value proposition, Traces to and Rests on lists, AC-nn criteria, and labels
 reports/week-02/README.md      the minimum usable product candidate: core task and stories
 reports/week-02/prototypes.md  what you showed, what they said, what changed
 ```
@@ -155,11 +155,11 @@ Any notation works, including `Given`/`When`/`Then`.
 The notation is not the requirement; observability is.
 Compare:
 
-| Criterion                                                                                                                     | Verdict                                   |
-| ----------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------- |
-| Works properly.                                                                                                               | Not a criterion, and not testable         |
-| The client sees a confirmation.                                                                                               | Observable, but the answer is a judgement |
-| `AC-01`: Given a held slot whose client has not paid, when the hold expires, then the slot shows as free on the booking page. | Observable, and the answer is yes or no   |
+| Criterion                                                                                                                   | Verdict                                   |
+| --------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------- |
+| Works properly.                                                                                                             | Not a criterion, and not testable         |
+| The client sees a confirmation.                                                                                             | Observable, but the answer is a judgement |
+| AC-01: Given a held slot whose client has not paid, when the hold expires, then the slot shows as free on the booking page. | Observable, and the answer is yes or no   |
 
 A criterion may name a screen, a field, or a system state, because that is what an observer checks; the story may not, because that would be the design.
 
@@ -255,7 +255,7 @@ See [Validating With The Customer](validating-with-the-customer.md) for the meet
   "I want a payment system" names an area, not a need, and no criterion can be written for it.
   Say who pays, for what, and what goes wrong when they do not.
 - **Forcing a story onto a gap that does not cover it.**
-  If the need came from a decision or an action point, cite its `DEC-nnn` or the action point in `Traces to` instead; a story that traces only to its `VP-nn` is fine.
+  If the need came from a decision or an action point, cite its `DEC-nnn` or the action point in `Traces to` instead; a story with no `Traces to` list, only its `VP-nn`, is fine.
   A false link makes a reader stop trusting the real ones.
 - **One criterion per story.**
   It is the easiest number to hit and the least useful.

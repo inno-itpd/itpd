@@ -54,7 +54,8 @@ The rules:
 - Start the forms pull request from a blank issue: [Issue Tracking](../requirements/repository-requirements.md#issue-tracking).
 - Add both issue forms and their labels: [the story issue form](../requirements/user-stories-requirements.md#the-issue-form) and [the task issue form](../requirements/task-issues-requirements.md#the-issue-form).
 - Close exactly one task issue from each pull request, and close a task whose pull request was not merged as not planned: [Closing A Task](../requirements/task-issues-requirements.md#closing-a-task).
-- Name branches after their task issue, and link in each pull request its task issue, naming the `AC-nn` it checks unless the task names them: [Branch Protection And Pull Requests](../requirements/repository-requirements.md#branch-protection-and-pull-requests).
+- Give each task its own acceptance criteria, which the reviewer ticks before approving: [Acceptance Criteria](../requirements/task-issues-requirements.md#acceptance-criteria).
+- Name branches after their task issue, and link in each pull request its task issue: [Branch Protection And Pull Requests](../requirements/repository-requirements.md#branch-protection-and-pull-requests).
 - Recommended: track the team's tasks inside the repository: [Tracking Tasks Inside The Repository](../requirements/repository-requirements.md#tracking-tasks-inside-the-repository).
 
 This week:
@@ -151,7 +152,7 @@ The method is in [Step 1: Write The Goal And The Boundary](../guides/user-storie
 The rules:
 
 - Open each story as an issue, and keep the issue as its record of change: [Where Stories Live](../requirements/user-stories-requirements.md#where-stories-live).
-- Write each story as a user's need, with its `Traces to` list, and its `Rests on` list when it rests on an assumption: [The Story](../requirements/user-stories-requirements.md#the-story).
+- Write each story as a user's need, with its `Value proposition`, its `Traces to` list when it has an origin, and its `Rests on` list when it rests on an assumption: [The Story](../requirements/user-stories-requirements.md#the-story).
 - Keep each assumption a story rests on as an `ASM-nn` entry, and settle it with its evidence: [Assumption Requirements](../requirements/assumptions-requirements.md).
 - Link each Week 1 identifier a story cites to its section: [Traceability Into Later Weeks](../requirements/general-requirements.md#traceability-into-later-weeks).
 - Give each story acceptance criteria somebody else can run, each with its `AC-nn`: [Acceptance Criteria](../requirements/user-stories-requirements.md#acceptance-criteria).
@@ -324,7 +325,7 @@ A transcript under item 5 goes in an appendix, which the two pages do not count.
 - [ ] `.github/ISSUE_TEMPLATE/user-story.yml`, `task.yml`, `config.yml`, and the labels, in one pull request started from a blank issue ([Part 1](#part-1-track-the-work-as-issues)).
 - [ ] `Story` and `Acceptance criteria` fields in `task.yml`, and every pull request closing one task issue ([Part 1](#part-1-track-the-work-as-issues)).
 - [ ] A `Rests on` field in `user-story.yml`, and every story's `ASM-nn` in its `Rests on` list rather than its `Traces to` list ([Part 1](#part-1-track-the-work-as-issues)).
-- [ ] `.github/pull_request_template.md` asks for the `AC-nn` each change checks ([Part 1](#part-1-track-the-work-as-issues)).
+- [ ] `.github/pull_request_template.md` links the task issue each pull request closes ([Part 1](#part-1-track-the-work-as-issues)).
 - [ ] `docs/decisions.md` with a `DEC-nnn` section for each Week 1 decision, each cited from what it changed, if it changed anything yet ([Part 2](#part-2-move-the-week-1-decisions-into-the-decisions-log)).
 - [ ] `docs/assumptions.md` with an `ASM-nn` section for each Week 1 assumption, and no table left in `value-proposition.md` ([Part 3](#part-3-move-the-week-1-assumptions-into-the-assumptions-log)).
 - [ ] Earlier weeks' Markdown fixed in a formatting-only pull request, merged before the Markdown check ([Part 4](#part-4-check-the-markdown-in-ci)).
