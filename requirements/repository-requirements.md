@@ -141,44 +141,20 @@ The link checker is a required part of the repository from Week 1.
 7. Every excluded link must be justified in the file that excludes it, and confirmed to work by opening it in a browser before you submit.
    A silent exclusion is a broken link you chose not to notice.
 
+**Recommended**
+
+- Keep Lychee's settings and exclusions in `lychee.toml` in the repository root, not in the workflow's `args`.
+  Lychee reads it by default, so the workflow and a local `lychee .` run check the same links the same way, and each exclusion keeps its reason in a comment beside it.
+
 **Example**
 
-`.github/workflows/lychee.yml`:
+The link check of this course's own repository is a working configuration to start from:
 
-```yaml
-name: Link check
+- [`.github/workflows/lychee.yml`](../.github/workflows/lychee.yml) runs Lychee on pull requests and on `main`, with its actions pinned per [Pinning Third-Party Actions](#pinning-third-party-actions).
+- [`lychee.toml`](../lychee.toml) holds the concurrency, the accepted statuses, and the exclusions, each with a comment saying why.
 
-on:
-  pull_request:
-  push:
-    branches: [main]
-
-permissions:
-  contents: read
-
-jobs:
-  lychee:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-      - name: Check links
-        uses: lycheeverse/lychee-action@e7477775783ea5526144ba13e8db5eec57747ce8 # v2.9.0
-        with:
-          args: >-
-            --no-progress
-            --max-concurrency 2
-            --accept 200,206,429
-            './**/*.md'
-          fail: true
-```
-
-Exclusions go in `.lycheeignore` in the repository root, one pattern per line, each with a comment saying why:
-
-```text
-# The Figma board requires a browser session and returns 403 to the checker.
-# Verified manually in a browser on 2026-09-30.
-https://www.figma.com/design/PUc4NFVcLureKzxE3RAGB0/Market-Research
-```
+Its exclusions are this repository's own.
+Start with none, and add yours with their reasons as you need them.
 
 ### Pinning Third-Party Actions
 

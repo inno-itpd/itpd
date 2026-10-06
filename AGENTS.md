@@ -60,6 +60,7 @@ It checks heading anchors with `--include-fragments` and fetches external links,
 | `lychee.toml`                             | Link check settings that `pnpm run check:links` and CI share: the concurrency, the accepted statuses, and the excluded paths and URLs, each with a comment saying why.                                   |
 
 Their fixtures run with `pnpm run test:markdown-format` and `pnpm run test:markdown-rules`, and all four gates run in CI on every pull request.
+`requirements/repository-requirements.md` links `.github/workflows/lychee.yml` and `lychee.toml` as the students' link-check example, so a change to either is a change to student-facing material.
 `eslint.config.ts` enables the `eslint-markdown` `recommended` set, which lints the same GFM AST as `@eslint/markdown` and so adds rules without a second parse.
 Two of its rules are off because they conflict with the house style: `md/no-irregular-dash`, because `course/syllabus.md` uses en and em dashes in its dates and titles and the guides use them deliberately, and `md/code-lang-shorthand`, because it rewrites the `markdown`, `text`, and `yaml` fence labels in `requirements/` and `guides/` to their shorthand forms.
 The `markdown/*` built-in rules other than `no-html` are not enabled, because `markdown/no-missing-label-refs` reports the `> [!NOTE]` and `> [!IMPORTANT]` blockquote alerts in `course/syllabus.md` as undefined label references.

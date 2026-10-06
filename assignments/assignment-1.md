@@ -100,7 +100,7 @@ The repository structure you are building towards:
 ├── README.md
 ├── LICENSE
 ├── .gitignore
-├── .lycheeignore
+├── lychee.toml
 ├── .github/
 │   ├── dependabot.yml
 │   ├── pull_request_template.md
@@ -310,7 +310,7 @@ See [Permalinks And Snapshots](../requirements/repository-requirements.md#permal
 - [ ] `main` protected: pull requests required, one approval, no self-approval.
       Screenshot saved in `reports/week-01/images/`.
 - [ ] Pull request template at `.github/pull_request_template.md`.
-- [ ] Lychee link check on pull requests and `main`, green, with justified exclusions in `.lycheeignore`.
+- [ ] Lychee link check on pull requests and `main`, green, with every exclusion justified where it is made.
 - [ ] Actions pinned to commit SHAs, with `.github/dependabot.yml`.
 - [ ] At least one merged pull request approved by another member.
 - [ ] Every member: at least one commit, at least one review.
