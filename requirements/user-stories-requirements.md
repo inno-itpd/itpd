@@ -17,6 +17,7 @@ How the `US-nn` and `AC-nn` identifiers are cited is in [General Requirements](g
 
 **Since: W2**
 
+<!-- TODO: are created since week 2 -->
 User stories are created in Week 2 and stay current for the rest of the course.
 Each story is a GitHub issue, and the `user-story` label identifies story issues unless the team chose another marker, per rule 6 below.
 
@@ -85,6 +86,7 @@ The rules every issue shares, such as disabling blank issues, are in [Issue Trac
 
 - Put the URL pattern in the descriptions of the `Traces to` and `Rests on` fields in `user-story.yml`, so whoever fills in the form sees it.
 - List a story's tasks in its body as a task list, such as `- [ ] #12`, so the story shows which of its tasks are closed.
+  <!-- TODO don't need a checkbox because a closed issue title will be visible and the color will show -->
   Use the list rather than GitHub sub-issues: a sub-issue has one parent, so a task that serves several stories could sit under only one of them.
   Closing the last task does not close the story.
 
@@ -111,6 +113,7 @@ Its job is to make one need concrete enough that a reviewer can tell whether you
    Such a specific goes in an acceptance criterion, or in a [constraint](product-vision-requirements.md#constraints) when it holds for the whole product, and goes in the story statement only when the specific thing is itself the need.
    An [acceptance criterion](#acceptance-criteria) may name the screen, the field, or the system state an observer checks, because that is what makes it runnable.
 4. Every story carries a `Traces to` list.
+   <!-- TODO use better field types -->
    It contains exactly one `VP-nn`, the value proposition the story supports, and, optionally, the story's origins: the `GAP-nn` it closes, the `DEC-nnn` of a decision, or an action point it carries out.
    A `GAP-nn` in the list is one that the story's `VP-nn` names under `**Closes:**`, so the story, its value proposition, and its gap form one chain.
    A story that rests on an [assumption](assumptions-requirements.md#what-rests-on-it) carries a separate `Rests on` list, naming the `ASM-nn` of each assumption it rests on, as a gap or a value proposition does.
@@ -222,6 +225,8 @@ As a coach who sells sessions online, I want a client to pay when they book, so 
 Must Have: without it, an unpaid booking still holds a slot, which is the GAP-01 problem itself; the reminder email can wait, because a client who paid already has the link.
 
 ### Acceptance criteria
+
+<!-- TODO don't require inline code for AC -->
 
 1. `AC-01`: Given a paid meeting type with one free slot, when a client books that slot, then the slot is held while the client pays.
 2. `AC-02`: Given a held slot whose client has not paid, when the hold expires, then the slot is released back to the calendar.

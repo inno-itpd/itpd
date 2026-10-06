@@ -44,6 +44,7 @@ A **task issue** holds one unit of work, such as building part of a story, docum
    The description field is required.
    The `Story` field is optional and takes each story issue the task works toward, one per line, such as `#42`, because one task may serve several stories.
    The `Acceptance criteria` field is optional and takes each `AC-nn` the task works toward, one per line, with its story when the task names more than one.
+   <!-- TODO AC required -->
    A task that is not work on a story, such as a workflow or a report, leaves both empty.
 2. Create the `task` label, by any means.
 
@@ -77,9 +78,12 @@ Hold a booked slot while the client pays, and release it when the hold expires.
 
 ### Story
 
-#42
+<!-- TODO use a bullet list here so that the issue title is rendered -->
+- #42
 
 ### Acceptance criteria
+
+<!-- TODO use a checklist here for the reviewer to check -->
 
 AC-01
 AC-02
