@@ -6,7 +6,8 @@ The parent `AGENTS.md` owns the repository map and the student-facing rules; thi
 ## What This Directory Owns
 
 The instructor's lecture slides, one Typst source per lecture.
-Nothing here is a layer, and nothing here is routed from `README.md`: students are graded against `requirements/`, not against the slides.
+Nothing here is a layer.
+`README.md` links each deck's PDF from its Lectures section so students can read the slides, but students are graded against `requirements/`, not against the slides.
 
 | File            | Owns                                                      |
 | --------------- | --------------------------------------------------------- |
@@ -95,7 +96,7 @@ There is no PDF-to-Typst converter, and pandoc cannot take a PDF as input, so ne
   Both pins are what the committed bytes were produced with, and a red check after either one changes is a reason to read the deck diff, not to re-record the pin.
 - Do not restate a rule from `requirements/` in a deck.
   A deck explains the week; `requirements/` is what a team is graded against, and the parent `AGENTS.md` layering rules still decide which of the two a sentence belongs to.
-- Do not add deck links to `README.md`.
-  It is the student entry point, and the slides are not part of it.
+- Do not add a deck without its row in the `README.md` Lectures table.
+  The row gives the week and the title from the deck's title slide, and links `lecture-N.pdf`, not `lecture-N.typ`.
 - Do not invent identifiers in slide examples.
   The identifier families and their stability rules are in the parent `AGENTS.md` conventions, and they hold in example text too.

@@ -17,6 +17,16 @@ Materials for the **IT Product Development (ITPD)** course: what the course expe
 Later assignments are added as the course runs.
 Each one adds the paths and evidence for its week, and changes nothing about the rules below.
 
+## Lectures
+
+The slides from each class.
+They explain the week; [the rules](#the-rules) are what your work is checked against.
+
+| Week | Lecture                                                |
+| ---- | ------------------------------------------------------ |
+| 1    | [Course introduction](lectures/lecture-1.pdf)          |
+| 2    | [Requirements and prototyping](lectures/lecture-2.pdf) |
+
 ## The Rules
 
 Read once.
