@@ -6,7 +6,7 @@ title: >-
 status: Done
 assignee: []
 created_date: '2026-10-06 12:26'
-updated_date: '2026-10-06 12:43'
+updated_date: '2026-10-06 12:45'
 labels: []
 dependencies: []
 ordinal: 79000
@@ -47,6 +47,8 @@ Rejected: closing on merge; leaving "delivered" to the Week 3 requirements; movi
 
 <!-- SECTION:NOTES:BEGIN -->
 2026-10-06: the close-on-acceptance rule conflicted with Issue Tracking rule 7. A branch created from an issue, or a `Closes #nn` keyword, makes GitHub close the issue when the pull request merges, before any verdict. Decided: a story's pull request links it with a non-closing reference such as `Refs #42`, and its branch is not created from the issue; task issues keep the auto-close. Rejected: reopening auto-closed stories; deferring to Week 3.
+
+Follow-up: course/syllabus.md Week 2 minima still said "a strict, non-empty subset of the Must-Have stories", so it now says "a non-empty subset", matching MUP rule 2.
 <!-- SECTION:NOTES:END -->
 
 ## Final Summary

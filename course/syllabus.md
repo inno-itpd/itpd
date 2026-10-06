@@ -124,7 +124,7 @@ Week 2 is the exception: its hard deadline is Saturday, October 10 at 23:59.
     5. **Prototypes**: prototypes of the riskiest assumptions, recorded at `reports/week-02/prototypes.md`.
        Prototypes may be paper sketches, view-only design tools, or disposable code spikes.
     6. **Customer Validation Meeting**: the Week 2 meeting with the customer, with the full Week 1 artifact set, which changes at least one story.
-  - **Minima**: at least eight story issues, at least five of them not `Won't Have`, each story carrying a `moscow:*` label, `Won't Have` stories closed as not planned, at least two acceptance criteria per story that is not `Won't Have`, and a minimum usable product candidate that is a strict, non-empty subset of the Must-Have stories and completes one core task end to end.
+  - **Minima**: at least eight story issues, at least five of them not `Won't Have`, each story carrying a `moscow:*` label, `Won't Have` stories closed as not planned, at least two acceptance criteria per story that is not `Won't Have`, and a minimum usable product candidate that is a non-empty subset of the Must-Have stories and completes one core task end to end.
     There is no product code this week.
   - **Note**: The product repository itself is created and configured in Week 1.
     Week 2 adds requirements, tracking, and prototypes.
