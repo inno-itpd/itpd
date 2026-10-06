@@ -48,7 +48,7 @@ The assignment lists what this week's meeting has to settle; your target turns t
 
 Re-read the previous meeting report before you write anything.
 Its open questions are still open, and its action points are due; if you have carried one out, the customer should hear how it went.
-This meeting's report records each one's outcome in `## Previous action points`, per [Meeting Report](../requirements/customer-meetings-requirements.md#meeting-report).
+This meeting's report records each action point's outcome in `## Previous action points` and each question's answer in `## Previous open questions`, per [Meeting Report](../requirements/customer-meetings-requirements.md#meeting-report).
 
 ## Step 2: Derive The Questions From The Target
 

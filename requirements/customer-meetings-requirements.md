@@ -190,15 +190,16 @@ A Week 3 meeting that shows working software.
 
    Name people as [Sensitive Information Reference](visibility-requirements.md#sensitive-information-reference) says.
 
-   | Section                     | Which meetings                  | What belongs in it                                                                                                                                                                                                                                                        |
-   | --------------------------- | ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-   | `## Metadata`               | Every meeting                   | Date, duration, who was there by GitHub username with the customer shown as `Customer`, what you presented, the answer to each of the three permission questions, a link to the transcript or `None` with the reason, and a link to the [meeting script](#meeting-script) |
-   | `## Previous action points` | Every meeting after the kickoff | A table, one row per action point the previous meeting reports set for this week                                                                                                                                                                                          |
-   | `## Summary`                | Every meeting                   | 3 to 5 bullets on what the meeting settled or changed, not on what was on the agenda                                                                                                                                                                                      |
-   | `## Decisions`              | Every meeting                   | A list of the decisions the meeting made                                                                                                                                                                                                                                  |
-   | `## Action points`          | Every meeting                   | A table, one row per action                                                                                                                                                                                                                                               |
-   | `## Open questions`         | Every meeting                   | A table, one row per question the meeting did not answer                                                                                                                                                                                                                  |
-   | `## Disagreements`          | Every meeting                   | A table, one row per place the customer did not agree with you                                                                                                                                                                                                            |
+   | Section                      | Which meetings                  | What belongs in it                                                                                                                                                                                                                                                        |
+   | ---------------------------- | ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+   | `## Metadata`                | Every meeting                   | Date, duration, who was there by GitHub username with the customer shown as `Customer`, what you presented, the answer to each of the three permission questions, a link to the transcript or `None` with the reason, and a link to the [meeting script](#meeting-script) |
+   | `## Previous action points`  | Every meeting after the kickoff | A table, one row per action point of an earlier report that is due by this meeting and not yet closed                                                                                                                                                                     |
+   | `## Previous open questions` | Every meeting after the kickoff | A table, one row per open question of an earlier report that is not yet closed                                                                                                                                                                                            |
+   | `## Summary`                 | Every meeting                   | 3 to 5 bullets on what the meeting settled or changed, not on what was on the agenda                                                                                                                                                                                      |
+   | `## Decisions`               | Every meeting                   | A list of the decisions the meeting made                                                                                                                                                                                                                                  |
+   | `## Action points`           | Every meeting                   | A table, one row per action                                                                                                                                                                                                                                               |
+   | `## Open questions`          | Every meeting                   | A table, one row per question the meeting did not answer                                                                                                                                                                                                                  |
+   | `## Disagreements`           | Every meeting                   | A table, one row per place the customer did not agree with you                                                                                                                                                                                                            |
 
 6. Each decision the meeting made has an entry in `docs/decisions.md`, per [Decision Requirements](decisions-requirements.md).
    `## Decisions` lists them, one bullet each, linking the entry with `DEC-nnn: <the decision>` as the link text, quoting the first line of the entry.
@@ -219,8 +220,16 @@ A Week 3 meeting that shows working software.
     `Decision` links each `DEC-nnn` the outcome produced, or says `None` when the outcome needed no decision.
     The earlier report is not edited; this row is the action point's closing record.
     An outcome that changes an artifact is carried into that artifact, and an outcome recorded only in this table has not been carried out.
+    An action point that was not carried out says why in `Outcome`, and reappears in this report's `## Action points` with a new due week, unless the team or the customer dropped it, which `Outcome` then says.
 
 11. `## Metadata` is a bulleted list, one `- **Label:** value` bullet per item, so that each item renders on a line of its own, as an identifier's fields do per [Identifier Rules](general-requirements.md#identifier-rules).
+
+12. `## Previous open questions` has the columns `Question`, `Answer`, and `Decision`.
+    `Question` cites the open question by its report's path and `#open-questions` anchor with the question quoted, as an action point is cited per [Identifier Rules](general-requirements.md#identifier-rules).
+    `Answer` says what the meeting or the work since found, and links each artifact the answer changed.
+    `Decision` links each `DEC-nnn` the answer produced, or says `None`.
+    The earlier report is not edited; this row is the question's closing record.
+    A question still unanswered says so in `Answer`, and reappears in this report's `## Open questions`.
 
 **Recommended**
 

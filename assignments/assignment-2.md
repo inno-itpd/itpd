@@ -193,6 +193,7 @@ The rules:
 - Cite an action point a story carries out as one of its origins: [The Story](../requirements/user-stories-requirements.md#the-story).
 - Record each outcome in the next meeting report, since the kickoff report is not edited: [Meeting Report](../requirements/customer-meetings-requirements.md#meeting-report).
 - Carry each outcome into the artifact it changed: [Meeting Report](../requirements/customer-meetings-requirements.md#meeting-report).
+- Close each kickoff open question in the next meeting report, or carry it forward: [Meeting Report](../requirements/customer-meetings-requirements.md#meeting-report).
 
 This week:
 
@@ -271,6 +272,7 @@ This week it also carries:
    | Deliverable            | Artifact                                                                                                            |
    | ---------------------- | ------------------------------------------------------------------------------------------------------------------- |
    | Kickoff action points  | `## Previous action points` in `reports/week-02/meeting-report.md`                                                  |
+   | Kickoff open questions | `## Previous open questions` in `reports/week-02/meeting-report.md`                                                 |
    | Product vision         | `docs/product-vision.md`                                                                                            |
    | System context diagram | `docs/architecture/context.<ext>` and its source, embedded in `docs/product-vision.md`                              |
    | Assumptions            | `docs/assumptions.md`                                                                                               |
@@ -325,6 +327,7 @@ A transcript under item 5 goes in an appendix, which the two pages do not count.
 - [ ] `## Minimum Usable Product Candidate` in `reports/week-02/README.md` ([Part 7](#part-7-propose-the-minimum-usable-product-candidate)).
 - [ ] `reports/week-02/prototypes.md` with at least one prototype, and no prototype code on `main` ([Part 8](#part-8-prototype-the-riskiest-part)).
 - [ ] Each kickoff action point's outcome in `## Previous action points`, and in the artifact it changed ([Part 9](#part-9-carry-out-the-kickoff-action-points)).
+- [ ] Each kickoff open question answered or carried forward in `## Previous open questions` ([Part 9](#part-9-carry-out-the-kickoff-action-points)).
 - [ ] `reports/week-02/meeting-script.md`, with the candidate's part listing its `US-nn` ([Part 10](#part-10-validate-with-the-customer)).
 - [ ] `reports/week-02/meeting-report.md`, with a row per kickoff action point, 2+ decisions listed by `DEC-nnn` including the candidate verdict, and 2+ action points due in Week 3 ([Part 10](#part-10-validate-with-the-customer)).
 - [ ] `reports/week-02/meeting-transcript.md`, if the meeting was recorded or held in writing ([Part 10](#part-10-validate-with-the-customer)).
