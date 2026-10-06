@@ -6,6 +6,8 @@ Materials for the **IT Product Development (ITPD)** course: what the course expe
 
 1. **[Course rules](course/rules.md)** — read this first.
    What is public, what is private, deadlines, AI policy.
+2. **[The course as an agent skill](requirements/repository-requirements.md#the-course-materials-as-an-agent-skill)** — if your team uses a coding agent.
+   How to install these materials in your repository so the agent reads them.
 
 ## Assignments
 

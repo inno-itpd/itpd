@@ -19,6 +19,7 @@ Use [General Requirements](general-requirements.md) for what an artifact is, [Vi
 - [Contributing](#contributing)
 - [Changelog, Releases And Versioning](#changelog-releases-and-versioning)
 - [Continuous Integration](#continuous-integration)
+- [The Course Materials As An Agent Skill](#the-course-materials-as-an-agent-skill)
 - [Recommended Throughout The Course](#recommended-throughout-the-course)
 
 ## Repository Setup
@@ -131,6 +132,7 @@ The link checker is a required part of the repository from Week 1.
 1. Configure link checking with [Lychee](https://lychee.cli.rs/continuous-integration/github/) as a GitHub Actions workflow.
 2. Check every Markdown file in the repository, including everything under `reports/` and `docs/`.
    Do not check only the files you edited.
+   The one directory you may leave out is the course materials', per [The Course Materials As An Agent Skill](#the-course-materials-as-an-agent-skill).
 3. Run it on pull requests and on every push to `main`.
 4. The workflow must fail the check when a link is broken.
    A check that reports and passes anyway is not a check.
@@ -387,7 +389,7 @@ The pull request is where the team already writes down what changed and why, whi
 3. Any of the common tools is acceptable: `markdownlint-cli2`, `prettier --check`, or `remark-lint`.
    Pin the action to a commit, per [Pinning Third-Party Actions](#pinning-third-party-actions), and pin the tool's version: an action that bundles the tool pins it with the action, and a tool installed by the workflow pins it in the lockfile.
 4. Fixing what the check reports in an earlier week's files is a formatting-only change, which [Where Artifacts Live In The Repository](general-requirements.md#where-artifacts-live-in-the-repository) allows.
-5. A task tracker's directory may be excluded from the check, per [Tracking Tasks Inside The Repository](#tracking-tasks-inside-the-repository).
+5. A task tracker's directory may be excluded from the check, per [Tracking Tasks Inside The Repository](#tracking-tasks-inside-the-repository), and so may the course materials' directory, per [The Course Materials As An Agent Skill](#the-course-materials-as-an-agent-skill).
    Nothing else is excluded.
 
 Markdown is checked in Week 2 because the week is mostly prose: a product vision, the meeting artifacts, and the week report.
@@ -440,6 +442,83 @@ It also excludes the task tracker's directory:
 7. Keep the link check and the Markdown check running.
    They are a baseline, not a substitute for the checks your product needs.
 8. The latest `main` run of every required check must be green before you submit.
+
+## The Course Materials As An Agent Skill
+
+**Since: W2**
+
+**Recommended**
+
+- If your team works with a coding agent, install these course materials in your repository as a skill, so the agent reads the rules your work is checked against instead of guessing them.
+  The course repository has a `SKILL.md` in its root, so a copy of the whole repository is the skill.
+- Add it as a Git submodule in the directory your agent reads skills from, under the name `itpd`, which must match the skill's name.
+  Many agents read `.agents/skills/`, and Claude Code reads `.claude/skills/`; check your agent's documentation.
+- Move it to the latest course materials when a new assignment is published, and commit the change so the whole team moves together.
+- Exclude its directory from the [Markdown check](#continuous-integration) and the [link check](#link-checking).
+  Its files are the course's, and the course repository checks them.
+- Disclose the agent's work in the week's [AI usage report](weekly-report-requirements.md#ai-usage-report), as for any other AI tool.
+
+A submodule is another Git repository placed inside yours.
+Your repository does not store its files: it stores the submodule's URL in `.gitmodules` and a pointer to one commit of it.
+Everyone who checks out your repository gets the course materials at that commit, until someone moves the pointer and commits the move.
+
+**Example**
+
+One member adds the submodule once, and commits it:
+
+```sh
+git submodule add https://github.com/inno-itpd/itpd .agents/skills/itpd
+git commit -m "chore: add the ITPD course materials as an agent skill"
+```
+
+Every member clones with the submodule:
+
+```sh
+git clone --recurse-submodules <your repository URL>
+```
+
+In a clone made without `--recurse-submodules`, the directory is empty until you run:
+
+```sh
+git submodule update --init
+```
+
+A plain `git pull` moves the pointer when a teammate has moved it, but leaves the files at the old commit.
+Pull with `git pull --recurse-submodules`, or set this once in your clone so `pull` and `checkout` update the submodule themselves:
+
+```sh
+git config submodule.recurse true
+```
+
+To move to the latest course materials, fetch them and commit the new pointer:
+
+```sh
+git submodule update --remote .agents/skills/itpd
+git add .agents/skills/itpd
+git commit -m "chore: update the ITPD course materials"
+```
+
+If the submodule's files were changed by hand or no longer match the pointer, force them back to the commit your repository records.
+This discards any change inside the submodule:
+
+```sh
+git submodule update --init --force .agents/skills/itpd
+```
+
+`actions/checkout` does not fetch submodules unless asked, so the directory is empty in CI.
+It is not empty in a local clone, so exclude it from both checks anyway.
+In `.markdownlint-cli2.jsonc`, beside the task tracker's directory:
+
+```jsonc
+  "ignores": ["backlog/**", ".agents/skills/itpd/**"],
+```
+
+In `lychee.toml`:
+
+```toml
+# The ITPD course materials, a submodule that the course repository checks.
+exclude_path = ['^(\./)?\.agents/skills/itpd/']
+```
 
 ## Recommended Throughout The Course
 

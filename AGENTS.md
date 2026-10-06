@@ -9,6 +9,7 @@ Operating instructions for coding agents maintaining the student-facing course m
 | File                                                  | Owns                                                                                                                                                            |
 | ----------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `README.md`                                           | Student entry point and routing. Nothing else.                                                                                                                  |
+| `SKILL.md`                                            | The entry point for a student's coding agent when a team installs this repository as a skill. A router, like `README.md`, and kept in step with it.             |
 | `course/syllabus.md`                                  | The single source of truth for the schedule: week-by-week focus, dates, submission deadlines, and course policies. Edited here.                                 |
 | `course/rules.md`                                     | The course contract: public vs private, hygiene, AI policy, deadlines, submission channel. Short, and a router rather than a second rulebook.                   |
 | `course/teams-and-projects.md`                        | Which team number works on which project. Regenerated each term, and a repeated project name is not an error because two teams may share a project name.        |
@@ -32,6 +33,9 @@ Operating instructions for coding agents maintaining the student-facing course m
 | `guides/validating-with-the-customer.md`              | Method for meetings after the kickoff and for recording what they changed. Explanatory, not normative.                                                          |
 | `assignments/assignment-N.md`                         | Learner-facing requirements for one week. Deltas, paths, and evidence only.                                                                                     |
 | `lectures/AGENTS.md`                                  | The lecture decks: `lecture-N.typ` sources, their generated PDFs, the build, the layout contract, and the conversion method. Not student-facing.                |
+
+`SKILL.md` makes a checkout of this repository a skill named `itpd`, which a team installs as a Git submodule per `requirements/repository-requirements.md`.
+When a requirements file, guide, or assignment is added, renamed, or removed, update the routing in `SKILL.md` in the same change, as in `README.md`.
 
 ### Tooling
 
