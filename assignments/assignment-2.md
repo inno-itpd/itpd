@@ -117,6 +117,7 @@ This week:
    `docs/decisions.md`, `docs/assumptions.md`, and every report from Week 2 on use the list from the start.
 5. In the same pull request, start the fields of each `ALT-nn`, `GAP-nn`, and `VP-nn` section with `**Status:**`, and move the reason and the date of each one you dropped into its `**Dropped:**` field, per [Where Research Lives](../requirements/research-requirements.md#where-research-lives) and [Identifier Rules](../requirements/general-requirements.md#identifier-rules).
    A dropped gap no longer lists the value propositions it affected.
+   Rename each field to the label the requirements give it, in their order, per [Alternatives](../requirements/research-requirements.md#alternatives), [Gap Analysis](../requirements/research-requirements.md#gap-analysis), and [Value Proposition And Differentiation](../requirements/research-requirements.md#value-proposition-and-differentiation), and add a `**Confidence:**` to each gap that has none.
 
 ## Part 5: State The Product Vision
 

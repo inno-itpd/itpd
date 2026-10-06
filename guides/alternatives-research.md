@@ -157,6 +157,7 @@ Calendly
 | Calendar sync            | Google, Microsoft, and iCloud; double bookings are prevented after the first connection (account setup).          |
 | Cost model               | The free tier is functional; payments, teams, and routing are paid tiers (pricing page).                          |
 | Onboarding               | Published an event type in about ten minutes (hands-on).                                                          |
+| Client account           | The client books without an account and receives an email confirmation (hands-on booking).                        |
 
 **Strengths**
 

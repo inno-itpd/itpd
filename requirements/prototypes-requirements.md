@@ -7,6 +7,7 @@ These requirements define what a prototype is for, what it must change, and wher
 
 - [Where Prototypes Live](#where-prototypes-live)
 - [Validation](#validation)
+- [Full Example](#full-example)
 
 ## Where Prototypes Live
 
@@ -16,15 +17,17 @@ These requirements define what a prototype is for, what it must change, and wher
 
 1. A week that tests an idea records it at `reports/week-NN/prototypes.md`.
    It is week evidence, not maintained documentation, so it is not in `docs/`.
-2. The file carries, for each prototype:
+2. The file has one section per prototype, headed by a name for it, with these fields as a bulleted list, in this order:
 
-   - What it is and how to view it: a screenshot in `reports/week-NN/images/` or a view-only external link.
+   - `**What it is:**` its form and what it shows.
+   - `**View:**` a screenshot in `reports/week-NN/images/` or a view-only external link.
      A code spike is viewed through its screenshot.
      It may also link its code as a pull request closed without merging, which stays readable after the branch is deleted, rather than linking the branch.
-   - Which `US-nn` or `GAP-nn` it tested, any `AC-nn` it exercised, and the question it was built to answer.
+   - `**Tested:**` the `US-nn` or `GAP-nn` it tested and any `AC-nn` it exercised.
      When the risky part is an [assumption](assumptions-requirements.md#the-assumption), also cite its `ASM-nn`.
-   - What the customer said about it.
-   - What changed as a result, and where that change is recorded.
+   - `**Question:**` the question it was built to answer.
+   - `**What the customer said:**` the customer's reaction to it.
+   - `**What changed:**` what changed as a result, and where that change is recorded.
 
 3. A prototype may be a paper sketch, a static image, a clickable design, or a code spike.
    Any format is allowed, as long as somebody else can look at it.
@@ -86,3 +89,20 @@ A prototype that validated everything proved nothing, because you chose the part
 - Prototype the riskiest assumption first, and only as long as it takes to get a reaction.
 - Test with whoever actually does the job, where that is possible; in this course, the customer is the one who reacts to the prototype.
 - Keep the loop short: build something, show it, write down what you learned, change the story.
+
+## Full Example
+
+`reports/week-02/prototypes.md`, after the Week 2 validation meeting:
+
+```markdown
+# Week 02 prototypes
+
+## Pay-before-confirm booking flow
+
+- **What it is:** a clickable design of a client booking a slot and paying on the payment provider's hosted checkout page.
+- **View:** [the clickable design, view-only](https://www.figma.com/proto/<file>) and [the held-slot screen](images/held-slot.png).
+- **Tested:** [`US-01`](https://github.com/<organization>/<repo>/issues/42), exercising `AC-01` and `AC-02`, and [`ASM-02`](../../docs/assumptions.md#asm-02), because whether clients pay at booking is the risky part.
+- **Question:** will the customer accept a slot that is held, not confirmed, while the client pays?
+- **What the customer said:** a hold is fine, but a booking that confirms before payment is the unpaid booking the product exists to stop.
+- **What changed:** [`DEC-006`](../../docs/decisions.md#dec-006), listed in [the meeting report](meeting-report.md#decisions): `US-01` gained `AC-03`, recorded in its issue comment, and `ASM-02` is `Confirmed`.
+```
