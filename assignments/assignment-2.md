@@ -163,9 +163,9 @@ The method is in [Step 2: Turn Each Gap Into Stories](../guides/user-stories-and
 
 The rules:
 
-- Name the core task and the `Must Have` stories that complete it, and cite the customer's verdict on them: [Minimum Usable Product Candidate](../requirements/user-stories-requirements.md#minimum-usable-product-candidate).
-- Record the candidate in the weekly public report: [Weekly Public Report](../requirements/weekly-report-requirements.md#weekly-public-report).
-- Keep the priority of a story the verdict drops from the candidate, unless the customer changed it: [Minimum Usable Product Candidate](../requirements/user-stories-requirements.md#minimum-usable-product-candidate).
+- Name the core task and the `Must Have` stories that complete it, and cite the customer's verdict on them: [The Candidate](../requirements/minimum-usable-product-requirements.md#the-candidate).
+- Record the candidate in the weekly public report: [Where The Candidate Lives](../requirements/minimum-usable-product-requirements.md#where-the-candidate-lives).
+- Keep the priority of a story the verdict drops from the candidate, unless the customer changed it: [The Candidate](../requirements/minimum-usable-product-requirements.md#the-candidate).
 
 This week:
 

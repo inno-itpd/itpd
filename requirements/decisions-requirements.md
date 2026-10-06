@@ -116,7 +116,7 @@ The whole file is in [Full Example](#full-example).
 
    - A story, in its `Traces to` list when the decision is its origin, per [The Story](user-stories-requirements.md#the-story), and in the comment that records each change, per [Where Stories Live](user-stories-requirements.md#where-stories-live).
    - A `CON-nn` or a `BND-nn` in the product vision, in the field that records the decision, per [Constraints](product-vision-requirements.md#constraints) and [Boundary](product-vision-requirements.md#boundary).
-   - The [minimum usable product candidate](user-stories-requirements.md#minimum-usable-product-candidate), which cites the customer's verdict on it.
+   - The [minimum usable product candidate](minimum-usable-product-requirements.md#the-candidate), which cites the customer's verdict on it.
 
 ## Reversing A Decision
 

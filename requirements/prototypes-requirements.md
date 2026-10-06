@@ -58,7 +58,7 @@ These rules apply to every meeting with the customer where you show a prototype,
    - **Proof of concept (PoC)**: can this work at all technically?
    - **Prototype**: how will this look, and does this user flow make sense?
    - **Minimum usable product (MUP)**: can a user complete the core tasks without getting frustrated?
-     See [Minimum Usable Product Candidate](user-stories-requirements.md#minimum-usable-product-candidate).
+     See [The Candidate](minimum-usable-product-requirements.md#the-candidate).
    - **Minimum viable product (MVP)**: will people use it?
 
    A code spike can answer the PoC question or a prototype question; either way it is recorded as a prototype and thrown away.

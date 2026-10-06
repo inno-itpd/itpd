@@ -180,7 +180,7 @@ If the only reason you can write is the definition of the label, you have not de
 A `Won't Have` story is not built, but write it down as an issue and close it as not planned, with the reason, instead of quietly leaving a story out.
 A reader can argue with a recorded `Won't Have`; they can only guess about a missing one.
 
-Then name the **minimum usable product candidate**, per [the requirement](../requirements/user-stories-requirements.md#minimum-usable-product-candidate).
+Then name the **minimum usable product candidate**, per [the requirement](../requirements/minimum-usable-product-requirements.md#the-candidate).
 
 This is the hardest decision of the week and it belongs here, where the evidence is.
 Work in this order:

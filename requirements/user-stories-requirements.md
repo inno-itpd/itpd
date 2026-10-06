@@ -1,6 +1,6 @@
 # User Story Requirements
 
-These requirements define a user story: where it lives, its issue form, what it must say, its acceptance criteria, its priority, and the minimum usable product candidate the priorities produce.
+These requirements define a user story: where it lives, its issue form, what it must say, its acceptance criteria, and its priority.
 [Guide: User Stories And Prototyping](../guides/user-stories-and-prototyping.md) is the method.
 How the `US-nn` and `AC-nn` identifiers are cited is in [General Requirements](general-requirements.md#identifier-rules).
 
@@ -11,7 +11,6 @@ How the `US-nn` and `AC-nn` identifiers are cited is in [General Requirements](g
 - [The Story](#the-story)
 - [Acceptance Criteria](#acceptance-criteria)
 - [MoSCoW Prioritization](#moscow-prioritization)
-- [Minimum Usable Product Candidate](#minimum-usable-product-candidate)
 - [Full Example](#full-example)
 
 ## Where Stories Live
@@ -180,7 +179,7 @@ Every priority is relative to the product you intend to finish in this course.
    The two are independent otherwise: a boundary item is a decision about the whole product and needs no matching story, and a `Won't Have` story is one written need that you excluded and need not appear in the boundary.
 6. To change a priority, change the label and the priority reason together, and record the change per [Where Stories Live](#where-stories-live).
    The comment names the old priority and the new one.
-7. The `Must Have` stories you would build first are the [minimum usable product candidate](#minimum-usable-product-candidate).
+7. The `Must Have` stories you would build first are the [minimum usable product candidate](minimum-usable-product-requirements.md#the-candidate).
 
 **Recommended**
 
@@ -196,30 +195,6 @@ A `Could Have` reason; the `Must Have` one is in the [full example](#full-exampl
 
 Could Have: a reminder email reduces no-shows, but a client who paid already has the link, so the core task finishes without it.
 ```
-
-## Minimum Usable Product Candidate
-
-**Since: W2**
-
-A **minimum usable product (MUP)** is the smallest product in which a user can complete the core tasks without getting frustrated.
-The candidate is your proposal for it, made before any product code exists, so the customer can argue with it while it is still cheap to change.
-
-**Required**
-
-1. Name the **core task** the candidate serves: one thing a user does from start to finish, written in one line.
-2. The candidate is a non-empty subset of your `Must Have` stories that together let a user complete that core task end to end.
-   Stories that cover only part of the task are not a candidate.
-3. Every story in the candidate is needed: without any one of them, the core task no longer completes.
-4. Record the candidate per [Weekly Public Report](weekly-report-requirements.md#weekly-public-report).
-5. The candidate is a proposal, not a commitment.
-   The customer's verdict on it is a [decision](decisions-requirements.md#the-decision), and the candidate cites its `DEC-nnn`.
-6. A story the verdict drops from the candidate keeps its priority unless the customer also changed it.
-   A priority change is recorded per [MoSCoW Prioritization](#moscow-prioritization).
-
-**Recommended**
-
-- Two or three stories that a user can finish in one sitting.
-  A long candidate is a postponement, not a priority.
 
 ## Full Example
 
