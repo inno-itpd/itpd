@@ -1,10 +1,10 @@
 ---
 id: TASK-101
 title: Move local task tracking into its own requirements file
-status: In Progress
+status: Done
 assignee: []
 created_date: '2026-10-06 19:26'
-updated_date: '2026-10-06 19:36'
+updated_date: '2026-10-06 19:54'
 labels: []
 dependencies: []
 ordinal: 97000
@@ -24,7 +24,7 @@ repository-requirements.md owns platform mechanics, and its Tracking Tasks Insid
 - [x] #4 repository-requirements.md no longer has the section, every inbound link points at the new file, and its markdownlint example sets gitignore
 - [x] #5 Closing A Task exempts the cleanup workflow's pull request from closing a task issue
 - [x] #6 General requirements class a TODO.md checklist as repository content, and README.md, course/rules.md, SKILL.md, assignment-2.md, and AGENTS.md route to the new file
-- [ ] #7 backlog-cleanup.yml has no maintainer-only wording
+- [x] #7 backlog-cleanup.yml has no maintainer-only wording
 <!-- AC:END -->
 
 ## Definition of Done
@@ -37,3 +37,9 @@ repository-requirements.md owns platform mechanics, and its Tracking Tasks Insid
 - [ ] #6 `pnpm run check:links` passes
 - [ ] #7 Implementation notes record the decisions made and the validation results
 <!-- DOD:END -->
+
+## Implementation Notes
+
+<!-- SECTION:NOTES:BEGIN -->
+The Backlog.md section moved unchanged from repository-requirements.md to requirements/local-task-tracking-requirements.md as A Task Tracker In The Repository. Decided in review: TODO.md is a working checklist for the work in hand plus candidate tasks, ticked as done and cleared whenever convenient, with its format left to the team and the example showing checkboxes, nesting, and a Later section. Committed or per member is the team's choice; Backlog drafts may hold candidates instead; customer action points go straight to task issues; committed TODO.md edits may ride along in any pull request; from W3 the choice is stated in CONTRIBUTING.md. The cleanup workflow's pull request is exempt from closing a task issue, as for Dependabot. The markdownlint-cli2 example sets gitignore as a general setting so local runs match CI, and TODO.md is not mentioned there. backlog-cleanup.yml lost its maintainer-only wording: the flake.nix comment, the named Lectures workflow, the agents commit scope, and the claim that the link check excludes backlog/. Validation: format:markdown:check, lint:markdown, both plugin fixtures, check:lectures, and check:links (786 OK, 0 errors) pass; actionlint passes on the workflow; no link to the old tracking-tasks-inside-the-repository anchor remains outside backlog/.
+<!-- SECTION:NOTES:END -->

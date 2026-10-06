@@ -26,8 +26,8 @@ jobs:
         with:
           persist-credentials: false
 
-      # flake.nix pins the CLI to a time-tools/Backlog.md commit that reports
-      # 1.52.0. The job needs only the CLI, so it skips nix develop.
+      # Pin the CLI to the version the team uses locally, so the job moves
+      # the tasks the same way a member's checkout would.
       - name: Install the Backlog CLI
         run: npm install --global --no-audit --no-fund backlog.md@1.52.0
 
@@ -65,7 +65,7 @@ jobs:
         env:
           # A pull request opened with the repository GITHUB_TOKEN starts no
           # pull_request workflows, so a BACKLOG_CLEANUP_TOKEN secret, when set,
-          # lets the Markdown, Lectures, and Link check workflows run on it.
+          # lets the pull request workflows run on it.
           GH_TOKEN: ${{ secrets.BACKLOG_CLEANUP_TOKEN || github.token }}
         run: |
           set -euo pipefail
@@ -81,7 +81,7 @@ jobs:
           task_ids=$(paste -sd, "$RUNNER_TEMP/done-task-ids.txt" | sed 's/,/, /g')
           git checkout -b "$branch"
           git add backlog
-          git commit -m "chore(agents): move done tasks to completed" \
+          git commit -m "chore: move done tasks to completed" \
             -m "Move ${task_ids} from backlog/tasks/ to backlog/completed/ so the active task list holds only open work. The Backlog CLI changes the file location only; the task contents are unchanged."
 
       - name: Push the cleanup branch
@@ -118,7 +118,7 @@ jobs:
 
           ## Definition of Done
 
-          - [x] The change is confined to \`backlog/\`, which the Markdown gates and the link check exclude.
+          - [x] The change is confined to \`backlog/\`, which the Markdown check excludes.
           - [ ] CI is green.
 
           ## Reviewer notes
@@ -131,5 +131,5 @@ jobs:
             gh pr edit "$number" --body-file "$body"
             echo "Refreshed pull request #$number for $branch."
           else
-            gh pr create --base main --head "$branch" --title "chore(agents): move done tasks to completed" --body-file "$body"
+            gh pr create --base main --head "$branch" --title "chore: move done tasks to completed" --body-file "$body"
           fi
