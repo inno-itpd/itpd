@@ -285,7 +285,8 @@ If credentials, personal data, or confidential material is committed by mistake:
 **Required**
 
 1. Add `.github/ISSUE_TEMPLATE/user-story.yml`, an Issue Form with a field for each part of a story issue listed in [Where Stories Live](user-stories-requirements.md#where-stories-live), and the `user-story` label applied by the form, or the issue type or field that rule allows instead.
-   The statement, the `Traces to` list, and the `Priority reason` field are required, and `Traces to` takes one entry per line.
+   The statement, the `Traces to` list, and the `Priority reason` field are required, and the `Rests on` list is optional.
+   `Traces to` and `Rests on` take one entry per line.
    The acceptance criteria field is optional, per [Acceptance Criteria](user-stories-requirements.md#acceptance-criteria).
 2. Add `.github/ISSUE_TEMPLATE/task.yml`, an Issue Form for work that is not a story, such as documentation, a report, or a workflow, with a description field and the `task` label applied by the form.
 3. Disable blank issue creation with `blank_issues_enabled: false` in `.github/ISSUE_TEMPLATE/config.yml`.
@@ -311,7 +312,7 @@ If credentials, personal data, or confidential material is committed by mistake:
 
 **Recommended**
 
-- Put the URL pattern in the description of the `Traces to` field in `user-story.yml`, so whoever fills in the form sees it.
+- Put the URL pattern in the descriptions of the `Traces to` and `Rests on` fields in `user-story.yml`, so whoever fills in the form sees it.
 
 The user story requirements say [what a story says](user-stories-requirements.md#the-story) and [how its issue is kept](user-stories-requirements.md#where-stories-live).
 

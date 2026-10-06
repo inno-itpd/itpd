@@ -52,7 +52,7 @@ See [Meeting Report](customer-meetings-requirements.md#meeting-report).
 
 **Since: W2**
 
-3. A story that rests on an assumption cites its `ASM-nn` in its `Traces to` list, per [The Story](user-stories-requirements.md#the-story).
+3. A story that rests on an assumption cites its `ASM-nn` in its `Rests on` list, per [The Story](user-stories-requirements.md#the-story).
 
 ## Checking And Settling
 

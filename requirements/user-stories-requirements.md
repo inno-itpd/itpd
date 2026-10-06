@@ -26,7 +26,7 @@ Each story is a GitHub issue, and the `user-story` label identifies story issues
    It carries:
 
    - The title `US-nn: <story title>`.
-   - The story statement and its `Traces to` list, per [The Story](#the-story).
+   - The story statement, its `Traces to` list, and its `Rests on` list when it rests on an assumption, per [The Story](#the-story).
    - The acceptance criteria, each starting with its `AC-nn`, per [Acceptance Criteria](#acceptance-criteria).
    - The priority reason, in the form's `Priority reason` field, and one `moscow:*` label, per [MoSCoW Prioritization](#moscow-prioritization).
    - The `user-story` label, applied by the form, or the marker the team chose instead, per rule 6.
@@ -37,7 +37,7 @@ Each story is a GitHub issue, and the `user-story` label identifies story issues
    When the story was dropped, the comment that records the priority change may be the closing comment.
    A closed story stays in the list; the closing comment and the close date are its record.
 3. The issue is the record of change.
-   Edit the body so it always states the current story, and add a comment for each change to a story part: the title, the statement, `Traces to`, the acceptance criteria, the `moscow:*` label, or the priority reason.
+   Edit the body so it always states the current story, and add a comment for each change to a story part: the title, the statement, `Traces to`, `Rests on`, the acceptance criteria, the `moscow:*` label, or the priority reason.
    The comment says what changed, names each `AC-nn` that changed, gives the reason, and links the `DEC-nnn` of the decision behind it when that decision has an entry, per [What Cites It](decisions-requirements.md#what-cites-it).
    GitHub dates the comment, so the comment does not need a typed date.
    No comment is needed for edits made before the first meeting with the customer that shows the story, for notes and the checklist, or for a [formatting-only change](general-requirements.md#where-artifacts-live-in-the-repository).
@@ -83,10 +83,11 @@ Its job is to make one need concrete enough that a reviewer can tell whether you
    An [acceptance criterion](#acceptance-criteria) may name the screen, the field, or the system state an observer checks, because that is what makes it runnable.
 4. Every story carries a `Traces to` list.
    It contains exactly one `VP-nn`, the value proposition the story supports, and, optionally, the story's origins: the `GAP-nn` it closes, the `DEC-nnn` of a decision, or an action point it carries out.
-   It also names the `ASM-nn` of each [assumption](assumptions-requirements.md#what-rests-on-it) the story rests on.
+   A `GAP-nn` in the list is one that the story's `VP-nn` names under `**Closes:**`, so the story, its value proposition, and its gap form one chain.
+   A story that rests on an [assumption](assumptions-requirements.md#what-rests-on-it) carries a separate `Rests on` list, naming the `ASM-nn` of each assumption it rests on, as a gap or a value proposition does.
    The `VP-nn` is how a story traces to the product vision, so the `VP-nn` of every story except a `Won't Have` story is one the vision's [goal](product-vision-requirements.md#goal) traces to.
    A story you intend to build that supports no such value proposition is outside the vision: add its `VP-nn` to the goal as a [team decision](decisions-requirements.md#the-decision), or make the story `Won't Have`.
-   Cite each entry as [Identifier Rules](general-requirements.md#identifier-rules) says, and link each Week 1 identifier per [Traceability Into Later Weeks](general-requirements.md#traceability-into-later-weeks).
+   Cite each entry of both lists as [Identifier Rules](general-requirements.md#identifier-rules) says, and link each Week 1 identifier per [Traceability Into Later Weeks](general-requirements.md#traceability-into-later-weeks).
    Link each file on `main`, per [Issue Tracking](repository-requirements.md#issue-tracking).
    A need from outside the Week 1 research is handled per [Traceability Into Later Weeks](general-requirements.md#traceability-into-later-weeks).
 5. Every story except a `Won't Have` story is small enough to build and verify in one week.
@@ -206,6 +207,9 @@ As a coach who sells sessions online, I want a client to pay when they book, so 
 
 - [`VP-01`](https://github.com/<organization>/<repo>/blob/main/docs/research/value-proposition.md#vp-01)
 - [`GAP-01`](https://github.com/<organization>/<repo>/blob/main/docs/research/gap-analysis.md#gap-01)
+
+### Rests on
+
 - [`ASM-02`](https://github.com/<organization>/<repo>/blob/main/docs/assumptions.md#asm-02)
 
 ### Priority reason

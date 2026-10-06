@@ -60,6 +60,7 @@ It is the short version of the requirements, states what is expected of you as a
 
 5. A formatting-only change is not a rewrite: whitespace, line breaks, list markers, heading levels, table alignment, or a link repointed at the same section after its anchor changed, with the words and their meaning unchanged.
    It may touch any earlier week's files, including meeting scripts and reports, and goes in a pull request of its own.
+6. Moving an `ASM-nn` from a story's `Traces to` list into its `Rests on` list is also a formatting-only change, because the link it records is unchanged, and it needs no change comment on the issue.
 
 ## Identifier Rules
 
@@ -121,12 +122,12 @@ The research you produce in Week 1 is the evidence base for the rest of the cour
 Later weeks cite your Week 1 identifiers rather than restating your findings.
 This is what makes the course a project rather than nine separate assignments.
 
-| Later work                   | Must cite                                                                                                                                                                     |
-| ---------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Week 2 product vision        | The `VP-nn` its goal traces to, per [Goal](product-vision-requirements.md#goal)                                                                                               |
-| Week 2 user stories          | The `VP-nn`, the `ASM-nn` of each assumption the story rests on, and any origins in each story's `Traces to` list, per [The Story](user-stories-requirements.md#the-story)    |
-| Week 2 prototypes            | The `US-nn` or `GAP-nn` each one tested, and the `ASM-nn` when the risky part is an assumption, per [Where Prototypes Live](prototypes-requirements.md#where-prototypes-live) |
-| Any change a decision caused | The decision's `DEC-nnn` when it has an entry, or its reason otherwise, per [What Cites It](decisions-requirements.md#what-cites-it)                                          |
+| Later work                   | Must cite                                                                                                                                                                                     |
+| ---------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Week 2 product vision        | The `VP-nn` its goal traces to, per [Goal](product-vision-requirements.md#goal)                                                                                                               |
+| Week 2 user stories          | The `VP-nn` and any origins in each story's `Traces to` list, and the `ASM-nn` of each assumption it rests on in its `Rests on` list, per [The Story](user-stories-requirements.md#the-story) |
+| Week 2 prototypes            | The `US-nn` or `GAP-nn` each one tested, and the `ASM-nn` when the risky part is an assumption, per [Where Prototypes Live](prototypes-requirements.md#where-prototypes-live)                 |
+| Any change a decision caused | The decision's `DEC-nnn` when it has an entry, or its reason otherwise, per [What Cites It](decisions-requirements.md#what-cites-it)                                                          |
 
 **Required**
 

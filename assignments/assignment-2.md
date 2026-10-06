@@ -58,6 +58,9 @@ The rules:
 This week:
 
 1. Before any other Week 2 pull request, merge the one that adds `user-story.yml`, `task.yml`, and `config.yml`, and create the labels.
+2. If your `user-story.yml` has no `Rests on` field, add it in a pull request of its own, per [Issue Tracking](../requirements/repository-requirements.md#issue-tracking).
+   Then move each `ASM-nn` in an existing story's `Traces to` list into a `### Rests on` section of the same issue.
+   This is a one-time catch-up: the field was added after the forms were due, and the move is a [formatting-only change](../requirements/general-requirements.md#where-artifacts-live-in-the-repository), so it needs no comment.
 
 ## Part 2: Move The Week 1 Decisions Into The Decisions Log
 
@@ -142,7 +145,7 @@ The method is in [Step 1: Write The Goal And The Boundary](../guides/user-storie
 The rules:
 
 - Open each story as an issue, and keep the issue as its record of change: [Where Stories Live](../requirements/user-stories-requirements.md#where-stories-live).
-- Write each story as a user's need, with its `Traces to` list: [The Story](../requirements/user-stories-requirements.md#the-story).
+- Write each story as a user's need, with its `Traces to` list, and its `Rests on` list when it rests on an assumption: [The Story](../requirements/user-stories-requirements.md#the-story).
 - Keep each assumption a story rests on as an `ASM-nn` entry, and settle it with its evidence: [Assumption Requirements](../requirements/assumptions-requirements.md).
 - Link each Week 1 identifier a story cites to its section: [Traceability Into Later Weeks](../requirements/general-requirements.md#traceability-into-later-weeks).
 - Give each story acceptance criteria somebody else can run, each with its `AC-nn`: [Acceptance Criteria](../requirements/user-stories-requirements.md#acceptance-criteria).
@@ -310,6 +313,7 @@ A transcript under item 5 goes in an appendix, which the two pages do not count.
 ## Checklist
 
 - [ ] `.github/ISSUE_TEMPLATE/user-story.yml`, `task.yml`, `config.yml`, and the labels, in one pull request started from a blank issue ([Part 1](#part-1-track-the-work-as-issues)).
+- [ ] A `Rests on` field in `user-story.yml`, and every story's `ASM-nn` in its `Rests on` list rather than its `Traces to` list ([Part 1](#part-1-track-the-work-as-issues)).
 - [ ] `.github/pull_request_template.md` asks for the `AC-nn` each change checks ([Part 1](#part-1-track-the-work-as-issues)).
 - [ ] `docs/decisions.md` with a `DEC-nnn` section for each Week 1 decision, each cited from what it changed, if it changed anything yet ([Part 2](#part-2-move-the-week-1-decisions-into-the-decisions-log)).
 - [ ] `docs/assumptions.md` with an `ASM-nn` section for each Week 1 assumption, and no table left in `value-proposition.md` ([Part 3](#part-3-move-the-week-1-assumptions-into-the-assumptions-log)).

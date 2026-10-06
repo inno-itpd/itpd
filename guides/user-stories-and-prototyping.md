@@ -23,7 +23,7 @@ Most of it is arguing about which stories are the same story wearing two hats, w
 
 ```text
 docs/product-vision.md         the goal, the constraints, the stakeholders, the boundary, the context diagram
-GitHub issues                  one per story, titled US-nn: <title>, with its Traces to list, AC-nn criteria, and labels
+GitHub issues                  one per story, titled US-nn: <title>, with its Traces to and Rests on lists, AC-nn criteria, and labels
 reports/week-02/README.md      the minimum usable product candidate: core task and stories
 reports/week-02/prototypes.md  what you showed, what they said, what changed
 ```
@@ -67,7 +67,7 @@ For each `GAP-nn`, ask what a user would be trying to do that they cannot do tod
 Not every story starts at a gap.
 A decision from `docs/decisions.md` or an action point can add one.
 When the story has an origin, record it in the story's `Traces to` list, and never invent a `GAP-nn` link to fill the list.
-When a story rests on a belief you have not checked, record the belief as an `ASM-nn` in `docs/assumptions.md` and list it in the story's `Traces to` too; see [Assumption Requirements](../requirements/assumptions-requirements.md).
+When a story rests on a belief you have not checked, record the belief as an `ASM-nn` in `docs/assumptions.md` and list it in the story's `Rests on`; see [Assumption Requirements](../requirements/assumptions-requirements.md).
 
 Whatever its origin, a story reaches the vision through its `VP-nn`.
 The vision has one goal and no identifier, so "traces to the vision" would be true of every story and would check nothing; the value proposition says which part of the goal the story serves.
