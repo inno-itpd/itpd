@@ -155,22 +155,22 @@ Keep only the ones something rests on: if a belief turned out false and nothing 
 
 Experts will upload materials per meeting type instead of sending them in chat after booking.
 
-**How to check:** run the materials prototype with two tutors in Week 2.
 **Status:** Open
+**How to check:** run the materials prototype with two tutors in Week 2.
 
 ## ASM-02
 
 Clients will pay at booking rather than on the day.
 
-**How to check:** only the customer can settle it, so it goes in the kickoff report's open questions.
 **Status:** Open
+**How to check:** only the customer can settle it, so it goes in the kickoff report's open questions.
 
 ## ASM-03
 
 Clients open the booking link on a phone.
 
-**How to check:** ask two experts where their last ten bookings came from, in Week 2.
 **Status:** Open
+**How to check:** ask two experts where their last ten bookings came from, in Week 2.
 ```
 
 `VP-01` in `docs/research/value-proposition.md` then gains one line, and `GAP-01` gains the same line naming `ASM-01`:

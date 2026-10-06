@@ -60,9 +60,9 @@ See [Meeting Report](customer-meetings-requirements.md#meeting-report).
 
 **Required**
 
-1. Each assumption says, under `**How to check:**`, how it could be checked and in which week.
-2. Each assumption has a `**Status:**`: `Open`, `Confirmed`, `Refuted`, or `Dropped`.
+1. Each assumption has a `**Status:**` as its first field: `Open`, `Confirmed`, `Refuted`, or `Dropped`.
    An assumption starts `Open`.
+2. Each assumption says, under `**How to check:**`, how it could be checked and in which week.
 3. When a decision or a check settles an assumption, change its status to `Confirmed` or `Refuted` and add an `**Outcome:**` that says what was found and links the evidence that settled it.
    A decision with an entry is cited by its `DEC-nnn`, per [What Cites It](decisions-requirements.md#what-cites-it).
 4. A refuted assumption keeps its entry.
@@ -86,21 +86,21 @@ See [Meeting Report](customer-meetings-requirements.md#meeting-report).
 
 Experts will upload materials per meeting type instead of sending them in chat after booking.
 
-**How to check:** run the materials prototype with two tutors in Week 2.
 **Status:** Open
+**How to check:** run the materials prototype with two tutors in Week 2.
 
 ## ASM-02
 
 Clients will pay at booking rather than on the day.
 
-**How to check:** only the customer can settle it, so it is an [open question](../reports/week-01/meeting-report.md#open-questions) carried into the Week 2 validation meeting.
 **Status:** Confirmed
+**How to check:** only the customer can settle it, so it is an [open question](../reports/week-01/meeting-report.md#open-questions) carried into the Week 2 validation meeting.
 **Outcome:** the customer will not accept a hold that confirms without payment, per [`DEC-006`](decisions.md#dec-006).
 
 ## ASM-03
 
 Clients open the booking link on a phone.
 
-**How to check:** ask two experts where their last ten bookings came from, in Week 2.
 **Status:** Open
+**How to check:** ask two experts where their last ten bookings came from, in Week 2.
 ```
