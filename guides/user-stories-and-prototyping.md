@@ -52,8 +52,8 @@ When you decide who handles an item, take "nobody" seriously.
 It is a legitimate answer, and it is the one the customer is most likely to argue with, which is why it is worth writing down.
 If the only reason you can give for an item is that it felt out of scope, you have not decided it yet, so take it to the customer.
 
-Keep one item per row or bullet, never a paragraph.
-A paragraph cannot be disagreed with item by item.
+Give each item its own `BND-nn` section, with one job in it, never a paragraph of several.
+A paragraph cannot be disagreed with item by item, and a story or a decision cannot cite half of one.
 
 Then draw the context diagram from the list rather than from memory.
 Start with every system and actor that the list says handles a job, then check the diagram against the list the other way.

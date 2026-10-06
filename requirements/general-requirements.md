@@ -70,7 +70,7 @@ It is the short version of the requirements, states what is expected of you as a
 1. The identifier families introduced in Week 1 are `ALT-nn` for alternatives, `GAP-nn` for gaps, `VP-nn` for value propositions, `ASM-nn` for assumptions, and `DEC-nnn` for decisions.
    All are zero-padded and case-sensitive.
    `DEC-nnn` has three digits, because a decision is made at every customer meeting and the log can pass 99 entries; every other family has two.
-   `US-nn` for user stories and `AC-nn` for their acceptance criteria are introduced in Week 2.
+   `US-nn` for user stories, `AC-nn` for their acceptance criteria, `CON-nn` for constraints, and `BND-nn` for boundary items are introduced in Week 2.
    A later family is introduced only by the requirement that first uses it.
 2. An identifier, once issued, is never changed, reused, or reassigned, including when the artifact is edited later in the course.
 3. Gaps in a sequence are expected and correct.

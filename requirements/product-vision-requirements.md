@@ -29,8 +29,8 @@ It is created once, in its final place, and then stays current.
 
    - The **goal**, per [Goal](#goal), linking each `VP-nn` section in `docs/research/value-proposition.md` rather than restating it.
    - The **stakeholders**, per [Stakeholders](#stakeholders).
-   - The **constraints**, per [Constraints](#constraints).
-   - The **boundary**, per [Boundary](#boundary).
+   - The **constraints**, each a `CON-nn` section, per [Constraints](#constraints).
+   - The **boundary**, each item a `BND-nn` section, per [Boundary](#boundary).
    - The **system context diagram**, per [System Context](#system-context), committed at `docs/architecture/context.<ext>`, with its source beside it when it has one, and embedded here as an image.
    - Links to the [user stories](user-stories-requirements.md#where-stories-live) and to the current week's report.
 
@@ -70,21 +70,30 @@ Keeping the two apart is the whole point of this section: a constraint you canno
 
 **Required**
 
-1. Record every constraint under one of four sources:
+1. Record each constraint as a section of its own, headed `### CON-nn` under `## Constraints`, per [Identifier Rules](general-requirements.md#identifier-rules), with the condition stated on its first line.
+2. Its fields, in this order:
+
+   | Field                | What it says                                                                                                               |
+   | -------------------- | -------------------------------------------------------------------------------------------------------------------------- |
+   | `**Status:**`        | `Active` or `Dropped`                                                                                                      |
+   | `**Source:**`        | One of the four sources in rule 3                                                                                          |
+   | `**What it costs:**` | What the constraint costs you; a constraint that costs nothing is not yet understood                                       |
+   | `**Decision:**`      | The `DEC-nnn`, linked, of the decision that imposed it, only when one did                                                  |
+   | `**Changed:**`       | Each change, recorded as a gap records it, per [Gap Analysis](research-requirements.md#gap-analysis), only when it changed |
+   | `**Dropped:**`       | Only on a dropped constraint, per [Identifier Rules](general-requirements.md#identifier-rules)                             |
+
+3. The four sources:
 
    - **Customer-given**: something the customer or the project catalog imposed, including a language, platform, or deployment mandate that came with the project.
    - **Team-given**: a condition that comes from the team itself, such as its size and its skills.
    - **Environmental**: a condition the setting imposes, such as the weeks left in the course, the academic calendar, or the tools the course provides or requires.
    - **Derived**: something that follows from the other three, such as a consequence of a deployment mandate for the target device.
 
-2. For each constraint, say what it costs you.
-   A constraint that costs nothing is not yet understood.
-3. An assumption is not a constraint and does not belong in this section.
+4. An assumption is not a constraint and does not belong in this section.
    Assumptions live in `docs/assumptions.md`, per [Assumption Requirements](assumptions-requirements.md), and are checked through [Validation](prototypes-requirements.md#validation).
-4. Do not list a constraint you chose and then describe it as imposed.
-   A technology choice is a decision, and a decision is not a constraint.
-   Record it as a [decision](decisions-requirements.md#the-decision), and cite its `DEC-nnn` where the choice shows.
-   A customer-given constraint that a decision imposed cites that decision's `DEC-nnn`.
+5. A technology choice the team made is a [decision](decisions-requirements.md#the-decision), not a constraint.
+   Record it as a decision, cite its `DEC-nnn` where the choice shows, and do not list it here as if it were imposed.
+   A mandate the customer gave, such as a platform or a deployment target, is a customer-given constraint, and its `**Decision:**` cites the `DEC-nnn` that records it.
 
 **Recommended**
 
@@ -110,17 +119,22 @@ That agreement is what makes the scope checkable:
 
 **Required**
 
-1. State the boundary as a list of things the product will not do, one item each.
-   An item names a job somebody could expect the product to do, not a quality such as "will not be slow".
-2. Each item says who handles that job instead:
+1. Record each thing the product will not do as a section of its own, headed `### BND-nn` under `## Boundary`, per [Identifier Rules](general-requirements.md#identifier-rules).
+   Its first line names one job somebody could expect the product to do, not a quality such as "will not be slow".
+2. Its fields, in this order:
 
-   - An external system or an external actor, which then appears on the context diagram.
-   - The user, by hand.
-   - Nobody, when the need is deliberately left unserved.
+   | Field             | What it says                                                                                                                                                                                 |
+   | ----------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+   | `**Status:**`     | `Active` or `Dropped`                                                                                                                                                                        |
+   | `**Handled by:**` | Who handles the job instead: an external system or an external actor, which then appears on the context diagram; the user, by hand; or `Nobody`, when the need is deliberately left unserved |
+   | `**Why:**`        | Why it is outside: the `CON-nn` that forces it, linked; the `DEC-nnn` of the decision that settled it, linked; or the team's own reasoning                                                   |
+   | `**Changed:**`    | Each change, recorded as a gap records it, per [Gap Analysis](research-requirements.md#gap-analysis), only when it changed                                                                   |
+   | `**Dropped:**`    | Only on a job the product now does, per [Identifier Rules](general-requirements.md#identifier-rules)                                                                                         |
 
-3. Each item says why it is outside: the [constraint](#constraints) that forces it, named; the decision that settled it, by its `DEC-nnn`, linked; or the team's own reasoning.
-4. An item is cited by its "will not" text, because boundary items are not an identifier family.
-   A customer decision that moves an item in or out of the boundary is recorded per [Meeting Report](customer-meetings-requirements.md#meeting-report).
+3. Cite a boundary item by its `BND-nn`, linked.
+4. A decision that moves a job into or out of the boundary is a [decision](decisions-requirements.md#the-decision) with an entry.
+   A job moved out is a new `BND-nn` whose `**Why:**` cites it.
+   A job moved in keeps its `BND-nn`, marked as dropped, and its `**Dropped:**` cites it.
 
 **Recommended**
 
@@ -130,11 +144,15 @@ That agreement is what makes the scope checkable:
 
 **Example**
 
-| The product will not                    | Handled by    | Why                                                           |
-| --------------------------------------- | ------------- | ------------------------------------------------------------- |
-| Host the video call                     | Video service | The single-term course constraint: video stays an integration |
-| Schedule more than one expert at a time | Nobody        | `DEC-002`: the experts work alone                             |
-| Sell recurring subscriptions or bundles | Nobody        | Team reasoning: no user we met pays for sessions in advance   |
+```markdown
+### BND-02
+
+Schedule more than one expert at a time.
+
+- **Status:** Active
+- **Handled by:** Nobody
+- **Why:** [`DEC-002`](decisions.md#dec-002): the experts work alone.
+```
 
 ## System Context
 
@@ -190,20 +208,64 @@ An independent expert can send one link where a client books a time, pays, and r
 
 ## Constraints
 
-| Constraint                                                            | Source         | What it costs                             |
-| --------------------------------------------------------------------- | -------------- | ----------------------------------------- |
-| Deployed on a single small VPS, per [`DEC-004`](decisions.md#dec-004) | Customer-given | No failover during a demo                 |
-| Built and maintained by 3 people                                      | Team-given     | No component may need a second expert     |
-| Single-term course                                                    | Environmental  | Payment and video stay integrations       |
-| Payment provider sandbox only                                         | Derived        | No live charges, so real fees go untested |
+### CON-01
+
+Deployed on a single small VPS.
+
+- **Status:** Active
+- **Source:** Customer-given
+- **What it costs:** no failover during a demo.
+- **Decision:** [`DEC-004`](decisions.md#dec-004)
+
+### CON-02
+
+Built and maintained by 3 people.
+
+- **Status:** Active
+- **Source:** Team-given
+- **What it costs:** no component may need a second expert.
+
+### CON-03
+
+Single-term course.
+
+- **Status:** Active
+- **Source:** Environmental
+- **What it costs:** payment and video stay integrations.
+
+### CON-04
+
+Payment provider sandbox only.
+
+- **Status:** Active
+- **Source:** Derived
+- **What it costs:** no live charges, so real fees go untested.
 
 ## Boundary
 
-| The product will not                    | Handled by    | Why                                                           |
-| --------------------------------------- | ------------- | ------------------------------------------------------------- |
-| Host the video call                     | Video service | The single-term course constraint: video stays an integration |
-| Schedule more than one expert at a time | Nobody        | [`DEC-002`](decisions.md#dec-002): the experts work alone     |
-| Sell recurring subscriptions or bundles | Nobody        | Team reasoning: no user we met pays for sessions in advance   |
+### BND-01
+
+Host the video call.
+
+- **Status:** Active
+- **Handled by:** Video service
+- **Why:** [`CON-03`](#con-03): video stays an integration.
+
+### BND-02
+
+Schedule more than one expert at a time.
+
+- **Status:** Active
+- **Handled by:** Nobody
+- **Why:** [`DEC-002`](decisions.md#dec-002): the experts work alone.
+
+### BND-03
+
+Sell recurring subscriptions or bundles.
+
+- **Status:** Active
+- **Handled by:** Nobody
+- **Why:** team reasoning: no user we met pays for sessions in advance.
 
 ## Context
 
@@ -211,7 +273,7 @@ An independent expert can send one link where a client books a time, pays, and r
 
 The independent experts and their clients are the actors.
 The external systems are the calendar, the payment provider, and the video service.
-The video service is on the diagram because the boundary hands it the call, and nothing on the diagram does a job the boundary leaves to nobody.
+The video service is on the diagram because `BND-01` hands it the call, and nothing on the diagram does a job the boundary leaves to nobody.
 
 ## Where The Detail Lives
 

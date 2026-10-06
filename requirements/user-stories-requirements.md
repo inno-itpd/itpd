@@ -137,7 +137,7 @@ Every priority is relative to the product you intend to finish in this course.
    - `Won't Have`, labelled `moscow:won't`: a need you have deliberately excluded.
 
 2. Every story carries a **priority reason** in the issue form's `Priority reason` field.
-   The reason says why the story has this priority and not the one above or below it, and names the [constraint](product-vision-requirements.md#constraints) when one drives it.
+   The reason says why the story has this priority and not the one above or below it, and cites the `CON-nn` of the [constraint](product-vision-requirements.md#constraints) that drives it, linked, when one does.
    A reason that restates the definition of the label is not a reason.
 3. Not every story you intend to build is `Must Have`: at least one of them is `Should Have` or `Could Have`.
    A list where everything is `Must Have` says nothing about what to build first.
@@ -145,7 +145,7 @@ Every priority is relative to the product you intend to finish in this course.
    It keeps its `US-nn` and its statement, and its issue closes as [Where Stories Live](#where-stories-live) says.
 5. The priorities do not contradict the [boundary](product-vision-requirements.md#boundary).
    No story you intend to build is something the boundary excludes.
-   A `Won't Have` reason that rests on the boundary quotes the boundary item.
+   A `Won't Have` reason that rests on the boundary cites the item's `BND-nn`, linked.
    The two are independent otherwise: a boundary item is a decision about the whole product and needs no matching story, and a `Won't Have` story is one written need that you excluded and need not appear in the boundary.
 6. To change a priority, change the label and the priority reason together, and record the change per [Where Stories Live](#where-stories-live).
    The comment names the old priority and the new one.
@@ -248,7 +248,7 @@ As a coach, I want to sell a bundle of ten sessions, so that a returning client 
 
 ### Priority reason
 
-Won't Have: the boundary item "Sell recurring subscriptions or bundles" excludes it, and no user we met has asked to pay for sessions in advance.
+Won't Have: [`BND-03`](https://github.com/<organization>/<repo>/blob/main/docs/product-vision.md#bnd-03) excludes selling bundles, and no user we met has asked to pay for sessions in advance.
 ```
 
 The closing comment on issue #50:

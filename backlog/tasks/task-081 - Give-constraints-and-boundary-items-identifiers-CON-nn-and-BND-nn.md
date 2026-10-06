@@ -1,10 +1,10 @@
 ---
 id: TASK-081
 title: 'Give constraints and boundary items identifiers: CON-nn and BND-nn'
-status: To Do
+status: Done
 assignee: []
 created_date: '2026-10-06 12:25'
-updated_date: '2026-10-06 12:27'
+updated_date: '2026-10-06 12:38'
 labels: []
 dependencies:
   - TASK-079
@@ -30,20 +30,26 @@ Rejected: keeping text citations with a rule that rewording is a change; also ad
 
 ## Acceptance Criteria
 <!-- AC:BEGIN -->
-- [ ] #1 general-requirements.md Identifier Rules and the AGENTS.md conventions introduce CON-nn and BND-nn in W2
-- [ ] #2 product-vision-requirements.md writes each constraint as a ### CON-nn section and each boundary item as a ### BND-nn section, with the decided fields
-- [ ] #3 A changed CON or BND records Changed bullets per Gap Analysis, and a removed one keeps its section as Dropped, citing the decision
-- [ ] #4 Constraint rule 4 says a team's technology choice is a decision and a customer's mandate is a customer-given constraint that cites its DEC-nnn
-- [ ] #5 user-stories-requirements.md has priority reasons cite CON-nn and Won't Have reasons cite BND-nn, with US-09 citing BND-03, and decisions-requirements.md What Cites It uses the identifiers
-- [ ] #6 The vision's Full Example, the boundary example, the guide's Step 1 example, and Assignment 2 Part 5 with its checklist use the sections
-- [ ] #7 The four Markdown gates pass
+- [x] #1 general-requirements.md Identifier Rules and the AGENTS.md conventions introduce CON-nn and BND-nn in W2
+- [x] #2 product-vision-requirements.md writes each constraint as a ### CON-nn section and each boundary item as a ### BND-nn section, with the decided fields
+- [x] #3 A changed CON or BND records Changed bullets per Gap Analysis, and a removed one keeps its section as Dropped, citing the decision
+- [x] #4 Constraint rule 4 says a team's technology choice is a decision and a customer's mandate is a customer-given constraint that cites its DEC-nnn
+- [x] #5 user-stories-requirements.md has priority reasons cite CON-nn and Won't Have reasons cite BND-nn, with US-09 citing BND-03, and decisions-requirements.md What Cites It uses the identifiers
+- [x] #6 The vision's Full Example, the boundary example, the guide's Step 1 example, and Assignment 2 Part 5 with its checklist use the sections
+- [x] #7 The four Markdown gates pass
 <!-- AC:END -->
 
 ## Definition of Done
 <!-- DOD:BEGIN -->
-- [ ] #1 All acceptance criteria are satisfied
-- [ ] #2 Changed Markdown files are formatted: `pnpm run format:markdown`
-- [ ] #3 `pnpm run lint:markdown` passes
-- [ ] #4 `pnpm run test:markdown-format` and `pnpm run test:markdown-rules` pass
-- [ ] #5 `pnpm run check:lectures` passes
+- [x] #1 All acceptance criteria are satisfied
+- [x] #2 Changed Markdown files are formatted: `pnpm run format:markdown`
+- [x] #3 `pnpm run lint:markdown` passes
+- [x] #4 `pnpm run test:markdown-format` and `pnpm run test:markdown-rules` pass
+- [x] #5 `pnpm run check:lectures` passes
 <!-- DOD:END -->
+
+## Final Summary
+
+<!-- SECTION:FINAL_SUMMARY:BEGIN -->
+Constraints and Boundary in product-vision-requirements.md record each item as a ### CON-nn or ### BND-nn section with a fields table: CON runs Status, Source, What it costs, Decision, Changed, Dropped; BND runs Status, Handled by, Why, Changed, Dropped. A changed item records Changed as a gap does, and a job moved into the product keeps its BND-nn as Dropped, citing the decision; a job moved out is a new BND-nn. Constraint rule 5 says a team's technology choice is a decision and a customer's mandate is a customer-given constraint whose Decision cites its DEC-nnn. Identifier Rules and AGENTS.md introduce both families in W2. Priority reasons cite CON-nn and Won't Have reasons cite BND-nn, with US-09 citing BND-03; What Cites It, the validating guide, the boundary guide, the vision's examples, and Assignment 2 Part 5 and its checklist follow. The lecture-2 boundary slide keeps its summary table, which shows the same three fields and contradicts nothing.
+<!-- SECTION:FINAL_SUMMARY:END -->

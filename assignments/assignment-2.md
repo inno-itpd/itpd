@@ -133,7 +133,7 @@ The rules:
 This week:
 
 1. Write `docs/product-vision.md`.
-2. Give the boundary at least 3 items.
+2. Give the boundary at least 3 `BND-nn` items.
 
 The method is in [Step 1: Write The Goal And The Boundary](../guides/user-stories-and-prototyping.md#step-1-write-the-goal-and-the-boundary).
 
@@ -316,7 +316,7 @@ A transcript under item 5 goes in an appendix, which the two pages do not count.
 - [ ] Earlier weeks' Markdown fixed in a formatting-only pull request, merged before the Markdown check ([Part 4](#part-4-check-the-markdown-in-ci)).
 - [ ] `ALT-nn`, `GAP-nn`, and `VP-nn` headings cut down to their identifiers, their fields written as bulleted lists starting with `**Status:**`, and every link to them repointed, in a pull request of its own ([Part 4](#part-4-check-the-markdown-in-ci)).
 - [ ] Markdown check and link check green on `main` ([Part 4](#part-4-check-the-markdown-in-ci)).
-- [ ] `docs/product-vision.md`, with at least 3 boundary items and the system context diagram ([Part 5](#part-5-state-the-product-vision)).
+- [ ] `docs/product-vision.md`, with its constraints as `CON-nn` sections, at least 3 `BND-nn` boundary items, and the system context diagram ([Part 5](#part-5-state-the-product-vision)).
 - [ ] The story issues ([Part 6](#part-6-write-the-user-stories-as-issues)).
 - [ ] `## Minimum Usable Product Candidate` in `reports/week-02/README.md` ([Part 7](#part-7-propose-the-minimum-usable-product-candidate)).
 - [ ] `reports/week-02/prototypes.md` with at least one prototype, and no prototype code on `main` ([Part 8](#part-8-prototype-the-riskiest-part)).
