@@ -1,5 +1,15 @@
+# Few links are external, so 8 at a time is fast and still polite to GitHub.
+max_concurrency = 8
+
+# 206 is a partial response, and 429 means rate-limited rather than broken.
+accept = [200, 206, 429]
+
 # Backlog task files and the local backlog.md notes are not course material.
 exclude_path = ['^(\./)?backlog(/|\.md$)']
 
-# semver.org takes about 17 s to answer, close to lychee's 20 s timeout.
-exclude = ['^https://semver\.org/']
+exclude = [
+  # semver.org takes about 17 s to answer, close to lychee's 20 s timeout.
+  '^https://semver\.org/',
+  # A permalink to a commit of this repository cannot change.
+  '^https://github\.com/inno-itpd/itpd/blob/[0-9a-f]{40}/',
+]
