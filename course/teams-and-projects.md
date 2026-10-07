@@ -12,3 +12,4 @@ The listing below is the **autumn term 2026** (25 September – 10 December 2026
 - Team 6: Sentence Cards Generator
 - Team 7: Modular LLM Gateway
 - Team 8: Debugging Gym
+- Team 9: Modular LLM Gateway
