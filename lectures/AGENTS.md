@@ -10,11 +10,12 @@ The instructor's lecture slides, one Typst source per lecture.
 Nothing here is a layer.
 `README.md` links each deck's PDF from its Lectures section so students can read the slides, but students are graded against `requirements/`, not against the slides.
 
-| File            | Owns                                                      |
-| --------------- | --------------------------------------------------------- |
-| `lecture-N.typ` | The source for lecture N. Edit this.                      |
-| `lecture-N.pdf` | Build output of `lecture-N.typ`. Generated, not authored. |
-| `AGENTS.md`     | This file.                                                |
+| File                | Owns                                                       |
+| ------------------- | ---------------------------------------------------------- |
+| `lecture-N.typ`     | The source for lecture N. Edit this.                       |
+| `lecture-N.pdf`     | Build output of `lecture-N.typ`. Generated, not authored.  |
+| `images/lecture-N/` | The images deck N shows, extracted from its slides export. |
+| `AGENTS.md`         | This file.                                                 |
 
 `N` is unpadded, so the first deck is `lecture-1.typ`.
 The slides export a deck was converted from is not committed.
@@ -62,6 +63,7 @@ Every deck keeps the slide format of the original export: `720 x 405 pt`, one sl
 Keep that size in `#set page`; do not switch to the `presentation-16-9` preset, which is a different page size.
 
 Decks are self-contained and use no `@preview` packages, so a build never needs the network.
+An image a deck shows is committed under `images/lecture-N/` and read by a path relative to the source.
 The helpers `slide`, `section`, `title-slide`, `term`, `note`, and `tag` are defined at the top of each source file.
 
 ## Two Typst Traps
@@ -83,6 +85,7 @@ A slides export is text-based, so `pdftotext -layout` recovers the content and t
 There is no PDF-to-Typst converter, and pandoc cannot take a PDF as input, so neither is a shortcut.
 
 1. Run `pdftotext -layout` on the export to read the slides, and `pdfimages -list` to see which slides carry images.
+   Extract them with `pdfimages -j`, which writes a JPEG out with its original bytes rather than re-encoding it.
 2. Write `lecture-N.typ` against the layout contract above.
 3. Run `pnpm run build:lectures`, then compare the page count with the number of slides you wrote, because overflow silently adds a page.
 4. Render the deck to PNG and read the densest slides, because a merged paragraph or a swallowed list marker leaves the page count unchanged.

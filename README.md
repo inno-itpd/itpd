@@ -28,6 +28,7 @@ They explain the week; [the rules](#the-rules) are what your work is checked aga
 | ---- | ------------------------------------------------------ |
 | 1    | [Course introduction](lectures/lecture-1.pdf)          |
 | 2    | [Requirements and prototyping](lectures/lecture-2.pdf) |
+| 3    | [Planning](lectures/lecture-3.pdf)                     |
 
 ## The Rules
 
