@@ -279,9 +279,9 @@
   - #strong[Define who is responsible]
     - Every task has a specific person responsible for completing it ("responsible")
   - #strong[Define when the work is done]
-    - There is a Definition of Done for a task
-    - There is a separate person who verifies that a task was done ("accountable")
+    - There is Definition of Done for the work (task, user story, etc.)
   - #strong[Review completed work]
+    - There is a separate person who verifies that a task was done ("accountable")
     - Iteration demo
     - What went wrong?
     - What went right?
