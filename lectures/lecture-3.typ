@@ -121,7 +121,7 @@
   - #strong[S]pecific: what exactly will be done, and for whom?
   - #strong[M]easurable: what evidence or number proves it is done?
   - #strong[A]chievable: can we reach it with our skills, time, and resources?
-  - #strong[R]elevant: does it serve the project's threshold of success?
+  - #strong[R]elevant: does it align well with the project vision?
   - #strong[T]ime-bound: by when, with a date?
 
 ]
