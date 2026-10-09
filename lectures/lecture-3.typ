@@ -241,7 +241,7 @@
 
 #slide("Strategic planning & tracking")[
   Level: project goals
-  
+
   - #strong[Define success wrt. your goals]
     - Make it testable
     - Make sure all stakeholders agree (80% of pain comes from skipping this step)
@@ -275,7 +275,7 @@
 
 #slide("Tactical planning")[
   Level: local sub-goals and tasks
-  
+
   - #strong[Define who is responsible]
     - Every task has a specific person responsible for completing it ("responsible")
   - #strong[Define when the work is done]
@@ -288,6 +288,8 @@
   - #strong[Adjust to fix discovered problems]
     - What should we keep from what went right?
     - Which steps should we take to improve iterations?
+
+  #note([Similar to #link("https://deming.org/explore/pdsa/")[The PDSA cycle]])
 ]
 
 // --- Review and close (source slides 17-18) ---------------------------------
