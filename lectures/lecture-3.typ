@@ -286,7 +286,7 @@
     - What went wrong?
     - What went right?
   - #strong[Adjust to fix discovered problems]
-    - What was good? 
+    - What should we keep from what went right?
     - Which steps should we take to improve iterations?
 ]
 
