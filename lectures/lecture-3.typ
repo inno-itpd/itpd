@@ -1,35 +1,4 @@
 // Planning, lecture 3 of the IT Product Development course.
-//
-// Converted from the 2025 slides export tmp/itpd-2025/lectures/lecture-2.1.pdf,
-// 18 slides at 720 x 405 pt. Each slide of the export is one slide here, in the
-// same order, and the section comments below name the source slides.
-//
-// Deviations from the export, on purpose:
-//   - The title slide adds "Innopolis University, 2026", as lecture-1.typ does.
-//   - Source slides 5-16 title every slide "Strategic", "Tactical", or
-//     "Planning" and put the topic in a first line beneath it. Here the topic
-//     is in the slide title, as "Strategic: define success", so the heading
-//     says which slide it is.
-//   - The navigation app screenshots on source slides 4 and 11 are the
-//     export's own JPEGs, extracted with pdfimages -j and committed under
-//     images/lecture-3/. They sit below the slide title rather than beside it.
-//   - The "Warning!" lines on source slides 7 and 16 are the warn() callout
-//     from lecture-2.typ.
-//   - Source slide 16 reads "what works best for: the specific team, what
-//     works for your project, ...". The list items are made parallel:
-//     "your team", "your project", "the tactical requirements".
-//   - Source slide 17 is titled "Review". It is "Quiz" here, the name
-//     lecture-2.typ gives its review-questions slides, because "Review" is
-//     also the topic of source slide 14.
-//   - The agenda keeps "Expectations", although no slide of the export covers
-//     it; the lecturer speaks to it.
-//   - Three small grammar fixes: "provide an explanation" on slide 16, a colon
-//     ending the lead sentence on slide 15, and a full stop after the
-//     warning on slide 7.
-//   - Wording is otherwise unchanged, including "Iteration demo" rather than a
-//     Scrum term: the deck introduces Scrum only as one tactical framework.
-//   - The helpers warn() and quiz() are copied from lecture-2.typ. The other
-//     six are copied unchanged from lecture-1.typ.
 
 #let accent = rgb("#12507b")
 #let muted = luma(42%)
@@ -109,7 +78,7 @@
   pagebreak(weak: true)
   v(1.3in)
   align(center)[
-    #text(size: 34pt, weight: "bold", fill: accent)[Planning]
+    #text(size: 34pt, weight: "bold", fill: accent)[Goals, Planning, Tracking]
     #v(0.16in)
     #text(size: 20pt, fill: muted)[IT Product Development]
   ]
@@ -127,146 +96,198 @@
 
 #slide("Agenda")[
   - Discussion questions
-  - Types of planning
-  - Strategic
-  - Tactical
-  - Expectations
+  - Goals
+  - Threshold of success
+  - Strategic planning
+  - Tactical planning
 ]
+
+#section("Goals")
+
+#slide("Discussion questions")[
+  What is a goal?
+
+  What are properties of unambiguous goals?
+
+  How to communicate goals to other people?
+]
+
+#slide("SMART goals")[
+  A goal is an idea of the future or desired result that people envision, plan, and commit to achieve." - #link("https://en.wikipedia.org/wiki/Goal")[Goal on Wiki]
+
+  The #strong[SMART] goal format lets you state goals precisely so that others can agree on what success wrt. this goal is and later tell whether it was achieved.
+
+  #strong[SMART] goal:
+  - #strong[S]pecific: what exactly will be done, and for whom?
+  - #strong[M]easurable: what evidence or number proves it is done?
+  - #strong[A]chievable: can we reach it with our skills, time, and resources?
+  - #strong[R]elevant: does it serve the project's threshold of success?
+  - #strong[T]ime-bound: by when, with a date?
+
+]
+
+#slide("SMART goal example")[
+  #grid(
+    columns: (0.5fr, 1fr),
+    gutter: 24pt,
+    [
+      *Example*
+
+      By the Week 3 soft deadline, October 15, 2026, our team ships a minimum usable product in which a user completes the core task chosen in Week 2 end to end, and the customer accepts it at that week's meeting.
+    ],
+    [
+      #strong[Properties]
+
+      - #strong[S]pecific — the MUP vertical slice for the core task, built only from Must Have stories.
+      - #strong[M]easurable — the core task runs end to end, and the customer's verdict is recorded as a DEC-nnn.
+      - #strong[A]chievable — one course week, a 3–4 person team, using a candidate already reviewed in Week 2.
+      - #strong[R]elevant — it is Submission 3 (7% of the grade) and the base for the Week 5 MVP.
+      - #strong[T]ime-bound — October 15, 2026, 23:59 (soft), October 16, 2026, 23:59 (hard).
+    ],
+  )
+]
+
+#slide("Quiz")[
+  Why write SMART goals?
+]
+
+
+#section("Threshold of success (ToS)")
+
+#slide("Discussion questions")[
+  What is success?
+
+  What is failure?
+
+  What is between them?
+]
+
+#slide("Why need threshold of success (ToS)?")[
+  #strong[Threshold of success] (ToS):
+
+  - Helps focus on essential goals
+  - Increases chances for a clear project success
+  - Helps communicate goals to stakeholders
+  - Helps identify the most important risks that are necessary to manage
+]
+
+#slide("Guess the sequence of ToS steps")[
+  - Convert to success statements (how to avoid failure?)
+  - List failure statements (when can the project fail?)
+  - Gather the team
+  - Write a minimal set of SMART goals
+  - Build a minimum picture of failure
+]
+
+#slide("The sequence of ToS steps")[
+  1. Gather the team
+  2. Build a minimum picture of failure
+  3. List failure statements
+  4. Convert to success statements
+  5. Write a minimal set of SMART goals
+]
+
+#slide("Discussion questions")[
+  What can be a failure statement for your team?
+]
+
+#section("Planning")
 
 #slide("Discussion questions")[
   What is planning?
 
   Why do people plan?
 
-  How do you plan to plan? :)
+  When do people plan?
 
   What types of planning do you know?
 ]
 
 // --- Types of planning (source slides 4-5) ----------------------------------
 
-#slide("Strategic")[
-  #grid(
-    columns: (1fr, auto, auto),
-    column-gutter: 14pt,
-    [One way to remember what you need from a strategic plan is to think of a navigation app.],
-    image("images/lecture-3/route-overview.jpg", height: 255pt),
-    image("images/lecture-3/route-legs.jpg", height: 255pt),
-  )
-]
-
-#slide("Planning")[
+#slide("Planning types")[
   #grid(
     columns: (1fr, 1fr),
     gutter: 24pt,
     [
       *Strategic*
-      - Long term (more than 4 iterations)
-      - Achieve goals
+      - Long-term
+      - Achieve global project goals
       - Keep in mind the threshold of success
     ],
     [
       *Tactical*
+      - Short-term
+      - Achieve local project goals
+      - Complete tasks
       - Situational
-      - Short term
     ],
+  )
+]
+
+#section("Strategic planning")
+
+#slide("Strategic plan example")[
+  #grid(
+    columns: (1fr, auto, auto),
+    column-gutter: 14pt,
+    [A navigation app provides a strategic plan #linebreak() - a path from start to finish.],
+    image("images/lecture-3/route-overview.jpg", height: 255pt),
+    image("images/lecture-3/route-legs.jpg", height: 255pt),
   )
 ]
 
 // --- Strategic (source slides 6-10) -----------------------------------------
 
-#slide("Strategic")[
-  - Define success
-  - Develop a roadmap
-  - Monitor progress
-  - Make contingency plans
-]
-
-#slide("Strategic: define success")[
-  - Be realistic
-  - Make it testable
-  - Make sure all stakeholders agree
-
-  #warn[80% of pain comes from skipping this step.]
-]
-
-#slide("Strategic: develop a roadmap")[
-  - Decompose how to achieve success into steps
-  - Find a "zoom level" that works for your project
-]
-
-#slide("Strategic: monitor progress")[
-  - Where are we in the project right now?
-  - How much was done?
-  - How much more do we have to do?
-  - Are we on track to make deadlines?
-  - Are we on track to complete promised deliverables?
-]
-
-#slide("Strategic: make contingency plans")[
-  - Think of multiple options
-  - Define alternative solutions
-  - Identify "point of no return" decisions
-  - Identify risks
+#slide("Strategic planning & tracking")[
+  Level: project goals
+  
+  - #strong[Define success wrt. your goals]
+    - Make it testable
+    - Make sure all stakeholders agree (80% of pain comes from skipping this step)
+  - #strong[Develop a roadmap]
+    - Decompose the path to success into steps (sub-goals, milestones)
+    - Find a "zoom level" that works for your project
+  - #strong[Monitor progress] - #strong["tracking"]
+    - Where are we in the project right now?
+    - How much was done?
+    - How much more do we have to do?
+    - Are we on track to complete promised deliverables?
+    - Can stakeholders clearly see our progress?
+  - #strong[Make contingency plans]
+    - Identify risks
+    - Define alternative solutions
+    - Identify "point of no return" decisions
 ]
 
 // --- Tactical (source slides 11-16) -----------------------------------------
 
-#slide("Tactical: requirements")[
+#section("Tactical planning")
+
+#slide("Tactical planning example")[
   #grid(
-    columns: (1fr, auto),
+    columns: (1fr, auto, auto),
     column-gutter: 14pt,
-    [
-      - SMART tasks (goals)
-      - Define who is responsible
-      - Review completed work
-      - Adjust to fix discovered problems
-    ],
+    [The same navigation app provides a tactical plan #linebreak() - a step-by-step path to a local goal (sub-goal)],
     image("images/lecture-3/turn-by-turn.jpg", height: 255pt),
   )
 ]
 
-#slide("Tactical: SMART tasks (goals)")[
-  - #strong[S]pecific
-  - #strong[M]easurable
-  - #strong[A]chievable
-  - #strong[R]elevant
-  - #strong[T]ime-bound
-]
-
-#slide("Tactical: responsibility")[
-  - Every task has a specific person responsible for completing it
-  - There is a separate person who verifies that it was done
-]
-
-#slide("Tactical: review and adjust")[
-  *Review*
-  - Iteration demo
-  - What went wrong?
-  - What went right?
-
-  *Adjust*
-  - What steps should we take to improve iterations?
-]
-
-#slide("Tactical pitfall")[
-  Using Scrum as an excuse not to have strategic planning:
-
-  - Can't manage customer expectations.
-  - Can't predict how much time larger features will take.
-  - You will end up writing code just for the sake of writing code.
-]
-
-#slide("Tactical frameworks")[
-  There are different tactical approaches like Scrum.
-  The specific approach is chosen based on what works best for:
-
-  - your team
-  - your project
-  - the tactical requirements
-
-  #warn[When you pick a framework, you must use all of it!
-    If you removed or added something, you must provide an explanation!]
+#slide("Tactical planning")[
+  Level: local sub-goals and tasks
+  
+  - #strong[Define who is responsible]
+    - Every task has a specific person responsible for completing it ("responsible")
+  - #strong[Define when the work is done]
+    - There is a Definition of Done for a task
+    - There is a separate person who verifies that a task was done ("accountable")
+  - #strong[Review completed work]
+    - Iteration demo
+    - What went wrong?
+    - What went right?
+  - #strong[Adjust to fix discovered problems]
+    - What was good? 
+    - Which steps should we take to improve iterations?
 ]
 
 // --- Review and close (source slides 17-18) ---------------------------------
