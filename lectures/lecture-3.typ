@@ -181,12 +181,12 @@
   1. Gather the whole team
   2. Build a minimum picture of failure (when should the project be considered a failure, informally?)
   3. List failure statements (testable - "We didn't do X", "We didn't meet Y", etc.)
-  4. Convert failure statements to success statements #linebreak() (testable - "We must do X", "We must meet Y")
+  4. Convert failure statements into success statements #linebreak() (testable - "We must do X", "We must meet Y", etc.)
   5. Write a minimal set of SMART goals that cover the success statements
 ]
 
 #slide("Guess the sequence of ToS steps")[
-  - Convert failure statements to success statements
+  - Convert failure statements into success statements
   - List failure statements
   - Gather the whole team
   - Write a minimal set of SMART goals that cover the success statements
