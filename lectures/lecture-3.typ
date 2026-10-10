@@ -15,8 +15,8 @@
 
 #set text(font: "Liberation Sans", size: 15pt, lang: "en")
 #set par(leading: 0.65em, spacing: 1.05em)
-#set list(indent: 1.2em, body-indent: 0.45em, spacing: 0.4em)
-#set enum(indent: 1.2em, body-indent: 0.45em, spacing: 0.4em)
+#set list(indent: 1.2em, body-indent: 0.45em, spacing: 0.7em)
+#set enum(indent: 1.2em, body-indent: 0.45em, spacing: 0.7em)
 #set heading(numbering: none)
 
 #show heading.where(level: 1): it => {
