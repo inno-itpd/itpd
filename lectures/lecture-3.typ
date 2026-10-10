@@ -275,9 +275,7 @@
   )
 ]
 
-#slide("Tactical planning")[
-  Level: local sub-goals and tasks
-
+#slide("Tactical planning (level: local sub-goals and tasks)")[
   - #strong[Define who is responsible]
     - Every task has a specific person responsible for completing it ("responsible")
   - #strong[Define when the work is done]
