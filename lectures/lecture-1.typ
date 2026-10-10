@@ -159,16 +159,16 @@
   #note[\* Product - result of a project; we assess your project activity]
 ]
 
-#slide("Course grade breakdown")[
+#slide("Course grade breakdown")[  
   Full grade: 100%
-
-  Pass: ≥75%
   - 63% = 9 assignments × 7%
   - 10% = attendance
   - 20% = project defense (end of the course)
   - 7% = peer evaluation (end of the course)
 
-  *Assignment grade:*
+  Pass: ≥75%
+
+  Assignment grade:
   - Coordination (meetings with customer)
   - Implementation (code, processes evidence, etc.)
 ]
@@ -236,7 +236,7 @@
 ]
 
 #slide("Use of AI")[
-  In this course the use of AI is allowed and encouraged if the following conditions are met:
+  In this course, the use of AI is allowed and encouraged if the following conditions are met:
   - You understand you're accountable for the artifacts that you submit.
   - You can clearly state where and how you used AI tools.
   - You are comfortable with privately submitting AI chat sessions to Moodle.
