@@ -162,8 +162,14 @@
   What is between them?
 ]
 
-#slide("Why need threshold of success (ToS)?")[
-  #strong[Threshold of success] (ToS):
+#slide("Threshold of success (ToS)")[
+  #strong[Threshold of success]:
+
+  Minimum set of SMART goals that must #strong[all] be achieved for the project to be considered a success by the stakeholders.
+  
+  If one of the goals is not achieved, the project will be considered a failure.
+
+  #strong[Why need it]:
 
   - Helps focus on essential goals
   - Increases chances for a clear project success
