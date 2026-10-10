@@ -238,8 +238,7 @@
     columns: (1fr, auto, auto),
     column-gutter: 14pt,
     [A navigation app provides a strategic plan #linebreak() - a path from start to finish.],
-    image("images/lecture-3/route-overview.jpg", height: 255pt),
-    image("images/lecture-3/route-legs.jpg", height: 255pt),
+    image("images/lecture-3/route-overview.png", height: 280pt),
   )
 ]
 
@@ -270,8 +269,8 @@
   #grid(
     columns: (1fr, auto, auto),
     column-gutter: 14pt,
-    [The same navigation app provides a tactical plan #linebreak() - a step-by-step path to a local goal (sub-goal)],
-    image("images/lecture-3/turn-by-turn.jpg", height: 255pt),
+    [The same navigation app provides #linebreak() a tactical plan #linebreak() - a step-by-step path to a local goal (sub-goal) of the strategic plan],
+    image("images/lecture-3/turn-by-turn.png", height: 280pt),
   )
 ]
 
