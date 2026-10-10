@@ -245,25 +245,21 @@
 
 // --- Strategic (source slides 6-10) -----------------------------------------
 
-#slide("Strategic planning & tracking")[
-  Level: project goals
-
+#slide("Strategic planning & tracking (level: global goals, sub-goals)")[
   - #strong[Define success wrt. your goals]
-    - Make it testable
-    - Make sure all stakeholders agree (80% of pain comes from skipping this step)
+    - Make it testable (threshold of success)
+    - Make sure all stakeholders agree (\~80% of pain comes from skipping this step)
   - #strong[Develop a roadmap]
     - Decompose the path to success into steps (sub-goals, milestones)
     - Find a "zoom level" that works for your project
   - #strong[Monitor progress] - #strong["tracking"]
-    - Where are we in the project right now?
-    - How much was done?
-    - How much more do we have to do?
+    - How much was done and how much remains?
     - Are we on track to complete promised deliverables?
     - Can stakeholders clearly see our progress?
   - #strong[Make contingency plans]
-    - Identify risks
     - Define alternative solutions
     - Identify "point of no return" decisions
+    - Identify risks
 ]
 
 // --- Tactical (source slides 11-16) -----------------------------------------
