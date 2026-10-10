@@ -177,20 +177,20 @@
   - Helps identify the most important risks that are necessary to manage
 ]
 
-#slide("Guess the sequence of ToS steps")[
-  - Convert to success statements (how to avoid failure?)
-  - List failure statements (when can the project fail?)
-  - Gather the team
-  - Write a minimal set of SMART goals
-  - Build a minimum picture of failure
+#slide("ToS steps")[
+  1. Gather the whole team
+  2. Build a minimum picture of failure (when should the project be considered a failure, informally?)
+  3. List failure statements (testable - "We didn't do X", "We didn't meet Y", etc.)
+  4. Convert failure statements to success statements #linebreak() (testable - "We must do X", "We must meet Y")
+  5. Write a minimal set of SMART goals that cover the success statements
 ]
 
-#slide("The sequence of ToS steps")[
-  1. Gather the team
-  2. Build a minimum picture of failure
-  3. List failure statements
-  4. Convert to success statements
-  5. Write a minimal set of SMART goals
+#slide("Guess the sequence of ToS steps")[
+  - Convert failure statements to success statements
+  - List failure statements
+  - Gather the whole team
+  - Write a minimal set of SMART goals that cover the success statements
+  - Build a minimum picture of failure
 ]
 
 #slide("Discussion questions")[
