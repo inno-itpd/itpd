@@ -31,6 +31,12 @@
       "type": "shell",
       "command": "pnpm run check:links",
       "problemMatcher": []
+    },
+    {
+      "label": "lint:actions",
+      "type": "shell",
+      "command": "pnpm run lint:actions",
+      "problemMatcher": []
     }
   ]
 }

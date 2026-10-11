@@ -12,6 +12,7 @@
     "build:lectures": "node scripts/lectures.mjs build",
     "check:lectures": "node scripts/lectures.mjs check",
     "check:links": "lychee --no-progress --include-fragments .",
+    "lint:actions": "actionlint",
     "lint:markdown": "node scripts/markdown.mjs lint",
     "format:markdown": "node scripts/markdown.mjs format",
     "format:markdown:check": "node scripts/markdown.mjs format:check",

@@ -10,7 +10,7 @@ Students start at [README.md](README.md).
 - Optional: VS Code with the extensions recommended in [.vscode/extensions.json](.vscode/extensions.json).
 
 Nothing else is installed by hand.
-[flake.nix](flake.nix) pins Node 26, pnpm, Typst, the deck font, the `backlog` CLI, lychee, and ripgrep.
+[flake.nix](flake.nix) pins Node 26, pnpm, Typst, the deck font, the `backlog` CLI, lychee, ripgrep, actionlint, and shellcheck.
 A shell outside Nix is not supported, because `pnpm run check:lectures` compares bytes that depend on the pinned font.
 
 ## Setup
@@ -33,6 +33,8 @@ pnpm run test:markdown-rules
 pnpm run check:lectures
 pnpm run check:links   # needs network
 ```
+
+After editing a file under `.github/workflows/`, run `pnpm run lint:actions`.
 
 Fill in [the pull request template](.github/pull_request_template.md).
 Commit messages follow [the `commit-itpd` skill](.agents/skills/commit-itpd/SKILL.md).

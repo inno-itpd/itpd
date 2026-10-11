@@ -50,11 +50,13 @@ Run `pnpm run format:markdown` before committing.
 The decks have their own gate, `pnpm run check:lectures`, and `lectures/AGENTS.md` owns it.
 Links have theirs, `pnpm run check:links`, which runs `lychee` from the shell over the directory, so it skips gitignored paths such as `tmp/`.
 It checks heading anchors with `--include-fragments` and fetches external links, so it needs network.
+Workflow files are checked locally with `pnpm run lint:actions`, which runs `actionlint` from the shell over `.github/workflows/` after any edit there.
+It uses `shellcheck` for `run:` scripts, and it reads workflow files only, not the composite action under `.github/actions/`.
 
 | File                                      | Owns                                                                                                                                                                                                     |
 | ----------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `CONTRIBUTING.md`                         | The maintainers' prerequisites, the setup, the checks to run before a pull request, and the repository settings the workflows need.                                                                      |
-| `flake.nix`                               | The pinned development shell: Node 26, pnpm, typst, the `backlog` CLI, ripgrep, lychee, and the deck font, with a `FONTCONFIG_FILE` of its own.                                                          |
+| `flake.nix`                               | The pinned development shell: Node 26, pnpm, typst, the `backlog` CLI, ripgrep, lychee, actionlint, shellcheck, and the deck font, with a `FONTCONFIG_FILE` of its own.                                  |
 | `.envrc`                                  | `use flake`, so `direnv` loads the shell on entering the directory.                                                                                                                                      |
 | `scripts/markdown.mjs`                    | Formats, checks, and lints every tracked `.md` file except `.opencode/`, `.agents/`, and `backlog/`.                                                                                                     |
 | `scripts/lectures.mjs`                    | Builds and checks every `lectures/lecture-N.typ` against its committed PDF, with the Typst version and the build epoch pinned.                                                                           |
