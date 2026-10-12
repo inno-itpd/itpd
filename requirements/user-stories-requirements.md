@@ -1,6 +1,6 @@
 # User Story Requirements
 
-These requirements define a user story: where it lives, its issue form, what it must say, its acceptance criteria, and its priority.
+These requirements define a user story: where it lives, its issue form, what it must say, its acceptance criteria, its priority, and the Sprint, Responsible, and Accountable values it carries when it is scheduled.
 [Guide: User Stories And Prototyping](../guides/user-stories-and-prototyping.md) is the method.
 How the `US-nn` and `AC-nn` identifiers are cited is in [General Requirements](general-requirements.md#identifier-rules).
 
@@ -11,6 +11,7 @@ How the `US-nn` and `AC-nn` identifiers are cited is in [General Requirements](g
 - [The Story](#the-story)
 - [Acceptance Criteria](#acceptance-criteria)
 - [MoSCoW Prioritization](#moscow-prioritization)
+- [The Sprint, Responsible, And Accountable Values](#the-sprint-responsible-and-accountable-values)
 - [Full Example](#full-example)
 
 ## Where Stories Live
@@ -195,6 +196,20 @@ A `Could Have` reason; the `Must Have` one is in the [full example](#full-exampl
 
 Could Have: a reminder email reduces no-shows, but a client who paid already has the link, so the core task finishes without it.
 ```
+
+## The Sprint, Responsible, And Accountable Values
+
+**Since: W3**
+
+The three values say when the team plans to finish a story, and which two members maintain and verify it.
+They are set on the issue after it is created, so no issue form change is needed.
+The fields themselves, their options, and their visibility are defined in [Issue Fields](repository-requirements.md#issue-fields).
+
+**Required**
+
+1. The team sets the three values together when it schedules the story into a sprint: `Sprint` names the sprint the team plans to finish the story in, and `Responsible` and `Accountable` name two different members.
+2. On a story, the responsible member maintains the story and its acceptance criteria; the accountable member verifies that it is ready to be shown, with every criterion runnable and every link on the issue resolving, per [the story items of the Definition of Done](definition-of-done-requirements.md#the-story).
+3. A reschedule or a change of hands updates the values; an open story the team has not scheduled carries none, and an already closed story keeps none.
 
 ## Full Example
 
