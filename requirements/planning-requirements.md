@@ -48,7 +48,7 @@ Every week from Week 3 to Week 9 is a sprint, so the plan carries seven of them,
    | Column    | What it holds                                                                                        |
    | --------- | ---------------------------------------------------------------------------------------------------- |
    | `Sprint`  | The `SPRINT-nn`, linked to its section, such as `[SPRINT-03](#sprint-03)`                            |
-   | `Due`     | The hard deadline of the sprint's week, from the syllabus, such as `2026-10-16`               |
+   | `Due`     | The hard deadline of the sprint's week, from the syllabus, such as `2026-10-16`                      |
    | `Release` | The sprint's `REL-nn`, linked to its section, such as `[REL-03](#rel-03)`, per [Releases](#releases) |
 
 3. A `### SPRINT-nn` section opens with the sprint's goal, in one sentence: what the sprint is for, stated as a result rather than as a list of tasks.
@@ -119,7 +119,7 @@ An issue belongs to a milestone only when it is part of that increment, so there
    | Field            | What it says                                                                                                                                                                                               |
    | ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
    | `**Milestone:**` | The GitHub milestone title as link text, linked to the milestone itself, such as `[MLS-03: Deliver MUP](https://github.com/<organization>/<repo>/milestone/3)`; the linked title is the milestone's scope. |
-   | `**Due:**`       | The hard deadline of the due week, from the syllabus, matching the GitHub milestone.                                                                                                                |
+   | `**Due:**`       | The hard deadline of the due week, from the syllabus, matching the GitHub milestone.                                                                                                                       |
    | `**Done when:**` | The observable check that says the increment is finished, distinct from the description below the fields.                                                                                                  |
    | `**Sprints:**`   | The `SPRINT-nn` the milestone is worked on in, each linked, one or more.                                                                                                                                   |
    | `**Advances:**`  | The `TOS-nn` goal or goals the milestone serves, each linked, at least one.                                                                                                                                |
