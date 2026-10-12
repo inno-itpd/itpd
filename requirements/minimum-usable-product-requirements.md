@@ -1,6 +1,6 @@
 # Minimum Usable Product Requirements
 
-These requirements define the minimum usable product candidate: where it is recorded, what it must contain, and the customer's verdict on it.
+These requirements define the minimum usable product candidate: where it is recorded, what it must contain, how it is built, delivered, and released, and the customer's verdict on it.
 The stories it is made of, and their priorities, are in [User Story Requirements](user-stories-requirements.md).
 [Step 4: Prioritize, Then Pick The First Thing To Build](../guides/user-stories-and-prototyping.md#step-4-prioritize-then-pick-the-first-thing-to-build) is the method.
 
@@ -8,6 +8,7 @@ The stories it is made of, and their priorities, are in [User Story Requirements
 
 - [Where The Candidate Lives](#where-the-candidate-lives)
 - [The Candidate](#the-candidate)
+- [Building, Delivering, And Releasing The Candidate](#building-delivering-and-releasing-the-candidate)
 - [Full Example](#full-example)
 
 ## Where The Candidate Lives
@@ -41,6 +42,26 @@ The candidate is your proposal for it, made before any product code exists, so t
 
 - Two or three stories that a user can finish in one sitting.
   A long candidate is a postponement, not a priority.
+
+## Building, Delivering, And Releasing The Candidate
+
+**Since: W3**
+
+Week 3 is where the candidate stops being a proposal: its stories are built into one working slice on `main`, shown to the customer against their acceptance criteria, and released as the sprint's release, `REL-03`.
+
+**Required**
+
+1. The week's build scope is exactly the candidate's stories: a `Must Have` story outside the candidate is not owed in Week 3.
+2. Build the candidate's stories into one working slice merged into `main`, through task issues and one pull request per task, per [Closing A Task](task-issues-requirements.md#closing-a-task).
+   Merge each pull request before the customer meeting: nothing is left on a branch, and the slice is not partially merged.
+3. The slice is **working** when a clean checkout completes the core task end to end by following `docs/setup.md`, which the root README links, per [Setup And Run Instructions](repository-requirements.md#setup-and-run-instructions).
+4. Show each finished story against its acceptance criteria, one `AC-nn` at a time, at the weekly meeting, per [Showing Working Software](customer-meetings-requirements.md#showing-working-software): each verdict is a `DEC-nnn` naming the `US-nn`, and it either closes the story or leaves it open with its rework tasks, per [Where Stories Live](user-stories-requirements.md#where-stories-live) and [Closing A Task](task-issues-requirements.md#closing-a-task).
+5. A candidate story the team will not finish by the deadline moves out of the candidate only with the customer's decision, at the Week 3 meeting or in the same week's written exchange with the customer, recorded as a `DEC-nnn` naming the story.
+   When the remaining stories no longer complete the core task end to end, the same decision re-scopes the core task by editing the first sentence of the active milestone's description, per [Milestones](planning-requirements.md#milestones).
+   The story issue records what moved and why, per [Where Stories Live](user-stories-requirements.md#where-stories-live), and the Week 3 report names what shipped and what moved out.
+6. The week's release is `REL-03`, the sprint's final release: cut on the product state after the customer meeting and any same-week rework, per [Releases](planning-requirements.md#releases).
+   The tag is pushed first, then the changelog's released section, the plan's `REL-03` line, and the week's report merge after it, so every link resolves.
+7. Deployment is not required in Week 3: the production deployment arrives in Week 5.
 
 ## Full Example
 
