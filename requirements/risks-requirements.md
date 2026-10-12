@@ -101,7 +101,7 @@ The plan carries no contingency section of its own, per [Progress Monitoring](pl
 2. `**Window:**` names when the risk can materialize: a date, a week, a sprint, or a milestone.
 3. `**Mitigation:**` says what the team does to reduce or avoid the risk before it happens.
 4. `**Contingency:**` is the fallback if the risk materializes anyway: the alternative solution the team decided before it was needed.
-5. Several options are several risks: each `RISK-nn` carries one `**Contingency:**`, so a risk with two possible fallbacks is two entries.
+5. Several options are several risks: each `RISK-nn` carries one `**Contingency:**`, and a risk with two possible fallbacks is two entries, because a fallback with a choice in it is a decision the team has not made.
 6. A point of no return is a `DEC-nnn`, not a field of a risk: passing one gets a [decision](decisions-requirements.md#the-decision) entry, and a risk whose mitigation or contingency passes one cites its `DEC-nnn`.
 
 **Recommended**
