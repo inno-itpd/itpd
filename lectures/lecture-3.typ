@@ -141,7 +141,7 @@
       - #strong[S]pecific — the MUP vertical slice for the core task, built only from Must Have stories.
       - #strong[M]easurable — the core task runs end to end, and the customer's verdict is recorded as a DEC-nnn.
       - #strong[A]chievable — one course week, a 3–4 person team, using a candidate already reviewed in Week 2.
-      - #strong[R]elevant — it is Submission 3 (7% of the grade) and the base for the Week 5 MVP.
+      - #strong[R]elevant — it is Submission 3 (7% of the grade) and the base for the Week 5 release.
       - #strong[T]ime-bound — October 15, 2026, 23:59 (soft), October 16, 2026, 23:59 (hard).
     ],
   )
