@@ -29,10 +29,10 @@ It is created in Week 3 in its final place and stays current for the rest of the
    | Column       | What it holds                                                          |
    | ------------ | ---------------------------------------------------------------------- |
    | `ID`         | The `RISK-nn`, linked to its section, such as `[RISK-02](#risk-02)`    |
-   | `Risk`       | The section's first line, quoted: the risk in one sentence             |
    | `Status`     | The `**Status:**` value: `Open`, `Mitigated`, `Realized`, or `Dropped` |
    | `Impact`     | The `**Impact:**` rating word, `High`, `Medium`, or `Low`              |
    | `Likelihood` | The `**Likelihood:**` rating word                                      |
+   | `Risk`       | The section's first line, quoted: the risk in one sentence             |
 
 3. The table lists the `Open` risks first, sorted by `Impact` then `Likelihood`, both from `High` to `Low`, and the settled risks after them in identifier order.
    Ties keep identifier order.
@@ -146,10 +146,10 @@ The sprint is planned for all three of us, so one member's unplanned absence wou
 ```markdown
 # Risks
 
-| ID                  | Risk                                                                                                                                                               | Impact | Likelihood | Status    |
-| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------ | ---------- | --------- |
-| [RISK-02](#risk-02) | "The payment sandbox is rate-limited, so the end-to-end check may fail during the Week 3 meeting, which would leave the core task unproven."                       | High   | Medium     | Open      |
-| [RISK-01](#risk-01) | "The team has never integrated a payment provider, so the payment step may take longer than the sprint allows, which would push the MUP past the Week 3 deadline." | High   | Medium     | Mitigated |
+| ID                  | Status    | Impact | Likelihood | Risk                                                                                                                                                               |
+| ------------------- | --------- | ------ | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [RISK-02](#risk-02) | Open      | High   | Medium     | The payment sandbox is rate-limited, so the end-to-end check may fail during the Week 3 meeting, which would leave the core task unproven.                         |
+| [RISK-01](#risk-01) | Mitigated | High   | Medium     | The team has never integrated a payment provider, so the payment step may take longer than the sprint allows, which would push the MUP past the Week 3 deadline.   |
 
 ## RISK-01
 
