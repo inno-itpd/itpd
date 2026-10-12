@@ -46,6 +46,9 @@
               inputs.backlog-md.packages.${system}.default
               pkgs.ripgrep
               pkgs.lychee
+              # actionlint checks run: scripts with shellcheck when it is on PATH.
+              pkgs.actionlint
+              pkgs.shellcheck
             ];
             shellHook = ''
               export BACKLOG_CWD="$PWD"
