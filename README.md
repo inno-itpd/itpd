@@ -48,6 +48,9 @@ The assignments reference these rather than repeating them.
 | [Local Task Tracking Requirements](requirements/local-task-tracking-requirements.md)       | A task tracker in the repository, a `TODO.md` checklist, and moving Done tasks out of the active list                       |
 | [Minimum Usable Product Requirements](requirements/minimum-usable-product-requirements.md) | The minimum usable product candidate and the customer's verdict on it                                                       |
 | [Prototype Requirements](requirements/prototypes-requirements.md)                          | What a prototype must change, and where it is recorded                                                                      |
+| [Planning Requirements](requirements/planning-requirements.md)                             | The project plan, its sprints, releases, and milestones, and the threshold of success                                       |
+| [Risk Requirements](requirements/risks-requirements.md)                                    | The risk register: a risk's statement and fields, its rating, and its response                                              |
+| [Definition Of Done Requirements](requirements/definition-of-done-requirements.md)         | What done means for a story, a task, and a pull request                                                                     |
 | [Customer Meeting Requirements](requirements/customer-meetings-requirements.md)            | Meetings with the customer, and their scripts, reports, and transcripts                                                     |
 | [Weekly Report Requirements](requirements/weekly-report-requirements.md)                   | The weekly report, the AI usage report, deviations, and the Moodle PDF                                                      |
 | [Repository Requirements](requirements/repository-requirements.md)                         | GitHub, the rules every issue shares, pull requests, branch protection, link checking, permalinks, snapshots, changelog, CI |
@@ -56,13 +59,14 @@ The assignments reference these rather than repeating them.
 
 How to actually do the work.
 
-| Guide                                                                      | For                                                                                |
-| -------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
-| [Researching alternatives](guides/alternatives-research.md)                | Finding your set, choosing properties, evaluating consistently, capturing evidence |
-| [From comparison to value proposition](guides/comparison-and-synthesis.md) | Building the table, finding the gaps, writing the proposition and your assumptions |
-| [The kickoff meeting](guides/customer-kickoff-meeting.md)                  | The five areas and the Mom Test pass                                               |
-| [User stories and prototyping](guides/user-stories-and-prototyping.md)     | Turning a gap into stories, writing criteria, and testing an idea cheaply          |
-| [Validating with the customer](guides/validating-with-the-customer.md)     | Running a meeting after the kickoff and recording what it changed                  |
+| Guide                                                                      | For                                                                                             |
+| -------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| [Researching alternatives](guides/alternatives-research.md)                | Finding your set, choosing properties, evaluating consistently, capturing evidence              |
+| [From comparison to value proposition](guides/comparison-and-synthesis.md) | Building the table, finding the gaps, writing the proposition and your assumptions              |
+| [The kickoff meeting](guides/customer-kickoff-meeting.md)                  | The five areas and the Mom Test pass                                                            |
+| [User stories and prototyping](guides/user-stories-and-prototyping.md)     | Turning a gap into stories, writing criteria, and testing an idea cheaply                       |
+| [Validating with the customer](guides/validating-with-the-customer.md)     | Running a meeting after the kickoff and recording what it changed                               |
+| [Planning and tracking](guides/planning-and-tracking.md)                   | The threshold of success, the plan and its releases, milestones, risks, and progress monitoring |
 
 ## Course Documents
 
