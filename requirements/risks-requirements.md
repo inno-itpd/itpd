@@ -30,9 +30,9 @@ It is created in Week 3 in its final place and stays current for the rest of the
    | ------------ | ---------------------------------------------------------------------- |
    | `ID`         | The `RISK-nn`, linked to its section, such as `[RISK-02](#risk-02)`    |
    | `Risk`       | The section's first line, quoted: the risk in one sentence             |
+   | `Status`     | The `**Status:**` value: `Open`, `Mitigated`, `Realized`, or `Dropped` |
    | `Impact`     | The `**Impact:**` rating word, `High`, `Medium`, or `Low`              |
    | `Likelihood` | The `**Likelihood:**` rating word                                      |
-   | `Status`     | The `**Status:**` value: `Open`, `Mitigated`, `Realized`, or `Dropped` |
 
 3. The table lists the `Open` risks first, sorted by `Impact` then `Likelihood`, both from `High` to `Low`, and the settled risks after them in identifier order.
    Ties keep identifier order.
