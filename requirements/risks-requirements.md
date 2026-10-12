@@ -77,15 +77,15 @@ The two ratings say what the risk could cost and how likely it is, and the summa
 **Required**
 
 1. `**Impact:**` and `**Likelihood:**` carry their rating word, `High`, `Medium`, or `Low`, directly after the field name, so the bullet carries one colon.
-2. The reason follows on indented lines inside the same bullet: for `**Impact:**`, what the risk threatens and how badly, and for `**Likelihood:**`, why the risk is that likely.
+2. The reason follows on indented lines inside the same bullet with own bullet: for `**Impact:**`, what the risk threatens and how badly, and for `**Likelihood:**`, why the risk is that likely.
 
 **Example**
 
 ```markdown
 - **Impact:** High
-  A failed check in front of the customer would leave the MUP's central story unaccepted, and the meeting would spend its time on a sandbox quota.
+  - A failed check in front of the customer would leave the MUP's central story unaccepted, and the meeting would spend its time on a sandbox quota.
 - **Likelihood:** Medium
-  The provider rate-limits the shared sandbox, and the rehearsal and the meeting fall on the same day.
+  - The provider rate-limits the shared sandbox, and the rehearsal and the meeting fall on the same day.
 ```
 
 ## Response
