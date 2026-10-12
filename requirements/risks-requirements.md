@@ -146,10 +146,10 @@ The sprint is planned for all three of us, so one member's unplanned absence wou
 ```markdown
 # Risks
 
-| ID                  | Status    | Impact | Likelihood | Risk                                                                                                                                                               |
-| ------------------- | --------- | ------ | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [RISK-02](#risk-02) | Open      | High   | Medium     | The payment sandbox is rate-limited, so the end-to-end check may fail during the Week 3 meeting, which would leave the core task unproven.                         |
-| [RISK-01](#risk-01) | Mitigated | High   | Medium     | The team has never integrated a payment provider, so the payment step may take longer than the sprint allows, which would push the MUP past the Week 3 deadline.   |
+| ID                  | Status    | Impact | Likelihood | Risk                                                                                                                                                             |
+| ------------------- | --------- | ------ | ---------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [RISK-02](#risk-02) | Open      | High   | Medium     | The payment sandbox is rate-limited, so the end-to-end check may fail during the Week 3 meeting, which would leave the core task unproven.                       |
+| [RISK-01](#risk-01) | Mitigated | High   | Medium     | The team has never integrated a payment provider, so the payment step may take longer than the sprint allows, which would push the MUP past the Week 3 deadline. |
 
 ## RISK-01
 
