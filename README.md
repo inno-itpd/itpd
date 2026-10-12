@@ -67,12 +67,13 @@ How to actually do the work.
 ## Course Documents
 
 Reference material from the course.
-Neither is a rule you can deviate from, so both live here rather than in `requirements/`.
+None of them is a rule you can deviate from, so they live here rather than in `requirements/`.
 
-| Document                                           | What it covers                                                   |
-| -------------------------------------------------- | ---------------------------------------------------------------- |
-| [Syllabus](course/syllabus.md)                     | Weeks, dates, deliverables, grading weights, and course policies |
-| [Teams and projects](course/teams-and-projects.md) | Team numbers and their projects for the current term             |
+| Document                                           | What it covers                                                            |
+| -------------------------------------------------- | ------------------------------------------------------------------------- |
+| [Syllabus](course/syllabus.md)                     | Weeks, dates, deliverables, grading weights, and course policies          |
+| [Course tooling](course/tooling.md)                | Tools the course suggests for transcripts, prototyping, and coding agents |
+| [Teams and projects](course/teams-and-projects.md) | Team numbers and their projects for the current term                      |
 
 ## How Your Repository Is Organised
 
