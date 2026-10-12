@@ -49,6 +49,11 @@ It is created once, in its final place, and then stays current.
 3. State it in one sentence.
    A vision that has grown into a specification has become the stories, and the two then drift apart.
 
+**Since: W3**
+
+4. The goal links `docs/threshold-of-success.md`: the goal says what the product must achieve, and the threshold refines it into the SMART goals the project's success rests on, per [The Threshold Of Success](planning-requirements.md#the-threshold-of-success).
+   The threshold does not link back, and the plan reaches it through each milestone's `**Advances:**` field, per [Milestones](planning-requirements.md#milestones).
+
 ## Stakeholders
 
 **Since: W2**
@@ -199,6 +204,7 @@ Meeting booking app
 An independent expert can send one link where a client books a time, pays, and receives the meeting link and materials, without assembling the same session from three tools.
 
 **Supports:** [VP-01](research/value-proposition.md#vp-01).
+**Threshold:** [the threshold of success](threshold-of-success.md).
 
 ## Stakeholders
 

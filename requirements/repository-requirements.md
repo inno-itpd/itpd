@@ -1,6 +1,6 @@
 # Repository Requirements
 
-These requirements cover the mechanics of the product repository: where it lives, how changes get in, how links get checked, and how you produce the permalinks and the snapshot your assignment asks for.
+These requirements cover the mechanics of the product repository: where it lives, how changes get in, how links get checked, how the documentation site is published, and how you produce the permalinks and the snapshot your assignment asks for.
 Use [General Requirements](general-requirements.md) for what an artifact is, [Visibility Requirements](visibility-requirements.md) for who may see it, and the file for each artifact, listed in [the course rules](../course/rules.md#where-the-rules-live), for the product work.
 
 <h2>Table of contents</h2>
@@ -8,6 +8,8 @@ Use [General Requirements](general-requirements.md) for what an artifact is, [Vi
 - [Repository Setup](#repository-setup)
   - [Licensing](#licensing)
   - [Root README](#root-readme)
+  - [Setup And Run Instructions](#setup-and-run-instructions)
+- [Documentation Site](#documentation-site)
 - [Branch Protection And Pull Requests](#branch-protection-and-pull-requests)
 - [Link Checking](#link-checking)
   - [Pinning Third-Party Actions](#pinning-third-party-actions)
@@ -15,6 +17,7 @@ Use [General Requirements](general-requirements.md) for what an artifact is, [Vi
 - [Configuration And Sensitive Information](#configuration-and-sensitive-information)
 - [Sensitive-Data Incident Response](#sensitive-data-incident-response)
 - [Issue Tracking](#issue-tracking)
+  - [Issue Fields](#issue-fields)
 - [Contributing](#contributing)
 - [Changelog, Releases And Versioning](#changelog-releases-and-versioning)
 - [Continuous Integration](#continuous-integration)
@@ -76,7 +79,36 @@ In Week 1 it must contain:
 
 **Since: W3**
 
-The root `README.md` also carries setup and run instructions for the product as it exists.
+The root `README.md` also links the product's setup and run instructions, which live in `docs/setup.md`.
+
+### Setup And Run Instructions
+
+**Since: W3**
+
+The product's setup and run instructions live in `docs/setup.md`, which the root `README.md` links, per [Root README](#root-readme).
+
+**Required**
+
+1. The page covers at least: the prerequisites, how to install, how to configure the product, pointing at a `.env.example` file or a similar one, how to run the product, and how to run the checks and the tests.
+2. It covers enough that a clean checkout can complete the [core task](minimum-usable-product-requirements.md#the-candidate) end to end by following it.
+   The coverage is the requirement; the page's headings and their order are the team's choice.
+
+## Documentation Site
+
+**Since: W3**
+
+The repository publishes its maintained documentation as a website, so a reader can reach it without cloning the repository.
+The site serves `docs/`; nothing moves into it from `reports/`, per [Where Artifacts Live In The Repository](general-requirements.md#where-artifacts-live-in-the-repository).
+
+**Required**
+
+1. Publish `docs/` as a [GitHub Pages](https://docs.github.com/en/pages) site through a GitHub Actions workflow under `.github/workflows/`, and link the site from the root `README.md`.
+   Pin every third-party action per [Pinning Third-Party Actions](#pinning-third-party-actions).
+2. Any static site generator is allowed, and the generator's configuration path is the team's choice.
+   [mdBook](https://rust-lang.github.io/mdBook/), [Zensical](https://zensical.org/), and [MkDocs](https://www.mkdocs.org/) are examples, in that order.
+3. The site's default page is a landing page, not a file listing: it says what the product is, and it navigates to the other pages and the resources around the project.
+4. The site does not link the weekly reports: a week's report is evidence for its week, not maintained documentation.
+5. A page that links a file outside `docs/` links it by the file's GitHub URL, so the link resolves on the site and in the repository alike.
 
 ## Branch Protection And Pull Requests
 
@@ -283,6 +315,32 @@ Link on `main`, not at a commit hash, so the link shows the file as it is now, s
 The commit-hash permalink is for the submission, per [Permalinks And Snapshots](#permalinks-and-snapshots).
 Merge the file into `main` before an issue links it.
 
+### Issue Fields
+
+**Since: W3**
+
+The three fields carry who works on an issue and when the team plans to finish it, and the plan and the sprint backlog read those values instead of a copied list.
+
+**Required**
+
+1. The organization creates three **issue fields**, each **single-select** and with visibility **Public**:
+
+   | Field         | Its options                                                  |
+   | ------------- | ------------------------------------------------------------ |
+   | `Sprint`      | one per sprint, `SPRINT-03` to `SPRINT-09`, and nothing else |
+   | `Responsible` | one per team member, by the member's GitHub username         |
+   | `Accountable` | one per team member, by the member's GitHub username         |
+
+   Pin each field to the issue types the team uses for story and task issues, or to `Issues without a type` when the team uses none: a field pinned to nothing does not appear on an issue.
+   A new field starts with organization-only visibility, so change it to `Public`.
+
+2. The team sets the three values together when it schedules an issue into a sprint: `Sprint` names the sprint the team plans to finish the issue in, and `Responsible` and `Accountable` name two different members, who will do the work and verify it.
+   The values are set on the issue after it is created, so no issue form change is needed.
+   An open issue the team has not scheduled carries none, a closed issue keeps none, and a reschedule or a change of hands updates them.
+3. A sprint's backlog is the issue list filtered by its `Sprint` value, such as `field.Sprint:SPRINT-03`, which the plan's `**Sprint Backlog:**` field links, per [Sprints](planning-requirements.md#sprints).
+4. A team whose organization cannot create issue fields declares a [deviation](weekly-report-requirements.md#declaring-deviations) and carries the three values as labels instead: `responsible:<username>`, `accountable:<username>`, and `sprint:<SPRINT-nn>`, set on the issue when it is scheduled.
+   An issue without a `sprint:*` label is unscheduled.
+
 ## Contributing
 
 **Since: W3**
@@ -296,6 +354,9 @@ Merge the file into `main` before an issue links it.
 3. `CONTRIBUTING.md` states how a change gets in: the branch naming rule, what a pull request must contain, and what the reviewer checks.
 4. Keep it current.
    A contributing guide that describes last month's process is worse than none, because it is believed.
+5. Once the stack is chosen, its package ecosystem joins `github-actions` in `.github/dependabot.yml`, per [Pinning Third-Party Actions](#pinning-third-party-actions), so the product's dependencies are bumped like the action pins.
+6. A Dependabot pull request is reviewed like any other, with one approval from another member.
+   Any member may merge it, and it closes no task issue, because the bot opens it, per [Closing A Task](task-issues-requirements.md#closing-a-task).
 
 **Recommended**
 

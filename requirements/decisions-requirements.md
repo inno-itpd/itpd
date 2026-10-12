@@ -40,6 +40,7 @@ A [decision](general-requirements.md#artifact-concepts-and-terminology) is a con
    - It changes more than one artifact, an artifact that does not exist yet, or no artifact at all.
    - It changes the product vision's goal, a constraint, or a boundary item, or it is a technology choice.
      A technology choice the team made is a team decision, not a constraint, per [Constraints](product-vision-requirements.md#constraints).
+   - It passes a point of no return: undoing the choice would cost a rebuild rather than an edit.
    - It reverses a decision that has an entry.
 
 2. Any other decision is a team decision that changes one artifact that already exists, and it needs no entry.
