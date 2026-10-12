@@ -153,24 +153,49 @@
 
 Next: Week 3 is planning and the minimum usable product, and it has no assignment yet.
 
-- [ ] traceability
-- [ ] `tmp/itpd-2025/lectures/lecture-2.1.pdf` is the only planning source, and it is thin.
-      Its agenda promises `Expectations` and never delivers it.
-- [ ] **Estimation has no source material anywhere in the 2025 decks.**
-      It has to be written from scratch, and it is the part students will push back on hardest.
-- [ ] Borrowables worth reusing: strategic versus tactical planning, `Define success` as step one of
-      strategic planning, the `zoom level` framing for a roadmap, `point of no return` for contingency
-      plans, and the `Warning!` that 80% of the pain comes from skipping `Define success`.
-- [ ] New for W3 that no source has: the tactical questions belong in `CONTRIBUTING.md`, the changelog is
-      compiled from pull requests rather than from commits, and SemVer tags begin.
-- [ ] `docs/threshold-of-success.md` and `docs/work-plan.md` have no artifact structure yet.
-      `## Later Weeks` in `requirements/artifact-requirements.md` says so, and that is where they go.
-- [ ] Functional requirements - specify sources (user stories, constraints, architecture, etc.)
-- [ ] Scope, out of scope
-- [ ] root README
+- [x] wdyt about using SPRINT-?? instead of Later?
+  - Don't use it because it's redundant.
+    Can just keep issues not belonging to a sprint.
+- [x] Root README
+  - [x] Shows where to find the setup instructions
+- [x] Add info about tools
+  - course/tooling.md
+    - AssemblyAI - for transcripts
+    - Google AI Studio - for initial prototyping
+    - OpenCode - free agent with free /models
+  - mention in the README
+- [x] set up actionlint
+- [x] changelog is compiled from pull requests rather than from commits
+- [x] Add public issue fields:
+  - Responsible
+  - Accountable
+- [x] GitHub Pages for docs
+- [x] release
+- [x] should reports be a part of the site?
+  - No, they're not something users would need to read
+- [x] risk format: condition, consequence (why we care)
+- [x] Sprint releases:
+  - SPRINT-nn has a sub-section REL-nn
+- [ ] Require assignees?
+- [ ] Require responsible and accountable are always different people
+- [ ] Specify that the candidate should move to a milestone
+- [ ] Introduce a policy about dependency bumps
+- [ ] release title: always SemVer
+- [ ] Save A3 decisions in course/decisions/decisions-a3.md
+- [ ] Improve the lecture in the next iteration.
+      Include:
+  - [ ] Planning
+  - [ ] Estimation (story points?)
+  - [ ] Risks
+  - [ ] Scrum basics (tactical planning)
 
 ## A4
 
+- Scrum
+  - Sprints
+  - Retro - in the report, what can't be public?
+- Architecture and Scrum
+- [ ] Functional requirements - specify sources (user stories, constraints, architecture, etc.)
 - quality requirements, no quality goals
 - Week 4 is quality and architecture, and it continues C4 from the W2 context diagram:
   containers, then components.
