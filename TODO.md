@@ -140,11 +140,14 @@
 - [x] Move "Minimum Usable Product Candidate" to another doc from user-stories-requirements
 - [x] lychee
 - [x] using this repo as an agent skill
-- [ ] add actionlint
-- [ ] lecture 2:
+- [ ] require actionlint on their side
+- [ ] Improve ecture 2:
   - [ ] Remind what a gap and a value proposition are (bridge-in)
+  - [ ] Prototype is needed to show early what you're working on
+  - [ ] Terms about scope: in-scope, out-of-scope
+  - [ ] Talk about traceability
   - [ ] Provide summary at the end
-- [ ] recommend to fork and edit if want to preserve some connections?
+- [ ] MoSCoW must be issue fields
 
 ## A3
 
