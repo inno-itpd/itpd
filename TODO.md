@@ -189,8 +189,9 @@ Next: Week 3 is planning and the minimum usable product, and it has no assignmen
   - Fixed: the rule reads "an already closed issue needs none", and the values and the assignees stay on the issue after it closes.
 - [x] Move issues to a separate doc
   - `requirements/issue-tracking-requirements.md` holds the rules every issue shares, the fields, the assignees, and the project.
-- [ ] Introduce a policy about dependency bumps
-- [ ] Save A3 decisions in course/decisions/decisions-a3.md
+- [x] Save A3 decisions in course/decisions/decisions-a3.md
+  - Dropped: the decisions landed in the course materials and the backlog task notes, and `handoff.md` is planning scratch that is deleted once Assignment 3 is published.
+- [x] Introduce a policy about dependency bumps
 - [ ] Improve the lecture in the next iteration.
       Include:
   - [ ] Planning
