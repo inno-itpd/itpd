@@ -45,8 +45,8 @@ A **task issue** holds one unit of work, such as building part of a story, docum
 **Required**
 
 1. Add `.github/ISSUE_TEMPLATE/task.yml`, an Issue Form for every unit of work, with the `task` label applied by the form.
-   The description field and the `Acceptance criteria` field are required.
-   The `Story` field is optional and takes a bullet list with one item for each story issue the task works toward, because one task may serve several stories.
+   The description and `Acceptance criteria` form fields are required.
+   The `Story` form field is optional and takes a bullet list with one item for each story issue the task works toward, because one task may serve several stories.
    Each item names the story issue alone or follows it with the story's `AC-nn` the task works toward in parentheses, such as `- #42 (AC-01, AC-02)`, so GitHub renders each story's title.
    A task that is not work on a story, such as a workflow or a report, leaves `Story` empty.
 2. Create the `task` label, by any means.

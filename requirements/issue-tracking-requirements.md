@@ -47,6 +47,8 @@ Merge the file into `main` before an issue links it.
 
 **Since: W3**
 
+An **issue field** is the organization's field on the issue itself, set after the issue is created and shown in the issue's sidebar.
+It is not a field of the issue form, which is written into the issue body once, and not a project's own field, which lives only in that project.
 The three fields carry who works on an issue and when the team plans to finish it, and the plan and the sprint backlog read those values instead of a copied list.
 
 **Required**

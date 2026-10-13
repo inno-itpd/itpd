@@ -72,9 +72,9 @@ The rules every issue shares, such as disabling blank issues, are in [Issue Trac
 **Required**
 
 1. Add `.github/ISSUE_TEMPLATE/user-story.yml`, an Issue Form with a field for each part of a story issue listed in [Where Stories Live](#where-stories-live), and the `user-story` label applied by the form, or the issue type or field that rule allows instead.
-   The statement, the `Value proposition` field, and the `Priority reason` field are required, and the `Traces to` and `Rests on` lists are optional.
+   The statement, the `Value proposition` form field, and the `Priority reason` form field are required, and the `Traces to` and `Rests on` lists are optional.
    `Value proposition` is a single-line input that takes one `VP-nn`, and `Traces to` and `Rests on` take one entry per line.
-   The acceptance criteria field is optional, per [Acceptance Criteria](#acceptance-criteria).
+   The acceptance criteria form field is optional, per [Acceptance Criteria](#acceptance-criteria).
 2. Create the `user-story` label and the four `moscow:*` labels in [MoSCoW Prioritization](#moscow-prioritization), by any means.
    The form applies `user-story`; the team applies one MoSCoW label per story.
    A team that marks stories or priorities with an issue type or field, per [Where Stories Live](#where-stories-live), creates that type or field instead of the labels it replaces.
