@@ -14,14 +14,14 @@ The threshold session of Step 1 and the risk session of Step 5 are the hours tha
 - [What You Produce](#what-you-produce)
 - [Step 1: Agree On The Threshold Of Success](#step-1-agree-on-the-threshold-of-success)
 - [Step 2: Choose The Roadmap's Zoom Level](#step-2-choose-the-roadmaps-zoom-level)
-- [Step 3: Write The Sprints And Their Releases](#step-3-write-the-sprints-and-their-releases)
+- [Step 3: Write The Milestones](#step-3-write-the-milestones)
+  - [Lead The Description With The Outcome](#lead-the-description-with-the-outcome)
+- [Step 4: Write The Sprints And Their Releases](#step-4-write-the-sprints-and-their-releases)
   - [Lead With A Result](#lead-with-a-result)
   - [Give Every Unplanned Sprint A Provisional Goal](#give-every-unplanned-sprint-a-provisional-goal)
   - [Schedule With The Milestone, Not In The File](#schedule-with-the-milestone-not-in-the-file)
   - [Releases](#releases)
   - [Pick The Number From What A User Could Observe](#pick-the-number-from-what-a-user-could-observe)
-- [Step 4: Write The Milestones](#step-4-write-the-milestones)
-  - [Lead The Description With The Outcome](#lead-the-description-with-the-outcome)
 - [Step 5: Name The Risks And Their Fallbacks](#step-5-name-the-risks-and-their-fallbacks)
   - [Start From The Plan, Not From A Feeling](#start-from-the-plan-not-from-a-feeling)
   - [Write The First Line As Cause, Event, And Impact](#write-the-first-line-as-cause-event-and-impact)
@@ -45,7 +45,7 @@ The threshold session of Step 1 and the risk session of Step 5 are the hours tha
 
 ```text
 docs/threshold-of-success.md   TOS-01, TOS-02, … one section per goal, and the statements table below them
-docs/project-plan.md           the sprint and milestone sections, and progress monitoring
+docs/project-plan.md           the milestone and sprint sections, and progress monitoring
 docs/risks.md                  RISK-01, RISK-02, … the register
 GitHub                         the `SPRINT-nn` milestones, every scheduled issue in its sprint's milestone, and the `Responsible` and `Accountable` values and the matching assignees
 ```
@@ -141,7 +141,29 @@ The plan's milestones are not GitHub milestones: each sprint is one, per [Sprint
 The plan holds increments, never the issue list.
 Which issue is worked on when is the GitHub milestone the issue is assigned to, per [Scheduling An Issue](../requirements/issue-tracking-requirements.md#scheduling-an-issue): the same issue can move between sprints, and its milestone moves with it, without the roadmap being rewritten.
 
-## Step 3: Write The Sprints And Their Releases
+## Step 3: Write The Milestones
+
+A milestone section opens with its fields and follows them with a description of the increment, per [Milestones](../requirements/planning-requirements.md#milestones).
+The fields carry the due date, the sprints, and the threshold goals the increment advances.
+A milestone carries no exit check of its own: the increment is read from what its sprints released, and the MUP's check is the clean-checkout definition the [MUP requirements](../requirements/minimum-usable-product-requirements.md#the-candidate) and `docs/setup.md` own.
+
+### Lead The Description With The Outcome
+
+The first sentence is the conclusion, and the sentences after it add scope, sequencing, or the problem the increment beats:
+
+```markdown
+A client goes from the coach's booking link to a paid, confirmed booking.
+Rescheduling and reminders build on this slice in the next increment.
+```
+
+A reader who stops after the first line already has the increment, and nobody has to reach the end to find out what they get.
+This is Barbara Minto's pyramid principle applied to a plan: the conclusion first, the support after, because a reader reads a plan to decide whether the increment matters, not to follow the team's itinerary.
+The tell of a buried outcome is the word "so" near the end: "we started with the slots, then wired payments, so that a client can book" says the same thing as the first sentence above, a paragraph later.
+
+The first sentence is also where the increment's scope lives, so when the customer or the work moves something in or out, edit that sentence rather than keeping a second scope list somewhere else.
+Record the reason like any other change: a customer's decision gets a `DEC-nnn`, per [The Decision](../requirements/decisions-requirements.md#the-decision), and the story issue says what moved.
+
+## Step 4: Write The Sprints And Their Releases
 
 Every submission week is a **sprint**, and the plan carries one section per sprint, in order, from the first to the last.
 Write them from near to far: the current sprint in concrete terms, the next one in its own words, and the rest at the level of direction.
@@ -191,28 +213,6 @@ The tag is the team's choice under SemVer, per [Versioning And Tags](../requirem
 The release repeats the tag as its title, so the version reads the same wherever the release is linked.
 A first release with no users is usually `v0.1.0`; after that, a fix a user could notice is a patch, a new capability is a minor, and a change that breaks how an existing user works is a major.
 When the number is not obvious, ask what a user would see, because that is what the version communicates.
-
-## Step 4: Write The Milestones
-
-A milestone section opens with its fields and follows them with a description of the increment, per [Milestones](../requirements/planning-requirements.md#milestones).
-The fields carry the due date, the sprints, and the threshold goals the increment advances.
-A milestone carries no exit check of its own: the increment is read from what its sprints released, and the MUP's check is the clean-checkout definition the [MUP requirements](../requirements/minimum-usable-product-requirements.md#the-candidate) and `docs/setup.md` own.
-
-### Lead The Description With The Outcome
-
-The first sentence is the conclusion, and the sentences after it add scope, sequencing, or the problem the increment beats:
-
-```markdown
-A client goes from the coach's booking link to a paid, confirmed booking.
-Rescheduling and reminders build on this slice in the next increment.
-```
-
-A reader who stops after the first line already has the increment, and nobody has to reach the end to find out what they get.
-This is Barbara Minto's pyramid principle applied to a plan: the conclusion first, the support after, because a reader reads a plan to decide whether the increment matters, not to follow the team's itinerary.
-The tell of a buried outcome is the word "so" near the end: "we started with the slots, then wired payments, so that a client can book" says the same thing as the first sentence above, a paragraph later.
-
-The first sentence is also where the increment's scope lives, so when the customer or the work moves something in or out, edit that sentence rather than keeping a second scope list somewhere else.
-Record the reason like any other change: a customer's decision gets a `DEC-nnn`, per [The Decision](../requirements/decisions-requirements.md#the-decision), and the story issue says what moved.
 
 ## Step 5: Name The Risks And Their Fallbacks
 

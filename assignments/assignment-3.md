@@ -68,24 +68,24 @@ This week:
 
 The rules:
 
-- The plan is `docs/project-plan.md`, holding the sprints, the milestones, and progress monitoring, in that order: [Where The Plan And The Threshold Live](../requirements/planning-requirements.md#where-the-plan-and-the-threshold-live).
-- `## Sprints` carries one `### SPRINT-nn` section per sprint from Week 3 to Week 9, each with its goal, its `**Due:**` field, its `**Sprint Backlog:**` link once it has issues, and its nested `#### REL-nn` release; a later sprint's goal is provisional: [Sprints](../requirements/planning-requirements.md#sprints) and [Releases](../requirements/planning-requirements.md#releases).
+- The plan is `docs/project-plan.md`, holding the milestones, the sprints, and progress monitoring, in that order: [Where The Plan And The Threshold Live](../requirements/planning-requirements.md#where-the-plan-and-the-threshold-live).
 - `## Milestones` carries one `### MLS-nn` section per milestone, with its fields and the description below them; a milestone is plan documentation, and each sprint is a GitHub milestone: [Milestones](../requirements/planning-requirements.md#milestones) and [Sprints](../requirements/planning-requirements.md#sprints).
+- `## Sprints` carries one `### SPRINT-nn` section per sprint from Week 3 to Week 9, each with its goal, its `**Due:**` field, its `**Sprint Backlog:**` link once it has issues, and its nested `#### REL-nn` release; a later sprint's goal is provisional: [Sprints](../requirements/planning-requirements.md#sprints) and [Releases](../requirements/planning-requirements.md#releases).
 - `## Progress Monitoring` names the team's weekly review, who checks, and where progress is visible, and links `docs/risks.md` once: [Progress Monitoring](../requirements/planning-requirements.md#progress-monitoring).
 - The risks are `docs/risks.md`, with the summary table and one `## RISK-nn` section per risk: [Where The Risks Live](../requirements/risks-requirements.md#where-the-risks-live).
 - A risk is one sentence of cause, event, and impact, followed by its rating, trigger, window, mitigation, and contingency: [The Risk](../requirements/risks-requirements.md#the-risk), [Rating](../requirements/risks-requirements.md#rating), and [Response](../requirements/risks-requirements.md#response).
 - Read the register at the weekly review, and settle what the review sees: [Checking And Settling](../requirements/risks-requirements.md#checking-and-settling).
 
-The method is in [Step 2: Choose The Roadmap's Zoom Level](../guides/planning-and-tracking.md#step-2-choose-the-roadmaps-zoom-level), [Step 3: Write The Sprints And Their Releases](../guides/planning-and-tracking.md#step-3-write-the-sprints-and-their-releases), [Step 4: Write The Milestones](../guides/planning-and-tracking.md#step-4-write-the-milestones), [Step 5: Name The Risks And Their Fallbacks](../guides/planning-and-tracking.md#step-5-name-the-risks-and-their-fallbacks), and [Step 6: Set Up Progress Monitoring](../guides/planning-and-tracking.md#step-6-set-up-progress-monitoring).
+The method is in [Step 2: Choose The Roadmap's Zoom Level](../guides/planning-and-tracking.md#step-2-choose-the-roadmaps-zoom-level), [Step 3: Write The Milestones](../guides/planning-and-tracking.md#step-3-write-the-milestones), [Step 4: Write The Sprints And Their Releases](../guides/planning-and-tracking.md#step-4-write-the-sprints-and-their-releases), [Step 5: Name The Risks And Their Fallbacks](../guides/planning-and-tracking.md#step-5-name-the-risks-and-their-fallbacks), and [Step 6: Set Up Progress Monitoring](../guides/planning-and-tracking.md#step-6-set-up-progress-monitoring).
 
 This week:
 
 1. Write `docs/project-plan.md` with its three parts in order.
-2. `## Sprints` covers all seven sprints, `SPRINT-03` to `SPRINT-09`: write `SPRINT-03` and `SPRINT-04` concretely, and give every later sprint a provisional goal that stays current until it is planned.
-3. Give each sprint its nested `#### REL-nn` heading, `REL-03` to `REL-09`; a release section stays empty until its release is published.
-4. In `## Milestones`, write `MLS-03`, whose focus is delivering the MUP; further milestones are the team's choice, each written when the team defines the increment it delivers, numbered by its due week.
+2. In `## Milestones`, write `MLS-03`, whose focus is delivering the MUP; further milestones are the team's choice, each written when the team defines the increment it delivers, numbered by its due week.
    The `**Sprints:**` runs stay disjoint and consecutive, each ending in the week its milestone is due; the runs need not cover every sprint, and a sprint no milestone covers is still scheduled in its GitHub milestone.
    Create the seven sprint milestones on GitHub, each titled `SPRINT-nn: <focus>` with the week's hard deadline as its due date; the plan's milestones themselves are not on GitHub.
+3. `## Sprints` covers all seven sprints, `SPRINT-03` to `SPRINT-09`: write `SPRINT-03` and `SPRINT-04` concretely, and give every later sprint a provisional goal that stays current until it is planned.
+4. Give each sprint its nested `#### REL-nn` heading, `REL-03` to `REL-09`; a release section stays empty until its release is published.
 5. In `## Progress Monitoring`, name when the team's weekly review is held, who checks, and the views where progress is visible: the GitHub project's table view and the sprints' GitHub milestones.
 6. Write `docs/risks.md` with at least 3 risks that threaten the plan or the threshold, each stated as cause, event, and impact.
 
@@ -302,7 +302,7 @@ A transcript under item 5 goes in an appendix, which the two pages do not count.
 
 - [ ] `docs/threshold-of-success.md` with 3+ goals, each with its fields, and the failure and success statements below them ([Part 1](#part-1-state-the-threshold-of-success)).
 - [ ] The vision's goal links the threshold ([Part 1](#part-1-state-the-threshold-of-success)).
-- [ ] `docs/project-plan.md` with `## Sprints` (`SPRINT-03` to `SPRINT-09`, each with its `**Due:**` field and its nested `REL-nn`), `## Milestones` (`MLS-03`, and any further milestone the team defines, each with its fields and description), and `## Progress Monitoring` ([Part 2](#part-2-write-the-project-plan-and-name-the-risks)).
+- [ ] `docs/project-plan.md` with `## Milestones` (`MLS-03`, and any further milestone the team defines, each with its fields and description), `## Sprints` (`SPRINT-03` to `SPRINT-09`, each with its `**Due:**` field and its nested `REL-nn`), and `## Progress Monitoring` ([Part 2](#part-2-write-the-project-plan-and-name-the-risks)).
 - [ ] The seven `SPRINT-nn` GitHub milestones created, each with its focus and due date, and the plan's `**Sprints:**` runs disjoint and consecutive, each ending in its due week ([Part 2](#part-2-write-the-project-plan-and-name-the-risks)).
 - [ ] `docs/risks.md` with 3+ risks and the summary table ([Part 2](#part-2-write-the-project-plan-and-name-the-risks)).
 - [ ] The stack recorded as a `DEC-nnn`, `.gitignore` extended, and the stack's ecosystem added to `.github/dependabot.yml` ([Part 3](#part-3-decide-the-stack)).
