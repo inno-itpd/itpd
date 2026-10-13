@@ -55,7 +55,7 @@ The rules:
 - Add both issue forms and their labels: [the story issue form](../requirements/user-stories-requirements.md#the-issue-form) and [the task issue form](../requirements/task-issues-requirements.md#the-issue-form).
 - Close exactly one task issue from each pull request, and close a task whose pull request was not merged as not planned: [Closing A Task](../requirements/task-issues-requirements.md#closing-a-task).
 - Give each task its own acceptance criteria, which the reviewer ticks before approving: [Acceptance Criteria](../requirements/task-issues-requirements.md#acceptance-criteria).
-- Name branches after their task issue, and link in each pull request its task issue: [Branch Protection And Pull Requests](../requirements/repository-requirements.md#branch-protection-and-pull-requests).
+- Name branches after their task issue, and link in each pull request its task issue: [Branch Naming](../requirements/pull-requests-requirements.md#branch-naming) and [The Pull Request Template](../requirements/pull-requests-requirements.md#the-pull-request-template).
 - Recommended: track the team's tasks inside the repository, with a task tracker, a `TODO.md` checklist, and a workflow that moves Done tasks out of the active list: [Local Task Tracking Requirements](../requirements/local-task-tracking-requirements.md).
 
 This week:

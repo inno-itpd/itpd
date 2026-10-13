@@ -2,7 +2,7 @@
 
 These requirements cover the issues a team opens on GitHub: the rules every issue shares, the `Sprint`, `Responsible`, and `Accountable` values, the matching assignees, and the public project that shows them.
 The form and the labels of each kind of issue are in [User Story Requirements](user-stories-requirements.md#the-issue-form) and [Task Issue Requirements](task-issues-requirements.md#the-issue-form).
-Branches, pull requests, link checking, and the permalinks are in [Repository Requirements](repository-requirements.md).
+Branches and pull requests are in [Pull Request Requirements](pull-requests-requirements.md); link checking and the permalinks are in [Repository Requirements](repository-requirements.md).
 A task tracker inside the repository is in [Local Task Tracking Requirements](local-task-tracking-requirements.md).
 
 <h2>Table of contents</h2>
@@ -61,6 +61,7 @@ The three fields carry who works on an issue and when the team plans to finish i
 
    Pin each field to the issue types the team uses for story and task issues, or to `Issues without a type` when the team uses none: a field pinned to nothing does not appear on an issue.
    A new field starts with organization-only visibility, so change it to `Public`.
+
 2. The team sets the three values together when it schedules an issue into a sprint: `Sprint` names the sprint the team plans to finish the issue in, and `Responsible` and `Accountable` name two different members, who will do the work and verify it.
    The values are set on the issue after it is created, so no issue form change is needed.
    An open issue the team has not scheduled carries none, and an already closed issue needs none.

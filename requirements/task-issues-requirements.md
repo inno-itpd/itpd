@@ -3,7 +3,7 @@
 These requirements define a task issue: where it lives, its issue form, its acceptance criteria, the Sprint, Responsible, and Accountable values and the matching assignees it carries when it is scheduled, and how a pull request closes it.
 What a story says, and how its issue closes, is in [User Story Requirements](user-stories-requirements.md).
 The rules every issue shares are in [Issue Tracking](issue-tracking-requirements.md).
-Branches and pull requests are in [Repository Requirements](repository-requirements.md#branch-protection-and-pull-requests).
+Branches and pull requests are in [Pull Request Requirements](pull-requests-requirements.md).
 
 <h2>Table of contents</h2>
 
@@ -36,7 +36,7 @@ A **task issue** holds one unit of work, such as building part of a story, docum
 
 **Recommended**
 
-- Give a task a short imperative title, such as `Hold a slot while the client pays`, and reuse it as its branch's description, per [Branch Protection And Pull Requests](repository-requirements.md#branch-protection-and-pull-requests).
+- Give a task a short imperative title, such as `Hold a slot while the client pays`, and reuse it as its branch's description, per [Branch Naming](pull-requests-requirements.md#branch-naming).
 
 ## The Issue Form
 
@@ -95,8 +95,8 @@ The fields themselves, their options, and their visibility are defined in [Issue
 1. Every pull request closes exactly one task issue, with a closing keyword in its description such as `Closes #12`.
    Create its branch from that task where GitHub supports it.
    A task that needs more than one pull request is split into more tasks.
-   A Dependabot pull request has no task issue, because the bot opens it; [Pinning Third-Party Actions](repository-requirements.md#pinning-third-party-actions) says how it is handled.
-   Neither has the pull request of a workflow that moves Done tracker tasks, because a workflow opens it; [Moving Done Tasks Out Of The Active List](local-task-tracking-requirements.md#moving-done-tasks-out-of-the-active-list) says how it is handled.
+   A Dependabot pull request has no task issue, because the bot opens it; [Bot And Workflow Pull Requests](pull-requests-requirements.md#bot-and-workflow-pull-requests) says how it is handled.
+   Neither has the pull request of a workflow that moves Done tracker tasks, because a workflow opens it; [Bot And Workflow Pull Requests](pull-requests-requirements.md#bot-and-workflow-pull-requests) says how it is handled.
 2. Work on a story is one or more task issues whose `Story` field names it, and a story small enough for one pull request has one task.
    The rework on a story the customer rejected is a new task issue whose `Story` field names the story and each failed `AC-nn`, and whose description cites the rejection's `DEC-nnn`; a closed task is not reopened.
 3. Before approving a pull request, the reviewer ticks each of its task's acceptance criteria in the task issue.

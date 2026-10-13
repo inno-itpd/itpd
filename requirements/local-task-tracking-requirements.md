@@ -2,7 +2,7 @@
 
 These requirements cover the work a team tracks inside its repository rather than on GitHub: a task tracker, a `TODO.md` checklist, and a workflow that keeps the tracker's active list short.
 Task issues, and how a pull request closes one, are in [Task Issue Requirements](task-issues-requirements.md).
-The Markdown check, the link check, and pull requests are in [Repository Requirements](repository-requirements.md).
+The Markdown check and the link check are in [Repository Requirements](repository-requirements.md); pull requests are in [Pull Request Requirements](pull-requests-requirements.md).
 
 <h2>Table of contents</h2>
 
@@ -90,7 +90,7 @@ A **candidate task** is work someone noticed that nobody has decided to do yet; 
 
   - **Committed:** every member sees the list.
     The file is checked like any other Markdown file, by the [Markdown check](repository-requirements.md#continuous-integration) and the [link check](repository-requirements.md#link-checking), and follows [what may be committed](visibility-requirements.md).
-    Adding, ticking, or deleting its items may ride along in any pull request, per [Branch Protection And Pull Requests](repository-requirements.md#branch-protection-and-pull-requests).
+    Adding, ticking, or deleting its items may ride along in any pull request, per [One Change Per Pull Request](pull-requests-requirements.md#one-change-per-pull-request).
   - **Kept by each member:** list `TODO.md` in `.gitignore`.
     Nobody reviews it, and nobody else sees it.
 
@@ -133,7 +133,7 @@ A tracker keeps finished tasks beside the open ones until someone moves them.
 **Recommended**
 
 - Run a scheduled workflow that completes every Done task and opens one pull request with the move.
-  Review and merge it like any other pull request.
+  Review and merge it like any other pull request, per [Bot And Workflow Pull Requests](pull-requests-requirements.md#bot-and-workflow-pull-requests).
   Like a Dependabot pull request, it has no task issue, per [Closing A Task](task-issues-requirements.md#closing-a-task), and its branch keeps the name the workflow gives it.
 - Under Settings → Actions → General → Workflow permissions, allow GitHub Actions to create pull requests, first in the organization and then in the repository.
   The repository's checkbox is greyed out until the organization allows it.

@@ -54,7 +54,8 @@ If the current week has no assignment file here, this copy may be older than the
 | Meeting scripts, reports, and transcripts                                | [Customer meetings](requirements/customer-meetings-requirements.md)           | [The kickoff meeting](guides/customer-kickoff-meeting.md), [Validating with the customer](guides/validating-with-the-customer.md)       |
 | The weekly report, the AI usage report, deviations, the Moodle PDF       | [Weekly report](requirements/weekly-report-requirements.md)                   |                                                                                                                                         |
 | The changelog, Semantic Versioning, tags, and release titles             | [Releases](requirements/releases-requirements.md)                             |                                                                                                                                         |
-| GitHub, pull requests, link checking, CI, permalinks                     | [Repository](requirements/repository-requirements.md)                         |                                                                                                                                         |
+| Branches, pull requests, review, and the evidence                        | [Pull requests](requirements/pull-requests-requirements.md)                   |                                                                                                                                         |
+| GitHub, branch protection, link checking, CI, permalinks                 | [Repository](requirements/repository-requirements.md)                         |                                                                                                                                         |
 
 ## Working In The Team's Repository
 

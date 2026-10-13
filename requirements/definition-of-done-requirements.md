@@ -1,7 +1,7 @@
 # Definition Of Done Requirements
 
 These requirements define the team's Definition of Done: where it lives, what it must say for a story, a task, and a pull request, and how it stays current.
-What a task issue is, and how a pull request closes one, is in [Task Issue Requirements](task-issues-requirements.md#closing-a-task); how a change gets in is in [Repository Requirements](repository-requirements.md#branch-protection-and-pull-requests).
+What a task issue is, and how a pull request closes one, is in [Task Issue Requirements](task-issues-requirements.md#closing-a-task); how a change gets in is in [Pull Request Requirements](pull-requests-requirements.md).
 
 <h2>Table of contents</h2>
 
@@ -76,12 +76,12 @@ A **pull request** is the change that closes one task issue, and the list says w
 
    - A pull request closes exactly one task issue and links it, per [Closing A Task](task-issues-requirements.md#closing-a-task).
    - The accountable reviewer ticks every task acceptance criterion before approving, per [Closing A Task](task-issues-requirements.md#closing-a-task).
-   - The approval comes from a member other than the author, per [Branch Protection And Pull Requests](repository-requirements.md#branch-protection-and-pull-requests).
+   - The approval comes from a member other than the author, per [Review And Approval](pull-requests-requirements.md#review-and-approval).
    - The repository checks are green: the [link check](repository-requirements.md#link-checking), the [Markdown check](repository-requirements.md#continuous-integration), and the [product-code CI](repository-requirements.md#continuous-integration).
    - A user-visible change updates the `[Unreleased]` section of `CHANGELOG.md`, per [The Changelog](releases-requirements.md#the-changelog).
    - The acceptance criteria this pull request claims pass on its branch, and on `main` after it merges.
    - No secret, recording, or private-only material is committed, per [Sensitive Information Reference](visibility-requirements.md#sensitive-information-reference).
-   - Implementation notes in the pull request description record the decisions made and how the change was checked, per [Branch Protection And Pull Requests](repository-requirements.md#branch-protection-and-pull-requests).
+   - Implementation notes in the pull request description record the decisions made and how the change was checked, per [The Pull Request Template](pull-requests-requirements.md#the-pull-request-template).
 
 ## Full Example
 

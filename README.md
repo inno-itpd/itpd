@@ -55,7 +55,8 @@ The assignments reference these rather than repeating them.
 | [Customer Meeting Requirements](requirements/customer-meetings-requirements.md)            | Meetings with the customer, and their scripts, reports, and transcripts                                          |
 | [Weekly Report Requirements](requirements/weekly-report-requirements.md)                   | The weekly report, the AI usage report, deviations, and the Moodle PDF                                           |
 | [Release Requirements](requirements/releases-requirements.md)                              | The changelog, Semantic Versioning, tags, and release titles                                                     |
-| [Repository Requirements](requirements/repository-requirements.md)                         | GitHub, pull requests, branch protection, link checking, permalinks, snapshots, CI                               |
+| [Pull Request Requirements](requirements/pull-requests-requirements.md)                    | Branches, the pull request template, review, and the evidence                                                    |
+| [Repository Requirements](requirements/repository-requirements.md)                         | GitHub, branch protection, link checking, permalinks, snapshots, CI                                              |
 
 ## The Guides
 

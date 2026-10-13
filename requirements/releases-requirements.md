@@ -3,7 +3,7 @@
 These requirements define the changelog and the release that ends each sprint: where the changelog lives, how it is written, how versions and tags are named, and what cutting a release changes.
 [Guide: Planning And Tracking](../guides/planning-and-tracking.md) is the method.
 When a release happens, and how it belongs to its sprint, is in [Releases](planning-requirements.md#releases).
-How a change gets in, and what the pull request template prompts for, is in [Branch Protection And Pull Requests](repository-requirements.md#branch-protection-and-pull-requests).
+How a change gets in, and what the pull request template prompts for, is in [Pull Request Requirements](pull-requests-requirements.md).
 
 <h2>Table of contents</h2>
 

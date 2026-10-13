@@ -94,7 +94,7 @@ Week 2 is the exception: its hard deadline is Saturday, October 10 at 23:59.
 - **Class 1 (Sep 25)**: Course introduction, syllabus overview, rubric orientation, and presentation of the provided project catalog.
   Team formation begins.
 - **Repository Setup (during Week 1)**: Each team creates one GitHub organization and one public, MIT-licensed product repository inside it, and adds every member as a collaborator. `main` is protected (pull requests required, at least one approval, no self-approval), a pull request template is added, and automated link checking runs on pull requests and on `main` with a green `main` run before submission.
-  See [Repository Requirements](../requirements/repository-requirements.md).
+  See [Repository Requirements](../requirements/repository-requirements.md) and [Pull Request Requirements](../requirements/pull-requests-requirements.md).
 - **Customer Kickoff (during Week 1)**: Each team holds one kickoff meeting with its instructor, who acts as the customer.
   The team presents its reading of the problem and its proposed direction.
   The team prepares a meeting script in advance, covering business goals, end users, the current workflow, pain points and constraints, and scope, and improves it against [The Mom Test](https://www.koji.so/docs/mom-test-methodology).
