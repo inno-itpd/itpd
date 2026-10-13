@@ -176,11 +176,20 @@ Next: Week 3 is planning and the minimum usable product, and it has no assignmen
 - [x] risk format: condition, consequence (why we care)
 - [x] Sprint releases:
   - SPRINT-nn has a sub-section REL-nn
-- [ ] Require assignees?
-- [ ] Require responsible and accountable are always different people
-- [ ] Specify that the candidate should move to a milestone
+- [x] Specify that the candidate should move to a milestone
+- [x] release title: always SemVer
+- [x] GitHub Project
+  - A table
+- [x] Require responsible and accountable are always different people
+- [x] ### TOS- instead of ## TOS-p
+  - Leave as is
+- [x] Require assignees?
+  - Yes: the issue's assignees are the same two members as `Responsible` and `Accountable`, exactly those two, because a GitHub assignee carries no role of its own.
+- [x] "closed issue" "keeps none" - it means already closed issues don't need these labels etc
+  - Fixed: the rule reads "an already closed issue needs none", and the values and the assignees stay on the issue after it closes.
+- [x] Move issues to a separate doc
+  - `requirements/issue-tracking-requirements.md` holds the rules every issue shares, the fields, the assignees, and the project.
 - [ ] Introduce a policy about dependency bumps
-- [ ] release title: always SemVer
 - [ ] Save A3 decisions in course/decisions/decisions-a3.md
 - [ ] Improve the lecture in the next iteration.
       Include:
