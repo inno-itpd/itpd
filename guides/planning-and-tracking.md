@@ -128,12 +128,13 @@ Two questions place a candidate increment:
    If the increment cannot be shown as a working thing or a visible change, it is a phase, and the plan will never be able to say when it is done.
 
 Attach every milestone to the threshold goal it serves; `**Advances:**` is the field that carries that link, per [Milestones](../requirements/planning-requirements.md#milestones).
-A goal no milestone advances is a goal the plan does not seriously pursue, so either add an increment for it or take it out of the threshold.
+A milestone that advances no goal is not on the path; a goal no milestone advances is carried by the sprints and their releases.
 
-A team defines its own milestone set, and a course this long usually has a handful of milestones rather than one per week.
+The plan carries one milestone from the start: `MLS-03`, the MUP's, per [Milestones](../requirements/planning-requirements.md#milestones).
+Beyond it the set is the team's, and a course this long usually has a handful of milestones rather than one per week.
 The set comes from the increments rather than from the calendar: number each milestone by the week it is due in, and let a week whose work belongs to a longer increment leave a gap in the numbering.
-The `**Sprints:**` runs are disjoint and together name every sprint, per [Milestones](../requirements/planning-requirements.md#milestones), so each sprint belongs to exactly one of them.
-Each run is a consecutive stretch that ends in the week its milestone is due, such as `MLS-03` over `SPRINT-03` and `MLS-05` over `SPRINT-04` to `SPRINT-05`: an increment holds one week or several, and no week's work floats free.
+The `**Sprints:**` runs are disjoint, per [Milestones](../requirements/planning-requirements.md#milestones): a sprint belongs to at most one milestone, and a sprint no milestone covers is still carried by its own GitHub milestone, per [Sprints](../requirements/planning-requirements.md#sprints).
+Each run is a consecutive stretch that ends in the week its milestone is due, such as `MLS-03` over `SPRINT-03` and `MLS-05` over `SPRINT-04` to `SPRINT-05`: an increment holds one week or several, and a week no milestone covers keeps its own sprint's goal.
 A step that slips keeps its number and its due week, with its leftover work rescheduled into a later sprint's milestone, rather than the run being extended past that week.
 The plan's milestones are not GitHub milestones: each sprint is one, per [Sprints](../requirements/planning-requirements.md#sprints), and an increment reaches the platform through the sprints it names.
 

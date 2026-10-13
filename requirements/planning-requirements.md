@@ -104,7 +104,8 @@ A **milestone** is an increment on the path to the threshold, due at the end of 
 The work toward it may span one or more sprints, and not every week has one of its own: the releases give the weekly cadence, and the milestones give the increments on the path to the threshold of success.
 A milestone is plan documentation only: it has no GitHub milestone of its own, because each sprint is one, and its section reaches the platform through its sprints.
 It carries no state, per [Identifier Rules](general-requirements.md#identifier-rules).
-Every sprint belongs to exactly one milestone, so each increment names the sprints that complete it; an issue the team has not scheduled sits in no sprint's milestone, and there is still no parking milestone.
+Each increment names the sprints that complete it, and a sprint belongs to at most one of them.
+A sprint no milestone covers is still scheduled in its own GitHub milestone, per [Sprints](#sprints), and an issue the team has not scheduled sits in no sprint's milestone; there is still no parking milestone.
 
 **Required**
 
@@ -124,9 +125,10 @@ Every sprint belongs to exactly one milestone, so each increment names the sprin
    Later sentences may add scope, sequencing, or the problem the increment beats, and do not restate `**Sprints:**` or `**Advances:**`.
 5. The milestone does not repeat the `VP-nn`: it reaches the vision through its `**Advances:**`, and the vision's goal links the threshold, per [Goal](product-vision-requirements.md#goal).
 6. The team chooses its milestone set.
-   In Week 3 it writes at least two: `MLS-03`, whose focus is delivering the MUP, and one more for the next increment, which the team defines.
-   The second milestone's number follows its due week, so one due at the end of Week 5 is `MLS-05`; the week is the team's choice.
-7. The `**Sprints:**` runs are disjoint and consecutive, together name every sprint from `SPRINT-03` to `SPRINT-09`, and each ends in the week its milestone is due, so each sprint belongs to exactly one of the plan's milestones.
+   In Week 3 it writes one: `MLS-03`, whose focus is delivering the MUP.
+   Further milestones are the team's choice: each is written when the team defines the increment it delivers, and its number follows its due week, so one due at the end of Week 5 is `MLS-05`; the week is the team's choice.
+7. The `**Sprints:**` runs are disjoint and consecutive, and each ends in the week its milestone is due, so a sprint belongs to at most one milestone.
+   The runs need not cover every sprint: a sprint no run names is still planned in its `### SPRINT-nn` section and scheduled in its GitHub milestone, per [Sprints](#sprints).
    An issue is scheduled by being assigned to its sprint's GitHub milestone, per [Scheduling An Issue](issue-tracking-requirements.md#scheduling-an-issue), and a reschedule moves it to the later sprint's milestone.
 
 ## Progress Monitoring
