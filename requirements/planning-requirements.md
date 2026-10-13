@@ -297,10 +297,10 @@ Every story in the Week 2 candidate is accepted by the customer at the Week 3 me
 
 ## Failure And Success Statements
 
-| Goal              | Success statement                                        | Failure statement                        |
-| ----------------- | -------------------------------------------------------- | ---------------------------------------- |
-| [TOS-01](#tos-01) | A real user completes the core task end to end.          | We never put it in front of a real user. |
-| [TOS-01](#tos-01) | A booking pays through the provider.                     | We never took a real payment.            |
-| [TOS-02](#tos-02) | The customer accepts the Week 2 candidate.               | The customer never accepted it.          |
-| —                 | A teammate must be able to run it from a clean checkout. | Nobody outside the team could run it.    |
+| Goal              | Success statement                                                         | Failure statement                                   |
+| ----------------- | ------------------------------------------------------------------------- | --------------------------------------------------- |
+| [TOS-01](#tos-01) | A real user completes the core task end to end.                           | We never put it in front of a real user.            |
+| [TOS-01](#tos-01) | A booking pays through the provider.                                      | We never took a real payment.                       |
+| [TOS-02](#tos-02) | The customer accepts the Week 2 candidate.                                | The customer never accepted it.                     |
+| —                 | A teammate run it from a clean checkout following the setup instructions. | Nobody outside the team could run the product code. |
 ```
