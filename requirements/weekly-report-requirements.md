@@ -40,6 +40,10 @@ Who may see each item is in [Visibility Requirements](visibility-requirements.md
 
 11. It records the minimum usable product candidate, per [Where The Candidate Lives](minimum-usable-product-requirements.md#where-the-candidate-lives).
 
+**Since: W3**
+
+12. It states the week's customer-meeting outcome: each story shown and whether the customer accepted or rejected it, and each candidate story that moved out, each citing the `DEC-nnn` that records it, per [Showing Working Software](customer-meetings-requirements.md#showing-working-software) and [Building, Delivering, And Releasing The Candidate](minimum-usable-product-requirements.md#building-delivering-and-releasing-the-candidate).
+
 **Recommended**
 
 - Use the same section order every week so readers learn it once.

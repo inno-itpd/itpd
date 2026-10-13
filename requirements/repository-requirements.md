@@ -1,6 +1,7 @@
 # Repository Requirements
 
-These requirements cover the mechanics of the product repository: where it lives, how changes get in, how links get checked, and how you produce the permalinks and the snapshot your assignment asks for.
+These requirements cover the mechanics of the product repository: where it lives, how links get checked, how the documentation site is published, and how you produce the permalinks and the snapshot your assignment asks for.
+How a change reaches `main` is in [Pull Request Requirements](pull-requests-requirements.md).
 Use [General Requirements](general-requirements.md) for what an artifact is, [Visibility Requirements](visibility-requirements.md) for who may see it, and the file for each artifact, listed in [the course rules](../course/rules.md#where-the-rules-live), for the product work.
 
 <h2>Table of contents</h2>
@@ -8,15 +9,15 @@ Use [General Requirements](general-requirements.md) for what an artifact is, [Vi
 - [Repository Setup](#repository-setup)
   - [Licensing](#licensing)
   - [Root README](#root-readme)
-- [Branch Protection And Pull Requests](#branch-protection-and-pull-requests)
+  - [Setup And Run Instructions](#setup-and-run-instructions)
+- [Documentation Site](#documentation-site)
+- [Branch Protection](#branch-protection)
 - [Link Checking](#link-checking)
   - [Pinning Third-Party Actions](#pinning-third-party-actions)
 - [Permalinks And Snapshots](#permalinks-and-snapshots)
 - [Configuration And Sensitive Information](#configuration-and-sensitive-information)
 - [Sensitive-Data Incident Response](#sensitive-data-incident-response)
-- [Issue Tracking](#issue-tracking)
 - [Contributing](#contributing)
-- [Changelog, Releases And Versioning](#changelog-releases-and-versioning)
 - [Continuous Integration](#continuous-integration)
 - [The Course Materials As An Agent Skill](#the-course-materials-as-an-agent-skill)
 - [Recommended Throughout The Course](#recommended-throughout-the-course)
@@ -42,7 +43,7 @@ Use [General Requirements](general-requirements.md) for what an artifact is, [Vi
    Once you pick a stack, extend it for that stack.
 7. The first commit goes directly to `main`.
    It is the only commit that ever goes directly to `main`.
-   See [Branch Protection And Pull Requests](#branch-protection-and-pull-requests).
+   See [Branch Protection](#branch-protection).
 8. Keep the repository reachable for the whole course.
    Do not archive, transfer, or rename it, do not delete the organization, and do not make it private.
 
@@ -76,11 +77,42 @@ In Week 1 it must contain:
 
 **Since: W3**
 
-The root `README.md` also carries setup and run instructions for the product as it exists.
+The root `README.md` also links the product's setup and run instructions, which live in `docs/setup.md`.
 
-## Branch Protection And Pull Requests
+### Setup And Run Instructions
+
+**Since: W3**
+
+The product's setup and run instructions live in `docs/setup.md`, which the root `README.md` links, per [Root README](#root-readme).
+
+**Required**
+
+1. The page covers at least: the prerequisites, how to install, how to configure the product, pointing at a `.env.example` file or a similar one, how to run the product, and how to run the checks and the tests.
+2. It covers enough that a clean checkout can complete the [core task](minimum-usable-product-requirements.md#the-candidate) end to end by following it.
+   The coverage is the requirement; the page's headings and their order are the team's choice.
+
+## Documentation Site
+
+**Since: W3**
+
+The repository publishes its maintained documentation as a website, so a reader can reach it without cloning the repository.
+The site serves `docs/`; nothing moves into it from `reports/`, per [Where Artifacts Live In The Repository](general-requirements.md#where-artifacts-live-in-the-repository).
+
+**Required**
+
+1. Publish `docs/` as a [GitHub Pages](https://docs.github.com/en/pages) site through a GitHub Actions workflow under `.github/workflows/`, and link the site from the root `README.md`.
+   Pin every third-party action per [Pinning Third-Party Actions](#pinning-third-party-actions).
+2. Any static site generator is allowed, and the generator's configuration path is the team's choice.
+   [mdBook](https://rust-lang.github.io/mdBook/), [Zensical](https://zensical.org/), and [MkDocs](https://www.mkdocs.org/) are examples, in that order.
+3. The site's default page is a landing page, not a file listing: it says what the product is, and it navigates to the other pages and the resources around the project.
+4. The site does not link the weekly reports: a week's report is evidence for its week, not maintained documentation.
+5. A page that links a file outside `docs/` links it by the file's GitHub URL, so the link resolves on the site and in the repository alike.
+
+## Branch Protection
 
 **Since: W1**
+
+The settings below enforce the pull request workflow in [Pull Request Requirements](pull-requests-requirements.md).
 
 **Required**
 
@@ -93,32 +125,6 @@ The root `README.md` also carries setup and run instructions for the product as 
 
 2. GitHub enforces all three of these for repositories owned by an organization, which is what the repository is.
    If a setting is not available to you, ask in the course chat rather than proceeding without it.
-3. Every change after the first commit goes through a pull request: documentation, configuration, and CI changes included.
-4. Keep each pull request to one change.
-   A pull request that fixes a broken link and reformats three files is hard to review, and review is the point.
-   Adding, ticking, or deleting items in a committed `TODO.md` may ride along in any pull request, per [A TODO.md Checklist](local-task-tracking-requirements.md#a-todomd-checklist).
-5. Name branches with a short lowercase hyphenated description, for example `add-alternatives-research`.
-   From Week 2, use the number of the [task issue](task-issues-requirements.md#where-task-issues-live) the branch works on: `<issue-number>-<short-description>`, for example `12-hold-a-slot-while-the-client-pays`.
-6. Add a pull request template at `.github/pull_request_template.md`.
-   It must prompt for:
-
-   - What changed and why.
-   - What you checked, and how.
-   - For the reviewer: what to look at, and whether the linked requirements or acceptance criteria are satisfied.
-     From Week 2, link the [task issue](task-issues-requirements.md#closing-a-task) the pull request closes, whose acceptance criteria the reviewer ticks before approving.
-
-7. Do not delete pull requests, reviews, or branches that are used as assignment evidence, and do not rewrite history to tidy it up.
-   The history is part of what is being assessed.
-8. History rewriting is allowed in exactly one case: removing accidentally committed sensitive data.
-   See [Sensitive-Data Incident Response](#sensitive-data-incident-response).
-
-**Required in Week 1**
-
-1. At least one pull request must be merged into `main` with an approval from another team member, and it must be linked from the Week 1 report as evidence.
-2. Every team member must, during Week 1:
-
-   - Make at least one commit through a pull request.
-   - Review and approve at least one other team member's pull request.
 
 ## Link Checking
 
@@ -173,7 +179,7 @@ Pin it to a commit, not to a name, and let Dependabot move the pin for you.
    Both are moving labels that somebody else can repoint.
 3. Add `.github/dependabot.yml` with the `github-actions` ecosystem, so the pins are updated for you.
    A pin that nobody updates is a pin to a version with a known vulnerability.
-4. Treat a Dependabot pull request as any other pull request: review it, and merge it through a pull request.
+4. A Dependabot pull request is handled like any other, per [Bot And Workflow Pull Requests](pull-requests-requirements.md#bot-and-workflow-pull-requests).
 5. Update the SHA and the version comment in the same commit, so the comment never names a different version than the SHA.
 
 **Example**
@@ -256,33 +262,6 @@ If credentials, personal data, or confidential material is committed by mistake:
 5. Write privately what was exposed, when, and what you did about it, and send that to your instructor.
    Do not put that account in the public repository.
 
-## Issue Tracking
-
-**Since: W2**
-
-The repository's issues are of two kinds, story issues and task issues, and each kind is opened from its own Issue Form.
-The form and the labels of each kind are in its own requirements: [the story issue form](user-stories-requirements.md#the-issue-form) and [the task issue form](task-issues-requirements.md#the-issue-form).
-The rules in this section apply to both.
-
-**Required**
-
-1. Disable blank issue creation with `blank_issues_enabled: false` in `.github/ISSUE_TEMPLATE/config.yml`.
-2. The pull request that adds the two forms and `config.yml` is the only one that starts before a form exists.
-   Open a blank issue for it first, then name its branch and close that issue like any other pull request's task.
-   Once the `task` label exists, apply it to that issue, so that every task issue carries the label.
-   A team that disabled blank issues before it had the task form opens the issue for the pull request that adds `task.yml` with `gh issue create`.
-3. After that pull request, open every issue from a form.
-   This is the team's rule rather than the platform's: `gh issue create` and the API skip the form and the label it applies.
-4. In an issue, an issue comment, or a pull request description, link a repository file by its full URL on `main`, because a relative link does not resolve there:
-
-```text
-https://github.com/<org>/<repo>/blob/main/docs/decisions.md#dec-006
-```
-
-Link on `main`, not at a commit hash, so the link shows the file as it is now, such as a decision that has since been reversed.
-The commit-hash permalink is for the submission, per [Permalinks And Snapshots](#permalinks-and-snapshots).
-Merge the file into `main` before an issue links it.
-
 ## Contributing
 
 **Since: W3**
@@ -293,34 +272,17 @@ Merge the file into `main` before an issue links it.
    It is how a new member, or a grader, finds out how the team works, and it is written before the workflow is complicated rather than after.
 2. `CONTRIBUTING.md` states the commit message format the team uses.
    Any format is allowed; an unstated format is not, because a reviewer cannot judge a commit they cannot parse.
-3. `CONTRIBUTING.md` states how a change gets in: the branch naming rule, what a pull request must contain, and what the reviewer checks.
+3. `CONTRIBUTING.md` states how a change gets in: the branch naming rule, what a pull request must contain, and what the reviewer checks, per [Pull Request Requirements](pull-requests-requirements.md).
 4. Keep it current.
    A contributing guide that describes last month's process is worse than none, because it is believed.
+5. `CONTRIBUTING.md` states which views the team uses in its GitHub project and why, and links the project, per [GitHub Projects](issue-tracking-requirements.md#github-projects).
+6. Once the stack is chosen, its package ecosystem joins `github-actions` in `.github/dependabot.yml`, per [Pinning Third-Party Actions](#pinning-third-party-actions), so the product's dependencies are bumped like the action pins.
 
 **Recommended**
 
 - Use [Conventional Commits](https://www.conventionalcommits.org/) for commit messages: a type, a scope, and a short description.
   It is a good default because it is machine-readable, and a changelog can be generated from it if the team ever wants one.
   It is not required, and a team that writes a clearer format should write it down instead.
-
-## Changelog, Releases And Versioning
-
-**Since: W3**
-
-**Required**
-
-1. Maintain `CHANGELOG.md` in the repository root, following [Keep a Changelog](https://keepachangelog.com/).
-2. Keep an `[Unreleased]` section during development, with an entry for every user-visible change, grouped under `Added`, `Changed`, `Deprecated`, `Removed`, `Fixed`, and `Security`.
-3. Add a changelog line to the pull request template: either the change is user-visible and the entry is updated, or it is not user-visible.
-4. Version with [Semantic Versioning](https://semver.org/) and prefix tags with `v`, for example `v0.1.0`.
-5. Each tag points at a commit on `main`.
-   Protect mapped tags from being moved or deleted.
-6. When you cut a release, move the included entries into a dated section, link the section to the release, and open a new empty `[Unreleased]`.
-
-**Compile the changelog from pull requests, not from commits.**
-A commit message records what the team judged important at that moment, and that judgement is usually about the code rather than the product: a rename, a refactor, a fix for a bug nobody outside the team could reach.
-A changelog is a user-facing summary, so it answers a different question.
-The pull request is where the team already writes down what changed and why, which is why the pull request template asks for the changelog line.
 
 ## Continuous Integration
 
@@ -381,7 +343,7 @@ It also skips the files that `.gitignore` lists, so a local run checks the same 
 }
 ```
 
-**Since: W3**
+**Since: W4**
 
 6. Add continuous integration for your product code: linting, formatting or type checking, build, and automated tests, on pull requests and on `main`.
 7. Keep the link check and the Markdown check running.

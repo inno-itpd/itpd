@@ -51,11 +51,11 @@ By the end of this week you should be able to show a reader:
 
 The rules:
 
-- Start the forms pull request from a blank issue: [Issue Tracking](../requirements/repository-requirements.md#issue-tracking).
+- Start the forms pull request from a blank issue: [Opening Issues](../requirements/issue-tracking-requirements.md#opening-issues).
 - Add both issue forms and their labels: [the story issue form](../requirements/user-stories-requirements.md#the-issue-form) and [the task issue form](../requirements/task-issues-requirements.md#the-issue-form).
 - Close exactly one task issue from each pull request, and close a task whose pull request was not merged as not planned: [Closing A Task](../requirements/task-issues-requirements.md#closing-a-task).
 - Give each task its own acceptance criteria, which the reviewer ticks before approving: [Acceptance Criteria](../requirements/task-issues-requirements.md#acceptance-criteria).
-- Name branches after their task issue, and link in each pull request its task issue: [Branch Protection And Pull Requests](../requirements/repository-requirements.md#branch-protection-and-pull-requests).
+- Name branches after their task issue, and link in each pull request its task issue: [Branch Naming](../requirements/pull-requests-requirements.md#branch-naming) and [The Pull Request Template](../requirements/pull-requests-requirements.md#the-pull-request-template).
 - Recommended: track the team's tasks inside the repository, with a task tracker, a `TODO.md` checklist, and a workflow that moves Done tasks out of the active list: [Local Task Tracking Requirements](../requirements/local-task-tracking-requirements.md).
 
 This week:
@@ -103,7 +103,7 @@ This week:
 1. Before a story cites an assumption, move your Week 1 assumptions table from `docs/research/value-proposition.md` into `docs/assumptions.md`, in one pull request.
    This is the same one-time catch-up as the decisions in [Part 2](#part-2-move-the-week-1-decisions-into-the-decisions-log).
    Give each row its own `ASM-nn` section, numbered in the table's order, with its current status, and leave no copy of the table in `value-proposition.md`.
-2. Merge it and `docs/decisions.md` before a story links them, because a story [links files on `main`](../requirements/repository-requirements.md#issue-tracking).
+2. Merge it and `docs/decisions.md` before a story links them, because a story [links files on `main`](../requirements/issue-tracking-requirements.md#linking-a-file-from-an-issue-or-a-pull-request).
 
 ## Part 4: Check The Markdown In CI
 

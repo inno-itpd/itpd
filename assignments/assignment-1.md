@@ -59,7 +59,8 @@ They are the rules; this assignment only tells you what this week requires.
 | [Research Requirements](../requirements/research-requirements.md)                  | What counts as a valid alternative, gap, and value proposition, and where each lives |
 | [Customer Meeting Requirements](../requirements/customer-meetings-requirements.md) | The kickoff, and the meeting script, report, and transcript                          |
 | [Weekly Report Requirements](../requirements/weekly-report-requirements.md)        | The weekly report, the AI usage report, deviations, and the Moodle PDF               |
-| [Repository Requirements](../requirements/repository-requirements.md)              | GitHub, pull requests, branch protection, link checking, permalinks, snapshots       |
+| [Pull Request Requirements](../requirements/pull-requests-requirements.md)         | Branches, the pull request template, review, and the evidence                        |
+| [Repository Requirements](../requirements/repository-requirements.md)              | GitHub, branch protection, link checking, permalinks, snapshots                      |
 | [Guide: researching alternatives](../guides/alternatives-research.md)              | How to find and evaluate your set                                                    |
 | [Guide: comparison to value proposition](../guides/comparison-and-synthesis.md)    | How to build the table, find the gaps, write the proposition                         |
 | [Guide: the kickoff meeting](../guides/customer-kickoff-meeting.md)                | How to write the kickoff meeting script and run the meeting                          |
@@ -76,7 +77,7 @@ They are the rules; this assignment only tells you what this week requires.
 
 ## Part 2: Set Up The Repository
 
-Complete every requirement marked `**Since: W1**` in [Repository Requirements](../requirements/repository-requirements.md).
+Complete every requirement marked `**Since: W1**` in [Repository Requirements](../requirements/repository-requirements.md) and [Pull Request Requirements](../requirements/pull-requests-requirements.md).
 In short, this week you must have:
 
 1. A **public** repository in the team's own organization, with `main` as the default branch and all members as collaborators.
@@ -90,8 +91,12 @@ In short, this week you must have:
    See [Link Checking](../requirements/repository-requirements.md#link-checking) for a working configuration and the rules on excluding links.
 7. Every action pinned to a commit SHA, with `.github/dependabot.yml` keeping the pins current.
    See [Pinning Third-Party Actions](../requirements/repository-requirements.md#pinning-third-party-actions).
-8. The Week 1 pull-request minimums: one approved and one merged pull request, and every member committing through a pull request and approving someone else's (one approval per PR is enough).
-   See [Branch Protection And Pull Requests](../requirements/repository-requirements.md#branch-protection-and-pull-requests).
+8. The Week 1 pull-request minimums:
+
+   - At least one pull request merged into `main` with an approval from another member, and linked from the Week 1 report as evidence.
+   - For every member: at least one commit through a pull request, and at least one review and approval of another member's pull request (one approval per pull request is enough).
+
+   See [Pull Request Requirements](../requirements/pull-requests-requirements.md).
 
 The repository structure you are building towards:
 

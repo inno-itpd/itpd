@@ -1,14 +1,16 @@
 # Task Issue Requirements
 
-These requirements define a task issue: where it lives, its issue form, its acceptance criteria, and how a pull request closes it.
+These requirements define a task issue: where it lives, its issue form, its acceptance criteria, the Sprint, Responsible, and Accountable values and the matching assignees it carries when it is scheduled, and how a pull request closes it.
 What a story says, and how its issue closes, is in [User Story Requirements](user-stories-requirements.md).
-The rules every issue shares, and branches and pull requests, are in [Repository Requirements](repository-requirements.md#issue-tracking).
+The rules every issue shares are in [Issue Tracking](issue-tracking-requirements.md).
+Branches and pull requests are in [Pull Request Requirements](pull-requests-requirements.md).
 
 <h2>Table of contents</h2>
 
 - [Where Task Issues Live](#where-task-issues-live)
 - [The Issue Form](#the-issue-form)
 - [Acceptance Criteria](#acceptance-criteria)
+- [The Sprint, Responsible, And Accountable Values](#the-sprint-responsible-and-accountable-values)
 - [Closing A Task](#closing-a-task)
 - [Full Example](#full-example)
 
@@ -34,7 +36,7 @@ A **task issue** holds one unit of work, such as building part of a story, docum
 
 **Recommended**
 
-- Give a task a short imperative title, such as `Hold a slot while the client pays`, and reuse it as its branch's description, per [Branch Protection And Pull Requests](repository-requirements.md#branch-protection-and-pull-requests).
+- Give a task a short imperative title, such as `Hold a slot while the client pays`, and reuse it as its branch's description, per [Branch Naming](pull-requests-requirements.md#branch-naming).
 
 ## The Issue Form
 
@@ -43,8 +45,8 @@ A **task issue** holds one unit of work, such as building part of a story, docum
 **Required**
 
 1. Add `.github/ISSUE_TEMPLATE/task.yml`, an Issue Form for every unit of work, with the `task` label applied by the form.
-   The description field and the `Acceptance criteria` field are required.
-   The `Story` field is optional and takes a bullet list with one item for each story issue the task works toward, because one task may serve several stories.
+   The description and `Acceptance criteria` form fields are required.
+   The `Story` form field is optional and takes a bullet list with one item for each story issue the task works toward, because one task may serve several stories.
    Each item names the story issue alone or follows it with the story's `AC-nn` the task works toward in parentheses, such as `- #42 (AC-01, AC-02)`, so GitHub renders each story's title.
    A task that is not work on a story, such as a workflow or a report, leaves `Story` empty.
 2. Create the `task` label, by any means.
@@ -69,6 +71,21 @@ They may be narrower or more technical than the criteria of the story it works t
 4. Edit a task's criteria as the work clarifies them.
    A task is not a requirement, so the edit needs no comment.
 
+## The Sprint, Responsible, And Accountable Values
+
+**Since: W3**
+
+The three values say when the team plans to finish a task, and which two members do and verify the work.
+The task's assignees name the same two members, because a GitHub assignee carries no role of its own.
+They and the assignees are set on the issue after it is created, so no issue form change is needed.
+The fields themselves, their options, and their visibility are defined in [Issue Fields](issue-tracking-requirements.md#issue-fields), and the assignee rule in [Assignees](issue-tracking-requirements.md#assignees).
+
+**Required**
+
+1. The team sets the three values together when it schedules the task into a sprint: `Sprint` names the sprint the team plans to finish the task in, `Responsible` and `Accountable` name two different members, and the same two members are the task's assignees, per [Assignees](issue-tracking-requirements.md#assignees).
+2. On a task, the responsible member does the work; the accountable member verifies it, ticks each acceptance criterion before the pull request merges, and approves the pull request, per [Closing A Task](#closing-a-task).
+3. A reschedule or a change of hands updates the values and the assignees; an open task the team has not scheduled carries none, and an already closed task needs none.
+
 ## Closing A Task
 
 **Since: W2**
@@ -78,8 +95,8 @@ They may be narrower or more technical than the criteria of the story it works t
 1. Every pull request closes exactly one task issue, with a closing keyword in its description such as `Closes #12`.
    Create its branch from that task where GitHub supports it.
    A task that needs more than one pull request is split into more tasks.
-   A Dependabot pull request has no task issue, because the bot opens it; [Pinning Third-Party Actions](repository-requirements.md#pinning-third-party-actions) says how it is handled.
-   Neither has the pull request of a workflow that moves Done tracker tasks, because a workflow opens it; [Moving Done Tasks Out Of The Active List](local-task-tracking-requirements.md#moving-done-tasks-out-of-the-active-list) says how it is handled.
+   A Dependabot pull request has no task issue, because the bot opens it; [Bot And Workflow Pull Requests](pull-requests-requirements.md#bot-and-workflow-pull-requests) says how it is handled.
+   Neither has the pull request of a workflow that moves Done tracker tasks, because a workflow opens it; [Bot And Workflow Pull Requests](pull-requests-requirements.md#bot-and-workflow-pull-requests) says how it is handled.
 2. Work on a story is one or more task issues whose `Story` field names it, and a story small enough for one pull request has one task.
    The rework on a story the customer rejected is a new task issue whose `Story` field names the story and each failed `AC-nn`, and whose description cites the rejection's `DEC-nnn`; a closed task is not reopened.
 3. Before approving a pull request, the reviewer ticks each of its task's acceptance criteria in the task issue.

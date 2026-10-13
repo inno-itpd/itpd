@@ -70,9 +70,10 @@ It is the short version of the requirements, states what is expected of you as a
 **Required**
 
 1. The identifier families introduced in Week 1 are `ALT-nn` for alternatives, `GAP-nn` for gaps, `VP-nn` for value propositions, `ASM-nn` for assumptions, and `DEC-nnn` for decisions.
-   All are zero-padded and case-sensitive.
+   Every family is zero-padded and case-sensitive.
    `DEC-nnn` has three digits, because a decision is made at every customer meeting and the log can pass 99 entries; every other family has two.
    `US-nn` for user stories, `AC-nn` for the acceptance criteria of a story issue or a task issue, `CON-nn` for constraints, and `BND-nn` for boundary items are introduced in Week 2.
+   `RISK-nn` for risks, `TOS-nn` for the goals in the threshold of success, `SPRINT-nn` for sprints, `MLS-nn` for milestones, and `REL-nn` for releases are introduced in Week 3.
    A later family is introduced only by the requirement that first uses it.
 2. An identifier, once issued, is never changed, reused, or reassigned, including when the artifact is edited later in the course.
 3. Gaps in a sequence are expected and correct.
@@ -102,6 +103,13 @@ It is the short version of the requirements, states what is expected of you as a
 12. A dropped item does not list what its drop affected.
     Each artifact that cited it records the change where that artifact records its changes, so the link is recorded once, in the artifact that cites the other.
 
+**Since: W3**
+
+13. `TOS-nn` and `RISK-nn` are sectioned identifiers like the others: the rules above apply, including `**Status:**` as the first field and the dropped form.
+    Their values and the files that own them are in [The Threshold Of Success](planning-requirements.md#the-threshold-of-success) and [Checking And Settling](risks-requirements.md#checking-and-settling).
+14. `SPRINT-nn`, `MLS-nn`, and `REL-nn` are the exceptions to rule 10, and `MLS-nn` and `REL-nn` also to rule 5: the platform carries their state, and the plan's section is their record rather than a `**Status:**` field.
+    A milestone opens with its fields and its description below them, and a release carries its released-as line once it is published; [Sprints](planning-requirements.md#sprints), [Milestones](planning-requirements.md#milestones), and [Releases](planning-requirements.md#releases) say how each is written.
+
 **Example**
 
 A gap the kickoff dropped, in `docs/research/gap-analysis.md`, with its other fields left out:
@@ -123,17 +131,21 @@ The research you produce in Week 1 is the evidence base for the rest of the cour
 Later weeks cite your Week 1 identifiers rather than restating your findings.
 This is what makes the course a project rather than nine separate assignments.
 
-| Later work                   | Must cite                                                                                                                                                                                                                   |
-| ---------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Week 2 product vision        | The `VP-nn` its goal traces to, per [Goal](product-vision-requirements.md#goal)                                                                                                                                             |
-| Week 2 user stories          | The `VP-nn` in each story's `Value proposition` field, any origins in its `Traces to` list, and the `ASM-nn` of each assumption it rests on in its `Rests on` list, per [The Story](user-stories-requirements.md#the-story) |
-| Week 2 prototypes            | The `US-nn` or `GAP-nn` each one tested, and the `ASM-nn` when the risky part is an assumption, per [Where Prototypes Live](prototypes-requirements.md#where-prototypes-live)                                               |
-| Any change a decision caused | The decision's `DEC-nnn` when it has an entry, or its reason otherwise, per [What Cites It](decisions-requirements.md#what-cites-it)                                                                                        |
+| Later work                      | Must cite                                                                                                                                                                                                                   |
+| ------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Week 2 product vision           | The `VP-nn` its goal traces to, per [Goal](product-vision-requirements.md#goal)                                                                                                                                             |
+| Week 2 user stories             | The `VP-nn` in each story's `Value proposition` field, any origins in its `Traces to` list, and the `ASM-nn` of each assumption it rests on in its `Rests on` list, per [The Story](user-stories-requirements.md#the-story) |
+| Week 2 prototypes               | The `US-nn` or `GAP-nn` each one tested, and the `ASM-nn` when the risky part is an assumption, per [Where Prototypes Live](prototypes-requirements.md#where-prototypes-live)                                               |
+| Week 3 project plan             | The `TOS-nn` of each milestone's `**Advances:**` field and the `SPRINT-nn` of its `**Sprints:**` field, per [Milestones](planning-requirements.md#milestones)                                                               |
+| Week 3 threshold of success     | The customer's `DEC-nnn` behind each goal change or drop, per [The Threshold Of Success](planning-requirements.md#the-threshold-of-success)                                                                                 |
+| Week 3 risks                    | The `DEC-nnn` of a decision that settled the risk or that its response passes, per [Checking And Settling](risks-requirements.md#checking-and-settling) and [Response](risks-requirements.md#response)                      |
+| Every weekly report from Week 3 | The `REL-nn` of its week's release, linked to that release's plan section, such as `project-plan.md#rel-03`, per [Releases](planning-requirements.md#releases)                                                              |
+| Any change a decision caused    | The decision's `DEC-nnn` when it has an entry, or its reason otherwise, per [What Cites It](decisions-requirements.md#what-cites-it)                                                                                        |
 
 **Required**
 
 1. When a later artifact cites a Week 1 identifier, link to the section it refers to by its identifier anchor, such as `decisions.md#dec-006`, per [Identifier Rules](#identifier-rules).
-   From an issue or a pull request, link it on `main`, per [Issue Tracking](repository-requirements.md#issue-tracking).
+   From an issue or a pull request, link it on `main`, per [Linking A File From An Issue Or A Pull Request](issue-tracking-requirements.md#linking-a-file-from-an-issue-or-a-pull-request).
 2. If later work contradicts something in your research, update the research.
    A changed gap or value proposition records the change under `**Changed:**`, per [Gap Analysis](research-requirements.md#gap-analysis), and a dropped item is kept per [Identifier Rules](#identifier-rules).
    The research is maintained documentation, not a frozen Week 1 submission.
