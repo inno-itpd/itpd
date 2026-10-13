@@ -209,8 +209,9 @@ The fields themselves, their options, and their visibility are defined in [Issue
 **Required**
 
 1. The team sets the three values together when it schedules the story into a sprint: `Sprint` names the sprint the team plans to finish the story in, `Responsible` and `Accountable` name two different members, and the same two members are the story's assignees, per [Assignees](issue-tracking-requirements.md#assignees).
+   The same act assigns the story to its sprint's milestone, per [Milestones](planning-requirements.md#milestones).
 2. On a story, the responsible member maintains the story and its acceptance criteria; the accountable member verifies that it is ready to be shown, with every criterion runnable and every link on the issue resolving, per [the story items of the Definition of Done](definition-of-done-requirements.md#the-story).
-3. A reschedule or a change of hands updates the values and the assignees; an open story the team has not scheduled carries none, and an already closed story needs none.
+3. A reschedule or a change of hands updates the values, the milestone, and the assignees; an open story the team has not scheduled carries none, and an already closed story needs none.
 
 ## Full Example
 

@@ -47,7 +47,7 @@ The threshold session of Step 1 and the risk session of Step 5 are the hours tha
 docs/threshold-of-success.md   TOS-01, TOS-02, … one section per goal, and the statements table below them
 docs/project-plan.md           the sprint and milestone tables with their sections, and progress monitoring
 docs/risks.md                  RISK-01, RISK-02, … the register
-GitHub                         the MLS-nn milestones, and the Sprint, Responsible, and Accountable values and the matching assignees on scheduled issues
+GitHub                         the MLS-nn milestones, every scheduled issue on its sprint's milestone, and the Sprint, Responsible, and Accountable values and the matching assignees
 ```
 
 The threshold is the bar, the plan is the path to it, and the register is what could take the path away.
@@ -131,10 +131,13 @@ Attach every milestone to the threshold goal it serves; `**Advances:**` is the f
 A goal no milestone advances is a goal the plan does not seriously pursue, so either add an increment for it or take it out of the threshold.
 
 A team defines its own milestone set, and a course this long usually has a handful of milestones rather than one per week.
-The set comes from the increments rather than from the calendar: number each milestone by the week it is due in, and let a week without one leave a gap.
+The set comes from the increments rather than from the calendar: number each milestone by the week it is due in, and let a week whose work belongs to a longer increment leave a gap in the numbering.
+The `**Sprints:**` runs are disjoint and together name every sprint, per [Milestones](../requirements/planning-requirements.md#milestones), so each sprint belongs to exactly one milestone.
+Each run is a consecutive stretch that ends in the week its milestone is due, such as `MLS-03` over `SPRINT-03` and `MLS-05` over `SPRINT-04` to `SPRINT-05`: an increment holds one week or several, and no week's work floats free.
+A step that slips keeps its number and closes late, with its leftover work rescheduled into a later sprint's milestone, rather than the run being extended past its due week.
 
 The plan holds increments, never the issue list.
-Which issue is worked on when is a `Sprint` field value, per [Issue Fields](../requirements/issue-tracking-requirements.md#issue-fields), so the same issue can move between sprints without rewriting the roadmap.
+Which issue is worked on when is a `Sprint` field value, per [Issue Fields](../requirements/issue-tracking-requirements.md#issue-fields), and the issue's milestone comes from that sprint, per [Milestones](../requirements/planning-requirements.md#milestones): the same issue can move between sprints, and its milestone moves with it, without the roadmap being rewritten.
 
 ## Step 3: Write The Sprints And Their Releases
 
@@ -162,8 +165,8 @@ A provisional goal is a direction the plan currently believes, not a promise to 
 
 ### Schedule With The Field, Not In The File
 
-When a sprint is planned, the issues that make its goal true carry three values and two assignees: the `Sprint` they belong to, the `Responsible` and `Accountable` members who do the work and verify it, and those same two members as the issue's assignees, per [Issue Tracking](../requirements/issue-tracking-requirements.md).
-The plan's `**Sprint Backlog:**` field links the filtered issue view, so the plan never copies the list and never goes stale.
+When a sprint is planned, the issues that make its goal true carry three values, two assignees, and their sprint's milestone: the `Sprint` they belong to, the `Responsible` and `Accountable` members who do the work and verify it, those same two members as the issue's assignees, per [Issue Tracking](../requirements/issue-tracking-requirements.md), and the milestone that names the sprint, per [Milestones](../requirements/planning-requirements.md#milestones).
+The plan's `**Sprint Backlog:**` field links the filtered issue view, and the milestone list shows the same issues scoped to the increment, so the plan never copies the list and never goes stale.
 
 ### Releases
 
@@ -315,7 +318,7 @@ The loop fails in two opposite ways: a review that changes nothing is a status r
 | ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | The plan is still right              | Nothing, and say so: "no change" is a decision the team made                                                                                                                    |
 | The plan is right, the text is stale | Edit the artifact: the sprint goal, a provisional goal, a milestone's first sentence, or a trigger                                                                              |
-| Reality moved away from the plan     | Change the plan: edit the active milestone's first sentence for scope, or set an issue's `Sprint` value to the sprint that now holds it                                         |
+| Reality moved away from the plan     | Change the plan: edit the active milestone's first sentence for scope, or set an issue's `Sprint` value and milestone to the sprint that now holds it                           |
 | The bar itself has to move           | Only the customer can move it: a goal's change or drop cites their `DEC-nnn`, per [The Threshold Of Success](../requirements/planning-requirements.md#the-threshold-of-success) |
 
 ### Record The Result In The Artifact That Changed
@@ -341,6 +344,8 @@ The customer meeting that follows the review has its own method in [Validating W
   "Build the booking flow in Week 3" says what the team does, not what will be true; every sentence in the plan should survive being read by the customer.
 - **A milestone per week.**
   At that zoom level the milestones restate the sprints, and the roadmap stops showing a path.
+- **A scheduled issue with no milestone.**
+  The milestone list is then missing part of the increment, and the plan's own answer to "how far along is this?" is wrong.
 - **Burying the outcome of an increment.**
   If the first sentence is the history and the last is the deliverable, a reader who stops early gets the wrong idea of what is being built.
 - **A goal that moves with no decision.**

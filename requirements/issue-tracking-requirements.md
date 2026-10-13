@@ -65,9 +65,10 @@ The three fields carry who works on an issue and when the team plans to finish i
    A new field starts with organization-only visibility, so change it to `Public`.
 
 2. The team sets the three values together when it schedules an issue into a sprint: `Sprint` names the sprint the team plans to finish the issue in, and `Responsible` and `Accountable` name two different members, who will do the work and verify it.
+   The same act assigns the issue to its sprint's milestone, per [Milestones](planning-requirements.md#milestones).
    The values are set on the issue after it is created, so no issue form change is needed.
-   An open issue the team has not scheduled carries none, and an already closed issue needs none.
-   A reschedule or a change of hands updates them, and the values stay on an issue after it closes.
+   An open issue the team has not scheduled carries none and no milestone, and an already closed issue needs none.
+   A reschedule or a change of hands updates them and the milestone, and the values stay on an issue after it closes.
 3. A sprint's backlog is the issue list filtered by its `Sprint` value, such as `field.Sprint:SPRINT-03`, which the plan's `**Sprint Backlog:**` field links, per [Sprints](planning-requirements.md#sprints).
 4. A team whose organization cannot create issue fields declares a [deviation](weekly-report-requirements.md#declaring-deviations) and carries the three values as labels instead: `responsible:<username>`, `accountable:<username>`, and `sprint:<SPRINT-nn>`, set on the issue when it is scheduled.
    An issue without a `sprint:*` label is unscheduled.

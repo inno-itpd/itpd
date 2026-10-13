@@ -98,8 +98,8 @@ The changelog, the tags, and the release titles follow [Release Requirements](re
 **Since: W3**
 
 A **milestone** is an increment on the path to the threshold, due at the end of a week.
-The sprints working toward it may span one or more sprints, and not every week has one: the releases give the weekly cadence, and the milestones give the increments on the path to the threshold of success.
-An issue belongs to a milestone only when it is part of that increment, so there is no parking milestone; the week it is worked in comes from its `Sprint` field, per [Issue Fields](issue-tracking-requirements.md#issue-fields).
+The sprints working toward it may span one or more sprints, and not every week has one of its own: the releases give the weekly cadence, and the milestones give the increments on the path to the threshold of success.
+Every sprint belongs to exactly one milestone, so the milestone list is the increment's work rather than a second view of one week; an issue the team has not scheduled carries no milestone, and there is still no parking milestone.
 
 **Required**
 
@@ -121,7 +121,7 @@ An issue belongs to a milestone only when it is part of that increment, so there
    | `**Milestone:**` | The GitHub milestone title as link text, linked to the milestone itself, such as `[MLS-03: Deliver MUP](https://github.com/<organization>/<repo>/milestone/3)`; the linked title is the milestone's scope. |
    | `**Due:**`       | The hard deadline of the due week, from the syllabus, matching the GitHub milestone.                                                                                                                       |
    | `**Done when:**` | The observable check that says the increment is finished, distinct from the description below the fields.                                                                                                  |
-   | `**Sprints:**`   | The `SPRINT-nn` the milestone is worked on in, each linked, one or more.                                                                                                                                   |
+   | `**Sprints:**`   | The consecutive `SPRINT-nn` run the milestone is worked on in, each linked, one or more.                                                                                                                   |
    | `**Advances:**`  | The `TOS-nn` goal or goals the milestone serves, each linked, at least one.                                                                                                                                |
 
 5. A description of the increment follows the fields.
@@ -131,7 +131,9 @@ An issue belongs to a milestone only when it is part of that increment, so there
 7. The team chooses its milestone set.
    In Week 3 it creates at least two: `MLS-03`, whose focus is delivering the MUP, and one more for the next increment, which the team defines.
    The second milestone's number follows its due week, so one due at the end of Week 5 is `MLS-05`; the week is the team's choice.
-8. Close the GitHub milestone once its `**Done when:**` check passes.
+8. The `**Sprints:**` runs are disjoint and consecutive, together name every sprint from `SPRINT-03` to `SPRINT-09`, and each ends in the week its milestone is due, so each sprint belongs to exactly one milestone.
+   Every issue that carries a `Sprint` value, per [Issue Fields](issue-tracking-requirements.md#issue-fields), is assigned to that sprint's milestone, and a reschedule sets the `Sprint` value and the milestone together.
+9. Close the GitHub milestone once its `**Done when:**` check passes.
    The section stays as written, because the platform carries the state, per [Identifier Rules](general-requirements.md#identifier-rules).
 
 **Recommended**

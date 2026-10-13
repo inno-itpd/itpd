@@ -83,8 +83,9 @@ The fields themselves, their options, and their visibility are defined in [Issue
 **Required**
 
 1. The team sets the three values together when it schedules the task into a sprint: `Sprint` names the sprint the team plans to finish the task in, `Responsible` and `Accountable` name two different members, and the same two members are the task's assignees, per [Assignees](issue-tracking-requirements.md#assignees).
+   The same act assigns the task to its sprint's milestone, per [Milestones](planning-requirements.md#milestones).
 2. On a task, the responsible member does the work; the accountable member verifies it, ticks each acceptance criterion before the pull request merges, and approves the pull request, per [Closing A Task](#closing-a-task).
-3. A reschedule or a change of hands updates the values and the assignees; an open task the team has not scheduled carries none, and an already closed task needs none.
+3. A reschedule or a change of hands updates the values, the milestone, and the assignees; an open task the team has not scheduled carries none, and an already closed task needs none.
 
 ## Closing A Task
 

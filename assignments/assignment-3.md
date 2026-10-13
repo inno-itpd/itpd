@@ -45,7 +45,7 @@ By the end of this week you should be able to show a reader:
 <!-- TODO maybe not all seven -->
 <!-- milestone for the next increment? -->
 
-- A plan from here to those goals: seven sprints with a goal and a release each, and a milestone for the MUP and one for the next increment.
+- A plan from here to those goals: seven sprints with a goal and a release each, and milestones that carry every sprint's work, the MUP first.
 - The risks that could take the plan away, each with a trigger, a window, a mitigation, and a fallback.
 - What done means for a story, a task, and a pull request, and the workflow around it: the contributing guide, the three issue fields, and the public project.
 - A working slice on `main` that a clean checkout completes end to end by following `docs/setup.md`, on the chosen stack, with `docs/` published as a site.
@@ -88,7 +88,8 @@ This week:
 2. `## Sprints` covers all seven sprints, `SPRINT-03` to `SPRINT-09`: write `SPRINT-03` and `SPRINT-04` concretely, and give every later sprint a provisional goal that stays current until it is planned.
 3. Give each sprint its nested `#### REL-nn` heading, `REL-03` to `REL-09`; a release section stays empty until its release is published.
 4. In `## Milestones`, write at least two milestones: `MLS-03`, whose focus is delivering the MUP, and one more for the next increment the team defines.
-   Create both on GitHub with their titles and due dates.
+   The `**Sprints:**` runs must be consecutive, each ending in the week its milestone is due, and together name every sprint from `SPRINT-03` to `SPRINT-09`, so write further milestones until the set reaches the last sprint.
+   Create each on GitHub with its title and due date.
 5. In `## Progress Monitoring`, name when the team's weekly review is held, who checks, and the views where progress is visible: the GitHub project's table view, the sprint backlog view, and the milestone list.
 6. Write `docs/risks.md` with at least 3 risks that threaten the plan or the threshold, each stated as cause, event, and impact.
 
@@ -114,6 +115,7 @@ The rules:
 - `CONTRIBUTING.md` states the commit message format, how a change gets in, and which views the team uses in its GitHub project: [Contributing](../requirements/repository-requirements.md#contributing).
 - The organization creates the `Sprint`, `Responsible`, and `Accountable` issue fields, each single-select and `Public`: [Issue Fields](../requirements/issue-tracking-requirements.md#issue-fields).
 - An issue's assignees are the same two members its `Responsible` and `Accountable` values name: [Assignees](../requirements/issue-tracking-requirements.md#assignees).
+- Every issue the plan schedules is assigned to its sprint's milestone: [Milestones](../requirements/planning-requirements.md#milestones).
 - One public GitHub project holds every open issue, with a table view whose columns include the three fields and the built-in `Assignees`: [GitHub Projects](../requirements/issue-tracking-requirements.md#github-projects).
 
 This week:
@@ -122,7 +124,7 @@ This week:
 2. Write `CONTRIBUTING.md` in the repository root.
 3. Create the three issue fields with their options, each single-select and `Public`, pinned to the issue types the team uses.
 4. Create the GitHub project: set it `Public`, give it a description that links the repository, and add a table view over the three fields and the assignees, grouped or sorted by `Sprint`.
-5. Set the three values and the same two members as assignees on every issue the plan schedules, at minimum the `SPRINT-03` set.
+5. Set the three values, the same two members as assignees, and the sprint's milestone on every issue the plan schedules, at minimum the `SPRINT-03` set, which belongs to `MLS-03`.
 
 ## Part 5: Build The Minimum Usable Product
 
@@ -234,6 +236,7 @@ A strong submission has:
   A plan that reads as a task list hides what the work is for.
 - **Milestones that are increments, not weeks.**
   The MUP is one, the next delivery is another, and each names the threshold goal it advances.
+  Every sprint belongs to one of them, and every scheduled issue carries its sprint's milestone, so the milestone list shows the increment's work.
   A milestone per week restates the sprints.
 - **Risks you would act on.**
   Each has a trigger the review can watch and a fallback decided before it was needed.
@@ -303,14 +306,14 @@ A transcript under item 5 goes in an appendix, which the two pages do not count.
 
 - [ ] `docs/threshold-of-success.md` with 3+ goals, each with its fields, and the failure and success statements below them ([Part 1](#part-1-state-the-threshold-of-success)).
 - [ ] The vision's goal links the threshold ([Part 1](#part-1-state-the-threshold-of-success)).
-- [ ] `docs/project-plan.md` with `## Sprints` (the table and `SPRINT-03` to `SPRINT-09`, each with its nested `REL-nn`), `## Milestones` (the table and 2+ milestones), and `## Progress Monitoring` ([Part 2](#part-2-write-the-project-plan-and-name-the-risks)).
-- [ ] The GitHub milestones created, `MLS-03` and the next increment's ([Part 2](#part-2-write-the-project-plan-and-name-the-risks)).
+- [ ] `docs/project-plan.md` with `## Sprints` (the table and `SPRINT-03` to `SPRINT-09`, each with its nested `REL-nn`), `## Milestones` (the table and the milestones whose `**Sprints:**` fields name every sprint), and `## Progress Monitoring` ([Part 2](#part-2-write-the-project-plan-and-name-the-risks)).
+- [ ] The GitHub milestones created, with consecutive `**Sprints:**` runs ending in their due weeks, every sprint named by one, and the `SPRINT-03` set on `MLS-03` ([Part 2](#part-2-write-the-project-plan-and-name-the-risks)).
 - [ ] `docs/risks.md` with 3+ risks and the summary table ([Part 2](#part-2-write-the-project-plan-and-name-the-risks)).
 - [ ] The stack recorded as a `DEC-nnn`, `.gitignore` extended, and the stack's ecosystem added to `.github/dependabot.yml` ([Part 3](#part-3-decide-the-stack)).
 - [ ] `docs/definition-of-done.md` and `CONTRIBUTING.md` ([Part 4](#part-4-define-done-and-the-workflow)).
 - [ ] The `Sprint`, `Responsible`, and `Accountable` fields created and `Public` ([Part 4](#part-4-define-done-and-the-workflow)).
 - [ ] The public GitHub project with its table view over the fields and the assignees ([Part 4](#part-4-define-done-and-the-workflow)).
-- [ ] Every issue the plan schedules carries the three values and both members as assignees, at minimum the `SPRINT-03` set ([Part 4](#part-4-define-done-and-the-workflow)).
+- [ ] Every issue the plan schedules carries the three values, both members as assignees, and its sprint's milestone, at minimum the `SPRINT-03` set ([Part 4](#part-4-define-done-and-the-workflow)).
 - [ ] **Every candidate story built into `main` through task issues and pull requests, and shown at the meeting or moved out by the customer's decision** ([Part 5](#part-5-build-the-minimum-usable-product)).
 - [ ] The docs site published and linked, and `docs/setup.md` linked from the root README ([Part 6](#part-6-publish-the-docs-site-and-write-the-setup-page)).
 - [ ] Each Week 2 action point's outcome in `## Previous action points`, and in the artifact it changed ([Part 7](#part-7-carry-out-the-week-2-action-points-and-open-questions)).
