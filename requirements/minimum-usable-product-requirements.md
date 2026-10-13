@@ -20,6 +20,10 @@ The stories it is made of, and their priorities, are in [User Story Requirements
 1. Record the candidate in the [weekly public report](weekly-report-requirements.md#weekly-public-report), under the heading the assignment names.
 2. The record gives the core task, then the `US-nn` of each story with its issue linked, and the `DEC-nnn` of the customer's verdict on it once they have given it.
 
+**Since: W3**
+
+3. In Week 3 the candidate moves into the plan: it is delivered under the MUP milestone, `MLS-03`, and its core task is maintained as the first sentence of that milestone's description, per [Milestones](planning-requirements.md#milestones).
+
 ## The Candidate
 
 **Since: W2**
@@ -58,7 +62,7 @@ Week 3 is where the candidate stops being a proposal: its stories are built into
 4. Show each finished story against its acceptance criteria, one `AC-nn` at a time, at the weekly meeting, per [Showing Working Software](customer-meetings-requirements.md#showing-working-software): each verdict is a `DEC-nnn` naming the `US-nn`, and it either closes the story or leaves it open with its rework tasks, per [Where Stories Live](user-stories-requirements.md#where-stories-live) and [Closing A Task](task-issues-requirements.md#closing-a-task).
 5. A candidate story the team will not finish by the deadline moves out of the candidate only with the customer's decision, at the Week 3 meeting or in the same week's written exchange with the customer, recorded as a `DEC-nnn` naming the story.
    When the remaining stories no longer complete the core task end to end, the same decision re-scopes the core task by editing the first sentence of the active milestone's description, per [Milestones](planning-requirements.md#milestones).
-   The story issue records what moved and why, per [Where Stories Live](user-stories-requirements.md#where-stories-live), and the Week 3 report names what shipped and what moved out.
+   The story issue records what moved and why, per [Where Stories Live](user-stories-requirements.md#where-stories-live), and the week's report states the outcome, per [Weekly Public Report](weekly-report-requirements.md#weekly-public-report).
 6. The week's release is `REL-03`, the sprint's final release: cut on the product state after the customer meeting and any same-week rework, per [Releases](planning-requirements.md#releases).
    The tag is pushed first, then the changelog's released section, the plan's `REL-03` line, and the week's report merge after it, so every link resolves.
 7. Deployment is not required in Week 3: the production deployment arrives in Week 5.

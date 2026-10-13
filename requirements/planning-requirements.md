@@ -97,8 +97,8 @@ The changelog and the tags follow [Changelog, Releases And Versioning](repositor
 
 **Since: W3**
 
-A **milestone** is an increment bigger than one sprint, due at the end of a week.
-The sprints working toward it may span several weeks, and not every week has one: the releases give the weekly cadence, and the milestones give the multi-sprint increments on the path to the threshold of success.
+A **milestone** is an increment on the path to the threshold, due at the end of a week.
+The sprints working toward it may span one or more sprints, and not every week has one: the releases give the weekly cadence, and the milestones give the increments on the path to the threshold of success.
 An issue belongs to a milestone only when it is part of that increment, so there is no parking milestone; the week it is worked in comes from its `Sprint` field, per [Issue Tracking](repository-requirements.md#issue-tracking).
 
 **Required**
@@ -131,6 +131,8 @@ An issue belongs to a milestone only when it is part of that increment, so there
 7. The team chooses its milestone set.
    In Week 3 it creates at least two: `MLS-03`, whose focus is delivering the MUP, and one more for the next increment, which the team defines.
    The second milestone's number follows its due week, so one due at the end of Week 5 is `MLS-05`; the week is the team's choice.
+8. Close the GitHub milestone once its `**Done when:**` check passes.
+   The section stays as written, because the platform carries the state, per [Identifier Rules](general-requirements.md#identifier-rules).
 
 **Recommended**
 
@@ -240,7 +242,7 @@ A client can reschedule a booking without emailing the coach.
 - **Sprints:** [SPRINT-03](#sprint-03)
 - **Advances:** [TOS-01](threshold-of-success.md#tos-01)
 
-Delivers the minimum usable product: one link where a client picks a free slot, pays, and receives the meeting link and the materials.
+A client goes from the coach's booking link to a paid, confirmed booking.
 Rescheduling and reminders build on this slice in the next increment.
 
 ## Progress Monitoring

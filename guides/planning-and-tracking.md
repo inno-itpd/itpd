@@ -106,13 +106,14 @@ The **roadmap** is the path from where the team is to the threshold: the milesto
 
 Its hardest decision is the zoom level, which is how big one step is.
 Too close and the milestones restate the sprints; too far and the roadmap says nothing until the end of the course, when it is too late to change anything.
-The level that works is an increment that takes several sprints, ends in a state the customer can react to, and is one of a handful between now and the threshold.
+The level that works is an increment that ends in a state the customer can react to and is one of a handful between now and the threshold; it can take several sprints, or land inside one, as the MUP does.
 
 Two questions place a candidate increment:
 
 1. **Could it finish inside one sprint?**
 
-   Then it is the sprint's goal, not a milestone.
+   It can still be a milestone when it is a checkpoint the customer reacts to and a threshold goal rests on it, as the MUP is.
+   An increment that only restates the sprint's own work is the sprint's goal, not a milestone.
 
 2. **Could the customer watch it run?**
 
@@ -191,7 +192,7 @@ Write `**Done when:**` as a check the customer could run at the end of the due w
 The first sentence is the conclusion, and the sentences after it add scope, sequencing, or the problem the increment beats:
 
 ```markdown
-Delivers the minimum usable product: one link where a client picks a free slot, pays, and receives the meeting link and the materials.
+A client goes from the coach's booking link to a paid, confirmed booking.
 Rescheduling and reminders build on this slice in the next increment.
 ```
 
