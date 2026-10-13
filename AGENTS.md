@@ -109,6 +109,9 @@ The CLI has `archive` but no `delete`, so removing a task that was never committ
 Run `backlog <command> --help` before an unfamiliar command.
 The `Done` criteria come from `definition_of_done` in `backlog/config.yml`, which is this repository's four Markdown gates, the deck check, the link check, and implementation notes that record the decisions made and the validation results.
 
+The user may stage the changes made for the current task, so a non-empty index is expected and the staged changes are the user's own work, not a script's or a configuration's.
+Leave the staged changes in place.
+
 ### Maintained Elsewhere
 
 - The `docs/` destination map below describes artifacts in **student** repositories.
