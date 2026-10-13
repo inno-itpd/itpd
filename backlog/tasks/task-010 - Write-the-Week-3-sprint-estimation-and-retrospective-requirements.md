@@ -1,39 +1,54 @@
 ---
 id: TASK-010
-title: 'Write the Week 3 sprint, estimation, and retrospective requirements'
+title: >-
+  Write the Week 4 sprint planning, grooming, estimation, and retrospective
+  requirements
 status: To Do
 assignee: []
 created_date: '2026-10-02 07:07'
-updated_date: '2026-10-06 13:21'
+updated_date: '2026-10-13 11:11'
 labels: []
-dependencies: []
+dependencies:
+  - TASK-109
+  - TASK-112
+  - TASK-113
+  - TASK-118
 references:
-  - backlog.md
   - tmp/itpd-2025/lectures/lecture-2.1.pdf
+  - tmp/itpd-2025/assignments/assignment-2.md
   - tmp/itpd-2025/assignments/assignment-3.md
-modified_files:
-  - requirements/process-requirements.md
-  - requirements/artifact-requirements.md
+  - tmp/itpd-2025/assignments/assignment-4.md
   - course/syllabus.md
+modified_files:
+  - requirements/planning-requirements.md
+  - guides/planning-and-tracking.md
+  - course/syllabus.md
+  - AGENTS.md
+  - README.md
+  - SKILL.md
+  - course/rules.md
+type: docs
 ordinal: 10000
 ---
 
 ## Description
 
 <!-- SECTION:DESCRIPTION:BEGIN -->
-ITPD requires elements of Scrum, decided while planning TASK-009: a sprint is one course week from Week 3, sprint planning and grooming start there, estimation is required with no unit prescribed, and each sprint ends with `reports/week-NN/sprint-retrospective.md`.
-No normative home exists yet: `backlog.md` records that estimation has no source material anywhere in the 2025 decks, `tmp/itpd-2025/lectures/lecture-2.1.pdf` is the only planning source and its agenda promises `Expectations` without delivering it, and the Week 3 assignment has not been written.
-This task adds the process requirements and the artifact structures at the same time as that assignment.
+Week 3 defines the sprint structure the Week 4 ceremonies operate: one course week is a sprint, the `SPRINT-03` to `SPRINT-09` sections in `docs/project-plan.md` carry each sprint goal and its `REL-nn` release, the `Sprint` issue field schedules the issues, and `## Progress Monitoring` holds the weekly review, per `requirements/planning-requirements.md` and `requirements/issue-tracking-requirements.md`.
+Week 4 adds the ceremonies on top: each sprint starts with planning and grooming, estimation is required with no unit prescribed, and each sprint ends with a retrospective at `reports/week-NN/sprint-retrospective.md`, per the Scrum paragraph in `AGENTS.md`.
+The rules land as `**Since: W4**` sections in `requirements/planning-requirements.md`, the method in `guides/planning-and-tracking.md`, and the Week 4 deliverables in `course/syllabus.md`, and the routers stay in step in the same change; the plan and threshold structures the planning requirements own are not reopened.
+`tmp/itpd-2025/lectures/lecture-2.1.pdf` is the planning source; `tmp/itpd-2025/assignments/assignment-2.md` carries the story-points exercise, and `tmp/itpd-2025/assignments/assignment-3.md` and `assignment-4.md` carry the 2025 planning, grooming, and retrospective checklists; estimation has no source material anywhere in the 2025 decks and must be written from scratch.
 <!-- SECTION:DESCRIPTION:END -->
 
 ## Acceptance Criteria
 <!-- AC:BEGIN -->
-- [ ] #1 `process-requirements.md` gains a `**Since: W3**` section for sprint planning, grooming, estimation, and progress tracking, using the `Required`/`Recommended`/`Example` labels
-- [ ] #2 `artifact-requirements.md` gains structures for `docs/work-plan.md`, `docs/threshold-of-success.md`, and `reports/week-NN/sprint-retrospective.md`, replacing the `## Later Weeks` placeholder
-- [ ] #3 The estimation approach is decided and stated, or deliberately left to teams with the reason recorded; story points stay unprescribed unless that decision changes
-- [ ] #4 The retrospective name and path are checked against `docs/reflection.md` (Week 9) and the Week 10 course retrospective, so no two artifacts share the word ambiguously
-- [ ] #5 `course/syllabus.md` Week 3+ deliverables match the new requirements where the sprint design requires it
-- [ ] #6 The Week 3 assignment cites these requirements per the authoring checklist in `AGENTS.md`
+- [ ] #1 `requirements/planning-requirements.md` gains a `**Since: W4**` section for sprint planning and grooming, in the file's shape: planning opens the sprint, selects its issues from the product backlog, sets their `Sprint`, `Responsible`, and `Accountable` values and the matching assignees, and replaces the provisional goal with the sprint goal; grooming keeps the product backlog ready between sprints; the section cites the Week 3 sprint and issue-field rules rather than restating them, and the file's table of contents and `Required`/`Recommended`/`Example` labels stay in step
+- [ ] #2 Estimation is required with no unit prescribed: the approach is decided and stated in `requirements/planning-requirements.md`, or deliberately left to teams with the reason recorded, and story points stay unprescribed unless that decision changes
+- [ ] #3 `reports/week-NN/sprint-retrospective.md` gets its structure and rules in `requirements/planning-requirements.md`, and every sprint from `SPRINT-04` on ends with a retrospective that the weekly report links as a supporting artifact
+- [ ] #4 The retrospective name and path are checked against the Week 9 project reflection and the Week 10 course retrospective, so no two artifacts share the word ambiguously
+- [ ] #5 `guides/planning-and-tracking.md` gains the planning, grooming, estimation, and retrospective method, with its table of contents and `## What You Produce` in step and its links to the new sections
+- [ ] #6 `course/syllabus.md` names estimation in the Week 4 entry, where it moved from the Week 3 lecture line, and the sprint retrospective wherever the sprint design requires it
+- [ ] #7 The routers stay in step: `AGENTS.md` names the ceremony and retrospective rules in its map and ownership rows and its `reports/week-NN/` shape sentence accounts for the retrospective, and `README.md`, `SKILL.md`, and `course/rules.md` name them where they route to `requirements/planning-requirements.md` and `guides/planning-and-tracking.md`
 <!-- AC:END -->
 
 ## Definition of Done
@@ -43,33 +58,26 @@ This task adds the process requirements and the artifact structures at the same 
 - [ ] #3 `pnpm run lint:markdown` passes
 - [ ] #4 `pnpm run test:markdown-format` and `pnpm run test:markdown-rules` pass
 - [ ] #5 `pnpm run check:lectures` passes
-- [ ] #6 Implementation notes record the decisions made and the validation results
+- [ ] #6 `pnpm run check:links` passes
+- [ ] #7 Implementation notes record the decisions made and the validation results
 <!-- DOD:END -->
 
 ## Implementation Plan
 
 <!-- SECTION:PLAN:BEGIN -->
-1. Read `lectures/AGENTS.md`-adjacent material is not needed, but read `tmp/itpd-2025/lectures/lecture-2.1.pdf` and the `backlog.md` A3 list for the borrowables.
-2. Decide the estimation approach, and leave the unit to teams unless the decision says otherwise.
-3. Write the `process-requirements.md` section before the artifact structures, then add the three structures to `artifact-requirements.md` and update the `docs/` destination map.
-4. Adjust `course/syllabus.md` Week 3+ deliverables.
-5. Write the Week 3 assignment last and run the four Markdown gates.
+1. Read `tmp/itpd-2025/assignments/assignment-3.md` and `assignment-4.md` for the 2025 planning, grooming, and retrospective checklists, and `lecture-2.1.pdf` for the planning vocabulary.
+2. Decide the estimation approach: state it, or leave the unit to teams and record the reason.
+3. Write the `**Since: W4**` sections in `requirements/planning-requirements.md` first: sprint planning and grooming, estimation, and the `reports/week-NN/sprint-retrospective.md` structure, citing the Week 3 sprint and issue-field rules.
+4. Extend `guides/planning-and-tracking.md` with the ceremony, estimation, and retrospective method, keeping its table of contents and `## What You Produce` in step.
+5. Add estimation and the retrospective to the syllabus where the sprint design requires them.
+6. Update the routers in the same change, run the Markdown gates, `check:links`, and `backlog doctor`, and record the notes.
 <!-- SECTION:PLAN:END -->
 
 ## Implementation Notes
 
 <!-- SECTION:NOTES:BEGIN -->
-Borrowables for the planning material, from `backlog.md` A3 and `lecture-2.1.pdf`: strategic versus tactical planning, `Define success` as step one of strategic planning, the roadmap zoom level, `point of no return` for contingency plans, and the warning that 80% of the pain comes from skipping `Define success`.
-
-New for Week 3 with no source material: the tactical questions belong in `CONTRIBUTING.md`, the changelog is compiled from pull requests rather than commits, and the first SemVer tags begin.
-
-C4 continues from the Week 2 context diagram into Week 4 with containers and components; the W2 deck says so on its vocabulary slide.
-
-The retrospective path `reports/week-NN/sprint-retrospective.md` is registered by TASK-009 as a placeholder in `artifact-requirements.md` `## Later Weeks`; this task replaces that placeholder with the real structure.
-
-This task is the follow-up for the estimation gap recorded in `backlog.md`: estimation has no source material anywhere in the 2025 decks and must be written from scratch, and it is the part students will push back on hardest.
-
-Refine the `**Since: W3**` section `## Showing Working Software` in `requirements/customer-meetings-requirements.md` together with the Week 3 assignment. It carried a `TODO refine` comment in the student-facing source, which TASK-057 moved here.
-
-2026-10-06: decided in TASK-083 and TASK-084. In Week 3 meetings, a story closes as completed only on the customer's accepting verdict. Every meeting report after the kickoff closes earlier action points and open questions. The Week 3 assignment should cite both rules rather than restate them.
+Retargeted by TASK-120: the sprint structure landed in Week 3, so this task keeps the Week 4 ceremonies and drops the plan and threshold structures, which the planning requirements own.
+TASK-009 registered the path `reports/week-NN/sprint-retrospective.md` and deferred its structure to this task.
+Estimation has no source material anywhere in the 2025 decks, so it must be written from scratch; it is the part students will push back on hardest.
+The Week 4 assignment cites the new sections and is its own task, as Assignment 3 was.
 <!-- SECTION:NOTES:END -->
