@@ -26,8 +26,8 @@ They are created in Week 3 in their final place and stay current for the rest of
 1. The project plan is `docs/project-plan.md`.
    It carries these parts, in this order, and the linked rule says what each part must say:
 
-   - The **sprints**, per [Sprints](#sprints): the `## Sprints` table and one `### SPRINT-nn` section per sprint, each with its release per [Releases](#releases).
-   - The **milestones**, per [Milestones](#milestones): the `## Milestones` table and one `### MLS-nn` section per milestone.
+   - The **sprints**, per [Sprints](#sprints): one `### SPRINT-nn` section per sprint, each with its goal, its due date, its sprint backlog, and its release per [Releases](#releases).
+   - The **milestones**, per [Milestones](#milestones): one `### MLS-nn` section per milestone.
    - The **progress monitoring**, per [Progress Monitoring](#progress-monitoring), last.
 
 2. The threshold of success is `docs/threshold-of-success.md`.
@@ -46,28 +46,25 @@ Every week from Week 3 to Week 9 is a sprint, so the plan carries seven of them,
 2. Each sprint is a GitHub **milestone** titled `SPRINT-nn: <focus>`, such as `SPRINT-03: Pay at booking`, with the hard deadline of its week as the due date.
    The focus is a short phrase, and the sprint's goal stays in the plan's section.
    Create all seven milestones when the plan is written, so that scheduling an issue is assigning it to a milestone that already exists.
-3. `## Sprints` opens with a table whose columns are these, in this order:
+3. A `### SPRINT-nn` section opens with the sprint's goal, in one sentence: what the sprint is for, stated as a result rather than as a list of tasks.
+4. A sprint the team has not planned yet states a **provisional** goal: one sentence, kept current until the sprint is planned, so the plan leaves no future week without direction.
+5. Under the goal, the section carries these fields, in this order, as a bulleted list, per [Identifier Rules](general-requirements.md#identifier-rules):
 
-   | Column    | What it holds                                                                                                          |
-   | --------- | ---------------------------------------------------------------------------------------------------------------------- |
-   | `Sprint`  | The `SPRINT-nn`, linked to its section, such as `[SPRINT-03](#sprint-03)`                                              |
-   | `Due`     | The hard deadline of the sprint's week, from the syllabus, such as `2026-10-17`, the date its GitHub milestone carries |
-   | `Release` | The sprint's `REL-nn`, linked to its section, such as `[REL-03](#rel-03)`, per [Releases](#releases)                   |
+   | Field                 | What it says                                                                                                                                                                                                                                                                                     |
+   | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+   | `**Due:**`            | The hard deadline of the sprint's week, from the syllabus, such as `2026-10-17`, the date its GitHub milestone carries.                                                                                                                                                                          |
+   | `**Sprint Backlog:**` | A link to the sprint's GitHub milestone, such as `https://github.com/<organization>/<repo>/milestone/<number>`, which lists the issues scheduled into the sprint. The number is the one GitHub assigned to the milestone, not the sprint's number. The field appears once the sprint has issues. |
 
-4. A `### SPRINT-nn` section opens with the sprint's goal, in one sentence: what the sprint is for, stated as a result rather than as a list of tasks.
-5. A sprint the team has not planned yet states a **provisional** goal: one sentence, kept current until the sprint is planned, so the plan leaves no future week without direction.
-6. Under the goal, the section carries its only field, `**Sprint Backlog:**`: a link to the sprint's GitHub milestone, such as `https://github.com/<organization>/<repo>/milestone/<number>`, which lists the issues scheduled into the sprint.
-   The number is the one GitHub assigned to the milestone, not the sprint's number.
-   The field appears once the sprint has issues.
-7. The plan does not copy that list: scheduling is assigning an issue to its sprint's milestone, per [Scheduling An Issue](issue-tracking-requirements.md#scheduling-an-issue).
-8. Close the sprint's GitHub milestone once its release is cut, per [Releases](#releases).
+6. The plan does not copy that list: scheduling is assigning an issue to its sprint's milestone, per [Scheduling An Issue](issue-tracking-requirements.md#scheduling-an-issue).
+7. Close the sprint's GitHub milestone once its release is cut, per [Releases](#releases).
    An issue still open is first rescheduled into a later sprint's milestone, per [Scheduling An Issue](issue-tracking-requirements.md#scheduling-an-issue).
 
 **Example**
 
-The `**Sprint Backlog:**` field of a planned sprint:
+The fields of a planned sprint:
 
 ```markdown
+- **Due:** 2026-10-17
 - **Sprint Backlog:** [the issues scheduled into SPRINT-03](https://github.com/<organization>/<repo>/milestone/1)
 ```
 
@@ -113,13 +110,7 @@ Every sprint belongs to exactly one milestone, so each increment names the sprin
 
 1. Number each milestone by the week it is due in: `MLS-03` is due at the end of Week 3.
    A week with no milestone leaves a gap in the sequence, which [Identifier Rules](general-requirements.md#identifier-rules) expects.
-2. The plan carries one `### MLS-nn` section per milestone under `## Milestones`, and `## Milestones` opens with a table whose columns are these, in this order:
-
-   | Column      | What it holds                                                                              |
-   | ----------- | ------------------------------------------------------------------------------------------ |
-   | `Milestone` | The `MLS-nn`, linked to its section, such as `[MLS-03](#mls-03)`                           |
-   | `Due`       | The milestone's due date, the hard deadline of the week it is due in, such as `2026-10-17` |
-
+2. The plan carries one `### MLS-nn` section per milestone under `## Milestones`.
 3. A `### MLS-nn` section opens with these fields, in this order, as a bulleted list, per [Identifier Rules](general-requirements.md#identifier-rules):
 
    | Field           | What it says                                                                                               |
@@ -227,15 +218,11 @@ From `docs/project-plan.md`:
 
 ## Sprints
 
-| Sprint                  | Due        | Release           |
-| ----------------------- | ---------- | ----------------- |
-| [SPRINT-03](#sprint-03) | 2026-10-17 | [REL-03](#rel-03) |
-| [SPRINT-04](#sprint-04) | 2026-10-23 | [REL-04](#rel-04) |
-
 ### SPRINT-03
 
 A client books a paid slot and receives the meeting link and the materials.
 
+- **Due:** 2026-10-17
 - **Sprint Backlog:** [the issues scheduled into SPRINT-03](https://github.com/<organization>/<repo>/milestone/1)
 
 #### REL-03
@@ -246,13 +233,11 @@ Released as [v0.1.0](https://github.com/<organization>/<repo>/releases/tag/v0.1.
 
 A client can reschedule a booking without emailing the coach.
 
+- **Due:** 2026-10-23
+
 #### REL-04
 
 ## Milestones
-
-| Milestone         | Due        |
-| ----------------- | ---------- |
-| [MLS-03](#mls-03) | 2026-10-17 |
 
 ### MLS-03
 

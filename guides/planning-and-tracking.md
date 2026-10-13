@@ -45,7 +45,7 @@ The threshold session of Step 1 and the risk session of Step 5 are the hours tha
 
 ```text
 docs/threshold-of-success.md   TOS-01, TOS-02, … one section per goal, and the statements table below them
-docs/project-plan.md           the sprint and milestone tables with their sections, and progress monitoring
+docs/project-plan.md           the sprint and milestone sections, and progress monitoring
 docs/risks.md                  RISK-01, RISK-02, … the register
 GitHub                         the `SPRINT-nn` milestones, every scheduled issue in its sprint's milestone, and the `Responsible` and `Accountable` values and the matching assignees
 ```
@@ -194,7 +194,7 @@ When the number is not obvious, ask what a user would see, because that is what 
 ## Step 4: Write The Milestones
 
 A milestone section opens with its fields and follows them with a description of the increment, per [Milestones](../requirements/planning-requirements.md#milestones).
-The fields carry what the index table cannot: the due date, the sprints, and the threshold goals the increment advances.
+The fields carry the due date, the sprints, and the threshold goals the increment advances.
 A milestone carries no exit check of its own: the increment is read from what its sprints released, and the MUP's check is the clean-checkout definition the [MUP requirements](../requirements/minimum-usable-product-requirements.md#the-candidate) and `docs/setup.md` own.
 
 ### Lead The Description With The Outcome
