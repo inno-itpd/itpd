@@ -31,7 +31,7 @@ They are created in Week 3 in their final place and stay current for the rest of
    - The **progress monitoring**, per [Progress Monitoring](#progress-monitoring), last.
 
 2. The threshold of success is `docs/threshold-of-success.md`.
-   It carries one `## TOS-nn` section per goal, per [The Threshold Of Success](#the-threshold-of-success).
+   It carries one `## TOS-nn` section per goal and, below them, the failure and success statements they came from, per [The Threshold Of Success](#the-threshold-of-success).
 
 ## Sprints
 
@@ -166,7 +166,9 @@ That review is where the threshold of success and the risks are looked at; the w
 **Since: W3**
 
 The **threshold of success** is the minimal set of SMART goals that must all be achieved for the project to count as a success.
-The file holds the set the team keeps and nothing else; the steps that produce it, from failure statements to the kept goals, are the method in [Guide: Planning And Tracking](../guides/planning-and-tracking.md), not content of this file.
+
+The file holds two parts: the kept set, and the failure and success statements the set came from, so every goal shows the failure it answers rather than standing as an invention.
+The steps that produce the set, from picturing failure to keeping the minimal set, are the method in [Guide: Planning And Tracking](../guides/planning-and-tracking.md), not content of this file.
 
 **Recommended**
 
@@ -194,6 +196,21 @@ The file holds the set the team keeps and nothing else; the steps that produce i
    The verdict is final: a settled goal is neither edited nor moved, and the file stays in identifier order, because a missed goal is evidence rather than clutter.
 5. Dropping a goal changes the success bar, so it is agreed with the customer: the `**Dropped:**` field gives the date and the reason, and the reason cites the customer's `DEC-nnn`.
    `Dropped` is final.
+6. Below the goals, the file carries a `## Failure And Success Statements` section: one table, whose columns are these, in this order:
+
+   | Column              | What it holds                                                                                                   |
+   | ------------------- | --------------------------------------------------------------------------------------------------------------- |
+   | `Goal`              | The `TOS-nn` goal that covers the statement, linked, such as `[TOS-01](#tos-01)`, or `—` when no goal covers it |
+   | `Success statement` | The success statement the row's failure statement was converted into, as the session wrote it                   |
+   | `Failure statement` | The failure statement the row came from, as the session wrote it                                                |
+
+   The rows are grouped by goal in `TOS-nn` order, and the rows no goal covers come last, in the order the session listed them.
+
+7. One row is one failure statement with its conversion, so a goal that merged several statements has one row per statement, each linking that goal.
+8. Every `TOS-nn` traces to at least one row.
+   A row may trace to no goal: the statements are the evidence of the choice the minimal set makes, so nothing is deleted.
+9. The table is written once, in the session that produced the set.
+   Its rows are not edited or removed: a goal's change or drop lives in its own fields, per rules 3 to 5, and a goal added later appends its rows in `TOS-nn` order, before the rows no goal covers.
 
 ## Full Example
 
@@ -273,4 +290,13 @@ Every story in the Week 2 candidate is accepted by the customer at the Week 3 me
 - **Status:** Missed
 - **Measure:** the customer's verdict on each candidate story, recorded as a `DEC-nnn`, at the Week 3 meeting.
 - **Outcome:** `US-08` was moved out of the candidate instead of accepted, by the customer's decision, per [`DEC-010`](decisions.md#dec-010); the other two stories were accepted.
+
+## Failure And Success Statements
+
+| Goal              | Success statement                                        | Failure statement                        |
+| ----------------- | -------------------------------------------------------- | ---------------------------------------- |
+| [TOS-01](#tos-01) | A real user completes the core task end to end.          | We never put it in front of a real user. |
+| [TOS-01](#tos-01) | A booking pays through the provider.                     | We never took a real payment.            |
+| [TOS-02](#tos-02) | The customer accepts the Week 2 candidate.               | The customer never accepted it.          |
+| —                 | A teammate must be able to run it from a clean checkout. | Nobody outside the team could run it.    |
 ```

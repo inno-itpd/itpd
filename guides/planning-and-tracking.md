@@ -44,7 +44,7 @@ The threshold session of Step 1 and the risk session of Step 5 are the hours tha
 ## What You Produce
 
 ```text
-docs/threshold-of-success.md   TOS-01, TOS-02, … one section per goal
+docs/threshold-of-success.md   TOS-01, TOS-02, … one section per goal, and the statements table below them
 docs/project-plan.md           the sprint and milestone tables with their sections, and progress monitoring
 docs/risks.md                  RISK-01, RISK-02, … the register
 GitHub                         the MLS-nn milestones, and the Sprint, Responsible, and Accountable values on scheduled issues
@@ -62,7 +62,7 @@ Two tests keep the set honest:
 - **Checkable.**
   The goal names the evidence or the number that settles it, so `**Measure:**` is something you look up rather than argue about.
 
-[The Threshold Of Success](../requirements/planning-requirements.md#the-threshold-of-success) owns the file's shape and how a goal changes, and its [full example](../requirements/planning-requirements.md#full-example) shows a written set.
+[The Threshold Of Success](../requirements/planning-requirements.md#the-threshold-of-success) owns the file's shape and how a goal changes, and its [full example](../requirements/planning-requirements.md#full-example) shows a written set with the statements table below it.
 This step produces that set, in five moves:
 
 1. **Gather the whole team.**
@@ -78,15 +78,15 @@ This step produces that set, in five moves:
 4. **Convert each one into a success statement.**
    "We must get a real user through it", "the customer must accept it", "a teammate must be able to run it from a clean checkout".
    The conversion is where the measure and the date usually appear, which are the M and the T of SMART.
-5. **Keep the minimal SMART set and delete the rest.**
-   Merge statements that are one goal behind two fears, and delete what nobody would treat as a failure.
-   What is left is the threshold; what is deleted becomes the first draft of the roadmap in [Step 2](#step-2-choose-the-roadmaps-zoom-level).
+5. **Keep the minimal SMART set.**
+   Merge statements that are one goal behind two fears, and leave what nobody would treat as a failure off the goal list.
+   What is left is the threshold; the statements stay in the file's table, per [The Threshold Of Success](../requirements/planning-requirements.md#the-threshold-of-success), and the ones no goal covers become the first draft of the roadmap in [Step 2](#step-2-choose-the-roadmaps-zoom-level).
 
 The wording of each kept goal is checked against SMART: specific, measurable, achievable, relevant, and time-bound.
 The letters are a checklist rather than a template: a goal the team cannot reach with its time and skills is a wish, and a goal that does not serve the vision's goal is a distraction.
 
 Each kept statement becomes one `TOS-nn` section from the start.
-The failure statements are working notes and do not go into the file, which holds the set the team keeps and nothing else.
+The statements themselves are recorded below the goals, in the file's table, per [The Threshold Of Success](../requirements/planning-requirements.md#the-threshold-of-success): the table is the account of the fears the bar was chosen from, and it is written once, while a later goal change lives in the goal's own fields.
 
 **Example**
 
@@ -95,6 +95,14 @@ Failure:  We never put it in front of a real user.
 Success:  A real user completes the core task end to end.
 Goal:     TOS-01: a coach takes one real paid booking through the product by the end of Week 6.
           Measure: one booking in the deployed product, by the end of Week 6.
+```
+
+In the file, the statements become rows of the table below the goals:
+
+```markdown
+| Goal              | Success statement                               | Failure statement                        |
+| ----------------- | ----------------------------------------------- | ---------------------------------------- |
+| [TOS-01](#tos-01) | A real user completes the core task end to end. | We never put it in front of a real user. |
 ```
 
 In the full example the second goal was `Missed`, and it stayed in the file with its `**Outcome:**`.
