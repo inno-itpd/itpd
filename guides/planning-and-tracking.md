@@ -3,7 +3,7 @@
 How to turn the threshold of success into a plan the team follows, a register of what could stop it, and a weekly review that holds both against reality.
 
 The rules are in [Planning Requirements](../requirements/planning-requirements.md) for the plan, the threshold, and the review, and in [Risk Requirements](../requirements/risks-requirements.md) for the register.
-The scheduling mechanics are in [Issue Tracking](../requirements/repository-requirements.md#issue-tracking), the release mechanics in [Changelog, Releases And Versioning](../requirements/repository-requirements.md#changelog-releases-and-versioning), and the decision log in [Decision Requirements](../requirements/decisions-requirements.md).
+The scheduling mechanics are in [Issue Tracking](../requirements/repository-requirements.md#issue-tracking), the release mechanics in [Release Requirements](../requirements/releases-requirements.md), and the decision log in [Decision Requirements](../requirements/decisions-requirements.md).
 This guide is the method: what to decide first, how to phrase it, and what the team does with it every week.
 
 **Timebox:** about a day for the whole team, spent unevenly.
@@ -180,7 +180,7 @@ The release itself is about the product code, so the documents following it do n
 
 ### Pick the number from what a user could observe
 
-The tag is the team's choice under SemVer, per [Changelog, Releases And Versioning](../requirements/repository-requirements.md#changelog-releases-and-versioning).
+The tag is the team's choice under SemVer, per [Versioning And Tags](../requirements/releases-requirements.md#versioning-and-tags).
 The release repeats the tag as its title, so the version reads the same wherever the release is linked.
 A first release with no users is usually `v0.1.0`; after that, a fix a user could notice is a patch, a new capability is a minor, and a change that breaks how an existing user works is a major.
 When the number is not obvious, ask what a user would see, because that is what the version communicates.

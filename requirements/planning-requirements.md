@@ -71,7 +71,7 @@ The `**Sprint Backlog:**` field of a planned sprint:
 
 A **release** is the sprint's stable state: the product as it stands when the sprint ends, tagged, so later work cites one commit rather than a moving week.
 Every sprint from Week 3 to Week 9 ends in one release, named `REL-nn` after its sprint: the MUP week is `REL-03`, and the last is `REL-09`.
-The changelog, the tags, and the release titles follow [Changelog, Releases And Versioning](repository-requirements.md#changelog-releases-and-versioning); this section says how a release belongs to its sprint.
+The changelog, the tags, and the release titles follow [Release Requirements](releases-requirements.md); this section says how a release belongs to its sprint.
 
 **Required**
 

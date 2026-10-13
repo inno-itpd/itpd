@@ -19,7 +19,6 @@ Use [General Requirements](general-requirements.md) for what an artifact is, [Vi
 - [Issue Tracking](#issue-tracking)
   - [Issue Fields](#issue-fields)
 - [Contributing](#contributing)
-- [Changelog, Releases And Versioning](#changelog-releases-and-versioning)
 - [Continuous Integration](#continuous-integration)
 - [The Course Materials As An Agent Skill](#the-course-materials-as-an-agent-skill)
 - [Recommended Throughout The Course](#recommended-throughout-the-course)
@@ -363,27 +362,6 @@ The three fields carry who works on an issue and when the team plans to finish i
 - Use [Conventional Commits](https://www.conventionalcommits.org/) for commit messages: a type, a scope, and a short description.
   It is a good default because it is machine-readable, and a changelog can be generated from it if the team ever wants one.
   It is not required, and a team that writes a clearer format should write it down instead.
-
-## Changelog, Releases And Versioning
-
-**Since: W3**
-
-**Required**
-
-1. Maintain `CHANGELOG.md` in the repository root, following [Keep a Changelog](https://keepachangelog.com/).
-2. Keep an `[Unreleased]` section during development, with an entry for every user-visible change, grouped under `Added`, `Changed`, `Deprecated`, `Removed`, `Fixed`, and `Security`.
-3. Add a changelog line to the pull request template: either the change is user-visible and the entry is updated, or it is not user-visible.
-4. Version with [Semantic Versioning](https://semver.org/) and prefix tags with `v`, for example `v0.1.0`.
-   Title the release with the tag, so the title and the tag match, for example `v0.1.0` in both.
-   A nickname for the release goes in its body, not its title.
-5. Each tag points at a commit on `main`.
-   Protect mapped tags from being moved or deleted.
-6. When you cut a release, move the included entries into a dated section, link the section to the release, and open a new empty `[Unreleased]`.
-
-**Compile the changelog from pull requests, not from commits.**
-A commit message records what the team judged important at that moment, and that judgement is usually about the code rather than the product: a rename, a refactor, a fix for a bug nobody outside the team could reach.
-A changelog is a user-facing summary, so it answers a different question.
-The pull request is where the team already writes down what changed and why, which is why the pull request template asks for the changelog line.
 
 ## Continuous Integration
 

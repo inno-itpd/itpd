@@ -35,25 +35,26 @@ They explain the week; [the rules](#the-rules) are what your work is checked aga
 Read once.
 The assignments reference these rather than repeating them.
 
-| File                                                                                       | What it defines                                                                                                             |
-| ------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------- |
-| [General Requirements](requirements/general-requirements.md)                               | What the terms mean, `docs/` versus `reports/`, identifiers, and how later weeks cite earlier work                          |
-| [Visibility Requirements](requirements/visibility-requirements.md)                         | What is public, what goes in Moodle only, what is never committed, and screenshots                                          |
-| [Research Requirements](requirements/research-requirements.md)                             | Alternatives, the comparison, gaps, value propositions, and research honesty                                                |
-| [Assumption Requirements](requirements/assumptions-requirements.md)                        | Where assumptions live, what rests on them, and how they are checked and settled                                            |
-| [Decision Requirements](requirements/decisions-requirements.md)                            | Where decisions live, what each entry says, what cites it, and how it is reversed                                           |
-| [Product Vision Requirements](requirements/product-vision-requirements.md)                 | The goal, stakeholders, constraints, boundary, and system context diagram                                                   |
-| [User Story Requirements](requirements/user-stories-requirements.md)                       | Story issues, acceptance criteria, and priorities                                                                           |
-| [Task Issue Requirements](requirements/task-issues-requirements.md)                        | Task issues, their form, and how a pull request closes one                                                                  |
-| [Local Task Tracking Requirements](requirements/local-task-tracking-requirements.md)       | A task tracker in the repository, a `TODO.md` checklist, and moving Done tasks out of the active list                       |
-| [Minimum Usable Product Requirements](requirements/minimum-usable-product-requirements.md) | The minimum usable product candidate, how it is built, delivered, and released, and the customer's verdict on it            |
-| [Prototype Requirements](requirements/prototypes-requirements.md)                          | What a prototype must change, and where it is recorded                                                                      |
-| [Planning Requirements](requirements/planning-requirements.md)                             | The project plan, its sprints, releases, and milestones, and the threshold of success                                       |
-| [Risk Requirements](requirements/risks-requirements.md)                                    | The risk register: a risk's statement and fields, its rating, and its response                                              |
-| [Definition Of Done Requirements](requirements/definition-of-done-requirements.md)         | What done means for a story, a task, and a pull request                                                                     |
-| [Customer Meeting Requirements](requirements/customer-meetings-requirements.md)            | Meetings with the customer, and their scripts, reports, and transcripts                                                     |
-| [Weekly Report Requirements](requirements/weekly-report-requirements.md)                   | The weekly report, the AI usage report, deviations, and the Moodle PDF                                                      |
-| [Repository Requirements](requirements/repository-requirements.md)                         | GitHub, the rules every issue shares, pull requests, branch protection, link checking, permalinks, snapshots, changelog, CI |
+| File                                                                                       | What it defines                                                                                                  |
+| ------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------- |
+| [General Requirements](requirements/general-requirements.md)                               | What the terms mean, `docs/` versus `reports/`, identifiers, and how later weeks cite earlier work               |
+| [Visibility Requirements](requirements/visibility-requirements.md)                         | What is public, what goes in Moodle only, what is never committed, and screenshots                               |
+| [Research Requirements](requirements/research-requirements.md)                             | Alternatives, the comparison, gaps, value propositions, and research honesty                                     |
+| [Assumption Requirements](requirements/assumptions-requirements.md)                        | Where assumptions live, what rests on them, and how they are checked and settled                                 |
+| [Decision Requirements](requirements/decisions-requirements.md)                            | Where decisions live, what each entry says, what cites it, and how it is reversed                                |
+| [Product Vision Requirements](requirements/product-vision-requirements.md)                 | The goal, stakeholders, constraints, boundary, and system context diagram                                        |
+| [User Story Requirements](requirements/user-stories-requirements.md)                       | Story issues, acceptance criteria, and priorities                                                                |
+| [Task Issue Requirements](requirements/task-issues-requirements.md)                        | Task issues, their form, and how a pull request closes one                                                       |
+| [Local Task Tracking Requirements](requirements/local-task-tracking-requirements.md)       | A task tracker in the repository, a `TODO.md` checklist, and moving Done tasks out of the active list            |
+| [Minimum Usable Product Requirements](requirements/minimum-usable-product-requirements.md) | The minimum usable product candidate, how it is built, delivered, and released, and the customer's verdict on it |
+| [Prototype Requirements](requirements/prototypes-requirements.md)                          | What a prototype must change, and where it is recorded                                                           |
+| [Planning Requirements](requirements/planning-requirements.md)                             | The project plan, its sprints, releases, and milestones, and the threshold of success                            |
+| [Risk Requirements](requirements/risks-requirements.md)                                    | The risk register: a risk's statement and fields, its rating, and its response                                   |
+| [Definition Of Done Requirements](requirements/definition-of-done-requirements.md)         | What done means for a story, a task, and a pull request                                                          |
+| [Customer Meeting Requirements](requirements/customer-meetings-requirements.md)            | Meetings with the customer, and their scripts, reports, and transcripts                                          |
+| [Weekly Report Requirements](requirements/weekly-report-requirements.md)                   | The weekly report, the AI usage report, deviations, and the Moodle PDF                                           |
+| [Release Requirements](requirements/releases-requirements.md)                              | The changelog, Semantic Versioning, tags, and release titles                                                     |
+| [Repository Requirements](requirements/repository-requirements.md)                         | GitHub, the rules every issue shares, pull requests, branch protection, link checking, permalinks, snapshots, CI |
 
 ## The Guides
 

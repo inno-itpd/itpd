@@ -1,6 +1,6 @@
 ---
 name: itpd
-description: Rules, assignments, and guides for the IT Product Development (ITPD) course. Use when working in an ITPD team's product repository on a course deliverable — a weekly report under reports/week-NN/, the research, assumptions, decisions, product vision, project plan with its sprints and releases, threshold of success, risks, or Definition of Done under docs/, story or task issues, a customer meeting script or report, the AI usage report, the Moodle PDF, or the repository setup and CI the course requires.
+description: Rules, assignments, and guides for the IT Product Development (ITPD) course. Use when working in an ITPD team's product repository on a course deliverable — a weekly report under reports/week-NN/, the research, assumptions, decisions, product vision, project plan with its sprints and releases, threshold of success, risks, or Definition of Done under docs/, story or task issues, a customer meeting script or report, the AI usage report, the Moodle PDF, the changelog or a release, or the repository setup and CI the course requires.
 ---
 
 # ITPD Course Materials
@@ -52,6 +52,7 @@ If the current week has no assignment file here, this copy may be older than the
 | `docs/definition-of-done.md`                                             | [Definition of Done](requirements/definition-of-done-requirements.md)         |                                                                                                                                         |
 | Meeting scripts, reports, and transcripts                                | [Customer meetings](requirements/customer-meetings-requirements.md)           | [The kickoff meeting](guides/customer-kickoff-meeting.md), [Validating with the customer](guides/validating-with-the-customer.md)       |
 | The weekly report, the AI usage report, deviations, the Moodle PDF       | [Weekly report](requirements/weekly-report-requirements.md)                   |                                                                                                                                         |
+| The changelog, Semantic Versioning, tags, and release titles             | [Releases](requirements/releases-requirements.md)                             |                                                                                                                                         |
 | GitHub, issues, pull requests, link checking, CI, permalinks             | [Repository](requirements/repository-requirements.md)                         |                                                                                                                                         |
 
 ## Working In The Team's Repository
