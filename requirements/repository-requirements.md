@@ -18,6 +18,7 @@ Use [General Requirements](general-requirements.md) for what an artifact is, [Vi
 - [Sensitive-Data Incident Response](#sensitive-data-incident-response)
 - [Issue Tracking](#issue-tracking)
   - [Issue Fields](#issue-fields)
+  - [Assignees](#assignees)
   - [GitHub Projects](#github-projects)
 - [Contributing](#contributing)
 - [Continuous Integration](#continuous-integration)
@@ -336,10 +337,28 @@ The three fields carry who works on an issue and when the team plans to finish i
 
 2. The team sets the three values together when it schedules an issue into a sprint: `Sprint` names the sprint the team plans to finish the issue in, and `Responsible` and `Accountable` name two different members, who will do the work and verify it.
    The values are set on the issue after it is created, so no issue form change is needed.
-   An open issue the team has not scheduled carries none, a closed issue keeps none, and a reschedule or a change of hands updates them.
+   An open issue the team has not scheduled carries none, and an already closed issue needs none.
+   A reschedule or a change of hands updates them, and the values stay on an issue after it closes.
 3. A sprint's backlog is the issue list filtered by its `Sprint` value, such as `field.Sprint:SPRINT-03`, which the plan's `**Sprint Backlog:**` field links, per [Sprints](planning-requirements.md#sprints).
 4. A team whose organization cannot create issue fields declares a [deviation](weekly-report-requirements.md#declaring-deviations) and carries the three values as labels instead: `responsible:<username>`, `accountable:<username>`, and `sprint:<SPRINT-nn>`, set on the issue when it is scheduled.
    An issue without a `sprint:*` label is unscheduled.
+
+### Assignees
+
+**Since: W3**
+
+The issue's assignees name the same two members as its `Responsible` and `Accountable` values, because a GitHub assignee carries no role of its own.
+The values carry the roles, and the assignees are the platform's usual surface: they notify the members, and the issue list can filter by them.
+
+**Required**
+
+1. The team sets the issue's assignees to the two members its `Responsible` and `Accountable` values name, and to no one else, in the same act as the values, per [Issue Fields](#issue-fields).
+2. A reschedule or a change of hands updates the values and the assignees together.
+3. An open issue the team has not scheduled carries no assignees, and an already closed issue needs none.
+   The assignees stay on an issue after it closes, as the record of who did the work.
+4. Pull requests are not assigned this way.
+   A pull request already names its author and its reviewer.
+5. A team on the label fallback, per [Issue Fields](#issue-fields), sets the same two assignees; the role labels carry the roles.
 
 ### GitHub Projects
 
@@ -356,7 +375,7 @@ The plan names it where progress is visible, per [Progress Monitoring](planning-
    A new organization project starts private, so change its visibility in the project's settings.
 3. The project holds every open issue of the repository and stays current, so an issue the team schedules is already in it.
    The platform's auto-add workflow and adding items by hand both count.
-4. The project carries at least one **table view** whose columns include the `Sprint`, `Responsible`, and `Accountable` issue fields, grouped or sorted by `Sprint`.
+4. The project carries at least one **table view** whose columns include the `Sprint`, `Responsible`, and `Accountable` issue fields and the built-in `Assignees`, grouped or sorted by `Sprint`.
    A team on the label fallback, per [Issue Fields](#issue-fields), shows the three labels instead.
 
 ## Contributing

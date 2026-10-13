@@ -1,6 +1,6 @@
 # Task Issue Requirements
 
-These requirements define a task issue: where it lives, its issue form, its acceptance criteria, the Sprint, Responsible, and Accountable values it carries when it is scheduled, and how a pull request closes it.
+These requirements define a task issue: where it lives, its issue form, its acceptance criteria, the Sprint, Responsible, and Accountable values and the matching assignees it carries when it is scheduled, and how a pull request closes it.
 What a story says, and how its issue closes, is in [User Story Requirements](user-stories-requirements.md).
 The rules every issue shares, and branches and pull requests, are in [Repository Requirements](repository-requirements.md#issue-tracking).
 
@@ -75,14 +75,15 @@ They may be narrower or more technical than the criteria of the story it works t
 **Since: W3**
 
 The three values say when the team plans to finish a task, and which two members do and verify the work.
-They are set on the issue after it is created, so no issue form change is needed.
-The fields themselves, their options, and their visibility are defined in [Issue Fields](repository-requirements.md#issue-fields).
+The task's assignees name the same two members, because a GitHub assignee carries no role of its own.
+They and the assignees are set on the issue after it is created, so no issue form change is needed.
+The fields themselves, their options, and their visibility are defined in [Issue Fields](repository-requirements.md#issue-fields), and the assignee rule in [Assignees](repository-requirements.md#assignees).
 
 **Required**
 
-1. The team sets the three values together when it schedules the task into a sprint: `Sprint` names the sprint the team plans to finish the task in, and `Responsible` and `Accountable` name two different members.
+1. The team sets the three values together when it schedules the task into a sprint: `Sprint` names the sprint the team plans to finish the task in, `Responsible` and `Accountable` name two different members, and the same two members are the task's assignees, per [Assignees](repository-requirements.md#assignees).
 2. On a task, the responsible member does the work; the accountable member verifies it, ticks each acceptance criterion before the pull request merges, and approves the pull request, per [Closing A Task](#closing-a-task).
-3. A reschedule or a change of hands updates the values; an open task the team has not scheduled carries none, and a closed task keeps none.
+3. A reschedule or a change of hands updates the values and the assignees; an open task the team has not scheduled carries none, and an already closed task needs none.
 
 ## Closing A Task
 

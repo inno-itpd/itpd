@@ -1,6 +1,6 @@
 # User Story Requirements
 
-These requirements define a user story: where it lives, its issue form, what it must say, its acceptance criteria, its priority, and the Sprint, Responsible, and Accountable values it carries when it is scheduled.
+These requirements define a user story: where it lives, its issue form, what it must say, its acceptance criteria, its priority, and the Sprint, Responsible, and Accountable values and the matching assignees it carries when it is scheduled.
 [Guide: User Stories And Prototyping](../guides/user-stories-and-prototyping.md) is the method.
 How the `US-nn` and `AC-nn` identifiers are cited is in [General Requirements](general-requirements.md#identifier-rules).
 
@@ -202,14 +202,15 @@ Could Have: a reminder email reduces no-shows, but a client who paid already has
 **Since: W3**
 
 The three values say when the team plans to finish a story, and which two members maintain and verify it.
-They are set on the issue after it is created, so no issue form change is needed.
-The fields themselves, their options, and their visibility are defined in [Issue Fields](repository-requirements.md#issue-fields).
+The story's assignees name the same two members, because a GitHub assignee carries no role of its own.
+They and the assignees are set on the issue after it is created, so no issue form change is needed.
+The fields themselves, their options, and their visibility are defined in [Issue Fields](repository-requirements.md#issue-fields), and the assignee rule in [Assignees](repository-requirements.md#assignees).
 
 **Required**
 
-1. The team sets the three values together when it schedules the story into a sprint: `Sprint` names the sprint the team plans to finish the story in, and `Responsible` and `Accountable` name two different members.
+1. The team sets the three values together when it schedules the story into a sprint: `Sprint` names the sprint the team plans to finish the story in, `Responsible` and `Accountable` name two different members, and the same two members are the story's assignees, per [Assignees](repository-requirements.md#assignees).
 2. On a story, the responsible member maintains the story and its acceptance criteria; the accountable member verifies that it is ready to be shown, with every criterion runnable and every link on the issue resolving, per [the story items of the Definition of Done](definition-of-done-requirements.md#the-story).
-3. A reschedule or a change of hands updates the values; an open story the team has not scheduled carries none, and an already closed story keeps none.
+3. A reschedule or a change of hands updates the values and the assignees; an open story the team has not scheduled carries none, and an already closed story needs none.
 
 ## Full Example
 

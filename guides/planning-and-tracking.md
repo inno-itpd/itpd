@@ -47,7 +47,7 @@ The threshold session of Step 1 and the risk session of Step 5 are the hours tha
 docs/threshold-of-success.md   TOS-01, TOS-02, … one section per goal, and the statements table below them
 docs/project-plan.md           the sprint and milestone tables with their sections, and progress monitoring
 docs/risks.md                  RISK-01, RISK-02, … the register
-GitHub                         the MLS-nn milestones, and the Sprint, Responsible, and Accountable values on scheduled issues
+GitHub                         the MLS-nn milestones, and the Sprint, Responsible, and Accountable values and the matching assignees on scheduled issues
 ```
 
 The threshold is the bar, the plan is the path to it, and the register is what could take the path away.
@@ -162,7 +162,7 @@ A provisional goal is a direction the plan currently believes, not a promise to 
 
 ### Schedule with the field, not in the file
 
-When a sprint is planned, the issues that make its goal true carry three values: the `Sprint` they belong to, and the `Responsible` and `Accountable` members who do the work and verify it, per [Issue Tracking](../requirements/repository-requirements.md#issue-tracking).
+When a sprint is planned, the issues that make its goal true carry three values and two assignees: the `Sprint` they belong to, the `Responsible` and `Accountable` members who do the work and verify it, and those same two members as the issue's assignees, per [Issue Tracking](../requirements/repository-requirements.md#issue-tracking).
 The plan's `**Sprint Backlog:**` field links the filtered issue view, so the plan never copies the list and never goes stale.
 
 ### Releases
