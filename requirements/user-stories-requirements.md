@@ -1,6 +1,6 @@
 # User Story Requirements
 
-These requirements define a user story: where it lives, its issue form, what it must say, its acceptance criteria, its priority, and the Sprint, Responsible, and Accountable values and the matching assignees it carries when it is scheduled.
+These requirements define a user story: where it lives, its issue form, what it must say, its acceptance criteria, its priority, and the `Responsible` and `Accountable` values and the matching assignees it carries when it is scheduled.
 [Guide: User Stories And Prototyping](../guides/user-stories-and-prototyping.md) is the method.
 How the `US-nn` and `AC-nn` identifiers are cited is in [General Requirements](general-requirements.md#identifier-rules).
 
@@ -11,7 +11,7 @@ How the `US-nn` and `AC-nn` identifiers are cited is in [General Requirements](g
 - [The Story](#the-story)
 - [Acceptance Criteria](#acceptance-criteria)
 - [MoSCoW Prioritization](#moscow-prioritization)
-- [The Sprint, Responsible, And Accountable Values](#the-sprint-responsible-and-accountable-values)
+- [The Responsible And Accountable Values](#the-responsible-and-accountable-values)
 - [Full Example](#full-example)
 
 ## Where Stories Live
@@ -197,20 +197,20 @@ A `Could Have` reason; the `Must Have` one is in the [full example](#full-exampl
 Could Have: a reminder email reduces no-shows, but a client who paid already has the link, so the core task finishes without it.
 ```
 
-## The Sprint, Responsible, And Accountable Values
+## The Responsible And Accountable Values
 
 **Since: W3**
 
-The three values say when the team plans to finish a story, and which two members maintain and verify it.
+The two values say which two members maintain and verify a story, and the milestone the story is assigned to says when the team plans to finish it.
 The story's assignees name the same two members, because a GitHub assignee carries no role of its own.
 They and the assignees are set on the issue after it is created, so no issue form change is needed.
 The fields themselves, their options, and their visibility are defined in [Issue Fields](issue-tracking-requirements.md#issue-fields), and the assignee rule in [Assignees](issue-tracking-requirements.md#assignees).
 
 **Required**
 
-1. The team sets the three values together when it schedules the story into a sprint: `Sprint` names the sprint the team plans to finish the story in, `Responsible` and `Accountable` name two different members, and the same two members are the story's assignees, per [Assignees](issue-tracking-requirements.md#assignees).
+1. The team schedules the story by assigning it to its sprint's GitHub milestone, per [Sprints](planning-requirements.md#sprints), and sets the two values in the same act: `Responsible` and `Accountable` name two different members, and the same two members are the story's assignees, per [Assignees](issue-tracking-requirements.md#assignees).
 2. On a story, the responsible member maintains the story and its acceptance criteria; the accountable member verifies that it is ready to be shown, with every criterion runnable and every link on the issue resolving, per [the story items of the Definition of Done](definition-of-done-requirements.md#the-story).
-3. A reschedule or a change of hands updates the values and the assignees; an open story the team has not scheduled carries none, and an already closed story needs none.
+3. A reschedule or a change of hands moves the story to the later sprint's milestone and updates the values and the assignees; an open story the team has not scheduled carries none and no milestone, and an already closed story needs none.
 
 ## Full Example
 

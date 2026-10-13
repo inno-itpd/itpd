@@ -14,14 +14,14 @@ The threshold session of Step 1 and the risk session of Step 5 are the hours tha
 - [What You Produce](#what-you-produce)
 - [Step 1: Agree On The Threshold Of Success](#step-1-agree-on-the-threshold-of-success)
 - [Step 2: Choose The Roadmap's Zoom Level](#step-2-choose-the-roadmaps-zoom-level)
-- [Step 3: Write The Sprints And Their Releases](#step-3-write-the-sprints-and-their-releases)
+- [Step 3: Write The Milestones](#step-3-write-the-milestones)
+  - [Lead The Description With The Outcome](#lead-the-description-with-the-outcome)
+- [Step 4: Write The Sprints And Their Releases](#step-4-write-the-sprints-and-their-releases)
   - [Lead With A Result](#lead-with-a-result)
   - [Give Every Unplanned Sprint A Provisional Goal](#give-every-unplanned-sprint-a-provisional-goal)
-  - [Schedule With The Field, Not In The File](#schedule-with-the-field-not-in-the-file)
+  - [Schedule With The Milestone, Not In The File](#schedule-with-the-milestone-not-in-the-file)
   - [Releases](#releases)
   - [Pick The Number From What A User Could Observe](#pick-the-number-from-what-a-user-could-observe)
-- [Step 4: Write The Milestones](#step-4-write-the-milestones)
-  - [Lead The Description With The Outcome](#lead-the-description-with-the-outcome)
 - [Step 5: Name The Risks And Their Fallbacks](#step-5-name-the-risks-and-their-fallbacks)
   - [Start From The Plan, Not From A Feeling](#start-from-the-plan-not-from-a-feeling)
   - [Write The First Line As Cause, Event, And Impact](#write-the-first-line-as-cause-event-and-impact)
@@ -45,9 +45,9 @@ The threshold session of Step 1 and the risk session of Step 5 are the hours tha
 
 ```text
 docs/threshold-of-success.md   TOS-01, TOS-02, … one section per goal, and the statements table below them
-docs/project-plan.md           the sprint and milestone tables with their sections, and progress monitoring
+docs/project-plan.md           the milestone and sprint sections, and progress monitoring
 docs/risks.md                  RISK-01, RISK-02, … the register
-GitHub                         the MLS-nn milestones, and the Sprint, Responsible, and Accountable values and the matching assignees on scheduled issues
+GitHub                         the `SPRINT-nn` milestones, every scheduled issue in its sprint's milestone, and the `Responsible` and `Accountable` values and the matching assignees
 ```
 
 The threshold is the bar, the plan is the path to it, and the register is what could take the path away.
@@ -128,73 +128,24 @@ Two questions place a candidate increment:
    If the increment cannot be shown as a working thing or a visible change, it is a phase, and the plan will never be able to say when it is done.
 
 Attach every milestone to the threshold goal it serves; `**Advances:**` is the field that carries that link, per [Milestones](../requirements/planning-requirements.md#milestones).
-A goal no milestone advances is a goal the plan does not seriously pursue, so either add an increment for it or take it out of the threshold.
+A milestone that advances no goal is not on the path; a goal no milestone advances is carried by the sprints and their releases.
 
-A team defines its own milestone set, and a course this long usually has a handful of milestones rather than one per week.
-The set comes from the increments rather than from the calendar: number each milestone by the week it is due in, and let a week without one leave a gap.
+The plan carries one milestone from the start: `MLS-03`, the MUP's, per [Milestones](../requirements/planning-requirements.md#milestones).
+Beyond it the set is the team's, and a course this long usually has a handful of milestones rather than one per week.
+The set comes from the increments rather than from the calendar: number each milestone by the week it is due in, and let a week whose work belongs to a longer increment leave a gap in the numbering.
+The `**Sprints:**` runs are disjoint, per [Milestones](../requirements/planning-requirements.md#milestones): a sprint belongs to at most one milestone, and a sprint no milestone covers is still carried by its own GitHub milestone, per [Sprints](../requirements/planning-requirements.md#sprints).
+Each run is a consecutive stretch that ends in the week its milestone is due, such as `MLS-03` over `SPRINT-03` and `MLS-05` over `SPRINT-04` to `SPRINT-05`: an increment holds one week or several, and a week no milestone covers keeps its own sprint's goal.
+A step that slips keeps its number and its due week, with its leftover work rescheduled into a later sprint's milestone, rather than the run being extended past that week.
+The plan's milestones are not GitHub milestones: each sprint is one, per [Sprints](../requirements/planning-requirements.md#sprints), and an increment reaches the platform through the sprints it names.
 
 The plan holds increments, never the issue list.
-Which issue is worked on when is a `Sprint` field value, per [Issue Fields](../requirements/issue-tracking-requirements.md#issue-fields), so the same issue can move between sprints without rewriting the roadmap.
+Which issue is worked on when is the GitHub milestone the issue is assigned to, per [Scheduling An Issue](../requirements/issue-tracking-requirements.md#scheduling-an-issue): the same issue can move between sprints, and its milestone moves with it, without the roadmap being rewritten.
 
-## Step 3: Write The Sprints And Their Releases
-
-Every submission week is a **sprint**, and the plan carries one section per sprint, in order, from the first to the last.
-Write them from near to far: the current sprint in concrete terms, the next one in its own words, and the rest at the level of direction.
-
-### Lead With A Result
-
-The sprint's first line is one sentence, and it states what will be true at the end of the week:
-
-```markdown
-### SPRINT-03
-
-A client books a paid slot and receives the meeting link and the materials.
-```
-
-A goal that reads like a task list, such as "implement the booking page and fix the payment bug", tells the team what to do and hides what it is for.
-The tasks live in the sprint backlog view, where they are already listed and already current.
-
-### Give Every Unplanned Sprint A Provisional Goal
-
-The sprint five weeks out still gets a sentence, because a plan that goes blank after next week cannot be held against the threshold.
-Keep the sentence at its own level, such as "a coach can reschedule without emailing", and revise it when the sprint is planned for real.
-A provisional goal is a direction the plan currently believes, not a promise to the customer, and a stale one misleads exactly the week it was written for.
-
-### Schedule With The Field, Not In The File
-
-When a sprint is planned, the issues that make its goal true carry three values and two assignees: the `Sprint` they belong to, the `Responsible` and `Accountable` members who do the work and verify it, and those same two members as the issue's assignees, per [Issue Tracking](../requirements/issue-tracking-requirements.md).
-The plan's `**Sprint Backlog:**` field links the filtered issue view, so the plan never copies the list and never goes stale.
-
-### Releases
-
-Every sprint ends in one release: the product's state tagged at its end, so later work cites a commit rather than a moving week.
-Cut it after the customer meeting and any same-week rework, on the state the sprint actually left behind, and in this order:
-
-1. Merge the sprint's pull requests.
-2. Push the tag on that commit.
-3. Merge what links the tag: the changelog's released section, the plan's `REL-nn` line, and the week's report.
-
-The documents come after the tag because each of them links it, and a link to a tag that does not exist yet is broken the moment it is checked.
-The release itself is about the product code, so the documents following it do not change what was released.
-[Releases](../requirements/planning-requirements.md#releases) states the order as a rule; the reason to keep it is that it makes the links resolve the first time.
-
-### Pick The Number From What A User Could Observe
-
-The tag is the team's choice under SemVer, per [Versioning And Tags](../requirements/releases-requirements.md#versioning-and-tags).
-The release repeats the tag as its title, so the version reads the same wherever the release is linked.
-A first release with no users is usually `v0.1.0`; after that, a fix a user could notice is a patch, a new capability is a minor, and a change that breaks how an existing user works is a major.
-When the number is not obvious, ask what a user would see, because that is what the version communicates.
-
-## Step 4: Write The Milestones
+## Step 3: Write The Milestones
 
 A milestone section opens with its fields and follows them with a description of the increment, per [Milestones](../requirements/planning-requirements.md#milestones).
-The fields carry what the index table cannot: the GitHub milestone, the due date, the exit check, the sprints, and the threshold goals the increment advances.
-
-Write `**Done when:**` as a check the customer could run at the end of the due week, not as a summary of the description:
-
-```markdown
-- **Done when:** a clean checkout completes the core task end to end by following [setup.md](setup.md).
-```
+The fields carry the due date, the sprints, and the threshold goals the increment advances.
+A milestone carries no exit check of its own: the increment is read from what its sprints released, and the MUP's check is the clean-checkout definition the [MUP requirements](../requirements/minimum-usable-product-requirements.md#the-candidate) and `docs/setup.md` own.
 
 ### Lead The Description With The Outcome
 
@@ -211,6 +162,57 @@ The tell of a buried outcome is the word "so" near the end: "we started with the
 
 The first sentence is also where the increment's scope lives, so when the customer or the work moves something in or out, edit that sentence rather than keeping a second scope list somewhere else.
 Record the reason like any other change: a customer's decision gets a `DEC-nnn`, per [The Decision](../requirements/decisions-requirements.md#the-decision), and the story issue says what moved.
+
+## Step 4: Write The Sprints And Their Releases
+
+Every submission week is a **sprint**, and the plan carries one section per sprint, in order, from the first to the last.
+Write them from near to far: the current sprint in concrete terms, the next one in its own words, and the rest at the level of direction.
+Each sprint is also a GitHub milestone, titled `SPRINT-nn: <focus>` and due on the week's hard deadline, and all seven exist on GitHub when the plan is written, per [Sprints](../requirements/planning-requirements.md#sprints).
+
+### Lead With A Result
+
+The sprint's first line is one sentence, and it states what will be true at the end of the week:
+
+```markdown
+### SPRINT-03
+
+A client books a paid slot and receives the meeting link and the materials.
+```
+
+A goal that reads like a task list, such as "implement the booking page and fix the payment bug", tells the team what to do and hides what it is for.
+The tasks live in the sprint's GitHub milestone, where they are already listed and already current.
+
+### Give Every Unplanned Sprint A Provisional Goal
+
+The sprint five weeks out still gets a sentence, because a plan that goes blank after next week cannot be held against the threshold.
+Keep the sentence at its own level, such as "a coach can reschedule without emailing", and revise it when the sprint is planned for real.
+A provisional goal is a direction the plan currently believes, not a promise to the customer, and a stale one misleads exactly the week it was written for.
+
+### Schedule With The Milestone, Not In The File
+
+When a sprint is planned, the issues that make its goal true are assigned to its GitHub milestone, carry two values, and carry two assignees: the `Responsible` and `Accountable` members who do the work and verify it, those same two members as the issue's assignees, per [Issue Tracking](../requirements/issue-tracking-requirements.md), and the assignment to the sprint's milestone, per [Sprints](../requirements/planning-requirements.md#sprints).
+The plan's `**Sprint Backlog:**` field links that milestone, and an increment is read through its `**Sprints:**` run, whose milestones hold its issues, so the plan never copies the list and never goes stale.
+
+### Releases
+
+Every sprint ends in one release: the product's state tagged at its end, so later work cites a commit rather than a moving week.
+Cut it after the customer meeting and any same-week rework, on the state the sprint actually left behind, and in this order:
+
+1. Merge the sprint's pull requests.
+2. Push the tag on that commit.
+3. Close the sprint's GitHub milestone, after rescheduling anything still open into a later sprint's milestone.
+4. Merge what links the tag: the changelog's released section, the plan's `REL-nn` line, and the week's report.
+
+The documents come after the tag because each of them links it, and a link to a tag that does not exist yet is broken the moment it is checked.
+The release itself is about the product code, so the documents following it do not change what was released.
+[Releases](../requirements/planning-requirements.md#releases) states the order as a rule; the reason to keep it is that it makes the links resolve the first time.
+
+### Pick The Number From What A User Could Observe
+
+The tag is the team's choice under SemVer, per [Versioning And Tags](../requirements/releases-requirements.md#versioning-and-tags).
+The release repeats the tag as its title, so the version reads the same wherever the release is linked.
+A first release with no users is usually `v0.1.0`; after that, a fix a user could notice is a patch, a new capability is a minor, and a change that breaks how an existing user works is a major.
+When the number is not obvious, ask what a user would see, because that is what the version communicates.
 
 ## Step 5: Name The Risks And Their Fallbacks
 
@@ -293,9 +295,9 @@ Holding the review before the meeting means the meeting can spend its time on th
 
 ### Put Progress Where It Can Be Seen Without The Plan
 
-The plan names the GitHub project's table view, the sprint backlog view, and the milestone list, and those are the answer to "how far along is this?" without anyone opening a file.
-The table view is the whole backlog at a glance, and the other two scope the same issues to the sprint and the milestone, per [GitHub Projects](../requirements/issue-tracking-requirements.md#github-projects).
-The views are always current because the work itself updates them: a percentage in the plan drifts the day somebody forgets it, and the issue field does not.
+The plan names the GitHub project's table view and the sprints' GitHub milestones, and those are the answer to "how far along is this?" without anyone opening a file.
+The table view is the whole backlog at a glance, and a sprint's milestone is the same issues scoped to its week, per [GitHub Projects](../requirements/issue-tracking-requirements.md#github-projects).
+The views are always current because the work itself updates them: a percentage in the plan drifts the day somebody forgets it, and a milestone does not.
 
 ## Step 7: Review And Adjust
 
@@ -315,7 +317,7 @@ The loop fails in two opposite ways: a review that changes nothing is a status r
 | ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | The plan is still right              | Nothing, and say so: "no change" is a decision the team made                                                                                                                    |
 | The plan is right, the text is stale | Edit the artifact: the sprint goal, a provisional goal, a milestone's first sentence, or a trigger                                                                              |
-| Reality moved away from the plan     | Change the plan: edit the active milestone's first sentence for scope, or set an issue's `Sprint` value to the sprint that now holds it                                         |
+| Reality moved away from the plan     | Change the plan: edit the active milestone's first sentence for scope, or move an issue to the milestone of the sprint that now holds it                                        |
 | The bar itself has to move           | Only the customer can move it: a goal's change or drop cites their `DEC-nnn`, per [The Threshold Of Success](../requirements/planning-requirements.md#the-threshold-of-success) |
 
 ### Record The Result In The Artifact That Changed
@@ -339,8 +341,10 @@ The customer meeting that follows the review has its own method in [Validating W
   The session is worth having for the fear that nobody had named; if it ended with the previous draft unchanged, no failure was pictured.
 - **A plan that describes activity.**
   "Build the booking flow in Week 3" says what the team does, not what will be true; every sentence in the plan should survive being read by the customer.
-- **A milestone per week.**
-  At that zoom level the milestones restate the sprints, and the roadmap stops showing a path.
+- **A plan milestone per week.**
+  At that zoom level the plan's milestones restate the sprints' GitHub milestones, and the roadmap stops showing a path.
+- **An issue in no milestone.**
+  The sprint's milestone does not list it, the project groups it outside every week, and it reads as unscheduled however finished it is.
 - **Burying the outcome of an increment.**
   If the first sentence is the history and the last is the deliverable, a reader who stops early gets the wrong idea of what is being built.
 - **A goal that moves with no decision.**

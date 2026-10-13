@@ -62,7 +62,7 @@ It is not an assumption: an assumption is a belief to check, and a risk is an ev
    | `**Impact:**`      | The rating word, `High`, `Medium`, or `Low`, and what the risk threatens and how badly                     |
    | `**Likelihood:**`  | The rating word, and why the risk is that likely                                                           |
    | `**Trigger:**`     | The observable signal that the risk is materializing                                                       |
-   | `**Window:**`      | When the risk can materialize: a date, a week, a sprint, or a milestone                                    |
+   | `**Window:**`      | When the risk can materialize: a date, a week, a sprint, or a plan milestone                               |
    | `**Mitigation:**`  | What the team does to reduce or avoid the risk                                                             |
    | `**Contingency:**` | The fallback if the risk materializes anyway                                                               |
    | `**Outcome:**`     | Added on `Mitigated` or `Realized`: what was done or what happened, linking the evidence and any `DEC-nnn` |
@@ -98,7 +98,7 @@ The plan carries no contingency section of its own, per [Progress Monitoring](pl
 **Required**
 
 1. `**Trigger:**` names the observable signal that the risk is materializing: something the review can see rather than infer.
-2. `**Window:**` names when the risk can materialize: a date, a week, a sprint, or a milestone.
+2. `**Window:**` names when the risk can materialize: a date, a week, a sprint, or a plan milestone.
 3. `**Mitigation:**` says what the team does to reduce or avoid the risk before it happens.
 4. `**Contingency:**` is the fallback if the risk materializes anyway: the alternative solution the team decided before it was needed.
 5. Several options are several risks: each `RISK-nn` carries one `**Contingency:**`, and a risk with two possible fallbacks is two entries, because a fallback with a choice in it is a decision the team has not made.

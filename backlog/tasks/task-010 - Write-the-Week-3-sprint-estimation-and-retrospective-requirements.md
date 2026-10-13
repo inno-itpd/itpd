@@ -6,7 +6,7 @@ title: >-
 status: To Do
 assignee: []
 created_date: '2026-10-02 07:07'
-updated_date: '2026-10-13 11:11'
+updated_date: '2026-10-13 18:23'
 labels: []
 dependencies:
   - TASK-109
@@ -34,7 +34,7 @@ ordinal: 10000
 ## Description
 
 <!-- SECTION:DESCRIPTION:BEGIN -->
-Week 3 defines the sprint structure the Week 4 ceremonies operate: one course week is a sprint, the `SPRINT-03` to `SPRINT-09` sections in `docs/project-plan.md` carry each sprint goal and its `REL-nn` release, the `Sprint` issue field schedules the issues, and `## Progress Monitoring` holds the weekly review, per `requirements/planning-requirements.md` and `requirements/issue-tracking-requirements.md`.
+Week 3 defines the sprint structure the Week 4 ceremonies operate: one course week is a sprint, the `SPRINT-03` to `SPRINT-09` sections in `docs/project-plan.md` carry each sprint goal and its `REL-nn` release, each sprint is a GitHub milestone the issues are scheduled into, and `## Progress Monitoring` holds the weekly review, per `requirements/planning-requirements.md` and `requirements/issue-tracking-requirements.md`.
 Week 4 adds the ceremonies on top: each sprint starts with planning and grooming, estimation is required with no unit prescribed, and each sprint ends with a retrospective at `reports/week-NN/sprint-retrospective.md`, per the Scrum paragraph in `AGENTS.md`.
 The rules land as `**Since: W4**` sections in `requirements/planning-requirements.md`, the method in `guides/planning-and-tracking.md`, and the Week 4 deliverables in `course/syllabus.md`, and the routers stay in step in the same change; the plan and threshold structures the planning requirements own are not reopened.
 `tmp/itpd-2025/lectures/lecture-2.1.pdf` is the planning source; `tmp/itpd-2025/assignments/assignment-2.md` carries the story-points exercise, and `tmp/itpd-2025/assignments/assignment-3.md` and `assignment-4.md` carry the 2025 planning, grooming, and retrospective checklists; estimation has no source material anywhere in the 2025 decks and must be written from scratch.
@@ -42,7 +42,7 @@ The rules land as `**Since: W4**` sections in `requirements/planning-requirement
 
 ## Acceptance Criteria
 <!-- AC:BEGIN -->
-- [ ] #1 `requirements/planning-requirements.md` gains a `**Since: W4**` section for sprint planning and grooming, in the file's shape: planning opens the sprint, selects its issues from the product backlog, sets their `Sprint`, `Responsible`, and `Accountable` values and the matching assignees, and replaces the provisional goal with the sprint goal; grooming keeps the product backlog ready between sprints; the section cites the Week 3 sprint and issue-field rules rather than restating them, and the file's table of contents and `Required`/`Recommended`/`Example` labels stay in step
+- [ ] #1 `requirements/planning-requirements.md` gains a `**Since: W4**` section for sprint planning and grooming, in the file's shape: planning opens the sprint, selects its issues from the product backlog, assigns them to the sprint's GitHub milestone and sets their `Responsible` and `Accountable` values with the matching assignees, and replaces the provisional goal with the sprint goal; grooming keeps the product backlog ready between sprints; the section cites the Week 3 sprint and issue-field rules rather than restating them, and the file's table of contents and `Required`/`Recommended`/`Example` labels stay in step
 - [ ] #2 Estimation is required with no unit prescribed: the approach is decided and stated in `requirements/planning-requirements.md`, or deliberately left to teams with the reason recorded, and story points stay unprescribed unless that decision changes
 - [ ] #3 `reports/week-NN/sprint-retrospective.md` gets its structure and rules in `requirements/planning-requirements.md`, and every sprint from `SPRINT-04` on ends with a retrospective that the weekly report links as a supporting artifact
 - [ ] #4 The retrospective name and path are checked against the Week 9 project reflection and the Week 10 course retrospective, so no two artifacts share the word ambiguously

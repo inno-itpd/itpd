@@ -7,9 +7,9 @@ How the `SPRINT-nn`, `MLS-nn`, `REL-nn`, and `TOS-nn` identifiers are issued and
 <h2>Table of contents</h2>
 
 - [Where The Plan And The Threshold Live](#where-the-plan-and-the-threshold-live)
+- [Milestones](#milestones)
 - [Sprints](#sprints)
 - [Releases](#releases)
-- [Milestones](#milestones)
 - [Progress Monitoring](#progress-monitoring)
 - [The Threshold Of Success](#the-threshold-of-success)
 - [Full Example](#full-example)
@@ -26,43 +26,81 @@ They are created in Week 3 in their final place and stay current for the rest of
 1. The project plan is `docs/project-plan.md`.
    It carries these parts, in this order, and the linked rule says what each part must say:
 
-   - The **sprints**, per [Sprints](#sprints): the `## Sprints` table and one `### SPRINT-nn` section per sprint, each with its release per [Releases](#releases).
-   - The **milestones**, per [Milestones](#milestones): the `## Milestones` table and one `### MLS-nn` section per milestone.
+   - The **milestones**, per [Milestones](#milestones): one `### MLS-nn` section per milestone.
+   - The **sprints**, per [Sprints](#sprints): one `### SPRINT-nn` section per sprint, each with its goal, its due date, its sprint backlog, and its release per [Releases](#releases).
    - The **progress monitoring**, per [Progress Monitoring](#progress-monitoring), last.
 
 2. The threshold of success is `docs/threshold-of-success.md`.
    It carries one `## TOS-nn` section per goal and, below them, the failure and success statements they came from, per [The Threshold Of Success](#the-threshold-of-success).
 
+## Milestones
+
+**Since: W3**
+
+A **milestone** is an increment on the path to the threshold, due at the end of a week.
+The work toward it may span one or more sprints, and not every week has one of its own: the releases give the weekly cadence, and the milestones give the increments on the path to the threshold of success.
+A milestone is plan documentation only: it has no GitHub milestone of its own, because each sprint is one, and its section reaches the platform through its sprints.
+It carries no state, per [Identifier Rules](general-requirements.md#identifier-rules).
+Each increment names the sprints that complete it, and a sprint belongs to at most one of them.
+A sprint no milestone covers is still scheduled in its own GitHub milestone, per [Sprints](#sprints), and an issue the team has not scheduled sits in no sprint's milestone; there is still no parking milestone.
+
+**Required**
+
+1. Number each milestone by the week it is due in: `MLS-03` is due at the end of Week 3.
+   A week with no milestone leaves a gap in the sequence, which [Identifier Rules](general-requirements.md#identifier-rules) expects.
+2. The plan carries one `### MLS-nn` section per milestone under `## Milestones`.
+3. A `### MLS-nn` section opens with these fields, in this order, as a bulleted list, per [Identifier Rules](general-requirements.md#identifier-rules):
+
+   | Field           | What it says                                                                                               |
+   | --------------- | ---------------------------------------------------------------------------------------------------------- |
+   | `**Due:**`      | The hard deadline of the due week, from the syllabus, the date the last sprint's GitHub milestone carries. |
+   | `**Sprints:**`  | The consecutive `SPRINT-nn` run the milestone is worked on in, each linked, one or more.                   |
+   | `**Advances:**` | The `TOS-nn` goal or goals the milestone serves, each linked, at least one.                                |
+
+4. A description of the increment follows the fields.
+   Its first sentence states what the increment delivers, so a reader who stops there has the milestone, and it is the one place the increment's scope is edited.
+   Later sentences may add scope, sequencing, or the problem the increment beats, and do not restate `**Sprints:**` or `**Advances:**`.
+5. The milestone does not repeat the `VP-nn`: it reaches the vision through its `**Advances:**`, and the vision's goal links the threshold, per [Goal](product-vision-requirements.md#goal).
+6. The team chooses its milestone set.
+   In Week 3 it writes one: `MLS-03`, whose focus is delivering the MUP.
+   Further milestones are the team's choice: each is written when the team defines the increment it delivers, and its number follows its due week, so one due at the end of Week 5 is `MLS-05`; the week is the team's choice.
+7. The `**Sprints:**` runs are disjoint and consecutive, and each ends in the week its milestone is due, so a sprint belongs to at most one milestone.
+   The runs need not cover every sprint: a sprint no run names is still planned in its `### SPRINT-nn` section and scheduled in its GitHub milestone, per [Sprints](#sprints).
+   An issue is scheduled by being assigned to its sprint's GitHub milestone, per [Scheduling An Issue](issue-tracking-requirements.md#scheduling-an-issue), and a reschedule moves it to the later sprint's milestone.
+
 ## Sprints
 
 **Since: W3**
 
-A **sprint** is one submission week, with a timebox, a goal, and a release of its own.
-Every week from Week 3 to Week 9 is a sprint, so the plan carries seven of them, `SPRINT-03` to `SPRINT-09`.
+A **sprint** is one submission week, with a timebox, a goal, a release of its own, and a GitHub milestone.
+Every week from Week 3 to Week 9 is a sprint, so the plan carries seven of them, `SPRINT-03` to `SPRINT-09`, and each is a GitHub milestone.
 
 **Required**
 
 1. Each sprint is `SPRINT-nn` after its week number, per [Identifier Rules](general-requirements.md#identifier-rules), and the plan carries one `### SPRINT-nn` section per sprint, in sprint order, under `## Sprints`.
-2. `## Sprints` opens with a table whose columns are these, in this order:
-
-   | Column    | What it holds                                                                                        |
-   | --------- | ---------------------------------------------------------------------------------------------------- |
-   | `Sprint`  | The `SPRINT-nn`, linked to its section, such as `[SPRINT-03](#sprint-03)`                            |
-   | `Due`     | The hard deadline of the sprint's week, from the syllabus, such as `2026-10-17`                      |
-   | `Release` | The sprint's `REL-nn`, linked to its section, such as `[REL-03](#rel-03)`, per [Releases](#releases) |
-
+2. Each sprint is a GitHub **milestone** titled `SPRINT-nn: <focus>`, such as `SPRINT-03: Pay at booking`, with the hard deadline of its week as the due date.
+   The focus is a short phrase, and the sprint's goal stays in the plan's section.
+   Create all seven milestones when the plan is written, so that scheduling an issue is assigning it to a milestone that already exists.
 3. A `### SPRINT-nn` section opens with the sprint's goal, in one sentence: what the sprint is for, stated as a result rather than as a list of tasks.
 4. A sprint the team has not planned yet states a **provisional** goal: one sentence, kept current until the sprint is planned, so the plan leaves no future week without direction.
-5. Under the goal, the section carries its only field, `**Sprint Backlog:**`: a link to the issue view filtered by the sprint's `Sprint` value, such as `field.Sprint:SPRINT-03`, which lists the issues scheduled into the sprint.
-   The field appears once the sprint has issues.
-6. The plan does not copy that list: scheduling is the `Sprint` field's job, per [Issue Fields](issue-tracking-requirements.md#issue-fields).
+5. Under the goal, the section carries these fields, in this order, as a bulleted list, per [Identifier Rules](general-requirements.md#identifier-rules):
+
+   | Field                 | What it says                                                                                                                                                                                                                                                                                     |
+   | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+   | `**Due:**`            | The hard deadline of the sprint's week, from the syllabus, such as `2026-10-17`, the date its GitHub milestone carries.                                                                                                                                                                          |
+   | `**Sprint Backlog:**` | A link to the sprint's GitHub milestone, such as `https://github.com/<organization>/<repo>/milestone/<number>`, which lists the issues scheduled into the sprint. The number is the one GitHub assigned to the milestone, not the sprint's number. The field appears once the sprint has issues. |
+
+6. The plan does not copy that list: scheduling is assigning an issue to its sprint's milestone, per [Scheduling An Issue](issue-tracking-requirements.md#scheduling-an-issue).
+7. Close the sprint's GitHub milestone once its release is cut, per [Releases](#releases).
+   An issue still open is first rescheduled into a later sprint's milestone, per [Scheduling An Issue](issue-tracking-requirements.md#scheduling-an-issue).
 
 **Example**
 
-The `**Sprint Backlog:**` field of a planned sprint:
+The fields of a planned sprint:
 
 ```markdown
-- **Sprint Backlog:** [the issues scheduled into SPRINT-03](https://github.com/<organization>/<repo>/issues?q=field.Sprint:SPRINT-03)
+- **Due:** 2026-10-17
+- **Sprint Backlog:** [the issues scheduled into SPRINT-03](https://github.com/<organization>/<repo>/milestone/1)
 ```
 
 ## Releases
@@ -93,51 +131,6 @@ The changelog, the tags, and the release titles follow [Release Requirements](re
 
 - Put what should point at the release into its GitHub release body, such as the changelog section for that version and the week's report.
 
-## Milestones
-
-**Since: W3**
-
-A **milestone** is an increment on the path to the threshold, due at the end of a week.
-The sprints working toward it may span one or more sprints, and not every week has one: the releases give the weekly cadence, and the milestones give the increments on the path to the threshold of success.
-An issue belongs to a milestone only when it is part of that increment, so there is no parking milestone; the week it is worked in comes from its `Sprint` field, per [Issue Fields](issue-tracking-requirements.md#issue-fields).
-
-**Required**
-
-1. Number each milestone by the week it is due in: `MLS-03` is due at the end of Week 3.
-   A week with no milestone leaves a gap in the sequence, which [Identifier Rules](general-requirements.md#identifier-rules) expects.
-2. Create each milestone on GitHub with the title `MLS-nn: <focus>`, such as `MLS-03: Deliver MUP`, and its due date.
-   The title carries the number and the focus, and does not repeat the week number.
-3. The plan carries one `### MLS-nn` section per milestone under `## Milestones`, and `## Milestones` opens with a table whose columns are these, in this order:
-
-   | Column      | What it holds                                                                        |
-   | ----------- | ------------------------------------------------------------------------------------ |
-   | `Milestone` | The `MLS-nn`, linked to its section, such as `[MLS-03](#mls-03)`                     |
-   | `Due`       | The milestone's due date, the one its GitHub milestone carries, such as `2026-10-17` |
-
-4. A `### MLS-nn` section opens with these fields, in this order, as a bulleted list, per [Identifier Rules](general-requirements.md#identifier-rules):
-
-   | Field            | What it says                                                                                                                                                                                               |
-   | ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-   | `**Milestone:**` | The GitHub milestone title as link text, linked to the milestone itself, such as `[MLS-03: Deliver MUP](https://github.com/<organization>/<repo>/milestone/3)`; the linked title is the milestone's scope. |
-   | `**Due:**`       | The hard deadline of the due week, from the syllabus, matching the GitHub milestone.                                                                                                                       |
-   | `**Done when:**` | The observable check that says the increment is finished, distinct from the description below the fields.                                                                                                  |
-   | `**Sprints:**`   | The `SPRINT-nn` the milestone is worked on in, each linked, one or more.                                                                                                                                   |
-   | `**Advances:**`  | The `TOS-nn` goal or goals the milestone serves, each linked, at least one.                                                                                                                                |
-
-5. A description of the increment follows the fields.
-   Its first sentence states what the increment delivers, so a reader who stops there has the milestone, and it is the one place the increment's scope is edited.
-   Later sentences may add scope, sequencing, or the problem the increment beats, and do not restate `**Done when:**`, `**Sprints:**`, or `**Advances:**`.
-6. The milestone does not repeat the `VP-nn`: it reaches the vision through its `**Advances:**`, and the vision's goal links the threshold, per [Goal](product-vision-requirements.md#goal).
-7. The team chooses its milestone set.
-   In Week 3 it creates at least two: `MLS-03`, whose focus is delivering the MUP, and one more for the next increment, which the team defines.
-   The second milestone's number follows its due week, so one due at the end of Week 5 is `MLS-05`; the week is the team's choice.
-8. Close the GitHub milestone once its `**Done when:**` check passes.
-   The section stays as written, because the platform carries the state, per [Identifier Rules](general-requirements.md#identifier-rules).
-
-**Recommended**
-
-- Write `**Done when:**` as the check the customer could run, not as a summary of the description.
-
 ## Progress Monitoring
 
 **Since: W3**
@@ -147,13 +140,13 @@ That review is where the threshold of success and the risks are looked at; the w
 
 **Required**
 
-1. `## Progress Monitoring` is the plan's last part, after the sprint and milestone sections.
+1. `## Progress Monitoring` is the plan's last part, after the milestone and sprint sections.
 2. It is a bulleted list, one `- **Label:** value` bullet per item, as an identifier's fields are per [Identifier Rules](general-requirements.md#identifier-rules).
 3. The list names three things:
 
    - The team's weekly review and when it is held.
    - Who checks the artifacts the review covers.
-   - Where progress is visible: the public GitHub project's table view, per [GitHub Projects](issue-tracking-requirements.md#github-projects), the sprint backlog view, and the milestone list.
+   - Where progress is visible: the public GitHub project's table view, per [GitHub Projects](issue-tracking-requirements.md#github-projects), and the sprints' GitHub milestones.
 
 4. The review reads `docs/threshold-of-success.md` and `docs/risks.md`, per [Risk Requirements](risks-requirements.md).
    The plan links `docs/risks.md` once, from this list.
@@ -225,18 +218,25 @@ From `docs/project-plan.md`:
 ```markdown
 # Project plan
 
-## Sprints
+## Milestones
 
-| Sprint                  | Due        | Release           |
-| ----------------------- | ---------- | ----------------- |
-| [SPRINT-03](#sprint-03) | 2026-10-17 | [REL-03](#rel-03) |
-| [SPRINT-04](#sprint-04) | 2026-10-23 | [REL-04](#rel-04) |
+### MLS-03
+
+- **Due:** 2026-10-17
+- **Sprints:** [SPRINT-03](#sprint-03)
+- **Advances:** [TOS-01](threshold-of-success.md#tos-01)
+
+A client goes from the coach's booking link to a paid, confirmed booking.
+Rescheduling and reminders build on this slice in the next increment.
+
+## Sprints
 
 ### SPRINT-03
 
 A client books a paid slot and receives the meeting link and the materials.
 
-- **Sprint Backlog:** [the issues scheduled into SPRINT-03](https://github.com/<organization>/<repo>/issues?q=field.Sprint:SPRINT-03)
+- **Due:** 2026-10-17
+- **Sprint Backlog:** [the issues scheduled into SPRINT-03](https://github.com/<organization>/<repo>/milestone/1)
 
 #### REL-03
 
@@ -246,30 +246,15 @@ Released as [v0.1.0](https://github.com/<organization>/<repo>/releases/tag/v0.1.
 
 A client can reschedule a booking without emailing the coach.
 
+- **Due:** 2026-10-23
+
 #### REL-04
-
-## Milestones
-
-| Milestone         | Due        |
-| ----------------- | ---------- |
-| [MLS-03](#mls-03) | 2026-10-17 |
-
-### MLS-03
-
-- **Milestone:** [MLS-03: Deliver MUP](https://github.com/<organization>/<repo>/milestone/3)
-- **Due:** 2026-10-17
-- **Done when:** a clean checkout completes the core task end to end by following [setup.md](setup.md).
-- **Sprints:** [SPRINT-03](#sprint-03)
-- **Advances:** [TOS-01](threshold-of-success.md#tos-01)
-
-A client goes from the coach's booking link to a paid, confirmed booking.
-Rescheduling and reminders build on this slice in the next increment.
 
 ## Progress Monitoring
 
 - **Review:** the team's weekly review, Mondays at 17:00, before the customer meeting; it reviews [threshold-of-success.md](threshold-of-success.md) and [risks.md](risks.md).
 - **Checked by:** the accountable member of each scheduled issue reports its state, and the team walks the sprint backlog against the sprint's goal.
-- **Visible at:** the [project's table view](https://github.com/orgs/<organization>/projects/<number>), the sprint backlog view, and the milestone list.
+- **Visible at:** the [project's table view](https://github.com/orgs/<organization>/projects/<number>) and the sprints' GitHub milestones.
 ```
 
 From `docs/threshold-of-success.md`:
