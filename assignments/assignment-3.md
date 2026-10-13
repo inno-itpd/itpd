@@ -9,11 +9,11 @@ See [Deadlines And Submission](../course/rules.md#deadlines-and-submission).
 
 One submission per team.
 
-Week 2 ended with a candidate, the customer's verdict on it, and no product code.
+Week 2 ended with a candidate for a minimum usable product, the customer's verdict on it, and no product code.
 This week the project gets both a plan and its first product code: you set the bar for its success, write the plan that reaches it, define what done means, and build the candidate into one working slice on `main`.
 
 What you hand in is a plan a reader can hold you to, and the working slice behind it, released as the sprint's tagged version.
-Deployment is not part of this week: the production instance arrives in Week 5.
+Deployment is not part of this week.
 
 The tools the course suggests, from meeting transcripts to a coding agent, are in [Course Tooling](../course/tooling.md).
 
@@ -41,6 +41,10 @@ The tools the course suggests, from meeting transcripts to a coding agent, are i
 By the end of this week you should be able to show a reader:
 
 - The minimum set of goals the project must achieve, each with the measure that settles it, and the failure statements the set answers.
+
+<!-- TODO maybe not all seven -->
+<!-- milestone for the next increment? -->
+
 - A plan from here to those goals: seven sprints with a goal and a release each, and a milestone for the MUP and one for the next increment.
 - The risks that could take the plan away, each with a trigger, a window, a mitigation, and a fallback.
 - What done means for a story, a task, and a pull request, and the workflow around it: the contributing guide, the three issue fields, and the public project.
