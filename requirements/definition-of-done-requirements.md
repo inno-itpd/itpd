@@ -77,11 +77,15 @@ A **pull request** is the change that closes one task issue, and the list says w
    - A pull request closes exactly one task issue and links it, per [Closing A Task](task-issues-requirements.md#closing-a-task).
    - The accountable reviewer ticks every task acceptance criterion before approving, per [Closing A Task](task-issues-requirements.md#closing-a-task).
    - The approval comes from a member other than the author, per [Review And Approval](pull-requests-requirements.md#review-and-approval).
-   - The repository checks are green: the [link check](repository-requirements.md#link-checking), the [Markdown check](repository-requirements.md#continuous-integration), and the [product-code CI](repository-requirements.md#continuous-integration).
+   - The repository checks are green: the [link check](repository-requirements.md#link-checking) and the [Markdown check](repository-requirements.md#continuous-integration).
    - A user-visible change updates the `[Unreleased]` section of `CHANGELOG.md`, per [The Changelog](releases-requirements.md#the-changelog).
    - The acceptance criteria this pull request claims pass on its branch, and on `main` after it merges.
    - No secret, recording, or private-only material is committed, per [Sensitive Information Reference](visibility-requirements.md#sensitive-information-reference).
    - Implementation notes in the pull request description record the decisions made and how the change was checked, per [The Pull Request Template](pull-requests-requirements.md#the-pull-request-template).
+
+**Since: W4**
+
+2. From Week 4, the list also names the [product-code CI](repository-requirements.md#continuous-integration) among the checks that must be green.
 
 ## Full Example
 
@@ -111,7 +115,7 @@ Work tracked in the in-repository task tracker follows the tracker's own Definit
 - A pull request closes exactly one task issue and links it.
 - The accountable reviewer ticks every task acceptance criterion before approving.
 - The approval comes from a member other than the author.
-- The repository checks are green: the link check, the Markdown check, and the product-code CI.
+- The repository checks are green: the link check and the Markdown check.
 - A user-visible change updates the `[Unreleased]` section of [`CHANGELOG.md`](../CHANGELOG.md).
 - The acceptance criteria this pull request claims pass on its branch, and on `main` after it merges.
 - No secret, recording, or private-only material is committed.

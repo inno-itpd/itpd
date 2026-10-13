@@ -132,15 +132,12 @@ The rules:
 - Build the candidate's stories into one working slice merged into `main`, through task issues and one pull request per task: [Building, Delivering, And Releasing The Candidate](../requirements/minimum-usable-product-requirements.md#building-delivering-and-releasing-the-candidate).
 - One pull request closes exactly one task issue: [Closing A Task](../requirements/task-issues-requirements.md#closing-a-task).
 - The slice is working when a clean checkout completes the core task end to end by following `docs/setup.md`: [Setup And Run Instructions](../requirements/repository-requirements.md#setup-and-run-instructions).
-- Add product-code CI, covering linting, formatting or type checking, the build, and the tests, on pull requests and on `main`, beside the checks already running: [Continuous Integration](../requirements/repository-requirements.md#continuous-integration).
-- Pin every third-party action: [Pinning Third-Party Actions](../requirements/repository-requirements.md#pinning-third-party-actions).
 
 This week:
 
 1. Open a task issue for each unit of work on the candidate, and merge one pull request per task.
 2. Merge each pull request before the customer meeting: nothing is left on a branch, and the slice is not partially merged.
-3. Add the product-code CI workflow for the stack, on pull requests and on `main`.
-4. Run the slice from a clean checkout by following `docs/setup.md`.
+3. Run the slice from a clean checkout by following `docs/setup.md`.
 
 ## Part 6: Publish The Docs Site And Write The Setup Page
 
@@ -270,7 +267,6 @@ This week it also carries:
    | GitHub project              | your project's table view                                                                          |
    | Minimum usable product      | the `US-nn` of the candidate, merged into `main` and shown at the meeting                          |
    | Changelog and first release | `CHANGELOG.md`, and the first release                                                              |
-   | Product-code CI             | the product-code workflows under `.github/workflows/`, and their latest green `main` run           |
    | Documentation site          | your site's URL                                                                                    |
    | Setup and run instructions  | `docs/setup.md`                                                                                    |
    | Week 2 action points        | `## Previous action points` in `reports/week-03/meeting-report.md`                                 |
@@ -281,7 +277,7 @@ This week it also carries:
 
    If the customer refused publication of the transcript, that row says so and points at the Moodle submission instead.
 
-4. Repository evidence: one merged pull request that closed its task issue, and the latest green link check, Markdown check, and product-code CI runs on `main`.
+4. Repository evidence: one merged pull request that closed its task issue, and the latest green link check and Markdown check runs on `main`.
 5. `## Deviations`: anything you did differently from this assignment, per [Declaring Deviations](../requirements/weekly-report-requirements.md#declaring-deviations).
 
 ## Assignment Report On Moodle
@@ -316,7 +312,6 @@ A transcript under item 5 goes in an appendix, which the two pages do not count.
 - [ ] The public GitHub project with its table view over the fields and the assignees ([Part 4](#part-4-define-done-and-the-workflow)).
 - [ ] Every issue the plan schedules carries the three values and both members as assignees, at minimum the `SPRINT-03` set ([Part 4](#part-4-define-done-and-the-workflow)).
 - [ ] **Every candidate story built into `main` through task issues and pull requests, and shown at the meeting or moved out by the customer's decision** ([Part 5](#part-5-build-the-minimum-usable-product)).
-- [ ] The product-code CI green on `main` ([Part 5](#part-5-build-the-minimum-usable-product)).
 - [ ] The docs site published and linked, and `docs/setup.md` linked from the root README ([Part 6](#part-6-publish-the-docs-site-and-write-the-setup-page)).
 - [ ] Each Week 2 action point's outcome in `## Previous action points`, and in the artifact it changed ([Part 7](#part-7-carry-out-the-week-2-action-points-and-open-questions)).
 - [ ] Each Week 2 open question answered or carried forward in `## Previous open questions` ([Part 7](#part-7-carry-out-the-week-2-action-points-and-open-questions)).
