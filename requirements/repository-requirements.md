@@ -374,6 +374,8 @@ The three fields carry who works on an issue and when the team plans to finish i
 2. Keep an `[Unreleased]` section during development, with an entry for every user-visible change, grouped under `Added`, `Changed`, `Deprecated`, `Removed`, `Fixed`, and `Security`.
 3. Add a changelog line to the pull request template: either the change is user-visible and the entry is updated, or it is not user-visible.
 4. Version with [Semantic Versioning](https://semver.org/) and prefix tags with `v`, for example `v0.1.0`.
+   Title the release with the tag, so the title and the tag match, for example `v0.1.0` in both.
+   A nickname for the release goes in its body, not its title.
 5. Each tag points at a commit on `main`.
    Protect mapped tags from being moved or deleted.
 6. When you cut a release, move the included entries into a dated section, link the section to the release, and open a new empty `[Unreleased]`.

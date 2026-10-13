@@ -181,6 +181,7 @@ The release itself is about the product code, so the documents following it do n
 ### Pick the number from what a user could observe
 
 The tag is the team's choice under SemVer, per [Changelog, Releases And Versioning](../requirements/repository-requirements.md#changelog-releases-and-versioning).
+The release repeats the tag as its title, so the version reads the same wherever the release is linked.
 A first release with no users is usually `v0.1.0`; after that, a fix a user could notice is a patch, a new capability is a minor, and a change that breaks how an existing user works is a major.
 When the number is not obvious, ask what a user would see, because that is what the version communicates.
 
