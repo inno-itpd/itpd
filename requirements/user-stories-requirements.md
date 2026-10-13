@@ -67,7 +67,7 @@ Each story is a GitHub issue, and the `user-story` label identifies story issues
 
 **Since: W2**
 
-The rules every issue shares, such as disabling blank issues, are in [Issue Tracking](repository-requirements.md#issue-tracking).
+The rules every issue shares, such as disabling blank issues, are in [Issue Tracking](issue-tracking-requirements.md).
 
 **Required**
 
@@ -118,7 +118,7 @@ Its job is to make one need concrete enough that a reviewer can tell whether you
    The `VP-nn` is how a story traces to the product vision, so the `VP-nn` of every story except a `Won't Have` story is one the vision's [goal](product-vision-requirements.md#goal) traces to.
    A story you intend to build that supports no such value proposition is outside the vision: add its `VP-nn` to the goal as a [team decision](decisions-requirements.md#the-decision), or make the story `Won't Have`.
    Cite the `VP-nn` and each entry of both lists as [Identifier Rules](general-requirements.md#identifier-rules) says, and link each Week 1 identifier per [Traceability Into Later Weeks](general-requirements.md#traceability-into-later-weeks).
-   Link each file on `main`, per [Issue Tracking](repository-requirements.md#issue-tracking).
+   Link each file on `main`, per [Linking A File From An Issue Or A Pull Request](issue-tracking-requirements.md#linking-a-file-from-an-issue-or-a-pull-request).
    A need from outside the Week 1 research is handled per [Traceability Into Later Weeks](general-requirements.md#traceability-into-later-weeks).
 5. Every story except a `Won't Have` story is small enough to build and verify in one week.
    A need larger than that is written as two or more stories.
@@ -204,11 +204,11 @@ Could Have: a reminder email reduces no-shows, but a client who paid already has
 The three values say when the team plans to finish a story, and which two members maintain and verify it.
 The story's assignees name the same two members, because a GitHub assignee carries no role of its own.
 They and the assignees are set on the issue after it is created, so no issue form change is needed.
-The fields themselves, their options, and their visibility are defined in [Issue Fields](repository-requirements.md#issue-fields), and the assignee rule in [Assignees](repository-requirements.md#assignees).
+The fields themselves, their options, and their visibility are defined in [Issue Fields](issue-tracking-requirements.md#issue-fields), and the assignee rule in [Assignees](issue-tracking-requirements.md#assignees).
 
 **Required**
 
-1. The team sets the three values together when it schedules the story into a sprint: `Sprint` names the sprint the team plans to finish the story in, `Responsible` and `Accountable` name two different members, and the same two members are the story's assignees, per [Assignees](repository-requirements.md#assignees).
+1. The team sets the three values together when it schedules the story into a sprint: `Sprint` names the sprint the team plans to finish the story in, `Responsible` and `Accountable` name two different members, and the same two members are the story's assignees, per [Assignees](issue-tracking-requirements.md#assignees).
 2. On a story, the responsible member maintains the story and its acceptance criteria; the accountable member verifies that it is ready to be shown, with every criterion runnable and every link on the issue resolving, per [the story items of the Definition of Done](definition-of-done-requirements.md#the-story).
 3. A reschedule or a change of hands updates the values and the assignees; an open story the team has not scheduled carries none, and an already closed story needs none.
 

@@ -145,7 +145,7 @@ This is what makes the course a project rather than nine separate assignments.
 **Required**
 
 1. When a later artifact cites a Week 1 identifier, link to the section it refers to by its identifier anchor, such as `decisions.md#dec-006`, per [Identifier Rules](#identifier-rules).
-   From an issue or a pull request, link it on `main`, per [Issue Tracking](repository-requirements.md#issue-tracking).
+   From an issue or a pull request, link it on `main`, per [Linking A File From An Issue Or A Pull Request](issue-tracking-requirements.md#linking-a-file-from-an-issue-or-a-pull-request).
 2. If later work contradicts something in your research, update the research.
    A changed gap or value proposition records the change under `**Changed:**`, per [Gap Analysis](research-requirements.md#gap-analysis), and a dropped item is kept per [Identifier Rules](#identifier-rules).
    The research is maintained documentation, not a frozen Week 1 submission.

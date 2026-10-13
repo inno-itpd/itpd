@@ -55,7 +55,7 @@ Every week from Week 3 to Week 9 is a sprint, so the plan carries seven of them,
 4. A sprint the team has not planned yet states a **provisional** goal: one sentence, kept current until the sprint is planned, so the plan leaves no future week without direction.
 5. Under the goal, the section carries its only field, `**Sprint Backlog:**`: a link to the issue view filtered by the sprint's `Sprint` value, such as `field.Sprint:SPRINT-03`, which lists the issues scheduled into the sprint.
    The field appears once the sprint has issues.
-6. The plan does not copy that list: scheduling is the `Sprint` field's job, per [Issue Tracking](repository-requirements.md#issue-tracking).
+6. The plan does not copy that list: scheduling is the `Sprint` field's job, per [Issue Fields](issue-tracking-requirements.md#issue-fields).
 
 **Example**
 
@@ -99,7 +99,7 @@ The changelog, the tags, and the release titles follow [Release Requirements](re
 
 A **milestone** is an increment on the path to the threshold, due at the end of a week.
 The sprints working toward it may span one or more sprints, and not every week has one: the releases give the weekly cadence, and the milestones give the increments on the path to the threshold of success.
-An issue belongs to a milestone only when it is part of that increment, so there is no parking milestone; the week it is worked in comes from its `Sprint` field, per [Issue Tracking](repository-requirements.md#issue-tracking).
+An issue belongs to a milestone only when it is part of that increment, so there is no parking milestone; the week it is worked in comes from its `Sprint` field, per [Issue Fields](issue-tracking-requirements.md#issue-fields).
 
 **Required**
 
@@ -153,7 +153,7 @@ That review is where the threshold of success and the risks are looked at; the w
 
    - The team's weekly review and when it is held.
    - Who checks the artifacts the review covers.
-   - Where progress is visible: the public GitHub project's table view, per [GitHub Projects](repository-requirements.md#github-projects), the sprint backlog view, and the milestone list.
+   - Where progress is visible: the public GitHub project's table view, per [GitHub Projects](issue-tracking-requirements.md#github-projects), the sprint backlog view, and the milestone list.
 
 4. The review reads `docs/threshold-of-success.md` and `docs/risks.md`, per [Risk Requirements](risks-requirements.md).
    The plan links `docs/risks.md` once, from this list.

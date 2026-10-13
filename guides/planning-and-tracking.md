@@ -3,7 +3,7 @@
 How to turn the threshold of success into a plan the team follows, a register of what could stop it, and a weekly review that holds both against reality.
 
 The rules are in [Planning Requirements](../requirements/planning-requirements.md) for the plan, the threshold, and the review, and in [Risk Requirements](../requirements/risks-requirements.md) for the register.
-The scheduling mechanics are in [Issue Tracking](../requirements/repository-requirements.md#issue-tracking), the release mechanics in [Release Requirements](../requirements/releases-requirements.md), and the decision log in [Decision Requirements](../requirements/decisions-requirements.md).
+The scheduling mechanics are in [Issue Tracking](../requirements/issue-tracking-requirements.md), the release mechanics in [Release Requirements](../requirements/releases-requirements.md), and the decision log in [Decision Requirements](../requirements/decisions-requirements.md).
 This guide is the method: what to decide first, how to phrase it, and what the team does with it every week.
 
 **Timebox:** about a day for the whole team, spent unevenly.
@@ -134,7 +134,7 @@ A team defines its own milestone set, and a course this long usually has a handf
 The set comes from the increments rather than from the calendar: number each milestone by the week it is due in, and let a week without one leave a gap.
 
 The plan holds increments, never the issue list.
-Which issue is worked on when is a `Sprint` field value, per [Issue Tracking](../requirements/repository-requirements.md#issue-tracking), so the same issue can move between sprints without rewriting the roadmap.
+Which issue is worked on when is a `Sprint` field value, per [Issue Fields](../requirements/issue-tracking-requirements.md#issue-fields), so the same issue can move between sprints without rewriting the roadmap.
 
 ## Step 3: Write The Sprints And Their Releases
 
@@ -162,7 +162,7 @@ A provisional goal is a direction the plan currently believes, not a promise to 
 
 ### Schedule with the field, not in the file
 
-When a sprint is planned, the issues that make its goal true carry three values and two assignees: the `Sprint` they belong to, the `Responsible` and `Accountable` members who do the work and verify it, and those same two members as the issue's assignees, per [Issue Tracking](../requirements/repository-requirements.md#issue-tracking).
+When a sprint is planned, the issues that make its goal true carry three values and two assignees: the `Sprint` they belong to, the `Responsible` and `Accountable` members who do the work and verify it, and those same two members as the issue's assignees, per [Issue Tracking](../requirements/issue-tracking-requirements.md).
 The plan's `**Sprint Backlog:**` field links the filtered issue view, so the plan never copies the list and never goes stale.
 
 ### Releases
@@ -294,7 +294,7 @@ Holding the review before the meeting means the meeting can spend its time on th
 ### Put progress where it can be seen without the plan
 
 The plan names the GitHub project's table view, the sprint backlog view, and the milestone list, and those are the answer to "how far along is this?" without anyone opening a file.
-The table view is the whole backlog at a glance, and the other two scope the same issues to the sprint and the milestone, per [GitHub Projects](../requirements/repository-requirements.md#github-projects).
+The table view is the whole backlog at a glance, and the other two scope the same issues to the sprint and the milestone, per [GitHub Projects](../requirements/issue-tracking-requirements.md#github-projects).
 The views are always current because the work itself updates them: a percentage in the plan drifts the day somebody forgets it, and the issue field does not.
 
 ## Step 7: Review And Adjust
