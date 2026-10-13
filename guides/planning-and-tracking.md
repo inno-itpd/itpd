@@ -293,7 +293,8 @@ Holding the review before the meeting means the meeting can spend its time on th
 
 ### Put progress where it can be seen without the plan
 
-The plan names the sprint backlog view and the milestone list, and those two are the answer to "how far along is this?" without anyone opening a file.
+The plan names the GitHub project's table view, the sprint backlog view, and the milestone list, and those are the answer to "how far along is this?" without anyone opening a file.
+The table view is the whole backlog at a glance, and the other two scope the same issues to the sprint and the milestone, per [GitHub Projects](../requirements/repository-requirements.md#github-projects).
 The views are always current because the work itself updates them: a percentage in the plan drifts the day somebody forgets it, and the issue field does not.
 
 ## Step 7: Review And Adjust

@@ -153,7 +153,7 @@ That review is where the threshold of success and the risks are looked at; the w
 
    - The team's weekly review and when it is held.
    - Who checks the artifacts the review covers.
-   - Where progress is visible, such as the sprint backlog view and the milestone list.
+   - Where progress is visible: the public GitHub project's table view, per [GitHub Projects](repository-requirements.md#github-projects), the sprint backlog view, and the milestone list.
 
 4. The review reads `docs/threshold-of-success.md` and `docs/risks.md`, per [Risk Requirements](risks-requirements.md).
    The plan links `docs/risks.md` once, from this list.
@@ -270,7 +270,7 @@ Rescheduling and reminders build on this slice in the next increment.
 
 - **Review:** the team's weekly review, Mondays at 17:00, before the customer meeting; it reviews [threshold-of-success.md](threshold-of-success.md) and [risks.md](risks.md).
 - **Checked by:** the accountable member of each scheduled issue reports its state, and the team walks the sprint backlog against the sprint's goal.
-- **Visible at:** the sprint backlog view and the milestone list.
+- **Visible at:** the [project's table view](https://github.com/orgs/<organization>/projects/<number>), the sprint backlog view, and the milestone list.
 ```
 
 From `docs/threshold-of-success.md`:
