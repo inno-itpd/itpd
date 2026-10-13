@@ -190,6 +190,7 @@ The steps that produce the set, from picturing failure to keeping the minimal se
 
 3. While a goal is `Open`, its text, including a date, may change, and the bar moves only with the customer's agreement.
    Record each change as one bullet under `**Changed:**`, saying what changed and citing the customer's `DEC-nnn`.
+   A goal added later is a bar move too: its first `**Changed:**` bullet says it was added and cites the customer's `DEC-nnn`.
    The bar never moves silently.
 4. Set `Achieved` when the `**Measure:**` is met, and `Missed` as soon as it is certain the goal will not be achieved, mid-course included.
    Either verdict adds `**Outcome:**`, saying what was found and linking the evidence and any `DEC-nnn`.
@@ -198,19 +199,22 @@ The steps that produce the set, from picturing failure to keeping the minimal se
    `Dropped` is final.
 6. Below the goals, the file carries a `## Failure And Success Statements` section: one table, whose columns are these, in this order:
 
-   | Column              | What it holds                                                                                                   |
-   | ------------------- | --------------------------------------------------------------------------------------------------------------- |
-   | `Goal`              | The `TOS-nn` goal that covers the statement, linked, such as `[TOS-01](#tos-01)`, or `—` when no goal covers it |
-   | `Success statement` | The success statement the row's failure statement was converted into, as the session wrote it                   |
-   | `Failure statement` | The failure statement the row came from, as the session wrote it                                                |
+   | Column              | What it holds                                                                                                                      |
+   | ------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+   | `Goal`              | Each `TOS-nn` goal chosen for the statement, linked, such as `[TOS-01](#tos-01)`, in `TOS-nn` order, or `—` when no goal covers it |
+   | `Success statement` | The success statement the row's failure statement was converted into, as the session wrote it                                      |
+   | `Failure statement` | The failure statement the row came from, as the session wrote it                                                                   |
 
-   The rows are grouped by goal in `TOS-nn` order, and the rows no goal covers come last, in the order the session listed them.
+   The rows are grouped by their first goal in `TOS-nn` order, and the rows no goal covers come last, in the order the session listed them.
 
 7. One row is one failure statement with its conversion, so a goal that merged several statements has one row per statement, each linking that goal.
 8. Every `TOS-nn` traces to at least one row.
    A row may trace to no goal: the statements are the evidence of the choice the minimal set makes, so nothing is deleted.
-9. The table is written once, in the session that produced the set.
-   Its rows are not edited or removed: a goal's change or drop lives in its own fields, per rules 3 to 5, and a goal added later appends its rows in `TOS-nn` order, before the rows no goal covers.
+9. The table only grows: the statement cells stay as the session wrote them, and a goal's change or drop lives in its own fields, per rules 3 to 5, so no row is rewritten.
+   New rows arrive with a goal added later or a statement identified later, and take their place by the grouping above.
+   A later goal that covers a row already listed adds its link to that row, and a row that was uncovered moves into the group of that goal.
+   A `Goal` link is never removed: a dropped goal keeps its rows, and its `**Dropped:**` field carries the state.
+   A correction that changes no meaning, such as a typo, is not an update.
 
 ## Full Example
 

@@ -86,7 +86,7 @@ The wording of each kept goal is checked against SMART: specific, measurable, ac
 The letters are a checklist rather than a template: a goal the team cannot reach with its time and skills is a wish, and a goal that does not serve the vision's goal is a distraction.
 
 Each kept statement becomes one `TOS-nn` section from the start.
-The statements themselves are recorded below the goals, in the file's table, per [The Threshold Of Success](../requirements/planning-requirements.md#the-threshold-of-success): the table is the account of the fears the bar was chosen from, and it is written once, while a later goal change lives in the goal's own fields.
+The statements themselves are recorded below the goals, in the file's table, per [The Threshold Of Success](../requirements/planning-requirements.md#the-threshold-of-success): the table is the account of the fears the bar was chosen from, it is never rewritten and only grows, and a later goal change lives in the goal's own fields.
 
 **Example**
 
