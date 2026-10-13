@@ -1,10 +1,10 @@
 ---
 id: TASK-133
 title: Fix the review findings on the Week 3 materials
-status: In Progress
+status: Done
 assignee: []
 created_date: '2026-10-13 10:18'
-updated_date: '2026-10-13 10:31'
+updated_date: '2026-10-13 11:00'
 labels: []
 dependencies:
   - TASK-120
@@ -51,13 +51,9 @@ The maintainer confirmed the Week 3 hard-deadline move is intentional, agreed to
    D6's milestone `**Due:**` says "Friday hard-deadline date".
    D14 and D36 name `requirements/repository-requirements.md` for the fields, assignees, and project, but TASK-129 moved them to `requirements/issue-tracking-requirements.md`.
    D10 lists the risk table columns as `ID, Risk, Impact, Likelihood, Status` while the file uses `ID, Status, Impact, Likelihood, Risk`.
-7. A3 decisions record.
-   `TODO.md` asks to "Save A3 decisions in course/decisions/decisions-a3.md"; no such directory, file, or convention exists, and `handoff.md` (the only record of the A3 decisions) is deleted once Assignment 3 is published.
-   Decide and land the record, or drop the TODO item with the reason recorded.
-   The dependency-bumps item is covered by TASK-120's TODO cleanup.
 
 Notes:
-- This task depends on TASK-120 because both edit `TODO.md`; TASK-120 owns the TASK-010 retarget and ticks the A3 items its work covered.
+- This task depends on TASK-120 because both edit `TODO.md`, and TASK-120 owns the TASK-010 retarget.
   TASK-119's AC #1 keeps the old Friday date as history and is not edited.
 - The deferred TODO comments in `assignments/assignment-3.md` currently fail `pnpm run format:markdown:check`; until they are removed the Markdown gates cannot go green, and resolving them is part of that deferral rather than this task.
 - The `assignments/assignment-3.md` deadline edit stays in the working tree; land it with this change.
@@ -67,33 +63,40 @@ Notes:
 <!-- AC:BEGIN -->
 - [x] #1 The Week 3 hard deadline reads Saturday 17 October 2026 in course/syllabus.md and the Week 3 row of README.md, and the syllabus exception sentence covers Week 2 and Week 3
 - [x] #2 The dates that mirror Week 3 in requirements/planning-requirements.md and the RISK-03 example in requirements/risks-requirements.md read 2026-10-17, and course/rules.md is reviewed and left as is
-- [ ] #3 requirements/risks-requirements.md's Rating rule reads grammatically and its Full Example uses the nested-bullet form for the Impact and Likelihood reasons, matching the Rating example
-- [ ] #4 The Full Example intro in requirements/planning-requirements.md describes the actual trim: the first two sprints' sections and the first milestone's section
-- [ ] #5 Every heading and TOC entry in guides/planning-and-tracking.md is Title Case, the Run it in a fixed order heading and TOC entry have no trailing colon, and every TOC anchor resolves
-- [ ] #6 AGENTS.md's Maintained Here table carries a course/tooling.md row
-- [ ] #7 handoff.md's Current State and D3, D6, D10, D14, and D36 match the repository, and the file stays untracked
-- [ ] #8 The A3 decision record is settled and landed (a course/decisions record routed as needed, or the TODO.md item dropped with its reason recorded), and TODO.md's A3 section has no unresolved item left once TASK-120 lands
+- [x] #3 requirements/risks-requirements.md's Rating rule reads grammatically and its Full Example uses the nested-bullet form for the Impact and Likelihood reasons, matching the Rating example
+- [x] #4 The Full Example intro in requirements/planning-requirements.md describes the actual trim: the first two sprints' sections and the first milestone's section
+- [x] #5 Every heading and TOC entry in guides/planning-and-tracking.md is Title Case, the Run it in a fixed order heading and TOC entry have no trailing colon, and every TOC anchor resolves
+- [x] #6 AGENTS.md's Maintained Here table carries a course/tooling.md row
+- [x] #7 handoff.md's Current State and D3, D6, D10, D14, and D36 match the repository, and the file stays untracked
 <!-- AC:END -->
 
 ## Definition of Done
 <!-- DOD:BEGIN -->
-- [ ] #1 All acceptance criteria are satisfied
-- [ ] #2 Changed Markdown files are formatted: `pnpm run format:markdown`
-- [ ] #3 `pnpm run lint:markdown` passes
-- [ ] #4 `pnpm run test:markdown-format` and `pnpm run test:markdown-rules` pass
-- [ ] #5 `pnpm run check:lectures` passes
-- [ ] #6 `pnpm run check:links` passes
-- [ ] #7 Implementation notes record the decisions made and the validation results
+- [x] #1 All acceptance criteria are satisfied
+- [x] #2 Changed Markdown files are formatted: `pnpm run format:markdown`
+- [x] #3 `pnpm run lint:markdown` passes
+- [x] #4 `pnpm run test:markdown-format` and `pnpm run test:markdown-rules` pass
+- [x] #5 `pnpm run check:lectures` passes
+- [x] #6 `pnpm run check:links` passes
+- [x] #7 Implementation notes record the decisions made and the validation results
 <!-- DOD:END -->
 
 ## Implementation Notes
 
 <!-- SECTION:NOTES:BEGIN -->
-Date fix only (finding 1 of 7); findings 2 to 7 remain, so the task stays open.
+Finding 1 (dates) landed first and findings 2 to 6 landed in the later slice.
 
-Changed: course/syllabus.md gives the Week 3 hard deadline as October 17 at 23:59 (Saturday) and the exception sentence now covers Weeks 2 and 3; README.md Week 3 row is Sat 17 Oct, 23:59; the five Week 3 deadline dates in requirements/planning-requirements.md read 2026-10-17 (both Due examples, the SPRINT-03 row, the MLS-03 row, and the MLS-03 Due field); requirements/risks-requirements.md RISK-03 is dropped 2026-10-17. The assignments/assignment-3.md deadline edit was already in the working tree and lands with this slice; its TODO comments stay deferred as agreed.
+Changed (dates): course/syllabus.md gives the Week 3 hard deadline as October 17 at 23:59 (Saturday) and the exception sentence now covers Weeks 2 and 3; README.md Week 3 row is Sat 17 Oct, 23:59; the five Week 3 deadline dates in requirements/planning-requirements.md read 2026-10-17 (both Due examples, the SPRINT-03 row, the MLS-03 row, and the MLS-03 Due field); requirements/risks-requirements.md RISK-03 is dropped 2026-10-17. The assignments/assignment-3.md deadline edit was already in the working tree and lands with this slice; its TODO comment stays deferred as agreed.
 
-Decisions: course/rules.md was reviewed and left unchanged, because it states the general Thursday/Friday pair and the syllabus carries the exceptions. The 2026-10-15 dates in the planning example are release-cut days, not deadline mirrors, so they stay. Left outside this slice: lectures/lecture-3.typ line 145 still says October 16 (hard), and handoff.md D3 still says Friday 16 October; neither is in the agreed fix list, and the deck needs a rebuild to change.
+Changed (findings 2 to 6): requirements/risks-requirements.md's Rating rule reads "The reason follows on a nested bullet under the rating", and the Full Example's Impact and Likelihood reasons are nested bullets, matching the Rating example; requirements/planning-requirements.md's Full Example intro is trimmed to the first two sprints' sections and the first milestone's section; guides/planning-and-tracking.md's 20 `###` headings and their TOC entries are Title Case and Run It In A Fixed Order lost its colon; AGENTS.md's Maintained Here table gained the course/tooling.md row; handoff.md's Current State, D3, D6, D10, D14, and D36 were refreshed.
 
-Validation: format:markdown:check and format:markdown (no-op) pass; lint:markdown passes; test:markdown-format 34/34; test:markdown-rules 34/34; check:lectures reports 3 decks matching Typst 0.15.1; check:links reports 1157 total, 1155 OK, 0 errors, 2 excluded. No 2026-10-16 remains in the planning or risks requirements files, and course/rules.md has no diff. The deferred TODO comments in assignments/assignment-3.md do not fail the Markdown gates in the current tree: format:markdown:check and a no-cache eslint pass with them staged.
+Decisions: course/rules.md was reviewed and left unchanged, because it states the general Thursday/Friday pair and the syllabus carries the exceptions. The 2026-10-15 dates in the planning example are release-cut days, not deadline mirrors, so they stay. Two handoff lands-in lines were fixed for the same class of move: D32 now names requirements/releases-requirements.md (TASK-126) and D33 names requirements/issue-tracking-requirements.md (TASK-129). handoff.md stays untracked. D3 gives the Saturday 17 October hard deadline; D6's Due row no longer says Friday; Current State records the assignment at 61a9bd2 with 4e51b00 and 9b53f5b on top, after a fresh-context audit showed 61a9bd2 was no longer its latest commit.
+
+Validation: format:markdown (no-op), format:markdown:check, lint:markdown, test:markdown-format 34/34, test:markdown-rules 34/34, check:lectures (3 decks match Typst 0.15.1), check:links (1157 total, 1155 OK, 0 errors, 2 excluded, 1 redirect, fragments included so the retitled guide anchors resolve), backlog doctor clean. No 2026-10-16 remains in the planning or risks requirements files, and course/rules.md has no diff. The deferred TODO comment in assignments/assignment-3.md does not fail the Markdown gates. Left alone on purpose: lectures/lecture-3.typ line 145 still says October 16 (hard) and needs a deck rebuild, and the handoff's session history keeps its historical references.
 <!-- SECTION:NOTES:END -->
+
+## Final Summary
+
+<!-- SECTION:FINAL_SUMMARY:BEGIN -->
+Fixed the Week 3 review findings: the Week 3 hard deadline reads Saturday 17 October 2026 across the syllabus, README, planning requirements, and the RISK-03 example; the risk rating rule and its Full Example now match; the plan example intro describes its actual trim; the planning guide headings are Title Case; AGENTS.md carries the course/tooling.md row; and handoff.md was refreshed and stays untracked. Verified with format:markdown:check, lint:markdown, test:markdown-format 34/34, test:markdown-rules 34/34, check:lectures (3 decks match Typst 0.15.1), check:links (1157 links, 0 errors), and backlog doctor.
+<!-- SECTION:FINAL_SUMMARY:END -->

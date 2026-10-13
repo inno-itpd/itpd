@@ -77,7 +77,7 @@ The two ratings say what the risk could cost and how likely it is, and the summa
 **Required**
 
 1. `**Impact:**` and `**Likelihood:**` carry their rating word, `High`, `Medium`, or `Low`, directly after the field name, so the bullet carries one colon.
-2. The reason follows on indented lines inside the same bullet with own bullet: for `**Impact:**`, what the risk threatens and how badly, and for `**Likelihood:**`, why the risk is that likely.
+2. The reason follows on a nested bullet under the rating: for `**Impact:**`, what the risk threatens and how badly, and for `**Likelihood:**`, why the risk is that likely.
 
 **Example**
 
@@ -157,9 +157,9 @@ The team has never integrated a payment provider, so the payment step may take l
 
 - **Status:** Mitigated
 - **Impact:** High
-  The core task cannot complete without the payment step, so the sprint would end without the MUP.
+  - The core task cannot complete without the payment step, so the sprint would end without the MUP.
 - **Likelihood:** Medium
-  The team is new to payment integrations, but the provider's hosted checkout keeps card data out of the product, per [`DEC-005`](decisions.md#dec-005).
+  - The team is new to payment integrations, but the provider's hosted checkout keeps card data out of the product, per [`DEC-005`](decisions.md#dec-005).
 - **Trigger:** the sandbox account is not taking test payments by the sprint's second day.
 - **Window:** [SPRINT-03](project-plan.md#sprint-03).
 - **Mitigation:** open the sandbox account first and take one test payment before building anything on top of the integration.
@@ -172,9 +172,9 @@ The payment sandbox is rate-limited, so the end-to-end check may fail during the
 
 - **Status:** Open
 - **Impact:** High
-  A failed check in front of the customer would leave the MUP's central story unaccepted, and the meeting would spend its time on a sandbox quota.
+  - A failed check in front of the customer would leave the MUP's central story unaccepted, and the meeting would spend its time on a sandbox quota.
 - **Likelihood:** Medium
-  The provider rate-limits the shared sandbox, and the rehearsal and the meeting fall on the same day.
+  - The provider rate-limits the shared sandbox, and the rehearsal and the meeting fall on the same day.
 - **Trigger:** a test payment comes back rate-limited.
 - **Window:** [SPRINT-03](project-plan.md#sprint-03), up to the Week 3 meeting.
 - **Mitigation:** run the end-to-end check the day before the meeting, so the meeting shows an already-proven payment step.

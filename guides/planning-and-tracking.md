@@ -15,30 +15,30 @@ The threshold session of Step 1 and the risk session of Step 5 are the hours tha
 - [Step 1: Agree On The Threshold Of Success](#step-1-agree-on-the-threshold-of-success)
 - [Step 2: Choose The Roadmap's Zoom Level](#step-2-choose-the-roadmaps-zoom-level)
 - [Step 3: Write The Sprints And Their Releases](#step-3-write-the-sprints-and-their-releases)
-  - [Lead with a result](#lead-with-a-result)
-  - [Give every unplanned sprint a provisional goal](#give-every-unplanned-sprint-a-provisional-goal)
-  - [Schedule with the field, not in the file](#schedule-with-the-field-not-in-the-file)
+  - [Lead With A Result](#lead-with-a-result)
+  - [Give Every Unplanned Sprint A Provisional Goal](#give-every-unplanned-sprint-a-provisional-goal)
+  - [Schedule With The Field, Not In The File](#schedule-with-the-field-not-in-the-file)
   - [Releases](#releases)
-  - [Pick the number from what a user could observe](#pick-the-number-from-what-a-user-could-observe)
+  - [Pick The Number From What A User Could Observe](#pick-the-number-from-what-a-user-could-observe)
 - [Step 4: Write The Milestones](#step-4-write-the-milestones)
-  - [Lead the description with the outcome](#lead-the-description-with-the-outcome)
+  - [Lead The Description With The Outcome](#lead-the-description-with-the-outcome)
 - [Step 5: Name The Risks And Their Fallbacks](#step-5-name-the-risks-and-their-fallbacks)
-  - [Start from the plan, not from a feeling](#start-from-the-plan-not-from-a-feeling)
-  - [Write the first line as cause, event, and impact](#write-the-first-line-as-cause-event-and-impact)
-  - [Rate to sort, not to decorate](#rate-to-sort-not-to-decorate)
-  - [Give it a trigger and a window](#give-it-a-trigger-and-a-window)
-  - [Answer it twice](#answer-it-twice)
-  - [Points of no return are decisions](#points-of-no-return-are-decisions)
-  - [Run it as a session](#run-it-as-a-session)
+  - [Start From The Plan, Not From A Feeling](#start-from-the-plan-not-from-a-feeling)
+  - [Write The First Line As Cause, Event, And Impact](#write-the-first-line-as-cause-event-and-impact)
+  - [Rate To Sort, Not To Decorate](#rate-to-sort-not-to-decorate)
+  - [Give It A Trigger And A Window](#give-it-a-trigger-and-a-window)
+  - [Answer It Twice](#answer-it-twice)
+  - [Points Of No Return Are Decisions](#points-of-no-return-are-decisions)
+  - [Run It As A Session](#run-it-as-a-session)
 - [Step 6: Set Up Progress Monitoring](#step-6-set-up-progress-monitoring)
-  - [Run it in a fixed order:](#run-it-in-a-fixed-order)
-  - [Keep the customer meeting separate](#keep-the-customer-meeting-separate)
-  - [Put progress where it can be seen without the plan](#put-progress-where-it-can-be-seen-without-the-plan)
+  - [Run It In A Fixed Order](#run-it-in-a-fixed-order)
+  - [Keep The Customer Meeting Separate](#keep-the-customer-meeting-separate)
+  - [Put Progress Where It Can Be Seen Without The Plan](#put-progress-where-it-can-be-seen-without-the-plan)
 - [Step 7: Review And Adjust](#step-7-review-and-adjust)
-  - [Ask the same questions every week](#ask-the-same-questions-every-week)
-  - [Turn each answer into one move](#turn-each-answer-into-one-move)
-  - [Record the result in the artifact that changed](#record-the-result-in-the-artifact-that-changed)
-  - [Match the amount of plan to the amount of certainty](#match-the-amount-of-plan-to-the-amount-of-certainty)
+  - [Ask The Same Questions Every Week](#ask-the-same-questions-every-week)
+  - [Turn Each Answer Into One Move](#turn-each-answer-into-one-move)
+  - [Record The Result In The Artifact That Changed](#record-the-result-in-the-artifact-that-changed)
+  - [Match The Amount Of Plan To The Amount Of Certainty](#match-the-amount-of-plan-to-the-amount-of-certainty)
 - [Common Mistakes](#common-mistakes)
 
 ## What You Produce
@@ -141,7 +141,7 @@ Which issue is worked on when is a `Sprint` field value, per [Issue Fields](../r
 Every submission week is a **sprint**, and the plan carries one section per sprint, in order, from the first to the last.
 Write them from near to far: the current sprint in concrete terms, the next one in its own words, and the rest at the level of direction.
 
-### Lead with a result
+### Lead With A Result
 
 The sprint's first line is one sentence, and it states what will be true at the end of the week:
 
@@ -154,13 +154,13 @@ A client books a paid slot and receives the meeting link and the materials.
 A goal that reads like a task list, such as "implement the booking page and fix the payment bug", tells the team what to do and hides what it is for.
 The tasks live in the sprint backlog view, where they are already listed and already current.
 
-### Give every unplanned sprint a provisional goal
+### Give Every Unplanned Sprint A Provisional Goal
 
 The sprint five weeks out still gets a sentence, because a plan that goes blank after next week cannot be held against the threshold.
 Keep the sentence at its own level, such as "a coach can reschedule without emailing", and revise it when the sprint is planned for real.
 A provisional goal is a direction the plan currently believes, not a promise to the customer, and a stale one misleads exactly the week it was written for.
 
-### Schedule with the field, not in the file
+### Schedule With The Field, Not In The File
 
 When a sprint is planned, the issues that make its goal true carry three values and two assignees: the `Sprint` they belong to, the `Responsible` and `Accountable` members who do the work and verify it, and those same two members as the issue's assignees, per [Issue Tracking](../requirements/issue-tracking-requirements.md).
 The plan's `**Sprint Backlog:**` field links the filtered issue view, so the plan never copies the list and never goes stale.
@@ -178,7 +178,7 @@ The documents come after the tag because each of them links it, and a link to a 
 The release itself is about the product code, so the documents following it do not change what was released.
 [Releases](../requirements/planning-requirements.md#releases) states the order as a rule; the reason to keep it is that it makes the links resolve the first time.
 
-### Pick the number from what a user could observe
+### Pick The Number From What A User Could Observe
 
 The tag is the team's choice under SemVer, per [Versioning And Tags](../requirements/releases-requirements.md#versioning-and-tags).
 The release repeats the tag as its title, so the version reads the same wherever the release is linked.
@@ -196,7 +196,7 @@ Write `**Done when:**` as a check the customer could run at the end of the due w
 - **Done when:** a clean checkout completes the core task end to end by following [setup.md](setup.md).
 ```
 
-### Lead the description with the outcome
+### Lead The Description With The Outcome
 
 The first sentence is the conclusion, and the sentences after it add scope, sequencing, or the problem the increment beats:
 
@@ -217,7 +217,7 @@ Record the reason like any other change: a customer's decision gets a `DEC-nnn`,
 A **risk** is something that has not happened and could hurt the project if it does, and the register holds the ones the team would act on, per [The Risk](../requirements/risks-requirements.md#the-risk).
 A register that stays short is a register that gets read, so the first job is choosing what not to write down.
 
-### Start from the plan, not from a feeling
+### Start From The Plan, Not From A Feeling
 
 Walk the threshold and the plan in order and ask what could stop each part:
 
@@ -228,7 +228,7 @@ Walk the threshold and the plan in order and ask what could stop each part:
 
 The pass produces more candidates than the register should hold, and the action test cuts them down: when nobody would change what they do if the risk started to happen, it is a worry, not a risk.
 
-### Write the first line as cause, event, and impact
+### Write The First Line As Cause, Event, And Impact
 
 One sentence, in that order, so the reader knows why it happens, what happens, and what it costs:
 
@@ -238,30 +238,30 @@ The team has never integrated a payment provider, so the payment step may take l
 
 "The payment integration might be hard" names no event and no cost, so nothing can be decided about it.
 
-### Rate to sort, not to decorate
+### Rate To Sort, Not To Decorate
 
 `**Impact:**` says what the project loses if the risk happens, and `**Likelihood:**` says why it is that likely, per [Rating](../requirements/risks-requirements.md#rating).
 Write the reason as evidence, such as "the provider rate-limits the shared sandbox", rather than as a mood, because the review uses the ratings to choose what to look at first.
 
-### Give it a trigger and a window
+### Give It A Trigger And A Window
 
 `**Trigger:**` is what the review will see when the risk is materializing, and without one the risk is noticed only after it has happened.
 `**Window:**` is when it can happen, which is also how the register stays honest: a risk whose window closes without its trigger becomes `Dropped` with the date and the reason, per [Checking And Settling](../requirements/risks-requirements.md#checking-and-settling).
 
-### Answer it twice
+### Answer It Twice
 
 `**Mitigation:**` changes the odds, and `**Contingency:**` changes what happens after: it is the fallback the team decided before it needed one, which the lecture calls the alternative solution.
 Write the fallback before the trigger fires, because the moment a risk materializes is the wrong moment to invent one.
 If the team wants two fallbacks, it has two risks: one risk carries one contingency, and a risk that offers a choice is a decision the team has not made.
 
-### Points of no return are decisions
+### Points Of No Return Are Decisions
 
 Some answers commit the team to something it cannot cheaply undo, such as a stack the product is built on, or a branch that holds the only copy of a test.
 When the team passes one, it records a `DEC-nnn`, per [The Decision](../requirements/decisions-requirements.md#the-decision), and the risk whose answer crossed it cites that decision instead of repeating the reasoning.
 The habit that catches these is one question asked before the choice: "if this turns out wrong, what does reversing it cost?"
 If the answer is "we rebuild", it is a decision.
 
-### Run it as a session
+### Run It As A Session
 
 Half an hour with the whole team, quiet writing first and discussion second, because the loudest member's risk is often the one already being handled.
 Then keep the register to what the weekly review can actually read, and read it there, per [Step 6](#step-6-set-up-progress-monitoring).
@@ -272,7 +272,7 @@ Monitoring is a habit, not a report: the team meets every week, looks at the sam
 [Progress Monitoring](../requirements/planning-requirements.md#progress-monitoring) fixes what the plan says about that meeting, so the cadence, the checker, and the visible views are written down rather than assumed.
 A review with no stated time does not happen, and a review with no named checker turns into a conversation about whoever is least defensive.
 
-### Run it in a fixed order:
+### Run It In A Fixed Order
 
 1. **The sprint.**
    Walk the backlog against the sprint's goal, one issue at a time: what moved, what is stuck, and does the goal still hold?
@@ -286,12 +286,12 @@ A review with no stated time does not happen, and a review with no named checker
 4. **The changes.**
    Name each edit the review settled and the artifact it lands in: the goal, the risk, the plan, or nothing.
 
-### Keep the customer meeting separate
+### Keep The Customer Meeting Separate
 
 The team's review is where the plan meets reality, and the weekly customer meeting is where the customer decides and accepts.
 Holding the review before the meeting means the meeting can spend its time on the product instead of on the team discovering its own state in the room.
 
-### Put progress where it can be seen without the plan
+### Put Progress Where It Can Be Seen Without The Plan
 
 The plan names the GitHub project's table view, the sprint backlog view, and the milestone list, and those are the answer to "how far along is this?" without anyone opening a file.
 The table view is the whole backlog at a glance, and the other two scope the same issues to the sprint and the milestone, per [GitHub Projects](../requirements/issue-tracking-requirements.md#github-projects).
@@ -302,14 +302,14 @@ The views are always current because the work itself updates them: a percentage 
 The weekly review is one turn of the loop the lecture calls [PDSA](https://en.wikipedia.org/wiki/PDCA): plan the sprint, do the work, study what happened, and act on what the study found.
 The loop fails in two opposite ways: a review that changes nothing is a status report, and a plan that changes every week has no direction to test.
 
-### Ask the same questions every week
+### Ask The Same Questions Every Week
 
 - What did the sprint deliver, and what did it not?
 - What went wrong, and what will the team do differently next sprint?
 - What went right, and what will the team keep doing?
 - What did the customer accept, reject, or ask for, and what does that change?
 
-### Turn each answer into one move
+### Turn Each Answer Into One Move
 
 | What the answer means                | The move                                                                                                                                                                        |
 | ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -318,13 +318,13 @@ The loop fails in two opposite ways: a review that changes nothing is a status r
 | Reality moved away from the plan     | Change the plan: edit the active milestone's first sentence for scope, or set an issue's `Sprint` value to the sprint that now holds it                                         |
 | The bar itself has to move           | Only the customer can move it: a goal's change or drop cites their `DEC-nnn`, per [The Threshold Of Success](../requirements/planning-requirements.md#the-threshold-of-success) |
 
-### Record the result in the artifact that changed
+### Record The Result In The Artifact That Changed
 
 The threshold file, the plan, and the register are the record; the review produces edits, and a decision where the customer settled something.
 A risk that was answered becomes `Mitigated` or `Realized` in the register, per [Checking And Settling](../requirements/risks-requirements.md#checking-and-settling), and a goal whose measure lands becomes `Achieved`.
 Settled items keep their headings and their wording, because the account of what the team believed earlier is what makes the current plan trustworthy.
 
-### Match the amount of plan to the amount of certainty
+### Match The Amount Of Plan To The Amount Of Certainty
 
 The nearer a sprint is, the more its goal is a commitment; the farther it is, the more it is a direction, which is why the later sprints carry provisional goals.
 When a far sprint's provisional goal turns out wrong, that is the system working, and the fix costs one sentence now instead of a rewritten plan later.

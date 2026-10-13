@@ -218,7 +218,7 @@ The steps that produce the set, from picturing failure to keeping the minimal se
 
 ## Full Example
 
-Both files of the meeting-booking example, after Week 3, with the later sprints and the second milestone left out.
+Both files of the meeting-booking example, after Week 3, trimmed to the first two sprints' sections and the first milestone's section.
 
 From `docs/project-plan.md`:
 
@@ -253,7 +253,6 @@ A client can reschedule a booking without emailing the coach.
 | Milestone         | Due        |
 | ----------------- | ---------- |
 | [MLS-03](#mls-03) | 2026-10-17 |
-| [MLS-05](#mls-05) | 2026-10-30 |
 
 ### MLS-03
 
