@@ -48,7 +48,7 @@ Every week from Week 3 to Week 9 is a sprint, so the plan carries seven of them,
    | Column    | What it holds                                                                                        |
    | --------- | ---------------------------------------------------------------------------------------------------- |
    | `Sprint`  | The `SPRINT-nn`, linked to its section, such as `[SPRINT-03](#sprint-03)`                            |
-   | `Due`     | The hard deadline of the sprint's week, from the syllabus, such as `2026-10-16`                      |
+   | `Due`     | The hard deadline of the sprint's week, from the syllabus, such as `2026-10-17`                      |
    | `Release` | The sprint's `REL-nn`, linked to its section, such as `[REL-03](#rel-03)`, per [Releases](#releases) |
 
 3. A `### SPRINT-nn` section opens with the sprint's goal, in one sentence: what the sprint is for, stated as a result rather than as a list of tasks.
@@ -112,7 +112,7 @@ An issue belongs to a milestone only when it is part of that increment, so there
    | Column      | What it holds                                                                        |
    | ----------- | ------------------------------------------------------------------------------------ |
    | `Milestone` | The `MLS-nn`, linked to its section, such as `[MLS-03](#mls-03)`                     |
-   | `Due`       | The milestone's due date, the one its GitHub milestone carries, such as `2026-10-16` |
+   | `Due`       | The milestone's due date, the one its GitHub milestone carries, such as `2026-10-17` |
 
 4. A `### MLS-nn` section opens with these fields, in this order, as a bulleted list, per [Identifier Rules](general-requirements.md#identifier-rules):
 
@@ -229,7 +229,7 @@ From `docs/project-plan.md`:
 
 | Sprint                  | Due        | Release           |
 | ----------------------- | ---------- | ----------------- |
-| [SPRINT-03](#sprint-03) | 2026-10-16 | [REL-03](#rel-03) |
+| [SPRINT-03](#sprint-03) | 2026-10-17 | [REL-03](#rel-03) |
 | [SPRINT-04](#sprint-04) | 2026-10-23 | [REL-04](#rel-04) |
 
 ### SPRINT-03
@@ -252,13 +252,13 @@ A client can reschedule a booking without emailing the coach.
 
 | Milestone         | Due        |
 | ----------------- | ---------- |
-| [MLS-03](#mls-03) | 2026-10-16 |
+| [MLS-03](#mls-03) | 2026-10-17 |
 | [MLS-05](#mls-05) | 2026-10-30 |
 
 ### MLS-03
 
 - **Milestone:** [MLS-03: Deliver MUP](https://github.com/<organization>/<repo>/milestone/3)
-- **Due:** 2026-10-16
+- **Due:** 2026-10-17
 - **Done when:** a clean checkout completes the core task end to end by following [setup.md](setup.md).
 - **Sprints:** [SPRINT-03](#sprint-03)
 - **Advances:** [TOS-01](threshold-of-success.md#tos-01)

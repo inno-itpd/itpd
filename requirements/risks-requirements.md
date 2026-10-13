@@ -136,7 +136,7 @@ A risk whose window closed without its trigger, with its other fields left out:
 The sprint is planned for all three of us, so one member's unplanned absence would leave the docs site and the setup page to the other two, which would push both past the deadline.
 
 - **Status:** Dropped
-- **Dropped:** 2026-10-16: the sprint ended without an absence, so the risk can no longer materialize.
+- **Dropped:** 2026-10-17: the sprint ended without an absence, so the risk can no longer materialize.
 ```
 
 ## Full Example

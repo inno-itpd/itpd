@@ -3,7 +3,7 @@
 **This week's dates:**
 
 - Soft deadline: Thursday 15 October 2026, 23:59.
-- Hard deadline: Friday 16 October 2026, 23:59.
+- Hard deadline: Saturday 17 October 2026, 23:59.
 
 See [Deadlines And Submission](../course/rules.md#deadlines-and-submission).
 

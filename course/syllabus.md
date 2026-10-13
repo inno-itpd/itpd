@@ -73,7 +73,7 @@ The first two weeks establish the project foundations, team formation, and compe
 ## 3. Weekly Curriculum & Milestones
 
 The due dates below are the Thursday soft deadlines; each hard deadline is the following Friday at 23:59.
-Week 2 is the exception: its hard deadline is Saturday, October 10 at 23:59.
+Weeks 2 and 3 are the exceptions: their hard deadlines are Saturday, October 10 at 23:59 and Saturday, October 17 at 23:59.
 
 | Week        | Date Range      | Focus / Key Milestones                                                                                                       |
 | :---------- | :-------------- | :--------------------------------------------------------------------------------------------------------------------------- |
@@ -150,7 +150,7 @@ Week 2 is the exception: its hard deadline is Saturday, October 10 at 23:59.
     11. **Documentation Site**: `docs/` published as a GitHub Pages site and linked from the root `README.md`.
     12. **Setup And Run Instructions**: `docs/setup.md`, linked from the root `README.md`.
   - **Submission Scope**: Team submission.
-  - **Deadline**: soft **October 15 at 23:59 (Thursday)**, hard **October 16 at 23:59 (Friday)**.
+  - **Deadline**: soft **October 15 at 23:59 (Thursday)**, hard **October 17 at 23:59 (Saturday)**.
 
 ### Week 4: Oct 16 – Oct 22 (Software Quality, Architecture & Next Product Release)
 
