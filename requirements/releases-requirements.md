@@ -55,13 +55,14 @@ The pull request is where the team already writes down what changed and why, whi
 
 **Since: W3**
 
-When the release is cut is in [Releases](planning-requirements.md#releases); this section says how it is titled and what cutting it does to the changelog.
+When the release is cut is in [Releases](planning-requirements.md#releases); this section says how it is titled and what cutting it changes in the changelog and in the sprint's GitHub milestone.
 
 **Required**
 
 1. Title the release with the tag, so the title and the tag match, for example `v0.1.0` in both.
    A nickname for the release goes in its body, not its title.
 2. When you cut a release, move the included entries into a dated section, link the section to the release, and open a new empty `[Unreleased]`.
+3. Close the sprint's GitHub milestone once the release is cut, after moving each issue still open into a later sprint's milestone, per [Sprints](planning-requirements.md#sprints).
 
 ## Full Example
 
