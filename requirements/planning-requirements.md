@@ -176,7 +176,7 @@ The file holds the set the team keeps and nothing else; the steps that produce i
 **Required**
 
 1. The threshold is `docs/threshold-of-success.md`, and each of its goals is a section of its own, headed `## TOS-nn`, per [Identifier Rules](general-requirements.md#identifier-rules).
-2. A `## TOS-nn` section states the goal on its first line, in one sentence, as a result its `**Measure:**` can settle, and carries these fields, in this order:
+2. A `## TOS-nn` section states the goal on its first line, in one sentence, as a result its `**Measure:**` can settle, and carries these fields, in this order, as a bulleted list, per [Identifier Rules](general-requirements.md#identifier-rules):
 
    | Field          | What it says                                                                                                                                                              |
    | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
