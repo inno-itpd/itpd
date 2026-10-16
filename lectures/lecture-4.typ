@@ -65,6 +65,11 @@
   text(size: 10pt, weight: "bold", fill: white)[#body],
 )
 
+// A citation links the bracketed key it prints to the key's labelled entry
+// on the References slide; rest carries the locator some citations write
+// beside the key, as in [Bck, Ch. 20].
+#let cite(key, rest: "") = link(label(key))[\[#key#rest\]]
+
 // A quotation drawn rather than marked, from lecture-2.typ.
 #let quoted(body) = block(
   width: 100%,
@@ -135,7 +140,7 @@
 ]
 
 #slide("Stakeholders and Quality")[
-  [Sbok5]:
+  #cite("Sbok5"):
 
   *Stakeholders* are all individuals and groups affected by the Scrum project.
 
@@ -147,7 +152,7 @@
 ]
 
 #slide("Product Quality")[
-  [Iso25010]:
+  #cite("Iso25010"):
 
   The *quality of a system* is the degree to which the system satisfies the stated and implied needs of its various *stakeholders*, and thus provides value.
 
@@ -157,7 +162,7 @@
 ]
 
 #slide("The ISO 25010 Quality Model")[
-  Quality → Characteristics → Sub-characteristics [Iso25010]:
+  Quality → Characteristics → Sub-characteristics #cite("Iso25010"):
 
   #image("images/lecture-4/iso-25010-model.jpg", width: 100%)
 ]
@@ -167,7 +172,7 @@
     columns: (1fr, auto),
     column-gutter: 18pt,
     [
-      [Q42]:
+      #cite("Q42"):
 
       The arc42 quality model Q42 is a simple, pragmatic yet effective approach to *product and system quality*. It starts with *stakeholders' expectations* and requirements. From these, it derives 8 important system properties, which are sufficient to cover most, if not all, required, desirable or expected of the more than 100 _traditional_ qualities.
     ],
@@ -181,7 +186,7 @@
   - *Pros:*
     - Stakeholders know their needs and thus are the perfect assessors.
   - *Cons:*
-    - It's probably too late. You should've agreed on the quality in advance to have shared expectations and to build adequate quality into your product and processes [Pmbok7].
+    - It's probably too late. You should've agreed on the quality in advance to have shared expectations and to build adequate quality into your product and processes #cite("Pmbok7").
 ]
 
 #slide("How to Measure Your Product Quality? Idea 2")[
@@ -190,7 +195,7 @@
   - *Pros:*
     - Don't need to design your own quality attributes.
   - *Cons:*
-    - Existing attributes are too abstract and can't be directly measured. Example [Iso25010]:
+    - Existing attributes are too abstract and can't be directly measured. Example #cite("Iso25010"):
 
       #note[Capacity - Degree to which the maximum limits of a product or system parameter meet requirements.]
 ]
@@ -203,13 +208,13 @@
     - Their price can be estimated by tracing these requirements to related architectural decisions.
     - They can be put into a contract.
   - *Cons:*
-    - They may not cover the perceived quality [Garvin].
+    - They may not cover the perceived quality #cite("Garvin").
 ]
 
 #slide("Quality Attribute Scenarios")[
-  QA scenarios are a way to write unambiguous testable quality requirements [Bck]. You should specify a realistic test to prove that a scenario is testable.
+  QA scenarios are a way to write unambiguous testable quality requirements #cite("Bck"). You should specify a realistic test to prove that a scenario is testable.
 
-  A scenario has 6 parts [QasArch]:
+  A scenario has 6 parts #cite("QasArch"):
 
   #set text(size: 12pt)
   #table(
@@ -231,7 +236,7 @@
 #slide("A General Quality Attribute Scenario for Availability")[
   #align(center)[#image("images/lecture-4/availability-scenario.jpg", width: 87%)]
 
-  #align(center)[Source: [Bck]]
+  #align(center)[Source: #cite("Bck")]
 ]
 
 #slide("A QA Scenario for Moodle's Availability (AI-generated)")[
@@ -294,17 +299,17 @@
 ]
 
 #slide("What is an Architecture of a Software System?")[
-  [Bck]:
+  #cite("Bck"):
 
   The *software architecture* of a system is the set of structures needed to reason about the system. These structures comprise software elements, relations among them, and properties of both.
 
   A *structure is architectural* if it supports reasoning about the system and the system's quality attributes. The reasoning should be about attributes of the system that are important to some stakeholder(s).
 
-  The attributes include *functionality* achieved by the system (see Functional Suitability in [Iso25010]).
+  The attributes include *functionality* achieved by the system (see Functional Suitability in #cite("Iso25010")).
 ]
 
 #slide("Why is an Architecture Important?")[
-  [Bck]:
+  #cite("Bck"):
 
   - The architecture connects (often abstract) business goals and requirements with the (concrete) tasks and implementation.
   - Designing an architecture helps avoid costly changes later.
@@ -315,7 +320,7 @@
 ]
 
 #slide("What can Affect the Architecture?")[
-  [Bck]:
+  #cite("Bck"):
 
   Architecturally Significant Requirements (ASRs) derived from:
 
@@ -330,7 +335,7 @@
     columns: (1fr, auto),
     column-gutter: 18pt,
     [
-      [Bck]:
+      #cite("Bck"):
 
       Design mostly at the very beginning of the project.
 
@@ -345,12 +350,12 @@
 #slide("How to Design an Architecture?")[
   See:
 
-  - Designing an Architecture [Bck, Ch. 20]
-  - An LLM-assisted approach to designing software architectures using ADD [LlmAdd]
+  - Designing an Architecture #cite("Bck", rest: ", Ch. 20")
+  - An LLM-assisted approach to designing software architectures using ADD #cite("LlmAdd")
 ]
 
 #slide("How to Document the Architecture?")[
-  See [Bck, Chapter 22], #link("https://github.com/otrebmuh/EventTicketSystem/blob/2a928d226d43704457ad5be46b1e6b80f5bca8cb/Design/Architecture.md")[Example 1], #link("https://github.com/otrebmuh/HotelPricingSystem/blob/433e061f712a8748fdf04a6f767752e12be2f4b9/Design/Architecture.md")[Example 2]
+  See #cite("Bck", rest: ", Chapter 22"), #link("https://github.com/otrebmuh/EventTicketSystem/blob/2a928d226d43704457ad5be46b1e6b80f5bca8cb/Design/Architecture.md")[Example 1], #link("https://github.com/otrebmuh/HotelPricingSystem/blob/433e061f712a8748fdf04a6f767752e12be2f4b9/Design/Architecture.md")[Example 2]
 
   In your assignments, you'll have to document at least these:
 
@@ -384,7 +389,7 @@
 ]
 
 #slide("Agile Manifesto")[
-  [AgileManifesto]:
+  #cite("AgileManifesto"):
 
   #align(center)[
     We are uncovering better ways of developing software by doing it and helping others do it. Through this work we have come to value:
@@ -425,7 +430,7 @@
     - Test-driven development: Tests
     - Continuous integration: CI/CD pipelines
     - Design improvement: Documented architecture
-  - Scrum [ScrumGuide]
+  - Scrum #cite("ScrumGuide")
     - Scrum Team, Scrum Events (Sprint Planning, Review, Retrospective): Sprint tracking sheet
     - Product Backlog, Sprint Backlog: GitHub Issues, GitHub Projects
     - Increments: Milestones and Releases on GitHub
@@ -436,7 +441,7 @@
 
   We teach you to apply Scrum practices, not the framework.
 
-  As explained in the [ScrumGuide] end note:
+  As explained in the #cite("ScrumGuide") end note:
 
   #quoted["The Scrum framework, as outlined herein, is immutable. While implementing only parts of Scrum is possible, the result is not Scrum. Scrum exists only in its entirety and functions well as a container for other techniques, methodologies, and practices."]
 ]
@@ -454,15 +459,15 @@
 #slide("References")[
   #set text(size: 12.5pt)
 
-  + [Sbok5]: SBOK® Guide, 5th ed., #link("https://www.scrumstudy.com/sbokguide/download-free-buy-sbok#new-sbok-download")[https://www.scrumstudy.com/sbokguide/download-free-buy-sbok#new-sbok-download]
-  + [Iso25010]: #link("https://iso25000.com/index.php/en/iso-25000-standards/iso-25010")[https://iso25000.com/index.php/en/iso-25000-standards/iso-25010]
-  + [Pmbok6]: PMBOK® Guide, 6th ed., #link("https://www.pmi.org/standards/pmbok")[https://www.pmi.org/standards/pmbok]
-  + [Pmbok7]: PMBOK® Guide, 7th ed., #link("https://www.pmi.org/standards/pmbok")[https://www.pmi.org/standards/pmbok]
-  + [Q42]: #link("https://quality.arc42.org/")[https://quality.arc42.org/]
-  + [Garvin]: #link("https://en.wikipedia.org/wiki/Eight_dimensions_of_quality")[https://en.wikipedia.org/wiki/Eight_dimensions_of_quality]
-  + [QasArch]: Quality attributes of software architectures #link("https://www.cs.unibo.it/cianca/wwwpages/as/5.pdf#page=26")[https://www.cs.unibo.it/cianca/wwwpages/as/5.pdf#page=26]
-  + [Bck]: L. Bass, P. Clements, and R. Kazman, Software Architecture in Practice, 4th ed.
-  + [LlmAdd]: An LLM-assisted approach to designing software architectures using ADD, #link("https://arxiv.org/abs/2506.22688")[https://arxiv.org/abs/2506.22688]
-  + [AgileManifesto]: Manifesto for Agile Software Development #link("https://agilemanifesto.org/")[https://agilemanifesto.org/]
-  + [ScrumGuide]: Scrum Guide™ #link("https://scrumguides.org/scrum-guide.html")[https://scrumguides.org/scrum-guide.html]
+  + [Sbok5]<Sbok5>: SBOK® Guide, 5th ed., #link("https://www.scrumstudy.com/sbokguide/download-free-buy-sbok#new-sbok-download")[https://www.scrumstudy.com/sbokguide/download-free-buy-sbok#new-sbok-download]
+  + [Iso25010]<Iso25010>: #link("https://iso25000.com/index.php/en/iso-25000-standards/iso-25010")[https://iso25000.com/index.php/en/iso-25000-standards/iso-25010]
+  + [Pmbok6]<Pmbok6>: PMBOK® Guide, 6th ed., #link("https://www.pmi.org/standards/pmbok")[https://www.pmi.org/standards/pmbok]
+  + [Pmbok7]<Pmbok7>: PMBOK® Guide, 7th ed., #link("https://www.pmi.org/standards/pmbok")[https://www.pmi.org/standards/pmbok]
+  + [Q42]<Q42>: #link("https://quality.arc42.org/")[https://quality.arc42.org/]
+  + [Garvin]<Garvin>: #link("https://en.wikipedia.org/wiki/Eight_dimensions_of_quality")[https://en.wikipedia.org/wiki/Eight_dimensions_of_quality]
+  + [QasArch]<QasArch>: Quality attributes of software architectures #link("https://www.cs.unibo.it/cianca/wwwpages/as/5.pdf#page=26")[https://www.cs.unibo.it/cianca/wwwpages/as/5.pdf#page=26]
+  + [Bck]<Bck>: L. Bass, P. Clements, and R. Kazman, Software Architecture in Practice, 4th ed.
+  + [LlmAdd]<LlmAdd>: An LLM-assisted approach to designing software architectures using ADD, #link("https://arxiv.org/abs/2506.22688")[https://arxiv.org/abs/2506.22688]
+  + [AgileManifesto]<AgileManifesto>: Manifesto for Agile Software Development #link("https://agilemanifesto.org/")[https://agilemanifesto.org/]
+  + [ScrumGuide]<ScrumGuide>: Scrum Guide™ #link("https://scrumguides.org/scrum-guide.html")[https://scrumguides.org/scrum-guide.html]
 ]
