@@ -454,6 +454,127 @@
   More info: #link("https://github.com/inno-se/the-guide?tab=readme-ov-file#agile")[Agile], #link("https://github.com/inno-se/the-guide?tab=readme-ov-file#scrum")[Scrum], #link("https://github.com/inno-se/the-guide?tab=readme-ov-file#projects")[Projects]
 ]
 
+#section("Scrum")
+
+#slide("Discussion (5 mins)")[
+  - Why need an intentionally structured process to achieve good results?
+  - What is the difference between a Product Backlog and a Sprint Backlog?
+]
+
+// The export draws this slide as one image, the SCRUM framework diagram.
+
+#slide("Scrum Framework (visualized)")[
+  #align(center + horizon, image("images/lecture-4/scrum-framework.jpg", width: 90%))
+]
+
+
+#slide("Definitions")[
+  - *Scrum* - a lightweight process framework that helps people, teams and organizations generate value through adaptive solutions for complex problems.
+  - *Product Backlog* - emergent, ordered list of what is needed to improve the product. It is the single source of work undertaken by the Scrum Team. Consists of *Product Backlog items (PBI)* - user stories, tasks, etc.
+  - *Sprint* - a container for Scrum events (*Sprint Planning, Daily Scrum, Sprint Review, Sprint Retrospective*). _1 week long for this course._
+  - *Sprint Backlog* - the *Sprint Goal*, the PBIs selected for the Sprint (Sprint Backlog items - SBI), plus the plan for delivering them.
+  - *Sprint Goal* - communicates why the Sprint is valuable to stakeholders. Defined at the Sprint Planning.
+
+  #note[Source: #link("https://scrumguides.org/scrum-guide.html")[The Scrum Guide]]
+]
+
+#slide("Scrum events")[
+  - *Sprint Planning (start of the Sprint)* - The team plans the work to be performed for the Sprint. They define the Sprint Goal and select the most important PBIs. Developers decompose the PBIs into smaller work items.
+  - *Daily Scrum* - A daily 15-minute meeting where the team inspects the progress towards the Sprint Goal and produces an actionable plan for the next day of work.
+  - *Sprint Review (near the end of the Sprint)* - The team inspects the outcome of the Sprint with the customer and determines future adaptations.
+  - *Sprint Retrospective (after the Sprint Review)* - The team plans ways to increase quality and effectiveness.
+
+  #note[Source: #link("https://scrumguides.org/scrum-guide.html")[The Scrum Guide]]
+]
+
+// --- Product backlog refinement (source slides 14-19) -----------------------
+
+#section("Product backlog refinement")
+
+#slide("Discussion (3 minutes)")[
+  - What does DEEP in “DEEP product backlog” mean?
+]
+
+#slide("DEEP product backlog")[
+  - *Detailed enough* - User stories on the Product Backlog that will be done soon need to be sufficiently well understood that they can be completed in the coming Sprint.
+  - *Estimated* - for well-understood PBIs, estimate how much effort, complexity, and risk it’ll require to complete these PBIs.
+  - *Emergent* - as more is learned, user stories and tasks on the Product Backlog will be added, removed, or reprioritized.
+  - *Prioritized* - The Product Backlog should be sorted with the most valuable items at the top and the least valuable at the bottom. By always working in priority order, the team is able to maximize the value of the product or system being developed.
+
+  #note[Sources: #link("https://www.mountaingoatsoftware.com/blog/make-the-product-backlog-deep")[Make the Product Backlog DEEP], #link("https://www.atlassian.com/agile/project-management/estimation")[Story Points and Estimation]]
+]
+
+#slide("Detailed enough")[
+  #place(
+    top + left,
+    dx: 1.55in,
+    dy: 0.77in,
+    image("images/lecture-4/backlog-detail.png", width: 7.66in),
+  )
+  #place(bottom + left, dy: 0.18in)[
+    #note[Sources: #link("https://www.mountaingoatsoftware.com/agile/user-stories/product-backlog-refinement")[Product Backlog Refinement]]
+  ]
+]
+
+#slide("Product Backlog Refinement Tips")[
+  - *Refine* the Product Backlog *every Sprint* to ensure the priorities are correct.
+  - *Have* at least *two Sprints* worth of stories *refined*.
+  - Refine *before the Sprint Planning*.
+  - More refined Product Backlog means easier Sprint Planning.
+  - *Who should do* the Product Backlog refinement?
+    + Product owner (must)
+    + Developers (should)
+]
+
+#slide("Activity 2 - Refine the Product Backlog (15 mins)")[
+  + Add up to two new user stories to your Product Backlog (if any).
+  + Mark up to two unnecessary user stories as removed.
+  + Re-prioritize user stories using MoSCoW.
+  + Reorder them (keep identifiers).
+  + Split large user stories in the top into smaller ones.
+  + Discuss each user story from the technical point of view.
+  + Estimate each user story in story points \
+    using the Modified Fibonacci sequence: \
+    1, 2, 3, 5, 8, 13, 20, 40, 100. #h(1fr) #note[Source: #link("https://www.atlassian.com/agile/project-management/fibonacci-story-points")[Fibonacci Story Points]]
+  + Record the total Product Backlog size in story points.
+]
+
+// --- Sprint planning (source slides 20-24) ----------------------------------
+
+#section("Sprint Planning")
+
+#slide("Discussion (2 minutes)")[
+  - When should you conduct the Sprint Planning?
+]
+
+#slide("Sprint Planning")[
+  - *Refine the Sprint Goal:* \
+    what will be the overall value of your Sprint to the customer?
+  - Given the Sprint Goal, decide what can be *delivered* in the upcoming Sprint and discuss how that work will be achieved.
+  - *Who should attend* the Sprint Planning meeting?
+    + Product owner (must)
+    + Scrum master (must)
+    + Developers (must)
+]
+
+#slide("Activity 3 - Sprint Planning (20 mins)")[
+  Start working on the Sprint Backlog for delivering the MVP v1:
+
+  + Define the Sprint Goal for the upcoming Sprint.
+  + Based on your Sprint Goal, pick all relevant PBIs from the refined Product Backlog \
+    (probably all user stories from the MVP v1 scope negotiated with the customer).
+  + Make sure all selected user stories are estimated in story points.
+  + Calculate how many story points are going in total into the Sprint.
+  + Select two or three user stories from the Sprint Backlog.
+  + Break each of them into two or three tasks. \
+    These user stories and tasks will be Sprint Backlog items (SBI).
+  + Provide two AC for each SBI.
+  + Assign a _responsible_ person for each SBI - who will work on the item.
+  + Assign an _accountable_ person for each SBI - a different person who will review the work and will be responsible for successful completion of that item.
+  + Ensure each SBI has enough information for developers to start working on that item.
+]
+
+
 // --- References (source slide 34) -------------------------------------------
 
 #slide("References")[
