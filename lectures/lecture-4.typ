@@ -158,7 +158,9 @@
 
   *Stakeholders' needs* (functionality, performance, security, maintainability, etc.) are precisely what is represented in the quality model, which categorizes the *product quality* into characteristics and sub-characteristics.
 
-  #align(center)[#note[a.k.a "quality attributes" - properties of the system that stakeholders consider to measure quality]]
+  #align(
+    center,
+  )[#note[a.k.a "quality attributes" - properties of the system that stakeholders consider to measure quality]]
 ]
 
 #slide("The ISO 25010 Quality Model")[
@@ -222,14 +224,14 @@
     inset: (x: 6pt, y: 4pt),
     stroke: 0.5pt + luma(75%),
     fill: (x, y) => if y == 0 { accent } else { none },
-    text(fill: white, weight: "bold")[Part],
-    text(fill: white, weight: "bold")[Short description],
+    text(fill: white, weight: "bold")[Part], text(fill: white, weight: "bold")[Short description],
     [Source of stimulus], [An entity that generates the stimulus (human, external system, sensor, etc.)],
     [Stimulus], [A condition (event) to be considered when it arrives at a system],
     [Environment], [A system's condition when a stimulus occurs],
     [Response], [The activity undertaken at the arrival of the stimulus],
     [Artifact], [Some artifact that is stimulated; may be the whole system or part of it],
-    [Response measure], [The response to the stimulus should be measurable someway so that the quality requirement can be tested],
+    [Response measure],
+    [The response to the stimulus should be measurable someway so that the quality requirement can be tested],
   )
 ]
 
@@ -247,11 +249,20 @@
     stroke: 0.5pt + luma(75%),
     fill: (x, y) => if x == 0 { luma(96%) } else { none },
     [*Source of Stimulus*], [External: A large number of students (e.g., 500+) simultaneously using the system.],
-    [*Stimulus*], [Fault (Crash): An unexpected number of concurrent database write operations, triggered by all students submitting a high-stakes quiz in the final minute before the deadline, causes the primary database server to crash.],
-    [*Artifact*], [The Moodle application, specifically the database server and the services that depend on it (e.g., quiz submission, gradebook, session management).],
-    [*Environment*], [Normal (Peak) Operation: The system is operating under a heavy but expected load on a weekday evening, which is a known peak usage time for students.],
-    [*Response*], [The system's high-availability mechanism detects the primary database failure. It automatically initiates a failover to a redundant, standby database server. A brief maintenance page is displayed to users currently in the process of submitting, and the system then seamlessly restores their sessions once the failover is complete.],
-    [*Response Measure*], [Full service is restored within 3 minutes. No more than 0.5% of student quiz submissions are lost and require resubmission. The system's availability must not drop below 99.9% during the academic term.],
+    [*Stimulus*],
+    [Fault (Crash): An unexpected number of concurrent database write operations, triggered by all students submitting a high-stakes quiz in the final minute before the deadline, causes the primary database server to crash.],
+
+    [*Artifact*],
+    [The Moodle application, specifically the database server and the services that depend on it (e.g., quiz submission, gradebook, session management).],
+
+    [*Environment*],
+    [Normal (Peak) Operation: The system is operating under a heavy but expected load on a weekday evening, which is a known peak usage time for students.],
+
+    [*Response*],
+    [The system's high-availability mechanism detects the primary database failure. It automatically initiates a failover to a redundant, standby database server. A brief maintenance page is displayed to users currently in the process of submitting, and the system then seamlessly restores their sessions once the failover is complete.],
+
+    [*Response Measure*],
+    [Full service is restored within 3 minutes. No more than 0.5% of student quiz submissions are lost and require resubmission. The system's availability must not drop below 99.9% during the academic term.],
   )
 ]
 
