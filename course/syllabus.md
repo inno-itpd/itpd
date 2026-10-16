@@ -154,14 +154,14 @@ Weeks 2 and 3 are the exceptions: their hard deadlines are Saturday, October 10 
 ### Week 4: Oct 16 – Oct 22 (Software Quality, Architecture & Next Product Release)
 
 - **Class 4 (Oct 16)**:
-  - **Lecture**: **Software Quality** (quality attributes, architectural drivers, verification strategies).
+  - **Lecture**: **Software Quality** (quality characteristics, architectural drivers, verification strategies).
 - **Submission 4 (Team Deliverables - Due Oct 22, 23:59)**:
   - **Deliverables**:
-    1. **Quality Goals Specification**: Detailed description of quality goals for the project (business goals, non-functional quality attributes, constraints).
-    2. **Verification Plan**: Description of how the team plans to verify that the quality goals are achieved.
-    3. **Architectural Draft**: Architectural design draft demonstrating how the chosen architecture supports the defined quality goals.
-    4. **Continuous Integration for the product code**: linting, formatting or type checking, build, and tests, on pull requests and on `main`.
-    5. **Next Product Release (`REL-04`)**: Working code iteration following the selected architecture and complying with the defined quality goals.
+    1. **Architectural drivers specification**: Detailed description of business goals, technical and business constraints, quality requirements, and functional requirements.
+    2. **Architectural Draft**: Architectural design draft demonstrating how the chosen architecture supports the defined drivers.
+    3. **Testing plan**: Specification of quality requirement tests and when they're expected to pass.
+    4. **Continuous Integration for the Product Code**: Automation for simple quality requirements: linting, formatting, type checking, build, and tests, on pull requests and on `main`.
+    5. **Next Product Release (`REL-04`)**: Working code iteration following the selected architecture.
   - **Submission Scope**: Team submission.
   - **Deadline**: soft **October 22 at 23:59 (Thursday)**, hard **October 23 at 23:59 (Friday)**.
 
