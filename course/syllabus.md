@@ -12,7 +12,7 @@ The course is designed to prepare students for the Industrial Project course and
   - [Week 2: Oct 2 – Oct 8 (Requirements \& Prototyping)](#week-2-oct-2--oct-8-requirements--prototyping)
   - [Week 3: Oct 9 – Oct 15 (Planning \& Minimum Usable Product)](#week-3-oct-9--oct-15-planning--minimum-usable-product)
   - [Week 4: Oct 16 – Oct 22 (Software Quality, Architecture \& Next Product Release)](#week-4-oct-16--oct-22-software-quality-architecture--next-product-release)
-  - [Week 5: Oct 23 – Oct 29 (Testing, Automation, Production Deployment \& Next Product Release)](#week-5-oct-23--oct-29-testing-automation-production-deployment--next-product-release)
+  - [Week 5: Oct 23 – Oct 29 (Testing Environments, Deployment Automation \& Next Product Release)](#week-5-oct-23--oct-29-testing-environments-deployment-automation--next-product-release)
   - [Week 6: Oct 30 – Nov 5 (Analytics \& In-Class Product Presentations)](#week-6-oct-30--nov-5-analytics--in-class-product-presentations)
   - [Week 7: Nov 6 – Nov 12 (Usability Testing Preparation)](#week-7-nov-6--nov-12-usability-testing-preparation)
   - [Week 8: Nov 13 – Nov 19 (Project Configuration Management)](#week-8-nov-13--nov-19-project-configuration-management)
@@ -154,18 +154,18 @@ Weeks 2 and 3 are the exceptions: their hard deadlines are Saturday, October 10 
 ### Week 4: Oct 16 – Oct 22 (Software Quality, Architecture & Next Product Release)
 
 - **Class 4 (Oct 16)**:
-  - **Lecture**: **Software Quality** (quality attributes, architectural drivers, verification strategies).
+  - **Lecture**: **Software Quality** (quality characteristics, architectural drivers, verification strategies).
 - **Submission 4 (Team Deliverables - Due Oct 22, 23:59)**:
   - **Deliverables**:
-    1. **Quality Goals Specification**: Detailed description of quality goals for the project (business goals, non-functional quality attributes, constraints).
-    2. **Verification Plan**: Description of how the team plans to verify that the quality goals are achieved.
-    3. **Architectural Draft**: Architectural design draft demonstrating how the chosen architecture supports the defined quality goals.
-    4. **Continuous Integration for the product code**: linting, formatting or type checking, build, and tests, on pull requests and on `main`.
-    5. **Next Product Release (`REL-04`)**: Working code iteration following the selected architecture and complying with the defined quality goals.
+    1. **Architectural drivers specification**: Detailed description of business goals, technical and business constraints, quality requirements, and functional requirements.
+    2. **Architectural Draft**: Architectural design draft demonstrating how the chosen architecture supports the defined drivers.
+    3. **Testing plan**: Specification of quality requirement tests and when they're expected to pass.
+    4. **Continuous Integration for the Product Code**: Automation for simple quality requirements: linting, formatting, type checking, build, and tests, on pull requests and on `main`.
+    5. **Next Product Release (`REL-04`)**: Working code iteration following the selected architecture.
   - **Submission Scope**: Team submission.
   - **Deadline**: soft **October 22 at 23:59 (Thursday)**, hard **October 23 at 23:59 (Friday)**.
 
-### Week 5: Oct 23 – Oct 29 (Testing, Automation, Production Deployment & Next Product Release)
+### Week 5: Oct 23 – Oct 29 (Testing Environments, Deployment Automation & Next Product Release)
 
 - **Class 5 (Oct 23)**:
   - **Lecture**: **Testing and Automating Development Tasks** (unit testing strategies, test runners, CI/CD automation pipelines, production deployment).

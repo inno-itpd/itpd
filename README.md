@@ -25,11 +25,12 @@ Each one adds the paths and evidence for its week, and changes nothing about the
 The slides from each class.
 They explain the week; [the rules](#the-rules) are what your work is checked against.
 
-| Week | Lecture                                                |
-| ---- | ------------------------------------------------------ |
-| 1    | [Course introduction](lectures/lecture-1.pdf)          |
-| 2    | [Requirements and prototyping](lectures/lecture-2.pdf) |
-| 3    | [Planning](lectures/lecture-3.pdf)                     |
+| Week | Lecture                                                 |
+| ---- | ------------------------------------------------------- |
+| 1    | [Course introduction](lectures/lecture-1.pdf)           |
+| 2    | [Requirements and prototyping](lectures/lecture-2.pdf)  |
+| 3    | [Goals, Planning, Tracking](lectures/lecture-3.pdf)     |
+| 4    | [Quality, Architecture & Agile](lectures/lecture-4.pdf) |
 
 ## The Rules
 
