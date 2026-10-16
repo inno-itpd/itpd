@@ -1,27 +1,4 @@
 // Quality, Architecture & Agile, lecture 4 of the IT Product Development course.
-//
-// Converted from the 2025 slides export tmp/itpd-2025/lectures/lecture-2.2.pdf,
-// 34 slides at 720 x 405 pt. Each slide of the export is one slide here, in th
-//
-// Deviations from the export, on purpose:
-//   - The title slide drops the author line and adds "Innopolis University, 2026",
-//     as lecture-1.typ does.
-//   - The quizzes keep their questions as lines rather than the export's numbered
-//     list, the shape lecture-2.typ gives its quizzes.
-//   - Source slide 6 draws a curly brace under the paragraph, pointing to the
-//     "a.k.a quality attributes" line. The line is a centered note here, with no
-//     brace
-//     figure on slide 13, and the design-effort curve on slide 23 are the
-//     export's own JPEGs, extracted with pdfimages -j so they are not
-//     re-encoded, and committed under images/lecture-4/
-//     because the export's text does not fit the slide at the deck's size.
-//   - The [ScrumGuide] quotation on source slide 32 is the quoted() callout from
-//     lecture-2.typ.
-//   - Source slide 34 keeps all 11 references, including [Pmbok6], which no
-//     slide cites.
-//   - The links to the 2025 course guide and to the two example architecture
-//     documents are kept as the export has them.
-//   - Wording is otherwise unchanged.
 
 #let accent = rgb("#12507b")
 #let muted = luma(42%)
@@ -122,7 +99,6 @@
   - Architecture
   - Agile
   - Scrum
-  - Product Backlog
 ]
 
 #section("Product Quality")
@@ -387,7 +363,7 @@
 
 #quiz[
   When did Agile appear?
-  
+
   Is Agile an excuse to not deliver results on time (true/false)?
 ]
 
@@ -463,7 +439,7 @@
   Does architecture-centric view agree with other principles? *Yes!*
 ]
 
-#slide("Why use Agile for the ITPD Course?")[
+#slide("Why still use Agile for the ITPD Course?")[
   - You work in a team so you need to care about interactions with your teammates.
 
   #linebreak()
@@ -491,9 +467,9 @@
 ]
 
 #slide("Definitions")[
-  
+
   #cite("ScrumGuide")
-  
+
   - *Scrum* - a lightweight process framework that helps people, teams and organizations generate value through adaptive solutions for complex problems.
   - *Product Backlog* - emergent, ordered list of what is needed to improve the product. It is the single source of work undertaken by the Scrum Team. Consists of *Product Backlog items (PBI)* - user stories, tasks, etc.
   - *Sprint* - a container for Scrum events (*Sprint Planning, Daily Scrum, Sprint Review, Sprint Retrospective*). _1 week long for this course._
@@ -510,93 +486,24 @@
   #note[Source: #link("https://scrumguides.org/scrum-guide.html")[The Scrum Guide]]
 ]
 
-#slide("You Won't use Scrum in ITPD")[
-  Please don't tell during the Industrial Project that you were trained to use Scrum in ITPD!
+#slide("Scrum in ITPD")[
+  In ITPD, we use elements of Scrum that align well with what's imporant in the course - regular communication inside the team and with the customer, iterative progress towards MVP, bounded amount of work each Sprint.
 
-  We teach you to apply specific Scrum practices, not the whole framework.
+  Please don't tell during the Industrial Project that you were trained to use Scrum in ITPD!
 
   As explained in the #cite("ScrumGuide") end note:
 
   #quoted["The Scrum framework, as outlined herein, is immutable. While implementing only parts of Scrum is possible, the result is not Scrum. Scrum exists only in its entirety and functions well as a container for other techniques, methodologies, and practices."]
 ]
 
-#quiz[
-  - Is there the team lead role in a Scrum team?
+#section("Key Takeaways")
 
-  - Who is accountable for the project success in a Scrum team?
-
-  - Why not use full Scrum in ITPD?
+#slide("Key Takeaways")[
+  - You must think about quality early if you want to have control over your software system via its architecture.
+  - Effective agile practices should be supported by the well-thought-out architecture and configuration management.
+  - Scrum is a well-documented framework in spirit of Agile that guides you how to deliver every Sprint.
 ]
 
-#section("Product Backlog")
-
-#slide("Discussion (3 minutes)")[
-  - What is a Product Backlog?
-]
-
-#slide("DEEP product backlog")[
-  - *Detailed enough* - User stories on the Product Backlog that will be done soon need to be sufficiently well understood that they can be completed in the coming Sprint.
-  - *Estimated* - for well-understood PBIs, estimate how much effort, complexity, and risk it’ll require to complete these PBIs.
-  - *Emergent* - as more is learned, user stories and tasks on the Product Backlog will be added, removed, or reprioritized.
-  - *Prioritized* - The Product Backlog should be sorted with the most valuable items at the top and the least valuable at the bottom. By always working in priority order, the team is able to maximize the value of the product or system being developed.
-
-  #note[Sources: #link("https://www.mountaingoatsoftware.com/blog/make-the-product-backlog-deep")[Make the Product Backlog DEEP], #link("https://www.atlassian.com/agile/project-management/estimation")[Story Points and Estimation]]
-]
-
-#slide("Detailed enough")[
-  #place(
-    top + left,
-    dx: 1.55in,
-    dy: 0.77in,
-    image("images/lecture-4/backlog-detail.png", height: 4in),
-  )
-  #place(bottom + left, dy: 0.18in)[
-    #note[Sources: #link("https://www.mountaingoatsoftware.com/agile/user-stories/product-backlog-refinement")[Product Backlog Refinement]]
-  ]
-]
-
-#slide("Product Backlog Refinement Tips")[
-  - *Refine* the Product Backlog *every Sprint* to ensure the priorities are correct.
-  - *Have* at least *two Sprints* worth of stories *refined*.
-  - Refine *before the Sprint Planning*.
-  - More refined Product Backlog means easier Sprint Planning.
-  - *Who should do* the Product Backlog refinement?
-    + Product owner (must)
-    + Developers (should)
-]
-
-#section("Sprint Planning")
-
-#slide("Discussion (2 minutes)")[
-  - When should you conduct the Sprint Planning?
-]
-
-#slide("Sprint Planning")[
-  - *Refine the Sprint Goal:* \
-    what will be the overall value of your Sprint to the customer?
-  - Given the Sprint Goal, decide what can be *delivered* in the upcoming Sprint and discuss how that work will be achieved.
-  - *Who should attend* the Sprint Planning meeting?
-    + Product owner (must)
-    + Scrum master (must)
-    + Developers (must)
-]
-
-#slide("Activity 3 - Sprint Planning (20 mins)")[
-  Start working on the Sprint Backlog for delivering the MVP v1:
-
-  + Define the Sprint Goal for the upcoming Sprint.
-  + Based on your Sprint Goal, pick all relevant PBIs from the refined Product Backlog \
-    (probably all user stories from the MVP v1 scope negotiated with the customer).
-  + Make sure all selected user stories are estimated in story points.
-  + Calculate how many story points are going in total into the Sprint.
-  + Select two or three user stories from the Sprint Backlog.
-  + Break each of them into two or three tasks. \
-    These user stories and tasks will be Sprint Backlog items (SBI).
-  + Provide two AC for each SBI.
-  + Assign a _responsible_ person for each SBI - who will work on the item.
-  + Assign an _accountable_ person for each SBI - a different person who will review the work and will be responsible for successful completion of that item.
-  + Ensure each SBI has enough information for developers to start working on that item.
-]
 
 
 // --- References (source slide 34) -------------------------------------------
