@@ -50,7 +50,7 @@
   - named as `Recommended` in `## Tracking Tasks Inside The Repository`, not required
   - its files are declared repository content, not artifacts
 - [x] Linter in CI (students)
-  - Markdown check moved into W2, product code CI into W3
+  - Markdown check moved into W2, product code CI into W4
 - [x] context diagram - https://c4model.com/diagrams/system-context
   - required in W2, format deliberately not mandated
   - C4 continues in W4 with containers and components
@@ -141,13 +141,18 @@
 - [x] lychee
 - [x] using this repo as an agent skill
 - [ ] require actionlint on their side
-- [ ] Improve ecture 2:
+- [ ] avoid migrations in the assignment ("one-time catch-up")
+  - Example:
+- [ ] Improve lecture 2:
   - [ ] Remind what a gap and a value proposition are (bridge-in)
   - [ ] Prototype is needed to show early what you're working on
   - [ ] Terms about scope: in-scope, out-of-scope
   - [ ] Talk about traceability
   - [ ] Provide summary at the end
-- [ ] MoSCoW must be issue fields
+- [ ] Next iteration:
+  - [ ] Introduce separate issue types for US and Tasks
+  - [ ] MoSCoW must be issue fields on US
+  - [ ] Tasks must have priority
 
 ## A3
 
@@ -189,9 +194,17 @@ Next: Week 3 is planning and the minimum usable product, and it has no assignmen
   - Fixed: the rule reads "an already closed issue needs none", and the values and the assignees stay on the issue after it closes.
 - [x] Move issues to a separate doc
   - `requirements/issue-tracking-requirements.md` holds the rules every issue shares, the fields, the assignees, and the project.
-- [x] Save A3 decisions in course/decisions/decisions-a3.md
-  - Dropped: the decisions landed in the course materials and the backlog task notes, and `handoff.md` is planning scratch that is deleted once Assignment 3 is published.
-- [x] Introduce a policy about dependency bumps
+- [x] Save A3 decisions in `course/decisions/a3.md`
+  - The key design decisions are recorded there as `A3-DEC-nnn` entries with their reasons, alternatives, and landing points; the full planning log stays in the untracked `handoff.md` until Assignment 3 is published.
+- [x] Milestones
+  - [x] Pre-defined: only for MUP
+  - [x] Above sprints, no table
+- [ ] Introduce an explicit policy about dependency bumps for the itpd repo
+- [x] Require a responsible person for each risk
+  - No: responsibility stays on task and story issues, and the register's checker is named in the plan's Progress Monitoring.
+- [ ] Decisions
+  - [ ] Responsible + accountable - make the work owner obvious to prevent free-riding
+  - [ ] Unstash a3-handoff and record other relevant decisions from there
 - [ ] Improve the lecture in the next iteration.
       Include:
   - [ ] Planning
@@ -201,6 +214,13 @@ Next: Week 3 is planning and the minimum usable product, and it has no assignmen
 
 ## A4
 
+- [ ] https://github.com/inno-itpd/itpd/actions/runs/38108934047/job/114380240234
+- [ ] Lecture:
+  - Last week, you built something and you were not required to automatically check what you built
+- [ ] Ubiquitous language
+- [ ] Product-code CI (moved from Week 3):
+  - [ ] Assignment 4 cites the `Since: W4` block in `requirements/repository-requirements.md`
+  - [ ] The full example in `requirements/definition-of-done-requirements.md` gains the product-code CI
 - Scrum
   - Sprints
   - Retro - in the report, what can't be public?
@@ -219,6 +239,14 @@ Next: Week 3 is planning and the minimum usable product, and it has no assignmen
 - [ ] Still keep user story issues to track added value?
       Or, fully switch to architecture and functional requirements issues?
 - [ ] "main actor flows" (sequence diagrams)?
+- [ ] Introduce separate issue types for US and Tasks
+- [ ] MoSCoW must be issue fields on US
+- [ ] Tasks must have priority
+- [ ] Ask questions about the setup:
+  - [ ] How does your setup help prevent free riding?
+  - [ ]
+- [ ] Verification and validation
+  - [ ] Formal verification with Lean 4
 
 ## A6
 
