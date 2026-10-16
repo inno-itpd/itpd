@@ -1,8 +1,7 @@
 // Quality, Architecture & Agile, lecture 4 of the IT Product Development course.
 //
 // Converted from the 2025 slides export tmp/itpd-2025/lectures/lecture-2.2.pdf,
-// 34 slides at 720 x 405 pt. Each slide of the export is one slide here, in the
-// same order, and the section comments below name the source slides.
+// 34 slides at 720 x 405 pt. Each slide of the export is one slide here, in th
 //
 // Deviations from the export, on purpose:
 //   - The title slide drops the author line and adds "Innopolis University, 2026",
@@ -11,12 +10,10 @@
 //     list, the shape lecture-2.typ gives its quizzes.
 //   - Source slide 6 draws a curly brace under the paragraph, pointing to the
 //     "a.k.a quality attributes" line. The line is a centered note here, with no
-//     brace.
-//   - The quality-model diagrams on source slides 7 and 8, the availability
+//     brace
 //     figure on slide 13, and the design-effort curve on slide 23 are the
 //     export's own JPEGs, extracted with pdfimages -j so they are not
-//     re-encoded, and committed under images/lecture-4/.
-//   - The tables on source slides 12 and 14 are Typst tables set to 12pt,
+//     re-encoded, and committed under images/lecture-4/
 //     because the export's text does not fit the slide at the deck's size.
 //   - The [ScrumGuide] quotation on source slide 32 is the quoted() callout from
 //     lecture-2.typ.
@@ -117,26 +114,27 @@
 // Every section opens with a quiz and closes with its Key Takeaways slide.
 #let quiz(body) = slide("Quiz")[#body]
 
-// --- Title, agenda, and the Product Quality opener (source slides 1-3) ------
-
 #title-slide()
 
 #slide("Agenda")[
-  - Quality
+  - Product quality
+  - Quality requirements
   - Architecture
   - Agile
+  - Scrum
+  - Product Backlog
 ]
 
 #section("Product Quality")
 
-// --- Quality (source slides 4-17) -------------------------------------------
-
 #quiz[
-  What is a quality attribute?
+  What are examples of fast software?
 
-  Which quality attributes do you know?
+  What are examples of slow software?
 
-  Which quality attribute did the NavProject team skip?
+  How to measure the speed of software?
+
+  Who decides which speed is enough?
 ]
 
 #slide("Stakeholders and Quality")[
@@ -146,25 +144,23 @@
 
   #line(length: 100%, stroke: 0.5pt + luma(70%))
 
-  Your stakeholders are course instructors, your customer, peer teams, your team.
+  Your stakeholders are course instructors, your customer, team, users of your product.
 
-  You should manage and meet their expectations about the quality of both your product and project (deliver on time, use appropriate processes, tools etc.)
+  You should identify, manage, and meet their requirements and expectations about the quality of your product (e.g. security, speed) and project (e.g. time, budget, processes, etc.) to achieve success.
 ]
 
 #slide("Product Quality")[
   #cite("Iso25010"):
 
-  The *quality of a system* is the degree to which the system satisfies the stated and implied needs of its various *stakeholders*, and thus provides value.
+  The *quality of a system* is the degree to which the system satisfies the #underline("stated") and #underline("implied") needs of its various stakeholders, and thus provides value.
 
-  *Stakeholders' needs* (functionality, performance, security, maintainability, etc.) are precisely what is represented in the quality model, which categorizes the *product quality* into characteristics and sub-characteristics.
-
-  #align(
-    center,
-  )[#note[a.k.a "quality attributes" - properties of the system that stakeholders consider to measure quality]]
+  Stakeholders' needs (functionality, performance, security, maintainability, etc.) are precisely what is represented in the *quality model*, which categorizes the product quality into *characteristics* and *sub-characteristics* (a.k.a "quality attributes").
 ]
 
 #slide("The ISO 25010 Quality Model")[
-  Quality → Characteristics → Sub-characteristics #cite("Iso25010"):
+  #cite("Iso25010"):
+
+  Quality → Characteristics → Sub-characteristics
 
   #image("images/lecture-4/iso-25010-model.jpg", width: 100%)
 ]
@@ -176,14 +172,16 @@
     [
       #cite("Q42"):
 
-      The arc42 quality model Q42 is a simple, pragmatic yet effective approach to *product and system quality*. It starts with *stakeholders' expectations* and requirements. From these, it derives 8 important system properties, which are sufficient to cover most, if not all, required, desirable or expected of the more than 100 _traditional_ qualities.
+      The arc42 quality model Q42 is a simple, pragmatic yet effective approach to *product and system quality*. It starts with *stakeholders' expectations* and *requirements*. From these, it derives 8 important *system properties*, which are sufficient to cover most, if not all, required, desirable or expected of the more than 100 _traditional_ qualities.
     ],
     image("images/lecture-4/q42-model.jpg", height: 255pt),
   )
 ]
 
+#section("Quality Requirements")
+
 #slide("How to Measure Your Product Quality? Idea 1")[
-  You ask stakeholders to assess the quality of a product version.
+  You ask stakeholders to assess the quality of a product version ("I know it when I see it.").
 
   - *Pros:*
     - Stakeholders know their needs and thus are the perfect assessors.
@@ -192,7 +190,7 @@
 ]
 
 #slide("How to Measure Your Product Quality? Idea 2")[
-  You use quality attributes from an existing model.
+  You use quality attributes from an existing model ("I don't want to think.").
 
   - *Pros:*
     - Don't need to design your own quality attributes.
@@ -208,13 +206,15 @@
   - *Pros:*
     - These requirements can be tested by all stakeholders (your team, your customer, etc.)
     - Their price can be estimated by tracing these requirements to related architectural decisions.
-    - They can be put into a contract.
+    - They can be put into a contract ("service-level agreements").
   - *Cons:*
     - They may not cover the perceived quality #cite("Garvin").
 ]
 
-#slide("Quality Attribute Scenarios")[
-  QA scenarios are a way to write unambiguous testable quality requirements #cite("Bck"). You should specify a realistic test to prove that a scenario is testable.
+#slide("Quality Attribute Scenarios (Quality Requirements, QR)")[
+  *Quality attribute scenarios* (*QAS*) are a way to write unambiguous testable (pass/fail) *quality requirements* (*QR*) #cite("Bck").
+
+  To prove that the requirement is testable, you define a *quality requirement test* (*QRT*) which specifies how to test the requirement.
 
   A scenario has 6 parts #cite("QasArch"):
 
@@ -241,7 +241,7 @@
   #align(center)[Source: #cite("Bck")]
 ]
 
-#slide("A QA Scenario for Moodle's Availability (AI-generated)")[
+#slide("Example: A QR for Moodle's Availability")[
   #set text(size: 12pt)
   #table(
     columns: (auto, 1fr),
@@ -266,7 +266,7 @@
   )
 ]
 
-#slide("A Test for the QA scenario (AI-Generated)")[
+#slide("Example: A QR test")[
   - *Step 1: Simulate the Stimulus*
     - In a staging environment, we use a load testing tool (JMeter) to simulate *500+ students* submitting a quiz at the exact same second.
   - *Step 2: Inject the Fault*
@@ -278,48 +278,41 @@
       - *Availability:* The overall uptime of *99.9%* is maintained.
 ]
 
-#slide("How to get QA Scenarios?")[
-  - Quality Attribute Workshop (see #link("https://github.com/inno-se/the-guide?tab=readme-ov-file#quality-attribute-workshop-qaw")[Quality attribute workshop])
-    - During QAW, facilitators identify and clarify architectural drivers with stakeholders and the architect and then help stakeholders generate, prioritize, and refine QA scenarios based on these drivers.
-  - Use an AI (similar to QAW; modify the steps below as necessary)
-    - Load into the chat with the AI the existing product documentation, an existing quality model (ISO 25010, Q42, etc.) description, architectural drivers (see #link("https://github.com/inno-se/the-guide?tab=readme-ov-file#architectural-drivers")[Architectural drivers]), QAW procedure description.
-    - Ask the AI to identify relevant quality attributes and come up with brief scenarios.
-    - Ask stakeholders to validate and prioritize these scenarios.
-    - Ask the AI to refine the most important scenarios.
-    - Verify the requirements (consistency, feasibility, etc.)
-    - Repeat steps as necessary.
+#slide("How to obtain QAS?")[
+  Quality requirements belong to *architectural drivers* that also include primary functional requirements, technical and business constraints, business goals. More about them later.
+
+  To obtain QAS, you can conduct a *Quality Attribute Workshop* (*QAW*, #link("https://github.com/inno-se/the-guide?tab=readme-ov-file#quality-attribute-workshop-qaw")[more info here]).
+
+  During QAW, facilitators (team members, AI) identify and clarify architectural drivers with stakeholders and the architect and then help stakeholders generate, prioritize, verify (consistency, feasibility, etc.) and refine QA scenarios based on these drivers.
 ]
 
 #slide("Key Takeaways")[
   - Elicit quality requirements at the project start to better manage customer expectations.
-  - Use QA scenarios to express testable quality requirements.
+  - Use quality attribute scenarios to express testable quality requirements.
   - Derive specific quality requirements from generic quality attributes in existing quality models.
   - Use AI to produce requirements and specify corresponding tests.
-
-  More info: #link("https://github.com/inno-se/the-guide?tab=readme-ov-file#quality")[Quality]
+  - More info: #link("https://github.com/inno-se/the-guide?tab=readme-ov-file#quality")[Quality]
 ]
 
 #section("Architecture")
 
-// --- Architecture (source slides 19-26) -------------------------------------
-
 #quiz[
-  What is an architecture of a software system?
-
   Which software systems have an architecture?
+
+  What is the architecture of a software system?
 ]
 
-#slide("What is an Architecture of a Software System?")[
+#slide("What is the Architecture of a Software System?")[
   #cite("Bck"):
 
-  The *software architecture* of a system is the set of structures needed to reason about the system. These structures comprise software elements, relations among them, and properties of both.
+  The *software architecture* of a system is the set of *structures* needed to reason about the system. These structures comprise software elements, relations among them, and properties of both.
 
-  A *structure is architectural* if it supports reasoning about the system and the system's quality attributes. The reasoning should be about attributes of the system that are important to some stakeholder(s).
+  A structure is *architectural* if it supports reasoning about the system and the system's quality attributes. The reasoning should be about attributes of the system that are important to some stakeholder(s).
 
   The attributes include *functionality* achieved by the system (see Functional Suitability in #cite("Iso25010")).
 ]
 
-#slide("Why is an Architecture Important?")[
+#slide("Why is the Architecture Important?")[
   #cite("Bck"):
 
   - The architecture connects (often abstract) business goals and requirements with the (concrete) tasks and implementation.
@@ -333,15 +326,17 @@
 #slide("What can Affect the Architecture?")[
   #cite("Bck"):
 
-  Architecturally Significant Requirements (ASRs) derived from:
+  The architecture is developed based on *Architecturally Significant Requirements* (ASRs) that can affect quality attributes of the system.
 
-  - Functional requirements;
+  ASRs are:
+
+  - Primary functional requirements;
   - Quality requirements;
   - Business goals;
   - Constraints (business, technical)
 ]
 
-#slide("When to Design an Architecture?")[
+#slide("When to Design the Architecture?")[
   #grid(
     columns: (1fr, auto),
     column-gutter: 18pt,
@@ -368,15 +363,15 @@
 #slide("How to Document the Architecture?")[
   See #cite("Bck", rest: ", Chapter 22"), #link("https://github.com/otrebmuh/EventTicketSystem/blob/2a928d226d43704457ad5be46b1e6b80f5bca8cb/Design/Architecture.md")[Example 1], #link("https://github.com/otrebmuh/HotelPricingSystem/blob/433e061f712a8748fdf04a6f767752e12be2f4b9/Design/Architecture.md")[Example 2]
 
-  In your assignments, you'll have to document at least these:
-
-  - Static views (context diagram, use case diagram, component diagram)
+  Diagrams:
+  - Static views (context diagram, component diagram)
   - Dynamic views (sequence diagram)
-  - Architectural decisions with justification
 
-  The diagrams must include a key (legend).
+  #note[The diagrams must include a key (legend)!]
 
-  The documentation should be #link("https://github.com/inno-se/the-guide?tab=readme-ov-file#just-barely-good-enough-jbge")[just barely good enough] (of enough quality for the target audience at a given time).
+  Text:
+  - *Architectural decision records* (*ADR*) - architectural decisions with justification; #linebreak() records have a uniform format
+  - Diagram descriptions
 ]
 
 #slide("Key Takeaways")[
@@ -385,18 +380,15 @@
   - The ASRs should be gathered early in the project.
   - The ASRs include quality requirements.
   - Hence, quality requirements should be gathered early in the project.
-
-  More info: #link("https://github.com/inno-se/the-guide?tab=readme-ov-file#architecture")[Architecture]
+  - More info: #link("https://github.com/inno-se/the-guide?tab=readme-ov-file#architecture")[Architecture]
 ]
 
 #section("Agile")
 
-// --- Agile (source slides 28-33) --------------------------------------------
-
 #quiz[
-  Which Agile approaches did you use?
-
-  Why do you think they were Agile approaches?
+  When did Agile appear?
+  
+  Is Agile an excuse to not deliver results on time (true/false)?
 ]
 
 #slide("Agile Manifesto")[
@@ -422,71 +414,91 @@
   ]
 ]
 
+#slide("Agile and Architecture")[
+  See #link("https://agilemanifesto.org/principles.html")[Principles behind the Agile Manifesto], #link("https://github.com/inno-se/the-guide?tab=readme-ov-file#agile-and-architecture")[Agile and architecture]
+
+  #cite("Bck"):
+
+  #set text(size: 12pt)
+  #table(
+    columns: (40%, 10%, 1fr),
+    inset: (x: 6pt, y: 3pt),
+    stroke: 0.5pt + luma(75%),
+    fill: (x, y) => if x == 0 { luma(96%) } else { none },
+    [*Agile Principle*], [*Agree?*], [*Architecture-centric View*],
+
+    [The best architectures, requirements, and designs emerge from self-organizing teams.],
+    [No],
+    [No, they don’t. The best architectures are consciously designed by skilled, talented, trained, and experienced architects, as we describe in Chapter 20],
+
+    [The most efficient and effective method of conveying information to and within a development team is face-to-face conversation.],
+    [No],
+    [This is nonsense for nontrivial systems. Humans invented writing because our brains can’t remember everything we need to remember.],
+
+    [Business people and developers must work together daily throughout the project.],
+    [Mostly],
+    [Business goals lead to quality attribute requirements, which the architecture’s primary duty is to fulfill, as we discussed in Chapter 19.],
+
+    [Build projects around motivated individuals. Give them the environment and support they need, and trust them to get the job done.],
+    [Mostly],
+    [While we agree in principle, many developers are inexperienced. So make sure to include a skilled, experienced, and motivated architect to help guide these individuals.],
+
+    [Working software is the primary measure of progress.],
+    [Mostly],
+    [Yes, as long as “primary” is not taken to mean “only,” and as long as this principle is not used as an excuse to eliminate all work except coding.],
+
+    [Simplicity — the art of maximizing the amount of work not done — is essential.],
+    [Mostly],
+    [Yes, of course, as long as it is understood that the work we are not doing can actually be jettisoned safely without detriment to the system being delivered.],
+
+    [Deliver working software frequently, from a couple of weeks to a couple of months, with a preference for the shorter time scale.],
+    [Yes!],
+    [Absolutely, as long as this principle is not seen as precluding a thoughtful architecture. DevOps has a large role to play here, and we have seen, in Chapter 5, how architectures can support DevOps.],
+
+    [Welcome changing requirements, even late in development. Agile processes harness change for the customer’s competitive advantage.],
+    [Yes!],
+    [Absolutely. This principle is served by architectures that provide high degrees of modifiability (Chapter 8) and deployability (Chapter 5).],
+  )
+
+  Does architecture-centric view agree with other principles? *Yes!*
+]
+
 #slide("Why use Agile for the ITPD Course?")[
-  ITPD is like a training before the Industrial Project (IP) course.
+  - You work in a team so you need to care about interactions with your teammates.
 
-  The IP lasts for two semesters. There will most probably be changes in requirements. You'll have to deliver value to real companies to succeed.
+  #linebreak()
 
-  Agile works well for small self-organizing cross-functional teams. Agile is about managing changes and delivering value early. During ITPD, you'll practice both in a low-stakes project under our supervision.
+  - The ultimate goal is to produce working valuable software although we also require you manage the configuration to be able to comprehensively control the project.
 
-  We hope that the training during ITPD will help you succeed during the IP.
-]
+  #linebreak()
 
-#slide("Agile Practices")[
-  During the course, you'll apply practices from Agile approaches to improve the quality of your system through processes and tools.
+  - We want you to learn to elicit and analyze requirements so you have to meet with the customer weekly. We don't provide a contract to negotiate.
 
-  The focus will be on these approaches and associated practices/artifacts and deliverables (the list may be extended):
+  #linebreak()
 
-  - Extreme Programming, or XP
-    - Test-driven development: Tests
-    - Continuous integration: CI/CD pipelines
-    - Design improvement: Documented architecture
-  - Scrum #cite("ScrumGuide")
-    - Scrum Team, Scrum Events (Sprint Planning, Review, Retrospective): Sprint tracking sheet
-    - Product Backlog, Sprint Backlog: GitHub Issues, GitHub Projects
-    - Increments: Milestones and Releases on GitHub
-]
-
-#slide("You Won't use Scrum in ITPD")[
-  Please don't tell during the Industrial Project that you were trained to use Scrum!
-
-  We teach you to apply Scrum practices, not the framework.
-
-  As explained in the #cite("ScrumGuide") end note:
-
-  #quoted["The Scrum framework, as outlined herein, is immutable. While implementing only parts of Scrum is possible, the result is not Scrum. Scrum exists only in its entirety and functions well as a container for other techniques, methodologies, and practices."]
-]
-
-#slide("Key Takeaways")[
-  - Scrum practices aren't Scrum.
-  - We believe that Agile practices can improve the quality of your software.
-  - ITPD lets you train for the IP course.
-
-  More info: #link("https://github.com/inno-se/the-guide?tab=readme-ov-file#agile")[Agile], #link("https://github.com/inno-se/the-guide?tab=readme-ov-file#scrum")[Scrum], #link("https://github.com/inno-se/the-guide?tab=readme-ov-file#projects")[Projects]
+  - The development of a new product can be unpredictable so you have to respond to changes although you should also keep in mind the general plan to know how it changes when changes arrive.
 ]
 
 #section("Scrum")
 
-#slide("Discussion (5 mins)")[
-  - Why need an intentionally structured process to achieve good results?
-  - What is the difference between a Product Backlog and a Sprint Backlog?
+#quiz[
+  - What is Scrum?
+  - How is it related to Agile?
 ]
-
-// The export draws this slide as one image, the SCRUM framework diagram.
 
 #slide("Scrum Framework (visualized)")[
   #align(center + horizon, image("images/lecture-4/scrum-framework.jpg", width: 90%))
 ]
 
-
 #slide("Definitions")[
+  
+  #cite("ScrumGuide")
+  
   - *Scrum* - a lightweight process framework that helps people, teams and organizations generate value through adaptive solutions for complex problems.
   - *Product Backlog* - emergent, ordered list of what is needed to improve the product. It is the single source of work undertaken by the Scrum Team. Consists of *Product Backlog items (PBI)* - user stories, tasks, etc.
   - *Sprint* - a container for Scrum events (*Sprint Planning, Daily Scrum, Sprint Review, Sprint Retrospective*). _1 week long for this course._
-  - *Sprint Backlog* - the *Sprint Goal*, the PBIs selected for the Sprint (Sprint Backlog items - SBI), plus the plan for delivering them.
+  - *Sprint Backlog* - the *Sprint Goal*, the PBIs selected for the Sprint (*Sprint Backlog items* - *SBI*), plus the plan for delivering them.
   - *Sprint Goal* - communicates why the Sprint is valuable to stakeholders. Defined at the Sprint Planning.
-
-  #note[Source: #link("https://scrumguides.org/scrum-guide.html")[The Scrum Guide]]
 ]
 
 #slide("Scrum events")[
@@ -498,12 +510,28 @@
   #note[Source: #link("https://scrumguides.org/scrum-guide.html")[The Scrum Guide]]
 ]
 
-// --- Product backlog refinement (source slides 14-19) -----------------------
+#slide("You Won't use Scrum in ITPD")[
+  Please don't tell during the Industrial Project that you were trained to use Scrum in ITPD!
 
-#section("Product backlog refinement")
+  We teach you to apply specific Scrum practices, not the whole framework.
+
+  As explained in the #cite("ScrumGuide") end note:
+
+  #quoted["The Scrum framework, as outlined herein, is immutable. While implementing only parts of Scrum is possible, the result is not Scrum. Scrum exists only in its entirety and functions well as a container for other techniques, methodologies, and practices."]
+]
+
+#quiz[
+  - Is there the team lead role in a Scrum team?
+
+  - Who is accountable for the project success in a Scrum team?
+
+  - Why not use full Scrum in ITPD?
+]
+
+#section("Product Backlog")
 
 #slide("Discussion (3 minutes)")[
-  - What does DEEP in “DEEP product backlog” mean?
+  - What is a Product Backlog?
 ]
 
 #slide("DEEP product backlog")[
@@ -520,7 +548,7 @@
     top + left,
     dx: 1.55in,
     dy: 0.77in,
-    image("images/lecture-4/backlog-detail.png", width: 7.66in),
+    image("images/lecture-4/backlog-detail.png", height: 4in),
   )
   #place(bottom + left, dy: 0.18in)[
     #note[Sources: #link("https://www.mountaingoatsoftware.com/agile/user-stories/product-backlog-refinement")[Product Backlog Refinement]]
@@ -536,21 +564,6 @@
     + Product owner (must)
     + Developers (should)
 ]
-
-#slide("Activity 2 - Refine the Product Backlog (15 mins)")[
-  + Add up to two new user stories to your Product Backlog (if any).
-  + Mark up to two unnecessary user stories as removed.
-  + Re-prioritize user stories using MoSCoW.
-  + Reorder them (keep identifiers).
-  + Split large user stories in the top into smaller ones.
-  + Discuss each user story from the technical point of view.
-  + Estimate each user story in story points \
-    using the Modified Fibonacci sequence: \
-    1, 2, 3, 5, 8, 13, 20, 40, 100. #h(1fr) #note[Source: #link("https://www.atlassian.com/agile/project-management/fibonacci-story-points")[Fibonacci Story Points]]
-  + Record the total Product Backlog size in story points.
-]
-
-// --- Sprint planning (source slides 20-24) ----------------------------------
 
 #section("Sprint Planning")
 
