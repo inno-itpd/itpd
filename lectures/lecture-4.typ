@@ -375,6 +375,19 @@
   Is Agile an excuse to not deliver results on time?
 ]
 
+#slide("What is Agile?")[  
+  From #link("https://agilemanifesto.org/history.html")["History: The Agile Manifesto"]:
+
+  #quote(
+    "We hope that our work ... helps others in our profession to think about software development, methodologies, and organizations, in new – more agile – ways.",
+    block: true,
+  )
+  
+  Opinion: Agile is a response of independent thinkers about software development to inefficient corporate bureaucracy.
+
+  Opinion: Agile is a mindset based on particular values, definitely not a process framework.
+]
+
 #slide("Agile Manifesto")[
   #cite("AgileManifesto"):
 
