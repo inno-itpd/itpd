@@ -123,6 +123,9 @@
   Your stakeholders are course instructors, your customer, team, users of your product.
 
   You should identify, manage, and meet their requirements and expectations about the quality of your product (e.g. security, speed) and project (e.g. time, budget, processes, etc.) to achieve success.
+
+  
+  *Important: stakeholders may not know how to describe the quality they want, so you should help them. This way, you can collaborate towards achieving the same desired quality.*
 ]
 
 #slide("Product Quality")[
@@ -499,6 +502,7 @@
 #section("Key Takeaways")
 
 #slide("Key Takeaways")[
+  - You should help stakeholders express their quality requirements and then collaborate with them to achieve the desired product quality.
   - You must think about quality early if you want to have control over your software system via its architecture.
   - Effective agile practices should be supported by the well-thought-out architecture and configuration management.
   - Scrum is a well-documented framework in spirit of Agile that guides you how to deliver every Sprint.
