@@ -460,7 +460,7 @@
   Does architecture-centric view agree with other principles? *Yes!*
 ]
 
-#slide("Why still use Agile for the ITPD Course?")[
+#slide("Why use Agile for the ITPD Course?")[
   - You work in a team so you need to care about interactions with your teammates.
 
   #linebreak()
