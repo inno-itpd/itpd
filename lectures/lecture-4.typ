@@ -267,7 +267,7 @@
 
   To obtain QAS, you can conduct a *Quality Attribute Workshop* (*QAW*, #link("https://github.com/inno-se/the-guide?tab=readme-ov-file#quality-attribute-workshop-qaw")[more info here]).
 
-  During QAW, facilitators (team members, AI) identify and clarify architectural drivers with stakeholders and the architect and then help stakeholders generate, prioritize, verify (consistency, feasibility, etc.) and refine QA scenarios based on these drivers.
+  During QAW, facilitators (team members, AI) identify and clarify architectural drivers with stakeholders and the architect and then help stakeholders generate, prioritize, verify (check requirements for consistency, feasibility etc.) and refine QA scenarios based on these drivers.
 ]
 
 #slide("Key Takeaways")[
