@@ -370,9 +370,9 @@
 #section("Agile")
 
 #quiz[
-  When did Agile appear?
+  Who of you heard about Agile?
 
-  Is Agile an excuse to not deliver results on time (true/false)?
+  Is Agile an excuse to not deliver results on time?
 ]
 
 #slide("Agile Manifesto")[
