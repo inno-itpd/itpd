@@ -99,6 +99,7 @@
   - Architecture
   - Agile
   - Scrum
+  // - Product Backlog
 ]
 
 #section("Product Quality")
@@ -123,6 +124,8 @@
   Your stakeholders are course instructors, your customer, team, users of your product.
 
   You should identify, manage, and meet their requirements and expectations about the quality of your product (e.g. security, speed) and project (e.g. time, budget, processes, etc.) to achieve success.
+
+  *Important: stakeholders may not know how to describe the quality they want, so you should help them. This way, you can collaborate towards achieving the same desired quality.*
 ]
 
 #slide("Product Quality")[
@@ -152,6 +155,11 @@
     ],
     image("images/lecture-4/q42-model.jpg", height: 255pt),
   )
+]
+
+#slide("Key Takeaways")[
+  - Stakeholders have explicit and implicit expectations about the properties of the software system that you build. Help them uncover these expectations and manage these expectations.
+  - Existing quality models cover most of the potentially desirable properties of software systems.
 ]
 
 #section("Quality Requirements")
@@ -259,7 +267,7 @@
 
   To obtain QAS, you can conduct a *Quality Attribute Workshop* (*QAW*, #link("https://github.com/inno-se/the-guide?tab=readme-ov-file#quality-attribute-workshop-qaw")[more info here]).
 
-  During QAW, facilitators (team members, AI) identify and clarify architectural drivers with stakeholders and the architect and then help stakeholders generate, prioritize, verify (consistency, feasibility, etc.) and refine QA scenarios based on these drivers.
+  During QAW, facilitators (team members, AI) identify and clarify architectural drivers with stakeholders and the architect and then help stakeholders generate, prioritize, verify (check requirements for consistency, feasibility etc.) and refine QA scenarios based on these drivers.
 ]
 
 #slide("Key Takeaways")[
@@ -362,9 +370,22 @@
 #section("Agile")
 
 #quiz[
-  When did Agile appear?
+  Who of you heard about Agile?
 
-  Is Agile an excuse to not deliver results on time (true/false)?
+  Is Agile an excuse to not deliver results on time?
+]
+
+#slide("What is Agile?")[  
+  From #link("https://agilemanifesto.org/history.html")["History: The Agile Manifesto"]:
+
+  #quote(
+    "We hope that our work ... helps others in our profession to think about software development, methodologies, and organizations, in new – more agile – ways.",
+    block: true,
+  )
+  
+  Opinion: Agile is a response of independent thinkers about software development to inefficient corporate bureaucracy.
+
+  Opinion: Agile is a mindset based on particular values, definitely not a process framework.
 ]
 
 #slide("Agile Manifesto")[
@@ -439,7 +460,7 @@
   Does architecture-centric view agree with other principles? *Yes!*
 ]
 
-#slide("Why still use Agile for the ITPD Course?")[
+#slide("Why use Agile for the ITPD Course?")[
   - You work in a team so you need to care about interactions with your teammates.
 
   #linebreak()
@@ -499,11 +520,90 @@
 #section("Key Takeaways")
 
 #slide("Key Takeaways")[
+  - You should help stakeholders express their quality requirements and then collaborate with them to achieve the desired product quality.
   - You must think about quality early if you want to have control over your software system via its architecture.
-  - Effective agile practices should be supported by the well-thought-out architecture and configuration management.
-  - Scrum is a well-documented framework in spirit of Agile that guides you how to deliver every Sprint.
+  - Effective Agile practices should be supported by the well-thought-out architecture and configuration management.
+  - Scrum is a well-documented framework in spirit of Agile that guides you how to deliver value every Sprint.
+  - ITPD relies on Scrum practices that ensure team's collaboration and steady progress towards their goals.
 ]
 
+// #quiz[
+//   - Is there the team lead role in a Scrum team?
+
+//   - Who is accountable for the project success in a Scrum team?
+
+//   - Why not use full Scrum in ITPD?
+// ]
+
+// #section("Product Backlog")
+
+// #slide("Discussion (3 minutes)")[
+//   - What is a Product Backlog?
+// ]
+
+// #slide("DEEP product backlog")[
+//   - *Detailed enough* - User stories on the Product Backlog that will be done soon need to be sufficiently well understood that they can be completed in the coming Sprint.
+//   - *Estimated* - for well-understood PBIs, estimate how much effort, complexity, and risk it’ll require to complete these PBIs.
+//   - *Emergent* - as more is learned, user stories and tasks on the Product Backlog will be added, removed, or reprioritized.
+//   - *Prioritized* - The Product Backlog should be sorted with the most valuable items at the top and the least valuable at the bottom. By always working in priority order, the team is able to maximize the value of the product or system being developed.
+
+//   #note[Sources: #link("https://www.mountaingoatsoftware.com/blog/make-the-product-backlog-deep")[Make the Product Backlog DEEP], #link("https://www.atlassian.com/agile/project-management/estimation")[Story Points and Estimation]]
+// ]
+
+// #slide("Detailed enough")[
+//   #place(
+//     top + left,
+//     dx: 1.55in,
+//     dy: 0.77in,
+//     image("images/lecture-4/backlog-detail.png", height: 4in),
+//   )
+//   #place(bottom + left, dy: 0.18in)[
+//     #note[Sources: #link("https://www.mountaingoatsoftware.com/agile/user-stories/product-backlog-refinement")[Product Backlog Refinement]]
+//   ]
+// ]
+
+// #slide("Product Backlog Refinement Tips")[
+//   - *Refine* the Product Backlog *every Sprint* to ensure the priorities are correct.
+//   - *Have* at least *two Sprints* worth of stories *refined*.
+//   - Refine *before the Sprint Planning*.
+//   - More refined Product Backlog means easier Sprint Planning.
+//   - *Who should do* the Product Backlog refinement?
+//     + Product owner (must)
+//     + Developers (should)
+// ]
+
+// #section("Sprint Planning")
+
+// #slide("Discussion (2 minutes)")[
+//   - When should you conduct the Sprint Planning?
+// ]
+
+// #slide("Sprint Planning")[
+//   - *Refine the Sprint Goal:* \
+//     what will be the overall value of your Sprint to the customer?
+//   - Given the Sprint Goal, decide what can be *delivered* in the upcoming Sprint and discuss how that work will be achieved.
+//   - *Who should attend* the Sprint Planning meeting?
+//     + Product owner (must)
+//     + Scrum master (must)
+//     + Developers (must)
+// ]
+
+// #slide("Activity 3 - Sprint Planning (20 mins)")[
+//   Start working on the Sprint Backlog for delivering the MVP v1:
+
+//   + Define the Sprint Goal for the upcoming Sprint.
+//   + Based on your Sprint Goal, pick all relevant PBIs from the refined Product Backlog \
+//     (probably all user stories from the MVP v1 scope negotiated with the customer).
+//   + Make sure all selected user stories are estimated in story points.
+//   + Calculate how many story points are going in total into the Sprint.
+//   + Select two or three user stories from the Sprint Backlog.
+//   + Break each of them into two or three tasks. \
+//     These user stories and tasks will be Sprint Backlog items (SBI).
+//   + Provide two AC for each SBI.
+//   + Assign a _responsible_ person for each SBI - who will work on the item.
+//   + Assign an _accountable_ person for each SBI - a different person who will review the work and will be responsible for successful completion of that item.
+//   + Ensure each SBI has enough information for developers to start working on that item.
+// ]
 
 
 // --- References (source slide 34) -------------------------------------------
