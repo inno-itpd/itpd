@@ -123,7 +123,7 @@
   Your stakeholders are course instructors, your customer, team, users of your product.
 
   You should identify, manage, and meet their requirements and expectations about the quality of your product (e.g. security, speed) and project (e.g. time, budget, processes, etc.) to achieve success.
-
+  
   
   *Important: stakeholders may not know how to describe the quality they want, so you should help them. This way, you can collaborate towards achieving the same desired quality.*
 ]
@@ -155,6 +155,11 @@
     ],
     image("images/lecture-4/q42-model.jpg", height: 255pt),
   )
+]
+
+#slide("Key Takeaways")[
+  - Stakeholders have explicit and implicit expectations about the properties of the software system that you build. Help them uncover these expectations and manage these expectations.
+  - Existing quality models cover most of the potentially desirable properties of software systems.
 ]
 
 #section("Quality Requirements")
