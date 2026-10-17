@@ -505,9 +505,9 @@
   - You should help stakeholders express their quality requirements and then collaborate with them to achieve the desired product quality.
   - You must think about quality early if you want to have control over your software system via its architecture.
   - Effective agile practices should be supported by the well-thought-out architecture and configuration management.
-  - Scrum is a well-documented framework in spirit of Agile that guides you how to deliver every Sprint.
+  - Scrum is a well-documented framework in spirit of Agile that guides you how to deliver value every Sprint. 
+  - ITPD relies on Scrum practices that ensure team's collaboration and steady progress towards their goals.
 ]
-
 
 
 // --- References (source slide 34) -------------------------------------------
