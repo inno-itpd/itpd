@@ -153,6 +153,10 @@
   - [ ] Introduce separate issue types for US and Tasks
   - [ ] MoSCoW must be issue fields on US
   - [ ] Tasks must have priority
+- [] Replace the acceptance criteria slide
+  - See Lab 3 from SWP-26
+  - Improve wording
+  - Add AC examples
 
 ## A3
 
@@ -205,26 +209,34 @@ Next: Week 3 is planning and the minimum usable product, and it has no assignmen
 - [ ] Decisions
   - [ ] Responsible + accountable - make the work owner obvious to prevent free-riding
   - [ ] Unstash a3-handoff and record other relevant decisions from there
+- [ ] Connect risks to goals (ToS)
+  - Risks are certain events that potentially threaten success
 - [ ] Improve the lecture in the next iteration.
       Include:
   - [ ] Planning
   - [ ] Estimation (story points?)
   - [ ] Risks
-  - [ ] Scrum basics (tactical planning)
+  - [ ] Move Scrum from week 4 to here
+    - [ ] Mention PBI, sprints, SBI
+    - [ ] Task priorities as issue fields
 
 ## A4
 
 - [ ] https://github.com/inno-itpd/itpd/actions/runs/38108934047/job/114380240234
 - [ ] Lecture:
   - Last week, you built something and you were not required to automatically check what you built
-- [ ] Ubiquitous language
+  - [ ] Ubiquitous language
+  - [ ] Why automate quality assurance?
+  - [ ] Verification and validation
+    - [ ] Formal verification with Lean 4
+  - [ ] Explain why they document architecture after building an MUP
+    - the core scenario works so the product direction is viable
+    - can work on a proper architecture to accommodate more scenarios
+  - [ ] Intro to Scrum
 - [ ] Product-code CI (moved from Week 3):
   - [ ] Assignment 4 cites the `Since: W4` block in `requirements/repository-requirements.md`
   - [ ] The full example in `requirements/definition-of-done-requirements.md` gains the product-code CI
-- Scrum
-  - Sprints
-  - Retro - in the report, what can't be public?
-- Architecture and Scrum
+- [ ] Architecture and Agile
 - [ ] Functional requirements - specify sources (user stories, constraints, architecture, etc.)
 - quality requirements, no quality goals
 - Week 4 is quality and architecture, and it continues C4 from the W2 context diagram:
@@ -236,17 +248,21 @@ Next: Week 3 is planning and the minimum usable product, and it has no assignmen
 - arc42 framing: quality goals belong in framing, testable quality scenarios late.
 - `Q-nn` and the `docs/quality-requirements.md` structure are new; 2025 had quality attribute
   scenarios but no quality goals, and no `Q-nn` family.
-- [ ] Still keep user story issues to track added value?
+- [x] Still keep user story issues to track added value?
       Or, fully switch to architecture and functional requirements issues?
-- [ ] "main actor flows" (sequence diagrams)?
-- [ ] Introduce separate issue types for US and Tasks
-- [ ] MoSCoW must be issue fields on US
-- [ ] Tasks must have priority
-- [ ] Ask questions about the setup:
-  - [ ] How does your setup help prevent free riding?
-  - [ ]
-- [ ] Verification and validation
-  - [ ] Formal verification with Lean 4
+      Keep them, FR and ADR can't capture the value
+- [ ] Assignment
+  - [ ] Introduce separate issue types for US and Tasks
+  - [ ] MoSCoW must be issue fields on US
+  - [ ] Tasks must have priority issue field
+  - [ ] In the report, ask questions about the setup (?):
+    - [ ] How does your setup help prevent free riding?
+    - [ ] How can you go from a line of code to a ToS goal
+  - [ ] Retrospective - what should be public?
+  - [ ] Prioritize QRs by technical risk and importance
+  - [ ] Feature issue type - for tracking progress of task issues?
+- [ ] Sequence diagrams
+  - [ ] Main actor flow
 
 ## A6
 
