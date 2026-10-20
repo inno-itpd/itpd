@@ -2,7 +2,7 @@
 
 This plan records the scope Assignment 4 hands to Week 5, and everything that scope depends on, before the work is written.
 It covers four groups: the quality requirement tests, the quality requirement testing plan and the progress recorded in it, the container, component, and sequence views, and continuous integration — `actionlint` and the product-code CI.
-Assignment 4 is the functional requirements, the quality requirements, the architecture decision records, the architecture document's drivers and decision index, and the Week 4 process work — sprint planning and estimates, the ceremonies, the glossary, the team's `AGENTS.md`, `REL-04`, and the deadlines; [`a4-plan.md`](a4-plan.md) designs that and leaves these four groups out.
+Assignment 4 is the functional requirements, the quality requirements, the architectural decision records, the architecture document's drivers and decision index, and the Week 4 process work — sprint planning and estimates, the ceremonies, the glossary, the team's `AGENTS.md`, `REL-04`, and the deadlines; [`a4-plan.md`](a4-plan.md) designs that and leaves these four groups out.
 The [Design Decisions](#design-decisions) section states the model and the reason for it.
 This is a scope plan, not the whole of Assignment 5: Week 5's other work — the unit test suite, the production deployment, `REL-05`, and the 7-minute pitch deck — comes from the syllabus and is designed when the rest of the assignment is written.
 Nothing here settles that other work.
@@ -46,12 +46,12 @@ One rule is new rather than moved: `adr-requirements.md` gains the `**Since: W5*
 
 The boundary between the two plans:
 
-- Assignment 4 keeps the architecture document: `docs/architecture/README.md` links the drivers, holds the decision index and the trace chain, and links the product vision for the scope it serves.
+- Assignment 4 keeps the architecture document: `docs/architecture/README.md` links the drivers, holds the decision index, and links the product vision for the scope it serves, and the links themselves are the chain, so no document restates it.
 - Assignment 4 introduces `**Containers:**` on the FR and ADR records, naming the C4 deployable units.
   The container view here names exactly the containers those records name.
 - The context diagram stays where Week 2 put it, under `## System Context` in `docs/product-vision.md`.
   It is the one C4 view the project has before this work, and its rules are the Week 2 rules, which did not move.
-- Assignment 4's `## Trace` states the chain from a task to the threshold.
+- Assignment 4's drivers section and decision index point at where the chain's facts are recorded, per [Traceability Into Later Weeks](../../requirements/general-requirements.md#traceability-into-later-weeks).
   This plan adds the one link to the testing plan, so the architecture document never restates when a test passes.
 - Assignment 4's quality requirements have no tests.
   The rule that every `QR-nn` has at least one `QRT-nn` is `**Since: W5**`, so a Week 4 QR is finished when its scenario is written.
@@ -79,7 +79,7 @@ The tests live inside the requirement they prove, their state lives in one plan 
 - **The testing plan.**
   `docs/project-plan.md` gains `## Quality Requirement Testing Plan` after `## Releases` and before `## Progress Monitoring`.
   It is one table with the columns `QR`, `QRT`, `Status`, `Checked`, `Planned for sprint`, and `Evidence`, one row per `QRT-nn`, ordered by the quality requirements index and then by `QRT-nn`, with the `QR` and `QRT` cells linking the requirement and the test's section.
-  The architecture document links this section once, from its `## Trace`.
+  The quality requirements index links this section once.
 - **The statuses.**
   `Status` is the test's state at its last check: `Passes`, `Fails`, `Not verified`, or `Dropped`, where `Not verified` means no check is recorded.
   `Checked` is the `SPRINT-nn` of that check, and `None` on a `Not verified` or `Dropped` row.
@@ -181,7 +181,7 @@ No requirements file is added here.
 - `## Views` between `## Drivers` and `## Architectural Decisions`, with the three views, their paths, and their sources, all `**Since: W5**`.
 - `### Diagrams And Legends` at the end of `## Views`, `**Since: W5**`, with the rules above; the context diagram keeps its Week 2 rules under `## System Context` in the product vision.
 - The container view names every container the functional requirements and the ADRs name and adds none they do not name, and the component view expands one of them.
-- The `## Trace` section gains the one link to `docs/project-plan.md#quality-requirement-testing-plan`, `**Since: W5**`.
+- `docs/quality-requirements/README.md` gains the one link to `docs/project-plan.md#quality-requirement-testing-plan`, in a `**Since: W5**` block.
 - The full example gains a container view, its source, and its legend, and the architecture example's part list gains `## Views`, with the subsection inside it rather than a part of its own.
 
 ### `repository-requirements.md`
@@ -234,7 +234,7 @@ These are the parts this plan settles; the rest of Week 5's parts are added with
 - **Add The CI Checks.**
   `actionlint` over `.github/workflows/` and the five product-code checks on pull requests and on `main`, each third-party action pinned, with the Definition of Done's pull request list updated and the latest `main` run green.
 - **Link The Testing Plan.**
-  The architecture document's `## Trace` links `docs/project-plan.md#quality-requirement-testing-plan` once; the changelog claims a `QR-nn` only through its passing, checked tests; the week's report's summary points at the testing plan; and no ADR cites a `QRT-nn`.
+  The quality requirements index links `docs/project-plan.md#quality-requirement-testing-plan` once; the changelog claims a `QR-nn` only through its passing, checked tests; the week's report's summary points at the testing plan; and no ADR cites a `QRT-nn`.
 
 ### What Good Looks Like
 
@@ -315,7 +315,7 @@ The entries:
 - A view audit: every view has a legend, a source beside its image, and an opaque image; the container view names exactly the containers the FRs and ADRs name; the component view expands one container; the sequence view shows the core task end to end; and the context diagram still carries its Week 2 rules.
 - A level audit: every `manual` test carries `**Why Manual:**`, every `CI` test names a workflow step, every `scripted` test names its script or command, and every testing-plan `Evidence` cell matches its test's level.
 - A check audit: every `Passes` or `Fails` row carries a `Checked` sprint and an `Evidence` link, a `Not verified` or `Dropped` row carries neither, and every claimed `QR-nn` has all its non-dropped tests `Passes` and `Checked` in the release's sprint.
-- A trace audit: the testing plan is linked once from the architecture's `## Trace`, the week's report points at it, and no test's status appears outside the testing plan.
+- A trace audit: the testing plan is linked once from the quality requirements index, the week's report points at it, and no test's status appears outside the testing plan.
 - A full-example audit: every edited example carries its new field or section, every example is set in the week its new rule belongs to, and the tests example has a `CI` and a `manual` test.
 - A CI audit: `actionlint` and the five checks are in the W5 block, pinned, on pull requests and on `main`, and the Definition of Done's W5 item names them.
 - `backlog doctor`, after the task changes.
@@ -345,7 +345,7 @@ The entries:
 - [`course/syllabus.md`](../syllabus.md), especially Week 5 and the Submission 5 row: the week's other deliverables and the deadline Assignment 4 sets.
 - [`lectures/lecture-4.typ`](../../lectures/lecture-4.typ): ISO 25010, the six-part scenario and its worked test, the drivers, the ADR, and the priority matrix.
 - `assignments/assignment-4.md`, once it is written: the shape Assignment 5 follows, as designed in [`a4-plan.md`](a4-plan.md).
-- [`course/decisions/a3.md`](../decisions/a3.md), especially `A3-DEC-018` (the product-code CI deferred to Week 4, which this plan reverses to Week 5) and `A3-DEC-022` (the one-way chain), which the tests and the trace extend.
+- [`course/decisions/a3.md`](../decisions/a3.md), especially `A3-DEC-018` (the product-code CI deferred to Week 4, which this plan reverses to Week 5) and `A3-DEC-022` (the one-way chain), which Assignment 4 reverses and the tests then extend.
 
 ### The Requirements This Plan Extends
 

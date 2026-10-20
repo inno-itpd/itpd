@@ -17,11 +17,15 @@ The threshold session of Step 1 and the risk session of Step 5 are the hours tha
 - [Step 3: Write The Milestones](#step-3-write-the-milestones)
   - [Lead The Description With The Outcome](#lead-the-description-with-the-outcome)
 - [Step 4: Write The Sprints And Their Releases](#step-4-write-the-sprints-and-their-releases)
+  - [Refine Before You Plan](#refine-before-you-plan)
   - [Lead With A Result](#lead-with-a-result)
   - [Give Every Unplanned Sprint A Provisional Goal](#give-every-unplanned-sprint-a-provisional-goal)
   - [Schedule With The Milestone, Not In The File](#schedule-with-the-milestone-not-in-the-file)
+  - [Set The Velocity](#set-the-velocity)
+  - [Show The Sprint At Its Review](#show-the-sprint-at-its-review)
   - [Releases](#releases)
   - [Pick The Number From What A User Could Observe](#pick-the-number-from-what-a-user-could-observe)
+  - [Close With The Retrospective](#close-with-the-retrospective)
 - [Step 5: Name The Risks And Their Fallbacks](#step-5-name-the-risks-and-their-fallbacks)
   - [Start From The Plan, Not From A Feeling](#start-from-the-plan-not-from-a-feeling)
   - [Write The First Line As Cause, Event, And Impact](#write-the-first-line-as-cause-event-and-impact)
@@ -169,6 +173,20 @@ Every submission week is a **sprint**, and the plan carries one section per spri
 Write them from near to far: the current sprint in concrete terms, the next one in its own words, and the rest at the level of direction.
 Each sprint is also a GitHub milestone, titled `SPRINT-nn: <focus>` and due on the week's hard deadline, and all seven exist on GitHub when the plan is written, per [Sprints](../requirements/planning-requirements.md#sprints).
 
+### Refine Before You Plan
+
+Refinement is the work that makes planning short: the items the team will schedule are read, split, and estimated before the team commits to a sprint.
+It produces no document, and its evidence is the `Story Points` on each story and the future sprint's milestone the item sits in.
+The moves are small:
+
+- Read each item against its acceptance criteria, because a criterion nobody can run is a sign the item is not ready.
+- Split the story that is too large to estimate, so the estimate follows the split rather than replacing it.
+- Estimate the stories together, because the team's number survives the first surprise and one member's number does not.
+- Move each ready item into its future sprint's milestone, so planning starts from a shortlist rather than from the whole backlog.
+
+[Sprint Ceremony Requirements](../requirements/sprint-ceremonies-requirements.md#product-backlog-refinement) owns what refinement leaves behind, and [Estimation](../requirements/sprint-ceremonies-requirements.md#estimation) owns the fields and when each is set.
+In the first sprint where the ceremony runs, planning does that pass itself, because the week before had no refinement.
+
 ### Lead With A Result
 
 The sprint's first line is one sentence, and it states what will be true at the end of the week:
@@ -193,6 +211,23 @@ A provisional goal is a direction the plan currently believes, not a promise to 
 When a sprint is planned, the issues that make its goal true are assigned to its GitHub milestone, carry two values, and carry two assignees: the `Responsible` and `Accountable` members who do the work and verify it, those same two members as the issue's assignees, per [Issue Tracking](../requirements/issue-tracking-requirements.md), and the assignment to the sprint's milestone, per [Sprints](../requirements/planning-requirements.md#sprints).
 The plan's `**Sprint Backlog:**` field links that milestone, and an increment is read through its `**Sprints:**` run, whose milestones hold its issues, so the plan never copies the list and never goes stale.
 
+### Set The Velocity
+
+Planning ends with a number to compare against at the close.
+`**Planned Velocity:**` is the story points of the stories selected for the sprint, set at planning, and `**Actual Velocity:**` is the points of the stories completed, added when the sprint closes, per [Sprint Ceremony Requirements](../requirements/sprint-ceremonies-requirements.md#sprint-planning).
+
+Compute both by hand from the stories' `Story Points`, because a single-select field holds one option and cannot be added up.
+The sum is over the issues in the sprint's milestone, and it takes a minute; a generated total would be a second figure that drifts from the field it was made from.
+Below the actual, one sentence says what moved out of the sprint and where it went, because a lower number without the reason teaches the next planning nothing.
+The planned number is a forecast rather than a target, so the first sprint's actual is a fact to learn from rather than evidence against the team.
+
+### Show The Sprint At Its Review
+
+The weekly customer meeting is the sprint's review, and it is where the week's work meets the customer's verdict.
+Show the working software first, then the quality requirements and the architecture against the drivers, because those are the parts a screenshot cannot carry.
+The customer's verdict on each story is the meeting's decision, recorded as a `DEC-nnn`, and the meeting report is the review's record.
+[Sprint Ceremony Requirements](../requirements/sprint-ceremonies-requirements.md#sprint-review) owns the ceremony, and [Validating With The Customer](validating-with-the-customer.md) is the method for the meeting itself.
+
 ### Releases
 
 Every sprint ends in one release: the product's state tagged at its end, so later work cites a commit rather than a moving week.
@@ -213,6 +248,15 @@ The tag is the team's choice under SemVer, per [Versioning And Tags](../requirem
 The release repeats the tag as its title, so the version reads the same wherever the release is linked.
 A first release with no users is usually `v0.1.0`; after that, a fix a user could notice is a patch, a new capability is a minor, and a change that breaks how an existing user works is a major.
 When the number is not obvious, ask what a user would see, because that is what the version communicates.
+
+### Close With The Retrospective
+
+The sprint closes with the retrospective at `reports/week-NN/sprint-retrospective.md`, written after the review, the release, and the actual velocity, and it is a record of that sprint rather than a file to rewrite later.
+It looks back at the sprint rather than at the product: what went well, what did not, the actions the team takes into the next sprint, and what happened to the actions it carried from the last one.
+[Sprint Ceremony Requirements](../requirements/sprint-ceremonies-requirements.md#retrospective) owns the sections, the row counts, and the fields of an action, and the weekly report's coverage table links the file.
+
+The first retrospective says there is no previous retrospective instead of showing an empty table.
+After that, the carried actions are the history the next sprint inherits, so a closed action is the evidence that the last retrospective changed something.
 
 ## Step 5: Name The Risks And Their Fallbacks
 

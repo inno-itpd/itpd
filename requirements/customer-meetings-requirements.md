@@ -79,6 +79,12 @@ The Week 1 meeting is the kickoff.
    The written exchange, timestamped, is the [transcript](#meeting-transcript); record a voice or screen note if there is one, and declare the substitution as a [deviation](weekly-report-requirements.md#declaring-deviations).
    The rules above still apply, except the role split and the length; the script's shape for it is in [Meeting Script](#meeting-script).
 
+**Since: W4**
+
+10. The weekly meeting is the sprint's [Sprint Review](sprint-ceremonies-requirements.md#sprint-review), so the meeting and the ceremony are one event: it shows the working software, and the customer's verdict on each story is recorded, per [Showing Working Software](#showing-working-software).
+    The meeting report is its record, and it carries the review's outcome.
+11. The team schedules the meeting with the customer, and it may be held on the Friday of its week.
+
 **Example**
 
 A Week 2 validation meeting.

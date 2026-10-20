@@ -23,10 +23,10 @@ A task tracker inside the repository is in [Local Task Tracking Requirements](lo
 1. Disable blank issue creation with `blank_issues_enabled: false` in `.github/ISSUE_TEMPLATE/config.yml`.
 2. The pull request that adds the two forms and `config.yml` is the only one that starts before a form exists.
    Open a blank issue for it first, then name its branch and close that issue like any other pull request's task.
-   Once the `task` label exists, apply it to that issue, so that every task issue carries the label.
+   Once the `Task` type exists, apply it to that issue, so that every task issue carries its type, per [Issue Fields](#issue-fields).
    A team that disabled blank issues before it had the task form opens the issue for the pull request that adds `task.yml` with `gh issue create`.
 3. After that pull request, open every issue from a form.
-   This is the team's rule rather than the platform's: `gh issue create` and the API skip the form and the label it applies.
+   This is the team's rule rather than the platform's: `gh issue create` and the API skip the form and the type it applies.
 
 ## Linking A File From An Issue Or A Pull Request
 
@@ -61,8 +61,25 @@ The two fields carry who works on an issue, and the milestone the issue is in ca
    | `Responsible` | one per team member, by the member's GitHub username |
    | `Accountable` | one per team member, by the member's GitHub username |
 
-   Pin each field to the issue types the team uses for story and task issues, or to `Issues without a type` when the team uses none: a field pinned to nothing does not appear on an issue.
+   Pin each field to the issue type it belongs to, because a field pinned to nothing does not appear on an issue: `Responsible` and `Accountable` pin to both the `User Story` and the `Task` type.
    A new field starts with organization-only visibility, so change it to `Public`.
+
+**Since: W4**
+
+2. The organization creates three more **issue fields**, each **single-select** and **Public**, and each pinned to one issue type:
+
+   | Field          | Its options                                            | Pinned to    |
+   | -------------- | ------------------------------------------------------ | ------------ |
+   | `MoSCoW`       | `Must Have`, `Should Have`, `Could Have`, `Won't Have` | `User Story` |
+   | `Story Points` | `1`, `2`, `3`, `5`, `8`, `13`                          | `User Story` |
+   | `Priority`     | `High`, `Medium`, `Low`                                | `Task`       |
+
+   [Estimation](sprint-ceremonies-requirements.md#estimation) says when each value is set, and no field pins to `Issues without a type`.
+
+3. The five fields are set on the issues that already exist: the `User Story` type and a `MoSCoW` value on every story, and the `Task` type on every task.
+   The six labels they replace, `user-story`, `task`, `moscow:must`, `moscow:should`, `moscow:could`, and `moscow:won't`, retire once every issue carries its type and every story its `MoSCoW` value, so no open issue is left carrying one of them.
+4. A team whose organization cannot create issue types or issue fields declares a [deviation](weekly-report-requirements.md#declaring-deviations).
+   No substitute is defined: the type and the fields are the only carriers.
 
 ## Scheduling An Issue
 
@@ -77,8 +94,7 @@ Scheduling is the single act that puts an issue into a sprint: the issue goes in
    An open issue the team has not scheduled carries none and no milestone, and an already closed issue needs none.
    A reschedule or a change of hands moves the issue to the later sprint's milestone and updates the values, and the values stay on an issue after it closes.
 2. A sprint's issue list is its GitHub milestone, which the plan's `**Sprint Backlog:**` field links, per [Sprints](planning-requirements.md#sprints).
-3. A team whose organization cannot create issue fields declares a [deviation](weekly-report-requirements.md#declaring-deviations) and carries the two values as labels instead: `responsible:<username>` and `accountable:<username>`, set on the issue when it is scheduled.
-   An issue in no milestone is unscheduled.
+3. An issue in no milestone is unscheduled.
 
 ## Assignees
 
@@ -95,7 +111,6 @@ The values carry the roles, and the assignees are the platform's usual surface: 
    The assignees stay on an issue after it closes, as the record of who did the work.
 4. Pull requests are not assigned this way.
    A pull request already names its author and its reviewer.
-5. A team on the label fallback, per [Scheduling An Issue](#scheduling-an-issue), sets the same two assignees; the role labels carry the roles.
 
 ## GitHub Projects
 
@@ -113,4 +128,8 @@ The plan names it where progress is visible, per [Progress Monitoring](planning-
 3. The project holds every open issue of the repository and stays current, so an issue the team schedules is already in it.
    The platform's auto-add workflow and adding items by hand both count.
 4. The project carries at least one **table view** whose columns include the `Responsible` and `Accountable` issue fields, the built-in `Assignees`, and the built-in `Milestone`, grouped or sorted by `Milestone`.
-   The milestone column shows each issue's sprint; a team on the label fallback, per [Scheduling An Issue](#scheduling-an-issue), shows the two labels in place of the two field columns and still groups or sorts by `Milestone`.
+   The milestone column shows each issue's sprint.
+
+**Since: W4**
+
+5. The table view also shows the `MoSCoW`, `Story Points`, and `Priority` fields, so the priority, the estimate, and the order of work are visible beside the schedule.

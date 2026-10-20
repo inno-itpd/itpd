@@ -94,6 +94,19 @@ Every week from Week 3 to Week 9 is a sprint, so the plan carries seven of them,
 7. Close the sprint's GitHub milestone once its release is cut, per [Releases](#releases).
    An issue still open is first rescheduled into a later sprint's milestone, per [Scheduling An Issue](issue-tracking-requirements.md#scheduling-an-issue).
 
+**Since: W4**
+
+8. The sprint's goal is set at planning and replaces the provisional one, per [Sprint Planning](sprint-ceremonies-requirements.md#sprint-planning).
+9. A planned sprint carries two more fields after `**Sprint Backlog:**`, in this order:
+
+   | Field                   | What it says                                                                                                                     |
+   | ----------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+   | `**Planned Velocity:**` | The story points of the stories selected for the sprint, set at planning and computed by hand from their `Story Points` values.  |
+   | `**Actual Velocity:**`  | Added when the sprint closes: the story points of the completed stories, and one sentence on what moved out and to which sprint. |
+
+   The velocity is computed by hand, because a single-select field holds one option and cannot be added up.
+   [Estimation](sprint-ceremonies-requirements.md#estimation) says how a story's points are set.
+
 **Example**
 
 The fields of a planned sprint:
@@ -101,6 +114,8 @@ The fields of a planned sprint:
 ```markdown
 - **Due:** 2026-10-17
 - **Sprint Backlog:** [the issues scheduled into SPRINT-03](https://github.com/<organization>/<repo>/milestone/1)
+- **Planned Velocity:** 8
+- **Actual Velocity:** 5; the two remaining stories moved to SPRINT-04.
 ```
 
 ## Releases
@@ -237,6 +252,8 @@ A client books a paid slot and receives the meeting link and the materials.
 
 - **Due:** 2026-10-17
 - **Sprint Backlog:** [the issues scheduled into SPRINT-03](https://github.com/<organization>/<repo>/milestone/1)
+- **Planned Velocity:** 8
+- **Actual Velocity:** 5; the two stories that did not finish moved to SPRINT-04.
 
 #### REL-03
 
@@ -246,7 +263,9 @@ Released as [v0.1.0](https://github.com/<organization>/<repo>/releases/tag/v0.1.
 
 A client can reschedule a booking without emailing the coach.
 
-- **Due:** 2026-10-23
+- **Due:** 2026-10-24
+- **Sprint Backlog:** [the issues scheduled into SPRINT-04](https://github.com/<organization>/<repo>/milestone/2)
+- **Planned Velocity:** 11
 
 #### REL-04
 
