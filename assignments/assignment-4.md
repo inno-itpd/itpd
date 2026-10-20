@@ -71,7 +71,7 @@ This week:
 1. Plan `SPRINT-04` in `docs/project-plan.md`: replace its provisional goal with the sprint's goal, and set `**Planned Velocity:**` to the story points of the stories you selected, computed by hand from their `Story Points`.
 2. Set `SPRINT-04`'s `**Due:**` field and its GitHub milestone's due date to `2026-10-24`.
 3. Move `SPRINT-05` to `SPRINT-09`: their `**Due:**` fields and GitHub milestones become `2026-10-31`, `2026-11-07`, `2026-11-14`, `2026-11-21`, and `2026-11-28`.
-4. Refine the items in the `SPRINT-05` and `SPRINT-06` milestones until each is ready to schedule.
+4. Refine the next two sprints' worth of the product backlog until each item is ready to schedule, and leave them unscheduled: refinement puts nothing into a sprint's milestone.
    Refinement produces no document, and its evidence is the `Story Points` on each story.
 5. Create the `MoSCoW`, `Story Points`, and `Priority` fields, each single-select, `Public`, and pinned to its issue type, and show them in the project's table view beside the two role fields, the assignees, and the milestone.
    The type and the `MoSCoW` value go on every issue you already have in [Part 7](#part-7-bring-the-existing-issues-to-the-week-4-shape), so the `moscow:*` labels carry the priority until that pass replaces them.
@@ -318,6 +318,8 @@ A strong submission has:
   Each names a rejected option, the requirements it `**Addresses:**`, and the quality attributes it accepts with the `QR-nn` that covers each.
 - **A chain a reader can walk.**
   From a task's `### Requirements` through the functional requirement and the architectural decision record to the `TOS-nn` behind it, with no document restating the chain.
+- **A backlog that is ready rather than promised.**
+  The next two sprints' worth carries its estimates and no milestone, and a sprint's milestone holds only what its planning scheduled.
 - **Estimates the team can defend.**
   A `**Planned Velocity:**` the team knew before it started, an `**Actual Velocity:**` it compares with the plan, and both computed from the stories' `Story Points`.
 - **A glossary and an `AGENTS.md` worth reading.**
@@ -335,7 +337,7 @@ This week it also carries:
 | Deliverable                | Artifact                                                                                              |
 | -------------------------- | ----------------------------------------------------------------------------------------------------- |
 | Sprint plan and estimates  | `docs/project-plan.md#sprint-04`, with its goal, its planned velocity, and its actual velocity        |
-| Product backlog refinement | the `SPRINT-05` and `SPRINT-06` milestone issues, with the `Story Points` on each                     |
+| Product backlog refinement | the refined stories in the product backlog, with the `Story Points` on each and no sprint milestone   |
 | Issue catch-up             | the issue lists filtered by the `User Story` and `Task` types                                         |
 | Quality requirements       | `docs/quality-requirements/qr/`, with `docs/quality-requirements/README.md` as the priority matrix    |
 | Functional requirements    | `docs/functional-requirements/`, with `README.md` as the index and `fr/` for the records              |
@@ -380,7 +382,7 @@ A transcript under item 5 goes in an appendix, which the two pages do not count.
 ## Checklist
 
 - [ ] `SPRINT-04` planned with its goal, its `**Due:**` field, its `**Sprint Backlog:**` link, and its `**Planned Velocity:**`, and the later sprints' `**Due:**` fields and GitHub milestones moved to the five Saturdays ([Part 1](#part-1-plan-the-sprint-refine-the-backlog-and-set-the-fields)).
-- [ ] The `SPRINT-05` and `SPRINT-06` items refined, with the `Story Points` on each story ([Part 1](#part-1-plan-the-sprint-refine-the-backlog-and-set-the-fields)).
+- [ ] The next two sprints' worth of stories refined in the product backlog, with the `Story Points` on each and no sprint milestone ([Part 1](#part-1-plan-the-sprint-refine-the-backlog-and-set-the-fields)).
 - [ ] The three issue fields created, `Public`, pinned, and shown in the project's table view ([Part 1](#part-1-plan-the-sprint-refine-the-backlog-and-set-the-fields)).
 - [ ] 3 or more `QR-nn` files under `docs/quality-requirements/qr/`, each with a different characteristic, the six scenario parts, and its row in `docs/quality-requirements/README.md` ([Part 2](#part-2-write-the-quality-requirements)).
 - [ ] The `Maintainability` / `Testability` requirement names its critical modules and carries `High` business importance ([Part 2](#part-2-write-the-quality-requirements)).

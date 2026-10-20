@@ -281,13 +281,13 @@ The method is the [Scrum Guide](https://scrumguides.org/scrum-guide.html), named
 
 - **`## Sprint Planning`**: The sprint opens with planning in the plan's `### SPRINT-nn` section, which is the planning record.
   Planning sets the goal, replacing the provisional one, and adds `**Planned Velocity:**`: the story points of the stories selected for the sprint.
-  The items stay in the sprint's GitHub milestone, which the section links; the plan does not copy that list.
+  Planning schedules the selected items into the sprint's GitHub milestone, which the section links; the plan does not copy that list.
   When the sprint closes, the section gains `**Actual Velocity:**`, the points of the completed stories, and one sentence on what moved out and to which sprint.
   The velocity is computed by hand from the stories' `Story Points`, because a single-select field holds one option and cannot be added up.
   The team plans `SPRINT-04` first, and every later sprint is planned the same way in its own week.
-- **`## Product Backlog Refinement`**: Before planning, the items in the next two sprints are refined until each is ready to schedule, as the guide's refinement does.
+- **`## Product Backlog Refinement`**: The product backlog is the open issues in no sprint's milestone, and before planning the next two sprints' worth of it is refined until each item is ready to schedule, as the guide's refinement does.
   Refinement produces no document: its evidence is the `Story Points` on each story.
-  An item ready to schedule sits in its future sprint's GitHub milestone; a story larger than `13SP` is split before it is scheduled, so the milestone applies only to items small enough to schedule.
+  Refinement does not schedule: a ready item stays in the product backlog, with no milestone, no `Responsible` value, no `Accountable` value, and no assignees, until its sprint's planning schedules it; a story larger than `13SP` is split before it is scheduled.
   In the first sprint the ceremony runs, planning itself estimates the sprint's stories and orders its tasks, because the week before had no refinement.
   An issue carried from an earlier week is refined before it enters a sprint, and a story among them is estimated, or it stays unscheduled.
 - **`## Estimation`**: Estimation is an activity inside planning and refinement, not a ceremony of its own.
@@ -395,7 +395,7 @@ The intro continues from Week 3: the minimum usable product is on `main` and the
 The numbered parts, in the order the work can succeed, each a rules list and then the week's minima:
 
 1. **Plan The Sprint, Refine The Backlog, And Set The Fields.**
-   The plan's `### SPRINT-04` section with its goal replacing the provisional one, `**Planned Velocity:**`, `SPRINT-04`'s `**Due:**` and GitHub milestone due date set to `2026-10-24`, and the later sprints' `**Due:**` fields and GitHub milestones moved to `2026-10-31`, `2026-11-07`, `2026-11-14`, `2026-11-21`, and `2026-11-28`; refinement for `SPRINT-05` and `SPRINT-06` with no document; the three issue fields created and pinned, the project's table view showing them, and every carried issue refined and, when it is a story, estimated before it enters the sprint.
+   The plan's `### SPRINT-04` section with its goal replacing the provisional one, `**Planned Velocity:**`, `SPRINT-04`'s `**Due:**` and GitHub milestone due date set to `2026-10-24`, and the later sprints' `**Due:**` fields and GitHub milestones moved to `2026-10-31`, `2026-11-07`, `2026-11-14`, `2026-11-21`, and `2026-11-28`; refinement for `SPRINT-05` and `SPRINT-06` with no document and no milestone; the three issue fields created and pinned, the project's table view showing them, and every carried issue refined and, when it is a story, estimated before it enters the sprint.
    The velocity that goes into the plan's planned field is computed by hand from the stories' `Story Points`.
 2. **Write The Quality Requirements.** `docs/quality-requirements/qr/`, at least 3 `QR-nn` files, each with a different characteristic, all six scenario parts, both priorities, and its row in `docs/quality-requirements/README.md`.
    One of them is about `Maintainability` / `Testability`, names the critical modules, and carries `High` business importance.
@@ -431,25 +431,25 @@ The checklist has one item per part and per artifact, each citing the rule its p
 
 The coverage table rows are:
 
-| Deliverable                | Artifact                                                                                           |
-| -------------------------- | -------------------------------------------------------------------------------------------------- |
-| Sprint plan and estimates  | `docs/project-plan.md#sprint-04`, with its goal, its planned velocity, and its actual velocity     |
-| Product backlog refinement | the `SPRINT-05` and `SPRINT-06` milestone issues, with the `Story Points` on each                  |
-| Issue catch-up             | the issue lists filtered by the `User Story` and `Task` types                                      |
-| Quality requirements       | `docs/quality-requirements/qr/`, with `docs/quality-requirements/README.md` as the priority matrix |
-| Functional requirements    | `docs/functional-requirements/`, with `README.md` as the index and `fr/` for the records           |
-| Architecture and drivers   | `docs/architecture/README.md`, with the drivers it links and the ADR index                         |
-| Architectural decisions    | `docs/architecture/adr/` and the ADR index                                                         |
-| Glossary                   | `docs/glossary.md`                                                                                 |
-| Team `AGENTS.md`           | `AGENTS.md`                                                                                        |
-| Repository surfaces        | the five field columns in the project view, and the docs site linking the new `docs/` pages        |
-| Week 3 action points       | `## Previous action points` in `reports/week-04/meeting-report.md`                                 |
-| Week 3 open questions      | `## Previous open questions` in the same report                                                    |
-| Meeting script             | `reports/week-04/meeting-script.md`                                                                |
-| Customer validation        | `reports/week-04/meeting-report.md`, the transcript when there is one, and each story's verdict    |
-| `REL-04`                   | the tag, the changelog's released section, and the plan's `REL-04` line                            |
-| Sprint retrospective       | `reports/week-04/sprint-retrospective.md`                                                          |
-| AI usage                   | `reports/week-04/ai-usage.md`                                                                      |
+| Deliverable                | Artifact                                                                                            |
+| -------------------------- | --------------------------------------------------------------------------------------------------- |
+| Sprint plan and estimates  | `docs/project-plan.md#sprint-04`, with its goal, its planned velocity, and its actual velocity      |
+| Product backlog refinement | the refined stories in the product backlog, with the `Story Points` on each and no sprint milestone |
+| Issue catch-up             | the issue lists filtered by the `User Story` and `Task` types                                       |
+| Quality requirements       | `docs/quality-requirements/qr/`, with `docs/quality-requirements/README.md` as the priority matrix  |
+| Functional requirements    | `docs/functional-requirements/`, with `README.md` as the index and `fr/` for the records            |
+| Architecture and drivers   | `docs/architecture/README.md`, with the drivers it links and the ADR index                          |
+| Architectural decisions    | `docs/architecture/adr/` and the ADR index                                                          |
+| Glossary                   | `docs/glossary.md`                                                                                  |
+| Team `AGENTS.md`           | `AGENTS.md`                                                                                         |
+| Repository surfaces        | the five field columns in the project view, and the docs site linking the new `docs/` pages         |
+| Week 3 action points       | `## Previous action points` in `reports/week-04/meeting-report.md`                                  |
+| Week 3 open questions      | `## Previous open questions` in the same report                                                     |
+| Meeting script             | `reports/week-04/meeting-script.md`                                                                 |
+| Customer validation        | `reports/week-04/meeting-report.md`, the transcript when there is one, and each story's verdict     |
+| `REL-04`                   | the tag, the changelog's released section, and the plan's `REL-04` line                             |
+| Sprint retrospective       | `reports/week-04/sprint-retrospective.md`                                                           |
+| AI usage                   | `reports/week-04/ai-usage.md`                                                                       |
 
 The **What Good Looks Like** guidance:
 

@@ -26,6 +26,7 @@ The sprint's `### SPRINT-nn` section in `docs/project-plan.md` is the planning r
 1. Hold planning at the start of every sprint, and write its result into the sprint's `### SPRINT-nn` section, per [Sprints](planning-requirements.md#sprints).
 2. Planning sets the goal, and the goal it sets replaces the provisional one the section carried until then.
 3. The stories and tasks selected are scheduled into the sprint's GitHub milestone, per [Scheduling An Issue](issue-tracking-requirements.md#scheduling-an-issue), which the `**Sprint Backlog:**` field links; the plan copies no list of them.
+   The selection starts at the top of the [product backlog](#product-backlog-refinement), and scheduling is where an issue leaves it.
 4. Planning adds `**Planned Velocity:**` below `**Sprint Backlog:**`: the story points of the stories selected for the sprint.
 5. Compute that total by hand from the selected stories' `Story Points`, because a single-select field holds one option and cannot be added up.
 6. When the sprint closes, add `**Actual Velocity:**` below `**Planned Velocity:**`: the points of the stories the sprint completed, added the same way.
@@ -36,15 +37,16 @@ The sprint's `### SPRINT-nn` section in `docs/project-plan.md` is the planning r
 
 **Since: W4**
 
-Refinement is how the product backlog stays ready: the items in the next two sprints are made small enough, and understood well enough, to schedule.
+The **product backlog** is the open issues that sit in no sprint's GitHub milestone, per [Scheduling An Issue](issue-tracking-requirements.md#scheduling-an-issue).
+Refinement is how it stays ready: the next two sprints' worth of it is made small enough, and understood well enough, to schedule, and each item stays in the backlog until its sprint is planned.
 It produces no document, and its evidence is the estimate on each story.
 
 **Required**
 
-1. Before a sprint is planned, refine the items in the next two sprints until each is ready to schedule, using the method in [Guide: Planning And Tracking](../guides/planning-and-tracking.md).
+1. Before a sprint is planned, refine the next two sprints' worth of the product backlog until each item is ready to schedule, using the method in [Guide: Planning And Tracking](../guides/planning-and-tracking.md).
 2. Refinement produces no document: its evidence is the `Story Points` value on each story, per [Estimation](#estimation).
 3. A story is ready to schedule when its scope is settled, its acceptance criteria are runnable, per [Acceptance Criteria](user-stories-requirements.md#acceptance-criteria), and its `Story Points` is set.
-4. An item that is ready to schedule sits in its future sprint's GitHub milestone, per [Scheduling An Issue](issue-tracking-requirements.md#scheduling-an-issue), so planning starts from that milestone.
+4. Refinement does not schedule an item: it stays in the product backlog, with no milestone, no `Responsible` value, no `Accountable` value, and no assignees, until its sprint's planning schedules it, per [Scheduling An Issue](issue-tracking-requirements.md#scheduling-an-issue) and [Sprint Planning](#sprint-planning).
 5. A story larger than `13SP` is split before it is scheduled, so a sprint's milestone holds only stories the scale can estimate and one sprint can finish.
 6. In `SPRINT-04`, planning itself estimates the sprint's stories and orders its tasks, because the week before had no refinement.
 7. An issue carried from an earlier week is refined before it enters a sprint, and a story among them is estimated, or it stays unscheduled.

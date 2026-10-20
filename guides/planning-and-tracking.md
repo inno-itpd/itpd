@@ -176,13 +176,13 @@ Each sprint is also a GitHub milestone, titled `SPRINT-nn: <focus>` and due on t
 ### Refine Before You Plan
 
 Refinement is the work that makes planning short: the items the team will schedule are read, split, and estimated before the team commits to a sprint.
-It produces no document, and its evidence is the `Story Points` on each story and the future sprint's milestone the item sits in.
+It produces no document, and its evidence is the `Story Points` on each story, in the product backlog where the item still sits.
 The moves are small:
 
 - Read each item against its acceptance criteria, because a criterion nobody can run is a sign the item is not ready.
 - Split the story that is too large to estimate, so the estimate follows the split rather than replacing it.
 - Estimate the stories together, because the team's number survives the first surprise and one member's number does not.
-- Move each ready item into its future sprint's milestone, so planning starts from a shortlist rather than from the whole backlog.
+- Leave each ready item in the product backlog: refinement schedules nothing, and the `MoSCoW` value ranks a story, so planning starts from the top of the backlog rather than from the whole of it.
 
 [Sprint Ceremony Requirements](../requirements/sprint-ceremonies-requirements.md#product-backlog-refinement) owns what refinement leaves behind, and [Estimation](../requirements/sprint-ceremonies-requirements.md#estimation) owns the fields and when each is set.
 In the first sprint where the ceremony runs, planning does that pass itself, because the week before had no refinement.
@@ -210,6 +210,7 @@ A provisional goal is a direction the plan currently believes, not a promise to 
 
 When a sprint is planned, the issues that make its goal true are assigned to its GitHub milestone, carry two values, and carry two assignees: the `Responsible` and `Accountable` members who do the work and verify it, those same two members as the issue's assignees, per [Issue Tracking](../requirements/issue-tracking-requirements.md), and the assignment to the sprint's milestone, per [Sprints](../requirements/planning-requirements.md#sprints).
 The plan's `**Sprint Backlog:**` field links that milestone, and an increment is read through its `**Sprints:**` run, whose milestones hold its issues, so the plan never copies the list and never goes stale.
+Refinement is not this act: a refined item stays in the [product backlog](../requirements/sprint-ceremonies-requirements.md#product-backlog-refinement) until its sprint's planning schedules it, so a sprint's milestone holds what the team committed to rather than what it merely prepared.
 
 ### Set The Velocity
 

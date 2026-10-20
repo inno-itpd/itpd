@@ -94,7 +94,7 @@ Scheduling is the single act that puts an issue into a sprint: the issue goes in
    An open issue the team has not scheduled carries none and no milestone, and an already closed issue needs none.
    A reschedule or a change of hands moves the issue to the later sprint's milestone and updates the values, and the values stay on an issue after it closes.
 2. A sprint's issue list is its GitHub milestone, which the plan's `**Sprint Backlog:**` field links, per [Sprints](planning-requirements.md#sprints).
-3. An issue in no milestone is unscheduled.
+3. An issue in no milestone is unscheduled, and the open issues in no milestone are the product backlog, per [Product Backlog Refinement](sprint-ceremonies-requirements.md#product-backlog-refinement).
 
 ## Assignees
 
