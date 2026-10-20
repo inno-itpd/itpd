@@ -334,26 +334,27 @@ This week it also carries:
 2. The customer-meeting outcome: each story shown and whether the customer accepted or rejected it, each citing its `DEC-nnn`.
 3. The coverage table, with these rows:
 
-| Deliverable                | Artifact                                                                                              |
-| -------------------------- | ----------------------------------------------------------------------------------------------------- |
-| Sprint plan and estimates  | `docs/project-plan.md#sprint-04`, with its goal, its planned velocity, and its actual velocity        |
-| Product backlog refinement | the refined stories in the product backlog, with the `Story Points` on each and no sprint milestone   |
-| Issue catch-up             | the issue lists filtered by the `User Story` and `Task` types                                         |
-| Quality requirements       | `docs/quality-requirements/qr/`, with `docs/quality-requirements/README.md` as the priority matrix    |
-| Functional requirements    | `docs/functional-requirements/`, with `README.md` as the index and `fr/` for the records              |
-| Container view             | `docs/architecture/README.md#container-view`, its image and source, and `#container-responsibilities` |
-| Architecture and drivers   | `docs/architecture/README.md`, with the drivers it links and the ADR index                            |
-| Architectural decisions    | `docs/architecture/adr/` and the ADR index                                                            |
-| Glossary                   | `docs/glossary.md`                                                                                    |
-| Team `AGENTS.md`           | `AGENTS.md`                                                                                           |
-| Repository surfaces        | the five field columns in the project view, and the docs site linking the new `docs/` pages           |
-| Week 3 action points       | `## Previous action points` in `reports/week-04/meeting-report.md`                                    |
-| Week 3 open questions      | `## Previous open questions` in the same report                                                       |
-| Meeting script             | `reports/week-04/meeting-script.md`                                                                   |
-| Customer validation        | `reports/week-04/meeting-report.md`, the transcript when there is one, and each story's verdict       |
-| `REL-04`                   | the tag, the changelog's released section, and the plan's `REL-04` line                               |
-| Sprint retrospective       | `reports/week-04/sprint-retrospective.md`                                                             |
-| AI usage                   | `reports/week-04/ai-usage.md`                                                                         |
+| Deliverable                      | Artifact                                                                                                                                                            |
+| -------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Sprint plan and estimates        | `docs/project-plan.md#sprint-04`, with its goal, its planned velocity, and its actual velocity                                                                      |
+| Product backlog refinement       | the project's table view grouped by `Milestone` (Sprint milestone); its group with no milestone is the product backlog, and each story there carries `Story Points` |
+| Issue catch-up                   | the issue lists filtered by the `User Story` and `Task` types                                                                                                       |
+| Quality requirements             | `docs/quality-requirements/qr/`, with `docs/quality-requirements/README.md` as the priority matrix                                                                  |
+| Functional requirements          | `docs/functional-requirements/`, with `README.md` as the index and `fr/` for the records                                                                            |
+| Container view                   | `docs/architecture/README.md#container-view`, its image and source, and `#container-responsibilities`                                                               |
+| Architecture and drivers         | `docs/architecture/README.md`, with the drivers it links and the ADR index                                                                                          |
+| Architectural decisions          | `docs/architecture/adr/` and the ADR index                                                                                                                          |
+| Glossary                         | `docs/glossary.md`                                                                                                                                                  |
+| Team `AGENTS.md`                 | `AGENTS.md`                                                                                                                                                         |
+| Issue fields in the project view | the project's table view, with `Responsible`, `Accountable`, `MoSCoW`, `Story Points`, and `Priority` beside the `Assignees` and `Milestone` columns                |
+| Documentation site               | the published site's URL; its navigation links the new quality requirements, functional requirements, architecture, and glossary pages                              |
+| Week 3 action points             | `## Previous action points` in `reports/week-04/meeting-report.md`                                                                                                  |
+| Week 3 open questions            | `## Previous open questions` in the same report                                                                                                                     |
+| Meeting script                   | `reports/week-04/meeting-script.md`                                                                                                                                 |
+| Customer validation              | `reports/week-04/meeting-report.md`, the transcript when there is one, and each story's verdict                                                                     |
+| `REL-04`                         | the tag, the changelog's released section, and the plan's `REL-04` line                                                                                             |
+| Sprint retrospective             | `reports/week-04/sprint-retrospective.md`                                                                                                                           |
+| AI usage                         | `reports/week-04/ai-usage.md`                                                                                                                                       |
 
 If the customer refused publication of the transcript, that row says so and points at the Moodle submission instead.
 
