@@ -11,6 +11,7 @@ One submission per team.
 
 Week 3 ended with a minimum usable product on `main` and its first release tagged.
 This week the product gets the requirements behind it and the architecture that answers them: testable quality requirements, the container view of what the product runs as, the functional requirements behind the stories, the architectural decision records (ADRs), and the architecture document that links the drivers to the ADRs.
+The issues opened in Weeks 2 and 3 are converted to the new shape in one pass, so the tracker reads one way rather than two.
 The week also carries the sprint's ceremonies and the fourth release.
 
 What you hand in is a set of requirements a stranger could fail, an architecture a reader can walk from a driver to the ADR that answers it, and the sprint records behind both, released as `REL-04`.
@@ -26,12 +27,13 @@ The tools the course suggests, from meeting transcripts to a coding agent, are i
 - [Part 4: Write The Functional Requirements](#part-4-write-the-functional-requirements)
 - [Part 5: Link The Drivers Into The Architecture](#part-5-link-the-drivers-into-the-architecture)
 - [Part 6: Record The Architectural Decisions And Their Index](#part-6-record-the-architectural-decisions-and-their-index)
-- [Part 7: Write The Glossary And The Team's AGENTS.md](#part-7-write-the-glossary-and-the-teams-agentsmd)
-- [Part 8: Carry Out The Week 3 Action Points And Open Questions](#part-8-carry-out-the-week-3-action-points-and-open-questions)
-- [Part 9: Validate With The Customer](#part-9-validate-with-the-customer)
-- [Part 10: Cut The REL-04 Release](#part-10-cut-the-rel-04-release)
-- [Part 11: Close The Sprint And Hold The Retrospective](#part-11-close-the-sprint-and-hold-the-retrospective)
-- [Part 12: Report On Your AI Usage](#part-12-report-on-your-ai-usage)
+- [Part 7: Bring The Existing Issues To The Week 4 Shape](#part-7-bring-the-existing-issues-to-the-week-4-shape)
+- [Part 8: Write The Glossary And The Team's AGENTS.md](#part-8-write-the-glossary-and-the-teams-agentsmd)
+- [Part 9: Carry Out The Week 3 Action Points And Open Questions](#part-9-carry-out-the-week-3-action-points-and-open-questions)
+- [Part 10: Validate With The Customer](#part-10-validate-with-the-customer)
+- [Part 11: Cut The REL-04 Release](#part-11-cut-the-rel-04-release)
+- [Part 12: Close The Sprint And Hold The Retrospective](#part-12-close-the-sprint-and-hold-the-retrospective)
+- [Part 13: Report On Your AI Usage](#part-13-report-on-your-ai-usage)
 - [What Good Looks Like](#what-good-looks-like)
 - [Assignment Report In The Repository](#assignment-report-in-the-repository)
 - [Assignment Report On Moodle](#assignment-report-on-moodle)
@@ -48,6 +50,7 @@ By the end of this week you should be able to show a reader:
 - The functional requirements behind the stories: the behavior, the containers it runs in, where it came from, and its own acceptance criteria.
 - An architecture document that links the drivers to the sections and files that hold them, and an ADR index that maps each record to the drivers it answers.
 - The architectural decision records themselves: the context, the options turned down, the outcome, and the quality attributes they accept with the requirement that covers each.
+- Every issue from Weeks 2 and 3 brought to the Week 4 shape in one pass: typed, prioritised, with checkbox criteria, and with each story and open task naming the functional requirements and architectural decision records that specify it.
 - A sprint with a goal, a planned velocity known before the work started, an actual velocity to compare it with, and a retrospective to carry forward.
 - The glossary that fixes the project's words, and the team's `AGENTS.md` that tells an agent how the repository works.
 - Each story shown to the customer against its acceptance criteria, with each verdict recorded as a `DEC-nnn`.
@@ -60,8 +63,6 @@ The rules:
 - The plan's `### SPRINT-nn` section carries the sprint's goal, its `**Due:**` field, its `**Sprint Backlog:**` link, `**Planned Velocity:**`, and `**Actual Velocity:**`: [Sprints](../requirements/planning-requirements.md#sprints).
 - The sprint opens with planning, and the items in the next two sprints are refined before it: [Sprint Planning](../requirements/sprint-ceremonies-requirements.md#sprint-planning) and [Product Backlog Refinement](../requirements/sprint-ceremonies-requirements.md#product-backlog-refinement).
 - The estimate, the priority, and the order of work are three single-select issue fields, each pinned to its issue type: [Estimation](../requirements/sprint-ceremonies-requirements.md#estimation) and [Issue Fields](../requirements/issue-tracking-requirements.md#issue-fields).
-- A story is marked by the `User Story` issue type and its priority by the `MoSCoW` field, and a task by the `Task` type and the `Priority` field: [Where Stories Live](../requirements/user-stories-requirements.md#where-stories-live).
-- A criterion is a checkbox, and the accountable member ticks it once it is verified: [Acceptance Criteria](../requirements/user-stories-requirements.md#acceptance-criteria).
 - The project's table view shows the five fields beside the assignees and the milestone: [GitHub Projects](../requirements/issue-tracking-requirements.md#github-projects).
 - An issue carried from an earlier week is refined before it enters a sprint, and a story among them is estimated, or it stays unscheduled: [Product Backlog Refinement](../requirements/sprint-ceremonies-requirements.md#product-backlog-refinement).
 
@@ -73,11 +74,10 @@ This week:
 4. Refine the items in the `SPRINT-05` and `SPRINT-06` milestones until each is ready to schedule.
    Refinement produces no document, and its evidence is the `Story Points` on each story.
 5. Create the `MoSCoW`, `Story Points`, and `Priority` fields, each single-select, `Public`, and pinned to its issue type, and show them in the project's table view beside the two role fields, the assignees, and the milestone.
-6. Set the `User Story` type and a `MoSCoW` value on every story, and the `Task` type on every task, then retire the `user-story`, `task`, and four `moscow:*` labels.
-7. Convert every existing story's acceptance criteria to checkboxes.
-8. Refine each issue carried from an earlier week before it enters the sprint.
+   The type and the `MoSCoW` value go on every issue you already have in [Part 7](#part-7-bring-the-existing-issues-to-the-week-4-shape), so the `moscow:*` labels carry the priority until that pass replaces them.
+6. Refine each issue carried from an earlier week before it enters the sprint.
    A story among them is estimated, or it stays unscheduled.
-9. A story larger than `13` story points is split before it is estimated or scheduled.
+7. A story larger than `13` story points is split before it is estimated or scheduled.
 
 The method is in [Guide: Planning And Tracking](../guides/planning-and-tracking.md).
 
@@ -131,15 +131,12 @@ The rules:
 - Each `**Containers:**` name comes from the container view, spelled the same, and names the containers the behavior runs in rather than every container it touches: [The Functional Requirement](../requirements/functional-requirements-requirements.md#the-functional-requirement).
 - `## Behavior` carries one or more `shall` statements, each naming its actor, its condition, and its observable outcome: [Behavior](../requirements/functional-requirements-requirements.md#behavior).
 - `## Acceptance Criteria` carries one `### AC-nn` section per criterion, and the criterion is the team's technical check: [Acceptance Criteria](../requirements/functional-requirements-requirements.md#acceptance-criteria).
-- A story names the functional requirements and the architectural decision records that specify it, in `### Specified by`: [The Story](../requirements/user-stories-requirements.md#the-story).
-- The backfill on every story is part of the one-time catch-up, so it needs no change comment: [The Story](../requirements/user-stories-requirements.md#the-story).
 
 This week:
 
 1. Write at least 5 `FR-nnn` files under `docs/functional-requirements/fr/`, each with its `**Traces to:**`, its `**Containers:**`, its `shall` statements, and at least one `### AC-nn` criterion.
 2. Add each requirement's row to `docs/functional-requirements/README.md`, in `FR-nnn` order.
-3. Give every story, including the stories that closed in Weeks 2 and 3, its `### Specified by` list naming the functional requirements and the architectural decision records that specify it.
-4. Do not restate the story in the requirement, and do not keep a second list of stories in the repository.
+3. Do not restate the story in the requirement, and do not keep a second list of stories in the repository.
 
 The method is in [Step 4: Write The Functional Requirements](../guides/quality-and-architecture.md#step-4-write-the-functional-requirements).
 
@@ -168,7 +165,6 @@ The rules:
 - The record that decides the stack and the split names every container the view lists, and the view's opening sentence links it: [The Record](../requirements/adr-requirements.md#the-record).
 - `**Addresses:**` lists the functional requirements and quality requirements the record accounts for, and there is no `ASR` field: [What It Accounts For](../requirements/adr-requirements.md#what-it-accounts-for).
 - The ADR index is one table under `## Architectural Decisions`, with the active records above the inactive ones: [Architectural Decisions](../requirements/architecture-requirements.md#architectural-decisions).
-- A task names the functional requirements and architectural decision records it works on, in `### Requirements`: [The Issue Form](../requirements/task-issues-requirements.md#the-issue-form).
 
 This week:
 
@@ -176,11 +172,29 @@ This week:
 2. One of the records decides the stack and the container split: name every container in its `**Containers:**`, and add its link to the `## Container View` sentence in [Part 3](#part-3-draw-the-container-view).
 3. Write the ADR index: one table with its four columns, the active records above the inactive ones, and each `Addresses` cell naming the drivers the record answers.
 4. The three minimum records are `Accepted` before submission.
-5. Give every open task its `### Requirements` section, including the tasks opened in Weeks 2 and 3; a task that serves no requirement says so and is repository upkeep.
 
 The method is in [Step 6: Write The Architectural Decision Records](../guides/quality-and-architecture.md#step-6-write-the-architectural-decision-records) and [Step 7: Index The Architectural Decision Records](../guides/quality-and-architecture.md#step-7-index-the-architectural-decision-records).
 
-## Part 7: Write The Glossary And The Team's AGENTS.md
+## Part 7: Bring The Existing Issues To The Week 4 Shape
+
+The rules:
+
+- Every story's acceptance criteria are checkboxes, and the accountable member ticks each one once it is verified: [Acceptance Criteria](../requirements/user-stories-requirements.md#acceptance-criteria).
+- Every story except a `Won't Have` names the functional requirements and the architectural decision records that specify it, in `### Specified by`, and every open task names what it works on in `### Requirements`, or says it serves none: [The Story](../requirements/user-stories-requirements.md#the-story) and [The Issue Form](../requirements/task-issues-requirements.md#the-issue-form).
+- A story is marked by the `User Story` issue type and its priority by the `MoSCoW` field, and a task by the `Task` type: [Where Stories Live](../requirements/user-stories-requirements.md#where-stories-live) and [Issue Fields](../requirements/issue-tracking-requirements.md#issue-fields).
+- The pass is the one-time catch-up, so no issue carries a change comment for it: [The Story](../requirements/user-stories-requirements.md#the-story) and [Acceptance Criteria](../requirements/user-stories-requirements.md#acceptance-criteria).
+
+This week:
+
+Do the pass after [Part 6](#part-6-record-the-architectural-decisions-and-their-index), because the two lists name requirements and records that do not exist before it, and before the meeting in [Part 10](#part-10-validate-with-the-customer).
+It is one change, merged once, rather than a pull request per issue.
+
+1. Set the `User Story` type and a `MoSCoW` value on every story, and the `Task` type on every task, then retire the `user-story`, `task`, and four `moscow:*` labels.
+2. Convert every story's acceptance criteria to `- [ ] AC-nn: <criterion>`, keeping each `AC-nn`.
+3. Add `### Specified by` to every story other than a `Won't Have`, including the stories that closed in Weeks 2 and 3, naming each `FR-nnn` and `ADR-nnn` that specifies it.
+4. Add `### Requirements` to every open task, including the ones opened in Weeks 2 and 3, naming each `FR-nnn` and `ADR-nnn` it works on, or the line saying it serves none.
+
+## Part 8: Write The Glossary And The Team's AGENTS.md
 
 The rules:
 
@@ -193,7 +207,7 @@ This week:
 1. Write `docs/glossary.md` with at least three terms, each with its definition and, where an artifact defines it, a link to that artifact.
 2. Write `AGENTS.md` in the repository root, with the team's layout, checks, conventions, and off-limits files, and one line linking the course `SKILL.md` by its GitHub URL.
 
-## Part 8: Carry Out The Week 3 Action Points And Open Questions
+## Part 9: Carry Out The Week 3 Action Points And Open Questions
 
 The rules:
 
@@ -206,13 +220,13 @@ The rules:
 This week:
 
 The Week 3 action points are the rows of `## Action points` in `reports/week-03/meeting-report.md` that are due in Week 4.
-They are due now, and at the latest before the meeting in [Part 9](#part-9-validate-with-the-customer).
+They are due now, and at the latest before the meeting in [Part 10](#part-10-validate-with-the-customer).
 
 1. Carry out each action point, or find out why it cannot be done.
 2. Carry the outcome into the artifact it affects.
-3. Put each row of `## Open questions` in `reports/week-03/meeting-report.md` to the customer in Part 9, unless the work since has answered it.
+3. Put each row of `## Open questions` in `reports/week-03/meeting-report.md` to the customer in [Part 10](#part-10-validate-with-the-customer), unless the work since has answered it.
 
-## Part 9: Validate With The Customer
+## Part 10: Validate With The Customer
 
 The rules:
 
@@ -239,7 +253,7 @@ This week:
 
 The method is in [Guide: Validating With The Customer](../guides/validating-with-the-customer.md).
 
-## Part 10: Cut The REL-04 Release
+## Part 11: Cut The REL-04 Release
 
 The rules:
 
@@ -254,7 +268,7 @@ This week:
 2. After the meeting and any rework, merge the sprint's pull requests, push the tag on that commit, and protect the tag from being moved or deleted.
 3. Merge what links the tag after it exists, in this order: the changelog's released section, the plan's `REL-04` line, and the week's report.
 
-## Part 11: Close The Sprint And Hold The Retrospective
+## Part 12: Close The Sprint And Hold The Retrospective
 
 The rules:
 
@@ -271,7 +285,7 @@ This week:
 
 The method is in [Guide: Planning And Tracking](../guides/planning-and-tracking.md).
 
-## Part 12: Report On Your AI Usage
+## Part 13: Report On Your AI Usage
 
 The rules:
 
@@ -318,31 +332,28 @@ This week it also carries:
 2. The customer-meeting outcome: each story shown and whether the customer accepted or rejected it, each citing its `DEC-nnn`.
 3. The coverage table, with these rows:
 
-<!-- TODO catch-up for stories wrt acceptance criteria and functional requirements isn't very obvious from the assignment -->
-
 <!-- TODO why sprint-05 and sprint-06 milestone issues if it's week 4? -->
-<!-- TODO issue format catch-up in deliverables - what to link? -->
 
-| Deliverable                | Artifact                                                                                                                          |
-| -------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
-| Sprint plan and estimates  | `docs/project-plan.md#sprint-04`, with its goal, its planned velocity, and its actual velocity                                    |
-| Product backlog refinement | the `SPRINT-05` and `SPRINT-06` milestone issues, with the `Story Points` on each                                                 |
-| Issue format catch-up      | every story's checkbox criteria and `### Specified by`, every open task's `### Requirements`, and every issue's type and `MoSCoW` |
-| Quality requirements       | `docs/quality-requirements/qr/`, with `docs/quality-requirements/README.md` as the priority matrix                                |
-| Functional requirements    | `docs/functional-requirements/`, with `README.md` as the index and `fr/` for the records                                          |
-| Container view             | `docs/architecture/README.md#container-view`, its image and source, and `#container-responsibilities`                             |
-| Architecture and drivers   | `docs/architecture/README.md`, with the drivers it links and the ADR index                                                        |
-| Architectural decisions    | `docs/architecture/adr/` and the ADR index                                                                                        |
-| Glossary                   | `docs/glossary.md`                                                                                                                |
-| Team `AGENTS.md`           | `AGENTS.md`                                                                                                                       |
-| Repository surfaces        | the five field columns in the project view, and the docs site linking the new `docs/` pages                                       |
-| Week 3 action points       | `## Previous action points` in `reports/week-04/meeting-report.md`                                                                |
-| Week 3 open questions      | `## Previous open questions` in the same report                                                                                   |
-| Meeting script             | `reports/week-04/meeting-script.md`                                                                                               |
-| Customer validation        | `reports/week-04/meeting-report.md`, the transcript when there is one, and each story's verdict                                   |
-| `REL-04`                   | the tag, the changelog's released section, and the plan's `REL-04` line                                                           |
-| Sprint retrospective       | `reports/week-04/sprint-retrospective.md`                                                                                         |
-| AI usage                   | `reports/week-04/ai-usage.md`                                                                                                     |
+| Deliverable                | Artifact                                                                                              |
+| -------------------------- | ----------------------------------------------------------------------------------------------------- |
+| Sprint plan and estimates  | `docs/project-plan.md#sprint-04`, with its goal, its planned velocity, and its actual velocity        |
+| Product backlog refinement | the `SPRINT-05` and `SPRINT-06` milestone issues, with the `Story Points` on each                     |
+| Issue catch-up             | the issue lists filtered by the `User Story` and `Task` types                                         |
+| Quality requirements       | `docs/quality-requirements/qr/`, with `docs/quality-requirements/README.md` as the priority matrix    |
+| Functional requirements    | `docs/functional-requirements/`, with `README.md` as the index and `fr/` for the records              |
+| Container view             | `docs/architecture/README.md#container-view`, its image and source, and `#container-responsibilities` |
+| Architecture and drivers   | `docs/architecture/README.md`, with the drivers it links and the ADR index                            |
+| Architectural decisions    | `docs/architecture/adr/` and the ADR index                                                            |
+| Glossary                   | `docs/glossary.md`                                                                                    |
+| Team `AGENTS.md`           | `AGENTS.md`                                                                                           |
+| Repository surfaces        | the five field columns in the project view, and the docs site linking the new `docs/` pages           |
+| Week 3 action points       | `## Previous action points` in `reports/week-04/meeting-report.md`                                    |
+| Week 3 open questions      | `## Previous open questions` in the same report                                                       |
+| Meeting script             | `reports/week-04/meeting-script.md`                                                                   |
+| Customer validation        | `reports/week-04/meeting-report.md`, the transcript when there is one, and each story's verdict       |
+| `REL-04`                   | the tag, the changelog's released section, and the plan's `REL-04` line                               |
+| Sprint retrospective       | `reports/week-04/sprint-retrospective.md`                                                             |
+| AI usage                   | `reports/week-04/ai-usage.md`                                                                         |
 
 If the customer refused publication of the transcript, that row says so and points at the Moodle submission instead.
 
@@ -372,28 +383,26 @@ A transcript under item 5 goes in an appendix, which the two pages do not count.
 
 - [ ] `SPRINT-04` planned with its goal, its `**Due:**` field, its `**Sprint Backlog:**` link, and its `**Planned Velocity:**`, and the later sprints' `**Due:**` fields and GitHub milestones moved to the five Saturdays ([Part 1](#part-1-plan-the-sprint-refine-the-backlog-and-set-the-fields)).
 - [ ] The `SPRINT-05` and `SPRINT-06` items refined, with the `Story Points` on each story ([Part 1](#part-1-plan-the-sprint-refine-the-backlog-and-set-the-fields)).
-- [ ] The three issue fields created, `Public`, pinned, and shown in the project's table view, and the type and `MoSCoW` set on every issue ([Part 1](#part-1-plan-the-sprint-refine-the-backlog-and-set-the-fields)).
-- [ ] Every existing story's acceptance criteria converted to checkboxes, and the six labels retired ([Part 1](#part-1-plan-the-sprint-refine-the-backlog-and-set-the-fields)).
+- [ ] The three issue fields created, `Public`, pinned, and shown in the project's table view ([Part 1](#part-1-plan-the-sprint-refine-the-backlog-and-set-the-fields)).
 - [ ] 3 or more `QR-nn` files under `docs/quality-requirements/qr/`, each with a different characteristic, the six scenario parts, and its row in `docs/quality-requirements/README.md` ([Part 2](#part-2-write-the-quality-requirements)).
 - [ ] The `Maintainability` / `Testability` requirement names its critical modules and carries `High` business importance ([Part 2](#part-2-write-the-quality-requirements)).
 - [ ] The container view: `docs/architecture/README.md` with `## Container View`, its image and source, `### Container Responsibilities`, and `## Diagrams And Legends` ([Part 3](#part-3-draw-the-container-view)).
 - [ ] 5 or more `FR-nnn` files under `docs/functional-requirements/fr/`, each with its `**Traces to:**`, its `**Containers:**`, its `shall` statements, and its own criteria, and its row in the index ([Part 4](#part-4-write-the-functional-requirements)).
-- [ ] Every story names its functional requirements and records in `### Specified by` ([Part 4](#part-4-write-the-functional-requirements)).
 - [ ] `docs/architecture/README.md` opens with the vision link, and its `## Drivers` links the four holders and names no requirement of its own ([Part 5](#part-5-link-the-drivers-into-the-architecture)).
 - [ ] `docs/product-vision.md` links `docs/architecture/README.md`, and the vision keeps the goal, stakeholders, constraints, boundary, and system context ([Part 5](#part-5-link-the-drivers-into-the-architecture)).
 - [ ] 3 or more `ADR-nnn` files, each `**Addresses:**` at least one requirement, each with its options turned down and its accepted quality attributes covered by a `QR-nn` ([Part 6](#part-6-record-the-architectural-decisions-and-their-index)).
 - [ ] The ADR index with its four columns, active records above inactive ones, and each active record `Accepted` ([Part 6](#part-6-record-the-architectural-decisions-and-their-index)).
 - [ ] The record that decides the split and the stack names every container in the view ([Part 6](#part-6-record-the-architectural-decisions-and-their-index)).
-- [ ] Every open task names its functional requirements and records in `### Requirements`, or says it serves none ([Part 6](#part-6-record-the-architectural-decisions-and-their-index)).
-- [ ] `docs/glossary.md` with 3 or more terms, and a root `AGENTS.md` linking the course `SKILL.md` once ([Part 7](#part-7-write-the-glossary-and-the-teams-agentsmd)).
-- [ ] Each Week 3 action point's outcome in `## Previous action points`, and in the artifact it changed ([Part 8](#part-8-carry-out-the-week-3-action-points-and-open-questions)).
-- [ ] Each Week 3 open question answered or carried forward in `## Previous open questions` ([Part 8](#part-8-carry-out-the-week-3-action-points-and-open-questions)).
-- [ ] `reports/week-04/meeting-script.md` ([Part 9](#part-9-validate-with-the-customer)).
-- [ ] `reports/week-04/meeting-report.md`, with a `DEC-nnn` for each story shown and 2 or more action points due in Week 5 ([Part 9](#part-9-validate-with-the-customer)).
-- [ ] `reports/week-04/meeting-transcript.md`, if the meeting was recorded or held in writing ([Part 9](#part-9-validate-with-the-customer)).
-- [ ] The fourth release tagged, and the changelog's released section, the plan's `REL-04` line, and `reports/week-04/README.md` merged after the tag ([Part 10](#part-10-cut-the-rel-04-release)).
-- [ ] `**Actual Velocity:**` set in `### SPRINT-04`, and `reports/week-04/sprint-retrospective.md` with its four sections and its first-retrospective `## Carried Actions` ([Part 11](#part-11-close-the-sprint-and-hold-the-retrospective)).
-- [ ] `reports/week-04/ai-usage.md` ([Part 12](#part-12-report-on-your-ai-usage)).
+- [ ] Every issue from Weeks 2 and 3 in the Week 4 shape: the two types and a `MoSCoW` on every story, checkbox criteria, every story other than a `Won't Have` naming its `### Specified by`, every open task's `### Requirements`, and the six labels retired ([Part 7](#part-7-bring-the-existing-issues-to-the-week-4-shape)).
+- [ ] `docs/glossary.md` with 3 or more terms, and a root `AGENTS.md` linking the course `SKILL.md` once ([Part 8](#part-8-write-the-glossary-and-the-teams-agentsmd)).
+- [ ] Each Week 3 action point's outcome in `## Previous action points`, and in the artifact it changed ([Part 9](#part-9-carry-out-the-week-3-action-points-and-open-questions)).
+- [ ] Each Week 3 open question answered or carried forward in `## Previous open questions` ([Part 9](#part-9-carry-out-the-week-3-action-points-and-open-questions)).
+- [ ] `reports/week-04/meeting-script.md` ([Part 10](#part-10-validate-with-the-customer)).
+- [ ] `reports/week-04/meeting-report.md`, with a `DEC-nnn` for each story shown and 2 or more action points due in Week 5 ([Part 10](#part-10-validate-with-the-customer)).
+- [ ] `reports/week-04/meeting-transcript.md`, if the meeting was recorded or held in writing ([Part 10](#part-10-validate-with-the-customer)).
+- [ ] The fourth release tagged, and the changelog's released section, the plan's `REL-04` line, and `reports/week-04/README.md` merged after the tag ([Part 11](#part-11-cut-the-rel-04-release)).
+- [ ] `**Actual Velocity:**` set in `### SPRINT-04`, and `reports/week-04/sprint-retrospective.md` with its four sections and its first-retrospective `## Carried Actions` ([Part 12](#part-12-close-the-sprint-and-hold-the-retrospective)).
+- [ ] `reports/week-04/ai-usage.md` ([Part 13](#part-13-report-on-your-ai-usage)).
 - [ ] `reports/week-04/README.md` ([Assignment Report In The Repository](#assignment-report-in-the-repository)).
 - [ ] Everything merged into `main`, with the permalink and the snapshot taken from that commit ([Submission Procedure](#submission-procedure)).
 - [ ] PDF ready, and the permalink opened in a browser at the full commit hash ([Assignment Report On Moodle](#assignment-report-on-moodle)).

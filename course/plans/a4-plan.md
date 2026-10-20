@@ -390,36 +390,38 @@ The steps:
 The header carries the date: hard Saturday 24 October 2026 at 23:59.
 There is no soft deadline.
 The intro continues from Week 3: the minimum usable product is on `main` and the first release is tagged, and this week the product gets quality requirements, functional requirements, a documented architecture, and the architectural decision records behind it.
-`## Objectives` follows Assignment 3's: the ISO/IEC 25010 quality model and the six-part scenario, the quality requirements, the functional requirements and the ADRs, the architecture document with the drivers it links and the ADR index, the sprint records and estimates, the glossary and the team's `AGENTS.md`, and `REL-04`.
+`## Objectives` follows Assignment 3's: the ISO/IEC 25010 quality model and the six-part scenario, the quality requirements, the functional requirements and the ADRs, the architecture document with the drivers it links and the ADR index, the sprint records and estimates, the one-pass conversion of the issues opened in Weeks 2 and 3, the glossary and the team's `AGENTS.md`, and `REL-04`.
 
 The numbered parts, in the order the work can succeed, each a rules list and then the week's minima:
 
 1. **Plan The Sprint, Refine The Backlog, And Set The Fields.**
-   The plan's `### SPRINT-04` section with its goal replacing the provisional one, `**Planned Velocity:**`, `SPRINT-04`'s `**Due:**` and GitHub milestone due date set to `2026-10-24`, and the later sprints' `**Due:**` fields and GitHub milestones moved to `2026-10-31`, `2026-11-07`, `2026-11-14`, `2026-11-21`, and `2026-11-28`; refinement for `SPRINT-05` and `SPRINT-06` with no document; the three issue fields created and pinned, the project's table view showing them, and `MoSCoW` and the type set on every existing issue; every existing story's acceptance criteria converted to checkboxes; and every carried issue refined and, when it is a story, estimated before it enters the sprint.
+   The plan's `### SPRINT-04` section with its goal replacing the provisional one, `**Planned Velocity:**`, `SPRINT-04`'s `**Due:**` and GitHub milestone due date set to `2026-10-24`, and the later sprints' `**Due:**` fields and GitHub milestones moved to `2026-10-31`, `2026-11-07`, `2026-11-14`, `2026-11-21`, and `2026-11-28`; refinement for `SPRINT-05` and `SPRINT-06` with no document; the three issue fields created and pinned, the project's table view showing them, and every carried issue refined and, when it is a story, estimated before it enters the sprint.
    The velocity that goes into the plan's planned field is computed by hand from the stories' `Story Points`.
 2. **Write The Quality Requirements.** `docs/quality-requirements/qr/`, at least 3 `QR-nn` files, each with a different characteristic, all six scenario parts, both priorities, and its row in `docs/quality-requirements/README.md`.
    One of them is about `Maintainability` / `Testability`, names the critical modules, and carries `High` business importance.
-3. **Write The Functional Requirements.** `docs/functional-requirements/` with its index and at least 5 `fr/FR-nnn.md`, each with its `**Traces to:**`, its `**Containers:**`, its `shall` statements, and its own `### AC-nn` criteria.
-   Every story, including the ones closed in Weeks 2 and 3, names its FRs and ADRs in `### Specified by`; the backfill is part of the catch-up, so it needs no change comment.
-4. **Link The Drivers Into The Architecture.**
+3. **Draw The Container View.**
+   `docs/architecture/README.md` opens with one sentence linking `docs/product-vision.md` as the scope, then carries `## Container View` with the diagram and its source, `### Container Responsibilities` with one row per container and the data or state it owns, and `## Diagrams And Legends`; the view is the set the functional requirements and the records draw their containers from.
+4. **Write The Functional Requirements.** `docs/functional-requirements/` with its index and at least 5 `fr/FR-nnn.md`, each with its `**Traces to:**`, its `**Containers:**`, its `shall` statements, and its own `### AC-nn` criteria.
+5. **Link The Drivers Into The Architecture.**
    Open `docs/architecture/README.md` with one sentence that links `docs/product-vision.md` as the scope, then link the threshold of success in full, the vision's `## Constraints` section, the functional requirements index, and the quality requirements index, and name no single `TOS-nn`, `CON-nn`, `FR-nnn`, or `QR-nn` there.
    Link `docs/architecture/README.md` from `docs/product-vision.md`, per [Product Vision Requirements](../../requirements/product-vision-requirements.md#where-the-vision-lives), with the vision's constraints, boundary, and system context staying where they are.
-5. **Record The Decisions And Their Index.**
+6. **Record The Decisions And Their Index.**
    At least 3 `ADR-nnn` files, each `**Addresses:**` at least one ASR, each with its rejected options, its accepted quality attributes covered by a QR, and the index's one table with its active records above the inactive ones, with each row's `Addresses` cell naming the drivers that record answers.
    The three minimum ADRs are `Accepted` before submission.
-   Every open task names the FRs and ADRs it works on in `### Requirements`, including the tasks opened in Weeks 2 and 3.
-6. **Write The Glossary And The Team's `AGENTS.md`.**
+7. **Bring The Existing Issues To The Week 4 Shape.**
+   One pass once the requirements and the records exist: the two issue types and a `MoSCoW` on every existing issue, the six labels retired, every story's acceptance criteria converted to checkboxes, every story other than a `Won't Have` naming its FRs and ADRs in `### Specified by`, and every open task naming its FRs and ADRs in `### Requirements`; the backfill is part of the catch-up, so it needs no change comment, and the pass is one change rather than a pull request per issue.
+8. **Write The Glossary And The Team's `AGENTS.md`.**
    `docs/glossary.md` with at least three terms, and a root `AGENTS.md` with the team's layout, checks, conventions, and off-limits files, linking the course repository's `SKILL.md` once as the router.
-7. **Carry Out The Week 3 Action Points And Open Questions.**
+9. **Carry Out The Week 3 Action Points And Open Questions.**
    They are read from `## Previous action points` and `## Previous open questions` of `reports/week-04/meeting-report.md`, per [Meeting Report](../../requirements/customer-meetings-requirements.md#meeting-report); nothing is copied from Week 3.
-8. **Validate With The Customer.**
-   The meeting is the Sprint Review: show the quality requirements and the architecture against the drivers, and record each customer change as a `DEC-nnn`.
-   In the script, the report, and the transcript.
-9. **Cut The `REL-04` Release.**
-   The tag on `main`, the changelog's released section, the plan's `REL-04` line, and the week's report, in that order, per [Releases](../../requirements/planning-requirements.md#releases).
-10. **Close The Sprint And Hold The Retrospective.**
+10. **Validate With The Customer.**
+    The meeting is the Sprint Review: show the quality requirements and the architecture against the drivers, and record each customer change as a `DEC-nnn`.
+    In the script, the report, and the transcript.
+11. **Cut The `REL-04` Release.**
+    The tag on `main`, the changelog's released section, the plan's `REL-04` line, and the week's report, in that order, per [Releases](../../requirements/planning-requirements.md#releases).
+12. **Close The Sprint And Hold The Retrospective.**
     Set `**Actual Velocity:**` in `### SPRINT-04` from the completed stories, then write `reports/week-04/sprint-retrospective.md` with its four sections, the row counts, a `Reason` on every action, and a `## Carried Actions` section saying this is the first retrospective.
-11. **Report On Your AI Usage.**
+13. **Report On Your AI Usage.**
 
 The assignment follows Assignment 3's shape: the header, `## Objectives`, the numbered parts, `## What Good Looks Like`, `## Assignment Report In The Repository` with its coverage table and repository evidence, `## Assignment Report On Moodle` with the wrapper's contents, `### Submission Procedure`, and `## Checklist`.
 
@@ -429,25 +431,25 @@ The checklist has one item per part and per artifact, each citing the rule its p
 
 The coverage table rows are:
 
-| Deliverable                | Artifact                                                                                                                          |
-| -------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
-| Sprint plan and estimates  | `docs/project-plan.md#sprint-04`, with its goal, its planned velocity, and its actual velocity                                    |
-| Product backlog refinement | the `SPRINT-05` and `SPRINT-06` milestone issues, with the `Story Points` on each                                                 |
-| Issue format catch-up      | every story's checkbox criteria and `### Specified by`, every open task's `### Requirements`, and every issue's type and `MoSCoW` |
-| Quality requirements       | `docs/quality-requirements/qr/`, with `docs/quality-requirements/README.md` as the priority matrix                                |
-| Functional requirements    | `docs/functional-requirements/`, with `README.md` as the index and `fr/` for the records                                          |
-| Architecture and drivers   | `docs/architecture/README.md`, with the drivers it links and the ADR index                                                        |
-| Architectural decisions    | `docs/architecture/adr/` and the ADR index                                                                                        |
-| Glossary                   | `docs/glossary.md`                                                                                                                |
-| Team `AGENTS.md`           | `AGENTS.md`                                                                                                                       |
-| Repository surfaces        | the five field columns in the project view, and the docs site linking the new `docs/` pages                                       |
-| Week 3 action points       | `## Previous action points` in `reports/week-04/meeting-report.md`                                                                |
-| Week 3 open questions      | `## Previous open questions` in the same report                                                                                   |
-| Meeting script             | `reports/week-04/meeting-script.md`                                                                                               |
-| Customer validation        | `reports/week-04/meeting-report.md`, the transcript when there is one, and each story's verdict                                   |
-| `REL-04`                   | the tag, the changelog's released section, and the plan's `REL-04` line                                                           |
-| Sprint retrospective       | `reports/week-04/sprint-retrospective.md`                                                                                         |
-| AI usage                   | `reports/week-04/ai-usage.md`                                                                                                     |
+| Deliverable                | Artifact                                                                                           |
+| -------------------------- | -------------------------------------------------------------------------------------------------- |
+| Sprint plan and estimates  | `docs/project-plan.md#sprint-04`, with its goal, its planned velocity, and its actual velocity     |
+| Product backlog refinement | the `SPRINT-05` and `SPRINT-06` milestone issues, with the `Story Points` on each                  |
+| Issue catch-up             | the issue lists filtered by the `User Story` and `Task` types                                      |
+| Quality requirements       | `docs/quality-requirements/qr/`, with `docs/quality-requirements/README.md` as the priority matrix |
+| Functional requirements    | `docs/functional-requirements/`, with `README.md` as the index and `fr/` for the records           |
+| Architecture and drivers   | `docs/architecture/README.md`, with the drivers it links and the ADR index                         |
+| Architectural decisions    | `docs/architecture/adr/` and the ADR index                                                         |
+| Glossary                   | `docs/glossary.md`                                                                                 |
+| Team `AGENTS.md`           | `AGENTS.md`                                                                                        |
+| Repository surfaces        | the five field columns in the project view, and the docs site linking the new `docs/` pages        |
+| Week 3 action points       | `## Previous action points` in `reports/week-04/meeting-report.md`                                 |
+| Week 3 open questions      | `## Previous open questions` in the same report                                                    |
+| Meeting script             | `reports/week-04/meeting-script.md`                                                                |
+| Customer validation        | `reports/week-04/meeting-report.md`, the transcript when there is one, and each story's verdict    |
+| `REL-04`                   | the tag, the changelog's released section, and the plan's `REL-04` line                            |
+| Sprint retrospective       | `reports/week-04/sprint-retrospective.md`                                                          |
+| AI usage                   | `reports/week-04/ai-usage.md`                                                                      |
 
 The **What Good Looks Like** guidance:
 
