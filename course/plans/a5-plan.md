@@ -352,6 +352,6 @@ The entries:
 
 ### The Prior Iterations Consulted
 
-- [`tmp/itpd-2025/assignments/assignment-4.md`](../../tmp/itpd-2025/assignments/assignment-4.md), for the quality requirement evidence it expected and the testing plan.
-- [`tmp/swp-2026/assignments/Assignment_04.md`](../../tmp/swp-2026/assignments/Assignment_04.md), for the range of quality requirement evidence it expected.
+- `tmp/itpd-2025/assignments/assignment-4.md`, for the quality requirement evidence it expected and the testing plan.
+- `tmp/swp-2026/assignments/Assignment_04.md`, for the range of quality requirement evidence it expected.
 - The backlog tasks this plan changes: TASK-134 records the Week 3 to Week 4 move, and TASK-145 records the Week 4 to Week 5 move.

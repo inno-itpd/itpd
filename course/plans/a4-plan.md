@@ -621,5 +621,5 @@ These are repository content rather than artifacts, per [Where Artifacts Live In
 
 ### The Prior Iterations Consulted
 
-- [`tmp/itpd-2025/assignments/assignment-4.md`](../../tmp/itpd-2025/assignments/assignment-4.md), for the sprint review, the retrospective's three questions, the grooming, and the 1–2 hour task size.
+- `tmp/itpd-2025/assignments/assignment-4.md`, for the sprint review, the retrospective's three questions, the grooming, and the 1–2 hour task size.
 - The backlog tasks this plan closes or changes: TASK-010 and TASK-066.
