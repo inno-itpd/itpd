@@ -1,13 +1,13 @@
 # Architectural Decision Record Requirements
 
 These requirements define the architectural decision record: where it lives, the fields its file carries, the four body sections, and the requirements it accounts for.
-The decision index that lists the records is in [Architecture Requirements](architecture-requirements.md#architectural-decisions), the customer decisions a record may cite are in [Decision Requirements](decisions-requirements.md#the-decision), and the requirements a record names are in [Functional Requirements](functional-requirements-requirements.md#the-functional-requirement) and [Quality Requirements](quality-requirements-requirements.md#the-quality-requirement).
+The ADR index that lists the records is in [Architecture Requirements](architecture-requirements.md#architectural-decisions), the customer decisions a record may cite are in [Decision Requirements](decisions-requirements.md#the-decision), and the requirements a record names are in [Functional Requirements](functional-requirements-requirements.md#the-functional-requirement) and [Quality Requirements](quality-requirements-requirements.md#the-quality-requirement).
 How the `ADR-nnn` identifier is issued and cited is in [General Requirements](general-requirements.md#identifier-rules).
 [Guide: Quality And Architecture](../guides/quality-and-architecture.md) is the method.
 
 <h2>Table of contents</h2>
 
-- [Where Architectural Decision Records Live](#where-architecture-decision-records-live)
+- [Where Architectural Decision Records Live](#where-architectural-decision-records-live)
 - [The Record](#the-record)
 - [What It Accounts For](#what-it-accounts-for)
 - [Full Example](#full-example)
@@ -26,7 +26,7 @@ It keeps the reasoning where a reader meets it once, instead of in a commit mess
    The `#` heading carries the identifier and the title, which is the exception rule 5 of [Identifier Rules](general-requirements.md#identifier-rules) gives a file that is its own record.
 3. `docs/architecture/adr/TEMPLATE.md` is the shape to copy, so a new record starts from the template and the template itself is left unfilled.
 4. The record is maintained documentation, created in `docs/` in its final place and kept current, per [Where Artifacts Live In The Repository](general-requirements.md#where-artifacts-live-in-the-repository).
-5. Every record is listed in the architecture document's decision index, and its row is written with it, per [Architectural Decisions](architecture-requirements.md#architectural-decisions).
+5. Every record is listed in the architecture document's ADR index, and its row is written with it, per [Architectural Decisions](architecture-requirements.md#architectural-decisions).
 6. Write a record for a choice that is architectural, technological, or about functional behavior, because a reader would otherwise have to reconstruct it from the code.
 7. A choice the team made is a record rather than a `DEC-nnn`, per [The Decision](decisions-requirements.md#the-decision), and a mandate the customer gave stays a customer-given [constraint](product-vision-requirements.md#constraints) whose `**Decision:**` cites the `DEC-nnn` that records it.
 
@@ -42,7 +42,7 @@ The record follows the [MADR 4](https://adr.github.io/madr/) shape in the `itpd`
 
 **Required**
 
-1. The heading is `# ADR-nnn: Title`, and the title is short enough to recognise the record in the decision index.
+1. The heading is `# ADR-nnn: Title`, and the title is short enough to recognise the record in the ADR index.
 2. The fields follow the heading as a bulleted list, in this order, per [Identifier Rules](general-requirements.md#identifier-rules) rule 9:
 
    | Field                | What it says                                                                                                                                                      |
@@ -83,7 +83,7 @@ The record follows the [MADR 4](https://adr.github.io/madr/) shape in the `itpd`
 
 **Recommended**
 
-- Start `## Decision Outcome` with the chosen option's name, so the decision index's `Decision` cell can be read from it.
+- Start `## Decision Outcome` with the chosen option's name, so the ADR index's `Decision` cell can be read from it.
 
 **Example**
 

@@ -1,6 +1,6 @@
 # Architecture Requirements
 
-These requirements define the architecture document: where it lives, the drivers it links, the decision index that maps each record to the requirements it answers, and what makes a requirement architecturally significant.
+These requirements define the architecture document: where it lives, the drivers it links, the ADR index that maps each record to the requirements it answers, and what makes a requirement architecturally significant.
 The record an index row points at is specified in [Architectural Decision Record Requirements](adr-requirements.md), the requirements the index names are in [Functional Requirements](functional-requirements-requirements.md) and [Quality Requirements](quality-requirements-requirements.md), and the scope the document serves stays in [Product Vision Requirements](product-vision-requirements.md).
 How the `ADR-nnn`, `FR-nnn`, and `QR-nn` identifiers are issued and cited is in [General Requirements](general-requirements.md#identifier-rules).
 [Guide: Quality And Architecture](../guides/quality-and-architecture.md) is the method.
@@ -26,7 +26,7 @@ The architecture document records what the software system is made of, and it po
 2. It opens with one sentence that links `docs/product-vision.md` as the scope it serves, and then carries these parts, in this order:
 
    - `## Drivers`, per [Drivers](#drivers): the four groups of requirements that drive the architecture.
-   - `## Architectural Decisions`, per [Architectural Decisions](#architectural-decisions): the decision index.
+   - `## Architectural Decisions`, per [Architectural Decisions](#architectural-decisions): the ADR index.
 
 3. It carries no trace section, because the chain from a story to the threshold of success is the links between the artifacts and no document restates it, per [Traceability Into Later Weeks](general-requirements.md#traceability-into-later-weeks).
 4. `## Views` is Assignment 5's, and it is added between `## Drivers` and `## Architectural Decisions`, so the final order is drivers, views, and decisions.
@@ -56,7 +56,7 @@ An **architectural driver** is a requirement or a goal that shapes the architect
    - The **quality requirements** link `docs/quality-requirements/README.md`, which is the group's index and the priority matrix, per [The Quality Requirements Index](quality-requirements-requirements.md#the-quality-requirements-index).
 
 2. The section names no `TOS-nn`, `CON-nn`, `FR-nnn`, or `QR-nn`, and it restates no goal, constraint, or requirement: an entry says which group it is and links the group.
-3. The section is not a table, because the decision index's `Addresses` column is the one table that maps a requirement to the record that answers it, per [Architectural Decisions](#architectural-decisions).
+3. The section is not a table, because the ADR index's `Addresses` column is the one table that maps a requirement to the record that answers it, per [Architectural Decisions](#architectural-decisions).
 4. The boundary and the system context are scope rather than drivers, so the section links neither of them, and the opening sentence links the vision for both.
 5. A requirement that no record answers yet is still reached through the index its group owns, so nothing dangles from the drivers section.
 
@@ -84,20 +84,20 @@ This section says how the architecture document reaches those requirements; the 
 
 **Required**
 
-1. The architecture document carries no list of architecturally significant requirements: the decision index's `Addresses` column is where each of them appears, linked, record by record, per [Architectural Decisions](#architectural-decisions).
+1. The architecture document carries no list of architecturally significant requirements: the ADR index's `Addresses` column is where each of them appears, linked, record by record, per [Architectural Decisions](#architectural-decisions).
 2. No requirement carries an `ASR` field or marker of its own: [The Functional Requirement](functional-requirements-requirements.md#the-functional-requirement) and [The Quality Requirement](quality-requirements-requirements.md#the-quality-requirement) say what each family carries, and neither includes one.
 3. A requirement that no record names yet is still reached through the index its group owns, which the drivers section links, per [Drivers](#drivers).
 4. To find the records that account for one requirement, search the records' `**Addresses:**` fields, per [Traceability Into Later Weeks](general-requirements.md#traceability-into-later-weeks).
 
 **Recommended**
 
-- Read the index against the quality requirements index, so a quality attribute the team is judged on has a record behind it.
+- Read the ADR index against the quality requirements index, so a quality attribute the team is judged on has a record behind it.
 
 ## Architectural Decisions
 
 **Since: W4**
 
-The decision index is one table under `## Architectural Decisions` in `docs/architecture/README.md`.
+The **ADR index** is one table under `## Architectural Decisions` in `docs/architecture/README.md`.
 It lists the records, and it is the one place where a requirement meets the record that answers it.
 
 **Required**
@@ -124,7 +124,7 @@ It lists the records, and it is the one place where a requirement meets the reco
 
 ## Full Example
 
-`docs/architecture/README.md` in the meeting-booking example, after Week 4: the opening sentence that links the scope, the four drivers, and the decision index, with three active records above one inactive one.
+`docs/architecture/README.md` in the meeting-booking example, after Week 4: the opening sentence that links the scope, the four drivers, and the ADR index, with three active records above one inactive one.
 
 ```markdown
 # Architecture

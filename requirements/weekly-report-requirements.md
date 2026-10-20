@@ -98,10 +98,10 @@ The provider's hosted checkout keeps us outside card data, and the testability r
 
 ## Contribution
 
-| Member | Work                                                          |
-| ------ | ------------------------------------------------------------- |
-| @alice | [PR #31](...), the quality requirements, [approved](...) @bob |
-| @bob   | [PR #32](...), the decision records, [approved](...) @carol   |
+| Member | Work                                                                      |
+| ------ | ------------------------------------------------------------------------- |
+| @alice | [PR #31](...), the quality requirements, [approved](...) @bob             |
+| @bob   | [PR #32](...), the architectural decision records, [approved](...) @carol |
 
 ## Repository evidence
 

@@ -1,6 +1,6 @@
 ---
 name: itpd
-description: Rules, assignments, and guides for the IT Product Development (ITPD) course. Use when working in an ITPD team's product repository on a course deliverable — a weekly report under reports/week-NN/, the research, assumptions, decisions, product vision, functional requirements, quality requirements, the architecture document and its decision records, project plan with its sprints, releases, and ceremonies, threshold of success, risks, Definition of Done, glossary, or the team's AGENTS.md under docs/, story or task issues, a customer meeting script or report, the AI usage report, the Moodle PDF, the changelog or a release, or the repository setup and CI the course requires.
+description: Rules, assignments, and guides for the IT Product Development (ITPD) course. Use when working in an ITPD team's product repository on a course deliverable — a weekly report under reports/week-NN/, the research, assumptions, decisions, product vision, functional requirements, quality requirements, the architecture document and its architectural decision records, project plan with its sprints, releases, and ceremonies, threshold of success, risks, Definition of Done, glossary, or the team's AGENTS.md under docs/, story or task issues, a customer meeting script or report, the AI usage report, the Moodle PDF, the changelog or a release, or the repository setup and CI the course requires.
 ---
 
 # ITPD Course Materials

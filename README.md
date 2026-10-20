@@ -11,12 +11,12 @@ Materials for the **IT Product Development (ITPD)** course: what the course expe
 
 ## Assignments
 
-| Week                             | Hard deadline     | Deliverable                                                                                                                       |
-| -------------------------------- | ----------------- | --------------------------------------------------------------------------------------------------------------------------------- |
-| [1](assignments/assignment-1.md) | Fri 2 Oct, 23:59  | Initial project research: alternatives, comparison, gaps, value proposition                                                       |
-| [2](assignments/assignment-2.md) | Sat 10 Oct, 23:59 | Requirements and prototyping: vision, user stories, prototypes, validation                                                        |
-| [3](assignments/assignment-3.md) | Sat 17 Oct, 23:59 | Planning and the minimum usable product: plan, threshold, risks, Definition of Done, first release                                |
-| [4](assignments/assignment-4.md) | Sat 24 Oct, 23:59 | Quality and architecture: quality and functional requirements, decision records, drivers, glossary, retrospective, fourth release |
+| Week                             | Hard deadline     | Deliverable                                                                                                                                     |
+| -------------------------------- | ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| [1](assignments/assignment-1.md) | Fri 2 Oct, 23:59  | Initial project research: alternatives, comparison, gaps, value proposition                                                                     |
+| [2](assignments/assignment-2.md) | Sat 10 Oct, 23:59 | Requirements and prototyping: vision, user stories, prototypes, validation                                                                      |
+| [3](assignments/assignment-3.md) | Sat 17 Oct, 23:59 | Planning and the minimum usable product: plan, threshold, risks, Definition of Done, first release                                              |
+| [4](assignments/assignment-4.md) | Sat 24 Oct, 23:59 | Quality and architecture: quality and functional requirements, architectural decision records, drivers, glossary, retrospective, fourth release |
 
 Later assignments are added as the course runs.
 Each one adds the paths and evidence for its week, and changes nothing about the rules below.
@@ -46,8 +46,8 @@ The assignments reference these rather than repeating them.
 | [Assumption Requirements](requirements/assumptions-requirements.md)                        | Where assumptions live, what rests on them, and how they are checked and settled                                 |
 | [Decision Requirements](requirements/decisions-requirements.md)                            | Where decisions live, what each entry says, what cites it, and how it is reversed                                |
 | [Product Vision Requirements](requirements/product-vision-requirements.md)                 | The goal, stakeholders, constraints, boundary, the system context diagram, and the architecture it links         |
-| [Architecture Requirements](requirements/architecture-requirements.md)                     | The architecture document, the drivers it links, and the decision index                                          |
-| [Architectural Decision Record Requirements](requirements/adr-requirements.md)             | The decision records, their `**Addresses:**` field, and their body                                               |
+| [Architecture Requirements](requirements/architecture-requirements.md)                     | The architecture document, the drivers it links, and the ADR index                                               |
+| [Architectural Decision Record Requirements](requirements/adr-requirements.md)             | The architectural decision records, their `**Addresses:**` field, and their body                                 |
 | [Functional Requirements](requirements/functional-requirements-requirements.md)            | Functional requirement files, their behavior, their criteria, and the index                                      |
 | [Quality Requirements](requirements/quality-requirements-requirements.md)                  | Quality requirements, the ISO/IEC 25010:2023 pair, the scenario, and the priority matrix                         |
 | [User Story Requirements](requirements/user-stories-requirements.md)                       | Story issues, acceptance criteria, and priorities                                                                |
@@ -72,15 +72,15 @@ The assignments reference these rather than repeating them.
 
 How to actually do the work.
 
-| Guide                                                                      | For                                                                                             |
-| -------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
-| [Researching alternatives](guides/alternatives-research.md)                | Finding your set, choosing properties, evaluating consistently, capturing evidence              |
-| [From comparison to value proposition](guides/comparison-and-synthesis.md) | Building the table, finding the gaps, writing the proposition and your assumptions              |
-| [The kickoff meeting](guides/customer-kickoff-meeting.md)                  | The five areas and the Mom Test pass                                                            |
-| [User stories and prototyping](guides/user-stories-and-prototyping.md)     | Turning a gap into stories, writing criteria, and testing an idea cheaply                       |
-| [Validating with the customer](guides/validating-with-the-customer.md)     | Running a meeting after the kickoff and recording what it changed                               |
-| [Planning and tracking](guides/planning-and-tracking.md)                   | The threshold of success, the plan and its releases, milestones, risks, and progress monitoring |
-| [Quality and architecture](guides/quality-and-architecture.md)             | Quality expectations, the requirements, the drivers, the decision records, and the indexes      |
+| Guide                                                                      | For                                                                                                      |
+| -------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| [Researching alternatives](guides/alternatives-research.md)                | Finding your set, choosing properties, evaluating consistently, capturing evidence                       |
+| [From comparison to value proposition](guides/comparison-and-synthesis.md) | Building the table, finding the gaps, writing the proposition and your assumptions                       |
+| [The kickoff meeting](guides/customer-kickoff-meeting.md)                  | The five areas and the Mom Test pass                                                                     |
+| [User stories and prototyping](guides/user-stories-and-prototyping.md)     | Turning a gap into stories, writing criteria, and testing an idea cheaply                                |
+| [Validating with the customer](guides/validating-with-the-customer.md)     | Running a meeting after the kickoff and recording what it changed                                        |
+| [Planning and tracking](guides/planning-and-tracking.md)                   | The threshold of success, the plan and its releases, milestones, risks, and progress monitoring          |
+| [Quality and architecture](guides/quality-and-architecture.md)             | Quality expectations, the requirements, the drivers, the architectural decision records, and the indexes |
 
 ## Course Documents
 

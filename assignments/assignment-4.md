@@ -10,7 +10,7 @@ See [Deadlines And Submission](../course/rules.md#deadlines-and-submission).
 One submission per team.
 
 Week 3 ended with a minimum usable product on `main` and its first release tagged.
-This week the product gets the requirements behind it and the architecture that answers them: testable quality requirements, the functional requirements behind the stories, the architectural decision records (ADR), and the architecture document that links the drivers to the ADRs.
+This week the product gets the requirements behind it and the architecture that answers them: testable quality requirements, the functional requirements behind the stories, the architectural decision records (ADRs), and the architecture document that links the drivers to the ADRs.
 The week also carries the sprint's ceremonies and the fourth release.
 
 What you hand in is a set of requirements a stranger could fail, an architecture a reader can walk from a driver to the ADR that answers it, and the sprint records behind both, released as `REL-04`.
@@ -24,7 +24,7 @@ The tools the course suggests, from meeting transcripts to a coding agent, are i
 - [Part 2: Write The Quality Requirements](#part-2-write-the-quality-requirements)
 - [Part 3: Write The Functional Requirements](#part-3-write-the-functional-requirements)
 - [Part 4: Link The Drivers Into The Architecture](#part-4-link-the-drivers-into-the-architecture)
-- [Part 5: Record The Decisions And Their Index](#part-5-record-the-decisions-and-their-index)
+- [Part 5: Record The Architectural Decisions And Their Index](#part-5-record-the-architectural-decisions-and-their-index)
 - [Part 6: Write The Glossary And The Team's AGENTS.md](#part-6-write-the-glossary-and-the-teams-agentsmd)
 - [Part 7: Carry Out The Week 3 Action Points And Open Questions](#part-7-carry-out-the-week-3-action-points-and-open-questions)
 - [Part 8: Validate With The Customer](#part-8-validate-with-the-customer)
@@ -44,7 +44,7 @@ By the end of this week you should be able to show a reader:
 - The product's quality expectations, each as an ISO/IEC 25010:2023 pair and a six-part quality attribute scenario a reviewer could fail.
 - The quality requirements index as the priority matrix, sorted by value to the customer and by the technical risk of achieving and testing them.
 - The functional requirements behind the stories: the behavior, the containers it lands in, where it came from, and its own acceptance criteria.
-- An architecture document that links the drivers to the sections and files that hold them, and a decision index that maps each record to the drivers it answers.
+- An architecture document that links the drivers to the sections and files that hold them, and an ADR index that maps each record to the drivers it answers.
 - The architectural decision records themselves: the context, the options turned down, the outcome, and the quality attributes they accept with the requirement that covers each.
 - A sprint with a goal, a planned velocity known before the work started, an actual velocity to compare it with, and a retrospective to carry forward.
 - The glossary that fixes the project's words, and the team's `AGENTS.md` that tells an agent how the repository works.
@@ -135,24 +135,24 @@ This week:
 
 The method is in [Step 5: Link The Drivers](../guides/quality-and-architecture.md#step-5-link-the-drivers).
 
-## Part 5: Record The Decisions And Their Index
+## Part 5: Record The Architectural Decisions And Their Index
 
 The rules:
 
-- Each record is `docs/architecture/adr/ADR-nnn.md`, and `docs/architecture/adr/TEMPLATE.md` is the shape to copy: [Where Architectural Decision Records Live](../requirements/adr-requirements.md#where-architecture-decision-records-live).
+- Each record is `docs/architecture/adr/ADR-nnn.md`, and `docs/architecture/adr/TEMPLATE.md` is the shape to copy: [Where Architectural Decision Records Live](../requirements/adr-requirements.md#where-architectural-decision-records-live).
 - A record carries its status, its containers, its `**Addresses:**`, and its `**Decision:**` field, and its body is the MADR shape: [The Record](../requirements/adr-requirements.md#the-record).
 - `**Addresses:**` lists the functional requirements and quality requirements the record accounts for, and there is no `ASR` field: [What It Accounts For](../requirements/adr-requirements.md#what-it-accounts-for).
-- The index is one table under `## Architectural Decisions`, with the active records above the inactive ones: [Architectural Decisions](../requirements/architecture-requirements.md#architectural-decisions).
+- The ADR index is one table under `## Architectural Decisions`, with the active records above the inactive ones: [Architectural Decisions](../requirements/architecture-requirements.md#architectural-decisions).
 - A task names the functional requirements and architectural decision records it works on, in `### Requirements`: [The Issue Form](../requirements/task-issues-requirements.md#the-issue-form).
 
 This week:
 
 1. Write at least 3 `ADR-nnn` files, each `**Addresses:**` at least one functional or quality requirement, each naming the options it turned down, and each naming the quality attributes it accepts with the `QR-nn` that covers each.
-2. Write the decision index: one table with its four columns, the active records above the inactive ones, and each `Addresses` cell naming the drivers the record answers.
+2. Write the ADR index: one table with its four columns, the active records above the inactive ones, and each `Addresses` cell naming the drivers the record answers.
 3. The three minimum records are `Accepted` before submission.
 4. Give every open task its `### Requirements` section, including the tasks opened in Weeks 2 and 3; a task that serves no requirement says so and is repository upkeep.
 
-The method is in [Step 6: Write The Decision Records](../guides/quality-and-architecture.md#step-6-write-the-decision-records) and [Step 7: Index The Decisions](../guides/quality-and-architecture.md#step-7-index-the-decisions).
+The method is in [Step 6: Write The Architectural Decision Records](../guides/quality-and-architecture.md#step-6-write-the-architectural-decision-records) and [Step 7: Index The Architectural Decision Records](../guides/quality-and-architecture.md#step-7-index-the-architectural-decision-records).
 
 ## Part 6: Write The Glossary And The Team's AGENTS.md
 
@@ -269,13 +269,13 @@ A strong submission has:
   A table or an example where prose would be vague, and a tick only once the criterion is verified.
 - **A catch-up with no leftovers.**
   No earlier story or open task is left in the old shape, and no issue carries a change comment for the conversion, because the pass is recorded once.
-- **A drivers section that points, and an index that maps.**
-  The drivers section says where the drivers live, and each driver meets the record that answers it in the index's `Addresses` column, so the two lists cannot drift.
+- **A drivers section that points, and an ADR index that maps.**
+  The drivers section says where the drivers live, and each driver meets the record that answers it in the ADR index's `Addresses` column, so the two lists cannot drift.
   The architecture links the vision rather than copying it.
-- **Decision records that answer for something.**
+- **Architectural decision records that answer for something.**
   Each names a rejected option, the requirements it `**Addresses:**`, and the quality attributes it accepts with the `QR-nn` that covers each.
 - **A chain a reader can walk.**
-  From a task's `### Requirements` through the functional requirement and the decision record to the `TOS-nn` behind it, with no document restating the chain.
+  From a task's `### Requirements` through the functional requirement and the architectural decision record to the `TOS-nn` behind it, with no document restating the chain.
 - **Estimates the team can defend.**
   A `**Planned Velocity:**` the team knew before it started, an `**Actual Velocity:**` it compares with the plan, and both computed from the stories' `Story Points`.
 - **A glossary and an `AGENTS.md` worth reading.**
@@ -297,8 +297,8 @@ This week it also carries:
    | Issue format catch-up      | every story's checkbox criteria and `### Specified by`, every open task's `### Requirements`, and every issue's type and `MoSCoW` |
    | Quality requirements       | `docs/quality-requirements/qr/`, with `docs/quality-requirements/README.md` as the priority matrix                                |
    | Functional requirements    | `docs/functional-requirements/`, with `README.md` as the index and `fr/` for the records                                          |
-   | Architecture and drivers   | `docs/architecture/README.md`, with the drivers it links and the decision index                                                   |
-   | Architectural decisions    | `docs/architecture/adr/` and the index                                                                                            |
+   | Architecture and drivers   | `docs/architecture/README.md`, with the drivers it links and the ADR index                                                        |
+   | Architectural decisions    | `docs/architecture/adr/` and the ADR index                                                                                        |
    | Glossary                   | `docs/glossary.md`                                                                                                                |
    | Team `AGENTS.md`           | `AGENTS.md`                                                                                                                       |
    | Repository surfaces        | the five field columns in the project view, and the docs site linking the new `docs/` pages                                       |
@@ -346,9 +346,9 @@ A transcript under item 5 goes in an appendix, which the two pages do not count.
 - [ ] Every story names its functional requirements and records in `### Specified by` ([Part 3](#part-3-write-the-functional-requirements)).
 - [ ] `docs/architecture/README.md` opens with the vision link, and its `## Drivers` links the four holders and names no requirement of its own ([Part 4](#part-4-link-the-drivers-into-the-architecture)).
 - [ ] `docs/product-vision.md` links `docs/architecture/README.md`, and the vision keeps the goal, stakeholders, constraints, boundary, and system context ([Part 4](#part-4-link-the-drivers-into-the-architecture)).
-- [ ] 3 or more `ADR-nnn` files, each `**Addresses:**` at least one requirement, each with its options turned down and its accepted quality attributes covered by a `QR-nn` ([Part 5](#part-5-record-the-decisions-and-their-index)).
-- [ ] The decision index with its four columns, active records above inactive ones, and each active record `Accepted` ([Part 5](#part-5-record-the-decisions-and-their-index)).
-- [ ] Every open task names its functional requirements and records in `### Requirements`, or says it serves none ([Part 5](#part-5-record-the-decisions-and-their-index)).
+- [ ] 3 or more `ADR-nnn` files, each `**Addresses:**` at least one requirement, each with its options turned down and its accepted quality attributes covered by a `QR-nn` ([Part 5](#part-5-record-the-architectural-decisions-and-their-index)).
+- [ ] The ADR index with its four columns, active records above inactive ones, and each active record `Accepted` ([Part 5](#part-5-record-the-architectural-decisions-and-their-index)).
+- [ ] Every open task names its functional requirements and records in `### Requirements`, or says it serves none ([Part 5](#part-5-record-the-architectural-decisions-and-their-index)).
 - [ ] `docs/glossary.md` with 3 or more terms, and a root `AGENTS.md` linking the course `SKILL.md` once ([Part 6](#part-6-write-the-glossary-and-the-teams-agentsmd)).
 - [ ] Each Week 3 action point's outcome in `## Previous action points`, and in the artifact it changed ([Part 7](#part-7-carry-out-the-week-3-action-points-and-open-questions)).
 - [ ] Each Week 3 open question answered or carried forward in `## Previous open questions` ([Part 7](#part-7-carry-out-the-week-3-action-points-and-open-questions)).

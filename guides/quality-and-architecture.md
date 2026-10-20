@@ -6,7 +6,7 @@ This week the product gets quality requirements, functional requirements, a docu
 The rules are in [Quality Requirement Requirements](../requirements/quality-requirements-requirements.md), [Functional Requirement Requirements](../requirements/functional-requirements-requirements.md), [Architecture Requirements](../requirements/architecture-requirements.md), and [ADR Requirements](../requirements/adr-requirements.md), and the glossary is in [Glossary Requirements](../requirements/glossary-requirements.md).
 This guide is the method: finding the quality expectations, writing each one so a reviewer can fail it, and keeping the links between the requirements, the drivers, and the decisions pointing one way.
 
-**Timebox:** about two days, most of it in the quality attribute workshop and the first three decision records.
+**Timebox:** about two days, most of it in the quality attribute workshop and the first three architectural decision records.
 The requirements are cheapest to change now, before a test or a decision rests on them.
 
 <h2>Table of contents</h2>
@@ -38,16 +38,16 @@ The requirements are cheapest to change now, before a test or a decision rests o
   - [Link Each Group Where It Lives](#link-each-group-where-it-lives)
   - [Name No Requirement Of Your Own](#name-no-requirement-of-your-own)
   - [Open By Linking The Scope](#open-by-linking-the-scope)
-- [Step 6: Write The Decision Records](#step-6-write-the-decision-records)
+- [Step 6: Write The Architectural Decision Records](#step-6-write-the-architectural-decision-records)
   - [Write The Context As The Forces](#write-the-context-as-the-forces)
   - [Name The Options You Turned Down](#name-the-options-you-turned-down)
   - [State The Outcome](#state-the-outcome)
   - [Write The Consequences Against The Quality Requirements](#write-the-consequences-against-the-quality-requirements)
   - [Name The Requirements It Answers](#name-the-requirements-it-answers)
   - [Name The Decision It Documents](#name-the-decision-it-documents)
-- [Step 7: Index The Decisions](#step-7-index-the-decisions)
+- [Step 7: Index The Architectural Decision Records](#step-7-index-the-architectural-decision-records)
   - [Keep The Quality Requirements Index Sorted](#keep-the-quality-requirements-index-sorted)
-  - [Keep One Decision Index](#keep-one-decision-index)
+  - [Keep One ADR Index](#keep-one-adr-index)
   - [Read From The Requirement To The Record](#read-from-the-requirement-to-the-record)
   - [Search From The Record To The Requirement](#search-from-the-record-to-the-requirement)
   - [Leave The Chain To The Links](#leave-the-chain-to-the-links)
@@ -57,7 +57,7 @@ The requirements are cheapest to change now, before a test or a decision rests o
 
 - `docs/quality-requirements/`, with `qr/` for the records and `README.md` for the index: the testable quality requirements and the priority matrix that orders them, per [Quality Requirement Requirements](../requirements/quality-requirements-requirements.md).
 - `docs/functional-requirements/`, with `fr/` for the records and `README.md` for the index: the behavior the product must have, written so a reviewer can check it without opening a story, per [Functional Requirement Requirements](../requirements/functional-requirements-requirements.md).
-- `docs/architecture/README.md`: the drivers that shape the architecture and the decision index, per [Architecture Requirements](../requirements/architecture-requirements.md).
+- `docs/architecture/README.md`: the drivers that shape the architecture and the ADR index, per [Architecture Requirements](../requirements/architecture-requirements.md).
 - `docs/architecture/adr/`: one record per decision, with the options it turned down and the requirements it accounts for, per [ADR Requirements](../requirements/adr-requirements.md).
 - `docs/glossary.md`: the project's own terms, each defined once, per [Where The Glossary Lives](../requirements/glossary-requirements.md#where-the-glossary-lives) and [The Term](../requirements/glossary-requirements.md#the-term).
 
@@ -300,9 +300,9 @@ The section names no `TOS-nn`, `CON-nn`, `FR-nnn`, or `QR-nn`.
 A name there would put the same fact in two places: the threshold owns the goal, the vision owns the constraint, and the indexes own the requirements.
 The second copy drifts the week one of them changes.
 
-The specific requirements appear once, in the decision index's `Addresses` column, where each record names what it answers.
+The specific requirements appear once, in the ADR index's `Addresses` column, where each record names what it answers.
 A requirement no record answers is still reached through its index, so the drivers section leaves nothing dangling.
-The section stays a map of where each group lives, and the index carries the detail.
+The section stays a map of where each group lives, and the ADR index carries the detail.
 
 ### Open By Linking The Scope
 
@@ -311,10 +311,10 @@ The goal, the stakeholders, the boundary, the constraints, and the system contex
 
 Link the vision as a whole rather than a section at a time, because a section link moves the scope into the architecture one piece at a time.
 
-## Step 6: Write The Decision Records
+## Step 6: Write The Architectural Decision Records
 
 An **architectural decision record** is the reasoning for one decision, in a uniform shape, so a reader can see what was decided, what else was considered, and what the choice costs.
-Its path is in [Where Architectural Decision Records Live](../requirements/adr-requirements.md#where-architecture-decision-records-live), and its fields are in [The Record](../requirements/adr-requirements.md#the-record).
+Its path is in [Where Architectural Decision Records Live](../requirements/adr-requirements.md#where-architectural-decision-records-live), and its fields are in [The Record](../requirements/adr-requirements.md#the-record).
 
 ### Write The Context As The Forces
 
@@ -367,9 +367,9 @@ A purely technical choice the team made has no `DEC-nnn`, and the field is left 
 
 The stack is the case to get right: the record states the stack and justifies it, and its `**Decision:**` names the customer's mandate when there is one.
 
-## Step 7: Index The Decisions
+## Step 7: Index The Architectural Decision Records
 
-Two indexes make the week readable: the quality requirements index, which is the priority matrix, and the decision index, which is the one table that maps a requirement to the record that answers it.
+Two indexes make the week readable: the quality requirements index, which is the priority matrix, and the ADR index, which is the one table that maps a requirement to the record that answers it.
 
 ### Keep The Quality Requirements Index Sorted
 
@@ -380,7 +380,7 @@ The sort is the method: active records first, then business importance from High
 Re-sort the table when a rating changes, so its top row is always the next conversation the team should have.
 The `Status` column is the record's own state, so the table never disagrees with the file it summarises.
 
-### Keep One Decision Index
+### Keep One ADR Index
 
 The [Architectural Decisions](../requirements/architecture-requirements.md#architectural-decisions) section of `docs/architecture/README.md` holds one table with the `ADR`, `Status`, `Addresses`, and `Decision` columns.
 Its `Addresses` column is the one map from a requirement to the record that answers it, so no separate driver table exists beside it.
@@ -393,7 +393,7 @@ A row's `Decision` is one line, short enough to scan: it is the reason to open t
 The reading order from a quality requirement to the ADR that answers it runs through the indexes:
 
 1. Open `docs/quality-requirements/README.md` and find the QR's row.
-2. Read the decision index's `Addresses` column for the row that names the QR.
+2. Read the ADR index's `Addresses` column for the row that names the QR.
 3. Open the ADR that row links.
 
 Every hop is a link that already exists, so the reader needs no trace document to follow the path.
@@ -431,7 +431,7 @@ A trace section or a matrix table would be a second copy of those facts, and it 
 - **A functional requirement that is the story again.**
   If the FR repeats the story's three lines, the team maintains the same fact twice; write the behavior the story left open, not the need again.
 - **A drivers section that lists the requirements.**
-  Naming a `TOS-nn` or a `QR-nn` there puts a second copy of a fact the threshold or the index owns; link each group once and leave the names to the decision index.
+  Naming a `TOS-nn` or a `QR-nn` there puts a second copy of a fact the threshold or the index owns; link each group once and leave the names to the ADR index.
 - **An ADR with one option and no consequences.**
   It records what the team did without the reasoning that makes it a decision; name the option you turned down and the quality the choice costs.
 - **A trace document.**

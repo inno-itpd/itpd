@@ -2,7 +2,7 @@
 
 This plan records the scope Assignment 4 hands to Week 5, and everything that scope depends on, before the work is written.
 It covers four groups: the quality requirement tests, the quality requirement testing plan and the progress recorded in it, the container, component, and sequence views, and continuous integration — `actionlint` and the product-code CI.
-Assignment 4 is the functional requirements, the quality requirements, the architectural decision records, the architecture document's drivers and decision index, and the Week 4 process work — sprint planning and estimates, the ceremonies, the glossary, the team's `AGENTS.md`, `REL-04`, and the deadlines; [`a4-plan.md`](a4-plan.md) designs that and leaves these four groups out.
+Assignment 4 is the functional requirements, the quality requirements, the architectural decision records, the architecture document's drivers and ADR index, and the Week 4 process work — sprint planning and estimates, the ceremonies, the glossary, the team's `AGENTS.md`, `REL-04`, and the deadlines; [`a4-plan.md`](a4-plan.md) designs that and leaves these four groups out.
 The [Design Decisions](#design-decisions) section states the model and the reason for it.
 This is a scope plan, not the whole of Assignment 5: Week 5's other work — the unit test suite, the production deployment, `REL-05`, and the 7-minute pitch deck — comes from the syllabus and is designed when the rest of the assignment is written.
 Nothing here settles that other work.
@@ -46,12 +46,12 @@ One rule is new rather than moved: `adr-requirements.md` gains the `**Since: W5*
 
 The boundary between the two plans:
 
-- Assignment 4 keeps the architecture document: `docs/architecture/README.md` links the drivers, holds the decision index, and links the product vision for the scope it serves, and the links themselves are the chain, so no document restates it.
+- Assignment 4 keeps the architecture document: `docs/architecture/README.md` links the drivers, holds the ADR index, and links the product vision for the scope it serves, and the links themselves are the chain, so no document restates it.
 - Assignment 4 introduces `**Containers:**` on the FR and ADR records, naming the C4 deployable units.
   The container view here names exactly the containers those records name.
 - The context diagram stays where Week 2 put it, under `## System Context` in `docs/product-vision.md`.
   It is the one C4 view the project has before this work, and its rules are the Week 2 rules, which did not move.
-- Assignment 4's drivers section and decision index point at where the chain's facts are recorded, per [Traceability Into Later Weeks](../../requirements/general-requirements.md#traceability-into-later-weeks).
+- Assignment 4's drivers section and ADR index point at where the chain's facts are recorded, per [Traceability Into Later Weeks](../../requirements/general-requirements.md#traceability-into-later-weeks).
   This plan adds the one link to the testing plan, so the architecture document never restates when a test passes.
 - Assignment 4's quality requirements have no tests.
   The rule that every `QR-nn` has at least one `QRT-nn` is `**Since: W5**`, so a Week 4 QR is finished when its scenario is written.
@@ -254,7 +254,7 @@ The file follows the format of `course/decisions/a3.md`: a header paragraph, the
 
 The entries:
 
-1. The four groups — the tests, the testing plan, the container, component, and sequence views, and continuous integration (`actionlint` and the product-code CI) — move from Assignment 4's scope to Week 5, so Assignment 4 is the functional requirements, the quality requirements, the ADRs, the architecture document's drivers and decision index, and the Week 4 process work — sprint planning and estimates, the ceremonies, the glossary, the team's `AGENTS.md`, `REL-04`, and the deadlines.
+1. The four groups — the tests, the testing plan, the container, component, and sequence views, and continuous integration (`actionlint` and the product-code CI) — move from Assignment 4's scope to Week 5, so Assignment 4 is the functional requirements, the quality requirements, the ADRs, the architecture document's drivers and ADR index, and the Week 4 process work — sprint planning and estimates, the ceremonies, the glossary, the team's `AGENTS.md`, `REL-04`, and the deadlines.
 2. A quality requirement test is a `## QRT-nn` section inside its QR's file, numbered within the QR and owned by `quality-requirements-requirements.md` with the requirement; no separate tests file is added.
 3. A test's `**Level:**` is `CI`, `scripted`, or `manual`, `**Runs at:**` says where it runs, and a manual test carries `**Why Manual:**`; the test carries no state, and the testing plan carries its status, last check, planned sprint, and `Evidence` cell.
 4. A `High` QR must have a `CI` or `scripted` test; a `High` QR whose only possible test is manual is a deviation, and the reason is recorded.
@@ -324,7 +324,7 @@ The entries:
 
 - This work lands in the `itpd` course repository only, and no file is created under `docs/` or `reports/`, since those belong to student repositories.
 - Assignment 5 is Week 5, and Week 5's due date is Saturday 31 October 2026 at 23:59, set by Assignment 4's schedule change.
-- Assignment 4 lands first: the quality requirements, the functional requirements, the ADRs, the architecture document with its drivers and decision index, and the priority matrix exist before this work adds to them.
+- Assignment 4 lands first: the quality requirements, the functional requirements, the ADRs, the architecture document with its drivers and ADR index, and the priority matrix exist before this work adds to them.
 - The requirements files this plan edits are Assignment 4's; no new requirements file is added, because the tests stay inside the QR file and the testing plan stays inside the project plan.
 - The context diagram and its Week 2 rules stay with `## System Context` in the product vision; this work adds the other three views under `## Views` in the architecture document and their diagram rules under `### Diagrams And Legends`.
 - The Week 4 process work stays in Assignment 4; only `actionlint` and the product-code CI move to Week 5.
