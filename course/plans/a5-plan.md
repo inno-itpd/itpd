@@ -78,7 +78,7 @@ The tests live inside the requirement they prove, their state lives in one plan 
   A test carries no `**Status:**`, no `**Checked:**`, no `**Planned for sprint:**`, and no `**Evidence:**`: the testing plan carries all four, and `planning-requirements.md` owns its columns and statuses.
 - **The testing plan.**
   `docs/project-plan.md` gains `## Quality Requirement Testing Plan` after `## Releases` and before `## Progress Monitoring`.
-  It is one table with the columns `QR`, `QRT`, `Status`, `Checked`, `Planned for sprint`, and `Evidence`, one row per `QRT-nn`, in the quality index order and then `QRT-nn` order, with the `QR` and `QRT` cells linking the requirement and the test's section.
+  It is one table with the columns `QR`, `QRT`, `Status`, `Checked`, `Planned for sprint`, and `Evidence`, one row per `QRT-nn`, ordered by the quality requirements index and then by `QRT-nn`, with the `QR` and `QRT` cells linking the requirement and the test's section.
   The architecture document links this section once, from its `## Trace`.
 - **The statuses.**
   `Status` is the test's state at its last check: `Passes`, `Fails`, `Not verified`, or `Dropped`, where `Not verified` means no check is recorded.
@@ -93,7 +93,7 @@ The tests live inside the requirement they prove, their state lives in one plan 
   A `manual` test records what was inspected, by whom, and what was observed in the same place, with a screenshot when the evidence is visual.
   The testing plan's `Evidence` cell links that evidence; it never holds the output itself.
 - **Tests inherit the priority.**
-  A test is not prioritized separately: it inherits its QR's priority, the testing plan's rows follow the quality index order, and `Planned for sprint` is the only schedule.
+  A test is not prioritized separately: it inherits its QR's priority, the testing plan's rows follow the order of the quality requirements index, and `Planned for sprint` is the only schedule.
 - **Progress.**
   `## Progress Monitoring` gains a sentence that the weekly review reads the testing plan's rows that are not `Passes`.
   The weekly report's summary points at the testing plan rather than copying its rows, and the plan remains the one place the rows live.
@@ -258,7 +258,7 @@ The entries:
 2. A quality requirement test is a `## QRT-nn` section inside its QR's file, numbered within the QR and owned by `quality-requirements-requirements.md` with the requirement; no separate tests file is added.
 3. A test's `**Level:**` is `CI`, `scripted`, or `manual`, `**Runs at:**` says where it runs, and a manual test carries `**Why Manual:**`; the test carries no state, and the testing plan carries its status, last check, planned sprint, and `Evidence` cell.
 4. A `High` QR must have a `CI` or `scripted` test; a `High` QR whose only possible test is manual is a deviation, and the reason is recorded.
-5. The testing plan lives in `docs/project-plan.md`'s `## Quality Requirement Testing Plan`, keeps its rows in the quality index order, and `planning-requirements.md` owns its rules.
+5. The testing plan lives in `docs/project-plan.md`'s `## Quality Requirement Testing Plan`, keeps its rows in the order of the quality requirements index, and `planning-requirements.md` owns its rules.
 6. Tests inherit their QR's priority; there is no separate test priority, and `Planned for sprint` is the only schedule.
 7. The evidence the testing plan records for a test follows its level: a `CI` test links its run, a `scripted` test records the command and its output, and a `manual` test records the inspection.
 8. A release claims a `QR-nn` only when every non-dropped test for it is `Passes` and `Checked` in the release's sprint, with evidence from the released state; it may record a test it adds at any status.
