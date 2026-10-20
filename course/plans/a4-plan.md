@@ -4,18 +4,18 @@ This plan records the final design of Assignment 4 and everything it depends on,
 It replaces the first draft and its correction list: every decision is stated once, in the form the requirements will take, and the superseded corrections are gone.
 The design was settled in the review of the first draft and in the decisions that `course/decisions/a4.md` will carry.
 The [Design Decisions](#design-decisions) section states the model and the reason for it.
-Assignment 4 is about the functional requirements, the quality requirements, the architecture decision records, the architecture document's scope and drivers, and the Week 4 process work; the quality requirement tests, their testing plan, the container, component, and sequence views, and continuous integration (`actionlint` and the product-code CI) are planned in [`a5-plan.md`](a5-plan.md).
+Assignment 4 is about the functional requirements, the quality requirements, the architecture decision records, the architecture document's drivers and decision index, and the Week 4 process work; the quality requirement tests, their testing plan, the container, component, and sequence views, and continuous integration (`actionlint` and the product-code CI) are planned in [`a5-plan.md`](a5-plan.md).
 
 ## Goal And Success Criteria
 
 Write Assignment 4 and everything it depends on, so Week 4 can be handed in from the course materials.
-The week covers: the ISO/IEC 25010 quality model, testable quality requirements, the architectural drivers and the architecture document, the functional requirements behind the stories, the architecture decision records, the glossary and the team's `AGENTS.md`, the sprint ceremonies, the `REL-04` release, and the deadline change; the product-code CI's marker moves out of Week 4 to Week 5.
+The week covers: the ISO/IEC 25010 quality model, testable quality requirements, the architectural drivers and the architecture document that links them, the functional requirements behind the stories, the architecture decision records, the glossary and the team's `AGENTS.md`, the sprint ceremonies, the `REL-04` release, and the deadline change; the product-code CI's marker moves out of Week 4 to Week 5.
 
 Done means:
 
 - `assignments/assignment-4.md` exists, is written as a delta against `requirements/`, and follows the Assignment 3 shape: header, Objectives, numbered parts, What Good Looks Like, the repository report with its coverage table, the Moodle wrapper, Submission Procedure, and Checklist.
 - Seven new requirements files own the new rules, and every new rule has exactly one owner.
-- The architecture document takes the constraints, boundary, and system context from the product vision, and the product vision links it.
+- The architecture document links the drivers to the sections and files that hold them, and its decision index maps each record to the drivers it answers, while the constraints, boundary, and system context stay in the product vision.
 - The architecture, the functional requirements, the quality requirements, the ADRs, the ceremonies, the team's `AGENTS.md`, and the glossary each have a requirements file.
 - The quality requirement tests, their testing plan, the container, component, and sequence views, `actionlint`, and product-code CI are planned in [`a5-plan.md`](a5-plan.md), not here.
 - `course/syllabus.md`, `README.md`, `SKILL.md`, `course/rules.md`, `AGENTS.md`, and `TODO.md` are updated in step with the new files and the deadline change.
@@ -28,7 +28,7 @@ Done means:
   The workspace-relative `../../time-tools/timeful` does not exist.
 - The reference supplies the shape of the FR, QR, and ADR records: the six-part quality attribute scenario, the ISO/IEC 25010 characteristic and sub-characteristic table, the MADR sections, and the decision index.
 - The existing `itpd` conventions win where the two differ: no YAML front matter, since no course file uses it; an identifier heads a section or a file, with a first line and then a bulleted `- **Label:**` field list; every family has a dropped form; `**Since: WN**` markers; one owner per rule.
-- The course changes the reference in three places: the constraints, boundary, and system context move into the architecture document; the quality requirement index is also the priority matrix; and the ADR `**Addresses:**` accounts for the ASRs rather than naming a generic effect.
+- The course changes the reference in three places: the architecture document's drivers link the sections and files that hold them rather than restating them, so the constraints, boundary, and system context stay in the product vision; the quality requirement index is also the priority matrix; and the ADR `**Addresses:**` accounts for the ASRs rather than naming a generic effect.
   The reference's test shape, a `QRT-nn` scoped to its QR, is the fourth change and belongs to [`a5-plan.md`](a5-plan.md).
 
 ## Architecture Change Map
@@ -37,7 +37,6 @@ The change touches the four layers `AGENTS.md` defines, plus the schedule and th
 
 ```text
 assignments/assignment-4.md          what this week requires (deltas only)
-assignments/assignment-2.md          the vision anchors retargeted at the architecture
 guides/quality-and-architecture.md   how (new)
 requirements/                        the rules (seven new files, and edited ones)
 course/rules.md                      the contract and its router (rows and the deadline rule)
@@ -75,18 +74,24 @@ The model has three record families and one index per group.
   The facts are different: the ADR says "I account for this ASR", and the FR says "this ADR constrains me", so the ADR may be written before or after the FR.
   There is no `ASR: true/false` field; the ADR `**Addresses:**` list is the set of ASRs, and the reverse lookup is a search of those lists.
 - **The architecture document.** `docs/architecture/README.md` is the one architecture document.
-  It owns the constraints, boundary, and system context, and the context diagram is embedded there.
-  The product vision keeps the goal and stakeholders and links the architecture.
-  The context diagram is embedded there, with its source beside it; the image is SVG or PNG with an opaque background, so it is legible in both themes.
-  The container, component, and sequence views and their diagram rules are Assignment 5's, under `## Views` with `### Diagrams And Legends` at its end, so Week 4 documents the scope before it draws it.
+  It opens by linking the product vision as the scope it serves, then carries the drivers, the decision index, and the trace.
+  The drivers section points at the sections and files that hold the drivers, so the architecture document restates no goal, constraint, or requirement.
+  The goal, stakeholders, boundary, constraints, and system context stay in `docs/product-vision.md`, and the context diagram stays embedded there.
+  The container, component, and sequence views and their diagram rules are Assignment 5's, under `## Views` with `### Diagrams And Legends` at its end, so Week 4 shows what drives the architecture before Week 5 draws it.
 - **The product vision.**
-  The vision keeps `## Goal` and `## Stakeholders`.
-  From Week 4 it links the architecture document for the constraints, boundary, and system context; it does not duplicate them.
-  The Week 4 assignment moves the existing Week 2 sections from the vision into the architecture.
+  The vision keeps every part it has: `## Goal`, `## Stakeholders`, `## Constraints`, `## Boundary`, and `## System Context` with its embedded diagram.
+  From Week 4 it links `docs/architecture/README.md` as a whole, so the two documents point at each other and neither copies the other.
+  No section moves out of the vision in Week 4.
+- **The drivers.**
+  The drivers are the business goals, the constraints, the functional requirements, and the quality requirements.
+  `## Drivers` links each group once, at a section or a file, and names no `TOS-nn`, `CON-nn`, `FR-nnn`, or `QR-nn` of its own: the threshold of success in full, the vision's `## Constraints` section, the functional requirements' index, and the quality index.
+  The specific requirements appear in the decision index's `Addresses` column, which maps each record to the drivers it answers, so a driver is named once and the two lists cannot drift.
 - **The quality index.** `docs/quality/README.md` is the priority matrix: `QR`, `Outcome`, `Business importance`, `Technical risk`, `Characteristic`, `Sub-characteristic`, `Status`.
   It sorts active records first, then business importance High to Low, then technical risk High to Low.
   No separate matrix table is added.
-- **The decision index.** It has the columns `ADR`, `Status`, `Addresses`, and `Decision`. `Proposed` and `Accepted` are active; `Superseded`, `Deprecated`, and `Dropped` are inactive.
+- **The decision index.** It has the columns `ADR`, `Status`, `Addresses`, and `Decision`.
+  `Proposed` and `Accepted` are active; `Superseded`, `Deprecated`, and `Dropped` are inactive.
+  It is the one table that maps a driver to the record that answers it, so no separate driver table is added.
   The active records come first, and Week 4 requires the three minimum ADRs to be `Accepted` before submission.
 - **Estimation.**
   Three public single-select issue fields: `MoSCoW` and `Story Points` on a `User Story`, and `Priority` on a `Task`. `Story Points` stops at `13`; a story above `13` is split before it is estimated or scheduled.
@@ -111,48 +116,36 @@ The model has three record families and one index per group.
 ## 1. New Requirements Files (`requirements/`)
 
 All new files are flat in `requirements/`, carry `**Since: W4**` markers, a ToC, `Required` / `Recommended` / `Example` labels, and one full example at the end, in the meeting-booking example the other files already use.
-`architecture-requirements.md` also carries the constraints, boundary, and system context rules with `**Since: W2**`, because those artifacts are created in Week 2 and move into the architecture document in Week 4.
+`architecture-requirements.md` carries no `**Since: W2**` rule, because the product vision keeps the Week 2 scope and the context diagram.
 
 ### `architecture-requirements.md`
 
 - **Where The Architecture Lives:** `docs/architecture/README.md` is the only architecture document.
-  It carries these parts, in order:
-  1. `## System Context`, with the context diagram, its source, and the external actors;
-  2. `## Boundary`, with one `### BND-nn` section per item;
-  3. `## Constraints`, with one `### CON-nn` section per constraint;
-  4. `## Drivers`, with the business goals, the constraints, the functional requirements, and the quality requirements;
-  5. `## Architectural Decisions`, with the decision index;
-  6. `## Trace`, with the chain from a task to the threshold.
+  It opens with one sentence that links `docs/product-vision.md` as the scope it serves, then carries these parts, in order:
+  1. `## Drivers`, which links the business goals, the constraints, the functional requirements, and the quality requirements;
+  2. `## Architectural Decisions`, with the decision index;
+  3. `## Trace`, with the chain from a task to the threshold.
 
-  `## Views`, with `### Diagrams And Legends` at its end, is Assignment 5's, which adds it between `## Drivers` and `## Architectural Decisions`; the final order is System Context, Boundary, Constraints, Drivers, Views, Architectural Decisions, Trace.
-  The context diagram stays under `## System Context`, so Week 4 draws the scope before Assignment 5 draws the rest.
+  `## Views`, with `### Diagrams And Legends` at its end, is Assignment 5's, which adds it between `## Drivers` and `## Architectural Decisions`; the final order is Drivers, Views, Architectural Decisions, Trace.
+  The goal, stakeholders, boundary, constraints, and system context stay in `docs/product-vision.md`, and the context diagram stays embedded there, so the vision owns the scope and the architecture document links it.
 
-- **The Move:** The constraints, boundary, and system context rules move here from [Product Vision Requirements](../../requirements/product-vision-requirements.md).
-  They keep `**Since: W2**` markers and the fields and citations the product vision gave them.
-  The product vision keeps `## Goal` and `## Stakeholders`, and gains a `## Architecture` section that links the architecture document.
-  Week 4 moves the existing `## Constraints`, `## Boundary`, and `## System Context` sections from `docs/product-vision.md` to the architecture document, and leaves the `## Architecture` section in the vision.
-  No content stays in both files.
-  Every file that links the vision's old anchors moves with them, per [Section 2](#2-edited-requirements-files).
-- **System Context:** The context diagram is embedded under `## System Context`, committed at `docs/architecture/context.<ext>` with its source beside it.
-  It shows the product, the external actors, and the external systems it exchanges data with.
-  It agrees with the boundary list: every external system or actor a boundary item names appears on the diagram, and everything on the diagram exchanges something with the product.
-  The diagram is legible in both themes and has an opaque background.
-  The product vision links `docs/architecture/README.md` as a whole; it does not embed a second copy.
-- **Boundary:** Each `### BND-nn` section states one job somebody could expect the product to do and that it will not do.
-  Its fields are `**Status:**`, `**Handled by:**`, `**Why:**`, `**Changed:**`, and `**Dropped:**`, in that order.
-  A decision that moves a job into or out of the boundary has an entry; a job moved out is a new `BND-nn` whose `**Why:**` cites it, and a job moved in keeps its `BND-nn` marked dropped and cites it.
-- **Constraints:** Each `### CON-nn` section states one condition the product has to live inside.
-  Its fields are `**Status:**`, `**Source:**`, `**What it costs:**`, `**Decision:**`, `**Changed:**`, and `**Dropped:**`, in that order.
-  The four sources are Customer-given, Team-given, Environmental, and Derived.
-  A technology choice is an ADR, not a constraint; a customer mandate is a `CON-nn` whose `**Decision:**` cites the `DEC-nnn` that records it.
-- **Drivers:** The business goals are the `TOS-nn` goals, each linked with a one-line label and not copied; the threshold of success owns the statement.
-  The constraints are each `CON-nn` linked with the requirement it constrains.
-  The functional requirements are each `FR-nnn` linked.
-  The quality requirements are each `QR-nn` linked in the order of the quality index.
-  The drivers section does not restate a requirement; it links it.
+- **No Move:** The constraints, boundary, and system context rules stay in [Product Vision Requirements](../../requirements/product-vision-requirements.md), with their `**Since: W2**` markers, fields, and citations.
+  The vision gains one `**Since: W4**` rule that it links the architecture document as a whole, alongside the user stories and the current week's report, because the architecture document's drivers point back at `## Constraints`.
+  Week 4 moves no section, so no file that links `docs/product-vision.md#constraints`, `#boundary`, or `#system-context` retargets.
+- **Drivers:** The section has four entries, and each links the holder of its group:
+  1. the business goals link `docs/threshold-of-success.md` in full, because its goals are its own `## TOS-nn` sections and the threshold owns each statement;
+  2. the constraints link `docs/product-vision.md#constraints`, whose `### CON-nn` sections are the constraints;
+  3. the functional requirements link `docs/functional-requirements/README.md`;
+  4. the quality requirements link `docs/quality/README.md`, which is also the priority matrix.
+
+  The section names no `TOS-nn`, `CON-nn`, `FR-nnn`, or `QR-nn`, and restates no requirement: it says which group it is and links the group.
+  The boundary and the system context are scope rather than drivers, so the section links neither and the opening sentence links the vision for both.
+  The entries are bullets, not a table: the one table that maps a driver to a record is the decision index's `Addresses` column, which lists, record by record, the `FR-nnn` and `QR-nn` the record answers.
+  A requirement no record answers is still reached through the index that holds it, so nothing dangles from the drivers section.
+
 - **ASRs:** An architecturally significant requirement is a requirement that affects the architecture and the quality of the software system.
   The `**Addresses:**` field of an ADR lists the ASRs that ADR accounts for, so the ADR set is the marker and no separate `ASR` field is added.
-  The drivers section lists every requirement; the ADRs show which of them shaped the architecture.
+  The drivers section links where the requirements live; the decision index names, record by record, the requirements that shaped the architecture.
   Finding the ADRs that account for one requirement is a search of the ADR files' `**Addresses:**` lists, not a field on the requirement, because a connection maintained on both sides goes stale on one, as [`A3-DEC-022`](../decisions/a3.md#a3-dec-022-the-chain-from-a-commit-to-the-threshold) reasons.
 - **Architectural Decisions:** The index is one table under `## Architectural Decisions`, with these columns in this order:
 
@@ -164,6 +157,7 @@ All new files are flat in `requirements/`, carry `**Since: W4**` markers, a ToC,
   | `Decision`  | The record's decision in one line, short enough to scan                               |
 
   `Proposed` and `Accepted` are active; the other three are inactive.
+  The index is the one table that maps a driver to the record that answers it: the `Addresses` cell names the `FR-nnn` and `QR-nn` the record accounts for, and no separate driver table is added.
   The active records come first, in `ADR-nnn` order, and the inactive ones follow, in `ADR-nnn` order.
   An ADR that addresses several requirements lists them all in one cell.
 
@@ -340,14 +334,13 @@ The method is the [Scrum Guide](https://scrumguides.org/scrum-guide.html), named
 | `task-issues-requirements.md`        | The form gains a `### Requirements` section naming the FRs and ADRs the task works on, as links on `main`, and keeps its `### Story` section, which names the story and the `AC-nn` the task advances; the two are different links. It applies the `Task` type, which is also set on the existing tasks. A scheduled task carries `Priority`, per `sprint-ceremonies-requirements.md#estimation`, which owns when the field is set. The `task` label retires after the migration.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 | `planning-requirements.md`           | `### SPRINT-nn` gains the `Since: W4` fields: the goal is set at planning and replaces the provisional one; `**Planned Velocity:**` and `**Actual Velocity:**` follow `**Sprint Backlog:**`, with the planned value set at planning and the actual value at close. The full example gains the actual field; its `SPRINT-04` due date becomes `2026-10-24`, and `SPRINT-05` to `SPRINT-09` become `2026-10-31`, `2026-11-07`, `2026-11-14`, `2026-11-21`, and `2026-11-28`.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 | `decisions-requirements.md`          | The technology-choice trigger of [The Decision](../../requirements/decisions-requirements.md#the-decision) links the ADR rule instead of requiring a `DEC-nnn`, and a customer's mandate stays a `CON-nn` citing the decision that records it. [What Cites It](../../requirements/decisions-requirements.md#what-cites-it) links the link model instead of restating it.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
-| `product-vision-requirements.md`     | `## Constraints`, `## Boundary`, and `## System Context` move to the architecture requirements, with their `**Since: W2**` markers and fields. The vision keeps `## Goal` and `## Stakeholders`, and gains a `## Architecture` section that links `docs/architecture/README.md` as a whole. Week 4 moves the existing sections from `docs/product-vision.md` to the architecture document and leaves the `## Architecture` section in the vision; no content stays in both. Its full example loses the three sections, and the context diagram appears in the architecture example.                                                                                                                                                                                                                                                                                                                                                                                      |
+| `product-vision-requirements.md`     | `## Constraints`, `## Boundary`, and `## System Context` stay as they are, with their `**Since: W2**` markers, fields, and examples; no rule moves out. A `**Since: W4**` rule 4 says the vision links `docs/architecture/README.md` as a whole, because the architecture document's drivers point back at `## Constraints`. The ToC is unchanged, and the full example keeps the three sections and gains the architecture link in its links list.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 | `weekly-report-requirements.md`      | W4: the coverage table carries a row that links `reports/week-NN/sprint-retrospective.md`. The report gains no planning, refinement, or retrospective section, because the plan, the issues, and the retrospective file own them. The free-riding answer is not required; the contribution table is the evidence, and the report does not assess an individual. The full example is reframed as a Week 04 report, so the retrospective row sits in the week it belongs to, and its coverage table lists the Week 4 deliverables.                                                                                                                                                                                                                                                                                                                                                                                                                                         |
 | `customer-meetings-requirements.md`  | A `Since: W4` sentence links `sprint-ceremonies-requirements.md#sprint-review` as the weekly meeting's role, so the meeting and the ceremony are one event. The team schedules the meeting, and it may be on Friday.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 | `pull-requests-requirements.md`      | No change. The pull request template stays owned by [The Pull Request Template](../../requirements/pull-requests-requirements.md#the-pull-request-template); the `FR` / `ADR` / `QR` prompt block is not added, because the task issue's `### Requirements` section carries the links.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 
-The move retargets every file that links the product vision's old anchors: `requirements/assumptions-requirements.md` (the vision's `## Constraints` link), `requirements/user-stories-requirements.md` (the `## Constraints` links in its story and priority rules, the `## Boundary` link in its priority rule, and the example's `docs/product-vision.md#bnd-03`, which becomes `docs/architecture/README.md#bnd-03`), `requirements/decisions-requirements.md` (the `## Constraints` and `## Boundary` links), `guides/user-stories-and-prototyping.md` (the `## Boundary` and `## System Context` links), `assignments/assignment-2.md` (the `## Constraints`, `## Boundary`, and `## System Context` links in Part 5, the system-context row of its coverage table, and its checklist item), and `course/syllabus.md` (the Week 2 product-vision deliverable) point at the architecture requirements' `#constraints`, `#boundary`, and `#system-context` instead.
-
-The full examples in the edited files gain the new fields: the story and task examples gain `### Specified by` and `### Requirements`, and the weekly-report example is reframed as a Week 04 report with the retrospective row.
+The full examples in the edited files gain the new fields: the story and task examples gain `### Specified by` and `### Requirements`, the weekly-report example is reframed as a Week 04 report with the retrospective row, and the product-vision example links the architecture document.
+The architecture example's `## Drivers` links the meeting-booking example's threshold, the constraints section of its vision, its functional-requirements index, and its quality index, and names no driver of its own.
 Each new requirements file ends with its own full example in the meeting-booking example; the quality requirements example is one `QR-nn` with its scenario.
 
 No `issue-types-requirements.md` is added: the story file's rule 6 and the task file's form rule own the type, and [Issue Fields](../../requirements/issue-tracking-requirements.md#issue-fields) owns the pinning.
@@ -365,15 +358,13 @@ The steps:
    Business importance is the value to the customer and technical risk is how hard the attribute is to achieve and to test; the index sorts active records first, then importance, then risk, and its `Status` column is the record's own state.
 4. **Write the functional requirements.**
    The behavior a story needs, the containers it lands in, its `**Traces to:**`, its `shall` statements, and its own criteria, each with an anchor; the story's `### Specified by` names the FRs and ADRs that specify it.
-5. **Put the scope in the architecture.**
-   Move the constraints, boundary, and context from the vision, embed the context diagram, and link the vision to the architecture as a whole.
-6. **Collect the drivers.**
-   The `TOS-nn` goals, the `CON-nn`, the FRs, and the QRs, each linked, and the ASRs that the ADRs account for.
-7. **Write the decision records.**
+5. **Link the drivers.**
+   The four groups, the section or file that holds each, the threshold in full and the vision's constraints section, and why the drivers section names no driver of its own.
+6. **Write the decision records.**
    Context, the options turned down, the outcome, the consequences, the `**Addresses:**` ASRs, and the `**Decision:**` it documents.
-8. **Index and trace.**
-   The quality index and its sort, and the decision index with its active and inactive tables; the reading order from a quality requirement to the ADR that answers it, and the search that finds it in the other direction.
-9. **Answer "why does this line of code exist?".**
+7. **Index and trace.**
+   The quality index and its sort, and the decision index with its active and inactive tables and its `Addresses` column as the one map from a driver to its record; the reading order from a quality requirement to the ADR that answers it, and the search that finds it in the other direction.
+8. **Answer "why does this line of code exist?".**
    The chain from a commit to a `TOS-nn`, with the task's `### Requirements` section as its first hop.
 
 ## 4. `assignments/assignment-4.md`
@@ -381,7 +372,7 @@ The steps:
 The header carries the date: hard Saturday 24 October 2026 at 23:59.
 There is no soft deadline.
 The intro continues from Week 3: the minimum usable product is on `main` and the first release is tagged, and this week the product gets quality requirements, functional requirements, a documented architecture, and the decision records behind it.
-`## Objectives` follows Assignment 3's: the ISO/IEC 25010 quality model and the six-part scenario, the quality requirements, the functional requirements and the ADRs, the architecture document with its drivers, the sprint records and estimates, the glossary and the team's `AGENTS.md`, and `REL-04`.
+`## Objectives` follows Assignment 3's: the ISO/IEC 25010 quality model and the six-part scenario, the quality requirements, the functional requirements and the ADRs, the architecture document with the drivers it links and the decision index, the sprint records and estimates, the glossary and the team's `AGENTS.md`, and `REL-04`.
 
 The numbered parts, in the order the work can succeed, each a rules list and then the week's minima:
 
@@ -392,11 +383,11 @@ The numbered parts, in the order the work can succeed, each a rules list and the
    One of them is about `Maintainability` / `Testability`, names the critical modules, and carries `High` business importance.
 3. **Write The Functional Requirements.** `docs/functional-requirements/` with its index and at least 5 `fr/FR-nnn.md`, each with its `**Traces to:**`, its `**Containers:**`, its `shall` statements, and its own `### AC-nn` criteria.
    Every open story in the previous and the current sprint names its FRs and ADRs in `### Specified by`.
-4. **Move The Scope And Write The Drivers.**
-   Move `## Constraints`, `## Boundary`, and `## System Context` from `docs/product-vision.md` to `docs/architecture/README.md`, embed the context diagram there with its source, and leave a `## Architecture` section in the vision that links `docs/architecture/README.md` as a whole and copies none of it.
-   In the architecture document, link the `TOS-nn` goals as the business goals, the `CON-nn`, the FRs, and the QRs in the quality index order.
+4. **Link The Drivers Into The Architecture.**
+   Open `docs/architecture/README.md` with one sentence that links `docs/product-vision.md` as the scope, then link the threshold of success in full, the vision's `## Constraints` section, the functional requirements index, and the quality index, and name no single `TOS-nn`, `CON-nn`, `FR-nnn`, or `QR-nn` there.
+   Link `docs/architecture/README.md` from `docs/product-vision.md`, per [Product Vision Requirements](../../requirements/product-vision-requirements.md#where-the-vision-lives), with the vision's constraints, boundary, and system context staying where they are.
 5. **Record The Decisions, Index, And Trace.**
-   At least 3 `ADR-nnn` files, each `**Addresses:**` at least one ASR, each with its rejected options, its accepted quality attributes covered by a QR, and the index's active table above its inactive one.
+   At least 3 `ADR-nnn` files, each `**Addresses:**` at least one ASR, each with its rejected options, its accepted quality attributes covered by a QR, and the index's active table above its inactive one, with each row's `Addresses` cell naming the drivers that record answers.
    The three minimum ADRs are `Accepted` before submission.
    The trace states the chain from a task to a `TOS-nn`.
 6. **Write The Glossary And The Team's `AGENTS.md`.**
@@ -422,23 +413,23 @@ The checklist has one item per part and per artifact, each citing the rule its p
 
 The coverage table rows are:
 
-| Deliverable                                      | Artifact                                                                                        |
-| ------------------------------------------------ | ----------------------------------------------------------------------------------------------- |
-| Sprint plan and estimates                        | `docs/project-plan.md#sprint-04`, with its goal, its planned velocity, and its actual velocity  |
-| Product backlog refinement                       | the `SPRINT-05` and `SPRINT-06` milestone issues, with the `Story Points` on each               |
-| Quality requirements                             | `docs/quality/qr/`, with `docs/quality/README.md` as the priority matrix                        |
-| Functional requirements                          | `docs/functional-requirements/`, with `README.md` as the index and `fr/` for the records        |
-| Architecture, drivers, constraints, and boundary | `docs/architecture/README.md`, with `context.<ext>`                                             |
-| Architectural decisions                          | `docs/architecture/adr/` and the index                                                          |
-| Glossary                                         | `docs/glossary.md`                                                                              |
-| Team `AGENTS.md`                                 | `AGENTS.md`                                                                                     |
-| Week 3 action points                             | `## Previous action points` in `reports/week-04/meeting-report.md`                              |
-| Week 3 open questions                            | `## Previous open questions` in the same report                                                 |
-| Meeting script                                   | `reports/week-04/meeting-script.md`                                                             |
-| Customer validation                              | `reports/week-04/meeting-report.md`, the transcript when there is one, and each story's verdict |
-| `REL-04`                                         | the tag, the changelog's released section, and the plan's `REL-04` line                         |
-| Sprint retrospective                             | `reports/week-04/sprint-retrospective.md`                                                       |
-| AI usage                                         | `reports/week-04/ai-usage.md`                                                                   |
+| Deliverable                | Artifact                                                                                        |
+| -------------------------- | ----------------------------------------------------------------------------------------------- |
+| Sprint plan and estimates  | `docs/project-plan.md#sprint-04`, with its goal, its planned velocity, and its actual velocity  |
+| Product backlog refinement | the `SPRINT-05` and `SPRINT-06` milestone issues, with the `Story Points` on each               |
+| Quality requirements       | `docs/quality/qr/`, with `docs/quality/README.md` as the priority matrix                        |
+| Functional requirements    | `docs/functional-requirements/`, with `README.md` as the index and `fr/` for the records        |
+| Architecture and drivers   | `docs/architecture/README.md`, with the drivers it links and the decision index                 |
+| Architectural decisions    | `docs/architecture/adr/` and the index                                                          |
+| Glossary                   | `docs/glossary.md`                                                                              |
+| Team `AGENTS.md`           | `AGENTS.md`                                                                                     |
+| Week 3 action points       | `## Previous action points` in `reports/week-04/meeting-report.md`                              |
+| Week 3 open questions      | `## Previous open questions` in the same report                                                 |
+| Meeting script             | `reports/week-04/meeting-script.md`                                                             |
+| Customer validation        | `reports/week-04/meeting-report.md`, the transcript when there is one, and each story's verdict |
+| `REL-04`                   | the tag, the changelog's released section, and the plan's `REL-04` line                         |
+| Sprint retrospective       | `reports/week-04/sprint-retrospective.md`                                                       |
+| AI usage                   | `reports/week-04/ai-usage.md`                                                                   |
 
 The **What Good Looks Like** guidance:
 
@@ -446,7 +437,7 @@ The **What Good Looks Like** guidance:
 - a priority matrix that does not rate everything `High`, and the mandated testability requirement rated `High` with its reason;
 - functional requirements a reviewer can check without opening a story, a `**Traces to:**` that names their origins and constraints, and a story that names the FRs and ADRs specifying it;
 - criteria a checker can run as written, including a table or an example where prose would be vague;
-- an architecture that owns the scope, the context, and the drivers in one place, and a vision that links it rather than copying it;
+- a drivers section that points at where the drivers live, a decision index where each driver meets the record that answers it, and a vision the architecture links rather than copies;
 - decision records that name a rejected option, the ASRs they account for, and the quality attributes they accept with the QR that covers each;
 - a trace chain a reader can walk from a task through the ADR or the FR to a `TOS-nn`;
 - estimates the team can defend, a `**Planned Velocity:**` they knew before they started, and an `**Actual Velocity:**` they compare it with, both computed from the stories' `Story Points`;
@@ -458,15 +449,15 @@ The file follows the format of `course/decisions/a3.md`: a header paragraph, the
 
 The entries:
 
-1. Week 4 is the functional requirements, the quality requirements, the architecture decision records, the architecture document's scope and drivers, the glossary, the ceremonies, the team's `AGENTS.md`, `REL-04`, and the deadlines; the tests, the testing plan, the container, component, and sequence views, and continuous integration (`actionlint` and the product-code CI) are Assignment 5's.
+1. Week 4 is the functional requirements, the quality requirements, the architecture decision records, the architecture document's drivers and decision index, the glossary, the ceremonies, the team's `AGENTS.md`, `REL-04`, and the deadlines; the tests, the testing plan, the container, component, and sequence views, and continuous integration (`actionlint` and the product-code CI) are Assignment 5's.
 2. Seven flat requirements files own the new rules: architecture, functional requirements, quality requirements, ADRs, sprint ceremonies, agent instructions, and the glossary.
 3. `FR-nnn` exists; this entry reverses `A3-DEC-014` in full, whose "stories with their acceptance criteria are the functional requirements" clause stops holding.
    Entry 27 restates the clauses it leaves standing.
 4. An FR is the specification independent of its stories: it has no story field and does not restate the story, may cite the origin story in `**Traces to:**`, names its `**Containers:**`, and carries its own criteria with anchors.
 5. `QR-nn`: one file at `docs/quality/qr/QR-nn.md`, one ISO/IEC 25010 pair, six scenario parts, the index as the priority matrix, and the testability requirement at `High`.
 6. `ADR-nnn`: MADR-shaped files, the `**Addresses:**` list of ASRs, the `**Decision:**` field, and the five statuses ending in `Dropped`.
-7. The architecture document owns the constraints, boundary, and system context; the product vision keeps goal and stakeholders and links the architecture.
-8. The decision index has the columns `ADR`, `Status`, `Addresses`, and `Decision`; `Proposed` is active; the three minimum ADRs are `Accepted` before submission.
+7. The architecture document links the drivers to the sections and files that hold them, and carries the decision index and the trace; the product vision keeps the goal, stakeholders, constraints, boundary, and system context, and links the architecture.
+8. The decision index has the columns `ADR`, `Status`, `Addresses`, and `Decision`, and it is the one table that maps a driver to the record that answers it; `Proposed` is active; the three minimum ADRs are `Accepted` before submission.
 9. `Story Points` stops at `13`; a larger story is split before it is estimated or scheduled.
    Ideal hours are not tracked: a task is ordered by `Priority` and carries no estimate.
 10. The sprint section carries `**Planned Velocity:**` and `**Actual Velocity:**`, computed by hand from the stories' `Story Points`.
@@ -492,19 +483,18 @@ The entries:
 
 ## 6. Edited Files Outside `requirements/`
 
-- **`course/syllabus.md`**: The Week 4 deliverables name each artifact by path: the sprint plan and estimates, the quality requirements, the functional requirements, the architecture with its drivers, constraints, boundary, and context, the decision records, the glossary, the team's `AGENTS.md`, the retrospective, and `REL-04`.
-  The Week 4 section gains an `- **Objectives**:` list like Week 5's, covering the quality model and the six-part scenario, the quality requirements, the functional requirements and ADRs, the architecture with its drivers, the ceremony records and estimates, the glossary and the team's `AGENTS.md`, and `REL-04`.
+- **`course/syllabus.md`**: The Week 4 deliverables name each artifact by path: the sprint plan and estimates, the quality requirements, the functional requirements, the architecture with the drivers it links and the decision index, the decision records, the glossary, the team's `AGENTS.md`, the retrospective, and `REL-04`.
+  The Week 4 section gains an `- **Objectives**:` list like Week 5's, covering the quality model and the six-part scenario, the quality requirements, the functional requirements and ADRs, the architecture with its drivers and decisions, the ceremony records and estimates, the glossary and the team's `AGENTS.md`, and `REL-04`.
   The Submission 4 row is a short category summary in the same order, and both call the group quality requirements.
-  The Week 2 deliverables' product-vision line says the constraints, boundary, and system context move into `docs/architecture/README.md` in Week 4.
   The Week 5 deliverables, the Submission 5 row, and continuous integration (`actionlint` and the product-code CI) are Assignment 5's.
   Week 4's hard deadline becomes Saturday 24 October at 23:59, and Weeks 5 to 9 move to Saturdays 31 October, 7 November, 14 November, 21 November, and 28 November.
   The global deadline rule says the group submissions from Week 4 to Week 9 are due on Saturday at 23:59 with no soft deadline, Weeks 1 to 3 keep their recorded pair, and the Week 11 individual reflection keeps `December 10 at 23:59`; the late-submission example says Saturday.
   The `Verification & Validation` line under Week 5 moves into the Week 5 lecture line it describes.
-- **`README.md`**: The Assignment 4 row in Assignments, the new guide row in The Guides, the seven new requirements files in The Rules table, the product-vision row rewritten for the vision's goal-and-stakeholders scope, and the Saturday deadline in the assignment table and the closing sentence.
+- **`README.md`**: The Assignment 4 row in Assignments, the new guide row in The Guides, the seven new requirements files in The Rules table, the product-vision row gaining the architecture link, and the Saturday deadline in the assignment table and the closing sentence.
 - **`SKILL.md`**: Matching rows in Where Each Kind Of Work Is Ruled, with the guide beside each requirements link: functional requirements, quality requirements, the architecture with its decisions, the sprint ceremonies, the team's `AGENTS.md`, and the glossary.
-  The product-vision row is rewritten as in the README, and the front-matter `description` names the new Week 4 artifacts.
-- **`course/rules.md`**: The seven new requirements files in Where The Rules Live, the new guide, the product-vision row rewritten, and the deadline rule: the group submissions from Week 4 to Week 9 are due on Saturday at 23:59 with no soft deadline, Weeks 1 to 3 keep their pair, and the Week 11 individual reflection keeps its date.
-- **`AGENTS.md`**: The Repository Map with the seven new requirements files and `guides/quality-and-architecture.md`; the `requirements/` table with them; the product-vision row; the `docs/` Destination Map with the Week 2 note that its constraints, boundary, and system context move to the architecture document in Week 4, and the Week 4 row (`docs/architecture/README.md` with the context diagram, constraints, boundary, and `adr/`, `docs/functional-requirements/` with `fr/`, `docs/quality/` with `qr/`, `docs/glossary.md`), leaving the container, component, and sequence views and the testing plan to Assignment 5; the identifier conventions with the new families and their heading forms, including the sentence that `DEC-nnn`, `FR-nnn`, and `ADR-nnn` take three digits and every other family two; the terminology list with the new words (`functional requirement`, `quality requirement`, `architecture decision record`, `architecturally significant requirement`, `quality attribute scenario`, `architectural driver`, `option`, `container`, `sprint planning`, `product backlog refinement`, `sprint review`, `retrospective`, `velocity`, `glossary`, `provenance`, `conformance`); the Scrum paragraph rewritten for the three fields, the hand-computed velocity, and the Sprint Review; the "Do Not" bullet about the soft/hard deadline pair replaced, because there is no soft deadline from Week 4; and the assignment checklist unchanged.
+  The product-vision row gains the architecture link as in the README, and the front-matter `description` names the new Week 4 artifacts.
+- **`course/rules.md`**: The seven new requirements files in Where The Rules Live, the new guide, the product-vision row gaining the architecture link, and the deadline rule: the group submissions from Week 4 to Week 9 are due on Saturday at 23:59 with no soft deadline, Weeks 1 to 3 keep their pair, and the Week 11 individual reflection keeps its date.
+- **`AGENTS.md`**: The Repository Map with the seven new requirements files and `guides/quality-and-architecture.md`; the `requirements/` table with them, and the product-vision row keeping the scope and gaining the architecture link; the `docs/` Destination Map's Week 4 row (`docs/architecture/README.md` with the drivers it links, the decision index, and the trace, and `adr/`, `docs/functional-requirements/` with `fr/`, `docs/quality/` with `qr/`, `docs/glossary.md`), leaving the container, component, and sequence views and the testing plan to Assignment 5; the identifier conventions with the new families and their heading forms, including the sentence that `DEC-nnn`, `FR-nnn`, and `ADR-nnn` take three digits and every other family two; the terminology list with the new words (`functional requirement`, `quality requirement`, `architecture decision record`, `architecturally significant requirement`, `quality attribute scenario`, `architectural driver`, `option`, `container`, `sprint planning`, `product backlog refinement`, `sprint review`, `retrospective`, `velocity`, `glossary`, `provenance`, `conformance`); the Scrum paragraph rewritten for the three fields, the hand-computed velocity, and the Sprint Review; the "Do Not" bullet about the soft/hard deadline pair replaced, because there is no soft deadline from Week 4; and the assignment checklist unchanged.
 - **`TODO.md`**: The A4 items this work closes are ticked: the acceptance criteria checkboxes, the reopened story, the `Traces to` origins, the velocity fields, the glossary, the free-riding answer removed, the manual calculation of velocity, the technical-risk rating, and the public retrospective.
   The lecture additions are marked skipped, and the feature issue type is deferred with a note.
 - **`course/decisions/a3.md`**: `A3-DEC-014` and `A3-DEC-022` get `**Status:** Reversed by A4-DEC-nnn`, linked, and keep their statements and fields; `A3-DEC-014`'s surviving stack, `.gitignore`, and Dependabot clauses are restated by an `A4-DEC`, because a reversal cannot be partial.
@@ -528,7 +518,7 @@ These are repository content rather than artifacts, per [Where Artifacts Live In
 
 - **A story that several FRs specify:** Allowed: the story's `### Specified by` lists all of them, and no FR names the story back.
 - **An FR that arrives after its story is built:** Allowed: `**Traces to:**` cites the story, and the FR starts from the behavior that exists.
-- **A QR no ADR accounts for:** Allowed: the QR is a requirement that no decision has shaped yet, and the architecture's drivers list still links it.
+- **A QR no ADR accounts for:** Allowed: the QR is a requirement that no decision has shaped yet, and the drivers section still reaches it through the quality index it links.
 - **A story dropped after its FR exists:** The FR becomes `Dropped` with the reason and the `DEC-nnn`, and a story that still points at it is re-pointed or closed.
 - **An ADR that drops an FR:** The FR's `**Dropped:**` cites the `ADR-nnn`, and the ADR's `**Addresses:**` still lists the FR, because the decision is answerable for the removal.
 - **A customer decision that changes a quality requirement:** A `DEC-nnn` and a `**Changed:**` on the QR, never an edit with no record.
@@ -545,7 +535,7 @@ These are repository content rather than artifacts, per [Where Artifacts Live In
 - A cross-reference audit: every `**Since: W4**` rule has an Assignment 4 part, and every assignment part and coverage row has a rule.
 - A date audit: `course/syllabus.md`, `README.md`, `assignments/assignment-4.md`, this plan, and `SPRINT-04`'s `**Due:**` all say 24 October 2026; Weeks 5 to 9 say the Saturday dates.
 - A link-model audit: an FR's `**Traces to:**` names the ADRs that constrain it, an ADR's `**Addresses:**` names the FRs and QRs it accounts for, and no file carries an `ASR` field.
-- A move audit: no file links `product-vision-requirements.md#constraints`, `#boundary`, or `#system-context` after the move, and the vision's `## Architecture` link points at `docs/architecture/README.md`.
+- A drivers audit: `## Drivers` names no `TOS-nn`, `CON-nn`, `FR-nnn`, or `QR-nn`, links the threshold in full, the vision's `## Constraints`, the functional requirements index, and the quality index; the decision index's `Addresses` cells name the drivers; no section moved out of `docs/product-vision.md`; and the vision links `docs/architecture/README.md`.
 - A three-digit audit: `FR-nnn` and `ADR-nnn` use three digits everywhere, and no other Week 4 family does.
 - A full-example audit: every new requirements file ends with one, every edited example carries its new fields, and every example is set in the week its new rule belongs to.
 - `backlog doctor`, after the task changes.
@@ -554,8 +544,8 @@ These are repository content rather than artifacts, per [Where Artifacts Live In
 
 - This work lands in the `itpd` course repository only, and no file is created under `docs/` or `reports/`, since those belong to student repositories.
 - The Week 4 dates come from the syllabus, and its hard deadline moved to Saturday 24 October 2026 in the design session; Weeks 4 to 9 are Saturdays with no soft deadline, and the Week 11 individual reflection keeps its December 10 date.
-- The constraints, boundary, and system context move into the architecture document in Week 4; the product vision keeps the goal and stakeholders and links it as a whole.
-  The Week 2 assignment stays historical, so the requirements state the final home and the Week 4 assignment performs the move.
+- The constraints, boundary, and system context stay in `docs/product-vision.md` under their Week 2 rules; the architecture document links the threshold of success, the vision's constraints section, the functional requirements index, and the quality index, and the vision links the architecture document.
+  The Week 2 assignment stays historical, so the Week 4 assignment adds the architecture link and moves nothing.
 - The ASR is not a field: the ADR `**Addresses:**` list is the set of ASRs, and the FR `**Traces to:**` names the ADRs that constrain it; the reverse lookup is a search of the ADR lists.
 - The stack is an ADR that cites the customer's `DEC-nnn`; the existing `DEC` is not migrated, `A3-DEC-014` is reversed in full by an `A4-DEC` that restates its stack, `.gitignore`, and Dependabot clauses, and `A3-DEC-022` is reversed by another.
 - ISO/IEC 25010:2023 is the standard cited, with the course's Title Case labels and the link `https://iso25000.com/en/iso-25000-standards/iso-25010`; the Scrum Guide is the ceremony method; and a container is C4's deployable unit, though the container view that draws them is Assignment 5's.

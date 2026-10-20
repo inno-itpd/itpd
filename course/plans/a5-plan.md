@@ -2,7 +2,7 @@
 
 This plan records the scope Assignment 4 hands to Week 5, and everything that scope depends on, before the work is written.
 It covers four groups: the quality requirement tests, the quality requirement testing plan and the progress recorded in it, the container, component, and sequence views, and continuous integration — `actionlint` and the product-code CI.
-Assignment 4 is the functional requirements, the quality requirements, the architecture decision records, the architecture document's scope and drivers, and the Week 4 process work — sprint planning and estimates, the ceremonies, the glossary, the team's `AGENTS.md`, `REL-04`, and the deadlines; [`a4-plan.md`](a4-plan.md) designs that and leaves these four groups out.
+Assignment 4 is the functional requirements, the quality requirements, the architecture decision records, the architecture document's drivers and decision index, and the Week 4 process work — sprint planning and estimates, the ceremonies, the glossary, the team's `AGENTS.md`, `REL-04`, and the deadlines; [`a4-plan.md`](a4-plan.md) designs that and leaves these four groups out.
 The [Design Decisions](#design-decisions) section states the model and the reason for it.
 This is a scope plan, not the whole of Assignment 5: Week 5's other work — the unit test suite, the production deployment, `REL-05`, and the 7-minute pitch deck — comes from the syllabus and is designed when the rest of the assignment is written.
 Nothing here settles that other work.
@@ -46,11 +46,11 @@ One rule is new rather than moved: `adr-requirements.md` gains the `**Since: W5*
 
 The boundary between the two plans:
 
-- Assignment 4 keeps the architecture document: `docs/architecture/README.md` owns the constraints, boundary, and system context, with the context diagram and its Week 2 rules, then the drivers, the decision index, and the trace chain.
+- Assignment 4 keeps the architecture document: `docs/architecture/README.md` links the drivers, holds the decision index and the trace chain, and links the product vision for the scope it serves.
 - Assignment 4 introduces `**Containers:**` on the FR and ADR records, naming the C4 deployable units.
   The container view here names exactly the containers those records name.
-- The context diagram stays where Assignment 4 puts it, under `## System Context`.
-  It is the one view the architecture document has before this work, and its rules are the Week 2 rules moved with the section.
+- The context diagram stays where Week 2 put it, under `## System Context` in `docs/product-vision.md`.
+  It is the one C4 view the project has before this work, and its rules are the Week 2 rules, which did not move.
 - Assignment 4's `## Trace` states the chain from a task to the threshold.
   This plan adds the one link to the testing plan, so the architecture document never restates when a test passes.
 - Assignment 4's quality requirements have no tests.
@@ -107,7 +107,7 @@ The tests live inside the requirement they prove, their state lives in one plan 
   2. the component view, embedded from `docs/architecture/component.<ext>`, showing the components inside one named container and the well-defined interfaces they expose;
   3. the sequence view, embedded from `docs/architecture/sequence-<core-task>.<ext>`, showing the core task's main actor flow across the containers, with each step numbered.
 
-  The context view stays in Assignment 4's `## System Context`, so all four C4 views exist, in the order context, container, component, sequence.
+  The context view stays in the product vision's `## System Context`, so all four C4 views exist, in the order context, container, component, sequence.
 
 - **The container view.**
   It names every container the functional requirements and the ADRs name, such as `frontend`, `static content`, and `backend`, and it adds none they do not name.
@@ -126,7 +126,7 @@ The tests live inside the requirement they prove, their state lives in one plan 
   - the views under `## Views` agree with the document's text and with the boundary;
   - every element the document names in prose appears in a view.
 
-  The context diagram keeps the Week 2 rules that Assignment 4 moved with `## System Context`, so these rules do not restate them.
+  The context diagram keeps its Week 2 rules in the product vision's `## System Context`, so these rules do not restate them.
 
 - **Continuous integration.**
   `actionlint` checks `.github/workflows/` on pull requests and on `main`, pinned like any other tool.
@@ -179,7 +179,7 @@ No requirements file is added here.
 ### `architecture-requirements.md`
 
 - `## Views` between `## Drivers` and `## Architectural Decisions`, with the three views, their paths, and their sources, all `**Since: W5**`.
-- `### Diagrams And Legends` at the end of `## Views`, `**Since: W5**`, with the rules above; the context diagram keeps its Week 2 rules under `## System Context`.
+- `### Diagrams And Legends` at the end of `## Views`, `**Since: W5**`, with the rules above; the context diagram keeps its Week 2 rules under `## System Context` in the product vision.
 - The container view names every container the functional requirements and the ADRs name and adds none they do not name, and the component view expands one of them.
 - The `## Trace` section gains the one link to `docs/project-plan.md#quality-requirement-testing-plan`, `**Since: W5**`.
 - The full example gains a container view, its source, and its legend, and the architecture example's part list gains `## Views`, with the subsection inside it rather than a part of its own.
@@ -230,7 +230,7 @@ These are the parts this plan settles; the rest of Week 5's parts are added with
   Every row that is not `Passes` keeps its status and its planned sprint.
 - **Draw The C4 Views.**
   A container view, a component view of one named container with its interfaces, and one sequence view of the core task's main flow, each embedded with its source, its legend, and an opaque SVG or PNG.
-  The context view stays in `docs/architecture/README.md#system-context`.
+  The context view stays in `docs/product-vision.md#system-context`.
 - **Add The CI Checks.**
   `actionlint` over `.github/workflows/` and the five product-code checks on pull requests and on `main`, each third-party action pinned, with the Definition of Done's pull request list updated and the latest `main` run green.
 - **Link The Testing Plan.**
@@ -254,7 +254,7 @@ The file follows the format of `course/decisions/a3.md`: a header paragraph, the
 
 The entries:
 
-1. The four groups — the tests, the testing plan, the container, component, and sequence views, and continuous integration (`actionlint` and the product-code CI) — move from Assignment 4's scope to Week 5, so Assignment 4 is the functional requirements, the quality requirements, the ADRs, the architecture document's scope and drivers, and the Week 4 process work — sprint planning and estimates, the ceremonies, the glossary, the team's `AGENTS.md`, `REL-04`, and the deadlines.
+1. The four groups — the tests, the testing plan, the container, component, and sequence views, and continuous integration (`actionlint` and the product-code CI) — move from Assignment 4's scope to Week 5, so Assignment 4 is the functional requirements, the quality requirements, the ADRs, the architecture document's drivers and decision index, and the Week 4 process work — sprint planning and estimates, the ceremonies, the glossary, the team's `AGENTS.md`, `REL-04`, and the deadlines.
 2. A quality requirement test is a `## QRT-nn` section inside its QR's file, numbered within the QR and owned by `quality-requirements-requirements.md` with the requirement; no separate tests file is added.
 3. A test's `**Level:**` is `CI`, `scripted`, or `manual`, `**Runs at:**` says where it runs, and a manual test carries `**Why Manual:**`; the test carries no state, and the testing plan carries its status, last check, planned sprint, and `Evidence` cell.
 4. A `High` QR must have a `CI` or `scripted` test; a `High` QR whose only possible test is manual is a deviation, and the reason is recorded.
@@ -262,7 +262,7 @@ The entries:
 6. Tests inherit their QR's priority; there is no separate test priority, and `Planned for sprint` is the only schedule.
 7. The evidence the testing plan records for a test follows its level: a `CI` test links its run, a `scripted` test records the command and its output, and a `manual` test records the inspection.
 8. A release claims a `QR-nn` only when every non-dropped test for it is `Passes` and `Checked` in the release's sprint, with evidence from the released state; it may record a test it adds at any status.
-9. The architecture's views are C4: the context view stays in Assignment 4, and the container, component, and sequence views arrive in Week 5; the component view expands one container and shows its interfaces, the sequence view shows the core task end to end, and every view has an opaque SVG or PNG and its source.
+9. The architecture's views are C4: the context view stays in the product vision, and the container, component, and sequence views arrive in Week 5; the component view expands one container and shows its interfaces, the sequence view shows the core task end to end, and every view has an opaque SVG or PNG and its source.
 10. The container view names exactly the containers the functional requirements and the ADRs name, so the field Assignment 4 introduces and the view Week 5 draws cannot disagree.
 11. The diagram rules — the legend, the source beside the image, the opaque image, the tools, the agreement with the text and the boundary, and the prose elements appearing in a view — live in `### Diagrams And Legends` under `## Views` in the architecture requirements.
 12. Continuous integration is `actionlint` over `.github/workflows/` plus five product-code checks — linting, formatting, type checking, build, and automated tests — on pull requests and on `main`, pinned, with its Definition of Done item, and it arrives in Week 5.
@@ -284,7 +284,7 @@ The entries:
 - **`README.md`**: The guide row in The Guides, the Assignment 5 row when the assignment is written, and no new requirements file row.
 - **`SKILL.md`**: The routing row for the guide and the Week 5 artifacts, with the guide beside each requirements link; the front-matter `description` gains the tests, the views, and the CI checks when the assignment is written.
 - **`course/rules.md`**: The new guide in its guide list, and the Week 5 artifacts, including the CI checks, in the routing.
-- **`AGENTS.md`**: The Repository Map and the `requirements/` table gain `guides/quality-requirement-tests-and-views.md`; the `docs/` Destination Map's Week 4 architecture row keeps the context diagram and gains the container, component, and sequence images in a Week 5 note; the identifier conventions gain `QRT-nn` and the sentence that it is scoped to its QR; the terminology list gains `quality requirement test`, `quality requirement testing plan`, `container view`, `component view`, `sequence view`, `legend`, and `evidence`; the assignment checklist stays unchanged.
+- **`AGENTS.md`**: The Repository Map and the `requirements/` table gain `guides/quality-requirement-tests-and-views.md`; the `docs/` Destination Map's Week 4 architecture row gains the container, component, and sequence images and their sources in a Week 5 note, while the Week 2 row keeps the context diagram; the identifier conventions gain `QRT-nn` and the sentence that it is scoped to its QR; the terminology list gains `quality requirement test`, `quality requirement testing plan`, `container view`, `component view`, `sequence view`, `legend`, and `evidence`; the assignment checklist stays unchanged.
 - **`TODO.md`**: The A5 items this work closes are ticked: where to track progress on a QRT, how to prioritize QRTs, product-code CI, `actionlint`, and sequence diagrams.
   The feature issue type and the named architecture-example links stay deferred with a note.
 - **`course/decisions/a3.md`**: `A3-DEC-018` gets `**Status:** Reversed by A5-DEC-017`, linked to that entry once `course/decisions/a5.md` exists, and keeps its statement and fields; its `**Where it lands:**` pointer says the product-code CI marker moved from Week 4 to Week 5 and cites `A5-DEC-017`; `A5-DEC-017` restates the clauses that still hold.
@@ -324,9 +324,9 @@ The entries:
 
 - This work lands in the `itpd` course repository only, and no file is created under `docs/` or `reports/`, since those belong to student repositories.
 - Assignment 5 is Week 5, and Week 5's due date is Saturday 31 October 2026 at 23:59, set by Assignment 4's schedule change.
-- Assignment 4 lands first: the quality requirements, the functional requirements, the ADRs, the architecture document with its scope and drivers, and the priority matrix exist before this work adds to them.
+- Assignment 4 lands first: the quality requirements, the functional requirements, the ADRs, the architecture document with its drivers and decision index, and the priority matrix exist before this work adds to them.
 - The requirements files this plan edits are Assignment 4's; no new requirements file is added, because the tests stay inside the QR file and the testing plan stays inside the project plan.
-- The context diagram and its Week 2 rules stay with `## System Context` in Assignment 4; this work adds the other three views under `## Views` and their diagram rules under `### Diagrams And Legends`.
+- The context diagram and its Week 2 rules stay with `## System Context` in the product vision; this work adds the other three views under `## Views` in the architecture document and their diagram rules under `### Diagrams And Legends`.
 - The Week 4 process work stays in Assignment 4; only `actionlint` and the product-code CI move to Week 5.
 - The examples are set in the week their rule belongs to: the planning example after Week 5, the changelog after `REL-05`, and the weekly report a Week 05 report.
 - The functional requirements and the ADRs name containers from Week 4, and the container view names exactly that set; there is no fixed container list.
