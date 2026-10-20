@@ -44,6 +44,13 @@ Who may see each item is in [Visibility Requirements](visibility-requirements.md
 
 12. It states the week's customer-meeting outcome: each story shown and whether the customer accepted or rejected it, and each candidate story that moved out, each citing the `DEC-nnn` that records it, per [Showing Working Software](customer-meetings-requirements.md#showing-working-software) and [Building, Delivering, And Releasing The Candidate](minimum-usable-product-requirements.md#building-delivering-and-releasing-the-candidate).
 
+**Since: W4**
+
+13. The coverage table carries a row that links `reports/week-NN/sprint-retrospective.md`, per [Retrospective](sprint-ceremonies-requirements.md#retrospective).
+    The report carries no sprint planning, refinement, or retrospective section, because the plan, the issues, and the retrospective file own them.
+14. The report does not assess an individual.
+    The contribution table is the evidence of who did what, and no section asks the team to rate or explain a member's contribution.
+
 **Recommended**
 
 - Use the same section order every week so readers learn it once.
@@ -53,10 +60,10 @@ Who may see each item is in [Visibility Requirements](visibility-requirements.md
 
 **Example**
 
-A Week 01 report, from `reports/week-01/README.md`:
+A Week 04 report, from `reports/week-04/README.md`:
 
 ```markdown
-# Week 01 report
+# Week 04 report
 
 ## Project
 
@@ -66,40 +73,39 @@ Our problem-space sentence: an expert who sells sessions online needs one link w
 
 ## What we did
 
-We researched four alternatives, compared them on six properties, and identified three gaps worth building on.
+We wrote the quality and functional requirements behind the slice, documented the architecture and the decisions it makes, and held the sprint's planning, review, and retrospective.
 
 ## Findings
 
-The strongest products schedule time well and leave payment and materials to integrations or paid tiers.
-Nobody gives an expert one flow from booking to a paid, prepared session, which is the gap our project targets.
+Payment confirmation is the quality attribute that shapes the architecture, not the calendar.
+The provider's hosted checkout keeps us outside card data, and the testability requirement is what the payment module is judged by.
 
 ## Coverage
 
-| Deliverable              | Artifact                                                                                                               |
-| ------------------------ | ---------------------------------------------------------------------------------------------------------------------- |
-| License                  | [LICENSE](../../LICENSE)                                                                                               |
-| Alternatives search      | [docs/research/alternatives.md](../../docs/research/alternatives.md)                                                   |
-| Candidate list           | [reports/week-01/candidate-list.md](candidate-list.md)                                                                 |
-| Compare the alternatives | [docs/research/comparison.md](../../docs/research/comparison.md)                                                       |
-| Gap analysis             | [docs/research/gap-analysis.md](../../docs/research/gap-analysis.md)                                                   |
-| Value proposition        | [docs/research/value-proposition.md](../../docs/research/value-proposition.md)                                         |
-| Assumptions              | [docs/assumptions.md](../../docs/assumptions.md)                                                                       |
-| Decisions                | [docs/decisions.md](../../docs/decisions.md)                                                                           |
-| Research board           | [Figma board](https://www.figma.com/design/PUc4NFVcLureKzxE3RAGB0/Market-Research)                                     |
-| Meeting script           | [reports/week-01/meeting-script.md](meeting-script.md)                                                                 |
-| Customer kickoff         | [reports/week-01/meeting-report.md](meeting-report.md), [reports/week-01/meeting-transcript.md](meeting-transcript.md) |
-| AI usage                 | [reports/week-01/ai-usage.md](ai-usage.md)                                                                             |
+| Deliverable               | Artifact                                                                               |
+| ------------------------- | -------------------------------------------------------------------------------------- |
+| Sprint plan and estimates | [docs/project-plan.md](../../docs/project-plan.md#sprint-04)                           |
+| Quality requirements      | [docs/quality-requirements/README.md](../../docs/quality-requirements/README.md)       |
+| Functional requirements   | [docs/functional-requirements/README.md](../../docs/functional-requirements/README.md) |
+| Architecture and drivers  | [docs/architecture/README.md](../../docs/architecture/README.md)                       |
+| Architectural decisions   | [docs/architecture/adr/](../../docs/architecture/adr/)                                 |
+| Glossary                  | [docs/glossary.md](../../docs/glossary.md)                                             |
+| Team `AGENTS.md`          | [AGENTS.md](../../AGENTS.md)                                                           |
+| Customer validation       | [reports/week-04/meeting-report.md](meeting-report.md)                                 |
+| `REL-04`                  | [v0.4.0](https://github.com/<organization>/<repo>/releases/tag/v0.4.0)                 |
+| Sprint retrospective      | [reports/week-04/sprint-retrospective.md](sprint-retrospective.md)                     |
+| AI usage                  | [reports/week-04/ai-usage.md](ai-usage.md)                                             |
 
 ## Contribution
 
-| Member | Work                                                   |
-| ------ | ------------------------------------------------------ |
-| @alice | [PR #4](...), alternatives 1–2, [approved](...) @bob   |
-| @bob   | [PR #5](...), comparison table, [approved](...) @carol |
+| Member | Work                                                                      |
+| ------ | ------------------------------------------------------------------------- |
+| @alice | [PR #31](...), the quality requirements, [approved](...) @bob             |
+| @bob   | [PR #32](...), the architectural decision records, [approved](...) @carol |
 
 ## Repository evidence
 
-[Reviewed pull request](...), [link check run](...).
+[Reviewed pull request](...), [link check run](...), [Markdown check run](...).
 
 ## Deviations
 

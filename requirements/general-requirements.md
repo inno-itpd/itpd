@@ -74,6 +74,7 @@ It is the short version of the requirements, states what is expected of you as a
    `DEC-nnn` has three digits, because a decision is made at every customer meeting and the log can pass 99 entries; every other family has two.
    `US-nn` for user stories, `AC-nn` for the acceptance criteria of a story issue or a task issue, `CON-nn` for constraints, and `BND-nn` for boundary items are introduced in Week 2.
    `RISK-nn` for risks, `TOS-nn` for the goals in the threshold of success, `SPRINT-nn` for sprints, `MLS-nn` for milestones, and `REL-nn` for releases are introduced in Week 3.
+   `FR-nnn` for functional requirements, `QR-nn` for quality requirements, and `ADR-nnn` for architectural decision records are introduced in Week 4, and `FR-nnn` and `ADR-nnn` take three digits, because each grows with every record and can pass 99; `QR-nn` takes two, like every other family.
    A later family is introduced only by the requirement that first uses it.
 2. An identifier, once issued, is never changed, reused, or reassigned, including when the artifact is edited later in the course.
 3. Gaps in a sequence are expected and correct.
@@ -82,9 +83,10 @@ It is the short version of the requirements, states what is expected of you as a
    A decision is dropped by reversing it, per [Reversing A Decision](decisions-requirements.md#reversing-a-decision).
 5. The heading of an identifier's section is the identifier alone, such as `## DEC-001`, so the section's anchor is `#dec-001` and a link to it survives rewording the item.
    The first line under the heading names the item or states it in one sentence.
+   `FR-nnn`, `QR-nn`, and `ADR-nnn` are the exceptions, because each is a file of its own: the file's `#` heading carries the identifier and the title, such as `# FR-001: Hold a slot while the client pays`, and the file's path is the link target, per [Where Functional Requirements Live](functional-requirements-requirements.md#where-functional-requirements-live).
 6. Every reference between artifacts uses the identifier, not the title, so that renaming a title does not break the chain.
-7. `US-nn` and `AC-nn` are the exceptions to rules 4 and 5, and to rules 10 to 12, because they live in an issue rather than in a section of their own.
-   [Where Stories Live](user-stories-requirements.md#where-stories-live) says how a dropped story is kept, [Acceptance Criteria](user-stories-requirements.md#acceptance-criteria) says how a story's criterion is numbered, retired, and cited, and the task's [Acceptance Criteria](task-issues-requirements.md#acceptance-criteria) says the same for a task's criterion.
+7. `US-nn` and `AC-nn` are the exceptions to rules 4 and 5, and to rules 10 to 12, because they live in an issue or, for an `AC-nn`, in a requirement file rather than in a section of their own.
+   [Where Stories Live](user-stories-requirements.md#where-stories-live) says how a dropped story is kept, [Acceptance Criteria](user-stories-requirements.md#acceptance-criteria) says how a story's criterion is numbered, retired, and cited, the task's [Acceptance Criteria](task-issues-requirements.md#acceptance-criteria) says the same for a task's criterion, and [Acceptance Criteria](functional-requirements-requirements.md#acceptance-criteria) says the same for a functional requirement's.
 8. Action points are not an identifier family, and there is no `ACT-nn`.
    Cite an action point by its meeting report's path and `#action-points` anchor, with the action quoted.
    A story's `Traces to` entry for an action point uses this form.
@@ -99,6 +101,7 @@ It is the short version of the requirements, states what is expected of you as a
     A decision's are in [The Decision](decisions-requirements.md#the-decision), and every other family has a `Dropped` value.
 11. A dropped item keeps its heading, its first line, and its other fields.
     Its `**Status:**` becomes `Dropped`, and a `**Dropped:**` field, after the others, gives the date and the reason.
+    `ADR-nnn` is the exception, because its fields are a file's fields: its `**Dropped:**` sits among them, after `**Superseded by:**`, in the order [The Record](adr-requirements.md#the-record) gives.
     When a decision dropped it, the reason cites the decision's `DEC-nnn`, linked, when it has an entry, or gives the decision's reason otherwise, per [What Cites It](decisions-requirements.md#what-cites-it).
 12. A dropped item does not list what its drop affected.
     Each artifact that cited it records the change where that artifact records its changes, so the link is recorded once, in the artifact that cites the other.
@@ -131,16 +134,21 @@ The research you produce in Week 1 is the evidence base for the rest of the cour
 Later weeks cite your Week 1 identifiers rather than restating your findings.
 This is what makes the course a project rather than nine separate assignments.
 
-| Later work                      | Must cite                                                                                                                                                                                                                   |
-| ------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Week 2 product vision           | The `VP-nn` its goal traces to, per [Goal](product-vision-requirements.md#goal)                                                                                                                                             |
-| Week 2 user stories             | The `VP-nn` in each story's `Value proposition` field, any origins in its `Traces to` list, and the `ASM-nn` of each assumption it rests on in its `Rests on` list, per [The Story](user-stories-requirements.md#the-story) |
-| Week 2 prototypes               | The `US-nn` or `GAP-nn` each one tested, and the `ASM-nn` when the risky part is an assumption, per [Where Prototypes Live](prototypes-requirements.md#where-prototypes-live)                                               |
-| Week 3 project plan             | The `TOS-nn` of each milestone's `**Advances:**` field and the `SPRINT-nn` of its `**Sprints:**` field, per [Milestones](planning-requirements.md#milestones)                                                               |
-| Week 3 threshold of success     | The customer's `DEC-nnn` behind each goal change or drop, per [The Threshold Of Success](planning-requirements.md#the-threshold-of-success)                                                                                 |
-| Week 3 risks                    | The `DEC-nnn` of a decision that settled the risk or that its response passes, per [Checking And Settling](risks-requirements.md#checking-and-settling) and [Response](risks-requirements.md#response)                      |
-| Every weekly report from Week 3 | The `REL-nn` of its week's release, linked to that release's plan section, such as `project-plan.md#rel-03`, per [Releases](planning-requirements.md#releases)                                                              |
-| Any change a decision caused    | The decision's `DEC-nnn` when it has an entry, or its reason otherwise, per [What Cites It](decisions-requirements.md#what-cites-it)                                                                                        |
+| Later work                      | Must cite                                                                                                                                                                                                                                         |
+| ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Week 2 product vision           | The `VP-nn` its goal traces to, per [Goal](product-vision-requirements.md#goal)                                                                                                                                                                   |
+| Week 2 user stories             | The `VP-nn` in each story's `Value proposition` field, any origins in its `Traces to` list, and the `ASM-nn` of each assumption it rests on in its `Rests on` list, per [The Story](user-stories-requirements.md#the-story)                       |
+| Week 2 prototypes               | The `US-nn` or `GAP-nn` each one tested, and the `ASM-nn` when the risky part is an assumption, per [Where Prototypes Live](prototypes-requirements.md#where-prototypes-live)                                                                     |
+| Week 3 project plan             | The `TOS-nn` of each milestone's `**Advances:**` field and the `SPRINT-nn` of its `**Sprints:**` field, per [Milestones](planning-requirements.md#milestones)                                                                                     |
+| Week 3 threshold of success     | The customer's `DEC-nnn` behind each goal change or drop, per [The Threshold Of Success](planning-requirements.md#the-threshold-of-success)                                                                                                       |
+| Week 3 risks                    | The `DEC-nnn` of a decision that settled the risk or that its response passes, per [Checking And Settling](risks-requirements.md#checking-and-settling) and [Response](risks-requirements.md#response)                                            |
+| Every weekly report from Week 3 | The `REL-nn` of its week's release, linked to that release's plan section, such as `project-plan.md#rel-03`, per [Releases](planning-requirements.md#releases)                                                                                    |
+| Week 4 product vision           | The `TOS-nn` its goal links and `docs/architecture/README.md` as a whole, per [Goal](product-vision-requirements.md#goal) and [Where The Vision Lives](product-vision-requirements.md#where-the-vision-lives)                                     |
+| Week 4 functional requirements  | The origin each `**Traces to:**` entry names: a `US-nn`, a `DEC-nnn`, a `CON-nn`, or a meeting report; and the `ADR-nnn` that constrains it, per [The Functional Requirement](functional-requirements-requirements.md#the-functional-requirement) |
+| Week 4 architectural decisions  | The `FR-nnn` and `QR-nn` each `**Addresses:**` field names, and the `DEC-nnn` its `**Decision:**` documents, per [The Record](adr-requirements.md#the-record)                                                                                     |
+| Week 4 stories                  | The `FR-nnn` and `ADR-nnn` that specify it, in `### Specified by`, per [The Story](user-stories-requirements.md#the-story)                                                                                                                        |
+| Week 4 tasks                    | The `FR-nnn` and `ADR-nnn` the task works on, in `### Requirements`, per [The Issue Form](task-issues-requirements.md#the-issue-form)                                                                                                             |
+| Any change a decision caused    | The decision's `DEC-nnn` when it has an entry, or its reason otherwise, per [What Cites It](decisions-requirements.md#what-cites-it)                                                                                                              |
 
 **Required**
 
@@ -152,3 +160,14 @@ This is what makes the course a project rather than nine separate assignments.
    See [Where Artifacts Live In The Repository](#where-artifacts-live-in-the-repository).
 3. A later need that your Week 1 research did not anticipate does not rewrite the research.
    It becomes a story that traces to the `VP-nn` it supports; update the research only when the later need contradicts it.
+
+**Since: W4**
+
+The chain from a story to the threshold of success is a chain of links, and each side of a link owns one fact.
+An architectural decision record's `**Addresses:**` says which requirements the record accounts for, a functional requirement's `**Traces to:**` says which records constrain it, a story's `### Specified by` says which requirements and records specify it, and a task's `### Requirements` says which requirements its work serves.
+The facts differ, so a record may be written before or after the requirement it answers, and no document restates the chain: the links are the trace.
+
+**Required**
+
+4. To find the architectural decision records that account for one requirement, search their `**Addresses:**` fields.
+   No requirement carries the reverse field, because a connection maintained on both sides goes stale on one, as [`A3-DEC-022`](../course/decisions/a3.md#a3-dec-022-the-chain-from-a-commit-to-the-threshold) reasons.

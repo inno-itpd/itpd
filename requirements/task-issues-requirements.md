@@ -27,8 +27,9 @@ A **task issue** holds one unit of work, such as building part of a story, docum
 
    - A description of the work.
    - Each story issue the task works toward, with the story's `AC-nn` it works toward, when it works toward a story, per [The Issue Form](#the-issue-form).
+   - The functional requirements and architectural decision records the task works on, per [The Issue Form](#the-issue-form).
    - The task's own acceptance criteria, per [Acceptance Criteria](#acceptance-criteria).
-   - The `task` label, applied by the form.
+   - The `Task` issue type, applied by the form.
 
 2. A task has no identifier family.
    Cite it by its issue number, such as `#12`, or by a link to the issue.
@@ -44,12 +45,16 @@ A **task issue** holds one unit of work, such as building part of a story, docum
 
 **Required**
 
-1. Add `.github/ISSUE_TEMPLATE/task.yml`, an Issue Form for every unit of work, with the `task` label applied by the form.
-   The description and `Acceptance criteria` form fields are required.
+1. Add `.github/ISSUE_TEMPLATE/task.yml`, an Issue Form for every unit of work, with the `Task` issue type applied by the form.
+   The description, `Acceptance criteria`, and `Requirements` form fields are required.
    The `Story` form field is optional and takes a bullet list with one item for each story issue the task works toward, because one task may serve several stories.
    Each item names the story issue alone or follows it with the story's `AC-nn` the task works toward in parentheses, such as `- #42 (AC-01, AC-02)`, so GitHub renders each story's title.
    A task that is not work on a story, such as a workflow or a report, leaves `Story` empty.
-2. Create the `task` label, by any means.
+2. The `Requirements` field takes one item per line, each a link to an `FR-nnn` or an `ADR-nnn` on `main`, such as `https://github.com/<organization>/<repo>/blob/main/docs/functional-requirements/fr/FR-001.md`.
+   It names what the task works on, and it is a different link from the `Story` field: the story is the need, and the requirement is the specification the task advances.
+   A task that serves no requirement says so in one line, such as `None: repository upkeep`, and it is repository upkeep rather than product work.
+   A task that names only an `ADR-nnn` reaches the threshold through that record's `**Addresses:**`, per [What It Accounts For](adr-requirements.md#what-it-accounts-for).
+3. Create the `Task` issue type, set it on the tasks that already exist, and retire the `task` label with the other five, per [Issue Fields](issue-tracking-requirements.md#issue-fields).
 
 **Recommended**
 
@@ -79,6 +84,7 @@ The two values say which two members do and verify a task, and the milestone the
 The task's assignees name the same two members, because a GitHub assignee carries no role of its own.
 They and the assignees are set on the issue after it is created, so no issue form change is needed.
 The fields themselves, their options, and their visibility are defined in [Issue Fields](issue-tracking-requirements.md#issue-fields), and the assignee rule in [Assignees](issue-tracking-requirements.md#assignees).
+A scheduled task also carries its `Priority`, and [Estimation](sprint-ceremonies-requirements.md#estimation) says when each field is set.
 
 **Required**
 
@@ -110,7 +116,8 @@ Issue #12, a task on the story in [the user story example](user-stories-requirem
 
 ```markdown
 Title: Hold a slot while the client pays
-Labels: task
+Type: Task
+Priority: High
 
 ### Description
 
@@ -119,6 +126,11 @@ Hold a booked slot while the client pays, and release it when the hold expires.
 ### Story
 
 - #42 (AC-01, AC-02)
+
+### Requirements
+
+- [FR-001](https://github.com/<organization>/<repo>/blob/main/docs/functional-requirements/fr/FR-001.md)
+- [ADR-001](https://github.com/<organization>/<repo>/blob/main/docs/architecture/adr/ADR-001.md)
 
 ### Acceptance criteria
 
@@ -133,7 +145,7 @@ Issue #7, a task that is not work on a story, so its `Story` field is empty:
 
 ```markdown
 Title: Check the Markdown in CI
-Labels: task
+Type: Task
 
 ### Description
 
@@ -142,6 +154,10 @@ Run the Markdown format check and the lint on every pull request.
 ### Story
 
 _No response_
+
+### Requirements
+
+- None: repository upkeep.
 
 ### Acceptance criteria
 

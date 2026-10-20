@@ -38,8 +38,8 @@ A [decision](general-requirements.md#artifact-concepts-and-terminology) is a con
    - The customer made it, in a meeting or outside one.
    - It was made in a meeting with the customer, including one the team made and the customer did not contest.
    - It changes more than one artifact, an artifact that does not exist yet, or no artifact at all.
-   - It changes the product vision's goal, a constraint, or a boundary item, or it is a technology choice.
-     A technology choice the team made is a team decision, not a constraint, per [Constraints](product-vision-requirements.md#constraints).
+   - It changes the product vision's goal, a constraint, or a boundary item, or it is a technology choice or a functional-behaviour choice, which an [architectural decision record](adr-requirements.md#the-record) or a [functional requirement](functional-requirements-requirements.md#the-functional-requirement) documents instead of a `DEC-nnn`.
+     A technology choice the team made is a team decision, not a constraint, per [Constraints](product-vision-requirements.md#constraints), and a customer's mandate is a `CON-nn` that cites the `DEC-nnn` recording it.
    - It passes a point of no return: undoing the choice would cost a rebuild rather than an edit.
    - It reverses a decision that has an entry.
 
@@ -92,7 +92,7 @@ The whole file is in [Full Example](#full-example).
 **Required**
 
 1. The entry does not list what the decision changed.
-   A link between two artifacts is recorded once, in the artifact that cites the other, as for an [assumption](assumptions-requirements.md#what-rests-on-it).
+   A link between two artifacts is recorded once, in the artifact that cites the other, per the link model of [Traceability Into Later Weeks](general-requirements.md#traceability-into-later-weeks), as for an [assumption](assumptions-requirements.md#what-rests-on-it).
 2. Each artifact the decision changed cites its `DEC-nnn`, linked, where that artifact records its changes:
 
    - A dropped item, such as a `GAP-nn` or a `VP-nn`, in the reason it was dropped, per [Identifier Rules](general-requirements.md#identifier-rules).

@@ -32,10 +32,15 @@ It is created once, in its final place, and then stays current.
    - The **constraints**, each a `CON-nn` section, per [Constraints](#constraints).
    - The **boundary**, each item a `BND-nn` section, per [Boundary](#boundary).
    - The **system context diagram**, per [System Context](#system-context), committed at `docs/architecture/context.<ext>`, with its source beside it when it has one, and embedded here as an image.
-   - Links to the [user stories](user-stories-requirements.md#where-stories-live) and to the current week's report.
+   - Links to the [user stories](user-stories-requirements.md#where-stories-live), to [the architecture document](architecture-requirements.md#where-the-architecture-lives), and to the current week's report.
 
 3. When the product or the decisions change, update this file.
    It is maintained documentation, not a Week 2 submission, so a contradiction with the stories is a bug rather than a historical record.
+
+**Since: W4**
+
+4. The vision links `docs/architecture/README.md` as a whole, per [Where The Architecture Lives](architecture-requirements.md#where-the-architecture-lives), because the architecture document's drivers point back at [Constraints](#constraints) and it links this file as the scope it serves.
+   No part of the vision moves to the architecture document: the goal, the stakeholders, the constraints, the boundary, and the system context stay here, and neither file copies the other.
 
 ## Goal
 
@@ -284,5 +289,6 @@ The video service is on the diagram because `BND-01` hands it the call, and noth
 ## Where The Detail Lives
 
 - [User stories](https://github.com/<organization>/<repo>/issues?q=label%3Auser-story)
+- [The architecture](architecture/README.md)
 - [Week 2 report](../reports/week-02/README.md)
 ```

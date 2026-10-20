@@ -83,9 +83,9 @@ A **pull request** is the change that closes one task issue, and the list says w
    - No secret, recording, or private-only material is committed, per [Sensitive Information Reference](visibility-requirements.md#sensitive-information-reference).
    - Implementation notes in the pull request description record the decisions made and how the change was checked, per [The Pull Request Template](pull-requests-requirements.md#the-pull-request-template).
 
-**Since: W4**
+**Since: W5**
 
-2. From Week 4, the list also names the [product-code CI](repository-requirements.md#continuous-integration) among the checks that must be green.
+2. From Week 5, the list also names the [product-code CI](repository-requirements.md#continuous-integration) among the checks that must be green.
 
 ## Full Example
 

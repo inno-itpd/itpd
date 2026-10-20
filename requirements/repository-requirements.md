@@ -345,10 +345,13 @@ It also skips the files that `.gitignore` lists, so a local run checks the same 
 
 **Since: W4**
 
-6. Add continuous integration for your product code: linting, formatting or type checking, build, and automated tests, on pull requests and on `main`.
-7. Keep the link check and the Markdown check running.
+6. Keep the link check and the Markdown check running.
    They are a baseline, not a substitute for the checks your product needs.
-8. The latest `main` run of every required check must be green before you submit.
+7. The latest `main` run of every required check must be green before you submit.
+
+**Since: W5**
+
+8. Add continuous integration for your product code: linting, formatting or type checking, build, and automated tests, on pull requests and on `main`.
 
 ## The Course Materials As An Agent Skill
 
@@ -443,4 +446,3 @@ For opencode, in `opencode.json`:
 
 - Enable secret scanning and push protection.
 - Provide a Nix flake or a `devenv` configuration so the project can be set up reproducibly.
-- Add `AGENTS.md` once the workflow is stable enough to be worth writing down.

@@ -23,7 +23,7 @@ Most of it is arguing about which stories are the same story wearing two hats, w
 
 ```text
 docs/product-vision.md         the goal, the constraints, the stakeholders, the boundary, the context diagram
-GitHub issues                  one per story, titled US-nn: <title>, with its value proposition, Traces to and Rests on lists, AC-nn criteria, and labels
+GitHub issues                  one per story, typed User Story, titled US-nn: <title>, with its value proposition, Traces to, Rests on and Specified by lists, AC-nn criteria, and its MoSCoW and Story Points values
 reports/week-02/README.md      the minimum usable product candidate: core task and stories
 reports/week-02/prototypes.md  what you showed, what they said, what changed
 ```
@@ -87,15 +87,14 @@ The third line is the one that catches a story written from a feature rather tha
 If you cannot finish it with a value, you have written a task, not a story, and the story is hiding an assumption you have not checked.
 
 **Which `US-nn` does a new story take?**
-The next free one in the registry, per [Where Stories Live](../requirements/user-stories-requirements.md#where-stories-live), and not its issue number.
-This prints the highest `US-nn` issued so far, closed stories included:
+The next free one in the registry, and not its issue number.
+The story is the `User Story` type, per [Where Stories Live](../requirements/user-stories-requirements.md#where-stories-live), so filter the issue list by that type.
+Only a story's title starts with `US-nn:`, so this prints the highest one issued, closed stories included:
 
 ```text
-gh issue list --label user-story --state all --limit 1000 --json title \
+gh issue list --state all --limit 1000 --json title \
   --jq '[.[].title | capture("^US-(?<n>[0-9]+)") | .n | tonumber] | max'
 ```
-
-A team that marks stories with an issue type or a field instead of the label filters by that marker instead.
 
 **How specific should a story be?**
 A story states the problem precisely and leaves the solution open.
@@ -110,7 +109,7 @@ As a coach
 I want booked sessions to appear in the calendar I already use
 so that I do not double-book a slot
 
-AC-01: A session booked by a client appears in the coach's Google Calendar, at the booked time.
+- [ ] AC-01: A session booked by a client appears in the coach's Google Calendar, at the booked time.
 ```
 
 The customer told you the coach uses Google Calendar, so the criterion names it.
@@ -146,7 +145,8 @@ One criterion for the happy path, and one for what happens when something is mis
 A single criterion per story is easy to satisfy with a line of prose that tests nothing.
 The criteria go in the issue form; a `Won't Have` story may carry none.
 
-Number each criterion `AC-01`, `AC-02`, and so on, from the top of the story, and write the ID at the start of the criterion.
+Write each criterion as one checkbox item, `- [ ] AC-01: <criterion>`, numbered `AC-01`, `AC-02`, and so on from the top of the story.
+The box is the criterion's state: the accountable member ticks it once the criterion is verified, and [Acceptance Criteria](../requirements/user-stories-requirements.md#acceptance-criteria) says what the tick means for the story.
 The ID is stable inside the issue: an edit keeps it, a removed criterion retires it, and a criterion added later takes the next free number.
 Another artifact cites a criterion by its `AC-nn` together with the story issue, as a link to the issue or its `US-nn` when the issue is already linked.
 The notation is not fixed; what has to be unambiguous is which story and which criterion.
@@ -168,17 +168,19 @@ You probably do not yet know what the product does in that case, which makes it 
 
 ## Step 4: Prioritize, Then Pick The First Thing To Build
 
-MoSCoW is a four-way priority scale: `Must Have`, `Should Have`, `Could Have`, and `Won't Have`.
+MoSCoW is a four-way priority scale, carried by the story's `MoSCoW` field: `Must Have`, `Should Have`, `Could Have`, and `Won't Have`.
 [MoSCoW Prioritization](../requirements/user-stories-requirements.md#moscow-prioritization) defines each value and what a priority has to record.
-Prioritize every story with it.
-The point of the exercise is not the label, it is the argument: whoever disagrees with a `Must Have` has to say why the product is not the product without it.
+Prioritize every story with the field.
+The point of the exercise is not the value but the argument: whoever disagrees with a `Must Have` has to say why the product is not the product without it.
 
 The priority reason is where that argument is written down.
 Write it as a comparison, because a comparison is what somebody can disagree with: why this story is above the one you made `Should Have`, or why the core task still finishes without it.
-If the only reason you can write is the definition of the label, you have not decided yet, so put the story next to its neighbours and decide.
+If the only reason you can write is the definition of the value, you have not decided yet, so put the story next to its neighbours and decide.
 
 A `Won't Have` story is not built, but write it down as an issue and close it as not planned, with the reason, instead of quietly leaving a story out.
 A reader can argue with a recorded `Won't Have`; they can only guess about a missing one.
+
+The story also carries `Story Points`, which estimates it rather than prioritizing it, and [Estimation](../requirements/sprint-ceremonies-requirements.md#estimation) says when a story is estimated.
 
 Then name the **minimum usable product candidate**, per [the requirement](../requirements/minimum-usable-product-requirements.md#the-candidate).
 
@@ -260,7 +262,7 @@ See [Validating With The Customer](validating-with-the-customer.md) for the meet
 - **One criterion per story.**
   It is the easiest number to hit and the least useful.
 - **A `Must Have` list that is everything.**
-  The label stops meaning anything, and a `Must Have` list nobody can build is not a priority.
+  The value stops meaning anything, and a `Must Have` list nobody can build is not a priority.
 - **Prototyping the part you are sure about.**
   It feels productive, it demos well, and it teaches you nothing.
   The customer being impressed is not the same as the customer being surprised.

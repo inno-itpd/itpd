@@ -11,11 +11,12 @@ Materials for the **IT Product Development (ITPD)** course: what the course expe
 
 ## Assignments
 
-| Week                             | Hard deadline     | Deliverable                                                                                        |
-| -------------------------------- | ----------------- | -------------------------------------------------------------------------------------------------- |
-| [1](assignments/assignment-1.md) | Fri 2 Oct, 23:59  | Initial project research: alternatives, comparison, gaps, value proposition                        |
-| [2](assignments/assignment-2.md) | Sat 10 Oct, 23:59 | Requirements and prototyping: vision, user stories, prototypes, validation                         |
-| [3](assignments/assignment-3.md) | Sat 17 Oct, 23:59 | Planning and the minimum usable product: plan, threshold, risks, Definition of Done, first release |
+| Week                             | Hard deadline     | Deliverable                                                                                                                                     |
+| -------------------------------- | ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| [1](assignments/assignment-1.md) | Fri 2 Oct, 23:59  | Initial project research: alternatives, comparison, gaps, value proposition                                                                     |
+| [2](assignments/assignment-2.md) | Sat 10 Oct, 23:59 | Requirements and prototyping: vision, user stories, prototypes, validation                                                                      |
+| [3](assignments/assignment-3.md) | Sat 17 Oct, 23:59 | Planning and the minimum usable product: plan, threshold, risks, Definition of Done, first release                                              |
+| [4](assignments/assignment-4.md) | Sat 24 Oct, 23:59 | Quality and architecture: quality and functional requirements, architectural decision records, drivers, glossary, retrospective, fourth release |
 
 Later assignments are added as the course runs.
 Each one adds the paths and evidence for its week, and changes nothing about the rules below.
@@ -44,14 +45,19 @@ The assignments reference these rather than repeating them.
 | [Research Requirements](requirements/research-requirements.md)                             | Alternatives, the comparison, gaps, value propositions, and research honesty                                     |
 | [Assumption Requirements](requirements/assumptions-requirements.md)                        | Where assumptions live, what rests on them, and how they are checked and settled                                 |
 | [Decision Requirements](requirements/decisions-requirements.md)                            | Where decisions live, what each entry says, what cites it, and how it is reversed                                |
-| [Product Vision Requirements](requirements/product-vision-requirements.md)                 | The goal, stakeholders, constraints, boundary, and system context diagram                                        |
+| [Product Vision Requirements](requirements/product-vision-requirements.md)                 | The goal, stakeholders, constraints, boundary, the system context diagram, and the architecture it links         |
+| [Architecture Requirements](requirements/architecture-requirements.md)                     | The architecture document, the drivers it links, and the ADR index                                               |
+| [Architectural Decision Record Requirements](requirements/adr-requirements.md)             | The architectural decision records, their `**Addresses:**` field, and their body                                 |
+| [Functional Requirements](requirements/functional-requirements-requirements.md)            | Functional requirement files, their behavior, their criteria, and the index                                      |
+| [Quality Requirements](requirements/quality-requirements-requirements.md)                  | Quality requirements, the ISO/IEC 25010:2023 pair, the scenario, and the priority matrix                         |
 | [User Story Requirements](requirements/user-stories-requirements.md)                       | Story issues, acceptance criteria, and priorities                                                                |
 | [Task Issue Requirements](requirements/task-issues-requirements.md)                        | Task issues, their form, and how a pull request closes one                                                       |
 | [Issue Tracking Requirements](requirements/issue-tracking-requirements.md)                 | The rules every issue shares, the sprint milestones, the issue fields, the assignees, and the GitHub project     |
 | [Local Task Tracking Requirements](requirements/local-task-tracking-requirements.md)       | A task tracker in the repository, a `TODO.md` checklist, and moving Done tasks out of the active list            |
 | [Minimum Usable Product Requirements](requirements/minimum-usable-product-requirements.md) | The minimum usable product candidate, how it is built, delivered, and released, and the customer's verdict on it |
 | [Prototype Requirements](requirements/prototypes-requirements.md)                          | What a prototype must change, and where it is recorded                                                           |
-| [Planning Requirements](requirements/planning-requirements.md)                             | The project plan, its sprints, releases, and milestones, and the threshold of success                            |
+| [Planning Requirements](requirements/planning-requirements.md)                             | The project plan, its sprints, releases, and milestones, the threshold of success, and the velocity fields       |
+| [Sprint Ceremony Requirements](requirements/sprint-ceremonies-requirements.md)             | Sprint planning, refinement, estimation, the Sprint Review, and the retrospective                                |
 | [Risk Requirements](requirements/risks-requirements.md)                                    | The risk register: a risk's statement and fields, its rating, and its response                                   |
 | [Definition Of Done Requirements](requirements/definition-of-done-requirements.md)         | What done means for a story, a task, and a pull request                                                          |
 | [Customer Meeting Requirements](requirements/customer-meetings-requirements.md)            | Meetings with the customer, and their scripts, reports, and transcripts                                          |
@@ -59,19 +65,22 @@ The assignments reference these rather than repeating them.
 | [Release Requirements](requirements/releases-requirements.md)                              | The changelog, Semantic Versioning, tags, and release titles                                                     |
 | [Pull Request Requirements](requirements/pull-requests-requirements.md)                    | Branches, the pull request template, review, and the evidence                                                    |
 | [Repository Requirements](requirements/repository-requirements.md)                         | GitHub, branch protection, link checking, permalinks, snapshots, CI                                              |
+| [Agent Instructions Requirements](requirements/agent-instructions-requirements.md)         | The team's own `AGENTS.md` and what it states to a coding agent                                                  |
+| [Glossary Requirements](requirements/glossary-requirements.md)                             | The project's glossary, its terms, and their definitions                                                         |
 
 ## The Guides
 
 How to actually do the work.
 
-| Guide                                                                      | For                                                                                             |
-| -------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
-| [Researching alternatives](guides/alternatives-research.md)                | Finding your set, choosing properties, evaluating consistently, capturing evidence              |
-| [From comparison to value proposition](guides/comparison-and-synthesis.md) | Building the table, finding the gaps, writing the proposition and your assumptions              |
-| [The kickoff meeting](guides/customer-kickoff-meeting.md)                  | The five areas and the Mom Test pass                                                            |
-| [User stories and prototyping](guides/user-stories-and-prototyping.md)     | Turning a gap into stories, writing criteria, and testing an idea cheaply                       |
-| [Validating with the customer](guides/validating-with-the-customer.md)     | Running a meeting after the kickoff and recording what it changed                               |
-| [Planning and tracking](guides/planning-and-tracking.md)                   | The threshold of success, the plan and its releases, milestones, risks, and progress monitoring |
+| Guide                                                                      | For                                                                                                      |
+| -------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| [Researching alternatives](guides/alternatives-research.md)                | Finding your set, choosing properties, evaluating consistently, capturing evidence                       |
+| [From comparison to value proposition](guides/comparison-and-synthesis.md) | Building the table, finding the gaps, writing the proposition and your assumptions                       |
+| [The kickoff meeting](guides/customer-kickoff-meeting.md)                  | The five areas and the Mom Test pass                                                                     |
+| [User stories and prototyping](guides/user-stories-and-prototyping.md)     | Turning a gap into stories, writing criteria, and testing an idea cheaply                                |
+| [Validating with the customer](guides/validating-with-the-customer.md)     | Running a meeting after the kickoff and recording what it changed                                        |
+| [Planning and tracking](guides/planning-and-tracking.md)                   | The threshold of success, the plan and its releases, milestones, risks, and progress monitoring          |
+| [Quality and architecture](guides/quality-and-architecture.md)             | Quality expectations, the requirements, the drivers, the architectural decision records, and the indexes |
 
 ## Course Documents
 
@@ -102,4 +111,4 @@ Detailed content goes in dedicated files that the report links.
 Your repository is public and MIT-licensed.
 The Moodle submission is a PDF that points at it: a permalink to your week report at the exact commit you submitted, a permalink to the repository at that commit, the private material that must not be public, and a zip snapshot of that commit.
 
-One submission per team, due Thursday 23:59.
+One submission per team, due Saturday 23:59.
