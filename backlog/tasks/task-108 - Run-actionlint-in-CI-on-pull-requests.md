@@ -4,6 +4,7 @@ title: Run actionlint in CI on pull requests
 status: To Do
 assignee: []
 created_date: '2026-10-11 14:06'
+updated_date: '2026-10-18 15:40'
 labels: []
 dependencies: []
 ordinal: 104000
@@ -33,3 +34,9 @@ TASK-107 adds actionlint and shellcheck to the dev shell and documents running `
 - [ ] #6 `pnpm run check:links` passes
 - [ ] #7 Implementation notes record the decisions made and the validation results
 <!-- DOD:END -->
+
+## Implementation Notes
+
+<!-- SECTION:NOTES:BEGIN -->
+Separate from the students' actionlint rule: `plan.md` adds `actionlint` to the Week 4 product-code CI block in `requirements/repository-requirements.md`, which constrains the teams' repositories. This task adds it to this course repository's own CI. The two are carried by different files and neither closes the other.
+<!-- SECTION:NOTES:END -->
