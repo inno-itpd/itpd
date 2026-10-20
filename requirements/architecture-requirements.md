@@ -9,9 +9,10 @@ How the `ADR-nnn`, `FR-nnn`, and `QR-nn` identifiers are issued and cited is in 
 
 - [Where The Architecture Lives](#where-the-architecture-lives)
 - [Drivers](#drivers)
-- [Container View](#container-view)
-- [Container Responsibilities](#container-responsibilities)
-- [Diagrams And Legends](#diagrams-and-legends)
+- [Containers](#containers)
+  - [Container View](#container-view)
+  - [Container Responsibilities](#container-responsibilities)
+  - [Diagrams And Legends](#diagrams-and-legends)
 - [Architecturally Significant Requirements](#architecturally-significant-requirements)
 - [Architectural Decisions](#architectural-decisions)
 - [Full Example](#full-example)
@@ -80,7 +81,9 @@ The four entries in `docs/architecture/README.md` of the meeting-booking example
 - **Quality requirements:** the [quality requirements index](../quality-requirements/README.md) holds the quality the architecture must meet, and it is also the priority matrix.
 ```
 
-## Container View
+## Containers
+
+### Container View
 
 **Since: W4**
 
@@ -116,7 +119,7 @@ The product runs as the containers below, and [`ADR-005`](adr/ADR-005.md) decide
 ![Container view](container.svg)
 ```
 
-## Container Responsibilities
+### Container Responsibilities
 
 **Since: W4**
 
@@ -156,7 +159,7 @@ The responsibilities of the containers in the [full example](#full-example):
 | `database` | Stores the bookings, the holds, and their state; stores the meeting links and the references to the materials                                             |
 ```
 
-## Diagrams And Legends
+### Diagrams And Legends
 
 **Since: W4**
 
