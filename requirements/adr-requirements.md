@@ -45,16 +45,16 @@ The record follows the [MADR 4](https://adr.github.io/madr/) shape in the `itpd`
 1. The heading is `# ADR-nnn: Title`, and the title is short enough to recognise the record in the ADR index.
 2. The fields follow the heading as a bulleted list, in this order, per [Identifier Rules](general-requirements.md#identifier-rules) rule 9:
 
-   | Field                | What it says                                                                                                                                                      |
-   | -------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-   | `**Status:**`        | One of `Proposed`, `Accepted`, `Superseded`, `Deprecated`, or `Dropped`, in the meanings below                                                                    |
-   | `**Superseded by:**` | Only on a superseded record: the `ADR-nnn` that replaces it, linked                                                                                               |
-   | `**Dropped:**`       | Only on a dropped record: the date and the reason, in the form [Identifier Rules](general-requirements.md#identifier-rules) rule 11 gives                         |
-   | `**Created:**`       | The date the record was created                                                                                                                                   |
-   | `**Updated:**`       | The date of the last edit that left the decision as it was, because a changed decision is a new record that supersedes this one                                   |
-   | `**Containers:**`    | One or more container names, the C4 deployable units such as `frontend`, `static content`, or `backend`                                                           |
-   | `**Addresses:**`     | The requirements the record accounts for: one or more `FR-nnn` and `QR-nn`, each linked, with no relation word, per [What It Accounts For](#what-it-accounts-for) |
-   | `**Decision:**`      | The `DEC-nnn` whose choice the record documents, one or more, each linked, only when one exists, per [The Decision](decisions-requirements.md#the-decision)       |
+   | Field                | What it says                                                                                                                                                                                           |
+   | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+   | `**Status:**`        | One of `Proposed`, `Accepted`, `Superseded`, `Deprecated`, or `Dropped`, in the meanings below                                                                                                         |
+   | `**Superseded by:**` | Only on a superseded record: the `ADR-nnn` that replaces it, linked                                                                                                                                    |
+   | `**Dropped:**`       | Only on a dropped record: the date and the reason, in the form [Identifier Rules](general-requirements.md#identifier-rules) rule 11 gives                                                              |
+   | `**Created:**`       | The date the record was created                                                                                                                                                                        |
+   | `**Updated:**`       | The date of the last edit that left the decision as it was, because a changed decision is a new record that supersedes this one                                                                        |
+   | `**Containers:**`    | One or more container names from the architecture document's [container view](architecture-requirements.md#container-view), the C4 deployable units such as `frontend`, `static content`, or `backend` |
+   | `**Addresses:**`     | The requirements the record accounts for: one or more `FR-nnn` and `QR-nn`, each linked, with no relation word, per [What It Accounts For](#what-it-accounts-for)                                      |
+   | `**Decision:**`      | The `DEC-nnn` whose choice the record documents, one or more, each linked, only when one exists, per [The Decision](decisions-requirements.md#the-decision)                                            |
 
 3. The status values mean:
 
@@ -80,6 +80,8 @@ The record follows the [MADR 4](https://adr.github.io/madr/) shape in the `itpd`
    A record that accepts a quality attribute with no `QR-nn` is not ready, so the team either writes that requirement or changes the decision.
 9. The record carries the architectural, technology, or functional-behavior reasoning, and the `DEC-nnn` it names carries only what the customer decided.
    The stack is a record: it states the stack and justifies it, and it may cite the `DEC-nnn` that records the customer's mandate.
+10. The record that decides the stack and the container split names every container the [container view](architecture-requirements.md#container-view) lists, all of them, and the view's opening sentence links it.
+    A container added later is decided by a record that names it, and the table, the diagram, and that record change in one change.
 
 **Recommended**
 

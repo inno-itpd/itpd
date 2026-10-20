@@ -37,20 +37,20 @@ It is created in Week 4 in its final place and stays current, per [Where Artifac
 
 **Since: W4**
 
-The requirement states what the product does, and its fields say where it came from, where it lands, and whether it is still active.
+The requirement states what the product does, and its fields say where it came from, where it runs, and whether it is still active.
 The behavior and the criteria are the requirement itself; the fields are its record.
 
 **Required**
 
 1. The file carries these fields, in this order, as a bulleted list, per [Identifier Rules](general-requirements.md#identifier-rules):
 
-   | Field             | What it says                                                                                                                                                                       |
-   | ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-   | `**Status:**`     | `Active` or `Dropped`                                                                                                                                                              |
-   | `**Traces to:**`  | One or more origins and constraints, each linked, per rule 2                                                                                                                       |
-   | `**Containers:**` | One or more names of the C4 deployable units the behavior lands in, such as `frontend`, `static content`, or `backend`                                                             |
-   | `**Changed:**`    | Each change, recorded as a gap records one, per [Gap Analysis](research-requirements.md#gap-analysis), only when it changed                                                        |
-   | `**Dropped:**`    | Only on a dropped requirement: the date, the reason, and the `DEC-nnn` or `ADR-nnn` that caused it, when one did, per [Identifier Rules](general-requirements.md#identifier-rules) |
+   | Field             | What it says                                                                                                                                                                                                          |
+   | ----------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+   | `**Status:**`     | `Active` or `Dropped`                                                                                                                                                                                                 |
+   | `**Traces to:**`  | One or more origins and constraints, each linked, per rule 2                                                                                                                                                          |
+   | `**Containers:**` | One or more names of the C4 deployable units the behavior runs in, from the architecture document's [container view](architecture-requirements.md#container-view), such as `frontend`, `static content`, or `backend` |
+   | `**Changed:**`    | Each change, recorded as a gap records one, per [Gap Analysis](research-requirements.md#gap-analysis), only when it changed                                                                                           |
+   | `**Dropped:**`    | Only on a dropped requirement: the date, the reason, and the `DEC-nnn` or `ADR-nnn` that caused it, when one did, per [Identifier Rules](general-requirements.md#identifier-rules)                                    |
 
 2. `**Traces to:**` is provenance and constraint: one or more entries recording where the requirement came from and what limits it, each linked.
    The `US-nn`, `DEC-nnn`, `CON-nn`, or meeting report that produced it is an origin, the `ADR-nnn` that constrains it is a constraint, and at least one entry is required.
@@ -64,6 +64,8 @@ The behavior and the criteria are the requirement itself; the fields are its rec
    A need the customer has not seen is a story first, because a requirement that invents one decides for the customer.
 6. A requirement that changed without dropping records each change under `**Changed:**` as a gap records one, per [Gap Analysis](research-requirements.md#gap-analysis).
 7. A dropped requirement keeps its file, its title, and its `### AC-nn` sections, so every anchor still resolves; its `**Status:**` becomes `Dropped`, and its `**Dropped:**` field gives the date and the reason, citing the `DEC-nnn` or `ADR-nnn` when one caused the drop, per [Identifier Rules](general-requirements.md#identifier-rules).
+8. Each name in `**Containers:**` is a container the [container view](architecture-requirements.md#container-view) lists, spelled as the view spells it.
+   It names the containers the behavior runs in, not every container the behavior touches, because a store the requirement writes to is not where the behavior runs.
 
 **Recommended**
 
@@ -149,7 +151,7 @@ Given a held slot whose payment has not settled, when the hold expires, then the
 **Since: W4**
 
 `docs/functional-requirements/README.md` is the group's entry point and its one index.
-It lists each requirement with the containers it lands in and whether it is still active, and the architecture document links it as the functional-requirement driver group, per [Drivers](architecture-requirements.md#drivers).
+It lists each requirement with the containers it runs in and whether it is still active, and the architecture document links it as the functional-requirement driver group, per [Drivers](architecture-requirements.md#drivers).
 
 **Required**
 

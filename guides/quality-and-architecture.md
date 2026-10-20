@@ -2,7 +2,7 @@
 
 How to find what the stakeholders expect of the product, write it as quality and functional requirements, and document the architecture and the decisions that answer it.
 
-This week the product gets quality requirements, functional requirements, a documented architecture, and the architectural decision records behind it.
+This week the product gets quality requirements, functional requirements, a container view, a documented architecture, and the architectural decision records behind it.
 The rules are in [Quality Requirement Requirements](../requirements/quality-requirements-requirements.md), [Functional Requirement Requirements](../requirements/functional-requirements-requirements.md), [Architecture Requirements](../requirements/architecture-requirements.md), and [ADR Requirements](../requirements/adr-requirements.md), and the glossary is in [Glossary Requirements](../requirements/glossary-requirements.md).
 This guide is the method: finding the quality expectations, writing each one so a reviewer can fail it, and keeping the links between the requirements, the drivers, and the decisions pointing one way.
 
@@ -29,6 +29,7 @@ The requirements are cheapest to change now, before a test or a decision rests o
   - [Let The Index Sort, Not The Rating](#let-the-index-sort-not-the-rating)
 - [Step 4: Write The Functional Requirements](#step-4-write-the-functional-requirements)
   - [Start From The Behavior A Story Needs](#start-from-the-behavior-a-story-needs)
+  - [Draw The Container View](#draw-the-container-view)
   - [Name The Containers](#name-the-containers)
   - [Record Where It Came From](#record-where-it-came-from)
   - [Write Shall Statements](#write-shall-statements)
@@ -57,7 +58,7 @@ The requirements are cheapest to change now, before a test or a decision rests o
 
 - `docs/quality-requirements/`, with `qr/` for the records and `README.md` for the index: the testable quality requirements and the priority matrix that orders them, per [Quality Requirement Requirements](../requirements/quality-requirements-requirements.md).
 - `docs/functional-requirements/`, with `fr/` for the records and `README.md` for the index: the behavior the product must have, written so a reviewer can check it without opening a story, per [Functional Requirement Requirements](../requirements/functional-requirements-requirements.md).
-- `docs/architecture/README.md`: the drivers that shape the architecture and the ADR index, per [Architecture Requirements](../requirements/architecture-requirements.md).
+- `docs/architecture/README.md`: the container view with its responsibilities, the drivers that shape the architecture, and the ADR index, per [Architecture Requirements](../requirements/architecture-requirements.md).
 - `docs/architecture/adr/`: one record per decision, with the options it turned down and the requirements it accounts for, per [ADR Requirements](../requirements/adr-requirements.md).
 - `docs/glossary.md`: the project's own terms, each defined once, per [Where The Glossary Lives](../requirements/glossary-requirements.md#where-the-glossary-lives) and [The Term](../requirements/glossary-requirements.md#the-term).
 
@@ -226,11 +227,27 @@ One FR may serve several stories and one story may need several FRs, because the
 
 Start from the stories the sprint is about to build, and add the closed stories whose behavior the product already has: the index is the product's behavior, not the sprint's.
 
+### Draw The Container View
+
+Start with what the product actually runs as, because the FRs and the ADRs both name these units and neither can name a unit the team has not settled.
+A **container** is a deployable unit: the frontend, the static site, the backend, the database, the worker, or the rented storage.
+Write down what you deploy or rent today rather than what you plan to split into later, and count a managed database or a serverless function as a unit because the team still deploys to it.
+
+Draw the units and the external systems they call, label each box with its technology, and label each arrow with what crosses it.
+Then write `### Container Responsibilities` with one row per box: what the unit does in two to five clauses, and the data it owns.
+The table is where a new member looks to decide where a change goes, so write it for them rather than for the diagram.
+
+Link the record that decides the split and the stack, because the picture says what the system is and the record says why.
+If the record does not exist yet, add the link when it does; the view is not finished until the link is there.
+
+Two traps: a box per code module turns the view into a component view without the discipline, and a box nothing deploys is a plan rather than part of the product.
+If the product genuinely runs as one unit, say that in one sentence and keep the single box, rather than splitting it to reach a count.
+
 ### Name The Containers
 
-`**Containers:**` names the deployable units the behavior lands in, such as `frontend`, `backend`, or `static content`.
-The list is the first sketch of the architecture, because a behavior that runs in two containers is a behavior with a call between them.
-Name what the behavior needs rather than every container in the system: an FR whose containers are all of them says nothing about where the work goes.
+`**Containers:**` names the containers the behavior runs in, and the names come from the container view, spelled as the view spells them.
+The field is per behavior, so it names the one or two units that carry that behavior, not every container the behavior touches: a booking whose request runs in the backend and whose row is stored in the database runs in `backend`, because the database does not run the behavior.
+A behavior that needs two units is a behavior with a call between them, which is what the component and sequence views in Week 5 show.
 
 ### Record Where It Came From
 
@@ -430,6 +447,12 @@ A trace section or a matrix table would be a second copy of those facts, and it 
   It sorts nothing, and the first row is a coin toss; rate the value and the difficulty separately, so the order means something.
 - **A functional requirement that is the story again.**
   If the FR repeats the story's three lines, the team maintains the same fact twice; write the behavior the story left open, not the need again.
+- **A container view that is a module diagram.**
+  A box per service, folder, or layer names the code's parts rather than the units the team deploys; each box should be something the team can start, host, or rent.
+- **Responsibilities that are a feature list.**
+  "Supports login, bookings, and payments" says what the product does, not what the unit is for; name the job the unit carries and the data it owns.
+- **A container nothing names.**
+  A box no functional requirement runs in, and that stores nothing those requirements use, is a plan for a later week rather than part of the product.
 - **A drivers section that lists the requirements.**
   Naming a `TOS-nn` or a `QR-nn` there puts a second copy of a fact the threshold or the index owns; link each group once and leave the names to the ADR index.
 - **An ADR with one option and no consequences.**

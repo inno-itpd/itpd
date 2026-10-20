@@ -160,7 +160,7 @@ From Week 4 to Week 9 every submission is due on Saturday at 23:59, with no soft
 - **Objectives**:
   - Turn the quality attributes into testable quality requirements, prioritized in one matrix.
   - Write the functional requirements behind the stories, with their behavior and their own criteria.
-  - Document the architecture: the drivers it links, the architectural decision records, and the ADR index.
+  - Document the architecture: the container view and its responsibilities, the drivers it links, the architectural decision records, and the ADR index.
   - Plan the sprint, refine its backlog, and estimate its stories.
   - Fix the project's words in a glossary, and tell a coding agent how the repository works.
   - Cut the sprint's release, `REL-04`.
@@ -169,7 +169,7 @@ From Week 4 to Week 9 every submission is due on Saturday at 23:59, with no soft
     1. **Sprint plan and estimates**: `docs/project-plan.md#sprint-04`, with its goal, its planned velocity, and its actual velocity.
     2. **Quality requirements**: `docs/quality-requirements/` with `qr/`, and `README.md` as the priority matrix.
     3. **Functional requirements**: `docs/functional-requirements/` with `fr/`, and `README.md` as the index.
-    4. **Architecture and drivers**: `docs/architecture/README.md`, with the drivers it links and the ADR index.
+    4. **Architecture**: `docs/architecture/README.md`, with the container view and its responsibilities, the drivers it links, and the ADR index.
     5. **Architectural decision records**: `docs/architecture/adr/` and the ADR index.
     6. **Glossary and the team's `AGENTS.md`**: `docs/glossary.md` and `AGENTS.md`.
     7. **Sprint retrospective**: `reports/week-04/sprint-retrospective.md`.
