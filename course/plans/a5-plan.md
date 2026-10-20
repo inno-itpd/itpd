@@ -50,7 +50,7 @@ One rule is new rather than moved: `adr-requirements.md` gains the `**Since: W5*
 The boundary between the two plans:
 
 - Assignment 4 keeps the architecture document: `docs/architecture/README.md` links the drivers, holds the container view with its responsibilities and the diagram conventions, holds the ADR index, and links the product vision for the scope it serves, and the links themselves are the chain, so no document restates it.
-- Assignment 4 introduces `**Containers:**` on the FR and ADR records, naming the C4 deployable units from its container view; this plan adds the two views that build on it.
+- Assignment 4 introduces `**Containers:**` on the FR and ADR records, naming the C4 containers from its container view; this plan adds the two views that build on it.
 - The context diagram stays where Week 2 put it, under `## System Context` in `docs/product-vision.md`.
   It is the one C4 view the project has before this work, and its rules are the Week 2 rules, which did not move.
 - Assignment 4's drivers section and ADR index point at where the chain's facts are recorded, per [Traceability Into Later Weeks](../../requirements/general-requirements.md#traceability-into-later-weeks).

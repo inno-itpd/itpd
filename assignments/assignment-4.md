@@ -46,7 +46,7 @@ By the end of this week you should be able to show a reader:
 
 - The product's quality expectations, each as an ISO/IEC 25010:2023 pair and a six-part quality attribute scenario a reviewer could fail.
 - The quality requirements index as the priority matrix, sorted by value to the customer and by the technical risk of achieving and testing them.
-- The container view: the units the product runs as, their technologies, what each one does, and the record that decides the split.
+- The container view: the applications and data stores the product runs as, their technologies, what each one does, and the record that decides the split.
 - The functional requirements behind the stories: the behavior, the containers it runs in, where it came from, and its own acceptance criteria.
 - An architecture document that links the drivers to the sections and files that hold them, and an ADR index that maps each record to the drivers it answers.
 - The architectural decision records themselves: the context, the options turned down, the outcome, and the quality attributes they accept with the requirement that covers each.
@@ -105,7 +105,7 @@ The method is in [Step 1: Find The Quality Expectations](../guides/quality-and-a
 The rules:
 
 - `docs/architecture/README.md` is one document, with `## Container View` and `### Container Responsibilities` inside it: [Where The Architecture Lives](../requirements/architecture-requirements.md#where-the-architecture-lives), [Container View](../requirements/architecture-requirements.md#container-view), and [Container Responsibilities](../requirements/architecture-requirements.md#container-responsibilities).
-- The view shows at least two containers, each a unit the team deploys or rents, labelled with its technology, and the external systems it calls: [Container View](../requirements/architecture-requirements.md#container-view).
+- The view shows at least two containers, each an application or a data store the team deploys or rents, labelled with its technology, and the external systems it calls: [Container View](../requirements/architecture-requirements.md#container-view).
 - The responsibilities table has one row per container, with two to five responsibilities each, and at least one says what data or state the container owns: [Container Responsibilities](../requirements/architecture-requirements.md#container-responsibilities).
 - Every diagram carries a legend, labels each arrow with what crosses it, and is committed as an image with its source beside it: [Diagrams And Legends](../requirements/architecture-requirements.md#diagrams-and-legends).
 - The record that decides the stack and the split names every container the view lists: [The Record](../requirements/adr-requirements.md#the-record).
@@ -114,8 +114,8 @@ The rules:
 This week:
 
 1. Open `docs/architecture/README.md` with one sentence that links `docs/product-vision.md` as the scope it serves, then add `## Container View`.
-2. Decide the containers: what you deploy or rent, its technology, and the external systems it calls.
-   A product that genuinely runs as one unit says so in one sentence instead of splitting itself.
+2. Decide the containers: each application or data store you deploy or rent, its technology, and the external systems it calls.
+   A product that genuinely runs as one container says so in one sentence instead of splitting itself.
 3. Commit the diagram at `docs/architecture/container.<ext>` with its source beside it, embed it in the section, and add `## Diagrams And Legends` with the legend, the tool, and each image's source.
 4. Add `### Container Responsibilities` with one row per container, two to five responsibilities each, one of them the data or state the container owns.
 5. Add the link to the record that decides the split and the stack in [Part 6](#part-6-record-the-architectural-decisions-and-their-index), once that record exists.
@@ -302,7 +302,7 @@ A strong submission has:
 - **A priority matrix that sorts.**
   Not everything is `High`, and the mandated testability requirement is `High` with the reason the rule gives: the instructors are stakeholders, and the course is part of the business.
 - **A container view a reader could deploy from.**
-  Each box is a unit the team hosts or rents, labelled with its technology, and the responsibilities table says what each one is for and what data it owns; the view links the record that decides the split.
+  Each box is an application or a data store the team hosts or rents, labelled with its technology, and the responsibilities table says what each one is for and what data it owns; the view links the record that decides the split.
 - **Functional requirements a reviewer can check without opening a story.**
   Each has its `shall` statements, its containers, and its own criteria, and its `**Traces to:**` names where it came from and what limits it.
 - **A story that names its specification.**

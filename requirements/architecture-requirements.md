@@ -29,7 +29,7 @@ The architecture document records what the software system is made of, and it po
 2. It opens with one sentence that links `docs/product-vision.md` as the scope it serves, and then carries these parts, in this order:
 
    - `## Drivers`, per [Drivers](#drivers): the four groups of requirements that drive the architecture.
-   - `## Container View`, per [Container View](#container-view): the units the product runs as, with `### Container Responsibilities` beneath it, per [Container Responsibilities](#container-responsibilities).
+   - `## Container View`, per [Container View](#container-view): the applications and data stores the product runs as, with `### Container Responsibilities` beneath it, per [Container Responsibilities](#container-responsibilities).
    - `## Diagrams And Legends`, per [Diagrams And Legends](#diagrams-and-legends): the legend and the conventions every diagram in the document follows.
    - `## Architectural Decisions`, per [Architectural Decisions](#architectural-decisions): the ADR index.
 
@@ -84,7 +84,10 @@ The four entries in `docs/architecture/README.md` of the meeting-booking example
 
 **Since: W4**
 
-The **container view** is the picture of what the product is made of: the deployable units it runs as, their technology, and the external systems they exchange data with.
+The **container view** is the picture of what the product is made of: its **containers**, the applications and data stores it runs as, their technology, and the external systems they exchange data with.
+A **container** is C4's abstraction: an application or a data store that has to be running for the product to work.
+[https://c4model.com/abstractions/container](https://c4model.com/abstractions/container) defines it as a runtime boundary rather than a Docker container.
+A JAR, a DLL, or a module organises the code inside a container rather than being one.
 It is the first view of the product's own structure, and the component and sequence views Week 5 adds build on it.
 
 **Required**
@@ -92,8 +95,8 @@ It is the first view of the product's own structure, and the component and seque
 1. `## Container View` opens with one sentence that links the record that decides the stack and the container split, per [The Record](adr-requirements.md#the-record), such as "the product runs as the containers below, and `ADR-005` decides that split and the stack it runs on".
 2. Below the sentence, the diagram is embedded as an image, per [Diagrams And Legends](#diagrams-and-legends).
 3. The diagram shows every container and every external system a container exchanges data with, and no external actor, which the vision's [System Context](product-vision-requirements.md#system-context) already shows.
-4. The diagram shows at least two containers, each one a unit the team deploys or rents, such as an application, a static site, or a database.
-   A product that genuinely runs as one unit says so in the section's opening sentence, in place of the count.
+4. The diagram shows at least two containers, each one an application or a data store the team deploys or rents, such as a web frontend, a backend service, or a database.
+   A product that genuinely runs as one container says so in the section's opening sentence, in place of the count.
 5. Each container's label names the container and its technology, such as `backend (Node.js)`.
 6. The diagram shows exactly the rows of [Container Responsibilities](#container-responsibilities), with the same names and the same spelling.
 7. The section is a view and not a decision: the reason for the split and the stack stays in the record it links, per [What It Accounts For](adr-requirements.md#what-it-accounts-for).
@@ -101,7 +104,7 @@ It is the first view of the product's own structure, and the component and seque
 **Recommended**
 
 - Draw the containers in the order a request travels, from the container the customer uses to the store it reaches.
-- Keep one box per unit the team can point at in its hosting, its `compose` file, or its deployment README, rather than one box per module it plans.
+- Keep one box per container the team can point at in its hosting, its `compose` file, or its deployment README, rather than one box per module it plans.
 
 **Example**
 

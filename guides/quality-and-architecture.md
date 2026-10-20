@@ -229,25 +229,27 @@ Start from the stories the sprint is about to build, and add the closed stories 
 
 ### Draw The Container View
 
-Start with what the product actually runs as, because the FRs and the ADRs both name these units and neither can name a unit the team has not settled.
-A **container** is a deployable unit: the frontend, the static site, the backend, the database, the worker, or the rented storage.
-Write down what you deploy or rent today rather than what you plan to split into later, and count a managed database or a serverless function as a unit because the team still deploys to it.
+Start with what the product actually runs as, because the FRs and the ADRs both name these containers and neither can name one the team has not settled.
+A **container** is C4's abstraction: an application or a data store, something that has to be running for the product to work, such as the frontend, the static site, the backend, the database, the worker, or the rented storage.
+C4 defines it at [https://c4model.com/abstractions/container](https://c4model.com/abstractions/container): a runtime boundary around code that runs or data that is stored.
+The word does not mean a Docker container, and a JAR, a DLL, or a module organises the code inside a container rather than being one.
+Write down what you deploy or rent today rather than what you plan to split into later, and count a managed database or a serverless function as a container, because the team still deploys to it and owns what it stores.
 
-Draw the units and the external systems they call, label each box with its technology, and label each arrow with what crosses it.
-Then write `### Container Responsibilities` with one row per box: what the unit does in two to five clauses, and the data it owns.
+Draw the containers and the external systems they call, label each box with its technology, and label each arrow with what crosses it.
+Then write `### Container Responsibilities` with one row per box: what the container does in two to five clauses, and the data it owns.
 The table is where a new member looks to decide where a change goes, so write it for them rather than for the diagram.
 
 Link the record that decides the split and the stack, because the picture says what the system is and the record says why.
 If the record does not exist yet, add the link when it does; the view is not finished until the link is there.
 
 Two traps: a box per code module turns the view into a component view without the discipline, and a box nothing deploys is a plan rather than part of the product.
-If the product genuinely runs as one unit, say that in one sentence and keep the single box, rather than splitting it to reach a count.
+If the product genuinely runs as one container, say that in one sentence and keep the single box, rather than splitting it to reach a count.
 
 ### Name The Containers
 
 `**Containers:**` names the containers the behavior runs in, and the names come from the container view, spelled as the view spells them.
-The field is per behavior, so it names the one or two units that carry that behavior, not every container the behavior touches: a booking whose request runs in the backend and whose row is stored in the database runs in `backend`, because the database does not run the behavior.
-A behavior that needs two units is a behavior with a call between them, which is what the component and sequence views in Week 5 show.
+The field is per behavior, so it names the one or two containers that carry that behavior, not every container the behavior touches: a booking whose request runs in the backend and whose row is stored in the database runs in `backend`, because the database does not run the behavior.
+A behavior that needs two containers is a behavior with a call between them, which is what the component and sequence views in Week 5 show.
 
 ### Record Where It Came From
 
@@ -448,9 +450,9 @@ A trace section or a matrix table would be a second copy of those facts, and it 
 - **A functional requirement that is the story again.**
   If the FR repeats the story's three lines, the team maintains the same fact twice; write the behavior the story left open, not the need again.
 - **A container view that is a module diagram.**
-  A box per service, folder, or layer names the code's parts rather than the units the team deploys; each box should be something the team can start, host, or rent.
+  A box per service, folder, or layer names the code's parts rather than the containers that have to be running; each box should be an application or a data store the team deploys or rents.
 - **Responsibilities that are a feature list.**
-  "Supports login, bookings, and payments" says what the product does, not what the unit is for; name the job the unit carries and the data it owns.
+  "Supports login, bookings, and payments" says what the product does, not what the container is for; name the job the container carries and the data it owns.
 - **A container nothing names.**
   A box no functional requirement runs in, and that stores nothing those requirements use, is a plan for a later week rather than part of the product.
 - **A drivers section that lists the requirements.**

@@ -44,13 +44,13 @@ The behavior and the criteria are the requirement itself; the fields are its rec
 
 1. The file carries these fields, in this order, as a bulleted list, per [Identifier Rules](general-requirements.md#identifier-rules):
 
-   | Field             | What it says                                                                                                                                                                                                          |
-   | ----------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-   | `**Status:**`     | `Active` or `Dropped`                                                                                                                                                                                                 |
-   | `**Traces to:**`  | One or more origins and constraints, each linked, per rule 2                                                                                                                                                          |
-   | `**Containers:**` | One or more names of the C4 deployable units the behavior runs in, from the architecture document's [container view](architecture-requirements.md#container-view), such as `frontend`, `static content`, or `backend` |
-   | `**Changed:**`    | Each change, recorded as a gap records one, per [Gap Analysis](research-requirements.md#gap-analysis), only when it changed                                                                                           |
-   | `**Dropped:**`    | Only on a dropped requirement: the date, the reason, and the `DEC-nnn` or `ADR-nnn` that caused it, when one did, per [Identifier Rules](general-requirements.md#identifier-rules)                                    |
+   | Field             | What it says                                                                                                                                                                                                    |
+   | ----------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+   | `**Status:**`     | `Active` or `Dropped`                                                                                                                                                                                           |
+   | `**Traces to:**`  | One or more origins and constraints, each linked, per rule 2                                                                                                                                                    |
+   | `**Containers:**` | One or more names of the C4 containers the behavior runs in, from the architecture document's [container view](architecture-requirements.md#container-view), such as `frontend`, `static content`, or `backend` |
+   | `**Changed:**`    | Each change, recorded as a gap records one, per [Gap Analysis](research-requirements.md#gap-analysis), only when it changed                                                                                     |
+   | `**Dropped:**`    | Only on a dropped requirement: the date, the reason, and the `DEC-nnn` or `ADR-nnn` that caused it, when one did, per [Identifier Rules](general-requirements.md#identifier-rules)                              |
 
 2. `**Traces to:**` is provenance and constraint: one or more entries recording where the requirement came from and what limits it, each linked.
    The `US-nn`, `DEC-nnn`, `CON-nn`, or meeting report that produced it is an origin, the `ADR-nnn` that constrains it is a constraint, and at least one entry is required.

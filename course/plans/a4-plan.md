@@ -91,7 +91,7 @@ The model has three record families and one index per group.
   It carries no trace section, and no artifact restates the chain: the links themselves are the trace, from a task's `### Requirements` through the FR and the ADR to the `TOS-nn` behind it.
   The drivers section points at the sections and files that hold the drivers, so the architecture document restates no goal, constraint, or requirement.
   The goal, stakeholders, boundary, constraints, and system context stay in `docs/product-vision.md`, and the context diagram stays embedded there.
-  The component and sequence views are Assignment 5's, added as their own parts after the container view; the container view, its responsibilities, and the diagram rules are Week 4's, so Week 4 shows what drives the architecture and the units it runs as before Week 5 adds the two views.
+  The component and sequence views are Assignment 5's, added as their own parts after the container view; the container view, its responsibilities, and the diagram rules are Week 4's, so Week 4 shows what drives the architecture and the containers it runs as before Week 5 adds the two views.
 - **The product vision.**
   The vision keeps every part it has: `## Goal`, `## Stakeholders`, `## Constraints`, `## Boundary`, and `## System Context` with its embedded diagram.
   From Week 4 it links `docs/architecture/README.md` as a whole, so the two documents point at each other and neither copies the other.
@@ -189,7 +189,7 @@ All new files are flat in `requirements/`, carry `**Since: W4**` markers, a ToC,
 - The FR's fields, in this order:
   - `**Status:**`, `Active` or `Dropped`;
   - `**Traces to:**`, one or more entries recording where the requirement came from and what constrains it: the `US-nn`, `DEC-nnn`, `CON-nn`, or meeting report that produced it, and the `ADR-nnn` that constrains it, each linked; at least one entry;
-  - `**Containers:**`, one or more container names from the container view, the C4 deployable units such as `frontend`, `static content`, or `backend`;
+  - `**Containers:**`, one or more container names from the container view, the C4 containers such as `frontend`, `static content`, or `backend`;
   - `**Changed:**`, each change, recorded as a gap records one, only when it changed;
   - `**Dropped:**`, the date, the reason, and the `DEC-nnn` or `ADR-nnn` when one caused it.
 - `**Traces to:**` is provenance and constraint.
@@ -258,7 +258,7 @@ All new files are flat in `requirements/`, carry `**Since: W4**` markers, a ToC,
   - `**Superseded by:**`, only on a superseded record, the `ADR-nnn` linked;
   - `**Dropped:**`, only on a dropped record, the date and the reason;
   - `**Created:**` and `**Updated:**`, where `**Updated:**` changes only when an edit leaves the decision as it was, because a changed decision is a new record that supersedes;
-  - `**Containers:**`, one or more container names from the container view, the C4 deployable units;
+  - `**Containers:**`, one or more container names from the container view, the C4 containers;
   - `**Addresses:**`, the ASRs the record accounts for, one or more `FR-nnn` and `QR-nn` links; at least one, and no relation word;
   - `**Decision:**`, the `DEC-nnn` whose choice the record documents, one or more, each linked, only when one exists.
 - The body sections are `## Context`, `## Considered Options`, `## Decision Outcome`, and `## Consequences`.
@@ -583,7 +583,7 @@ These are repository content rather than artifacts, per [Where Artifacts Live In
   The Week 2 assignment stays historical, so the Week 4 assignment adds the architecture link and moves nothing.
 - The ASR is not a field: the ADR `**Addresses:**` list is the set of ASRs, and the FR `**Traces to:**` names the ADRs that constrain it; the reverse lookup is a search of the ADR lists.
 - The stack is an ADR that cites the customer's `DEC-nnn`; the existing `DEC` is not migrated, `A3-DEC-014` is reversed in full by an `A4-DEC` that restates its stack, `.gitignore`, and Dependabot clauses, and `A3-DEC-022` is reversed by another, which adds the task's and the story's hops without producing a trace document.
-- ISO/IEC 25010:2023 is the standard cited, with the course's Title Case labels and the link `https://iso25000.com/en/iso-25000-standards/iso-25010`; the Scrum Guide is the ceremony method; and a container is C4's deployable unit, with the container view in Week 4 and the component and sequence views in Week 5.
+- ISO/IEC 25010:2023 is the standard cited, with the course's Title Case labels and the link `https://iso25000.com/en/iso-25000-standards/iso-25010`; the Scrum Guide is the ceremony method; and a container is C4's application or data store, with the container view in Week 4 and the component and sequence views in Week 5.
 - The lecture stays as built, and its commented-out Scrum slides are not uncommented here.
 - Week 4 adds no CI check: the product-code CI's marker moves to Week 5, and `actionlint` and the product-code CI are Assignment 5's.
 - The team schedules the customer meeting, which may fall on Friday; the meeting is the Sprint Review.
