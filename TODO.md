@@ -5,6 +5,12 @@
 - [ ] add decision-log.md - which important decisions we made?
 - [ ] assignment-plan.md (partly covered by the `docs/` destination map in `itpd/AGENTS.md`)
 - [ ] move Markdown formatters to external repo to just reuse them here (e.g. in time-tools)
+- [ ] Design rules for assignments
+  - One clear option to do things.
+  - Issue field >> issue label
+- [ ] Identifier format
+  - for ACs: US-01-AC-01
+  - for QRs: QR-01-QRT-01
 
 ## A1
 
@@ -50,10 +56,10 @@
   - named as `Recommended` in `## Tracking Tasks Inside The Repository`, not required
   - its files are declared repository content, not artifacts
 - [x] Linter in CI (students)
-  - Markdown check moved into W2, product code CI into W4
+  - Markdown check moved into W2, product code CI into W5
 - [x] context diagram - https://c4model.com/diagrams/system-context
   - required in W2, format deliberately not mandated
-  - C4 continues in W4 with containers and components
+  - C4 continues in W5 with the container, component, and sequence views
 - [x] Use sentence case in titles
   - not done, and should not be: every H2 in `guides/` and `assignments/` is Title Case
   - `AGENTS.md` said sentence case and was wrong; corrected to Title Case
@@ -140,8 +146,11 @@
 - [x] Move "Minimum Usable Product Candidate" to another doc from user-stories-requirements
 - [x] lychee
 - [x] using this repo as an agent skill
+- [ ] provide checkboxes for acceptance criteria in user stories
 - [ ] require actionlint on their side
+  - moves to Week 5 with the product-code CI, per `course/plans/a5-plan.md`
 - [ ] avoid migrations in the assignment ("one-time catch-up")
+  - Annotated rather than ticked: the Week 4 catch-up is the deliberate exception, recorded once in `course/decisions/a4.md`, so no issue carries a change comment for it.
   - Example:
 - [ ] Improve lecture 2:
   - [ ] Remind what a gap and a value proposition are (bridge-in)
@@ -153,10 +162,12 @@
   - [ ] Introduce separate issue types for US and Tasks
   - [ ] MoSCoW must be issue fields on US
   - [ ] Tasks must have priority
-- [] Replace the acceptance criteria slide
+- [ ] Replace the acceptance criteria slide
   - See Lab 3 from SWP-26
   - Improve wording
   - Add AC examples
+- [ ] Store user stories in a file and provide a table as an index.
+  - So that later, only tasks are in a backlog?
 
 ## A3
 
@@ -223,7 +234,7 @@ Next: Week 3 is planning and the minimum usable product, and it has no assignmen
 ## A4
 
 - [ ] https://github.com/inno-itpd/itpd/actions/runs/38108934047/job/114380240234
-- [ ] Lecture:
+- [x] Lecture: skipped, because the Week 4 deck is compiled and already covers the quality material
   - Last week, you built something and you were not required to automatically check what you built
   - [ ] Ubiquitous language
   - [ ] Why automate quality assurance?
@@ -233,14 +244,14 @@ Next: Week 3 is planning and the minimum usable product, and it has no assignmen
     - the core scenario works so the product direction is viable
     - can work on a proper architecture to accommodate more scenarios
   - [ ] Intro to Scrum
-- [ ] Product-code CI (moved from Week 3):
-  - [ ] Assignment 4 cites the `Since: W4` block in `requirements/repository-requirements.md`
-  - [ ] The full example in `requirements/definition-of-done-requirements.md` gains the product-code CI
+- [ ] Product-code CI (moved from Week 3 to Week 5):
+  - [ ] Assignment 5 cites the `Since: W5` block in `requirements/repository-requirements.md`
+  - [ ] The full example in `requirements/definition-of-done-requirements.md` gains the product-code CI and `actionlint` in Week 5
 - [ ] Architecture and Agile
 - [ ] Functional requirements - specify sources (user stories, constraints, architecture, etc.)
 - quality requirements, no quality goals
-- Week 4 is quality and architecture, and it continues C4 from the W2 context diagram:
-  containers, then components.
+- Week 4 is quality and architecture; Week 5 continues C4 from the W2 context diagram:
+  containers, components, then a sequence view.
   The W2 deck says so on the vocabulary slide.
 - Source: `tmp/itpd-2025/lectures/lecture-2.2.pdf` carries ISO 25010, the Q42 model, and the six-part
   quality attribute scenario, plus the three ways to measure quality and the pass/fail argument for
@@ -251,18 +262,53 @@ Next: Week 3 is planning and the minimum usable product, and it has no assignmen
 - [x] Still keep user story issues to track added value?
       Or, fully switch to architecture and functional requirements issues?
       Keep them, FR and ADR can't capture the value
-- [ ] Assignment
-  - [ ] Introduce separate issue types for US and Tasks
-  - [ ] MoSCoW must be issue fields on US
-  - [ ] Tasks must have priority issue field
-  - [ ] In the report, ask questions about the setup (?):
-    - [ ] How does your setup help prevent free riding?
-    - [ ] How can you go from a line of code to a ToS goal
-  - [ ] Retrospective - what should be public?
-  - [ ] Prioritize QRs by technical risk and importance
+- [x] Assignment
+  - [x] Introduce separate issue types for US and Tasks
+    - The `User Story` and `Task` types replace the two labels, per `requirements/issue-tracking-requirements.md#issue-fields`.
+  - [x] MoSCoW must be issue fields on US
+    - The `MoSCoW` field replaces the four `moscow:*` labels.
+  - [x] Tasks must have priority issue field
+    - The `Priority` field orders a scheduled task.
+  - [x] In the report, ask questions about the setup (?): the free-riding question is removed, because the report is public and the contribution table is the evidence; the traceability question is dropped, because the chain is the links and no document restates it
+    - [x] How does your setup help prevent free riding?
+      - Removed: the report does not assess an individual.
+    - [x] How can you go from a line of code to a ToS goal
+      - Dropped with the report question.
+  - [x] Retrospective - what should be public?
+    - The retrospective is `reports/week-NN/sprint-retrospective.md`, a public file with its four sections.
+  - [x] Prioritize QRs by technical risk and importance
   - [ ] Feature issue type - for tracking progress of task issues?
-- [ ] Sequence diagrams
-  - [ ] Main actor flow
+    - Deferred: this work adds no feature issue type.
+  - [ ] Sequence diagrams (the sequence view is A5)
+    - [ ] Main actor flow
+  - [ ] At least one QR about testability mentioning critical modules (files with code)
+  - [x] AC in a user story - use checkboxes to track state
+    - The criteria are checkboxes, and the accountable member ticks one once it is verified.
+  - [x] User stories - reopen when a new related task appears
+  - [x] User story requirements - explain which "traces to" origins are allowed
+    - The allowed origins are the `GAP-nn` a story closes, the `DEC-nnn` of a decision, or an action point, and no other.
+  - [x] "Planned Velocity" and "Actual Velocity" fields for sprints
+  - [x] Explain that need to calculate manually because single-select can't be a number
+    - https://github.com/orgs/community/discussions/156904
+  - [x] glossary.md
+  - [ ] Where to track progress on qrt?
+  - [x] Technical risk - hard to achieve
+  - [ ] How to prioritize QRT?
+  - [ ] I think we should provide examples
+        https://github.com/otrebmuh/HotelPricingSystem/blob/433e061f712a8748fdf04a6f767752e12be2f4b9/Design/Architecture.md
+
+        https://github.com/otrebmuh/EventTicketSystem/blob/2a928d226d43704457ad5be46b1e6b80f5bca8cb/Design/Architecture.md#user-story-priorities
+
+        Also need to link
+        https://github.com/Alexey-Popov/awesome-ai-architect/blob/main/solution-architecture/quality-attributes.md
+
+  - [x] Drop ideal hours
+    - `course/plans/a4-plan.md`: no `Ideal Hours` field, and the sprint record carries velocity only
+
+## A5
+
+- story points from week 5
+- `course/plans/a5-plan.md` designs the QRTs, the testing plan, the container, component, and sequence views, and the CI checks
 
 ## A6
 
