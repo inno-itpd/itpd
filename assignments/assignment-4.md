@@ -332,8 +332,6 @@ This week it also carries:
 2. The customer-meeting outcome: each story shown and whether the customer accepted or rejected it, each citing its `DEC-nnn`.
 3. The coverage table, with these rows:
 
-<!-- TODO why sprint-05 and sprint-06 milestone issues if it's week 4? -->
-
 | Deliverable                | Artifact                                                                                              |
 | -------------------------- | ----------------------------------------------------------------------------------------------------- |
 | Sprint plan and estimates  | `docs/project-plan.md#sprint-04`, with its goal, its planned velocity, and its actual velocity        |
@@ -357,8 +355,8 @@ This week it also carries:
 
 If the customer refused publication of the transcript, that row says so and points at the Moodle submission instead.
 
-1. Repository evidence: one merged pull request that closed its task issue, and the latest green link-check and Markdown-check runs on `main`.
-2. `## Deviations`: anything you did differently from this assignment, per [Declaring Deviations](../requirements/weekly-report-requirements.md#declaring-deviations).
+4. Repository evidence: one merged pull request that closed its task issue, and the latest green link-check and Markdown-check runs on `main`.
+5. `## Deviations`: anything you did differently from this assignment, per [Declaring Deviations](../requirements/weekly-report-requirements.md#declaring-deviations).
 
 ## Assignment Report On Moodle
 
