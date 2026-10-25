@@ -35,11 +35,9 @@ The architecture document records what the software system is made of, and it po
    - `## Architectural Decisions`, per [Architectural Decisions](#architectural-decisions): the ADR index.
 
 3. It carries no trace section, because the chain from a story to the threshold of success is the links between the artifacts and no document restates it, per [Traceability Into Later Weeks](general-requirements.md#traceability-into-later-weeks).
-4. Week 5 adds `## Component View` and `## Sequence View` between `## Container View` and `## Diagrams And Legends`, so the final order is drivers, container, component, sequence, diagrams, and decisions.
-   [The Assignment 5 plan](../course/plans/a5-plan.md) says what those two views and their sources are.
-5. The goal, stakeholders, boundary, constraints, and system context stay in `docs/product-vision.md`, and the context diagram stays embedded there.
+4. The goal, stakeholders, boundary, constraints, and system context stay in `docs/product-vision.md`, and the context diagram stays embedded there.
    Week 4 moves no section, so a link to `docs/product-vision.md#constraints`, `#boundary`, or `#system-context` keeps resolving.
-6. The vision links `docs/architecture/README.md` as a whole, per [Where The Vision Lives](product-vision-requirements.md#where-the-vision-lives), so the two documents point at each other and neither copies the other.
+5. The vision links `docs/architecture/README.md` as a whole, per [Where The Vision Lives](product-vision-requirements.md#where-the-vision-lives), so the two documents point at each other and neither copies the other.
 
 **Recommended**
 
@@ -91,7 +89,7 @@ The **container view** is the picture of what the product is made of: its **cont
 A **container** is C4's abstraction: an application or a data store that has to be running for the product to work.
 [https://c4model.com/abstractions/container](https://c4model.com/abstractions/container) defines it as a runtime boundary rather than a Docker container.
 A JAR, a DLL, or a module organises the code inside a container rather than being one.
-It is the first view of the product's own structure, and the component and sequence views Week 5 adds build on it.
+It is the only view of the product's own structure the document carries, and the last view it gains: the context diagram stays in the vision and shows the environment, and this view shows what the product runs as.
 
 **Required**
 
@@ -174,7 +172,7 @@ The document puts its diagram conventions under `## Diagrams And Legends`, after
 3. Every arrow says what crosses it, such as a protocol, a request, or an event.
 4. Every element the document names in prose appears in a view, and the views agree with the document's text and with the vision's boundary.
 5. The tool is the team's choice.
-   [Structurizr](https://structurizr.com/), [LikeC4](https://github.com/likec4/likec4), and C4-PlantUML are recommended for the container, component, and sequence views, and Mermaid, PlantUML, D2, draw.io, and Excalidraw remain allowed.
+   [Structurizr](https://structurizr.com/), [LikeC4](https://github.com/likec4/likec4), and C4-PlantUML are recommended for the container view, and Mermaid, PlantUML, D2, draw.io, and Excalidraw remain allowed.
 6. The context diagram keeps its Week 2 rules under the vision's system context, and this section adds only the rules the views need and the context diagram does not.
 
 **Recommended**

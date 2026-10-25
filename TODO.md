@@ -59,7 +59,7 @@
   - Markdown check moved into W2, product code CI into W5
 - [x] context diagram - https://c4model.com/diagrams/system-context
   - required in W2, format deliberately not mandated
-  - C4 continues in W5 with the container, component, and sequence views
+  - C4 continues in W4 with the container view, and the course stops there: no component or sequence view
 - [x] Use sentence case in titles
   - not done, and should not be: every H2 in `guides/` and `assignments/` is Title Case
   - `AGENTS.md` said sentence case and was wrong; corrected to Title Case
@@ -250,9 +250,7 @@ Next: Week 3 is planning and the minimum usable product, and it has no assignmen
 - [ ] Architecture and Agile
 - [ ] Functional requirements - specify sources (user stories, constraints, architecture, etc.)
 - quality requirements, no quality goals
-- Week 4 is quality and architecture; Week 5 continues C4 from the W2 context diagram:
-  containers, components, then a sequence view.
-  The W2 deck says so on the vocabulary slide.
+- Week 4 is the container view; the C4 views are the W2 context view and the W4 container view, and the component and sequence views were dropped rather than deferred.
 - Source: `tmp/itpd-2025/lectures/lecture-2.2.pdf` carries ISO 25010, the Q42 model, and the six-part
   quality attribute scenario, plus the three ways to measure quality and the pass/fail argument for
   agreeing testable quality requirements with stakeholders.
@@ -279,9 +277,7 @@ Next: Week 3 is planning and the minimum usable product, and it has no assignmen
   - [x] Prioritize QRs by technical risk and importance
   - [ ] Feature issue type - for tracking progress of task issues?
     - Deferred: this work adds no feature issue type.
-  - [ ] Sequence diagrams (the sequence view is A5)
-    - [ ] Main actor flow
-  - [ ] At least one QR about testability mentioning critical modules (files with code)
+  - [x] At least one QR about testability mentioning critical modules (files with code)
   - [x] AC in a user story - use checkboxes to track state
     - The criteria are checkboxes, and the accountable member ticks one once it is verified.
   - [x] User stories - reopen when a new related task appears
@@ -291,9 +287,9 @@ Next: Week 3 is planning and the minimum usable product, and it has no assignmen
   - [x] Explain that need to calculate manually because single-select can't be a number
     - https://github.com/orgs/community/discussions/156904
   - [x] glossary.md
-  - [ ] Where to track progress on qrt?
+  - [x] Where to track progress on qrt?
   - [x] Technical risk - hard to achieve
-  - [ ] How to prioritize QRT?
+  - [x] How to prioritize QRT?
   - [ ] I think we should provide examples
         https://github.com/otrebmuh/HotelPricingSystem/blob/433e061f712a8748fdf04a6f767752e12be2f4b9/Design/Architecture.md
 
@@ -308,7 +304,10 @@ Next: Week 3 is planning and the minimum usable product, and it has no assignmen
 ## A5
 
 - story points from week 5
-- `course/plans/a5-plan.md` designs the QRTs, the testing plan, the container, component, and sequence views, and the CI checks
+- `course/plans/a5-plan.md` designs the QRTs, the testing plan, and the CI checks
+- The component and sequence views are dropped rather than deferred: `A5-DEC-009` removes them, and the container view is the last view the architecture document carries.
+- They should define at least two more milestones
+- Define your integration environment
 
 ## A6
 

@@ -279,7 +279,7 @@
   - The *external systems* it exchanges data with
 
   It stops there.
-  No containers, no components, and no internal structure; that is for later weeks.
+  No containers, no components, and no internal structure; the container view arrives in Week 4.
 
   The diagram and the boundary must agree:
   - Whatever the boundary says handles a job is on the diagram.

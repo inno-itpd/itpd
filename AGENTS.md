@@ -216,12 +216,12 @@ A part may keep a small example beside the rule it illustrates, such as the boun
 Each row is added when its assignment is written, so a week's path is decided in the same place as the work that uses it.
 A later assignment may extend this map, but should not silently move an entry.
 
-| Week | Maintained artifacts                                                                                                                                                                                                                                            |
-| ---- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| W1   | `docs/research/` — `alternatives.md`, `comparison.md`, `gap-analysis.md`, `value-proposition.md`; `docs/assumptions.md`; and `docs/decisions.md`                                                                                                                |
-| W2   | `docs/product-vision.md`, and the context diagram it embeds, `docs/architecture/context.<ext>` with its source (the stories are GitHub issues)                                                                                                                  |
-| W3   | `docs/project-plan.md`, `docs/threshold-of-success.md`, `docs/risks.md`, `docs/definition-of-done.md`, and `docs/setup.md`                                                                                                                                      |
-| W4   | `docs/functional-requirements/` with `fr/`, `docs/quality-requirements/` with `qr/`, `docs/architecture/README.md` with `adr/`, its container view and responsibilities, and `docs/glossary.md`; the component and sequence views and the testing plan are W5's |
+| Week | Maintained artifacts                                                                                                                                                                                                      |
+| ---- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| W1   | `docs/research/` — `alternatives.md`, `comparison.md`, `gap-analysis.md`, `value-proposition.md`; `docs/assumptions.md`; and `docs/decisions.md`                                                                          |
+| W2   | `docs/product-vision.md`, and the context diagram it embeds, `docs/architecture/context.<ext>` with its source (the stories are GitHub issues)                                                                            |
+| W3   | `docs/project-plan.md`, `docs/threshold-of-success.md`, `docs/risks.md`, `docs/definition-of-done.md`, and `docs/setup.md`                                                                                                |
+| W4   | `docs/functional-requirements/` with `fr/`, `docs/quality-requirements/` with `qr/`, `docs/architecture/README.md` with `adr/`, its container view and responsibilities, and `docs/glossary.md`; the testing plan is W5's |
 
 Weekly reports live at `reports/week-NN/README.md` in every week, and the Moodle PDF is the private wrapper in every week.
 Meeting artifacts live at `reports/week-NN/meeting-report.md`, plus a `meeting-transcript.md` beside it when the meeting was recorded or held in writing.

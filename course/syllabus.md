@@ -179,6 +179,8 @@ From Week 4 to Week 9 every submission is due on Saturday at 23:59, with no soft
 
 ### Week 5: Oct 23 – Oct 29 (Testing Environments, Deployment Automation & Next Product Release)
 
+<!-- Reproducibility -->
+
 - **Class 5 (Oct 23)**:
   - **Lecture**: **Testing and Automating Development Tasks** (unit testing strategies, test runners, CI/CD automation pipelines, production deployment).
 - **Objectives**:
@@ -199,6 +201,8 @@ From Week 4 to Week 9 every submission is due on Saturday at 23:59, with no soft
 
 ### Week 6: Oct 30 – Nov 5 (Analytics & In-Class Product Presentations)
 
+<!-- TODO pitch deck submitted this week -->
+
 - **Class 6 (Oct 30)**:
   - **First Half - Lecture**: **Product & Software Analytics** (telemetry, event tracking, instrumentation, analytics architectures, data-driven decisions).
   - **Second Half - In-Class Product Presentations**: Teams present their 7-minute pitch decks submitted at the end of Week 5, pitching their product, explaining technical approaches selected, and sharing roadmap plans for the remainder of the course.
@@ -206,6 +210,9 @@ From Week 4 to Week 9 every submission is due on Saturday at 23:59, with no soft
   - **Deliverables**:
     1. **Analytics Integration**: Introduce and instrument analytics into the product codebase (event tracking, metrics collection, telemetry).
     2. **Active Data Collection**: Verification that analytics data collection is operational and recording product usage.
+    3. **7-Minute Product Presentation Deck**: Pitch deck showcasing the product, discussing chosen technical approaches, and detailing roadmap plans for the rest of the course.
+       > **To revise:** the deck is currently expected as a Moodle attachment rather than a repository artifact.
+       > Confirm the submission channel and where, if anywhere, it is indexed from.
   - **Submission Scope**: Team submission.
   - **Deadline**: **November 7 at 23:59 (Saturday)**, with no soft deadline.
 

@@ -4,7 +4,7 @@ title: Move the product-code CI and actionlint from Week 4 to Week 5
 status: To Do
 assignee: []
 created_date: '2026-10-20 15:33'
-updated_date: '2026-10-20 15:42'
+updated_date: '2026-10-25 13:13'
 labels: []
 dependencies: []
 references:
@@ -24,7 +24,7 @@ ordinal: 116000
 ## Description
 
 <!-- SECTION:DESCRIPTION:BEGIN -->
-TASK-134 moved the product-code CI from Week 3 to Week 4, but the A5 plan moves the quality requirement tests, the testing plan, the container, component, and sequence views, and CI to Week 5, because the Week 5 lecture is testing and automation. The CI half moves with it: the product-code CI marker in `requirements/repository-requirements.md`, the Definition of Done item, and `actionlint`, which the A4 plan had put in Week 4. The move also corrects the syllabus, the TODO notes, `A3-DEC-018`'s pointer, and the A5 decision log's surviving-clause entry.
+TASK-134 moved the product-code CI from Week 3 to Week 4, but the A5 plan moves the quality requirement tests, the testing plan, and CI to Week 5, because the Week 5 lecture is testing and automation. The CI half moves with it: the product-code CI marker in `requirements/repository-requirements.md`, the Definition of Done item, and `actionlint`, which the A4 plan had put in Week 4. The move also corrects the syllabus, the TODO notes, `A3-DEC-018`'s pointer, and the A5 decision log's surviving-clause entry. The component and sequence views are no longer part of the move: the plan removes them from the course, per its `A5-DEC-009`.
 <!-- SECTION:DESCRIPTION:END -->
 
 ## Acceptance Criteria

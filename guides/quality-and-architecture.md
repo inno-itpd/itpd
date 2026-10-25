@@ -249,7 +249,7 @@ If the product genuinely runs as one container, say that in one sentence and kee
 
 `**Containers:**` names the containers the behavior runs in, and the names come from the container view, spelled as the view spells them.
 The field is per behavior, so it names the one or two containers that carry that behavior, not every container the behavior touches: a booking whose request runs in the backend and whose row is stored in the database runs in `backend`, because the database does not run the behavior.
-A behavior that needs two containers is a behavior with a call between them, which is what the component and sequence views in Week 5 show.
+A behavior that needs two containers is a behavior with a call between them, and the arrow between the two boxes in the container view is that call.
 
 ### Record Where It Came From
 
