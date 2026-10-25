@@ -1,0 +1,19 @@
+# Repository-local dsh overlay. dsh does not discover it, so pass it
+# explicitly when launching dsh from this checkout:
+#
+#   dsh --patch .dsh/cordis.patch.yml --profile web --port 0 --no-open
+#
+# Overlays are read at launch; restart dsh after editing this file.
+#
+# `backlog` comes from the devShell. It resolves the project from BACKLOG_CWD,
+# which the flake's shellHook pins to this checkout, and its Bun runtime needs a
+# writable cache, which `.envrc` puts under `.local/` because DSH's
+# workspace-write sandbox mounts $HOME read-only.
+- insert:
+    - id: mcp-backlog
+      name: "@deepseek-ai/dsh-mcp-client"
+      config:
+        serverName: backlog
+        transport: stdio
+        command: backlog
+        args: ["mcp", "start"]

@@ -70,12 +70,15 @@ Links have theirs, `pnpm run check:links`, which runs `lychee` from the shell ov
 It checks heading anchors with `--include-fragments` and fetches external links, so it needs network.
 Workflow files are checked locally with `pnpm run lint:actions`, which runs `actionlint` from the shell over `.github/workflows/` after any edit there.
 It uses `shellcheck` for `run:` scripts, and it reads workflow files only, not the composite action under `.github/actions/`.
+The maintainers' agent harness reaches the Backlog CLI over MCP through `.dsh/cordis.patch.yml`, which `dsh` applies only when it is launched with `--patch`.
 
 | File                                      | Owns                                                                                                                                                                                                     |
 | ----------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `CONTRIBUTING.md`                         | The maintainers' prerequisites, the setup, the checks to run before a pull request, and the repository settings the workflows need.                                                                      |
 | `flake.nix`                               | The pinned development shell: Node 26, pnpm, typst, the `backlog` CLI, ripgrep, lychee, actionlint, shellcheck, and the deck font, with a `FONTCONFIG_FILE` of its own.                                  |
-| `.envrc`                                  | `use flake`, so `direnv` loads the shell on entering the directory.                                                                                                                                      |
+| `.envrc`                                  | `use flake`, plus the cache locations it exports under `.local/`, because DSH's workspace-write sandbox mounts `$HOME` read-only.                                                                        |
+| `.dsh/cordis.patch.yml`                   | The repository-local `dsh` overlay: the Backlog MCP server, which `dsh` applies only when it is launched with `--patch`.                                                                                 |
+| `.dsh/README.md`                          | The `--patch` launch command, its flag ordering, the restart-after-edit rule, and the environment the overlay needs.                                                                                     |
 | `scripts/markdown.mjs`                    | Formats, checks, and lints every tracked `.md` file except `.opencode/`, `.agents/`, and `backlog/`.                                                                                                     |
 | `scripts/lectures.mjs`                    | Builds and checks every `lectures/lecture-N.typ` against its committed PDF, with the Typst version and the build epoch pinned.                                                                           |
 | `prettier/markdown/sentences-per-line.js` | Formatter plugin: one sentence per line, and table rows left on one physical line.                                                                                                                       |
