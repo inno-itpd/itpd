@@ -8,9 +8,12 @@
 - [ ] Design rules for assignments
   - One clear option to do things.
   - Issue field >> issue label
-- [ ] Identifier format
+- [ ] Identifier format?
   - for ACs: US-01-AC-01
   - for QRs: QR-01-QRT-01
+- [ ] Traceability - only from line of code to ToS
+- [ ] Should ADR cite a QRT?
+      A QRT may constrain the architecture to make the system more testable
 
 ## A1
 
