@@ -142,6 +142,10 @@ Each run is a consecutive stretch that ends in the week its milestone is due, su
 A step that slips keeps its number and its due week, with its leftover work rescheduled into a later sprint's milestone, rather than the run being extended past that week.
 The plan's milestones are not GitHub milestones: each sprint is one, per [Sprints](../requirements/planning-requirements.md#sprints), and an increment reaches the platform through the sprints it names.
 
+Assignment 5 sets a bar above that team choice: at least two milestones due in `SPRINT-05` through `SPRINT-09` in total, counting a milestone the plan already has in that range and adding only the shortfall, with the two due in different sprints.
+[Milestones](../requirements/planning-requirements.md#milestones) still leaves the set to the team, so the two are the week's bar rather than a rule: a team that already has two keeps them, and a team with one adds one.
+A run may cover two sprints, so a milestone that advances the week's increment can begin in `SPRINT-04` and end in `SPRINT-05`.
+
 The plan holds increments, never the issue list.
 Which issue is worked on when is the GitHub milestone the issue is assigned to, per [Scheduling An Issue](../requirements/issue-tracking-requirements.md#scheduling-an-issue): the same issue can move between sprints, and its milestone moves with it, without the roadmap being rewritten.
 

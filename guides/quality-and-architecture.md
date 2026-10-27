@@ -52,6 +52,11 @@ The requirements are cheapest to change now, before a test or a decision rests o
   - [Read From The Requirement To The Record](#read-from-the-requirement-to-the-record)
   - [Search From The Record To The Requirement](#search-from-the-record-to-the-requirement)
   - [Leave The Chain To The Links](#leave-the-chain-to-the-links)
+- [Step 8: Document The Features](#step-8-document-the-features)
+  - [Name A Capability, Not An Artifact](#name-a-capability-not-an-artifact)
+  - [Leave Each Fact Where It Already Lives](#leave-each-fact-where-it-already-lives)
+  - [Choose Where The Team Documents Features](#choose-where-the-team-documents-features)
+  - [Name One Element So An Agent Can Find It](#name-one-element-so-an-agent-can-find-it)
 - [Common Mistakes](#common-mistakes)
 
 ## What You Produce
@@ -438,6 +443,48 @@ A task's `### Requirements` names the FR and the ADR it works on, the FR's `**Tr
 The architecture document reaches the threshold of success through its drivers, and the story's `### Specified by` names the same FR and ADR from the other side.
 Follow those links once each from a task, and you arrive at a goal the customer set without any document written to carry you.
 A trace section or a matrix table would be a second copy of those facts, and it would be stale the first week a requirement moved; the links are the trace, and the search is the way back.
+
+## Step 8: Document The Features
+
+A **feature** is a capability a user recognises: a booked and paid slot, a rescheduled session, a cancelled one.
+It is a way of talking about the product rather than an artifact of its own, and this step is the exercise that asks the team where it keeps that conversation and how it names the parts a change lands in.
+
+### Name A Capability, Not An Artifact
+
+A feature needs no identifier family, no index, and no file of its own, because it is the name of something the product does rather than a record about it.
+"A client books and pays in one flow" is a feature, because a user would ask for it and the customer would accept it; "the booking page" is a screen, and `FR-012` is a requirement.
+The test is the sentence a user would say: if it has to name a screen, a table, or a service to make sense, it is describing the implementation of a feature rather than the feature.
+
+### Leave Each Fact Where It Already Lives
+
+A feature holds no new fact, because every part of it already has an owner:
+
+- The need is a `US-nn` story, with its acceptance criteria.
+- The behaviour is a `FR-nnn`, with its acceptance criteria, per [The Functional Requirement](../requirements/functional-requirements-requirements.md#the-functional-requirement).
+- The decision that shaped it is an architectural decision record, whose `**Addresses:**` names the requirements it accounts for, per [What It Accounts For](../requirements/adr-requirements.md#what-it-accounts-for).
+- The name, when the project uses the word in its own sense, is a term in `docs/glossary.md`, and its `**Defined by:**` links the artifact that defines it, per [The Term](../requirements/glossary-requirements.md#the-term).
+
+Documenting a feature means joining those pieces into one entry a reader can follow, not restating them: a page that repeats a requirement's behaviour is the copy that goes stale the week the requirement changes, and it is the copy somebody will quote.
+A feature with no story and no requirement is a gap rather than a feature, and the team writes the missing record before it documents the feature.
+
+### Choose Where The Team Documents Features
+
+There is no required path, and the exercise asks the team to choose a place and explain the choice: a section of `docs/`, such as a `docs/features.md`, a page on the team's documentation site, a project view that collects a feature's stories, or the glossary alone when the product has few enough features for it.
+The place holds when three things are true:
+
+- A new member, and a coding agent, find it from the repository's `README.md` or from `docs/` without asking anybody.
+- It reaches each feature's story, requirement, and record by link, so a reader arrives at the owner of each fact.
+- It says how it is updated when a feature changes, such as when the story closes, when the requirement moves, or when a record supersedes the decision.
+
+The answer is recorded where the team documents features, and the week's report links it, so a reader can tell a documented product from an undocumented one.
+A team whose answer is "the glossary and the linked records" has answered the exercise rather than skipped it, as long as it says so and points at the links.
+
+### Name One Element So An Agent Can Find It
+
+The exercise's second question is the practical one: how would the team tell a coding agent to capitalize the first letter in the word "login" on the sign-in page?
+A sentence that works names the screen, the element, and the property, and leaves no doubt which of the page's several words it means, such as `signInPage.loginLink.label`.
+The scheme is the team's, and what makes it work is that it is uniform and stable: the same shape on every screen, and a name that survives the copy changing from "Login" to "Sign in".
+A scheme a person cannot read is no better than none, so keep the names close to the element's role in the product, record the scheme beside the code or in the place features are documented, and use it in the sentences the team gives the agent.
 
 ## Common Mistakes
 
