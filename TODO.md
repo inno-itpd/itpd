@@ -280,7 +280,7 @@ Next: Week 3 is planning and the minimum usable product, and it has no assignmen
   - [x] Prioritize QRs by technical risk and importance
   - [ ] Feature issue type - for tracking progress of task issues?
     - Deferred: this work adds no feature issue type.
-    - Feature documentation answers the need without one, because a feature's story, requirement, record, and glossary term already have owners, per `requirements/features-requirements.md` and `A5-DEC-034`.
+    - Feature documentation answers the need without one, because a feature's story, requirement, record, and glossary term already have owners, per `requirements/features-requirements.md` and `A5-DEC-036`.
   - [x] At least one QR about testability mentioning critical modules (files with code)
   - [x] AC in a user story - use checkboxes to track state
     - The criteria are checkboxes, and the accountable member ticks one once it is verified.

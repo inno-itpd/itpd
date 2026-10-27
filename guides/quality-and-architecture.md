@@ -67,7 +67,7 @@ The requirements are cheapest to change now, before a test or a decision rests o
 - `docs/architecture/README.md`: the container view with its responsibilities, the drivers that shape the architecture, and the ADR index, per [Architecture Requirements](../requirements/architecture-requirements.md).
 - `docs/architecture/adr/`: one record per decision, with the options it turned down and the requirements it accounts for, per [ADR Requirements](../requirements/adr-requirements.md).
 - `docs/glossary.md`: the project's own terms, each defined once, per [Where The Glossary Lives](../requirements/glossary-requirements.md#where-the-glossary-lives) and [The Term](../requirements/glossary-requirements.md#the-term).
-- `docs/features.md`: the product's capabilities for users and for developers, each an entry that joins the story, requirement, record, and glossary term that own its facts, per [Feature Documentation Requirements](../requirements/features-requirements.md).
+- `docs/features.md`: the product's capabilities for users and for developers, one entry per capability that links the story, requirement, and record that own its facts, with the page's vocabulary routed to the glossary, per [Feature Documentation Requirements](../requirements/features-requirements.md).
 
 The requirements say what the product must do and how well, the architecture says what the team decided in order to get that, and the indexes are where the two meet.
 
@@ -468,6 +468,7 @@ A feature holds no new fact, because every part of it already has an owner:
 - The behaviour is a `FR-nnn`, with its acceptance criteria, per [The Functional Requirement](../requirements/functional-requirements-requirements.md#the-functional-requirement).
 - The decision that shaped it is an architectural decision record, whose `**Addresses:**` names the requirements it accounts for, per [What It Accounts For](../requirements/adr-requirements.md#what-it-accounts-for).
 - The name, when the project uses the word in its own sense, is a term in `docs/glossary.md`, and its `**Defined by:**` links the artifact that defines it, per [The Term](../requirements/glossary-requirements.md#the-term).
+  The entry's sentence links that term at first use and does not define it.
 
 Documenting a feature means joining those pieces into one entry a reader can follow, not restating them: a page that repeats a requirement's behaviour is the copy that goes stale the week the requirement changes, and it is the copy somebody will quote.
 The entry links the story, the requirement, the record, and the term, and leaves each fact with its owner.
@@ -479,6 +480,9 @@ Write it as the user would say it: "A client books a slot and pays for it withou
 Leave out identifiers, screen names, and acceptance criteria, because the entry's links carry them and a sentence that names `FR-001` has stopped being user language.
 Keep it to one capability: if the sentence needs "and then" twice, it is probably two capabilities, and each gets its own entry.
 
+Where the sentence uses a word the glossary defines, the word links to its term at that first use, so the sentence stays one sentence and the vocabulary resolves in a click.
+The heading is not a place for a link: it is the capability's name, and it is the anchor a citation uses.
+
 ### Order The Entries
 
 One flat list, in the order a reader should meet the product: the capability the product exists for first, then the ones a user meets as they use it.
@@ -488,7 +492,7 @@ Do not order by `US-nn` or `FR-nnn` number either, because the numbers record wh
 ### Keep The Page Current
 
 The page is maintained documentation, so it changes with the product.
-When a feature changes, update its entry in the same pull request as the change: a closed story stays linked, a moved requirement gets its new link, a superseding record replaces the old one, and a renamed glossary term updates the `**Terms:**` link.
+When a feature changes, update its entry in the same pull request as the change: a closed story stays linked, a moved requirement gets its new link, a superseding record replaces the old one, and a renamed glossary term updates its word and link in the sentence that uses it.
 When the product gains a capability, add an entry; when it loses one, remove the entry rather than leaving a description of something the product no longer does.
 The same pull request is what keeps the page from describing a product that no longer exists, which is the failure a page written once and never reopened always reaches.
 

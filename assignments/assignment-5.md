@@ -49,7 +49,7 @@ By the end of this week you should be able to show a reader:
 - At least two implemented tests: the testability requirement's `CI` test and one other requirement's test at `CI`, `scripted`, or `deployed`.
 - The testing plan with one row per test: its result, its last check, its planned sprint, and the evidence its level requires.
 - At least two plan milestones and two new stories that make the next increments visible.
-- The feature documentation: `docs/features.md`, with a user-language sentence per capability and links to the story, requirement, record, and glossary term that own its facts.
+- The feature documentation: `docs/features.md`, with a user-language sentence per capability, its glossary line and first-use term links, and links to the story, requirement, and record that own each fact.
 - Each story shown at the Sprint Review with its verdict recorded as a `DEC-nnn`, and each implemented test's result shown at its level.
 - `REL-05`: the tag on the final production commit, the release body's verified quality, the changelog section, and the plan's `REL-05` line.
 - The sprint closed with its actual velocity, a retrospective that carries the Week 4 actions, and the AI usage report.
@@ -182,14 +182,15 @@ The rules:
 - A feature is a capability rather than an artifact, and each fact it joins already has one owner: [The Feature Entry](../requirements/features-requirements.md#the-feature-entry).
 - The page carries at least three features at the end of the week, or every feature when the product has fewer: [Where The Features Live](../requirements/features-requirements.md#where-the-features-live).
 - A feature's need is a `US-nn` story, its behavior an `FR-nnn`, the decision that shaped it an `ADR-nnn`, and its name, when the project uses the word in its own sense, a `docs/glossary.md` term: [The Story](../requirements/user-stories-requirements.md#the-story), [The Functional Requirement](../requirements/functional-requirements-requirements.md#the-functional-requirement), [What It Accounts For](../requirements/adr-requirements.md#what-it-accounts-for), and [The Term](../requirements/glossary-requirements.md#the-term).
+- The glossary is the page's vocabulary: the page's intro links `docs/glossary.md`, and an entry's sentence links its terms at first use: [The Feature Entry](../requirements/features-requirements.md#the-feature-entry).
 - An entry restates no behavior its `FR-nnn` owns and no acceptance criterion its story or requirement carries: [The Feature Entry](../requirements/features-requirements.md#the-feature-entry).
 - The page changes in the same pull request as the change it reflects, whether that change is a story, a requirement, a record, or a term: [The Feature Entry](../requirements/features-requirements.md#the-feature-entry).
 
 This week:
 
-1. Write `docs/features.md` with at least three features, or every feature when the product has fewer.
+1. Write `docs/features.md` with at least three features, or every feature when the product has fewer, and the line that links `docs/glossary.md`.
 2. Give each entry a `##` heading that names the capability and one opening sentence in the user's language that says what a user can do.
-3. Link the entry's `**Stories:**` to the stories that carry the need and its `**Behavior:**` to the `FR-nnn` files that own the capability, and add `**Decisions:**` and `**Terms:**` when the capability has them.
+3. Link the entry's `**Stories:**` to the stories that carry the need and its `**Behavior:**` to the `FR-nnn` files that own the capability, add `**Decisions:**` when the capability has a record, and link a glossary term at its first use in the opening sentence.
 4. Keep the entries one flat list in the order a reader should meet the product: no role grouping and no `**Users:**` field.
 5. Update the page in the same pull request as a change to a story, a requirement, a record, or a term it links.
 6. Link `docs/features.md` from the coverage table in [Assignment Report In The Repository](#assignment-report-in-the-repository).
@@ -338,7 +339,7 @@ A strong submission has:
 - **A CI check that is pinned, green, and deploys nothing.**
   `actionlint` and each applicable product-code check run on pull requests and on `main`, appear in the Definition of Done, and stop at the build and the tests.
 - **Feature documentation a newcomer can act on.**
-  One page lists the product's capabilities in the user's words, each linked to the story, the requirement, the records, and the glossary term that own its facts, and the page is updated in the same pull request as the change.
+  One page lists the product's capabilities in the user's words, each linking the story, the requirement, and the records that own its facts, with the words the project defines linked to the glossary, and the page is updated in the same pull request as the change.
 - **Stories that show what the increment is for.**
   The deployed, verified product on one side, and on the other the needs it serves, each story a user's need rather than a feature name.
 - **A release that claims only what its tests verified.**
@@ -412,7 +413,7 @@ A transcript under item 6 goes in an appendix, which the two pages do not count.
 - [ ] The testability requirement's `CI` test and one other active requirement's test at `CI`, `scripted`, or `deployed`, with the High-requirement and next-active-row rule applied, and no `manual` test standing in for the second ([Part 4](#part-4-write-the-quality-requirement-tests)).
 - [ ] The testing plan with one row per test, the testability and other implemented rows `Passes` and `Checked` in `SPRINT-05`, and every other row keeping its result ([Part 5](#part-5-run-the-tests-and-record-the-testing-plan)).
 - [ ] The quality requirements index links the testing plan once ([Part 5](#part-5-run-the-tests-and-record-the-testing-plan)).
-- [ ] Feature documentation in `docs/features.md`, with 3 or more features or every feature, an opening sentence per entry, and its links ([Part 6](#part-6-document-the-features)).
+- [ ] Feature documentation in `docs/features.md`, with at least three features or every feature, one sentence per capability with its glossary term linked, the page's glossary line, and the story, requirement, and record links ([Part 6](#part-6-document-the-features)).
 - [ ] Each Week 4 action point's outcome in `## Previous action points`, and in the artifact it changed ([Part 7](#part-7-carry-out-the-week-4-action-points-and-open-questions)).
 - [ ] Each Week 4 open question answered or carried forward in `## Previous open questions` ([Part 7](#part-7-carry-out-the-week-4-action-points-and-open-questions)).
 - [ ] `reports/week-05/meeting-script.md` ([Part 8](#part-8-validate-with-the-customer)).
