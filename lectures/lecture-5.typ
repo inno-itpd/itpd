@@ -1,5 +1,3 @@
-// Quality, Architecture & Agile, lecture 4 of the IT Product Development course.
-
 #let accent = rgb("#12507b")
 #let muted = luma(42%)
 
