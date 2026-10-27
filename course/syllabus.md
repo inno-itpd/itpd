@@ -12,9 +12,9 @@ The course is designed to prepare students for the Industrial Project course and
   - [Week 2: Oct 2 – Oct 8 (Requirements \& Prototyping)](#week-2-oct-2--oct-8-requirements--prototyping)
   - [Week 3: Oct 9 – Oct 15 (Planning \& Minimum Usable Product)](#week-3-oct-9--oct-15-planning--minimum-usable-product)
   - [Week 4: Oct 16 – Oct 22 (Software Quality, Architecture \& Next Product Release)](#week-4-oct-16--oct-22-software-quality-architecture--next-product-release)
-  - [Week 5: Oct 23 – Oct 29 (Testing Environments, Deployment Automation \& Next Product Release)](#week-5-oct-23--oct-29-testing-environments-deployment-automation--next-product-release)
-  - [Week 6: Oct 30 – Nov 5 (Analytics \& In-Class Product Presentations)](#week-6-oct-30--nov-5-analytics--in-class-product-presentations)
-  - [Week 7: Nov 6 – Nov 12 (Usability Testing Preparation)](#week-7-nov-6--nov-12-usability-testing-preparation)
+  - [Week 5: Oct 23 – Oct 29 (Testing, Verification \& Deployment)](#week-5-oct-23--oct-29-testing-verification--deployment)
+  - [Week 6: Oct 30 – Nov 5 (Analytics)](#week-6-oct-30--nov-5-analytics)
+  - [Week 7: Nov 6 – Nov 12 (Usability Testing Preparation \& In-Class Product Presentations)](#week-7-nov-6--nov-12-usability-testing-preparation--in-class-product-presentations)
   - [Week 8: Nov 13 – Nov 19 (Project Configuration Management)](#week-8-nov-13--nov-19-project-configuration-management)
   - [Week 9: Nov 20 – Nov 26 (Project Pitching, Repository Finalization \& Reflection)](#week-9-nov-20--nov-26-project-pitching-repository-finalization--reflection)
   - [Week 10: Nov 27 – Dec 3 (Course Review \& Final Exam Preparation)](#week-10-nov-27--dec-3-course-review--final-exam-preparation)
@@ -83,9 +83,9 @@ From Week 4 to Week 9 every submission is due on Saturday at 23:59, with no soft
 | **Week 2**  | Oct 2 – Oct 8   | Lecture (Requirements & Prototyping), Research Review, Issue Tracking & **Submission 2 (due Oct 8, 23:59)**                  |
 | **Week 3**  | Oct 9 – Oct 15  | Lecture (Planning), Project Plan & **Submission 3 (MUP due Oct 15, 23:59)**                                                  |
 | **Week 4**  | Oct 16 – Oct 22 | Lecture (Software Quality), Architecture Draft & **Submission 4 (due Oct 24, 23:59)**                                        |
-| **Week 5**  | Oct 23 – Oct 29 | Lecture (Testing & Automation), CI/CD, Prod Setup & **Submission 5 (REL-05 + 7-min Pitch Deck due Oct 31, 23:59)**           |
-| **Week 6**  | Oct 30 – Nov 5  | Lecture (Analytics), Product Presentations & **Submission 6 (Analytics Integration due Nov 7, 23:59)**                       |
-| **Week 7**  | Nov 6 – Nov 12  | Lecture (Usability Testing) & **Submission 7 (Usability Test Protocol due Nov 14, 23:59)**                                   |
+| **Week 5**  | Oct 23 – Oct 29 | Lecture (Testing & Automation), CI Checks, VM Deployment & **Submission 5 (due Oct 31, 23:59)**                              |
+| **Week 6**  | Oct 30 – Nov 5  | Lecture (Analytics) & **Submission 6 (Analytics Integration due Nov 7, 23:59)**                                              |
+| **Week 7**  | Nov 6 – Nov 12  | Lecture (Usability Testing), In-Class Product Presentations & **Submission 7 (Usability Test Protocol due Nov 14, 23:59)**   |
 | **Week 8**  | Nov 13 – Nov 19 | Lecture (Configuration Management) & **Submission 8 (CM Evaluation & Implementation due Nov 21, 23:59)**                     |
 | **Week 9**  | Nov 20 – Nov 26 | Lecture (Project Pitching), Repo Finalization & **Submission 9 (due Nov 28, 23:59)**                                         |
 | **Week 10** | Nov 27 – Dec 3  | Lecture (Course Review) & Final Exam Preparation                                                                             |
@@ -177,42 +177,53 @@ From Week 4 to Week 9 every submission is due on Saturday at 23:59, with no soft
   - **Submission Scope**: Team submission.
   - **Deadline**: **October 24 at 23:59 (Saturday)**, with no soft deadline.
 
-### Week 5: Oct 23 – Oct 29 (Testing Environments, Deployment Automation & Next Product Release)
+### Week 5: Oct 23 – Oct 29 (Testing, Verification & Deployment)
 
 - **Class 5 (Oct 23)**:
   - **Lecture**: **Testing and Automating Development Tasks** (unit testing strategies, test runners, CI/CD automation pipelines, production deployment).
+    The product CI runs outside the university network, so it stops at the build and the tests, and the deployment is the manual gate.
 - **Objectives**:
-  - Add comprehensive unit tests (if not already existing).
-  - Set up and deploy to a live production instance.
-  - Configure CI/CD automated test and deployment pipelines.
-  - Cut the sprint's release, `REL-05`.
+  - Turn the quality requirements into quality requirement tests (`QRT-nn`) a stranger can run, and record every test's result in the testing plan.
+  - Add the automated tests for the testability requirement's critical modules, with `actionlint` and every applicable product-code CI check.
+  - Deploy the product to staging and production on the university VM, by hand from a campus machine, and document the four environments in `docs/deployment.md`.
+    "Live accessible" means the customer reaches the product from the university network at the VM's IPv4 address.
+  - Define at least two plan milestones and add two stories that carry the next increments.
+  - Write Feature Documentation in `docs/features.md`: a user-language sentence per capability and links to the records that own its facts.
+  - Cut the sprint's release, `REL-05`, on the final production commit.
 - **Submission 5 (Team Deliverables - Due Oct 31, 23:59)**:
   - **Deliverables**:
-    1. **Test Suite & CI/CD**: Unit test suite integrated and automated in the repository, with CI/CD workflows for linting, testing, and deployment.
-    2. **Production Instance**: Live accessible deployment instance with verified environment configuration.
-    3. **Next Product Release (`REL-05`)**: Working codebase fulfilling core value proposition.
-    4. **7-Minute Product Presentation Deck**: Pitch deck showcasing the product, discussing chosen technical approaches, and detailing roadmap plans for the rest of the course.
-       > **To revise:** the deck is currently expected as a Moodle attachment rather than a repository artifact.
-       > Confirm the submission channel and where, if anywhere, it is indexed from.
+    1. **Quality Requirement Tests And Testing Plan**: a `QRT-nn` inside every active High business-importance requirement's file, and one row per test in `docs/project-plan.md`'s `## Quality Requirement Testing Plan`, with the test's result, its last check, its planned sprint, and its evidence.
+    2. **Automated Tests And CI Checks**: the automated tests for the testability requirement's critical modules, `actionlint`, and every applicable product-code check, on pull requests and on `main`.
+    3. **Staging And Production On The University VM**: the two deployments and the deployment runbook, `docs/deployment.md`, with the core task verified on production.
+    4. **Plan Milestones And Stories**: at least two plan milestones and two new stories that carry the next increments.
+    5. **Feature Documentation**: `docs/features.md`, with a user-language sentence per capability, the page's glossary line and first-use term links, and links to the story, functional requirement, and architectural decision record that own its facts.
+    6. **Sprint Retrospective**: `reports/week-05/sprint-retrospective.md`.
+    7. **Next Product Release (`REL-05`)**: the tag on the final production commit, the release body's verified quality, the changelog's released section, and the plan's `REL-05` line.
   - **Submission Scope**: Team submission.
-  - **Deadline**: **October 31 at 23:59 (Saturday)**, with no soft deadline (presented in-class during Week 6).
+  - **Deadline**: **October 31 at 23:59 (Saturday)**, with no soft deadline.
 
-### Week 6: Oct 30 – Nov 5 (Analytics & In-Class Product Presentations)
+### Week 6: Oct 30 – Nov 5 (Analytics)
+
+<!-- TODO pitch deck submitted this week -->
 
 - **Class 6 (Oct 30)**:
-  - **First Half - Lecture**: **Product & Software Analytics** (telemetry, event tracking, instrumentation, analytics architectures, data-driven decisions).
-  - **Second Half - In-Class Product Presentations**: Teams present their 7-minute pitch decks submitted at the end of Week 5, pitching their product, explaining technical approaches selected, and sharing roadmap plans for the remainder of the course.
+  - **Lecture**: **Product & Software Analytics** (telemetry, event tracking, instrumentation, analytics architectures, data-driven decisions).
 - **Submission 6 (Team Deliverables - Due Nov 7, 23:59)**:
   - **Deliverables**:
     1. **Analytics Integration**: Introduce and instrument analytics into the product codebase (event tracking, metrics collection, telemetry).
     2. **Active Data Collection**: Verification that analytics data collection is operational and recording product usage.
+    3. **7-Minute Product Presentation Deck**: Pitch deck showcasing the product, discussing chosen technical approaches, and detailing roadmap plans for the rest of the course.
+       > **To revise:** the deck is currently expected as a Moodle attachment rather than a repository artifact.
+       > Confirm the submission channel and where, if anywhere, it is indexed from.
   - **Submission Scope**: Team submission.
   - **Deadline**: **November 7 at 23:59 (Saturday)**, with no soft deadline.
 
-### Week 7: Nov 6 – Nov 12 (Usability Testing Preparation)
+### Week 7: Nov 6 – Nov 12 (Usability Testing Preparation & In-Class Product Presentations)
 
 - **Class 7 (Nov 6)**:
   - **Lecture**: **Usability Testing** (usability evaluation methodologies, test protocols, test task formulation, observer guidelines, qualitative/quantitative metrics, pre/post test survey design).
+  - **In-Class Product Presentations**: Teams present a near-final version of their Week 6 pitch decks, pitching their product, explaining technical approaches selected, and sharing roadmap plans for the remainder of the course.
+    The final deck is submitted with Submission 6 on November 7.
 - **Submission 7 (Team Deliverables - Due Nov 14, 23:59)**:
   - **Deliverables**:
     1. **Pre-Test & Post-Test Surveys**: Structured survey instruments designed to capture participant background/expectations (pre-test) and feedback/system usability assessment (post-test).
@@ -243,7 +254,7 @@ From Week 4 to Week 9 every submission is due on Saturday at 23:59, with no soft
 - **Submission 9 (Team Deliverables - Due Nov 28, 23:59)**:
   - **Deliverables**:
     1. **Final Project Presentation Deck**: Polished presentation deck pitching the completed product, architecture, technical highlights, and demo flow.
-       > **To revise:** the same submission-channel question as the Week 5 deck above.
+       > **To revise:** the same submission-channel question as the Week 6 deck above.
     2. **Usability Test Results & Findings Report**: Summary of usability tests conducted, participant observations, key friction points identified, and improvement actions taken or recommended.
     3. **Project Reflection Report**: Detailed retrospective reflecting on the team's engineering journey, technical choices, outcomes, quality goals achieved, lessons learned, and team dynamics.
     4. **Finalized Repository State**: Verified repository state with all planned implementation and upkeep tasks concluded.
@@ -278,21 +289,21 @@ From Week 4 to Week 9 every submission is due on Saturday at 23:59, with no soft
 
 The course evaluation consists of **9 group submissions**, **1 individual reflection & peer evaluation**, and the **Final Exam**:
 
-|   #    | Assessment Item      | Week       | Scope          | Deadline / Date | Primary Deliverables                                                                                                                                                                                                                                                                                                | Grade Component  |
-| :----: | :------------------- | :--------- | :------------- | :-------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | :--------------: |
-| **1**  | **Submission 1**     | Week 1     | **Group**      | Oct 1, 23:59    | **Initial Project Research** (alternatives search, pros & cons, gap analysis, value proposition), product repository setup, customer kickoff transcript                                                                                                                                                             |    Group (7%)    |
-| **2**  | **Submission 2**     | Week 2     | **Group**      | Oct 8, 23:59    | **Requirements & Prototyping** (product vision, user stories with acceptance criteria, issue tracking, prototypes, customer validation)                                                                                                                                                                             |    Group (7%)    |
-| **3**  | **Submission 3**     | Week 3     | **Group**      | Oct 15, 23:59   | **Plan & MUP** (project plan, threshold of success, risk register, minimum usable product, Definition of Done, `SPRINT-nn` GitHub milestones, `Responsible` and `Accountable` issue fields with matching assignees, public GitHub project, changelog, first SemVer tag, docs site, setup and run instructions)      |    Group (7%)    |
-| **4**  | **Submission 4**     | Week 4     | **Group**      | Oct 24, 23:59   | **Quality & Architecture** (sprint plan and estimates, quality requirements and their priority matrix, functional requirements, the architecture with its drivers and ADR index, the architectural decision records, the glossary, the team's `AGENTS.md`, the sprint retrospective, next product release `REL-04`) |    Group (7%)    |
-| **5**  | **Submission 5**     | Week 5     | **Group**      | Oct 31, 23:59   | **Deployment & Release** (unit tests, production deployment, CI/CD pipelines, next product release `REL-05`, 7-min pitch deck — _presented in-class during Week 6_)                                                                                                                                                 |    Group (7%)    |
-| **6**  | **Submission 6**     | Week 6     | **Group**      | Nov 7, 23:59    | **Product Analytics** (analytics instrumentation and active event/telemetry collection)                                                                                                                                                                                                                             |    Group (7%)    |
-| **7**  | **Submission 7**     | Week 7     | **Group**      | Nov 14, 23:59   | **Usability Testing** (pre/post-test surveys, task facilitation protocol, observation recording strategy)                                                                                                                                                                                                           |    Group (7%)    |
-| **8**  | **Submission 8**     | Week 8     | **Group**      | Nov 21, 23:59   | **Configuration Management** (evaluation of CM practices, improvement plan, and implementation)                                                                                                                                                                                                                     |    Group (7%)    |
-| **9**  | **Submission 9**     | Week 9     | **Group**      | Nov 28, 23:59   | **Final Project Submission** (final presentation deck, usability test results & findings, project reflection report, repository code freeze)                                                                                                                                                                        |    Group (7%)    |
-| **—**  | _Review Class_       | Week 10    | _Cohort_       | Nov 27 in class | Course retrospective and final exam demo preparation _(no submission due)_                                                                                                                                                                                                                                          |        —         |
-| **—**  | **Class Attendance** | Weeks 1–11 | **Individual** | Ongoing         | Active in-class presence and collaboration across all weekly class sessions                                                                                                                                                                                                                                         | Individual (10%) |
-| **10** | **Final Exam**       | Week 11    | **Group**      | Dec 4 in class  | **Group Project Presentations** (live software demos, architectural defense, peer evaluation)                                                                                                                                                                                                                       | Final Exam (20%) |
-| **11** | **Submission 10**    | Week 11    | **Individual** | Dec 10, 23:59   | **Individual Reflection & Peer Evaluation** (personal reflection on contributions, peer evaluation of teammates) — _available only if the group delivered the final presentation_                                                                                                                                   | Individual (7%)  |
+|   #    | Assessment Item      | Week       | Scope          | Deadline / Date | Primary Deliverables                                                                                                                                                                                                                                                                                                                                                                                                                   | Grade Component  |
+| :----: | :------------------- | :--------- | :------------- | :-------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :--------------: |
+| **1**  | **Submission 1**     | Week 1     | **Group**      | Oct 1, 23:59    | **Initial Project Research** (alternatives search, pros & cons, gap analysis, value proposition), product repository setup, customer kickoff transcript                                                                                                                                                                                                                                                                                |    Group (7%)    |
+| **2**  | **Submission 2**     | Week 2     | **Group**      | Oct 8, 23:59    | **Requirements & Prototyping** (product vision, user stories with acceptance criteria, issue tracking, prototypes, customer validation)                                                                                                                                                                                                                                                                                                |    Group (7%)    |
+| **3**  | **Submission 3**     | Week 3     | **Group**      | Oct 15, 23:59   | **Plan & MUP** (project plan, threshold of success, risk register, minimum usable product, Definition of Done, `SPRINT-nn` GitHub milestones, `Responsible` and `Accountable` issue fields with matching assignees, public GitHub project, changelog, first SemVer tag, docs site, setup and run instructions)                                                                                                                         |    Group (7%)    |
+| **4**  | **Submission 4**     | Week 4     | **Group**      | Oct 24, 23:59   | **Quality & Architecture** (sprint plan and estimates, quality requirements and their priority matrix, functional requirements, the architecture with its drivers and ADR index, the architectural decision records, the glossary, the team's `AGENTS.md`, the sprint retrospective, next product release `REL-04`)                                                                                                                    |    Group (7%)    |
+| **5**  | **Submission 5**     | Week 5     | **Group**      | Oct 31, 23:59   | **Verification & Deployment** (quality requirement tests and the testing plan, automated tests and CI checks, staging and production instances with `docs/deployment.md` — _live accessible means the customer reaches them from the university network at the VM's IPv4 address_ — at least two milestones and two new stories, Feature Documentation in `docs/features.md`, the sprint retrospective, next product release `REL-05`) |    Group (7%)    |
+| **6**  | **Submission 6**     | Week 6     | **Group**      | Nov 7, 23:59    | **Product Analytics** (analytics instrumentation and active event/telemetry collection)                                                                                                                                                                                                                                                                                                                                                |    Group (7%)    |
+| **7**  | **Submission 7**     | Week 7     | **Group**      | Nov 14, 23:59   | **Usability Testing** (pre/post-test surveys, task facilitation protocol, observation recording strategy)                                                                                                                                                                                                                                                                                                                              |    Group (7%)    |
+| **8**  | **Submission 8**     | Week 8     | **Group**      | Nov 21, 23:59   | **Configuration Management** (evaluation of CM practices, improvement plan, and implementation)                                                                                                                                                                                                                                                                                                                                        |    Group (7%)    |
+| **9**  | **Submission 9**     | Week 9     | **Group**      | Nov 28, 23:59   | **Final Project Submission** (final presentation deck, usability test results & findings, project reflection report, repository code freeze)                                                                                                                                                                                                                                                                                           |    Group (7%)    |
+| **—**  | _Review Class_       | Week 10    | _Cohort_       | Nov 27 in class | Course retrospective and final exam demo preparation _(no submission due)_                                                                                                                                                                                                                                                                                                                                                             |        —         |
+| **—**  | **Class Attendance** | Weeks 1–11 | **Individual** | Ongoing         | Active in-class presence and collaboration across all weekly class sessions                                                                                                                                                                                                                                                                                                                                                            | Individual (10%) |
+| **10** | **Final Exam**       | Week 11    | **Group**      | Dec 4 in class  | **Group Project Presentations** (live software demos, architectural defense, peer evaluation)                                                                                                                                                                                                                                                                                                                                          | Final Exam (20%) |
+| **11** | **Submission 10**    | Week 11    | **Individual** | Dec 10, 23:59   | **Individual Reflection & Peer Evaluation** (personal reflection on contributions, peer evaluation of teammates) — _available only if the group delivered the final presentation_                                                                                                                                                                                                                                                      | Individual (7%)  |
 
 ### Assessment Counts & Components
 

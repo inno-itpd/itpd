@@ -3,7 +3,7 @@
 How to find what the stakeholders expect of the product, write it as quality and functional requirements, and document the architecture and the decisions that answer it.
 
 This week the product gets quality requirements, functional requirements, a container view, a documented architecture, and the architectural decision records behind it.
-The rules are in [Quality Requirement Requirements](../requirements/quality-requirements-requirements.md), [Functional Requirement Requirements](../requirements/functional-requirements-requirements.md), [Architecture Requirements](../requirements/architecture-requirements.md), and [ADR Requirements](../requirements/adr-requirements.md), and the glossary is in [Glossary Requirements](../requirements/glossary-requirements.md).
+The rules are in [Quality Requirement Requirements](../requirements/quality-requirements-requirements.md), [Functional Requirement Requirements](../requirements/functional-requirements-requirements.md), [Architecture Requirements](../requirements/architecture-requirements.md), [ADR Requirements](../requirements/adr-requirements.md), and [Feature Documentation Requirements](../requirements/features-requirements.md), and the glossary is in [Glossary Requirements](../requirements/glossary-requirements.md).
 This guide is the method: finding the quality expectations, writing each one so a reviewer can fail it, and keeping the links between the requirements, the drivers, and the decisions pointing one way.
 
 **Timebox:** about two days, most of it in the quality attribute workshop and the first three architectural decision records.
@@ -52,6 +52,12 @@ The requirements are cheapest to change now, before a test or a decision rests o
   - [Read From The Requirement To The Record](#read-from-the-requirement-to-the-record)
   - [Search From The Record To The Requirement](#search-from-the-record-to-the-requirement)
   - [Leave The Chain To The Links](#leave-the-chain-to-the-links)
+- [Step 8: Document The Features](#step-8-document-the-features)
+  - [Name A Capability, Not An Artifact](#name-a-capability-not-an-artifact)
+  - [Leave Each Fact Where It Already Lives](#leave-each-fact-where-it-already-lives)
+  - [Write The User Sentence](#write-the-user-sentence)
+  - [Order The Entries](#order-the-entries)
+  - [Keep The Page Current](#keep-the-page-current)
 - [Common Mistakes](#common-mistakes)
 
 ## What You Produce
@@ -61,6 +67,7 @@ The requirements are cheapest to change now, before a test or a decision rests o
 - `docs/architecture/README.md`: the container view with its responsibilities, the drivers that shape the architecture, and the ADR index, per [Architecture Requirements](../requirements/architecture-requirements.md).
 - `docs/architecture/adr/`: one record per decision, with the options it turned down and the requirements it accounts for, per [ADR Requirements](../requirements/adr-requirements.md).
 - `docs/glossary.md`: the project's own terms, each defined once, per [Where The Glossary Lives](../requirements/glossary-requirements.md#where-the-glossary-lives) and [The Term](../requirements/glossary-requirements.md#the-term).
+- `docs/features.md`: the product's capabilities for users and for developers, one entry per capability that links the story, requirement, and record that own its facts, with the page's vocabulary routed to the glossary, per [Feature Documentation Requirements](../requirements/features-requirements.md).
 
 The requirements say what the product must do and how well, the architecture says what the team decided in order to get that, and the indexes are where the two meet.
 
@@ -249,7 +256,7 @@ If the product genuinely runs as one container, say that in one sentence and kee
 
 `**Containers:**` names the containers the behavior runs in, and the names come from the container view, spelled as the view spells them.
 The field is per behavior, so it names the one or two containers that carry that behavior, not every container the behavior touches: a booking whose request runs in the backend and whose row is stored in the database runs in `backend`, because the database does not run the behavior.
-A behavior that needs two containers is a behavior with a call between them, which is what the component and sequence views in Week 5 show.
+A behavior that needs two containers is a behavior with a call between them, and the arrow between the two boxes in the container view is that call.
 
 ### Record Where It Came From
 
@@ -439,6 +446,56 @@ The architecture document reaches the threshold of success through its drivers, 
 Follow those links once each from a task, and you arrive at a goal the customer set without any document written to carry you.
 A trace section or a matrix table would be a second copy of those facts, and it would be stale the first week a requirement moved; the links are the trace, and the search is the way back.
 
+## Step 8: Document The Features
+
+A **feature** is a capability a user recognises: a booked and paid slot, a rescheduled session, a cancelled one.
+`docs/features.md` is the one page where the product's features are written down for users and for developers, per [Feature Documentation Requirements](../requirements/features-requirements.md).
+Its entries give a user what the product does and give a developer the records that own the detail.
+
+### Name A Capability, Not An Artifact
+
+A feature is the name of something the product does rather than a record about it: "a client books and pays in one flow" is a feature, because a user would ask for it and the customer would accept it; "the booking page" is a screen, and `FR-012` is a requirement.
+The test is the sentence a user would say: if it has to name a screen, a table, or a service to make sense, it is describing the implementation of a feature rather than the feature.
+
+Find the capabilities from the product rather than from the file structure: the things a user opens the product to do, and the sentences they would use to ask for them.
+A capability with at least one story and one functional requirement is ready to document; one without them is not ready, and the story or the requirement comes first.
+
+### Leave Each Fact Where It Already Lives
+
+A feature holds no new fact, because every part of it already has an owner:
+
+- The need is a `US-nn` story, with its acceptance criteria.
+- The behaviour is a `FR-nnn`, with its acceptance criteria, per [The Functional Requirement](../requirements/functional-requirements-requirements.md#the-functional-requirement).
+- The decision that shaped it is an architectural decision record, whose `**Addresses:**` names the requirements it accounts for, per [What It Accounts For](../requirements/adr-requirements.md#what-it-accounts-for).
+- The name, when the project uses the word in its own sense, is a term in `docs/glossary.md`, and its `**Defined by:**` links the artifact that defines it, per [The Term](../requirements/glossary-requirements.md#the-term).
+  The entry's sentence links that term at first use and does not define it.
+
+Documenting a feature means joining those pieces into one entry a reader can follow, not restating them: a page that repeats a requirement's behaviour is the copy that goes stale the week the requirement changes, and it is the copy somebody will quote.
+The entry links the story, the requirement, the record, and the term, and leaves each fact with its owner.
+
+### Write The User Sentence
+
+The first line under an entry's heading is one sentence in the user's language, and it is the only part a user has to read.
+Write it as the user would say it: "A client books a slot and pays for it without leaving the booking page", not "The booking endpoint persists a hold and confirms payment".
+Leave out identifiers, screen names, and acceptance criteria, because the entry's links carry them and a sentence that names `FR-001` has stopped being user language.
+Keep it to one capability: if the sentence needs "and then" twice, it is probably two capabilities, and each gets its own entry.
+
+Where the sentence uses a word the glossary defines, the word links to its term at that first use, so the sentence stays one sentence and the vocabulary resolves in a click.
+The heading is not a place for a link: it is the capability's name, and it is the anchor a citation uses.
+
+### Order The Entries
+
+One flat list, in the order a reader should meet the product: the capability the product exists for first, then the ones a user meets as they use it.
+Do not group the page by role, because the opening sentence is the user-facing part and a role section would need a taxonomy the course does not have.
+Do not order by `US-nn` or `FR-nnn` number either, because the numbers record when a record was written rather than how a reader meets the product.
+
+### Keep The Page Current
+
+The page is maintained documentation, so it changes with the product.
+When a feature changes, update its entry in the same pull request as the change: a closed story stays linked, a moved requirement gets its new link, a superseding record replaces the old one, and a renamed glossary term updates its word and link in the sentence that uses it.
+When the product gains a capability, add an entry; when it loses one, remove the entry rather than leaving a description of something the product no longer does.
+The same pull request is what keeps the page from describing a product that no longer exists, which is the failure a page written once and never reopened always reaches.
+
 ## Common Mistakes
 
 - **A quality requirement nobody could fail.**
@@ -461,3 +518,5 @@ A trace section or a matrix table would be a second copy of those facts, and it 
   It records what the team did without the reasoning that makes it a decision; name the option you turned down and the quality the choice costs.
 - **A trace document.**
   A section or a table that restates the chain is stale the first week a requirement moves; follow the links instead.
+- **A feature entry that retells its requirement.**
+  A paragraph that repeats the `FR-nnn`'s behavior gives the same fact two owners, and the copy goes stale the week the requirement changes; write the user's sentence and link the requirement.

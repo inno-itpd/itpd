@@ -51,6 +51,10 @@ Who may see each item is in [Visibility Requirements](visibility-requirements.md
 14. The report does not assess an individual.
     The contribution table is the evidence of who did what, and no section asks the team to rate or explain a member's contribution.
 
+**Since: W5**
+
+15. The report's summary points at `docs/project-plan.md#quality-requirement-testing-plan` for the tests that are not `Passes`, and copies none of the rows.
+
 **Recommended**
 
 - Use the same section order every week so readers learn it once.
@@ -60,10 +64,10 @@ Who may see each item is in [Visibility Requirements](visibility-requirements.md
 
 **Example**
 
-A Week 04 report, from `reports/week-04/README.md`:
+A Week 05 report, from `reports/week-05/README.md`:
 
 ```markdown
-# Week 04 report
+# Week 05 report
 
 ## Project
 
@@ -73,39 +77,45 @@ Our problem-space sentence: an expert who sells sessions online needs one link w
 
 ## What we did
 
-We wrote the quality and functional requirements behind the slice, documented the architecture and the decisions it makes, and held the sprint's planning, review, and retrospective.
+We deployed the release candidate to the staging and production instances on the university VM, added the automated tests and the CI checks, and implemented the tests for the two active High business-importance quality requirements.
 
 ## Findings
 
-Payment confirmation is the quality attribute that shapes the architecture, not the calendar.
-The provider's hosted checkout keeps us outside card data, and the testability requirement is what the payment module is judged by.
+The deployed test is what the time-behaviour requirement needed: it measures the booking page on staging, from a campus machine, against the same commit production runs.
+[The testing plan](../../docs/project-plan.md#quality-requirement-testing-plan) carries both tests, their results, and every row that is not `Passes`.
+
+## Quality requirement tests
+
+The staging run of `4c1e9ab` from a campus machine reported 9 of 10 page loads under two seconds, so [`QR-01 QRT-01`](../../docs/quality-requirements/qr/QR-01.md#qrt-01) passes.
+The `test` job passed on the same commit, so [`QR-02 QRT-01`](../../docs/quality-requirements/qr/QR-02.md#qrt-01) passes.
 
 ## Coverage
 
-| Deliverable               | Artifact                                                                               |
-| ------------------------- | -------------------------------------------------------------------------------------- |
-| Sprint plan and estimates | [docs/project-plan.md](../../docs/project-plan.md#sprint-04)                           |
-| Quality requirements      | [docs/quality-requirements/README.md](../../docs/quality-requirements/README.md)       |
-| Functional requirements   | [docs/functional-requirements/README.md](../../docs/functional-requirements/README.md) |
-| Architecture and drivers  | [docs/architecture/README.md](../../docs/architecture/README.md)                       |
-| Architectural decisions   | [docs/architecture/adr/](../../docs/architecture/adr/)                                 |
-| Glossary                  | [docs/glossary.md](../../docs/glossary.md)                                             |
-| Team `AGENTS.md`          | [AGENTS.md](../../AGENTS.md)                                                           |
-| Customer validation       | [reports/week-04/meeting-report.md](meeting-report.md)                                 |
-| `REL-04`                  | [v0.4.0](https://github.com/<organization>/<repo>/releases/tag/v0.4.0)                 |
-| Sprint retrospective      | [reports/week-04/sprint-retrospective.md](sprint-retrospective.md)                     |
-| AI usage                  | [reports/week-04/ai-usage.md](ai-usage.md)                                             |
+| Deliverable                | Artifact                                                                                                    |
+| -------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| Sprint plan and milestones | [docs/project-plan.md](../../docs/project-plan.md#milestones)                                               |
+| New stories                | [the two stories added this sprint](https://github.com/<organization>/<repo>/issues?q=is%3Aissue+sprint+05) |
+| Quality requirement tests  | [docs/quality-requirements/qr/QR-01.md](../../docs/quality-requirements/qr/QR-01.md#qrt-01)                 |
+| Testing plan               | [docs/project-plan.md](../../docs/project-plan.md#quality-requirement-testing-plan)                         |
+| Automated tests and CI     | [.github/workflows/ci.yml](../../.github/workflows/ci.yml)                                                  |
+| Deployment                 | [docs/deployment.md](../../docs/deployment.md)                                                              |
+| Feature documentation      | [docs/features.md](../../docs/features.md)                                                                  |
+| Week 4 action points       | [reports/week-05/meeting-report.md](meeting-report.md#previous-action-points)                               |
+| Customer validation        | [reports/week-05/meeting-report.md](meeting-report.md)                                                      |
+| `REL-05`                   | [v0.5.0](https://github.com/<organization>/<repo>/releases/tag/v0.5.0)                                      |
+| Sprint retrospective       | [reports/week-05/sprint-retrospective.md](sprint-retrospective.md)                                          |
+| AI usage                   | [reports/week-05/ai-usage.md](ai-usage.md)                                                                  |
 
 ## Contribution
 
-| Member | Work                                                                      |
-| ------ | ------------------------------------------------------------------------- |
-| @alice | [PR #31](...), the quality requirements, [approved](...) @bob             |
-| @bob   | [PR #32](...), the architectural decision records, [approved](...) @carol |
+| Member | Work                                                                         |
+| ------ | ---------------------------------------------------------------------------- |
+| @alice | [PR #41](...), the deployment runbook, [approved](...) @bob                  |
+| @bob   | [PR #42](...), the automated tests and the CI checks, [approved](...) @carol |
 
 ## Repository evidence
 
-[Reviewed pull request](...), [link check run](...), [Markdown check run](...).
+[Reviewed pull request](...), [link check run](...), [Markdown check run](...), [product-code CI run](...), [actionlint run](...).
 
 ## Deviations
 

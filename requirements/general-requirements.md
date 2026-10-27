@@ -75,6 +75,7 @@ It is the short version of the requirements, states what is expected of you as a
    `US-nn` for user stories, `AC-nn` for the acceptance criteria of a story issue or a task issue, `CON-nn` for constraints, and `BND-nn` for boundary items are introduced in Week 2.
    `RISK-nn` for risks, `TOS-nn` for the goals in the threshold of success, `SPRINT-nn` for sprints, `MLS-nn` for milestones, and `REL-nn` for releases are introduced in Week 3.
    `FR-nnn` for functional requirements, `QR-nn` for quality requirements, and `ADR-nnn` for architectural decision records are introduced in Week 4, and `FR-nnn` and `ADR-nnn` take three digits, because each grows with every record and can pass 99; `QR-nn` takes two, like every other family.
+   `QRT-nn` for quality requirement tests is introduced in Week 5, takes two digits, and is scoped to its `QR-nn`.
    A later family is introduced only by the requirement that first uses it.
 2. An identifier, once issued, is never changed, reused, or reassigned, including when the artifact is edited later in the course.
 3. Gaps in a sequence are expected and correct.
@@ -113,6 +114,19 @@ It is the short version of the requirements, states what is expected of you as a
 14. `SPRINT-nn`, `MLS-nn`, and `REL-nn` are the exceptions to rule 10, and `MLS-nn` and `REL-nn` also to rule 5: the sprint's GitHub milestone and the release carry their own state, a plan milestone carries none, and the plan's section is the record rather than a `**Status:**` field.
     A plan milestone opens with its fields and its description below them, and a release carries its released-as line once it is published; [Sprints](planning-requirements.md#sprints), [Milestones](planning-requirements.md#milestones), and [Releases](planning-requirements.md#releases) say how each is written.
 
+**Since: W5**
+
+15. `QRT-nn` is the Week 5 family, and it takes two digits.
+    It is scoped to its `QR-nn`, so its identifier is the pair `QR-01 QRT-02`, and the bare number is unique only within its requirement.
+16. A `QRT-nn` section's heading is the bare identifier, such as `## QRT-01`, so its anchor is `#qrt-01`.
+    This is an exception to rule 5, because the requirement file supplies the scope, and rule 2 applies to the pair rather than to the bare number.
+17. A test follows rule 10: it carries `**Status:**` as its first field, and the values are `Active` and `Dropped`.
+    Its result is not its status, because the testing plan carries the result, the sprint it was last checked in, and its evidence, per [Quality Requirement Testing Plan](planning-requirements.md#quality-requirement-testing-plan).
+18. A dropped test follows rule 11: it keeps its heading, its first line, and its other fields, and adds `**Dropped:**` with the date and the reason.
+19. A feature is not an identifier family, and there is no `FEAT-nn`.
+    Cite a feature by the path of `docs/features.md` and the entry's `##` heading anchor, such as `docs/features.md#book-and-pay-in-one-flow`, per [Feature Documentation Requirements](features-requirements.md#where-the-features-live).
+    A feature has no index, no issue type, and no report section.
+
 **Example**
 
 A gap the kickoff dropped, in `docs/research/gap-analysis.md`, with its other fields left out:
@@ -134,21 +148,23 @@ The research you produce in Week 1 is the evidence base for the rest of the cour
 Later weeks cite your Week 1 identifiers rather than restating your findings.
 This is what makes the course a project rather than nine separate assignments.
 
-| Later work                      | Must cite                                                                                                                                                                                                                                         |
-| ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Week 2 product vision           | The `VP-nn` its goal traces to, per [Goal](product-vision-requirements.md#goal)                                                                                                                                                                   |
-| Week 2 user stories             | The `VP-nn` in each story's `Value proposition` field, any origins in its `Traces to` list, and the `ASM-nn` of each assumption it rests on in its `Rests on` list, per [The Story](user-stories-requirements.md#the-story)                       |
-| Week 2 prototypes               | The `US-nn` or `GAP-nn` each one tested, and the `ASM-nn` when the risky part is an assumption, per [Where Prototypes Live](prototypes-requirements.md#where-prototypes-live)                                                                     |
-| Week 3 project plan             | The `TOS-nn` of each milestone's `**Advances:**` field and the `SPRINT-nn` of its `**Sprints:**` field, per [Milestones](planning-requirements.md#milestones)                                                                                     |
-| Week 3 threshold of success     | The customer's `DEC-nnn` behind each goal change or drop, per [The Threshold Of Success](planning-requirements.md#the-threshold-of-success)                                                                                                       |
-| Week 3 risks                    | The `DEC-nnn` of a decision that settled the risk or that its response passes, per [Checking And Settling](risks-requirements.md#checking-and-settling) and [Response](risks-requirements.md#response)                                            |
-| Every weekly report from Week 3 | The `REL-nn` of its week's release, linked to that release's plan section, such as `project-plan.md#rel-03`, per [Releases](planning-requirements.md#releases)                                                                                    |
-| Week 4 product vision           | The `TOS-nn` its goal links and `docs/architecture/README.md` as a whole, per [Goal](product-vision-requirements.md#goal) and [Where The Vision Lives](product-vision-requirements.md#where-the-vision-lives)                                     |
-| Week 4 functional requirements  | The origin each `**Traces to:**` entry names: a `US-nn`, a `DEC-nnn`, a `CON-nn`, or a meeting report; and the `ADR-nnn` that constrains it, per [The Functional Requirement](functional-requirements-requirements.md#the-functional-requirement) |
-| Week 4 architectural decisions  | The `FR-nnn` and `QR-nn` each `**Addresses:**` field names, and the `DEC-nnn` its `**Decision:**` documents, per [The Record](adr-requirements.md#the-record)                                                                                     |
-| Week 4 stories                  | The `FR-nnn` and `ADR-nnn` that specify it, in `### Specified by`, per [The Story](user-stories-requirements.md#the-story)                                                                                                                        |
-| Week 4 tasks                    | The `FR-nnn` and `ADR-nnn` the task works on, in `### Requirements`, per [The Issue Form](task-issues-requirements.md#the-issue-form)                                                                                                             |
-| Any change a decision caused    | The decision's `DEC-nnn` when it has an entry, or its reason otherwise, per [What Cites It](decisions-requirements.md#what-cites-it)                                                                                                              |
+| Later work                       | Must cite                                                                                                                                                                                                                                         |
+| -------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Week 2 product vision            | The `VP-nn` its goal traces to, per [Goal](product-vision-requirements.md#goal)                                                                                                                                                                   |
+| Week 2 user stories              | The `VP-nn` in each story's `Value proposition` field, any origins in its `Traces to` list, and the `ASM-nn` of each assumption it rests on in its `Rests on` list, per [The Story](user-stories-requirements.md#the-story)                       |
+| Week 2 prototypes                | The `US-nn` or `GAP-nn` each one tested, and the `ASM-nn` when the risky part is an assumption, per [Where Prototypes Live](prototypes-requirements.md#where-prototypes-live)                                                                     |
+| Week 3 project plan              | The `TOS-nn` of each milestone's `**Advances:**` field and the `SPRINT-nn` of its `**Sprints:**` field, per [Milestones](planning-requirements.md#milestones)                                                                                     |
+| Week 3 threshold of success      | The customer's `DEC-nnn` behind each goal change or drop, per [The Threshold Of Success](planning-requirements.md#the-threshold-of-success)                                                                                                       |
+| Week 3 risks                     | The `DEC-nnn` of a decision that settled the risk or that its response passes, per [Checking And Settling](risks-requirements.md#checking-and-settling) and [Response](risks-requirements.md#response)                                            |
+| Every weekly report from Week 3  | The `REL-nn` of its week's release, linked to that release's plan section, such as `project-plan.md#rel-03`, per [Releases](planning-requirements.md#releases)                                                                                    |
+| Week 4 product vision            | The `TOS-nn` its goal links and `docs/architecture/README.md` as a whole, per [Goal](product-vision-requirements.md#goal) and [Where The Vision Lives](product-vision-requirements.md#where-the-vision-lives)                                     |
+| Week 4 functional requirements   | The origin each `**Traces to:**` entry names: a `US-nn`, a `DEC-nnn`, a `CON-nn`, or a meeting report; and the `ADR-nnn` that constrains it, per [The Functional Requirement](functional-requirements-requirements.md#the-functional-requirement) |
+| Week 4 architectural decisions   | The `FR-nnn` and `QR-nn` each `**Addresses:**` field names, and the `DEC-nnn` its `**Decision:**` documents, per [The Record](adr-requirements.md#the-record)                                                                                     |
+| Week 4 stories                   | The `FR-nnn` and `ADR-nnn` that specify it, in `### Specified by`, per [The Story](user-stories-requirements.md#the-story)                                                                                                                        |
+| Week 4 tasks                     | The `FR-nnn` and `ADR-nnn` the task works on, in `### Requirements`, per [The Issue Form](task-issues-requirements.md#the-issue-form)                                                                                                             |
+| Week 5 quality requirement tests | The `QR-nn` each test proves, per [Quality Requirement Tests](quality-requirements-requirements.md#quality-requirement-tests); its result is in [the testing plan](planning-requirements.md#quality-requirement-testing-plan)                     |
+| Week 5 feature documentation     | The `US-nn`, `FR-nnn`, and `ADR-nnn` each entry links, and the glossary term its opening sentence links at first use, per [The Feature Entry](features-requirements.md#the-feature-entry)                                                         |
+| Any change a decision caused     | The decision's `DEC-nnn` when it has an entry, or its reason otherwise, per [What Cites It](decisions-requirements.md#what-cites-it)                                                                                                              |
 
 **Required**
 

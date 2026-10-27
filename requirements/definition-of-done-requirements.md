@@ -85,7 +85,7 @@ A **pull request** is the change that closes one task issue, and the list says w
 
 **Since: W5**
 
-2. From Week 5, the list also names the [product-code CI](repository-requirements.md#continuous-integration) among the checks that must be green.
+2. From Week 5, the list also names `actionlint` and the applicable [product-code CI](repository-requirements.md#continuous-integration) checks among the checks that must be green.
 
 ## Full Example
 
@@ -115,7 +115,7 @@ Work tracked in the in-repository task tracker follows the tracker's own Definit
 - A pull request closes exactly one task issue and links it.
 - The accountable reviewer ticks every task acceptance criterion before approving.
 - The approval comes from a member other than the author.
-- The repository checks are green: the link check and the Markdown check.
+- The repository checks are green: the link check, the Markdown check, `actionlint`, and the applicable product-code CI checks.
 - A user-visible change updates the `[Unreleased]` section of [`CHANGELOG.md`](../CHANGELOG.md).
 - The acceptance criteria this pull request claims pass on its branch, and on `main` after it merges.
 - No secret, recording, or private-only material is committed.

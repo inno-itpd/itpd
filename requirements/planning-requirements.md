@@ -10,6 +10,7 @@ How the `SPRINT-nn`, `MLS-nn`, `REL-nn`, and `TOS-nn` identifiers are issued and
 - [Milestones](#milestones)
 - [Sprints](#sprints)
 - [Releases](#releases)
+- [Quality Requirement Testing Plan](#quality-requirement-testing-plan)
 - [Progress Monitoring](#progress-monitoring)
 - [The Threshold Of Success](#the-threshold-of-success)
 - [Full Example](#full-example)
@@ -28,6 +29,7 @@ They are created in Week 3 in their final place and stay current for the rest of
 
    - The **milestones**, per [Milestones](#milestones): one `### MLS-nn` section per milestone.
    - The **sprints**, per [Sprints](#sprints): one `### SPRINT-nn` section per sprint, each with its goal, its due date, its sprint backlog, and its release per [Releases](#releases).
+   - The **quality requirement testing plan**, per [Quality Requirement Testing Plan](#quality-requirement-testing-plan): one table, one row per test.
    - The **progress monitoring**, per [Progress Monitoring](#progress-monitoring), last.
 
 2. The threshold of success is `docs/threshold-of-success.md`.
@@ -142,9 +144,42 @@ The changelog, the tags, and the release titles follow [Release Requirements](re
    Then merge what links the tag, in this order: the changelog's released section, this `REL-nn` line, and the week's report, so every link resolves the first time it is checked.
 5. The `REL-nn` section does not link the changelog, and the changelog does not mention `REL-nn`: the changelog's released section links the release, and the plan and the week's report make the link between the release and its sprint.
 
+**Since: W5**
+
+6. A team may release more than once in a sprint: the sprint's `REL-nn` is the last release cut in that sprint, and an earlier release in the same sprint carries no `REL-nn`.
+
 **Recommended**
 
 - Put what should point at the release into its GitHub release body, such as the changelog section for that version and the week's report.
+
+## Quality Requirement Testing Plan
+
+**Since: W5**
+
+The plan carries one table of the quality requirement tests and what each last found.
+A test's definition is in [Quality Requirement Tests](quality-requirements-requirements.md#quality-requirement-tests), and this section says how its result is kept.
+
+**Required**
+
+1. `docs/project-plan.md` carries a `## Quality Requirement Testing Plan` section, with one row per `QRT-nn` and these columns, in this order:
+
+   | Column               | What it holds                                                                                                                                  |
+   | -------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+   | `QR`                 | The requirement the test proves, linked to its file                                                                                            |
+   | `QRT`                | The test, cited as the pair and linked to its section                                                                                          |
+   | `Status`             | The test's result at its last check                                                                                                            |
+   | `Checked`            | The `SPRINT-nn` of that check                                                                                                                  |
+   | `Planned for sprint` | The `SPRINT-nn` the test is planned for                                                                                                        |
+   | `Evidence`           | A link to the proof the test's level requires, per [Quality Requirement Tests](quality-requirements-requirements.md#quality-requirement-tests) |
+
+2. The rows follow the order of the quality requirements index, and a test's number breaks a tie within one requirement, per [The Quality Requirements Index](quality-requirements-requirements.md#the-quality-requirements-index).
+3. `Status` is the test's result at its last check: `Passes`, `Fails`, or `Not verified`, where `Not verified` means no check is recorded, or `Dropped` when the test itself is dropped.
+4. `Checked` is the sprint of that check, linked to its `### SPRINT-nn` section in the plan, such as `[SPRINT-05](#sprint-05)`, and `None` on a `Not verified` or `Dropped` row.
+5. `Planned for sprint` is exactly one `SPRINT-nn`, linked through the plan, and `None` on a `Dropped` row.
+6. `Evidence` is required on a `Passes` or `Fails` row, says `None` on a `Not verified` or `Dropped` row, and links the proof rather than holding the output itself.
+7. A row that is not `Passes` keeps its result: a `Fails` row keeps its `Checked` and `Evidence`, a `Not verified` row keeps its planned sprint, and a `Dropped` row has `None` for `Checked`, `Planned for sprint`, and `Evidence`.
+8. No test carries its result, its check, or its evidence: the test's section carries its definition, and this table carries its row, per [Quality Requirement Tests](quality-requirements-requirements.md#quality-requirement-tests).
+9. A test inherits its requirement's priority, so the table carries no priority column and `Planned for sprint` is the only schedule.
 
 ## Progress Monitoring
 
@@ -168,6 +203,10 @@ That review is where the threshold of success and the risks are looked at; the w
 5. The plan carries no contingency section: a fallback is a risk's `**Contingency:**`, so it lives in `docs/risks.md`.
 6. What the review settles is recorded in the artifact that changed: a goal's change or drop in `docs/threshold-of-success.md`, per [The Threshold Of Success](#the-threshold-of-success), and a risk's status or outcome in `docs/risks.md`.
    A status change cites a `DEC-nnn` only when a decision settled one.
+
+**Since: W5**
+
+7. The weekly review reads the rows of [Quality Requirement Testing Plan](#quality-requirement-testing-plan) that are not `Passes`, and records each follow-up in the plan.
 
 ## The Threshold Of Success
 
@@ -226,7 +265,7 @@ The steps that produce the set, from picturing failure to keeping the minimal se
 
 ## Full Example
 
-Both files of the meeting-booking example, after Week 3, trimmed to the first two sprints' sections and the first milestone's section.
+Both files of the meeting-booking example, after Week 5, trimmed to the milestone sections for Weeks 3, 5, and 6, the sprints they run over, and the testing plan.
 
 From `docs/project-plan.md`:
 
@@ -243,6 +282,22 @@ From `docs/project-plan.md`:
 
 A client goes from the coach's booking link to a paid, confirmed booking.
 Rescheduling and reminders build on this slice in the next increment.
+
+### MLS-05
+
+- **Due:** 2026-10-31
+- **Sprints:** [SPRINT-04](#sprint-04), [SPRINT-05](#sprint-05)
+- **Advances:** [TOS-01](threshold-of-success.md#tos-01)
+
+A client reschedules a booking without emailing the coach, the booking page shows the free slots within two seconds, and the product runs on the staging and production deployments.
+
+### MLS-06
+
+- **Due:** 2026-11-07
+- **Sprints:** [SPRINT-06](#sprint-06)
+- **Advances:** [TOS-01](threshold-of-success.md#tos-01)
+
+A coach takes one real paid booking through the deployed product, from the booking link to the confirmation.
 
 ## Sprints
 
@@ -266,12 +321,43 @@ A client can reschedule a booking without emailing the coach.
 - **Due:** 2026-10-24
 - **Sprint Backlog:** [the issues scheduled into SPRINT-04](https://github.com/<organization>/<repo>/milestone/2)
 - **Planned Velocity:** 11
+- **Actual Velocity:** 8; the reschedule story and its tests moved to SPRINT-05.
 
 #### REL-04
 
+Released as [v0.4.0](https://github.com/<organization>/<repo>/releases/tag/v0.4.0) on 2026-10-22.
+
+### SPRINT-05
+
+A client sees the free slots within two seconds, and the product runs on the staging and production deployments on the university VM.
+
+- **Due:** 2026-10-31
+- **Sprint Backlog:** [the issues scheduled into SPRINT-05](https://github.com/<organization>/<repo>/milestone/3)
+- **Planned Velocity:** 11
+- **Actual Velocity:** 11; nothing moved out.
+
+#### REL-05
+
+Released as [v0.5.0](https://github.com/<organization>/<repo>/releases/tag/v0.5.0) on 2026-10-29.
+
+### SPRINT-06
+
+A coach takes one real paid booking through the deployed product.
+
+- **Due:** 2026-11-07
+
+#### REL-06
+
+## Quality Requirement Testing Plan
+
+| QR                                        | QRT                                                     | Status | Checked                 | Planned for sprint      | Evidence                                                                                        |
+| ----------------------------------------- | ------------------------------------------------------- | ------ | ----------------------- | ----------------------- | ----------------------------------------------------------------------------------------------- |
+| [QR-01](quality-requirements/qr/QR-01.md) | [QR-01 QRT-01](quality-requirements/qr/QR-01.md#qrt-01) | Passes | [SPRINT-05](#sprint-05) | [SPRINT-05](#sprint-05) | [the staging run in the Week 05 report](../reports/week-05/README.md#quality-requirement-tests) |
+| [QR-02](quality-requirements/qr/QR-02.md) | [QR-02 QRT-01](quality-requirements/qr/QR-02.md#qrt-01) | Passes | [SPRINT-05](#sprint-05) | [SPRINT-05](#sprint-05) | [the CI run on `4c1e9ab`](...)                                                                  |
+
 ## Progress Monitoring
 
-- **Review:** the team's weekly review, Mondays at 17:00, before the customer meeting; it reviews [threshold-of-success.md](threshold-of-success.md) and [risks.md](risks.md).
+- **Review:** the team's weekly review, Mondays at 17:00, before the customer meeting; it reviews [threshold-of-success.md](threshold-of-success.md), [risks.md](risks.md), and the [testing plan](#quality-requirement-testing-plan) rows that are not `Passes`.
 - **Checked by:** the accountable member of each scheduled issue reports its state, and the team walks the sprint backlog against the sprint's goal.
 - **Visible at:** the [project's table view](https://github.com/orgs/<organization>/projects/<number>) and the sprints' GitHub milestones.
 ```

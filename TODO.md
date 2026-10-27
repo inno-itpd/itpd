@@ -8,9 +8,11 @@
 - [ ] Design rules for assignments
   - One clear option to do things.
   - Issue field >> issue label
-- [ ] Identifier format
-  - for ACs: US-01-AC-01
-  - for QRs: QR-01-QRT-01
+- [x] Identifier format?
+  - A scoped identifier is cited as a space-separated pair: `QR-01 QRT-02` for a quality requirement test, and `FR-012 AC-02` for a criterion; the hyphenated `QR-01-QRT-01` is not adopted, per `A5-DEC-030`.
+- [ ] Traceability - only from line of code to ToS
+- [x] Should ADR cite a QRT?
+      No: an ADR's `**Addresses:**` list names the `FR-nnn` and `QR-nn` the decision accounts for, and it reaches the test through its `QR-nn`, per `A5-DEC-018`.
 
 ## A1
 
@@ -59,7 +61,7 @@
   - Markdown check moved into W2, product code CI into W5
 - [x] context diagram - https://c4model.com/diagrams/system-context
   - required in W2, format deliberately not mandated
-  - C4 continues in W5 with the container, component, and sequence views
+  - C4 continues in W4 with the container view, and the course stops there: no component or sequence view
 - [x] Use sentence case in titles
   - not done, and should not be: every H2 in `guides/` and `assignments/` is Title Case
   - `AGENTS.md` said sentence case and was wrong; corrected to Title Case
@@ -147,8 +149,8 @@
 - [x] lychee
 - [x] using this repo as an agent skill
 - [ ] provide checkboxes for acceptance criteria in user stories
-- [ ] require actionlint on their side
-  - moves to Week 5 with the product-code CI, per `course/plans/a5-plan.md`
+- [x] require actionlint on their side
+  - The `**Since: W5**` block in `requirements/repository-requirements.md` requires it over `.github/workflows/`, on pull requests and `main`, pinned like any other tool, and Assignment 5's Part 2 asks the team for it, per `A5-DEC-024`.
 - [ ] avoid migrations in the assignment ("one-time catch-up")
   - Annotated rather than ticked: the Week 4 catch-up is the deliberate exception, recorded once in `course/decisions/a4.md`, so no issue carries a change comment for it.
   - Example:
@@ -244,15 +246,14 @@ Next: Week 3 is planning and the minimum usable product, and it has no assignmen
     - the core scenario works so the product direction is viable
     - can work on a proper architecture to accommodate more scenarios
   - [ ] Intro to Scrum
-- [ ] Product-code CI (moved from Week 3 to Week 5):
-  - [ ] Assignment 5 cites the `Since: W5` block in `requirements/repository-requirements.md`
-  - [ ] The full example in `requirements/definition-of-done-requirements.md` gains the product-code CI and `actionlint` in Week 5
+- [x] Product-code CI (moved from Week 3 to Week 5):
+  - [x] Assignment 5 cites the `Since: W5` block in `requirements/repository-requirements.md`
+  - [x] The full example in `requirements/definition-of-done-requirements.md` gains the product-code CI and `actionlint` in Week 5
+  - The block names the five checks and stops at the build and the tests, because the product CI cannot reach the university network, per `A5-DEC-024`.
 - [ ] Architecture and Agile
 - [ ] Functional requirements - specify sources (user stories, constraints, architecture, etc.)
 - quality requirements, no quality goals
-- Week 4 is quality and architecture; Week 5 continues C4 from the W2 context diagram:
-  containers, components, then a sequence view.
-  The W2 deck says so on the vocabulary slide.
+- Week 4 is the container view; the C4 views are the W2 context view and the W4 container view, and the component and sequence views were dropped rather than deferred.
 - Source: `tmp/itpd-2025/lectures/lecture-2.2.pdf` carries ISO 25010, the Q42 model, and the six-part
   quality attribute scenario, plus the three ways to measure quality and the pass/fail argument for
   agreeing testable quality requirements with stakeholders.
@@ -279,9 +280,8 @@ Next: Week 3 is planning and the minimum usable product, and it has no assignmen
   - [x] Prioritize QRs by technical risk and importance
   - [ ] Feature issue type - for tracking progress of task issues?
     - Deferred: this work adds no feature issue type.
-  - [ ] Sequence diagrams (the sequence view is A5)
-    - [ ] Main actor flow
-  - [ ] At least one QR about testability mentioning critical modules (files with code)
+    - Feature documentation answers the need without one, because a feature's story, requirement, record, and glossary term already have owners, per `requirements/features-requirements.md` and `A5-DEC-036`.
+  - [x] At least one QR about testability mentioning critical modules (files with code)
   - [x] AC in a user story - use checkboxes to track state
     - The criteria are checkboxes, and the accountable member ticks one once it is verified.
   - [x] User stories - reopen when a new related task appears
@@ -291,9 +291,9 @@ Next: Week 3 is planning and the minimum usable product, and it has no assignmen
   - [x] Explain that need to calculate manually because single-select can't be a number
     - https://github.com/orgs/community/discussions/156904
   - [x] glossary.md
-  - [ ] Where to track progress on qrt?
+  - [x] Where to track progress on qrt?
   - [x] Technical risk - hard to achieve
-  - [ ] How to prioritize QRT?
+  - [x] How to prioritize QRT?
   - [ ] I think we should provide examples
         https://github.com/otrebmuh/HotelPricingSystem/blob/433e061f712a8748fdf04a6f767752e12be2f4b9/Design/Architecture.md
 
@@ -307,8 +307,15 @@ Next: Week 3 is planning and the minimum usable product, and it has no assignmen
 
 ## A5
 
-- story points from week 5
-- `course/plans/a5-plan.md` designs the QRTs, the testing plan, the container, component, and sequence views, and the CI checks
+- [x] Story points arrived in Week 4, not Week 5: the `Story Points` field carries the estimate, and velocity is computed by hand from it.
+- `course/plans/a5-plan.md` designs the QRTs, the testing plan, and the CI checks
+- The component and sequence views are not required: `A5-DEC-009` records that the course requires the context and container views, and the container view is the last required view.
+- [x] They should define at least two more milestones
+  - The minimum is the assignment's, not a rule: at least two plan milestones due in `SPRINT-05` through `SPRINT-09` in total, with an existing one counting and only the shortfall added, per `A5-DEC-019`.
+- [x] Define your integration environment
+  - Integration is the product CI on GitHub Actions, and the university VM hosts staging and production; what the team defines is the four-environment map and the manual deploy in `docs/deployment.md`, per `A5-DEC-023` and `A5-DEC-026`.
+- [x] Revise explanation of features in guides/quality-and-architecture.md
+  - The guide now links `requirements/features-requirements.md`: `docs/features.md` is fixed, one flat entry per capability, the user sentence opens it, and the links own each fact.
 
 ## A6
 
