@@ -120,6 +120,11 @@ A Week 2 validation meeting.
 3. Add a comment to the story issue with the verdict, naming any failed `AC-nn` and citing the decision's `DEC-nnn`.
    An accepted story then closes, and a rejected one stays open, per [Where Stories Live](user-stories-requirements.md#where-stories-live).
 
+**Since: W5**
+
+4. Show the deployed production instance on the university VM as the working software, reached from the university network, and show each implemented `QRT-nn`'s result at its level with it, per [Quality Requirement Tests](quality-requirements-requirements.md#quality-requirement-tests).
+   When the VM is unavailable, show the local product and the deployment plan, and declare the [deviation](weekly-report-requirements.md#declaring-deviations).
+
 **Example**
 
 A Week 3 meeting that shows working software.
