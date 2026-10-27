@@ -265,7 +265,7 @@ The steps that produce the set, from picturing failure to keeping the minimal se
 
 ## Full Example
 
-Both files of the meeting-booking example, after Week 5, trimmed to the first two milestones' sections, the sprints they run over, and the testing plan.
+Both files of the meeting-booking example, after Week 5, trimmed to the milestone sections for Weeks 3, 5, and 6, the sprints they run over, and the testing plan.
 
 From `docs/project-plan.md`:
 
@@ -290,6 +290,14 @@ Rescheduling and reminders build on this slice in the next increment.
 - **Advances:** [TOS-01](threshold-of-success.md#tos-01)
 
 A client reschedules a booking without emailing the coach, the booking page shows the free slots within two seconds, and the product runs on the staging and production deployments.
+
+### MLS-06
+
+- **Due:** 2026-11-07
+- **Sprints:** [SPRINT-06](#sprint-06)
+- **Advances:** [TOS-01](threshold-of-success.md#tos-01)
+
+A coach takes one real paid booking through the deployed product, from the booking link to the confirmation.
 
 ## Sprints
 
@@ -331,6 +339,14 @@ A client sees the free slots within two seconds, and the product runs on the sta
 #### REL-05
 
 Released as [v0.5.0](https://github.com/<organization>/<repo>/releases/tag/v0.5.0) on 2026-10-29.
+
+### SPRINT-06
+
+A coach takes one real paid booking through the deployed product.
+
+- **Due:** 2026-11-07
+
+#### REL-06
 
 ## Quality Requirement Testing Plan
 

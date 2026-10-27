@@ -4,7 +4,7 @@ title: Write course/decisions/a5.md and update the reversed decision records
 status: Done
 assignee: []
 created_date: '2026-10-27 08:45'
-updated_date: '2026-10-27 12:07'
+updated_date: '2026-10-27 12:48'
 labels: []
 dependencies:
   - TASK-151.01
@@ -63,7 +63,7 @@ When done, record implementation notes and set the task to Done.
 - [x] #3 `pnpm run lint:markdown` passes
 - [x] #4 `pnpm run test:markdown-format` and `pnpm run test:markdown-rules` pass
 - [x] #5 `pnpm run check:lectures` passes
-- [ ] #6 `pnpm run check:links` passes
+- [x] #6 `pnpm run check:links` passes
 - [x] #7 Implementation notes record the decisions made and the validation results
 <!-- DOD:END -->
 
@@ -103,6 +103,8 @@ Validation
 - Local link and anchor audit over `a3.md`, `a4.md`, `a5.md`, `a4-plan.md`, `a5-plan.md`, and `syllabus.md`: 471 local links checked, 0 broken (`a5.md` alone: 123, all resolving). `lychee --offline --include-fragments .` reports 2422 links and 0 errors. The 5 anchors that pointed at the yet-to-be-renamed Week 5 heading before the syllabus edit now resolve.
 - `pnpm run check:links`: 0 link errors and 0 fragment errors; the command exits 2 only on 4 `TIMEOUT`s to `https://iso25000.com/en/iso-25000-standards/iso-25010`, a pre-existing external URL in `a4-plan.md`, `a5-plan.md`, and `quality-requirements-requirements.md` that this task did not add and that this machine cannot reach (curl also times out; the pre-change baseline run had the same timeouts). DoD #6 is left unchecked for that environmental reason: the repository's own links and anchors are clean, but the command cannot exit 0 while the external host is unreachable.
 - Decision-log audit: 33 entries, IDs contiguous `A5-DEC-001` to `A5-DEC-033`, every entry with all five fields, `**Reverses:**` on `A5-DEC-009` and `A5-DEC-013` only, and every `A5-DEC` the plan cites (22 distinct IDs) exists in `a5.md` and states the resolution it is cited for.
+
+TASK-151.07 re-ran `pnpm run check:links` after the A5 work landed: 2428 links, 2426 OK, 2 excluded, 0 errors. The `iso25000.com` timeout was environmental and is gone, so DoD #6 is checked.
 <!-- SECTION:NOTES:END -->
 
 ## Final Summary

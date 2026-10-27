@@ -4,7 +4,7 @@ title: 'Land the Week 5 CI, environment, deployment, and visibility rules'
 status: Done
 assignee: []
 created_date: '2026-10-27 08:44'
-updated_date: '2026-10-27 10:25'
+updated_date: '2026-10-27 12:48'
 labels: []
 dependencies: []
 references:
@@ -64,7 +64,7 @@ When done, record implementation notes and set the task to Done.
 - [x] #3 `pnpm run lint:markdown` passes
 - [x] #4 `pnpm run test:markdown-format` and `pnpm run test:markdown-rules` pass
 - [x] #5 `pnpm run check:lectures` passes
-- [ ] #6 `pnpm run check:links` passes
+- [x] #6 `pnpm run check:links` passes
 - [x] #7 Implementation notes record the decisions made and the validation results
 <!-- DOD:END -->
 
@@ -116,6 +116,8 @@ Implemented the three requirements files TASK-151.02 owns, per `course/plans/a5-
 - `pnpm run test:markdown-format` and `pnpm run test:markdown-rules`: 34 tests each, pass.
 - `pnpm run check:lectures`: 5 decks match their sources with Typst 0.15.1, pass.
 - `pnpm run check:links`: 2013 links, 2007 OK, 2 excluded, 1 redirect, 0 errors, and 4 timeouts, all on `https://iso25000.com/en/iso-25000-standards/iso-25010`, in `course/plans/a4-plan.md`, `course/plans/a5-plan.md`, and `requirements/quality-requirements-requirements.md`. None of those files is edited here, and the host is unreachable from this environment: DNS resolves to `198.57.150.143`, `curl` times out after 70 s, and `web_fetch` fails, while the previous task's run on this machine passed at 12:46. `lychee --offline --include-fragments .` passes over the repository with 0 errors, and the three changed files pass `lychee --offline --include-fragments` with 0 errors, so every added path and heading anchor resolves. DoD #6 is left unchecked: the only failure is the external timeout, not a link this change introduces.
+
+TASK-151.07 re-ran `pnpm run check:links` after the A5 work landed: 2428 links, 2426 OK, 2 excluded, 0 errors. The `iso25000.com` timeout was environmental and is gone, so DoD #6 is checked.
 <!-- SECTION:NOTES:END -->
 
 ## Final Summary

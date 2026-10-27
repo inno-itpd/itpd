@@ -150,7 +150,7 @@
 - [x] using this repo as an agent skill
 - [ ] provide checkboxes for acceptance criteria in user stories
 - [x] require actionlint on their side
-  - The `**Since: W5**` block in `requirements/repository-requirements.md` requires it over `.github/workflows/`, on pull requests and `main`, pinned like any other tool, per `A5-DEC-024`.
+  - The `**Since: W5**` block in `requirements/repository-requirements.md` requires it over `.github/workflows/`, on pull requests and `main`, pinned like any other tool, and Assignment 5's Part 2 asks the team for it, per `A5-DEC-024`.
 - [ ] avoid migrations in the assignment ("one-time catch-up")
   - Annotated rather than ticked: the Week 4 catch-up is the deliberate exception, recorded once in `course/decisions/a4.md`, so no issue carries a change comment for it.
   - Example:
