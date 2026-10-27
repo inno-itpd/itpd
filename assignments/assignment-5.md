@@ -51,7 +51,7 @@ By the end of this week you should be able to show a reader:
 - At least two plan milestones and two new stories that make the next increments visible.
 - The feature documentation: `docs/features.md`, with a user-language sentence per capability, its glossary line and first-use term links, and links to the story, requirement, and record that own each fact.
 - Each story shown at the Sprint Review with its verdict recorded as a `DEC-nnn`, and each implemented test's result shown at its level.
-- `REL-05`: the tag on the final production commit, the release body's verified quality, the changelog section, and the plan's `REL-05` line.
+- `REL-05`: the tag on the final production commit, the release body with its user summary, claim, and evidence links, the changelog section, and the plan's `REL-05` line.
 - The sprint closed with its actual velocity, a retrospective that carries the Week 4 actions, and the AI usage report.
 
 ## Part 1: Plan The Sprint, Define The Milestones, And Add The Stories
@@ -271,7 +271,8 @@ The rules:
 - `CHANGELOG.md` follows Keep a Changelog, with an `[Unreleased]` section during development, and it is user-visible only: [The Changelog](../requirements/releases-requirements.md#the-changelog).
 - Version with Semantic Versioning, prefix tags with `v`, point each tag at a commit on `main`, and protect it: [Versioning And Tags](../requirements/releases-requirements.md#versioning-and-tags).
 - Title the release with its tag, move the released entries into a dated section linked to the release, and open a new empty `[Unreleased]`: [Cutting A Release](../requirements/releases-requirements.md#cutting-a-release).
-- The release body links each test it relies on and claims a `QR-nn` only when every non-dropped test for it is `Passes` and `Checked` in the release's sprint: [Cutting A Release](../requirements/releases-requirements.md#cutting-a-release) and [Quality Requirement Testing Plan](../requirements/planning-requirements.md#quality-requirement-testing-plan).
+- The release body opens with the customer summary and the limitation, then indexes the claim, and it repeats no title, tag, commit, or date: [Cutting A Release](../requirements/releases-requirements.md#cutting-a-release).
+- The release body claims a `QR-nn` only when every non-dropped test for it is `Passes` and `Checked` in the release's sprint: [Quality Requirement Testing Plan](../requirements/planning-requirements.md#quality-requirement-testing-plan).
 - `REL-05` is the plan's `#### REL-05` section under `### SPRINT-05`, carrying one line with the tag and the day it was cut: [Releases](../requirements/planning-requirements.md#releases).
 - The sprint's `REL-nn` is the last release cut in that sprint: [Releases](../requirements/planning-requirements.md#releases).
 - Close the sprint's GitHub milestone once the release is cut, after rescheduling each issue still open: [Cutting A Release](../requirements/releases-requirements.md#cutting-a-release).
@@ -280,7 +281,7 @@ This week:
 
 1. Keep `CHANGELOG.md` current through the week, with an `[Unreleased]` entry for each user-visible change.
 2. After the meeting and any rework, merge the sprint's pull requests, push the tag on the final production commit, and protect the tag from being moved or deleted.
-3. Write the release body in your own shape: link each test the release adds or relies on, and state which `QR-nn`s it claims with the run that checked each in `SPRINT-05`.
+3. Write the release body for the customer who opens it from the week's report, and check it against [Cutting A Release](../requirements/releases-requirements.md#cutting-a-release).
 4. Re-check any test last checked in an earlier sprint on the released commit before its requirement is claimed; a test that does not pass is not claimed, and its row keeps its result.
 5. Move the released entries into the dated section the changelog uses for a version, such as `[0.5.0]`, link that section to the release, open a new empty `[Unreleased]`, and merge what links the tag in this order: the changelog's released section, the plan's `REL-05` line, and the week's report.
 6. Close `SPRINT-05`'s GitHub milestone after moving each issue still open into a later sprint's milestone.

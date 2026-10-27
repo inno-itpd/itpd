@@ -25,6 +25,7 @@ The threshold session of Step 1 and the risk session of Step 5 are the hours tha
   - [Show The Sprint At Its Review](#show-the-sprint-at-its-review)
   - [Releases](#releases)
   - [Pick The Number From What A User Could Observe](#pick-the-number-from-what-a-user-could-observe)
+  - [Write The Release Body](#write-the-release-body)
   - [Close With The Retrospective](#close-with-the-retrospective)
 - [Step 5: Name The Risks And Their Fallbacks](#step-5-name-the-risks-and-their-fallbacks)
   - [Start From The Plan, Not From A Feeling](#start-from-the-plan-not-from-a-feeling)
@@ -253,6 +254,24 @@ The tag is the team's choice under SemVer, per [Versioning And Tags](../requirem
 The release repeats the tag as its title, so the version reads the same wherever the release is linked.
 A first release with no users is usually `v0.1.0`; after that, a fix a user could notice is a patch, a new capability is a minor, and a change that breaks how an existing user works is a major.
 When the number is not obvious, ask what a user would see, because that is what the version communicates.
+
+### Write The Release Body
+
+The body has three readers: the customer who opens the release from the week's report, the next sprint that needs to know what the tagged state contains, and the grader who checks the claim is true.
+Write it for the first and let the other two follow the links.
+
+Start from the changelog's released section and ask what a customer can do now that they could not do last week.
+That is the opening sentence, and it is about the product rather than about the repository.
+Then add what the changelog never says: what the release still does not do.
+`None` is an answer, and it is the honest one when the sprint finished everything it promised.
+
+The rest is an index of the claim, per [Cutting A Release](../requirements/releases-requirements.md#cutting-a-release).
+Link the testing plan and the week's report instead of pasting their rows, because the plan stays current and the report is that week's record, while a copied row goes stale the next sprint.
+
+Finish with what was verified on the production deployment and from where, which the testing plan's row does not carry.
+Then re-read the page before publishing: the title is the tag, the header holds the commit and the date, and the URL holds the version, so the body needs none of them.
+
+The plan and the week's report merge after the tag, so check the body's links once those merges land and before the week closes.
 
 ### Close With The Retrospective
 

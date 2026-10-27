@@ -316,6 +316,7 @@ Next: Week 3 is planning and the minimum usable product, and it has no assignmen
   - Integration is the product CI on GitHub Actions, and the university VM hosts staging and production; what the team defines is the four-environment map and the manual deploy in `docs/deployment.md`, per `A5-DEC-023` and `A5-DEC-026`.
 - [x] Revise explanation of features in guides/quality-and-architecture.md
   - The guide now links `requirements/features-requirements.md`: `docs/features.md` is fixed, one flat entry per capability, the user sentence opens it, and the links own each fact.
+- [x] Improve the format of releases - make releases more meaningful
 
 ## A6
 

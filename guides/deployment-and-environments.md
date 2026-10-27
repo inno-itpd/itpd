@@ -147,13 +147,13 @@ It is the checklist a teammate compares their machine against: a variable missin
 
 The staging and production values live on the VM: an environment file under the service's directory or the file the service's unit loads, whichever the team's setup uses.
 The repository holds the shape and the runbook says where the values live on the machine; no secret is committed, and the two deployments do not share one.
-A deployment is not a user-visible change, so the changelog does not record it and the release body does, per [The Changelog](../requirements/releases-requirements.md#the-changelog).
+A deployment is not a user-visible change, so the changelog does not record it: the runbook describes it, and the release body records only its verification, per [The Changelog](../requirements/releases-requirements.md#the-changelog).
 
 ### Build Once And Deploy The Same Commit Twice
 
 The commit is the unit that moves, so staging runs it, the deployed test passes against it, and production runs the same commit.
 Build the commit on the machine that runs it, or build one artifact and copy it; what must not happen is staging deploying one state and production another, because then the test proved a version nobody released.
-Write the commit into the evidence of the run and into the release, so the claim and the deployment name the same tree.
+Write the commit into the evidence of the run, and cut the tag on that commit: the tag is the commit, so the claim and the deployment name the same tree without the body repeating the hash.
 
 ### Choose A Directory Or Service You Can Restart
 

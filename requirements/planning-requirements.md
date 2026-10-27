@@ -148,10 +148,6 @@ The changelog, the tags, and the release titles follow [Release Requirements](re
 
 6. A team may release more than once in a sprint: the sprint's `REL-nn` is the last release cut in that sprint, and an earlier release in the same sprint carries no `REL-nn`.
 
-**Recommended**
-
-- Put what should point at the release into its GitHub release body, such as the changelog section for that version and the week's report.
-
 ## Quality Requirement Testing Plan
 
 **Since: W5**
