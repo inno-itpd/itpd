@@ -11,13 +11,13 @@ Materials for the **IT Product Development (ITPD)** course: what the course expe
 
 ## Assignments
 
-| Week                             | Hard deadline     | Deliverable                                                                                                                                                                   |
-| -------------------------------- | ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [1](assignments/assignment-1.md) | Fri 2 Oct, 23:59  | Initial project research: alternatives, comparison, gaps, value proposition                                                                                                   |
-| [2](assignments/assignment-2.md) | Sat 10 Oct, 23:59 | Requirements and prototyping: vision, user stories, prototypes, validation                                                                                                    |
-| [3](assignments/assignment-3.md) | Sat 17 Oct, 23:59 | Planning and the minimum usable product: plan, threshold, risks, Definition of Done, first release                                                                            |
-| [4](assignments/assignment-4.md) | Sat 24 Oct, 23:59 | Quality and architecture: quality and functional requirements, architectural decision records, drivers, glossary, retrospective, fourth release                               |
-| [5](assignments/assignment-5.md) | Sat 31 Oct, 23:59 | Testing and deployment: quality requirement tests and the testing plan, unit tests and CI checks, staging and production on the VM, Feature Documentation, the Week 5 release |
+| Week                             | Hard deadline     | Deliverable                                                                                                                                                                        |
+| -------------------------------- | ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [1](assignments/assignment-1.md) | Fri 2 Oct, 23:59  | Initial project research: alternatives, comparison, gaps, value proposition                                                                                                        |
+| [2](assignments/assignment-2.md) | Sat 10 Oct, 23:59 | Requirements and prototyping: vision, user stories, prototypes, validation                                                                                                         |
+| [3](assignments/assignment-3.md) | Sat 17 Oct, 23:59 | Planning and the minimum usable product: plan, threshold, risks, Definition of Done, first release                                                                                 |
+| [4](assignments/assignment-4.md) | Sat 24 Oct, 23:59 | Quality and architecture: quality and functional requirements, architectural decision records, drivers, glossary, retrospective, fourth release                                    |
+| [5](assignments/assignment-5.md) | Sat 31 Oct, 23:59 | Testing and deployment: quality requirement tests and the testing plan, automated tests and CI checks, staging and production on the VM, Feature Documentation, the Week 5 release |
 
 Later assignments are added as the course runs.
 Each one adds the paths and evidence for its week, and changes nothing about the rules below.

@@ -77,7 +77,7 @@ Our problem-space sentence: an expert who sells sessions online needs one link w
 
 ## What we did
 
-We deployed the release candidate to the staging and production instances on the university VM, added the unit tests and the CI checks, and implemented the tests for the two active High business-importance quality requirements.
+We deployed the release candidate to the staging and production instances on the university VM, added the automated tests and the CI checks, and implemented the tests for the two active High business-importance quality requirements.
 
 ## Findings
 
@@ -97,7 +97,7 @@ The `test` job passed on the same commit, so [`QR-02 QRT-01`](../../docs/quality
 | New stories                | [the two stories added this sprint](https://github.com/<organization>/<repo>/issues?q=is%3Aissue+sprint+05) |
 | Quality requirement tests  | [docs/quality-requirements/qr/QR-01.md](../../docs/quality-requirements/qr/QR-01.md#qrt-01)                 |
 | Testing plan               | [docs/project-plan.md](../../docs/project-plan.md#quality-requirement-testing-plan)                         |
-| Unit tests and CI          | [.github/workflows/ci.yml](../../.github/workflows/ci.yml)                                                  |
+| Automated tests and CI     | [.github/workflows/ci.yml](../../.github/workflows/ci.yml)                                                  |
 | Deployment                 | [docs/deployment.md](../../docs/deployment.md)                                                              |
 | Feature documentation      | [docs/features.md](../../docs/features.md)                                                                  |
 | Week 4 action points       | [reports/week-05/meeting-report.md](meeting-report.md#previous-action-points)                               |
@@ -108,10 +108,10 @@ The `test` job passed on the same commit, so [`QR-02 QRT-01`](../../docs/quality
 
 ## Contribution
 
-| Member | Work                                                                    |
-| ------ | ----------------------------------------------------------------------- |
-| @alice | [PR #41](...), the deployment runbook, [approved](...) @bob             |
-| @bob   | [PR #42](...), the unit tests and the CI checks, [approved](...) @carol |
+| Member | Work                                                                         |
+| ------ | ---------------------------------------------------------------------------- |
+| @alice | [PR #41](...), the deployment runbook, [approved](...) @bob                  |
+| @bob   | [PR #42](...), the automated tests and the CI checks, [approved](...) @carol |
 
 ## Repository evidence
 

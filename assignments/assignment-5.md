@@ -10,7 +10,7 @@ See [Deadlines And Submission](../course/rules.md#deadlines-and-submission).
 One submission per team.
 
 Week 4 ended with the quality requirements and their priority matrix, the functional requirements, the architectural decision records, the architecture document with its container view, the glossary, the team's `AGENTS.md`, and `REL-04`.
-This week the product leaves your laptops: it runs in staging and production on the university VM, the unit tests and the CI checks prove it, every active High business-importance quality requirement gets a test, and the testing plan records what each test last found.
+This week the product leaves your laptops: it runs in staging and production on the university VM, the automated tests and the CI checks prove it, every active High business-importance quality requirement gets a test, and the testing plan records what each test last found.
 The week also adds at least two plan milestones and two stories that carry the next increments, documents the product's features in `docs/features.md`, and ends with `REL-05`.
 
 What you hand in is a deployed product the customer can open from the university network, the checks behind it at the level each one runs, and the plan and records the next increments rest on.
@@ -21,7 +21,7 @@ The tools the course suggests, from meeting transcripts to a coding agent, are i
 
 - [Objectives](#objectives)
 - [Part 1: Plan The Sprint, Define The Milestones, And Add The Stories](#part-1-plan-the-sprint-define-the-milestones-and-add-the-stories)
-- [Part 2: Add The Unit Tests And The CI Checks](#part-2-add-the-unit-tests-and-the-ci-checks)
+- [Part 2: Add The Automated Tests And The CI Checks](#part-2-add-the-automated-tests-and-the-ci-checks)
 - [Part 3: Deploy To The VM And Document The Environments](#part-3-deploy-to-the-vm-and-document-the-environments)
 - [Part 4: Write The Quality Requirement Tests](#part-4-write-the-quality-requirement-tests)
 - [Part 5: Run The Tests And Record The Testing Plan](#part-5-run-the-tests-and-record-the-testing-plan)
@@ -44,9 +44,9 @@ By the end of this week you should be able to show a reader:
 
 - The product in the four environments: development on your machines, integration in the product CI, staging and production on the university VM.
 - A deployment runbook, `docs/deployment.md`, that a teammate on the university network could redeploy from with the address from the Moodle submission.
-- The unit tests for the testability requirement's critical modules, and the CI checks that run them on pull requests and on `main`.
+- The automated tests for the testability requirement's critical modules, and the CI checks that run them on pull requests and on `main`.
 - A quality requirement test inside every active High business-importance requirement's file, with its level, what runs it, and a pass criterion a stranger can settle.
-- At least two implemented tests: the testability requirement's `CI` test and one other requirement's test at `CI`, `scripted`, or `deployed`.
+- At least two implemented quality requirement tests: the testability requirement's `CI` test and one other requirement's test at `CI`, `scripted`, or `deployed`.
 - The testing plan with one row per test: its result, its last check, its planned sprint, and the evidence its level requires.
 - At least two plan milestones and two new stories that make the next increments visible.
 - The feature documentation: `docs/features.md`, with a user-language sentence per capability, its glossary line and first-use term links, and links to the story, requirement, and record that own each fact.
@@ -80,7 +80,7 @@ This week:
 
 The method is in [Step 3: Write The Milestones](../guides/planning-and-tracking.md#step-3-write-the-milestones) and [Step 4: Write The Sprints And Their Releases](../guides/planning-and-tracking.md#step-4-write-the-sprints-and-their-releases).
 
-## Part 2: Add The Unit Tests And The CI Checks
+## Part 2: Add The Automated Tests And The CI Checks
 
 The rules:
 
@@ -334,7 +334,7 @@ A strong submission has:
   The four environments, the campus access, the configuration, the deploy, the verification, and the rollback, with the real address from the Moodle submission and none in the repository.
 - **A VM prepared from the portal and a product the customer can open.**
   The VM recreated from the portal, reached over SSH from a campus machine, and production opened by the customer from the university network.
-- **A unit suite that fails when a critical module breaks.**
+- **An automated test suite that fails when a critical module breaks.**
   At least one test for each module the testability requirement names, run from a clean checkout.
 - **A CI check that is pinned, green, and deploys nothing.**
   `actionlint` and each applicable product-code check run on pull requests and on `main`, appear in the Definition of Done, and stop at the build and the tests.
@@ -361,7 +361,7 @@ This week it also carries:
 | New stories                | the issue list filtered by the `User Story` type, and the `SPRINT-05` milestone holding the scheduled one                         |
 | Quality requirement tests  | `docs/quality-requirements/qr/`, with a `QRT-nn` in every active High business-importance requirement's file                      |
 | Testing plan               | `docs/project-plan.md#quality-requirement-testing-plan`                                                                           |
-| Unit tests and CI          | `.github/workflows/`, with `actionlint` and the product-code checks                                                               |
+| Automated tests and CI     | `.github/workflows/`, with `actionlint` and the product-code checks                                                               |
 | Deployment                 | `docs/deployment.md`, the staging and production instances on the university VM, and the core-task verification                   |
 | Feature documentation      | `docs/features.md`                                                                                                                |
 | Week 4 action points       | `## Previous action points` in `reports/week-05/meeting-report.md`                                                                |
@@ -404,9 +404,9 @@ A transcript under item 6 goes in an appendix, which the two pages do not count.
 - [ ] 2 or more plan milestones due in `SPRINT-05` through `SPRINT-09` in total, with only the shortfall added, the two due in different sprints, and each with its fields and its increment ([Part 1](#part-1-plan-the-sprint-define-the-milestones-and-add-the-stories)).
 - [ ] 2 or more new `US-nn` in the Week 4 shape, at least one scheduled in `SPRINT-05` and one refined for `SPRINT-06` with no milestone ([Part 1](#part-1-plan-the-sprint-define-the-milestones-and-add-the-stories)).
 - [ ] The next two sprints' worth of the product backlog refined, with the `Story Points` on each and no sprint milestone ([Part 1](#part-1-plan-the-sprint-define-the-milestones-and-add-the-stories)).
-- [ ] `actionlint` over `.github/workflows/` and a named step for each applicable product-code check, on pull requests and `main`, every action pinned ([Part 2](#part-2-add-the-unit-tests-and-the-ci-checks)).
-- [ ] The checks that do not apply recorded with their reason, and the unit suite covering the testability requirement's critical modules ([Part 2](#part-2-add-the-unit-tests-and-the-ci-checks)).
-- [ ] The Definition of Done's pull request list carries `actionlint` and the product-code checks, the latest `main` runs are green, and the workflow deploys nothing ([Part 2](#part-2-add-the-unit-tests-and-the-ci-checks)).
+- [ ] `actionlint` over `.github/workflows/` and a named step for each applicable product-code check, on pull requests and `main`, every action pinned ([Part 2](#part-2-add-the-automated-tests-and-the-ci-checks)).
+- [ ] The checks that do not apply recorded with their reason, and the automated test suite covering the testability requirement's critical modules ([Part 2](#part-2-add-the-automated-tests-and-the-ci-checks)).
+- [ ] The Definition of Done's pull request list carries `actionlint` and the product-code checks, the latest `main` runs are green, and the workflow deploys nothing ([Part 2](#part-2-add-the-automated-tests-and-the-ci-checks)).
 - [ ] `docs/deployment.md` with the four environments, the campus access, the configuration, the deploy, the verification, and the rollback, and no real address ([Part 3](#part-3-deploy-to-the-vm-and-document-the-environments)).
 - [ ] The release candidate deployed to staging and production, the core task verified from a campus machine, and the real addresses in the Moodle submission ([Part 3](#part-3-deploy-to-the-vm-and-document-the-environments)).
 - [ ] A `QRT-nn` inside every active High business-importance requirement's file, with its fields, its procedure, and its pass criterion ([Part 4](#part-4-write-the-quality-requirement-tests)).
