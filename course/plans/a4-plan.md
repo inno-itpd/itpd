@@ -362,6 +362,7 @@ A new obligation arrives in a `**Since: W4**` block inside its section; amended 
 The full examples in the edited files gain the new fields: the story and task examples replace their `Labels:` line with a `Type:` line and the field values, gain `### Specified by` and `### Requirements`, and show their criteria as checkboxes; the weekly-report example is reframed as a Week 04 report with the retrospective row, and the product-vision example links the architecture document.
 The architecture example's `## Drivers` links the meeting-booking example's threshold, the constraints section of its vision, its functional requirements index, and its quality requirements index, and names no driver of its own.
 Each new requirements file ends with its own full example in the meeting-booking example; the quality requirements example is one `QR-nn` with its scenario.
+Four of those examples move with the rules they prove: Assignment 5's file changes make the planning, release, weekly-report, and quality full examples Week 5's, as [`a5-plan.md`](a5-plan.md#changes-to-the-requirements) records, so the Week 4 descriptions above no longer match those four examples, and neither plan repeats a rule the other owns.
 
 No `issue-types-requirements.md` is added: the story file's rule 6 and the task file's form rule own the type, and [Issue Fields](../../requirements/issue-tracking-requirements.md#issue-fields) owns the pinning.
 

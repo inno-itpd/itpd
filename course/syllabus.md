@@ -12,7 +12,7 @@ The course is designed to prepare students for the Industrial Project course and
   - [Week 2: Oct 2 – Oct 8 (Requirements \& Prototyping)](#week-2-oct-2--oct-8-requirements--prototyping)
   - [Week 3: Oct 9 – Oct 15 (Planning \& Minimum Usable Product)](#week-3-oct-9--oct-15-planning--minimum-usable-product)
   - [Week 4: Oct 16 – Oct 22 (Software Quality, Architecture \& Next Product Release)](#week-4-oct-16--oct-22-software-quality-architecture--next-product-release)
-  - [Week 5: Oct 23 – Oct 29 (Testing Environments, Deployment Automation \& Next Product Release)](#week-5-oct-23--oct-29-testing-environments-deployment-automation--next-product-release)
+  - [Week 5: Oct 23 – Oct 29 (Testing, Verification, \& Deployment)](#week-5-oct-23--oct-29-testing-verification--deployment)
   - [Week 6: Oct 30 – Nov 5 (Analytics \& In-Class Product Presentations)](#week-6-oct-30--nov-5-analytics--in-class-product-presentations)
   - [Week 7: Nov 6 – Nov 12 (Usability Testing Preparation)](#week-7-nov-6--nov-12-usability-testing-preparation)
   - [Week 8: Nov 13 – Nov 19 (Project Configuration Management)](#week-8-nov-13--nov-19-project-configuration-management)
@@ -177,7 +177,7 @@ From Week 4 to Week 9 every submission is due on Saturday at 23:59, with no soft
   - **Submission Scope**: Team submission.
   - **Deadline**: **October 24 at 23:59 (Saturday)**, with no soft deadline.
 
-### Week 5: Oct 23 – Oct 29 (Testing Environments, Deployment Automation & Next Product Release)
+### Week 5: Oct 23 – Oct 29 (Testing, Verification & Deployment)
 
 <!-- Reproducibility -->
 
