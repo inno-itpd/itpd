@@ -99,7 +99,7 @@ The `test` job passed on the same commit, so [`QR-02 QRT-01`](../../docs/quality
 | Testing plan               | [docs/project-plan.md](../../docs/project-plan.md#quality-requirement-testing-plan)                         |
 | Unit tests and CI          | [.github/workflows/ci.yml](../../.github/workflows/ci.yml)                                                  |
 | Deployment                 | [docs/deployment.md](../../docs/deployment.md)                                                              |
-| Codebase design exercise   | [docs/features.md](../../docs/features.md)                                                                  |
+| Feature documentation      | [docs/features.md](../../docs/features.md)                                                                  |
 | Week 4 action points       | [reports/week-05/meeting-report.md](meeting-report.md#previous-action-points)                               |
 | Customer validation        | [reports/week-05/meeting-report.md](meeting-report.md)                                                      |
 | `REL-05`                   | [v0.5.0](https://github.com/<organization>/<repo>/releases/tag/v0.5.0)                                      |

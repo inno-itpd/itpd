@@ -123,6 +123,9 @@ It is the short version of the requirements, states what is expected of you as a
 17. A test follows rule 10: it carries `**Status:**` as its first field, and the values are `Active` and `Dropped`.
     Its result is not its status, because the testing plan carries the result, the sprint it was last checked in, and its evidence, per [Quality Requirement Testing Plan](planning-requirements.md#quality-requirement-testing-plan).
 18. A dropped test follows rule 11: it keeps its heading, its first line, and its other fields, and adds `**Dropped:**` with the date and the reason.
+19. A feature is not an identifier family, and there is no `FEAT-nn`.
+    Cite a feature by the path of `docs/features.md` and the entry's `##` heading anchor, such as `docs/features.md#book-and-pay-in-one-flow`, per [Feature Documentation Requirements](features-requirements.md#where-the-features-live).
+    A feature has no index, no issue type, and no report section.
 
 **Example**
 
@@ -160,6 +163,7 @@ This is what makes the course a project rather than nine separate assignments.
 | Week 4 stories                   | The `FR-nnn` and `ADR-nnn` that specify it, in `### Specified by`, per [The Story](user-stories-requirements.md#the-story)                                                                                                                        |
 | Week 4 tasks                     | The `FR-nnn` and `ADR-nnn` the task works on, in `### Requirements`, per [The Issue Form](task-issues-requirements.md#the-issue-form)                                                                                                             |
 | Week 5 quality requirement tests | The `QR-nn` each test proves, per [Quality Requirement Tests](quality-requirements-requirements.md#quality-requirement-tests); its result is in [the testing plan](planning-requirements.md#quality-requirement-testing-plan)                     |
+| Week 5 feature documentation     | The `US-nn`, `FR-nnn`, `ADR-nnn`, and glossary term that each entry joins, per [The Feature Entry](features-requirements.md#the-feature-entry)                                                                                                    |
 | Any change a decision caused     | The decision's `DEC-nnn` when it has an entry, or its reason otherwise, per [What Cites It](decisions-requirements.md#what-cites-it)                                                                                                              |
 
 **Required**

@@ -280,7 +280,7 @@ Next: Week 3 is planning and the minimum usable product, and it has no assignmen
   - [x] Prioritize QRs by technical risk and importance
   - [ ] Feature issue type - for tracking progress of task issues?
     - Deferred: this work adds no feature issue type.
-    - The codebase design exercise answers the need without one, because a feature's story, requirement, record, and glossary term already have owners, per `A5-DEC-021`.
+    - Feature documentation answers the need without one, because a feature's story, requirement, record, and glossary term already have owners, per `requirements/features-requirements.md` and `A5-DEC-034`.
   - [x] At least one QR about testability mentioning critical modules (files with code)
   - [x] AC in a user story - use checkboxes to track state
     - The criteria are checkboxes, and the accountable member ticks one once it is verified.
@@ -314,7 +314,8 @@ Next: Week 3 is planning and the minimum usable product, and it has no assignmen
   - The minimum is the assignment's, not a rule: at least two plan milestones due in `SPRINT-05` through `SPRINT-09` in total, with an existing one counting and only the shortfall added, per `A5-DEC-019`.
 - [x] Define your integration environment
   - Integration is the product CI on GitHub Actions, and the university VM hosts staging and production; what the team defines is the four-environment map and the manual deploy in `docs/deployment.md`, per `A5-DEC-023` and `A5-DEC-026`.
-- [ ] Revise explanation of features in guides/quality-and-architecture.md
+- [x] Revise explanation of features in guides/quality-and-architecture.md
+  - The guide now links `requirements/features-requirements.md`: `docs/features.md` is fixed, one flat entry per capability, the user sentence opens it, and the links own each fact.
 
 ## A6
 

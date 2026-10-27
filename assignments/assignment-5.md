@@ -11,7 +11,7 @@ One submission per team.
 
 Week 4 ended with the quality requirements and their priority matrix, the functional requirements, the architectural decision records, the architecture document with its container view, the glossary, the team's `AGENTS.md`, and `REL-04`.
 This week the product leaves your laptops: it runs in staging and production on the university VM, the unit tests and the CI checks prove it, every active High business-importance quality requirement gets a test, and the testing plan records what each test last found.
-The week also adds at least two plan milestones and two stories that carry the next increments, asks where you document features and how you name the elements in them, and ends with `REL-05`.
+The week also adds at least two plan milestones and two stories that carry the next increments, documents the product's features in `docs/features.md`, and ends with `REL-05`.
 
 What you hand in is a deployed product the customer can open from the university network, the checks behind it at the level each one runs, and the plan and records the next increments rest on.
 
@@ -25,7 +25,7 @@ The tools the course suggests, from meeting transcripts to a coding agent, are i
 - [Part 3: Deploy To The VM And Document The Environments](#part-3-deploy-to-the-vm-and-document-the-environments)
 - [Part 4: Write The Quality Requirement Tests](#part-4-write-the-quality-requirement-tests)
 - [Part 5: Run The Tests And Record The Testing Plan](#part-5-run-the-tests-and-record-the-testing-plan)
-- [Part 6: Answer The Codebase Design Exercise](#part-6-answer-the-codebase-design-exercise)
+- [Part 6: Document The Features](#part-6-document-the-features)
 - [Part 7: Carry Out The Week 4 Action Points And Open Questions](#part-7-carry-out-the-week-4-action-points-and-open-questions)
 - [Part 8: Validate With The Customer](#part-8-validate-with-the-customer)
 - [Part 9: Redeploy And Retest After Same-Week Rework](#part-9-redeploy-and-retest-after-same-week-rework)
@@ -49,7 +49,7 @@ By the end of this week you should be able to show a reader:
 - At least two implemented tests: the testability requirement's `CI` test and one other requirement's test at `CI`, `scripted`, or `deployed`.
 - The testing plan with one row per test: its result, its last check, its planned sprint, and the evidence its level requires.
 - At least two plan milestones and two new stories that make the next increments visible.
-- The codebase design answer: where features are documented and how one element on one screen is named so an agent can find it.
+- The feature documentation: `docs/features.md`, with a user-language sentence per capability and links to the story, requirement, record, and glossary term that own its facts.
 - Each story shown at the Sprint Review with its verdict recorded as a `DEC-nnn`, and each implemented test's result shown at its level.
 - `REL-05`: the tag on the final production commit, the release body's verified quality, the changelog section, and the plan's `REL-05` line.
 - The sprint closed with its actual velocity, a retrospective that carries the Week 4 actions, and the AI usage report.
@@ -174,20 +174,25 @@ This week:
 
 The method is in [Step 4: Record The Progress](../guides/quality-requirement-tests.md#step-4-record-the-progress).
 
-## Part 6: Answer The Codebase Design Exercise
+## Part 6: Document The Features
 
 The rules:
 
-- A feature is a capability rather than an artifact, and each fact it joins already has one owner: [Step 8: Document The Features](../guides/quality-and-architecture.md#step-8-document-the-features).
+- `docs/features.md` is the one page where you document the product's features for users and developers: one flat `##` entry per capability, a user-language opening sentence, and links to what owns each fact: [Where The Features Live](../requirements/features-requirements.md#where-the-features-live) and [The Feature Entry](../requirements/features-requirements.md#the-feature-entry).
+- A feature is a capability rather than an artifact, and each fact it joins already has one owner: [The Feature Entry](../requirements/features-requirements.md#the-feature-entry).
+- The page carries at least three features at the end of the week, or every feature when the product has fewer: [Where The Features Live](../requirements/features-requirements.md#where-the-features-live).
 - A feature's need is a `US-nn` story, its behavior an `FR-nnn`, the decision that shaped it an `ADR-nnn`, and its name, when the project uses the word in its own sense, a `docs/glossary.md` term: [The Story](../requirements/user-stories-requirements.md#the-story), [The Functional Requirement](../requirements/functional-requirements-requirements.md#the-functional-requirement), [What It Accounts For](../requirements/adr-requirements.md#what-it-accounts-for), and [The Term](../requirements/glossary-requirements.md#the-term).
-- The exercise is the assignment's, so the answer lives where you document features and the report links it: [Step 8: Document The Features](../guides/quality-and-architecture.md#step-8-document-the-features).
+- An entry restates no behavior its `FR-nnn` owns and no acceptance criterion its story or requirement carries: [The Feature Entry](../requirements/features-requirements.md#the-feature-entry).
+- The page changes in the same pull request as the change it reflects, whether that change is a story, a requirement, a record, or a term: [The Feature Entry](../requirements/features-requirements.md#the-feature-entry).
 
 This week:
 
-1. Write your answer where you document features: how you document them for users and for developers, where and why there, and how the documentation connects to the stories, the `FR-nnn` files, the `ADR-nnn` records, and the glossary.
-2. Say how you update the documentation when a feature changes, such as when its story closes, its requirement moves, or a record supersedes its decision.
-3. Answer the element-naming question: how you would tell a coding agent to capitalize the first letter in the word "login" on the sign-in page, and which naming scheme gives each element a precise, stable name, such as `signInPage.loginLink.label`.
-4. Keep the answer with the product, in the repository or as an external-but-indexed artifact, and link it from the report's coverage table.
+1. Write `docs/features.md` with at least three features, or every feature when the product has fewer.
+2. Give each entry a `##` heading that names the capability and one opening sentence in the user's language that says what a user can do.
+3. Link the entry's `**Stories:**` to the stories that carry the need and its `**Behavior:**` to the `FR-nnn` files that own the capability, and add `**Decisions:**` and `**Terms:**` when the capability has them.
+4. Keep the entries one flat list in the order a reader should meet the product: no role grouping and no `**Users:**` field.
+5. Update the page in the same pull request as a change to a story, a requirement, a record, or a term it links.
+6. Link `docs/features.md` from the coverage table in [Assignment Report In The Repository](#assignment-report-in-the-repository).
 
 The method is in [Step 8: Document The Features](../guides/quality-and-architecture.md#step-8-document-the-features).
 
@@ -332,8 +337,8 @@ A strong submission has:
   At least one test for each module the testability requirement names, run from a clean checkout.
 - **A CI check that is pinned, green, and deploys nothing.**
   `actionlint` and each applicable product-code check run on pull requests and on `main`, appear in the Definition of Done, and stop at the build and the tests.
-- **A codebase-design answer a stranger can act on.**
-  One place says how features are documented, how the documentation stays connected to the stories, the requirements, the records, and the glossary, and how an agent is told which element to change.
+- **Feature documentation a newcomer can act on.**
+  One page lists the product's capabilities in the user's words, each linked to the story, the requirement, the records, and the glossary term that own its facts, and the page is updated in the same pull request as the change.
 - **Stories that show what the increment is for.**
   The deployed, verified product on one side, and on the other the needs it serves, each story a user's need rather than a feature name.
 - **A release that claims only what its tests verified.**
@@ -357,7 +362,7 @@ This week it also carries:
 | Testing plan               | `docs/project-plan.md#quality-requirement-testing-plan`                                                                           |
 | Unit tests and CI          | `.github/workflows/`, with `actionlint` and the product-code checks                                                               |
 | Deployment                 | `docs/deployment.md`, the staging and production instances on the university VM, and the core-task verification                   |
-| Codebase design exercise   | the place where you document features                                                                                             |
+| Feature documentation      | `docs/features.md`                                                                                                                |
 | Week 4 action points       | `## Previous action points` in `reports/week-05/meeting-report.md`                                                                |
 | Week 4 open questions      | `## Previous open questions` in the same report                                                                                   |
 | Meeting script             | `reports/week-05/meeting-script.md`                                                                                               |
@@ -407,7 +412,7 @@ A transcript under item 6 goes in an appendix, which the two pages do not count.
 - [ ] The testability requirement's `CI` test and one other active requirement's test at `CI`, `scripted`, or `deployed`, with the High-requirement and next-active-row rule applied, and no `manual` test standing in for the second ([Part 4](#part-4-write-the-quality-requirement-tests)).
 - [ ] The testing plan with one row per test, the testability and other implemented rows `Passes` and `Checked` in `SPRINT-05`, and every other row keeping its result ([Part 5](#part-5-run-the-tests-and-record-the-testing-plan)).
 - [ ] The quality requirements index links the testing plan once ([Part 5](#part-5-run-the-tests-and-record-the-testing-plan)).
-- [ ] The codebase design answer, recorded where you document features, covering the documentation place, its links, how it is updated, and the element-naming scheme ([Part 6](#part-6-answer-the-codebase-design-exercise)).
+- [ ] Feature documentation in `docs/features.md`, with 3 or more features or every feature, an opening sentence per entry, and its links ([Part 6](#part-6-document-the-features)).
 - [ ] Each Week 4 action point's outcome in `## Previous action points`, and in the artifact it changed ([Part 7](#part-7-carry-out-the-week-4-action-points-and-open-questions)).
 - [ ] Each Week 4 open question answered or carried forward in `## Previous open questions` ([Part 7](#part-7-carry-out-the-week-4-action-points-and-open-questions)).
 - [ ] `reports/week-05/meeting-script.md` ([Part 8](#part-8-validate-with-the-customer)).
