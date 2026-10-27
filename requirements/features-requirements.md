@@ -38,18 +38,19 @@ It restates neither.
 
 **Required**
 
-1. Each feature is one `##` section headed with the capability's name, so its anchor is `#<capability>`.
+1. Each feature is one `##` section headed with the capability's name in sentence case, so its anchor is `#<capability>`.
+   Only the first word, proper nouns, and acronyms are capitalised, as in `## Reschedule a session`.
    The entries form one flat list in the order a reader should meet the product, with no role grouping.
 2. The first line under the heading is one sentence in the user's language that says what a user can do, such as `A client can book a slot and pay for it without leaving the booking page.`
    It describes the capability rather than a screen, a table, or a service, and it names no `US-nn`, `FR-nnn`, or `ADR-nnn`.
 3. Below the sentence, the entry carries these links, each a `- **Label:** value` bullet, in this order:
 
-   | Field            | What it links                                                                                                                                                                                          |
-   | ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-   | `**Stories:**`   | The `US-nn` stories that carry the need, each linked to its issue, per [Where Stories Live](user-stories-requirements.md#where-stories-live)                                                           |
-   | `**Behavior:**`  | The `FR-nnn` files that own the capability's behavior, each linked, per [The Functional Requirement](functional-requirements-requirements.md#the-functional-requirement)                              |
-   | `**Decisions:**` | Optional: the `ADR-nnn` records that shape the capability, each linked, per [The Record](adr-requirements.md#the-record)                                                                               |
-   | `**Terms:**`     | Optional: the `docs/glossary.md` terms the capability uses in the project's own sense, each linked by its term anchor, per [The Term](glossary-requirements.md#the-term)                               |
+   | Field            | What it links                                                                                                                                                            |
+   | ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+   | `**Stories:**`   | The `US-nn` stories that carry the need, each linked to its issue, per [Where Stories Live](user-stories-requirements.md#where-stories-live)                             |
+   | `**Behavior:**`  | The `FR-nnn` files that own the capability's behavior, each linked, per [The Functional Requirement](functional-requirements-requirements.md#the-functional-requirement) |
+   | `**Decisions:**` | Optional: the `ADR-nnn` records that shape the capability, each linked, per [The Record](adr-requirements.md#the-record)                                                 |
+   | `**Terms:**`     | Optional: the `docs/glossary.md` terms the capability uses in the project's own sense, each linked by its term anchor, per [The Term](glossary-requirements.md#the-term) |
 
 4. An entry restates no behavior an `FR-nnn` owns and no acceptance criterion a story or a requirement carries.
    A reader who wants the behavior follows `**Behavior:**` to the requirement.
@@ -70,7 +71,7 @@ The meeting-booking example, as `docs/features.md` stands at the end of Week 5:
 
 The capabilities this product offers, in the order a user meets them.
 
-## Book And Pay In One Flow
+## Book and pay in one flow
 
 A client books a slot and pays for it without leaving the booking page.
 
@@ -79,14 +80,14 @@ A client books a slot and pays for it without leaving the booking page.
 - **Decisions:** [`ADR-001`](architecture/adr/ADR-001.md)
 - **Terms:** [`Hold`](glossary.md#hold), [`Booking`](glossary.md#booking)
 
-## Reschedule A Session
+## Reschedule a session
 
 A client moves a booked session to another time the coach offers.
 
 - **Stories:** [`US-04`](https://github.com/<organization>/<repo>/issues/47)
 - **Behavior:** [`FR-004`](functional-requirements/fr/FR-004.md)
 
-## Cancel A Session
+## Cancel a session
 
 A client cancels a booked session and is told what happens to the payment.
 
