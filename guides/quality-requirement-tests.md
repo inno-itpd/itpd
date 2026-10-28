@@ -1,9 +1,9 @@
 # Guide: Quality Requirement Tests
 
-How to turn a quality requirement into a check another person can run, give that test the environment it needs, and keep its result where the week and the release read it.
+How to turn a quality requirement into a check another person can run, give that test the environment it needs, and keep its result in the plan where the week and the release read it.
 
 The rules are in [Quality Requirement Tests](../requirements/quality-requirements-requirements.md#quality-requirement-tests): the section's placement, its fields, the four levels, the evidence each level produces, and which requirements need a test at all.
-Its result is kept in [Quality Requirement Testing Plan](../requirements/planning-requirements.md#quality-requirement-testing-plan), and the claim a release builds from it is in [Cutting A Release](../requirements/releases-requirements.md#cutting-a-release).
+Its result is kept in [Quality Requirement Testing Plan](../requirements/planning-requirements.md#quality-requirement-testing-plan), and the release's `Checked QRs` list in [Releases](../requirements/planning-requirements.md#releases) indexes the requirements that were checked.
 The deployment address a test reads is private-only, per [Sensitive Information Reference](../requirements/visibility-requirements.md#sensitive-information-reference), and the environments themselves belong to [Environments And Deployment](../requirements/repository-requirements.md#environments-and-deployment).
 This guide is the method: making a requirement checkable, writing the check, choosing where it runs, and reading its result into the plan.
 
@@ -184,8 +184,8 @@ A check run against production measures a state the team has already promised ra
 
 When the VM or the staging deployment is unavailable, the other implemented test has two honest forms, and the team picks one and says which in the week's report.
 
-The first is to write it at the level that can run, `CI` or `scripted`, and record that run: the level, `**Runs at:**`, and the row's evidence all change together, and the release can claim the requirement through the check that actually happened.
-The second is to keep it `deployed` and leave the row `Not verified` with the sprint the VM is now expected in, so the test still says what the team means to run and nothing is claimed through it.
+The first is to write it at the level that can run, `CI` or `scripted`, and record that run: the level, `**Runs at:**`, and the row's evidence all change together, and the requirement appears in the release's `Checked QRs` list through the check that actually happened.
+The second is to keep it `deployed` and leave the row `Not verified` with the sprint the VM is now expected in, so the test still says what the team means to run and no check is recorded for it.
 
 Both forms declare the deviation, per [Declaring Deviations](../requirements/weekly-report-requirements.md#declaring-deviations), and neither leaves the row as a `Passes` that no run produced.
 When the VM arrives, a test written at the fallback level is checked again at `deployed`, and the row moves to the sprint that check happens in.
@@ -226,13 +226,13 @@ Output pasted into a table cell is a second copy of a result the report owns, an
 The week's report points at the testing plan for the tests that are not `Passes`, and copies none of the rows, per [Weekly Public Report](../requirements/weekly-report-requirements.md#weekly-public-report).
 The plan is the one place the rows live, and the report is the one place the week explains what it did about them.
 
-The Sprint Review shows each implemented test's result beside the working software, per [Showing Working Software](../requirements/customer-meetings-requirements.md#showing-working-software), so the plan's rows are what the customer sees before the release claims anything.
+The Sprint Review shows each implemented test's result beside the working software, per [Showing Working Software](../requirements/customer-meetings-requirements.md#showing-working-software), so the plan's rows are what the customer sees before the release's `Checked QRs` list is written.
 
 ### Leave The Test A Definition
 
 The test section carries no result, no checked sprint, and no evidence link.
 Those are the plan's, and a second copy on the test drifts the first week the test is re-run: the plan says `Passes`, the test says `Not verified`, and nobody knows which one the team believes.
-A dropped test is the one exception, and it is not a result either: `**Dropped:**` records that the check is no longer maintained, and the plan's row records that nothing is claimed through it.
+A dropped test is the one exception, and it is not a result either: `**Dropped:**` records that the check is no longer maintained, and the plan's row records that no check is recorded for it.
 
 ## Common Mistakes
 
@@ -252,5 +252,5 @@ A dropped test is the one exception, and it is not a result either: `**Dropped:*
   A `**Runs at:**` line, a procedure, or a report that names the VM's address publishes a private-only value; use `$STAGING_URL` or a placeholder and keep the address in the Moodle submission.
 - **An ADR that cites a `QRT-nn`.**
   A record answers requirements rather than checks, so its `**Addresses:**` names the `QR-nn` and the test is reached through it, per [What It Accounts For](../requirements/adr-requirements.md#what-it-accounts-for).
-- **A release that claims a quality requirement its tests have not verified.**
-  A requirement is claimed when its tests are `Passes` and checked in the release's sprint, per [Cutting A Release](../requirements/releases-requirements.md#cutting-a-release); a test last checked two sprints ago is re-run before the claim rather than trusted.
+- **A `Checked QRs` list that reads as a quality claim.**
+  The list indexes every requirement with a test checked in the sprint, including the partial ones; the plan's rows say what passed, what failed, and what is still `Not verified`, per [Releases](../requirements/planning-requirements.md#releases).

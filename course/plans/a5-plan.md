@@ -5,6 +5,9 @@ It states the week's scope and identifies the contradictions the wider scope exp
 Week 5 has no pitch deck.
 The deck is Week 6's; the in-class presentations move from the Week 6 class to the Week 7 class, so teams bring a near-final deck to the Week 7 class on 6 November and submit the final one through Moodle on 7 November, and this plan designs no deck artifact and no Week 5 Moodle item.
 
+**Superseded in part:** [`A5-DEC-038`](../decisions/a5.md#a5-dec-038-the-release-body-is-user-facing-and-the-plan-records-the-checks) reverses the release-body model below.
+The release body is user-facing, and the sprint's `REL-nn` block in the plan records the checked requirements, per [Cutting A Release](../../requirements/releases-requirements.md#cutting-a-release) and [Releases](../../requirements/planning-requirements.md#releases); the rest of this plan stays as the design record.
+
 Assignment 4 delivered the functional requirements, the quality requirements, the architectural decision records, the architecture document's container view, drivers and ADR index, and the Week 4 process work — sprint planning and estimates, the ceremonies, the glossary, the team's `AGENTS.md`, `REL-04`, and the deadlines; [`a4-plan.md`](a4-plan.md) designs that and [`assignment-4.md`](../../assignments/assignment-4.md) is the design.
 The rules this plan adds are `**Since: W5**`.
 The requirements files they land in are existing files, so this plan adds sections to them and adds no new requirements file: the environments and the deployment are platform rules that belong to `repository-requirements.md`, the addresses are private-only per `visibility-requirements.md`, and the codebase design exercise is the assignment's, not a report rule.

@@ -325,6 +325,13 @@ Next: Week 3 is planning and the minimum usable product, and it has no assignmen
 - [ ] address the Week 6 `docs/analytics.md` row once the W6 assignment is written
 - [ ] course/syllabus: decide the W6 maintained artifact
 
+## A7
+
+- [ ] Add the production verification to the release record after the UAT (user acceptance testing) work
+  - The release body stays user-facing, and the plan's `REL-nn` block has no production check for now.
+    During the deferral, the week report records the checked core task, per `A5-DEC-025`; `repository-requirements.md` rule 7 and Assignment 5's Part 3 item stay as written.
+    Once UATs are designed, add `**Checked UATs:**` beside `**Checked QRs:**`, decide whether `repository-requirements.md` rule 7 stays in force, and where the check is recorded.
+
 ## A2-2025 Tech Stack TODO
 
 `tmp/itpd-2025/assignments/assignment-2.md:34` carries an unresolved comment on the tech-stack line:

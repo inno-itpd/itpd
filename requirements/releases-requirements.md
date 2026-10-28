@@ -2,7 +2,7 @@
 
 These requirements define the changelog and the release that ends each sprint: where the changelog lives, how it is written, how versions and tags are named, what the release body carries, and what cutting a release changes.
 [Guide: Planning And Tracking](../guides/planning-and-tracking.md) is the method.
-When a release happens, and how it belongs to its sprint, is in [Releases](planning-requirements.md#releases).
+When a release happens, how it belongs to its sprint, and what the sprint's `REL-nn` section records, are in [Releases](planning-requirements.md#releases).
 How a change gets in, and what the pull request template prompts for, is in [Pull Request Requirements](pull-requests-requirements.md).
 
 <h2>Table of contents</h2>
@@ -38,7 +38,7 @@ It is created in Week 3, with the first release, and stays current for the rest 
 
 **Since: W5**
 
-4. The changelog records user-visible changes only: a test, a workflow, or a deployment is not a changelog entry, per [Cutting A Release](#cutting-a-release).
+4. The changelog records user-visible changes only: a test, a workflow, or a deployment is not a changelog entry, and the sprint's checked requirements are recorded in the plan's `REL-nn` block, per [Releases](planning-requirements.md#releases).
 
 **Compile the changelog from pull requests, not from commits.**
 A commit message records what the team judged important at that moment, and that judgement is usually about the code rather than the product: a rename, a refactor, a fix for a bug nobody outside the team could reach.
@@ -59,23 +59,29 @@ The pull request is where the team already writes down what changed and why, whi
 
 **Since: W3**
 
-When the release is cut is in [Releases](planning-requirements.md#releases); this section says how it is titled, what its body carries, and what cutting it changes in the changelog and in the sprint's GitHub milestone.
+When the release is cut is in [Releases](planning-requirements.md#releases); this section says how it is titled, what its user-facing body carries, and what cutting it changes in the changelog and in the sprint's GitHub milestone.
+The sprint's `REL-nn` section, which records the tag, the day, and from `REL-05` the checked requirements, is in [Releases](planning-requirements.md#releases).
 
 **Required**
 
 1. Title the release with the tag, so the title and the tag match, for example `v0.1.0` in both.
-   A nickname for the release goes in its body, not its title.
+   A nickname for the release may head its body; it does not go in the title.
 2. When you cut a release, move the included entries into a dated section, link the section to the release, and open a new empty `[Unreleased]`.
 3. Close the sprint's GitHub milestone once the release is cut, after moving each issue still open into a later sprint's milestone, per [Sprints](planning-requirements.md#sprints).
 
 **Since: W5**
 
-4. The release body claims a `QR-nn` only when that requirement has at least one non-dropped test and every non-dropped test is `Passes` and `Checked` in the release's sprint, per [Quality Requirement Testing Plan](planning-requirements.md#quality-requirement-testing-plan).
-   A test last checked in an earlier sprint is checked again on the released commit before the claim, and the evidence is the run or the inspection of that state.
-5. The body opens with what a reader who does not read code needs: one or two sentences saying what the release lets the user do that they could not before, or that it changes nothing they can see, and what it does not do yet, or `None`.
-6. The body's verification part names the sprint the claim rests on, lists each claimed `QR-nn` once with its tests cited as the pair and linked to their sections, links the testing plan and the week's `#quality-requirement-tests` section once, and records the core task's production verification, per [Environments And Deployment](repository-requirements.md#environments-and-deployment).
-7. The body restates no metadata the release page already shows: not the title, the tag, the commit, or the date.
-   Its headings and order are the team's; these rules fix what it contains.
+4. The body is the customer-facing note for every release cut from Week 5 on, including an earlier release in a sprint and a hotfix, and it has three parts, in this order:
+   - One or two sentences saying what the release lets the user do that they could not before, or `No changes visible to a user`.
+   - One sentence saying what it does not do yet, or `None`.
+   - A final line, `[Full changelog](<absolute url>)`, linking the changelog's released section.
+
+   The summary and the limitation are separate paragraphs, and no heading is required.
+
+5. The body carries no `REL-nn`, `QR-nn`, or `QRT-nn` citation, no quality claim, no test result, no link to the testing plan or the week's report, and no production check.
+6. The body does not restate the title, the tag, the commit, or the date that the release page already shows.
+   The `Full changelog` URL's heading anchor may carry the version and the date, because it is a link destination rather than a statement.
+   The team may add headings; the three parts and their order are fixed.
 
 ## Full Example
 
@@ -102,20 +108,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/), and this
 ```
 
 The release those entries came from is titled `v0.5.0`: the tag and the title match, and the dated section links it.
-Its body opens with what the release changes for the user and what it does not do yet, then indexes the claim, in one possible shape:
+Its body is the customer-facing note, in one possible shape: the summary, the limitation, and the `Full changelog` link.
 
 ```markdown
 Booking now shows how many free slots are left in each day, so a customer can pick a time without opening every slot.
+
 Recurring bookings are not supported yet.
 
-## Verified on this release
-
-Every requirement below has all its non-dropped tests `Passes` and `Checked` in `SPRINT-05`:
-
-- [`QR-01 QRT-01`](https://github.com/<organization>/<repo>/blob/main/docs/quality-requirements/qr/QR-01.md#qrt-01)
-- [`QR-02 QRT-01`](https://github.com/<organization>/<repo>/blob/main/docs/quality-requirements/qr/QR-02.md#qrt-01)
-
-Results and evidence: [testing plan](https://github.com/<organization>/<repo>/blob/main/docs/project-plan.md#quality-requirement-testing-plan) and the [Week 05 report](https://github.com/<organization>/<repo>/blob/main/reports/week-05/README.md#quality-requirement-tests).
-
-The core booking task was verified from a campus machine on the production deployment.
+[Full changelog](https://github.com/<organization>/<repo>/blob/main/CHANGELOG.md#050---2026-10-29)
 ```

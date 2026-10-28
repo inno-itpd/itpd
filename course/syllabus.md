@@ -198,7 +198,7 @@ From Week 4 to Week 9 every submission is due on Saturday at 23:59, with no soft
     4. **Plan Milestones And Stories**: at least two plan milestones and two new stories that carry the next increments.
     5. **Feature Documentation**: `docs/features.md`, with a user-language sentence per capability, the page's glossary line and first-use term links, and links to the story, functional requirement, and architectural decision record that own its facts.
     6. **Sprint Retrospective**: `reports/week-05/sprint-retrospective.md`.
-    7. **Next Product Release (`REL-05`)**: the tag on the final production commit, the release body's verified quality, the changelog's released section, and the plan's `REL-05` line.
+    7. **Next Product Release (`REL-05`)**: the tag on the final production commit, the user-facing release body, the changelog's released section, and the plan's `REL-05` block with its `Released` and `Checked QRs` fields.
   - **Submission Scope**: Team submission.
   - **Deadline**: **October 31 at 23:59 (Saturday)**, with no soft deadline.
 

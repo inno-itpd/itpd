@@ -50,7 +50,7 @@ The threshold session of Step 1 and the risk session of Step 5 are the hours tha
 
 ```text
 docs/threshold-of-success.md   TOS-01, TOS-02, … one section per goal, and the statements table below them
-docs/project-plan.md           the milestone and sprint sections, and progress monitoring
+docs/project-plan.md           the milestone and sprint sections, the `REL-nn` sections, the testing plan, and progress monitoring
 docs/risks.md                  RISK-01, RISK-02, … the register
 GitHub                         the `SPRINT-nn` milestones, every scheduled issue in its sprint's milestone, and the `Responsible` and `Accountable` values and the matching assignees
 ```
@@ -242,7 +242,7 @@ Cut it after the customer meeting and any same-week rework, on the state the spr
 1. Merge the sprint's pull requests.
 2. Push the tag on that commit.
 3. Close the sprint's GitHub milestone, after rescheduling anything still open into a later sprint's milestone.
-4. Merge what links the tag: the changelog's released section, the plan's `REL-nn` line, and the week's report.
+4. Merge what links the tag: the changelog's released section, the plan's `REL-nn` section, and the week's report.
 
 The documents come after the tag because each of them links it, and a link to a tag that does not exist yet is broken the moment it is checked.
 The release itself is about the product code, so the documents following it do not change what was released.
@@ -257,21 +257,23 @@ When the number is not obvious, ask what a user would see, because that is what 
 
 ### Write The Release Body
 
-The body has three readers: the customer who opens the release from the week's report, the next sprint that needs to know what the tagged state contains, and the grader who checks the claim is true.
-Write it for the first and let the other two follow the links.
+The body has one reader: the customer who opens the release from the week's report.
+The technical record is the plan's `REL-nn` block and the testing plan, so the body links neither and repeats neither.
 
 Start from the changelog's released section and ask what a customer can do now that they could not do last week.
-That is the opening sentence, and it is about the product rather than about the repository.
-Then add what the changelog never says: what the release still does not do.
-`None` is an answer, and it is the honest one when the sprint finished everything it promised.
+That is the first paragraph, and it is about the product rather than about the repository.
+A release that changes nothing visible says `No changes visible to a user` there.
+Then add what the changelog never says in its own paragraph: what the release still does not do, or `None` when it does everything it promised.
+Finish with `[Full changelog](...)`, an absolute link to the changelog's released section.
+The release page already shows the title, the tag, the commit, and the date, so the body repeats none of them.
 
-The rest is an index of the claim, per [Cutting A Release](../requirements/releases-requirements.md#cutting-a-release).
-Link the testing plan and the week's report instead of pasting their rows, because the plan stays current and the report is that week's record, while a copied row goes stale the next sprint.
+The summary and the limitation are separate paragraphs, the `Full changelog` line follows them, and no heading is needed; a heading is the team's choice, per [Cutting A Release](../requirements/releases-requirements.md#cutting-a-release).
+The `Full changelog` line links the section the changelog gains after the tag, so write it once that section is merged and check it before the week closes.
 
-Finish with what was verified on the production deployment and from where, which the testing plan's row does not carry.
-Then re-read the page before publishing: the title is the tag, the header holds the commit and the date, and the URL holds the version, so the body needs none of them.
-
-The plan and the week's report merge after the tag, so check the body's links once those merges land and before the week closes.
+The body is not the place for the technical record.
+The plan's `REL-nn` section carries `**Released:**` and `**Checked QRs:**` once the release is published: `Released` links the tag and gives the day it was cut, and `Checked QRs` lists every requirement with at least one test checked in the sprint, each linked to its file, with one link to the [testing plan](../requirements/planning-requirements.md#quality-requirement-testing-plan).
+The list is an index rather than a claim: the plan's rows carry each test's result, and they show whether a requirement is fully or partially verified, so the list does not repeat that distinction.
+Only the sprint's `REL-nn` carries the block; an earlier release in the sprint and a hotfix carry none, per [Releases](../requirements/planning-requirements.md#releases).
 
 ### Close With The Retrospective
 
