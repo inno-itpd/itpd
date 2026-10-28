@@ -271,7 +271,7 @@ The rules:
 - `CHANGELOG.md` follows Keep a Changelog, with an `[Unreleased]` section during development, and it is user-visible only: [The Changelog](../requirements/releases-requirements.md#the-changelog).
 - Version with Semantic Versioning, prefix tags with `v`, point each tag at a commit on `main`, and protect it: [Versioning And Tags](../requirements/releases-requirements.md#versioning-and-tags).
 - Title the release with its tag, move the released entries into a dated section linked to the release, and open a new empty `[Unreleased]`: [Cutting A Release](../requirements/releases-requirements.md#cutting-a-release).
-- The release body is the customer-facing note: the summary, the limitation, and the `Full changelog` link, with no technical record and no title, tag, commit, or date: [Cutting A Release](../requirements/releases-requirements.md#cutting-a-release).
+- The release body opens with the customer-facing note, the summary, the limitation, and the `Full changelog` link; it may add customer-facing content after that note and carries no technical record and no title, tag, commit, or date: [Cutting A Release](../requirements/releases-requirements.md#cutting-a-release).
 - `REL-05` is the plan's `#### REL-05` section under `### SPRINT-05`, carrying the block: `Released` links the tag and the day it was cut, and `Checked QRs` lists every `QR-nn` with at least one test checked in `SPRINT-05`, each linked, with one link to the testing plan: [Releases](../requirements/planning-requirements.md#releases).
 - Only the sprint's `REL-nn`, the last release cut in that sprint, carries the block; an earlier release in the sprint and a hotfix carry none: [Releases](../requirements/planning-requirements.md#releases).
 - Close the sprint's GitHub milestone once the release is cut, after rescheduling each issue still open: [Cutting A Release](../requirements/releases-requirements.md#cutting-a-release).
@@ -280,7 +280,7 @@ This week:
 
 1. Keep `CHANGELOG.md` current through the week, with an `[Unreleased]` entry for each user-visible change.
 2. After the meeting and any rework, merge the sprint's pull requests, push the tag on the final production commit, and protect the tag from being moved or deleted.
-3. Write the release body for the customer who opens it from the week's report: the summary, the limitation, and the `Full changelog` link; check it against [Cutting A Release](../requirements/releases-requirements.md#cutting-a-release).
+3. Write the release body for the customer who opens it from the week's report: the summary, the limitation, and the `Full changelog` link, plus any customer-facing content the team adds after it; check it against [Cutting A Release](../requirements/releases-requirements.md#cutting-a-release).
 4. Write `Checked QRs` from the tests checked in `SPRINT-05`: a requirement appears when at least one of its tests was checked this sprint, and a test last checked in an earlier sprint does not put it there unless it is rerun.
    A test that does not pass keeps its result in the plan.
 5. Move the released entries into the dated section the changelog uses for a version, such as `[0.5.0]`, link that section to the release, open a new empty `[Unreleased]`, and merge what links the tag in this order: the changelog's released section, the plan's `REL-05` block, and the week's report, so the body's `Full changelog` link resolves.

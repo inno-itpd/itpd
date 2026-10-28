@@ -71,17 +71,20 @@ The sprint's `REL-nn` section, which records the tag, the day, and from `REL-05`
 
 **Since: W5**
 
-4. The body is the customer-facing note for every release cut from Week 5 on, including an earlier release in a sprint and a hotfix, and it has three parts, in this order:
+4. The body is the customer-facing note for every release cut from Week 5 on, including an earlier release in a sprint and a hotfix, and it carries three parts, in this order:
    - One or two sentences saying what the release lets the user do that they could not before, or `No changes visible to a user`.
    - One sentence saying what it does not do yet, or `None`.
-   - A final line, `[Full changelog](<absolute url>)`, linking the changelog's released section.
+   - A line, `[Full changelog](<absolute url>)`, linking the changelog's released section and closing the required note.
 
    The summary and the limitation are separate paragraphs, and no heading is required.
 
-5. The body carries no `REL-nn`, `QR-nn`, or `QRT-nn` citation, no quality claim, no test result, no link to the testing plan or the week's report, and no production check.
-6. The body does not restate the title, the tag, the commit, or the date that the release page already shows.
+5. The body may carry additional content after the `Full changelog` line.
+   The additional content is optional, and the team chooses its headings.
+   Everything in it is something a customer needs that no other record carries, such as an upgrade step, a screenshot, or where to find the change in the product.
+6. Everything in the body, the additional content included, carries no `REL-nn`, `QR-nn`, or `QRT-nn` citation, no quality claim, no test result, no link to the testing plan or the week's report, and no production check.
+   It does not restate the title, the tag, the commit, or the date that the release page already shows, and it does not repeat a changelog entry.
    The `Full changelog` URL's heading anchor may carry the version and the date, because it is a link destination rather than a statement.
-   The team may add headings; the three parts and their order are fixed.
+7. The three parts and their order are fixed, and headings may organize them and the additional content.
 
 ## Full Example
 
@@ -108,7 +111,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/), and this
 ```
 
 The release those entries came from is titled `v0.5.0`: the tag and the title match, and the dated section links it.
-Its body is the customer-facing note, in one possible shape: the summary, the limitation, and the `Full changelog` link.
+Its body is the customer-facing note, in one possible shape: the summary, the limitation, the `Full changelog` link, and one piece of additional content the team chose to add after it.
 
 ```markdown
 Booking now shows how many free slots are left in each day, so a customer can pick a time without opening every slot.
@@ -116,4 +119,8 @@ Booking now shows how many free slots are left in each day, so a customer can pi
 Recurring bookings are not supported yet.
 
 [Full changelog](https://github.com/<organization>/<repo>/blob/main/CHANGELOG.md#050---2026-10-29)
+
+### If The Page Was Already Open
+
+Reload the booking page once; a page opened before this release does not show the count.
 ```
