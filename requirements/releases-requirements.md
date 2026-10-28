@@ -74,9 +74,6 @@ The sprint's `REL-nn` section, which records the tag, the day, and from `REL-05`
 4. The body is the customer-facing note for every release cut from Week 5 on, including an earlier release in a sprint and a hotfix.
    It is the team's shape: neither a section nor a section title is required.
 5. The body ends with the line `[Full changelog](<absolute url>)`, which links the changelog's released section, and nothing comes after it.
-6. Everything in the body carries no `REL-nn`, `QR-nn`, or `QRT-nn` citation, no quality claim, no test result, no link to the testing plan or the week's report, and no production check.
-   It does not restate the title, the tag, the commit, or the date that the release page already shows, and it does not repeat a changelog entry.
-   The `Full changelog` URL's heading anchor may carry the version and the date, because it is a link destination rather than a statement.
 
 **Recommended**
 
@@ -84,6 +81,9 @@ The sprint's `REL-nn` section, which records the tag, the day, and from `REL-05`
 - Say what it does not do yet, and say nothing when this version does everything it promised.
 - Keep each to a short paragraph, so the body stays a note rather than a second changelog.
 - Add anything else a customer needs that no other record carries, such as an upgrade step, a screenshot, or where to find the change in the product, before the `Full changelog` line.
+- Link the record rather than copy the fact when the body mentions something another record already carries: the plan's `REL-nn` block and the testing plan own what the sprint checked, and `CHANGELOG.md` owns each user-visible change.
+  A copy drifts from its record as that record changes, and a link keeps the body true.
+- Spend the body's sentences on the product: the release page already shows the title, the tag, the commit, and the date.
 
 ## Full Example
 
@@ -111,6 +111,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/), and this
 
 The release those entries came from is titled `v0.5.0`: the tag and the title match, and the dated section links it.
 Its body is the customer-facing note, in one possible shape: the summary, the limitation, one section the team chose to add, and the `Full changelog` line that closes it.
+The link points at the released section's heading, so its anchor carries the version and the date.
 
 ```markdown
 Booking now shows how many free slots are left in each day, so a customer can pick a time without opening every slot.

@@ -258,7 +258,7 @@ When the number is not obvious, ask what a user would see, because that is what 
 ### Write The Release Body
 
 The body has one reader: the customer who opens the release from the week's report.
-The technical record is the plan's `REL-nn` block and the testing plan, so the body links neither and repeats neither.
+The team writes it in its own shape, and [Cutting A Release](../requirements/releases-requirements.md#cutting-a-release) recommends the content rather than fixing it.
 
 Start from the changelog's released section and ask what a customer can do now that they could not do last week.
 That is the opening, and it is about the product rather than about the repository.
@@ -266,15 +266,16 @@ A release that changes nothing visible says `No changes visible to a user` there
 Then say what the changelog never says: what the release still does not do.
 When it does everything it promised, say nothing there.
 The opening and the limitation are recommended rather than required, per [Cutting A Release](../requirements/releases-requirements.md#cutting-a-release): the section titles, the number of paragraphs, and the length are the team's.
-The release page already shows the title, the tag, the commit, and the date, so the body repeats none of them.
+The release page already shows the title, the tag, the commit, and the date, so the body can spend its sentences on the product instead.
 
 Anything a customer needs that no other record carries, such as an upgrade step, a screenshot, or where to find the change, sits before the last line, in a section of its own when it needs one.
-It is still not the place for a test result, a claim, or a citation: the plan's `REL-nn` block and the testing plan carry those.
+When the body mentions something another record already carries, link that record instead of copying the fact: the plan's `REL-nn` block and the testing plan own what the sprint checked, and `CHANGELOG.md` owns each user-visible change.
+A copy drifts as its record changes, and a link keeps the body true.
 
 Finish with `[Full changelog](...)`, an absolute link to the changelog's released section.
 It is the body's last line and nothing comes after it, so write it once that section is merged and check it before the week closes.
 
-The body is not the place for the technical record.
+The technical record keeps its own home.
 The plan's `REL-nn` section carries `**Released:**` and `**Checked QRs:**` once the release is published: `Released` links the tag and gives the day it was cut, and `Checked QRs` lists every requirement with at least one test checked in the sprint, each linked to its file, with one link to the [testing plan](../requirements/planning-requirements.md#quality-requirement-testing-plan).
 The list is an index rather than a claim: the plan's rows carry each test's result, and they show whether a requirement is fully or partially verified, so the list does not repeat that distinction.
 Only the sprint's `REL-nn` carries the block; an earlier release in the sprint and a hotfix carry none, per [Releases](../requirements/planning-requirements.md#releases).
