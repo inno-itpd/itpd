@@ -261,16 +261,18 @@ The body has one reader: the customer who opens the release from the week's repo
 The technical record is the plan's `REL-nn` block and the testing plan, so the body links neither and repeats neither.
 
 Start from the changelog's released section and ask what a customer can do now that they could not do last week.
-That is the first paragraph, and it is about the product rather than about the repository.
+That is the opening, and it is about the product rather than about the repository.
 A release that changes nothing visible says `No changes visible to a user` there.
-Then add what the changelog never says in its own paragraph: what the release still does not do, or `None` when it does everything it promised.
-Finish the note with `[Full changelog](...)`, an absolute link to the changelog's released section.
+Then say what the changelog never says: what the release still does not do.
+When it does everything it promised, say nothing there.
+The opening and the limitation are recommended rather than required, per [Cutting A Release](../requirements/releases-requirements.md#cutting-a-release): the section titles, the number of paragraphs, and the length are the team's.
 The release page already shows the title, the tag, the commit, and the date, so the body repeats none of them.
 
-The summary and the limitation are separate paragraphs, the `Full changelog` line follows them and closes the note, and no heading is needed; headings are the team's choice, per [Cutting A Release](../requirements/releases-requirements.md#cutting-a-release).
-Anything a customer needs that no other record carries, such as an upgrade step, a screenshot, or where to find the change, may follow the link, and the team shapes it as it likes.
+Anything a customer needs that no other record carries, such as an upgrade step, a screenshot, or where to find the change, sits before the last line, in a section of its own when it needs one.
 It is still not the place for a test result, a claim, or a citation: the plan's `REL-nn` block and the testing plan carry those.
-The `Full changelog` line links the section the changelog gains after the tag, so write it once that section is merged and check it before the week closes.
+
+Finish with `[Full changelog](...)`, an absolute link to the changelog's released section.
+It is the body's last line and nothing comes after it, so write it once that section is merged and check it before the week closes.
 
 The body is not the place for the technical record.
 The plan's `REL-nn` section carries `**Released:**` and `**Checked QRs:**` once the release is published: `Released` links the tag and gives the day it was cut, and `Checked QRs` lists every requirement with at least one test checked in the sprint, each linked to its file, with one link to the [testing plan](../requirements/planning-requirements.md#quality-requirement-testing-plan).
