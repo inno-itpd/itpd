@@ -13,6 +13,8 @@
 - [ ] Traceability - only from line of code to ToS
 - [x] Should ADR cite a QRT?
       No: an ADR's `**Addresses:**` list names the `FR-nnn` and `QR-nn` the decision accounts for, and it reaches the test through its `QR-nn`, per `A5-DEC-018`.
+- Next course iteration:
+  - reports and changelog inside docs so that links to them resolve on the docs site
 
 ## A1
 
