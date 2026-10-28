@@ -25,6 +25,7 @@ The threshold session of Step 1 and the risk session of Step 5 are the hours tha
   - [Show The Sprint At Its Review](#show-the-sprint-at-its-review)
   - [Releases](#releases)
   - [Pick The Number From What A User Could Observe](#pick-the-number-from-what-a-user-could-observe)
+  - [Write The Release Body](#write-the-release-body)
   - [Close With The Retrospective](#close-with-the-retrospective)
 - [Step 5: Name The Risks And Their Fallbacks](#step-5-name-the-risks-and-their-fallbacks)
   - [Start From The Plan, Not From A Feeling](#start-from-the-plan-not-from-a-feeling)
@@ -49,7 +50,7 @@ The threshold session of Step 1 and the risk session of Step 5 are the hours tha
 
 ```text
 docs/threshold-of-success.md   TOS-01, TOS-02, … one section per goal, and the statements table below them
-docs/project-plan.md           the milestone and sprint sections, and progress monitoring
+docs/project-plan.md           the milestone and sprint sections, the `REL-nn` sections, the testing plan, and progress monitoring
 docs/risks.md                  RISK-01, RISK-02, … the register
 GitHub                         the `SPRINT-nn` milestones, every scheduled issue in its sprint's milestone, and the `Responsible` and `Accountable` values and the matching assignees
 ```
@@ -241,7 +242,7 @@ Cut it after the customer meeting and any same-week rework, on the state the spr
 1. Merge the sprint's pull requests.
 2. Push the tag on that commit.
 3. Close the sprint's GitHub milestone, after rescheduling anything still open into a later sprint's milestone.
-4. Merge what links the tag: the changelog's released section, the plan's `REL-nn` line, and the week's report.
+4. Merge what links the tag: the changelog's released section, the plan's `REL-nn` section, and the week's report.
 
 The documents come after the tag because each of them links it, and a link to a tag that does not exist yet is broken the moment it is checked.
 The release itself is about the product code, so the documents following it do not change what was released.
@@ -253,6 +254,31 @@ The tag is the team's choice under SemVer, per [Versioning And Tags](../requirem
 The release repeats the tag as its title, so the version reads the same wherever the release is linked.
 A first release with no users is usually `v0.1.0`; after that, a fix a user could notice is a patch, a new capability is a minor, and a change that breaks how an existing user works is a major.
 When the number is not obvious, ask what a user would see, because that is what the version communicates.
+
+### Write The Release Body
+
+The body has one reader: the customer who opens the release from the week's report.
+The team writes it in its own shape, and [Cutting A Release](../requirements/releases-requirements.md#cutting-a-release) recommends the content rather than fixing it.
+
+Start from the changelog's released section and ask what a customer can do now that they could not do last week.
+That is the opening, and it is about the product rather than about the repository.
+A release that changes nothing visible says `No changes visible to a user` there.
+Then say what the changelog never says: what the release still does not do.
+When it does everything it promised, say nothing there.
+The opening and the limitation are recommended rather than required, per [Cutting A Release](../requirements/releases-requirements.md#cutting-a-release): the section titles, the number of paragraphs, and the length are the team's.
+The release page already shows the title, the tag, the commit, and the date, so the body can spend its sentences on the product instead.
+
+Anything a customer needs that no other record carries, such as an upgrade step, a screenshot, or where to find the change, sits before the last line, in a section of its own when it needs one.
+When the body mentions something another record already carries, link that record instead of copying the fact: the plan's `REL-nn` block and the testing plan own what the sprint checked, and `CHANGELOG.md` owns each user-visible change.
+A copy drifts as its record changes, and a link keeps the body true.
+
+Finish with `[Full changelog](...)`, an absolute link to the changelog's released section.
+It is the body's last line and nothing comes after it, so write it once that section is merged and check it before the week closes.
+
+The technical record keeps its own home.
+The plan's `REL-nn` section carries `**Released:**` and `**Checked QRs:**` once the release is published: `Released` links the tag and gives the day it was cut, and `Checked QRs` lists every requirement with at least one test checked in the sprint, each linked to its file, with one link to the [testing plan](../requirements/planning-requirements.md#quality-requirement-testing-plan).
+The list is an index rather than a claim: the plan's rows carry each test's result, and they show whether a requirement is fully or partially verified, so the list does not repeat that distinction.
+Only the sprint's `REL-nn` carries the block; an earlier release in the sprint and a hotfix carry none, per [Releases](../requirements/planning-requirements.md#releases).
 
 ### Close With The Retrospective
 

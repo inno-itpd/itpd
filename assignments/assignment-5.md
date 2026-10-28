@@ -51,7 +51,7 @@ By the end of this week you should be able to show a reader:
 - At least two plan milestones and two new stories that make the next increments visible.
 - The feature documentation: `docs/features.md`, with a user-language sentence per capability, its glossary line and first-use term links, and links to the story, requirement, and record that own each fact.
 - Each story shown at the Sprint Review with its verdict recorded as a `DEC-nnn`, and each implemented test's result shown at its level.
-- `REL-05`: the tag on the final production commit, the release body's verified quality, the changelog section, and the plan's `REL-05` line.
+- `REL-05`: the tag on the final production commit, the user-facing release body, the changelog's released section, and the plan's `REL-05` block with its `Released` and `Checked QRs` fields.
 - The sprint closed with its actual velocity, a retrospective that carries the Week 4 actions, and the AI usage report.
 
 ## Part 1: Plan The Sprint, Define The Milestones, And Add The Stories
@@ -252,7 +252,7 @@ The rules:
 - The release is cut at the sprint's end, on the state after the meeting and any same-week rework: [Releases](../requirements/planning-requirements.md#releases).
 - A rejected story stays open with its rework tasks: [Showing Working Software](../requirements/customer-meetings-requirements.md#showing-working-software).
 - Deploy by hand, the same commit to staging and then to production, and roll back a deploy that fails its verification: [Environments And Deployment](../requirements/repository-requirements.md#environments-and-deployment).
-- The release claims a requirement only when every non-dropped test for it is `Passes` and `Checked` in the release's sprint, re-checking a test last checked in an earlier sprint: [Cutting A Release](../requirements/releases-requirements.md#cutting-a-release).
+- The plan's `REL-05` block is written after the rework, from the tests checked in `SPRINT-05`: [Releases](../requirements/planning-requirements.md#releases).
 
 This week:
 
@@ -260,7 +260,7 @@ This week:
 2. Rerun the other implemented test at its level: against the new staging deployment, or in the CI on the reworked commit.
 3. When it passes, deploy the same final commit to production and verify the core task again.
 4. If the rework cannot finish before the deadline, defer it to `SPRINT-06` and keep the reviewed and tested commit as the release commit.
-5. Only the final production deploy supplies the release's evidence: a rerun before the last deploy is not the released state's run.
+5. The tag is cut on the final production deploy's commit, which is the commit the staging test ran and the evidence names: a run on an earlier commit is not the released state's run.
 
 The method is in [Step 4: Deploy To Staging And Run The Deployed Test](../guides/deployment-and-environments.md#step-4-deploy-to-staging-and-run-the-deployed-test) and [Step 5: Deploy To Production And Verify](../guides/deployment-and-environments.md#step-5-deploy-to-production-and-verify).
 
@@ -271,18 +271,19 @@ The rules:
 - `CHANGELOG.md` follows Keep a Changelog, with an `[Unreleased]` section during development, and it is user-visible only: [The Changelog](../requirements/releases-requirements.md#the-changelog).
 - Version with Semantic Versioning, prefix tags with `v`, point each tag at a commit on `main`, and protect it: [Versioning And Tags](../requirements/releases-requirements.md#versioning-and-tags).
 - Title the release with its tag, move the released entries into a dated section linked to the release, and open a new empty `[Unreleased]`: [Cutting A Release](../requirements/releases-requirements.md#cutting-a-release).
-- The release body links each test it relies on and claims a `QR-nn` only when every non-dropped test for it is `Passes` and `Checked` in the release's sprint: [Cutting A Release](../requirements/releases-requirements.md#cutting-a-release) and [Quality Requirement Testing Plan](../requirements/planning-requirements.md#quality-requirement-testing-plan).
-- `REL-05` is the plan's `#### REL-05` section under `### SPRINT-05`, carrying one line with the tag and the day it was cut: [Releases](../requirements/planning-requirements.md#releases).
-- The sprint's `REL-nn` is the last release cut in that sprint: [Releases](../requirements/planning-requirements.md#releases).
+- The release body is the customer-facing note, written in the team's shape and closing with the `Full changelog` line: [Cutting A Release](../requirements/releases-requirements.md#cutting-a-release).
+- `REL-05` is the plan's `#### REL-05` section under `### SPRINT-05`, carrying the block: `Released` links the tag and the day it was cut, and `Checked QRs` lists every `QR-nn` with at least one test checked in `SPRINT-05`, each linked, with one link to the testing plan: [Releases](../requirements/planning-requirements.md#releases).
+- Only the sprint's `REL-nn`, the last release cut in that sprint, carries the block; an earlier release in the sprint and a hotfix carry none: [Releases](../requirements/planning-requirements.md#releases).
 - Close the sprint's GitHub milestone once the release is cut, after rescheduling each issue still open: [Cutting A Release](../requirements/releases-requirements.md#cutting-a-release).
 
 This week:
 
 1. Keep `CHANGELOG.md` current through the week, with an `[Unreleased]` entry for each user-visible change.
 2. After the meeting and any rework, merge the sprint's pull requests, push the tag on the final production commit, and protect the tag from being moved or deleted.
-3. Write the release body in your own shape: link each test the release adds or relies on, and state which `QR-nn`s it claims with the run that checked each in `SPRINT-05`.
-4. Re-check any test last checked in an earlier sprint on the released commit before its requirement is claimed; a test that does not pass is not claimed, and its row keeps its result.
-5. Move the released entries into the dated section the changelog uses for a version, such as `[0.5.0]`, link that section to the release, open a new empty `[Unreleased]`, and merge what links the tag in this order: the changelog's released section, the plan's `REL-05` line, and the week's report.
+3. Write the release body for the customer who opens it from the week's report, in the team's shape: the summary, the limitation when there is one, any content the team adds for the customer, and the `Full changelog` line as the last line; check it against [Cutting A Release](../requirements/releases-requirements.md#cutting-a-release).
+4. Write `Checked QRs` from the tests checked in `SPRINT-05`: a requirement appears when at least one of its tests was checked this sprint, and a test last checked in an earlier sprint does not put it there unless it is rerun.
+   A test that does not pass keeps its result in the plan.
+5. Move the released entries into the dated section the changelog uses for a version, such as `[0.5.0]`, link that section to the release, open a new empty `[Unreleased]`, and merge what links the tag in this order: the changelog's released section, the plan's `REL-05` block, and the week's report, so the body's `Full changelog` link resolves.
 6. Close `SPRINT-05`'s GitHub milestone after moving each issue still open into a later sprint's milestone.
 7. The version is the team's choice under Semantic Versioning; `v0.5.0` continues the course's example rather than fixing a scheme.
 
@@ -342,8 +343,8 @@ A strong submission has:
   One page lists the product's capabilities in the user's words, each linking the story, the requirement, and the records that own its facts, with the words the project defines linked to the glossary, and the page is updated in the same pull request as the change.
 - **Stories that show what the increment is for.**
   The deployed, verified product on one side, and on the other the needs it serves, each story a user's need rather than a feature name.
-- **A release that claims only what its tests verified.**
-  Cut after the review and the rework, on the commit production finally runs, and claiming only the requirements whose tests are `Passes` and checked in the release's sprint.
+- **A release whose record says what was checked.**
+  Cut after the review and the rework, on the commit production finally runs, with the plan's `REL-05` block listing every requirement with at least one test checked in `SPRINT-05`, and the testing plan showing what passed and what is partial.
 
 ## Assignment Report In The Repository
 
@@ -355,23 +356,23 @@ This week it also carries:
 2. The customer-meeting outcome: each story shown and whether the customer accepted or rejected it, each citing its `DEC-nnn`, and each implemented test's result at its level.
 3. The coverage table, with these rows:
 
-| Deliverable                | Artifact                                                                                                                          |
-| -------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
-| Sprint plan and milestones | `docs/project-plan.md#sprint-05` and `#milestones`, with the goal, the planned and actual velocity, and each milestone's due week |
-| New stories                | the issue list filtered by the `User Story` type, and the `SPRINT-05` milestone holding the scheduled one                         |
-| Quality requirement tests  | `docs/quality-requirements/qr/`, with a `QRT-nn` in every active High business-importance requirement's file                      |
-| Testing plan               | `docs/project-plan.md#quality-requirement-testing-plan`                                                                           |
-| Automated tests and CI     | `.github/workflows/`, with `actionlint` and the product-code checks                                                               |
-| Deployment                 | `docs/deployment.md`, the staging and production instances on the university VM, and the core-task verification                   |
-| Feature documentation      | `docs/features.md`                                                                                                                |
-| Week 4 action points       | `## Previous action points` in `reports/week-05/meeting-report.md`                                                                |
-| Week 4 open questions      | `## Previous open questions` in the same report                                                                                   |
-| Meeting script             | `reports/week-05/meeting-script.md`                                                                                               |
-| Meeting transcript         | `reports/week-05/meeting-transcript.md`, or one line saying why there is none                                                     |
-| Customer validation        | `reports/week-05/meeting-report.md`, and each story's verdict                                                                     |
-| `REL-05`                   | the tag, its GitHub release body, the changelog's released section, and the plan's `REL-05` line                                  |
-| Sprint retrospective       | `reports/week-05/sprint-retrospective.md`                                                                                         |
-| AI usage                   | `reports/week-05/ai-usage.md`                                                                                                     |
+| Deliverable                | Artifact                                                                                                                                 |
+| -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| Sprint plan and milestones | `docs/project-plan.md#sprint-05` and `#milestones`, with the goal, the planned and actual velocity, and each milestone's due week        |
+| New stories                | the issue list filtered by the `User Story` type, and the `SPRINT-05` milestone holding the scheduled one                                |
+| Quality requirement tests  | `docs/quality-requirements/qr/`, with a `QRT-nn` in every active High business-importance requirement's file                             |
+| Testing plan               | `docs/project-plan.md#quality-requirement-testing-plan`                                                                                  |
+| Automated tests and CI     | `.github/workflows/`, with `actionlint` and the product-code checks                                                                      |
+| Deployment                 | `docs/deployment.md`, the staging and production instances on the university VM, and the core-task verification                          |
+| Feature documentation      | `docs/features.md`                                                                                                                       |
+| Week 4 action points       | `## Previous action points` in `reports/week-05/meeting-report.md`                                                                       |
+| Week 4 open questions      | `## Previous open questions` in the same report                                                                                          |
+| Meeting script             | `reports/week-05/meeting-script.md`                                                                                                      |
+| Meeting transcript         | `reports/week-05/meeting-transcript.md`, or one line saying why there is none                                                            |
+| Customer validation        | `reports/week-05/meeting-report.md`, and each story's verdict                                                                            |
+| `REL-05`                   | the tag, its user-facing release body, the changelog's released section, and the plan's `REL-05` block with `Released` and `Checked QRs` |
+| Sprint retrospective       | `reports/week-05/sprint-retrospective.md`                                                                                                |
+| AI usage                   | `reports/week-05/ai-usage.md`                                                                                                            |
 
 If the customer refused publication of the transcript, that row says so and points at the Moodle submission instead.
 
@@ -420,8 +421,8 @@ A transcript under item 6 goes in an appendix, which the two pages do not count.
 - [ ] `reports/week-05/meeting-report.md`, with the deployed product and the implemented tests shown, a `DEC-nnn` for each story shown, and 2 or more action points due in Week 6 ([Part 8](#part-8-validate-with-the-customer)).
 - [ ] `reports/week-05/meeting-transcript.md`, if the meeting was recorded or held in writing ([Part 8](#part-8-validate-with-the-customer)).
 - [ ] Any same-week rework merged, redeployed to staging, retested, redeployed to production, and verified, or deferred to `SPRINT-06` with the reviewed commit released ([Part 9](#part-9-redeploy-and-retest-after-same-week-rework)).
-- [ ] `REL-05` tagged on the final production commit, with its release body, the changelog's released section, the plan's `REL-05` line, and the sprint milestone closed ([Part 10](#part-10-cut-the-rel-05-release)).
-- [ ] Every claimed `QR-nn` verified by a test that is `Passes` and `Checked` in `SPRINT-05`, re-checked on the released commit when it was last checked earlier ([Part 10](#part-10-cut-the-rel-05-release)).
+- [ ] `REL-05` tagged on the final production commit, with its user-facing release body, the changelog's released section, the plan's `REL-05` block, and the sprint milestone closed ([Part 10](#part-10-cut-the-rel-05-release)).
+- [ ] `Checked QRs` lists every `QR-nn` with at least one test checked in `SPRINT-05`, and the testing plan shows each test's result ([Part 10](#part-10-cut-the-rel-05-release)).
 - [ ] `**Actual Velocity:**` set in `### SPRINT-05`, and `reports/week-05/sprint-retrospective.md` with its four sections and its carried actions ([Part 11](#part-11-close-the-sprint-and-hold-the-retrospective)).
 - [ ] `reports/week-05/ai-usage.md` ([Part 12](#part-12-report-on-your-ai-usage)).
 - [ ] `reports/week-05/README.md` ([Assignment Report In The Repository](#assignment-report-in-the-repository)).

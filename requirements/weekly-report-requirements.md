@@ -102,7 +102,7 @@ The `test` job passed on the same commit, so [`QR-02 QRT-01`](../../docs/quality
 | Feature documentation      | [docs/features.md](../../docs/features.md)                                                                  |
 | Week 4 action points       | [reports/week-05/meeting-report.md](meeting-report.md#previous-action-points)                               |
 | Customer validation        | [reports/week-05/meeting-report.md](meeting-report.md)                                                      |
-| `REL-05`                   | [v0.5.0](https://github.com/<organization>/<repo>/releases/tag/v0.5.0)                                      |
+| `REL-05`                   | [the plan's `REL-05` block](../../docs/project-plan.md#rel-05)                                              |
 | Sprint retrospective       | [reports/week-05/sprint-retrospective.md](sprint-retrospective.md)                                          |
 | AI usage                   | [reports/week-05/ai-usage.md](ai-usage.md)                                                                  |
 

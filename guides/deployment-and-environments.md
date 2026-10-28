@@ -147,13 +147,13 @@ It is the checklist a teammate compares their machine against: a variable missin
 
 The staging and production values live on the VM: an environment file under the service's directory or the file the service's unit loads, whichever the team's setup uses.
 The repository holds the shape and the runbook says where the values live on the machine; no secret is committed, and the two deployments do not share one.
-A deployment is not a user-visible change, so the changelog does not record it and the release body does, per [The Changelog](../requirements/releases-requirements.md#the-changelog).
+A deployment is not a user-visible change, so the changelog does not record it: the runbook describes it, and the week's report records the production verification, per [The Changelog](../requirements/releases-requirements.md#the-changelog) and [Environments And Deployment](../requirements/repository-requirements.md#environments-and-deployment).
 
 ### Build Once And Deploy The Same Commit Twice
 
 The commit is the unit that moves, so staging runs it, the deployed test passes against it, and production runs the same commit.
 Build the commit on the machine that runs it, or build one artifact and copy it; what must not happen is staging deploying one state and production another, because then the test proved a version nobody released.
-Write the commit into the evidence of the run and into the release, so the claim and the deployment name the same tree.
+Write the commit into the evidence of the run, and cut the tag on that commit: the tag names the commit the deployment ran, so neither the body nor the plan repeats the hash.
 
 ### Choose A Directory Or Service You Can Restart
 
@@ -199,7 +199,7 @@ When staging has not run, or its result is `Fails`, production waits: a deploy t
 
 ### Verify The Core Task And Nothing More
 
-Do the product's core task on the deployed instance, as a user would, and record what was checked with the release, per [Environments And Deployment](../requirements/repository-requirements.md#environments-and-deployment).
+Do the product's core task on the deployed instance, as a user would, and record what was checked in the week's report, per [Environments And Deployment](../requirements/repository-requirements.md#environments-and-deployment).
 [The Candidate](../requirements/minimum-usable-product-requirements.md#the-candidate) names the core task, and it is the one thing the deployment must do; a walk through every screen is a test that is never finished and never repeated.
 
 ### Roll Back Before You Fix Forward

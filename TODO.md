@@ -13,6 +13,8 @@
 - [ ] Traceability - only from line of code to ToS
 - [x] Should ADR cite a QRT?
       No: an ADR's `**Addresses:**` list names the `FR-nnn` and `QR-nn` the decision accounts for, and it reaches the test through its `QR-nn`, per `A5-DEC-018`.
+- Next course iteration:
+  - reports and changelog inside docs so that links to them resolve on the docs site
 
 ## A1
 
@@ -316,11 +318,19 @@ Next: Week 3 is planning and the minimum usable product, and it has no assignmen
   - Integration is the product CI on GitHub Actions, and the university VM hosts staging and production; what the team defines is the four-environment map and the manual deploy in `docs/deployment.md`, per `A5-DEC-023` and `A5-DEC-026`.
 - [x] Revise explanation of features in guides/quality-and-architecture.md
   - The guide now links `requirements/features-requirements.md`: `docs/features.md` is fixed, one flat entry per capability, the user sentence opens it, and the links own each fact.
+- [x] Improve the format of releases - make releases more meaningful
 
 ## A6
 
 - [ ] address the Week 6 `docs/analytics.md` row once the W6 assignment is written
 - [ ] course/syllabus: decide the W6 maintained artifact
+
+## A7
+
+- [ ] Add the production verification to the release record after the UAT (user acceptance testing) work
+  - The release body stays user-facing, and the plan's `REL-nn` block has no production check for now.
+    During the deferral, the week report records the checked core task, per `A5-DEC-025`; `repository-requirements.md` rule 7 and Assignment 5's Part 3 item stay as written.
+    Once UATs are designed, add `**Checked UATs:**` beside `**Checked QRs:**`, decide whether `repository-requirements.md` rule 7 stays in force, and where the check is recorded.
 
 ## A2-2025 Tech Stack TODO
 

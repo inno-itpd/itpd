@@ -112,7 +112,8 @@ It is the short version of the requirements, states what is expected of you as a
 13. `TOS-nn` and `RISK-nn` are sectioned identifiers like the others: the rules above apply, including `**Status:**` as the first field and the dropped form.
     Their values and the files that own them are in [The Threshold Of Success](planning-requirements.md#the-threshold-of-success) and [Checking And Settling](risks-requirements.md#checking-and-settling).
 14. `SPRINT-nn`, `MLS-nn`, and `REL-nn` are the exceptions to rule 10, and `MLS-nn` and `REL-nn` also to rule 5: the sprint's GitHub milestone and the release carry their own state, a plan milestone carries none, and the plan's section is the record rather than a `**Status:**` field.
-    A plan milestone opens with its fields and its description below them, and a release carries its released-as line once it is published; [Sprints](planning-requirements.md#sprints), [Milestones](planning-requirements.md#milestones), and [Releases](planning-requirements.md#releases) say how each is written.
+    A plan milestone opens with its fields and its description below them.
+    The `REL-03` and `REL-04` sections carry the released-as line once their release is published, and from `REL-05` on the `REL-nn` section carries its `**Released:**` and `**Checked QRs:**` fields instead; [Sprints](planning-requirements.md#sprints), [Milestones](planning-requirements.md#milestones), and [Releases](planning-requirements.md#releases) say how each is written.
 
 **Since: W5**
 

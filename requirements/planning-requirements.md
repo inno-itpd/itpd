@@ -126,7 +126,7 @@ The fields of a planned sprint:
 
 A **release** is the sprint's stable state: the product as it stands when the sprint ends, tagged, so later work cites one commit rather than a moving week.
 Every sprint from Week 3 to Week 9 ends in one release, named `REL-nn` after its sprint: the MUP week is `REL-03`, and the last is `REL-09`.
-The changelog, the tags, and the release titles follow [Release Requirements](releases-requirements.md); this section says how a release belongs to its sprint.
+The changelog, the tags, and the release titles follow [Release Requirements](releases-requirements.md); this section says how a release belongs to its sprint and what its `REL-nn` section records.
 
 **Required**
 
@@ -141,16 +141,21 @@ The changelog, the tags, and the release titles follow [Release Requirements](re
    The tag is the team's choice under SemVer; the plan does not fix a numbering.
 
 4. Cut the release at the sprint's end, on the state after the customer meeting and any same-week rework: merge the sprint's pull requests, then push the tag on that commit.
-   Then merge what links the tag, in this order: the changelog's released section, this `REL-nn` line, and the week's report, so every link resolves the first time it is checked.
+   Then merge what links the tag, in this order: the changelog's released section, this `REL-nn` section, and the week's report, so every link resolves the first time it is checked.
 5. The `REL-nn` section does not link the changelog, and the changelog does not mention `REL-nn`: the changelog's released section links the release, and the plan and the week's report make the link between the release and its sprint.
 
 **Since: W5**
 
 6. A team may release more than once in a sprint: the sprint's `REL-nn` is the last release cut in that sprint, and an earlier release in the same sprint carries no `REL-nn`.
+   Only the sprint's `REL-nn` carries the block in rule 7; a hotfix, a release cut after the sprint's `REL-nn` to repair what it released, carries none.
+7. From `REL-05` on, when the release is published, its section carries a bullet block instead of the line in rule 3, with these fields, in this order:
 
-**Recommended**
+   - `**Released:**` the tag as link text and the day it was cut, as in rule 3.
+   - `**Checked QRs:**` every `QR-nn` with at least one test checked in the sprint, each linked to its requirement file, one bullet each, and after the list one sentence linking this plan's [Quality Requirement Testing Plan](#quality-requirement-testing-plan) once.
 
-- Put what should point at the release into its GitHub release body, such as the changelog section for that version and the week's report.
+   The block is an index of what was checked in the sprint, not a quality claim: the testing plan's rows carry each test's result, and its `Checked` column names the sprint of each test's last check.
+   A sprint with no checked requirement says `None` in `**Checked QRs:**` and keeps the testing-plan sentence, because the plan still carries the planned and unverified rows.
+   [Release Requirements](releases-requirements.md#cutting-a-release) owns the user-facing release body; the block is the release's technical record.
 
 ## Quality Requirement Testing Plan
 
@@ -338,7 +343,13 @@ A client sees the free slots within two seconds, and the product runs on the sta
 
 #### REL-05
 
-Released as [v0.5.0](https://github.com/<organization>/<repo>/releases/tag/v0.5.0) on 2026-10-29.
+- **Released:** [v0.5.0](https://github.com/<organization>/<repo>/releases/tag/v0.5.0) on 2026-10-29.
+- **Checked QRs:**
+  - [QR-01](quality-requirements/qr/QR-01.md)
+  - [QR-02](quality-requirements/qr/QR-02.md)
+  - [QR-03](quality-requirements/qr/QR-03.md)
+
+  The [testing plan](#quality-requirement-testing-plan) carries each test's result.
 
 ### SPRINT-06
 
@@ -350,10 +361,12 @@ A coach takes one real paid booking through the deployed product.
 
 ## Quality Requirement Testing Plan
 
-| QR                                        | QRT                                                     | Status | Checked                 | Planned for sprint      | Evidence                                                                                        |
-| ----------------------------------------- | ------------------------------------------------------- | ------ | ----------------------- | ----------------------- | ----------------------------------------------------------------------------------------------- |
-| [QR-01](quality-requirements/qr/QR-01.md) | [QR-01 QRT-01](quality-requirements/qr/QR-01.md#qrt-01) | Passes | [SPRINT-05](#sprint-05) | [SPRINT-05](#sprint-05) | [the staging run in the Week 05 report](../reports/week-05/README.md#quality-requirement-tests) |
-| [QR-02](quality-requirements/qr/QR-02.md) | [QR-02 QRT-01](quality-requirements/qr/QR-02.md#qrt-01) | Passes | [SPRINT-05](#sprint-05) | [SPRINT-05](#sprint-05) | [the CI run on `4c1e9ab`](...)                                                                  |
+| QR                                        | QRT                                                     | Status       | Checked                 | Planned for sprint      | Evidence                                                                                        |
+| ----------------------------------------- | ------------------------------------------------------- | ------------ | ----------------------- | ----------------------- | ----------------------------------------------------------------------------------------------- |
+| [QR-01](quality-requirements/qr/QR-01.md) | [QR-01 QRT-01](quality-requirements/qr/QR-01.md#qrt-01) | Passes       | [SPRINT-05](#sprint-05) | [SPRINT-05](#sprint-05) | [the staging run in the Week 05 report](../reports/week-05/README.md#quality-requirement-tests) |
+| [QR-02](quality-requirements/qr/QR-02.md) | [QR-02 QRT-01](quality-requirements/qr/QR-02.md#qrt-01) | Passes       | [SPRINT-05](#sprint-05) | [SPRINT-05](#sprint-05) | [the CI run on `4c1e9ab`](...)                                                                  |
+| [QR-03](quality-requirements/qr/QR-03.md) | [QR-03 QRT-01](quality-requirements/qr/QR-03.md#qrt-01) | Passes       | [SPRINT-05](#sprint-05) | [SPRINT-05](#sprint-05) | [the staging run in the Week 05 report](../reports/week-05/README.md#quality-requirement-tests) |
+| [QR-03](quality-requirements/qr/QR-03.md) | [QR-03 QRT-02](quality-requirements/qr/QR-03.md#qrt-02) | Not verified | None                    | [SPRINT-06](#sprint-06) | None                                                                                            |
 
 ## Progress Monitoring
 
