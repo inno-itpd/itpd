@@ -89,9 +89,6 @@
 
 #let key-takeaways(body) = slide("Key takeaways")[#body]
 
-// differential testing - caveat: lean version may not capture the intent
-// TODO link paper about lean verification of natural-language math proofs
-
 #title-slide()
 
 #slide("Agenda")[
