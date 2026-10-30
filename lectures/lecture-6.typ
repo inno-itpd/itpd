@@ -104,8 +104,52 @@
 
 #quiz[
   - Which problem are you solving for yourself by building a product in the ITPD course?
-  - Which problem do entrepreneurs solve for themselves?
-  - Why can you afford yourself not to try other product ideas?
+  - Which problem do entrepreneurs solve for themselves by building products?
+  - Why can you afford yourself not to try other product ideas in the ITPD course?
+]
+
+#slide("Hypothesis-driven entrepreneurship")[
+  The goal is to fail fast and to not waste resources on the wrong direction.
+
+  ---
+
+  From #link("https://www.hbs.edu/faculty/Pages/item.aspx?num=41302")[Hypothesis-Driven Entrepreneurship]:
+
+  #show quote: set block(spacing: 1em)
+
+  #quote(block: true)[
+    "Lean startups" use hypothesis-driven approach to evaluate entreprenerial opportunities.
+
+    They state falsifiable hypotheses about their business model and test them using MVPs.
+
+    Based on test feedback (quantitative and qualitative data), they decide whether to *keep* the business model, to *pivot* by updating the model, or to *abandon* the model.
+  ]
+]
+
+#slide("Hypothesis example")[
+  #show quote: set block(spacing: 1em)
+
+  #quote(block: true)[
+    *Willingness to pay (viability)*:
+
+    - *Belief*: We believe coaches will pay 500 RUB a month to stop scheduling meetings by hand.
+    - *Test*: paid online meeting booking service pilot offered to the 20 coaches who finish onboarding.
+    - *Falsified if*: fewer than 3 accept the pilot, or more than half cancel within four weeks.
+
+  ]
+]
+
+#slide("Lean startup cycle")[
+  #figure(
+    image("images/lecture-6/lean-startup-circle.png", height: 70%),
+    caption: "Ries' Lean startup, "
+      + link("https://blog.babak.no/2016/11/07/six-management-ideas-applied-to-research-leadership/")[source],
+  )
+]
+
+#key-takeaways[
+  - Make testable hypotheses so that you can set up experiments.
+  - Plan experiments and learn from them, don't just try things.
 ]
 
 #section("Product analytics")
