@@ -13,7 +13,7 @@
 
 #set text(font: "Liberation Sans", size: 15pt, lang: "en")
 #set par(leading: 0.65em, spacing: 1.05em)
-#set list(indent: 1.2em, body-indent: 0.45em, spacing: 0.6em)
+#set list(indent: 1.2em, body-indent: 0.45em, spacing: 1em)
 #set enum(indent: 1.2em, body-indent: 0.45em, spacing: 0.4em)
 #set heading(numbering: none)
 
@@ -123,7 +123,7 @@
   ]
 ]
 
-#slide("Hypothesis example")[
+#slide("Example: hypothesis about the business model")[
   #show quote: set block(spacing: 1em)
 
   #quote(block: true)[
@@ -132,7 +132,6 @@
     - *Belief*: We believe coaches will pay 500 RUB a month to stop scheduling meetings by hand.
     - *Test*: paid online meeting booking service pilot offered to the 20 coaches who finish onboarding.
     - *Falsified if*: fewer than 3 accept the pilot, or more than half cancel within four weeks.
-
   ]
 ]
 
@@ -149,13 +148,111 @@
   - Plan experiments and learn from them, don't just try things.
 ]
 
+#section("Metrics")
+
+#quiz[
+  - Which metrics should you care about in your app?
+]
+
+#slide("Metric tree")[
+  #grid(
+    columns: (1fr, auto, auto),
+    column-gutter: 14pt,
+    [From #link("https://mixpanel.com/blog/metric-tree/")[What is a metric tree]:
+
+      "Focus Metric" - key actionable metric, a.k.a. "North Star metric"
+
+      L1 input metrics feed into the focus metric.
+
+      L2 input metrics feed into the L1 metrics.
+
+      Metrics can be selected via #link("https://en.wikipedia.org/wiki/GQM")[GQM].
+    ],
+    image("images/lecture-6/metrics-tree.png", height: 70%),
+  )
+]
+
+#slide("Some types of metrics")[
+  From #link("https://en.wikipedia.org/wiki/Lean_startup#Actionable_metrics_vs_vanity_metrics")[Lean startup]:
+
+  - *Actionable metrics* - can lean to informed business decisions and subsequent actions.
+  - *Vanity metrics* - give "the rosiest picture possible" but don't reflect key business drivers. Opposite of actionable metrics.
+
+  From #link("https://producthq.org/product-analytics/counter-metrics/")[Counter metrics]:
+
+  - A *counter metric* is what you watch to ensure gains on the north star didn't come at the expense of customers or the business.
+
+    Example:
+
+    - North star: completed paid bookings per active coach per week.
+    - Counter-metric: cancellation and no-show rate within 7 days of booking.
+]
+
+#key-takeaways[
+  - Focus on one key actionable metric and connect other metrics to it.
+  - Introduce counter-metrics to avoid gaming the key metric.
+]
+
 #section("Product analytics")
 
 #quiz[
-
+  - How to find out which features are unnecessary in your app?
+  - How to discover where users behave differently from what you expected?
+  - How to identify which of your expectations about the user experience are wrong?
 ]
 
 #slide("Product analytics")[
+  From #link("https://www.atlassian.com/agile/product-management/product-analytics")[What every product manager needs to know about product analytics]:
+
+  - Product analytics tracks and analyzes user engagement and behavior (e.g. clicks) to inform product decisions and improvements.
+
+  - Data-driven insights help teams understand feature usage, prioritize changes, and pay off "empathy debt." (show users that "we hear you")
+
+  - Combining analytics with qualitative feedback provides a complete picture of user needs.
+
+  - Instrument your product with analytics and use findings to guide feature development and optimization.
+]
+
+#slide("Testing a hypothesis about a product change")[
+  Possible process for testing hypotheses - from #link("https://www.atlassian.com/agile/product-management/product-analytics")[What every product manager needs to know about product analytics]:
+
+  - Define a clear hypothesis for a product change.
+
+  - Build the cheapest possible implementation of this change, loaded with any analytics events you need, that will allow you to test the hypothesis.
+
+  - Deploy the change to a subset of customers in an A/B test.
+
+  - Wait for results.
+
+  - Do a breakdown of the results, with the help of an analyst in the case of more complex changes, and decide whether the change was successful.
+]
+
+#slide("Example: hypothesis about a product change")[
+  *Willingness to book (engagement)*:
+
+  - *Belief*: We believe that making the "Book a meeting" button larger on a coach's availability page will raise completed bookings by 5% relative, because visitors currently miss the small link among the profile text.
+
+  - *Test*: A/B test for two weeks: half the visitors to coach pages see the current link, half see the larger button; compare completed bookings per visitor, with analytics events on page view, slot selected, and booking confirmed.
+
+  - *Falsified if*: the 95% confidence interval for the lift lies entirely below +5% relative; if it includes zero, the test is inconclusive and needs more traffic, not a verdict.
+]
+
+#slide("Key takeaways")[
+  From #link("https://www.atlassian.com/agile/product-management/product-analytics")[What every product manager needs to know about product analytics]:
+
+  #quote(block: true)[
+    - Think in advance about all events in your system that you need to capture before running experiments.
+
+    - Instrument your system to capture as many such events as possible automatically.
+
+    - Make dry runs with dummy data to identify gaps.
+
+    - Check that your hypothesis is testable given your data and tooling.
+
+    - Make sure you're testing on enough users and for a long enough period of time. You want to make sure your results are statistically significant.
+
+    - Be prepared to discard bad ideas quickly.
+  ]
 
 ]
 
