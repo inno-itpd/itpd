@@ -93,6 +93,7 @@
 
 #slide("Agenda")[
   - Hypothesis-driven entrepreneurship
+  - Metrics
   - Product analytics
   - Observability
 ]
@@ -259,26 +260,38 @@
 #section("Observability")
 
 #quiz[
-
+  - Which data can help understand why the system malfunctions since the start of this week?
 ]
 
-// TODO supporting product analytics with observability
+#slide("Observability pillars")[
+  From #link("https://www.ibm.com/think/insights/observability-pillars")[Observability pillars]:
+  - *Metrics* - provide quantitative insights into system performance by measuring various parameters (e.g. memory usage, response times, availability). Help *identify that an issue happened* (monitoring).
+  - *Logs* - immutable, exhaustive records of discrete events that occur within a system (e.g. errors). Provide *details to understand the root cause of an issue*.
+  - *Traces* - capture end-to-end journey of a request through the system, capturing the path and lifespan of each component involved in processing the request. Help *identify sources of issues*.
+]
 
-#slide("Observability")[
+#slide("Example: metrics in OpenObserve")[
+  #align(horizon + center, image("images/lecture-6/metrics.png", height: 80%))
+]
 
+#slide("Example: logs in OpenObserve")[
+  #align(horizon + center, image("images/lecture-6/logs.png", height: 80%))
+]
+
+#slide("Example: traces in OpenObserve")[
+  #align(horizon + center, image("images/lecture-6/traces.png", height: 80%))
 ]
 
 #key-takeaways[
-
+  - Observability focuses on system health and incident resolution
+  - Product analytics focuses on product success
+  - Both observability and analytics require product instrumentation to collect data about events
+  - Both rely on hypothesis testing to resolve issues and make decisions (debugging is hypothesis testing)
 ]
 
 
-// --- References (source slide 34) -------------------------------------------
-
-// TODO revise
-
-#slide("References")[
-  #set text(size: 12.5pt)
+// #slide("References")[
+//   #set text(size: 12.5pt)
 
 
-]
+// ]
