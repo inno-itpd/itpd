@@ -231,6 +231,8 @@
   #image("images/lecture-4/iso-25010-model.jpg", width: 100%)
 ]
 
+// TODO use online meeting booking service example
+
 #slide("Example: A QR for Moodle's Availability")[
   - Business importance: High
   - Technical risk: High
