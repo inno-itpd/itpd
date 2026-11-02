@@ -155,7 +155,7 @@ The changelog, the tags, and the release titles follow [Release Requirements](re
 
    The block is an index of what was checked in the sprint, not a quality claim: the testing plan's rows carry each test's result, and its `Checked` column names the sprint of each test's last check.
    A sprint with no checked requirement says `None` in `**Checked QRs:**` and keeps the testing-plan sentence, because the plan still carries the planned and unverified rows.
-   [Release Requirements](releases-requirements.md#cutting-a-release) owns the user-facing release body; the block is the release's technical record.
+   [Release Requirements](releases-requirements.md#cutting-a-release) owns the release body for whoever deploys it; the block is the release's technical record.
 
 ## Quality Requirement Testing Plan
 

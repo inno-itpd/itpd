@@ -252,25 +252,31 @@ The release itself is about the product code, so the documents following it do n
 
 The tag is the team's choice under SemVer, per [Versioning And Tags](../requirements/releases-requirements.md#versioning-and-tags).
 The release repeats the tag as its title, so the version reads the same wherever the release is linked.
-A first release with no users is usually `v0.1.0`; after that, a fix a user could notice is a patch, a new capability is a minor, and a change that breaks how an existing user works is a major.
-When the number is not obvious, ask what a user would see, because that is what the version communicates.
+A first release with no users is usually `v0.1.0`; after that, a fix a user or an operator could notice is a patch, a new capability is a minor, and a change that breaks how an existing user or deployment works is a major.
+When the number is not obvious, ask what a user or an operator would see, because that is what the version communicates: a change that forces a configuration change or a migration is not a patch, even when the product looks the same.
 
 ### Write The Release Body
 
-The release body has one primary reader: the customer.
-The team writes it in its own shape, and [Cutting A Release](../requirements/releases-requirements.md#cutting-a-release) recommends the content rather than fixing it.
+The release body has one primary reader: the person who already runs the previous version and is deciding whether and how to move to this one.
+The next teammate who redeploys is that person, and so is anyone who self-hosts the product from the repository.
+The team writes the body in its own shape, and [Cutting A Release](../requirements/releases-requirements.md#cutting-a-release) fixes two things: the statement of whether the upgrade needs action, and the closing `Full changelog` line.
 
-Start from the changelog's released section and ask what a customer can do now that they could not do last week.
-That is the opening, and it is about the product rather than about the repository.
-A release that changes nothing visible says `No changes visible to a user` there.
-Then say what the changelog never says: what the release still does not do.
-When it does everything it promised, say nothing there.
-The opening and the limitation are recommended rather than required, per [Cutting A Release](../requirements/releases-requirements.md#cutting-a-release): the section titles, the number of paragraphs, and the length are the team's.
-The release page already shows the title, the tag, the commit, and the date, so the body can spend its sentences on the product instead.
+Ask first what the reader has to do.
+Read the newly released changelog section and the diffs that touched configuration, migrations, dependency manifests, and the deployment, and decide whether anything beyond deploying this version is required.
+That answer is the body's first sentence: the steps, or `No action beyond deploying this version`.
 
-Anything a customer needs that no other record carries, such as an upgrade step, a screenshot, or where to find the change, sits before the last line, in a section of its own when it needs one.
-When the body mentions something another record already carries, link that record instead of copying the fact: the plan's `REL-nn` block and the testing plan own what the sprint checked, and `CHANGELOG.md` owns each user-visible change.
-A copy drifts as its record changes, and a link keeps the body true.
+When action is required, give the steps in the order the reader takes them, name the exact environment variable, command, path, or version, and link the section of `docs/setup.md` or `docs/deployment.md` that carries the procedure instead of repeating it.
+Say which versions the note applies to when the steps are conditional, so a reader several releases behind knows whether it is the note they need.
+Name the known issues and their workarounds, and say nothing when there are none.
+Then give one sentence on why the upgrade is worth taking; the list of changes is the changelog's, and the last line links it.
+
+Assume the reader can run the product but has never seen this release.
+Name exact things and state the consequence once; do not explain what an environment variable is or how to connect to a machine.
+The test is whether a competent operator could act on the body without opening the repository: if they need the procedure, it belongs in the linked guide.
+
+The release page already shows the title, the tag, the commit, and the date, so the body can spend its sentences on the upgrade instead.
+Link the record rather than copy it: `CHANGELOG.md` owns each notable change, and `docs/setup.md` and `docs/deployment.md` own the install, configuration, deploy, and rollback steps.
+Leave out what other records own: the plan's `REL-nn` block and the testing plan record what the sprint checked, and the weekly report is the customer's evidence.
 
 Finish with `[Full changelog](...)`, an absolute link to the changelog's released section.
 It is the body's last line and nothing comes after it, so write it once that section is merged and check it before the week closes.

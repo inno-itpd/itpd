@@ -147,7 +147,8 @@ It is the checklist a teammate compares their machine against: a variable missin
 
 The staging and production values live on the VM: an environment file under the service's directory or the file the service's unit loads, whichever the team's setup uses.
 The repository holds the shape and the runbook says where the values live on the machine; no secret is committed, and the two deployments do not share one.
-A deployment is not a user-visible change, so the changelog does not record it: the runbook describes it, and the week's report records the production verification, per [The Changelog](../requirements/releases-requirements.md#the-changelog) and [Environments And Deployment](../requirements/repository-requirements.md#environments-and-deployment).
+The act of deploying is not a change to the product, so the changelog does not record it; a change to how the product is deployed is notable, and the runbook carries the procedure.
+The week's report records the production verification, per [The Changelog](../requirements/releases-requirements.md#the-changelog) and [Environments And Deployment](../requirements/repository-requirements.md#environments-and-deployment).
 
 ### Build Once And Deploy The Same Commit Twice
 

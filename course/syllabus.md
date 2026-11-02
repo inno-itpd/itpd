@@ -14,8 +14,8 @@ The course is designed to prepare students for the Industrial Project course and
   - [Week 4: Oct 16 – Oct 22 (Software Quality, Architecture \& Next Product Release)](#week-4-oct-16--oct-22-software-quality-architecture--next-product-release)
   - [Week 5: Oct 23 – Oct 29 (Testing, Verification \& Deployment)](#week-5-oct-23--oct-29-testing-verification--deployment)
   - [Week 6: Oct 30 – Nov 5 (Analytics)](#week-6-oct-30--nov-5-analytics)
-  - [Week 7: Nov 6 – Nov 12 (Usability Testing Preparation \& In-Class Product Presentations)](#week-7-nov-6--nov-12-usability-testing-preparation--in-class-product-presentations)
-  - [Week 8: Nov 13 – Nov 19 (Project Configuration Management)](#week-8-nov-13--nov-19-project-configuration-management)
+  - [Week 7: Nov 6 – Nov 12 (Usability Testing Preparation)](#week-7-nov-6--nov-12-usability-testing-preparation)
+  - [Week 8: Nov 13 – Nov 19 (Project Configuration Management \& In-Class Product Presentations)](#week-8-nov-13--nov-19-project-configuration-management--in-class-product-presentations)
   - [Week 9: Nov 20 – Nov 26 (Project Pitching, Repository Finalization \& Reflection)](#week-9-nov-20--nov-26-project-pitching-repository-finalization--reflection)
   - [Week 10: Nov 27 – Dec 3 (Course Review \& Final Exam Preparation)](#week-10-nov-27--dec-3-course-review--final-exam-preparation)
   - [Week 11: Dec 4 – Dec 10 (Final Exam: Group Presentations of the Projects)](#week-11-dec-4--dec-10-final-exam-group-presentations-of-the-projects)
@@ -198,7 +198,7 @@ From Week 4 to Week 9 every submission is due on Saturday at 23:59, with no soft
     4. **Plan Milestones And Stories**: at least two plan milestones and two new stories that carry the next increments.
     5. **Feature Documentation**: `docs/features.md`, with a user-language sentence per capability, the page's glossary line and first-use term links, and links to the story, functional requirement, and architectural decision record that own its facts.
     6. **Sprint Retrospective**: `reports/week-05/sprint-retrospective.md`.
-    7. **Next Product Release (`REL-05`)**: the tag on the final production commit, the user-facing release body, the changelog's released section, and the plan's `REL-05` block with its `Released` and `Checked QRs` fields.
+    7. **Next Product Release (`REL-05`)**: the tag on the final production commit, the release body for whoever deploys it, the changelog's released section, and the plan's `REL-05` block with its `Released` and `Checked QRs` fields.
   - **Submission Scope**: Team submission.
   - **Deadline**: **October 31 at 23:59 (Saturday)**, with no soft deadline.
 
@@ -218,7 +218,7 @@ From Week 4 to Week 9 every submission is due on Saturday at 23:59, with no soft
   - **Submission Scope**: Team submission.
   - **Deadline**: **November 7 at 23:59 (Saturday)**, with no soft deadline.
 
-### Week 7: Nov 6 – Nov 12 (Usability Testing Preparation & In-Class Product Presentations)
+### Week 7: Nov 6 – Nov 12 (Usability Testing Preparation)
 
 - **Class 7 (Nov 6)**:
   - **Lecture**: **Usability Testing** (usability evaluation methodologies, test protocols, test task formulation, observer guidelines, qualitative/quantitative metrics, pre/post test survey design).
@@ -233,7 +233,9 @@ From Week 4 to Week 9 every submission is due on Saturday at 23:59, with no soft
   - **Submission Scope**: Team submission.
   - **Deadline**: **November 14 at 23:59 (Saturday)**, with no soft deadline.
 
-### Week 8: Nov 13 – Nov 19 (Project Configuration Management)
+### Week 8: Nov 13 – Nov 19 (Project Configuration Management & In-Class Product Presentations)
+
+<!-- Configuration management was done for them -->
 
 - **Class 8 (Nov 13)**:
   - **Lecture**: **Project Configuration Management** (configuration identification, baseline control, environment configuration, dependency management, branching/release strategies, reproducible builds).
@@ -262,6 +264,8 @@ From Week 4 to Week 9 every submission is due on Saturday at 23:59, with no soft
   - **Deadline**: **November 28 at 23:59 (Saturday)**, with no soft deadline.
 
 ### Week 10: Nov 27 – Dec 3 (Course Review & Final Exam Preparation)
+
+<!-- submit final deck -->
 
 - **Class 10 (Nov 27)**:
   - **Lecture**: **Course Review** (synthesizing core paradigms, architectural decisions, quality verification, configuration management, and retrospective lessons learned).
