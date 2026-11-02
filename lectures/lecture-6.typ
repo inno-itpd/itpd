@@ -93,7 +93,7 @@
 
 #slide("Agenda")[
   - Hypothesis-driven entrepreneurship
-  - Metrics
+  - Product metrics
   - Product analytics
   - Observability
 ]
@@ -149,10 +149,10 @@
   - Plan experiments and learn from them, don't just try things.
 ]
 
-#section("Metrics")
+#section("Product metrics")
 
 #quiz[
-  - Which metrics should you care about in your app?
+  - Which metrics should you care about in your product?
 ]
 
 #slide("Metric tree")[
@@ -183,21 +183,21 @@
 
   - A *counter metric* is what you watch to ensure gains on the north star didn't come at the expense of customers or the business.
 
-    Example:
+    Example (online meeting booking):
 
-    - North star: completed paid bookings per active coach per week.
-    - Counter-metric: cancellation and no-show rate within 7 days of booking.
+    - #underline("North star", offset: 3pt): completed paid bookings per active coach per week.
+    - #underline("Counter metric", offset: 3pt): cancellation and no-show rate within 7 days of booking.
 ]
 
 #key-takeaways[
-  - Focus on one key actionable metric and connect other metrics to it.
+  - Focus on one key actionable product metric and connect other metrics to it.
   - Introduce counter-metrics to avoid gaming the key metric.
 ]
 
 #section("Product analytics")
 
 #quiz[
-  - How to find out which features are unnecessary in your app?
+  - How to find out which features are unnecessary in your product?
   - How to discover where users behave differently from what you expected?
   - How to identify which of your expectations about the user experience are wrong?
 ]
