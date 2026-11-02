@@ -257,7 +257,7 @@ When the number is not obvious, ask what a user would see, because that is what 
 
 ### Write The Release Body
 
-The body has one reader: the customer who opens the release from the week's report.
+The release body has one primary reader: the customer.
 The team writes it in its own shape, and [Cutting A Release](../requirements/releases-requirements.md#cutting-a-release) recommends the content rather than fixing it.
 
 Start from the changelog's released section and ask what a customer can do now that they could not do last week.
