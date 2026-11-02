@@ -185,24 +185,42 @@
 ]
 
 #slide("How to Measure Your Product Quality? Idea 3")[
-  You agree with stakeholders on testable (pass/fail) quality requirements.
+  You agree with stakeholders on testable (pass/fail) *quality requirements*.
 
   - *Pros:*
     - These requirements can be tested by all stakeholders (your team, your customer, etc.)
     - Their price can be estimated by tracing these requirements to related architectural decisions.
-    - They can be put into a contract ("service-level agreements").
+    - They can be put into a contract ("service-level agreements (SLAs)").
   - *Cons:*
     - They may not cover the perceived quality #cite("Garvin").
 ]
 
-#slide("Quality Attribute Scenarios (Quality Requirements, QR)")[
+#slide("Quality Requirements")[
+  *Problem* (adapted from #link("https://www.radview.com/blog/non-functional-requirements-nfrs-for-performance-testing")[Non-functional requirements for performance testing]):
+
+  #show quote: set block(spacing: 1em)
+
+  #quote(
+    block: true,
+  )[When quality requirements are not documented, the system still has performance characteristics.
+    They’re just unknown, untested, and discovered by your customers in production.]
+
+  *Solution*: document quality requirements.
+
+  ---
+
   *Quality attribute scenarios* (*QAS*) are a way to write unambiguous testable (pass/fail) *quality requirements* (*QR*) #cite("Bck").
 
-  To prove that the requirement is testable, you define a *quality requirement test* (*QRT*) which specifies how to test the requirement.
+  ---
 
+  Note: A *quality requirement scenario (QRS)* is the QAS specified for the QR.
+]
+
+
+#slide("Quality Attribute Scenario")[
   A scenario has 6 parts #cite("QasArch"):
 
-  #set text(size: 12pt)
+  #set text(size: 18pt)
   #table(
     columns: (auto, 1fr),
     inset: (x: 6pt, y: 4pt),
@@ -225,8 +243,8 @@
   #align(center)[Source: #cite("Bck")]
 ]
 
-#slide("Example: A QR for Moodle's Availability")[
-  #set text(size: 12pt)
+#slide("Example: A QAS for Moodle's Availability")[
+  #set text(size: 13pt)
   #table(
     columns: (auto, 1fr),
     inset: (x: 6pt, y: 3pt),
@@ -248,18 +266,6 @@
     [*Response Measure*],
     [Full service is restored within 3 minutes. No more than 0.5% of student quiz submissions are lost and require resubmission. The system's availability must not drop below 99.9% during the academic term.],
   )
-]
-
-#slide("Example: A QR test")[
-  - *Step 1: Simulate the Stimulus*
-    - In a staging environment, we use a load testing tool (JMeter) to simulate *500+ students* submitting a quiz at the exact same second.
-  - *Step 2: Inject the Fault*
-    - At the precise moment of peak submission load, we intentionally *crash the primary database server* to trigger the automated failover system.
-  - *Step 3: Measure the Response*
-    - The test is considered a *PASS* only if the system automatically recovers and meets these strict criteria:
-      - *Recovery Time:* Full functionality is restored in *under 3 minutes*.
-      - *Data Integrity:* Fewer than *0.5%* of student submissions are lost.
-      - *Availability:* The overall uptime of *99.9%* is maintained.
 ]
 
 #slide("How to obtain QAS?")[
@@ -375,14 +381,14 @@
   Is Agile an excuse to not deliver results on time?
 ]
 
-#slide("What is Agile?")[  
+#slide("What is Agile?")[
   From #link("https://agilemanifesto.org/history.html")["History: The Agile Manifesto"]:
 
   #quote(
     "We hope that our work ... helps others in our profession to think about software development, methodologies, and organizations, in new – more agile – ways.",
     block: true,
   )
-  
+
   Opinion: Agile is a response of independent thinkers about software development to inefficient corporate bureaucracy.
 
   Opinion: Agile is a mindset based on particular values, definitely not a process framework.
