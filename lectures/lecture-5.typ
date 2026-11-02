@@ -78,7 +78,7 @@
   align(center)[
     #text(size: 34pt, weight: "bold", fill: accent)[Quality Management]
     #v(0.16in)
-    #text(size: 20pt, fill: muted)[IT Product Development]
+    #text(size: 20pt, fill: muted)[Lecture 5, IT Product Development]
   ]
   v(1.42in)
   align(center)[
