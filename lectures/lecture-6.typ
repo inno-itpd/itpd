@@ -257,6 +257,58 @@
 
 ]
 
+#section("SLA, SLO, SLI")
+
+#quiz[
+  - How do you ensure that your customer doesn't expect more than what you agreed on?
+]
+
+#slide("Why need to document quality requirements?")[
+  *Problem*: mismatch in expectations about desired quality during the project.
+
+  Adapted from #link("https://www.radview.com/blog/non-functional-requirements-nfrs-for-performance-testing")[Non-functional requirements for performance testing]:
+
+  #show quote: set block(spacing: 1em)
+
+  #quote(
+    block: true,
+  )[When quality requirements are not documented, the system still has characteristics.
+    They’re just unknown, untested, and discovered by your customers in production.]
+
+  ---
+
+  *Solution*: put quality requirements into a contract.
+
+  Adapted from #link("https://newrelic.com/blog/observability/what-are-slos-slis-slas")[What are SLOs, SLIs, and SLAs?]:
+
+  - *Service level agreements (SLA)* - legal contracts that explain what is agreed upon and what happens if the system doesn't meet SLOs.
+
+  - *Service level objectives (SLO)* - the desired (ranges of) values for specific SLIs that will allow to satisfy SLAs.
+
+  - *Service level indicators (SLI)* - key metrics for a characteristic of the system.
+]
+
+#slide("Example: SLO, SLI")[
+  From #link("https://newrelic.com/blog/observability/what-are-slos-slis-slas")[What are SLOs, SLIs, and SLAs]:
+
+  Latency SLOs:
+  - 95% of web page loads complete within 2 seconds.
+  - 99% of API requests return within 300 milliseconds.
+
+  Latency SLIs:
+  - Time taken for an API request to return a response.
+  - Time taken for a web page to load for the end user.
+
+  ---
+
+  Note: these SLOs are less precise than quality attribute scenarios because they don't specify the source of stimulus, stimulus, environment (QAS were explained in Lecture 4).
+]
+
+#key-takeaways[
+  - Formalize agreements about quality (document or even put into a contract)
+  - Decide in advance what to measure, why, and how
+]
+
 #section("Observability")
 
 #quiz[
