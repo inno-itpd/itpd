@@ -87,7 +87,7 @@
 // Every section opens with a quiz and closes with its Key Takeaways slide.
 #let quiz(body) = slide("Quiz")[#body]
 
-#let key-takeaways(body) = slide("Key takeaways")[#body]
+#let key-takeaways(section, body) = slide("Key takeaways" + " " + "(" + section + ")")[#body]
 
 #title-slide()
 
@@ -144,7 +144,7 @@
   )
 ]
 
-#key-takeaways[
+#key-takeaways("Hypothesis-driven entrepreneurship")[
   - Make testable hypotheses so that you can set up experiments.
   - Plan experiments and learn from them, don't just try things.
 ]
@@ -189,7 +189,7 @@
     - #underline("Counter metric", offset: 3pt): cancellation and no-show rate within 7 days of booking.
 ]
 
-#key-takeaways[
+#key-takeaways("Product metrics")[
   - Focus on one key actionable product metric and connect other metrics to it.
   - Introduce counter-metrics to avoid gaming the key metric.
 ]
@@ -238,7 +238,7 @@
   - *Falsified if*: the 95% confidence interval for the lift lies entirely below +5% relative; if it includes zero, the test is inconclusive and needs more traffic, not a verdict.
 ]
 
-#slide("Key takeaways")[
+#key-takeaways("Product analytics")[
   From #link("https://www.atlassian.com/agile/product-management/product-analytics")[What every product manager needs to know about product analytics]:
 
   #quote(block: true)[
@@ -304,7 +304,7 @@
   Note: these SLOs are less precise than quality attribute scenarios because they don't specify the source of stimulus, stimulus, environment (QAS were explained in Lecture 4).
 ]
 
-#key-takeaways[
+#key-takeaways("SLA, SLO, SLI")[
   - Formalize agreements about quality (document or even put into a contract)
   - Decide in advance what to measure, why, and how
 ]
@@ -350,7 +350,7 @@
   - *SLAs conformance* - demonstrate that relevant SLOs are achieved
 ]
 
-#key-takeaways[
+#key-takeaways("Observability")[
   - Observability focuses on system health and incident resolution
   - Product analytics focuses on product success
   - Both observability and analytics require product instrumentation to collect data about events
