@@ -95,6 +95,7 @@
   - Hypothesis-driven entrepreneurship
   - Product metrics
   - Product analytics
+  - SLA, SLO, SLI
   - Observability
 ]
 
