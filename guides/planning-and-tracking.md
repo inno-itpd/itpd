@@ -113,6 +113,9 @@ In the file, the statements become rows of the table below the goals:
 In the full example the second goal was `Missed`, and it stayed in the file with its `**Outcome:**`.
 A set that quietly drops the goal it missed is not a threshold; it is the first draft of a report that no longer has to be honest.
 
+From Week 6 on, the threshold is also reviewed against the numbers the product now reports.
+[Step 8: Review The Threshold](analytics-and-observability.md#step-8-review-the-threshold) is that method, and [The Threshold Of Success](../requirements/planning-requirements.md#the-threshold-of-success) is the rule.
+
 ## Step 2: Choose The Roadmap's Zoom Level
 
 The **roadmap** is the path from where the team is to the threshold: the milestones, in order, each one a step somebody outside the team can see.

@@ -109,6 +109,9 @@ The status is not the result, and [Step 4](#step-4-record-the-progress) is where
 `**Runs at:**` names what runs the test in one line, and the line is what a second person needs to re-run the check: the workflow and its step, the script path or the command, the staging deployment and the command or tool, or the inspection step.
 Write the step rather than the workflow alone: "the `test` job of `.github/workflows/ci.yml`, on every pull request and on `main`" is re-runnable, and "CI" is not.
 
+From Week 6 on, a runtime test also names the `Active` `SLI-nn` it reads in `**Runs at:**`, and its procedure reads that signal, per [Quality Requirement Tests](../requirements/quality-requirements-requirements.md#quality-requirement-tests).
+[Step 6: Write The Observability Requirement And Run Its Test](analytics-and-observability.md#step-6-write-the-observability-requirement-and-run-its-test) is that method.
+
 ### Justify A Manual Test
 
 A `manual` test carries `**Why Manual:**` in one sentence, and the sentence has to say why no command can check the requirement.

@@ -8,6 +8,7 @@ Every artifact file links here rather than repeating where an item goes.
 - [Visibility Model](#visibility-model)
 - [Sensitive Information Reference](#sensitive-information-reference)
 - [Screenshot Evidence](#screenshot-evidence)
+- [Telemetry And Personal Data](#telemetry-and-personal-data)
 
 ## Visibility Model
 
@@ -44,6 +45,7 @@ Every item below goes in exactly one place.
 | Usability test participant identity, data, recordings, consent, and results                                                                 | Moodle only                                                                                                                                                              |
 | Confidential business or research information, and anything the customer asks you to keep private                                           | Moodle only                                                                                                                                                              |
 | The staging and production deployment addresses of the university VM                                                                        | Moodle only                                                                                                                                                              |
+| The four dashboards' addresses and credentials, and the analytics and observability backends' administrative credentials                    | Moodle only                                                                                                                                                              |
 | Credentials, tokens, API keys, private keys, and `.env` files                                                                               | Never committed; Moodle only when the week needs them; see [Configuration And Sensitive Information](repository-requirements.md#configuration-and-sensitive-information) |
 | Large files: recordings, video, datasets, model weights, archives                                                                           | Never committed; see [Configuration And Sensitive Information](repository-requirements.md#configuration-and-sensitive-information)                                       |
 | Customer-owned or third-party material, including code copied from another repository, that you may not redistribute                        | Never committed; see [Licensing](repository-requirements.md#licensing)                                                                                                   |
@@ -56,6 +58,11 @@ Once it is in the git history it is public, and deleting the file does not remov
 
 The staging and production deployment addresses of the university VM are Moodle-only.
 `docs/deployment.md` carries a placeholder instead of the address, a `QRT-nn`'s `**Runs at:**` names the staging deployment with a placeholder or an environment variable such as `$STAGING_URL`, and the weekly public report says the product is reached from the university network and points at the Moodle submission for the address, per [Environments And Deployment](repository-requirements.md#environments-and-deployment).
+
+**Since: W6**
+
+The four dashboards' addresses and credentials, and the two telemetry backends' administrative credentials, are Moodle-only.
+`docs/analytics.md` and `docs/observability.md` name the backend and the chart rather than linking an address, a `QRT-nn`'s `**Runs at:**` uses a placeholder or an environment variable such as `$OPENOBSERVE_URL`, and the weekly public report links the sanitized screenshots rather than an address, per [Product Analytics Requirements](analytics-requirements.md#the-dashboard) and [Observability Requirements](observability-requirements.md#the-dashboard).
 
 The repository identifies people by GitHub username, and the customer as `Customer`.
 If the customer has a GitHub username and agrees to it being public, use the username instead.
@@ -87,3 +94,17 @@ Both are allowed:
 
 Wherever a screenshot lives, the text that refers to it must carry the meaning.
 A screenshot with no explanation is not evidence.
+
+## Telemetry And Personal Data
+
+**Since: W6**
+
+**Personal data** is a name, an email address, a phone number, a postal address, or free text that identifies a person.
+**Telemetry** is the events and signals the product records about its use and its operation, per [Product Analytics Requirements](analytics-requirements.md) and [Observability Requirements](observability-requirements.md).
+
+**Required**
+
+1. Telemetry data is never committed to the repository: it lives in the analytics or the observability backend, outside the repository, and the repository holds only the plans and the sanitized screenshots.
+2. An event or a signal carries no personal data, and its payload carries no free text.
+3. An opaque identifier is allowed when it is generated at random, is not derived from personal data, and cannot be reversed to a person.
+4. A dashboard screenshot is sanitized before it is published, per [Screenshot Evidence](#screenshot-evidence), so it carries no personal data and no real address.

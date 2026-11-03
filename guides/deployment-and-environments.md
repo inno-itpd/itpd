@@ -7,6 +7,8 @@ Which test level runs in which environment is in [Quality Requirement Tests](../
 The addresses are private-only, per [Sensitive Information Reference](../requirements/visibility-requirements.md#sensitive-information-reference), and `docs/setup.md` stays the local guide, per [Setup And Run Instructions](../requirements/repository-requirements.md#setup-and-run-instructions).
 This guide is the method: drawing the map, preparing the machine, configuring it, deploying twice, and writing down what works.
 
+The two telemetry pipelines are deployed the same way, and their method is in [Guide: Product Analytics And Observability](analytics-and-observability.md): [Step 3](analytics-and-observability.md#step-3-deploy-the-analytics-backend-and-expose-the-dashboards) puts the analytics backend on the campus network, and [Step 5](analytics-and-observability.md#step-5-deploy-openobserve-and-build-the-sli-dashboards) puts the observability backend beside it.
+
 **Timebox:** about a day, most of it on the VM before anything is deployed.
 The first deploy is the slow one, because the access, the configuration, and the ports are settled there; every later deploy is one command and one check.
 

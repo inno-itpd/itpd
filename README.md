@@ -11,13 +11,14 @@ Materials for the **IT Product Development (ITPD)** course: what the course expe
 
 ## Assignments
 
-| Week                             | Hard deadline     | Deliverable                                                                                                                                                                        |
-| -------------------------------- | ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [1](assignments/assignment-1.md) | Fri 2 Oct, 23:59  | Initial project research: alternatives, comparison, gaps, value proposition                                                                                                        |
-| [2](assignments/assignment-2.md) | Sat 10 Oct, 23:59 | Requirements and prototyping: vision, user stories, prototypes, validation                                                                                                         |
-| [3](assignments/assignment-3.md) | Sat 17 Oct, 23:59 | Planning and the minimum usable product: plan, threshold, risks, Definition of Done, first release                                                                                 |
-| [4](assignments/assignment-4.md) | Sat 24 Oct, 23:59 | Quality and architecture: quality and functional requirements, architectural decision records, drivers, glossary, retrospective, fourth release                                    |
-| [5](assignments/assignment-5.md) | Sat 31 Oct, 23:59 | Testing and deployment: quality requirement tests and the testing plan, automated tests and CI checks, staging and production on the VM, Feature Documentation, the Week 5 release |
+| Week                             | Hard deadline     | Deliverable                                                                                                                                                                                                                             |
+| -------------------------------- | ----------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [1](assignments/assignment-1.md) | Fri 2 Oct, 23:59  | Initial project research: alternatives, comparison, gaps, value proposition                                                                                                                                                             |
+| [2](assignments/assignment-2.md) | Sat 10 Oct, 23:59 | Requirements and prototyping: vision, user stories, prototypes, validation                                                                                                                                                              |
+| [3](assignments/assignment-3.md) | Sat 17 Oct, 23:59 | Planning and the minimum usable product: plan, threshold, risks, Definition of Done, first release                                                                                                                                      |
+| [4](assignments/assignment-4.md) | Sat 24 Oct, 23:59 | Quality and architecture: quality and functional requirements, architectural decision records, drivers, glossary, retrospective, fourth release                                                                                         |
+| [5](assignments/assignment-5.md) | Sat 31 Oct, 23:59 | Testing and deployment: quality requirement tests and the testing plan, automated tests and CI checks, staging and production on the VM, Feature Documentation, the Week 5 release                                                      |
+| [6](assignments/assignment-6.md) | Sat 7 Nov, 23:59  | Product analytics and observability: the analytics plan and metric tree, the events, the four dashboards, the two internal stories, the two ADRs, the diagnosability requirement and its test, the threshold review, the Week 6 release |
 
 Later assignments are added as the course runs.
 Each one adds the paths and evidence for its week, and changes nothing about the rules below.
@@ -27,12 +28,14 @@ Each one adds the paths and evidence for its week, and changes nothing about the
 The slides from each class.
 They explain the week; [the rules](#the-rules) are what your work is checked against.
 
-| Week | Lecture                                                 |
-| ---- | ------------------------------------------------------- |
-| 1    | [Course introduction](lectures/lecture-1.pdf)           |
-| 2    | [Requirements and prototyping](lectures/lecture-2.pdf)  |
-| 3    | [Goals, Planning, Tracking](lectures/lecture-3.pdf)     |
-| 4    | [Quality, Architecture & Agile](lectures/lecture-4.pdf) |
+| Week | Lecture                                                       |
+| ---- | ------------------------------------------------------------- |
+| 1    | [Course introduction](lectures/lecture-1.pdf)                 |
+| 2    | [Requirements and prototyping](lectures/lecture-2.pdf)        |
+| 3    | [Goals, Planning, Tracking](lectures/lecture-3.pdf)           |
+| 4    | [Quality, Architecture & Agile](lectures/lecture-4.pdf)       |
+| 5    | [Testing and automation](lectures/lecture-5.pdf)              |
+| 6    | [Product analytics and observability](lectures/lecture-6.pdf) |
 
 ## The Rules
 
@@ -69,22 +72,25 @@ The assignments reference these rather than repeating them.
 | [Agent Instructions Requirements](requirements/agent-instructions-requirements.md)         | The team's own `AGENTS.md` and what it states to a coding agent                                                                                                         |
 | [Glossary Requirements](requirements/glossary-requirements.md)                             | The project's glossary, its terms, and their definitions                                                                                                                |
 | [Feature Documentation Requirements](requirements/features-requirements.md)                | The feature page, its entries, the links to what owns each fact, and the Week 5 minimum                                                                                 |
+| [Product Analytics Requirements](requirements/analytics-requirements.md)                   | The focus metric and the metric tree, the events and instrumentation, the analytics pipeline and its dashboards, and the collected data                                 |
+| [Observability Requirements](requirements/observability-requirements.md)                   | The signals, the `SLI`s and their fields, the observability pipeline and its dashboards, and the collected data                                                         |
 
 ## The Guides
 
 How to actually do the work.
 
-| Guide                                                                      | For                                                                                              |
-| -------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
-| [Researching alternatives](guides/alternatives-research.md)                | Finding your set, choosing properties, evaluating consistently, capturing evidence               |
-| [From comparison to value proposition](guides/comparison-and-synthesis.md) | Building the table, finding the gaps, writing the proposition and your assumptions               |
-| [The kickoff meeting](guides/customer-kickoff-meeting.md)                  | The five areas and the Mom Test pass                                                             |
-| [User stories and prototyping](guides/user-stories-and-prototyping.md)     | Turning a gap into stories, writing criteria, and testing an idea cheaply                        |
-| [Validating with the customer](guides/validating-with-the-customer.md)     | Running a meeting after the kickoff and recording what it changed                                |
-| [Planning and tracking](guides/planning-and-tracking.md)                   | The threshold of success, the plan and its releases, milestones, risks, and progress monitoring  |
-| [Quality and architecture](guides/quality-and-architecture.md)             | Requirements, decisions, the container view, the quality expectations, and Feature Documentation |
-| [Quality requirement tests](guides/quality-requirement-tests.md)           | Writing a runnable check, choosing its level and environment, and recording its result           |
-| [Deployment and environments](guides/deployment-and-environments.md)       | The four environments, the university VM, staging and production, and the deployment runbook     |
+| Guide                                                                        | For                                                                                                       |
+| ---------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
+| [Researching alternatives](guides/alternatives-research.md)                  | Finding your set, choosing properties, evaluating consistently, capturing evidence                        |
+| [From comparison to value proposition](guides/comparison-and-synthesis.md)   | Building the table, finding the gaps, writing the proposition and your assumptions                        |
+| [The kickoff meeting](guides/customer-kickoff-meeting.md)                    | The five areas and the Mom Test pass                                                                      |
+| [User stories and prototyping](guides/user-stories-and-prototyping.md)       | Turning a gap into stories, writing criteria, and testing an idea cheaply                                 |
+| [Validating with the customer](guides/validating-with-the-customer.md)       | Running a meeting after the kickoff and recording what it changed                                         |
+| [Planning and tracking](guides/planning-and-tracking.md)                     | The threshold of success, the plan and its releases, milestones, risks, and progress monitoring           |
+| [Quality and architecture](guides/quality-and-architecture.md)               | Requirements, decisions, the container view, the quality expectations, and Feature Documentation          |
+| [Quality requirement tests](guides/quality-requirement-tests.md)             | Writing a runnable check, choosing its level and environment, and recording its result                    |
+| [Deployment and environments](guides/deployment-and-environments.md)         | The four environments, the university VM, staging and production, and the deployment runbook              |
+| [Product analytics and observability](guides/analytics-and-observability.md) | The metric tree, the events, the two pipelines, the four dashboards, the `SLI`s, and the threshold review |
 
 ## Course Documents
 
