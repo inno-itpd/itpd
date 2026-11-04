@@ -185,7 +185,7 @@ From Week 4 to Week 9 every submission is due on Saturday at 23:59, with no soft
 - **Objectives**:
   - Turn the quality requirements into quality requirement tests (`QRT-nn`) a stranger can run, and record every test's result in the testing plan.
   - Add the automated tests for the testability requirement's critical modules, with `actionlint` and every applicable product-code CI check.
-  - Deploy the product to staging and production on the university VM, by hand from a campus machine, and document the four environments in `docs/deployment.md`.
+  - Deploy the product to staging and production on the university VM, by hand from a machine on the university network, and document the four environments in `docs/deployment.md`.
     "Live accessible" means the customer reaches the product from the university network at the VM's IPv4 address.
   - Define at least two plan milestones and add two stories that carry the next increments.
   - Write Feature Documentation in `docs/features.md`: a user-language sentence per capability and links to the records that own its facts.

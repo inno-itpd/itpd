@@ -27,7 +27,7 @@ The metric tree is an afternoon once the events are named, and the observability
   - [Carry `source` On Every Event](#carry-source-on-every-event)
   - [Trace Every Metric To Its Events](#trace-every-metric-to-its-events)
 - [Step 3: Deploy The Analytics Backend And Expose The Dashboards](#step-3-deploy-the-analytics-backend-and-expose-the-dashboards)
-  - [Self-Host The Backend On The Campus Network](#self-host-the-backend-on-the-campus-network)
+  - [Self-Host The Backend On The University Network](#self-host-the-backend-on-the-university-network)
   - [Separate The Environments By Scope](#separate-the-environments-by-scope)
   - [Chart The Query The Page Records](#chart-the-query-the-page-records)
   - [Check The Staging Dashboard With A Test Event](#check-the-staging-dashboard-with-a-test-event)
@@ -162,7 +162,7 @@ A metric with no event is dropped or gets its event in the same pull request; a 
 The **analytics backend** stores the events and serves the dashboards.
 The default is OpenPanel self-hosted, per [The Pipeline](../requirements/analytics-requirements.md#the-pipeline), and the deployment's steps belong to `docs/deployment.md`, per [Environments And Deployment](../requirements/repository-requirements.md#environments-and-deployment).
 
-### Self-Host The Backend On The Campus Network
+### Self-Host The Backend On The University Network
 
 Run the backend on the university VM, so the data never leaves the university network.
 Install its configuration and secrets outside the repository, and keep the shape in `.env.example` with placeholders, per [Configuration And Sensitive Information](../requirements/repository-requirements.md#configuration-and-sensitive-information).

@@ -26,7 +26,7 @@ Making a response measure runnable is the hour that decides whether the rest is 
   - [Close With The Pass Criterion](#close-with-the-pass-criterion)
 - [Step 3: Pick The Environment The Test Needs](#step-3-pick-the-environment-the-test-needs)
   - [Let The Check Choose The Level](#let-the-check-choose-the-level)
-  - [Run The Deployed Test From Campus](#run-the-deployed-test-from-campus)
+  - [Run The Deployed Test From The University Network](#run-the-deployed-test-from-the-university-network)
   - [Fall Back When Staging Is Missing](#fall-back-when-staging-is-missing)
   - [Keep The Inspection Out Of The Deployed Level](#keep-the-inspection-out-of-the-deployed-level)
 - [Step 4: Record The Progress](#step-4-record-the-progress)
@@ -126,7 +126,7 @@ When an active requirement's check can be automated, that check is the one the t
 
 The `### Procedure` is a numbered list of the steps somebody else runs: set up the state, perform the action, and read the output.
 Write the output the reader is looking for, in the units the criterion uses, so the last step is reading a number rather than hunting for one.
-Name where the runner stands, because a step that only works on the author's laptop is not a procedure: on the campus machine, against the staging deployment, or from a clean checkout.
+Name where the runner stands, because a step that only works on the author's laptop is not a procedure: on the university network, against the staging deployment, or from a clean checkout.
 
 Keep the verdict out of the procedure.
 The steps produce the number, and the pass criterion judges it, so a reader who stops before the criterion knows what was measured and no more.
@@ -175,7 +175,7 @@ A measurement of the built product under a production-like load needs staging; a
 
 The testability requirement is the anchor of the week, because its check is the suite itself: it runs from a clean checkout in the product CI, so it is `CI`, and the critical modules it has to cover come from [Write The Testability Requirement Against The Code](quality-and-architecture.md#write-the-testability-requirement-against-the-code).
 
-### Run The Deployed Test From Campus
+### Run The Deployed Test From The University Network
 
 A `deployed` test exists because the product CI cannot reach the university network.
 The staging deployment is reachable from a machine on that network, so the team's member on campus runs the check, and the test's `**Runs at:**` names the staging deployment rather than production.

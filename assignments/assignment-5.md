@@ -100,7 +100,7 @@ This week:
 4. Add at least one test for each critical module the testability requirement names, so a broken one fails the suite from a clean checkout.
 5. Add `actionlint` and the product-code checks to `docs/definition-of-done.md`'s `## Pull Request` list.
 6. Get the latest run of every check on `main` green before the meeting in [Part 8](#part-8-validate-with-the-customer).
-7. Keep the workflow free of a deployment job: the deploy in [Part 3](#part-3-deploy-to-the-vm-and-document-the-environments) is manual from a campus machine.
+7. Keep the workflow free of a deployment job: the deploy in [Part 3](#part-3-deploy-to-the-vm-and-document-the-environments) is manual from a machine on the university network.
 
 ## Part 3: Deploy To The VM And Document The Environments
 
@@ -117,12 +117,12 @@ The rules:
 
 This week:
 
-1. Get the VM from the university portal, recreate it, set its password, and connect over SSH from a campus machine.
-2. Write `docs/deployment.md` with the four environments, the VM and its campus-network access, the configuration, the manual deploy, the verification, and the rollback.
+1. Get the VM from the university portal, recreate it, set its password, and connect over SSH from a machine on the university network.
+2. Write `docs/deployment.md` with the four environments, the VM and access to it from the university network, the configuration, the manual deploy, the verification, and the rollback.
    Link `docs/setup.md` for the build and the run, and repeat none of it.
 3. Keep the configuration's shape in `.env.example` with placeholders, install the real secrets outside the repository, and use `<university-vm-ipv4>` or an environment variable wherever an address would go.
 4. When the VM is available, deploy the release candidate to staging, then deploy the same commit to production.
-5. Verify the core task on production from a campus machine, and record what you checked with the release.
+5. Verify the core task on production from a machine on the university network, and record what you checked with the release.
 6. Put the real staging and production addresses in the Moodle submission in [Assignment Report On Moodle](#assignment-report-on-moodle), and in no repository file.
 7. When the VM is not available, record the postponement and the date the group chat announces, and declare the deviation; the rest of the week proceeds, and the test in [Part 4](#part-4-write-the-quality-requirement-tests) falls back to `scripted` or `CI`.
 
@@ -165,7 +165,7 @@ The rules:
 
 This week:
 
-1. Run every test you wrote at its level: the `CI` tests in the product CI, a `scripted` test on a development machine, a `deployed` test against staging from a campus machine, and a `manual` test by inspection.
+1. Run every test you wrote at its level: the `CI` tests in the product CI, a `scripted` test on a development machine, a `deployed` test against staging from a machine on the university network, and a `manual` test by inspection.
 2. Add the plan's rows, in the order of the quality requirements index, with each `QR` and `QRT` cell linking its file and its section.
 3. Set the testability `CI` row and the row of the other test you implemented at its level to `Passes` with `Checked` in `SPRINT-05`, and link the evidence each level requires.
 4. Link the plan once from `docs/quality-requirements/README.md`, and point the report's summary at it.
@@ -332,9 +332,9 @@ A strong submission has:
 - **A testing plan a reviewer can read in one pass.**
   It says what is verified, in which environment, when it was last checked, when the rest arrives, and what evidence proves it.
 - **A runbook a teammate could redeploy from.**
-  The four environments, the campus access, the configuration, the deploy, the verification, and the rollback, with the real address from the Moodle submission and none in the repository.
+  The four environments, access from the university network, the configuration, the deploy, the verification, and the rollback, with the real address from the Moodle submission and none in the repository.
 - **A VM prepared from the portal and a product the customer can open.**
-  The VM recreated from the portal, reached over SSH from a campus machine, and production opened by the customer from the university network.
+  The VM recreated from the portal, reached over SSH from a machine on the university network, and production opened by the customer from the university network.
 - **An automated test suite that fails when a critical module breaks.**
   At least one test for each module the testability requirement names, run from a clean checkout.
 - **A CI check that is pinned, green, and deploys nothing.**
@@ -408,8 +408,8 @@ A transcript under item 6 goes in an appendix, which the two pages do not count.
 - [ ] `actionlint` over `.github/workflows/` and a named step for each applicable product-code check, on pull requests and `main`, every action pinned ([Part 2](#part-2-add-the-automated-tests-and-the-ci-checks)).
 - [ ] The checks that do not apply recorded with their reason, and the automated test suite covering the testability requirement's critical modules ([Part 2](#part-2-add-the-automated-tests-and-the-ci-checks)).
 - [ ] The Definition of Done's pull request list carries `actionlint` and the product-code checks, the latest `main` runs are green, and the workflow deploys nothing ([Part 2](#part-2-add-the-automated-tests-and-the-ci-checks)).
-- [ ] `docs/deployment.md` with the four environments, the campus access, the configuration, the deploy, the verification, and the rollback, and no real address ([Part 3](#part-3-deploy-to-the-vm-and-document-the-environments)).
-- [ ] The release candidate deployed to staging and production, the core task verified from a campus machine, and the real addresses in the Moodle submission ([Part 3](#part-3-deploy-to-the-vm-and-document-the-environments)).
+- [ ] `docs/deployment.md` with the four environments, access from the university network, the configuration, the deploy, the verification, and the rollback, and no real address ([Part 3](#part-3-deploy-to-the-vm-and-document-the-environments)).
+- [ ] The release candidate deployed to staging and production, the core task verified from a machine on the university network, and the real addresses in the Moodle submission ([Part 3](#part-3-deploy-to-the-vm-and-document-the-environments)).
 - [ ] A `QRT-nn` inside every active High business-importance requirement's file, with its fields, its procedure, and its pass criterion ([Part 4](#part-4-write-the-quality-requirement-tests)).
 - [ ] The testability requirement's `CI` test and one other active requirement's test at `CI`, `scripted`, or `deployed`, with the High-requirement and next-active-row rule applied, and no `manual` test standing in for the second ([Part 4](#part-4-write-the-quality-requirement-tests)).
 - [ ] The testing plan with one row per test, the testability and other implemented rows `Passes` and `Checked` in `SPRINT-05`, and every other row keeping its result ([Part 5](#part-5-run-the-tests-and-record-the-testing-plan)).

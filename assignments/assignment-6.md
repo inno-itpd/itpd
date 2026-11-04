@@ -247,7 +247,7 @@ This week:
 2. Make its `Response Measure` about the product's telemetry endpoint: within five seconds of the failed request's response, the endpoint exposes one series point for it, carrying its request identifier and its failure label; within one minute, the `SLI`'s query returns the failure series with a P95 value.
 3. Write its `QRT-01` at `deployed`, naming the staging deployment and the `SLI-nn` you demonstrate in `**Runs at:**`, with a procedure that runs the core task's traffic and fails one request.
 4. Write the script or command, for example `scripts/check-sli.ts`, that generates the traffic, fails the request, reads the point, and prints it; the address is `$STAGING_URL`.
-5. Run the test against the staging deployment from a campus machine, and record its result as `Passes` with `Checked` in `SPRINT-06`.
+5. Run the test against the staging deployment from a machine on the university network, and record its result as `Passes` with `Checked` in `SPRINT-06`.
 6. Record the evidence the `deployed` level requires: the product endpoint's output for the failed request with its `request_id` and failure labels, the OpenObserve query result for the `SLI`'s five-minute P95 series, the dashboard screenshot, the staging environment, and the commit the test ran against.
 7. Run each row the testing plan planned for `SPRINT-06`, or move it to `SPRINT-07` with a reason, and declare both in the report.
 8. Optionally re-run one implemented runtime `QRT-nn` whose signal you can instrument: its `**Runs at:**` names the same `Active` `SLI`, its procedure reads that signal, and a failed re-run records `Fails` and does not remove this week's demonstration.
@@ -447,7 +447,7 @@ This week it also carries:
 If the customer refused publication of the transcript, that row says so and points at the Moodle submission instead.
 
 5. Repository evidence: one merged pull request that closed its task issue, and the latest green link-check, Markdown-check, `actionlint`, and product-code CI runs on `main`.
-6. `## Deviations`: anything you did differently from this assignment, per [Declaring Deviations](../requirements/weekly-report-requirements.md#declaring-deviations), including a VM that was unavailable, a backend that ran on a second campus machine, a dashboard the customer could not reach, a staging test event that reached production, a row planned for `SPRINT-06` that moved to `SPRINT-07` with its reason, and a test whose window was still open at the deadline.
+6. `## Deviations`: anything you did differently from this assignment, per [Declaring Deviations](../requirements/weekly-report-requirements.md#declaring-deviations), including a VM that was unavailable, a backend that ran on a second machine on the university network, a dashboard the customer could not reach, a staging test event that reached production, a row planned for `SPRINT-06` that moved to `SPRINT-07` with its reason, and a test whose window was still open at the deadline.
 
 ## Assignment Report On Moodle
 
