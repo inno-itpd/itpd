@@ -203,17 +203,20 @@ A **service level indicator**, `SLI-nn`, is the measured signal a runtime qualit
 
 ### Choose The Signal, Not The Chart
 
-The metric is required, and the log and the trace are optional, per [The Signals](../requirements/observability-requirements.md#the-signals).
+The metric is required, and the log and the trace are optional, except that a signal an `SLI`'s `**Source:**` names is emitted, per [The Signals](../requirements/observability-requirements.md#the-signals).
 Choose the signal the requirement's `Response Measure` needs: a response-time requirement needs a duration, and a diagnosability requirement needs the duration with the labels that identify the request.
+A histogram is aggregate, so the per-request point is a structured log line or a trace span; the aggregate is the metric.
 Do not define an `SLI` for a chart the team wants; define the signal a test reads.
 
 ### Write The Labels A Test Can Read
 
 Write the `**Definition:**` with the labels the signal carries, the `**Unit:**` it is reported in, and the `**Window:**` it covers.
-The `SLI` the diagnosability test reads names the labels that identify the request and the failure, such as `request_id` and `outcome`, so the test can find one request's [point](../requirements/observability-requirements.md#the-slis) as well as the aggregate.
+The `SLI` the diagnosability test reads names the labels that identify the request, the route, and the failure, such as `request_id`, `route`, and `outcome`, so the test can find one request's [point](../requirements/observability-requirements.md#the-slis) as well as the aggregate.
+The point is the structured log line or trace span the `**Definition:**` names; the histogram is only the aggregate.
 
 Record the `**Query:**` a chart uses when it shows the signal, with the labels and the window it selects.
 A signal without a chart still records its query, and a test can read it; a chart cannot run a query the page does not carry.
+The `**Query:**` field is the aggregate query; record the per-request log line's query beside the signal, and the requirement's test runs it.
 
 ### Name The One `SLI` The Week Demonstrates
 
@@ -232,6 +235,9 @@ Point each environment's build at its own scope, and keep the credentials in the
 As with the analytics pipeline, write the steps and the configuration into `docs/deployment.md` and link them from `docs/observability.md`.
 
 Export the signals with OpenTelemetry, and keep the instrumentation in the container that measures the thing: a request duration belongs to the `backend`, not to a script that runs after the fact.
+The `backend` exports the histogram and the structured log line; the log line is what lets the test find one request, and the histogram is what the P95 query aggregates.
+Record the duration once per request: `duration_ms` is the elapsed time from the `backend` receiving the request to its response completing, measured on a monotonic clock rather than by subtracting wall-clock timestamps.
+The histogram records the same observation, so the per-request point and the P95 cannot disagree.
 
 ### Put The Query In The `SLI`, Not The Chart
 
@@ -239,32 +245,35 @@ Build a dashboard in each environment scope with at least one chart for an `Acti
 The chart names the `SLI` and runs the `**Query:**` recorded under it, and the page names the chart rather than linking its private address.
 Send the staging test traffic through the staging scope, and leave the production scope's dashboard configured with the same query and unexercised.
 The dashboard's definition may be tracked when it is sanitized, but the page still owns the `SLI`'s query, so regenerate the definition when the query changes.
+The chart runs the aggregate; the per-request log query is the test's, and it runs against the staging organization, not the chart.
 
 ## Step 6: Write The Observability Requirement And Run Its Test
 
-The week's quality requirement is about the product's diagnosability, not about a dashboard: the dashboard is evidence, and the product's own telemetry endpoint is what the test measures.
+The week's quality requirement is about the product's diagnosability, not about a dashboard: the product pushes its signals to OpenObserve, the test reads them through the staging organization's query API, and the dashboard is evidence.
 The rules for the requirement and its test are in [Quality Requirements](../requirements/quality-requirements-requirements.md#the-quality-requirement) and [Quality Requirement Tests](../requirements/quality-requirements-requirements.md#quality-requirement-tests), and the method is in [Guide: Quality Requirement Tests](quality-requirement-tests.md).
 
 ### State Diagnosability As The Requirement
 
-Use the `Maintainability` / `Analysability` pair and write the scenario as an operator's investigation: the operator is the `Source`, a failed request in the core task is the `Stimulus`, the staging deployment with the pipeline running is the `Environment`, the product's request path and its instrumentation is the `Artifact`, the request's labelled point and the `SLI`'s aggregate series for the failure are the `Response`, and the endpoint's five-second exposure of the point and the five-minute P95 query are the `Response Measure`.
+Use the `Maintainability` / `Analysability` pair and write the scenario as an operator's investigation: the operator is the `Source`, a failed request in the core task is the `Stimulus`, the staging deployment with the pipeline running is the `Environment`, the product's request path and the signals it emits are the `Artifact`, the request's labelled log point and the `SLI`'s aggregate series for the failure are the `Response`, and the staging organization's five-second exposure of the log point and the five-minute P95 query are the `Response Measure`.
 
-The measure is about the product: the product's telemetry endpoint exposes the point, and the OpenObserve query shows the pipeline stored and rendered the aggregate.
-A requirement about a dashboard would be a requirement about a tool, and the tool is replaceable.
+The measure is about the operator's time to find the signal: the staging organization's log query returns the request's point within five seconds, and the same organization's P95 query returns the aggregate within one minute.
+The dashboard shows that the pipeline stored and rendered the signal, and it is evidence rather than the requirement; a requirement about a chart would be a requirement about a tool.
+The product does not expose a separate telemetry endpoint: it pushes the signals over OTLP, and the test reads them through the backend's query API.
 
 ### Make The Test Fail One Request
 
 Write a script or command, for example `scripts/check-sli.ts`, that runs the core task's traffic against `$STAGING_URL` and fails one booking request.
-Then read the request's series point from the product's telemetry endpoint and check that it appears within five seconds, carrying the request identifier and the failure label.
-After waiting up to a minute for the pipeline, record the `SLI`'s five-minute P95 query result in OpenObserve and the dashboard screenshot as the evidence that the pipeline stored and rendered the signal.
+The product pushes a structured log line for the request to OpenObserve; query the staging organization by the request's `request_id` and check that the line appears within five seconds, carrying the request identifier, the route, and the failure label.
+After waiting up to a minute for the metric export, record the `SLI`'s five-minute P95 query result in the same organization and the dashboard screenshot as the evidence that the pipeline stored and rendered the signal.
+The script takes `$OPENOBSERVE_URL` and reads its credential from the environment, because the organization's address and credential are private-only, per [Sensitive Information Reference](../requirements/visibility-requirements.md#sensitive-information-reference).
 
 A short-window check is the week's required demonstration because it can pass before the deadline; a longer check a team runs on its own stays `Not verified` with its planned sprint, per [Quality Requirement Testing Plan](../requirements/planning-requirements.md#quality-requirement-testing-plan).
 
 ### Cite The `SLI` And Settle The Threshold
 
-The test's `**Runs at:**` names the staging deployment, the command, and the `Active` `SLI` it reads, linked, per [Quality Requirement Tests](../requirements/quality-requirements-requirements.md#quality-requirement-tests).
-Its `**Pass when:**` states the requirement's `Response Measure` made specific to staging and to the five-second window, and still settles the measure's threshold: one failed request is the instance the procedure produces, not a narrower bar, and the `SLI`'s five-minute P95 query must return the failure series within one minute.
-The one-minute wait is the `SLI`'s `**Window:**`, which records how soon the aggregate point appears after the request; the test waits that long rather than the full five-minute window.
+The test's `**Runs at:**` names the staging deployment, the command with `$STAGING_URL` and `$OPENOBSERVE_URL`, and the `Active` `SLI` it reads, linked, per [Quality Requirement Tests](../requirements/quality-requirements-requirements.md#quality-requirement-tests).
+Its `**Pass when:**` states the requirement's `Response Measure` made specific to staging and to the five-second and one-minute windows, and still settles the measure's threshold: one failed request is the instance the procedure produces, not a narrower bar, and the `SLI`'s five-minute P95 query must return the failure series within one minute.
+The one-minute wait is the `SLI`'s `**Window:**`, which records how soon the aggregate point appears after the request; the five-second check is the same field's per-request point, and the test waits for the log line rather than the full five-minute window.
 
 Record the result as the testing plan's row, with `Checked` in the sprint and the evidence the `deployed` level requires, and declare any test traffic that reached production as a deviation.
 
@@ -286,10 +295,10 @@ Name the files so a reader can tell them apart, such as `analytics-staging.png` 
 
 ### Record The Point, The Query, And The Commit
 
-The observability test's evidence is the product endpoint's output for the failed request, the `SLI`'s five-minute P95 query result after the wait, the chart that updated, the staging environment, and the commit the test ran against.
+The observability test's evidence is the staging organization's log-query output for the failed request, the `SLI`'s five-minute P95 query result after the wait, the chart that updated, the staging environment, and the commit the test ran against.
 The analytics test event's evidence is the staging dashboard's event list, which shows it, and the metric chart, which excludes it.
 
-Name no real address in any of it: use an environment variable or a placeholder, per [Environments And Deployment](../requirements/repository-requirements.md#environments-and-deployment).
+Name no real address in any of it: use an environment variable such as `$OPENOBSERVE_URL` or a placeholder, per [Environments And Deployment](../requirements/repository-requirements.md#environments-and-deployment).
 
 ### Link It From The Report
 
@@ -368,6 +377,12 @@ The switch is what a team on a development machine uses, and what the review ask
   A test that names an `SLI` in `**Runs at:**` reads that signal, whether it was written this week or re-run from an earlier week.
 - **A `QRT` that reads a `Planned` `SLI`.**
   A test names an `Active` `SLI`, because a planned signal is not emitted yet.
+- **A QR that reads a product telemetry endpoint the product never exposes.**
+  The product pushes to OpenObserve; the test reads the staging organization's query, and the dashboard is evidence.
+- **A per-request point taken from the histogram or a `request_id` metric label.**
+  The histogram is aggregate, and a metric labelled with `request_id` is one series per request; the point is a structured log line or a trace span.
+- **A test that reads the chart instead of the signal.**
+  The chart is evidence; the measurement is the query's output.
 - **An `SLO` family or a `Samples` field.**
   The requirement's `Response Measure` is the target and the test's `**Pass when:**` settles it in the test's context.
 - **A `deployed` test that runs against production.**

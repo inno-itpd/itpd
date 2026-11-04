@@ -38,7 +38,7 @@ The metric is the number the `SLI`s are computed from, and the log and the trace
 **Required**
 
 1. The page names the three signal types, the metric, the log, and the trace, and states which of them the product emits.
-2. The product emits a metric for every `SLI`; the log and the trace are optional.
+2. The product emits a metric for every `SLI`; the log and the trace are optional, except that a signal an `SLI`'s `**Source:**` names is emitted.
 3. An alert is a rule over a signal rather than a signal of its own: it is optional, and the page records one only when the team defines it.
 
 ## The SLIs
@@ -47,7 +47,7 @@ The metric is the number the `SLI`s are computed from, and the log and the trace
 
 A **service level indicator**, `SLI-nn`, is a product quality signal the product emits and the observability pipeline records: what is measured, in which unit, over which window, and by which query.
 It is not an analytics metric and not a quality requirement: the `SLI` records the measured signal, and the requirement's `Response Measure` stays the target.
-A **point** is one observation of the signal: one value in the `SLI`'s `**Unit:**`, with the labels it carries and the time it was recorded, such as one request's duration labelled with its `request_id`, `route`, and `outcome`; an aggregate is computed from the points in the window.
+A **point** is one observation of the signal: one value in the `SLI`'s `**Unit:**`, with the labels it carries and the time it was recorded, such as one request's duration recorded on a log line labelled with its `request_id`, `route`, and `outcome`; an aggregate is computed from the points in the window.
 The family, its two digits, its repository-wide scope, its `## SLI-01` heading, its status values, and its citation are in [Identifier Rules](general-requirements.md#identifier-rules).
 The query is written in the backend's query language; OpenObserve runs PromQL through its metrics API, so the example's PromQL is what its chart runs, and a backend that uses SQL records the SQL form.
 
@@ -67,7 +67,7 @@ The query is written in the backend's query language; OpenObserve runs PromQL th
    | `**Dropped:**`    | Only on a dropped `SLI`: the date and the reason, per [Identifier Rules](general-requirements.md#identifier-rules)       |
 
 3. The team lists the `SLI`s its runtime quality requirements need, and it instruments and demonstrates at least one `Active` one.
-4. The `SLI` the observability requirement's test reads names, in its `**Definition:**`, the labels that identify the request and the failure, so the test can read them.
+4. The `SLI` the observability requirement's test reads names, in its `**Definition:**`, the labels that identify the request and the failure, and a per-request point is a structured log line or a trace span rather than a metric label, so the test can read it.
 5. A runtime `QRT-nn` written from Week 6 on names an `Active` `SLI-nn` in its `**Runs at:**`, per [Quality Requirement Tests](quality-requirements-requirements.md#quality-requirement-tests).
 6. A dropped `SLI` leaves its requirement active when another `Active` `SLI` covers it: the `QRT-nn`'s `**Runs at:**` names the replacement, or its testing-plan row becomes `Not verified`, per [Quality Requirement Testing Plan](planning-requirements.md#quality-requirement-testing-plan).
 7. The query is recorded in the `SLI`'s `**Query:**` field, and a dashboard chart that shows the `SLI` names it and runs it, so the query has one public owner.
@@ -82,7 +82,7 @@ The backend's steps and configuration are the deployment runbook's, and this sec
 
 **Required**
 
-1. The page states the instrumentation: which container emits each signal, and how it exports it.
+1. The page states the instrumentation: which container emits each signal, how it exports it, and the export interval that meets the `SLI`'s `**Window:**`.
 2. The observability backend is OpenObserve by default, because one service stores and serves the signals with relatively low resources, and another documented backend is allowed.
    It runs on the university VM, per [Environments And Deployment](repository-requirements.md#environments-and-deployment).
 3. One backend instance carries one environment scope per environment, `staging` and `production`, because the backend scopes its dashboard to that scope.
@@ -132,11 +132,12 @@ The meeting-booking example's `docs/observability.md` after Week 6.
 # Observability
 
 The signals this product reports about its own operation, the service level indicators they define, and the pipeline that stores them.
-The product's diagnosability requirement is checked against [`SLI-01`](#sli-01), and the OpenObserve query below is the evidence that the pipeline stores and renders it.
+The product's diagnosability requirement is read through the staging organization's log query, and the dashboard is the evidence that the pipeline stored and rendered it.
 
 ## The Signals
 
-The product emits a metric for every `SLI`, and it emits a log line and a trace span for every request when `TELEMETRY_LOGS` is `true`.
+The product emits a metric for every `SLI`, and it emits a structured log line for every booking request because `SLI-01`'s per-request point is read from it.
+The trace span is optional, and the team emits none this week.
 An alert is a rule over a signal rather than a signal of its own, and the team defines none this week.
 
 ## The SLIs
@@ -150,21 +151,25 @@ Booking request response time.
 
 - **Status:** Active
 - **Definition:** The five-minute P95 of the `backend`'s booking-request response time, in milliseconds, computed from an OpenTelemetry histogram labelled `route` and `outcome`, where `outcome` is `ok`, `client_error`, or `server_error`.
-  The product's telemetry endpoint also exposes the per-request point with `request_id`, `route`, and `outcome`, so a failed request can be found.
+  The per-request point is a structured log line carrying `request_id`, `route`, `outcome`, and `duration_ms`, which the environment's organization stores and a query finds by `request_id`.
+  `duration_ms` is the elapsed time from the `backend` receiving the request to its response completing, measured on a monotonic clock rather than by subtracting wall-clock timestamps, and it is the same observation the histogram records.
 - **Unit:** Milliseconds.
-- **Window:** Five minutes, evaluated every minute; the endpoint's per-request point appears within five seconds of the response, and the aggregate point follows within one minute.
-- **Source:** An OpenTelemetry histogram the `backend` exports through its instrumentation to OpenObserve, and the product's telemetry endpoint at `/telemetry/sli`, which exposes the per-request points and the aggregate.
+- **Window:** Five minutes, evaluated every minute; the per-request log line is queryable in the environment's organization within five seconds of the response, and the aggregate point follows within one minute.
+- **Source:** An OpenTelemetry histogram the `backend` exports over OTLP/HTTP to OpenObserve, and a structured log line the `backend` emits for every request, exported over OTLP logs to the same instance.
 - **Query:** `histogram_quantile(0.95, sum by (le, route, outcome) (rate(booking_request_duration_ms_bucket[5m])))`
+
+The per-request query selects the log line by `request_id`; the requirement's test runs it, and the dashboard chart runs the `**Query:**` above.
 
 ## The Pipeline
 
-The `backend` exports the histogram over OTLP/HTTP to an OpenObserve instance on the university VM, and the `frontend` sends its request timing with the same request identifier.
+The `backend` exports the histogram over OTLP/HTTP to an OpenObserve instance on the university VM, and it exports the structured log line over OTLP logs to the same instance; the `frontend` sends its request timing with the same request identifier.
+The log exporter batches at one second and the metric exporter runs every ten seconds, so the per-request point is queryable within five seconds and the aggregate within one minute.
 One OpenObserve instance carries two organizations, `staging` and `production`, and each organization's dashboard runs the query recorded under `SLI-01`.
-The staging organization receives the test traffic; the production organization's dashboard carries the same query and is not exercised with test traffic.
-Retention is 30 days, which covers the five-minute window the `SLI` query reads.
+The staging organization receives the test traffic, and the test's log query runs against it; the production organization's dashboard carries the same query and is not exercised with test traffic.
+Retention is 30 days, which covers the five-minute window and the per-request log line the `SLI` query reads.
 Collection is switched by `TELEMETRY_ENABLED`, which is `false` on a developer's machine and `true` in staging and production.
 The steps and configuration are in [the telemetry pipelines](deployment.md#the-telemetry-pipelines), and the secrets are installed on the VM and are not tracked in the repository; `.env.example` carries the shape.
-The backend and its dashboards are reachable from the university network only, and their addresses and credentials are in the Moodle submission.
+The backend and its dashboards are reachable from the university network only, and their addresses and credentials, including the query credential, are in the Moodle submission.
 
 ## The Dashboard
 
@@ -176,12 +181,12 @@ Each chart names `SLI-01` and runs the query recorded under it.
 | `P95 latency by outcome` | staging      | the `SLI-01` query, which the staging test traffic fills        |
 | `P95 latency by outcome` | production   | the same query, over the production organization's real traffic |
 
-The staging dashboard was checked with a failed booking request: the chart shows the `server_error` series, and the product's telemetry endpoint exposed the request's point with its `request_id`; the production dashboard carries the same chart and received no test traffic.
+The staging dashboard was checked with a failed booking request: the chart shows the `server_error` series, and the staging organization's log query returned the request's point with its `request_id`; the production dashboard carries the same chart and received no test traffic.
 Both dashboard addresses are in the Moodle submission, and the week report links one sanitized screenshot from each organization.
 
 ## Collected Data
 
-The signals collect the request identifier, the route, the outcome, and the duration on the per-request point, and the route, the outcome, and the duration on the aggregate; they also record the container that emitted them.
+The signals collect the request identifier, the route, the outcome, and the duration on the per-request log line, and the route, the outcome, and the duration on the aggregate; they also record the container that emitted them.
 They never collect a personal name, an email address, a phone number, a postal address, free text, or payment card data.
 A request is identified by the opaque `request_id`, which is generated at random and cannot be reversed to a person.
 Collection is switched off with `TELEMETRY_ENABLED=false`.

@@ -95,7 +95,7 @@ Our problem-space sentence: an expert who sells sessions online needs one link w
 ## What we did
 
 We wrote the analytics plan and its metric tree, instrumented the core task's events, and put an OpenPanel instance with a staging and a production project on the university VM.
-We wrote the observability plan and its `SLI`, put OpenObserve beside the analytics backend, and built the four dashboards.
+We wrote the observability plan and its `SLI`, instrumented the request log line, put OpenObserve beside the analytics backend, and built the four dashboards.
 We added the two stories for the product analyst and the system operator, the two architectural decision records, the container view's two external systems, the diagnosability requirement and its test, the threshold review, and `REL-06`; we cut the release as [v0.6.0](https://github.com/<organization>/<repo>/releases/tag/v0.6.0).
 
 ## Findings
@@ -128,9 +128,9 @@ The staging dashboard's event list shows the test event tagged `source=smoke`, w
 ![The analytics production dashboard: the same chart and query, with no test traffic](images/analytics-production.png)
 
 The observability plan is [docs/observability.md](../../docs/observability.md) and its `SLI` is [`SLI-01`](../../docs/observability.md#sli-01).
-The staging run of `scripts/check-sli.ts` failed one booking request, and the product's telemetry endpoint exposed its series point with its `request_id` and an `outcome` of `server_error` within five seconds; the five-minute P95 query returned the `server_error` series within one minute, so [`QR-04 QRT-01`](../../docs/quality-requirements/qr/QR-04.md#qrt-01) passes.
+The staging run of `scripts/check-sli.ts` failed one booking request, and the staging organization's log query returned the request's log point with its `request_id`, `route`, and an `outcome` of `server_error` within five seconds; the five-minute P95 query returned the `server_error` series within one minute, so [`QR-04 QRT-01`](../../docs/quality-requirements/qr/QR-04.md#qrt-01) passes.
 The team also re-ran [`QR-01 QRT-01`](../../docs/quality-requirements/qr/QR-01.md#qrt-01) as a regression check against the final staging deployment, and all ten page loads showed the free slots within two seconds, so it passed.
-The OpenObserve query returned the same `server_error` series, and the staging chart shows it.
+The staging dashboard's chart shows the same `server_error` series.
 
 ![The observability staging dashboard: the server error series from SLI-01's P95 query](images/observability-staging.png)
 

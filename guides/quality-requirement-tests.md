@@ -183,6 +183,7 @@ Write the procedure around the runner they already have: the SSH session, the br
 
 The staging deployment is the test bed, and production is where the customer uses the product.
 A check run against production measures a state the team has already promised rather than a state it can still change.
+When the signal the test measures is stored in the staging observability backend, the test queries that backend and the dashboard is evidence; the query is the measurement, and the test is still `deployed` because it runs against staging from the university network.
 
 ### Fall Back When Staging Is Missing
 

@@ -379,30 +379,30 @@ The staging deployment on the university VM, with the observability pipeline run
 
 ### Artifact
 
-The `backend`'s request path and its OpenTelemetry instrumentation.
+The `backend`'s request path and the operating signals it emits for a booking request: the response-time histogram and the structured request log line.
 
 ### Response
 
-The product's telemetry endpoint exposes the request's point, labelled with the request identifier and the failure, and the `SLI`'s aggregate series for the failure.
+The staging organization's queries return the request's log point, labelled with the request identifier, route, and failure, and the `SLI`'s aggregate series for the failure.
 
 ### Response Measure
 
-Within five seconds of the failed request's response, the product's telemetry endpoint exposes one series point for that request, carrying its `request_id` and an `outcome` of `server_error`; within one minute, the `SLI-01` query returns the `server_error` series for the route with a P95 value.
+Within five seconds of the failed request's response, the staging organization's query returns one log point for that request, carrying its `request_id`, its `route`, and an `outcome` of `server_error`; within one minute, the `SLI-01` query returns the `server_error` series for the route with a P95 value.
 
 ## QRT-01
 
-A failed booking request in staging appears in the product's telemetry endpoint within five seconds, labelled with its request identifier and its failure, and the `SLI`'s P95 query returns the failure series within one minute.
+A failed booking request in staging is queryable in the staging organization within five seconds, labelled with its request identifier, route, and failure, and the `SLI`'s P95 query returns the failure series within one minute.
 
 - **Status:** Active
 - **Level:** deployed
-- **Runs at:** the staging deployment on the university VM, from a machine on the university network: `scripts/check-sli.ts $STAGING_URL`; it reads [`SLI-01`](../../observability.md#sli-01), which the `backend` exports.
+- **Runs at:** the staging deployment on the university VM, from a machine on the university network: `scripts/check-sli.ts $STAGING_URL $OPENOBSERVE_URL`; it reads [`SLI-01`](../../observability.md#sli-01), which the `backend` exports to the staging organization.
 
 ### Procedure
 
 1. Deploy the release candidate to the staging deployment on the university VM.
-2. From a machine on the university network, run `scripts/check-sli.ts $STAGING_URL`, which runs the core task's traffic in staging and fails one booking request.
-3. Read the series point the script prints from the product's telemetry endpoint for the failed request.
-4. After waiting up to one minute for the pipeline, record the `SLI-01` query's result in OpenObserve, which returns the `server_error` series, and the dashboard screenshot as the evidence that the pipeline stored and rendered the signal.
+2. From a machine on the university network, run `scripts/check-sli.ts $STAGING_URL $OPENOBSERVE_URL`, which runs the core task's traffic in staging, fails one booking request, and prints the failed request's `request_id`.
+3. Query the staging organization for the failed request's log line by its `request_id`; record the result and the time between the failed response and the query.
+4. After waiting up to one minute for the metric export, record the `SLI-01` query's result in the staging organization, which returns the `server_error` series, and the dashboard screenshot as the evidence that the pipeline stored and rendered the signal.
 
-**Pass when:** within five seconds of the failed request's response, the product's telemetry endpoint exposes one series point for it, carrying its `request_id` and an `outcome` of `server_error`; within one minute, the `SLI-01` query returns the `server_error` series for the route with a P95 value.
+**Pass when:** within five seconds of the failed request's response, the staging organization's query returns one log point for it, carrying its `request_id`, its `route`, and an `outcome` of `server_error`; within one minute, the `SLI-01` query returns the `server_error` series for the route with a P95 value.
 ```
