@@ -92,17 +92,18 @@ The method is in [Step 4: Write The Sprints And Their Releases](../guides/planni
 The rules:
 
 - `docs/analytics.md` is one maintained page, created this week and kept current: [Where The Analytics Plan Lives](../requirements/analytics-requirements.md#where-the-analytics-plan-lives).
-- The plan names one focus metric traced to its `VP-nn`, one counter-metric at L1, one L1 input, and one or two L2 inputs, and it states the seven criteria of the North Star Framework and one rejected vanity metric: [The Value And The Metrics](../requirements/analytics-requirements.md#the-value-and-the-metrics).
-- The metric tree is one nested list, each metric is a `###` section with its `**Definition:**`, `**Source:**`, and `**Query:**`, and every node has one section: [The Value And The Metrics](../requirements/analytics-requirements.md#the-value-and-the-metrics).
+- The plan names one focus metric traced to its `VP-nn`, one counter-metric at L1, one L1 input, and one or two L2 inputs, in a labelled tree whose items link their sections: [The Metric Tree](../requirements/analytics-requirements.md#the-metric-tree).
+- The tree comes before the justification, and after it the plan states the seven criteria of the North Star Framework and one rejected vanity metric: [Why This Focus Metric](../requirements/analytics-requirements.md#why-this-focus-metric).
+- Each metric is a `###` section in tree order, with its `**Definition:**`, `**Source:**`, and `**Query:**`: [The Metric Sections](../requirements/analytics-requirements.md#the-metric-sections).
 - An analytics metric is not an identifier family, and it is cited by its heading anchor: [Identifier Rules](../requirements/general-requirements.md#identifier-rules).
 
 This week:
 
-1. Write `docs/analytics.md` with the focus metric, the `VP-nn` it expresses, the seven criteria one bullet each, and at least one rejected vanity metric with its reason.
-2. Write the focus metric at the top, the counter-metric and the one L1 input nested one level under it, the counter-metric marked as guarding the focus metric, and one or two L2 inputs under the L1 input, as one nested list.
-3. Give every node in the tree its own `###` section, headed with the metric's name in sentence case, with its `**Definition:**`, `**Source:**`, and `**Query:**`.
-4. Write a query for every metric, and name the one metric that is computed by its query rather than by hand.
-5. Say on the page that the focus metric may have no value until people outside the team use the product, if that is true for your product.
+1. Write `docs/analytics.md` with the focus metric and the `VP-nn` it expresses, then the metric tree, then the seven criteria one bullet each and at least one rejected vanity metric with its reason.
+2. Write the focus metric at the top, the counter-metric and the one L1 input nested one level under it, the counter-metric labelled `**L1 (counter-metric):**`, and one or two L2 inputs under the L1 input, as one nested list whose items link their sections.
+3. Give every node in the tree its own `###` section in tree order, headed with the metric's name in sentence case, with its `**Definition:**`, `**Source:**`, and `**Query:**`.
+4. Write a query for every metric, and say in the section of the one metric computed by its query rather than by hand that it is.
+5. Say in the justification that the focus metric may have no value until people outside the team use the product, if that is true for your product.
 6. Add the week's terms, `focus metric`, `input metric`, `counter-metric`, and `metric tree`, to `docs/glossary.md`.
 
 The method is in [Step 1: Find The Metrics](../guides/analytics-and-observability.md#step-1-find-the-metrics).
@@ -115,7 +116,7 @@ The rules:
 - Every event carries `source`, `smoke` marks the team's own pipeline check, and only `smoke` is excluded from a metric: [The Events](../requirements/analytics-requirements.md#the-events).
 - An event or a signal carries no personal data, and an opaque identifier is allowed when it cannot be reversed to a person: [Telemetry And Personal Data](../requirements/visibility-requirements.md#telemetry-and-personal-data).
 - A functional requirement is a file under `docs/functional-requirements/fr/`, with its behavior, its criteria, and its row in the index: [The Functional Requirement](../requirements/functional-requirements-requirements.md#the-functional-requirement).
-- A change to a metric, its events, or its query is made in the same pull request as every citation of it: [The Value And The Metrics](../requirements/analytics-requirements.md#the-value-and-the-metrics).
+- A change to a metric, its events, or its query is made in the same pull request as every citation of it: [The Metric Sections](../requirements/analytics-requirements.md#the-metric-sections).
 
 This week:
 
@@ -401,6 +402,7 @@ A strong submission has:
 
 - **A metric tree that explains the product in one list.**
   The focus metric expresses the `VP-nn` and passes all seven criteria, the counter-metric sits at L1 and guards it, and the one L1 and one or two L2 inputs are computable from the events in one pass.
+  Each node is labelled with its level and links its section, so a reader can jump from a node to its definition.
 - **Events a developer can instrument from and a stranger can recompute.**
   The table has `Fields` and `Collected at`, every event carries `source`, and no event carries personal data or free text.
 - **Four dashboards a reader can open.**

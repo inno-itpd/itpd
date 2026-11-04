@@ -80,7 +80,7 @@ The work of this step is choosing the one number the product's value is read fro
 
 ### Start From The Value Proposition
 
-Read [The Value And The Metrics](../requirements/analytics-requirements.md#the-value-and-the-metrics) and take the `VP-nn` the vision's goal traces to, per [Goal](../requirements/product-vision-requirements.md#goal).
+Read [The Metric Tree](../requirements/analytics-requirements.md#the-metric-tree) and take the `VP-nn` the vision's goal traces to, per [Goal](../requirements/product-vision-requirements.md#goal).
 
 The **focus metric** expresses that value proposition, not the product's features: "completed paid bookings per active coach per week" expresses a value proposition about selling sessions, while "events recorded" expresses nothing a user would recognise.
 
@@ -92,9 +92,11 @@ A number that needs a survey, a spreadsheet outside the pipeline, or a guess is 
 Take the [North Star Framework's](https://openpracticelibrary.com/practice/north-star-framework/) seven criteria, one at a time, and write the focus metric's answer beside each.
 The point is not the list; it is that a metric failing one of them is replaced before the work starts.
 
+Write them under `### Why This Focus Metric`, after the tree, so the reader meets the number before the argument for it, per [Why This Focus Metric](../requirements/analytics-requirements.md#why-this-focus-metric).
+
 If the focus metric fails "measurable" because the product records nothing that feeds it, that is a gap in [Step 2](#step-2-write-the-events-and-instrument-the-product), not a reason to keep a metric the pipeline cannot compute.
 
-Reject at least one vanity metric in writing, with the reason.
+Reject at least one vanity metric in one labelled line, with the reason, and not as a metric section.
 A GitHub star, a follower, a page view, and a download count the cheapest action a stranger can take; a booking, a payment, and a completed session count the value the product exists for.
 
 ### Guard It With A Counter-Metric
@@ -102,7 +104,7 @@ A GitHub star, a follower, a page view, and a download count the cheapest action
 A **counter-metric** is the number that would fall if the focus metric rose by harming the user.
 If the focus metric is bookings per week, the counter-metric is the cancellation and no-show rate; if it is sessions delivered, it is the complaint rate.
 Write the pair together, so the team cannot optimize one into the other.
-The counter-metric is not an input metric; it sits at L1 under the focus metric, marked as guarding it, so it constrains the focus metric rather than feeding it.
+The counter-metric is not an input metric; it sits at L1 under the focus metric, labelled `**L1 (counter-metric):**`, so it constrains the focus metric rather than feeding it.
 
 ### Decompose It Into Input Metrics
 
@@ -114,9 +116,10 @@ Do not add an L2 under each L1 input for symmetry: the tree is a diagnostic, and
 
 ### Draw The Tree As One Nested List
 
-The tree is one nested list, and indentation is what says which metric sits under which, per [The Value And The Metrics](../requirements/analytics-requirements.md#the-value-and-the-metrics).
-The focus metric is the top item; the counter-metric and the L1 input metric are each nested one level under it, with the counter-metric marked as guarding the focus metric; each L2 is nested under its L1 input.
-Each metric has exactly one parent, and each node has one `###` section below the tree, so the tree and the sections are one-to-one.
+The tree is one nested list under `### The Metric Tree`, and indentation is what says which metric sits under which, per [The Metric Tree](../requirements/analytics-requirements.md#the-metric-tree).
+The focus metric is the top item; the counter-metric and the L1 input metric are each nested one level under it, with the counter-metric labelled `**L1 (counter-metric):**`; each L2 is nested under its L1 input.
+Each item's name is a link to that metric's `###` section, and the sections follow the tree in order, so a reader can jump from any node to its definition.
+Each metric has exactly one parent, and each node has one section below the tree, so the tree and the sections are one-to-one.
 
 ### Write The Query, Not The Number
 
@@ -124,7 +127,7 @@ Each metric's `**Query:**` is the computation a chart uses when it shows the met
 Write the query with its window and its `source` filter, so the page says how the number is computed rather than how it was read on a day.
 A rate states its numerator and its denominator; a count states its unit and its window.
 
-At least one metric is computed by its query rather than by hand, and the page names it.
+At least one metric is computed by its query rather than by hand, and its section says so in one sentence.
 The focus metric may have no value until people outside the team use the product; say so on the page, and chart the L1 input until then.
 
 ## Step 2: Write The Events And Instrument The Product

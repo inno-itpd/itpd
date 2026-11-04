@@ -10,6 +10,9 @@ The deployment that runs the pipeline is [Environments And Deployment](repositor
 
 - [Where The Analytics Plan Lives](#where-the-analytics-plan-lives)
 - [The Value And The Metrics](#the-value-and-the-metrics)
+  - [The Metric Tree](#the-metric-tree)
+  - [Why This Focus Metric](#why-this-focus-metric)
+  - [The Metric Sections](#the-metric-sections)
 - [The Events](#the-events)
 - [The Pipeline](#the-pipeline)
 - [The Dashboard](#the-dashboard)
@@ -34,21 +37,57 @@ The analytics plan is maintained documentation: it is created in Week 6 in its f
 
 The plan reads from what the product is worth to its user down to the events that count it.
 The **focus metric** is the one number the product's value is read from, the **counter-metric** is the number that guards against buying it with harm, and the **input metrics** are the steps a team can change.
+The part is read in this order: the tree, the justification of the focus metric, and one section per metric.
+
+### The Metric Tree
+
+**Since: W6**
+
+The **metric tree** is the plan's shape: the number the value is read from, what guards it, and the steps under it.
+It is the page's map, so it comes before the argument for it, and each node is a link to that metric's section.
 
 **Required**
 
-1. The page names one focus metric, and it states the value proposition the metric expresses as a link to the `VP-nn` in `docs/research/value-proposition.md`, per [Traceability Into Later Weeks](general-requirements.md#traceability-into-later-weeks).
-2. The page states the seven criteria of the [North Star Framework](https://openpracticelibrary.com/practice/north-star-framework/), one bullet each, and how the focus metric meets each one: it expresses value, it represents the vision and strategy, it is a leading indicator, it is actionable, it is understandable, it is measurable, and it is not a vanity metric.
-3. The page names at least one metric it rejected as a vanity metric, with the reason, as a bullet in this section and not as a metric section.
-4. The page names one counter-metric, and the tree marks it as guarding the focus metric.
-5. The page names one L1 input metric and one or two L2 input metrics under it.
-6. The metric tree is one nested list in this section: the focus metric at the top, the counter-metric and the L1 input metric each nested one level under the focus metric, the counter-metric marked as guarding the focus metric, and each L2 input nested under the L1 input.
-   The counter-metric is not an input metric: it guards the focus metric rather than feeding it.
-   Indentation is what says which metric sits under which, and each metric has exactly one parent.
-7. Each metric is a `###` section under this section, headed with the metric's name in sentence case, so only the first word, a proper noun, and an acronym keep a capital, as in `### Booking conversion rate`.
-   Its anchor is the citation form `docs/analytics.md#<metric-anchor>`, as a feature is cited, per [Identifier Rules](general-requirements.md#identifier-rules).
-   Every node in the tree has one section and no section stands outside the tree.
-8. Each metric's section carries these fields, in this order:
+1. The page names one focus metric: the section's opening sentence states it, and its next sentence links the value proposition the metric expresses as a `VP-nn` in `docs/research/value-proposition.md`, per [Traceability Into Later Weeks](general-requirements.md#traceability-into-later-weeks).
+2. The section's first sub-heading is `### The Metric Tree`, and under it the tree is one nested list, before [Why This Focus Metric](#why-this-focus-metric).
+3. The list carries these labels, in bold:
+
+   | Label                      | What it labels                                                     |
+   | -------------------------- | ------------------------------------------------------------------ |
+   | `**Focus:**`               | the one focus metric, at the top of the list                       |
+   | `**L1 (counter-metric):**` | the one counter-metric, nested under the focus metric              |
+   | `**L1:**`                  | the one L1 input metric, nested under the focus metric             |
+   | `**L2:**`                  | one or two L2 input metrics, each nested under the L1 input metric |
+
+4. Each item's text is the metric's name as a link to that metric's `###` section, and the name matches the section's heading, so every metric is reachable from the tree.
+5. One sentence above the list says the label is the metric's level.
+6. The counter-metric is not an input metric: it guards the focus metric rather than feeding it, and the tree gives it the counter-metric label for that reason.
+7. Indentation is what says which metric sits under which, and each metric has exactly one parent.
+
+### Why This Focus Metric
+
+**Since: W6**
+
+The page justifies the number after the reader has met it: the argument follows the tree and says why this number, and not another, is the one the value is read from.
+
+**Required**
+
+1. The tree is followed by `### Why This Focus Metric`, which states the seven criteria of the [North Star Framework](https://openpracticelibrary.com/practice/north-star-framework/), one bullet each, with the focus metric's answer to each: it expresses value, it represents the vision and strategy, it is a leading indicator, it is actionable, it is understandable, it is measurable, and it is not a vanity metric.
+2. One metric the page rejected as a vanity metric is one labelled line in this section, with the reason, and not a metric section, such as `Rejected as a vanity metric: <name>, because <the reason>`.
+3. The page states here that the focus metric may depend on several input metrics and may have no value until real users produce traffic, rather than presenting test traffic as the metric's value.
+
+### The Metric Sections
+
+**Since: W6**
+
+Each node in the tree is one metric section below the justification, and the section is where the metric is defined, where its events are named, and how it is computed.
+The sections follow the tree, so the reader walks the tree down the page.
+
+**Required**
+
+1. Each node in the tree has exactly one `###` section under `## The Value And The Metrics`, in tree order, and the only other `###` headings there are `### The Metric Tree` and `### Why This Focus Metric`.
+2. Each section is headed with the metric's name in sentence case, so only the first word, a proper noun, and an acronym keep a capital, as in `### Booking conversion rate`, and its anchor is the citation form `docs/analytics.md#<metric-anchor>`, as a feature is cited, per [Identifier Rules](general-requirements.md#identifier-rules).
+3. Each metric's section carries these fields, in this order:
 
    | Field             | What it says                                                                                                                                                 |
    | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -56,12 +95,10 @@ The **focus metric** is the one number the product's value is read from, the **c
    | `**Source:**`     | The events that feed the metric, each named and linked to [The Events](#the-events)                                                                          |
    | `**Query:**`      | The computation a chart runs when it shows the metric, from the events [The Events](#the-events) records, with the window and the `source` filter it applies |
 
-9. A metric that cannot be computed from the events in [The Events](#the-events) is not a metric: the event is added or the metric is dropped.
+4. A metric that cannot be computed from the events in [The Events](#the-events) is not a metric: the event is added or the metric is dropped.
    No number is invented, and no chart is drawn from a table the team keeps outside the pipeline.
-10. At least one metric is computed by its query rather than by hand, and the page names it.
-11. The focus metric may depend on several input metrics and may have no value until real users produce traffic.
-    The page says so rather than presenting test traffic as the metric's value.
-12. A metric that is renamed or dropped updates every citation to it in the same pull request, and a dropped metric leaves the tree and gets no section.
+5. At least one metric is computed by its query rather than by hand, and its section says so in one sentence.
+6. A metric that is renamed or dropped updates every citation to it in the same pull request, and a dropped metric leaves the tree and gets no section.
 
 ## The Events
 
@@ -149,12 +186,25 @@ The focus metric expresses `VP-01`, which is the value proposition the vision's 
 # Product analytics
 
 The numbers this product is judged by, the events that produce them, and the pipeline that stores them.
-The focus metric expresses [`VP-01`](research/value-proposition.md#vp-01): a client books and pays for a session without leaving the booking page.
 
 ## The Value And The Metrics
 
-The focus metric is the number the product's value is read from, and the team would report it if the system were operated.
-It expresses [`VP-01`](research/value-proposition.md#vp-01), and its input metrics are the steps the team can change.
+The focus metric is completed paid bookings per active coach per week: the one number the page reads the product's value from.
+It expresses [`VP-01`](research/value-proposition.md#vp-01): a client books and pays for a session without leaving the booking page.
+
+### The Metric Tree
+
+The label is the metric's level: `Focus` is the focus metric, `L1` an input metric one level under it, and `L2` an input under an L1 input.
+`(counter-metric)` marks the counter-metric, which guards the focus metric rather than feeding it.
+Each metric's name links to its section.
+
+- **Focus:** [Completed paid bookings per active coach per week](#completed-paid-bookings-per-active-coach-per-week)
+  - **L1 (counter-metric):** [Cancellation and no-show rate within seven days](#cancellation-and-no-show-rate-within-seven-days)
+  - **L1:** [Booking conversion rate](#booking-conversion-rate)
+    - **L2:** [Checkout completion rate](#checkout-completion-rate)
+    - **L2:** [Slot availability rate](#slot-availability-rate)
+
+### Why This Focus Metric
 
 - **It expresses value:** a completed paid booking is what the coach and the client get from the product.
 - **It represents the vision and strategy:** the vision's goal is a coach selling sessions online without negotiating in chat, and a paid booking is that goal counted.
@@ -166,14 +216,7 @@ It expresses [`VP-01`](research/value-proposition.md#vp-01), and its input metri
 
 Rejected as a vanity metric: GitHub stars, because a star counts attention to a repository that no coach books a session from, and it never moves when the booking page changes.
 
-- Completed paid bookings per active coach per week
-  - Cancellation and no-show rate within seven days (guards the focus metric)
-  - Booking conversion rate
-    - Checkout completion rate
-    - Slot availability rate
-
-The focus metric depends on real users: until a coach's clients book through the product, the page reports no value.
-The two dashboards chart the booking conversion rate as its input, and the checkout completion rate is computed by its query from the events rather than by hand.
+The focus metric depends on its input metrics and on real users: until a coach's clients book through the product, the page reports no value.
 
 ### Completed paid bookings per active coach per week
 
@@ -198,6 +241,8 @@ The two dashboards chart the booking conversion rate as its input, and the check
 - **Definition:** A rate: the paid bookings in the week divided by the checkouts started in that week; the unit is bookings per checkout.
 - **Source:** [`payment_succeeded`](#the-events) and [`checkout_started`](#the-events).
 - **Query:** the count of `payment_succeeded` events in the week, excluding `source = "smoke"`, divided by the count of `checkout_started` events in the same week.
+
+The rate is computed by this query rather than by hand, so the team reads it from the pipeline and not from a table it keeps.
 
 ### Slot availability rate
 
