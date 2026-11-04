@@ -312,6 +312,7 @@ A client reschedules a booking without emailing the coach, the booking page show
 - **Advances:** [TOS-01](threshold-of-success.md#tos-01)
 
 A coach takes one real paid booking through the deployed product, from the booking link to the confirmation.
+The product reports how it is used and how it operates.
 
 ## Sprints
 
