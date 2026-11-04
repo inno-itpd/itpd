@@ -80,7 +80,8 @@ The work of this step is choosing the one number the product's value is read fro
 ### Start From The Value Proposition
 
 Read [The Value And The Metrics](../requirements/analytics-requirements.md#the-value-and-the-metrics) and take the `VP-nn` the vision's goal traces to, per [Goal](../requirements/product-vision-requirements.md#goal).
-The focus metric expresses that value proposition, not the product's features: "completed paid bookings per active coach per week" expresses a value proposition about selling sessions, while "events recorded" expresses nothing a user would recognise.
+
+The **focus metric** expresses that value proposition, not the product's features: "completed paid bookings per active coach per week" expresses a value proposition about selling sessions, while "events recorded" expresses nothing a user would recognise.
 
 Write the candidate metrics on one line each, then keep only those a user's action produces.
 A number that needs a survey, a spreadsheet outside the pipeline, or a guess is not a metric yet.
