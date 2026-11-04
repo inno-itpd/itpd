@@ -49,7 +49,7 @@ The metric tree is an afternoon once the events are named, and the observability
   - [Link It From The Report](#link-it-from-the-report)
 - [Step 8: Review The Threshold](#step-8-review-the-threshold)
   - [Read Each Open Goal Against The New Data](#read-each-open-goal-against-the-new-data)
-  - [Propose A Measure, Never Set It](#propose-a-measure-never-set-it)
+  - [Propose A Measure](#propose-a-measure)
   - [Settle Only What The Review Can Settle](#settle-only-what-the-review-can-settle)
 - [Step 9: Keep The Data Private](#step-9-keep-the-data-private)
   - [List What Is Collected And What Never Is](#list-what-is-collected-and-what-never-is)
@@ -300,7 +300,7 @@ The team now has numbers it did not have when the goals were written, and the re
 For each open `TOS-nn`, write its current `**Measure:**` and whether the analytics or the observability data can settle it.
 Some goals were written before the product had numbers, and the review is where that gap becomes visible.
 
-### Propose A Measure, Never Set It
+### Propose A Measure
 
 The team may propose an analytics-measured goal or a revised `**Measure:**`, and the proposal states the number, the week it lands in, and the metric's `###` link in `docs/analytics.md`.
 The customer agrees the change at the Sprint Review, and only that `DEC-nnn` moves the bar, per [The Threshold Of Success](../requirements/planning-requirements.md#the-threshold-of-success).
