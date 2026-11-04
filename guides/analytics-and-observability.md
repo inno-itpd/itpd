@@ -75,7 +75,7 @@ The two plans are maintained pages: the pipeline's steps live in the deployment 
 ## Step 1: Find The Metrics
 
 A **metric** is a number the product's use is counted in.
-The work of this step is choosing the one number the product's value is read from, and the few numbers that explain it, before writing any code.
+The work of this step is choosing the one number the product's value is read from, and the few numbers that explain or guard it, before writing any code.
 
 ### Start From The Value Proposition
 
@@ -101,19 +101,20 @@ A GitHub star, a follower, a page view, and a download count the cheapest action
 A **counter-metric** is the number that would fall if the focus metric rose by harming the user.
 If the focus metric is bookings per week, the counter-metric is the cancellation and no-show rate; if it is sessions delivered, it is the complaint rate.
 Write the pair together, so the team cannot optimize one into the other.
+The counter-metric is not an input metric; it sits at L1 under the focus metric, marked as guarding it, so it constrains the focus metric rather than feeding it.
 
 ### Decompose It Into Input Metrics
 
 Choose one L1 input metric under the focus metric and one or two L2 inputs under it.
 An **input metric** is a step the team can change this sprint: a conversion rate, a completion rate, an availability rate.
-The L1 explains most of the focus metric's movement, and each L2 explains the L1, so a chart of the L1 tells the team where to look.
+The L1 input explains most of the focus metric's movement, and each L2 explains the L1 input, so a chart of the L1 input tells the team where to look.
 
-Do not add an L2 under each L1 for symmetry: the tree is a diagnostic, and a metric the team cannot act on is noise.
+Do not add an L2 under each L1 input for symmetry: the tree is a diagnostic, and a metric the team cannot act on is noise.
 
 ### Draw The Tree As One Nested List
 
-The tree is one nested list, and indentation is what says which metric feeds which, per [The Value And The Metrics](../requirements/analytics-requirements.md#the-value-and-the-metrics).
-The focus metric is the top item, the counter-metric is its sibling marked as guarding it, the L1 is nested under the focus metric, and each L2 is nested under its L1.
+The tree is one nested list, and indentation is what says which metric sits under which, per [The Value And The Metrics](../requirements/analytics-requirements.md#the-value-and-the-metrics).
+The focus metric is the top item; the counter-metric and the L1 input metric are each nested one level under it, with the counter-metric marked as guarding the focus metric; each L2 is nested under its L1 input.
 Each metric has exactly one parent, and each node has one `###` section below the tree, so the tree and the sections are one-to-one.
 
 ### Write The Query, Not The Number

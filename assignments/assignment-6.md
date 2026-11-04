@@ -91,14 +91,14 @@ The method is in [Step 4: Write The Sprints And Their Releases](../guides/planni
 The rules:
 
 - `docs/analytics.md` is one maintained page, created this week and kept current: [Where The Analytics Plan Lives](../requirements/analytics-requirements.md#where-the-analytics-plan-lives).
-- The plan names one focus metric traced to its `VP-nn`, one counter-metric, one L1 input, and one or two L2 inputs, and it states the seven criteria of the North Star Framework and one rejected vanity metric: [The Value And The Metrics](../requirements/analytics-requirements.md#the-value-and-the-metrics).
+- The plan names one focus metric traced to its `VP-nn`, one counter-metric at L1, one L1 input, and one or two L2 inputs, and it states the seven criteria of the North Star Framework and one rejected vanity metric: [The Value And The Metrics](../requirements/analytics-requirements.md#the-value-and-the-metrics).
 - The metric tree is one nested list, each metric is a `###` section with its `**Definition:**`, `**Source:**`, and `**Query:**`, and every node has one section: [The Value And The Metrics](../requirements/analytics-requirements.md#the-value-and-the-metrics).
 - An analytics metric is not an identifier family, and it is cited by its heading anchor: [Identifier Rules](../requirements/general-requirements.md#identifier-rules).
 
 This week:
 
 1. Write `docs/analytics.md` with the focus metric, the `VP-nn` it expresses, the seven criteria one bullet each, and at least one rejected vanity metric with its reason.
-2. Write the counter-metric beside the focus metric, the one L1 input under the focus metric, and one or two L2 inputs under the L1, as one nested list.
+2. Write the focus metric at the top, the counter-metric and the one L1 input nested one level under it, the counter-metric marked as guarding the focus metric, and one or two L2 inputs under the L1 input, as one nested list.
 3. Give every node in the tree its own `###` section, headed with the metric's name in sentence case, with its `**Definition:**`, `**Source:**`, and `**Query:**`.
 4. Write a query for every metric, and name the one metric that is computed by its query rather than by hand.
 5. Say on the page that the focus metric may have no value until people outside the team use the product, if that is true for your product.
@@ -394,7 +394,7 @@ Assume your weekly public report is read by someone who does not know your proje
 A strong submission has:
 
 - **A metric tree that explains the product in one list.**
-  The focus metric expresses the `VP-nn` and passes all seven criteria, the counter-metric guards it, and the one L1 and one or two L2 inputs are computable from the events in one pass.
+  The focus metric expresses the `VP-nn` and passes all seven criteria, the counter-metric sits at L1 and guards it, and the one L1 and one or two L2 inputs are computable from the events in one pass.
 - **Events a developer can instrument from and a stranger can recompute.**
   The table has `Fields` and `Collected at`, every event carries `source`, and no event carries personal data or free text.
 - **Four dashboards a reader can open.**
@@ -486,7 +486,7 @@ The PDF carries no deck.
 - [ ] One `US-nn` for the product analyst and one for the system operator, each with the end-user `VP-nn` it serves, its `### Specified by`, its `MoSCoW`, `Story Points`, `Responsible`, `Accountable`, and two assignees, both scheduled in `SPRINT-06` ([Part 1](#part-1-refine-the-product-backlog-and-plan-the-sprint)).
 - [ ] The next two sprints' worth of the product backlog refined, with the `Story Points` on each and no sprint milestone ([Part 1](#part-1-refine-the-product-backlog-and-plan-the-sprint)).
 - [ ] The task issues for the two pipelines, the four dashboards, and the observability test, each with its `### Requirements`, scheduled in `SPRINT-06` ([Part 1](#part-1-refine-the-product-backlog-and-plan-the-sprint)).
-- [ ] `docs/analytics.md` with the focus metric traced to its `VP-nn`, the seven criteria, one rejected vanity metric, the counter-metric, the L1 and L2 inputs, and the tree ([Part 2](#part-2-write-the-analytics-plan-and-the-metric-tree)).
+- [ ] `docs/analytics.md` with the focus metric traced to its `VP-nn`, the seven criteria, one rejected vanity metric, the counter-metric at L1, the L1 and L2 inputs, and the tree ([Part 2](#part-2-write-the-analytics-plan-and-the-metric-tree)).
 - [ ] A `###` section for every node in the tree, each with its `**Definition:**`, `**Source:**`, and `**Query:**`, and one metric computed by its query named on the page ([Part 2](#part-2-write-the-analytics-plan-and-the-metric-tree)).
 - [ ] The event table with its four columns, its naming convention, `source` on every event, no personal data, and the core task covered end to end ([Part 3](#part-3-write-the-event-table-and-instrument-the-product)).
 - [ ] The product instrumented, the staging test event tagged `source=smoke`, the staging dashboard's event list showing it, and the staging chart excluding it ([Part 3](#part-3-write-the-event-table-and-instrument-the-product)).

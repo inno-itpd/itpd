@@ -42,8 +42,9 @@ The **focus metric** is the one number the product's value is read from, the **c
 3. The page names at least one metric it rejected as a vanity metric, with the reason, as a bullet in this section and not as a metric section.
 4. The page names one counter-metric, and the tree marks it as guarding the focus metric.
 5. The page names one L1 input metric and one or two L2 input metrics under it.
-6. The metric tree is one nested list in this section: the focus metric at the top, the counter-metric beside it and marked as guarding it, the L1 input nested under the focus metric, and each L2 input nested under its L1.
-   Indentation is what says which metric feeds which, and each metric has exactly one parent.
+6. The metric tree is one nested list in this section: the focus metric at the top, the counter-metric and the L1 input metric each nested one level under the focus metric, the counter-metric marked as guarding the focus metric, and each L2 input nested under the L1 input.
+   The counter-metric is not an input metric: it guards the focus metric rather than feeding it.
+   Indentation is what says which metric sits under which, and each metric has exactly one parent.
 7. Each metric is a `###` section under this section, headed with the metric's name in sentence case, so only the first word, a proper noun, and an acronym keep a capital, as in `### Booking conversion rate`.
    Its anchor is the citation form `docs/analytics.md#<metric-anchor>`, as a feature is cited, per [Identifier Rules](general-requirements.md#identifier-rules).
    Every node in the tree has one section and no section stands outside the tree.
@@ -166,10 +167,10 @@ It expresses [`VP-01`](research/value-proposition.md#vp-01), and its input metri
 Rejected as a vanity metric: GitHub stars, because a star counts attention to a repository that no coach books a session from, and it never moves when the booking page changes.
 
 - Completed paid bookings per active coach per week
+  - Cancellation and no-show rate within seven days (guards the focus metric)
   - Booking conversion rate
     - Checkout completion rate
     - Slot availability rate
-- Cancellation and no-show rate within seven days (guards the focus metric)
 
 The focus metric depends on real users: until a coach's clients book through the product, the page reports no value.
 The two dashboards chart the booking conversion rate as its input, and the checkout completion rate is computed by its query from the events rather than by hand.
