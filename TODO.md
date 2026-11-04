@@ -338,6 +338,11 @@ Next: Week 3 is planning and the minimum usable product, and it has no assignmen
 - [x] The deck is Week 7's, Submission 7 on 14 November carries it, and the Week 8 class presents it, per `A6-DEC-004`, `A6-DEC-024`, and `A6-DEC-025`.
 - [x] The four dashboards are the week's evidence, not features: `docs/features.md` carries the two internal capabilities, per `A6-DEC-019`.
 - [x] `course/plans/` has its row in `AGENTS.md`, and `course/decisions/a6.md` records the week's decisions.
+- [x] Counter-metric should be L1
+  - It is nested at L1 under the focus metric, marked as guarding it, and stays a guard rather than an input metric, so the tree has one root and the one-parent rule holds. `A6-DEC-002`.
+- [x] Why assume there's an endpoint for telemetry in the backend? doesn't it push to openobserve?
+  - It does push: the product exports the histogram and a structured per-request log line to OpenObserve, and the test queries the staging organization; there is no separate product telemetry endpoint.
+    The `SLI`'s per-request point is the log line, and the dashboard is evidence. `A6-DEC-026`.
 
 ## A7
 
