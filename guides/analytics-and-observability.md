@@ -38,6 +38,7 @@ The metric tree is an afternoon once the events are named, and the observability
 - [Step 5: Deploy OpenObserve And Build The `SLI` Dashboards](#step-5-deploy-openobserve-and-build-the-sli-dashboards)
   - [Run One Instance With One Scope Per Environment](#run-one-instance-with-one-scope-per-environment)
   - [Put The Query In The `SLI`, Not The Chart](#put-the-query-in-the-sli-not-the-chart)
+  - [Prove The Pipeline With Three Requests](#prove-the-pipeline-with-three-requests)
 - [Step 6: Write The Observability Requirement And Run Its Test](#step-6-write-the-observability-requirement-and-run-its-test)
   - [State Diagnosability As The Requirement](#state-diagnosability-as-the-requirement)
   - [Make The Test Fail One Request](#make-the-test-fail-one-request)
@@ -247,6 +248,17 @@ The chart names the `SLI` and runs the `**Query:**` recorded under it, and the p
 Send the staging test traffic through the staging scope, and leave the production scope's dashboard configured with the same query and unexercised.
 The dashboard's definition may be tracked when it is sanitized, but the page still owns the `SLI`'s query, so regenerate the definition when the query changes.
 The chart runs the aggregate; the per-request log query is the test's, and it runs against the staging organization, not the chart.
+
+### Prove The Pipeline With Three Requests
+
+A pipeline can be wired correctly and still look broken from the chart, so prove it before the test with three requests: two that succeed and one that fails on purpose.
+Read the instant value before the chart, so a `NaN` is a wiring problem rather than a line that has not been drawn yet.
+The check passes when the `outcome` labels come back as separate series and the failure's P95 is a number.
+
+When nothing appears, check the export interval against the `**Window:**`, the organization the build points at, and the bucket label in the query: a `sum by (route, outcome)` without `le` collapses the buckets, so `histogram_quantile` has nothing to interpolate.
+Produce the failure the same way the test will, so the test repeats it rather than inventing it.
+
+The check proves the pipeline, and the test proves the requirement; the test's `**Pass when:**` is the only condition the team records.
 
 ## Step 6: Write The Observability Requirement And Run Its Test
 

@@ -192,7 +192,9 @@ This week:
 2. Create the `staging` and `production` environment scopes — OpenObserve organizations, or the documented backend's equivalent — and point each environment's build at its own.
 3. Build a dashboard in each environment scope with at least one chart for an `Active` `SLI`, and name the chart after the `SLI`.
 4. Record the aggregate query in the `SLI`'s `**Query:**` field and run it in the chart, so the page and the chart carry the same query; record the per-request log query beside the signal.
-5. Send the staging test traffic to the staging scope, and leave the production dashboard configured with the same query and unexercised.
+5. Send the staging test traffic to the staging scope, make one request fail the way the test in Part 9 will, and check that the chart carries a separate failure series with a numeric P95 before you write that test.
+   Fix the export interval, the organization, or the query until it does; this check has no evidence row of its own.
+   Leave the production dashboard configured with the same query and unexercised.
 6. Write the observability pipeline's steps and configuration into `docs/deployment.md`, including the log exporter's batch interval, the metric exporter's interval, and the query endpoint and credential, and link `docs/observability.md` from it.
 7. Keep the backend's, the query's, and the dashboards' addresses and credentials out of the repository, and check that they are reachable from the university network.
 
