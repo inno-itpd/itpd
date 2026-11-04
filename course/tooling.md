@@ -20,7 +20,7 @@ The rules for the [meeting transcript](../requirements/customer-meetings-require
 
 ## OpenPanel
 
-[OpenPanel](https://openpanel.dev/) is an open-source product analytics backend that self-hosts on the team's VM or a campus machine, with one project per environment.
+[OpenPanel](https://openpanel.dev/) is an open-source product analytics backend that self-hosts on the team's VM, with one project per environment.
 [Product Analytics Requirements](../requirements/analytics-requirements.md) own the focus metric and the metric tree, the events, and the two projects.
 
 ## OpenObserve

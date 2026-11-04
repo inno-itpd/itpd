@@ -83,7 +83,7 @@ The backend's steps and configuration are the deployment runbook's, and this sec
 
 1. The page states the instrumentation: which container emits each signal, and how it exports it.
 2. The observability backend is OpenObserve by default, because one service stores and serves the signals with relatively low resources, and another documented backend is allowed.
-   It runs on the university VM or a campus machine, per [Environments And Deployment](repository-requirements.md#environments-and-deployment).
+   It runs on the university VM, per [Environments And Deployment](repository-requirements.md#environments-and-deployment).
 3. One backend instance carries one environment scope per environment, `staging` and `production`, because the backend scopes its dashboard to that scope.
    For OpenObserve the scope is an organization; a documented alternative uses the equivalent.
    Each scope has its own dashboard, and each environment's build configures its own.

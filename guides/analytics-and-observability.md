@@ -164,7 +164,7 @@ The default is OpenPanel self-hosted, per [The Pipeline](../requirements/analyti
 
 ### Self-Host The Backend On The Campus Network
 
-Run the backend on the university VM or a campus machine, so the data never leaves the university network.
+Run the backend on the university VM, so the data never leaves the university network.
 Install its configuration and secrets outside the repository, and keep the shape in `.env.example` with placeholders, per [Configuration And Sensitive Information](../requirements/repository-requirements.md#configuration-and-sensitive-information).
 
 Write the deployment's steps into `docs/deployment.md` under a section such as `## The Telemetry Pipelines`, and link that section from `docs/analytics.md` instead of repeating the commands on both pages.

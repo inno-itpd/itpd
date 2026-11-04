@@ -409,7 +409,7 @@ The deployment runbook is `docs/deployment.md`, and the local setup guide stays 
 **Since: W6**
 
 11. Two telemetry backends serve the product: the analytics backend, per [The Pipeline](analytics-requirements.md#the-pipeline), and the observability backend, per [The Pipeline](observability-requirements.md#the-pipeline).
-    Both run on the university VM or a campus machine, and both are reachable from where the customer works, on the university network.
+    Both run on the university VM, and both are reachable from where the customer works, on the university network.
     Their configuration and secrets are installed outside the repository, per [Configuration And Sensitive Information](#configuration-and-sensitive-information).
 12. The analytics backend is OpenPanel by default and the observability backend is OpenObserve by default; another self-hosted backend is allowed when `docs/analytics.md` or `docs/observability.md` documents it.
     Each backend carries one environment scope per environment: an OpenPanel project, an OpenObserve organization, or the documented backend's equivalent.

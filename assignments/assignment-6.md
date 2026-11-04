@@ -132,7 +132,7 @@ The method is in [Step 2: Write The Events And Instrument The Product](../guides
 
 The rules:
 
-- The analytics backend is OpenPanel by default, another documented self-hosted backend is allowed, and it runs on the university VM or a campus machine: [The Pipeline](../requirements/analytics-requirements.md#the-pipeline).
+- The analytics backend is OpenPanel by default, another documented self-hosted backend is allowed, and it runs on the university VM: [The Pipeline](../requirements/analytics-requirements.md#the-pipeline).
 - One backend instance carries one environment scope per environment, `staging` and `production`, each with its own credential: [The Pipeline](../requirements/analytics-requirements.md#the-pipeline).
 - Each environment's dashboard carries at least one chart for a metric in the tree, and the chart runs the query recorded in the metric's section: [The Dashboard](../requirements/analytics-requirements.md#the-dashboard).
 - The backend's and dashboards' addresses and credentials are private-only, and the evidence is two sanitized screenshots: [Sensitive Information Reference](../requirements/visibility-requirements.md#sensitive-information-reference) and [Screenshot Evidence](../requirements/visibility-requirements.md#screenshot-evidence).
@@ -141,7 +141,7 @@ The rules:
 
 This week:
 
-1. Deploy OpenPanel, or another backend the page documents, on the university VM or a campus machine.
+1. Deploy OpenPanel, or another backend the page documents, on the university VM.
 2. Create the `staging` and `production` environment scopes — OpenPanel projects, or the documented backend's equivalent — and give each its own credential such as a client ID, so each environment's build is configured with its own.
 3. Build a dashboard in each environment scope with at least one chart for the focus metric or its L1 input, and name the chart after the metric.
 4. Run the query recorded in the metric's section in the chart, check that the staging metric chart excludes the test event tagged `source=smoke`, and check that the staging dashboard's event list shows it.
@@ -175,7 +175,7 @@ The method is in [Step 4: Define The `SLI`s And Instrument The Signals](../guide
 
 The rules:
 
-- The observability backend is OpenObserve by default, another documented backend is allowed, and it runs on the university VM or a campus machine: [The Pipeline](../requirements/observability-requirements.md#the-pipeline).
+- The observability backend is OpenObserve by default, another documented backend is allowed, and it runs on the university VM: [The Pipeline](../requirements/observability-requirements.md#the-pipeline).
 - One backend instance carries one environment scope per environment, `staging` and `production` — OpenObserve organizations, or the documented backend's equivalent — each with its own dashboard: [The Pipeline](../requirements/observability-requirements.md#the-pipeline).
 - Each environment scope's dashboard carries at least one chart for an `Active` `SLI`, and the chart runs the query recorded in the `SLI`'s section: [The Dashboard](../requirements/observability-requirements.md#the-dashboard).
 - The dashboard's address is private-only, and the evidence is two sanitized screenshots: [Sensitive Information Reference](../requirements/visibility-requirements.md#sensitive-information-reference) and [Screenshot Evidence](../requirements/visibility-requirements.md#screenshot-evidence).
@@ -183,7 +183,7 @@ The rules:
 
 This week:
 
-1. Deploy OpenObserve, or another backend the page documents, on the university VM or a campus machine.
+1. Deploy OpenObserve, or another backend the page documents, on the university VM.
 2. Create the `staging` and `production` environment scopes — OpenObserve organizations, or the documented backend's equivalent — and point each environment's build at its own.
 3. Build a dashboard in each environment scope with at least one chart for an `Active` `SLI`, and name the chart after the `SLI`.
 4. Record the query in the `SLI`'s `**Query:**` field and run it in the chart, so the page and the chart carry the same query.

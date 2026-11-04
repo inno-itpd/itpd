@@ -97,7 +97,7 @@ The backend's steps and configuration are the deployment runbook's, and this sec
 
 1. The page states the instrumentation: which container sends the events, and how it sends them.
 2. The analytics backend is OpenPanel by default, and another self-hosted backend is allowed when the page documents it.
-   It runs on the university VM or a campus machine, per [Environments And Deployment](repository-requirements.md#environments-and-deployment).
+   It runs on the university VM, per [Environments And Deployment](repository-requirements.md#environments-and-deployment).
 3. One backend instance carries one environment scope per environment, `staging` and `production`, because the backend scopes its events, its sessions, and its dashboard to that scope.
    For OpenPanel the scope is a project; a documented alternative uses its equivalent.
    Each scope has its own credential, such as an OpenPanel client ID, and each environment's build is configured with its own, so each environment's dashboard serves charts from its own scope.
