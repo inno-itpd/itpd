@@ -49,11 +49,11 @@ The **focus metric** is the one number the product's value is read from, the **c
    Every node in the tree has one section and no section stands outside the tree.
 8. Each metric's section carries these fields, in this order:
 
-   | Field             | What it says                                                                                                                                             |
-   | ----------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
-   | `**Definition:**` | What the metric counts: a rate's numerator and denominator, or a count's unit and window                                                                 |
-   | `**Source:**`     | The events that feed the metric, each named and linked to [The Events](#the-events)                                                                      |
-   | `**Query:**`      | The computation the metric's dashboard chart runs, from the events [The Events](#the-events) records, with the window and the `source` filter it applies |
+   | Field             | What it says                                                                                                                                                 |
+   | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+   | `**Definition:**` | What the metric counts: a rate's numerator and denominator, or a count's unit and window                                                                     |
+   | `**Source:**`     | The events that feed the metric, each named and linked to [The Events](#the-events)                                                                          |
+   | `**Query:**`      | The computation a chart runs when it shows the metric, from the events [The Events](#the-events) records, with the window and the `source` filter it applies |
 
 9. A metric that cannot be computed from the events in [The Events](#the-events) is not a metric: the event is added or the metric is dropped.
    No number is invented, and no chart is drawn from a table the team keeps outside the pipeline.
@@ -77,11 +77,12 @@ The event table is the one registry and the schema the instrumentation sends, so
 3. Every event's name follows one convention, stated under the table as `object_action` in snake case, such as `booking_confirmed`.
 4. `Fires when` states the user's or the system's action that produces the event, in one sentence.
 5. `Fields` is the event's payload: each field's name, its type, and whether it is required, such as `booking_id` (uuid, required) or `amount` (integer, minor units).
-   An event carries no personal name, email address, phone number, postal address, free text that identifies a person, or payment card data, per [Telemetry And Personal Data](visibility-requirements.md#telemetry-and-personal-data).
+   An event carries no personal name, email address, phone number, postal address, free text, or payment card data, per [Telemetry And Personal Data](visibility-requirements.md#telemetry-and-personal-data).
    An event identifies a user by an opaque identifier when it needs to, and the identifier is not derived from personal data and cannot be reversed to it.
 6. `Collected at` names the product container that emits the event and the environment it emits from, such as `backend`, staging and production.
 7. Every event carries a `source` field, and its value records what the traffic is: `web`, `usability-test`, or `smoke`.
    `smoke` marks traffic the team generated to check the pipeline, so a metric excludes it.
+   Only `smoke` is a pipeline check; `usability-test` records the team's usability sessions and is not excluded from a metric unless the page says why.
 8. The table covers the core task end to end, so a later week's work has the events it needs.
 9. Every event a metric's `**Source:**` names has a row.
 
@@ -97,15 +98,16 @@ The backend's steps and configuration are the deployment runbook's, and this sec
 1. The page states the instrumentation: which container sends the events, and how it sends them.
 2. The analytics backend is OpenPanel by default, and another self-hosted backend is allowed when the page documents it.
    It runs on the university VM or a campus machine, per [Environments And Deployment](repository-requirements.md#environments-and-deployment).
-3. One backend instance carries two projects, `staging` and `production`, because the backend scopes its events, its sessions, and its dashboard to a project.
-   Each project has its own client ID, and each environment's build is configured with its own, so each environment's dashboard serves charts from its own project.
+3. One backend instance carries one environment scope per environment, `staging` and `production`, because the backend scopes its events, its sessions, and its dashboard to that scope.
+   For OpenPanel the scope is a project; a documented alternative uses its equivalent.
+   Each scope has its own credential, such as an OpenPanel client ID, and each environment's build is configured with its own, so each environment's dashboard serves charts from its own scope.
 4. The page states the retention, and it covers the longest metric window the page defines.
 5. The page records how collection is enabled and disabled, including the environment variable that turns it off.
 6. The deployment's steps and configuration live in `docs/deployment.md`, per [Environments And Deployment](repository-requirements.md#environments-and-deployment); the page links that section and repeats none of it.
    `.env.example` carries the configuration's shape, and the secrets are installed outside the repository, per [Configuration And Sensitive Information](repository-requirements.md#configuration-and-sensitive-information).
-7. A test event is sent only to the staging project and is tagged `source=smoke`; the production project contains only real traffic.
-8. The backend's address, its dashboard's address, and any credentials are private-only, per [Sensitive Information Reference](visibility-requirements.md#sensitive-information-reference).
-   The page names the backend and its dashboard and links neither address.
+7. A test event is sent only to the staging scope and is tagged `source=smoke`; the production scope contains only real traffic.
+8. The backend's address, its dashboards' addresses, and any credentials are private-only, per [Sensitive Information Reference](visibility-requirements.md#sensitive-information-reference).
+   The page names the backend and its dashboards and links neither address.
 
 ## The Dashboard
 
@@ -115,12 +117,13 @@ Each environment's dashboard is where the pipeline's data becomes a chart a read
 
 **Required**
 
-1. Each environment has a dashboard: one in the staging project and one in the production project.
+1. Each environment has a dashboard: one in the staging scope and one in the production scope.
 2. Each dashboard carries at least one chart for a metric in the tree: the focus metric once it has a value, otherwise its L1 input metric.
    A counter-metric chart is optional.
+   A metric without a chart still records its `**Query:**`; the one-chart minimum is the dashboard's, not every metric's.
 3. Each chart names its metric and runs the `**Query:**` recorded in that metric's section, so the page owns the query and the chart owns the display.
-4. A chart in the staging project excludes `source=smoke` from the metric; the production project's chart carries the same metric and the same query, and it receives no test traffic.
-5. The dashboard's address and any credentials are private-only, per [Sensitive Information Reference](visibility-requirements.md#sensitive-information-reference), and the page names the dashboard and its charts rather than linking the address.
+4. A chart in the staging scope excludes `source=smoke` from the metric, and the staging dashboard carries an event list or raw-events panel that shows the smoke event, so the exclusion is visible; the production scope's chart carries the same metric and the same query, and it receives no test traffic.
+5. The dashboards' addresses and any credentials are private-only, per [Sensitive Information Reference](visibility-requirements.md#sensitive-information-reference), and the page names the dashboards and their charts rather than linking an address.
 6. The evidence is two sanitized screenshots, one per environment, in `reports/week-NN/images/`, linked from the weekly report with the metric each chart shows, per [Screenshot Evidence](visibility-requirements.md#screenshot-evidence).
 
 ## Collected Data
@@ -236,14 +239,15 @@ Each chart is named after its metric and runs the query recorded under that metr
 | `Booking conversion` | staging     | the booking conversion rate's query, with `source = "smoke"` excluded |
 | `Booking conversion` | production  | the same query, over the production project's traffic                 |
 | `Cancellations`      | staging     | the cancellation and no-show rate's query, which is optional          |
+| `Recent events`      | staging     | the event list, which shows the test event tagged `source=smoke`      |
 
-The staging dashboard was checked with a test event tagged `source=smoke`, which the staging chart excluded; the production dashboard carries the same charts and received no test traffic.
+The staging dashboard was checked with a test event tagged `source=smoke`: the dashboard's event list shows it and the staging chart excluded it from the metric; the production dashboard carries the same required chart and query and received no test traffic.
 Both dashboard addresses are in the Moodle submission, and the week report links one sanitized screenshot from each environment.
 
 ## Collected Data
 
 The events collect the fields in [the events](#the-events): opaque identifiers for the coach, the booking, and the session; the slot's start; the amount and its currency; who cancelled; and `source`.
-They never collect a personal name, an email address, a phone number, a postal address, free text that identifies a person, or payment card data.
+They never collect a personal name, an email address, a phone number, a postal address, free text, or payment card data.
 An event identifies a client by the opaque `session_id`, which is generated at random and cannot be reversed to a person.
 Collection is switched off with `ANALYTICS_ENABLED=false`.
 The data lives in the OpenPanel instance's database on the university VM, outside the repository, and is reachable from the university network only.

@@ -138,6 +138,7 @@ It is the short version of the requirements, states what is expected of you as a
 22. An `SLI` follows rule 10: it carries `**Status:**` as its first field, and the values are `Active`, `Planned`, and `Dropped`.
     A dropped `SLI` follows rule 11 and adds `**Dropped:**` with the date and the reason.
 23. A runtime `QRT-nn` written from Week 6 on names an `Active` `SLI-nn` in `**Runs at:**`, per [Quality Requirement Tests](quality-requirements-requirements.md#quality-requirement-tests).
+    A test written before Week 6 that names an `SLI-nn` reads it too, so any test that adds the citation reads the signal in its procedure.
 24. There is no `SLO-nn` and no `MET-nn`: the target a test settles is its requirement's `Response Measure`, and an analytics metric is cited by its heading anchor, per rule 25.
 25. An analytics metric is not an identifier family either: it is one `###` section under `## The Value And The Metrics` in `docs/analytics.md`, cited by that heading's anchor, such as `docs/analytics.md#booking-conversion-rate`, per [Product Analytics Requirements](analytics-requirements.md#the-value-and-the-metrics).
 

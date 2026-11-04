@@ -48,27 +48,28 @@ The metric is the number the `SLI`s are computed from, and the log and the trace
 A **service level indicator**, `SLI-nn`, is a product quality signal the product emits and the observability pipeline records: what is measured, in which unit, over which window, and by which query.
 It is not an analytics metric and not a quality requirement: the `SLI` records the measured signal, and the requirement's `Response Measure` stays the target.
 The family, its two digits, its repository-wide scope, its `## SLI-01` heading, its status values, and its citation are in [Identifier Rules](general-requirements.md#identifier-rules).
+The query is written in the backend's query language; OpenObserve runs PromQL through its metrics API, so the example's PromQL is what its chart runs, and a backend that uses SQL records the SQL form.
 
 **Required**
 
 1. The section introduces the `SLI`s, and each `SLI` is a `## SLI-01` section after it, headed with the bare identifier, with its name on the first line, so its anchor is `#sli-01`.
 2. Each `SLI` carries these fields, in this order:
 
-   | Field             | What it says                                                                                                       |
-   | ----------------- | ------------------------------------------------------------------------------------------------------------------ |
-   | `**Status:**`     | `Active`, `Planned`, or `Dropped`                                                                                  |
-   | `**Definition:**` | What the signal measures and which labels it carries                                                               |
-   | `**Unit:**`       | The unit the value is reported in, such as milliseconds or a ratio                                                 |
-   | `**Window:**`     | The window the value covers, and how soon a point appears after the event it measures                              |
-   | `**Source:**`     | The signal and the instrumentation that produces it, including the container that emits it                         |
-   | `**Query:**`      | The query the dashboard chart runs, with the labels and the window it selects                                      |
-   | `**Dropped:**`    | Only on a dropped `SLI`: the date and the reason, per [Identifier Rules](general-requirements.md#identifier-rules) |
+   | Field             | What it says                                                                                                             |
+   | ----------------- | ------------------------------------------------------------------------------------------------------------------------ |
+   | `**Status:**`     | `Active`, `Planned`, or `Dropped`                                                                                        |
+   | `**Definition:**` | What the signal measures and which labels it carries                                                                     |
+   | `**Unit:**`       | The unit the value is reported in, such as milliseconds or a ratio                                                       |
+   | `**Window:**`     | The window the value covers, and how soon a point appears after the event it measures                                    |
+   | `**Source:**`     | The signal and the instrumentation that produces it, including the container that emits it                               |
+   | `**Query:**`      | The query a chart runs when it shows the SLI, in the backend's query language, with the labels and the window it selects |
+   | `**Dropped:**`    | Only on a dropped `SLI`: the date and the reason, per [Identifier Rules](general-requirements.md#identifier-rules)       |
 
 3. The team lists the `SLI`s its runtime quality requirements need, and it instruments and demonstrates at least one `Active` one.
 4. The `SLI` the observability requirement's test reads names, in its `**Definition:**`, the labels that identify the request and the failure, so the test can read them.
 5. A runtime `QRT-nn` written from Week 6 on names an `Active` `SLI-nn` in its `**Runs at:**`, per [Quality Requirement Tests](quality-requirements-requirements.md#quality-requirement-tests).
 6. A dropped `SLI` leaves its requirement active when another `Active` `SLI` covers it: the `QRT-nn`'s `**Runs at:**` names the replacement, or its testing-plan row becomes `Not verified`, per [Quality Requirement Testing Plan](planning-requirements.md#quality-requirement-testing-plan).
-7. The query is recorded in the `SLI`'s `**Query:**` field, and the dashboard's chart names the `SLI` and runs it, so the query has one public owner.
+7. The query is recorded in the `SLI`'s `**Query:**` field, and a dashboard chart that shows the `SLI` names it and runs it, so the query has one public owner.
 8. The chart's address is private-only, per [Sensitive Information Reference](visibility-requirements.md#sensitive-information-reference), so the page names the chart rather than linking it.
 
 ## The Pipeline
@@ -83,8 +84,10 @@ The backend's steps and configuration are the deployment runbook's, and this sec
 1. The page states the instrumentation: which container emits each signal, and how it exports it.
 2. The observability backend is OpenObserve by default, because one service stores and serves the signals with relatively low resources, and another documented backend is allowed.
    It runs on the university VM or a campus machine, per [Environments And Deployment](repository-requirements.md#environments-and-deployment).
-3. One backend instance carries two organizations, `staging` and `production`, because the backend scopes its dashboard to an organization; each organization has its own dashboard, and each environment's build configures its own.
-4. The staging organization receives the test traffic; the production organization's dashboard is configured with the same query and is not exercised with test traffic.
+3. One backend instance carries one environment scope per environment, `staging` and `production`, because the backend scopes its dashboard to that scope.
+   For OpenObserve the scope is an organization; a documented alternative uses the equivalent.
+   Each scope has its own dashboard, and each environment's build configures its own.
+4. The staging scope carries the test traffic; the production scope's dashboard is configured with the same query and is not exercised with test traffic.
 5. The page states the access: the backend, its dashboards, and their credentials are reachable by the team and the customer from the university network, and their addresses and credentials are private-only, per [Sensitive Information Reference](visibility-requirements.md#sensitive-information-reference).
 6. The page states the retention, and it covers the longest `SLI` window the page defines.
 7. The page records how collection is enabled and disabled, including the environment variable that turns it off.
@@ -95,15 +98,16 @@ The backend's steps and configuration are the deployment runbook's, and this sec
 
 **Since: W6**
 
-Each organization's dashboard is where the pipeline's signal becomes a chart an operator can read, and the `SLI`'s section is where its query is written.
+Each environment scope's dashboard is where the pipeline's signal becomes a chart an operator can read, and the `SLI`'s section is where its query is written.
 
 **Required**
 
-1. Each organization's dashboard carries at least one chart for an `Active` `SLI`.
+1. Each environment scope's dashboard carries at least one chart for an `Active` `SLI`.
+   An `SLI` without a chart still records its `**Query:**`; the one-chart minimum is the dashboard's, not every `SLI`'s.
 2. The chart names the `SLI` it shows and runs the `**Query:**` recorded in that `SLI`'s section.
-3. The staging organization's dashboard shows the test traffic; the production organization's dashboard carries the same chart and query and is not exercised with test traffic.
+3. The staging scope's dashboard shows the test traffic; the production scope's dashboard carries the same chart and query and is not exercised with test traffic.
 4. The dashboard's address and any credentials are private-only, per [Sensitive Information Reference](visibility-requirements.md#sensitive-information-reference), and the page names the dashboard and its charts rather than linking the address.
-5. The evidence is two sanitized screenshots, one per organization, in `reports/week-NN/images/`, linked from the weekly report with the `SLI` each chart shows, per [Screenshot Evidence](visibility-requirements.md#screenshot-evidence).
+5. The evidence is two sanitized screenshots, one per scope, in `reports/week-NN/images/`, linked from the weekly report with the `SLI` each chart shows, per [Screenshot Evidence](visibility-requirements.md#screenshot-evidence).
 
 ## Collected Data
 
@@ -143,10 +147,11 @@ Its target is the `Response Measure` of the requirement whose test reads it.
 Booking request response time.
 
 - **Status:** Active
-- **Definition:** The time the `backend` takes to answer one booking request, in milliseconds, exported as one series point per request and labelled `request_id`, `route`, and `outcome`, where `outcome` is `ok`, `client_error`, or `server_error`.
+- **Definition:** The five-minute P95 of the `backend`'s booking-request response time, in milliseconds, computed from an OpenTelemetry histogram labelled `route` and `outcome`, where `outcome` is `ok`, `client_error`, or `server_error`.
+  The product's telemetry endpoint also exposes the per-request point with `request_id`, `route`, and `outcome`, so a failed request can be found.
 - **Unit:** Milliseconds.
-- **Window:** One request, reported within five seconds of the response.
-- **Source:** An OpenTelemetry histogram the `backend` exports through its instrumentation to OpenObserve, and the product's telemetry endpoint at `/telemetry/sli`, which exposes the same series.
+- **Window:** Five minutes, evaluated every minute; the endpoint's per-request point appears within five seconds of the response, and the aggregate point follows within one minute.
+- **Source:** An OpenTelemetry histogram the `backend` exports through its instrumentation to OpenObserve, and the product's telemetry endpoint at `/telemetry/sli`, which exposes the per-request points and the aggregate.
 - **Query:** `histogram_quantile(0.95, sum by (le, route, outcome) (rate(booking_request_duration_ms_bucket[5m])))`
 
 ## The Pipeline
@@ -169,13 +174,13 @@ Each chart names `SLI-01` and runs the query recorded under it.
 | `P95 latency by outcome` | staging      | the `SLI-01` query, which the staging test traffic fills        |
 | `P95 latency by outcome` | production   | the same query, over the production organization's real traffic |
 
-The staging dashboard was checked with a failed booking request, which the chart shows; the production dashboard carries the same chart and received no test traffic.
+The staging dashboard was checked with a failed booking request: the chart shows the `server_error` series, and the product's telemetry endpoint exposed the request's point with its `request_id`; the production dashboard carries the same chart and received no test traffic.
 Both dashboard addresses are in the Moodle submission, and the week report links one sanitized screenshot from each organization.
 
 ## Collected Data
 
-The signals collect the request identifier, the route, the outcome, the duration, and the container that emitted them.
-They never collect a personal name, an email address, a phone number, a postal address, free text that identifies a person, or payment card data.
+The signals collect the request identifier, the route, the outcome, and the duration on the per-request point, and the route, the outcome, and the duration on the aggregate; they also record the container that emitted them.
+They never collect a personal name, an email address, a phone number, a postal address, free text, or payment card data.
 A request is identified by the opaque `request_id`, which is generated at random and cannot be reversed to a person.
 Collection is switched off with `TELEMETRY_ENABLED=false`.
 The data lives in the OpenObserve instance's storage on the university VM, outside the repository, and is reachable from the university network only.

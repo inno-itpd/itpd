@@ -110,6 +110,7 @@ The status is not the result, and [Step 4](#step-4-record-the-progress) is where
 Write the step rather than the workflow alone: "the `test` job of `.github/workflows/ci.yml`, on every pull request and on `main`" is re-runnable, and "CI" is not.
 
 From Week 6 on, a runtime test also names the `Active` `SLI-nn` it reads in `**Runs at:**`, and its procedure reads that signal, per [Quality Requirement Tests](../requirements/quality-requirements-requirements.md#quality-requirement-tests).
+A test written before Week 6 that is re-run with an `SLI` citation does the same, so a test never names a signal it does not read.
 [Step 6: Write The Observability Requirement And Run Its Test](analytics-and-observability.md#step-6-write-the-observability-requirement-and-run-its-test) is that method.
 
 ### Justify A Manual Test

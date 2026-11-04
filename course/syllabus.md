@@ -218,9 +218,9 @@ From Week 4 to Week 9 every submission is due on Saturday at 23:59, with no soft
 - **Submission 6 (Team Deliverables - Due Nov 7, 23:59)**:
   - **Deliverables**:
     1. **Product Analytics Plan**: `docs/analytics.md`, with the focus metric traced to its `VP-nn`, the counter-metric, the L1 and L2 input metrics, the metric tree, a section per metric, and the events and instrumentation.
-    2. **Analytics Dashboards**: one in the staging project and one in the production project, each with a chart that runs the query recorded in the plan.
+    2. **Analytics Dashboards**: one in the staging environment scope and one in the production environment scope, each with a chart that runs the query recorded in the plan.
     3. **Observability Plan And `SLI`s**: `docs/observability.md`, with the signals and the `SLI-nn` sections, each with its definition, unit, window, source, query, and status.
-    4. **Observability Dashboards**: one in the staging organization and one in the production organization, each with a chart that names an `Active` `SLI` and runs its query.
+    4. **Observability Dashboards**: one in the staging environment scope and one in the production environment scope, each with a chart that names an `Active` `SLI` and runs its query.
     5. **Two Functional Requirements And Two Stories**: one for the product analyst and one for the system operator, each story naming its `FR-nnn` and its `ADR-nnn`.
     6. **Two Architectural Decision Records And The Container View**: the analytics record and the observability record, with the two backends shown as external systems.
     7. **Observability Requirement And Test**: the diagnosability requirement with its `deployed` `QRT`, its result in the testing plan, and, when the team re-runs one, the runtime test's result.

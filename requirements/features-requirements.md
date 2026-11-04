@@ -32,8 +32,10 @@ It is the name of something the product does, not an artifact about the product,
 
 **Since: W6**
 
-A feature is a capability a user recognises, and the user may be an internal one, such as a product analyst or a system operator.
-The dashboards are the evidence of the internal capabilities, not features of their own, and their addresses are never linked, because an address is unstable or private-only.
+**Required**
+
+7. A feature is a capability a user recognises, and the user may be an internal one, such as a product analyst or a system operator.
+8. The dashboards are the evidence of the internal capabilities, not features of their own, and their addresses are never linked, because an address is unstable or private-only.
 
 ## The Feature Entry
 

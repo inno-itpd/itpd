@@ -49,9 +49,9 @@ By the end of this week you should be able to show a reader:
 
 - An analytics plan, `docs/analytics.md`, with one focus metric traced to its `VP-nn`, a counter-metric, a metric tree, and a metric section for every node.
 - An event table a developer can instrument from, with no personal data, `source` on every event, and the core task covered end to end.
-- An analytics backend on the university network, with a staging and a production project, and a dashboard in each.
+- An analytics backend on the university network, with a staging and a production environment scope, and a dashboard in each.
 - An observability plan, `docs/observability.md`, with the signals, the `SLI`s, their definitions, units, windows, sources, queries, and status, and the one `SLI` the week demonstrates.
-- An observability backend with a staging and a production organization, and a dashboard in each, whose chart names its `SLI`.
+- An observability backend with a staging and a production environment scope, and a dashboard in each, whose chart names its `SLI`.
 - Two new stories, one for a product analyst and one for a system operator, and the two functional requirements and two architectural decision records that specify them.
 - The container view updated with the two telemetry backends as external systems, and the container set unchanged.
 - A `Maintainability` / `Analysability` requirement about the product's diagnosability, with a `deployed` test that fails a staging request and reads the product's telemetry endpoint, and the test's result in the testing plan.
@@ -78,7 +78,7 @@ This week:
 2. Plan `SPRINT-06`: replace its provisional goal with the sprint's goal, set `**Due:**` to `2026-11-07`, link `**Sprint Backlog:**` to its GitHub milestone, and set `**Planned Velocity:**` to the story points of the stories you scheduled, computed by hand from their `Story Points`.
 3. Add one `US-nn` for the product analyst and one for the system operator, in the Week 4 story shape.
 4. Schedule both in `SPRINT-06`, with their GitHub milestone, their `Responsible` and `Accountable` values, and both assignees.
-5. Each story's `### Specified by` names the `FR-nnn` and the `ADR-nnn` that specify it: `FR-007` and `ADR-005` for the analyst, and `FR-008` and `ADR-006` for the operator.
+5. Each story's `### Specified by` names the `FR-nnn` and the `ADR-nnn` that specify it, using the next free identifier in each family: one pair for the analyst and one for the operator.
 6. Each story names a `VP-nn` the vision's goal traces to.
    When no existing value proposition covers the internal user, add one to `docs/research/value-proposition.md`, update the vision goal's `Supports:` list in the same change, and record it as a team decision.
 7. Write the task issues for the two pipelines, the four dashboards, and the observability test, each with its `### Requirements` section, and schedule them in `SPRINT-06`.
@@ -111,19 +111,19 @@ The method is in [Step 1: Find The Metrics](../guides/analytics-and-observabilit
 The rules:
 
 - The event table is one table with `Event`, `Fires when`, `Fields`, and `Collected at`, and it is the one registry and the schema the instrumentation sends: [The Events](../requirements/analytics-requirements.md#the-events).
-- Every event carries `source`, and `smoke` marks the team's own pipeline check: [The Events](../requirements/analytics-requirements.md#the-events).
+- Every event carries `source`, `smoke` marks the team's own pipeline check, and only `smoke` is excluded from a metric: [The Events](../requirements/analytics-requirements.md#the-events).
 - An event or a signal carries no personal data, and an opaque identifier is allowed when it cannot be reversed to a person: [Telemetry And Personal Data](../requirements/visibility-requirements.md#telemetry-and-personal-data).
 - A functional requirement is a file under `docs/functional-requirements/fr/`, with its behavior, its criteria, and its row in the index: [The Functional Requirement](../requirements/functional-requirements-requirements.md#the-functional-requirement).
 - A change to a metric, its events, or its query is made in the same pull request as every citation of it: [The Value And The Metrics](../requirements/analytics-requirements.md#the-value-and-the-metrics).
 
 This week:
 
-1. Write the event table with its four columns, the naming convention under it, and the fields each event carries.
+1. Write the event table with its four columns, the naming convention under it, the fields each event carries.
 2. Cover the core task end to end, so the Week 7 usability work has the events it needs.
 3. Instrument the product to send each event from the container and environment its `Collected at` names.
 4. Give every event a `source` field with a closed set of values, and send a staging test event tagged `source=smoke`.
-5. Check every field against the personal-data rule, and replace any personal field with an opaque identifier.
-6. Write the analytics functional requirement, `FR-007`, with its behavior and acceptance criteria, and add its row to `docs/functional-requirements/README.md`.
+5. Check every field against the telemetry rules: drop every personal field, and if an event needs to identify a person, use an opaque identifier that is generated at random, is not derived from personal data, and cannot be reversed to the person.
+6. Write the analytics functional requirement, using the next free `FR-nnn`: its behavior is that the product records an event for each step of the core task, with the fields in `docs/analytics.md`, and it carries its acceptance criteria and its row in `docs/functional-requirements/README.md`.
 7. Update every metric's `**Source:**` to name the events that feed it, and every citation when a name changed.
 
 The method is in [Step 2: Write The Events And Instrument The Product](../guides/analytics-and-observability.md#step-2-write-the-events-and-instrument-the-product).
@@ -133,21 +133,21 @@ The method is in [Step 2: Write The Events And Instrument The Product](../guides
 The rules:
 
 - The analytics backend is OpenPanel by default, another documented self-hosted backend is allowed, and it runs on the university VM or a campus machine: [The Pipeline](../requirements/analytics-requirements.md#the-pipeline).
-- One backend instance carries two projects, `staging` and `production`, each with its own client ID: [The Pipeline](../requirements/analytics-requirements.md#the-pipeline).
+- One backend instance carries one environment scope per environment, `staging` and `production`, each with its own credential: [The Pipeline](../requirements/analytics-requirements.md#the-pipeline).
 - Each environment's dashboard carries at least one chart for a metric in the tree, and the chart runs the query recorded in the metric's section: [The Dashboard](../requirements/analytics-requirements.md#the-dashboard).
-- The dashboards' addresses and credentials are private-only, and the evidence is two sanitized screenshots: [Sensitive Information Reference](../requirements/visibility-requirements.md#sensitive-information-reference) and [Screenshot Evidence](../requirements/visibility-requirements.md#screenshot-evidence).
+- The backend's and dashboards' addresses and credentials are private-only, and the evidence is two sanitized screenshots: [Sensitive Information Reference](../requirements/visibility-requirements.md#sensitive-information-reference) and [Screenshot Evidence](../requirements/visibility-requirements.md#screenshot-evidence).
 - `docs/deployment.md` carries the two telemetry pipelines' steps and configuration and links the two plans: [Environments And Deployment](../requirements/repository-requirements.md#environments-and-deployment).
 - The configuration's shape is in `.env.example`, and the secrets are installed outside the repository: [Configuration And Sensitive Information](../requirements/repository-requirements.md#configuration-and-sensitive-information).
 
 This week:
 
 1. Deploy OpenPanel, or another backend the page documents, on the university VM or a campus machine.
-2. Create the `staging` and `production` projects, give each its own client ID, and configure each environment's build with its own.
-3. Build a dashboard in each project with at least one chart for the focus metric or its L1 input, and name the chart after the metric.
-4. Run the query recorded in the metric's section in the chart, and check the staging chart excludes the test event tagged `source=smoke`.
+2. Create the `staging` and `production` environment scopes — OpenPanel projects, or the documented backend's equivalent — and give each its own credential such as a client ID, so each environment's build is configured with its own.
+3. Build a dashboard in each environment scope with at least one chart for the focus metric or its L1 input, and name the chart after the metric.
+4. Run the query recorded in the metric's section in the chart, check that the staging metric chart excludes the test event tagged `source=smoke`, and check that the staging dashboard's event list shows it.
 5. Check the staging dashboard with a test event, and confirm the production dashboard carries the same chart and query and received no test traffic.
 6. Write the telemetry pipelines' section in `docs/deployment.md` with the steps and the configuration, and link `docs/analytics.md` from it.
-7. Keep the dashboards' addresses and credentials out of the repository, and check that the dashboards are reachable from the university network.
+7. Keep the backend's and dashboards' addresses and credentials out of the repository, and check that the dashboards are reachable from the university network.
 
 The method is in [Step 3: Deploy The Analytics Backend And Expose The Dashboards](../guides/analytics-and-observability.md#step-3-deploy-the-analytics-backend-and-expose-the-dashboards) and [Step 4: Deploy To Staging And Run The Deployed Test](../guides/deployment-and-environments.md#step-4-deploy-to-staging-and-run-the-deployed-test).
 
@@ -166,7 +166,7 @@ This week:
 1. Write `docs/observability.md` with the signals the product emits, and say which of the three signal types it uses.
 2. List the `SLI`s your runtime requirements need, in `## SLI-nn` sections, with a definition, a unit, a window, a source, and a query each.
 3. Make the `SLI` the week demonstrates `Active`, and name the labels that identify the request and the failure in its `**Definition:**`.
-4. Write the observability functional requirement, `FR-008`, with its behavior and acceptance criteria, and add its row to `docs/functional-requirements/README.md`.
+4. Write the observability functional requirement, using the next free `FR-nnn`: its behavior is that the product exposes the quality signal for each runtime requirement, with its environment, to the observability backend, and it carries its acceptance criteria and its row in `docs/functional-requirements/README.md`.
 5. Add the week's terms, `signal`, `SLI`, `service level indicator`, `observability`, and `telemetry`, to `docs/glossary.md`.
 
 The method is in [Step 4: Define The `SLI`s And Instrument The Signals](../guides/analytics-and-observability.md#step-4-define-the-slis-and-instrument-the-signals).
@@ -176,18 +176,18 @@ The method is in [Step 4: Define The `SLI`s And Instrument The Signals](../guide
 The rules:
 
 - The observability backend is OpenObserve by default, another documented backend is allowed, and it runs on the university VM or a campus machine: [The Pipeline](../requirements/observability-requirements.md#the-pipeline).
-- One backend instance carries two organizations, `staging` and `production`, each with its own dashboard: [The Pipeline](../requirements/observability-requirements.md#the-pipeline).
-- Each organization's dashboard carries at least one chart for an `Active` `SLI`, and the chart runs the query recorded in the `SLI`'s section: [The Dashboard](../requirements/observability-requirements.md#the-dashboard).
+- One backend instance carries one environment scope per environment, `staging` and `production` — OpenObserve organizations, or the documented backend's equivalent — each with its own dashboard: [The Pipeline](../requirements/observability-requirements.md#the-pipeline).
+- Each environment scope's dashboard carries at least one chart for an `Active` `SLI`, and the chart runs the query recorded in the `SLI`'s section: [The Dashboard](../requirements/observability-requirements.md#the-dashboard).
 - The dashboard's address is private-only, and the evidence is two sanitized screenshots: [Sensitive Information Reference](../requirements/visibility-requirements.md#sensitive-information-reference) and [Screenshot Evidence](../requirements/visibility-requirements.md#screenshot-evidence).
 - `docs/deployment.md` carries the observability pipeline's steps and configuration and links the plan: [Environments And Deployment](../requirements/repository-requirements.md#environments-and-deployment).
 
 This week:
 
 1. Deploy OpenObserve, or another backend the page documents, on the university VM or a campus machine.
-2. Create the `staging` and `production` organizations, and point each environment's build at its own.
-3. Build a dashboard in each organization with at least one chart for an `Active` `SLI`, and name the chart after the `SLI`.
+2. Create the `staging` and `production` environment scopes — OpenObserve organizations, or the documented backend's equivalent — and point each environment's build at its own.
+3. Build a dashboard in each environment scope with at least one chart for an `Active` `SLI`, and name the chart after the `SLI`.
 4. Record the query in the `SLI`'s `**Query:**` field and run it in the chart, so the page and the chart carry the same query.
-5. Send the staging test traffic to the staging organization, and leave the production dashboard configured with the same query and unexercised.
+5. Send the staging test traffic to the staging scope, and leave the production dashboard configured with the same query and unexercised.
 6. Write the observability pipeline's steps and configuration into `docs/deployment.md`, and link `docs/observability.md` from it.
 7. Keep the backend's and dashboards' addresses and credentials out of the repository, and check that they are reachable from the university network.
 
@@ -204,8 +204,8 @@ The rules:
 
 This week:
 
-1. Write the analytics architectural decision record, addressing `FR-007`, with its `**Containers:**` naming the product containers that emit the events.
-2. Write the observability architectural decision record, addressing `QR-04` and `FR-008`, with its `**Containers:**` naming the containers that emit the signals.
+1. Write the analytics architectural decision record, using the next free `ADR-nnn`, addressing the analytics `FR-nnn`, with its `**Containers:**` naming the product containers that emit the events.
+2. Write the observability architectural decision record, using the next free `ADR-nnn`, addressing the new `QR-nn` and the observability `FR-nnn`, with its `**Containers:**` naming the containers that emit the signals.
 3. Update the container view so the analytics backend and the observability backend appear as external systems the product exchanges telemetry with, with the protocol on each arrow.
 4. Keep the container set unchanged, draw no new view, and add both records to the ADR index.
 
@@ -236,20 +236,22 @@ The rules:
 - The requirement is a file under `docs/quality-requirements/qr/` with its outcome, its ISO/IEC 25010:2023 pair, its business importance, its technical risk, and its six-part scenario: [The Quality Requirement](../requirements/quality-requirements-requirements.md#the-quality-requirement) and [The Quality Attribute Scenario](../requirements/quality-requirements-requirements.md#the-quality-attribute-scenario).
 - A test is a `## QRT-nn` section inside its requirement's file, with its fields, its procedure, and one `**Pass when:**` criterion: [Quality Requirement Tests](../requirements/quality-requirements-requirements.md#quality-requirement-tests).
 - A runtime test written from this week on names the `Active` `SLI-nn` it reads in `**Runs at:**`: [Quality Requirement Tests](../requirements/quality-requirements-requirements.md#quality-requirement-tests) and [The SLIs](../requirements/observability-requirements.md#the-slis).
+- Any runtime test that names an `SLI-nn` in `**Runs at:**`, including a Week 5 test re-run this week, reads that signal in its procedure: [Quality Requirement Tests](../requirements/quality-requirements-requirements.md#quality-requirement-tests).
 - The requirement's `Response Measure` remains the target, and the test's `**Pass when:**` settles it in the test's environment and window: [Quality Requirement Tests](../requirements/quality-requirements-requirements.md#quality-requirement-tests).
 - The testing plan carries each test's result, its last check, its planned sprint, and its evidence: [Quality Requirement Testing Plan](../requirements/planning-requirements.md#quality-requirement-testing-plan).
 - The quality requirements index and its matrix list every active requirement once: [The Quality Requirements Index](../requirements/quality-requirements-requirements.md#the-quality-requirements-index).
 
 This week:
 
-1. Write `QR-04` about the product's diagnosability, with the `Maintainability` / `Analysability` pair, `**Business importance:** High`, `**Technical risk:** Medium`, and a scenario whose source is the operator and whose stimulus is a failed request in the core task.
-2. Make its `Response Measure` about the product's telemetry endpoint: within five seconds of the failed request's response, the endpoint exposes one series point for it, carrying its request identifier and its failure label.
-3. Write `QRT-01` at `deployed`, naming the staging deployment and `SLI-01` in `**Runs at:**`, with a procedure that runs the core task's traffic and fails one request.
+1. Write the new quality requirement, using the next free `QR-nn`, about the product's diagnosability, with the `Maintainability` / `Analysability` pair, `**Business importance:** High`, `**Technical risk:** Medium`, and a scenario whose source is the operator and whose stimulus is a failed request in the core task.
+2. Make its `Response Measure` about the product's telemetry endpoint: within five seconds of the failed request's response, the endpoint exposes one series point for it, carrying its request identifier and its failure label; within one minute, the `SLI`'s query returns the failure series with a P95 value.
+3. Write its `QRT-01` at `deployed`, naming the staging deployment and the `SLI-nn` you demonstrate in `**Runs at:**`, with a procedure that runs the core task's traffic and fails one request.
 4. Write the script or command, for example `scripts/check-sli.ts`, that generates the traffic, fails the request, reads the point, and prints it; the address is `$STAGING_URL`.
-5. Run the test against the staging deployment from a campus machine, and record its result as `Passes` with `Checked` in `SPRINT-06` and the evidence the `deployed` level requires.
-6. Run each row the testing plan planned for `SPRINT-06`, or move it to `SPRINT-07` with a reason, and declare both in the report.
-7. Optionally re-run one implemented runtime `QRT-nn` whose signal you can instrument: its `**Runs at:**` names the same `Active` `SLI`, and a failed re-run records `Fails` and does not remove this week's demonstration.
-8. Add `QR-04`'s row to the index and its row to the matrix, and link the testing plan from the index once.
+5. Run the test against the staging deployment from a campus machine, and record its result as `Passes` with `Checked` in `SPRINT-06`.
+6. Record the evidence the `deployed` level requires: the product endpoint's output for the failed request with its `request_id` and failure labels, the OpenObserve query result for the `SLI`'s five-minute P95 series, the dashboard screenshot, the staging environment, and the commit the test ran against.
+7. Run each row the testing plan planned for `SPRINT-06`, or move it to `SPRINT-07` with a reason, and declare both in the report.
+8. Optionally re-run one implemented runtime `QRT-nn` whose signal you can instrument: its `**Runs at:**` names the same `Active` `SLI`, its procedure reads that signal, and a failed re-run records `Fails` and does not remove this week's demonstration.
+9. Add the new requirement's row to the index and its row to the matrix, and link the testing plan from the index once.
 
 The method is in [Step 6: Write The Observability Requirement And Run Its Test](../guides/analytics-and-observability.md#step-6-write-the-observability-requirement-and-run-its-test) and [Step 4: Record The Progress](../guides/quality-requirement-tests.md#step-4-record-the-progress).
 
@@ -308,7 +310,7 @@ This week:
 
 1. The meeting has to settle whether the telemetry answers the questions the customer recognises, whether the diagnosability requirement holds in staging, and what the threshold should measure next.
 2. In `reports/week-06/meeting-script.md`, `## Agenda` shows the deployed product, the analytics staging and production dashboards, the observability staging and production dashboards, the observability test's result with its `SLI`, and the optional runtime test's result; it ends with the threshold proposal.
-3. Show `QR-04 QRT-01`'s result: the failed request's series point, the `request_id` and failure labels it carries, the OpenObserve query, and the dashboard screenshot.
+3. Show the observability requirement's `QRT-01` result: the failed request's series point, the `request_id` and failure labels it carries, the `SLI`'s P95 query result, and the dashboard screenshot.
 4. Show the optional runtime test's result at its level when it was run, and name the `SLI` it read.
 5. Record the customer's decision on the threshold proposal as a `DEC-nnn`, and list it in `## Decisions`; a proposal the customer rejects is recorded as no change.
 6. `reports/week-06/meeting-report.md` closes the Week 5 action points and open questions in `## Previous action points` and `## Previous open questions`, and carries at least two rows in `## Action points`, each due inside Week 7.
@@ -390,13 +392,13 @@ A strong submission has:
 - **Events a developer can instrument from and a stranger can recompute.**
   The table has `Fields` and `Collected at`, every event carries `source`, and no event carries personal data or free text.
 - **Four dashboards a reader can open.**
-  Two analytics dashboards, one in each environment's project, and two observability dashboards, one in each organization; each has a chart for the focus metric or its L1 input, or for an `Active` `SLI`, and each chart runs the query the plan records.
+  Two analytics dashboards, one in each environment scope, and two observability dashboards, one in each environment scope; each has a chart for the focus metric or its L1 input, or for an `Active` `SLI`, and each chart runs the query the plan records.
 - **A staging test event that stays in staging.**
-  The staging chart shows it and excludes it from the metric, the production dashboard carries the same query, and the production project never receives it.
+  The staging dashboard's event list shows it and the chart excludes it from the metric, the production dashboard carries the same chart and query, and the production scope never receives it.
 - **An observability page a test can read.**
   Each `SLI` names its definition, unit, window, source, query, and status, and the demonstrated one names the labels that identify the request and the failure.
 - **A diagnosability requirement about the product, not the dashboard.**
-  The product's telemetry endpoint exposes the failed request's point within five seconds, and the OpenObserve query and the screenshot are the evidence that the pipeline stored and rendered it.
+  The product's telemetry endpoint exposes the failed request's point within five seconds, the `SLI`'s five-minute P95 query returns the failure series, and the OpenObserve query and the screenshot are the evidence that the pipeline stored and rendered it.
 - **Two internal capabilities with their records.**
   The analyst's story and the operator's story each name their `FR-nnn` and `ADR-nnn`, and each capability has a `docs/features.md` entry that links them and no dashboard address.
 - **A container view that shows what the product talks to.**
@@ -406,41 +408,41 @@ A strong submission has:
 - **A release whose record says what was checked.**
   `REL-06` is cut on the final production commit, its release body is the upgrade note with the new configuration, its `Checked QRs` lists the requirements checked in `SPRINT-06`, and the new requirement is one of them.
 - **A week with no deck and no experiment.**
-  The metrics are set up and shown, the report says whether the focus metric is computable yet, and the Week 7 usability work can use the events this week left.
+  The metrics are set up and shown, the report says whether the focus metric has a value yet, and the Week 7 usability work can use the events this week left.
 
 ## Assignment Report In The Repository
 
 Write `reports/week-06/README.md`, per [Weekly Public Report](../requirements/weekly-report-requirements.md#weekly-public-report).
 This week it also carries:
 
-1. In the summary, whether the focus metric is computable yet and what it would need, at least one analytics metric its query computes, `REL-06` and its tag, and what moved out of the sprint.
+1. In the summary, whether the focus metric has a value yet and what it would need, at least one analytics metric its query computes, `REL-06` and its tag, and what moved out of the sprint.
    Point at `docs/project-plan.md#quality-requirement-testing-plan` for the rows that are not `Passes`, and copy none of them.
 2. The `## Threshold review` section, with each open goal's current measure and whether the analytics or the observability data can settle it, and the customer's decision on the proposal.
 3. The four sanitized dashboard screenshots in `reports/week-06/images/`, linked with the metric or `SLI` each shows, and the observability test's result with the request identifier and failure labels it recorded.
 4. The coverage table, with these rows:
 
-| Deliverable                   | Artifact                                                                                                                                            |
-| ----------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Sprint plan and new stories   | `docs/project-plan.md#sprint-06`, and the two internal stories in the `SPRINT-06` milestone                                                         |
-| Analytics plan                | `docs/analytics.md`, with the metric tree and a section per metric                                                                                  |
-| Events and instrumentation    | `docs/analytics.md#the-events`                                                                                                                      |
-| Analytics dashboards          | `reports/week-06/images/`, one screenshot per environment, linked with the metric each chart shows                                                  |
-| Observability plan and `SLI`s | `docs/observability.md`                                                                                                                             |
-| Observability dashboards      | `reports/week-06/images/`, one screenshot per organization, linked with the `SLI` each chart shows                                                  |
-| Feature documentation         | `docs/features.md`                                                                                                                                  |
-| Functional requirements       | `docs/functional-requirements/README.md`, with `FR-007` and `FR-008`                                                                                |
-| ADRs and container view       | `docs/architecture/adr/` and `docs/architecture/README.md#container-view`                                                                           |
-| Observability requirement     | `docs/quality-requirements/qr/QR-04.md` and its `QRT-01`                                                                                            |
-| Runtime test re-run           | `docs/project-plan.md#quality-requirement-testing-plan`, when one was run                                                                           |
-| Threshold review              | `reports/week-06/README.md#threshold-review`                                                                                                        |
-| Week 5 action points          | `## Previous action points` in `reports/week-06/meeting-report.md`                                                                                  |
-| Week 5 open questions         | `## Previous open questions` in the same report                                                                                                     |
-| Meeting script                | `reports/week-06/meeting-script.md`                                                                                                                 |
-| Meeting transcript            | `reports/week-06/meeting-transcript.md`, or one line saying why there is none                                                                       |
-| Customer validation           | `reports/week-06/meeting-report.md`, and the threshold decision's `DEC-nnn`                                                                         |
-| `REL-06`                      | the tag, its release body for whoever deploys it, the changelog's released section, and the plan's `REL-06` block with `Released` and `Checked QRs` |
-| Sprint retrospective          | `reports/week-06/sprint-retrospective.md`                                                                                                           |
-| AI usage                      | `reports/week-06/ai-usage.md`                                                                                                                       |
+| Deliverable                   | Artifact                                                                                                                                             |
+| ----------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Sprint plan and new stories   | `docs/project-plan.md#sprint-06`, and the two internal stories in the `SPRINT-06` milestone                                                          |
+| Analytics plan                | `docs/analytics.md`, with the metric tree and a section per metric                                                                                   |
+| Events and instrumentation    | `docs/analytics.md#the-events`                                                                                                                       |
+| Analytics dashboards          | `reports/week-06/images/analytics-staging.png` and `reports/week-06/images/analytics-production.png`, linked with the metric each chart shows        |
+| Observability plan and `SLI`s | `docs/observability.md`                                                                                                                              |
+| Observability dashboards      | `reports/week-06/images/observability-staging.png` and `reports/week-06/images/observability-production.png`, linked with the `SLI` each chart shows |
+| Feature documentation         | `docs/features.md`                                                                                                                                   |
+| Functional requirements       | `docs/functional-requirements/README.md`, with the two new `FR-nnn` files                                                                            |
+| ADRs and container view       | `docs/architecture/adr/README.md` and `docs/architecture/README.md#container-view`                                                                   |
+| Observability requirement     | the new `QR-nn` file under `docs/quality-requirements/qr/`, and its `QRT-01`                                                                         |
+| Runtime test re-run           | `docs/project-plan.md#quality-requirement-testing-plan`, when one was run                                                                            |
+| Threshold review              | `reports/week-06/README.md#threshold-review`                                                                                                         |
+| Week 5 action points          | `## Previous action points` in `reports/week-06/meeting-report.md`                                                                                   |
+| Week 5 open questions         | `## Previous open questions` in the same report                                                                                                      |
+| Meeting script                | `reports/week-06/meeting-script.md`                                                                                                                  |
+| Meeting transcript            | `reports/week-06/meeting-transcript.md`, or one line saying why there is none                                                                        |
+| Customer validation           | `reports/week-06/meeting-report.md`, and the threshold decision's `DEC-nnn`                                                                          |
+| `REL-06`                      | the tag, its release body for whoever deploys it, the changelog's released section, and the plan's `REL-06` block with `Released` and `Checked QRs`  |
+| Sprint retrospective          | `reports/week-06/sprint-retrospective.md`                                                                                                            |
+| AI usage                      | `reports/week-06/ai-usage.md`                                                                                                                        |
 
 If the customer refused publication of the transcript, that row says so and points at the Moodle submission instead.
 
@@ -456,7 +458,7 @@ A transcript under item 6 goes in an appendix, which the two pages do not count.
 1. Project name and the team number.
 2. A table of team members: GitHub username, real name, and university email.
 3. A permalink to `reports/week-06/README.md` at the full commit hash.
-4. All four dashboards' addresses, and any credentials they need: the analytics staging and production dashboards and the observability staging and production dashboards.
+4. All four dashboards' addresses and any credentials they need, and the two telemetry backends' addresses and all credentials, including client IDs and tokens: the analytics staging and production dashboards, the observability staging and production dashboards, and the analytics and observability backends.
    They are private-only, and the customer reaches them from the university network.
 5. The product's staging and production addresses on the university VM, private-only, with the note that the customer reaches them from the university network.
 6. A link to the validation meeting recording, accessible to instructors, or one line saying why there is none: the customer refused recording, or the meeting was held in writing.
@@ -480,24 +482,24 @@ The PDF carries no deck.
 - [ ] `docs/analytics.md` with the focus metric traced to its `VP-nn`, the seven criteria, one rejected vanity metric, the counter-metric, the L1 and L2 inputs, and the tree ([Part 2](#part-2-write-the-analytics-plan-and-the-metric-tree)).
 - [ ] A `###` section for every node in the tree, each with its `**Definition:**`, `**Source:**`, and `**Query:**`, and one metric computed by its query named on the page ([Part 2](#part-2-write-the-analytics-plan-and-the-metric-tree)).
 - [ ] The event table with its four columns, its naming convention, `source` on every event, no personal data, and the core task covered end to end ([Part 3](#part-3-write-the-event-table-and-instrument-the-product)).
-- [ ] The product instrumented, the staging test event tagged `source=smoke`, and the staging chart excluding it ([Part 3](#part-3-write-the-event-table-and-instrument-the-product)).
-- [ ] `FR-007` written with its behavior and criteria, and its row in the functional requirements index ([Part 3](#part-3-write-the-event-table-and-instrument-the-product)).
-- [ ] The analytics backend on the university network, with a staging and a production project, each with its own client ID ([Part 4](#part-4-deploy-the-analytics-backend-and-expose-its-dashboards)).
-- [ ] A dashboard in each project, with at least one chart for the focus metric or its L1 input, running the query recorded in the page ([Part 4](#part-4-deploy-the-analytics-backend-and-expose-its-dashboards)).
+- [ ] The product instrumented, the staging test event tagged `source=smoke`, the staging dashboard's event list showing it, and the staging chart excluding it ([Part 3](#part-3-write-the-event-table-and-instrument-the-product)).
+- [ ] The analytics functional requirement written with the next free `FR-nnn`, with its behavior, its criteria, and its index row: [Part 3](#part-3-write-the-event-table-and-instrument-the-product).
+- [ ] The analytics backend on the university network, with a staging and a production environment scope, each with its own credential ([Part 4](#part-4-deploy-the-analytics-backend-and-expose-its-dashboards)).
+- [ ] A dashboard in each environment scope, with at least one chart for the focus metric or its L1 input, running the query recorded in the page ([Part 4](#part-4-deploy-the-analytics-backend-and-expose-its-dashboards)).
 - [ ] `docs/deployment.md` carrying the two telemetry pipelines' steps and configuration, linking the two plans ([Part 4](#part-4-deploy-the-analytics-backend-and-expose-its-dashboards) and [Part 6](#part-6-deploy-openobserve-and-build-the-sli-dashboards)).
 - [ ] `docs/observability.md` with the signals and the `SLI-nn` sections, each with its definition, unit, window, source, query, and status ([Part 5](#part-5-write-the-observability-plan-and-define-the-slis)).
 - [ ] The demonstrated `SLI` is `Active` and names the labels that identify the request and the failure ([Part 5](#part-5-write-the-observability-plan-and-define-the-slis)).
-- [ ] `FR-008` written with its behavior and criteria, and its row in the functional requirements index ([Part 5](#part-5-write-the-observability-plan-and-define-the-slis)).
-- [ ] OpenObserve on the university network with a staging and a production organization, each with a dashboard whose chart names its `SLI` ([Part 6](#part-6-deploy-openobserve-and-build-the-sli-dashboards)).
+- [ ] The observability functional requirement written with the next free `FR-nnn`, with its behavior, its criteria, and its index row: [Part 5](#part-5-write-the-observability-plan-and-define-the-slis).
+- [ ] OpenObserve on the university network with a staging and a production environment scope, each with a dashboard whose chart names its `SLI` ([Part 6](#part-6-deploy-openobserve-and-build-the-sli-dashboards)).
 - [ ] The analytics and observability ADRs, each addressing its `FR-nnn` or `QR-nn`, with its `**Containers:**` named, and both in the ADR index ([Part 7](#part-7-record-the-two-adrs-and-update-the-container-view)).
 - [ ] The container view showing the two backends as external systems with the protocol on each arrow, the container set unchanged, and no new view ([Part 7](#part-7-record-the-two-adrs-and-update-the-container-view)).
 - [ ] `docs/features.md` with an entry for each internal capability, linking its story, its `FR-nnn`, and its `ADR-nnn`, and no dashboard address ([Part 8](#part-8-document-the-two-features)).
 - [ ] The week's terms in `docs/glossary.md`, linked at first use in the two entries ([Part 8](#part-8-document-the-two-features)).
-- [ ] `QR-04` with its `Maintainability` / `Analysability` pair, `High` business importance, and its diagnosability scenario ([Part 9](#part-9-write-the-observability-requirement-and-its-test-and-run-the-test)).
-- [ ] `QR-04 QRT-01` at `deployed`, naming the staging deployment and `SLI-01` in `**Runs at:**`, with its procedure, its script, and its pass criterion ([Part 9](#part-9-write-the-observability-requirement-and-its-test-and-run-the-test)).
+- [ ] The new `QR-nn` with its `Maintainability` / `Analysability` pair, `High` business importance, and its diagnosability scenario ([Part 9](#part-9-write-the-observability-requirement-and-its-test-and-run-the-test)).
+- [ ] The new requirement's `QRT-01` at `deployed`, naming the staging deployment and the demonstrated `SLI-nn` in `**Runs at:**`, with its procedure, its script, and its pass criterion ([Part 9](#part-9-write-the-observability-requirement-and-its-test-and-run-the-test)).
 - [ ] The test run against staging, its row `Passes` with `Checked` in `SPRINT-06`, and its evidence linked ([Part 9](#part-9-write-the-observability-requirement-and-its-test-and-run-the-test)).
 - [ ] Each `SPRINT-06` testing-plan row run or moved to `SPRINT-07` with a reason, the optional re-run recorded when it was run, and the moves declared in the report ([Part 9](#part-9-write-the-observability-requirement-and-its-test-and-run-the-test)).
-- [ ] `QR-04`'s row in the index and the matrix, and the index linking the testing plan once ([Part 9](#part-9-write-the-observability-requirement-and-its-test-and-run-the-test)).
+- [ ] The new requirement's row in the index and the matrix, and the index linking the testing plan once ([Part 9](#part-9-write-the-observability-requirement-and-its-test-and-run-the-test)).
 - [ ] Each open goal's current measure and whether the new data can settle it, each settled goal set with its `**Outcome:**`, each later goal left `Open`, and the `## Threshold review` in the report ([Part 10](#part-10-review-the-threshold-of-success)).
 - [ ] Each Week 5 action point's outcome in `## Previous action points`, and each Week 5 open question answered or carried forward in `## Previous open questions` ([Part 11](#part-11-carry-out-the-week-5-action-points-and-open-questions)).
 - [ ] `reports/week-06/meeting-script.md` ([Part 12](#part-12-validate-with-the-customer)).
@@ -509,4 +511,4 @@ The PDF carries no deck.
 - [ ] `reports/week-06/ai-usage.md` ([Part 16](#part-16-report-on-your-ai-usage)).
 - [ ] `reports/week-06/README.md` with the summary, the threshold review, the four screenshots, and the coverage rows ([Assignment Report In The Repository](#assignment-report-in-the-repository)).
 - [ ] Everything merged into `main`, with the permalink and the snapshot taken from that commit ([Submission Procedure](#submission-procedure)).
-- [ ] PDF ready, the permalink opened in a browser at the full commit hash, the four dashboards' addresses and credentials in it, and the product's staging and production addresses in it ([Assignment Report On Moodle](#assignment-report-on-moodle)).
+- [ ] PDF ready, the permalink opened in a browser at the full commit hash, the four dashboards' addresses and credentials in it, the two backends' addresses and all credentials in it, and the product's staging and production addresses in it ([Assignment Report On Moodle](#assignment-report-on-moodle)).

@@ -412,11 +412,11 @@ The deployment runbook is `docs/deployment.md`, and the local setup guide stays 
     Both run on the university VM or a campus machine, and both are reachable from where the customer works, on the university network.
     Their configuration and secrets are installed outside the repository, per [Configuration And Sensitive Information](#configuration-and-sensitive-information).
 12. The analytics backend is OpenPanel by default and the observability backend is OpenObserve by default; another self-hosted backend is allowed when `docs/analytics.md` or `docs/observability.md` documents it.
-    The analytics backend carries one project per environment, and the observability backend one organization per environment.
-13. The two backends' addresses, the four dashboards' addresses, and any credentials are private-only, per [Sensitive Information Reference](visibility-requirements.md#sensitive-information-reference).
-14. From Week 6 on, `docs/deployment.md` carries the steps and configuration of both telemetry pipelines in addition to rule 8's parts: the analytics backend with its `staging` and `production` projects and their dashboards, and the observability backend with its `staging` and `production` organizations and their dashboards, such as in a `## The Telemetry Pipelines` section.
+    Each backend carries one environment scope per environment: an OpenPanel project, an OpenObserve organization, or the documented backend's equivalent.
+13. The two backends' addresses, the four dashboards' addresses, and all credentials, including client IDs and tokens, are private-only, per [Sensitive Information Reference](visibility-requirements.md#sensitive-information-reference).
+14. From Week 6 on, `docs/deployment.md` carries the steps and configuration of both telemetry pipelines in addition to rule 8's parts: the analytics backend with its `staging` and `production` environment scopes and their dashboards, and the observability backend with its `staging` and `production` environment scopes and their dashboards, such as in a `## The Telemetry Pipelines` section.
     It links `docs/analytics.md` and `docs/observability.md`, and the two plans own the topology.
-15. A staging test event never writes the production analytics project, and the observability requirement's `deployed` test reads the product's staging endpoint and no production data.
+15. A staging test event never writes the production analytics scope, and the observability requirement's `deployed` test reads the product's staging endpoint and no production data.
 16. Neither backend is deployed by a workflow: the product CI cannot reach the university network, so the deployment stays manual, per [Continuous Integration](#continuous-integration).
 
 ## The Course Materials As An Agent Skill

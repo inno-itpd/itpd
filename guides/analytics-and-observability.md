@@ -28,7 +28,7 @@ The metric tree is an afternoon once the events are named, and the observability
   - [Trace Every Metric To Its Events](#trace-every-metric-to-its-events)
 - [Step 3: Deploy The Analytics Backend And Expose The Dashboards](#step-3-deploy-the-analytics-backend-and-expose-the-dashboards)
   - [Self-Host The Backend On The Campus Network](#self-host-the-backend-on-the-campus-network)
-  - [Separate The Environments By Project](#separate-the-environments-by-project)
+  - [Separate The Environments By Scope](#separate-the-environments-by-scope)
   - [Chart The Query The Page Records](#chart-the-query-the-page-records)
   - [Check The Staging Dashboard With A Test Event](#check-the-staging-dashboard-with-a-test-event)
 - [Step 4: Define The `SLI`s And Instrument The Signals](#step-4-define-the-slis-and-instrument-the-signals)
@@ -36,7 +36,7 @@ The metric tree is an afternoon once the events are named, and the observability
   - [Write The Labels A Test Can Read](#write-the-labels-a-test-can-read)
   - [Name The One `SLI` The Week Demonstrates](#name-the-one-sli-the-week-demonstrates)
 - [Step 5: Deploy OpenObserve And Build The `SLI` Dashboards](#step-5-deploy-openobserve-and-build-the-sli-dashboards)
-  - [Run One Instance With Two Organizations](#run-one-instance-with-two-organizations)
+  - [Run One Instance With One Scope Per Environment](#run-one-instance-with-one-scope-per-environment)
   - [Put The Query In The `SLI`, Not The Chart](#put-the-query-in-the-sli-not-the-chart)
 - [Step 6: Write The Observability Requirement And Run Its Test](#step-6-write-the-observability-requirement-and-run-its-test)
   - [State Diagnosability As The Requirement](#state-diagnosability-as-the-requirement)
@@ -65,7 +65,7 @@ docs/analytics.md                       the focus metric, its tree, its metric s
 docs/observability.md                   the signals, the SLI sections, the pipeline, and the two dashboards
 docs/deployment.md                      the steps and configuration of both telemetry pipelines, linking the two plans
 docs/quality-requirements/qr/QR-nn.md   the diagnosability requirement and its deployed test, which names an Active SLI
-docs/features.md                        one entry per internal capability, linking its story, its FR-nnn, and its ADR-nn
+docs/features.md                        one entry per internal capability, linking its story, its FR-nnn, and its ADR-nnn
 reports/week-NN/images/                 the four sanitized dashboard screenshots
 reports/week-NN/README.md               the summary, the threshold review, the evidence links, and the coverage rows
 ```
@@ -117,7 +117,7 @@ Each metric has exactly one parent, and each node has one `###` section below th
 
 ### Write The Query, Not The Number
 
-Each metric's `**Query:**` is the computation its dashboard chart runs, and it is written from the events the table records.
+Each metric's `**Query:**` is the computation a chart uses when it shows the metric, and it is written from the events the table records.
 Write the query with its window and its `source` filter, so the page says how the number is computed rather than how it was read on a day.
 A rate states its numerator and its denominator; a count states its unit and its window.
 
@@ -149,7 +149,7 @@ Free text is the field that most often arrives by accident, because a cancellati
 ### Carry `source` On Every Event
 
 Every event carries `source`, with a value from a closed set such as `web`, `usability-test`, or `smoke`.
-`smoke` is the team's own pipeline check: it goes to the staging project only, and the staging chart excludes it, so a test run never becomes a metric's value.
+`smoke` is the team's own pipeline check: it goes to the staging scope only, the staging dashboard's event list shows it and the chart excludes it, so a test run never becomes a metric's value.
 A staging test event that reaches production is a deviation the week's report declares, per [Declaring Deviations](../requirements/weekly-report-requirements.md#declaring-deviations).
 
 ### Trace Every Metric To Its Events
@@ -170,23 +170,23 @@ Install its configuration and secrets outside the repository, and keep the shape
 Write the deployment's steps into `docs/deployment.md` under a section such as `## The Telemetry Pipelines`, and link that section from `docs/analytics.md` instead of repeating the commands on both pages.
 The runbook carries the commands, the ports, the configuration, and the restart; the plan carries the topology and the queries.
 
-### Separate The Environments By Project
+### Separate The Environments By Scope
 
-One backend instance carries two projects, `staging` and `production`, because the backend scopes its events and its dashboard to a project.
-Give each project its own client ID, configure each environment's build with its own, and verify that the staging build's events land in the staging project and the production build's in the production project.
+One backend instance carries one environment scope per environment, `staging` and `production`: an OpenPanel project, or the documented backend's equivalent.
+Give each scope its own credential such as a client ID, configure each environment's build with its own, and verify that the staging build's events land in the staging scope and the production build's in the production scope.
 
 The separation is what lets the team test the pipeline without writing the production metric.
-A single project for both environments makes every later chart a mixture, and no query can clean it afterwards.
+A single scope for both environments makes every later chart a mixture, and no query can clean it afterwards.
 
 ### Chart The Query The Page Records
 
-Build a dashboard in each project with at least one chart for a metric in the tree: the focus metric once it has a value, otherwise its L1 input.
+Build a dashboard in each environment scope with at least one chart for a metric in the tree: the focus metric once it has a value, otherwise its L1 input.
 Name the chart after its metric and run the `**Query:**` recorded in that metric's section, so the page owns the query and the chart owns the display.
 A chart that runs a query the page does not carry is a number nobody can recompute.
 
 ### Check The Staging Dashboard With A Test Event
 
-Send one event tagged `source=smoke` to the staging project, open the staging dashboard, and check that the chart shows it and that the metric excludes it.
+Send one event tagged `source=smoke` to the staging scope, open the staging dashboard, and check that the event list shows it and that the metric chart excludes it.
 Then open the production dashboard and check that it carries the same chart and query and has received no test traffic.
 
 Keep the dashboard's address and any credentials in the Moodle submission, per [Sensitive Information Reference](../requirements/visibility-requirements.md#sensitive-information-reference), and name the dashboard and its charts on the page instead of linking them.
@@ -205,10 +205,10 @@ Do not define an `SLI` for a chart the team wants; define the signal a test read
 ### Write The Labels A Test Can Read
 
 Write the `**Definition:**` with the labels the signal carries, the `**Unit:**` it is reported in, and the `**Window:**` it covers.
-The `SLI` the diagnosability test reads names the labels that identify the request and the failure, such as `request_id` and `outcome`, so the test can read one request's point rather than a total.
+The `SLI` the diagnosability test reads names the labels that identify the request and the failure, such as `request_id` and `outcome`, so the test can find one request's point as well as the aggregate.
 
-Record the `**Query:**` the dashboard chart runs, with the labels and the window it selects.
-A signal with no query has no chart, and a signal with no chart has no evidence.
+Record the `**Query:**` a chart uses when it shows the signal, with the labels and the window it selects.
+A signal without a chart still records its query, and a test can read it; a chart cannot run a query the page does not carry.
 
 ### Name The One `SLI` The Week Demonstrates
 
@@ -220,19 +220,19 @@ A `Planned` `SLI` is not yet a signal a test can read, and a `Dropped` one keeps
 The **observability backend** stores the signals and serves their dashboards.
 The default is OpenObserve, because one service stores and serves the signals with relatively low resources, and another documented backend is allowed, per [The Pipeline](../requirements/observability-requirements.md#the-pipeline).
 
-### Run One Instance With Two Organizations
+### Run One Instance With One Scope Per Environment
 
-One OpenObserve instance carries two organizations, `staging` and `production`, because the backend scopes a dashboard to an organization.
-Point each environment's build at its own organization, and keep the credentials in the Moodle submission and out of the repository.
+One OpenObserve instance carries one environment scope per environment, `staging` and `production`: an organization, or the documented backend's equivalent.
+Point each environment's build at its own scope, and keep the credentials in the Moodle submission and out of the repository.
 As with the analytics pipeline, write the steps and the configuration into `docs/deployment.md` and link them from `docs/observability.md`.
 
 Export the signals with OpenTelemetry, and keep the instrumentation in the container that measures the thing: a request duration belongs to the `backend`, not to a script that runs after the fact.
 
 ### Put The Query In The `SLI`, Not The Chart
 
-Build a dashboard in each organization with at least one chart for an `Active` `SLI`.
+Build a dashboard in each environment scope with at least one chart for an `Active` `SLI`.
 The chart names the `SLI` and runs the `**Query:**` recorded under it, and the page names the chart rather than linking its private address.
-Send the staging test traffic through the staging organization, and leave the production organization's dashboard configured with the same query and unexercised.
+Send the staging test traffic through the staging scope, and leave the production scope's dashboard configured with the same query and unexercised.
 
 ## Step 6: Write The Observability Requirement And Run Its Test
 
@@ -241,29 +241,30 @@ The rules for the requirement and its test are in [Quality Requirements](../requ
 
 ### State Diagnosability As The Requirement
 
-Use the `Maintainability` / `Analysability` pair and write the scenario as an operator's investigation: the operator is the `Source`, a failed request in the core task is the `Stimulus`, the staging deployment with the pipeline running is the `Environment`, the product's request path and its instrumentation is the `Artifact`, the labelled series for that request is the `Response`, and the endpoint's five-second exposure of the point is the `Response Measure`.
+Use the `Maintainability` / `Analysability` pair and write the scenario as an operator's investigation: the operator is the `Source`, a failed request in the core task is the `Stimulus`, the staging deployment with the pipeline running is the `Environment`, the product's request path and its instrumentation is the `Artifact`, the request's labelled point and the `SLI`'s aggregate series for the failure are the `Response`, and the endpoint's five-second exposure of the point and the five-minute P95 query are the `Response Measure`.
 
-The measure is about the product: the product's telemetry endpoint exposes the point, and the OpenObserve query shows the pipeline stored it.
+The measure is about the product: the product's telemetry endpoint exposes the point, and the OpenObserve query shows the pipeline stored and rendered the aggregate.
 A requirement about a dashboard would be a requirement about a tool, and the tool is replaceable.
 
 ### Make The Test Fail One Request
 
 Write a script or command, for example `scripts/check-sli.ts`, that runs the core task's traffic against `$STAGING_URL` and fails one booking request.
-Then read the series point from the product's telemetry endpoint and check that it appears within five seconds, carrying the request identifier and the failure label.
-After waiting up to a minute for the pipeline, record the `SLI`'s query in OpenObserve and the dashboard screenshot as the evidence that the pipeline stored and rendered the point.
+Then read the request's series point from the product's telemetry endpoint and check that it appears within five seconds, carrying the request identifier and the failure label.
+After waiting up to a minute for the pipeline, record the `SLI`'s five-minute P95 query result in OpenObserve and the dashboard screenshot as the evidence that the pipeline stored and rendered the signal.
 
 A short-window check is the week's required demonstration because it can pass before the deadline; a longer check a team runs on its own stays `Not verified` with its planned sprint, per [Quality Requirement Testing Plan](../requirements/planning-requirements.md#quality-requirement-testing-plan).
 
 ### Cite The `SLI` And Settle The Threshold
 
 The test's `**Runs at:**` names the staging deployment, the command, and the `Active` `SLI` it reads, linked, per [Quality Requirement Tests](../requirements/quality-requirements-requirements.md#quality-requirement-tests).
-Its `**Pass when:**` states the requirement's `Response Measure` made specific to staging and to the five-second window, and still settles the measure's threshold: one failed request is the instance the procedure produces, not a narrower bar.
+Its `**Pass when:**` states the requirement's `Response Measure` made specific to staging and to the five-second window, and still settles the measure's threshold: one failed request is the instance the procedure produces, not a narrower bar, and the `SLI`'s five-minute P95 query must return the failure series within one minute.
 
 Record the result as the testing plan's row, with `Checked` in the sprint and the evidence the `deployed` level requires, and declare any test traffic that reached production as a deviation.
 
 ### Re-Run A Runtime Test Only When It Helps
 
 Re-running an existing runtime `QRT-nn` with the same `Active` `SLI` is optional, and its row then names the new sprint in `Checked`.
+A re-run that adds an `SLI` citation reads it in its procedure, even when the test was written before Week 6.
 A failed re-run records its `Fails` result and does not remove the week's demonstration, which is the observability requirement's test.
 
 ## Step 7: Record The Evidence
@@ -278,8 +279,8 @@ Name the files so a reader can tell them apart, such as `analytics-staging.png` 
 
 ### Record The Point, The Query, And The Commit
 
-The observability test's evidence is the product endpoint's output for the failed request, the OpenObserve query's result after the wait, the chart that updated, the staging environment, and the commit the test ran against.
-The analytics test event's evidence is the staging chart that shows it and excludes it from the metric.
+The observability test's evidence is the product endpoint's output for the failed request, the `SLI`'s five-minute P95 query result after the wait, the chart that updated, the staging environment, and the commit the test ran against.
+The analytics test event's evidence is the staging dashboard's event list, which shows it, and the metric chart, which excludes it.
 
 Name no real address in any of it: use an environment variable or a placeholder, per [Environments And Deployment](../requirements/repository-requirements.md#environments-and-deployment).
 
@@ -350,13 +351,13 @@ The switch is what a team on a development machine uses, and what the review ask
 - **A dashboard only on localhost.**
   The customer reaches the dashboards from the university network, so a localhost dashboard shows nobody anything.
 - **A single dashboard for both environments.**
-  Each environment has its own dashboard in its own project or organization.
-- **A single project for both environments.**
+  Each environment has its own dashboard in its own environment scope.
+- **A single environment scope for both environments.**
   A dry run then pollutes the production metric, and no query can separate it afterwards.
-- **A `Metrics fed` column.**
-  Each metric's `**Source:**` names its events, so the table needs no reverse column.
 - **An `SLI` with no definition, unit, window, or query.**
   The signal is then a name, and a test cannot read it.
+- **A `QRT` that names an `SLI` without reading it in the procedure.**
+  A test that names an `SLI` in `**Runs at:**` reads that signal, whether it was written this week or re-run from an earlier week.
 - **A `QRT` that reads a `Planned` `SLI`.**
   A test names an `Active` `SLI`, because a planned signal is not emitted yet.
 - **An `SLO` family or a `Samples` field.**
@@ -368,4 +369,4 @@ The switch is what a team on a development machine uses, and what the review ask
 - **A dashboard on the public internet.**
   The backends and the dashboards are reachable from the university network only.
 - **A staging test event that reached production.**
-  The projects are separate, the event is tagged `source=smoke`, and a leak is declared as a deviation.
+  The environment scopes are separate, the event is tagged `source=smoke`, and a leak is declared as a deviation.

@@ -124,7 +124,7 @@ The testing plan carries each test's result, per [Quality Requirement Testing Pl
    | ----------------- | ----------------------------------------------------------------------------------------------------------------- |
    | `**Status:**`     | `Active` or `Dropped`, the test's own state, per [Identifier Rules](general-requirements.md#identifier-rules)     |
    | `**Level:**`      | One of `CI`, `scripted`, `deployed`, or `manual`, per rule 5                                                      |
-   | `**Runs at:**`    | What runs the test, in one line, per rule 6, and from Week 6 on the `Active` `SLI-nn` it reads, per rule 11       |
+   | `**Runs at:**`    | What runs the test, in one line, per rule 6, and, when it reads one, the `Active` `SLI-nn`, per rule 11           |
    | `**Why Manual:**` | Only on a `manual` test: why no command can check the requirement, in one sentence                                |
    | `**Dropped:**`    | Only on a dropped test: the date and the reason, per [Identifier Rules](general-requirements.md#identifier-rules) |
 
@@ -157,6 +157,7 @@ The testing plan carries each test's result, per [Quality Requirement Testing Pl
 
 11. A runtime `QRT-nn` written from Week 6 on is at level `scripted`, `deployed`, or `manual`, and it names the `Active` `SLI-nn` it reads in `**Runs at:**`, linked to the `SLI`'s section, per [The SLIs](observability-requirements.md#the-slis).
     A `manual` test that reads no signal is exempt, and it says so in `**Why Manual:**`.
+    A runtime test written before Week 6 that is re-run and given an `SLI-nn` citation reads the signal too: any test that names an `SLI-nn` in `**Runs at:**` reads it in its `### Procedure`, whenever it was written.
 12. Its `### Procedure` reads the signal the `SLI` defines, and its `**Pass when:**` states the requirement's `Response Measure` made specific to the test's environment and window, and still settles the measure's threshold.
     A particular request or event may be the instance the procedure produces, but it does not narrow the threshold.
 13. A `CI` test is not a runtime test and cites no `SLI`: the testability requirement's test is the `CI` test that proves a broken module fails the suite.
@@ -219,7 +220,7 @@ It lists every requirement once, with the priorities that order it and the pair 
 
 The priority matrix, the three active requirements with their tests, and the tests themselves, in `docs/quality-requirements/`, in the meeting-booking example.
 `QR-02` is the mandated testability requirement, so it names the frontend entry point `frontend/src/main.tsx` and the payment module `backend/src/payments/checkout.ts` in its scenario and carries `**Business importance:** High`.
-`QR-01` carries a `deployed` test that reads `SLI-01`, `QR-02` a `CI` test that cites no `SLI`, and `QR-04` a `deployed` test that reads `SLI-01`; `QR-03` is dropped, so it needs none.
+`QR-01` carries a `deployed` test that reads no `SLI`, because it measures the page's display time and not the backend's response; `QR-02` carries a `CI` test that cites no `SLI`; and `QR-04` a `deployed` test that reads `SLI-01`; `QR-03` is dropped, so it needs none.
 The `SLI` itself, its query, and the OpenObserve evidence are in [Observability Requirements](observability-requirements.md#full-example).
 
 From `docs/quality-requirements/README.md`:
@@ -282,7 +283,7 @@ The booking page shows the free slots within two seconds on a mid-range phone ov
 
 - **Status:** Active
 - **Level:** deployed
-- **Runs at:** the staging deployment on the university VM, from a machine on the university network: `scripts/check-booking-latency.ts $STAGING_URL`; it reads [`SLI-01`](../../observability.md#sli-01), which the `backend` exports.
+- **Runs at:** the staging deployment on the university VM, from a machine on the university network: `scripts/check-booking-latency.ts $STAGING_URL`.
 
 ### Procedure
 
@@ -382,15 +383,15 @@ The `backend`'s request path and its OpenTelemetry instrumentation.
 
 ### Response
 
-The product's telemetry endpoint exposes the `SLI`'s series point for that request, labelled with the request identifier and the failure.
+The product's telemetry endpoint exposes the request's point, labelled with the request identifier and the failure, and the `SLI`'s aggregate series for the failure.
 
 ### Response Measure
 
-Within five seconds of the failed request's response, the product's telemetry endpoint exposes one series point for that request, carrying its `request_id` and an `outcome` of `server_error`.
+Within five seconds of the failed request's response, the product's telemetry endpoint exposes one series point for that request, carrying its `request_id` and an `outcome` of `server_error`; within one minute, the `SLI-01` query returns the `server_error` series for the route with a P95 value.
 
 ## QRT-01
 
-A failed booking request in staging appears in the product's telemetry endpoint within five seconds, labelled with its request identifier and its failure.
+A failed booking request in staging appears in the product's telemetry endpoint within five seconds, labelled with its request identifier and its failure, and the `SLI`'s P95 query returns the failure series within one minute.
 
 - **Status:** Active
 - **Level:** deployed
@@ -401,7 +402,7 @@ A failed booking request in staging appears in the product's telemetry endpoint 
 1. Deploy the release candidate to the staging deployment on the university VM.
 2. From a machine on the university network, run `scripts/check-sli.ts $STAGING_URL`, which runs the core task's traffic in staging and fails one booking request.
 3. Read the series point the script prints from the product's telemetry endpoint for the failed request.
-4. After waiting up to one minute for the pipeline, record the `SLI-01` query's result in OpenObserve and the dashboard screenshot as the evidence that the pipeline stored and rendered the point.
+4. After waiting up to one minute for the pipeline, record the `SLI-01` query's result in OpenObserve, which returns the `server_error` series, and the dashboard screenshot as the evidence that the pipeline stored and rendered the signal.
 
-**Pass when:** within five seconds of the failed request's response, the product's telemetry endpoint exposes one series point for it, carrying its `request_id` and an `outcome` of `server_error`.
+**Pass when:** within five seconds of the failed request's response, the product's telemetry endpoint exposes one series point for it, carrying its `request_id` and an `outcome` of `server_error`; within one minute, the `SLI-01` query returns the `server_error` series for the route with a P95 value.
 ```
