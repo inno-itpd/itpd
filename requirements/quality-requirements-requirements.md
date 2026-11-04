@@ -68,6 +68,11 @@ The fields are the record that finds it in the matrix and says how important it 
 
 - Write the outcome as the state a reviewer can observe on the product, not as the test that would check it, so the requirement survives a change of test tool.
 
+**Since: W6**
+
+7. The requirement's `Response Measure` remains its target, and the `SLI-nn` a test reads is the measured signal the test names in its `**Runs at:**`, per [Quality Requirement Tests](#quality-requirement-tests).
+   No separate `SLO-nn` record is written.
+
 ## The Quality Attribute Scenario
 
 **Since: W4**
@@ -119,7 +124,7 @@ The testing plan carries each test's result, per [Quality Requirement Testing Pl
    | ----------------- | ----------------------------------------------------------------------------------------------------------------- |
    | `**Status:**`     | `Active` or `Dropped`, the test's own state, per [Identifier Rules](general-requirements.md#identifier-rules)     |
    | `**Level:**`      | One of `CI`, `scripted`, `deployed`, or `manual`, per rule 5                                                      |
-   | `**Runs at:**`    | What runs the test, in one line, per rule 6                                                                       |
+   | `**Runs at:**`    | What runs the test, in one line, per rule 6, and, when it reads one, the `Active` `SLI-nn`, per rule 11           |
    | `**Why Manual:**` | Only on a `manual` test: why no command can check the requirement, in one sentence                                |
    | `**Dropped:**`    | Only on a dropped test: the date and the reason, per [Identifier Rules](general-requirements.md#identifier-rules) |
 
@@ -147,6 +152,17 @@ The testing plan carries each test's result, per [Quality Requirement Testing Pl
     - A `scripted` test records the command and its output in a dated section of `reports/week-NN/README.md` or in a week-local supporting file the report links.
     - A `deployed` test records the command or tool, the staging environment, the output, the measured value, and the commit it ran against, with a screenshot when the result is visual, and names no real address.
     - A `manual` test records what was inspected, by whom, and what was observed, with a screenshot when the evidence is visual.
+
+**Since: W6**
+
+11. A runtime `QRT-nn` written from Week 6 on is at level `scripted`, `deployed`, or `manual`, and it names the `Active` `SLI-nn` it reads in `**Runs at:**`, linked to the `SLI`'s section, per [The SLIs](observability-requirements.md#the-slis).
+    A `manual` test that reads no signal is exempt, and it says so in `**Why Manual:**`.
+    A runtime test written before Week 6 that is re-run and given an `SLI-nn` citation reads the signal too: any test that names an `SLI-nn` in `**Runs at:**` reads it in its `### Procedure`, whenever it was written.
+12. Its `### Procedure` reads the signal the `SLI` defines, and its `**Pass when:**` states the requirement's `Response Measure` made specific to the test's environment and window, and still settles the measure's threshold.
+    A particular request or event may be the instance the procedure produces, but it does not narrow the threshold.
+13. A `CI` test is not a runtime test and cites no `SLI`: the testability requirement's test is the `CI` test that proves a broken module fails the suite.
+14. A dropped `SLI` leaves its requirement active when another `Active` `SLI` covers it: the `QRT`'s `**Runs at:**` names the replacement, or its testing-plan row becomes `Not verified`, per [Quality Requirement Testing Plan](planning-requirements.md#quality-requirement-testing-plan).
+    The requirement's `**Changed:**` records the loss only when its measure changed.
 
 ## The Allowed Pairs
 
@@ -202,20 +218,22 @@ It lists every requirement once, with the priorities that order it and the pair 
 
 ## Full Example
 
-The priority matrix, the two requirements with active tests, and the tests themselves, in `docs/quality-requirements/`, in the meeting-booking example.
+The priority matrix, the three active requirements with their tests, and the tests themselves, in `docs/quality-requirements/`, in the meeting-booking example.
 `QR-02` is the mandated testability requirement, so it names the frontend entry point `frontend/src/main.tsx` and the payment module `backend/src/payments/checkout.ts` in its scenario and carries `**Business importance:** High`.
-`QR-01` carries a `deployed` test and `QR-02` a `CI` test; `QR-03` is dropped, so it needs none.
+`QR-01` carries a `deployed` test that reads no `SLI`, because it measures the page's display time and not the backend's response; `QR-02` carries a `CI` test that cites no `SLI`; and `QR-04` a `deployed` test that reads `SLI-01`; `QR-03` is dropped, so it needs none.
+The `SLI` itself, its query, and the OpenObserve evidence are in [Observability Requirements](observability-requirements.md#full-example).
 
 From `docs/quality-requirements/README.md`:
 
 ```markdown
 # Quality requirements
 
-| QR                   | Outcome                                                                                                                     | Business importance | Technical risk | Characteristic         | Sub-characteristic | Status  |
-| -------------------- | --------------------------------------------------------------------------------------------------------------------------- | ------------------- | -------------- | ---------------------- | ------------------ | ------- |
-| [QR-01](qr/QR-01.md) | A client sees the free slots within two seconds of opening the coach's booking link on a mid-range phone.                   | High                | Medium         | Performance Efficiency | Time Behaviour     | Active  |
-| [QR-02](qr/QR-02.md) | A developer can run the checks that cover the payment module from a clean checkout, and a broken payment change fails them. | High                | Medium         | Maintainability        | Testability        | Active  |
-| [QR-03](qr/QR-03.md) | The booking page stays available for 99.9% of the month.                                                                    | Medium              | High           | Reliability            | Availability       | Dropped |
+| QR                   | Outcome                                                                                                                             | Business importance | Technical risk | Characteristic         | Sub-characteristic | Status  |
+| -------------------- | ----------------------------------------------------------------------------------------------------------------------------------- | ------------------- | -------------- | ---------------------- | ------------------ | ------- |
+| [QR-01](qr/QR-01.md) | A client sees the free slots within two seconds of opening the coach's booking link on a mid-range phone.                           | High                | Medium         | Performance Efficiency | Time Behaviour     | Active  |
+| [QR-02](qr/QR-02.md) | A developer can run the checks that cover the payment module from a clean checkout, and a broken payment change fails them.         | High                | Medium         | Maintainability        | Testability        | Active  |
+| [QR-04](qr/QR-04.md) | An operator can find a failed booking request in the product's response-time signal and see which request failed and what happened. | High                | Medium         | Maintainability        | Analysability      | Active  |
+| [QR-03](qr/QR-03.md) | The booking page stays available for 99.9% of the month.                                                                            | Medium              | High           | Reliability            | Availability       | Dropped |
 
 The tests and their results are in [the testing plan](../project-plan.md#quality-requirement-testing-plan).
 ```
@@ -330,4 +348,61 @@ The product's test suite runs from a clean checkout and fails when a payment tes
 3. Read the job's result.
 
 **Pass when:** the `test` job fails on the broken branch and passes on `main`, with at least one test covering each of `frontend/src/main.tsx` and `backend/src/payments/checkout.ts`.
+```
+
+From `docs/quality-requirements/qr/QR-04.md`:
+
+```markdown
+# QR-04: Find A Failed Request In The Operating Signals
+
+An operator investigating a failed booking request finds that request in the product's response-time signal and sees which request failed, in staging.
+
+- **Status:** Active
+- **Characteristic:** Maintainability
+- **Sub-characteristic:** Analysability
+- **Business importance:** High
+- **Technical risk:** Medium
+
+## Scenario
+
+### Source
+
+An operator investigates a booking request that failed.
+
+### Stimulus
+
+One booking request in the core task fails.
+
+### Environment
+
+The staging deployment on the university VM, with the observability pipeline running and `TELEMETRY_ENABLED` set.
+
+### Artifact
+
+The `backend`'s request path and the operating signals it emits for a booking request: the response-time histogram and the structured request log line.
+
+### Response
+
+The staging organization's queries return the request's log point, labelled with the request identifier, route, and failure, and the `SLI`'s aggregate series for the failure.
+
+### Response Measure
+
+Within five seconds of the failed request's response, the staging organization's query returns one log point for that request, carrying its `request_id`, its `route`, and an `outcome` of `server_error`; within one minute, the `SLI-01` query returns the `server_error` series for the route with a P95 value.
+
+## QRT-01
+
+A failed booking request in staging is queryable in the staging organization within five seconds, labelled with its request identifier, route, and failure, and the `SLI`'s P95 query returns the failure series within one minute.
+
+- **Status:** Active
+- **Level:** deployed
+- **Runs at:** the staging deployment on the university VM, from a machine on the university network: `scripts/check-sli.ts $STAGING_URL $OPENOBSERVE_URL`; it reads [`SLI-01`](../../observability.md#sli-01), which the `backend` exports to the staging organization.
+
+### Procedure
+
+1. Deploy the release candidate to the staging deployment on the university VM.
+2. From a machine on the university network, run `scripts/check-sli.ts $STAGING_URL $OPENOBSERVE_URL`, which runs the core task's traffic in staging, fails one booking request, and prints the failed request's `request_id`.
+3. Query the staging organization for the failed request's log line by its `request_id`; record the result and the time between the failed response and the query.
+4. After waiting up to one minute for the metric export, record the `SLI-01` query's result in the staging organization, which returns the `server_error` series, and the dashboard screenshot as the evidence that the pipeline stored and rendered the signal.
+
+**Pass when:** within five seconds of the failed request's response, the staging organization's query returns one log point for it, carrying its `request_id`, its `route`, and an `outcome` of `server_error`; within one minute, the `SLI-01` query returns the `server_error` series for the route with a P95 value.
 ```

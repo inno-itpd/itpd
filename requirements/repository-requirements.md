@@ -249,6 +249,10 @@ Both are built from the commit you are submitting, so that what a grader sees is
    When a file is genuinely required, use approved external storage and link to it.
 5. What may never be committed is in [Sensitive Information Reference](visibility-requirements.md#sensitive-information-reference).
 
+**Since: W6**
+
+6. A configuration file may be tracked when it carries no secret and no private-only value, such as a compose file that reads its values from environment variables.
+
 ## Sensitive-Data Incident Response
 
 **Since: W1**
@@ -365,7 +369,7 @@ It also skips the files that `.gitignore` lists, so a local run checks the same 
 
 10. A check that does not apply to your stack is recorded as not applicable, with the reason, rather than silently skipped.
 11. The automated tests include at least one test for each critical module the [testability quality requirement](quality-requirements-requirements.md#the-quality-requirement) names, and they run from a clean checkout, so a broken payment change fails the check.
-12. The continuous integration stops at the build and the tests: there is no deployment job, because the product CI cannot reach the university network, and the deployment is manual from a campus machine, per [Environments And Deployment](#environments-and-deployment).
+12. The continuous integration stops at the build and the tests: there is no deployment job, because the product CI cannot reach the university network, and the deployment is manual from a machine on the university network, per [Environments And Deployment](#environments-and-deployment).
 
 ## Environments And Deployment
 
@@ -390,21 +394,34 @@ The deployment runbook is `docs/deployment.md`, and the local setup guide stays 
 
 2. The university provides one VM per team, and it hosts both deployments.
    Get it from the university portal, recreate it, and set its password yourself, then connect to it over SSH from a machine on the university network.
-3. Every team has at least one member on campus, and that member runs the deployment and the `deployed` test from a machine there.
+3. Every team has at least one member on campus, and that member runs the deployment and the `deployed` test from a machine on the university network.
    The product CI cannot do either: it runs outside the university network, per [Continuous Integration](#continuous-integration).
 4. The customer reaches production from the university network at the VM's IPv4 address, and there is no domain name.
    That is what "live accessible" means in this course: the customer opens the product from the university network, not from the public internet.
 5. Staging and production are separate deployments on the VM, on separate ports, with separate configuration and separate secrets.
    Staging represents production closely enough that a passing test there is the confidence that the requirement holds in production, and a test run against staging never writes production data.
 6. Deploy by hand, from a machine on the university network: the release candidate goes to staging first, and the same commit then goes to production.
-7. After each production deploy, verify the [core task](minimum-usable-product-requirements.md#the-candidate) on the deployed product from a campus machine, and record what you checked with the release.
+7. After each production deploy, verify the [core task](minimum-usable-product-requirements.md#the-candidate) on the deployed product from a machine on the university network, and record what you checked with the release.
    A deploy that fails its verification is rolled back to the previous release, and `docs/deployment.md` says how.
-8. `docs/deployment.md` is the deployment runbook: the four environments, the VM and its campus-network access, the configuration, the manual deploy, the verification, and the rollback.
+8. `docs/deployment.md` is the deployment runbook: the four environments, the VM and access to it from the university network, the configuration, the manual deploy, the verification, and the rollback.
    It is not [Setup And Run Instructions](#setup-and-run-instructions): it links `docs/setup.md` for the build and the run, and repeats none of it.
 9. `docs/deployment.md` carries no real IPv4 address, host name, password, token, or secret.
    It uses placeholders such as `<university-vm-ipv4>`, and the deploy command reads the host from an environment variable; the real addresses are private-only, per [Sensitive Information Reference](visibility-requirements.md#sensitive-information-reference).
 10. The VM's configuration and its secrets are installed outside the repository, and no secret is committed.
     `.env.example` carries the shape, per [Configuration And Sensitive Information](#configuration-and-sensitive-information).
+
+**Since: W6**
+
+11. Two telemetry backends serve the product: the analytics backend, per [The Pipeline](analytics-requirements.md#the-pipeline), and the observability backend, per [The Pipeline](observability-requirements.md#the-pipeline).
+    Both run on the university VM, and both are reachable from where the customer works, on the university network.
+    Their secrets and private-only values are never tracked in the repository, and a sanitized configuration file may be tracked, per [Configuration And Sensitive Information](#configuration-and-sensitive-information).
+12. The analytics backend is OpenPanel by default and the observability backend is OpenObserve by default; another self-hosted backend is allowed when `docs/analytics.md` or `docs/observability.md` documents it.
+    Each backend carries one environment scope per environment: an OpenPanel project, an OpenObserve organization, or the documented backend's equivalent.
+13. The two backends' addresses, the four dashboards' addresses, and all credentials, including client IDs and tokens, are private-only, per [Sensitive Information Reference](visibility-requirements.md#sensitive-information-reference).
+14. From Week 6 on, `docs/deployment.md` carries the steps and configuration of both telemetry pipelines in addition to rule 8's parts: the analytics backend with its `staging` and `production` environment scopes and their dashboards, and the observability backend with its `staging` and `production` environment scopes and their dashboards, such as in a `## The Telemetry Pipelines` section.
+    It links `docs/analytics.md` and `docs/observability.md`, and the two plans own the topology.
+15. A staging test event never writes the production analytics scope, and the observability requirement's `deployed` test reads the product's staging endpoint and no production data.
+16. Neither backend is deployed by a workflow: the product CI cannot reach the university network, so the deployment stays manual, per [Continuous Integration](#continuous-integration).
 
 ## The Course Materials As An Agent Skill
 

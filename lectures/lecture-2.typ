@@ -132,7 +132,7 @@
   align(center)[
     #text(size: 34pt, weight: "bold", fill: accent)[Requirements and prototyping]
     #v(0.16in)
-    #text(size: 20pt, fill: muted)[IT Product Development]
+    #text(size: 20pt, fill: muted)[Lecture 2, IT Product Development]
   ]
   v(1.42in)
   align(center)[

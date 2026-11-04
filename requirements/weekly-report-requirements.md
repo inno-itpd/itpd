@@ -55,6 +55,26 @@ Who may see each item is in [Visibility Requirements](visibility-requirements.md
 
 15. The report's summary points at `docs/project-plan.md#quality-requirement-testing-plan` for the tests that are not `Passes`, and copies none of the rows.
 
+**Since: W6**
+
+16. The report's summary says whether the focus metric has a value yet and what it would need, links `docs/analytics.md` and `docs/observability.md`, and copies no chart or row from either page.
+    It shows at least one analytics metric that its query computes, and it does not present test traffic as a value.
+17. When a threshold review is due, a `## Threshold review` section carries it, per [The Threshold Of Success](planning-requirements.md#the-threshold-of-success): one table, with one row per goal that is `Open` when the review starts, in `TOS-nn` order, with these columns, in this order:
+
+    | Column                   | What it holds                                                                                                                                    |
+    | ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+    | `Goal`                   | The goal, linked to its section in `docs/threshold-of-success.md`, such as `[TOS-01](../../docs/threshold-of-success.md#tos-01)`                 |
+    | `Current measure`        | The goal's current `**Measure:**`, with the week it lands in                                                                                     |
+    | `New data can settle it` | `Yes` and the analytics or observability data that settles it, or `No` and why the data cannot                                                   |
+    | `Proposal`               | A proposed measure with its number, the week it lands in, and the metric's `###` link in `docs/analytics.md`, or `—` when the team proposes none |
+
+    Immediately after the table, in the same section, state in one sentence per row, in `TOS-nn` order, the goal's status after the review — `Open`, `Achieved`, or `Missed` — and link the goal to its section in `docs/threshold-of-success.md`.
+    The sentence gives the verdict, not why it was reached: a settled goal's `**Outcome:**` stays in `docs/threshold-of-success.md`, says what was found, and links the evidence, and the section does not restate it.
+    A goal settled in an earlier week is not in the table and needs no status sentence.
+    The section then says why the team proposed each measure in the table, or why it proposed none.
+
+18. When the week has evidence screenshots, the report embeds each one as an image in the section that describes it, and the assignment sets how many.
+
 **Recommended**
 
 - Use the same section order every week so readers learn it once.
@@ -64,10 +84,10 @@ Who may see each item is in [Visibility Requirements](visibility-requirements.md
 
 **Example**
 
-A Week 05 report, from `reports/week-05/README.md`:
+A Week 06 report, from `reports/week-06/README.md`:
 
 ```markdown
-# Week 05 report
+# Week 06 report
 
 ## Project
 
@@ -77,49 +97,89 @@ Our problem-space sentence: an expert who sells sessions online needs one link w
 
 ## What we did
 
-We deployed the release candidate to the staging and production instances on the university VM, added the automated tests and the CI checks, and implemented the tests for the two active High business-importance quality requirements.
+We wrote the analytics plan and its metric tree, instrumented the core task's events, and put an OpenPanel instance with a staging and a production project on the university VM.
+We wrote the observability plan and its `SLI`, instrumented the request log line, put OpenObserve beside the analytics backend, and built the four dashboards.
+We added the two stories for the product analyst and the system operator, the two architectural decision records, the container view's two self-hosted external systems, the diagnosability requirement and its test, the threshold review, and `REL-06`; we cut the release as [v0.6.0](https://github.com/<organization>/<repo>/releases/tag/v0.6.0).
 
 ## Findings
 
-The deployed test is what the time-behaviour requirement needed: it measures the booking page on staging, from a campus machine, against the same commit production runs.
-[The testing plan](../../docs/project-plan.md#quality-requirement-testing-plan) carries both tests, their results, and every row that is not `Passes`.
+The product now records how it is used and how it operates, and all four dashboards are reached from the university network.
+The focus metric is completed paid bookings per active coach per week, and it has no value yet: it needs paid bookings from people outside the team.
+The Week 7 usability test exercises the flow and yields usability findings, but it does not produce paid bookings, so the metric's first value comes from real use.
+The booking conversion rate is one of its inputs, and its query computes it from the events today.
+The analytics plan is [docs/analytics.md](../../docs/analytics.md) and the observability plan is [docs/observability.md](../../docs/observability.md).
+`QR-03 QRT-02` is still `Not verified` and moves to `SPRINT-07`; [the testing plan](../../docs/project-plan.md#quality-requirement-testing-plan) carries it and every other row that is not `Passes`.
 
-## Quality requirement tests
+## Threshold review
 
-The staging run of `4c1e9ab` from a campus machine reported 9 of 10 page loads under two seconds, so [`QR-01 QRT-01`](../../docs/quality-requirements/qr/QR-01.md#qrt-01) passes.
-The `test` job passed on the same commit, so [`QR-02 QRT-01`](../../docs/quality-requirements/qr/QR-02.md#qrt-01) passes.
+| Goal                                                | Current measure                                                                                                                      | New data can settle it                                                             | Proposal |
+| --------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------- | -------- |
+| [TOS-01](../../docs/threshold-of-success.md#tos-01) | One booking in the deployed product whose payment settled in the provider's sandbox, by the end of Week 6                            | Yes — the `booking_confirmed` and `payment_succeeded` events record it             | —        |
+| [TOS-03](../../docs/threshold-of-success.md#tos-03) | At least three of five participants completed the core task unaided, recorded in the Week 7 usability findings, by the end of Week 7 | No — a usability session is neither an analytics event nor an observability signal | —        |
+
+`[TOS-01](../../docs/threshold-of-success.md#tos-01)` is `Achieved`.
+`[TOS-03](../../docs/threshold-of-success.md#tos-03)` is `Open`.
+`TOS-02` is absent because it was settled in an earlier week.
+The team proposed no analytics-measured goal and no revised measure this week, because no remaining open goal is a number either pipeline can improve, and the customer agreed none was needed.
+
+## Analytics and observability
+
+The analytics plan is [docs/analytics.md](../../docs/analytics.md) and its events are in [the event table](../../docs/analytics.md#the-events).
+The staging dashboard's event list shows the test event tagged `source=smoke`, which the staging chart excludes, and the production dashboard is configured with the same query and has received no test traffic.
+
+![The analytics staging dashboard: the booking conversion rate chart and the event list that shows the smoke event](images/analytics-staging.png)
+
+![The analytics production dashboard: the same chart and query, with no test traffic](images/analytics-production.png)
+
+The observability plan is [docs/observability.md](../../docs/observability.md) and its `SLI` is [`SLI-01`](../../docs/observability.md#sli-01).
+The staging run of `scripts/check-sli.ts` failed one booking request, and the staging organization's log query returned the request's log point with its `request_id`, `route`, and an `outcome` of `server_error` within five seconds; the five-minute P95 query returned the `server_error` series within one minute, so [`QR-04 QRT-01`](../../docs/quality-requirements/qr/QR-04.md#qrt-01) passes.
+The team also re-ran [`QR-01 QRT-01`](../../docs/quality-requirements/qr/QR-01.md#qrt-01) as a regression check against the final staging deployment, and all ten page loads showed the free slots within two seconds, so it passed.
+The staging dashboard's chart shows the same `server_error` series.
+
+![The observability staging dashboard: the server error series from SLI-01's P95 query](images/observability-staging.png)
+
+![The observability production dashboard: the same query, with no test traffic](images/observability-production.png)
 
 ## Coverage
 
-| Deliverable                | Artifact                                                                                                    |
-| -------------------------- | ----------------------------------------------------------------------------------------------------------- |
-| Sprint plan and milestones | [docs/project-plan.md](../../docs/project-plan.md#milestones)                                               |
-| New stories                | [the two stories added this sprint](https://github.com/<organization>/<repo>/issues?q=is%3Aissue+sprint+05) |
-| Quality requirement tests  | [docs/quality-requirements/qr/QR-01.md](../../docs/quality-requirements/qr/QR-01.md#qrt-01)                 |
-| Testing plan               | [docs/project-plan.md](../../docs/project-plan.md#quality-requirement-testing-plan)                         |
-| Automated tests and CI     | [.github/workflows/ci.yml](../../.github/workflows/ci.yml)                                                  |
-| Deployment                 | [docs/deployment.md](../../docs/deployment.md)                                                              |
-| Feature documentation      | [docs/features.md](../../docs/features.md)                                                                  |
-| Week 4 action points       | [reports/week-05/meeting-report.md](meeting-report.md#previous-action-points)                               |
-| Customer validation        | [reports/week-05/meeting-report.md](meeting-report.md)                                                      |
-| `REL-05`                   | [the plan's `REL-05` block](../../docs/project-plan.md#rel-05)                                              |
-| Sprint retrospective       | [reports/week-05/sprint-retrospective.md](sprint-retrospective.md)                                          |
-| AI usage                   | [reports/week-05/ai-usage.md](ai-usage.md)                                                                  |
+| Deliverable                   | Artifact                                                                                                                                                                                                                                                        |
+| ----------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Sprint plan and new stories   | [docs/project-plan.md](../../docs/project-plan.md#sprint-06) and [the two stories](https://github.com/<organization>/<repo>/issues?q=is%3Aissue+sprint+06)                                                                                                      |
+| Analytics plan                | [docs/analytics.md](../../docs/analytics.md)                                                                                                                                                                                                                    |
+| Events and instrumentation    | [docs/analytics.md](../../docs/analytics.md#the-events)                                                                                                                                                                                                         |
+| Analytics dashboards          | [staging](images/analytics-staging.png) and [production](images/analytics-production.png)                                                                                                                                                                       |
+| Observability plan and `SLI`s | [docs/observability.md](../../docs/observability.md)                                                                                                                                                                                                            |
+| Observability dashboards      | [staging](images/observability-staging.png) and [production](images/observability-production.png)                                                                                                                                                               |
+| Feature documentation         | [docs/features.md](../../docs/features.md)                                                                                                                                                                                                                      |
+| Functional requirements       | [docs/functional-requirements/README.md](../../docs/functional-requirements/README.md)                                                                                                                                                                          |
+| ADRs and container view       | [ADR-005](../../docs/architecture/adr/ADR-005.md), [ADR-006](../../docs/architecture/adr/ADR-006.md), and [the container view](../../docs/architecture/README.md#container-view)                                                                                |
+| Observability requirement     | [QR-04](../../docs/quality-requirements/qr/QR-04.md) and [its test](../../docs/quality-requirements/qr/QR-04.md#qrt-01)                                                                                                                                         |
+| Runtime test re-run           | [the testing plan](../../docs/project-plan.md#quality-requirement-testing-plan)                                                                                                                                                                                 |
+| Threshold review              | [the threshold review](#threshold-review)                                                                                                                                                                                                                       |
+| Week 5 action points          | [reports/week-06/meeting-report.md](meeting-report.md#previous-action-points)                                                                                                                                                                                   |
+| Week 5 open questions         | [reports/week-06/meeting-report.md](meeting-report.md#previous-open-questions)                                                                                                                                                                                  |
+| Meeting script                | [reports/week-06/meeting-script.md](meeting-script.md)                                                                                                                                                                                                          |
+| Meeting transcript            | [reports/week-06/meeting-transcript.md](meeting-transcript.md)                                                                                                                                                                                                  |
+| Customer validation           | [reports/week-06/meeting-report.md](meeting-report.md)                                                                                                                                                                                                          |
+| `REL-06`                      | [v0.6.0](https://github.com/<organization>/<repo>/releases/tag/v0.6.0), [the release body](https://github.com/<organization>/<repo>/releases/tag/v0.6.0), [the changelog](../../CHANGELOG.md), and [the plan's REL-06 block](../../docs/project-plan.md#rel-06) |
+| Sprint retrospective          | [reports/week-06/sprint-retrospective.md](sprint-retrospective.md)                                                                                                                                                                                              |
+| AI usage                      | [reports/week-06/ai-usage.md](ai-usage.md)                                                                                                                                                                                                                      |
 
 ## Contribution
 
-| Member | Work                                                                         |
-| ------ | ---------------------------------------------------------------------------- |
-| @alice | [PR #41](...), the deployment runbook, [approved](...) @bob                  |
-| @bob   | [PR #42](...), the automated tests and the CI checks, [approved](...) @carol |
+| Contributor | Contribution                                                                                                                                                                                                                                       |
+| ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| @ana        | [the analytics plan](https://github.com/<organization>/<repo>/pull/41), [the events](https://github.com/<organization>/<repo>/pull/42), and [the analytics dashboards](https://github.com/<organization>/<repo>/pull/43), reviewed by @bo          |
+| @bo         | [the observability plan](https://github.com/<organization>/<repo>/pull/44), [`SLI-01`](https://github.com/<organization>/<repo>/pull/44), and [the observability dashboards](https://github.com/<organization>/<repo>/pull/45), reviewed by @ana   |
+| @cyd        | [the two ADRs](https://github.com/<organization>/<repo>/pull/46), [the container view](https://github.com/<organization>/<repo>/pull/46), and [the diagnosability requirement](https://github.com/<organization>/<repo>/pull/47), reviewed by @ana |
 
 ## Repository evidence
 
-[Reviewed pull request](...), [link check run](...), [Markdown check run](...), [product-code CI run](...), [actionlint run](...).
+The merged pull request for the analytics work, the merged pull request for the observability work, with the green Markdown, link, `actionlint`, and product-code CI checks on `main`.
 
 ## Deviations
 
-None.
+`QR-03 QRT-02` was planned for `SPRINT-06`, and its availability window is still open at the deadline, so it moves to `SPRINT-07`; [the testing plan](../../docs/project-plan.md#quality-requirement-testing-plan) carries the row.
 
 ## Privacy
 

@@ -192,6 +192,11 @@ The system context diagram is the picture of the [boundary](#boundary): the prod
    - Everything on the diagram exchanges something with the product.
      Nothing on it does a job the product claims for itself, and nothing on it does a job the boundary leaves to nobody.
 
+**Since: W6**
+
+7. A system the team self-hosts only to operate the product, such as an analytics or observability backend, is not part of this picture: it handles no boundary job and the product's users never meet it.
+   It belongs in the architecture document's [container view](architecture-requirements.md#container-view), not here.
+
 **Recommended**
 
 - Draw the boundary itself, as a frame or a box around the product, so the line the list describes is visible.

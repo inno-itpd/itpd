@@ -322,13 +322,32 @@ Next: Week 3 is planning and the minimum usable product, and it has no assignmen
 
 ## A6
 
-- [ ] address the Week 6 `docs/analytics.md` row once the W6 assignment is written
-- [ ] course/syllabus: decide the W6 maintained artifact
+- [x] Lecture:
+  - [x] Analytics vs observability
+  - [x] Metric and counter-metric
+- [x] Fix line in planning-and-tracking.md to "The release body has one primary reader: the customer." (superseded by `A5-DEC-042`)
+- [x] Assignment
+  - [x] Review ToS wrt. product analytics metrics
+    - The threshold review is the assignment's preparation, and it proposes an analytics-measured goal without moving the bar; the customer's `DEC-nnn` at the Sprint Review moves it, per `A6-DEC-013`.
+  - [x] OpenObserve - fast, easy to deploy, all-in-one
+    - OpenObserve is the observability backend, and OpenPanel is the analytics backend; both are defaults with a documented alternative, per `A6-DEC-003`.
+- [x] address the Week 6 `docs/analytics.md` row once the W6 assignment is written
+  - `docs/analytics.md` and `docs/observability.md` are the Week 6 maintained artifacts, in the destination map and the routers, per `A6-DEC-002` and `A6-DEC-016`.
+- [x] course/syllabus: decide the W6 maintained artifact
+  - The Week 6 syllabus names both plans, the four dashboards, the two internal stories, the two ADRs, the requirement and its test, the threshold review, and `REL-06`.
+- [x] The deck is Week 7's, Submission 7 on 14 November carries it, and the Week 8 class presents it, per `A6-DEC-004`, `A6-DEC-024`, and `A6-DEC-025`.
+- [x] The four dashboards are the week's evidence, not features: `docs/features.md` carries the two internal capabilities, per `A6-DEC-019`.
+- [x] `course/plans/` has its row in `AGENTS.md`, and `course/decisions/a6.md` records the week's decisions.
+- [x] Counter-metric should be L1
+  - It is nested at L1 under the focus metric, marked as guarding it, and stays a guard rather than an input metric, so the tree has one root and the one-parent rule holds. `A6-DEC-002`.
+- [x] Why assume there's an endpoint for telemetry in the backend? doesn't it push to openobserve?
+  - It does push: the product exports the histogram and a structured per-request log line to OpenObserve, and the test queries the staging organization; there is no separate product telemetry endpoint.
+    The `SLI`'s per-request point is the log line, and the dashboard is evidence. `A6-DEC-026`.
 
 ## A7
 
 - [ ] Add the production verification to the release record after the UAT (user acceptance testing) work
-  - The release body stays user-facing, and the plan's `REL-nn` block has no production check for now.
+  - The release body carries no production check, and the plan's `REL-nn` block has none for now.
     During the deferral, the week report records the checked core task, per `A5-DEC-025`; `repository-requirements.md` rule 7 and Assignment 5's Part 3 item stay as written.
     Once UATs are designed, add `**Checked UATs:**` beside `**Checked QRs:**`, decide whether `repository-requirements.md` rule 7 stays in force, and where the check is recorded.
 

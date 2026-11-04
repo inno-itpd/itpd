@@ -264,7 +264,7 @@ The rules:
 
 This week:
 
-1. Keep `CHANGELOG.md` current through the week, with an `[Unreleased]` entry for each user-visible change.
+1. Keep `CHANGELOG.md` current through the week, with an `[Unreleased]` entry for each notable change.
 2. After the meeting and any rework, merge the sprint's pull requests, push the tag on that commit, and protect the tag from being moved or deleted.
 3. Merge what links the tag after it exists, in this order: the changelog's released section, the plan's `REL-04` line, and the week's report.
 

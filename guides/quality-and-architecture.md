@@ -242,6 +242,13 @@ C4 defines it at [https://c4model.com/abstractions/container](https://c4model.co
 The word does not mean a Docker container, and a JAR, a DLL, or a module organises the code inside a container rather than being one.
 Write down what you deploy or rent today rather than what you plan to split into later, and count a managed database or a serverless function as a container, because the team still deploys to it and owns what it stores.
 
+A system the team runs but does not build is one of two cases.
+A managed database or a serverless function is a container, because the product needs it and the team owns what it stores.
+A backend the product only sends telemetry to and does not need to work is an external system even when the team deploys it on its own VM, because it observes the product rather than being part of it.
+For that system, say that it is self-hosted in one sentence under the view and in the legend, so a dashed box is not read as another party's service.
+
+The context diagram stays the picture of the product's business environment, so an operational backend added later belongs in this view and not there.
+
 Draw the containers and the external systems they call, label each box with its technology, and label each arrow with what crosses it.
 Then write `### Container Responsibilities` with one row per box: what the container does in two to five clauses, and the data it owns.
 The table is where a new member looks to decide where a change goes, so write it for them rather than for the diagram.

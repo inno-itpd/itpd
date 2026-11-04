@@ -155,7 +155,7 @@ The changelog, the tags, and the release titles follow [Release Requirements](re
 
    The block is an index of what was checked in the sprint, not a quality claim: the testing plan's rows carry each test's result, and its `Checked` column names the sprint of each test's last check.
    A sprint with no checked requirement says `None` in `**Checked QRs:**` and keeps the testing-plan sentence, because the plan still carries the planned and unverified rows.
-   [Release Requirements](releases-requirements.md#cutting-a-release) owns the user-facing release body; the block is the release's technical record.
+   [Release Requirements](releases-requirements.md#cutting-a-release) owns the release body for whoever deploys it; the block is the release's technical record.
 
 ## Quality Requirement Testing Plan
 
@@ -268,9 +268,18 @@ The steps that produce the set, from picturing failure to keeping the minimal se
    A `Goal` link is never removed: a dropped goal keeps its rows, and its `**Dropped:**` field carries the state.
    A correction that changes no meaning, such as a typo, is not an update.
 
+**Since: W6**
+
+10. In Week 6 the team reviews each open `TOS-nn` against what it can now measure: the goal's current `**Measure:**`, and whether the analytics or the observability data can settle it.
+    The review is preparation for the Sprint Review, and it is the `## Threshold review` section of the weekly report, one row per open goal, per [Weekly Report Requirements](weekly-report-requirements.md#weekly-public-report).
+11. The team may propose an analytics-measured goal or a revised `**Measure:**`, and a proposed measure states its number and the week it lands in and links the metric's `###` section in `docs/analytics.md`.
+    No goal is required to change.
+12. Only the customer's `DEC-nnn` agreed at the Sprint Review moves the bar: the goal's `**Changed:**` cites it, per rule 3, and the meeting report records it in `## Decisions`, per [Meeting Report](customer-meetings-requirements.md#meeting-report).
+13. A goal whose measure is already settled at the review is set `Achieved` or `Missed` with its `**Outcome:**`, per rule 4, and a goal whose measure lands later stays `Open`.
+
 ## Full Example
 
-Both files of the meeting-booking example, after Week 5, trimmed to the milestone sections for Weeks 3, 5, and 6, the sprints they run over, and the testing plan.
+Both files of the meeting-booking example, after Week 6, trimmed to the milestone sections for Weeks 3, 5, and 6, the sprints they run over, the testing plan, and the threshold's goals.
 
 From `docs/project-plan.md`:
 
@@ -298,11 +307,12 @@ A client reschedules a booking without emailing the coach, the booking page show
 
 ### MLS-06
 
-- **Due:** 2026-11-07
+- **Due:** 2026-11-08
 - **Sprints:** [SPRINT-06](#sprint-06)
 - **Advances:** [TOS-01](threshold-of-success.md#tos-01)
 
 A coach takes one real paid booking through the deployed product, from the booking link to the confirmation.
+The product reports how it is used and how it operates.
 
 ## Sprints
 
@@ -353,20 +363,31 @@ A client sees the free slots within two seconds, and the product runs on the sta
 
 ### SPRINT-06
 
-A coach takes one real paid booking through the deployed product.
+The product reports how it is used and how it operates, and the two dashboards show both on the university network.
 
-- **Due:** 2026-11-07
+- **Due:** 2026-11-08
+- **Sprint Backlog:** [the issues scheduled into SPRINT-06](https://github.com/<organization>/<repo>/milestone/4)
+- **Planned Velocity:** 8
+- **Actual Velocity:** 8; nothing moved out.
 
 #### REL-06
 
+- **Released:** [v0.6.0](https://github.com/<organization>/<repo>/releases/tag/v0.6.0) on 2026-11-05.
+- **Checked QRs:**
+  - [QR-01](quality-requirements/qr/QR-01.md)
+  - [QR-04](quality-requirements/qr/QR-04.md)
+
+  The [testing plan](#quality-requirement-testing-plan) carries each test's result.
+
 ## Quality Requirement Testing Plan
 
-| QR                                        | QRT                                                     | Status       | Checked                 | Planned for sprint      | Evidence                                                                                        |
-| ----------------------------------------- | ------------------------------------------------------- | ------------ | ----------------------- | ----------------------- | ----------------------------------------------------------------------------------------------- |
-| [QR-01](quality-requirements/qr/QR-01.md) | [QR-01 QRT-01](quality-requirements/qr/QR-01.md#qrt-01) | Passes       | [SPRINT-05](#sprint-05) | [SPRINT-05](#sprint-05) | [the staging run in the Week 05 report](../reports/week-05/README.md#quality-requirement-tests) |
-| [QR-02](quality-requirements/qr/QR-02.md) | [QR-02 QRT-01](quality-requirements/qr/QR-02.md#qrt-01) | Passes       | [SPRINT-05](#sprint-05) | [SPRINT-05](#sprint-05) | [the CI run on `4c1e9ab`](...)                                                                  |
-| [QR-03](quality-requirements/qr/QR-03.md) | [QR-03 QRT-01](quality-requirements/qr/QR-03.md#qrt-01) | Passes       | [SPRINT-05](#sprint-05) | [SPRINT-05](#sprint-05) | [the staging run in the Week 05 report](../reports/week-05/README.md#quality-requirement-tests) |
-| [QR-03](quality-requirements/qr/QR-03.md) | [QR-03 QRT-02](quality-requirements/qr/QR-03.md#qrt-02) | Not verified | None                    | [SPRINT-06](#sprint-06) | None                                                                                            |
+| QR                                        | QRT                                                     | Status       | Checked                 | Planned for sprint      | Evidence                                                                                          |
+| ----------------------------------------- | ------------------------------------------------------- | ------------ | ----------------------- | ----------------------- | ------------------------------------------------------------------------------------------------- |
+| [QR-01](quality-requirements/qr/QR-01.md) | [QR-01 QRT-01](quality-requirements/qr/QR-01.md#qrt-01) | Passes       | [SPRINT-06](#sprint-06) | [SPRINT-05](#sprint-05) | [the staging run in the Week 06 report](../reports/week-06/README.md#analytics-and-observability) |
+| [QR-02](quality-requirements/qr/QR-02.md) | [QR-02 QRT-01](quality-requirements/qr/QR-02.md#qrt-01) | Passes       | [SPRINT-05](#sprint-05) | [SPRINT-05](#sprint-05) | [the CI run on `4c1e9ab`](...)                                                                    |
+| [QR-04](quality-requirements/qr/QR-04.md) | [QR-04 QRT-01](quality-requirements/qr/QR-04.md#qrt-01) | Passes       | [SPRINT-06](#sprint-06) | [SPRINT-06](#sprint-06) | [the staging run in the Week 06 report](../reports/week-06/README.md#analytics-and-observability) |
+| [QR-03](quality-requirements/qr/QR-03.md) | [QR-03 QRT-01](quality-requirements/qr/QR-03.md#qrt-01) | Passes       | [SPRINT-05](#sprint-05) | [SPRINT-05](#sprint-05) | [the staging run in the Week 05 report](../reports/week-05/README.md#quality-requirement-tests)   |
+| [QR-03](quality-requirements/qr/QR-03.md) | [QR-03 QRT-02](quality-requirements/qr/QR-03.md#qrt-02) | Not verified | None                    | [SPRINT-07](#sprint-07) | None                                                                                              |
 
 ## Progress Monitoring
 
@@ -384,8 +405,9 @@ From `docs/threshold-of-success.md`:
 
 A coach takes one real paid booking through the product by the end of Week 6.
 
-- **Status:** Open
+- **Status:** Achieved
 - **Measure:** one booking in the deployed product whose payment settled in the provider's sandbox, by the end of Week 6.
+- **Outcome:** a client booked a paid session through the production deployment on 2026-11-04, and the payment settled in the provider's sandbox; the review is recorded in [the Week 06 report](../reports/week-06/README.md#the-threshold-review).
 - **Changed:**
   - Lowered from ten bookings to one: one real booking proves the whole loop, and ten by Week 6 was a guess, per [`DEC-008`](decisions.md#dec-008).
 
@@ -397,6 +419,13 @@ Every story in the Week 2 candidate is accepted by the customer at the Week 3 me
 - **Measure:** the customer's verdict on each candidate story, recorded as a `DEC-nnn`, at the Week 3 meeting.
 - **Outcome:** `US-08` was moved out of the candidate instead of accepted, by the customer's decision, per [`DEC-010`](decisions.md#dec-010); the other two stories were accepted.
 
+## TOS-03
+
+Three clients outside the team complete the core task unaided in the Week 7 usability test.
+
+- **Status:** Open
+- **Measure:** at least three of five participants completed the core task unaided, recorded in the Week 7 usability findings, by the end of Week 7.
+
 ## Failure And Success Statements
 
 | Goal              | Success statement                                                         | Failure statement                                   |
@@ -404,5 +433,6 @@ Every story in the Week 2 candidate is accepted by the customer at the Week 3 me
 | [TOS-01](#tos-01) | A real user completes the core task end to end.                           | We never put it in front of a real user.            |
 | [TOS-01](#tos-01) | A booking pays through the provider.                                      | We never took a real payment.                       |
 | [TOS-02](#tos-02) | The customer accepts the Week 2 candidate.                                | The customer never accepted it.                     |
+| [TOS-03](#tos-03) | A client outside the team completes the core task without help.           | The product only works for the people who built it. |
 | —                 | A teammate run it from a clean checkout following the setup instructions. | Nobody outside the team could run the product code. |
 ```

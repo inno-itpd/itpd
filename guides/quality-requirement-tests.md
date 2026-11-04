@@ -26,7 +26,7 @@ Making a response measure runnable is the hour that decides whether the rest is 
   - [Close With The Pass Criterion](#close-with-the-pass-criterion)
 - [Step 3: Pick The Environment The Test Needs](#step-3-pick-the-environment-the-test-needs)
   - [Let The Check Choose The Level](#let-the-check-choose-the-level)
-  - [Run The Deployed Test From Campus](#run-the-deployed-test-from-campus)
+  - [Run The Deployed Test From The University Network](#run-the-deployed-test-from-the-university-network)
   - [Fall Back When Staging Is Missing](#fall-back-when-staging-is-missing)
   - [Keep The Inspection Out Of The Deployed Level](#keep-the-inspection-out-of-the-deployed-level)
 - [Step 4: Record The Progress](#step-4-record-the-progress)
@@ -109,6 +109,10 @@ The status is not the result, and [Step 4](#step-4-record-the-progress) is where
 `**Runs at:**` names what runs the test in one line, and the line is what a second person needs to re-run the check: the workflow and its step, the script path or the command, the staging deployment and the command or tool, or the inspection step.
 Write the step rather than the workflow alone: "the `test` job of `.github/workflows/ci.yml`, on every pull request and on `main`" is re-runnable, and "CI" is not.
 
+From Week 6 on, a runtime test also names the `Active` `SLI-nn` it reads in `**Runs at:**`, and its procedure reads that signal, per [Quality Requirement Tests](../requirements/quality-requirements-requirements.md#quality-requirement-tests).
+A test written before Week 6 that is re-run with an `SLI` citation does the same, so a test never names a signal it does not read.
+[Step 6: Write The Observability Requirement And Run Its Test](analytics-and-observability.md#step-6-write-the-observability-requirement-and-run-its-test) is that method.
+
 ### Justify A Manual Test
 
 A `manual` test carries `**Why Manual:**` in one sentence, and the sentence has to say why no command can check the requirement.
@@ -122,7 +126,7 @@ When an active requirement's check can be automated, that check is the one the t
 
 The `### Procedure` is a numbered list of the steps somebody else runs: set up the state, perform the action, and read the output.
 Write the output the reader is looking for, in the units the criterion uses, so the last step is reading a number rather than hunting for one.
-Name where the runner stands, because a step that only works on the author's laptop is not a procedure: on the campus machine, against the staging deployment, or from a clean checkout.
+Name where the runner stands, because a step that only works on the author's laptop is not a procedure: on the university network, against the staging deployment, or from a clean checkout.
 
 Keep the verdict out of the procedure.
 The steps produce the number, and the pass criterion judges it, so a reader who stops before the criterion knows what was measured and no more.
@@ -171,7 +175,7 @@ A measurement of the built product under a production-like load needs staging; a
 
 The testability requirement is the anchor of the week, because its check is the suite itself: it runs from a clean checkout in the product CI, so it is `CI`, and the critical modules it has to cover come from [Write The Testability Requirement Against The Code](quality-and-architecture.md#write-the-testability-requirement-against-the-code).
 
-### Run The Deployed Test From Campus
+### Run The Deployed Test From The University Network
 
 A `deployed` test exists because the product CI cannot reach the university network.
 The staging deployment is reachable from a machine on that network, so the team's member on campus runs the check, and the test's `**Runs at:**` names the staging deployment rather than production.
@@ -179,6 +183,7 @@ Write the procedure around the runner they already have: the SSH session, the br
 
 The staging deployment is the test bed, and production is where the customer uses the product.
 A check run against production measures a state the team has already promised rather than a state it can still change.
+When the signal the test measures is stored in the staging observability backend, the test queries that backend and the dashboard is evidence; the query is the measurement, and the test is still `deployed` because it runs against staging from the university network.
 
 ### Fall Back When Staging Is Missing
 

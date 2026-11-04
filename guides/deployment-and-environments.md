@@ -7,6 +7,8 @@ Which test level runs in which environment is in [Quality Requirement Tests](../
 The addresses are private-only, per [Sensitive Information Reference](../requirements/visibility-requirements.md#sensitive-information-reference), and `docs/setup.md` stays the local guide, per [Setup And Run Instructions](../requirements/repository-requirements.md#setup-and-run-instructions).
 This guide is the method: drawing the map, preparing the machine, configuring it, deploying twice, and writing down what works.
 
+The two telemetry pipelines are deployed the same way, and their method is in [Guide: Product Analytics And Observability](analytics-and-observability.md): [Step 3](analytics-and-observability.md#step-3-deploy-the-analytics-backend-and-expose-the-dashboards) puts the analytics backend on the university network, and [Step 5](analytics-and-observability.md#step-5-deploy-openobserve-and-build-the-sli-dashboards) puts the observability backend beside it.
+
 **Timebox:** about a day, most of it on the VM before anything is deployed.
 The first deploy is the slow one, because the access, the configuration, and the ports are settled there; every later deploy is one command and one check.
 
@@ -21,7 +23,7 @@ The first deploy is the slow one, because the access, the configuration, and the
 - [Step 2: Prepare The VM](#step-2-prepare-the-vm)
   - [Get It From The Portal And Recreate It](#get-it-from-the-portal-and-recreate-it)
   - [Set The Password Yourself](#set-the-password-yourself)
-  - [Reach It From Campus](#reach-it-from-campus)
+  - [Reach It From The University Network](#reach-it-from-the-university-network)
   - [Keep The Address Out Of The Repository](#keep-the-address-out-of-the-repository)
   - [Give Staging And Production Their Own Ports](#give-staging-and-production-their-own-ports)
   - [Check The Customer Can Open It](#check-the-customer-can-open-it)
@@ -110,7 +112,7 @@ Record the image and the shape in the runbook, because "the VM from the portal" 
 Set the machine's password to a team secret and keep it out of the repository, per [Configuration And Sensitive Information](../requirements/repository-requirements.md#configuration-and-sensitive-information).
 The password goes in the team's password manager and in the Moodle submission when the week needs it, and it is never a value the runbook carries.
 
-### Reach It From Campus
+### Reach It From The University Network
 
 The VM is reachable from the university network, so the SSH session starts from a machine on that network: a lab machine, or the campus connection the university provides.
 Every team has at least one member on campus, and that member tests the access before the deployment day rather than on it.
@@ -147,7 +149,8 @@ It is the checklist a teammate compares their machine against: a variable missin
 
 The staging and production values live on the VM: an environment file under the service's directory or the file the service's unit loads, whichever the team's setup uses.
 The repository holds the shape and the runbook says where the values live on the machine; no secret is committed, and the two deployments do not share one.
-A deployment is not a user-visible change, so the changelog does not record it: the runbook describes it, and the week's report records the production verification, per [The Changelog](../requirements/releases-requirements.md#the-changelog) and [Environments And Deployment](../requirements/repository-requirements.md#environments-and-deployment).
+The act of deploying is not a change to the product, so the changelog does not record it; a change to how the product is deployed is notable, and the runbook carries the procedure.
+The week's report records the production verification, per [The Changelog](../requirements/releases-requirements.md#the-changelog) and [Environments And Deployment](../requirements/repository-requirements.md#environments-and-deployment).
 
 ### Build Once And Deploy The Same Commit Twice
 
@@ -167,14 +170,14 @@ This step ends with the other implemented test's result and the evidence that go
 
 ### Ship The Release Candidate To Staging First
 
-From a campus machine, deploy the candidate to staging and stop there.
+From a machine on the university network, deploy the candidate to staging and stop there.
 A broken configuration is cheap at this point: the customer's instance has not changed, and rolling back means starting the previous staging release rather than repairing production.
 
 ### Run The Other Implemented Test Where It Can Run
 
 The test's level in its `QRT-nn` section decides what runs: a `deployed` check against staging when staging is available, and a `scripted` or `CI` check when it is not.
 Run the procedure as the section writes it, read the output, and compare it against the `**Pass when:**` criterion.
-When the check is deployed, the runner is the member on campus and the command reads the address from an environment variable, per [Run The Deployed Test From Campus](quality-requirement-tests.md#run-the-deployed-test-from-campus).
+When the check is deployed, the runner is the member on campus and the command reads the address from an environment variable, per [Run The Deployed Test From The University Network](quality-requirement-tests.md#run-the-deployed-test-from-the-university-network).
 
 ### Capture The Evidence During The Run
 
@@ -194,7 +197,7 @@ Production is the state the customer uses, so this step is about the same commit
 
 ### Deploy The Commit Staging Passed
 
-Deploy the candidate that staging ran, from a campus machine, and do not rebuild it on the way.
+Deploy the candidate that staging ran, from a machine on the university network, and do not rebuild it on the way.
 When staging has not run, or its result is `Fails`, production waits: a deploy that skips the check is a deploy nobody has tested.
 
 ### Verify The Core Task And Nothing More
@@ -221,7 +224,7 @@ The tag then names the commit the deployment verified, and the version is the te
 
 ### Write The Runbook For The Next Person
 
-Open with the environment map, then the VM and its campus-network access, then the configuration, the deploy, the verification, and the rollback, in the order the work happens.
+Open with the environment map, then the VM and access to it from the university network, then the configuration, the deploy, the verification, and the rollback, in the order the work happens.
 Every command is copy-pasteable and every value it needs is a placeholder or a variable, so a reader substitutes one value from the Moodle submission and runs the page top to bottom.
 
 ### Keep The Real Values In Moodle

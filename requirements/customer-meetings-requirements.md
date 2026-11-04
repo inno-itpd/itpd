@@ -125,6 +125,11 @@ A Week 2 validation meeting.
 4. Show the deployed production instance on the university VM as the working software, reached from the university network, and show each implemented `QRT-nn`'s result at its level with it, per [Quality Requirement Tests](quality-requirements-requirements.md#quality-requirement-tests).
    When the VM is unavailable, show the local product and the deployment plan, and declare the [deviation](weekly-report-requirements.md#declaring-deviations).
 
+**Since: W6**
+
+5. Show the deployed product with the analytics dashboards, the observability dashboards, the observability `QRT`'s result, and, when a runtime `QRT-nn` was run, its result at its level; name the `SLI-nn` each runtime test read, per [The SLIs](observability-requirements.md#the-slis).
+   Present the threshold proposal, per [The Threshold Of Success](planning-requirements.md#the-threshold-of-success), and agree any threshold change with the customer's `DEC-nnn`, which the meeting report records in `## Decisions`, per [Meeting Report](#meeting-report).
+
 **Example**
 
 A Week 3 meeting that shows working software.

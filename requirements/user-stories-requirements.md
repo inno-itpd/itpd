@@ -115,7 +115,9 @@ Its job is to make one need concrete enough that a reviewer can tell whether you
    A `GAP-nn` in `Traces to` is one that the story's `VP-nn` names under `**Closes:**`, so the story, its value proposition, and its gap form one chain.
    A story that rests on an [assumption](assumptions-requirements.md#what-rests-on-it) carries a separate `Rests on` list, naming the `ASM-nn` of each assumption it rests on, as a gap or a value proposition does.
    The `VP-nn` is how a story traces to the product vision, so the `VP-nn` of every story except a `Won't Have` story is one the vision's [goal](product-vision-requirements.md#goal) traces to.
-   A story you intend to build that supports no such value proposition is outside the vision: add its `VP-nn` to the goal as a [team decision](decisions-requirements.md#the-decision), or make the story `Won't Have`.
+   An internal capability does not get a value proposition of its own.
+   Its story names the `VP-nn` the capability makes measurable or keeps deliverable, and its statement says what the capability enables for the internal user.
+   A story you intend to build that supports no such value proposition is outside the vision: add its `VP-nn` to the goal through a [decision](decisions-requirements.md#the-decision) that gets an entry, or make the story `Won't Have`.
    Cite the `VP-nn` and each entry of both lists as [Identifier Rules](general-requirements.md#identifier-rules) says, and link each Week 1 identifier per [Traceability Into Later Weeks](general-requirements.md#traceability-into-later-weeks).
    Link each file on `main`, per [Linking A File From An Issue Or A Pull Request](issue-tracking-requirements.md#linking-a-file-from-an-issue-or-a-pull-request).
    A need from outside the Week 1 research is handled per [Traceability Into Later Weeks](general-requirements.md#traceability-into-later-weeks).

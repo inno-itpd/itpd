@@ -76,6 +76,7 @@ It is the short version of the requirements, states what is expected of you as a
    `RISK-nn` for risks, `TOS-nn` for the goals in the threshold of success, `SPRINT-nn` for sprints, `MLS-nn` for milestones, and `REL-nn` for releases are introduced in Week 3.
    `FR-nnn` for functional requirements, `QR-nn` for quality requirements, and `ADR-nnn` for architectural decision records are introduced in Week 4, and `FR-nnn` and `ADR-nnn` take three digits, because each grows with every record and can pass 99; `QR-nn` takes two, like every other family.
    `QRT-nn` for quality requirement tests is introduced in Week 5, takes two digits, and is scoped to its `QR-nn`.
+   `SLI-nn` for service level indicators is introduced in Week 6, and it takes two digits.
    A later family is introduced only by the requirement that first uses it.
 2. An identifier, once issued, is never changed, reused, or reassigned, including when the artifact is edited later in the course.
 3. Gaps in a sequence are expected and correct.
@@ -128,6 +129,19 @@ It is the short version of the requirements, states what is expected of you as a
     Cite a feature by the path of `docs/features.md` and the entry's `##` heading anchor, such as `docs/features.md#book-and-pay-in-one-flow`, per [Feature Documentation Requirements](features-requirements.md#where-the-features-live).
     A feature has no index, no issue type, and no report section.
 
+**Since: W6**
+
+20. `SLI-nn` is the Week 6 family, and it takes two digits.
+    It is repository-wide rather than scoped to one `QR-nn`, because a signal serves every requirement whose test reads it.
+21. An `SLI-nn` section's heading is `### SLI-01`, under `## The SLIs`, with the name on the first line, so its anchor is `#sli-01`.
+    The section is in `docs/observability.md`, per [The SLIs](observability-requirements.md#the-slis).
+22. An `SLI` follows rule 10: it carries `**Status:**` as its first field, and the values are `Active`, `Planned`, and `Dropped`.
+    A dropped `SLI` follows rule 11 and adds `**Dropped:**` with the date and the reason.
+23. A runtime `QRT-nn` written from Week 6 on names an `Active` `SLI-nn` in `**Runs at:**`, per [Quality Requirement Tests](quality-requirements-requirements.md#quality-requirement-tests).
+    A test written before Week 6 that names an `SLI-nn` reads it too, so any test that adds the citation reads the signal in its procedure.
+24. There is no `SLO-nn` and no `MET-nn`: the target a test settles is its requirement's `Response Measure`, and an analytics metric is cited by its heading anchor, per rule 25.
+25. An analytics metric is not an identifier family either: it is one `###` section under `## The Value And The Metrics` in `docs/analytics.md`, cited by that heading's anchor, such as `docs/analytics.md#booking-conversion-rate`, per [Product Analytics Requirements](analytics-requirements.md#the-value-and-the-metrics).
+
 **Example**
 
 A gap the kickoff dropped, in `docs/research/gap-analysis.md`, with its other fields left out:
@@ -165,6 +179,8 @@ This is what makes the course a project rather than nine separate assignments.
 | Week 4 tasks                     | The `FR-nnn` and `ADR-nnn` the task works on, in `### Requirements`, per [The Issue Form](task-issues-requirements.md#the-issue-form)                                                                                                             |
 | Week 5 quality requirement tests | The `QR-nn` each test proves, per [Quality Requirement Tests](quality-requirements-requirements.md#quality-requirement-tests); its result is in [the testing plan](planning-requirements.md#quality-requirement-testing-plan)                     |
 | Week 5 feature documentation     | The `US-nn`, `FR-nnn`, and `ADR-nnn` each entry links, and the glossary term its opening sentence links at first use, per [The Feature Entry](features-requirements.md#the-feature-entry)                                                         |
+| Week 6 runtime tests             | The `SLI-nn` its `**Runs at:**` names, per [Quality Requirement Tests](quality-requirements-requirements.md#quality-requirement-tests)                                                                                                            |
+| Week 6 analytics plan            | The `VP-nn` its focus metric expresses, and the events each metric's `**Source:**` names, per [The Value And The Metrics](analytics-requirements.md#the-value-and-the-metrics)                                                                    |
 | Any change a decision caused     | The decision's `DEC-nnn` when it has an entry, or its reason otherwise, per [What Cites It](decisions-requirements.md#what-cites-it)                                                                                                              |
 
 **Required**

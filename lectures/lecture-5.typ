@@ -78,7 +78,7 @@
   align(center)[
     #text(size: 34pt, weight: "bold", fill: accent)[Quality Management]
     #v(0.16in)
-    #text(size: 20pt, fill: muted)[IT Product Development]
+    #text(size: 20pt, fill: muted)[Lecture 5, IT Product Development]
   ]
   v(1.42in)
   align(center)[
@@ -230,6 +230,8 @@
 
   #image("images/lecture-4/iso-25010-model.jpg", width: 100%)
 ]
+
+// TODO use online meeting booking service example
 
 #slide("Example: A QR for Moodle's Availability")[
   - Business importance: High
