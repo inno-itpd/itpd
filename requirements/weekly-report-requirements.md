@@ -60,7 +60,7 @@ Who may see each item is in [Visibility Requirements](visibility-requirements.md
 16. The report's summary says whether the focus metric has a value yet and what it would need, links `docs/analytics.md` and `docs/observability.md`, and copies no chart or row from either page.
     It shows at least one analytics metric that its query computes, and it does not present test traffic as a value.
 17. When a threshold review is due, a `## Threshold review` section carries it, per [The Threshold Of Success](planning-requirements.md#the-threshold-of-success): each open goal's current measure and whether the analytics or the observability data can settle it, and any proposed measure with its number, its week, and the metric's `###` link.
-18. When the week has evidence screenshots, the report links them, and the assignment sets how many.
+18. When the week has evidence screenshots, the report embeds each one as an image in the section that describes it, and the assignment sets how many.
 
 **Recommended**
 
@@ -107,11 +107,20 @@ The team proposed no analytics-measured goal and no revised measure this week, a
 ## Analytics and observability
 
 The analytics plan is [docs/analytics.md](../../docs/analytics.md) and its events are in [the event table](../../docs/analytics.md#the-events).
-The staging dashboard's event list shows the test event tagged `source=smoke`, which the staging chart excludes, and the production dashboard is configured with the same query and has received no test traffic: [staging screenshot](images/analytics-staging.png) and [production screenshot](images/analytics-production.png).
+The staging dashboard's event list shows the test event tagged `source=smoke`, which the staging chart excludes, and the production dashboard is configured with the same query and has received no test traffic.
+
+![The analytics staging dashboard: the booking conversion rate chart and the event list that shows the smoke event](images/analytics-staging.png)
+
+![The analytics production dashboard: the same chart and query, with no test traffic](images/analytics-production.png)
+
 The observability plan is [docs/observability.md](../../docs/observability.md) and its `SLI` is [`SLI-01`](../../docs/observability.md#sli-01).
 The staging run of `scripts/check-sli.ts` failed one booking request, and the product's telemetry endpoint exposed its series point with its `request_id` and an `outcome` of `server_error` within five seconds; the five-minute P95 query returned the `server_error` series within one minute, so [`QR-04 QRT-01`](../../docs/quality-requirements/qr/QR-04.md#qrt-01) passes.
 The team also re-ran [`QR-01 QRT-01`](../../docs/quality-requirements/qr/QR-01.md#qrt-01) as a regression check against the final staging deployment, and all ten page loads showed the free slots within two seconds, so it passed.
-The OpenObserve query returned the same `server_error` series, and the staging chart shows it: [staging screenshot](images/observability-staging.png) and [production screenshot](images/observability-production.png).
+The OpenObserve query returned the same `server_error` series, and the staging chart shows it.
+
+![The observability staging dashboard: the server error series from SLI-01's P95 query](images/observability-staging.png)
+
+![The observability production dashboard: the same query, with no test traffic](images/observability-production.png)
 
 ## Coverage
 
