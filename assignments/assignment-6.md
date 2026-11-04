@@ -159,14 +159,14 @@ The rules:
 
 - `docs/observability.md` is one maintained page, created this week and kept current: [Where The Observability Plan Lives](../requirements/observability-requirements.md#where-the-observability-plan-lives).
 - The signals are the metric, the log, and the trace; the metric is required, the log and the trace are optional except when an `SLI`'s source names one, and an alert is a rule over a signal rather than a signal: [The Signals](../requirements/observability-requirements.md#the-signals).
-- Each `SLI` is a `## SLI-nn` section with its name on the first line, its `**Status:**`, `**Definition:**`, `**Unit:**`, `**Window:**`, `**Source:**`, and `**Query:**`: [The SLIs](../requirements/observability-requirements.md#the-slis).
+- Each `SLI` is a `### SLI-nn` section under `## The SLIs`, with its name on the first line, its `**Status:**`, `**Definition:**`, `**Unit:**`, `**Window:**`, `**Source:**`, and `**Query:**`: [The SLIs](../requirements/observability-requirements.md#the-slis).
 - `SLI-nn` is repository-wide, it takes two digits, and its status values are `Active`, `Planned`, and `Dropped`: [Identifier Rules](../requirements/general-requirements.md#identifier-rules).
 - A functional requirement is a file under `docs/functional-requirements/fr/`, with its behavior, its criteria, and its row in the index: [The Functional Requirement](../requirements/functional-requirements-requirements.md#the-functional-requirement).
 
 This week:
 
 1. Write `docs/observability.md` with the signals the product emits, and say which of the three signal types it uses, including the structured log line the diagnosability test reads.
-2. List the `SLI`s your runtime requirements need, in `## SLI-nn` sections, with a definition, a unit, a window, a source, and a query each, and record the per-request log query beside the demonstrated `SLI`.
+2. List the `SLI`s your runtime requirements need, in `### SLI-nn` sections under `## The SLIs`, with a definition, a unit, a window, a source, and a query each, and record the per-request log query beside the demonstrated `SLI`.
 3. Make the `SLI` the week demonstrates `Active`, and name the labels that identify the request, the route, and the failure in its `**Definition:**`.
    The per-request point is a structured log line carrying `request_id`, `route`, `outcome`, and `duration_ms`; the aggregate is the histogram's five-minute P95.
 4. Write the observability functional requirement, using the next free `FR-nnn`: its behavior is that the product exposes the quality signal for each runtime requirement, with its environment, to the observability backend, including the per-request log line the diagnosability test reads, and it carries its acceptance criteria and its row in `docs/functional-requirements/README.md`.

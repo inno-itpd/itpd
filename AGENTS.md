@@ -201,7 +201,7 @@ A part may keep a small example beside the rule it illustrates, such as the boun
   `DEC-nnn`, `FR-nnn`, and `ADR-nnn` take three digits, because each grows with every record and can pass 99; every other family takes two.
   An `AC-nn` is scoped to the issue or the functional requirement that carries it and is cited together with it; a `QRT-nn` is scoped to its `QR-nn` and is cited as the pair `QR-01 QRT-02`.
   A `QRT-nn` section's heading is the bare identifier, an exception to identifier rule 5, because its `QR-nn` file carries the scope.
-  An `SLI-nn` is repository-wide, headed `## SLI-01` with its name on the first line, with `**Status:**` `Active`, `Planned`, or `Dropped` and a `**Dropped:**` field when dropped; a runtime `QRT-nn` written from W6 on names an `Active` one in its `**Runs at:**`, and there is no `SLO-nn` and no `MET-nn`.
+  An `SLI-nn` is repository-wide, headed `### SLI-01` under `## The SLIs`, with its name on the first line, with `**Status:**` `Active`, `Planned`, or `Dropped` and a `**Dropped:**` field when dropped; a runtime `QRT-nn` written from W6 on names an `Active` one in its `**Runs at:**`, and there is no `SLO-nn` and no `MET-nn`.
   A feature is not an identifier family: there is no `FEAT-nn`, and a feature is cited by `docs/features.md#anchor`, per [Feature Documentation Requirements](requirements/features-requirements.md#where-the-features-live).
   The other families are repository-wide.
   IDs are never renumbered or reused, including in example text.

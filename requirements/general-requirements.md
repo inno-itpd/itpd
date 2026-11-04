@@ -133,7 +133,7 @@ It is the short version of the requirements, states what is expected of you as a
 
 20. `SLI-nn` is the Week 6 family, and it takes two digits.
     It is repository-wide rather than scoped to one `QR-nn`, because a signal serves every requirement whose test reads it.
-21. An `SLI-nn` section's heading is `## SLI-01`, with the name on the first line, so its anchor is `#sli-01`.
+21. An `SLI-nn` section's heading is `### SLI-01`, under `## The SLIs`, with the name on the first line, so its anchor is `#sli-01`.
     The section is in `docs/observability.md`, per [The SLIs](observability-requirements.md#the-slis).
 22. An `SLI` follows rule 10: it carries `**Status:**` as its first field, and the values are `Active`, `Planned`, and `Dropped`.
     A dropped `SLI` follows rule 11 and adds `**Dropped:**` with the date and the reason.
