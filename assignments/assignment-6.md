@@ -135,9 +135,10 @@ The rules:
 - The analytics backend is OpenPanel by default, another documented self-hosted backend is allowed, and it runs on the university VM: [The Pipeline](../requirements/analytics-requirements.md#the-pipeline).
 - One backend instance carries one environment scope per environment, `staging` and `production`, each with its own credential: [The Pipeline](../requirements/analytics-requirements.md#the-pipeline).
 - Each environment's dashboard carries at least one chart for a metric in the tree, and the chart runs the query recorded in the metric's section: [The Dashboard](../requirements/analytics-requirements.md#the-dashboard).
+- A dashboard's definition may be tracked when it carries no address, credential, or other private-only value, and the page still owns the query: [The Dashboard](../requirements/analytics-requirements.md#the-dashboard).
 - The backend's and dashboards' addresses and credentials are private-only, and the evidence is two sanitized screenshots: [Sensitive Information Reference](../requirements/visibility-requirements.md#sensitive-information-reference) and [Screenshot Evidence](../requirements/visibility-requirements.md#screenshot-evidence).
 - `docs/deployment.md` carries the two telemetry pipelines' steps and configuration and links the two plans: [Environments And Deployment](../requirements/repository-requirements.md#environments-and-deployment).
-- The configuration's shape is in `.env.example`, and the secrets are installed outside the repository: [Configuration And Sensitive Information](../requirements/repository-requirements.md#configuration-and-sensitive-information).
+- The configuration's shape is in `.env.example`, a sanitized configuration file may be tracked, and the secrets and private-only values are never tracked: [Configuration And Sensitive Information](../requirements/repository-requirements.md#configuration-and-sensitive-information).
 
 This week:
 
@@ -178,8 +179,10 @@ The rules:
 - The observability backend is OpenObserve by default, another documented backend is allowed, and it runs on the university VM: [The Pipeline](../requirements/observability-requirements.md#the-pipeline).
 - One backend instance carries one environment scope per environment, `staging` and `production` — OpenObserve organizations, or the documented backend's equivalent — each with its own dashboard: [The Pipeline](../requirements/observability-requirements.md#the-pipeline).
 - Each environment scope's dashboard carries at least one chart for an `Active` `SLI`, and the chart runs the query recorded in the `SLI`'s section: [The Dashboard](../requirements/observability-requirements.md#the-dashboard).
+- A dashboard's definition may be tracked when it carries no address, credential, or other private-only value, and the page still owns the query: [The Dashboard](../requirements/observability-requirements.md#the-dashboard).
 - The dashboard's address is private-only, and the evidence is two sanitized screenshots: [Sensitive Information Reference](../requirements/visibility-requirements.md#sensitive-information-reference) and [Screenshot Evidence](../requirements/visibility-requirements.md#screenshot-evidence).
 - `docs/deployment.md` carries the observability pipeline's steps and configuration and links the plan: [Environments And Deployment](../requirements/repository-requirements.md#environments-and-deployment).
+- A sanitized configuration file may be tracked, and the secrets and private-only values are never tracked: [Configuration And Sensitive Information](../requirements/repository-requirements.md#configuration-and-sensitive-information).
 
 This week:
 

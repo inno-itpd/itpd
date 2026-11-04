@@ -166,7 +166,8 @@ The default is OpenPanel self-hosted, per [The Pipeline](../requirements/analyti
 ### Self-Host The Backend On The University Network
 
 Run the backend on the university VM, so the data never leaves the university network.
-Install its configuration and secrets outside the repository, and keep the shape in `.env.example` with placeholders, per [Configuration And Sensitive Information](../requirements/repository-requirements.md#configuration-and-sensitive-information).
+Install its configuration on the machine, keep its secrets and private-only values untracked, and keep the shape in `.env.example` with placeholders, per [Configuration And Sensitive Information](../requirements/repository-requirements.md#configuration-and-sensitive-information).
+A sanitized configuration file may be tracked, such as a compose file that reads its values from environment variables.
 
 Write the deployment's steps into `docs/deployment.md` under a section such as `## The Telemetry Pipelines`, and link that section from `docs/analytics.md` instead of repeating the commands on both pages.
 The runbook carries the commands, the ports, the configuration, and the restart; the plan carries the topology and the queries.
@@ -184,6 +185,7 @@ A single scope for both environments makes every later chart a mixture, and no q
 Build a dashboard in each environment scope with at least one chart for a metric in the tree: the focus metric once it has a value, otherwise its L1 input.
 Name the chart after its metric and run the `**Query:**` recorded in that metric's section, so the page owns the query and the chart owns the display.
 A chart that runs a query the page does not carry is a number nobody can recompute.
+A dashboard's definition may be tracked when it carries no address, credential, or other private-only value, but the page still owns the query, so regenerate the definition when the query changes.
 
 ### Check The Staging Dashboard With A Test Event
 
@@ -234,6 +236,7 @@ Export the signals with OpenTelemetry, and keep the instrumentation in the conta
 Build a dashboard in each environment scope with at least one chart for an `Active` `SLI`.
 The chart names the `SLI` and runs the `**Query:**` recorded under it, and the page names the chart rather than linking its private address.
 Send the staging test traffic through the staging scope, and leave the production scope's dashboard configured with the same query and unexercised.
+The dashboard's definition may be tracked when it is sanitized, but the page still owns the `SLI`'s query, so regenerate the definition when the query changes.
 
 ## Step 6: Write The Observability Requirement And Run Its Test
 
@@ -369,5 +372,9 @@ The switch is what a team on a development machine uses, and what the review ask
   Sanitize before publishing, and crop to the chart.
 - **A dashboard on the public internet.**
   The backends and the dashboards are reachable from the university network only.
+- **A committed secret or a private-only value.**
+  A sanitized configuration file may be tracked; `.env`, a credential, and a real address stay untracked.
+- **A dashboard definition tracked with its address.**
+  A definition may be tracked only when it is sanitized, and the page still owns the query.
 - **A staging test event that reached production.**
   The environment scopes are separate, the event is tagged `source=smoke`, and a leak is declared as a deviation.

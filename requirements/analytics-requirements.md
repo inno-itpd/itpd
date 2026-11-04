@@ -104,7 +104,7 @@ The backend's steps and configuration are the deployment runbook's, and this sec
 4. The page states the retention, and it covers the longest metric window the page defines.
 5. The page records how collection is enabled and disabled, including the environment variable that turns it off.
 6. The deployment's steps and configuration live in `docs/deployment.md`, per [Environments And Deployment](repository-requirements.md#environments-and-deployment); the page links that section and repeats none of it.
-   `.env.example` carries the configuration's shape, and the secrets are installed outside the repository, per [Configuration And Sensitive Information](repository-requirements.md#configuration-and-sensitive-information).
+   `.env.example` carries the configuration's shape, and the secrets are installed on the VM and are not tracked in the repository, per [Configuration And Sensitive Information](repository-requirements.md#configuration-and-sensitive-information).
 7. A test event is sent only to the staging scope and is tagged `source=smoke`; the production scope contains only real traffic.
 8. The backend's address, its dashboards' addresses, and any credentials are private-only, per [Sensitive Information Reference](visibility-requirements.md#sensitive-information-reference).
    The page names the backend and its dashboards and links neither address.
@@ -125,6 +125,7 @@ Each environment's dashboard is where the pipeline's data becomes a chart a read
 4. A chart in the staging scope excludes `source=smoke` from the metric, and the staging dashboard carries an event list or raw-events panel that shows the smoke event, so the exclusion is visible; the production scope's chart carries the same metric and the same query, and it receives no test traffic.
 5. The dashboards' addresses and any credentials are private-only, per [Sensitive Information Reference](visibility-requirements.md#sensitive-information-reference), and the page names the dashboards and their charts rather than linking an address.
 6. The evidence is two sanitized screenshots, one per environment, in `reports/week-NN/images/`, linked from the weekly report with the metric each chart shows, per [Screenshot Evidence](visibility-requirements.md#screenshot-evidence).
+7. A dashboard's definition may be tracked when it carries no address, no credential, and no other private-only value; the page still owns the query, so a tracked definition is regenerated in the same pull request when the query changes.
 
 ## Collected Data
 
@@ -225,7 +226,7 @@ The `frontend` and the `backend` send the events to an OpenPanel instance on the
 One OpenPanel instance carries two projects, `staging` and `production`: each has its own client ID, and each environment's build is configured with its own, so each environment's dashboard serves charts from its own project.
 Retention is 90 days, which covers the seven-day window of the counter-metric and every other window this page defines.
 Collection is switched by `ANALYTICS_ENABLED`, which is `false` on a developer's machine and `true` in staging and production.
-The steps and configuration are in [the telemetry pipelines](deployment.md#the-telemetry-pipelines), and the secrets are installed on the VM outside the repository; `.env.example` carries the shape.
+The steps and configuration are in [the telemetry pipelines](deployment.md#the-telemetry-pipelines), and the secrets are installed on the VM and are not tracked in the repository; `.env.example` carries the shape.
 A test event goes only to the staging project, tagged `source=smoke`; the production project contains only real traffic.
 The backend and its dashboards are reachable from the university network only, and their addresses and credentials are in the Moodle submission.
 

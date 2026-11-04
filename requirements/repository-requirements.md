@@ -249,6 +249,10 @@ Both are built from the commit you are submitting, so that what a grader sees is
    When a file is genuinely required, use approved external storage and link to it.
 5. What may never be committed is in [Sensitive Information Reference](visibility-requirements.md#sensitive-information-reference).
 
+**Since: W6**
+
+6. A configuration file may be tracked when it carries no secret and no private-only value, such as a compose file that reads its values from environment variables.
+
 ## Sensitive-Data Incident Response
 
 **Since: W1**
@@ -410,7 +414,7 @@ The deployment runbook is `docs/deployment.md`, and the local setup guide stays 
 
 11. Two telemetry backends serve the product: the analytics backend, per [The Pipeline](analytics-requirements.md#the-pipeline), and the observability backend, per [The Pipeline](observability-requirements.md#the-pipeline).
     Both run on the university VM, and both are reachable from where the customer works, on the university network.
-    Their configuration and secrets are installed outside the repository, per [Configuration And Sensitive Information](#configuration-and-sensitive-information).
+    Their secrets and private-only values are never tracked in the repository, and a sanitized configuration file may be tracked, per [Configuration And Sensitive Information](#configuration-and-sensitive-information).
 12. The analytics backend is OpenPanel by default and the observability backend is OpenObserve by default; another self-hosted backend is allowed when `docs/analytics.md` or `docs/observability.md` documents it.
     Each backend carries one environment scope per environment: an OpenPanel project, an OpenObserve organization, or the documented backend's equivalent.
 13. The two backends' addresses, the four dashboards' addresses, and all credentials, including client IDs and tokens, are private-only, per [Sensitive Information Reference](visibility-requirements.md#sensitive-information-reference).

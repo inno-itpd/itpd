@@ -92,7 +92,7 @@ The backend's steps and configuration are the deployment runbook's, and this sec
 6. The page states the retention, and it covers the longest `SLI` window the page defines.
 7. The page records how collection is enabled and disabled, including the environment variable that turns it off.
 8. The deployment's steps and configuration live in `docs/deployment.md`, per [Environments And Deployment](repository-requirements.md#environments-and-deployment); the page links that section and repeats none of it.
-   `.env.example` carries the configuration's shape, and the secrets are installed outside the repository, per [Configuration And Sensitive Information](repository-requirements.md#configuration-and-sensitive-information).
+   `.env.example` carries the configuration's shape, and the secrets are installed on the VM and are not tracked in the repository, per [Configuration And Sensitive Information](repository-requirements.md#configuration-and-sensitive-information).
 
 ## The Dashboard
 
@@ -108,6 +108,7 @@ Each environment scope's dashboard is where the pipeline's signal becomes a char
 3. The staging scope's dashboard shows the test traffic; the production scope's dashboard carries the same chart and query and is not exercised with test traffic.
 4. The dashboard's address and any credentials are private-only, per [Sensitive Information Reference](visibility-requirements.md#sensitive-information-reference), and the page names the dashboard and its charts rather than linking the address.
 5. The evidence is two sanitized screenshots, one per scope, in `reports/week-NN/images/`, linked from the weekly report with the `SLI` each chart shows, per [Screenshot Evidence](visibility-requirements.md#screenshot-evidence).
+6. A dashboard's definition may be tracked when it carries no address, no credential, and no other private-only value; the page still owns the query, so a tracked definition is regenerated in the same pull request when the query changes.
 
 ## Collected Data
 
@@ -161,7 +162,7 @@ One OpenObserve instance carries two organizations, `staging` and `production`, 
 The staging organization receives the test traffic; the production organization's dashboard carries the same query and is not exercised with test traffic.
 Retention is 30 days, which covers the five-minute window the `SLI` query reads.
 Collection is switched by `TELEMETRY_ENABLED`, which is `false` on a developer's machine and `true` in staging and production.
-The steps and configuration are in [the telemetry pipelines](deployment.md#the-telemetry-pipelines), and the secrets are installed on the VM outside the repository; `.env.example` carries the shape.
+The steps and configuration are in [the telemetry pipelines](deployment.md#the-telemetry-pipelines), and the secrets are installed on the VM and are not tracked in the repository; `.env.example` carries the shape.
 The backend and its dashboards are reachable from the university network only, and their addresses and credentials are in the Moodle submission.
 
 ## The Dashboard
