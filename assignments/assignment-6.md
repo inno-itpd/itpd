@@ -70,7 +70,7 @@ The rules:
 - A story names a `VP-nn` the vision's goal traces to, and a need the research did not anticipate is a story rather than a rewrite of the research: [Traceability Into Later Weeks](../requirements/general-requirements.md#traceability-into-later-weeks).
 - A task issue carries its `### Requirements` section, and a pull request closes one: [The Issue Form](../requirements/task-issues-requirements.md#the-issue-form).
 - Scheduling is assigning an issue to its sprint's GitHub milestone, and refinement leaves an item unscheduled: [Scheduling An Issue](../requirements/issue-tracking-requirements.md#scheduling-an-issue).
-- The plan milestone that lands this increment has its own fields and a description that leads with what it delivers: [Milestones](../requirements/planning-requirements.md#milestones).
+- A plan milestone has its own fields and a description that leads with the increment it delivers, and the team chooses its milestone set: [Milestones](../requirements/planning-requirements.md#milestones).
 
 This week:
 
@@ -82,7 +82,8 @@ This week:
 6. Each story names a `VP-nn` the vision's goal traces to: the analyst's story names the end-user value proposition the analytics capability makes measurable, and the operator's story names the one the product's operation keeps deliverable.
    No value proposition is added and the vision's `Supports:` list is not changed, per [The Story](../requirements/user-stories-requirements.md#the-story).
 7. Write the task issues for the two pipelines, the four dashboards, and the observability test, each with its `### Requirements` section, and schedule them in `SPRINT-06`.
-8. The plan milestone due in `SPRINT-06` leads with the increment the telemetry delivers, and it is the milestone the release belongs to.
+8. If a plan milestone is due in `SPRINT-06`, its description includes the telemetry increment.
+   No new milestone is required this week: if no milestone is due in `SPRINT-06`, the sprint's goal states the increment, per [Milestones](../requirements/planning-requirements.md#milestones).
 
 The method is in [Step 4: Write The Sprints And Their Releases](../guides/planning-and-tracking.md#step-4-write-the-sprints-and-their-releases).
 
