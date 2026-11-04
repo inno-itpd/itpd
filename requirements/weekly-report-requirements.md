@@ -99,7 +99,7 @@ Our problem-space sentence: an expert who sells sessions online needs one link w
 
 We wrote the analytics plan and its metric tree, instrumented the core task's events, and put an OpenPanel instance with a staging and a production project on the university VM.
 We wrote the observability plan and its `SLI`, instrumented the request log line, put OpenObserve beside the analytics backend, and built the four dashboards.
-We added the two stories for the product analyst and the system operator, the two architectural decision records, the container view's two external systems, the diagnosability requirement and its test, the threshold review, and `REL-06`; we cut the release as [v0.6.0](https://github.com/<organization>/<repo>/releases/tag/v0.6.0).
+We added the two stories for the product analyst and the system operator, the two architectural decision records, the container view's two self-hosted external systems, the diagnosability requirement and its test, the threshold review, and `REL-06`; we cut the release as [v0.6.0](https://github.com/<organization>/<repo>/releases/tag/v0.6.0).
 
 ## Findings
 

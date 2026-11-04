@@ -102,6 +102,12 @@ It is the only view of the product's own structure the document carries, and the
 6. The diagram shows exactly the rows of [Container Responsibilities](#container-responsibilities), with the same names and the same spelling.
 7. The section is a view and not a decision: the reason for the split and the stack stays in the record it links, per [What It Accounts For](adr-requirements.md#what-it-accounts-for).
 
+**Since: W6**
+
+8. A system the team self-hosts only to operate the product, such as an analytics or observability backend, is an external system when the product only sends data to it and does not need it to work.
+   It is not a container, and the section says once, in prose, that the team self-hosts it and does not build it; the legend says so too, per [Diagrams And Legends](#diagrams-and-legends).
+   The vision's context diagram does not change, per [System Context](product-vision-requirements.md#system-context).
+
 **Recommended**
 
 - Draw the containers in the order a request travels, from the container the customer uses to the store it reaches.
@@ -284,3 +290,28 @@ graph LR
     classDef external stroke-dasharray: 5 5
     class Payments,Email external
 ```
+
+After Week 6, the same view gains the two systems, one sentence under `## Container View`, and one line in the legend.
+
+The sentence, in the view's prose:
+
+```markdown
+The team self-hosts the analytics and observability backends on the university VM but does not build them, and they are outside the product boundary.
+```
+
+The same source with the two systems added:
+
+```mermaid
+graph LR
+    Frontend["frontend (React)"] -->|HTTPS| Backend["backend (Node.js)"]
+    Backend -->|SQL| Database[("database (PostgreSQL)")]
+    Backend -->|REST| Payments["payment provider"]
+    Backend -->|SMTP| Email["email provider"]
+    Frontend -->|HTTPS| OpenPanel["OpenPanel"]
+    Backend -->|HTTPS| OpenPanel
+    Backend -->|OTLP| OpenObserve["OpenObserve"]
+    classDef external stroke-dasharray: 5 5
+    class Payments,Email,OpenPanel,OpenObserve external
+```
+
+The legend's line: "OpenPanel and OpenObserve are dashed even though the team self-hosts them: they are outside the product boundary and the product does not need them to work."

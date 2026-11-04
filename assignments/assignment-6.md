@@ -53,7 +53,7 @@ By the end of this week you should be able to show a reader:
 - An observability plan, `docs/observability.md`, with the signals, the `SLI`s, their definitions, units, windows, sources, queries, and status, the per-request log line, and the one `SLI` the week demonstrates.
 - An observability backend with a staging and a production environment scope, and a dashboard in each, whose chart names its `SLI`.
 - Two new stories, one for a product analyst and one for a system operator, and the two functional requirements and two architectural decision records that specify them.
-- The container view updated with the two telemetry backends as external systems, and the container set unchanged.
+- The container view updated with the two telemetry backends as external systems, the container set unchanged, and one sentence under the view and one in the legend saying the team self-hosts them and does not build them.
 - A `Maintainability` / `Analysability` requirement about the product's diagnosability, with a `deployed` test that fails a staging request and reads the request's log point and the `SLI`'s P95 series from the staging organization, and the test's result in the testing plan.
 - The optional re-run of one runtime test that names the same `Active` `SLI`.
 - The threshold review with each open goal's current measure, and the customer's agreement recorded as a `DEC-nnn` for any change.
@@ -204,6 +204,8 @@ The rules:
 
 - An architectural decision record is a file under `docs/architecture/adr/` with its fields and its four body sections, and each `**Addresses:**` names at least one `FR-nnn` or `QR-nn`: [The Record](../requirements/adr-requirements.md#the-record) and [What It Accounts For](../requirements/adr-requirements.md#what-it-accounts-for).
 - The container view shows every external system a container exchanges data with, and the arrow carries the protocol: [Container View](../requirements/architecture-requirements.md#container-view).
+- A system the team self-hosts but does not build is still an external system when the product only sends data to it and does not need it to work; the view says so once in prose and the legend says it too: [Container View](../requirements/architecture-requirements.md#container-view).
+- The context diagram stays the product's business environment, so the two backends do not join it: [System Context](../requirements/product-vision-requirements.md#system-context).
 - The diagram conventions are the Week 4 ones, and no later week adds or restates a diagram rule: [Diagrams And Legends](../requirements/architecture-requirements.md#diagrams-and-legends).
 - The ADR index lists each record once: [Architectural Decisions](../requirements/architecture-requirements.md#architectural-decisions).
 
@@ -212,7 +214,8 @@ This week:
 1. Write the analytics architectural decision record, using the next free `ADR-nnn`, addressing the analytics `FR-nnn`, with its `**Containers:**` naming the product containers that emit the events.
 2. Write the observability architectural decision record, using the next free `ADR-nnn`, addressing the new `QR-nn` and the observability `FR-nnn`, with its `**Containers:**` naming the containers that emit the signals.
 3. Update the container view so the analytics backend and the observability backend appear as external systems the product exchanges telemetry with, with the protocol on each arrow.
-4. Keep the container set unchanged, draw no new view, and add both records to the ADR index.
+   They are outside the product boundary and the product works with collection off, so they are not containers even though the team deploys them; add one sentence under `## Container View` saying the team self-hosts both and does not build them, and add the same fact to the legend.
+4. Keep the container set unchanged, draw no new view, leave the context diagram as it is, and add both records to the ADR index.
 
 The method is in [Step 6: Write The Architectural Decision Records](../guides/quality-and-architecture.md#step-6-write-the-architectural-decision-records) and [Draw The Container View](../guides/quality-and-architecture.md#draw-the-container-view).
 
@@ -409,7 +412,7 @@ A strong submission has:
 - **Two internal capabilities with their records.**
   The analyst's story and the operator's story each name the end-user `VP-nn` they serve, their `FR-nnn`, and their `ADR-nnn`, and each capability has a `docs/features.md` entry that links the story, the requirement, and the record, and no dashboard address.
 - **A container view that shows what the product talks to.**
-  The two telemetry backends appear as external systems with the protocol on each arrow, the container set is unchanged, and the two records address the requirements they serve.
+  The two telemetry backends appear as external systems with the protocol on each arrow; the view's sentence and the legend say the team self-hosts them and does not build them; the container set and the context diagram are unchanged; and the two records address the requirements they serve.
 - **A threshold that moves only with the customer.**
   Each open goal has its current measure and whether the new data can settle it, each row's status is in a sentence after the table, a settled goal's `**Outcome:**` stays in `docs/threshold-of-success.md`, a goal due later stays `Open`, and any change cites the customer's `DEC-nnn`.
 - **A release whose record says what was checked.**
@@ -500,7 +503,7 @@ The PDF carries no deck.
 - [ ] The observability functional requirement written with the next free `FR-nnn`, with its behavior, its criteria, and its index row: [Part 5](#part-5-write-the-observability-plan-and-define-the-slis).
 - [ ] OpenObserve on the university network with a staging and a production environment scope, each with a dashboard whose chart names its `SLI` ([Part 6](#part-6-deploy-openobserve-and-build-the-sli-dashboards)).
 - [ ] The analytics and observability ADRs, each addressing its `FR-nnn` or `QR-nn`, with its `**Containers:**` named, and both in the ADR index ([Part 7](#part-7-record-the-two-adrs-and-update-the-container-view)).
-- [ ] The container view showing the two backends as external systems with the protocol on each arrow, the container set unchanged, and no new view ([Part 7](#part-7-record-the-two-adrs-and-update-the-container-view)).
+- [ ] The container view showing the two backends as external systems with the protocol on each arrow, the view's sentence and the legend's line that the team self-hosts them and does not build them, the container set and the context diagram unchanged, and no new view ([Part 7](#part-7-record-the-two-adrs-and-update-the-container-view)).
 - [ ] `docs/features.md` with an entry for each internal capability, linking its story, its `FR-nnn`, and its `ADR-nnn`, and no dashboard address ([Part 8](#part-8-document-the-two-features)).
 - [ ] The week's terms in `docs/glossary.md`, linked at first use in the two entries ([Part 8](#part-8-document-the-two-features)).
 - [ ] The new `QR-nn` with its `Maintainability` / `Analysability` pair, `High` business importance, and its diagnosability scenario ([Part 9](#part-9-write-the-observability-requirement-and-its-test-and-run-the-test)).
