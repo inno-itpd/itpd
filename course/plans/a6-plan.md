@@ -192,7 +192,7 @@ The week then prepares the threshold review, and the deck is not part of it.
 - **The two functional requirements and the two stories.**
   The analytics functional requirement states that the product records an event for each step of the core task, with the fields in `docs/analytics.md`; the product-analyst story specifies it and the analytics ADR.
   The observability functional requirement states that the product exposes the quality signal for each runtime requirement, with the environment, to the observability backend; the operator story specifies it and the observability ADR.
-  The stories name a `VP-nn` the vision's goal traces to; if no existing value proposition covers the internal user, the team adds one to `docs/research/value-proposition.md`, updates the vision goal's `Supports:` list in the same change, and records it as a team decision, per [The Story](../../requirements/user-stories-requirements.md#the-story).
+  The stories name a `VP-nn` the vision's goal traces to; an internal capability's story names the end-user value proposition the capability makes measurable or keeps deliverable, so neither story adds a value proposition and the vision is not changed, per [The Story](../../requirements/user-stories-requirements.md#the-story).
   Both capabilities are recognised by an internal user, so `docs/features.md` gains an entry for each, named for the capability such as `See how the product is used` and `Diagnose a quality problem from the operating signals`; each entry links its story, its functional requirement, and its ADR, and the dashboards are evidence and are never linked, because their addresses are unstable or private-only.
   The new terms are added to `docs/glossary.md` as the entries use them.
 - **The architecture.**
@@ -219,8 +219,13 @@ The week then prepares the threshold review, and the deck is not part of it.
 
 ## Changes To The Requirements
 
-These are changes to files Assignment 5 creates or edits, plus two new requirements files.
+These are the changes to the requirement files: the files Assignment 5 creates or edits, the two new requirements files, and two changes in `user-stories-requirements.md` for the two internal stories.
 No other requirements file changes.
+
+### `user-stories-requirements.md`
+
+- [The Story](../../requirements/user-stories-requirements.md#the-story) rule 4 gains the internal-capability rule: an internal capability does not get a value proposition of its own, its story names the `VP-nn` the capability makes measurable or keeps deliverable, and its statement says what the capability enables for the internal user.
+- The same rule's outside-the-vision sentence changes from adding a `VP-nn` to the goal as a team decision to adding it through a decision that gets an entry, so a change to the goal is a `DEC-nnn` rather than an entry-free team decision.
 
 ### `analytics-requirements.md`
 
@@ -432,7 +437,7 @@ The entries:
 16. The syllabus, the routers, the destination map, the plans row, the README lecture and Rules rows, the features definition, and `AGENTS.md` are updated for the two plans, the four dashboards, the `SLI`, the two functional requirements and stories, the two feature entries, the two ADRs, the no-deck week, the Week 7 deck, and the Week 8 presentations; `course/tooling.md` and `TODO.md` follow the same change.
 17. The Week 6 Moodle wrapper carries all four dashboards' addresses and credentials, the product's staging and production addresses, and no deck; the report says the customer reaches them from the university network.
 18. Week 7's usability work uses the events the week leaves, so the event table covers the core task end to end, and the Week 7 plan links the analytics plan rather than restating it.
-19. The week adds the analytics functional requirement and the observability functional requirement, and the product-analyst and operator stories specify them; the stories name a `VP-nn` the vision's goal traces to, a team whose internal user has no existing value proposition adds it to `docs/research/value-proposition.md` and updates the vision's `Supports:` list, and both capabilities get a `docs/features.md` entry; the dashboards are evidence, never a feature and never a linked address.
+19. The week adds the analytics functional requirement and the observability functional requirement, and the product-analyst and operator stories specify them; the stories name the end-user `VP-nn` the capabilities make measurable or keep deliverable, no value proposition is added for an internal user, and both capabilities get a `docs/features.md` entry; the dashboards are evidence, never a feature and never a linked address.
 20. The guide is `guides/analytics-and-observability.md`, and the planning, quality-requirement-test, and deployment guides gain pointers to it, and the `deployed` level is unchanged.
 21. The lecture is not edited: its metrics, analytics, SLA/SLO/SLI, and observability sections are the teaching the assignment relies on, and the committed PDF is current; the gate is green.
 22. The week runs no experiment and adds no user-facing capability; the sprint's stories are the two internal ones scheduled in `SPRINT-06`, at least one analytics metric is computed by its query, and the report says whether the focus metric has a value yet.
@@ -541,7 +546,7 @@ The entries:
 
 ### The Requirements This Plan Extends
 
-- `requirements/analytics-requirements.md` (new), `requirements/observability-requirements.md` (new), [Quality Requirements](../../requirements/quality-requirements-requirements.md), [General Requirements](../../requirements/general-requirements.md), [Planning Requirements](../../requirements/planning-requirements.md), [Repository Requirements](../../requirements/repository-requirements.md), [Visibility Requirements](../../requirements/visibility-requirements.md), [Customer Meeting Requirements](../../requirements/customer-meetings-requirements.md), and [Weekly Report Requirements](../../requirements/weekly-report-requirements.md), plus `requirements/functional-requirements-requirements.md`, `requirements/architecture-requirements.md`, `requirements/adr-requirements.md`, `requirements/releases-requirements.md`, and `requirements/features-requirements.md`, whose rules the new work extends in one place.
+- `requirements/analytics-requirements.md` (new), `requirements/observability-requirements.md` (new), [Quality Requirements](../../requirements/quality-requirements-requirements.md), [General Requirements](../../requirements/general-requirements.md), [Planning Requirements](../../requirements/planning-requirements.md), [Repository Requirements](../../requirements/repository-requirements.md), [Visibility Requirements](../../requirements/visibility-requirements.md), [Customer Meeting Requirements](../../requirements/customer-meetings-requirements.md), and [Weekly Report Requirements](../../requirements/weekly-report-requirements.md), plus `requirements/functional-requirements-requirements.md`, `requirements/architecture-requirements.md`, `requirements/adr-requirements.md`, `requirements/releases-requirements.md`, `requirements/features-requirements.md`, and `requirements/user-stories-requirements.md`, whose rules the new work extends in one place.
 
 ### The Format Reference
 

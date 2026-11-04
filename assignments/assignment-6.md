@@ -79,8 +79,8 @@ This week:
 3. Add one `US-nn` for the product analyst and one for the system operator, in the Week 4 story shape.
 4. Schedule both in `SPRINT-06`, with their GitHub milestone, their `Responsible` and `Accountable` values, and both assignees.
 5. Each story's `### Specified by` names the `FR-nnn` and the `ADR-nnn` that specify it, using the next free identifier in each family: one pair for the analyst and one for the operator.
-6. Each story names a `VP-nn` the vision's goal traces to.
-   When no existing value proposition covers the internal user, add one to `docs/research/value-proposition.md`, update the vision goal's `Supports:` list in the same change, and record it as a team decision.
+6. Each story names a `VP-nn` the vision's goal traces to: the analyst's story names the end-user value proposition the analytics capability makes measurable, and the operator's story names the one the product's operation keeps deliverable.
+   No value proposition is added and the vision's `Supports:` list is not changed, per [The Story](../requirements/user-stories-requirements.md#the-story).
 7. Write the task issues for the two pipelines, the four dashboards, and the observability test, each with its `### Requirements` section, and schedule them in `SPRINT-06`.
 8. The plan milestone due in `SPRINT-06` leads with the increment the telemetry delivers, and it is the milestone the release belongs to.
 
@@ -406,7 +406,7 @@ A strong submission has:
 - **A diagnosability requirement about the product, not the dashboard.**
   The staging organization's log query returns the failed request's point within five seconds, the `SLI`'s five-minute P95 query returns the failure series, and the screenshot is the evidence that the pipeline stored and rendered it.
 - **Two internal capabilities with their records.**
-  The analyst's story and the operator's story each name their `FR-nnn` and `ADR-nnn`, and each capability has a `docs/features.md` entry that links them and no dashboard address.
+  The analyst's story and the operator's story each name the end-user `VP-nn` they serve, their `FR-nnn`, and their `ADR-nnn`, and each capability has a `docs/features.md` entry that links the story, the requirement, and the record, and no dashboard address.
 - **A container view that shows what the product talks to.**
   The two telemetry backends appear as external systems with the protocol on each arrow, the container set is unchanged, and the two records address the requirements they serve.
 - **A threshold that moves only with the customer.**
@@ -483,7 +483,7 @@ The PDF carries no deck.
 ## Checklist
 
 - [ ] `SPRINT-06` planned with its goal, its `**Due:**` field, its `**Sprint Backlog:**` link, and its `**Planned Velocity:**` ([Part 1](#part-1-refine-the-product-backlog-and-plan-the-sprint)).
-- [ ] One `US-nn` for the product analyst and one for the system operator, each with its `VP-nn`, its `### Specified by`, its `MoSCoW`, `Story Points`, `Responsible`, `Accountable`, and two assignees, both scheduled in `SPRINT-06` ([Part 1](#part-1-refine-the-product-backlog-and-plan-the-sprint)).
+- [ ] One `US-nn` for the product analyst and one for the system operator, each with the end-user `VP-nn` it serves, its `### Specified by`, its `MoSCoW`, `Story Points`, `Responsible`, `Accountable`, and two assignees, both scheduled in `SPRINT-06` ([Part 1](#part-1-refine-the-product-backlog-and-plan-the-sprint)).
 - [ ] The next two sprints' worth of the product backlog refined, with the `Story Points` on each and no sprint milestone ([Part 1](#part-1-refine-the-product-backlog-and-plan-the-sprint)).
 - [ ] The task issues for the two pipelines, the four dashboards, and the observability test, each with its `### Requirements`, scheduled in `SPRINT-06` ([Part 1](#part-1-refine-the-product-backlog-and-plan-the-sprint)).
 - [ ] `docs/analytics.md` with the focus metric traced to its `VP-nn`, the seven criteria, one rejected vanity metric, the counter-metric, the L1 and L2 inputs, and the tree ([Part 2](#part-2-write-the-analytics-plan-and-the-metric-tree)).
