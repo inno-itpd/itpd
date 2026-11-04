@@ -74,7 +74,7 @@ The event table is the one registry and the schema the instrumentation sends, so
 1. The page carries a `## The Events` section with one table whose columns are `Event`, `Fires when`, `Fields`, and `Collected at`, in this order.
 2. The table is the one registry of events: an event is cited by its name plus `docs/analytics.md#the-events`, and there is no section per event.
    An event's name matches a row exactly, and a rename updates every citation in the same pull request.
-3. Every event's name follows one convention, stated under the table as `object_action` in snake case, such as `booking_confirmed`.
+3. Every event's name follows one convention, stated above the table as `object_action` in snake case, such as `booking_confirmed`.
 4. `Fires when` states the user's or the system's action that produces the event, in one sentence.
 5. `Fields` is the event's payload: each field's name, its type, and whether it is required, such as `booking_id` (uuid, required) or `amount` (integer, minor units).
    An event carries no personal name, email address, phone number, postal address, free text, or payment card data, per [Telemetry And Personal Data](visibility-requirements.md#telemetry-and-personal-data).
@@ -206,6 +206,9 @@ The two dashboards chart the booking conversion rate as its input, and the check
 
 ## The Events
 
+Every event is named `object_action` in snake case.
+Every event carries `source`, which is `web`, `usability-test`, or `smoke`.
+
 | Event                       | Fires when                                                      | Fields                                                                                                                         | Collected at                       |
 | --------------------------- | --------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------- |
 | `availability_published`    | A coach publishes or changes the slots offered for a week.      | `coach_id` (uuid, required), `week_start` (date, required), `source` (required)                                                | `backend`, staging and production  |
@@ -217,8 +220,6 @@ The two dashboards chart the booking conversion rate as its input, and the check
 | `booking_confirmed`         | The booking is stored and the client sees the confirmation.     | `booking_id` (uuid, required), `coach_id` (uuid, required), `source` (required)                                                | `backend`, staging and production  |
 | `booking_cancelled`         | A client or the coach cancels a confirmed booking.              | `booking_id` (uuid, required), `cancelled_by` (one of `client`, `coach`, required), `source` (required)                        | `backend`, staging and production  |
 | `booking_no_show_reported`  | The coach reports that the client did not attend.               | `booking_id` (uuid, required), `source` (required)                                                                             | `frontend`, staging and production |
-
-The events are named `object_action` in snake case, and every event carries `source`, which is `web`, `usability-test`, or `smoke`.
 
 ## The Pipeline
 

@@ -59,7 +59,17 @@ Who may see each item is in [Visibility Requirements](visibility-requirements.md
 
 16. The report's summary says whether the focus metric has a value yet and what it would need, links `docs/analytics.md` and `docs/observability.md`, and copies no chart or row from either page.
     It shows at least one analytics metric that its query computes, and it does not present test traffic as a value.
-17. When a threshold review is due, a `## Threshold review` section carries it, per [The Threshold Of Success](planning-requirements.md#the-threshold-of-success): each open goal's current measure and whether the analytics or the observability data can settle it, and any proposed measure with its number, its week, and the metric's `###` link.
+17. When a threshold review is due, a `## Threshold review` section carries it, per [The Threshold Of Success](planning-requirements.md#the-threshold-of-success): one table, with one row per open goal the review read, in `TOS-nn` order, with these columns, in this order:
+
+    | Column                   | What it holds                                                                                                                                    |
+    | ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+    | `Goal`                   | The goal, linked to its section in `docs/threshold-of-success.md`, such as `[TOS-01](../../docs/threshold-of-success.md#tos-01)`                 |
+    | `Current measure`        | The goal's current `**Measure:**`, with the week it lands in                                                                                     |
+    | `New data can settle it` | `Yes` and the analytics or observability data that settles it, or `No` and why the data cannot                                                   |
+    | `Proposal`               | A proposed measure with its number, the week it lands in, and the metric's `###` link in `docs/analytics.md`, or `—` when the team proposes none |
+
+    The section states each goal's status below the table, says what the team proposed or that it proposed nothing and why, and leaves a settled goal's `**Outcome:**` in `docs/threshold-of-success.md`.
+
 18. When the week has evidence screenshots, the report embeds each one as an image in the section that describes it, and the assignment sets how many.
 
 **Recommended**
@@ -99,10 +109,14 @@ The analytics plan is [docs/analytics.md](../../docs/analytics.md) and the obser
 
 ## Threshold review
 
-`TOS-01` is `Achieved`: a client booked a paid session in production on 2026-11-04 and the payment settled in the provider's sandbox.
-`TOS-02` stays `Missed`, with `US-08` moved out of the candidate at the Week 3 meeting.
-`TOS-03`, set in Week 3, stays `Open`: its measure is three of five participants completing the core task unaided, recorded in the Week 7 usability findings, and the analytics data cannot settle it before then.
-The team proposed no analytics-measured goal and no revised measure this week, and the customer agreed none was needed.
+| Goal                                                | Current measure                                                                                                                      | New data can settle it                                                             | Proposal |
+| --------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------- | -------- |
+| [TOS-01](../../docs/threshold-of-success.md#tos-01) | One booking in the deployed product whose payment settled in the provider's sandbox, by the end of Week 6                            | Yes — the `booking_confirmed` and `payment_succeeded` events record it             | —        |
+| [TOS-03](../../docs/threshold-of-success.md#tos-03) | At least three of five participants completed the core task unaided, recorded in the Week 7 usability findings, by the end of Week 7 | No — a usability session is neither an analytics event nor an observability signal | —        |
+
+`TOS-01` is `Achieved` and `TOS-03` stays `Open`, per [the threshold of success](../../docs/threshold-of-success.md).
+`TOS-02` was settled in Week 3, with `US-08` moved out of the candidate, and is not read.
+The team proposed no analytics-measured goal and no revised measure this week, because no remaining open goal is a number either pipeline can improve, and the customer agreed none was needed.
 
 ## Analytics and observability
 

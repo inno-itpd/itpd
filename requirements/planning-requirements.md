@@ -271,7 +271,7 @@ The steps that produce the set, from picturing failure to keeping the minimal se
 **Since: W6**
 
 10. In Week 6 the team reviews each open `TOS-nn` against what it can now measure: the goal's current `**Measure:**`, and whether the analytics or the observability data can settle it.
-    The review is preparation for the Sprint Review, and it is the `## Threshold review` section of the weekly report, per [Weekly Report Requirements](weekly-report-requirements.md#weekly-public-report).
+    The review is preparation for the Sprint Review, and it is the `## Threshold review` section of the weekly report, one row per open goal, per [Weekly Report Requirements](weekly-report-requirements.md#weekly-public-report).
 11. The team may propose an analytics-measured goal or a revised `**Measure:**`, and a proposed measure states its number and the week it lands in and links the metric's `###` section in `docs/analytics.md`.
     No goal is required to change.
 12. Only the customer's `DEC-nnn` agreed at the Sprint Review moves the bar: the goal's `**Changed:**` cites it, per rule 3, and the meeting report records it in `## Decisions`, per [Meeting Report](customer-meetings-requirements.md#meeting-report).

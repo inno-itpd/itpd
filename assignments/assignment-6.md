@@ -269,8 +269,8 @@ The rules:
 
 This week:
 
-1. Record each open goal's current `**Measure:**` and whether the analytics or the observability data can settle it.
-2. If the team proposes an analytics-measured goal or a revised measure, state its number and the week it lands in and link the metric's `###` section in `docs/analytics.md`.
+1. Record each open goal as one row of the `## Threshold review` table, with its current `**Measure:**` and whether the analytics or the observability data can settle it.
+2. If the team proposes an analytics-measured goal or a revised measure, fill the row's `Proposal` cell with its number, the sprint it lands in, and the metric's `###` section in `docs/analytics.md`.
 3. Set each goal whose measure is already settled to `Achieved` or `Missed` with its `**Outcome:**` and its evidence, and leave each goal due later `Open`.
 4. Write the `## Threshold review` section in `reports/week-06/README.md`, and present the proposal at the Sprint Review.
 5. Record any change the customer agrees as a `DEC-nnn`, cite it under the goal's `**Changed:**`, and list it in the meeting report's `## Decisions`.
@@ -420,7 +420,7 @@ This week it also carries:
 
 1. In the summary, whether the focus metric has a value yet and what it would need, at least one analytics metric its query computes, `REL-06` and its tag, and what moved out of the sprint.
    Point at `docs/project-plan.md#quality-requirement-testing-plan` for the rows that are not `Passes`, and copy none of them.
-2. The `## Threshold review` section, with each open goal's current measure and whether the analytics or the observability data can settle it, and the customer's decision on the proposal.
+2. The `## Threshold review` section, as one row per open goal with its current measure and whether the analytics or the observability data can settle it, and the customer's decision on the proposal.
 3. The four sanitized dashboard screenshots in `reports/week-06/images/`, linked with the metric or `SLI` each shows, and the observability test's result with the request identifier and failure labels it recorded.
 4. The coverage table, with these rows:
 
@@ -503,7 +503,7 @@ The PDF carries no deck.
 - [ ] The test run against staging, its row `Passes` with `Checked` in `SPRINT-06`, and its evidence linked ([Part 9](#part-9-write-the-observability-requirement-and-its-test-and-run-the-test)).
 - [ ] Each `SPRINT-06` testing-plan row run or moved to `SPRINT-07` with a reason, the optional re-run recorded when it was run, and the moves declared in the report ([Part 9](#part-9-write-the-observability-requirement-and-its-test-and-run-the-test)).
 - [ ] The new requirement's row in the index and the matrix, and the index linking the testing plan once ([Part 9](#part-9-write-the-observability-requirement-and-its-test-and-run-the-test)).
-- [ ] Each open goal's current measure and whether the new data can settle it, each settled goal set with its `**Outcome:**`, each later goal left `Open`, and the `## Threshold review` in the report ([Part 10](#part-10-review-the-threshold-of-success)).
+- [ ] Each open goal as one row of the review table with its current measure and whether the new data can settle it, each settled goal set with its `**Outcome:**`, each later goal left `Open`, and the `## Threshold review` in the report ([Part 10](#part-10-review-the-threshold-of-success)).
 - [ ] Each Week 5 action point's outcome in `## Previous action points`, and each Week 5 open question answered or carried forward in `## Previous open questions` ([Part 11](#part-11-carry-out-the-week-5-action-points-and-open-questions)).
 - [ ] `reports/week-06/meeting-script.md` ([Part 12](#part-12-validate-with-the-customer)).
 - [ ] `reports/week-06/meeting-report.md`, with the dashboards, the tests' results, the `SLI` each runtime test read, the threshold proposal, a `DEC-nnn` for any change, and 2 or more action points due in Week 7 ([Part 12](#part-12-validate-with-the-customer)).

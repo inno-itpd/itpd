@@ -47,6 +47,7 @@ The metric is the number the `SLI`s are computed from, and the log and the trace
 
 A **service level indicator**, `SLI-nn`, is a product quality signal the product emits and the observability pipeline records: what is measured, in which unit, over which window, and by which query.
 It is not an analytics metric and not a quality requirement: the `SLI` records the measured signal, and the requirement's `Response Measure` stays the target.
+A **point** is one observation of the signal: one value in the `SLI`'s `**Unit:**`, with the labels it carries and the time it was recorded, such as one request's duration labelled with its `request_id`, `route`, and `outcome`; an aggregate is computed from the points in the window.
 The family, its two digits, its repository-wide scope, its `## SLI-01` heading, its status values, and its citation are in [Identifier Rules](general-requirements.md#identifier-rules).
 The query is written in the backend's query language; OpenObserve runs PromQL through its metrics API, so the example's PromQL is what its chart runs, and a backend that uses SQL records the SQL form.
 

@@ -138,7 +138,7 @@ Then read the table back: could a developer instrument from it, and could a stra
 
 ### Name The Events One Way
 
-State one convention under the table, such as `object_action` in snake case, and follow it in every row.
+State one convention above the table, such as `object_action` in snake case, so a reader meets the naming before the rows, and follow it in every row.
 A mixed `bookingConfirmed`, `booking_confirmed`, and `confirm_booking` makes a query guess at names, and a rename breaks every chart silently.
 
 ### Keep Personal Data Out Of The Payload
@@ -150,6 +150,7 @@ Free text is the field that most often arrives by accident, because a cancellati
 ### Carry `source` On Every Event
 
 Every event carries `source`, with a value from a closed set such as `web`, `usability-test`, or `smoke`.
+State the set above the table, with the naming convention.
 `smoke` is the team's own pipeline check: it goes to the staging scope only, the staging dashboard's event list shows it and the chart excludes it, so a test run never becomes a metric's value.
 A staging test event that reaches production is a deviation the week's report declares, per [Declaring Deviations](../requirements/weekly-report-requirements.md#declaring-deviations).
 
@@ -174,7 +175,8 @@ The runbook carries the commands, the ports, the configuration, and the restart;
 
 ### Separate The Environments By Scope
 
-One backend instance carries one environment scope per environment, `staging` and `production`: an OpenPanel project, or the documented backend's equivalent.
+An **environment scope** is the backend's own partition that holds one environment's data and serves its dashboard: an OpenPanel project, an OpenObserve organization, or the documented backend's equivalent.
+One backend instance carries one environment scope per environment, `staging` and `production`.
 Give each scope its own credential such as a client ID, configure each environment's build with its own, and verify that the staging build's events land in the staging scope and the production build's in the production scope.
 
 The separation is what lets the team test the pipeline without writing the production metric.
@@ -208,7 +210,7 @@ Do not define an `SLI` for a chart the team wants; define the signal a test read
 ### Write The Labels A Test Can Read
 
 Write the `**Definition:**` with the labels the signal carries, the `**Unit:**` it is reported in, and the `**Window:**` it covers.
-The `SLI` the diagnosability test reads names the labels that identify the request and the failure, such as `request_id` and `outcome`, so the test can find one request's point as well as the aggregate.
+The `SLI` the diagnosability test reads names the labels that identify the request and the failure, such as `request_id` and `outcome`, so the test can find one request's [point](../requirements/observability-requirements.md#the-slis) as well as the aggregate.
 
 Record the `**Query:**` a chart uses when it shows the signal, with the labels and the window it selects.
 A signal without a chart still records its query, and a test can read it; a chart cannot run a query the page does not carry.
@@ -262,6 +264,7 @@ A short-window check is the week's required demonstration because it can pass be
 
 The test's `**Runs at:**` names the staging deployment, the command, and the `Active` `SLI` it reads, linked, per [Quality Requirement Tests](../requirements/quality-requirements-requirements.md#quality-requirement-tests).
 Its `**Pass when:**` states the requirement's `Response Measure` made specific to staging and to the five-second window, and still settles the measure's threshold: one failed request is the instance the procedure produces, not a narrower bar, and the `SLI`'s five-minute P95 query must return the failure series within one minute.
+The one-minute wait is the `SLI`'s `**Window:**`, which records how soon the aggregate point appears after the request; the test waits that long rather than the full five-minute window.
 
 Record the result as the testing plan's row, with `Checked` in the sprint and the evidence the `deployed` level requires, and declare any test traffic that reached production as a deviation.
 
@@ -300,20 +303,21 @@ The team now has numbers it did not have when the goals were written, and the re
 
 ### Read Each Open Goal Against The New Data
 
-For each open `TOS-nn`, write its current `**Measure:**` and whether the analytics or the observability data can settle it.
-Some goals were written before the product had numbers, and the review is where that gap becomes visible.
+Read every open `TOS-nn`, including the ones neither pipeline can settle, and give each one a row in the report's `## Threshold review` table: the goal, its current `**Measure:**`, and whether the analytics or the observability data can settle it.
+Some goals were written before the product had numbers, and the review is where that gap becomes visible: a goal the data cannot settle is recorded as `No`, not left out.
 
 ### Propose A Measure
 
-The team may propose an analytics-measured goal or a revised `**Measure:**`, and the proposal states the number, the week it lands in, and the metric's `###` link in `docs/analytics.md`.
+The team may propose an analytics-measured goal or a revised `**Measure:**`, and the proposal fills the row's `Proposal` cell with the number, the week it lands in, and the metric's `###` link in `docs/analytics.md`.
 The customer agrees the change at the Sprint Review, and only that `DEC-nnn` moves the bar, per [The Threshold Of Success](../requirements/planning-requirements.md#the-threshold-of-success).
 
-No goal is required to change: a week that proposes nothing and records why is a complete review.
+No goal is required to change: a row with `—` in its `Proposal` cell and the reason below the table is a complete review.
 
 ### Settle Only What The Review Can Settle
 
 A goal whose measure is already met or already impossible becomes `Achieved` or `Missed` with its `**Outcome:**`, and one whose measure lands later stays `Open`.
-The report carries the review in its `## Threshold review` section, and the meeting report records the customer's decision in `## Decisions`.
+The table does not carry the `**Outcome:**` or the `**Changed:**` field: those stay in the goal's section in `docs/threshold-of-success.md`, per [The Threshold Of Success](../requirements/planning-requirements.md#the-threshold-of-success).
+The report states each goal's status below the table, and the meeting report records the customer's decision in `## Decisions`.
 
 ## Step 9: Keep The Data Private
 
@@ -368,6 +372,8 @@ The switch is what a team on a development machine uses, and what the review ask
   The requirement's `Response Measure` is the target and the test's `**Pass when:**` settles it in the test's context.
 - **A `deployed` test that runs against production.**
   The `deployed` level is the staging deployment, and a test against production writes the customer's data.
+- **A threshold review that reads only the goals the data can settle.**
+  Every open goal gets a row, including the ones neither pipeline can settle, because the gap is the finding.
 - **A screenshot with personal data.**
   Sanitize before publishing, and crop to the chart.
 - **A dashboard on the public internet.**
