@@ -94,7 +94,7 @@ The point is not the list; it is that a metric failing one of them is replaced b
 If the focus metric fails "measurable" because the product records nothing that feeds it, that is a gap in [Step 2](#step-2-write-the-events-and-instrument-the-product), not a reason to keep a metric the pipeline cannot compute.
 
 Reject at least one vanity metric in writing, with the reason.
-A star, a follower, a page view, and a download count the cheapest action a stranger can take; a booking, a payment, and a completed session count the value the product exists for.
+A GitHub star, a follower, a page view, and a download count the cheapest action a stranger can take; a booking, a payment, and a completed session count the value the product exists for.
 
 ### Guard It With A Counter-Metric
 
