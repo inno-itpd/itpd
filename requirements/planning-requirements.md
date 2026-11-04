@@ -307,7 +307,7 @@ A client reschedules a booking without emailing the coach, the booking page show
 
 ### MLS-06
 
-- **Due:** 2026-11-07
+- **Due:** 2026-11-08
 - **Sprints:** [SPRINT-06](#sprint-06)
 - **Advances:** [TOS-01](threshold-of-success.md#tos-01)
 
@@ -365,7 +365,7 @@ A client sees the free slots within two seconds, and the product runs on the sta
 
 The product reports how it is used and how it operates, and the two dashboards show both on the university network.
 
-- **Due:** 2026-11-07
+- **Due:** 2026-11-08
 - **Sprint Backlog:** [the issues scheduled into SPRINT-06](https://github.com/<organization>/<repo>/milestone/4)
 - **Planned Velocity:** 8
 - **Actual Velocity:** 8; nothing moved out.

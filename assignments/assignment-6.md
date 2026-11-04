@@ -2,7 +2,7 @@
 
 **This week's deadline:**
 
-- Hard deadline: Saturday 7 November 2026, 23:59.
+- Hard deadline: Sunday 8 November 2026, 23:59.
 
 There is no soft deadline.
 See [Deadlines And Submission](../course/rules.md#deadlines-and-submission).
@@ -75,7 +75,7 @@ The rules:
 This week:
 
 1. Refine the next two sprints' worth of the product backlog until each item is ready to schedule, and leave those items unscheduled.
-2. Plan `SPRINT-06`: replace its provisional goal with the sprint's goal, set `**Due:**` to `2026-11-07`, link `**Sprint Backlog:**` to its GitHub milestone, and set `**Planned Velocity:**` to the story points of the stories you scheduled, computed by hand from their `Story Points`.
+2. Plan `SPRINT-06`: replace its provisional goal with the sprint's goal, set `**Due:**` to `2026-11-08`, link `**Sprint Backlog:**` to its GitHub milestone, and set `**Planned Velocity:**` to the story points of the stories you scheduled, computed by hand from their `Story Points`.
 3. Add one `US-nn` for the product analyst and one for the system operator, in the Week 4 story shape.
 4. Schedule both in `SPRINT-06`, with their GitHub milestone, their `Responsible` and `Accountable` values, and both assignees.
 5. Each story's `### Specified by` names the `FR-nnn` and the `ADR-nnn` that specify it, using the next free identifier in each family: one pair for the analyst and one for the operator.

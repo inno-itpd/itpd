@@ -18,7 +18,7 @@ Materials for the **IT Product Development (ITPD)** course: what the course expe
 | [3](assignments/assignment-3.md) | Sat 17 Oct, 23:59 | Planning and the minimum usable product: plan, threshold, risks, Definition of Done, first release                                                                                                                                      |
 | [4](assignments/assignment-4.md) | Sat 24 Oct, 23:59 | Quality and architecture: quality and functional requirements, architectural decision records, drivers, glossary, retrospective, fourth release                                                                                         |
 | [5](assignments/assignment-5.md) | Sat 31 Oct, 23:59 | Testing and deployment: quality requirement tests and the testing plan, automated tests and CI checks, staging and production on the VM, Feature Documentation, the Week 5 release                                                      |
-| [6](assignments/assignment-6.md) | Sat 7 Nov, 23:59  | Product analytics and observability: the analytics plan and metric tree, the events, the four dashboards, the two internal stories, the two ADRs, the diagnosability requirement and its test, the threshold review, the Week 6 release |
+| [6](assignments/assignment-6.md) | Sun 8 Nov, 23:59  | Product analytics and observability: the analytics plan and metric tree, the events, the four dashboards, the two internal stories, the two ADRs, the diagnosability requirement and its test, the threshold review, the Week 6 release |
 
 Later assignments are added as the course runs.
 Each one adds the paths and evidence for its week, and changes nothing about the rules below.
@@ -121,4 +121,4 @@ Detailed content goes in dedicated files that the report links.
 Your repository is public and MIT-licensed.
 The Moodle submission is a PDF that points at it: a permalink to your week report at the exact commit you submitted, a permalink to the repository at that commit, the private material that must not be public, and a zip snapshot of that commit.
 
-One submission per team, due Saturday 23:59.
+One submission per team, due 23:59 on the date the syllabus gives.

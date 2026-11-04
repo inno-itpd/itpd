@@ -36,7 +36,7 @@ Unchecked generated text and filler reduce the week's grade; see [AI Usage Repor
 
 - Every week has one team submission.
 
-  The group submissions from Week 4 to Week 9 are due on **Saturday at 23:59**, with no soft deadline.
+  The group submissions from Week 4 to Week 9 are due on **Saturday at 23:59**, with no soft deadline, except Week 6, which is due on **Sunday 8 November at 23:59**.
 
   Weeks 1 to 3 keep the soft and hard deadline pair their assignments record.
 
