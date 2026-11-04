@@ -313,6 +313,7 @@ The team now has numbers it did not have when the goals were written, and the re
 ### Read Each Open Goal Against The New Data
 
 Read every open `TOS-nn`, including the ones neither pipeline can settle, and give each one a row in the report's `## Threshold review` table: the goal, its current `**Measure:**`, and whether the analytics or the observability data can settle it.
+A goal settled in an earlier week is not `Open`, so it gets no row and no status sentence.
 Some goals were written before the product had numbers, and the review is where that gap becomes visible: a goal the data cannot settle is recorded as `No`, not left out.
 
 ### Propose A Measure
@@ -320,13 +321,14 @@ Some goals were written before the product had numbers, and the review is where 
 The team may propose an analytics-measured goal or a revised `**Measure:**`, and the proposal fills the row's `Proposal` cell with the number, the week it lands in, and the metric's `###` link in `docs/analytics.md`.
 The customer agrees the change at the Sprint Review, and only that `DEC-nnn` moves the bar, per [The Threshold Of Success](../requirements/planning-requirements.md#the-threshold-of-success).
 
-No goal is required to change: a row with `—` in its `Proposal` cell and the reason below the table is a complete review.
+No goal is required to change: a row with `—` in its `Proposal` cell and the reason in the paragraph after the table is a complete review.
 
 ### Settle Only What The Review Can Settle
 
 A goal whose measure is already met or already impossible becomes `Achieved` or `Missed` with its `**Outcome:**`, and one whose measure lands later stays `Open`.
 The table does not carry the `**Outcome:**` or the `**Changed:**` field: those stay in the goal's section in `docs/threshold-of-success.md`, per [The Threshold Of Success](../requirements/planning-requirements.md#the-threshold-of-success).
-The report states each goal's status below the table, and the meeting report records the customer's decision in `## Decisions`.
+The report states each reviewed goal's status in one sentence after the table, in `TOS-nn` order, and links the goal to its section; the `**Outcome:**` there says what was found and links the evidence, and the report does not restate it.
+The meeting report records the customer's decision in `## Decisions`.
 
 ## Step 9: Keep The Data Private
 
