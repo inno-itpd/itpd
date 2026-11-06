@@ -94,6 +94,11 @@
   ]
 }
 
+// Every section opens with a quiz and closes with its Key Takeaways slide.
+#let quiz(body) = slide("Quiz")[#body]
+
+#let key-takeaways(section, body) = slide("Key takeaways" + " " + "(" + section + ")")[#body]
+
 // --- Title and agenda -------------------------------------------------------
 
 #title-slide()
@@ -113,24 +118,20 @@
   What is usability?
 
   Why do you think you need to test it?
-
-  When you were building your app, did you think about affordances?
-
-  What are Gibson affordances? (Exploratory actions)
-
-  What are Norman affordances? (Correct usability)
 ]
 
 #slide("Usability testing")[
-  #term[Action]
-  - Evaluate a product or service by testing it with representative users.
+  Adapted from #link("https://www.usertesting.com/blog/common-usability-testing-questions")[Usability testing]:
 
-  #term[Goal]
-  - Identify any usability problems.
+  - *Goal:* Identify problems end-users can have before releasing the product, understand user behavior, get feedback to improve the product.
 
-  #term[How]
+  - *How:* Evaluate the product by testing it with representative users and observing their behavior.
+
+  - *What:*
   - Collect qualitative and quantitative data.
   - Determine the participant's satisfaction with the product.
+
+  Can be used to evaluate #link("https://iso25000.com/en/iso-25000-standards/iso-25010")[Interaction Capability (ISO/IEC 25010)] of your product.
 ]
 
 #slide("Usability testing: focus")[
@@ -138,62 +139,124 @@
     columns: (0.45fr, 1fr),
     column-gutter: 18pt,
     [
-      #term[Focus on]
+      *Focus on:*
       - Measure
       - Data
       - Learn
     ],
-    image("images/lecture-7/product-development-cycle.jpg", height: 265pt),
+    [#figure(
+      image("images/lecture-6/lean-startup-circle.png", height: 265pt),
+      caption: "Ries' Lean startup, "
+        + link("https://blog.babak.no/2016/11/07/six-management-ideas-applied-to-research-leadership/")[source],
+    )],
   )
 ]
 
-#slide("Usability testing process outline")[
+#slide("Usability test process outline")[
+  Adapted from #link("https://www.usertesting.com/resources/guides/usability-testing")[Usability testing] and #link("https://www.usertesting.com/resources/guides/usability-testing")[How to run a usability test]:
+
+  + Select the testing goal and audience
+  + Decide on the scope, budget, time
+  + Establish evaluation criteria (metrics)
+  + Decide on tasks for the test
+  + Instrument your system with relevant metrics
+  + Prepare scripts (instructions, tasks, questions, etc.)
+  + Screen participants (filter out irrelevant participants)
   + Run pre-test survey
-  + Run experiment (test)
-  + Collect data
+  + Run test
   + Run post-test survey
-  + Organize
+  + Organize data
   + Interpret and analyze
   + Learn
 ]
 
+#slide("Usability testing vs User acceptance testing")[
+  Adapted from #link("https://testsigma.com/blog/user-acceptance-testing-vs-usability-testing/")[User Acceptance Testing vs Usability Testing]:
+
+  - *Usability testing* - Used to uncover usability problems. Performed during the design and development.
+  - *User acceptance testing* - Used to uncover mismatches with requirements and expectations of stakeholders. Usually happens close to the final release of the product.
+]
+
+#key-takeaways("Usability testing")[
+  - Usability testing is used to uncover potential end-users' problems before releasing the product to end-users.
+  - Usability testing requires finding real participants representing the end-users.
+  - Usability testing relies on qualitative and quantitative data, and you should plan in advance how you collect and evaluate it.
+]
+
 // --- Running the test -------------------------------------------------------
 
-#section("Running the test")
+#section("Running the usability test")
 
-#slide("Pre-test survey")[
-  The goal is to understand the person and compare results between users with
-  similar backgrounds after the tests.
-
-  A basic "Please, tell us about yourself" will do, but try to get more
-  specific details that matter for your application.
+#quiz[
+  - What should you have scripted for a usability test?
 ]
 
-#slide("Run experiment")[
-  Give users an ability to use the system without interruptions.
+#slide("Run the pre-test survey")[
+  Adapted from #link("https://www.usertesting.com/blog/common-usability-testing-questions")[Common usability testing questions]:
 
-  No guidance, help, or user manual is given to the user.
+  - *Goal:* Learn more about your participant before the test influences how they might answer.
+
+  ---
+
+  Examples of questions:
+  - What could you tell about your current role?
+  - What work-related mobile apps do you use?
+  - How familiar are you with ...?
 ]
 
-#slide("Collect data")[
-  It is best if you have automatic action data collection.
+#slide("Run the test")[
+  Adapted from #link("https://www.usertesting.com/blog/how-usability-testing-works")[How user testing works]:
 
-  You can observe what the user does and take notes.
+  - Give users tasks where they use the software without your assistance and think out loud.
+
+  - Ask (open-ended) questions, starting with more general ones and getting to more specific ones.
+
+  - For every task, ask for feedback after they complete that task.
+
+  - Observe what the user does and take notes.
+
+  - Record the user's device screen to later be able to match user's comments and visible interactions.
+]
+
+#slide("Run the post-test survey")[
+  Adapted from #link("https://www.usertesting.com/blog/common-usability-testing-questions")[Follow-up usability test questions]:
+
+  - Get feedback on the experience overall
+  - See if there’s something participants want to talk about that you didn’t ask
+
+  ---
+
+  Examples of questions:
+  - What was your overall impression of the experience?
+  - If you could change anything about it, what would you change?
+  - Is there anything we didn’t ask you about this experience that we should have?
+]
+
+#key-takeaways("Run the usability test")[
+  - Let participants complete specific tasks without your guidance, like real end-users would do.
+  - Ask questions before, during, and after the test.
 ]
 
 // --- Post-test surveys ------------------------------------------------------
 
-#section("Post-test surveys")
+#section("Usability test surveys")
 
-#slide("Post-test survey")[
-  *Survey frameworks:*
+#slide("Survey frameworks")[
+
+  Adapted from #link("https://www.uxtesttools.com/?tab=standard-interfaces")[UX testing tools]:
+
+  - Post-task (after a single task is completed):
   - Single Ease Question (SEQ)
   - After-Scenario Questionnaire (ASQ)
+
+  - Post-test (during the post-test survey)
   - System Usability Scale (SUS)
+  
+  - Any stage:
   - Open-ended questions
 ]
 
-#slide("Single Ease Question (SEQ)")[
+#slide("Single Ease Question (SEQ) [post-task]")[
   #v(0.25in)
   #align(center)[
     #text(size: 18pt)[Overall, how difficult or easy was the task to complete?]
@@ -202,7 +265,7 @@
   #align(center, image("images/lecture-7/seq-scale.jpg", width: 92%))
 ]
 
-#slide("After-Scenario Questionnaire (ASQ)")[
+#slide("After-Scenario Questionnaire (ASQ) [post-task]")[
   + Overall, I am satisfied with the ease of completing the task in this scenario.
   + Overall, I am satisfied with the amount of time it took to complete the task in this scenario.
   + Overall, I am satisfied with the support information (online help, messages, documentation) when completing the task.
@@ -211,7 +274,7 @@
   #align(center, image("images/lecture-7/asq-scale.jpg", width: 92%))
 ]
 
-#slide("System Usability Scale (SUS)")[
+#slide("System Usability Scale (SUS) [post-test]")[
   *Standard 10 questions in order:*
   + I think that I would like to use this system frequently.
   + I found the system unnecessarily complex.
@@ -227,11 +290,15 @@
 ]
 
 #slide("Open-ended questions")[
-  The goal is to fill in missing context.
+  *Goal:* fill in missing context.
 
-  When preparing questions, use the approaches that we discussed:
-  - ORID
-  - "The Mom Test"
+  Ask more specific questions about new pieces of information that the user mentions.
+
+  ---
+
+  Possible approaches for designing questions:
+  - #link("https://www.betterevaluation.org/methods-approaches/methods/orid")[ORID]
+  - #link("https://inkubator.si/wp-content/uploads/2020/05/The-Mom-Test-by-@robfitz.pdf")[The Mom Test]
 ]
 
 // --- Analyzing the results --------------------------------------------------
