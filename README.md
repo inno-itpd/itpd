@@ -36,6 +36,7 @@ They explain the week; [the rules](#the-rules) are what your work is checked aga
 | 4    | [Quality, Architecture & Agile](lectures/lecture-4.pdf)       |
 | 5    | [Testing and automation](lectures/lecture-5.pdf)              |
 | 6    | [Product analytics and observability](lectures/lecture-6.pdf) |
+| 7    | [Usability testing](lectures/lecture-7.pdf)                   |
 
 ## The Rules
 
