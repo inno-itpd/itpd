@@ -128,8 +128,8 @@
   - *How:* Evaluate the product by testing it with representative users and observing their behavior.
 
   - *What:*
-  - Collect qualitative and quantitative data.
-  - Determine the participant's satisfaction with the product.
+    - Collect qualitative and quantitative data.
+    - Determine the participant's satisfaction with the product.
 
   Can be used to evaluate #link("https://iso25000.com/en/iso-25000-standards/iso-25010")[Interaction Capability (ISO/IEC 25010)] of your product.
 ]
@@ -246,14 +246,14 @@
   Adapted from #link("https://www.uxtesttools.com/?tab=standard-interfaces")[UX testing tools]:
 
   - Post-task (after a single task is completed):
-  - Single Ease Question (SEQ)
-  - After-Scenario Questionnaire (ASQ)
+    - Single Ease Question (SEQ)
+    - After-Scenario Questionnaire (ASQ)
 
   - Post-test (during the post-test survey)
-  - System Usability Scale (SUS)
-  
+    - System Usability Scale (SUS)
+
   - Any stage:
-  - Open-ended questions
+    - Open-ended questions
 ]
 
 #slide("Single Ease Question (SEQ) [post-task]")[
@@ -311,41 +311,64 @@
     inset: (x: 8pt, y: 6pt),
     stroke: 0.5pt + luma(70%),
     fill: (x, y) => if y == 0 { luma(95%) } else { none },
-    [*Exploratory actions / Gibson affordances*],
-    [*Correct usability / Norman affordances*],
-    [The user was using the Ctrl-F key to get to the "search" feature],
+    [*Correct usability (Gibson affordances)*], [*Exploratory actions (Norman affordances)*],
     [The user saw the search bar on the interface and used it],
-    [#text(fill: muted)[…]],
-    [#text(fill: muted)[…]],
+    [The user was using the Ctrl-F key to get to the "search" feature],
+
+    [#text(fill: muted)[…]], [#text(fill: muted)[…]],
   )
+
+  ---
+
+  Adapted from #link("https://www.linkinglearning.com.au/understanding-affordances-part-one/")[Understanding affordances]:
+
+  - *Gibson*: affordances exist whether or not they are perceived by the user – they exist independently, and therefore don’t change as the needs and goals of the user changes.
+
+  - *Norman*: affordances may exist in actuality, but they may also exist only in the perception of the user – based on previous experience or knowledge.
+
+  - Therefore, while one person may see an iPad as a useful device for checking email and watching YouTube, another might see it as a stylish cutting board.
 ]
 
 #slide("Organize: match user")[
   Match each user to the corresponding:
   - pre-test survey
-  - specific experiment
-  - observation
+  - specific task
+  - observations
   - post-test survey
 ]
 
-#slide("Interpret and analyze: example")[
-  *Interpreting SUS results:*
+#slide("Recap: System Usability Scale (SUS)")[
+  *Standard 10 questions in order:*
+  + I think that I would like to use this system frequently.
+  + I found the system unnecessarily complex.
+  + I thought the system was easy to use.
 
-  By adding the scores together you get a 0-40 scale.
+  #note[…]
 
-  To convert it to 0-100, multiply by 2.5.
+  With the following response format:
 
-  The result *is not a percentage!*
+  #align(center, image("images/lecture-7/sus-response-format.jpg", width: 55%))
+
+  Source and details: #link("https://measuringu.com/sus/")[https://measuringu.com/sus/]
 ]
 
+
 #slide("Interpret and analyze: example")[
   *Interpreting SUS results:*
 
-  The average score, based on 500+ case studies, is
+  By adding the scores together you get a 0-50 scale.
 
-  #align(center)[*68 points = 50 percentile*]
+  To convert it to 0-100, multiply by 2.
 
-  A score below 68 is considered below average, or below 50%, and vice versa.
+  The result *is not a percentage!*
+  
+  ---
+  
+  The median score, based on 500+ surveys, is
+
+  #align(center)[*68 points = 50th percentile*]
+  
+  A score below 68 is considered below median, or in lower 50% of observations, and vice versa.
 ]
 
 #slide("Interpret and analyze: example")[
@@ -353,12 +376,14 @@
 ]
 
 #slide("Learn")[
-  Write down what you have learned after interpreting and analyzing the results.
+  - Write down what you have learned after interpreting and analyzing the results.
+  
+  - Decide what to change in your approach to designing user tests and to building the product.
 ]
 
 // --- Review and close -------------------------------------------------------
 
-#slide("Review")[
+#quiz[
   What is usability?
 
   Why do you think you need to test it?
@@ -372,10 +397,4 @@
   What is SUS?
 
   How do we interpret SUS results?
-]
-
-#pagebreak(weak: true)
-#v(1.4in)
-#align(center)[
-  #text(size: 28pt, weight: "bold", fill: accent)[Questions?]
 ]
