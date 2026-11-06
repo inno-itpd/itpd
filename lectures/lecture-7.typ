@@ -301,9 +301,18 @@
   - #link("https://inkubator.si/wp-content/uploads/2020/05/The-Mom-Test-by-@robfitz.pdf")[The Mom Test]
 ]
 
+#key-takeaways("Usability test surveys")[
+  - Design questions to maximize learning and achieve the user test goals.
+  - Check established methods that enable relevant analysis.
+]
+
 // --- Analyzing the results --------------------------------------------------
 
 #section("Analyzing the results")
+
+#quiz[
+  - Why need to analyze the data?
+]
 
 #slide("Organize: observation")[
   #table(
@@ -379,6 +388,11 @@
   - Write down what you have learned after interpreting and analyzing the results.
   
   - Decide what to change in your approach to designing user tests and to building the product.
+]
+
+#key-takeaways("Analyze the results")[
+  - Analyze the data to make data-driven decisions.
+  - Learn from what your observations and improve your procedures.
 ]
 
 // --- Review and close -------------------------------------------------------
