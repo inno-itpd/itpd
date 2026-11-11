@@ -337,16 +337,17 @@ The test's result is graded through a quality requirement, and the record is the
 The requirement uses `Interaction Capability` and one sub-characteristic the team chooses from `Learnability`, `Self-descriptiveness`, and `Operability`.
 Choose the one the test actually measures, and write one sentence saying why: `Self-descriptiveness` fits a participant who must recognise what to do without a label, `Learnability` fits a first-time task, and `Operability` fits the effort of the interaction.
 
-The scenario reads a representative participant completing the main usability test task, in the staging deployment on the university network with seeded data, and the response is the behaviour the measure reads.
-The `Response Measure` is a real, countable criterion the team chooses, written before the first session.
-The example is that at least three participants complete the task unaided and the median main-task SEQ is at least five of seven; a team may choose another countable measure or bar that the test observes, and the test settles it.
-The measure is not a target: choose what tells you whether the product is usable, do not coach participants toward it, and do not change it after the data.
+The scenario reads a representative participant completing the main usability test task, in the staging deployment on the university network with seeded data, and the response is the participant's SEQ rating on the main task, recorded after the attempt.
+The `Response Measure` is the median main-task SEQ against a bar the team sets before the first session.
+The example bar is at least five of seven; a team may set another bar, and the test settles it.
+The completion, the assistance, the time, and the SUS stay analysis results and are not the requirement's measure.
+The bar is not a target: set it at the median SEQ that tells you whether the product is usable, do not coach participants toward it, and do not change it after the data.
 
 Carry `**Business importance:** High`, so the requirement needs its test, and the team's own `**Technical risk:**`.
 
 ### Write The Manual Test Around The Record
 
-Write the `QRT-nn` at `manual`, name the `UT-nn` in `**Runs at:**`, and write `**Why Manual:**`: no command can judge whether a representative participant completes the task unaided, and the test reads no `SLI`.
+Write the `QRT-nn` at `manual`, name the `UT-nn` in `**Runs at:**`, and write `**Why Manual:**`: no command can judge whether a representative participant completes the task unaided, or how that participant rates it on the SEQ, and the test reads no `SLI`.
 The procedure runs the main task with at least three participants per the record and reads `results.md`, so the record is the procedure's source.
 
 A manual test whose requirement is `Interaction Capability` and whose `**Runs at:**` names a `UT-nn` is the expected manual test for usability, and it needs no deviation; every other manual test keeps the deviation rule.

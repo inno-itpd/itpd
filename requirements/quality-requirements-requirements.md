@@ -234,7 +234,7 @@ It lists every requirement once, with the priorities that order it and the pair 
 
 The priority matrix, the three active requirements with their tests, and the tests themselves, in `docs/quality-requirements/`, in the meeting-booking example.
 `QR-02` is the mandated testability requirement, so it names the frontend entry point `frontend/src/main.tsx` and the payment module `backend/src/payments/checkout.ts` in its scenario and carries `**Business importance:** High`.
-`QR-01` carries a `deployed` test that reads no `SLI`, because it measures the page's display time and not the backend's response; `QR-02` carries a `CI` test that cites no `SLI`; and `QR-04` a `deployed` test that reads `SLI-01`; `QR-05` carries a `manual` test that reads `UT-01`, because no command can judge whether a representative participant completes the task unaided; `QR-03` is dropped, so it needs none.
+`QR-01` carries a `deployed` test that reads no `SLI`, because it measures the page's display time and not the backend's response; `QR-02` carries a `CI` test that cites no `SLI`; and `QR-04` a `deployed` test that reads `SLI-01`; `QR-05` carries a `manual` test that reads `UT-01`, because no command can judge whether a representative participant completes the task unaided, or how that participant rates it on the SEQ; `QR-03` is dropped, so it needs none.
 The `SLI` itself, its query, and the OpenObserve evidence are in [Observability Requirements](observability-requirements.md#full-example).
 
 From `docs/quality-requirements/README.md`:
@@ -247,7 +247,7 @@ From `docs/quality-requirements/README.md`:
 | [QR-01](qr/QR-01.md) | A client sees the free slots within two seconds of opening the coach's booking link on a mid-range phone.                           | High                | Medium         | Performance Efficiency | Time Behaviour       | Active  |
 | [QR-02](qr/QR-02.md) | A developer can run the checks that cover the payment module from a clean checkout, and a broken payment change fails them.         | High                | Medium         | Maintainability        | Testability          | Active  |
 | [QR-04](qr/QR-04.md) | An operator can find a failed booking request in the product's response-time signal and see which request failed and what happened. | High                | Medium         | Maintainability        | Analysability        | Active  |
-| [QR-05](qr/QR-05.md) | A representative participant completes the main usability test task unaided on first use and finds it easy.                         | High                | Medium         | Interaction Capability | Self-descriptiveness | Active  |
+| [QR-05](qr/QR-05.md) | A representative participant completing the product's main usability test task for the first time finds it easy on the SEQ.         | High                | Medium         | Interaction Capability | Self-descriptiveness | Active  |
 | [QR-03](qr/QR-03.md) | The booking page stays available for 99.9% of the month.                                                                            | Medium              | High           | Reliability            | Availability         | Dropped |
 
 The tests and their results are in [the testing plan](../project-plan.md#quality-requirement-testing-plan).
@@ -425,9 +425,9 @@ A failed booking request in staging is queryable in the staging organization wit
 From `docs/quality-requirements/qr/QR-05.md`, the usability requirement and its manual test:
 
 ```markdown
-# QR-05: Complete The Main Task Unaided On First Use
+# QR-05: Find The Main Task Easy On First Use
 
-A representative participant completing the product's main usability test task for the first time reaches the confirmation without help and finds the task easy.
+A representative participant completing the product's main usability test task for the first time finds it easy on the SEQ.
 
 - **Status:** Active
 - **Characteristic:** Interaction Capability
@@ -435,7 +435,7 @@ A representative participant completing the product's main usability test task f
 - **Business importance:** High
 - **Technical risk:** Medium
 
-`Self-descriptiveness` is what the test measures, because a participant who can tell what each screen expects completes the task unaided.
+`Self-descriptiveness` is what the test measures, because a participant who can tell what each screen expects finds the task easy on the SEQ.
 
 ## Scenario
 
@@ -457,26 +457,26 @@ The product's interface and the main usability test task.
 
 ### Response
 
-The participant reaches the task's end state unaided, or with help the observer records, and the task is easy enough on the SEQ.
+The participant rates the main task on the SEQ after the attempt.
 
 ### Response Measure
 
-At least three participants complete the main usability test task unaided, and the median main-task SEQ is at least five of seven.
+The median main-task SEQ is at least five of seven, the bar the team set before the first session.
 
 ## QRT-01
 
-A representative participant completes the main usability test task unaided on first use and finds it easy.
+A representative participant finds the main usability test task easy on first use.
 
 - **Status:** Active
 - **Level:** manual
 - **Runs at:** [`UT-01`](../../usability-tests/ut-01/README.md), whose sessions run the main task with at least three representative participants and record the results in [`results.md`](../../usability-tests/ut-01/results.md); it reads no `SLI`.
-- **Why Manual:** no command can judge whether a representative participant completes the task unaided, because the judgement reads a person's completion and that person's own ease rating, and it reads no `SLI`.
+- **Why Manual:** no command can judge whether a representative participant completes the task unaided, or how that participant rates it on the SEQ, and it reads no `SLI`.
 
 ### Procedure
 
 1. Book the at least three sessions the `UT-01` record schedules, with participants who match its participant profile.
-2. Run each session's main task per the record's protocol, and record its completion and its SEQ in `sessions/P-nn.md`.
-3. Write the aggregate completion and the median main-task SEQ in `results.md`.
+2. Run each session's main task per the record's protocol, and record its SEQ in `sessions/P-nn.md`.
+3. Write the median main-task SEQ in `results.md`.
 
-**Pass when:** at least three participants completed the main task unaided, and the median main-task SEQ is at least five of seven.
+**Pass when:** the median main-task SEQ is at least five of seven.
 ```
