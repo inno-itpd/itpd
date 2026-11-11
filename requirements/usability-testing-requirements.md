@@ -181,7 +181,9 @@ The survey instrument is `surveys.md`, the session's recording sheet and the ins
 5. The **SUS** is the standard ten items, in their standard order and wording, with no item reworded.
    Each item is answered from strongly disagree (1) to strongly agree (5), and the score is `SUS = 2.5 × (20 + sum(odd) - sum(even))`, computed from the responses as recorded; the even items are not reverse-coded before the formula.
    The results report its mean and median with the `n=<count>` caveat, because a small sample supports no claim about a population.
-6. The quality requirement reads the main task's median SEQ, and the results report the per-task SEQ for the main task and for the two secondary tasks.
+6. The quality requirement reads one of the recorded measures: the main task's completion and assistance, the time on task, the main task's SEQ, or the SUS.
+   The example reads the main task's median SEQ.
+   The results report all the recorded measures, including the per-task SEQ for the main task and for the two secondary tasks.
 7. The **open-ended post-test** asks for the overall impression, what the participant would change, and what the team did not ask.
 8. The qualitative evidence is the observation notes, the quotes, the friction points, and the think-aloud; the quantitative evidence is the completion, the assistance, the time on task, the SEQ, the SUS, and the Week 6 analytics events where they cover the task.
 9. The ASQ is optional: the SEQ and the SUS are enough for comparability and for the lecture's frameworks.
@@ -553,5 +555,6 @@ The sample supports no claim about the population, and the SUS is reported with 
 ## Conclusion
 
 The main task is usable for most participants, and the checkout form's phone field is the largest obstacle.
-The testing plan records [`QR-05 QRT-01`](../../quality-requirements/qr/QR-05.md#qrt-01) as `Passes`: three participants completed the main task unaided, and the median main-task SEQ is 6.
+The testing plan records [`QR-05 QRT-01`](../../quality-requirements/qr/QR-05.md#qrt-01) as `Passes`: the median main-task SEQ is 6, against the bar of at least five of seven the team set before the first session.
+The results also report that three participants completed the main task unaided.
 ```

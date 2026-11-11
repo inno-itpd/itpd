@@ -46,6 +46,7 @@ Recruiting is the long pole and starts first, because three people outside the t
   - [Leave The Results A Stub](#leave-the-results-a-stub)
 - [Step 8: Write The Quality Requirement And Its Test](#step-8-write-the-quality-requirement-and-its-test)
   - [Choose One Interaction Capability Sub-Characteristic](#choose-one-interaction-capability-sub-characteristic)
+  - [Choose The Measure](#choose-the-measure)
   - [Write The Manual Test Around The Record](#write-the-manual-test-around-the-record)
 - [Step 9: Run The Sessions And Analyze The Results](#step-9-run-the-sessions-and-analyze-the-results)
   - [Run At Least Three Counted Sessions](#run-at-least-three-counted-sessions)
@@ -223,7 +224,8 @@ The ASQ is optional: the SEQ and the SUS are enough for comparability and for th
 
 ### Read The Main Task's SEQ
 
-The SEQ is the standard question after each task, `Overall, how difficult or easy was the task to complete?`, on a seven-point scale where 1 is very difficult and 7 is very easy, and the quality requirement reads the main task's median SEQ.
+The SEQ is the standard question after each task, `Overall, how difficult or easy was the task to complete?`, on a seven-point scale where 1 is very difficult and 7 is very easy.
+The example quality requirement reads the main task's median SEQ; a team that chooses another measure reads that one, and the results still report the per-task SEQ.
 Record the SEQ after every task, including a task the participant failed, because a failed task's ease rating is part of what the failure felt like.
 
 The results report the per-task SEQ for the main task and for the two secondary tasks, so a reader can see which flow is the problem rather than one number over all three.
@@ -307,7 +309,7 @@ The analysis plan is written before the first session, so the team cannot choose
 
 ### Fix The Measures Before The Data
 
-Write the per-participant table's columns, the aggregate completion rate, the median time, the median SEQ, the SUS mean and median, the thematic analysis, the severity rating, the telemetry comparison, and the limitations, before the first session.
+Write the per-participant table's columns, the aggregate completion rate, the median time, the median SEQ, the SUS mean and median, the measure and bar the quality requirement uses, the thematic analysis, the severity rating, the telemetry comparison, and the limitations, before the first session.
 The columns are what the team commits to reading, and a measure added after the data is a measure chosen to flatter the result.
 
 The thematic analysis groups the observations into a small set of themes, each with the sessions it came from.
@@ -336,19 +338,26 @@ The test's result is graded through a quality requirement, and the record is the
 
 The requirement uses `Interaction Capability` and one sub-characteristic the team chooses from `Learnability`, `Self-descriptiveness`, and `Operability`.
 Choose the one the test actually measures, and write one sentence saying why: `Self-descriptiveness` fits a participant who must recognise what to do without a label, `Learnability` fits a first-time task, and `Operability` fits the effort of the interaction.
+The next subsection chooses the measure that reads it.
 
-The scenario reads a representative participant completing the main usability test task, in the staging deployment on the university network with seeded data, and the response is the participant's SEQ rating on the main task, recorded after the attempt.
-The `Response Measure` is the median main-task SEQ against a bar the team sets before the first session.
-The example bar is at least five of seven; a team may set another bar, and the test settles it.
-The completion, the assistance, the time, and the SUS stay analysis results and are not the requirement's measure.
-The bar is not a target: set it at the median SEQ that tells you whether the product is usable, do not coach participants toward it, and do not change it after the data.
+### Choose The Measure
+
+The team chooses the measure from the four the session records: the main task's completion and assistance, the time on task, the main task's SEQ, or the SUS.
+Choose the one that reads the sub-characteristic, and say why: `Self-descriptiveness` often reads on the main-task SEQ, `Learnability` on unaided completion or assistance, `Operability` on the time on task, and the SUS on the whole session's perceived usability; these are examples, not rules, and the team must say why its measure reads its sub-characteristic.
+A time measure is noisy with three to five participants, and a completion rate has a ceiling when everyone succeeds; say why the measure still tells you whether the product is usable.
+
+The scenario reads a representative participant completing the main usability test task, in the staging deployment on the university network with seeded data, and its `Response` is the behaviour the chosen measure reads.
+The `Response Measure` is a real, countable criterion the team writes before the first session: for the SEQ, the median main-task SEQ against a bar (the example is at least five of seven); for completion and assistance, the count or proportion that must reach `Unaided`; for the time, the median time against a limit; and for the SUS, the mean or median against a bar.
+The measures the requirement does not read stay analysis results and are reported; the requirement reads one.
+The measure is not a target: set it at the value that tells you whether the product is usable, do not coach participants toward it, and do not change it after the data.
 
 Carry `**Business importance:** High`, so the requirement needs its test, and the team's own `**Technical risk:**`.
 
 ### Write The Manual Test Around The Record
 
-Write the `QRT-nn` at `manual`, name the `UT-nn` in `**Runs at:**`, and write `**Why Manual:**`: no command can judge whether a representative participant completes the task unaided, or how that participant rates it on the SEQ, and the test reads no `SLI`.
+Write the `QRT-nn` at `manual`, name the `UT-nn` in `**Runs at:**`, and write `**Why Manual:**` saying why no command can judge the measure the team chose — whether the participant completes the task unaided, the participant's time on task, how the participant rates the main task on the SEQ, or the participant's own SUS responses — and that the test reads no `SLI`.
 The procedure runs the main task with at least three participants per the record and reads `results.md`, so the record is the procedure's source.
+The `**Pass when:**` restates the team's `Response Measure` and settles it.
 
 A manual test whose requirement is `Interaction Capability` and whose `**Runs at:**` names a `UT-nn` is the expected manual test for usability, and it needs no deviation; every other manual test keeps the deviation rule.
 
@@ -470,6 +479,10 @@ A private repository that outlives the course is participant data kept without a
   The score is `2.5 × (20 + sum(odd) - sum(even))`; a raw sum moves the number by tens of points and is not comparable with anything.
 - **The SEQ or SUS left out.**
   A session missing a measure is not a completed session; run the survey in every session, including a failed task's.
+- **A QR measure that is not one the record reports.**
+  The requirement reads the completion and assistance, the time, the SEQ, or the SUS, and the same measure is in `results.md`; a measure outside the record cannot be settled by the sessions.
+- **A measure chosen after the data.**
+  The measure and its bar are written before the first session; choosing them after the results flatters the finding.
 - **A task that names a button or a step.**
   The wording becomes the instruction, and the session tests the wording; name the goal and the start point only.
 - **A task that is a feature tour.**

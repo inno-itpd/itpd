@@ -170,8 +170,10 @@ The testing plan carries each test's result, per [Quality Requirement Testing Pl
 
 15. A usability requirement uses `Interaction Capability` and one sub-characteristic the team chooses from `Learnability`, `Self-descriptiveness`, and `Operability`, and the requirement states in one sentence why the chosen sub-characteristic is what the `UT-nn` measures.
     It carries `**Business importance:** High`, so rule 8 requires its test.
-16. Its `QRT-nn` is `manual`, names the `UT-nn` it runs in `**Runs at:**`, and carries `**Why Manual:**` because no command can judge whether a representative participant completes the task unaided.
-    It reads no `SLI-nn`, and its `**Why Manual:**` says so.
+16. The requirement's `Response` is the behaviour its chosen measure reads, and its `Response Measure` is a real, countable criterion the team writes before the first session.
+    The team chooses the measure from the main task's completion and assistance, the time on task, the main task's SEQ, or the SUS; the example reads the main task's median SEQ.
+    The requirement says why the chosen measure reads the chosen sub-characteristic, and the measures it does not read stay analysis results and are reported.
+    Its `QRT-nn` is `manual`, names the `UT-nn` it runs in `**Runs at:**`, and carries `**Why Manual:**` saying why no command can judge the chosen measure and that it reads no `SLI-nn`.
     Its `### Procedure` runs the main usability test task with at least three participants per the `UT-nn` record and reads that record's `results.md`, so the record is the procedure's source.
     Its `**Pass when:**` settles the requirement's `Response Measure`, and its evidence is the sanitized `results.md` and the private raw data, per [The Results And Findings](usability-testing-requirements.md#the-results-and-findings).
 17. A `manual` test whose requirement is `Interaction Capability`, with one of the three sub-characteristics, and whose `**Runs at:**` names a `UT-nn`, is the expected manual test for usability: it reads no `SLI`, says so in `**Why Manual:**`, and needs no deviation.
@@ -234,7 +236,7 @@ It lists every requirement once, with the priorities that order it and the pair 
 
 The priority matrix, the three active requirements with their tests, and the tests themselves, in `docs/quality-requirements/`, in the meeting-booking example.
 `QR-02` is the mandated testability requirement, so it names the frontend entry point `frontend/src/main.tsx` and the payment module `backend/src/payments/checkout.ts` in its scenario and carries `**Business importance:** High`.
-`QR-01` carries a `deployed` test that reads no `SLI`, because it measures the page's display time and not the backend's response; `QR-02` carries a `CI` test that cites no `SLI`; and `QR-04` a `deployed` test that reads `SLI-01`; `QR-05` carries a `manual` test that reads `UT-01`, because no command can judge whether a representative participant completes the task unaided, or how that participant rates it on the SEQ; `QR-03` is dropped, so it needs none.
+`QR-01` carries a `deployed` test that reads no `SLI`, because it measures the page's display time and not the backend's response; `QR-02` carries a `CI` test that cites no `SLI`; and `QR-04` a `deployed` test that reads `SLI-01`; `QR-05` carries a `manual` test that reads `UT-01`, because no command can judge how a representative participant rates the main task on the SEQ, which the example chooses as its measure; `QR-03` is dropped, so it needs none.
 The `SLI` itself, its query, and the OpenObserve evidence are in [Observability Requirements](observability-requirements.md#full-example).
 
 From `docs/quality-requirements/README.md`:
@@ -436,6 +438,7 @@ A representative participant completing the product's main usability test task f
 - **Technical risk:** Medium
 
 `Self-descriptiveness` is what the test measures, because a participant who can tell what each screen expects finds the task easy on the SEQ.
+The team chose the main task's SEQ as its measure; it records the completion and assistance, the time on task, and the SUS as analysis results.
 
 ## Scenario
 
@@ -470,7 +473,7 @@ A representative participant finds the main usability test task easy on first us
 - **Status:** Active
 - **Level:** manual
 - **Runs at:** [`UT-01`](../../usability-tests/ut-01/README.md), whose sessions run the main task with at least three representative participants and record the results in [`results.md`](../../usability-tests/ut-01/results.md); it reads no `SLI`.
-- **Why Manual:** no command can judge whether a representative participant completes the task unaided, or how that participant rates it on the SEQ, and it reads no `SLI`.
+- **Why Manual:** no command can judge how a representative participant rates the main task on the SEQ, and it reads no `SLI`.
 
 ### Procedure
 

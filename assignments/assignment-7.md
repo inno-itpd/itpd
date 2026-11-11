@@ -53,7 +53,7 @@ By the end of this week you should be able to show a reader:
 - One main usability test task and two secondary tasks, each a scenario with a start point, an end state, a success criterion written before the first session, a time limit, and a help rule.
 - The durable consent, the private `<organization>/<repo>-usability-data` repository with the text data, and the team-owned cloud folder for the recordings, with the instructors' access to both.
 - A recruitment target of at least three representative participants aged 18 or older, with five as the design target, and the team's plan for arranging the sessions.
-- An `Interaction Capability` quality requirement with a team-chosen sub-characteristic, the median main-task SEQ against a team-set bar, and a `manual` test that names `UT-01`, with its `**Why Manual:**`, its procedure, and its testing-plan row.
+- An `Interaction Capability` quality requirement with a team-chosen sub-characteristic, a team-chosen measure from the instruments the sessions record and a team-set bar, and a `manual` test that names `UT-01`, with its `**Why Manual:**`, its procedure, and its testing-plan row.
 - The `UT-01` design shown at the Sprint Review, and the Week 8 execution plan agreed with the customer.
 - `REL-07`: the tag on the release commit, protected from being moved or deleted, the release body for whoever deploys it, the changelog's released section, and the plan's `REL-07` block with its `Released` and `Checked QRs` fields.
 - The sprint closed with its actual velocity, a retrospective that carries the Week 6 actions, and the AI usage report.
@@ -170,22 +170,24 @@ The method is in [Step 5: Write The Consent And Create The Private Repository](.
 The rules:
 
 - A quality requirement is a file under `docs/quality-requirements/qr/`, with its outcome, its pair, its two priorities, and its six-part scenario: [The Quality Requirement](../requirements/quality-requirements-requirements.md#the-quality-requirement).
-- The usability requirement uses `Interaction Capability` and one sub-characteristic chosen from `Learnability`, `Self-descriptiveness`, and `Operability`: [Quality Requirement Tests](../requirements/quality-requirements-requirements.md#quality-requirement-tests).
+- The usability requirement uses `Interaction Capability` and one sub-characteristic chosen from `Learnability`, `Self-descriptiveness`, and `Operability`, and the team chooses the measure the test reads from the instruments the record reports: [Quality Requirement Tests](../requirements/quality-requirements-requirements.md#quality-requirement-tests).
 - A test is a `## QRT-nn` section inside its requirement's file, with its fields, its procedure, and one `**Pass when:**` criterion, and a `manual` one carries `**Why Manual:**`: [Quality Requirement Tests](../requirements/quality-requirements-requirements.md#quality-requirement-tests).
 - The testing plan carries each test's result, its last check, its planned sprint, and its evidence: [Quality Requirement Testing Plan](../requirements/planning-requirements.md#quality-requirement-testing-plan).
 
 This week:
 
-1. Write the new `QR-nn`, using the next free identifier, with the `Interaction Capability` characteristic and one sub-characteristic the team chooses, and one sentence saying why that sub-characteristic is what the test measures.
+1. Write the new `QR-nn`, using the next free identifier, with the `Interaction Capability` characteristic and one sub-characteristic the team chooses, and one sentence saying why that sub-characteristic is what the test measures and why the measure the team chooses reads it.
 2. Carry `**Business importance:** High`, which requires its test, and the team's `**Technical risk:**`.
-3. Write the scenario: a representative participant completing the main usability test task, in the staging deployment on the university network with seeded data, with the participant's SEQ rating on the main task, recorded after the attempt, as its `Response`.
-4. Make the `Response Measure` the median main-task SEQ against a bar the team sets before the first session.
-   The example bar is at least five of seven; a team may set another bar, and the test settles it.
-   The completion, the assistance, the time, and the SUS stay analysis results and are not the requirement's measure.
-   The bar is not a target: set it at the median SEQ that tells you whether the product is usable, do not coach participants toward it, and do not change it after the data.
-5. Write the `QRT-01` at `manual`, with `**Runs at:**` naming `UT-01` and the record, and `**Why Manual:**` saying no command can judge whether a representative participant completes the task, unaided or with recorded help, or how that participant rates it on the SEQ, and that it reads no `SLI`.
+3. Write the scenario: a representative participant completing the main usability test task, in the staging deployment on the university network with seeded data, with its `Response` the behaviour the team's chosen measure reads.
+   The team chooses the measure from the four the session records: the main task's completion and assistance, the time on task, the main task's SEQ, or the SUS.
+4. Make the `Response Measure` a real, countable criterion the team writes before the first session, and the test settles it.
+   The example is the median main-task SEQ against a bar; the example bar is at least five of seven.
+   A team that chooses the main task's completion and assistance, the time on task, or the SUS sets the criterion that tells it whether the product is usable, and says why the chosen measure reads the chosen sub-characteristic.
+   The measures the requirement does not read stay analysis results and are reported; the requirement reads one.
+   The measure is not a target: set it at the value that tells you whether the product is usable, do not coach participants toward it, and do not change it after the data.
+5. Write the `QRT-01` at `manual`, with `**Runs at:**` naming `UT-01` and the record, and `**Why Manual:**` saying why no command can judge the measure the team chose — the participant's completion and assistance, the time on task, the SEQ rating on the main task, or the SUS responses — and that it reads no `SLI`.
    It needs no deviation.
-6. Write the procedure that runs the main task with at least three participants per the record and reads `results.md`, and the `**Pass when:**` that settles the measure.
+6. Write the procedure that runs the main task with at least three participants per the record and reads `results.md`, and the `**Pass when:**` that restates the team's `Response Measure` and settles it.
 7. Add the testing-plan row: `Not verified`, `Checked: None`, `Planned for sprint:` `SPRINT-08` linked to its plan section, and `Evidence: None`.
    The verdict is recorded with the results in `SPRINT-08`, even when the sessions have already run.
 8. Add the requirement's row to the quality requirements index (the matrix), and link the testing plan from the index once.
@@ -228,7 +230,7 @@ The rules:
 
 This week:
 
-1. Write the analysis plan in the record: the per-participant table's columns, including each task's outcome and the assistance, the aggregate completion rate, the median time on task, the median SEQ for each task, including the median main-task SEQ against the bar the team sets in the quality requirement, the SUS mean and median, the thematic analysis, the severity rating, the telemetry comparison, and the limitations.
+1. Write the analysis plan in the record: the per-participant table's columns, including each task's outcome and the assistance, the aggregate completion rate, the median time on task, the median SEQ for each task, the measure and the bar the team sets in the quality requirement, the SUS mean and median, the thematic analysis, the severity rating, the telemetry comparison, and the limitations.
 2. Supply `results.md`'s headings: the results table, the findings, the limitations, and the conclusion.
    It carries no finding until the results are written.
 3. Write the findings template: `### Finding 1` with its `**Severity:**`, `**Tasks:**`, `**Evidence:**`, `**Recommendation:**`, and `**Task issue:**` fields.
@@ -304,7 +306,7 @@ The rules:
 
 This week:
 
-1. After the design review, apply its decisions to the record, the surveys, the consent, the task issues, the testing plan, and the `QR-nn` and its `QRT-nn` when the review changes the sub-characteristic or the measure.
+1. After the design review, apply its decisions to the record, the surveys, the consent, the task issues, the testing plan, and the `QR-nn` and its `QRT-nn` when the review changes the sub-characteristic, the measure, or the bar.
    A same-week rework is not an action point: apply it now.
 2. Run each testing-plan row the team's own plan scheduled for `SPRINT-07`, or move it to `SPRINT-08` with a reason, and declare both in the report.
 3. Update the testing plan with each row's result, its `Checked` sprint, and its evidence.
@@ -375,7 +377,7 @@ A strong submission has:
 - **Instruments a reader can answer.**
   The pre-test, the SEQ after each task, the full ten SUS items, the correct formula, the open-ended post-test, the qualitative observation, the quantitative completion, the assistance, the time, the SEQ, and the analysis plan that will report the SUS mean and median with the `n=<count>` caveat in Week 8, and the plan to read the Week 6 telemetry with `source=usability-test` in the results week.
 - **A quality requirement a manual test settles.**
-  An `Interaction Capability` `QR-nn` with a team-chosen sub-characteristic, the median main-task SEQ against a bar the team sets before the sessions, and a `manual` `QRT-nn` that names `UT-01`, carries `**Why Manual:**`, has a testing-plan row that is `Not verified` with `Planned for sprint: SPRINT-08`, needs no deviation, and is ready to record `Passes` or `Fails` in Week 8 with the sanitized results and the private raw data.
+  An `Interaction Capability` `QR-nn` with a team-chosen sub-characteristic, a team-chosen measure from the recorded instruments against a bar the team sets before the sessions, and a `manual` `QRT-nn` that names `UT-01`, carries `**Why Manual:**` for that measure, has a testing-plan row that is `Not verified` with `Planned for sprint: SPRINT-08`, needs no deviation, and is ready to record `Passes` or `Fails` in Week 8 with the sanitized results and the private raw data.
 - **A usability goal in the threshold is optional.**
   `TOS-03` in [the planning full example](../requirements/planning-requirements.md#full-example) is only an example: a team without a usability goal is not penalised, and a team whose threshold has one cites `UT-01` in its `**Outcome:**`; the required check is the `QR/QRT`.
 - **A Week 7 report that claims no result.**
@@ -462,7 +464,7 @@ The production analytics and observability dashboards are the Week 6 wrapper's; 
 - [ ] `sessions/README.md` with the facilitation script, the pre-test, the open-ended post-test, the no-help rule, the observation sheet, the roles by GitHub username, and the stop rule, and the dry run recorded as not counted ([Part 3](#part-3-write-the-surveys-and-the-task-protocol)).
 - [ ] `consent.md` as the public template, the private `<organization>/<repo>-usability-data` repository private and shared with the instructors, and the recordings folder created and shared ([Part 4](#part-4-write-the-consent-and-create-the-private-repository)).
 - [ ] The public link to the private repository and its link-check exclusion, the retention and deletion rule, and the private links in the Moodle wrapper ([Part 4](#part-4-write-the-consent-and-create-the-private-repository)).
-- [ ] The new `Interaction Capability` `QR-nn` with `High` business importance, the team's technical risk, one chosen sub-characteristic and its reason, the median main-task SEQ against a bar set before the sessions, and its scenario ([Part 5](#part-5-write-the-quality-requirement-and-its-manual-test)).
+- [ ] The new `Interaction Capability` `QR-nn` with `High` business importance, the team's technical risk, one chosen sub-characteristic and its reason, a team-chosen measure from the recorded instruments against a bar set before the sessions, and its scenario ([Part 5](#part-5-write-the-quality-requirement-and-its-manual-test)).
 - [ ] The `manual` `QRT-01` naming `UT-01` in `**Runs at:**`, with its `**Why Manual:**`, its procedure, its `**Pass when:**`, and its `Not verified` testing-plan row planned for `SPRINT-08` ([Part 5](#part-5-write-the-quality-requirement-and-its-manual-test)).
 - [ ] The requirement's row in the quality requirements index (the matrix) ([Part 5](#part-5-write-the-quality-requirement-and-its-manual-test)).
 - [ ] A recruitment target of at least three representative participants, 18 or older, matching the profile, five as the design target, and the consent template ready to collect, covering the recording and the sanitized public results ([Part 6](#part-6-plan-the-recruitment-and-the-sessions)).
