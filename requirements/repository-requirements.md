@@ -20,6 +20,7 @@ Use [General Requirements](general-requirements.md) for what an artifact is, [Vi
 - [Contributing](#contributing)
 - [Continuous Integration](#continuous-integration)
 - [Environments And Deployment](#environments-and-deployment)
+- [The Usability Data Repository](#the-usability-data-repository)
 - [The Course Materials As An Agent Skill](#the-course-materials-as-an-agent-skill)
 - [Recommended Throughout The Course](#recommended-throughout-the-course)
 
@@ -422,6 +423,27 @@ The deployment runbook is `docs/deployment.md`, and the local setup guide stays 
     It links `docs/analytics.md` and `docs/observability.md`, and the two plans own the topology.
 15. A staging test event never writes the production analytics scope, and the observability requirement's `deployed` test reads the product's staging endpoint and no production data.
 16. Neither backend is deployed by a workflow: the product CI cannot reach the university network, so the deployment stays manual, per [Continuous Integration](#continuous-integration).
+
+## The Usability Data Repository
+
+**Since: W7**
+
+The usability test's raw data is private, and it is kept in a repository of its own so that the product repository can stay public and sanitized.
+What may never be committed is in [Sensitive Information Reference](visibility-requirements.md#sensitive-information-reference), and what the test records is in [Usability Testing Requirements](usability-testing-requirements.md).
+
+**Required**
+
+1. The team creates one private `<organization>/<repo>-usability-data` repository per product repository, and it is private with the team and the instructors as readers.
+2. It is not the product repository: it carries no course CI, no branch protection, no releases, and no link check, and it holds only the text the test produces.
+   Its layout is the team's choice.
+3. It holds the text consent records, the identity mapping, the raw notes, the filtered telemetry export, the working analysis, and the recordings folder link and access, per [The Usability Data Repository](visibility-requirements.md#the-usability-data-repository).
+4. The recordings live in a team-owned cloud folder shared with the instructors, and the private repository records the folder link and the access instructions.
+   A recording is never committed to the product repository and never to the private repository.
+5. The product repository links the private repository, and the link is excluded from the link check because it needs authentication, per [Link Checking](#link-checking), with its reason in the link check's configuration such as `lychee.toml`.
+6. The Moodle PDF carries the private repository link and access and the recordings folder link and access, per [Private Submission Wrapper](weekly-report-requirements.md#private-submission-wrapper).
+7. The private repository, its history, and the recordings are deleted after the course is graded, and the sanitized public record stays.
+8. The repository's contents are covered by [Configuration And Sensitive Information](#configuration-and-sensitive-information) rather than a second list: it carries no secret and no credential, and the recordings are in the cloud folder rather than in its normal git history.
+9. The submission snapshot is the product repository, per [Permalinks And Snapshots](#permalinks-and-snapshots): the public test record is in it, and the private data is reached through the public link and the Moodle PDF, so no snapshot of the private repository is produced.
 
 ## The Course Materials As An Agent Skill
 

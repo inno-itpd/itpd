@@ -279,7 +279,7 @@ The steps that produce the set, from picturing failure to keeping the minimal se
 
 ## Full Example
 
-Both files of the meeting-booking example, after Week 6, trimmed to the milestone sections for Weeks 3, 5, and 6, the sprints they run over, the testing plan, and the threshold's goals.
+Both files of the meeting-booking example, after Week 8, trimmed to the milestone sections for Weeks 3, 5, and 6, the sprints they run over, the Week 7 and Week 8 sprints, the testing plan, and the threshold's goals.
 
 From `docs/project-plan.md`:
 
@@ -357,7 +357,6 @@ A client sees the free slots within two seconds, and the product runs on the sta
 - **Checked QRs:**
   - [QR-01](quality-requirements/qr/QR-01.md)
   - [QR-02](quality-requirements/qr/QR-02.md)
-  - [QR-03](quality-requirements/qr/QR-03.md)
 
   The [testing plan](#quality-requirement-testing-plan) carries each test's result.
 
@@ -379,15 +378,49 @@ The product reports how it is used and how it operates, and the two dashboards s
 
   The [testing plan](#quality-requirement-testing-plan) carries each test's result.
 
+### SPRINT-07
+
+The `UT-01` usability test is designed and prepared, and five representative participants are confirmed for Week 8.
+
+- **Due:** 2026-11-14
+- **Sprint Backlog:** [the issues scheduled into SPRINT-07](https://github.com/<organization>/<repo>/milestone/5)
+- **Planned Velocity:** 0
+- **Actual Velocity:** 0; the sprint carries tasks rather than stories, so it moves nothing out.
+
+#### REL-07
+
+- **Released:** [v0.7.0](https://github.com/<organization>/<repo>/releases/tag/v0.7.0) on 2026-11-12.
+- **Checked QRs:** None.
+
+  The [testing plan](#quality-requirement-testing-plan) carries each test's result.
+
+### SPRINT-08
+
+The usability sessions run, the results are analyzed, and the findings are triaged into the product backlog.
+
+- **Due:** 2026-11-21
+- **Sprint Backlog:** [the issues scheduled into SPRINT-08](https://github.com/<organization>/<repo>/milestone/6)
+- **Planned Velocity:** 5
+- **Actual Velocity:** 5; nothing moved out.
+
+#### REL-08
+
+- **Released:** [v0.8.0](https://github.com/<organization>/<repo>/releases/tag/v0.8.0) on 2026-11-19.
+- **Checked QRs:**
+  - [QR-05](quality-requirements/qr/QR-05.md)
+
+  The [testing plan](#quality-requirement-testing-plan) carries each test's result.
+
 ## Quality Requirement Testing Plan
 
-| QR                                        | QRT                                                     | Status       | Checked                 | Planned for sprint      | Evidence                                                                                          |
-| ----------------------------------------- | ------------------------------------------------------- | ------------ | ----------------------- | ----------------------- | ------------------------------------------------------------------------------------------------- |
-| [QR-01](quality-requirements/qr/QR-01.md) | [QR-01 QRT-01](quality-requirements/qr/QR-01.md#qrt-01) | Passes       | [SPRINT-06](#sprint-06) | [SPRINT-05](#sprint-05) | [the staging run in the Week 06 report](../reports/week-06/README.md#analytics-and-observability) |
-| [QR-02](quality-requirements/qr/QR-02.md) | [QR-02 QRT-01](quality-requirements/qr/QR-02.md#qrt-01) | Passes       | [SPRINT-05](#sprint-05) | [SPRINT-05](#sprint-05) | [the CI run on `4c1e9ab`](...)                                                                    |
-| [QR-04](quality-requirements/qr/QR-04.md) | [QR-04 QRT-01](quality-requirements/qr/QR-04.md#qrt-01) | Passes       | [SPRINT-06](#sprint-06) | [SPRINT-06](#sprint-06) | [the staging run in the Week 06 report](../reports/week-06/README.md#analytics-and-observability) |
-| [QR-03](quality-requirements/qr/QR-03.md) | [QR-03 QRT-01](quality-requirements/qr/QR-03.md#qrt-01) | Passes       | [SPRINT-05](#sprint-05) | [SPRINT-05](#sprint-05) | [the staging run in the Week 05 report](../reports/week-05/README.md#quality-requirement-tests)   |
-| [QR-03](quality-requirements/qr/QR-03.md) | [QR-03 QRT-02](quality-requirements/qr/QR-03.md#qrt-02) | Not verified | None                    | [SPRINT-07](#sprint-07) | None                                                                                              |
+| QR                                        | QRT                                                     | Status | Checked                 | Planned for sprint      | Evidence                                                                                          |
+| ----------------------------------------- | ------------------------------------------------------- | ------ | ----------------------- | ----------------------- | ------------------------------------------------------------------------------------------------- |
+| [QR-01](quality-requirements/qr/QR-01.md) | [QR-01 QRT-01](quality-requirements/qr/QR-01.md#qrt-01) | Passes | [SPRINT-06](#sprint-06) | [SPRINT-05](#sprint-05) | [the staging run in the Week 06 report](../reports/week-06/README.md#analytics-and-observability) |
+| [QR-02](quality-requirements/qr/QR-02.md) | [QR-02 QRT-01](quality-requirements/qr/QR-02.md#qrt-01) | Passes | [SPRINT-05](#sprint-05) | [SPRINT-05](#sprint-05) | [the CI run on `4c1e9ab`](...)                                                                    |
+| [QR-04](quality-requirements/qr/QR-04.md) | [QR-04 QRT-01](quality-requirements/qr/QR-04.md#qrt-01) | Passes | [SPRINT-06](#sprint-06) | [SPRINT-06](#sprint-06) | [the staging run in the Week 06 report](../reports/week-06/README.md#analytics-and-observability) |
+| [QR-05](quality-requirements/qr/QR-05.md) | [QR-05 QRT-01](quality-requirements/qr/QR-05.md#qrt-01) | Passes | [SPRINT-08](#sprint-08) | [SPRINT-08](#sprint-08) | [the usability results](usability-tests/ut-01/results.md#the-results)                             |
+
+The `QR-05` row read `Not verified`, `None`, `SPRINT-08`, and `None` during `SPRINT-07`, and the row above is its state after the sessions ran.
 
 ## Progress Monitoring
 
@@ -421,18 +454,19 @@ Every story in the Week 2 candidate is accepted by the customer at the Week 3 me
 
 ## TOS-03
 
-Three clients outside the team complete the core task unaided in the Week 7 usability test.
+At least three participants outside the team complete the main usability test task unaided in the Week 8 usability test.
 
-- **Status:** Open
-- **Measure:** at least three of five participants completed the core task unaided, recorded in the Week 7 usability findings, by the end of Week 7.
+- **Status:** Achieved
+- **Measure:** at least three of five participants completed the main usability test task unaided, recorded in the Week 8 usability results, by the end of Week 8.
+- **Outcome:** three of the five participants completed the main usability test task unaided on 16 and 17 November 2026, recorded in [the usability results](usability-tests/ut-01/results.md#the-results).
 
 ## Failure And Success Statements
 
-| Goal              | Success statement                                                         | Failure statement                                   |
-| ----------------- | ------------------------------------------------------------------------- | --------------------------------------------------- |
-| [TOS-01](#tos-01) | A real user completes the core task end to end.                           | We never put it in front of a real user.            |
-| [TOS-01](#tos-01) | A booking pays through the provider.                                      | We never took a real payment.                       |
-| [TOS-02](#tos-02) | The customer accepts the Week 2 candidate.                                | The customer never accepted it.                     |
-| [TOS-03](#tos-03) | A client outside the team completes the core task without help.           | The product only works for the people who built it. |
-| —                 | A teammate run it from a clean checkout following the setup instructions. | Nobody outside the team could run the product code. |
+| Goal              | Success statement                                                                   | Failure statement                                   |
+| ----------------- | ----------------------------------------------------------------------------------- | --------------------------------------------------- |
+| [TOS-01](#tos-01) | A real user completes the core task end to end.                                     | We never put it in front of a real user.            |
+| [TOS-01](#tos-01) | A booking pays through the provider.                                                | We never took a real payment.                       |
+| [TOS-02](#tos-02) | The customer accepts the Week 2 candidate.                                          | The customer never accepted it.                     |
+| [TOS-03](#tos-03) | A participant outside the team completes the main usability test task without help. | The product only works for the people who built it. |
+| —                 | A teammate run it from a clean checkout following the setup instructions.           | Nobody outside the team could run the product code. |
 ```

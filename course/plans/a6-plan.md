@@ -17,6 +17,11 @@ This plan reverses it in full: Week 6 carries no deck, the deck is Week 7's, Sub
 `A5-DEC-001` and `A5-DEC-016` are reversed in full for the same clauses, and each new entry restates the clauses that survive.
 The rest of Assignment 5's design stands.
 
+**Superseded later:** the later [`a7-plan.md`](a7-plan.md) reverses [`A6-DEC-004`](../decisions/a6.md#a6-dec-004-the-deck-moves-to-week-7), [`A6-DEC-018`](../decisions/a6.md#a6-dec-018-week-7-uses-the-events-the-week-leaves), [`A6-DEC-024`](../decisions/a6.md#a6-dec-024-a5-dec-001-is-reversed-in-full), and [`A6-DEC-025`](../decisions/a6.md#a6-dec-025-a5-dec-016-is-reversed-in-full), in full for their deck and presentation clauses.
+The 7-minute deck is prepared in Week 9, submitted with Submission 9, rehearsed in the Week 10 class, and presented at the Week 11 final exam, and the Week 8 class carries no product presentations.
+The usability test is designed in Week 7 and run in Week 8, `TOS-03`'s measure moves to Week 8, and the Week 9 usability results report moves to Week 8.
+The rest of the Week 6 design stands, and the rules this plan hands over are not repeated here.
+
 Assignment 5 delivered the quality requirement tests and the testing plan, the automated tests and the CI checks, the four environments and the manual deployment to the university VM, the two plan milestones and the two stories, the feature documentation, `REL-05`, and the Sprint Review and retrospective; [`a5-plan.md`](a5-plan.md) designs that and [`assignment-5.md`](../../assignments/assignment-5.md) is the design.
 
 The rules this plan adds are `**Since: W6**` blocks, and it updates one W5 table row's description and one full example for the `SLI`'s five-minute P95 and the new test's citation.

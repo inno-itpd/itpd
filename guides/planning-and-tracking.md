@@ -251,6 +251,9 @@ The documents come after the tag because each of them links it, and a link to a 
 The release itself is about the product code, so the documents following it do not change what was released.
 [Releases](../requirements/planning-requirements.md#releases) states the order as a rule; the reason to keep it is that it makes the links resolve the first time.
 
+A design-only sprint still cuts its release: the design week's `REL-07` may be docs-only, its body says no product change and no upgrade is required, and its `**Checked QRs:**` says `None` when no requirement was checked.
+The run week's release lists the `QR-nn` the usability test checked, and the quality requirement's testing-plan row is the technical record, per [Releases](../requirements/planning-requirements.md#releases) and [The Triage](../requirements/usability-testing-requirements.md#the-triage).
+
 ### Pick The Number From What A User Could Observe
 
 The tag is the team's choice under SemVer, per [Versioning And Tags](../requirements/releases-requirements.md#versioning-and-tags).

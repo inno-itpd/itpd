@@ -109,6 +109,8 @@ You are not asking permission, and a customer who agrees with everything has tol
 If the customer says "that sounds great" about your own idea, the useful next question is "what would you want to see for that to be true?" or "what is the risk in it?".
 Those are the questions that produce a `## Disagreements` row.
 
+In the design week the review validates the usability test's design, and in the run week it reads the results; the customer is not a usability participant, per [Guide: Usability Testing](usability-testing.md).
+
 ## Step 6: Trace What Changed
 
 Each decision gets a `DEC-nnn` entry in `docs/decisions.md`, with who made it and why, and the meeting report's `## Decisions` lists the meeting's entries, per [Decision Requirements](../requirements/decisions-requirements.md).
@@ -140,6 +142,8 @@ Every meeting settles its target with at least one decision, per [Every Meeting]
 The decision does not have to change anything: an accepted story, or a direction the customer confirmed, settles the target as well.
 A meeting that ends with no decision missed its target.
 Declare it as a [deviation](../requirements/weekly-report-requirements.md#declaring-deviations), and name what the next meeting will settle instead.
+
+A usability finding that changes behaviour is traced through the finding and its task issue rather than silently: the finding is cited by its `results.md` anchor, and the task issue carries the story, the `AC-nn`, and the `FR-nnn` or `ADR-nnn`, per [The Triage](../requirements/usability-testing-requirements.md#the-triage).
 
 A prototype asks for more: something must change, per [Validation](../requirements/prototypes-requirements.md#validation).
 If nothing changed after a prototype, that is a serious finding.

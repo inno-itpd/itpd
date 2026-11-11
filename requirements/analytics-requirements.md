@@ -119,10 +119,16 @@ The event table is the one registry and the schema the instrumentation sends, so
    An event identifies a user by an opaque identifier when it needs to, and the identifier is not derived from personal data and cannot be reversed to it.
 6. `Collected at` names the product container that emits the event and the environment it emits from, such as `backend`, staging and production.
 7. Every event carries a `source` field, and its value records what the traffic is: `web`, `usability-test`, or `smoke`.
-   `smoke` marks traffic the team generated to check the pipeline, so a metric excludes it.
-   Only `smoke` is a pipeline check; `usability-test` records the team's usability sessions and is not excluded from a metric unless the page says why.
+   `usability-test` records the team's usability sessions and `smoke` marks traffic the team generated to check the pipeline, so both are test traffic and every metric excludes both.
+   The page states for each metric why the test traffic is excluded, and only `web` traffic is a metric's value.
 8. The table covers the core task end to end, so a later week's work has the events it needs.
 9. Every event a metric's `**Source:**` names has a row.
+
+**Since: W7**
+
+10. The usability test runs on the staging deployment with seeded data and no real payment, and the page names that environment.
+    The test's task funnel is read with the `source=usability-test` filter and is shown separately from a metric, per [The Dashboard](#the-dashboard).
+    The page adds no new per-participant field, because the `session_id` already groups a booking-page visit, per [Telemetry And Personal Data](visibility-requirements.md#telemetry-and-personal-data).
 
 ## The Pipeline
 
@@ -143,7 +149,7 @@ The backend's steps and configuration are the deployment runbook's, and this sec
 5. The page records how collection is enabled and disabled, including the environment variable that turns it off.
 6. The deployment's steps and configuration live in `docs/deployment.md`, per [Environments And Deployment](repository-requirements.md#environments-and-deployment); the page links that section and repeats none of it.
    `.env.example` carries the configuration's shape, and the secrets are installed on the VM and are not tracked in the repository, per [Configuration And Sensitive Information](repository-requirements.md#configuration-and-sensitive-information).
-7. A test event is sent only to the staging scope and is tagged `source=smoke`; the production scope contains only real traffic.
+7. A test event is sent only to the staging scope and is tagged `source=smoke` or `source=usability-test`; the staging scope carries both, and the production scope carries only `web` traffic.
 8. The backend's address, its dashboards' addresses, and any credentials are private-only, per [Sensitive Information Reference](visibility-requirements.md#sensitive-information-reference).
    The page names the backend and its dashboards and links neither address.
 
@@ -160,7 +166,8 @@ Each environment's dashboard is where the pipeline's data becomes a chart a read
    A counter-metric chart is optional.
    A metric without a chart still records its `**Query:**`; the one-chart minimum is the dashboard's, not every metric's.
 3. Each chart names its metric and runs the `**Query:**` recorded in that metric's section, so the page owns the query and the chart owns the display.
-4. A chart in the staging scope excludes `source=smoke` from the metric, and the staging dashboard carries an event list or raw-events panel that shows the smoke event, so the exclusion is visible; the production scope's chart carries the same metric and the same query, and it receives no test traffic.
+4. A metric chart in the staging scope excludes `source=smoke` and `source=usability-test` from the metric, and the staging dashboard carries an event list or raw-events panel that shows the test traffic, so the exclusion is visible; the production scope's chart carries the same metric and the same query, and it receives no test traffic.
+   A separate usability funnel chart reads `source=usability-test` and is not a metric, per [The Events](#the-events).
 5. The dashboards' addresses and any credentials are private-only, per [Sensitive Information Reference](visibility-requirements.md#sensitive-information-reference), and the page names the dashboards and their charts rather than linking an address.
 6. The evidence is two sanitized screenshots, one per environment, in `reports/week-NN/images/`, linked from the weekly report with the metric each chart shows, per [Screenshot Evidence](visibility-requirements.md#screenshot-evidence).
 7. A dashboard's definition may be tracked when it carries no address, no credential, and no other private-only value; the page still owns the query, so a tracked definition is regenerated in the same pull request when the query changes.
@@ -191,6 +198,7 @@ The numbers this product is judged by, the events that produce them, and the pip
 
 The focus metric is completed paid bookings per active coach per week: the one number the page reads the product's value from.
 It expresses [`VP-01`](research/value-proposition.md#vp-01): a client books and pays for a session without leaving the booking page.
+Every metric excludes the test traffic, because a usability participant is not a paying customer.
 
 ### The Metric Tree
 
@@ -217,30 +225,31 @@ Each metric's name links to its section.
 Rejected as a vanity metric: GitHub stars, because a star counts attention to a repository that no coach books a session from, and it never moves when the booking page changes.
 
 The focus metric depends on its input metrics and on real users: until a coach's clients book through the product, the page reports no value.
+The focus metric excludes the test traffic because a usability participant is not a paying customer, and the `UT-01` funnel is read with the `source = "usability-test"` filter.
 
 ### Completed paid bookings per active coach per week
 
 - **Definition:** A rate: the number of confirmed paid bookings in the week divided by the number of coaches who published at least one slot in that week; the unit is bookings per coach per week.
 - **Source:** [`booking_confirmed`](#the-events) and [`availability_published`](#the-events).
-- **Query:** the count of `booking_confirmed` events in the week, excluding `source = "smoke"`, divided by the count of distinct `coach_id` values in `availability_published` events in the same week.
+- **Query:** the count of `booking_confirmed` events in the week, excluding `source = "smoke"` and `source = "usability-test"`, divided by the count of distinct `coach_id` values in `availability_published` events in the same week.
 
 ### Cancellation and no-show rate within seven days
 
 - **Definition:** A rate: the confirmed bookings in the week that were cancelled or reported as a no-show within seven days of their session, divided by the confirmed bookings in that week; the unit is cancelled or missed bookings per booking.
 - **Source:** [`booking_confirmed`](#the-events), [`booking_cancelled`](#the-events), and [`booking_no_show_reported`](#the-events).
-- **Query:** the count of `booking_cancelled` and `booking_no_show_reported` events matched to their `booking_confirmed` event inside seven days, excluding `source = "smoke"`, divided by the count of `booking_confirmed` events in the week.
+- **Query:** the count of `booking_cancelled` and `booking_no_show_reported` events matched to their `booking_confirmed` event inside seven days, excluding `source = "smoke"` and `source = "usability-test"`, divided by the count of `booking_confirmed` events in the week.
 
 ### Booking conversion rate
 
 - **Definition:** A rate: the confirmed paid bookings in the week divided by the booking-page sessions in that week; the unit is bookings per session.
 - **Source:** [`booking_confirmed`](#the-events) and [`booking_page_viewed`](#the-events).
-- **Query:** the count of `booking_confirmed` events in the week, excluding `source = "smoke"`, divided by the count of distinct `session_id` values in `booking_page_viewed` events in the same week.
+- **Query:** the count of `booking_confirmed` events in the week, excluding `source = "smoke"` and `source = "usability-test"`, divided by the count of distinct `session_id` values in `booking_page_viewed` events in the same week.
 
 ### Checkout completion rate
 
 - **Definition:** A rate: the paid bookings in the week divided by the checkouts started in that week; the unit is bookings per checkout.
 - **Source:** [`payment_succeeded`](#the-events) and [`checkout_started`](#the-events).
-- **Query:** the count of `payment_succeeded` events in the week, excluding `source = "smoke"`, divided by the count of `checkout_started` events in the same week.
+- **Query:** the count of `payment_succeeded` events in the week, excluding `source = "smoke"` and `source = "usability-test"`, divided by the count of `checkout_started` events in the same week.
 
 The rate is computed by this query rather than by hand, so the team reads it from the pipeline and not from a table it keeps.
 
@@ -248,7 +257,7 @@ The rate is computed by this query rather than by hand, so the team reads it fro
 
 - **Definition:** A rate: the requests for free slots that found one divided by the requests for free slots; the unit is answered requests per request.
 - **Source:** [`slot_availability_checked`](#the-events).
-- **Query:** the count of `slot_availability_checked` events whose `found` is `true`, excluding `source = "smoke"`, divided by all `slot_availability_checked` events in the week.
+- **Query:** the count of `slot_availability_checked` events whose `found` is `true`, excluding `source = "smoke"` and `source = "usability-test"`, divided by all `slot_availability_checked` events in the week.
 
 ## The Events
 
@@ -274,7 +283,7 @@ One OpenPanel instance carries two projects, `staging` and `production`: each ha
 Retention is 90 days, which covers the seven-day window of the counter-metric and every other window this page defines.
 Collection is switched by `ANALYTICS_ENABLED`, which is `false` on a developer's machine and `true` in staging and production.
 The steps and configuration are in [the telemetry pipelines](deployment.md#the-telemetry-pipelines), and the secrets are installed on the VM and are not tracked in the repository; `.env.example` carries the shape.
-A test event goes only to the staging project, tagged `source=smoke`; the production project contains only real traffic.
+A test event goes only to the staging project, tagged `source=smoke` or `source=usability-test`; the staging project carries both, and the production project contains only `web` traffic.
 The backend and its dashboards are reachable from the university network only, and their addresses and credentials are in the Moodle submission.
 
 ## The Dashboard
@@ -282,14 +291,16 @@ The backend and its dashboards are reachable from the university network only, a
 The staging dashboard is `Booking funnel (staging)` in the staging project, and the production dashboard is `Booking funnel (production)` in the production project.
 Each chart is named after its metric and runs the query recorded under that metric's section.
 
-| Chart                | Environment | What it runs                                                          |
-| -------------------- | ----------- | --------------------------------------------------------------------- |
-| `Booking conversion` | staging     | the booking conversion rate's query, with `source = "smoke"` excluded |
-| `Booking conversion` | production  | the same query, over the production project's traffic                 |
-| `Cancellations`      | staging     | the cancellation and no-show rate's query, which is optional          |
-| `Recent events`      | staging     | the event list, which shows the test event tagged `source=smoke`      |
+| Chart                | Environment | What it runs                                                                                          |
+| -------------------- | ----------- | ----------------------------------------------------------------------------------------------------- |
+| `Booking conversion` | staging     | the booking conversion rate's query, with `source = "smoke"` and `source = "usability-test"` excluded |
+| `Booking conversion` | production  | the same query, over the production project's traffic                                                 |
+| `Cancellations`      | staging     | the cancellation and no-show rate's query, which is optional                                          |
+| `Recent events`      | staging     | the event list, which shows the test traffic tagged `source=smoke` and `source=usability-test`        |
+| `Usability funnel`   | staging     | the booking funnel read with the `source = "usability-test"` filter, shown separately from a metric   |
 
 The staging dashboard was checked with a test event tagged `source=smoke`: the dashboard's event list shows it and the staging chart excluded it from the metric; the production dashboard carries the same required chart and query and received no test traffic.
+The `Usability funnel` chart is read with the `source = "usability-test"` filter and is not a metric: the `UT-01` sessions in Week 8 are the participants' visits, not paying customers, so the test traffic is never a metric's value.
 Both dashboard addresses are in the Moodle submission, and the week report links one sanitized screenshot from each environment.
 
 ## Collected Data

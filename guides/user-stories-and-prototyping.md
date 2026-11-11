@@ -239,6 +239,8 @@ Three forms, and all three are acceptable:
 
 When the question is only whether the idea can work at all, that is a proof of concept; record it the same way.
 
+A usability test with representative participants is not a prototype demo: it asks whether a stranger can reach the goal in the product, and the test lives in `docs/usability-tests/`, per [Guide: Usability Testing](usability-testing.md) and [Usability Testing Requirements](../requirements/usability-testing-requirements.md).
+
 On a code spike: **keep it off `main`.**
 Do it on a branch, show it from there, and do not merge it, per [Where Prototypes Live](../requirements/prototypes-requirements.md#where-prototypes-live).
 The evidence is the screenshot and your record, not the branch, so the branch is genuinely disposable and the repository does not have to carry it for the rest of the course.

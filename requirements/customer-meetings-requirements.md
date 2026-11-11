@@ -130,6 +130,19 @@ A Week 2 validation meeting.
 5. Show the deployed product with the analytics dashboards, the observability dashboards, the observability `QRT`'s result, and, when a runtime `QRT-nn` was run, its result at its level; name the `SLI-nn` each runtime test read, per [The SLIs](observability-requirements.md#the-slis).
    Present the threshold proposal, per [The Threshold Of Success](planning-requirements.md#the-threshold-of-success), and agree any threshold change with the customer's `DEC-nnn`, which the meeting report records in `## Decisions`, per [Meeting Report](#meeting-report).
 
+**Since: W7**
+
+6. The design week's Sprint Review, at the time arranged with the customer, shows the deployed production instance per rule 4 and the `UT-nn` design on staging: the research questions, the participant profile and count, the tasks, the surveys, the consent and the private repository, the recordings folder, the schedule, and the `QR-nn` with its `QRT-nn`.
+   It agrees the run week's execution plan with the customer.
+   The customer is not a usability participant, and the meeting report records the feedback and any decision as a `DEC-nnn`, per [Meeting Report](#meeting-report).
+   The Week 10 in-class product presentation is not a customer meeting and is not covered by this file.
+
+**Since: W8**
+
+7. The run week's Sprint Review, at the time arranged with the customer, shows the sanitized `results.md`, the `QR/QRT` result, the findings and their task issues, the threshold's usability outcome when the team has a usability goal, and the next steps, per [The Week 8 Execution](usability-testing-requirements.md#the-week-8-execution).
+   The meeting report records when the review was and what was shown.
+   The meeting follows rule 6's recording, script, and report rules, and the customer is not a usability participant.
+
 **Example**
 
 A Week 3 meeting that shows working software.
@@ -476,6 +489,49 @@ The rewrite anchors it to an event the customer will remember, so the answer is 
 | Your position                           | Customer's position                                                  | What you changed                                                                                                               |
 | --------------------------------------- | -------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
 | A booking may confirm and be paid later | A booking that confirms before payment is the unpaid booking to stop | [`US-01`](https://github.com/<organization>/<repo>/issues/42) gained `AC-03`, per [`DEC-006`](../../docs/decisions.md#dec-006) |
+```
+
+### Example Week 7 Design Review And Week 8 Results Review
+
+The Week 7 review settles the test design and the Week 8 plan; the Week 8 review shows what the sessions found.
+From `reports/week-07/meeting-report.md`, the decisions and action points only:
+
+```markdown
+## Summary
+
+- The customer agreed the `UT-01` design: one main booking task and two secondary tasks, five participants as the target, and the staging deployment.
+- The consent must carry the deletion date, and the recordings folder must be shared before the first session.
+- The customer asked for the checkout friction to be shown in the results even when the test finds nothing else.
+
+## Decisions
+
+- [DEC-018: Record the usability sessions against staging only](../../docs/decisions.md#dec-018)
+
+## Action points
+
+| Action                                           | Owner | Due           |
+| ------------------------------------------------ | ----- | ------------- |
+| Share the recordings folder with the instructors | cyd   | End of Week 8 |
+| Add the deletion date to the consent             | ana   | End of Week 8 |
+```
+
+From `reports/week-08/meeting-report.md`, the results review's summary:
+
+```markdown
+## Metadata
+
+- **Date:** 2026-11-20
+- **Duration:** 40 minutes
+- **Attended:** ana, bo, cyd, Customer
+- **Presented:** the sanitized `UT-01` results, the QR/QRT result, the two findings with their task issues, and the next steps
+- **Recording:** permitted, linked from the Week 08 Moodle submission
+- **Script:** [meeting-script.md](meeting-script.md)
+
+## Summary
+
+- Five sessions ran, three participants completed the main task unaided, and `QR-05 QRT-01` passes.
+- The customer agreed the checkout phone field is the first fix, and `REL-08` carries it.
+- The customer asked for the reschedule flow to be re-tested in `SPRINT-09` rather than fixed blind.
 ```
 
 ### Example Meeting Transcript

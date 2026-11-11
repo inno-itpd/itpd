@@ -25,7 +25,7 @@ It is the short version of the requirements, states what is expected of you as a
 4. A **repository-resident artifact** is committed to the product repository.
 5. An **external-but-indexed artifact** is hosted outside the repository, for example a GitHub issue, a Figma or Miro board, and must be linked from the weekly public report.
 6. A **private-only artifact** must never be committed to the public repository.
-   It is shared only through the Moodle submission.
+   It is shared through the Moodle submission, or through a private repository the instructors can access when the requirements allow it.
 7. A **deviation** is a place where your team did something materially different from what an assignment or these requirements describe.
    How one is declared is in [Declaring Deviations](weekly-report-requirements.md#declaring-deviations).
 8. A **meeting report** is your team's own account of a meeting with the customer, per [Meeting Report](customer-meetings-requirements.md#meeting-report).
@@ -77,6 +77,7 @@ It is the short version of the requirements, states what is expected of you as a
    `FR-nnn` for functional requirements, `QR-nn` for quality requirements, and `ADR-nnn` for architectural decision records are introduced in Week 4, and `FR-nnn` and `ADR-nnn` take three digits, because each grows with every record and can pass 99; `QR-nn` takes two, like every other family.
    `QRT-nn` for quality requirement tests is introduced in Week 5, takes two digits, and is scoped to its `QR-nn`.
    `SLI-nn` for service level indicators is introduced in Week 6, and it takes two digits.
+   `UT-nn` for usability tests is introduced in Week 7, and it takes two digits.
    A later family is introduced only by the requirement that first uses it.
 2. An identifier, once issued, is never changed, reused, or reassigned, including when the artifact is edited later in the course.
 3. Gaps in a sequence are expected and correct.
@@ -85,7 +86,8 @@ It is the short version of the requirements, states what is expected of you as a
    A decision is dropped by reversing it, per [Reversing A Decision](decisions-requirements.md#reversing-a-decision).
 5. The heading of an identifier's section is the identifier alone, such as `## DEC-001`, so the section's anchor is `#dec-001` and a link to it survives rewording the item.
    The first line under the heading names the item or states it in one sentence.
-   `FR-nnn`, `QR-nn`, and `ADR-nnn` are the exceptions, because each is a file of its own: the file's `#` heading carries the identifier and the title, such as `# FR-001: Hold a slot while the client pays`, and the file's path is the link target, per [Where Functional Requirements Live](functional-requirements-requirements.md#where-functional-requirements-live).
+   `FR-nnn`, `QR-nn`, `ADR-nnn`, and `UT-nn` are the exceptions, because each is a file or a directory of its own: the file's `#` heading carries the identifier and the title, such as `# FR-001: Hold a slot while the client pays`, and the file's path is the link target, per [Where Functional Requirements Live](functional-requirements-requirements.md#where-functional-requirements-live).
+   A `UT-nn`'s record is `docs/usability-tests/ut-nn/README.md`, headed `# UT-01: <title>`, per [Where The Usability Tests Live](usability-testing-requirements.md#where-the-usability-tests-live).
 6. Every reference between artifacts uses the identifier, not the title, so that renaming a title does not break the chain.
 7. `US-nn` and `AC-nn` are the exceptions to rules 4 and 5, and to rules 10 to 12, because they live in an issue or, for an `AC-nn`, in a requirement file rather than in a section of their own.
    [Where Stories Live](user-stories-requirements.md#where-stories-live) says how a dropped story is kept, [Acceptance Criteria](user-stories-requirements.md#acceptance-criteria) says how a story's criterion is numbered, retired, and cited, the task's [Acceptance Criteria](task-issues-requirements.md#acceptance-criteria) says the same for a task's criterion, and [Acceptance Criteria](functional-requirements-requirements.md#acceptance-criteria) says the same for a functional requirement's.
@@ -142,6 +144,19 @@ It is the short version of the requirements, states what is expected of you as a
 24. There is no `SLO-nn` and no `MET-nn`: the target a test settles is its requirement's `Response Measure`, and an analytics metric is cited by its heading anchor, per rule 25.
 25. An analytics metric is not an identifier family either: it is one `###` section under `## The Value And The Metrics` in `docs/analytics.md`, cited by that heading's anchor, such as `docs/analytics.md#booking-conversion-rate`, per [Product Analytics Requirements](analytics-requirements.md#the-value-and-the-metrics).
 
+**Since: W7**
+
+26. `UT-nn` is the Week 7 family, and it takes two digits.
+    It is repository-wide, one directory per test at `docs/usability-tests/ut-nn/`, and its record is that directory's `README.md`, headed `# UT-01: <title>`, per [Where The Usability Tests Live](usability-testing-requirements.md#where-the-usability-tests-live).
+    The `QRT-nn`'s `**Runs at:**` names the `UT-nn` it runs.
+27. A `UT-nn` follows rule 10: its record carries `**Status:**` as its first field, and the values are `Planned`, `Completed`, and `Dropped`.
+    A dropped test follows rule 11 and adds `**Dropped:**` with the date and the reason, per [The Test Record](usability-testing-requirements.md#the-test-record).
+    The group's index, `docs/usability-tests/README.md`, lists each test once.
+28. A participant is `P-01`, `P-02`, and so on: two digits, local to its `UT-nn`, assigned in the order the sessions are booked, cited as the pair `UT-01 P-01` or with the `UT-nn`'s path, and never reused, per [The Participants](usability-testing-requirements.md#the-participants).
+    There is no repository-wide `P-nn` family, no `UF-nn`, and no `FINDING-nn`.
+29. A finding is cited by `docs/usability-tests/ut-01/results.md#finding-1`, the anchor of its `### Finding 1` section, and not by an identifier, per [The Results And Findings](usability-testing-requirements.md#the-results-and-findings).
+    A task issue created from a finding cites the finding that way in its description.
+
 **Example**
 
 A gap the kickoff dropped, in `docs/research/gap-analysis.md`, with its other fields left out:
@@ -181,6 +196,10 @@ This is what makes the course a project rather than nine separate assignments.
 | Week 5 feature documentation     | The `US-nn`, `FR-nnn`, and `ADR-nnn` each entry links, and the glossary term its opening sentence links at first use, per [The Feature Entry](features-requirements.md#the-feature-entry)                                                         |
 | Week 6 runtime tests             | The `SLI-nn` its `**Runs at:**` names, per [Quality Requirement Tests](quality-requirements-requirements.md#quality-requirement-tests)                                                                                                            |
 | Week 6 analytics plan            | The `VP-nn` its focus metric expresses, and the events each metric's `**Source:**` names, per [The Value And The Metrics](analytics-requirements.md#the-value-and-the-metrics)                                                                    |
+| Week 7 usability test design     | The `QR-nn` the test serves and its `UT-nn` record, per [The Test Record](usability-testing-requirements.md#the-test-record)                                                                                                                      |
+| Week 8 usability results         | The `UT-nn` record and the findings' task issues, per [The Results And Findings](usability-testing-requirements.md#the-results-and-findings) and [The Triage](usability-testing-requirements.md#the-triage)                                       |
+| Week 8 task issue                | The finding by its `results.md` path and anchor, per [The Issue Form](task-issues-requirements.md#the-issue-form)                                                                                                                                 |
+| Week 9 final reflection          | The `UT-nn` results, per [The Results And Findings](usability-testing-requirements.md#the-results-and-findings)                                                                                                                                   |
 | Any change a decision caused     | The decision's `DEC-nnn` when it has an entry, or its reason otherwise, per [What Cites It](decisions-requirements.md#what-cites-it)                                                                                                              |
 
 **Required**

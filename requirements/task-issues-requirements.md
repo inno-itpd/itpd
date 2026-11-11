@@ -56,6 +56,15 @@ A **task issue** holds one unit of work, such as building part of a story, docum
    A task that names only an `ADR-nnn` reaches the threshold through that record's `**Addresses:**`, per [What It Accounts For](adr-requirements.md#what-it-accounts-for).
 3. Create the `Task` issue type, set it on the tasks that already exist, and retire the `task` label with the other five, per [Issue Fields](issue-tracking-requirements.md#issue-fields).
 
+**Since: W8**
+
+4. A task issue created from a usability finding cites the finding by its path and anchor in its description, such as `docs/usability-tests/ut-01/results.md#finding-1`, per [The Results And Findings](usability-testing-requirements.md#the-results-and-findings).
+5. Its `### Requirements` field names the `FR-nnn` or `ADR-nnn` it advances.
+   A task that is not product work says `None: repository upkeep`, and a defect never does.
+6. A finding that changes behaviour links the story and the `AC-nn` it serves in the `Story` field, as a defect does.
+7. When a significant finding exists, at least one task issue from the findings is scheduled in the run week's sprint, per [The Triage](usability-testing-requirements.md#the-triage).
+   Its `Priority`, `Responsible`, `Accountable`, assignees, and sprint milestone follow the existing rules, and the task's own route from the finding is the one [The Triage](usability-testing-requirements.md#the-triage) gives.
+
 **Recommended**
 
 - Prefill the `Acceptance criteria` field with `value: "- [ ] AC-01: "`, so whoever fills in the form starts from the checklist.
@@ -140,6 +149,33 @@ Hold a booked slot while the client pays, and release it when the hold expires.
 ```
 
 Its branch is `12-hold-a-slot-while-the-client-pays`, and its pull request's description says `Closes #12`.
+
+Issue #57, a task created from a usability finding, with the finding cited in its description:
+
+```markdown
+Title: Remove the phone field from the checkout form
+Type: Task
+Priority: High
+
+### Description
+
+Remove the phone number field from the checkout form, which the product never uses and which one participant abandoned the main task at, per [`docs/usability-tests/ut-01/results.md#finding-1`](https://github.com/<organization>/<repo>/blob/main/docs/usability-tests/ut-01/results.md#finding-1).
+
+### Story
+
+- #42 (AC-01)
+
+### Requirements
+
+- [FR-001](https://github.com/<organization>/<repo>/blob/main/docs/functional-requirements/fr/FR-001.md)
+
+### Acceptance criteria
+
+- [ ] AC-01: The checkout form asks for no phone number.
+- [ ] AC-02: A booking completes without a phone number on the staging deployment.
+```
+
+Its branch is `57-remove-the-phone-field-from-the-checkout-form`, and its pull request's description says `Closes #57`.
 
 Issue #7, a task that is not work on a story, so its `Story` field is empty:
 
