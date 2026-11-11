@@ -2,7 +2,7 @@
 
 **This week's deadline:**
 
-- Hard deadline: Saturday 14 November 2026, 23:59.
+- Hard deadline: Sunday 15 November 2026, 23:59.
 
 There is no soft deadline.
 See [Deadlines And Submission](../course/rules.md#deadlines-and-submission).
@@ -71,7 +71,7 @@ The rules:
 This week:
 
 1. Refine the next two sprints' worth of the product backlog, `SPRINT-08` and `SPRINT-09`, until each item is ready to schedule, and leave those items unscheduled.
-2. Plan `SPRINT-07`: replace its provisional goal with the sprint's goal, set `**Due:**` to `2026-11-14`, link `**Sprint Backlog:**` to its GitHub milestone, and set `**Planned Velocity:**` to the story points of the stories you scheduled, computed by hand from their `Story Points`.
+2. Plan `SPRINT-07`: replace its provisional goal with the sprint's goal, set `**Due:**` to `2026-11-15`, link `**Sprint Backlog:**` to its GitHub milestone, and set `**Planned Velocity:**` to the story points of the stories you scheduled, computed by hand from their `Story Points`.
    A sprint that carries only tasks has a planned velocity of `0`.
 3. Set `SPRINT-08`'s provisional goal, its `**Due:**` of `2026-11-21`, and its backlog link, so the results sprint has its target already.
 4. Schedule the test design tasks in `SPRINT-07`: the record, the surveys, the tasks and protocol, the consent and the private repository, the recordings folder, the quality requirement and its test, the recruitment, the dry run, and the analysis plan.

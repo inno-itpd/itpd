@@ -382,7 +382,7 @@ The product reports how it is used and how it operates, and the two dashboards s
 
 The `UT-01` usability test is designed and prepared, and the team's recruitment target is five representative participants for Week 8.
 
-- **Due:** 2026-11-14
+- **Due:** 2026-11-15
 - **Sprint Backlog:** [the issues scheduled into SPRINT-07](https://github.com/<organization>/<repo>/milestone/5)
 - **Planned Velocity:** 0
 - **Actual Velocity:** 0; the sprint carries tasks rather than stories, so it moves nothing out.

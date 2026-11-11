@@ -40,7 +40,7 @@ The course is designed to prepare students for the Industrial Project course and
   See [Every Meeting](../requirements/customer-meetings-requirements.md#every-meeting).
 - **Weekly Submission Deadline Policy**:
   > [!IMPORTANT]
-  > The group submissions from Week 4 to Week 9 are due on **Saturday at 23:59**, with no soft deadline, except Week 6, which is due on **Sunday 8 November at 23:59**.
+  > The group submissions from Week 4 to Week 9 are due on **Saturday at 23:59**, with no soft deadline, except Week 6, which is due on **Sunday 8 November at 23:59**, and Week 7, which is due on **Sunday 15 November at 23:59**.
   > Weeks 1 to 3 keep the soft and hard deadline pair their assignments record, and the Week 11 individual reflection keeps its own date.
   > See [Deadlines And Submission](rules.md#deadlines-and-submission) and the [Late Submission Policy](#late-submission-policy).
   > A submission is a reflection on the work done in the repository.
@@ -75,7 +75,7 @@ The first two weeks establish the project foundations, team formation, and compe
 
 The dates below are the group submissions' deadlines.
 Weeks 1 to 3 record the soft and hard deadline pair their assignments give.
-From Week 4 to Week 9 every submission is due on Saturday at 23:59, with no soft deadline, except Week 6, which is due on Sunday 8 November at 23:59.
+From Week 4 to Week 9 every submission is due on Saturday at 23:59, with no soft deadline, except Week 6, which is due on Sunday 8 November at 23:59, and Week 7, which is due on Sunday 15 November at 23:59.
 
 | Week        | Date Range      | Focus / Key Milestones                                                                                                             |
 | :---------- | :-------------- | :--------------------------------------------------------------------------------------------------------------------------------- |
@@ -85,7 +85,7 @@ From Week 4 to Week 9 every submission is due on Saturday at 23:59, with no soft
 | **Week 4**  | Oct 16 – Oct 22 | Lecture (Software Quality), Architecture Draft & **Submission 4 (due Oct 24, 23:59)**                                              |
 | **Week 5**  | Oct 23 – Oct 29 | Lecture (Testing & Automation), CI Checks, VM Deployment & **Submission 5 (due Oct 31, 23:59)**                                    |
 | **Week 6**  | Oct 30 – Nov 5  | Lecture (Product Analytics), Focus Metric, Events \& Observability, Four Dashboards \& **Submission 6 (due Nov 8, 23:59)**         |
-| **Week 7**  | Nov 6 – Nov 12  | Lecture (Usability Testing), `UT-01` Test Design, Surveys, Consent \& Private Data, QR/QRT \& **Submission 7 (due Nov 14, 23:59)** |
+| **Week 7**  | Nov 6 – Nov 12  | Lecture (Usability Testing), `UT-01` Test Design, Surveys, Consent \& Private Data, QR/QRT \& **Submission 7 (due Nov 15, 23:59)** |
 | **Week 8**  | Nov 13 – Nov 19 | Lecture (Configuration Management), CM Evaluation \& Implementation, Usability Results \& **Submission 8 (due Nov 21, 23:59)**     |
 | **Week 9**  | Nov 20 – Nov 26 | Lecture (Project Pitching), 7-Minute Deck Preparation, Repo Finalization \& **Submission 9 (due Nov 28, 23:59)**                   |
 | **Week 10** | Nov 27 – Dec 3  | Lecture (Course Review) \& Final Exam Preparation                                                                                  |
@@ -243,7 +243,7 @@ From Week 4 to Week 9 every submission is due on Saturday at 23:59, with no soft
   - Add the `Interaction Capability` requirement with its `manual` test, and plan it for the run week.
   - Set a recruitment target of at least three representative participants, with five as the design target; the team arranges the sessions, they may run as soon as the design is written, and the results are due with Submission 8.
   - Cut the sprint's release, `REL-07`.
-- **Submission 7 (Team Deliverables - Due Nov 14, 23:59)**:
+- **Submission 7 (Team Deliverables - Due Nov 15, 23:59)**:
   - **Deliverables**:
     1. **`UT-01` Usability Test Design**: `docs/usability-tests/README.md` and `docs/usability-tests/ut-01/README.md`, with the goal, the research questions, the participant profile, the tasks, the protocol, the measures, the analysis plan, the schedule, the roles, the environment, and the public/private evidence map.
     2. **Pre-Test & Post-Test Surveys**: `docs/usability-tests/ut-01/surveys.md`, with the pre-test, the SEQ after each task, the full ten SUS items and the formula, and the open-ended post-test.
@@ -253,7 +253,7 @@ From Week 4 to Week 9 every submission is due on Saturday at 23:59, with no soft
     6. **Recruitment Target And Session Plan**: a recruitment target of at least three representative participants aged 18 or older, five as the design target, and the team's plan for arranging the sessions.
     7. **Sprint, Sprint Review, Release, Retrospective, And AI Usage**: `SPRINT-07` with its velocity, the design review with the customer, `REL-07`, the sprint retrospective, and the AI usage report.
   - **Submission Scope**: Team submission.
-  - **Deadline**: **November 14 at 23:59 (Saturday)**, with no soft deadline.
+  - **Deadline**: **November 15 at 23:59 (Sunday)**, with no soft deadline.
   - **Detailed requirements**: [Assignment 7](../assignments/assignment-7.md).
 
 The week has no 7-minute deck and no experiment: the deck is prepared in Week 9, submitted with Submission 9, rehearsed in the Week 10 class, and presented at the Week 11 final exam.
@@ -332,7 +332,7 @@ The course evaluation consists of **9 group submissions**, **1 individual reflec
 | **4**  | **Submission 4**     | Week 4     | **Group**      | Oct 24, 23:59   | **Quality & Architecture** (sprint plan and estimates, quality requirements and their priority matrix, functional requirements, the architecture with its drivers and ADR index, the architectural decision records, the glossary, the team's `AGENTS.md`, the sprint retrospective, next product release `REL-04`)                                                                                                                    |    Group (7%)    |
 | **5**  | **Submission 5**     | Week 5     | **Group**      | Oct 31, 23:59   | **Verification & Deployment** (quality requirement tests and the testing plan, automated tests and CI checks, staging and production instances with `docs/deployment.md` — _live accessible means the customer reaches them from the university network at the VM's IPv4 address_ — at least two milestones and two new stories, Feature Documentation in `docs/features.md`, the sprint retrospective, next product release `REL-05`) |    Group (7%)    |
 | **6**  | **Submission 6**     | Week 6     | **Group**      | Nov 8, 23:59    | **Product Analytics & Observability** (the analytics plan and metric tree, the events and instrumentation, the two analytics dashboards, the observability plan and `SLI`s, the two observability dashboards, the two functional requirements and stories, the two ADRs and container view, the observability requirement and test, the threshold review, the sprint retrospective, next product release `REL-06`)                     |    Group (7%)    |
-| **7**  | **Submission 7**     | Week 7     | **Group**      | Nov 14, 23:59   | **Usability Testing Design** (the `UT-01` record, pre/post-test surveys, task facilitation protocol, observation recording strategy, consent, private usability-data repository, recordings folder, the `Interaction Capability` requirement and its manual test, the participants and schedule)                                                                                                                                       |    Group (7%)    |
+| **7**  | **Submission 7**     | Week 7     | **Group**      | Nov 15, 23:59   | **Usability Testing Design** (the `UT-01` record, pre/post-test surveys, task facilitation protocol, observation recording strategy, consent, private usability-data repository, recordings folder, the `Interaction Capability` requirement and its manual test, the participants and schedule)                                                                                                                                       |    Group (7%)    |
 | **8**  | **Submission 8**     | Week 8     | **Group**      | Nov 21, 23:59   | **Configuration Management & Usability Results** (evaluation of CM practices, improvement plan, and implementation; `docs/usability-tests/ut-01/results.md`, the sanitized sessions, the QR/QRT result, the findings and task issues, the sprint retrospective, next product release `REL-08`)                                                                                                                                         |    Group (7%)    |
 | **9**  | **Submission 9**     | Week 9     | **Group**      | Nov 28, 23:59   | **Final Project Submission** (final presentation deck, project reflection report, repository code freeze)                                                                                                                                                                                                                                                                                                                              |    Group (7%)    |
 | **—**  | _Review Class_       | Week 10    | _Cohort_       | Nov 27 in class | Course retrospective and final exam demo preparation _(no submission due)_                                                                                                                                                                                                                                                                                                                                                             |        —         |
