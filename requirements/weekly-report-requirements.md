@@ -157,7 +157,10 @@ The Week 8 handoff is the design, the five confirmed participants, the private r
 | `QR-05` and its test              | [QR-05](../../docs/quality-requirements/qr/QR-05.md) and [QRT-01](../../docs/quality-requirements/qr/QR-05.md#qrt-01)                                                                                |
 | Recruitment and schedule          | [the participants](../../docs/usability-tests/ut-01/README.md#participant-profile) and [the schedule](../../docs/usability-tests/ut-01/README.md#schedule)                                           |
 | Week 8 handoff                    | [reports/week-07/README.md#usability-test](#usability-test)                                                                                                                                          |
+| Glossary                          | [docs/glossary.md](../../docs/glossary.md)                                                                                                                                                           |
+| Risk register                     | [docs/risks.md](../../docs/risks.md)                                                                                                                                                                 |
 | Week 6 action points              | [reports/week-07/meeting-report.md](meeting-report.md#previous-action-points)                                                                                                                        |
+| Week 6 open questions             | [reports/week-07/meeting-report.md](meeting-report.md#previous-open-questions)                                                                                                                       |
 | Sprint Review                     | [reports/week-07/meeting-report.md](meeting-report.md)                                                                                                                                               |
 | Meeting script                    | [reports/week-07/meeting-script.md](meeting-script.md)                                                                                                                                               |
 | Meeting transcript                | [reports/week-07/meeting-transcript.md](meeting-transcript.md)                                                                                                                                       |
@@ -179,13 +182,11 @@ The merged pull requests for the design and for the recruitment, with the green 
 
 ## Deviations
 
-The private usability-data repository's link needs authentication, so it is excluded from the link check with its reason in [the link check configuration](../../lychee.toml), and the URL is in the Moodle submission.
-
 No participant withdrew and none failed to consent, so the five confirmed participants are the five counted candidates.
 
 ## Privacy
 
-No private-only material was committed to this repository.
+No private-only material and no participant identity were committed to this repository.
 ```
 
 The results report says what the sessions found and links the record:

@@ -37,13 +37,13 @@ The run week is the submission that carries the results, and the sessions may ru
 1. The usability tests are one maintained group, `docs/usability-tests/`, with an index and one directory per test.
 2. The index is `docs/usability-tests/README.md`, with one row per `UT-nn` and these columns, in this order:
 
-   | Column    | What it holds                                                                                                                          |
-   | --------- | -------------------------------------------------------------------------------------------------------------------------------------- |
-   | `UT`      | The identifier as link text, linked to the test's record, such as `[UT-01](ut-01/README.md)`                                           |
-   | `Goal`    | The test's one-sentence goal, copied from its record                                                                                   |
-   | `Status`  | The record's `**Status:**` value                                                                                                       |
-   | `Results` | `Pending` until the results are written, and after that a link to `results.md`, such as `[results](ut-01/results.md)`                  |
-   | `Sprints` | The `**Design sprint:**` and the `**Run sprint:**`, linked to their plan sections, such as `[SPRINT-07](../project-plan.md#sprint-07)` |
+   | Column    | What it holds                                                                                                                                                                               |
+   | --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+   | `UT`      | The identifier as link text, linked to the test's record, such as `[UT-01](ut-01/README.md)`                                                                                                |
+   | `Goal`    | The test's one-sentence goal, copied from its record                                                                                                                                        |
+   | `Status`  | The record's `**Status:**` value                                                                                                                                                            |
+   | `Results` | `Pending` until the results are written, and after that a link to `results.md`, such as `[results](ut-01/results.md)`                                                                       |
+   | `Sprints` | The `**Design sprint:**` and the `**Run sprint:**`, linked to their plan sections, such as `[SPRINT-07](../project-plan.md#sprint-07)`, and both run sprints when the sessions straddle two |
 
 3. The table is the index, so it lists each test once and is not a second record: the record carries the goal, the design, and the link to the results.
 4. Each test is `docs/usability-tests/ut-nn/`, one directory per test, and its `README.md` is the test record, per [The Test Record](#the-test-record).
@@ -65,12 +65,12 @@ It is public and sanitized; the private material is in [The Private Data Reposit
 1. The record's heading is `# UT-01: <title>`, with the identifier and a short title, such as `# UT-01: Book a paid session unaided`.
 2. The heading is followed by these fields, in this order, as a bulleted list, per [Identifier Rules](general-requirements.md#identifier-rules):
 
-   | Field                | What it says                                                                                                                                                                                                                  |
-   | -------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-   | `**Status:**`        | `Planned` until the counted sessions and the results are recorded, `Completed` when they are, or `Dropped`                                                                                                                    |
-   | `**Design sprint:**` | The `SPRINT-nn` the test was designed in, linked to its plan section, such as `[SPRINT-07](../../project-plan.md#sprint-07)`                                                                                                  |
-   | `**Run sprint:**`    | The `SPRINT-nn` the sessions run in, linked the same way, such as `[SPRINT-08](../../project-plan.md#sprint-08)`, `SPRINT-07` when they run before the design week's deadline, and updated to `SPRINT-09` when the plan moves |
-   | `**Dropped:**`       | Only on a dropped test: the date and the reason, per [Identifier Rules](general-requirements.md#identifier-rules)                                                                                                             |
+   | Field                | What it says                                                                                                                                                                                                                                                                                                                                                                       |
+   | -------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+   | `**Status:**`        | `Planned` until the counted sessions and the results are recorded, `Completed` when they are, or `Dropped`                                                                                                                                                                                                                                                                         |
+   | `**Design sprint:**` | The `SPRINT-nn` the test was designed in, linked to its plan section, such as `[SPRINT-07](../../project-plan.md#sprint-07)`                                                                                                                                                                                                                                                       |
+   | `**Run sprint:**`    | The `SPRINT-nn` in which the last counted session runs, linked the same way, such as `[SPRINT-08](../../project-plan.md#sprint-08)`, `SPRINT-07` when every counted session runs before the design week's deadline, and updated to `SPRINT-09` when the plan moves; when the sessions straddle two sprints, the record states which sessions ran in which and the index lists both |
+   | `**Dropped:**`       | Only on a dropped test: the date and the reason, per [Identifier Rules](general-requirements.md#identifier-rules)                                                                                                                                                                                                                                                                  |
 
 3. Below the fields the record states, in this order: the goal in one sentence, the research questions, the `QR-nn` the test serves, the participant profile, the tasks, the protocol, the measures, the analysis plan, the schedule, the roles, the environment, the consent and data map, the public and private evidence map, and the link to `results.md`.
    The parts are `##` sections; the participant profile is `## Participant Profile`, the tasks are `## The Tasks`, and the schedule is `## Schedule`.
@@ -79,7 +79,7 @@ It is public and sanitized; the private material is in [The Private Data Reposit
 6. The `QR-nn` the test serves is linked to its requirement file and is the requirement whose `QRT-nn` names the test in `**Runs at:**`, per [Quality Requirement Tests](quality-requirements-requirements.md#quality-requirement-tests).
 7. The record links `results.md`, which is a stub in the design week and is filled in the run week, per [The Results And Findings](#the-results-and-findings).
    The record links the results rather than copying them.
-8. The record states the schedule: the dates the team scheduled the sessions for, and the date the results are due.
+8. The record states the schedule: the dates the team scheduled the sessions for, the date the results are due, and which session ran in which sprint when the sessions straddle two.
 9. The record states the roles: who facilitates, who observes, and who keeps the recordings and the raw notes, by GitHub username.
 10. The record states the environment: the staging deployment on the university network, the seed the session starts from, and that no real payment is made.
 11. The record states the consent and data map, per [Consent And Recording](#consent-and-recording) and [The Private Data Repository](#the-private-data-repository): what is private, what is public and sanitized, and where the recordings live.

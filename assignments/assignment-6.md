@@ -468,7 +468,7 @@ If the customer refused publication of the transcript, that row says so and poin
 
 Create one PDF, per [Private Submission Wrapper](../requirements/weekly-report-requirements.md#private-submission-wrapper).
 Keep it to two pages, and put nothing in it except the following.
-A transcript under item 6 goes in an appendix, which the two pages do not count.
+A transcript under item 7 goes in an appendix, which the two pages do not count.
 
 1. Project name and the team number.
 2. A table of team members: GitHub username, real name, and university email.

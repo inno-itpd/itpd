@@ -106,7 +106,8 @@ Link the `QR-nn` the test serves, and write its `QRT-nn` with this test in `**Ru
 The record and the test point at each other, and the requirement is what makes the test graded rather than optional.
 [Step 8](#step-8-write-the-quality-requirement-and-its-test) writes them, and the record's field is written first because the test cites the record.
 
-Keep the record's `**Design sprint:**` and `**Run sprint:**` set to the two sprints the plan schedules: `SPRINT-07` for the design and `SPRINT-08` for the run, moved to `SPRINT-09` only when the plan moves.
+Keep the record's `**Design sprint:**` and `**Run sprint:**` set to the two sprints the plan schedules: `SPRINT-07` for the design and `SPRINT-08` for the run, `SPRINT-07` for the run when every counted session runs before the design week's deadline, and `SPRINT-09` only when the plan moves.
+When the sessions straddle `SPRINT-07` and `SPRINT-08`, the field names the sprint of the last counted session, the record says which sessions ran early, and the index lists both.
 The `**Status:**` is `Planned` from the first day and becomes `Completed` when the counted sessions and the results are recorded.
 
 ## Step 2: Choose And Recruit The Participants
@@ -134,8 +135,8 @@ For a participant who may not be, do not count the session.
 
 ### Schedule The Sessions Before The Deadline
 
-Recruit in the design week and schedule the sessions at the dates the team can arrange, before the design week's deadline, so the design report states a count it can keep.
-The sessions may run as soon as the design is written, including before the design week's deadline; 15 to 18 November is the suggested window, 19 and 20 November the analysis and the triage, and 21 November the report, so the results submission has room for a replacement.
+Recruit in the design week and fix the sessions' dates before the design week's deadline, so the design report states a count it can keep.
+The sessions may run as soon as the design is written, including before the 14 November deadline; 15 to 18 November is the suggested window, 19 and 20 November the analysis and the triage, and 21 November the report, so the results submission has room for a replacement.
 
 Each session has a code assigned in the order it is scheduled, `P-01`, `P-02`, and so on, and the code is local to the test.
 The code is how the public notes and the results refer to a participant, and the identity mapping is the only place the code and the person are joined.
@@ -336,9 +337,10 @@ The test's result is graded through a quality requirement, and the record is the
 The requirement uses `Interaction Capability` and one sub-characteristic the team chooses from `Learnability`, `Self-descriptiveness`, and `Operability`.
 Choose the one the test actually measures, and write one sentence saying why: `Self-descriptiveness` fits a participant who must recognise what to do without a label, `Learnability` fits a first-time task, and `Operability` fits the effort of the interaction.
 
-The scenario reads a representative participant completing the main usability test task unaided, in the staging deployment on the university network with seeded data.
-The `Response Measure` is countable: at least three participants complete the task unaided, and the median main-task SEQ is at least five of seven.
-A team may set a different countable completion and ease bar, provided the bar is written before the sessions and the test settles it.
+The scenario reads a representative participant completing the main usability test task, in the staging deployment on the university network with seeded data, and the response is the behaviour the measure reads.
+The `Response Measure` is a real, countable criterion the team chooses, written before the first session.
+The example is that at least three participants complete the task unaided and the median main-task SEQ is at least five of seven; a team may choose another countable measure or bar that the test observes, and the test settles it.
+The measure is not a target: choose what tells you whether the product is usable, do not coach participants toward it, and do not change it after the data.
 
 Carry `**Business importance:** High`, so the requirement needs its test, and the team's own `**Technical risk:**`.
 
@@ -433,7 +435,7 @@ No raw participant data is in the product repository, and no private link is in 
 ### Delete After Grading
 
 After the course is graded, delete the private repository, its history, and the recordings, and keep the sanitized public record.
-The consent states the deletion, and the plan's retention rule is what makes the consent truthful.
+The consent states the deletion, and the record's retention rule is what makes the consent truthful.
 
 A private repository that outlives the course is participant data kept without a reason, and the retention rule is the one promise the team can always keep.
 
