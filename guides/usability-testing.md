@@ -7,7 +7,7 @@ The quality requirement the test serves is in [Quality Requirements](../requirem
 Who may see each artifact is in [Visibility Requirements](../requirements/visibility-requirements.md), the events the test reads are in [Product Analytics Requirements](../requirements/analytics-requirements.md#the-events), and the staging deployment it runs against is in [Environments And Deployment](../requirements/repository-requirements.md#environments-and-deployment).
 This guide is the method: designing the test, preparing the data, running the sessions, analyzing the results, and learning from them.
 
-**Timebox:** about a day and a half for the design, most of it on the tasks and the consent, and about a day for the sessions and the analysis once the participants are scheduled.
+**Timebox:** about a day and a half for the design, most of it on the tasks and the consent, and about a day for the sessions and the analysis once the sessions are arranged.
 Recruiting is the long pole and starts first, because three people outside the team cannot be found on the deadline's evening.
 
 <h2>Table of contents</h2>
@@ -20,7 +20,7 @@ Recruiting is the long pole and starts first, because three people outside the t
 - [Step 2: Choose And Recruit The Participants](#step-2-choose-and-recruit-the-participants)
   - [Write The Profile Before You Recruit](#write-the-profile-before-you-recruit)
   - [Recruit Three, Aim For Five](#recruit-three-aim-for-five)
-  - [Schedule The Sessions Before The Deadline](#schedule-the-sessions-before-the-deadline)
+  - [Set The Recruitment Target And The Dates](#set-the-recruitment-target-and-the-dates)
   - [Replace Without Reusing A Code](#replace-without-reusing-a-code)
 - [Step 3: Write The Tasks And The Success Criteria](#step-3-write-the-tasks-and-the-success-criteria)
   - [Start The Main Task From The Event Table](#start-the-main-task-from-the-event-table)
@@ -39,7 +39,7 @@ Recruiting is the long pole and starts first, because three people outside the t
 - [Step 6: Set The Protocol, The Roles, And The Schedule](#step-6-set-the-protocol-the-roles-and-the-schedule)
   - [Run Every Session The Same Way](#run-every-session-the-same-way)
   - [Facilitate Without Leading](#facilitate-without-leading)
-  - [Schedule The Sessions And The Report](#schedule-the-sessions-and-the-report)
+  - [Arrange The Sessions And Write The Report](#arrange-the-sessions-and-write-the-report)
 - [Step 7: Write The Analysis Plan And The Evidence Map](#step-7-write-the-analysis-plan-and-the-evidence-map)
   - [Fix The Measures Before The Data](#fix-the-measures-before-the-data)
   - [Draw The Evidence Map](#draw-the-evidence-map)
@@ -128,17 +128,17 @@ Say which sessions were exploratory, in the report, rather than quietly counting
 
 At least three completed sessions are the minimum, and five is the design target.
 Recruit from outside the team: a classmate who is not on the team is allowed, a teammate, the customer, the instructor, and the course staff are not.
-Ask people who match the profile, and ask early: a session scheduled the day before the deadline has no replacement when the person cancels.
+Ask people who match the profile, and ask early: a session scheduled the day before the results are due has no replacement when the person cancels.
 
 Every participant is 18 or older, and the pre-test records the declaration.
 For a participant who may not be, do not count the session.
 
-### Schedule The Sessions Before The Deadline
+### Set The Recruitment Target And The Dates
 
-Recruit in the design week and fix the sessions' dates before the design week's deadline, so the design report states a count it can keep.
-The sessions may run as soon as the design is written, including before the 14 November deadline; 15 to 18 November is the suggested window, 19 and 20 November the analysis and the triage, and 21 November the report, so the results submission has room for a replacement.
+Decide in the design week how many participants to recruit, at least three and five as the design target, and start asking people who match the profile.
+The dates are the team's to arrange: a session may run as soon as the design is written, including before the design week's deadline, so the results submission has room for a replacement.
 
-Each session has a code assigned in the order it is scheduled, `P-01`, `P-02`, and so on, and the code is local to the test.
+Each session has a code assigned in the order it is arranged, `P-01`, `P-02`, and so on, and the code is local to the test.
 The code is how the public notes and the results refer to a participant, and the identity mapping is the only place the code and the person are joined.
 
 ### Replace Without Reusing A Code
@@ -292,9 +292,9 @@ At least two team members run each session, and the same facilitator runs all th
 
 Record the assistant's help in the note beside the task, and rate the task `Assisted` rather than `Unaided` when it was given.
 
-### Schedule The Sessions And The Report
+### Arrange The Sessions And Write The Report
 
-Schedule the at least three sessions at the dates the team can arrange; the sessions may run as soon as the design is written, 15 to 18 November is the suggested window, and the results, the analysis, and the triage are due with Submission 8 on 21 November.
+Arrange the at least three sessions at the dates the team sets; they may run as soon as the design is written, and the results, the analysis, and the triage are due with Submission 8 on 21 November.
 The Week 8 review is at the time arranged with the customer, and the report records when it was and what was shown.
 
 When the sessions cannot finish, move the quality requirement's testing-plan row to `SPRINT-09` with a reason, and declare the open window in the results report.
@@ -361,7 +361,7 @@ The run week executes the design.
 
 ### Run At Least Three Counted Sessions
 
-Run the scheduled sessions in person, on the university network, against the staging deployment, with the seed reset before each one.
+Run the sessions in person, on the university network, against the staging deployment, with the seed reset before each one.
 They may run before the design week's deadline, once the design is written, and the results are still written for Submission 8.
 Start the recording before the pre-test, check the consent first, and run the tasks in the fixed order.
 
@@ -488,7 +488,7 @@ A private repository that outlives the course is participant data kept without a
 - **A metric that includes the test traffic.**
   A participant is not a paying customer; every metric excludes `smoke` and `source=usability-test`, and the funnel is read with the filter and shown separately.
 - **A Week 7 result claimed.**
-  The design week schedules the sessions and writes the design; a result belongs to the run week's report and the results record.
+  The design week sets the recruitment target and the session plan; a result belongs to the run week's report and the results record.
 - **A Week 7 or Week 8 deck PDF.**
   The deck is Week 9's, submitted with Submission 9, rehearsed in the Week 10 class, and presented at the Week 11 final exam.
 - **A `TOS-03` treated as required.**

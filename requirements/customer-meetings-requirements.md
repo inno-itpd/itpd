@@ -132,7 +132,7 @@ A Week 2 validation meeting.
 
 **Since: W7**
 
-6. The design week's Sprint Review, at the time arranged with the customer, shows the deployed production instance per rule 4 and the `UT-nn` design on staging: the research questions, the participant profile and count, the tasks, the surveys, the consent and the private repository, the recordings folder, the schedule, and the `QR-nn` with its `QRT-nn`.
+6. The design week's Sprint Review, at the time arranged with the customer, shows the deployed production instance per rule 4 and the `UT-nn` design on staging: the research questions, the participant profile and recruitment target, the tasks, the surveys, the consent and the private repository, the recordings folder, the session plan, and the `QR-nn` with its `QRT-nn`.
    It agrees the run week's execution plan with the customer.
    The customer is not a usability participant, and the meeting report records the feedback and any decision as a `DEC-nnn`, per [Meeting Report](#meeting-report).
    The Week 10 in-class product presentation is not a customer meeting and is not covered by this file.

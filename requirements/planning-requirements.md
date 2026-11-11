@@ -380,7 +380,7 @@ The product reports how it is used and how it operates, and the two dashboards s
 
 ### SPRINT-07
 
-The `UT-01` usability test is designed and prepared, and five representative participants are confirmed for Week 8.
+The `UT-01` usability test is designed and prepared, and the team's recruitment target is five representative participants for Week 8.
 
 - **Due:** 2026-11-14
 - **Sprint Backlog:** [the issues scheduled into SPRINT-07](https://github.com/<organization>/<repo>/milestone/5)

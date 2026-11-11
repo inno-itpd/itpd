@@ -77,9 +77,9 @@ Who may see each item is in [Visibility Requirements](visibility-requirements.md
 
 **Since: W7**
 
-19. In the design week the report's summary says the test is designed and scheduled and claims no result.
-    It links `docs/usability-tests/ut-01/README.md`, `surveys.md`, `consent.md`, the `QR/QRT`, the private repository, and the schedule, and it names the recordings folder, whose link is in the Moodle submission.
-20. In the design week a `## Usability test` section carries the design summary, the participant count and profile, the tasks, the surveys, the consent and the private repository, the recordings folder, the schedule, the `QR/QRT`, and the run week's handoff.
+19. In the design week the report's summary says the test is designed and the recruitment is planned, and claims no result.
+    It links `docs/usability-tests/ut-01/README.md`, `surveys.md`, `consent.md`, the `QR/QRT`, the private repository, and the session plan, and it names the recordings folder, whose link is in the Moodle submission.
+20. In the design week a `## Usability test` section carries the design summary, the recruitment target and the participant profile, the tasks, the surveys, the consent and the private repository, the recordings folder, the session plan, the `QR/QRT`, and the run week's handoff.
     The coverage table carries one row per deliverable, and a row whose evidence is that section links `#usability-test`.
     The summary follows rule 16 for the focus metric, the analytics, and the observability, and restates none of it.
 
@@ -102,7 +102,7 @@ Who may see each item is in [Visibility Requirements](visibility-requirements.md
 
 A Week 07 design report and a Week 08 results report, from `reports/week-07/README.md` and `reports/week-08/README.md`.
 
-The design report says what was designed and scheduled, and claims no result:
+The design report says what was designed and planned, and claims no result:
 
 ```markdown
 # Week 07 report
@@ -116,13 +116,13 @@ Our problem-space sentence: an expert who sells sessions online needs one link w
 ## What we did
 
 We designed the `UT-01` usability test and prepared every artifact the Week 8 sessions need: the test record, the surveys, the tasks and the protocol, the consent, the private usability-data repository, the recordings folder, the new `QR-05` with its manual test, and the analysis plan.
-We recruited five participants and scheduled the sessions for 15 to 18 November.
+We set a recruitment target of five participants and planned how we will arrange the sessions.
 We held the Sprint Review as the design review, published its transcript in the repository, and cut `REL-07` as [v0.7.0](https://github.com/<organization>/<repo>/releases/tag/v0.7.0).
 No session has run and no result is claimed.
 
 ## Findings
 
-The test is designed for at least three completed sessions, with five as the target, and five participants are confirmed.
+The test is designed for at least three completed sessions, with five as the target, and the recruitment target is five.
 The design is [the `UT-01` record](../../docs/usability-tests/ut-01/README.md), and its results are due with Submission 8 on 21 November.
 `QR-05 QRT-01` is `Not verified` with `Planned for sprint` `SPRINT-08`, and [the testing plan](../../docs/project-plan.md#quality-requirement-testing-plan) carries the row.
 The focus metric still has no value, and the test traffic will be excluded from it: the `UT-01` funnel is read with the `source = "usability-test"` filter.
@@ -133,7 +133,7 @@ The design is in [the `UT-01` record](../../docs/usability-tests/ut-01/README.md
 The test runs one main booking task and two secondary tasks, with the pre-test, the SEQ after each task, the SUS after all tasks, and the open-ended post-test, in [the surveys](../../docs/usability-tests/ut-01/surveys.md).
 
 The participant profile is a person who books sessions online, has used a booking page before, and uses a phone or the team's laptop.
-Five participants are confirmed, `P-01` to `P-05`, and the sessions are scheduled for 15 to 18 November.
+The recruitment target is five, the team will assign `P-01` to `P-05` in the order it arranges the sessions, and it sets the session dates.
 
 The raw notes stay in the [private usability-data repository](https://github.com/<organization>/<repo>-usability-data), the consent records are beside them, and the recordings are in the team's cloud folder.
 The private repository link is excluded from the link check because it needs authentication, and both private links are in the Moodle submission.
@@ -141,32 +141,32 @@ The public record carries the sanitized sessions and the results.
 
 `QR-05` is the `Interaction Capability` / `Self-descriptiveness` requirement, and its manual test names `UT-01`: [QR-05](../../docs/quality-requirements/qr/QR-05.md) and [QRT-01](../../docs/quality-requirements/qr/QR-05.md#qrt-01).
 
-The Week 8 handoff is the design, the five confirmed participants, the private repository and the recordings folder, the `QR-05 QRT-01` row in `SPRINT-08`, the `results.md` stub, and the analysis and triage plan.
+The Week 8 handoff is the design, the recruitment target of five participants, the private repository and the recordings folder, the `QR-05 QRT-01` row in `SPRINT-08`, the `results.md` stub, and the analysis and triage plan.
 
 ## Coverage
 
-| Deliverable                       | Artifact                                                                                                                                                                                             |
-| --------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Sprint plan                       | [docs/project-plan.md](../../docs/project-plan.md#sprint-07)                                                                                                                                         |
-| `UT-01` test record               | [docs/usability-tests/ut-01/README.md](../../docs/usability-tests/ut-01/README.md)                                                                                                                   |
-| Surveys and post-test             | [surveys.md](../../docs/usability-tests/ut-01/surveys.md)                                                                                                                                            |
-| Tasks and protocol                | [the tasks](../../docs/usability-tests/ut-01/README.md#the-tasks) and [the session template](../../docs/usability-tests/ut-01/sessions/README.md)                                                    |
-| Consent template                  | [consent.md](../../docs/usability-tests/ut-01/consent.md)                                                                                                                                            |
-| Private usability-data repository | the private `meeting-booking-usability-data` repository, linked from the record and excluded from the link check at [the link check configuration](../../lychee.toml), accessible to the instructors |
-| Recordings folder                 | the team's cloud folder, linked in the Moodle submission                                                                                                                                             |
-| `QR-05` and its test              | [QR-05](../../docs/quality-requirements/qr/QR-05.md) and [QRT-01](../../docs/quality-requirements/qr/QR-05.md#qrt-01)                                                                                |
-| Recruitment and schedule          | [the participants](../../docs/usability-tests/ut-01/README.md#participant-profile) and [the schedule](../../docs/usability-tests/ut-01/README.md#schedule)                                           |
-| Week 8 handoff                    | [reports/week-07/README.md#usability-test](#usability-test)                                                                                                                                          |
-| Glossary                          | [docs/glossary.md](../../docs/glossary.md)                                                                                                                                                           |
-| Risk register                     | [docs/risks.md](../../docs/risks.md)                                                                                                                                                                 |
-| Week 6 action points              | [reports/week-07/meeting-report.md](meeting-report.md#previous-action-points)                                                                                                                        |
-| Week 6 open questions             | [reports/week-07/meeting-report.md](meeting-report.md#previous-open-questions)                                                                                                                       |
-| Sprint Review                     | [reports/week-07/meeting-report.md](meeting-report.md)                                                                                                                                               |
-| Meeting script                    | [reports/week-07/meeting-script.md](meeting-script.md)                                                                                                                                               |
-| Meeting transcript                | [reports/week-07/meeting-transcript.md](meeting-transcript.md)                                                                                                                                       |
-| `REL-07`                          | [v0.7.0](https://github.com/<organization>/<repo>/releases/tag/v0.7.0), [the changelog](../../CHANGELOG.md), and [the plan's REL-07 block](../../docs/project-plan.md#rel-07)                        |
-| Sprint retrospective              | [reports/week-07/sprint-retrospective.md](sprint-retrospective.md)                                                                                                                                   |
-| AI usage                          | [reports/week-07/ai-usage.md](ai-usage.md)                                                                                                                                                           |
+| Deliverable                         | Artifact                                                                                                                                                                                             |
+| ----------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Sprint plan                         | [docs/project-plan.md](../../docs/project-plan.md#sprint-07)                                                                                                                                         |
+| `UT-01` test record                 | [docs/usability-tests/ut-01/README.md](../../docs/usability-tests/ut-01/README.md)                                                                                                                   |
+| Surveys and post-test               | [surveys.md](../../docs/usability-tests/ut-01/surveys.md)                                                                                                                                            |
+| Tasks and protocol                  | [the tasks](../../docs/usability-tests/ut-01/README.md#the-tasks) and [the session template](../../docs/usability-tests/ut-01/sessions/README.md)                                                    |
+| Consent template                    | [consent.md](../../docs/usability-tests/ut-01/consent.md)                                                                                                                                            |
+| Private usability-data repository   | the private `meeting-booking-usability-data` repository, linked from the record and excluded from the link check at [the link check configuration](../../lychee.toml), accessible to the instructors |
+| Recordings folder                   | the team's cloud folder, linked in the Moodle submission                                                                                                                                             |
+| `QR-05` and its test                | [QR-05](../../docs/quality-requirements/qr/QR-05.md) and [QRT-01](../../docs/quality-requirements/qr/QR-05.md#qrt-01)                                                                                |
+| Recruitment target and session plan | [the participant profile](../../docs/usability-tests/ut-01/README.md#participant-profile) and [the session plan](../../docs/usability-tests/ut-01/README.md#schedule)                                |
+| Week 8 handoff                      | [reports/week-07/README.md#usability-test](#usability-test)                                                                                                                                          |
+| Glossary                            | [docs/glossary.md](../../docs/glossary.md)                                                                                                                                                           |
+| Risk register                       | [docs/risks.md](../../docs/risks.md)                                                                                                                                                                 |
+| Week 6 action points                | [reports/week-07/meeting-report.md](meeting-report.md#previous-action-points)                                                                                                                        |
+| Week 6 open questions               | [reports/week-07/meeting-report.md](meeting-report.md#previous-open-questions)                                                                                                                       |
+| Sprint Review                       | [reports/week-07/meeting-report.md](meeting-report.md)                                                                                                                                               |
+| Meeting script                      | [reports/week-07/meeting-script.md](meeting-script.md)                                                                                                                                               |
+| Meeting transcript                  | [reports/week-07/meeting-transcript.md](meeting-transcript.md)                                                                                                                                       |
+| `REL-07`                            | [v0.7.0](https://github.com/<organization>/<repo>/releases/tag/v0.7.0), [the changelog](../../CHANGELOG.md), and [the plan's REL-07 block](../../docs/project-plan.md#rel-07)                        |
+| Sprint retrospective                | [reports/week-07/sprint-retrospective.md](sprint-retrospective.md)                                                                                                                                   |
+| AI usage                            | [reports/week-07/ai-usage.md](ai-usage.md)                                                                                                                                                           |
 
 ## Contribution
 

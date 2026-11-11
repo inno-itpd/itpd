@@ -79,7 +79,7 @@ It is public and sanitized; the private material is in [The Private Data Reposit
 6. The `QR-nn` the test serves is linked to its requirement file and is the requirement whose `QRT-nn` names the test in `**Runs at:**`, per [Quality Requirement Tests](quality-requirements-requirements.md#quality-requirement-tests).
 7. The record links `results.md`, which is a stub in the design week and is filled in the run week, per [The Results And Findings](#the-results-and-findings).
    The record links the results rather than copying them.
-8. The record states the schedule: the dates the team scheduled the sessions for, the date the results are due, and which session ran in which sprint when the sessions straddle two.
+8. The record states the schedule: the dates the team has arranged for the sessions, or the plan for arranging them when the dates are not fixed, the date the results are due, and which session ran in which sprint when the sessions straddle two.
 9. The record states the roles: who facilitates, who observes, and who keeps the recordings and the raw notes, by GitHub username.
 10. The record states the environment: the staging deployment on the university network, the seed the session starts from, and that no real payment is made.
 11. The record states the consent and data map, per [Consent And Recording](#consent-and-recording) and [The Private Data Repository](#the-private-data-repository): what is private, what is public and sanitized, and where the recordings live.
@@ -121,7 +121,7 @@ A usability session is not the analytics `session_id`: the session is the sittin
 6. A session that is withdrawn, not recorded, not consented to the recording and the sanitized public results, or technically broken does not count.
 7. A participant who does not complete the task still counts, because the failure is a result.
 8. A replacement is recruited under the next free code, and a withdrawn code is retired and never reused.
-9. The team recruits the participants and schedules the sessions in the design week; the sessions may run as soon as the design is written, including before the design week's deadline, and the results are written in the run week.
+9. The team sets the recruitment target in the design week and arranges the sessions when it decides; a session may run as soon as the design is written, including before the design week's deadline, and the results are written in the run week.
 
 ## The Tasks
 
@@ -312,7 +312,7 @@ The run week executes the design: the sessions run or have run, the data goes to
 
 **Required**
 
-1. At least three usability sessions run after the design is written, at the dates the team schedules; 15 to 18 November is the suggested window, 19 and 20 November the analysis and the triage, and 21 November the report.
+1. At least three usability sessions run after the design is written, at the dates the team schedules, and before the run week's results and report are written.
 2. The raw text goes to the private repository, the recordings go to the cloud folder, and the sanitized session notes and results go to `docs/usability-tests/ut-01/`.
 3. The record's `**Status:**` becomes `Completed`, and its `results.md` is written, per [The Results And Findings](#the-results-and-findings).
 4. The quality requirement's testing-plan row records `Passes` or `Fails` with `Checked: SPRINT-08` and the results as its evidence, per [Quality Requirement Testing Plan](planning-requirements.md#quality-requirement-testing-plan).
@@ -398,7 +398,7 @@ A per-participant table, the aggregate completion, the median time, the median S
 
 ## Schedule
 
-The sessions are scheduled for 16 and 17 November, and the results are due with Submission 8 on 21 November.
+The sessions run at the dates the team arranges, and the results are due with Submission 8 on 21 November.
 
 ## Roles
 
