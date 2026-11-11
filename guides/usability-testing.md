@@ -7,7 +7,7 @@ The quality requirement the test serves is in [Quality Requirements](../requirem
 Who may see each artifact is in [Visibility Requirements](../requirements/visibility-requirements.md), the events the test reads are in [Product Analytics Requirements](../requirements/analytics-requirements.md#the-events), and the staging deployment it runs against is in [Environments And Deployment](../requirements/repository-requirements.md#environments-and-deployment).
 This guide is the method: designing the test, preparing the data, running the sessions, analyzing the results, and learning from them.
 
-**Timebox:** about a day and a half for the design, most of it on the tasks and the consent, and about a day for the sessions and the analysis once the participants are booked.
+**Timebox:** about a day and a half for the design, most of it on the tasks and the consent, and about a day for the sessions and the analysis once the participants are scheduled.
 Recruiting is the long pole and starts first, because three people outside the team cannot be found on the deadline's evening.
 
 <h2>Table of contents</h2>
@@ -20,7 +20,7 @@ Recruiting is the long pole and starts first, because three people outside the t
 - [Step 2: Choose And Recruit The Participants](#step-2-choose-and-recruit-the-participants)
   - [Write The Profile Before You Recruit](#write-the-profile-before-you-recruit)
   - [Recruit Three, Aim For Five](#recruit-three-aim-for-five)
-  - [Book The Sessions Before The Deadline](#book-the-sessions-before-the-deadline)
+  - [Schedule The Sessions Before The Deadline](#schedule-the-sessions-before-the-deadline)
   - [Replace Without Reusing A Code](#replace-without-reusing-a-code)
 - [Step 3: Write The Tasks And The Success Criteria](#step-3-write-the-tasks-and-the-success-criteria)
   - [Start The Main Task From The Event Table](#start-the-main-task-from-the-event-table)
@@ -39,7 +39,7 @@ Recruiting is the long pole and starts first, because three people outside the t
 - [Step 6: Set The Protocol, The Roles, And The Schedule](#step-6-set-the-protocol-the-roles-and-the-schedule)
   - [Run Every Session The Same Way](#run-every-session-the-same-way)
   - [Facilitate Without Leading](#facilitate-without-leading)
-  - [Book The Sessions And The Report](#book-the-sessions-and-the-report)
+  - [Schedule The Sessions And The Report](#schedule-the-sessions-and-the-report)
 - [Step 7: Write The Analysis Plan And The Evidence Map](#step-7-write-the-analysis-plan-and-the-evidence-map)
   - [Fix The Measures Before The Data](#fix-the-measures-before-the-data)
   - [Draw The Evidence Map](#draw-the-evidence-map)
@@ -127,17 +127,17 @@ Say which sessions were exploratory, in the report, rather than quietly counting
 
 At least three completed sessions are the minimum, and five is the design target.
 Recruit from outside the team: a classmate who is not on the team is allowed, a teammate, the customer, the instructor, and the course staff are not.
-Ask people who match the profile, and ask early: a session booked the day before the deadline has no replacement when the person cancels.
+Ask people who match the profile, and ask early: a session scheduled the day before the deadline has no replacement when the person cancels.
 
 Every participant is 18 or older, and the pre-test records the declaration.
 For a participant who may not be, do not count the session.
 
-### Book The Sessions Before The Deadline
+### Schedule The Sessions Before The Deadline
 
-Recruit in the design week and book the sessions for the run week, before the design week's deadline, so the design report states a count it can keep.
-Target 15 to 18 November for the sessions, 19 and 20 November for the analysis and the triage, and 21 November for the report, so the run week's deadline has room for a replacement.
+Recruit in the design week and schedule the sessions at the dates the team can arrange, before the design week's deadline, so the design report states a count it can keep.
+The sessions may run as soon as the design is written, including before the design week's deadline; 15 to 18 November is the suggested window, 19 and 20 November the analysis and the triage, and 21 November the report, so the results submission has room for a replacement.
 
-Each session has a code assigned in the order it is booked, `P-01`, `P-02`, and so on, and the code is local to the test.
+Each session has a code assigned in the order it is scheduled, `P-01`, `P-02`, and so on, and the code is local to the test.
 The code is how the public notes and the results refer to a participant, and the identity mapping is the only place the code and the person are joined.
 
 ### Replace Without Reusing A Code
@@ -207,17 +207,22 @@ Write both, because a completion rate with no observation says what happened and
 
 ### Use The Standard SUS
 
-The SUS is the standard ten items on the five-point scale, and the items are not reworded: a changed item is not comparable with another team's SUS or with the lecture's percentile reading.
-The full ten items are in [the full example](../requirements/usability-testing-requirements.md#full-example), and the survey copies them.
+The SUS is the standard ten items in their standard order and wording, and the items are not reworded: a changed item is not comparable with another team's SUS or with the lecture's benchmark.
+The one permitted change is naming `the product` instead of `the system`.
+The full ten items are in [the full example](../requirements/usability-testing-requirements.md#full-example), and the assignment prints them beside `surveys.md`.
 
-Score it as `SUS = 2.5 × (20 + sum(odd) - sum(even))`, where the odd items' answers are added and the even items' answers are subtracted, because the even items are negatively worded.
+Each item is answered from strongly disagree (1) to strongly agree (5), and the score is `SUS = 2.5 × (20 + sum(odd) - sum(even))`, computed from the responses as recorded.
+The odd items' answers are added and the even items' answers are subtracted, because the even items are negatively worded; the even items are not reverse-coded before the formula.
 A raw sum of the ten answers is not a SUS score, and it moves the number by tens of points.
+
+A worked score: five odd answers of 5, 4, 4, 5, and 5 and five even answers of 2, 1, 2, 2, and 1 give `2.5 × (20 + 23 - 8) = 87.5`.
+The lecture reads 68 as the average and 80 as excellent; with three to five participants, report the mean and median with `n` and read the number as a description of those people.
 
 The ASQ is optional: the SEQ and the SUS are enough for comparability and for the lecture's frameworks.
 
 ### Read The Main Task's SEQ
 
-The SEQ is one question after each task on a seven-point scale, and the quality requirement reads the main task's median SEQ.
+The SEQ is the standard question after each task, `Overall, how difficult or easy was the task to complete?`, on a seven-point scale where 1 is very difficult and 7 is very easy, and the quality requirement reads the main task's median SEQ.
 Record the SEQ after every task, including a task the participant failed, because a failed task's ease rating is part of what the failure felt like.
 
 The results report the per-task SEQ for the main task and for the two secondary tasks, so a reader can see which flow is the problem rather than one number over all three.
@@ -286,12 +291,12 @@ At least two team members run each session, and the same facilitator runs all th
 
 Record the assistant's help in the note beside the task, and rate the task `Assisted` rather than `Unaided` when it was given.
 
-### Book The Sessions And The Report
+### Schedule The Sessions And The Report
 
-Book the at least three sessions from 15 to 18 November, hold the analysis and the triage on 19 and 20 November, and write the report on 21 November.
+Schedule the at least three sessions at the dates the team can arrange; the sessions may run as soon as the design is written, 15 to 18 November is the suggested window, and the results, the analysis, and the triage are due with Submission 8 on 21 November.
 The Week 8 review is at the time arranged with the customer, and the report records when it was and what was shown.
 
-When the sessions cannot finish, move the quality requirement's testing-plan row to `SPRINT-09` with a reason, and declare the open window in the run week's report.
+When the sessions cannot finish, move the quality requirement's testing-plan row to `SPRINT-09` with a reason, and declare the open window in the results report.
 No result is claimed for a session that did not run.
 
 ## Step 7: Write The Analysis Plan And The Evidence Map
@@ -354,7 +359,8 @@ The run week executes the design.
 
 ### Run At Least Three Counted Sessions
 
-Run the booked sessions in person, on the university network, against the staging deployment, with the seed reset before each one.
+Run the scheduled sessions in person, on the university network, against the staging deployment, with the seed reset before each one.
+They may run before the design week's deadline, once the design is written, and the results are still written for Submission 8.
 Start the recording before the pre-test, check the consent first, and run the tasks in the fixed order.
 
 Count a session only when its consent and its recording are in place and its data is complete.
@@ -478,9 +484,9 @@ A private repository that outlives the course is participant data kept without a
 - **A test that runs on production.**
   Production is the state the team promised; run against staging, with the seed reset, and keep the customer's data out of the session.
 - **A metric that includes the test traffic.**
-  A participant is not a paying customer; every metric excludes `source=usability-test`, and the funnel is read with the filter and shown separately.
+  A participant is not a paying customer; every metric excludes `smoke` and `source=usability-test`, and the funnel is read with the filter and shown separately.
 - **A Week 7 result claimed.**
-  The design week books the sessions and writes the design; a result belongs to the run week's report and the results record.
+  The design week schedules the sessions and writes the design; a result belongs to the run week's report and the results record.
 - **A Week 7 or Week 8 deck PDF.**
   The deck is Week 9's, submitted with Submission 9, rehearsed in the Week 10 class, and presented at the Week 11 final exam.
 - **A `TOS-03` treated as required.**

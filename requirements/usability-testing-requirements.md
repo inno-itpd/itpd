@@ -29,7 +29,8 @@ The quality requirement a test serves is in [Quality Requirements](quality-requi
 **Since: W7**
 
 The usability test is maintained documentation: it is created in Week 7 in its final place and stays current, per [Where Artifacts Live In The Repository](general-requirements.md#where-artifacts-live-in-the-repository).
-The test is designed in Week 7 and run in Week 8, so its design is written before its results exist and its record is updated when they do.
+The test is designed in Week 7 and the sessions run when the team can schedule them, so its design is written before its results exist and its record is updated when they do.
+The run week is the submission that carries the results, and the sessions may run before it.
 
 **Required**
 
@@ -64,20 +65,21 @@ It is public and sanitized; the private material is in [The Private Data Reposit
 1. The record's heading is `# UT-01: <title>`, with the identifier and a short title, such as `# UT-01: Book a paid session unaided`.
 2. The heading is followed by these fields, in this order, as a bulleted list, per [Identifier Rules](general-requirements.md#identifier-rules):
 
-   | Field                | What it says                                                                                                                                                     |
-   | -------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-   | `**Status:**`        | `Planned` until the counted sessions and the results are recorded, `Completed` when they are, or `Dropped`                                                       |
-   | `**Design sprint:**` | The `SPRINT-nn` the test was designed in, linked to its plan section, such as `[SPRINT-07](../../project-plan.md#sprint-07)`                                     |
-   | `**Run sprint:**`    | The `SPRINT-nn` the sessions run in, linked the same way, such as `[SPRINT-08](../../project-plan.md#sprint-08)`, and updated to `SPRINT-09` when the plan moves |
-   | `**Dropped:**`       | Only on a dropped test: the date and the reason, per [Identifier Rules](general-requirements.md#identifier-rules)                                                |
+   | Field                | What it says                                                                                                                                                                                                                  |
+   | -------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+   | `**Status:**`        | `Planned` until the counted sessions and the results are recorded, `Completed` when they are, or `Dropped`                                                                                                                    |
+   | `**Design sprint:**` | The `SPRINT-nn` the test was designed in, linked to its plan section, such as `[SPRINT-07](../../project-plan.md#sprint-07)`                                                                                                  |
+   | `**Run sprint:**`    | The `SPRINT-nn` the sessions run in, linked the same way, such as `[SPRINT-08](../../project-plan.md#sprint-08)`, `SPRINT-07` when they run before the design week's deadline, and updated to `SPRINT-09` when the plan moves |
+   | `**Dropped:**`       | Only on a dropped test: the date and the reason, per [Identifier Rules](general-requirements.md#identifier-rules)                                                                                                             |
 
 3. Below the fields the record states, in this order: the goal in one sentence, the research questions, the `QR-nn` the test serves, the participant profile, the tasks, the protocol, the measures, the analysis plan, the schedule, the roles, the environment, the consent and data map, the public and private evidence map, and the link to `results.md`.
+   The parts are `##` sections; the participant profile is `## Participant Profile`, the tasks are `## The Tasks`, and the schedule is `## Schedule`.
 4. The goal is one sentence that says what the test is for in terms a reader outside the course can follow, such as whether a representative participant can book and pay without help.
 5. The research questions are a short numbered list, each answerable with the session's data, such as whether a participant finds a free slot without a hint and which step makes them ask for help.
 6. The `QR-nn` the test serves is linked to its requirement file and is the requirement whose `QRT-nn` names the test in `**Runs at:**`, per [Quality Requirement Tests](quality-requirements-requirements.md#quality-requirement-tests).
 7. The record links `results.md`, which is a stub in the design week and is filled in the run week, per [The Results And Findings](#the-results-and-findings).
    The record links the results rather than copying them.
-8. The record states the schedule: the week the sessions are booked for, the dates the team target, and the date the results are due.
+8. The record states the schedule: the dates the team scheduled the sessions for, and the date the results are due.
 9. The record states the roles: who facilitates, who observes, and who keeps the recordings and the raw notes, by GitHub username.
 10. The record states the environment: the staging deployment on the university network, the seed the session starts from, and that no real payment is made.
 11. The record states the consent and data map, per [Consent And Recording](#consent-and-recording) and [The Private Data Repository](#the-private-data-repository): what is private, what is public and sanitized, and where the recordings live.
@@ -114,12 +116,12 @@ A usability session is not the analytics `session_id`: the session is the sittin
 1. The test is designed for at least three completed usability sessions with representative participants, and five is the design target.
 2. A participant is 18 or older, is not a teammate, is not the customer, is not the instructor, and is not the course staff.
 3. Every counted participant matches [The Participant Profile](#the-participant-profile).
-4. A participant code is `P-01`, `P-02`, and so on: two digits, local to its `UT-nn`, assigned in the order the sessions are booked, cited as the pair `UT-01 P-01` or with the `UT-nn`'s path, and never reused, per [Identifier Rules](general-requirements.md#identifier-rules).
+4. A participant code is `P-01`, `P-02`, and so on: two digits, local to its `UT-nn`, assigned in the order the sessions are scheduled, cited as the pair `UT-01 P-01` or with the `UT-nn`'s path, and never reused, per [Identifier Rules](general-requirements.md#identifier-rules).
 5. A pilot or dry run does not count as a completed session, and it is not evidence.
 6. A session that is withdrawn, not recorded, not consented to the recording and the sanitized public results, or technically broken does not count.
 7. A participant who does not complete the task still counts, because the failure is a result.
 8. A replacement is recruited under the next free code, and a withdrawn code is retired and never reused.
-9. The team recruits the participants and books the sessions in the design week, and the sessions run in the run week.
+9. The team recruits the participants and schedules the sessions in the design week; the sessions may run as soon as the design is written, including before the design week's deadline, and the results are written in the run week.
 
 ## The Tasks
 
@@ -175,8 +177,9 @@ The survey instrument is `surveys.md`, the session's recording sheet and the ins
 2. Every session records the pre-test background, the think-aloud observation, the task completion and assistance, the time on task, a SEQ after each task, a SUS after all the tasks, the SUS score, and the open-ended post-test.
 3. The **pre-test** asks for the participant's role and background, their familiarity with similar products, the device, and their expectations.
    It carries no name, email address, phone number, or free-text identification, and it carries the 18-or-older declaration.
-4. The **SEQ** is one question after each task on a seven-point scale: how difficult the task was.
-5. The **SUS** is the standard ten items on the five-point scale, and it is scored `SUS = 2.5 × (20 + sum(odd) - sum(even))`.
+4. The **SEQ** is the standard question after each task on a seven-point scale: `Overall, how difficult or easy was the task to complete?`, where 1 is very difficult and 7 is very easy, so a higher score is easier.
+5. The **SUS** is the standard ten items, in their standard order and wording, with `the product` naming the system; that is the only permitted change.
+   Each item is answered from strongly disagree (1) to strongly agree (5), and the score is `SUS = 2.5 × (20 + sum(odd) - sum(even))`, computed from the responses as recorded; the even items are not reverse-coded before the formula.
    The results report its mean and median with the `n=<count>` caveat, because a small sample supports no claim about a population.
 6. The quality requirement reads the main task's median SEQ, and the results report the per-task SEQ for the main task and for the two secondary tasks.
 7. The **open-ended post-test** asks for the overall impression, what the participant would change, and what the team did not ask.
@@ -305,11 +308,11 @@ Triage is how a finding becomes work rather than a paragraph: every finding is c
 
 **Since: W8**
 
-The run week executes the design: the sessions run, the data goes to its two private places, the public record is written, and the result is learned from and reported.
+The run week executes the design: the sessions run or have run, the data goes to its two private places, the public record is written, and the result is learned from and reported.
 
 **Required**
 
-1. At least three usability sessions run after the design week's deadline, and the team targets 15 to 18 November for the sessions, 19 and 20 November for the analysis and the triage, and 21 November for the report.
+1. At least three usability sessions run after the design is written, at the dates the team schedules; 15 to 18 November is the suggested window, 19 and 20 November the analysis and the triage, and 21 November the report.
 2. The raw text goes to the private repository, the recordings go to the cloud folder, and the sanitized session notes and results go to `docs/usability-tests/ut-01/`.
 3. The record's `**Status:**` becomes `Completed`, and its `results.md` is written, per [The Results And Findings](#the-results-and-findings).
 4. The quality requirement's testing-plan row records `Passes` or `Fails` with `Checked: SPRINT-08` and the results as its evidence, per [Quality Requirement Testing Plan](planning-requirements.md#quality-requirement-testing-plan).
@@ -395,7 +398,7 @@ A per-participant table, the aggregate completion, the median time, the median S
 
 ## Schedule
 
-The sessions are booked for 15 to 18 November, and the results are due with Submission 8 on 21 November.
+The sessions are scheduled for 16 and 17 November, and the results are due with Submission 8 on 21 November.
 
 ## Roles
 
@@ -430,7 +433,7 @@ From `docs/usability-tests/ut-01/surveys.md`, the SUS and one SEQ:
 ```markdown
 ## SEQ, after each task
 
-How difficult was this task? 1 is very difficult, and 7 is very easy.
+Overall, how difficult or easy was the task to complete? 1 is very difficult, and 7 is very easy.
 
 ## SUS, after all the tasks
 
@@ -445,8 +448,9 @@ How difficult was this task? 1 is very difficult, and 7 is very easy.
 9. I felt very confident using the product.
 10. I needed to learn a lot of things before I could get going with this product.
 
-Each item is answered on a five-point scale, from strongly disagree to strongly agree.
+Each item is answered on a five-point scale, from strongly disagree (1) to strongly agree (5).
 The SUS score is `SUS = 2.5 × (20 + sum(odd) - sum(even))`, where the odd items are the five positively worded items and the even items are the five negatively worded ones, so the even answers are subtracted rather than added.
+The responses are the recorded 1 to 5 answers, and the even items are not reverse-coded before the formula.
 
 ## Open-ended post-test
 
@@ -549,5 +553,5 @@ The sample supports no claim about the population, and the SUS is reported with 
 ## Conclusion
 
 The main task is usable for most participants, and the checkout form's phone field is the largest obstacle.
-[`QR-05 QRT-01`](../../quality-requirements/qr/QR-05.md#qrt-01) passes: three participants completed the main task unaided, and the median main-task SEQ is 6.
+The testing plan records [`QR-05 QRT-01`](../../quality-requirements/qr/QR-05.md#qrt-01) as `Passes`: three participants completed the main task unaided, and the median main-task SEQ is 6.
 ```

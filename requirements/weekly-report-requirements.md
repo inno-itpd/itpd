@@ -116,7 +116,7 @@ Our problem-space sentence: an expert who sells sessions online needs one link w
 ## What we did
 
 We designed the `UT-01` usability test and prepared every artifact the Week 8 sessions need: the test record, the surveys, the tasks and the protocol, the consent, the private usability-data repository, the recordings folder, the new `QR-05` with its manual test, and the analysis plan.
-We recruited five participants and booked the sessions for 15 to 18 November.
+We recruited five participants and scheduled the sessions for 15 to 18 November.
 We held the Sprint Review as the design review, published its transcript in the repository, and cut `REL-07` as [v0.7.0](https://github.com/<organization>/<repo>/releases/tag/v0.7.0).
 No session has run and no result is claimed.
 
@@ -133,7 +133,7 @@ The design is in [the `UT-01` record](../../docs/usability-tests/ut-01/README.md
 The test runs one main booking task and two secondary tasks, with the pre-test, the SEQ after each task, the SUS after all tasks, and the open-ended post-test, in [the surveys](../../docs/usability-tests/ut-01/surveys.md).
 
 The participant profile is a person who books sessions online, has used a booking page before, and uses a phone or the team's laptop.
-Five participants are confirmed, `P-01` to `P-05`, and the sessions are booked for 15 to 18 November.
+Five participants are confirmed, `P-01` to `P-05`, and the sessions are scheduled for 15 to 18 November.
 
 The raw notes stay in the [private usability-data repository](https://github.com/<organization>/<repo>-usability-data), the consent records are beside them, and the recordings are in the team's cloud folder.
 The private repository link is excluded from the link check because it needs authentication, and both private links are in the Moodle submission.
@@ -155,7 +155,7 @@ The Week 8 handoff is the design, the five confirmed participants, the private r
 | Private usability-data repository | the private `meeting-booking-usability-data` repository, linked from the record and excluded from the link check at [the link check configuration](../../lychee.toml), accessible to the instructors |
 | Recordings folder                 | the team's cloud folder, linked in the Moodle submission                                                                                                                                             |
 | `QR-05` and its test              | [QR-05](../../docs/quality-requirements/qr/QR-05.md) and [QRT-01](../../docs/quality-requirements/qr/QR-05.md#qrt-01)                                                                                |
-| Recruitment and schedule          | [the participants](../../docs/usability-tests/ut-01/README.md#the-participants) and [the schedule](../../docs/usability-tests/ut-01/README.md#schedule)                                              |
+| Recruitment and schedule          | [the participants](../../docs/usability-tests/ut-01/README.md#participant-profile) and [the schedule](../../docs/usability-tests/ut-01/README.md#schedule)                                           |
 | Week 8 handoff                    | [reports/week-07/README.md#usability-test](#usability-test)                                                                                                                                          |
 | Week 6 action points              | [reports/week-07/meeting-report.md](meeting-report.md#previous-action-points)                                                                                                                        |
 | Sprint Review                     | [reports/week-07/meeting-report.md](meeting-report.md)                                                                                                                                               |

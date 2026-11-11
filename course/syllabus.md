@@ -241,7 +241,7 @@ From Week 4 to Week 9 every submission is due on Saturday at 23:59, with no soft
   - Write the pre-test, the SEQ after each task, the full SUS, and the open-ended post-test, and record the qualitative and the quantitative measures.
   - Write the durable consent and create the private usability-data repository and the recordings folder, and split the public sanitized record from the private raw data.
   - Add the `Interaction Capability` requirement with its `manual` test, and plan it for the run week.
-  - Recruit and schedule at least three representative participants, with five as the target, and hand the run off to Week 8.
+  - Recruit and schedule at least three representative participants, with five as the target; the sessions may run as soon as the design is written, and the results are due with Submission 8.
   - Cut the sprint's release, `REL-07`.
 - **Submission 7 (Team Deliverables - Due Nov 14, 23:59)**:
   - **Deliverables**:
@@ -250,7 +250,7 @@ From Week 4 to Week 9 every submission is due on Saturday at 23:59, with no soft
     3. **Task Facilitation Protocol And Observation Recording Strategy**: the tasks with their scenarios, start points, end states, success criteria, time limits, and fixed order, and `sessions/README.md` with the facilitation script, the no-help rule, the observation sheet, and the roles.
     4. **Consent, Private Repository, And Recordings Folder**: `consent.md`, the private `<organization>/<repo>-usability-data` repository shared with the instructors, the team-owned cloud folder for the recordings, and the private links in the Moodle wrapper.
     5. **Quality Requirement And Its Manual Test**: the `Interaction Capability` requirement with its team-chosen sub-characteristic, its scenario, and its `manual` `QRT` that names `UT-01`, with its testing-plan row planned for `SPRINT-08`.
-    6. **Recruitment And Schedule**: at least three confirmed representative participants aged 18 or older, five as the target, and the sessions booked for 15 to 18 November.
+    6. **Recruitment And Schedule**: at least three confirmed representative participants aged 18 or older, five as the target, and the sessions scheduled at the dates the team records, with 15 to 18 November as the suggested window.
     7. **Sprint, Sprint Review, Release, Retrospective, And AI Usage**: `SPRINT-07` with its velocity, the design review with the customer, `REL-07`, the sprint retrospective, and the AI usage report.
   - **Submission Scope**: Team submission.
   - **Deadline**: **November 14 at 23:59 (Saturday)**, with no soft deadline.
@@ -267,7 +267,7 @@ The week has no 7-minute deck and no experiment: the deck is prepared in Week 9,
   - The class carries no product presentations: the 7-minute deck is rehearsed in the Week 10 class and presented at the Week 11 final exam.
 - **Objectives**:
   - Evaluate the team's current configuration management and implement the improvements it needs.
-  - Run the `UT-01` sessions, write the sanitized notes and the results, triage the findings, and record the quality requirement's verdict.
+  - Write the sanitized notes and the results from the `UT-01` sessions, triage the findings, and record the quality requirement's verdict.
   - Cut the sprint's release, `REL-08`.
 - **Submission 8 (Team Deliverables - Due Nov 21, 23:59)**:
   - **Deliverables**:

@@ -152,7 +152,7 @@ It is the short version of the requirements, states what is expected of you as a
 27. A `UT-nn` follows rule 10: its record carries `**Status:**` as its first field, and the values are `Planned`, `Completed`, and `Dropped`.
     A dropped test follows rule 11 and adds `**Dropped:**` with the date and the reason, per [The Test Record](usability-testing-requirements.md#the-test-record).
     The group's index, `docs/usability-tests/README.md`, lists each test once.
-28. A participant is `P-01`, `P-02`, and so on: two digits, local to its `UT-nn`, assigned in the order the sessions are booked, cited as the pair `UT-01 P-01` or with the `UT-nn`'s path, and never reused, per [The Participants](usability-testing-requirements.md#the-participants).
+28. A participant is `P-01`, `P-02`, and so on: two digits, local to its `UT-nn`, assigned in the order the sessions are scheduled, cited as the pair `UT-01 P-01` or with the `UT-nn`'s path, and never reused, per [The Participants](usability-testing-requirements.md#the-participants).
     There is no repository-wide `P-nn` family, no `UF-nn`, and no `FINDING-nn`.
 29. A finding is cited by `docs/usability-tests/ut-01/results.md#finding-1`, the anchor of its `### Finding 1` section, and not by an identifier, per [The Results And Findings](usability-testing-requirements.md#the-results-and-findings).
     A task issue created from a finding cites the finding that way in its description.

@@ -11,8 +11,8 @@ One submission per team.
 
 Week 6 ended with the analytics and the observability running, four dashboards on the university network, and `REL-06`.
 This week the product's evidence becomes human: you design the usability test a stranger can run, write its record, its surveys, its tasks, its consent, and its analysis plan, create the private home for the raw data, and add the quality requirement the sessions check.
-You recruit the participants and book the sessions, and the sessions run in Week 8, where the results, the findings, and the triage are due with Submission 8.
-Week 7 claims no usability result: it designs the test and prepares every artifact the run week needs.
+You recruit the participants and schedule the sessions; they may run as soon as the design is written, including in Week 7, and the results, the findings, and the triage are due with Submission 8.
+Week 7 claims no usability result: it designs the test and prepares every artifact the results submission needs.
 The week also keeps the full sprint around the design, and it carries no 7-minute deck: the deck is prepared in Week 9, submitted with Submission 9, rehearsed in the Week 10 class, and presented at the Week 11 final exam.
 
 What you hand in is a test design another person could run without asking you a question, the private repository and recordings folder that make its evidence keepable, and `REL-07`.
@@ -47,11 +47,11 @@ The tools the course suggests, from a survey form to a recorder to the Week 6 te
 By the end of this week you should be able to show a reader:
 
 - A `UT-01` test record a stranger can run: the goal, the research questions, the quality requirement it serves, the participant profile, the tasks, the protocol, the measures, the analysis plan, the schedule, the roles, the environment, and the evidence map.
-- The group's index at `docs/usability-tests/README.md`, and the test's other files: `surveys.md`, `consent.md`, `sessions/README.md`, the session notes, `results.md`, and `images/`.
+- The group's index at `docs/usability-tests/README.md`, and the test's other files: `surveys.md`, `consent.md`, `sessions/README.md`, the `results.md` stub, and `images/`.
 - The pre-test, the SEQ after each task, the full ten SUS items with the correct formula, and the open-ended post-test, with the qualitative and the quantitative measures.
 - One main usability test task and two secondary tasks, each a scenario with a start point, an end state, a success criterion written before the first session, a time limit, and a help rule.
 - The durable consent, the private `<organization>/<repo>-usability-data` repository with the text data, and the team-owned cloud folder for the recordings, with the instructors' access to both.
-- At least three confirmed representative participants aged 18 or older, with five as the design target, and the sessions booked for 15 to 18 November.
+- At least three confirmed representative participants aged 18 or older, with five as the design target, and the sessions scheduled at the dates the team records, with 15 to 18 November as the suggested window.
 - An `Interaction Capability` quality requirement with a team-chosen sub-characteristic and a `manual` test that names `UT-01`, with its `**Why Manual:**`, its procedure, and its testing-plan row.
 - The `UT-01` design shown at the Sprint Review, and the Week 8 execution plan agreed with the customer.
 - `REL-07`: the tag on the final Week 7 commit, the release body for whoever deploys it, the changelog's released section, and the plan's `REL-07` block with its `Released` and `Checked QRs` fields.
@@ -72,9 +72,9 @@ This week:
 1. Refine the next two sprints' worth of the product backlog, `SPRINT-08` and `SPRINT-09`, until each item is ready to schedule, and leave those items unscheduled.
 2. Plan `SPRINT-07`: replace its provisional goal with the sprint's goal, set `**Due:**` to `2026-11-14`, link `**Sprint Backlog:**` to its GitHub milestone, and set `**Planned Velocity:**` to the story points of the stories you scheduled, computed by hand from their `Story Points`.
    A sprint that carries only tasks has a planned velocity of `0`.
-3. Set `SPRINT-08`'s provisional goal, its `**Due:**` of `2026-11-21`, and its backlog link, so the week that runs the test has its target already.
+3. Set `SPRINT-08`'s provisional goal, its `**Due:**` of `2026-11-21`, and its backlog link, so the results sprint has its target already.
 4. Schedule the test design tasks in `SPRINT-07`: the record, the surveys, the tasks and protocol, the consent and the private repository, the recordings folder, the quality requirement and its test, the recruitment, the dry run, and the analysis plan.
-5. Schedule the execution tasks in `SPRINT-08`: the sessions, the sanitized notes, the results, the findings, the triage, the `QR/QRT` verdict, and the release.
+5. Schedule the sessions in the sprint the team runs them in, `SPRINT-08` by default and `SPRINT-07` when they run before the design week's deadline, and schedule the sanitized notes, the results, the findings, the triage, the `QR/QRT` verdict, and the release in `SPRINT-08`.
 6. Write each task issue with its `### Requirements` section, its acceptance criteria, and its `Priority`.
    A task that is not product work says `None: repository upkeep`.
 
@@ -92,13 +92,13 @@ This week:
 
 1. Write `docs/usability-tests/README.md` with its table and one row for `UT-01`: `UT`, `Goal`, `Status`, `Results`, and `Sprints`.
    The `Results` cell is `Pending` until the results exist.
-2. Write `docs/usability-tests/ut-01/README.md` with its heading and these fields: `**Status:** Planned`, `**Design sprint:** SPRINT-07`, and `**Run sprint:** SPRINT-08`, each sprint linked to its plan section.
+2. Write `docs/usability-tests/ut-01/README.md` with its heading and these fields: `**Status:** Planned`, `**Design sprint:** SPRINT-07`, and `**Run sprint:**` the sprint the sessions run in, `SPRINT-08` in the default plan and `SPRINT-07` when they run before the design week's deadline, each sprint linked to its plan section.
 3. State the goal in one sentence, and write two or three research questions that the sessions can answer.
 4. Link the `QR-nn` the test serves, which Part 5 writes, using the next free identifier in the family.
 5. Write the participant profile in observable terms, per [The Participant Profile](../requirements/usability-testing-requirements.md#the-participant-profile), and state the tasks, the protocol, the measures, the analysis plan, the schedule, the roles, and the staging environment.
 6. Write the consent and data map, and the public and private evidence map.
 7. Link `results.md`, and create it beside the record as the stub Part 7 gives, so the link resolves.
-8. Create `sessions/`, `images/`, `surveys.md`, and `consent.md` as the parts below fill them.
+8. Create `sessions/`, `images/` with a `.gitkeep` so the directory is tracked, `surveys.md`, and `consent.md` as the parts below fill them.
 
 The method is in [Step 1: Write The Test Record And The Goal](../guides/usability-testing.md#step-1-write-the-test-record-and-the-goal).
 
@@ -113,14 +113,29 @@ The rules:
 
 This week:
 
-1. Write `surveys.md` with the pre-test, the SEQ after each task, the full ten SUS items on the five-point scale, the formula, and the open-ended post-test.
-   The SUS is scored `SUS = 2.5 × (20 + sum(odd) - sum(even))`.
+1. Write `surveys.md` with the pre-test, the SEQ after each task, the full ten SUS items below, the formula, and the open-ended post-test.
+   The SEQ is the standard question after each task, `Overall, how difficult or easy was the task to complete?`, on a seven-point scale where 1 is very difficult and 7 is very easy.
+   The SUS is the standard ten items in their standard order, with `the product` naming the system and no other change:
+
+   1. I think that I would like to use this product frequently.
+   2. I found the product unnecessarily complex.
+   3. I thought the product was easy to use.
+   4. I think that I would need the support of a technical person to be able to use this product.
+   5. I found the various functions in this product were well integrated.
+   6. I thought there was too much inconsistency in this product.
+   7. I would imagine that most people would learn to use this product very quickly.
+   8. I found the product very cumbersome to use.
+   9. I felt very confident using the product.
+   10. I needed to learn a lot of things before I could get going with this product.
+
+   Each item is answered from strongly disagree (1) to strongly agree (5), and the score is `SUS = 2.5 × (20 + sum(odd) - sum(even))`, computed from the responses as recorded; the even items are not reverse-coded before the formula.
+
 2. Write the main usability test task and the two secondary usability test tasks with their scenarios, start points, end states, success criteria, time limits, and fixed order.
 3. Give every task an `Unaided`, `Assisted`, or `Failed` criterion, written before the first session, and a help rule that names what counts as help.
 4. Write `sessions/README.md` with the session template and the instructions: the welcome, the consent and recording check, the think-aloud instruction, the scenario reading, the no-help rule, the observation sheet, the SEQ and SUS placement, the debrief, and the stop rule.
 5. Name the roles: the facilitator who runs every counted session, the observer who records the help and the friction, and the member who keeps the recordings and the private repository.
 6. Run the dry run with a teammate, check the wording and the time limit, and record that it is not evidence and is not counted.
-7. Do not write the results: the sessions run in Week 8.
+7. Do not write the results: the results are due with Submission 8, and the Week 7 report claims no result even when the sessions have already run.
 
 The method is in [Step 3: Write The Tasks And The Success Criteria](../guides/usability-testing.md#step-3-write-the-tasks-and-the-success-criteria) and [Step 4: Write The Instruments](../guides/usability-testing.md#step-4-write-the-instruments).
 
@@ -137,7 +152,8 @@ This week:
 
 1. Write `consent.md` as the public template with the full set of clauses and the unfilled signature line.
 2. Create the private `<organization>/<repo>-usability-data` repository, private, with the team and the instructors as readers.
-3. Put the text data's home in place: the consent records, the identity mapping, the raw notes, the filtered telemetry export, and the working analysis, in the layout the team chooses.
+3. Put the text data's home in place: the consent records, the identity mapping, the working analysis, and the recordings folder link and access, in the layout the team chooses; the raw notes and the filtered telemetry export are added when the sessions run.
+   When an instructor cannot access GitHub, the same text goes through a Moodle-only archive, and the deviation is declared.
 4. Create the team-owned cloud folder for the recordings, share it with the instructors, and record its link and the access instructions in the private repository.
 5. Link the private repository from the test record and the Week 7 report, and write the link-check exclusion with its reason beside it in the link check's configuration.
 6. Write the retention rule in the record: the private repository, its history, and the recordings are deleted after the course is graded, and the sanitized public record stays.
@@ -158,13 +174,14 @@ This week:
 
 1. Write the new `QR-nn`, using the next free identifier, with the `Interaction Capability` characteristic and one sub-characteristic the team chooses, and one sentence saying why that sub-characteristic is what the test measures.
 2. Carry `**Business importance:** High`, which requires its test, and the team's `**Technical risk:**`.
-3. Write the scenario: a representative participant completing the main usability test task unaided, in the staging deployment on the university network with seeded data, with the completion and the main task's SEQ as the response measure.
+3. Write the scenario: a representative participant completing the main usability test task unaided, in the staging deployment on the university network with seeded data, with the completion and the main task's SEQ as the response.
 4. Make the `Response Measure` countable: at least three participants complete the task unaided, and the median main-task SEQ is at least five of seven.
    A team may set a different countable bar, provided it is written before the sessions and the test settles it.
 5. Write the `QRT-01` at `manual`, with `**Runs at:**` naming `UT-01` and the record, and `**Why Manual:**` saying no command can judge whether a representative participant completes the task unaided and that it reads no `SLI`.
    It needs no deviation.
 6. Write the procedure that runs the main task with at least three participants per the record and reads `results.md`, and the `**Pass when:**` that settles the measure.
 7. Add the testing-plan row: `Not verified`, `Checked: None`, `Planned for sprint: SPRINT-08`, and `Evidence: None`.
+   The verdict is recorded with the results in `SPRINT-08`, even when the sessions have already run.
 8. Add the requirement's row to the quality requirements index and its row to the matrix, and link the testing plan from the index once.
 
 The method is in [Step 8: Write The Quality Requirement And Its Test](../guides/usability-testing.md#step-8-write-the-quality-requirement-and-its-test).
@@ -180,15 +197,15 @@ The rules:
 
 This week:
 
-1. Write the participant profile in the record, and recruit against it.
+1. Recruit against the participant profile the record carries.
 2. Confirm at least three representative people outside the team, 18 or older, and aim for five.
-   A classmate who is not on the team is allowed; a teammate, the customer, the instructor, and the course staff are not.
+   A classmate who is not on the team may be recruited when they match the profile; a teammate, the customer, the instructor, and the course staff are not.
 3. Collect each participant's durable consent, and check the recording and sanitized-public-results clauses before scheduling.
-4. Assign the codes in the order the sessions are booked, `P-01`, `P-02`, and so on, and plan a replacement under the next free code.
-5. Book the sessions for 15 to 18 November, in person, on the university network, and record the schedule in the record.
+4. Assign the codes in the order the sessions are scheduled, `P-01`, `P-02`, and so on, and plan a replacement under the next free code.
+5. Schedule the sessions at the dates the team can arrange, in person, on the university network, and record the dates in the record.
+   15 to 18 November is the suggested window, and a session may run before the Week 7 deadline once the design is written.
 6. Check the staging deployment for the sessions: the seed reset to synthetic data before each session, no real payment, and every test event tagged `source=usability-test`.
-7. Run the dry run with a teammate, and record that it is not counted.
-8. Record the confirmed count in the Week 7 report, and claim no result.
+7. Record the confirmed count in the Week 7 report, and claim no result.
 
 The method is in [Step 2: Choose And Recruit The Participants](../guides/usability-testing.md#step-2-choose-and-recruit-the-participants).
 
@@ -205,11 +222,10 @@ This week:
 
 1. Write the analysis plan in the record: the per-participant table's columns, the aggregate completion rate, the median time on task, the median SEQ, the main-task SEQ the quality requirement reads, the SUS mean and median, the thematic analysis, the severity rating, the telemetry comparison, and the limitations.
 2. Create `results.md` as the stub with its headings: the results table, the findings, the limitations, and the conclusion.
-   It carries no finding until the sessions run.
+   It carries no finding until the results are written.
 3. Write the findings template: `### Finding 1` with its `**Severity:**`, `**Tasks:**`, `**Evidence:**`, `**Recommendation:**`, and `**Task issue:**` fields.
-4. Write the triage plan: every finding is triaged, a significant finding becomes a task issue in `SPRINT-08`, and a behaviour change or defect names its story, `AC-nn`, `FR-nnn`, or `ADR-nnn`.
+4. Write the triage plan: every finding is triaged; when a significant finding exists, at least one becomes a task issue in `SPRINT-08`; a behaviour change or defect links the story and the `AC-nn` it serves and names the `FR-nnn` or `ADR-nnn`; the task issue cites the finding by `docs/usability-tests/ut-01/results.md#finding-1`.
 5. Finish the evidence map: the public record, the private text repository, the cloud recordings folder, the Moodle wrapper, and the Week 8 report, with no item in two places and no raw participant data in the product repository.
-6. State in the record that Week 7 claims no result: the sessions run in Week 8, and the results are due with Submission 8.
 
 The method is in [Step 7: Write The Analysis Plan And The Evidence Map](../guides/usability-testing.md#step-7-write-the-analysis-plan-and-the-evidence-map).
 
@@ -223,7 +239,7 @@ The rules:
 This week:
 
 1. Add `usability test`, `participant`, `usability session`, `consent`, `recording`, `SUS`, and `SEQ` to `docs/glossary.md`, and separate a usability session from the analytics `session_id` in its entry.
-2. Add the recruitment risk, the consent risk, and the Week 8 schedule risk to `docs/risks.md`, each with its rating, its mitigation, and its contingency.
+2. Add the recruitment risk, the consent risk, and the schedule risk to `docs/risks.md`, each with its `**Impact:**`, `**Likelihood:**`, `**Trigger:**`, `**Window:**`, `**Mitigation:**`, and `**Contingency:**`.
 3. Use the fallbacks the edge cases name: a shortfall of confirmed participants, a participant who withdraws or refuses the recording, a private repository or folder the instructors cannot access, and a test that cannot finish.
 
 The method is in [Step 5: Name The Risks And Their Fallbacks](../guides/planning-and-tracking.md#step-5-name-the-risks-and-their-fallbacks).
@@ -299,7 +315,7 @@ This week:
 
 1. Set `**Actual Velocity:**` in `### SPRINT-07` from the completed stories, computed by hand from their `Story Points`, with one sentence on what moved out and to which sprint.
    A sprint that carried only tasks has `0`, and the sentence says the sprint was a task sprint.
-2. Write `reports/week-07/sprint-retrospective.md` with its four sections, 3 or more things that went well, 2 or 3 that did not with their root causes, and 3 or 4 actions with their `Reason` and their `Carried` flag.
+2. Write `reports/week-07/sprint-retrospective.md` with its four sections, 3 or more things that went well, 2 or 3 that did not with their root causes, and 3 or 4 actions with their `Owner`, `Impact`, `Reason`, and `Carried` flag.
 3. `## Carried Actions` carries the `SPRINT-06` actions marked `Carried: Yes`, each citing that file's `#actions` anchor with the action quoted and an `Outcome` of `Done`, `Not done`, or `Dropped`.
 
 The method is in [Close With The Retrospective](../guides/planning-and-tracking.md#close-with-the-retrospective).
@@ -320,18 +336,19 @@ This week:
 
 The rules:
 
-- The run week executes the design, and the results and findings rules begin when the sessions run: [The Week 8 Execution](../requirements/usability-testing-requirements.md#the-week-8-execution).
+- The run week carries the results, and the results and findings rules begin when the sessions run or have run: [The Week 8 Execution](../requirements/usability-testing-requirements.md#the-week-8-execution).
 - The results report carries the summary, and the record carries the detail: [Weekly Public Report](../requirements/weekly-report-requirements.md#weekly-public-report).
 - A test that cannot finish moves its testing-plan row to `SPRINT-09` with a reason, and the report declares it: [Quality Requirement Testing Plan](../requirements/planning-requirements.md#quality-requirement-testing-plan).
 
 This week:
 
-1. Confirm at least three participants, with five as the target, and the sessions booked for 15 to 18 November.
+1. Confirm at least three participants, with five as the target, and the sessions scheduled at the dates the team records, with 15 to 18 November as the suggested window.
 2. Confirm the private repository and the recordings folder are ready, and that the instructors can open both.
-3. Confirm the `QR/QRT` row is `Not verified` with `Planned for sprint: SPRINT-08`.
+3. Confirm the `QR/QRT` row is `Not verified` with `Planned for sprint: SPRINT-08`; the verdict is recorded with Submission 8, even if the sessions have run.
 4. Confirm the `results.md` stub, the findings template, and the triage plan are in place.
-5. Name the Week 8 rules the run week completes: [The Results And Findings](../requirements/usability-testing-requirements.md#the-results-and-findings), [The Triage](../requirements/usability-testing-requirements.md#the-triage), and [The Week 8 Execution](../requirements/usability-testing-requirements.md#the-week-8-execution).
-6. Run no session and claim no result in Week 7.
+5. Name the rules the results submission completes: [The Results And Findings](../requirements/usability-testing-requirements.md#the-results-and-findings), [The Triage](../requirements/usability-testing-requirements.md#the-triage), and [The Week 8 Execution](../requirements/usability-testing-requirements.md#the-week-8-execution).
+6. Claim no result in Week 7: the results, the findings, the verdict, and the triage are due with Submission 8, even when the sessions have already run.
+7. `TOS-03` in the planning full example is an example: a team without a usability goal is not penalised, and a team whose threshold has one cites `UT-01` in its `**Outcome:**`; the required check is the `QR/QRT`.
 
 ## What Good Looks Like
 
@@ -339,21 +356,21 @@ Assume your weekly public report is read by someone who does not know your proje
 A strong submission has:
 
 - **A `UT-01` record a stranger can run.**
-  The goal and the research questions, the participant profile, at least three completed representative sessions of adults 18 or older with five as the target, the one main and two secondary usability test tasks, the success criteria, the time limit, the fixed order, the no-label wording, the help rule, the facilitator and observer roles, the staging environment with seeded data, in person on the university network, and the Week 8 dates.
+  The goal and the research questions, the participant profile, at least three confirmed representative participants aged 18 or older with five as the target, the one main and two secondary usability test tasks, the success criteria, the time limit, the fixed order, the no-label wording, the help rule, the facilitator and observer roles, the staging environment with seeded data, in person on the university network, and the dates the team schedules.
 - **A consent and a data split a reviewer can check.**
-  The durable consent and the required recording plus the sanitized public results for every counted session, the private text repository with the consent records, the identity mapping, the raw notes, and the filtered telemetry export, the cloud recordings folder, the public sanitized record, the public link and the link-check exclusion, and the Moodle links, with no raw participant data and no private link without an exclusion in the product repository.
+  The durable consent and the required recording plus the sanitized public results for every counted session, the private text repository with the consent records, the identity mapping, the working analysis, and the recordings folder link and access, the cloud recordings folder, the public sanitized record, the public link and the link-check exclusion, and the Moodle links, with no raw participant data and no private link without an exclusion in the product repository.
 - **Instruments a reader can answer.**
-  The pre-test, the SEQ after each task, the full ten SUS items, the correct formula, the open-ended post-test, the qualitative observation, the quantitative completion, the assistance, the time, the SEQ, the SUS, and the Week 6 telemetry read with `source=usability-test`, with the `n=<count>` caveat.
+  The pre-test, the SEQ after each task, the full ten SUS items, the correct formula, the open-ended post-test, the qualitative observation, the quantitative completion, the assistance, the time, the SEQ, and the SUS mean and median with the `n=<count>` caveat, and the plan to read the Week 6 telemetry with `source=usability-test` in the results week.
 - **A quality requirement a manual test settles.**
   An `Interaction Capability` `QR-nn` with a team-chosen sub-characteristic and a `manual` `QRT-nn` that names `UT-01`, carries `**Why Manual:**`, has a testing-plan row that is `Not verified` with `Planned for sprint: SPRINT-08`, needs no deviation, and is ready to record `Passes` or `Fails` in Week 8 with the sanitized results and the private raw data.
 - **A Week 7 report that claims no result.**
-  The report links the design, the surveys, the consent, the `QR/QRT`, the private repository, and the schedule, names the recordings folder, and links the Sprint Review, `REL-07`, the retrospective, and the AI usage; it says the sessions are booked for Week 8.
+  The report links the design, the surveys, the consent, the `QR/QRT`, the private repository, and the schedule, names the recordings folder, and links the Sprint Review, `REL-07`, the retrospective, and the AI usage; it says the sessions are scheduled and the results are due with Submission 8.
 - **A release whose record says what was checked.**
   `REL-07` is cut on the final commit, its `**Checked QRs:**` lists each checked `QR-nn` or says `None`, it is tagged the team's next version, and its upgrade note says no product change and no upgrade is required; the `SPRINT-07` milestone is closed after any open issue is rescheduled.
 - **A Week 8 handoff another week can start from.**
-  At least three participants confirmed with five as the target, the sessions booked for 15 to 18 November, the private repository and the recordings folder ready, the `results.md` stub and the findings and triage templates ready, and the `QR/QRT` row in `SPRINT-08`.
+  At least three participants confirmed with five as the target, the sessions scheduled at the dates the team records, the private repository and the recordings folder ready, the `results.md` stub and the findings and triage templates ready, and the `QR/QRT` row in `SPRINT-08`.
 - **A test design that uses the Week 6 events rather than a new schema.**
-  The main task is the flow the event table covers, no new `session_id` or per-participant field is added, every metric excludes `source=usability-test`, and the test traffic is not presented as a value.
+  The main task is the flow the event table covers, no new `session_id` or per-participant field is added, every metric excludes `smoke` and `source=usability-test`, and the test traffic is not presented as a value.
 - **A week with no deck.**
   The 7-minute deck is Week 9's, submitted with Submission 9, rehearsed in the Week 10 class, and presented at the Week 11 final exam; this week has no deck row in its report, its wrapper, or its checklist.
 - **One path and one identifier, everywhere.**
@@ -364,7 +381,7 @@ A strong submission has:
 Write `reports/week-07/README.md`, per [Weekly Public Report](../requirements/weekly-report-requirements.md#weekly-public-report).
 This week it also carries:
 
-1. In the summary, that the test is designed and scheduled, the confirmed participant count and profile, the `QR/QRT`, the private repository, the recordings folder, and the Week 8 dates, and no usability result.
+1. In the summary, that the test is designed and scheduled, the confirmed participant count and profile, the `QR/QRT`, the private repository, the recordings folder, and the dates the team scheduled, and no usability result.
    Say whether the design review's transcript was published, shared privately, or not made, and why.
    Point at `docs/project-plan.md#quality-requirement-testing-plan` for the rows that are not `Passes`, and copy none of them.
 2. The `## Usability test` section, per [Weekly Public Report](../requirements/weekly-report-requirements.md#weekly-public-report): the design summary, the participant count and profile, the tasks, the surveys, the consent and the private repository, the recordings folder, the schedule, the `QR/QRT`, and the Week 8 handoff.
@@ -380,7 +397,7 @@ This week it also carries:
 | Private usability-data repository | the private `<organization>/<repo>-usability-data` repository, linked from the record and the report and excluded from the link check               |
 | Recordings folder                 | the team's cloud folder, linked in the Moodle submission                                                                                            |
 | `QR-nn` and its test              | the new `QR-nn` file under `docs/quality-requirements/qr/` and its `QRT-01`                                                                         |
-| Recruitment and schedule          | `docs/usability-tests/ut-01/README.md#the-participants` and the record's schedule                                                                   |
+| Recruitment and schedule          | `docs/usability-tests/ut-01/README.md#participant-profile` and `docs/usability-tests/ut-01/README.md#schedule`                                      |
 | Week 8 handoff                    | `reports/week-07/README.md#usability-test`                                                                                                          |
 | Week 6 action points              | `## Previous action points` in `reports/week-07/meeting-report.md`                                                                                  |
 | Week 6 open questions             | `## Previous open questions` in the same report                                                                                                     |
@@ -405,7 +422,7 @@ Keep it to two pages, and put nothing in it except the following.
 3. A permalink to `reports/week-07/README.md` at the full commit hash.
 4. The private usability-data repository URL and the access instructions, and the recordings folder URL and the access instructions.
 5. The product's staging address on the university VM, private-only, with the note that the customer reaches it from the university network.
-6. The staging analytics and observability dashboards and backends' addresses and credentials, private-only.
+6. The staging analytics dashboard and backend addresses and credentials, private-only.
 7. A link to the design review's recording, accessible to instructors, or one line saying why there is none: the customer refused recording, or the meeting was held in writing.
 8. The meeting transcript, if the customer refused to let you publish it.
 9. One line confirming that no private-only material was committed to the repository, and no participant identity was committed to it.
@@ -421,7 +438,7 @@ The PDF carries no deck and no participant identity.
 ## Checklist
 
 - [ ] `SPRINT-07` planned with its goal, its `**Due:**` field, its `**Sprint Backlog:**` link, and its `**Planned Velocity:**`, and `SPRINT-08` given its provisional goal and its backlog link ([Part 1](#part-1-refine-the-product-backlog-and-plan-the-sprint)).
-- [ ] The design tasks scheduled in `SPRINT-07`, the execution tasks in `SPRINT-08`, and each task issue carrying its `### Requirements` and its criteria ([Part 1](#part-1-refine-the-product-backlog-and-plan-the-sprint)).
+- [ ] The design tasks scheduled in `SPRINT-07`, the sessions in the sprint they run in, the results tasks in `SPRINT-08`, and each task issue carrying its `### Requirements` and its criteria ([Part 1](#part-1-refine-the-product-backlog-and-plan-the-sprint)).
 - [ ] `docs/usability-tests/README.md` with the `UT-01` row, and `docs/usability-tests/ut-01/README.md` with its heading, its status, its design and run sprints, and its parts ([Part 2](#part-2-write-the-ut-01-test-record)).
 - [ ] `surveys.md` with the pre-test, the SEQ after each task, the full ten SUS items and the formula, and the open-ended post-test ([Part 3](#part-3-write-the-surveys-and-the-task-protocol)).
 - [ ] The main task and the two secondary tasks with their scenarios, start points, end states, success criteria, time limits, fixed order, and no UI labels or steps ([Part 3](#part-3-write-the-surveys-and-the-task-protocol)).
@@ -432,7 +449,7 @@ The PDF carries no deck and no participant identity.
 - [ ] The `manual` `QRT-01` naming `UT-01` in `**Runs at:**`, with its `**Why Manual:**`, its procedure, its `**Pass when:**`, and its `Not verified` testing-plan row planned for `SPRINT-08` ([Part 5](#part-5-write-the-quality-requirement-and-its-manual-test)).
 - [ ] The requirement's row in the quality requirements index and its row in the matrix ([Part 5](#part-5-write-the-quality-requirement-and-its-manual-test)).
 - [ ] At least three confirmed representative participants, 18 or older, matching the profile, five as the target, each with a durable consent covering the recording and the sanitized public results ([Part 6](#part-6-recruit-and-schedule-the-participants)).
-- [ ] The sessions booked for 15 to 18 November, in person, on the university network, against staging, with the seed reset and the `source=usability-test` check ([Part 6](#part-6-recruit-and-schedule-the-participants)).
+- [ ] The sessions scheduled at the dates the team records, with 15 to 18 November as the suggested window, in person, on the university network, against staging, with the seed reset and the `source=usability-test` check ([Part 6](#part-6-recruit-and-schedule-the-participants)).
 - [ ] The analysis plan written before the first session, the `results.md` stub with its headings, the findings template, the triage plan, and the evidence map ([Part 7](#part-7-write-the-analysis-plan-and-the-evidence-map)).
 - [ ] The Week 7 usability terms in `docs/glossary.md`, with the usability session separated from the analytics `session_id`, and the recruitment, consent, and schedule risks in `docs/risks.md` ([Part 8](#part-8-update-the-glossary-and-the-risk-register)).
 - [ ] Each Week 6 action point's outcome in `## Previous action points`, and each Week 6 open question put to the customer or carried forward ([Part 9](#part-9-carry-out-the-week-6-action-points-and-open-questions)).
@@ -442,7 +459,7 @@ The PDF carries no deck and no participant identity.
 - [ ] `REL-07` tagged on the final Week 7 commit, with the changelog's released section, the upgrade note ending with the `Full changelog` line, the plan's `REL-07` block with `Released` and `Checked QRs`, and the sprint milestone closed ([Part 11](#part-11-apply-the-design-review-run-the-sprints-testing-plan-rows-and-cut-rel-07)).
 - [ ] `**Actual Velocity:**` set in `### SPRINT-07`, and `reports/week-07/sprint-retrospective.md` with its four sections and its carried actions ([Part 12](#part-12-close-the-sprint-and-hold-the-retrospective)).
 - [ ] `reports/week-07/ai-usage.md`, including what usability material an agent was given ([Part 13](#part-13-report-on-your-ai-usage)).
-- [ ] The Week 8 handoff ready: at least three participants confirmed, the sessions booked, the private repository and the recordings folder ready, the `QR/QRT` row in `SPRINT-08`, and the `results.md` stub and triage plan ready, with no session run and no result claimed ([Part 14](#part-14-hand-off-the-week-8-execution)).
+- [ ] The Week 8 handoff ready: at least three participants confirmed, the sessions scheduled, the private repository and the recordings folder ready, the `QR/QRT` row in `SPRINT-08`, and the `results.md` stub and triage plan ready, with no result claimed and the results due with Submission 8 ([Part 14](#part-14-hand-off-the-week-8-execution)).
 - [ ] `reports/week-07/README.md` with the summary, the `## Usability test` section, and the coverage rows ([Assignment Report In The Repository](#assignment-report-in-the-repository)).
 - [ ] Everything merged into `main`, with the permalink and the snapshot taken from that commit ([Submission Procedure](#submission-procedure)).
 - [ ] PDF ready, the permalink opened in a browser at the full commit hash, the private repository and recordings folder links and access in it, the staging address in it, and no deck and no participant identity in it ([Assignment Report On Moodle](#assignment-report-on-moodle)).
