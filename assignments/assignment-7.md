@@ -117,18 +117,18 @@ This week:
 
 1. Write `surveys.md` with the pre-test, the SEQ after each task, the full ten SUS items below, the formula, and the open-ended post-test.
    The SEQ is the standard question after each task, `Overall, how difficult or easy was the task to complete?`, on a seven-point scale where 1 is very difficult and 7 is very easy.
-   The SUS is the standard ten items in their standard order, with `the product` naming the system and no other change:
+   The SUS is the standard ten items in their standard order and wording, with no change:
 
-   1. I think that I would like to use this product frequently.
-   2. I found the product unnecessarily complex.
-   3. I thought the product was easy to use.
-   4. I think that I would need the support of a technical person to be able to use this product.
-   5. I found the various functions in this product were well integrated.
-   6. I thought there was too much inconsistency in this product.
-   7. I would imagine that most people would learn to use this product very quickly.
-   8. I found the product very cumbersome to use.
-   9. I felt very confident using the product.
-   10. I needed to learn a lot of things before I could get going with this product.
+   1. I think that I would like to use this system frequently.
+   2. I found the system unnecessarily complex.
+   3. I thought the system was easy to use.
+   4. I think that I would need the support of a technical person to be able to use this system.
+   5. I found the various functions in this system were well integrated.
+   6. I thought there was too much inconsistency in this system.
+   7. I would imagine that most people would learn to use this system very quickly.
+   8. I found the system very cumbersome to use.
+   9. I felt very confident using the system.
+   10. I needed to learn a lot of things before I could get going with this system.
 
    Each item is answered from strongly disagree (1) to strongly agree (5), and the score is `SUS = 2.5 × (20 + sum(odd) - sum(even))`, computed from the responses as recorded; the even items are not reverse-coded before the formula.
 

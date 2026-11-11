@@ -209,7 +209,7 @@ Write both, because a completion rate with no observation says what happened and
 ### Use The Standard SUS
 
 The SUS is the standard ten items in their standard order and wording, and the items are not reworded: a changed item is not comparable with another team's SUS or with the lecture's benchmark.
-The one permitted change is naming `the product` instead of `the system`.
+`The system` is kept in every item, and the product's name never replaces it.
 The full ten items are in [the full example](../requirements/usability-testing-requirements.md#full-example), and the assignment prints them beside `surveys.md`.
 
 Each item is answered from strongly disagree (1) to strongly agree (5), and the score is `SUS = 2.5 × (20 + sum(odd) - sum(even))`, computed from the responses as recorded.
