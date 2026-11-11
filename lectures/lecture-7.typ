@@ -347,6 +347,8 @@
 ]
 
 #slide("Recap: System Usability Scale (SUS)")[
+  Adapted from #link("https://measuringu.com/sus/")[Measuring Usability with the System Usability Scale (SUS)].
+
   *Standard 10 questions in order:*
   + I think that I would like to use this system frequently.
   + I found the system unnecessarily complex.
@@ -357,36 +359,34 @@
   With the following response format:
 
   #align(center, image("images/lecture-7/sus-response-format.jpg", width: 55%))
-
-  Source and details: #link("https://measuringu.com/sus/")[https://measuringu.com/sus/]
 ]
 
 
-#slide("Interpret and analyze: example")[
-  *Interpreting SUS results:*
+#slide("Interpret and analyze: SUS example")[
+  Adapted from #link("https://measuringu.com/sus/")[Measuring Usability with the System Usability Scale (SUS)].
 
-  By adding the scores together you get a 0-50 scale.
+  SUS = 2.5 #sym.dot.op (20 + (sum of scores for odd questions) - (sum of scores for even questions))
 
-  To convert it to 0-100, multiply by 2.
+  Based on 500 studies, the "average" score is 68.
 
-  The result *is not a percentage!*
-  
+  68 is actually 50th percentile - around 50% of studied products (accounting for ties at SUS 68) have SUS lower than or equal to 68.
+
+  Below 68 is below average, above 80 is excellent.
+
   ---
-  
-  The median score, based on 500+ surveys, is
 
-  #align(center)[*68 points = 50th percentile*]
-  
-  A score below 68 is considered below median, or in lower 50% of observations, and vice versa.
+  For a sample (several people), you can use the mean of SUS.
+
+  See #link("https://measuringu.com/sample-sizes-for-sus-benchmark-tests/")[Sample Sizes for Comparing SUS to a Benchmark]
 ]
 
-#slide("Interpret and analyze: example")[
+#slide("Interpret and analyze: SUS example")[
   #align(center, image("images/lecture-7/sus-percentile.jpg", width: 72%))
 ]
 
 #slide("Learn")[
   - Write down what you have learned after interpreting and analyzing the results.
-  
+
   - Decide what to change in your approach to designing user tests and to building the product.
 ]
 

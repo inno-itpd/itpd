@@ -11,14 +11,15 @@ Materials for the **IT Product Development (ITPD)** course: what the course expe
 
 ## Assignments
 
-| Week                             | Hard deadline     | Deliverable                                                                                                                                                                                                                             |
-| -------------------------------- | ----------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [1](assignments/assignment-1.md) | Fri 2 Oct, 23:59  | Initial project research: alternatives, comparison, gaps, value proposition                                                                                                                                                             |
-| [2](assignments/assignment-2.md) | Sat 10 Oct, 23:59 | Requirements and prototyping: vision, user stories, prototypes, validation                                                                                                                                                              |
-| [3](assignments/assignment-3.md) | Sat 17 Oct, 23:59 | Planning and the minimum usable product: plan, threshold, risks, Definition of Done, first release                                                                                                                                      |
-| [4](assignments/assignment-4.md) | Sat 24 Oct, 23:59 | Quality and architecture: quality and functional requirements, architectural decision records, drivers, glossary, retrospective, fourth release                                                                                         |
-| [5](assignments/assignment-5.md) | Sat 31 Oct, 23:59 | Testing and deployment: quality requirement tests and the testing plan, automated tests and CI checks, staging and production on the VM, Feature Documentation, the Week 5 release                                                      |
-| [6](assignments/assignment-6.md) | Sun 8 Nov, 23:59  | Product analytics and observability: the analytics plan and metric tree, the events, the four dashboards, the two internal stories, the two ADRs, the diagnosability requirement and its test, the threshold review, the Week 6 release |
+| Week                             | Hard deadline     | Deliverable                                                                                                                                                                                                                                                                                 |
+| -------------------------------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [1](assignments/assignment-1.md) | Fri 2 Oct, 23:59  | Initial project research: alternatives, comparison, gaps, value proposition                                                                                                                                                                                                                 |
+| [2](assignments/assignment-2.md) | Sat 10 Oct, 23:59 | Requirements and prototyping: vision, user stories, prototypes, validation                                                                                                                                                                                                                  |
+| [3](assignments/assignment-3.md) | Sat 17 Oct, 23:59 | Planning and the minimum usable product: plan, threshold, risks, Definition of Done, first release                                                                                                                                                                                          |
+| [4](assignments/assignment-4.md) | Sat 24 Oct, 23:59 | Quality and architecture: quality and functional requirements, architectural decision records, drivers, glossary, retrospective, fourth release                                                                                                                                             |
+| [5](assignments/assignment-5.md) | Sat 31 Oct, 23:59 | Testing and deployment: quality requirement tests and the testing plan, automated tests and CI checks, staging and production on the VM, Feature Documentation, the Week 5 release                                                                                                          |
+| [6](assignments/assignment-6.md) | Sun 8 Nov, 23:59  | Product analytics and observability: the analytics plan and metric tree, the events, the four dashboards, the two internal stories, the two ADRs, the diagnosability requirement and its test, the threshold review, the Week 6 release                                                     |
+| [7](assignments/assignment-7.md) | Sun 15 Nov, 23:59 | Usability test design: the `UT-01` record, the surveys, the tasks and protocol, the consent, the private usability-data repository and the recordings folder, the `Interaction Capability` requirement and its manual test, the recruitment target and the session plan, the Week 7 release |
 
 Later assignments are added as the course runs.
 Each one adds the paths and evidence for its week, and changes nothing about the rules below.
@@ -75,23 +76,25 @@ The assignments reference these rather than repeating them.
 | [Feature Documentation Requirements](requirements/features-requirements.md)                | The feature page, its entries, the links to what owns each fact, and the Week 5 minimum                                                                                 |
 | [Product Analytics Requirements](requirements/analytics-requirements.md)                   | The focus metric and the metric tree, the events and instrumentation, the analytics pipeline and its dashboards, and the collected data                                 |
 | [Observability Requirements](requirements/observability-requirements.md)                   | The signals, the `SLI`s and their fields, the observability pipeline and its dashboards, and the collected data                                                         |
+| [Usability Testing Requirements](requirements/usability-testing-requirements.md)           | The `UT-nn` test record, the participants and their profile, the tasks, the protocol, the instruments, the consent, the private repository, the results, and the triage |
 
 ## The Guides
 
 How to actually do the work.
 
-| Guide                                                                        | For                                                                                                       |
-| ---------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
-| [Researching alternatives](guides/alternatives-research.md)                  | Finding your set, choosing properties, evaluating consistently, capturing evidence                        |
-| [From comparison to value proposition](guides/comparison-and-synthesis.md)   | Building the table, finding the gaps, writing the proposition and your assumptions                        |
-| [The kickoff meeting](guides/customer-kickoff-meeting.md)                    | The five areas and the Mom Test pass                                                                      |
-| [User stories and prototyping](guides/user-stories-and-prototyping.md)       | Turning a gap into stories, writing criteria, and testing an idea cheaply                                 |
-| [Validating with the customer](guides/validating-with-the-customer.md)       | Running a meeting after the kickoff and recording what it changed                                         |
-| [Planning and tracking](guides/planning-and-tracking.md)                     | The threshold of success, the plan and its releases, milestones, risks, and progress monitoring           |
-| [Quality and architecture](guides/quality-and-architecture.md)               | Requirements, decisions, the container view, the quality expectations, and Feature Documentation          |
-| [Quality requirement tests](guides/quality-requirement-tests.md)             | Writing a runnable check, choosing its level and environment, and recording its result                    |
-| [Deployment and environments](guides/deployment-and-environments.md)         | The four environments, the university VM, staging and production, and the deployment runbook              |
-| [Product analytics and observability](guides/analytics-and-observability.md) | The metric tree, the events, the two pipelines, the four dashboards, the `SLI`s, and the threshold review |
+| Guide                                                                        | For                                                                                                                   |
+| ---------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
+| [Researching alternatives](guides/alternatives-research.md)                  | Finding your set, choosing properties, evaluating consistently, capturing evidence                                    |
+| [From comparison to value proposition](guides/comparison-and-synthesis.md)   | Building the table, finding the gaps, writing the proposition and your assumptions                                    |
+| [The kickoff meeting](guides/customer-kickoff-meeting.md)                    | The five areas and the Mom Test pass                                                                                  |
+| [User stories and prototyping](guides/user-stories-and-prototyping.md)       | Turning a gap into stories, writing criteria, and testing an idea cheaply                                             |
+| [Validating with the customer](guides/validating-with-the-customer.md)       | Running a meeting after the kickoff and recording what it changed                                                     |
+| [Planning and tracking](guides/planning-and-tracking.md)                     | The threshold of success, the plan and its releases, milestones, risks, and progress monitoring                       |
+| [Quality and architecture](guides/quality-and-architecture.md)               | Requirements, decisions, the container view, the quality expectations, and Feature Documentation                      |
+| [Quality requirement tests](guides/quality-requirement-tests.md)             | Writing a runnable check, choosing its level and environment, and recording its result                                |
+| [Deployment and environments](guides/deployment-and-environments.md)         | The four environments, the university VM, staging and production, and the deployment runbook                          |
+| [Product analytics and observability](guides/analytics-and-observability.md) | The metric tree, the events, the two pipelines, the four dashboards, the `SLI`s, and the threshold review             |
+| [Usability testing](guides/usability-testing.md)                             | The test record, the participants, the tasks, the instruments, the consent, the sessions, the results, and the triage |
 
 ## Course Documents
 

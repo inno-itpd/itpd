@@ -146,12 +146,14 @@ The testing plan carries each test's result, per [Quality Requirement Testing Pl
 9. A `CI`, `scripted`, or `deployed` test satisfies rule 8, so the requirement is checked by a command rather than by a person.
    A `manual` test is the documented exception, used only when no automated form is possible: it carries `**Why Manual:**`, and the team declares the deviation naming the requirement, per [Declaring Deviations](weekly-report-requirements.md#declaring-deviations).
    A manual inspection of the deployment is `manual`, carries the field, and is not a `deployed` test.
+   The usability test that rule 17 exempts needs no deviation.
 10. The evidence a test produces follows its level, and the testing plan's `Evidence` cell links it rather than restating it:
 
     - A `CI` test links its run on `main`.
     - A `scripted` test records the command and its output in a dated section of `reports/week-NN/README.md` or in a week-local supporting file the report links.
     - A `deployed` test records the command or tool, the staging environment, the output, the measured value, and the commit it ran against, with a screenshot when the result is visual, and names no real address.
     - A `manual` test records what was inspected, by whom, and what was observed, with a screenshot when the evidence is visual.
+      A usability test records the sanitized `results.md` it reads and the private raw data behind it, per [The Results And Findings](usability-testing-requirements.md#the-results-and-findings).
 
 **Since: W6**
 
@@ -163,6 +165,20 @@ The testing plan carries each test's result, per [Quality Requirement Testing Pl
 13. A `CI` test is not a runtime test and cites no `SLI`: the testability requirement's test is the `CI` test that proves a broken module fails the suite.
 14. A dropped `SLI` leaves its requirement active when another `Active` `SLI` covers it: the `QRT`'s `**Runs at:**` names the replacement, or its testing-plan row becomes `Not verified`, per [Quality Requirement Testing Plan](planning-requirements.md#quality-requirement-testing-plan).
     The requirement's `**Changed:**` records the loss only when its measure changed.
+
+**Since: W7**
+
+15. A usability requirement uses `Interaction Capability` and one sub-characteristic the team chooses from `Learnability`, `Self-descriptiveness`, and `Operability`, and the requirement states in one sentence why the chosen sub-characteristic is what the `UT-nn` measures.
+    It carries `**Business importance:** High`, so rule 8 requires its test.
+16. The requirement's `Response` is the behaviour its chosen measure reads, and its `Response Measure` is a real, countable criterion the team writes before the first session.
+    The team chooses the measure from the main task's completion and assistance, the time on task, the main task's SEQ, or the SUS; the example reads the main task's median SEQ.
+    The requirement says why the chosen measure reads the chosen sub-characteristic, and the measures it does not read stay analysis results and are reported.
+    Its `QRT-nn` is `manual`, names the `UT-nn` it runs in `**Runs at:**`, and carries `**Why Manual:**` saying why no command can judge the chosen measure and that it reads no `SLI-nn`.
+    Its `### Procedure` runs the main usability test task with at least three participants per the `UT-nn` record and reads that record's `results.md`, so the record is the procedure's source.
+    Its `**Pass when:**` settles the requirement's `Response Measure`, and its evidence is the sanitized `results.md` and the private raw data, per [The Results And Findings](usability-testing-requirements.md#the-results-and-findings).
+17. A `manual` test whose requirement is `Interaction Capability`, with one of the three sub-characteristics, and whose `**Runs at:**` names a `UT-nn`, is the expected manual test for usability: it reads no `SLI`, says so in `**Why Manual:**`, and needs no deviation.
+    Every other `manual` test keeps rule 9's deviation.
+18. The testing plan's row for a usability test is `Not verified` with `Planned for sprint: SPRINT-08` in the design week, and `Passes` or `Fails` with `Checked: SPRINT-08` and the `results.md` evidence in the run week, per [Quality Requirement Testing Plan](planning-requirements.md#quality-requirement-testing-plan).
 
 ## The Allowed Pairs
 
@@ -220,7 +236,7 @@ It lists every requirement once, with the priorities that order it and the pair 
 
 The priority matrix, the three active requirements with their tests, and the tests themselves, in `docs/quality-requirements/`, in the meeting-booking example.
 `QR-02` is the mandated testability requirement, so it names the frontend entry point `frontend/src/main.tsx` and the payment module `backend/src/payments/checkout.ts` in its scenario and carries `**Business importance:** High`.
-`QR-01` carries a `deployed` test that reads no `SLI`, because it measures the page's display time and not the backend's response; `QR-02` carries a `CI` test that cites no `SLI`; and `QR-04` a `deployed` test that reads `SLI-01`; `QR-03` is dropped, so it needs none.
+`QR-01` carries a `deployed` test that reads no `SLI`, because it measures the page's display time and not the backend's response; `QR-02` carries a `CI` test that cites no `SLI`; and `QR-04` a `deployed` test that reads `SLI-01`; `QR-05` carries a `manual` test that reads `UT-01`, because no command can judge how a representative participant rates the main task on the SEQ, which the example chooses as its measure; `QR-03` is dropped, so it needs none.
 The `SLI` itself, its query, and the OpenObserve evidence are in [Observability Requirements](observability-requirements.md#full-example).
 
 From `docs/quality-requirements/README.md`:
@@ -228,12 +244,13 @@ From `docs/quality-requirements/README.md`:
 ```markdown
 # Quality requirements
 
-| QR                   | Outcome                                                                                                                             | Business importance | Technical risk | Characteristic         | Sub-characteristic | Status  |
-| -------------------- | ----------------------------------------------------------------------------------------------------------------------------------- | ------------------- | -------------- | ---------------------- | ------------------ | ------- |
-| [QR-01](qr/QR-01.md) | A client sees the free slots within two seconds of opening the coach's booking link on a mid-range phone.                           | High                | Medium         | Performance Efficiency | Time Behaviour     | Active  |
-| [QR-02](qr/QR-02.md) | A developer can run the checks that cover the payment module from a clean checkout, and a broken payment change fails them.         | High                | Medium         | Maintainability        | Testability        | Active  |
-| [QR-04](qr/QR-04.md) | An operator can find a failed booking request in the product's response-time signal and see which request failed and what happened. | High                | Medium         | Maintainability        | Analysability      | Active  |
-| [QR-03](qr/QR-03.md) | The booking page stays available for 99.9% of the month.                                                                            | Medium              | High           | Reliability            | Availability       | Dropped |
+| QR                   | Outcome                                                                                                                             | Business importance | Technical risk | Characteristic         | Sub-characteristic   | Status  |
+| -------------------- | ----------------------------------------------------------------------------------------------------------------------------------- | ------------------- | -------------- | ---------------------- | -------------------- | ------- |
+| [QR-01](qr/QR-01.md) | A client sees the free slots within two seconds of opening the coach's booking link on a mid-range phone.                           | High                | Medium         | Performance Efficiency | Time Behaviour       | Active  |
+| [QR-02](qr/QR-02.md) | A developer can run the checks that cover the payment module from a clean checkout, and a broken payment change fails them.         | High                | Medium         | Maintainability        | Testability          | Active  |
+| [QR-04](qr/QR-04.md) | An operator can find a failed booking request in the product's response-time signal and see which request failed and what happened. | High                | Medium         | Maintainability        | Analysability        | Active  |
+| [QR-05](qr/QR-05.md) | A representative participant completing the product's main usability test task for the first time finds it easy on the SEQ.         | High                | Medium         | Interaction Capability | Self-descriptiveness | Active  |
+| [QR-03](qr/QR-03.md) | The booking page stays available for 99.9% of the month.                                                                            | Medium              | High           | Reliability            | Availability         | Dropped |
 
 The tests and their results are in [the testing plan](../project-plan.md#quality-requirement-testing-plan).
 ```
@@ -405,4 +422,64 @@ A failed booking request in staging is queryable in the staging organization wit
 4. After waiting up to one minute for the metric export, record the `SLI-01` query's result in the staging organization, which returns the `server_error` series, and the dashboard screenshot as the evidence that the pipeline stored and rendered the signal.
 
 **Pass when:** within five seconds of the failed request's response, the staging organization's query returns one log point for it, carrying its `request_id`, its `route`, and an `outcome` of `server_error`; within one minute, the `SLI-01` query returns the `server_error` series for the route with a P95 value.
+```
+
+From `docs/quality-requirements/qr/QR-05.md`, the usability requirement and its manual test:
+
+```markdown
+# QR-05: Find The Main Task Easy On First Use
+
+A representative participant completing the product's main usability test task for the first time finds it easy on the SEQ.
+
+- **Status:** Active
+- **Characteristic:** Interaction Capability
+- **Sub-characteristic:** Self-descriptiveness
+- **Business importance:** High
+- **Technical risk:** Medium
+
+`Self-descriptiveness` is what the test measures, because a participant who can tell what each screen expects finds the task easy on the SEQ.
+The team chose the main task's SEQ as its measure; it records the completion and assistance, the time on task, and the SUS as analysis results.
+
+## Scenario
+
+### Source
+
+A representative participant who has not used the product before.
+
+### Stimulus
+
+The participant is given the main usability test task's scenario and the product's staging deployment.
+
+### Environment
+
+The staging deployment on the university VM, reached from the university network, with the seed reset before the session and no real payment, per the `UT-01` record.
+
+### Artifact
+
+The product's interface and the main usability test task.
+
+### Response
+
+The participant rates the main task on the SEQ after the attempt.
+
+### Response Measure
+
+The median main-task SEQ is at least five of seven, the bar the team set before the first session.
+
+## QRT-01
+
+A representative participant finds the main usability test task easy on first use.
+
+- **Status:** Active
+- **Level:** manual
+- **Runs at:** [`UT-01`](../../usability-tests/ut-01/README.md), whose sessions run the main task with at least three representative participants and record the results in [`results.md`](../../usability-tests/ut-01/results.md); it reads no `SLI`.
+- **Why Manual:** no command can judge how a representative participant rates the main task on the SEQ, and it reads no `SLI`.
+
+### Procedure
+
+1. Book the at least three sessions the `UT-01` record schedules, with participants who match its participant profile.
+2. Run each session's main task per the record's protocol, and record its SEQ in `sessions/P-nn.md`.
+3. Write the median main-task SEQ in `results.md`.
+
+**Pass when:** the median main-task SEQ is at least five of seven.
 ```

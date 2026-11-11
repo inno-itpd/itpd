@@ -122,6 +122,9 @@ A `manual` test carries `**Why Manual:**` in one sentence, and the sentence has 
 The manual exception is for a requirement no command can check, not a way to get out of running one.
 When an active requirement's check can be automated, that check is the one the team runs, and the manual test belongs to the requirement whose measure a command cannot reach.
 
+A usability test is the expected manual test: its requirement is `Interaction Capability`, its `**Runs at:**` names the `UT-nn`, and its `**Why Manual:**` says why no command can judge the measure it reads — the completion and assistance, the time on task, the SEQ, or the SUS — and that it reads no `SLI`.
+It needs no deviation, and the `UT-nn` record is the procedure and the sanitized results are the evidence, per [Quality Requirement Tests](../requirements/quality-requirements-requirements.md#quality-requirement-tests) and [Guide: Usability Testing](usability-testing.md).
+
 ### Write The Procedure For A Stranger
 
 The `### Procedure` is a numbered list of the steps somebody else runs: set up the state, perform the action, and read the output.

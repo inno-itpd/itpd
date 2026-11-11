@@ -75,6 +75,22 @@ Who may see each item is in [Visibility Requirements](visibility-requirements.md
 
 18. When the week has evidence screenshots, the report embeds each one as an image in the section that describes it, and the assignment sets how many.
 
+**Since: W7**
+
+19. In the design week the report's summary says the test is designed and the recruitment is planned, and claims no result.
+    It links `docs/usability-tests/ut-01/README.md`, `surveys.md`, `consent.md`, the `QR/QRT`, the private repository, and the session plan, and it names the recordings folder, whose link is in the Moodle submission.
+20. In the design week a `## Usability test` section carries the design summary, the recruitment target and the participant profile, the tasks, the surveys, the consent and the private repository, the recordings folder, the session plan, the `QR/QRT`, and the run week's handoff.
+    The coverage table carries one row per deliverable, and a row whose evidence is that section links `#usability-test`.
+    The summary follows rule 16 for the focus metric, the analytics, and the observability, and restates none of it.
+
+**Since: W8**
+
+21. In the run week the report's summary gives the number of counted sessions, the aggregate completion and ease, the `QR/QRT` result, the findings, and the triage.
+    It links the `results.md`, the sanitized session notes, the `QR/QRT`, the findings' task issues, the private repository, the release, the retrospective, and the AI usage; it copies no raw participant data and states the `n=<count>` caveat.
+    It follows rule 16 for the focus metric and the test traffic, and rules 7 and 8 for the contribution table and the repository evidence.
+22. In the run week a `## Usability test` section carries the results summary, the sanitized session links, the SUS and SEQ summary, the findings, the triage, and the `QR/QRT` result.
+    `results.md` is the record and the report is the summary: the reflection week's report carries no separate usability results report, and the final reflection cites the `UT-nn` results.
+
 **Recommended**
 
 - Use the same section order every week so readers learn it once.
@@ -84,10 +100,12 @@ Who may see each item is in [Visibility Requirements](visibility-requirements.md
 
 **Example**
 
-A Week 06 report, from `reports/week-06/README.md`:
+A Week 07 design report and a Week 08 results report, from `reports/week-07/README.md` and `reports/week-08/README.md`.
+
+The design report says what was designed and planned, and claims no result:
 
 ```markdown
-# Week 06 report
+# Week 07 report
 
 ## Project
 
@@ -97,89 +115,162 @@ Our problem-space sentence: an expert who sells sessions online needs one link w
 
 ## What we did
 
-We wrote the analytics plan and its metric tree, instrumented the core task's events, and put an OpenPanel instance with a staging and a production project on the university VM.
-We wrote the observability plan and its `SLI`, instrumented the request log line, put OpenObserve beside the analytics backend, and built the four dashboards.
-We added the two stories for the product analyst and the system operator, the two architectural decision records, the container view's two self-hosted external systems, the diagnosability requirement and its test, the threshold review, and `REL-06`; we cut the release as [v0.6.0](https://github.com/<organization>/<repo>/releases/tag/v0.6.0).
+We designed the `UT-01` usability test and prepared every artifact the Week 8 sessions need: the test record, the surveys, the tasks and the protocol, the consent, the private usability-data repository, the recordings folder, the new `QR-05` with its manual test, and the analysis plan.
+We set a recruitment target of five participants and planned how we will arrange the sessions.
+We held the Sprint Review as the design review, published its transcript in the repository, and cut `REL-07` as [v0.7.0](https://github.com/<organization>/<repo>/releases/tag/v0.7.0).
+No session has run and no result is claimed.
 
 ## Findings
 
-The product now records how it is used and how it operates, and all four dashboards are reached from the university network.
-The focus metric is completed paid bookings per active coach per week, and it has no value yet: it needs paid bookings from people outside the team.
-The Week 7 usability test exercises the flow and yields usability findings, but it does not produce paid bookings, so the metric's first value comes from real use.
-The booking conversion rate is one of its inputs, and its query computes it from the events today.
-The analytics plan is [docs/analytics.md](../../docs/analytics.md) and the observability plan is [docs/observability.md](../../docs/observability.md).
-`QR-03 QRT-02` is still `Not verified` and moves to `SPRINT-07`; [the testing plan](../../docs/project-plan.md#quality-requirement-testing-plan) carries it and every other row that is not `Passes`.
+The test is designed for at least three completed sessions, with five as the target, and the recruitment target is five.
+The design is [the `UT-01` record](../../docs/usability-tests/ut-01/README.md), and its results are due with Submission 8 on 21 November.
+`QR-05 QRT-01` is `Not verified` with `Planned for sprint` `SPRINT-08`, and [the testing plan](../../docs/project-plan.md#quality-requirement-testing-plan) carries the row.
+The focus metric still has no value, and the test traffic will be excluded from it: the `UT-01` funnel is read with the `source = "usability-test"` filter.
 
-## Threshold review
+## Usability test
 
-| Goal                                                | Current measure                                                                                                                      | New data can settle it                                                             | Proposal |
-| --------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------- | -------- |
-| [TOS-01](../../docs/threshold-of-success.md#tos-01) | One booking in the deployed product whose payment settled in the provider's sandbox, by the end of Week 6                            | Yes — the `booking_confirmed` and `payment_succeeded` events record it             | —        |
-| [TOS-03](../../docs/threshold-of-success.md#tos-03) | At least three of five participants completed the core task unaided, recorded in the Week 7 usability findings, by the end of Week 7 | No — a usability session is neither an analytics event nor an observability signal | —        |
+The design is in [the `UT-01` record](../../docs/usability-tests/ut-01/README.md).
+The test runs one main booking task and two secondary tasks, with the pre-test, the SEQ after each task, the SUS after all tasks, and the open-ended post-test, in [the surveys](../../docs/usability-tests/ut-01/surveys.md).
 
-`[TOS-01](../../docs/threshold-of-success.md#tos-01)` is `Achieved`.
-`[TOS-03](../../docs/threshold-of-success.md#tos-03)` is `Open`.
-`TOS-02` is absent because it was settled in an earlier week.
-The team proposed no analytics-measured goal and no revised measure this week, because no remaining open goal is a number either pipeline can improve, and the customer agreed none was needed.
+The participant profile is a person who books sessions online, has used a booking page before, and uses a phone or the team's laptop.
+The recruitment target is five, the team will assign `P-01` to `P-05` in the order it arranges the sessions, and it sets the session dates.
 
-## Analytics and observability
+The raw notes stay in the [private usability-data repository](https://github.com/<organization>/<repo>-usability-data), the consent records are beside them, and the recordings are in the team's cloud folder.
+The private repository link is excluded from the link check because it needs authentication, and both private links are in the Moodle submission.
+The public record carries the sanitized sessions and the results.
 
-The analytics plan is [docs/analytics.md](../../docs/analytics.md) and its events are in [the event table](../../docs/analytics.md#the-events).
-The staging dashboard's event list shows the test event tagged `source=smoke`, which the staging chart excludes, and the production dashboard is configured with the same query and has received no test traffic.
+`QR-05` is the `Interaction Capability` / `Self-descriptiveness` requirement, and its manual test names `UT-01`: [QR-05](../../docs/quality-requirements/qr/QR-05.md) and [QRT-01](../../docs/quality-requirements/qr/QR-05.md#qrt-01).
 
-![The analytics staging dashboard: the booking conversion rate chart and the event list that shows the smoke event](images/analytics-staging.png)
-
-![The analytics production dashboard: the same chart and query, with no test traffic](images/analytics-production.png)
-
-The observability plan is [docs/observability.md](../../docs/observability.md) and its `SLI` is [`SLI-01`](../../docs/observability.md#sli-01).
-The staging run of `scripts/check-sli.ts` failed one booking request, and the staging organization's log query returned the request's log point with its `request_id`, `route`, and an `outcome` of `server_error` within five seconds; the five-minute P95 query returned the `server_error` series within one minute, so [`QR-04 QRT-01`](../../docs/quality-requirements/qr/QR-04.md#qrt-01) passes.
-The team also re-ran [`QR-01 QRT-01`](../../docs/quality-requirements/qr/QR-01.md#qrt-01) as a regression check against the final staging deployment, and all ten page loads showed the free slots within two seconds, so it passed.
-The staging dashboard's chart shows the same `server_error` series.
-
-![The observability staging dashboard: the server error series from SLI-01's P95 query](images/observability-staging.png)
-
-![The observability production dashboard: the same query, with no test traffic](images/observability-production.png)
+The Week 8 handoff is the design, the recruitment target of five participants, the private repository and the recordings folder, the `QR-05 QRT-01` row in `SPRINT-08`, the `results.md` stub, and the analysis and triage plan.
 
 ## Coverage
 
-| Deliverable                   | Artifact                                                                                                                                                                                                                                                        |
-| ----------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Sprint plan and new stories   | [docs/project-plan.md](../../docs/project-plan.md#sprint-06) and [the two stories](https://github.com/<organization>/<repo>/issues?q=is%3Aissue+sprint+06)                                                                                                      |
-| Analytics plan                | [docs/analytics.md](../../docs/analytics.md)                                                                                                                                                                                                                    |
-| Events and instrumentation    | [docs/analytics.md](../../docs/analytics.md#the-events)                                                                                                                                                                                                         |
-| Analytics dashboards          | [staging](images/analytics-staging.png) and [production](images/analytics-production.png)                                                                                                                                                                       |
-| Observability plan and `SLI`s | [docs/observability.md](../../docs/observability.md)                                                                                                                                                                                                            |
-| Observability dashboards      | [staging](images/observability-staging.png) and [production](images/observability-production.png)                                                                                                                                                               |
-| Feature documentation         | [docs/features.md](../../docs/features.md)                                                                                                                                                                                                                      |
-| Functional requirements       | [docs/functional-requirements/README.md](../../docs/functional-requirements/README.md)                                                                                                                                                                          |
-| ADRs and container view       | [ADR-005](../../docs/architecture/adr/ADR-005.md), [ADR-006](../../docs/architecture/adr/ADR-006.md), and [the container view](../../docs/architecture/README.md#container-view)                                                                                |
-| Observability requirement     | [QR-04](../../docs/quality-requirements/qr/QR-04.md) and [its test](../../docs/quality-requirements/qr/QR-04.md#qrt-01)                                                                                                                                         |
-| Runtime test re-run           | [the testing plan](../../docs/project-plan.md#quality-requirement-testing-plan)                                                                                                                                                                                 |
-| Threshold review              | [the threshold review](#threshold-review)                                                                                                                                                                                                                       |
-| Week 5 action points          | [reports/week-06/meeting-report.md](meeting-report.md#previous-action-points)                                                                                                                                                                                   |
-| Week 5 open questions         | [reports/week-06/meeting-report.md](meeting-report.md#previous-open-questions)                                                                                                                                                                                  |
-| Meeting script                | [reports/week-06/meeting-script.md](meeting-script.md)                                                                                                                                                                                                          |
-| Meeting transcript            | [reports/week-06/meeting-transcript.md](meeting-transcript.md)                                                                                                                                                                                                  |
-| Customer validation           | [reports/week-06/meeting-report.md](meeting-report.md)                                                                                                                                                                                                          |
-| `REL-06`                      | [v0.6.0](https://github.com/<organization>/<repo>/releases/tag/v0.6.0), [the release body](https://github.com/<organization>/<repo>/releases/tag/v0.6.0), [the changelog](../../CHANGELOG.md), and [the plan's REL-06 block](../../docs/project-plan.md#rel-06) |
-| Sprint retrospective          | [reports/week-06/sprint-retrospective.md](sprint-retrospective.md)                                                                                                                                                                                              |
-| AI usage                      | [reports/week-06/ai-usage.md](ai-usage.md)                                                                                                                                                                                                                      |
+| Deliverable                         | Artifact                                                                                                                                                                                             |
+| ----------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Sprint plan                         | [docs/project-plan.md](../../docs/project-plan.md#sprint-07)                                                                                                                                         |
+| `UT-01` test record                 | [docs/usability-tests/ut-01/README.md](../../docs/usability-tests/ut-01/README.md)                                                                                                                   |
+| Surveys and post-test               | [surveys.md](../../docs/usability-tests/ut-01/surveys.md)                                                                                                                                            |
+| Tasks and protocol                  | [the tasks](../../docs/usability-tests/ut-01/README.md#the-tasks) and [the session template](../../docs/usability-tests/ut-01/sessions/README.md)                                                    |
+| Consent template                    | [consent.md](../../docs/usability-tests/ut-01/consent.md)                                                                                                                                            |
+| Private usability-data repository   | the private `meeting-booking-usability-data` repository, linked from the record and excluded from the link check at [the link check configuration](../../lychee.toml), accessible to the instructors |
+| Recordings folder                   | the team's cloud folder, linked in the Moodle submission                                                                                                                                             |
+| `QR-05` and its test                | [QR-05](../../docs/quality-requirements/qr/QR-05.md) and [QRT-01](../../docs/quality-requirements/qr/QR-05.md#qrt-01)                                                                                |
+| Recruitment target and session plan | [the participant profile](../../docs/usability-tests/ut-01/README.md#participant-profile) and [the session plan](../../docs/usability-tests/ut-01/README.md#schedule)                                |
+| Week 8 handoff                      | [reports/week-07/README.md#usability-test](#usability-test)                                                                                                                                          |
+| Glossary                            | [docs/glossary.md](../../docs/glossary.md)                                                                                                                                                           |
+| Risk register                       | [docs/risks.md](../../docs/risks.md)                                                                                                                                                                 |
+| Week 6 action points                | [reports/week-07/meeting-report.md](meeting-report.md#previous-action-points)                                                                                                                        |
+| Week 6 open questions               | [reports/week-07/meeting-report.md](meeting-report.md#previous-open-questions)                                                                                                                       |
+| Sprint Review                       | [reports/week-07/meeting-report.md](meeting-report.md)                                                                                                                                               |
+| Meeting script                      | [reports/week-07/meeting-script.md](meeting-script.md)                                                                                                                                               |
+| Meeting transcript                  | [reports/week-07/meeting-transcript.md](meeting-transcript.md)                                                                                                                                       |
+| `REL-07`                            | [v0.7.0](https://github.com/<organization>/<repo>/releases/tag/v0.7.0), [the changelog](../../CHANGELOG.md), and [the plan's REL-07 block](../../docs/project-plan.md#rel-07)                        |
+| Sprint retrospective                | [reports/week-07/sprint-retrospective.md](sprint-retrospective.md)                                                                                                                                   |
+| AI usage                            | [reports/week-07/ai-usage.md](ai-usage.md)                                                                                                                                                           |
 
 ## Contribution
 
-| Contributor | Contribution                                                                                                                                                                                                                                       |
-| ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| @ana        | [the analytics plan](https://github.com/<organization>/<repo>/pull/41), [the events](https://github.com/<organization>/<repo>/pull/42), and [the analytics dashboards](https://github.com/<organization>/<repo>/pull/43), reviewed by @bo          |
-| @bo         | [the observability plan](https://github.com/<organization>/<repo>/pull/44), [`SLI-01`](https://github.com/<organization>/<repo>/pull/44), and [the observability dashboards](https://github.com/<organization>/<repo>/pull/45), reviewed by @ana   |
-| @cyd        | [the two ADRs](https://github.com/<organization>/<repo>/pull/46), [the container view](https://github.com/<organization>/<repo>/pull/46), and [the diagnosability requirement](https://github.com/<organization>/<repo>/pull/47), reviewed by @ana |
+| Contributor | Contribution                                                                                                                                                                                                                                                           |
+| ----------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| @ana        | [the `UT-01` record](https://github.com/<organization>/<repo>/pull/51), [the surveys](https://github.com/<organization>/<repo>/pull/52), and [the consent](https://github.com/<organization>/<repo>/pull/53), reviewed by @bo                                          |
+| @bo         | [the tasks and protocol](https://github.com/<organization>/<repo>/pull/54) and [the `QR-05` test](https://github.com/<organization>/<repo>/pull/55), reviewed by @cyd                                                                                                  |
+| @cyd        | [the private repository and the recordings folder](https://github.com/<organization>/<repo>/pull/56), [the analysis plan](https://github.com/<organization>/<repo>/pull/56), and [the recruitment](https://github.com/<organization>/<repo>/pull/56), reviewed by @ana |
 
 ## Repository evidence
 
-The merged pull request for the analytics work, the merged pull request for the observability work, with the green Markdown, link, `actionlint`, and product-code CI checks on `main`.
+The merged pull requests for the design and for the recruitment, with the green Markdown, link, `actionlint`, and product-code CI checks on `main`.
 
 ## Deviations
 
-`QR-03 QRT-02` was planned for `SPRINT-06`, and its availability window is still open at the deadline, so it moves to `SPRINT-07`; [the testing plan](../../docs/project-plan.md#quality-requirement-testing-plan) carries the row.
+No participant withdrew and none failed to consent, so the five confirmed participants are the five counted candidates.
+
+## Privacy
+
+No private-only material and no participant identity were committed to this repository.
+```
+
+The results report says what the sessions found and links the record:
+
+```markdown
+# Week 08 report
+
+## Project
+
+Meeting booking app.
+
+## What we did
+
+We ran the five `UT-01` sessions on 16 and 17 November, wrote the sanitized session notes and [the results](../../docs/usability-tests/ut-01/results.md), triaged the two findings, and recorded [`QR-05 QRT-01`](../../docs/quality-requirements/qr/QR-05.md#qrt-01) as `Passes`.
+We fixed the checkout form's phone field and cut `REL-08` as [v0.8.0](https://github.com/<organization>/<repo>/releases/tag/v0.8.0).
+We also wrote the configuration management evaluation, the improvement plan, and its first implementation.
+
+## Findings
+
+Five sessions ran, and three participants completed the main task unaided; one reached it with help, and one failed it at the checkout form.
+The SUS mean is 75.0 and the median is 80.0, with `n=5`, and the median main-task SEQ is 6.
+`QR-05 QRT-01` passes, and [the testing plan](../../docs/project-plan.md#quality-requirement-testing-plan) carries the row and its evidence.
+The `Major` finding is the checkout form's phone field, carried by [#57](https://github.com/<organization>/<repo>/issues/57) and fixed in `REL-08`; the `Minor` finding is the confirmation page's missing meeting link, carried by [#58](https://github.com/<organization>/<repo>/issues/58) and scheduled in `SPRINT-09`.
+The focus metric still has no value: a usability participant is not a paying customer, and the `UT-01` funnel is read with the `source = "usability-test"` filter.
+
+## Usability test
+
+The results are in [docs/usability-tests/ut-01/results.md](../../docs/usability-tests/ut-01/results.md), and the sanitized session notes are beside it: [P-01](../../docs/usability-tests/ut-01/sessions/P-01.md) to [P-05](../../docs/usability-tests/ut-01/sessions/P-05.md).
+Five sessions ran, and the aggregate is three unaided completions of the main task, one assisted, and one failure.
+The main-task SEQ median is 6, and the secondary tasks' SEQ medians are 5 and 6.
+
+| Participant                                               | Main task | Main SEQ | Secondary 1 | Sec 1 SEQ | Secondary 2 | Sec 2 SEQ | SUS |
+| --------------------------------------------------------- | --------- | -------- | ----------- | --------- | ----------- | --------- | --- |
+| [P-01](../../docs/usability-tests/ut-01/sessions/P-01.md) | Unaided   | 7        | Assisted    | 5         | Unaided     | 7         | 85  |
+| [P-02](../../docs/usability-tests/ut-01/sessions/P-02.md) | Unaided   | 6        | Unaided     | 6         | Unaided     | 6         | 80  |
+| [P-03](../../docs/usability-tests/ut-01/sessions/P-03.md) | Failed    | 2        | Failed      | 3         | Assisted    | 5         | 52  |
+| [P-04](../../docs/usability-tests/ut-01/sessions/P-04.md) | Unaided   | 7        | Unaided     | 5         | Unaided     | 6         | 88  |
+| [P-05](../../docs/usability-tests/ut-01/sessions/P-05.md) | Assisted  | 5        | Unaided     | 4         | Unaided     | 5         | 70  |
+
+The two findings are [Finding 1](../../docs/usability-tests/ut-01/results.md#finding-1), the checkout form's phone field, and [Finding 2](../../docs/usability-tests/ut-01/results.md#finding-2), the confirmation page's missing meeting link.
+`Finding 1` is carried by [#57](https://github.com/<organization>/<repo>/issues/57) and fixed in `REL-08`; `Finding 2` is carried by [#58](https://github.com/<organization>/<repo>/issues/58) and scheduled in `SPRINT-09`.
+
+The private repository and the recordings folder are linked in the Moodle submission, and no raw data is copied into this report.
+
+## Threshold review
+
+| Goal                                                | Current measure                                                                                                                                    | New data can settle it                             | Proposal |
+| --------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------- | -------- |
+| [TOS-03](../../docs/threshold-of-success.md#tos-03) | At least three of five participants completed the main usability test task unaided, recorded in the Week 8 usability results, by the end of Week 8 | Yes — the `UT-01` sessions recorded the completion | —        |
+
+`[TOS-03](../../docs/threshold-of-success.md#tos-03)` is `Achieved`.
+No goal is `Open` after this review, and the team proposed no measure because the threshold is met.
+
+## Coverage
+
+| Deliverable          | Artifact                                                                                                                                                                                       |
+| -------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Usability results    | [docs/usability-tests/ut-01/results.md](../../docs/usability-tests/ut-01/results.md)                                                                                                           |
+| Sanitized sessions   | [P-01](../../docs/usability-tests/ut-01/sessions/P-01.md) to [P-05](../../docs/usability-tests/ut-01/sessions/P-05.md)                                                                         |
+| `QR-05` and its test | [QR-05](../../docs/quality-requirements/qr/QR-05.md) and [QRT-01](../../docs/quality-requirements/qr/QR-05.md#qrt-01)                                                                          |
+| Findings and triage  | [the findings](../../docs/usability-tests/ut-01/results.md#findings), [#57](https://github.com/<organization>/<repo>/issues/57), and [#58](https://github.com/<organization>/<repo>/issues/58) |
+| Threshold review     | [the threshold review](#threshold-review)                                                                                                                                                      |
+| CM evaluation        | [reports/week-08/cm-evaluation.md](cm-evaluation.md)                                                                                                                                           |
+| CM improvement plan  | [reports/week-08/cm-improvement-plan.md](cm-improvement-plan.md)                                                                                                                               |
+| CM implementation    | [the pull requests into `main`](https://github.com/<organization>/<repo>/pulls)                                                                                                                |
+| `REL-08`             | [v0.8.0](https://github.com/<organization>/<repo>/releases/tag/v0.8.0), [the changelog](../../CHANGELOG.md), and [the plan's REL-08 block](../../docs/project-plan.md#rel-08)                  |
+| Sprint retrospective | [reports/week-08/sprint-retrospective.md](sprint-retrospective.md)                                                                                                                             |
+| AI usage             | [reports/week-08/ai-usage.md](ai-usage.md)                                                                                                                                                     |
+
+## Contribution
+
+| Contributor | Contribution                                                                                                                                                                                                                                                |
+| ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| @ana        | [the sessions and the sanitized notes](https://github.com/<organization>/<repo>/pull/61) and [the results](https://github.com/<organization>/<repo>/pull/62), reviewed by @bo                                                                               |
+| @bo         | [the triage and #57](https://github.com/<organization>/<repo>/issues/57), [the checkout fix](https://github.com/<organization>/<repo>/pull/63), and [the CM evaluation](https://github.com/<organization>/<repo>/pull/64), reviewed by @cyd                 |
+| @cyd        | [the private data handling](https://github.com/<organization>/<repo>/pull/61), [the CM improvement plan](https://github.com/<organization>/<repo>/pull/65), and [the CM implementation](https://github.com/<organization>/<repo>/pull/66), reviewed by @ana |
+
+## Repository evidence
+
+The merged pull requests for the sessions, the results, the fix, and the CM work, with the green Markdown, link, `actionlint`, and product-code CI checks on `main`.
+
+## Deviations
+
+None.
 
 ## Privacy
 
@@ -249,7 +340,7 @@ The Moodle PDF is the canonical private artifact for a week.
 1. It identifies the project, the team, and the week clearly enough for an instructor to match it to the repository state.
 2. It links the public evidence rather than copying it.
    Do not paste the weekly report into the PDF.
-3. It contains that week's private-only material: every item [Sensitive Information Reference](visibility-requirements.md#sensitive-information-reference) sends to Moodle only.
+3. It contains the private-only items the week's assignment or report relies on, per [Sensitive Information Reference](visibility-requirements.md#sensitive-information-reference).
 4. When the assignment requires a permalink, it uses a commit-hash permalink, per [Permalinks And Snapshots](repository-requirements.md#permalinks-and-snapshots), so the link keeps pointing at the exact content that was submitted.
 5. It stays short.
    It is a map, not a second copy of the repository.
