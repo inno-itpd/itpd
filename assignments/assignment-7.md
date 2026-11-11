@@ -13,7 +13,7 @@ Week 6 ended with the analytics and the observability running, four dashboards o
 This week the product's evidence becomes human: you design the usability test a stranger can run, write its record, its surveys, its tasks, its consent, and its analysis plan, create the private home for the raw data, and add the quality requirement the sessions check.
 You recruit the participants and schedule the sessions; they may run as soon as the design is written, including in Week 7, and the results, the findings, and the triage are due with Submission 8.
 Week 7 claims no usability result: it designs the test and prepares every artifact the results submission needs.
-The week also keeps the full sprint around the design, and it carries no 7-minute deck: the deck is prepared in Week 9, submitted with Submission 9, rehearsed in the Week 10 class, and presented at the Week 11 final exam.
+The week also keeps the full sprint around the design.
 
 What you hand in is a test design another person could run without asking you a question, the private repository and recordings folder that make its evidence keepable, and `REL-07`.
 
@@ -344,7 +344,7 @@ This week:
 
 1. Confirm at least three participants, with five as the target, and the sessions scheduled at the dates the team records, with 15 to 18 November as the suggested window.
 2. Confirm the private repository and the recordings folder are ready, and that the instructors can open both.
-3. Confirm the `QR/QRT` row is `Not verified` with `Planned for sprint: SPRINT-08`; the verdict is recorded with Submission 8, even if the sessions have run.
+3. Confirm the `QR/QRT` row is `Not verified` with `Planned for sprint: SPRINT-08`.
 4. Confirm the `results.md` stub, the findings template, and the triage plan are in place.
 5. Name the rules the results submission completes: [The Results And Findings](../requirements/usability-testing-requirements.md#the-results-and-findings), [The Triage](../requirements/usability-testing-requirements.md#the-triage), and [The Week 8 Execution](../requirements/usability-testing-requirements.md#the-week-8-execution).
 6. Claim no result in Week 7: the results, the findings, the verdict, and the triage are due with Submission 8, even when the sessions have already run.
@@ -371,8 +371,6 @@ A strong submission has:
   At least three participants confirmed with five as the target, the sessions scheduled at the dates the team records, the private repository and the recordings folder ready, the `results.md` stub and the findings and triage templates ready, and the `QR/QRT` row in `SPRINT-08`.
 - **A test design that uses the Week 6 events rather than a new schema.**
   The main task is the flow the event table covers, no new `session_id` or per-participant field is added, every metric excludes `smoke` and `source=usability-test`, and the test traffic is not presented as a value.
-- **A week with no deck.**
-  The 7-minute deck is Week 9's, submitted with Submission 9, rehearsed in the Week 10 class, and presented at the Week 11 final exam; this week has no deck row in its report, its wrapper, or its checklist.
 - **One path and one identifier, everywhere.**
   A `UT-01` record a reader can find from `docs/usability-tests/README.md`, the weekly report, the testing plan, the quality requirements index, and the guide, with the same path and the same identifier in each.
 
@@ -427,7 +425,7 @@ Keep it to two pages, and put nothing in it except the following.
 8. The meeting transcript, if the customer refused to let you publish it.
 9. One line confirming that no private-only material was committed to the repository, and no participant identity was committed to it.
 
-The PDF carries no deck and no participant identity.
+The PDF carries no participant identity.
 
 ### Submission Procedure
 
@@ -462,4 +460,4 @@ The PDF carries no deck and no participant identity.
 - [ ] The Week 8 handoff ready: at least three participants confirmed, the sessions scheduled, the private repository and the recordings folder ready, the `QR/QRT` row in `SPRINT-08`, and the `results.md` stub and triage plan ready, with no result claimed and the results due with Submission 8 ([Part 14](#part-14-hand-off-the-week-8-execution)).
 - [ ] `reports/week-07/README.md` with the summary, the `## Usability test` section, and the coverage rows ([Assignment Report In The Repository](#assignment-report-in-the-repository)).
 - [ ] Everything merged into `main`, with the permalink and the snapshot taken from that commit ([Submission Procedure](#submission-procedure)).
-- [ ] PDF ready, the permalink opened in a browser at the full commit hash, the private repository and recordings folder links and access in it, the staging address in it, and no deck and no participant identity in it ([Assignment Report On Moodle](#assignment-report-on-moodle)).
+- [ ] PDF ready, the permalink opened in a browser at the full commit hash, the private repository and recordings folder links and access in it, the staging address in it, and no participant identity in it ([Assignment Report On Moodle](#assignment-report-on-moodle)).
