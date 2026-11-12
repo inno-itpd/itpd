@@ -171,7 +171,7 @@ The testing plan carries each test's result, per [Quality Requirement Testing Pl
 15. A usability requirement uses `Interaction Capability` and one sub-characteristic the team chooses from `Learnability`, `Self-descriptiveness`, and `Operability`, and the requirement states in one sentence why the chosen sub-characteristic is what the `UT-nn` measures.
     It carries `**Business importance:** High`, so rule 8 requires its test.
 16. The requirement's `Response` is the behaviour its chosen measure reads, and its `Response Measure` is a real, countable criterion the team writes before the first session.
-    The team chooses the measure from the main task's completion and assistance, the time on task, the main task's SEQ, or the SUS; the four are the menu of instruments, not of statistics.
+    The team chooses the measure from the main task's completion and assistance, the time on task, the main task's SEQ, or the SUS; the four are the recorded measures, not statistics, per [Measurement Terminology](general-requirements.md#measurement-terminology).
     The `Response Measure` uses one of the statistics the analysis plan reports for them: the main-task completion or assistance count or proportion, the main-task median time, the main-task median SEQ, or the SUS mean or median.
     The example reads the main task's median SEQ.
     The requirement says why the chosen measure reads the chosen sub-characteristic, and the measures it does not read stay analysis results and are reported.

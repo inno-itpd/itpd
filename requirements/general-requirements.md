@@ -11,6 +11,7 @@ It is the short version of the requirements, states what is expected of you as a
 <h2>Table of contents</h2>
 
 - [Artifact Concepts And Terminology](#artifact-concepts-and-terminology)
+- [Measurement Terminology](#measurement-terminology)
 - [Where Artifacts Live In The Repository](#where-artifacts-live-in-the-repository)
 - [Identifier Rules](#identifier-rules)
 - [Traceability Into Later Weeks](#traceability-into-later-weeks)
@@ -32,6 +33,21 @@ It is the short version of the requirements, states what is expected of you as a
 9. A **decision** is a conclusion that changes or explicitly settles what you build.
    A decision is recorded in `docs/decisions.md` when it needs an entry, per [The Decision](decisions-requirements.md#the-decision), and otherwise in the one artifact it changes.
 10. An **action point** is a follow-up that came out of a meeting, with an owner and a week it falls due in, per [Meeting Report](customer-meetings-requirements.md#meeting-report).
+
+## Measurement Terminology
+
+**Since: W7**
+
+A **measure** is a quantity one session records for one participant, such as a task's outcome, its time, or a survey score.
+The four a `UT-nn` records are listed in [The Instruments](usability-testing-requirements.md#the-instruments).
+A usability quality requirement reads one of them, and the record states which.
+A **statistic** is the summary computed from a measure's recorded values, such as a count, a proportion, a median, or a mean.
+The analysis plan reports it before the first session, and a quality requirement's criterion uses one, per [The Analysis](usability-testing-requirements.md#the-analysis) and [Quality Requirement Tests](quality-requirements-requirements.md#quality-requirement-tests).
+An **instrument** is what records the measures: the survey in `surveys.md` and the session template and observation sheet in `sessions/README.md`, per [The Instruments](usability-testing-requirements.md#the-instruments).
+It is not one of the measures.
+A **metric** is a product-analytics number computed from the events in [The Value And The Metrics](analytics-requirements.md#the-value-and-the-metrics).
+It is not a measure a session records.
+A quality requirement's **`Response Measure`** is its criterion, not its measure: it states what the measure must come to, per [The Quality Attribute Scenario](quality-requirements-requirements.md#the-quality-attribute-scenario).
 
 ## Where Artifacts Live In The Repository
 

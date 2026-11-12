@@ -350,7 +350,7 @@ A time measure is noisy with three to five participants, and a completion rate h
 
 The scenario reads a representative participant completing the main usability test task, in the staging deployment on the university network with seeded data, and its `Response` is the behaviour the chosen measure reads.
 The `Response Measure` is a real, countable criterion the team writes before the first session, and it uses one of the statistics the analysis plan reports: for the SEQ, the main-task median SEQ against a bar (the example is at least five of seven); for completion and assistance, the main-task count or proportion that must reach `Unaided`; for the time, the main-task median time against a limit; and for the SUS, the mean or median against a bar.
-The four instruments are the menu, not the statistic: the criterion reads the same statistic the plan reports, so the verdict never needs a number the plan did not commit to.
+The four [measures](../requirements/general-requirements.md#measurement-terminology) are the menu, not the statistic: the criterion reads the same statistic the plan reports, so the verdict never needs a number the plan did not commit to.
 The measures the requirement does not read stay analysis results and are reported; the requirement reads one.
 The measure is not a target: set it at the value that tells you whether the product is usable, do not coach participants toward it, and do not change it after the data.
 

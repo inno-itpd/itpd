@@ -170,7 +170,7 @@ The method is in [Step 5: Write The Consent And Create The Private Repository](.
 The rules:
 
 - A quality requirement is a file under `docs/quality-requirements/qr/`, with its outcome, its pair, its two priorities, and its six-part scenario: [The Quality Requirement](../requirements/quality-requirements-requirements.md#the-quality-requirement).
-- The usability requirement uses `Interaction Capability` and one sub-characteristic chosen from `Learnability`, `Self-descriptiveness`, and `Operability`, and the team chooses the measure the test reads from the recorded measures: [Quality Requirement Tests](../requirements/quality-requirements-requirements.md#quality-requirement-tests).
+- The usability requirement uses `Interaction Capability` and one sub-characteristic chosen from `Learnability`, `Self-descriptiveness`, and `Operability`, and the team chooses the [measure](../requirements/general-requirements.md#measurement-terminology) the test reads from the recorded measures: [Quality Requirement Tests](../requirements/quality-requirements-requirements.md#quality-requirement-tests).
 - A test is a `## QRT-nn` section inside its requirement's file, with its fields, its procedure, and one `**Pass when:**` criterion, and a `manual` one carries `**Why Manual:**`: [Quality Requirement Tests](../requirements/quality-requirements-requirements.md#quality-requirement-tests).
 - The testing plan carries each test's result, its last check, its planned sprint, and its evidence: [Quality Requirement Testing Plan](../requirements/planning-requirements.md#quality-requirement-testing-plan).
 
@@ -180,8 +180,7 @@ This week:
 2. Carry `**Business importance:** High`, which requires its test, and the team's `**Technical risk:**`.
 3. Write the scenario: a representative participant completing the main usability test task, in the staging deployment on the university network with seeded data, with its `Response` the behaviour the team's chosen measure reads.
    The team chooses the measure from the four the session records: the main task's completion and assistance, the time on task, the main task's SEQ, or the SUS.
-   The four are measures, not statistics.
-   The criterion uses a statistic the analysis plan reports: the main-task completion or assistance count or proportion, the main-task median time, the main-task median SEQ, or the SUS mean or median.
+   The criterion uses a statistic of that measure, and one the analysis plan reports: the main-task completion or assistance count or proportion, the main-task median time, the main-task median SEQ, or the SUS mean or median.
 4. Make the `Response Measure` a real, countable criterion the team writes before the first session, and the test settles it.
    The example is the median main-task SEQ against a bar; the example bar is at least five of seven.
    A team that chooses the main task's completion and assistance, its time on task, or the SUS sets the criterion that tells it whether the product is usable, and says why the chosen measure reads the chosen sub-characteristic.
@@ -251,7 +250,8 @@ The rules:
 
 This week:
 
-1. Add `usability test`, `participant`, `usability session`, `consent`, `recording`, `SUS`, and `SEQ` to `docs/glossary.md`, and separate a usability session from the analytics `session_id` in its entry.
+1. Add `usability test`, `participant`, `usability session`, `consent`, `recording`, `measure`, `metric`, `statistic`, `SUS`, and `SEQ` to `docs/glossary.md`, and separate a usability session from the analytics `session_id` in its entry.
+   Keep the measure, the metric, and the statistic apart in their entries.
 2. Add the recruitment risk, the consent risk, the data-access risk, and the schedule risk to `docs/risks.md`, each with its `**Status:** Open`, `**Impact:**`, `**Likelihood:**`, `**Trigger:**`, `**Window:**`, `**Mitigation:**`, and `**Contingency:**`.
 3. Write the fallback for each failure mode as the matching risk's `**Contingency:**`:
    - The recruitment risk, a shortfall of participants: recruit replacements; when three still cannot be recruited, keep the `QR/QRT` row `Not verified` in `SPRINT-08` or move it to `SPRINT-09`, declare the shortfall, and claim no result;

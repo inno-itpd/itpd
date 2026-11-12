@@ -168,12 +168,12 @@ The protocol is the order every session follows, so the sessions produce compara
 
 **Since: W7**
 
-The instruments are the questions and the observations every session records.
-The survey instrument is `surveys.md`, the session's recording sheet and the instructions are `sessions/README.md`, and the record states which measures the test reads.
+The instruments are the survey and the session's recording sheet: `surveys.md` holds the questions, and `sessions/README.md` holds the template, the instructions, and the observation sheet.
+A session records four measures, and the record states which one the quality requirement reads, per [Measurement Terminology](general-requirements.md#measurement-terminology).
 
 **Required**
 
-1. The survey instrument is `surveys.md`, and the session template and its instructions are `sessions/README.md`.
+1. The survey instrument is `surveys.md`, and the session template, its instructions, and the observation sheet are `sessions/README.md`.
 2. Every session records the pre-test background, the think-aloud observation, the task completion and assistance, the time on task, a SEQ after each task, a SUS after all the tasks, the SUS score, and the open-ended post-test.
 3. The **pre-test** asks for the participant's role and background, their familiarity with similar products, the device, and their expectations.
    It carries no name, email address, phone number, or free-text identification, and it carries the 18-or-older declaration.
