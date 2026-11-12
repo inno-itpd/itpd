@@ -43,7 +43,7 @@ Every item below goes in exactly one place.
 | Recordings of meetings with the customer, their links, and exact timecodes into them                                                                         | Moodle only                                                                                                                                                              |
 | A meeting transcript the customer refused to let you publish                                                                                                 | Moodle only                                                                                                                                                              |
 | Real names, email addresses including university ones, phone numbers, and other personal data of team members, the customer, or anyone else                  | Moodle only                                                                                                                                                              |
-| Usability test participant identity, consent records, identity mapping, raw notes, filtered telemetry export, and working analysis                           | The private `<organization>/<repo>-usability-data` repository, per [The Usability Data Repository](#the-usability-data-repository)                                       |
+| Usability test participant identity, consent records, identity mapping, raw notes, the test's filtered telemetry export, and working analysis                | The private `<organization>/<repo>-usability-data` repository, per [The Usability Data Repository](#the-usability-data-repository)                                       |
 | Usability session recordings                                                                                                                                 | A team-owned cloud folder shared with the instructors, linked from the private repository, per [The Usability Data Repository](#the-usability-data-repository)           |
 | The sanitized usability test record, surveys, consent template, session notes, results, findings, and images                                                 | Public repository                                                                                                                                                        |
 | Confidential business or research information, and anything the customer asks you to keep private                                                            | Moodle only                                                                                                                                                              |
@@ -81,7 +81,7 @@ The usability test's raw data identifies a person or can be joined to one, so it
 
 1. The team creates one private `<organization>/<repo>-usability-data` repository per product repository, and it is private with the team and the instructors as readers.
    It is not the product repository, so it carries no course CI, branch protection, releases, or link check.
-2. It holds only text: the durable consent records, the identity mapping, the raw notes, the filtered telemetry export of the test window, the working analysis, and the recordings folder link and access.
+2. It holds only text: the durable consent records, the identity mapping, the raw notes, the test's filtered telemetry export, the working analysis, and the recordings folder link and access.
    Its layout is the team's choice.
 3. The recordings live in a team-owned cloud folder shared with the instructors, such as the team's drive.
    They are never in the product repository and never in the private repository, and the private repository records the folder link and the access instructions.
@@ -140,5 +140,8 @@ A screenshot with no explanation is not evidence.
 
 **Since: W7**
 
-5. A usability test's events carry `source=usability-test` and no personal data, and the test adds no per-participant field; its funnel is read from the `source` filter and the test window, never by linking an event to a participant, per [The Events](analytics-requirements.md#the-events).
-6. The staging events for the test window may be exported as filtered text into the private usability-data repository when the export carries no IP address, location, user agent, referrer, or free text, per [The Usability Data Repository](#the-usability-data-repository).
+5. A usability test's instrumentation carries no personal data, and the team chooses and documents the link between a session's records and its participant: the session's time window, an opaque session token, the `P-nn` code, or another method, per [The Instrumentation](usability-testing-requirements.md#the-instrumentation).
+   The `P-nn` code may appear in staging test telemetry.
+   It is an exception to rule 3: the code is assigned in order rather than generated at random, and it is reversible only through the identity mapping in the private repository.
+   Test traffic writes no production data.
+6. The test's filtered telemetry export may be kept as text in the private usability-data repository when it carries no IP address, location, user agent, referrer, or free text; it may carry the participant link the record states, per [The Usability Data Repository](#the-usability-data-repository).

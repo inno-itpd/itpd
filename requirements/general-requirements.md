@@ -39,12 +39,14 @@ It is the short version of the requirements, states what is expected of you as a
 **Since: W7**
 
 A **measure** is a quantity one session records for one participant, such as a task's outcome, its time, or a survey score.
-The four a `UT-nn` records are listed in [The Instruments](usability-testing-requirements.md#the-instruments).
+The four measures a `UT-nn` record reports are listed in [The Instruments](usability-testing-requirements.md#the-instruments).
 A usability quality requirement reads one of them, and the record states which.
 A **statistic** is the summary computed from a measure's recorded values, such as a count, a proportion, a median, or a mean.
 The analysis plan reports it before the first session, and a quality requirement's criterion uses one, per [The Analysis](usability-testing-requirements.md#the-analysis) and [Quality Requirement Tests](quality-requirements-requirements.md#quality-requirement-tests).
 An **instrument** is what records the measures: the survey in `surveys.md` and the session template and observation sheet in `sessions/README.md`, per [The Instruments](usability-testing-requirements.md#the-instruments).
 It is not one of the measures.
+The test's **instrumentation** is the path that produces and stores the events, logs, or test-only records the test uses, and the link from a session to its participant, per [The Instrumentation](usability-testing-requirements.md#the-instrumentation).
+It is not one of the instruments, and it feeds the instrumentation comparison rather than the quality requirement's measure.
 A **metric** is a product-analytics number computed from the events in [The Value And The Metrics](analytics-requirements.md#the-value-and-the-metrics).
 It is not a measure a session records.
 A quality requirement's **`Response Measure`** is its criterion, not its measure: it states what the measure must come to, per [The Quality Attribute Scenario](quality-requirements-requirements.md#the-quality-attribute-scenario).
@@ -169,6 +171,7 @@ A quality requirement's **`Response Measure`** is its criterion, not its measure
     A dropped test follows rule 11 and adds `**Dropped:**` with the date and the reason, per [The Test Record](usability-testing-requirements.md#the-test-record).
     The group's index, `docs/usability-tests/README.md`, lists each test once.
 28. A participant is `P-01`, `P-02`, and so on: two digits, local to its `UT-nn`, assigned in the order the sessions are scheduled, cited as the pair `UT-01 P-01` or with the `UT-nn`'s path, and never reused, per [The Participants](usability-testing-requirements.md#the-participants).
+    The code may appear in staging test telemetry, per [The Instrumentation](usability-testing-requirements.md#the-instrumentation), and its identity mapping stays private.
     There is no repository-wide `P-nn` family, no `UF-nn`, and no `FINDING-nn`.
 29. A finding is cited by `docs/usability-tests/ut-01/results.md#finding-1`, the anchor of its `### Finding 1` section, and not by an identifier, per [The Results And Findings](usability-testing-requirements.md#the-results-and-findings).
     A task issue created from a finding cites the finding that way in its description.

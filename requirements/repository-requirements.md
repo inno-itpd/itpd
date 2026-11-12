@@ -436,7 +436,7 @@ What may never be committed is in [Sensitive Information Reference](visibility-r
 1. The team creates one private `<organization>/<repo>-usability-data` repository per product repository, and it is private with the team and the instructors as readers.
 2. It is not the product repository: it carries no course CI, no branch protection, no releases, and no link check, and it holds only the text the test produces.
    Its layout is the team's choice.
-3. It holds the text consent records, the identity mapping, the raw notes, the filtered telemetry export, the working analysis, and the recordings folder link and access, per [The Usability Data Repository](visibility-requirements.md#the-usability-data-repository).
+3. It holds the text consent records, the identity mapping, the raw notes, the test's filtered telemetry export, the working analysis, and the recordings folder link and access, per [The Usability Data Repository](visibility-requirements.md#the-usability-data-repository).
 4. The recordings live in a team-owned cloud folder shared with the instructors, and the private repository records the folder link and the access instructions.
    A recording is never committed to the product repository and never to the private repository.
 5. The product repository links the private repository, and the link is excluded from the link check because it needs authentication, per [Link Checking](#link-checking), with its reason in the link check's configuration such as `lychee.toml`.
