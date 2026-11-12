@@ -18,7 +18,7 @@ The week also keeps the full sprint around the design.
 
 What you hand in is a test design another person could run without asking you a question, the private repository and recordings folder that make its evidence keepable, and `REL-07`.
 
-The tools the course suggests, from a survey form to a recorder to the Week 6 telemetry, are in [Course Tooling](../course/tooling.md).
+The tools the course suggests, from meeting transcripts to a coding agent, are in [Course Tooling](../course/tooling.md).
 
 <h2>Table of contents</h2>
 
