@@ -180,12 +180,14 @@ This week:
 2. Carry `**Business importance:** High`, which requires its test, and the team's `**Technical risk:**`.
 3. Write the scenario: a representative participant completing the main usability test task, in the staging deployment on the university network with seeded data, with its `Response` the behaviour the team's chosen measure reads.
    The team chooses the measure from the four the session records: the main task's completion and assistance, the time on task, the main task's SEQ, or the SUS.
+   The four are instruments, not statistics.
+   The criterion uses a statistic the analysis plan reports: the main-task completion or assistance count or proportion, the main-task median time, the main-task median SEQ, or the SUS mean or median.
 4. Make the `Response Measure` a real, countable criterion the team writes before the first session, and the test settles it.
    The example is the median main-task SEQ against a bar; the example bar is at least five of seven.
-   A team that chooses the main task's completion and assistance, the time on task, or the SUS sets the criterion that tells it whether the product is usable, and says why the chosen measure reads the chosen sub-characteristic.
+   A team that chooses the main task's completion and assistance, its time on task, or the SUS sets the criterion that tells it whether the product is usable, and says why the chosen measure reads the chosen sub-characteristic.
    The measures the requirement does not read stay analysis results and are reported; the requirement reads one.
    The measure is not a target: set it at the value that tells you whether the product is usable, do not coach participants toward it, and do not change it after the data.
-5. Write the `QRT-01` at `manual`, with `**Runs at:**` naming `UT-01` and the record, and `**Why Manual:**` saying why no command can judge the measure the team chose — the participant's completion and assistance, the time on task, the SEQ rating on the main task, or the SUS responses — and that it reads no `SLI`.
+5. Write the `QRT-01` at `manual`, with `**Runs at:**` naming `UT-01` and the record, and `**Why Manual:**` saying why no command can judge the measure the team chose — the participant's completion and assistance, the main task's time on task, the SEQ rating on the main task, or the SUS responses — and that it reads no `SLI`.
    It needs no deviation.
 6. Write the procedure that runs the main task with at least three participants per the record and reads `results.md`, and the `**Pass when:**` that restates the team's `Response Measure` and settles it.
 7. Add the testing-plan row: `Not verified`, `Checked: None`, `Planned for sprint:` `SPRINT-08` linked to its plan section, and `Evidence: None`.
@@ -223,14 +225,15 @@ The method is in [Step 2: Choose And Recruit The Participants](../guides/usabili
 
 The rules:
 
-- The analysis plan is written before the first session, and it covers the per-participant table, the aggregate completion, the median time, the median SEQ, the SUS mean and median, the thematic analysis, the severity, the telemetry comparison, and the limitations: [The Analysis](../requirements/usability-testing-requirements.md#the-analysis).
+- The analysis plan is written before the first session, and it covers at least the per-participant table, the main task's aggregate completion, the main task's median time, the median SEQ for each task, the SUS mean and median, the thematic analysis, the severity, the telemetry comparison, and the limitations; a measure the product needs may be added before the first session: [The Analysis](../requirements/usability-testing-requirements.md#the-analysis).
 - `results.md` is the record of what was found, and each finding is a `### Finding 1` section cited by its anchor: [The Results And Findings](../requirements/usability-testing-requirements.md#the-results-and-findings).
 - The public evidence and its sanitization: [The Public Evidence](../requirements/usability-testing-requirements.md#the-public-evidence).
 - A screenshot that is published is sanitized: [Screenshot Evidence](../requirements/visibility-requirements.md#screenshot-evidence).
 
 This week:
 
-1. Write the analysis plan in the record: the per-participant table's columns, including each task's outcome and the assistance, the aggregate completion rate, the median time on task, the median SEQ for each task, the measure and the bar the team sets in the quality requirement, the SUS mean and median, the thematic analysis, the severity rating, the telemetry comparison, and the limitations.
+1. Write the analysis plan in the record: the per-participant table's columns, including each task's outcome and the assistance, the main task's aggregate completion rate, the main task's median time on task, the median SEQ for each task, the measure and the bar the team sets in the quality requirement, the SUS mean and median, the thematic analysis, the severity rating, the telemetry comparison, and the limitations.
+   Add any measure the product needs, with its statistic and scope, before the first session.
 2. Supply `results.md`'s headings: the results table, the findings, the limitations, and the conclusion.
    It carries no finding until the results are written.
 3. Write the findings template: `### Finding 1` with its `**Severity:**`, `**Tasks:**`, `**Evidence:**`, `**Recommendation:**`, and `**Task issue:**` fields.
@@ -375,9 +378,9 @@ A strong submission has:
 - **A consent and a data split a reviewer can check.**
   The durable consent and the required recording plus the sanitized public results for every counted session, the private text repository with the consent records, the identity mapping, the working analysis, and the recordings folder link and access, the cloud recordings folder, the public sanitized record, the public link and the link-check exclusion, and the Moodle links, with no raw participant data and no private link without an exclusion in the product repository.
 - **Instruments a reader can answer.**
-  The pre-test, the SEQ after each task, the full ten SUS items, the correct formula, the open-ended post-test, the qualitative observation, the quantitative completion, the assistance, the time, the SEQ, and the analysis plan that will report the SUS mean and median with the `n=<count>` caveat in Week 8, and the plan to read the Week 6 telemetry with `source=usability-test` in the results week.
+  The pre-test, the SEQ after each task, the full ten SUS items, the correct formula, the open-ended post-test, the qualitative observation, the quantitative completion, the assistance, the time, the SEQ, and the analysis plan that will report the minimum measures, including the SUS mean and median with the `n=<count>` caveat, and any additional measure named before the first session, in Week 8, and the plan to read the Week 6 telemetry with `source=usability-test` in the results week.
 - **A quality requirement a manual test settles.**
-  An `Interaction Capability` `QR-nn` with a team-chosen sub-characteristic, a team-chosen measure from the recorded instruments against a bar the team sets before the sessions, and a `manual` `QRT-nn` that names `UT-01`, carries `**Why Manual:**` for that measure, has a testing-plan row that is `Not verified` with `Planned for sprint: SPRINT-08`, needs no deviation, and is ready to record `Passes` or `Fails` in Week 8 with the sanitized results and the private raw data.
+  An `Interaction Capability` `QR-nn` with a team-chosen sub-characteristic, a team-chosen measure from the recorded instruments, read with a statistic the analysis plan reports, against a bar the team sets before the sessions, and a `manual` `QRT-nn` that names `UT-01`, carries `**Why Manual:**` for that measure, has a testing-plan row that is `Not verified` with `Planned for sprint: SPRINT-08`, needs no deviation, and is ready to record `Passes` or `Fails` in Week 8 with the sanitized results and the private raw data.
 - **A usability goal in the threshold is optional.**
   `TOS-03` in [the planning full example](../requirements/planning-requirements.md#full-example) is only an example: a team without a usability goal is not penalised, and a team whose threshold has one cites `UT-01` in its `**Outcome:**`; the required check is the `QR/QRT`.
 - **A Week 7 report that claims no result.**
@@ -464,12 +467,12 @@ The production analytics and observability dashboards are the Week 6 wrapper's; 
 - [ ] `sessions/README.md` with the facilitation script, the pre-test, the open-ended post-test, the no-help rule, the observation sheet, the roles by GitHub username, and the stop rule, and the dry run recorded as not counted ([Part 3](#part-3-write-the-surveys-and-the-task-protocol)).
 - [ ] `consent.md` as the public template, the private `<organization>/<repo>-usability-data` repository private and shared with the instructors, and the recordings folder created and shared ([Part 4](#part-4-write-the-consent-and-create-the-private-repository)).
 - [ ] The public link to the private repository and its link-check exclusion, the retention and deletion rule, and the private links in the Moodle wrapper ([Part 4](#part-4-write-the-consent-and-create-the-private-repository)).
-- [ ] The new `Interaction Capability` `QR-nn` with `High` business importance, the team's technical risk, one chosen sub-characteristic and its reason, a team-chosen measure from the recorded instruments against a bar set before the sessions, and its scenario ([Part 5](#part-5-write-the-quality-requirement-and-its-manual-test)).
+- [ ] The new `Interaction Capability` `QR-nn` with `High` business importance, the team's technical risk, one chosen sub-characteristic and its reason, a team-chosen measure from the recorded instruments, read with a statistic the analysis plan reports, against a bar set before the sessions, and its scenario ([Part 5](#part-5-write-the-quality-requirement-and-its-manual-test)).
 - [ ] The `manual` `QRT-01` naming `UT-01` in `**Runs at:**`, with its `**Why Manual:**`, its procedure, its `**Pass when:**`, and its `Not verified` testing-plan row planned for `SPRINT-08` ([Part 5](#part-5-write-the-quality-requirement-and-its-manual-test)).
 - [ ] The requirement's row in the quality requirements index (the matrix) ([Part 5](#part-5-write-the-quality-requirement-and-its-manual-test)).
 - [ ] A recruitment target of at least three representative participants, 18 or older, matching the profile, five as the design target, and the consent template ready to collect, covering the recording and the sanitized public results ([Part 6](#part-6-plan-the-recruitment-and-the-sessions)).
 - [ ] The session plan in `## Schedule` with the team's dates or how it will arrange them, the results-due date, in person, on the university network, against staging, with the seed reset and the `source=usability-test` check ([Part 6](#part-6-plan-the-recruitment-and-the-sessions)).
-- [ ] The analysis plan written before the first session, with each task's outcome and the assistance, the `results.md` stub with its headings, the findings template, the triage plan, and the evidence map ([Part 7](#part-7-write-the-analysis-plan-and-the-evidence-map)).
+- [ ] The analysis plan written before the first session, with the minimum measures and any additional measure named before the first session, each task's outcome and the assistance, the `results.md` stub with its headings, the findings template, the triage plan, and the evidence map ([Part 7](#part-7-write-the-analysis-plan-and-the-evidence-map)).
 - [ ] The Week 7 usability terms in `docs/glossary.md`, with the usability session separated from the analytics `session_id`, and the recruitment, consent, data-access, and schedule risks in `docs/risks.md`, each starting `**Status:** Open` ([Part 8](#part-8-update-the-glossary-and-the-risk-register)).
 - [ ] Each Week 6 action point's outcome in `## Previous action points`, and each Week 6 open question put to the customer or carried forward ([Part 9](#part-9-carry-out-the-week-6-action-points-and-open-questions)).
 - [ ] `reports/week-07/meeting-script.md` with the permission questions first, the design on staging, the Week 8 plan, and the read-back last ([Part 10](#part-10-validate-the-test-design-with-the-customer)).

@@ -198,12 +198,21 @@ The analysis plan is written before the first session, so the team cannot choose
 **Required**
 
 1. The analysis plan is written before the first session, and the record states it.
-2. The plan covers: a per-participant table with the task outcomes and the assistance, the aggregate completion rate, the median time on task, the median SEQ, the SUS mean and median, a thematic analysis of the notes, a severity rating, a telemetry comparison, and a limitations section.
-3. The thematic analysis groups the observations into a small set of themes, each with the sessions it came from, and it does not report a single participant's remark as a theme.
-4. The severity rating classifies each finding as `Critical`, `Major`, or `Minor`, and the results state the reason for the rating.
-5. The telemetry comparison reads the Week 6 events where they cover the task, with the `source=usability-test` filter, and it says which task the events could not cover rather than inventing an event or a metric.
-6. The limitations state the sample size, the participants' relation to the target user, the environment, and what the team could not measure.
-7. The record links `results.md`, which holds what was found, per [The Results And Findings](#the-results-and-findings).
+2. The plan covers at least:
+   - a per-participant table with each task's outcome and the assistance;
+   - the main task's aggregate completion rate: the count or proportion that reached the end state, and the count or proportion that did so unaided;
+   - the main task's median time on task;
+   - the median SEQ for each task: the main task and the two secondary tasks;
+   - the SUS mean and median, with `n=<count>`;
+   - a thematic analysis of the notes, a severity rating, a telemetry comparison, and a limitations section.
+3. The list in rule 2 is the minimum every team reports.
+   A team may add a measure relevant to its product, provided the plan names the measure, its statistic, and its scope before the first session.
+   A measure the plan does not name is not added after the data.
+4. The thematic analysis groups the observations into a small set of themes, each with the sessions it came from, and it does not report a single participant's remark as a theme.
+5. The severity rating classifies each finding as `Critical`, `Major`, or `Minor`, and the results state the reason for the rating.
+6. The telemetry comparison reads the Week 6 events where they cover the task, with the `source=usability-test` filter, and it says which task the events could not cover rather than inventing an event or a metric.
+7. The limitations state the sample size, the participants' relation to the target user, the environment, and what the team could not measure.
+8. The record links `results.md`, which holds what was found, per [The Results And Findings](#the-results-and-findings).
 
 ## Consent And Recording
 
@@ -270,7 +279,7 @@ The results are what the sessions found, and the findings are what the team deci
 
 **Required**
 
-1. `results.md` is written in the run week, and it carries the aggregate results, the SUS and SEQ summary with the `n=<count>` caveat, the qualitative findings with their severity and evidence, the telemetry comparison, the limitations, and the conclusion.
+1. `results.md` is written in the run week, and it carries the minimum measures [The Analysis](#the-analysis) requires, including the SUS and SEQ summary with the `n=<count>` caveat, every additional measure the plan named, the qualitative findings with their severity and evidence, the telemetry comparison, the limitations, and the conclusion.
 2. It links the sanitized session notes it summarizes, and it copies no raw data.
 3. Each finding is a `### Finding 1` section with a stable anchor, and it carries these fields:
 
@@ -396,7 +405,7 @@ The completion and the assistance per task, the time on task, the SEQ per task, 
 
 ## Analysis Plan
 
-A per-participant table, the aggregate completion, the median time, the median SEQ, the SUS mean and median, a thematic analysis, a severity per finding, the telemetry comparison, and the limitations.
+A per-participant table, the main task's aggregate completion, the main task's median time, the median SEQ for each task, the SUS mean and median, a thematic analysis, a severity per finding, the telemetry comparison, and the limitations.
 
 ## Schedule
 

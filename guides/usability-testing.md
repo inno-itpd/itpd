@@ -309,8 +309,10 @@ The analysis plan is written before the first session, so the team cannot choose
 
 ### Fix The Measures Before The Data
 
-Write the per-participant table's columns, the aggregate completion rate, the median time, the median SEQ, the SUS mean and median, the measure and bar the quality requirement uses, the thematic analysis, the severity rating, the telemetry comparison, and the limitations, before the first session.
-The columns are what the team commits to reading, and a measure added after the data is a measure chosen to flatter the result.
+Write the per-participant table's columns, the main task's aggregate completion rate, the main task's median time, the median SEQ for each task, the SUS mean and median, the measure and bar the quality requirement uses, the thematic analysis, the severity rating, the telemetry comparison, and the limitations, before the first session.
+The list is the minimum every team reports.
+A team may add a measure its product needs, provided the plan names the measure, its statistic, and its scope before the first session; a measure added after the data is a measure chosen to flatter the result.
+The columns are what the team commits to reading.
 
 The thematic analysis groups the observations into a small set of themes, each with the sessions it came from.
 One participant's remark is a quote, not a theme.
@@ -347,7 +349,8 @@ Choose the one that reads the sub-characteristic, and say why: `Self-descriptive
 A time measure is noisy with three to five participants, and a completion rate has a ceiling when everyone succeeds; say why the measure still tells you whether the product is usable.
 
 The scenario reads a representative participant completing the main usability test task, in the staging deployment on the university network with seeded data, and its `Response` is the behaviour the chosen measure reads.
-The `Response Measure` is a real, countable criterion the team writes before the first session: for the SEQ, the median main-task SEQ against a bar (the example is at least five of seven); for completion and assistance, the count or proportion that must reach `Unaided`; for the time, the median time against a limit; and for the SUS, the mean or median against a bar.
+The `Response Measure` is a real, countable criterion the team writes before the first session, and it uses one of the statistics the analysis plan reports: for the SEQ, the main-task median SEQ against a bar (the example is at least five of seven); for completion and assistance, the main-task count or proportion that must reach `Unaided`; for the time, the main-task median time against a limit; and for the SUS, the mean or median against a bar.
+The four instruments are the menu, not the statistic: the criterion reads the same statistic the plan reports, so the verdict never needs a number the plan did not commit to.
 The measures the requirement does not read stay analysis results and are reported; the requirement reads one.
 The measure is not a target: set it at the value that tells you whether the product is usable, do not coach participants toward it, and do not change it after the data.
 
@@ -388,7 +391,7 @@ An anonymized quote names no person and no organization, and it appears only whe
 
 ### Write The Results And The Findings
 
-Write `results.md` with the aggregate completion, the median time, the median SEQ, the SUS mean and median with `n=<count>`, the per-task SEQ, the thematic analysis, the telemetry comparison, the limitations, and the conclusion.
+Write `results.md` with the main task's aggregate completion, the main task's median time, the median SEQ for each task, the SUS mean and median with `n=<count>`, every additional measure the plan named, the thematic analysis, the telemetry comparison, the limitations, and the conclusion.
 Link the sanitized notes it summarizes, and copy none of the raw data.
 
 Each finding is a `### Finding 1` section with its stability anchored on the heading, its severity, the tasks and participant codes it came from, the evidence, the recommendation, and the task issue when one is opened.
