@@ -140,5 +140,5 @@ A screenshot with no explanation is not evidence.
 
 **Since: W7**
 
-5. A usability test's events carry `source=usability-test` and no personal data, and the test adds no per-participant field: the events are grouped by the existing `session_id`, which is the analytics session on the product's main page, and the test uses the `source` filter and the session's time window instead of a per-participant link, per [The Events](analytics-requirements.md#the-events).
+5. A usability test's events carry `source=usability-test` and no personal data, and the test adds no per-participant field; its funnel is read from the `source` filter and the test window, never by linking an event to a participant, per [The Events](analytics-requirements.md#the-events).
 6. The staging events for the test window may be exported as filtered text into the private usability-data repository when the export carries no IP address, location, user agent, referrer, or free text, per [The Usability Data Repository](#the-usability-data-repository).

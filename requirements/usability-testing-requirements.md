@@ -109,7 +109,6 @@ The product vision's `Stakeholders` table is background, not the profile: it nam
 **Since: W7**
 
 A **participant** is a person outside the team who attempts the test's tasks, and a **usability session** is one participant's run of them.
-A usability session is not the analytics `session_id`: the session is the sitting in front of the product, and `session_id` is the random identifier the product's events carry, per [Telemetry And Personal Data](visibility-requirements.md#telemetry-and-personal-data).
 
 **Required**
 

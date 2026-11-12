@@ -128,7 +128,7 @@ The event table is the one registry and the schema the instrumentation sends, so
 
 10. The usability test runs on the staging deployment with seeded data and no real payment, and the page names that environment.
     The test's task funnel is read with the `source=usability-test` filter and is shown separately from a metric, per [The Dashboard](#the-dashboard).
-    The page adds no new per-participant field, because the `session_id` already groups a booking-page visit, per [Telemetry And Personal Data](visibility-requirements.md#telemetry-and-personal-data).
+    The page adds no new per-participant field, per [Telemetry And Personal Data](visibility-requirements.md#telemetry-and-personal-data).
 
 ## The Pipeline
 

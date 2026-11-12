@@ -250,7 +250,7 @@ The rules:
 
 This week:
 
-1. Add `usability test`, `participant`, `usability session`, `consent`, `recording`, `measure`, `metric`, `statistic`, `SUS`, and `SEQ` to `docs/glossary.md`, and separate a usability session from the analytics `session_id` in its entry.
+1. Add `usability test`, `participant`, `usability session`, `consent`, `recording`, `measure`, `metric`, `statistic`, `SUS`, and `SEQ` to `docs/glossary.md`.
    Keep the measure, the metric, and the statistic apart in their entries.
 2. Add the recruitment risk, the consent risk, the data-access risk, and the schedule risk to `docs/risks.md`, each with its `**Status:** Open`, `**Impact:**`, `**Likelihood:**`, `**Trigger:**`, `**Window:**`, `**Mitigation:**`, and `**Contingency:**`.
 3. Write the fallback for each failure mode as the matching risk's `**Contingency:**`:
@@ -390,7 +390,7 @@ A strong submission has:
 - **A Week 8 handoff another week can start from.**
   A recruitment target of at least three participants with five as the design target, the participant profile, the team's plan for arranging the sessions, the private repository and the recordings folder ready, the `results.md` stub and the findings and triage templates ready, and the `QR/QRT` row in `SPRINT-08`.
 - **A test design that uses the Week 6 events rather than a new schema.**
-  The main task is the flow the event table covers, no new `session_id` or per-participant field is added, every metric excludes `smoke` and `source=usability-test`, and the test traffic is not presented as a value.
+  The main task is the flow the event table covers, no per-participant field is added, every metric excludes `smoke` and `source=usability-test`, and the test traffic is not presented as a value.
 - **One path and one identifier, everywhere.**
   A `UT-01` record a reader can find from `docs/usability-tests/README.md`, the weekly report, the testing plan, the quality requirements index, and the guide, with the same path and the same identifier in each.
 
@@ -473,7 +473,7 @@ The production analytics and observability dashboards are the Week 6 wrapper's; 
 - [ ] A recruitment target of at least three representative participants, 18 or older, matching the profile, five as the design target, and the consent template ready to collect, covering the recording and the sanitized public results ([Part 6](#part-6-plan-the-recruitment-and-the-sessions)).
 - [ ] The session plan in `## Schedule` with the team's dates or how it will arrange them, the results-due date, in person, on the university network, against staging, with the seed reset and the `source=usability-test` check ([Part 6](#part-6-plan-the-recruitment-and-the-sessions)).
 - [ ] The analysis plan written before the first session, with the minimum measures and any additional measure named before the first session, each task's outcome and the assistance, the `results.md` stub with its headings, the findings template, the triage plan, and the evidence map ([Part 7](#part-7-write-the-analysis-plan-and-the-evidence-map)).
-- [ ] The Week 7 usability terms in `docs/glossary.md`, with the usability session separated from the analytics `session_id`, and the recruitment, consent, data-access, and schedule risks in `docs/risks.md`, each starting `**Status:** Open` ([Part 8](#part-8-update-the-glossary-and-the-risk-register)).
+- [ ] The Week 7 usability terms in `docs/glossary.md` and the recruitment, consent, data-access, and schedule risks in `docs/risks.md`, each starting `**Status:** Open` ([Part 8](#part-8-update-the-glossary-and-the-risk-register)).
 - [ ] Each Week 6 action point's outcome in `## Previous action points`, and each Week 6 open question put to the customer or carried forward ([Part 9](#part-9-carry-out-the-week-6-action-points-and-open-questions)).
 - [ ] `reports/week-07/meeting-script.md` with the permission questions first, the design on staging, the Week 8 plan, and the read-back last ([Part 10](#part-10-validate-the-test-design-with-the-customer)).
 - [ ] `reports/week-07/meeting-report.md`, with the design review's feedback, a `DEC-nnn` for any decision, and 2 or more action points due after Week 7, at least one in Week 8 ([Part 10](#part-10-validate-the-test-design-with-the-customer)).
