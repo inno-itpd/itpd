@@ -48,7 +48,7 @@ The tools the course suggests, from meeting transcripts to a coding agent, are i
 By the end of this week you should be able to show a reader:
 
 - An analytics plan, `docs/analytics.md`, with one focus metric traced to its `VP-nn`, a counter-metric, a metric tree, and a metric section for every node.
-- An event table a developer can instrument from, with no personal data, `source` on every event, and the core task covered end to end.
+- An event table a developer can instrument from, with no personal data, `source` on every event, and the flows its metrics read and the product's main flow covered; the Week 7 test adds the events its tasks need.
 - An analytics backend on the university network, with a staging and a production environment scope, and a dashboard in each.
 - An observability plan, `docs/observability.md`, with the signals, the `SLI`s, their definitions, units, windows, sources, queries, and status, the per-request log line, and the one `SLI` the week demonstrates.
 - An observability backend with a staging and a production environment scope, and a dashboard in each, whose chart names its `SLI`.
@@ -121,7 +121,7 @@ The rules:
 This week:
 
 1. Write the event table with its four columns, the naming convention under it, the fields each event carries.
-2. Cover the core task end to end, so the Week 7 usability work has the events it needs.
+2. Cover the flows the metrics read and the product's main flow; the Week 7 test adds the events its tasks need, so the table is not expected to be sufficient for it.
 3. Instrument the product to send each event from the container and environment its `Collected at` names.
 4. Give every event a `source` field with a closed set of values, and send a staging test event tagged `source=smoke`.
 5. Check every field against the telemetry rules: drop every personal field, and if an event needs to identify a person, use an opaque identifier that is generated at random, is not derived from personal data, and cannot be reversed to the person.
@@ -422,7 +422,7 @@ A strong submission has:
 - **A release whose record says what was checked.**
   `REL-06` is cut on the final production commit, its release body is the upgrade note with the new configuration, its `Checked QRs` lists the requirements checked in `SPRINT-06`, and the new requirement is one of them.
 - **A week with no deck and no experiment.**
-  The metrics are set up and shown, the report says whether the focus metric has a value yet, and the Week 7 usability work can use the events this week left.
+  The metrics are set up and shown, the report says whether the focus metric has a value yet, and the Week 7 test can reuse the events this week left where they cover a task.
 
 ## Assignment Report In The Repository
 
@@ -496,7 +496,7 @@ The PDF carries no deck.
 - [ ] The task issues for the two pipelines, the four dashboards, and the observability test, each with its `### Requirements`, scheduled in `SPRINT-06` ([Part 1](#part-1-refine-the-product-backlog-and-plan-the-sprint)).
 - [ ] `docs/analytics.md` with the focus metric traced to its `VP-nn`, the seven criteria, one rejected vanity metric, the counter-metric at L1, the L1 and L2 inputs, and the tree ([Part 2](#part-2-write-the-analytics-plan-and-the-metric-tree)).
 - [ ] A `###` section for every node in the tree, each with its `**Definition:**`, `**Source:**`, and `**Query:**`, and one metric computed by its query named on the page ([Part 2](#part-2-write-the-analytics-plan-and-the-metric-tree)).
-- [ ] The event table with its four columns, its naming convention, `source` on every event, no personal data, and the core task covered end to end ([Part 3](#part-3-write-the-event-table-and-instrument-the-product)).
+- [ ] The event table with its four columns, its naming convention, `source` on every event, no personal data, and the flows its metrics read and the main flow covered; the Week 7 test extends it ([Part 3](#part-3-write-the-event-table-and-instrument-the-product)).
 - [ ] The product instrumented, the staging test event tagged `source=smoke`, the staging dashboard's event list showing it, and the staging chart excluding it ([Part 3](#part-3-write-the-event-table-and-instrument-the-product)).
 - [ ] The analytics functional requirement written with the next free `FR-nnn`, with its behavior, its criteria, and its index row: [Part 3](#part-3-write-the-event-table-and-instrument-the-product).
 - [ ] The analytics backend on the university network, with a staging and a production environment scope, each with its own credential ([Part 4](#part-4-deploy-the-analytics-backend-and-expose-its-dashboards)).

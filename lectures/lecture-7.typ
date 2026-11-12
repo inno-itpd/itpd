@@ -17,9 +17,10 @@
 //     images/lecture-7/.
 //   - The wording is copy-edited lightly: "background" becomes "backgrounds",
 //     "Ctrl-F key" becomes "the Ctrl-F key", "Match user" becomes "Match each
-//     user", and the below-average sentence becomes "A score below 68 is
-//     considered ...". The questions, survey items, scales, and numbers are
-//     unchanged.
+//     user", the below-average sentence becomes "A score below 68 is
+//     considered ...", and the process outline's "metrics" becomes "measures"
+//     to match the course's measurement terminology. The questions, survey
+//     items, scales, and numbers are unchanged.
 
 #let accent = rgb("#12507b")
 #let muted = luma(42%)
@@ -157,9 +158,9 @@
 
   + Select the testing goal and audience
   + Decide on the scope, budget, time
-  + Establish evaluation criteria (metrics)
+  + Establish evaluation criteria (measures)
   + Decide on tasks for the test
-  + Instrument your system with relevant metrics
+  + Instrument your system to record the relevant measures
   + Prepare scripts (instructions, tasks, questions, etc.)
   + Screen participants (filter out irrelevant participants)
   + Run pre-test survey

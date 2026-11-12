@@ -132,7 +132,7 @@ A Week 2 validation meeting.
 
 **Since: W7**
 
-6. The design week's Sprint Review, at the time arranged with the customer, shows the deployed production instance per rule 4 and the `UT-nn` design on staging: the research questions, the participant profile and recruitment target, the tasks, the surveys, the consent and the private repository, the recordings folder, the session plan, and the `QR-nn` with its `QRT-nn`.
+6. The design week's Sprint Review, at the time arranged with the customer, shows the deployed production instance per rule 4 and the `UT-nn` design on staging: the research questions, the participant profile and recruitment target, the tasks, the instrumentation and its verification, the surveys, the consent and the private repository, the recordings folder, the session plan, and the `QR-nn` with its `QRT-nn`.
    It agrees the run week's execution plan with the customer.
    The customer is not a usability participant, and the meeting report records the feedback and any decision as a `DEC-nnn`, per [Meeting Report](#meeting-report).
    The Week 10 in-class product presentation is not a customer meeting and is not covered by this file.
@@ -499,7 +499,7 @@ From `reports/week-07/meeting-report.md`, the decisions and action points only:
 ```markdown
 ## Summary
 
-- The customer agreed the `UT-01` design: one main booking task and two secondary tasks, five participants as the target, and the staging deployment.
+- The customer agreed the `UT-01` design: one main booking task and two secondary tasks, five participants as the target, the test's instrumentation and its verification, and the staging deployment.
 - The consent must carry the deletion date, and the recordings folder must be shared before the first session.
 - The customer asked for the checkout friction to be shown in the results even when the test finds nothing else.
 
@@ -523,7 +523,7 @@ From `reports/week-08/meeting-report.md`, the results review's summary:
 - **Date:** 2026-11-20
 - **Duration:** 40 minutes
 - **Attended:** ana, bo, cyd, Customer
-- **Presented:** the sanitized `UT-01` results, the QR/QRT result, the two findings with their task issues, and the next steps
+- **Presented:** the sanitized `UT-01` results, the instrumentation comparison, the QR/QRT result, the two findings with their task issues, and the next steps
 - **Recording:** permitted, linked from the Week 08 Moodle submission
 - **Script:** [meeting-script.md](meeting-script.md)
 

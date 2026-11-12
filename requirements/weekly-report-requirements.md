@@ -78,17 +78,18 @@ Who may see each item is in [Visibility Requirements](visibility-requirements.md
 **Since: W7**
 
 19. In the design week the report's summary says the test is designed and the recruitment is planned, and claims no result.
-    It links `docs/usability-tests/ut-01/README.md`, `surveys.md`, `consent.md`, the `QR/QRT`, the private repository, and the session plan, and it names the recordings folder, whose link is in the Moodle submission.
-20. In the design week a `## Usability test` section carries the design summary, the recruitment target and the participant profile, the tasks, the surveys, the consent and the private repository, the recordings folder, the session plan, the `QR/QRT`, and the run week's handoff.
+    It links `docs/usability-tests/ut-01/README.md`, `surveys.md`, `consent.md`, the `QR/QRT`, the private repository that holds the test's telemetry export, the session plan, and the test's instrumentation, and it says what was verified before the first session.
+    It names the recordings folder, whose link is in the Moodle submission.
+20. In the design week a `## Usability test` section carries the design summary, the recruitment target and the participant profile, the tasks, the surveys, the consent and the private repository with the test's telemetry export, the recordings folder, the instrumentation and its verification, the session plan, the `QR/QRT`, and the run week's handoff.
     The coverage table carries one row per deliverable, and a row whose evidence is that section links `#usability-test`.
     The summary follows rule 16 for the focus metric, the analytics, and the observability, and restates none of it.
 
 **Since: W8**
 
-21. In the run week the report's summary gives the number of counted sessions, the aggregate completion and ease, the `QR/QRT` result, the findings, and the triage.
-    It links the `results.md`, the sanitized session notes, the `QR/QRT`, the findings' task issues, the private repository, the release, the retrospective, and the AI usage; it copies no raw participant data and states the `n=<count>` caveat.
+21. In the run week the report's summary gives the number of counted sessions, the aggregate completion and ease, the instrumentation comparison, the `QR/QRT` result, the findings, and the triage.
+    It links the `results.md`, the sanitized session notes, the `QR/QRT`, the findings' task issues, the private repository that holds the test's telemetry export, the release, the retrospective, and the AI usage; it copies no raw participant data and states the `n=<count>` caveat.
     It follows rule 16 for the focus metric and the test traffic, and rules 7 and 8 for the contribution table and the repository evidence.
-22. In the run week a `## Usability test` section carries the results summary, the sanitized session links, the SUS and SEQ summary, the findings, the triage, and the `QR/QRT` result.
+22. In the run week a `## Usability test` section carries the results summary, the sanitized session links, the SUS and SEQ summary, the instrumentation comparison, the findings, the triage, and the `QR/QRT` result.
     `results.md` is the record and the report is the summary: the reflection week's report carries no separate usability results report, and the final reflection cites the `UT-nn` results.
 
 **Recommended**
@@ -115,7 +116,8 @@ Our problem-space sentence: an expert who sells sessions online needs one link w
 
 ## What we did
 
-We designed the `UT-01` usability test and prepared every artifact the Week 8 sessions need: the test record, the surveys, the tasks and the protocol, the consent, the private usability-data repository, the recordings folder, the new `QR-05` with its manual test, and the analysis plan.
+We designed the `UT-01` usability test and prepared every artifact the Week 8 sessions need: the test record, the surveys, the tasks and the protocol, the consent, the private usability-data repository, the recordings folder, the test's instrumentation, the new `QR-05` with its manual test, and the analysis plan.
+We verified the test's instrumentation on staging on 14 November, before the first counted session.
 We set a recruitment target of five participants and planned how we will arrange the sessions.
 We held the Sprint Review as the design review, published its transcript in the repository, and cut `REL-07` as [v0.7.0](https://github.com/<organization>/<repo>/releases/tag/v0.7.0).
 No session has run and no result is claimed.
@@ -125,23 +127,26 @@ No session has run and no result is claimed.
 The test is designed for at least three completed sessions, with five as the target, and the recruitment target is five.
 The design is [the `UT-01` record](../../docs/usability-tests/ut-01/README.md), and its results are due with Submission 8 on 21 November.
 `QR-05 QRT-01` is `Not verified` with `Planned for sprint` `SPRINT-08`, and [the testing plan](../../docs/project-plan.md#quality-requirement-testing-plan) carries the row.
-The focus metric still has no value, and the test traffic will be excluded from it: the `UT-01` funnel is read with the `source = "usability-test"` filter.
+The focus metric still has no value, and the test traffic will be excluded from it: the `UT-01` instrumentation is read separately, and a pipeline event of the test carries `source = "usability-test"`.
 
 ## Usability test
 
 The design is in [the `UT-01` record](../../docs/usability-tests/ut-01/README.md).
 The test runs one main booking task and two secondary tasks, with the pre-test, the SEQ after each task, the SUS after all tasks, and the open-ended post-test, in [the surveys](../../docs/usability-tests/ut-01/surveys.md).
 
+The test's instrumentation reuses the Week 6 booking events and adds a task-boundary event pair, sent to the staging scope with `source = "usability-test"` and the participant code; the verification run on 14 November confirmed that a session's events are read by that code.
+[The record's instrumentation section](../../docs/usability-tests/ut-01/README.md#instrumentation) says what the test observes and what it could not cover.
+
 The participant profile is a person who books sessions online, has used a booking page before, and uses a phone or the team's laptop.
 The recruitment target is five, the team will assign `P-01` to `P-05` in the order it arranges the sessions, and it sets the session dates.
 
-The raw notes stay in the [private usability-data repository](https://github.com/<organization>/<repo>-usability-data), the consent records are beside them, and the recordings are in the team's cloud folder.
+The raw notes and the test's telemetry export stay in the [private usability-data repository](https://github.com/<organization>/<repo>-usability-data), the consent records are beside them, and the recordings are in the team's cloud folder.
 The private repository link is excluded from the link check because it needs authentication, and both private links are in the Moodle submission.
 The public record carries the sanitized sessions and the results.
 
 `QR-05` is the `Interaction Capability` / `Self-descriptiveness` requirement, and its manual test names `UT-01`: [QR-05](../../docs/quality-requirements/qr/QR-05.md) and [QRT-01](../../docs/quality-requirements/qr/QR-05.md#qrt-01).
 
-The Week 8 handoff is the design, the recruitment target of five participants, the private repository and the recordings folder, the `QR-05 QRT-01` row in `SPRINT-08`, the `results.md` stub, and the analysis and triage plan.
+The Week 8 handoff is the design, the recruitment target of five participants, the private repository and the recordings folder, the test's instrumentation and its verification, the `QR-05 QRT-01` row in `SPRINT-08`, the `results.md` stub, and the analysis and triage plan.
 
 ## Coverage
 
@@ -151,6 +156,7 @@ The Week 8 handoff is the design, the recruitment target of five participants, t
 | `UT-01` test record                 | [docs/usability-tests/ut-01/README.md](../../docs/usability-tests/ut-01/README.md)                                                                                                                   |
 | Surveys and post-test               | [surveys.md](../../docs/usability-tests/ut-01/surveys.md)                                                                                                                                            |
 | Tasks and protocol                  | [the tasks](../../docs/usability-tests/ut-01/README.md#the-tasks) and [the session template](../../docs/usability-tests/ut-01/sessions/README.md)                                                    |
+| Test instrumentation                | [the record's instrumentation section](../../docs/usability-tests/ut-01/README.md#instrumentation) and [the events](../../docs/analytics.md#the-events)                                              |
 | Consent template                    | [consent.md](../../docs/usability-tests/ut-01/consent.md)                                                                                                                                            |
 | Private usability-data repository   | the private `meeting-booking-usability-data` repository, linked from the record and excluded from the link check at [the link check configuration](../../lychee.toml), accessible to the instructors |
 | Recordings folder                   | the team's cloud folder, linked in the Moodle submission                                                                                                                                             |
@@ -200,7 +206,7 @@ Meeting booking app.
 
 ## What we did
 
-We ran the five `UT-01` sessions on 16 and 17 November, wrote the sanitized session notes and [the results](../../docs/usability-tests/ut-01/results.md), triaged the two findings, and recorded [`QR-05 QRT-01`](../../docs/quality-requirements/qr/QR-05.md#qrt-01) as `Passes`.
+We ran the five `UT-01` sessions on 16 and 17 November, wrote the sanitized session notes and [the results](../../docs/usability-tests/ut-01/results.md), compared the test's instrumentation with the session records, triaged the two findings, and recorded [`QR-05 QRT-01`](../../docs/quality-requirements/qr/QR-05.md#qrt-01) as `Passes`.
 We fixed the checkout form's phone field and cut `REL-08` as [v0.8.0](https://github.com/<organization>/<repo>/releases/tag/v0.8.0).
 We also wrote the configuration management evaluation, the improvement plan, and its first implementation.
 
@@ -210,13 +216,14 @@ Five sessions ran, and three participants completed the main task unaided; one r
 The SUS mean is 75.0 and the median is 80.0, with `n=5`, and the median main-task SEQ is 6.
 `QR-05 QRT-01` passes, and [the testing plan](../../docs/project-plan.md#quality-requirement-testing-plan) carries the row and its evidence.
 The `Major` finding is the checkout form's phone field, carried by [#57](https://github.com/<organization>/<repo>/issues/57) and fixed in `REL-08`; the `Minor` finding is the confirmation page's missing meeting link, carried by [#58](https://github.com/<organization>/<repo>/issues/58) and scheduled in `SPRINT-09`.
-The focus metric still has no value: a usability participant is not a paying customer, and the `UT-01` funnel is read with the `source = "usability-test"` filter.
+The focus metric still has no value: a usability participant is not a paying customer, and the `UT-01` instrumentation is read separately; its pipeline events carry `source = "usability-test"`.
 
 ## Usability test
 
 The results are in [docs/usability-tests/ut-01/results.md](../../docs/usability-tests/ut-01/results.md), and the sanitized session notes are beside it: [P-01](../../docs/usability-tests/ut-01/sessions/P-01.md) to [P-05](../../docs/usability-tests/ut-01/sessions/P-05.md).
 Five sessions ran, and the aggregate is three unaided completions of the main task, one assisted, and one failure.
 The main-task SEQ median is 6, and the secondary tasks' SEQ medians are 5 and 6.
+The instrumentation comparison reads the test's telemetry export, covers the main task end to end, and could not cover the reschedule, which the observation recorded.
 
 | Participant                                               | Main task | Main SEQ | Secondary 1 | Sec 1 SEQ | Secondary 2 | Sec 2 SEQ | SUS |
 | --------------------------------------------------------- | --------- | -------- | ----------- | --------- | ----------- | --------- | --- |

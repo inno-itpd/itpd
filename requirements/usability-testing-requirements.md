@@ -1,9 +1,9 @@
 # Usability Testing Requirements
 
-These requirements define the usability test: where it lives, the test record and its index, the participants and the profile they match, the tasks, the protocol, the instruments, the analysis, the consent, the private data repository, the public evidence, the results and findings, and the triage that turns a finding into work.
+These requirements define the usability test: where it lives, the test record and its index, the participants and the profile they match, the tasks, the protocol, the instruments, the instrumentation, the analysis, the consent, the private data repository, the public evidence, the results and findings, and the triage that turns a finding into work.
 A usability test checks whether a representative participant can reach a goal in the product without help, which is the evidence the product's own telemetry cannot supply.
 Where the test lives in the repository is in [Where Artifacts Live In The Repository](general-requirements.md#where-artifacts-live-in-the-repository), how a test and a participant are cited is in [Identifier Rules](general-requirements.md#identifier-rules), and who may see each artifact is in [Visibility Requirements](visibility-requirements.md).
-The quality requirement a test serves is in [Quality Requirements](quality-requirements-requirements.md), the environment it runs in is in [Environments And Deployment](repository-requirements.md#environments-and-deployment), and the events it reads are in [Product Analytics Requirements](analytics-requirements.md#the-events).
+The quality requirement a test serves is in [Quality Requirements](quality-requirements-requirements.md), the environment it runs in is in [Environments And Deployment](repository-requirements.md#environments-and-deployment), the events the product already records are in [Product Analytics Requirements](analytics-requirements.md#the-events), and the test's instrumentation is in [The Instrumentation](#the-instrumentation).
 [Guide: Usability Testing](../guides/usability-testing.md) is the method.
 
 <h2>Table of contents</h2>
@@ -15,6 +15,7 @@ The quality requirement a test serves is in [Quality Requirements](quality-requi
 - [The Tasks](#the-tasks)
 - [The Protocol](#the-protocol)
 - [The Instruments](#the-instruments)
+- [The Instrumentation](#the-instrumentation)
 - [The Analysis](#the-analysis)
 - [Consent And Recording](#consent-and-recording)
 - [The Private Data Repository](#the-private-data-repository)
@@ -49,7 +50,7 @@ The run week is the submission that carries the results, and the sessions may ru
 4. Each test is `docs/usability-tests/ut-nn/`, one directory per test, and its `README.md` is the test record, per [The Test Record](#the-test-record).
    The test is cited as `UT-nn`, and its record's path is the link target, per [Identifier Rules](general-requirements.md#identifier-rules).
 5. A test directory carries the record in `README.md`, its instruments in `surveys.md`, the public consent template in `consent.md`, the session template and the session instructions in `sessions/README.md`, one sanitized note per counted session in `sessions/P-01.md`, `sessions/P-02.md`, and so on, the results in `results.md`, and the sanitized images in `images/`.
-6. The record carries the goal, the research questions, the participant profile, the tasks, the protocol, the measures, the analysis plan, the schedule, the roles, the environment, and the evidence map.
+6. The record carries the goal, the research questions, the participant profile, the tasks, the protocol, the measures, the instrumentation, the analysis plan, the schedule, the roles, the environment, and the evidence map.
    There is no separate `tasks.md`, `protocol.md`, or `analysis.md`, because the record is the one place a stranger runs the test from.
 7. The page is created in Week 7 and kept current for the rest of the course.
 
@@ -72,8 +73,8 @@ It is public and sanitized; the private material is in [The Private Data Reposit
    | `**Run sprint:**`    | The `SPRINT-nn` in which the last counted session runs, linked the same way, such as `[SPRINT-08](../../project-plan.md#sprint-08)`, `SPRINT-07` when every counted session runs before the design week's deadline, and updated to `SPRINT-09` when the plan moves; when the sessions straddle two sprints, the record states which sessions ran in which and the index lists both |
    | `**Dropped:**`       | Only on a dropped test: the date and the reason, per [Identifier Rules](general-requirements.md#identifier-rules)                                                                                                                                                                                                                                                                  |
 
-3. Below the fields the record states, in this order: the goal in one sentence, the research questions, the `QR-nn` the test serves, the participant profile, the tasks, the protocol, the measures, the analysis plan, the schedule, the roles, the environment, the consent and data map, the public and private evidence map, and the link to `results.md`.
-   The parts are `##` sections; the participant profile is `## Participant Profile`, the tasks are `## The Tasks`, and the schedule is `## Schedule`.
+3. Below the fields the record states, in this order: the goal in one sentence, the research questions, the `QR-nn` the test serves, the participant profile, the tasks, the protocol, the measures, the instrumentation, the analysis plan, the schedule, the roles, the environment, the consent and data map, the public and private evidence map, and the link to `results.md`.
+   The parts are `##` sections; the participant profile is `## Participant Profile`, the tasks are `## The Tasks`, the measures are `## Measures`, the instrumentation is `## Instrumentation`, and the schedule is `## Schedule`.
 4. The goal is one sentence that says what the test is for in terms a reader outside the course can follow, such as whether a representative participant can book and pay without help.
 5. The research questions are a short numbered list, each answerable with the session's data, such as whether a participant finds a free slot without a hint and which step makes them ask for help.
 6. The `QR-nn` the test serves is linked to its requirement file and is the requirement whose `QRT-nn` names the test in `**Runs at:**`, per [Quality Requirement Tests](quality-requirements-requirements.md#quality-requirement-tests).
@@ -82,7 +83,7 @@ It is public and sanitized; the private material is in [The Private Data Reposit
 8. The record states the schedule: the dates the team has arranged for the sessions, or the plan for arranging them when the dates are not fixed, the date the results are due, and which session ran in which sprint when the sessions straddle two.
 9. The record states the roles: who facilitates, who observes, and who keeps the recordings and the raw notes, by GitHub username.
 10. The record states the environment: the staging deployment on the university network, the seed the session starts from, and that no real payment is made.
-11. The record states the consent and data map, per [Consent And Recording](#consent-and-recording) and [The Private Data Repository](#the-private-data-repository): what is private, what is public and sanitized, and where the recordings live.
+11. The record states the consent and data map, per [Consent And Recording](#consent-and-recording) and [The Private Data Repository](#the-private-data-repository): what is private, including the test's telemetry export, what is public and sanitized, and where the recordings live.
 12. The record becomes `Completed` when the counted sessions and the results are recorded, and it is `Dropped` with `**Dropped:**` when the team abandons the test.
 
 ## The Participant Profile
@@ -109,7 +110,6 @@ The product vision's `Stakeholders` table is background, not the profile: it nam
 **Since: W7**
 
 A **participant** is a person outside the team who attempts the test's tasks, and a **usability session** is one participant's run of them.
-A usability session is not the analytics `session_id`: the session is the sitting in front of the product, and `session_id` is the random identifier the product's events carry, per [Telemetry And Personal Data](visibility-requirements.md#telemetry-and-personal-data).
 
 **Required**
 
@@ -133,7 +133,7 @@ The tasks are what makes one participant's run comparable with another's.
 **Required**
 
 1. The test has one **main usability test task** and two **secondary usability test tasks**.
-2. The main task is the product's main flow that [The Events](analytics-requirements.md#the-events) covers, and it is the subject of the `QR-nn` the test serves.
+2. The main task is the product's main flow, the test instruments it per [The Instrumentation](#the-instrumentation), and it is the subject of the `QR-nn` the test serves.
 3. The materials call it a usability test task and never `core task`.
 4. Each task is a scenario with a goal and a start point: it says what the participant wants to achieve, and where the session begins.
 5. The tasks are identical for every participant and are run in a fixed order, with the main task first.
@@ -162,18 +162,18 @@ The protocol is the order every session follows, so the sessions produce compara
 6. The observer records the help given, the time on task, the friction points, and the quotes.
 7. At least two team members run each session, and the same facilitator runs all the counted sessions.
 8. The stop rule: the facilitator stops the session when the participant asks to stop, or when the team observes a critical or security-sensitive problem; the stop and its reason are recorded in the session note and in the results, and a session stopped before its data is complete does not count as completed.
-9. The team checks that every test event carries `source=usability-test` before the first counted session, per [The Events](analytics-requirements.md#the-events).
+9. The team verifies the test's instrumentation before the first counted session, per [The Instrumentation](#the-instrumentation): a team-run or dry-run record reaches the store the record names, the participant link identifies that run, and an event that goes through the analytics pipeline carries `source=usability-test`, per [The Events](analytics-requirements.md#the-events).
 
 ## The Instruments
 
 **Since: W7**
 
-The instruments are the questions and the observations every session records.
-The survey instrument is `surveys.md`, the session's recording sheet and the instructions are `sessions/README.md`, and the record states which measures the test reads.
+The instruments are the survey and the session's recording sheet: `surveys.md` holds the questions, and `sessions/README.md` holds the template, the instructions, and the observation sheet.
+A session records four measures, and the record states which one the quality requirement reads, per [Measurement Terminology](general-requirements.md#measurement-terminology).
 
 **Required**
 
-1. The survey instrument is `surveys.md`, and the session template and its instructions are `sessions/README.md`.
+1. The survey instrument is `surveys.md`, and the session template, its instructions, and the observation sheet are `sessions/README.md`.
 2. Every session records the pre-test background, the think-aloud observation, the task completion and assistance, the time on task, a SEQ after each task, a SUS after all the tasks, the SUS score, and the open-ended post-test.
 3. The **pre-test** asks for the participant's role and background, their familiarity with similar products, the device, and their expectations.
    It carries no name, email address, phone number, or free-text identification, and it carries the 18-or-older declaration.
@@ -185,9 +185,42 @@ The survey instrument is `surveys.md`, the session's recording sheet and the ins
    The example reads the main task's median SEQ.
    The results report all the recorded measures, including the per-task SEQ for the main task and for the two secondary tasks.
 7. The **open-ended post-test** asks for the overall impression, what the participant would change, and what the team did not ask.
-8. The qualitative evidence is the observation notes, the quotes, the friction points, and the think-aloud; the quantitative evidence is the completion, the assistance, the time on task, the SEQ, the SUS, and the Week 6 analytics events where they cover the task.
+8. The qualitative evidence is the observation notes, the quotes, the friction points, and the think-aloud; the quantitative evidence is the completion, the assistance, the time on task, the SEQ, the SUS, and the test's instrumentation where it covers the task.
 9. The ASQ is optional: the SEQ and the SUS are enough for comparability and for the lecture's frameworks.
 10. Every session's pre-test, SEQ, SUS, and post-test are recorded for every counted participant, and missing data is never invented.
+
+## The Instrumentation
+
+**Since: W7**
+
+The instrumentation is how the test records what the participant does beyond the survey and the observer's notes: the events, the logs, the test-only records, and the way one session's records are told from another's.
+It serves the test, not the product's metrics.
+It is the team's design: the team may reuse the Week 6 events, add to them, or use a path of its own.
+The instrumentation is not one of [The Instruments](#the-instruments), and it feeds the instrumentation comparison rather than the quality requirement's measure.
+
+**Required**
+
+1. The team states what the test must observe to answer its research questions and to compare the session with the product's use.
+   The statement covers each task and the funnel the results compare.
+2. The team checks that statement against the events in [The Events](analytics-requirements.md#the-events): an event that covers the observation is reused; an event that is missing and goes through the analytics pipeline is added to the table in the same pull request as the code that emits it; a test-only event is documented in the record, per rule 3; and an observation that no event can carry is recorded by the observer.
+   A task the Week 6 table does not cover is not a reason to drop the task; it is a reason to instrument it.
+3. The team chooses and documents the instrumentation path in the record's `## Instrumentation` section: the events, logs, or records the test uses; the container or tool that emits each; the environment; and the store the data goes to.
+   An event that goes through the analytics pipeline is a row in [The Events](analytics-requirements.md#the-events).
+   A test-only event that never goes through that pipeline is documented in the record and need not be a row there.
+4. The team chooses and documents how one session's records are told from another's: the session's time window, an opaque session token, the `P-nn` participant code, or another method.
+   The participant code may appear in staging test telemetry, and it is the exception to the opaque-identifier rule, per [Telemetry And Personal Data](visibility-requirements.md#telemetry-and-personal-data).
+   The choice is in the record, so a reader can reconstruct a session's events without asking the team.
+5. The instrumentation collects no personal data, per [Telemetry And Personal Data](visibility-requirements.md#telemetry-and-personal-data).
+   The identity mapping stays in the private repository, and a record that can be joined to a person is private, per [The Private Data Repository](#the-private-data-repository).
+6. The instrumentation runs on the staging deployment or a test-only path, never on production, and it writes no production data.
+   When it goes through the analytics pipeline, every test event carries `source=usability-test`, and every metric query excludes it, per [The Events](analytics-requirements.md#the-events).
+7. The instrumentation is implemented and verified before the first counted session: a team-run or dry-run record reaches the store the record names, the participant link identifies that run, and the record says what was verified and when.
+   The implementation is scheduled in `SPRINT-07`.
+   The verification is scheduled before the first counted session, in the sprint that session runs in: `SPRINT-07` when it runs there, otherwise `SPRINT-08`.
+   It is complete by the start of `SPRINT-09` at the latest, so a counted session that slips into `SPRINT-09` runs on a verified path.
+   The dry run may be the verification when it is that run: in the verification's sprint, after the implementation, and before the first counted session; otherwise a second run is required.
+8. The record's `## Instrumentation` section is what the results' instrumentation comparison reads, per [The Analysis](#the-analysis).
+   The section says which task or question the instrumentation cannot cover, and the results repeat that limit rather than inventing an event or a metric.
 
 ## The Analysis
 
@@ -198,12 +231,23 @@ The analysis plan is written before the first session, so the team cannot choose
 **Required**
 
 1. The analysis plan is written before the first session, and the record states it.
-2. The plan covers: a per-participant table with the task outcomes and the assistance, the aggregate completion rate, the median time on task, the median SEQ, the SUS mean and median, a thematic analysis of the notes, a severity rating, a telemetry comparison, and a limitations section.
-3. The thematic analysis groups the observations into a small set of themes, each with the sessions it came from, and it does not report a single participant's remark as a theme.
-4. The severity rating classifies each finding as `Critical`, `Major`, or `Minor`, and the results state the reason for the rating.
-5. The telemetry comparison reads the Week 6 events where they cover the task, with the `source=usability-test` filter, and it says which task the events could not cover rather than inventing an event or a metric.
-6. The limitations state the sample size, the participants' relation to the target user, the environment, and what the team could not measure.
-7. The record links `results.md`, which holds what was found, per [The Results And Findings](#the-results-and-findings).
+2. The plan covers at least:
+   - a per-participant table with each task's outcome and the assistance;
+   - the main task's aggregate completion rate: the count or proportion that reached the end state, and the count or proportion that did so unaided;
+   - the main task's median time on task;
+   - the median SEQ for each task: the main task and the two secondary tasks;
+   - the SUS mean and median, with `n=<count>`;
+   - a thematic analysis of the notes, a severity rating, an instrumentation comparison, and a limitations section.
+3. The list in rule 2 is the minimum every team reports.
+   A team may add a measure relevant to its product, provided the plan names the measure, its statistic, and its scope before the first session.
+   A measure the plan does not name is not added after the data.
+4. The thematic analysis groups the observations into a small set of themes, each with the sessions it came from, and it does not report a single participant's remark as a theme.
+5. The severity rating classifies each finding as `Critical`, `Major`, or `Minor`, and the results state the reason for the rating.
+6. The instrumentation comparison reads the events or records the test instrumented, per [The Instrumentation](#the-instrumentation), with the participant link the record states and with `source=usability-test` when the events go through the analytics pipeline.
+   It says which task or question the instrumentation could not cover rather than inventing an event or a metric.
+   It does not present a test event as a product metric.
+7. The limitations state the sample size, the participants' relation to the target user, the environment, and what the team could not measure.
+8. The record links `results.md`, which holds what was found, per [The Results And Findings](#the-results-and-findings).
 
 ## Consent And Recording
 
@@ -235,7 +279,7 @@ The repository that holds it is in [The Usability Data Repository](repository-re
 **Required**
 
 1. The team creates one private `<organization>/<repo>-usability-data` repository in the design week, and it is private with the team and the instructors as readers.
-2. It holds text only: the consent records, the identity mapping, the raw notes, the filtered telemetry export, the working analysis, and the recordings folder link and access.
+2. It holds text only: the consent records, the identity mapping, the raw notes, the test's filtered telemetry export, the working analysis, and the recordings folder link and access.
    Its layout is the team's choice.
 3. The recordings live in a team-owned cloud folder, such as the team's drive, shared with the instructors.
    They are never in the product repository and are not in the private repository.
@@ -243,7 +287,8 @@ The repository that holds it is in [The Usability Data Repository](repository-re
 5. The Moodle PDF carries the private repository link and access and the recordings folder link and access, per [Private Submission Wrapper](weekly-report-requirements.md#private-submission-wrapper).
 6. The private repository and the recordings stay until the course is graded; after the course is graded the team deletes the private repository, its history, and the recordings, and the sanitized public record stays.
 7. When an instructor cannot access GitHub, the team gives the private text data through a Moodle-only archive and declares the [deviation](weekly-report-requirements.md#declaring-deviations).
-8. A filtered text export of the staging events for the test window may be kept in the private repository when it carries no IP address, location, user agent, referrer, or free text, per [Telemetry And Personal Data](visibility-requirements.md#telemetry-and-personal-data).
+8. A filtered text export of the test's instrumentation may be kept in the private repository when it carries no IP address, location, user agent, referrer, or free text.
+   It may carry the participant link the record states, per [The Instrumentation](#the-instrumentation) and [Telemetry And Personal Data](visibility-requirements.md#telemetry-and-personal-data).
 
 ## The Public Evidence
 
@@ -270,7 +315,7 @@ The results are what the sessions found, and the findings are what the team deci
 
 **Required**
 
-1. `results.md` is written in the run week, and it carries the aggregate results, the SUS and SEQ summary with the `n=<count>` caveat, the qualitative findings with their severity and evidence, the telemetry comparison, the limitations, and the conclusion.
+1. `results.md` is written in the run week, and it carries the minimum measures [The Analysis](#the-analysis) requires, including the SUS and SEQ summary with the `n=<count>` caveat, every additional measure the plan named, the qualitative findings with their severity and evidence, the instrumentation comparison, the limitations, and the conclusion.
 2. It links the sanitized session notes it summarizes, and it copies no raw data.
 3. Each finding is a `### Finding 1` section with a stable anchor, and it carries these fields:
 
@@ -314,8 +359,8 @@ The run week executes the design: the sessions run or have run, the data goes to
 
 **Required**
 
-1. At least three usability sessions run after the design is written, at the dates the team schedules, and before the run week's results and report are written.
-2. The raw text goes to the private repository, the recordings go to the cloud folder, and the sanitized session notes and results go to `docs/usability-tests/ut-01/`.
+1. At least three usability sessions run after the design is written and the instrumentation is verified, per [The Instrumentation](#the-instrumentation), at the dates the team schedules, and before the run week's results and report are written.
+2. The raw text and the test's telemetry export go to the private repository, the recordings go to the cloud folder, and the sanitized session notes and results go to `docs/usability-tests/ut-01/`.
 3. The record's `**Status:**` becomes `Completed`, and its `results.md` is written, per [The Results And Findings](#the-results-and-findings).
 4. The quality requirement's testing-plan row records `Passes` or `Fails` with `Checked: SPRINT-08` and the results as its evidence, per [Quality Requirement Testing Plan](planning-requirements.md#quality-requirement-testing-plan).
 5. The findings are triaged, and the task issues are scheduled, per [The Triage](#the-triage).
@@ -327,7 +372,7 @@ The run week executes the design: the sessions run or have run, the data goes to
 
 ## Full Example
 
-The meeting-booking example's Week 7 design and Week 8 results, abridged: the index, the record, the instruments, the consent, one session note, and the results.
+The meeting-booking example's Week 7 design and Week 8 results, abridged: the index, the record, the instruments, the instrumentation, the consent, one session note, and the results.
 
 From `docs/usability-tests/README.md`:
 
@@ -392,11 +437,18 @@ The session is in person, on the university network, against the staging deploym
 
 ## Measures
 
-The completion and the assistance per task, the time on task, the SEQ per task, the SUS after all tasks, and the events tagged `source=usability-test`.
+The completion and the assistance per task, the time on task, the SEQ per task, the SUS after all tasks, and the test's instrumentation.
+
+## Instrumentation
+
+The Week 6 `booking_page_viewed`, `slot_availability_checked`, `slot_selected`, `checkout_started`, `payment_succeeded`, and `booking_confirmed` events cover the main task, and during a session they carry `source=usability-test` and the `P-nn` code the session uses, so the funnel and the timings are read per session.
+The test adds `usability_task_started` and `usability_task_ended`, emitted by the frontend with `source=usability-test`, `participant_code`, and the task, so the observer's timings and the funnel line up per task.
+The instrumentation does not record a reschedule or the meeting link, so the two secondary tasks' outcomes are read from the observation.
+The verification run on staging on 14 November confirmed that every event of a session reaches the staging event list, that the session is filtered by `participant_code`, and that the production scope receives none.
 
 ## Analysis Plan
 
-A per-participant table, the aggregate completion, the median time, the median SEQ, the SUS mean and median, a thematic analysis, a severity per finding, the telemetry comparison, and the limitations.
+A per-participant table, the main task's aggregate completion, the main task's median time, the median SEQ for each task, the SUS mean and median, a thematic analysis, a severity per finding, the instrumentation comparison, and the limitations.
 
 ## Schedule
 
@@ -412,20 +464,20 @@ The staging deployment on the university VM, reached from the university network
 
 ## Consent And Data
 
-The consent records, the identity mapping, and the raw notes are in the [private usability-data repository](https://github.com/<organization>/<repo>-usability-data), which the link check excludes because it needs authentication.
+The consent records, the identity mapping, the raw notes, and the test's telemetry export are in the [private usability-data repository](https://github.com/<organization>/<repo>-usability-data), which the link check excludes because it needs authentication.
 The recordings are in the team's cloud folder, and both private links are in the Moodle submission.
 The public evidence is this record, the surveys, the consent template, the session notes, the results, and the images.
 
 ## Evidence Map
 
-| Item                                              | Where it goes                                               |
-| ------------------------------------------------- | ----------------------------------------------------------- |
-| The record, the surveys, and the consent template | `docs/usability-tests/ut-01/`                               |
-| The sanitized session notes                       | `docs/usability-tests/ut-01/sessions/`                      |
-| The results and the findings                      | `docs/usability-tests/ut-01/results.md`                     |
-| The consent records and the identity mapping      | the private usability-data repository                       |
-| The raw notes and the filtered telemetry export   | the private usability-data repository                       |
-| The recordings                                    | the team's cloud folder, linked from the private repository |
+| Item                                                   | Where it goes                                               |
+| ------------------------------------------------------ | ----------------------------------------------------------- |
+| The record, the surveys, and the consent template      | `docs/usability-tests/ut-01/`                               |
+| The sanitized session notes                            | `docs/usability-tests/ut-01/sessions/`                      |
+| The results and the findings                           | `docs/usability-tests/ut-01/results.md`                     |
+| The consent records and the identity mapping           | the private usability-data repository                       |
+| The raw notes and the test's filtered telemetry export | the private usability-data repository                       |
+| The recordings                                         | the team's cloud folder, linked from the private repository |
 
 The results are in [results.md](results.md).
 ```
@@ -522,8 +574,8 @@ The aggregate completion rate is 4 of 5 unaided or assisted on the main task and
 The median main-task SEQ is 6, the median first secondary-task SEQ is 5, the median second secondary-task SEQ is 6, and the median time on the main task is 2 minutes 10 seconds.
 The SUS mean is 75.0 and the median is 80.0, with `n=5`.
 
-The events tagged `source=usability-test` cover the main task end to end, and the funnel's largest drop is between the slot list and the checkout form.
-The secondary tasks were covered by the observation only, because the event table does not record a reschedule.
+The test's instrumentation covers the main task end to end, read per `P-nn` code, and the funnel's largest drop is between the slot list and the checkout form.
+The secondary tasks were read from the observation, because the test's instrumentation does not record a reschedule.
 
 ## Findings
 

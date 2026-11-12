@@ -2,9 +2,9 @@
 
 How to design a usability test a stranger can run, recruit the people it needs, record what they do, and turn what they found into work the product backlog carries.
 
-The rules are in [Usability Testing Requirements](../requirements/usability-testing-requirements.md): the record, the participants, the tasks, the protocol, the instruments, the analysis, the consent, the private repository, the public evidence, the results, and the triage.
+The rules are in [Usability Testing Requirements](../requirements/usability-testing-requirements.md): the record, the participants, the tasks, the protocol, the instruments, the instrumentation, the analysis, the consent, the private repository, the public evidence, the results, and the triage.
 The quality requirement the test serves is in [Quality Requirements](../requirements/quality-requirements-requirements.md), what a manual test must carry is in [Quality Requirement Tests](../requirements/quality-requirements-requirements.md#quality-requirement-tests), and the testing plan that records the verdict is in [Planning Requirements](../requirements/planning-requirements.md#quality-requirement-testing-plan).
-Who may see each artifact is in [Visibility Requirements](../requirements/visibility-requirements.md), the events the test reads are in [Product Analytics Requirements](../requirements/analytics-requirements.md#the-events), and the staging deployment it runs against is in [Environments And Deployment](../requirements/repository-requirements.md#environments-and-deployment).
+Who may see each artifact is in [Visibility Requirements](../requirements/visibility-requirements.md), the events the product already records are in [Product Analytics Requirements](../requirements/analytics-requirements.md#the-events), the test's instrumentation is in [The Instrumentation](../requirements/usability-testing-requirements.md#the-instrumentation), and the staging deployment it runs against is in [Environments And Deployment](../requirements/repository-requirements.md#environments-and-deployment).
 This guide is the method: designing the test, preparing the data, running the sessions, analyzing the results, and learning from them.
 
 **Timebox:** about a day and a half for the design, most of it on the tasks and the consent, and about a day for the sessions and the analysis once the sessions are arranged.
@@ -23,12 +23,13 @@ Recruiting is the long pole and starts first, because three people outside the t
   - [Set The Recruitment Target And The Dates](#set-the-recruitment-target-and-the-dates)
   - [Replace Without Reusing A Code](#replace-without-reusing-a-code)
 - [Step 3: Write The Tasks And The Success Criteria](#step-3-write-the-tasks-and-the-success-criteria)
-  - [Start The Main Task From The Event Table](#start-the-main-task-from-the-event-table)
+  - [Start The Main Task From The Product's Main Flow](#start-the-main-task-from-the-products-main-flow)
   - [Write The Scenario, Not The Steps](#write-the-scenario-not-the-steps)
   - [Write The Success Criterion Before The First Session](#write-the-success-criterion-before-the-first-session)
   - [Dry Run With A Teammate](#dry-run-with-a-teammate)
-- [Step 4: Write The Instruments](#step-4-write-the-instruments)
+- [Step 4: Write The Instruments And Prepare The Instrumentation](#step-4-write-the-instruments-and-prepare-the-instrumentation)
   - [Ask Only What The Session Can Record](#ask-only-what-the-session-can-record)
+  - [Choose And Verify The Test's Instrumentation](#choose-and-verify-the-tests-instrumentation)
   - [Use The Standard SUS](#use-the-standard-sus)
   - [Read The Main Task's SEQ](#read-the-main-tasks-seq)
   - [Keep The Sample Caveat With The Number](#keep-the-sample-caveat-with-the-number)
@@ -65,7 +66,7 @@ Recruiting is the long pole and starts first, because three people outside the t
 
 ```text
 docs/usability-tests/README.md             the index: one row per UT-nn with its goal, status, results, and sprints
-docs/usability-tests/ut-01/README.md       the test record: goal, questions, profile, tasks, protocol, measures, analysis, schedule, roles, environment, evidence map
+docs/usability-tests/ut-01/README.md       the test record: goal, questions, profile, tasks, protocol, measures, instrumentation, analysis, schedule, roles, environment, evidence map
 docs/usability-tests/ut-01/surveys.md      the pre-test, the SEQ, the ten SUS items, and the open-ended post-test
 docs/usability-tests/ut-01/consent.md      the public consent template
 docs/usability-tests/ut-01/sessions/       the session template in README.md, and one sanitized P-nn.md per counted session
@@ -77,7 +78,7 @@ reports/week-NN/README.md                  the design report in Week 7 and the r
 ```
 
 The record is the design, the results are what the sessions found, and the private repository is the raw evidence: three places, one fact each, and no fact in two of them.
-The record and the results are public and sanitized; the consent records, the identity mapping, the raw notes, and the filtered telemetry export are private.
+The record and the results are public and sanitized; the consent records, the identity mapping, the raw notes, and the test's filtered telemetry export are private.
 
 ## Step 1: Write The Test Record And The Goal
 
@@ -155,10 +156,12 @@ When a session does not count, recruit a replacement and assign the next free co
 The tasks are what makes one participant's run comparable with another's.
 [The Tasks](../requirements/usability-testing-requirements.md#the-tasks) owns the count, the wording rule, and the success criteria.
 
-### Start The Main Task From The Event Table
+### Start The Main Task From The Product's Main Flow
 
-The main usability test task is the product's main flow that the Week 6 event table covers, and it is the subject of the quality requirement.
-Read [The Events](../requirements/analytics-requirements.md#the-events) and name the task from the flow the events record end to end, so the observation and the telemetry describe the same path.
+The main usability test task is the product's main flow, and it is the subject of the quality requirement.
+Name the task from the flow the target user does, then read [The Events](../requirements/analytics-requirements.md#the-events) and check which events cover it: where they do, the observation and the instrumentation describe the same path; where they do not, the test instruments the task, per [The Instrumentation](../requirements/usability-testing-requirements.md#the-instrumentation).
+
+The task does not have to be a flow the Week 6 event table already covers: the table is the product's metrics, and the test may add what it needs.
 
 Add two secondary tasks that cover adjacent flows the team wants to learn about, such as a reschedule and finding the meeting link.
 The secondary tasks are identical for every participant, in the same order, and the main task comes first.
@@ -192,10 +195,10 @@ The dry run is not evidence, its participant is not a counted participant, and i
 
 The dry run also checks the recording and whether the SUS is readable: a participant who cannot follow the ten items on a screen will not follow them in a session either.
 
-## Step 4: Write The Instruments
+## Step 4: Write The Instruments And Prepare The Instrumentation
 
-The instruments are the questions every session records, and `surveys.md` holds them.
-[The Instruments](../requirements/usability-testing-requirements.md#the-instruments) owns what each session records and the SUS' scoring.
+The instruments are the questions every session records, and `surveys.md` holds them; the instrumentation is the path that produces the events, logs, or test-only records and the participant link, and it is not one of the instruments.
+[The Instruments](../requirements/usability-testing-requirements.md#the-instruments) owns what each session records and the SUS' scoring, and [The Instrumentation](../requirements/usability-testing-requirements.md#the-instrumentation) owns the instrumentation path.
 
 ### Ask Only What The Session Can Record
 
@@ -204,8 +207,27 @@ A pre-test that asks for a name turns the public record into a place personal da
 
 The pre-test also carries the 18-or-older declaration, and the participant's answers stay with the session's note rather than in the public repository.
 
-The quantitative measures are the completion, the assistance, the time on task, the SEQ, the SUS, and the events where they cover the task; the qualitative ones are the observation, the quotes, the friction points, and the think-aloud.
+The quantitative evidence is the completion, the assistance, the time on task, the SEQ, the SUS, and the test's instrumentation where it covers the task; the qualitative evidence is the observation, the quotes, the friction points, and the think-aloud.
 Write both, because a completion rate with no observation says what happened and not why.
+
+### Choose And Verify The Test's Instrumentation
+
+The instrumentation is the team's design: the Week 6 events may cover a task, cover part of it, or miss it.
+Start from what the test must observe: each task, the funnel the results compare, and the research questions.
+Reuse an event where it covers the observation; add a row to [The Events](../requirements/analytics-requirements.md#the-events) where the product needs a new event and the team sends it through the analytics pipeline; keep a test-only record in the record where it does not.
+
+Choose how one session's records are told from another's: the session's time window, an opaque session token, the `P-nn` code, or another method.
+The `P-nn` code may appear in staging telemetry: it is the exception to the opaque-identifier rule, assigned in order and reversible only through the private mapping.
+When the test uses the code, add `participant_code` (string, optional, staging test only) to the row of each event the test reuses, so the table and the code agree.
+The record's `## Instrumentation` section states what the test must observe, what it reuses, what it adds, the environment and store, and the participant link, so a reader can reconstruct a session's events.
+
+Implement the instrumentation and verify it before the first counted session: run a task as a teammate, find the record in the store the record names, and check that the participant link identifies that run.
+Schedule the verification before the first counted session, in `SPRINT-07` or `SPRINT-08`, and finish it by the start of `SPRINT-09`.
+The dry run may be the verification when it is that run, after the implementation and before the first counted session; otherwise run a second check before the first session.
+An event that goes through the analytics pipeline carries `source=usability-test`, and every metric excludes it.
+A test-only path writes no production data and carries no personal data.
+
+The record says what the instrumentation cannot cover, and the results repeat that limit rather than inventing an event or a metric.
 
 ### Use The Standard SUS
 
@@ -251,7 +273,7 @@ Check the public-results clause before the session, because a participant who re
 
 ### Separate The Text Data From The Recordings
 
-Create one private `<organization>/<repo>-usability-data` repository, add the team and the instructors as readers, and keep text in it only: the consent records, the identity mapping, the raw notes, the filtered telemetry export, the working analysis, and the recordings folder link and access.
+Create one private `<organization>/<repo>-usability-data` repository, add the team and the instructors as readers, and keep text in it only: the consent records, the identity mapping, the raw notes, the test's filtered telemetry export, the working analysis, and the recordings folder link and access.
 The layout is the team's choice; the contents are not.
 
 Create the team-owned cloud folder for the recordings, share it with the instructors, and record its link and the access instructions in the private repository.
@@ -280,7 +302,7 @@ Write the session template in `sessions/README.md`, and have the facilitator fol
 
 The session is in person, on the university network, against the staging deployment, with the seed reset before it and no real payment.
 The staging address and credentials are shared for the session and are never committed, per [Sensitive Information Reference](../requirements/visibility-requirements.md#sensitive-information-reference).
-Check that every test event carries `source=usability-test` before the first counted session, so the funnel is readable afterwards.
+Check that every event the test sends through the analytics pipeline carries `source=usability-test`, and that the participant link the record states identifies a session, before the first counted session, so the funnel is readable afterwards.
 
 The stop rule: stop the session when the participant asks to stop, or when a critical or security-sensitive problem appears, record the stop and its reason, and do not count a session whose data is incomplete.
 
@@ -309,15 +331,17 @@ The analysis plan is written before the first session, so the team cannot choose
 
 ### Fix The Measures Before The Data
 
-Write the per-participant table's columns, the aggregate completion rate, the median time, the median SEQ, the SUS mean and median, the measure and bar the quality requirement uses, the thematic analysis, the severity rating, the telemetry comparison, and the limitations, before the first session.
-The columns are what the team commits to reading, and a measure added after the data is a measure chosen to flatter the result.
+Write the per-participant table's columns, the main task's aggregate completion rate, the main task's median time, the median SEQ for each task, the SUS mean and median, the measure and bar the quality requirement uses, the thematic analysis, the severity rating, the instrumentation comparison and what it cannot cover, and the limitations, before the first session.
+The list is the minimum every team reports.
+A team may add a measure its product needs, provided the plan names the measure, its statistic, and its scope before the first session; a measure added after the data is a measure chosen to flatter the result.
+The columns are what the team commits to reading.
 
 The thematic analysis groups the observations into a small set of themes, each with the sessions it came from.
 One participant's remark is a quote, not a theme.
 
 ### Draw The Evidence Map
 
-Map each item to its place before the first session: the record, the surveys, the consent template, the session template, the sanitized notes, the results, and the images to the public repository; the consent records, the identity mapping, the raw notes, the filtered telemetry export, and the working analysis to the private repository; the recordings to the cloud folder.
+Map each item to its place before the first session: the record, the surveys, the consent template, the session template, the sanitized notes, the results, and the images to the public repository; the consent records, the identity mapping, the raw notes, the test's filtered telemetry export, and the working analysis to the private repository; the recordings to the cloud folder.
 Put the same map in the record, so a reader sees where each piece of evidence lives without leaving the test.
 
 Mark which links are private-only and which are public, and put the private ones in the Moodle wrapper rather than in a public file.
@@ -347,7 +371,8 @@ Choose the one that reads the sub-characteristic, and say why: `Self-descriptive
 A time measure is noisy with three to five participants, and a completion rate has a ceiling when everyone succeeds; say why the measure still tells you whether the product is usable.
 
 The scenario reads a representative participant completing the main usability test task, in the staging deployment on the university network with seeded data, and its `Response` is the behaviour the chosen measure reads.
-The `Response Measure` is a real, countable criterion the team writes before the first session: for the SEQ, the median main-task SEQ against a bar (the example is at least five of seven); for completion and assistance, the count or proportion that must reach `Unaided`; for the time, the median time against a limit; and for the SUS, the mean or median against a bar.
+The `Response Measure` is a real, countable criterion the team writes before the first session, and it uses one of the statistics the analysis plan reports: for the SEQ, the main-task median SEQ against a bar (the example is at least five of seven); for completion and assistance, the main-task count or proportion that must reach `Unaided`; for the time, the main-task median time against a limit; and for the SUS, the mean or median against a bar.
+The four [measures](../requirements/general-requirements.md#measurement-terminology) are the menu, not the statistic: the criterion reads the same statistic the plan reports, so the verdict never needs a number the plan did not commit to.
 The measures the requirement does not read stay analysis results and are reported; the requirement reads one.
 The measure is not a target: set it at the value that tells you whether the product is usable, do not coach participants toward it, and do not change it after the data.
 
@@ -388,7 +413,8 @@ An anonymized quote names no person and no organization, and it appears only whe
 
 ### Write The Results And The Findings
 
-Write `results.md` with the aggregate completion, the median time, the median SEQ, the SUS mean and median with `n=<count>`, the per-task SEQ, the thematic analysis, the telemetry comparison, the limitations, and the conclusion.
+Write `results.md` with the main task's aggregate completion, the main task's median time, the median SEQ for each task, the SUS mean and median with `n=<count>`, every additional measure the plan named, the thematic analysis, the instrumentation comparison, the limitations, and the conclusion.
+The comparison names the instrumentation and says which task or question it could not cover.
 Link the sanitized notes it summarizes, and copy none of the raw data.
 
 Each finding is a `### Finding 1` section with its stability anchored on the heading, its severity, the tasks and participant codes it came from, the evidence, the recommendation, and the task issue when one is opened.
@@ -500,7 +526,13 @@ A private repository that outlives the course is participant data kept without a
 - **A test that runs on production.**
   Production is the state the team promised; run against staging, with the seed reset, and keep the customer's data out of the session.
 - **A metric that includes the test traffic.**
-  A participant is not a paying customer; every metric excludes `smoke` and `source=usability-test`, and the funnel is read with the filter and shown separately.
+  A participant is not a paying customer; every metric excludes `smoke` and `source=usability-test`, and the test's instrumentation is read separately.
+- **A test that assumes the Week 6 events cover it.**
+  The event table covers the metrics and the main flow, and the test may need an event it does not carry; check the table against the tasks and add what the test needs.
+- **An instrumentation first run on the first counted session.**
+  A missing event costs a session, not a retake; implement and verify the path before the first counted session.
+- **A participant link the record does not state.**
+  The time window, an opaque token, and the `P-nn` code are all allowed, and the record says which one; a link only the team knows cannot be reconstructed by a reader.
 - **A Week 7 result claimed.**
   The design week sets the recruitment target and the session plan; a result belongs to the run week's report and the results record.
 - **A Week 7 or Week 8 deck PDF.**
