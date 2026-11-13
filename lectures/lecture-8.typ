@@ -92,7 +92,7 @@
 
 #section("Agentic development")
 
-#slide("Quiz")[
+#quiz[
   What are the benefits of using an AI agent to develop a product?
 
   What are the costs of using an AI agent to develop a product?
