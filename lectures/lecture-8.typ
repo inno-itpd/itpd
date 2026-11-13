@@ -153,6 +153,23 @@
   - *Intent debt* lives in artifacts. It accumulates when the goals and constraints that should guide the system are poorly captured or maintained. It limits whether the system continues to reflect what we meant to build and it limits how humans and AI agents can continue to evolve the system effectively.
 ]
 
+#slide("Costs")[
+  As a developer, what do you pay for when using an agent?
+  - money (sometimes compensated by the company): buying tokens
+  - time: waiting for a result
+  - time + effort:
+    - formulating a task
+    - identifying relevant artifacts
+    - steering an agent
+      - composing a prompt
+      - answering questions
+      - reading agent thoughts to understand its reasoning
+    - reviewing results
+    - identifying requirements that were violated in the code
+    - identifying and repaying cognitive and technical debt
+    - handling incidents connected with agent-generated code
+]
+
 #key-takeaways("Agentic development")[
   - Agents speed up writing code and creating artifacts
   - Agents' hallucinations can accumulate
