@@ -122,8 +122,10 @@
 ]
 
 #slide("ReAct agent and environment")[
+  Agent uses tools to interact with its environment, e.g. query or modify it.
+
   #figure(
-    image("images/lecture-8/agent-and-environment.png", height: 74%),
+    image("images/lecture-8/agent-and-environment.png", height: 60%),
     caption: "ReAct agent example - "
       + link(
         "https://medium.com/google-cloud/building-react-agents-from-scratch-a-hands-on-guide-using-gemini-ffe4621d90ae",
