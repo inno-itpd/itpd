@@ -93,7 +93,7 @@
 
 #section("Usability testing")
 
-#slide("Review")[
+#quiz[
   What is usability?
 
   Why do you think you need to test it?
