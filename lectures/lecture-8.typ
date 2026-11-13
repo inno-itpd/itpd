@@ -134,11 +134,32 @@
 ]
 
 #slide("Agentic development challenges")[
+  Adapted from #link("https://www.sonarsource.com/resources/library/what-is-agentic-development/")[What is agentic development?]:
 
+  - *Reliability* - Agents' hallucinations accumulate. If an agent completes a task with 95% accuracy, the agent's accuracy for a chain of 10 tasks can be around 60%.
+  #v(0.05in)
+  - *Review at scale* - Agents write the code more quickly than humans can review it. The review stage becomes a bottleneck in the development process.
+  #v(0.05in)
+  - *Accountability* - The developer is accountable for the the code they ship, even if the code was authored by the agent. It's usually hard to prove that the implementation covers all corner cases.
+]
+
+#slide("Debt")[
+  From #link("https://martinfowler.com/fragments/2026-04-02.html")[Fragments]:
+
+  - *Technical debt* lives in code. It accumulates when implementation decisions compromise future changeability. It limits how systems can change.
+  #v(0.05in)
+  - *Cognitive debt* lives in people. It accumulates when shared understanding of the system erodes faster than it is replenished. It limits how teams can reason about change.
+  #v(0.05in)
+  - *Intent debt* lives in artifacts. It accumulates when the goals and constraints that should guide the system are poorly captured or maintained. It limits whether the system continues to reflect what we meant to build and it limits how humans and AI agents can continue to evolve the system effectively.
 ]
 
 #key-takeaways("Agentic development")[
-  - Agents aren't 100% accurate and the errors that they introduce into the project codebase can accumulate quickly.
+  - Agents speed up writing code and creating artifacts
+  - Agents' hallucinations can accumulate
+  - Reviews are necessary to reduce hallucinations
+  - Reviews become a bottleneck between implementation and product delivery
+  - Sacrificing reviews for velocity leads to technical and cognitive debt
+  - Reviews become harder when there's technical or cognitive debt
 ]
 
 // --- Review and close -------------------------------------------------------
