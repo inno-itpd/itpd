@@ -1,26 +1,4 @@
 // Usability testing, lecture 7 of the IT Product Development course.
-//
-// Converted by hand from tmp/itpd-2025/lectures/lecture-7.pdf (21 slides).
-// The deck follows the export slide for slide, in the same order, with these
-// deviations recorded on purpose:
-//   - The title slide follows the pattern of the other decks: the export's
-//     "Product Development" subtitle becomes "Lecture 7, IT Product
-//     Development", and Innopolis University, 2026 is added.
-//   - An Agenda slide and four section dividers are new. The export has no
-//     agenda and no section breaks; every source slide still has its own page.
-//   - The source's opening and closing Review slides keep the title "Review"
-//     rather than becoming Quiz slides, because the source uses them to recap.
-//   - The table on source slide 14 is redrawn as a Typst table.
-//   - The cycle diagram on slide 4, the SEQ and ASQ scales on slides 10 and
-//     11, the SUS response format on slide 12, and the SUS percentile chart on
-//     slide 18 are the JPEGs extracted with pdfimages -j, committed under
-//     images/lecture-7/.
-//   - The wording is copy-edited lightly: "background" becomes "backgrounds",
-//     "Ctrl-F key" becomes "the Ctrl-F key", "Match user" becomes "Match each
-//     user", the below-average sentence becomes "A score below 68 is
-//     considered ...", and the process outline's "metrics" becomes "measures"
-//     to match the course's measurement terminology. The questions, survey
-//     items, scales, and numbers are unchanged.
 
 #let accent = rgb("#12507b")
 #let muted = luma(42%)
