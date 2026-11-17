@@ -1,6 +1,6 @@
 # Guide: Configuration Management
 
-How to inventory the configuration a project depends on, judge it by the goals its artifacts serve, and record the first change the team would make, without turning the review into a backlog.
+How to inventory the configuration a project depends on, judge it by the goals its artifacts serve, and record the first change the team would make.
 
 The rules are in [Configuration Management Requirements](../requirements/configuration-management-requirements.md): the plan, the items and their fields, the connections, the goal-based evaluation, the recommendation, and the public review.
 The criteria are the course's own: [Repository Requirements](../requirements/repository-requirements.md) for the delivery, [Agent Instructions Requirements](../requirements/agent-instructions-requirements.md) for the team's `AGENTS.md`, [General Requirements](../requirements/general-requirements.md) for the identifiers and the locations, and [Weekly Report Requirements](../requirements/weekly-report-requirements.md) for the report.
@@ -26,7 +26,7 @@ Take the inventory first and write the goal sections second, because the goals a
   - [Write The Fields Before The Verdicts](#write-the-fields-before-the-verdicts)
   - [Read Each Group Against Its Target](#read-each-group-against-its-target)
 - [Step 3: Connect The Items](#step-3-connect-the-items)
-  - [Write The Edge In The Item, Not In A Table](#write-the-edge-in-the-item-not-in-a-table)
+  - [Write The Edge In The Item](#write-the-edge-in-the-item)
   - [State What Breaks](#state-what-breaks)
   - [Name The External End](#name-the-external-end)
 - [Step 4: Write The Local Goals](#step-4-write-the-local-goals)
@@ -62,7 +62,6 @@ docs/project-plan.md                the sprint that holds the review
 ```
 
 The plan is maintained and the evaluation is that week's evidence: the plan describes the configuration as it is, and the evaluation says what the team would change about it.
-The evaluation is not a second plan, and the plan is not a report.
 
 ## Step 1: Set The Review Baseline And Read The Rules
 
@@ -144,10 +143,9 @@ An item with no target is not a configuration item: it is a habit.
 The connections are what make the plan usable: a reader who has one item follows it to the next, and an agent that changes one knows what it breaks.
 [The Connections](../requirements/configuration-management-requirements.md#the-connections) owns the kinds, the failure clause, and the external ends.
 
-### Write The Edge In The Item, Not In A Table
+### Write The Edge In The Item
 
-Every edge lives in its own item's `**Connections:**` field.
-A connections table beside the items is a second copy of the same facts, and the two disagree within a month.
+Every edge lives in the item's own `**Connections:**` field: a second list of the edges beside the items is a copy that disagrees with them within a month.
 
 ### State What Breaks
 
@@ -229,7 +227,7 @@ A team that finds the change not worth its tradeoff records that, and that sente
 
 The one change the team would make first is `## The First Change`, in one paragraph: what it keeps, what it removes, and its main tradeoff.
 It is where the team would start rather than the largest change, and the other changes stay in their goal sections without an order or a schedule.
-Do not measure a maintenance cost, a token count, or a failure rate to justify it: the evidence is the team's own use, and a number invented to fill a cell is worse than a sentence a reader can check.
+Justify it from the evidence of your own use: a command you ran, a link you followed, or a minute you spent is worth more than a number a reader cannot check.
 
 ## Step 7: Publish The Sanitized Review
 
@@ -282,11 +280,6 @@ A settings change that leaves the plan accurate needs no update, and the `**Revi
   A path is not a configuration item: write what breaks without it, because the purpose is what the evaluation judges.
 - **A configuration plan longer than the repository it describes.**
   A set of files is one item at its index; a plan of sixty items is a second repository, and nobody maintains it twice.
-- **A configuration plan that plans changes.**
-  The plan documents the configuration as it is; the changes are the evaluation's, and they schedule none.
-  A plan that lists intended improvements is a second roadmap to keep true.
-- **A review that becomes a backlog.**
-  The evaluation is a judgement, not scheduled work: its goal sections and first change are a recommendation, and a team that turns them into `SPRINT-09` task issues has added a plan the course does not ask for.
 - **A goal that is the project's goal.**
   The project's goal is what the product is for, and every artifact serves it, so nothing can be cut; a local goal is what a set of artifacts is for.
 - **A goal list copied from another team.**
@@ -309,8 +302,6 @@ A settings change that leaves the plan accurate needs no update, and the `**Revi
   The course repository is read-only for the team; judge the wiring, change the team's own file, and report the course's problem rather than editing it.
 - **A review that only adds configuration.**
   The same failure as the earlier entry, stated for the whole evaluation: a review with three `Add`s and no `Cut` has not looked at what the team keeps.
-- **An implementation presented as required.**
-  The week's result is the plan and its goal-based evaluation; a team that enacted nothing has still done the week, and a report that claims otherwise is a claim the repository does not support.
 - **A configuration item that is product behaviour.**
   A broken payment endpoint, a slow page, and an exposed route are product work; they become a risk or a task issue, and the plan stays about the configuration around the code.
 - **An agent given an unsanitized plan or evaluation.**

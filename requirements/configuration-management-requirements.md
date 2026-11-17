@@ -27,7 +27,7 @@ The plan is maintained documentation and the evaluation is that week's evidence,
 
 1. The configuration plan is `docs/configuration-plan.md`.
    It is the maintained inventory of the configuration: what the items are, what each is for, how each is identified and owned, what each reads and what reads it, and where each lives.
-   It documents the configuration as it is and is not a plan of changes, and it schedules none.
+   It documents the configuration as it is.
    It stays current until the course ends, and it is the file a reader or an agent opens to find the configuration.
 2. The configuration review's evidence is `reports/week-NN/cm-evaluation.md`, written in the week the review is held.
    For Assignment 8 that is `reports/week-08/`.
@@ -83,11 +83,10 @@ An item the team cannot find, open, or read is still an item; a defect in the pr
    | `**What good looks like:**` | A short paragraph stating the target the item must meet and linking the rule it must meet by its URL in the course repository, so the link resolves from the repository and from an issue, per [What It States](agent-instructions-requirements.md#what-it-states) |
    | `**Dropped:**`              | Only on a dropped item: the date and the reason it was removed                                                                                                                                                                                                     |
 
-8. The item records no `**Version:**` and the plan records no `**Baseline:**`, because the repository's history and the evaluation's baseline identify the state, and a copy of them in the plan is a second copy to keep true.
-9. A dropped item stays where it is, in its group, with `**Status:**` `Dropped` and its `**Dropped:**` date and reason, so no identifier is reused and a reader sees the history in place.
-   The item is neither counted nor judged, and the plan carries no `## Dropped Items` section.
-10. A configuration the team does not have is named in words in the evaluation's goal sections, has no `CFG-nn`, and receives one only once it exists.
-    Naming it in the plan as an item the team then invents would make the inventory describe a repository that is not there.
+8. A dropped item stays where it is, in its group, with `**Status:**` `Dropped` and its `**Dropped:**` date and reason, so no identifier is reused and a reader sees the history in place.
+   The item is neither counted nor judged.
+9. A configuration the team does not have is named in words in the evaluation's goal sections, has no `CFG-nn`, and receives one only once it exists.
+   Naming it in the plan as an item the team then invents would make the inventory describe a repository that is not there.
 
 ## The Connections
 
@@ -98,8 +97,7 @@ The connections are how a reader or an agent follows one item to the next, and t
 
 **Required**
 
-1. Each item's `**Connections:**` field is the single record of its edges.
-   The plan carries no connections table, so there is one place to maintain.
+1. Each item's `**Connections:**` field is the single record of its edges, so there is one place to maintain.
 2. Each edge names the other end, its kind, and what breaks when it breaks.
    The kind is one of these:
 
@@ -147,8 +145,7 @@ A review that only reports missing items pushes a team to add configuration; the
 8. A goal section's evidence is a link to a file or a CI run, a sanitized screenshot, or a quoted command output.
    A settings page is named in words and not linked, because it needs authentication, and a screenshot of one is sanitized per [Screenshot Evidence](visibility-requirements.md#screenshot-evidence).
 9. An item the team could not judge is the `## What We Could Not Judge` note, with the reason and the risk it carries, so the item is accounted for without a verdict.
-10. The evaluation carries no change table, no per-item verdict, no cost table, and no graph paragraph: the goal sections carry the changes and `## The First Change` carries the headline.
-11. `## The First Change` is one paragraph naming the one change the team would make first, what it keeps, what it removes, and its main tradeoff.
+10. `## The First Change` is one paragraph naming the one change the team would make first, what it keeps, what it removes, and its main tradeoff.
     The goal sections are not an ordered backlog, and the first change is the team's answer to where it would start rather than the largest change.
 
 ## The Recommendation
@@ -157,7 +154,6 @@ A review that only reports missing items pushes a team to add configuration; the
 
 The goal sections and the first change are the evaluation's recommendation.
 The recommendation is a judgement rather than a plan: it schedules no work and adds nothing to a backlog.
-No separate improvement plan is required, because a plan beside an evaluation is a second document to keep true, and the evaluation's goal sections already say what would change and why.
 
 **Required**
 

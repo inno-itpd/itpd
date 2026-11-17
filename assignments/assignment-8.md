@@ -12,7 +12,7 @@ One submission per team.
 Week 7 ended with the `UT-01` design, the private home for the raw data, the `Interaction Capability` requirement with its manual test, and `REL-07`.
 This week the sessions run, or they already ran in Week 7, and the results become the week's first stream: the sanitized session notes, the aggregate table, the findings, the triage, the verdict, and the fixes the product backlog now carries.
 The second stream is the configuration review (the week's activity; its artifact is the configuration evaluation, `reports/week-08/cm-evaluation.md`): the team writes the maintained configuration plan, `docs/configuration-plan.md`, which documents the configuration as it is, and judges the configuration by the goals its artifacts serve.
-The deliverable is the evaluation, not a configuration change: no change is required this week, and the evaluation schedules none, because its first change and the other goal sections are a recommendation rather than a backlog.
+The deliverable is the evaluation.
 The full sprint still runs around both streams.
 
 You hand in the `UT-01` results and the findings with their issues, and the configuration plan with its goal-based evaluation and its first change.
@@ -73,7 +73,7 @@ This week:
 2. Plan `SPRINT-08`: replace its provisional goal with the sprint's goal, set `**Due:**` to `2026-11-21`, link `**Sprint Backlog:**` to its GitHub milestone, and set `**Planned Velocity:**` to the story points of the stories you scheduled, computed by hand from their `Story Points`.
    Only the product stories' points count: the results, the configuration, and the other task work carry none.
 3. Set `SPRINT-09`'s provisional goal, its `**Due:**` of `2026-11-28`, and its `**Sprint Backlog:**` once the sprint has issues.
-   The provisional goal names the final repository state, the 7-minute deck, the reflection, and whatever else the team plans; the evaluation adds no configuration work to it.
+   The provisional goal names the final repository state, the 7-minute deck, the reflection, and whatever else the team plans.
    The seven sprint milestones already exist, so link `SPRINT-09`'s milestone; do not create a new milestone.
 4. Schedule in `SPRINT-08`: the sanitized session notes, the results, the findings, the triage, the `QR/QRT` verdict, the configuration plan, the configuration evaluation, the glossary and risk updates, the Sprint Review, and `REL-08`.
 5. Set the `UT-01` record's `**Run sprint:**` to the sprint the counted sessions ran in: `SPRINT-07` when every counted session ran before the Week 7 deadline of 15 November 23:59, `SPRINT-08` otherwise.
@@ -205,7 +205,6 @@ This week:
 3. Give each item its `**Status:**` `Active`, its `**Type:**`, and its `**Purpose:**` saying what breaks without it.
    Give it its `**Owner:**` who keeps it true, its `**Where:**` as a path or a settings page in words, its `**Connections:**` with their kind and what breaks, and its `**What good looks like:**` stating the target and linking the course rule it must meet.
 4. Keep a removed item in its group with `**Status:**` `Dropped` and its `**Dropped:**` date and reason, so no identifier is reused and the history is readable in place.
-   Do not add a `**Baseline:**`, a `**Properties:**`, a `**Version:**`, a connections table, or a `## Dropped Items` section.
 5. Name a configuration the team does not have in words in the evaluation, with no `CFG-nn` until it exists.
 6. Keep the plan public-safe: a private setting is named in words, and no address, credential, or secret value appears in it.
    Record the plan's link in the team's `AGENTS.md`, per [What It States](../requirements/agent-instructions-requirements.md#what-it-states).
@@ -217,7 +216,7 @@ The method is in [Step 2: Inventory The Configuration](../guides/configuration-m
 The rules:
 
 - The evaluation carries its baseline, its method, one section per local goal, what the team could not judge, and its first change: [The Evaluation](../requirements/configuration-management-requirements.md#the-evaluation).
-- The goal sections and the first change are the recommendation, and no separate plan, no implementation, and no scheduled work are required: [The Recommendation](../requirements/configuration-management-requirements.md#the-recommendation).
+- The goal sections and the first change are the recommendation, and no implementation or scheduled work is required: [The Recommendation](../requirements/configuration-management-requirements.md#the-recommendation).
 - The review is public and sanitized: [The Public Review](../requirements/configuration-management-requirements.md#the-public-review).
 
 This week:
@@ -233,9 +232,9 @@ This week:
    - `**Why:**` the goal is still achieved and the change removes a named mechanism, with the evidence from your own use;
    - `**Tradeoffs:**` what the change gives up and why the gain is worth the loss, or why the team would not make it.
 5. Name the one change the team would make first in `## The First Change`, with what it keeps, what it removes, and its main tradeoff.
-   The changes in the other goal sections stay proposals, and the evaluation schedules none of them.
+   The changes in the other goal sections stay proposals.
    Record in `## What We Could Not Judge` each item or artifact you could not judge, with the reason and the risk it carries; if every item could be judged, write `None` and say so.
-6. Write the evaluation without a change table, a per-item verdict, a cost table, or a graph paragraph, and keep it sanitized: no address, no credential, and no step-by-step that would let a reader use a weakness.
+6. Keep the evaluation sanitized: no address, no credential, and no step-by-step that would let a reader use a weakness.
    A goal section that names a failing item and its consequence stays public in words.
 
 The method is in [Step 4: Write The Local Goals](../guides/configuration-management.md#step-4-write-the-local-goals), [Step 5: Judge Each Goal](../guides/configuration-management.md#step-5-judge-each-goal), and [Step 6: Propose A More Convenient Way And Its Tradeoffs](../guides/configuration-management.md#step-6-propose-a-more-convenient-way-and-its-tradeoffs).
@@ -274,7 +273,7 @@ This week:
 1. Read `## Action points` in `reports/week-07/meeting-report.md`, carry out every action due by Week 8 and any action carried from an earlier report, carry each outcome into the artifact it changed, and record it in `## Previous action points` in `reports/week-08/meeting-report.md`.
 2. Put each row of `## Open questions` in the Week 7 report to the customer at the Sprint Review, or close it, and record the outcome in `## Previous open questions`.
 3. Hold the Week 8 Sprint Review and show the deployed production instance with the analytics and observability dashboards, the sanitized results, the conclusion and its product response, the `QR/QRT` result, the findings and their task issues, the threshold outcome, and the next steps.
-   The week's usability results are the Sprint Review's subject; the configuration evaluation is not presented at the meeting and schedules no work.
+   The week's usability results are the Sprint Review's subject; the configuration evaluation is not presented at the meeting.
 4. Write `reports/week-08/meeting-script.md` with the permission questions first, the results, the conclusion, the findings, the open questions, the next steps, and the read-back of the decisions and action points last.
 5. Write `reports/week-08/meeting-report.md` with the Sprint Review's feedback, a `DEC-nnn` for any decision, and at least two action points after Week 8, at least one of which is due in Week 9.
 6. Publish the transcript when the customer allows it, and say in one line why there is none when the meeting was not recorded or was held in writing.
@@ -303,7 +302,6 @@ This week:
    Protect the tag from being moved or deleted.
 6. Write `REL-08`'s block with `**Released:**` and `**Checked QRs:**`, listing each `QR-nn` the sprint checked or saying `None`, and close the list with one sentence linking the plan's `## Quality Requirement Testing Plan`.
 7. Advance the configuration plan's `**Reviewed:**` date if the plan is reviewed again after the meeting, and record any enacted configuration change in the pull request that carries it.
-   No change is scheduled or required.
 8. Close `SPRINT-08`'s GitHub milestone after moving each issue still open into a later sprint's milestone.
 
 The method is in [Releases](../guides/planning-and-tracking.md#releases) and [Step 4: Record The Progress](../guides/quality-requirement-tests.md#step-4-record-the-progress).
@@ -330,7 +328,6 @@ The method is in [Close With The Retrospective](../guides/planning-and-tracking.
 The rules:
 
 - Name the tools you used, what for, and what you did with their output: [AI Usage Report](../requirements/weekly-report-requirements.md#ai-usage-report).
-- The evaluation schedules no work, and no implementation is required this week: [The Recommendation](../requirements/configuration-management-requirements.md#the-recommendation).
 
 This week:
 
@@ -339,7 +336,6 @@ This week:
 3. Say whether an agent was given any usability material, and if so, confirm it was given the sanitized note rather than the raw recording or the private notes.
    Say whether an agent was given the configuration plan or the evaluation, and confirm it was the public, sanitized state.
 4. Write the Week 9 handoff in the report: the results, the configuration plan, the evaluation with its goal sections, its tradeoffs, and its first change, the final repository state, and the reflection.
-   The handoff names no configuration work to schedule, because the evaluation schedules none.
    Add the private repository and the recordings folder still accessible, the `REL-08` tag, and the evidence the deck will cite.
 
 ## What Good Looks Like
@@ -358,11 +354,11 @@ A strong submission has:
 - **A verdict recorded where it is read.**
   The testing plan's `QR-nn` row is `Passes` or `Fails` with `Checked: SPRINT-08` and the results as evidence, or `Not verified` or moved with a reason, and the threshold's usability goal is settled with its `**Outcome:**` when the team has one.
 - **A configuration plan a stranger or an agent can read.**
-  `docs/configuration-plan.md` has its `**Reviewed:**` date, at least 8 `Active` `CFG-nn` items across the five groups, the fields [Part 7](#part-7-write-the-configuration-plan) names, and a dropped item in place with its `**Dropped:**`; the forbidden fields and the `## Dropped Items` section are absent.
+  `docs/configuration-plan.md` has its `**Reviewed:**` date, at least 8 `Active` `CFG-nn` items across the five groups, the fields [Part 7](#part-7-write-the-configuration-plan) names, and a dropped item in place with its `**Dropped:**`.
 - **An evaluation that judges by goal, not by item.**
-  `reports/week-08/cm-evaluation.md` has its baseline, review date, method, one section per local goal with the four fields [Part 8](#part-8-write-the-goal-based-configuration-evaluation) names, its `What We Could Not Judge` note, and its first change; no change table, per-item verdict, cost table, or graph paragraph appears, and the goal is local rather than the project's.
+  `reports/week-08/cm-evaluation.md` has its baseline, review date, method, one section per local goal with the four fields [Part 8](#part-8-write-the-goal-based-configuration-evaluation) names, its `What We Could Not Judge` note, and its first change; the goal is local rather than the project's.
 - **A first change that is a recommendation.**
-  It names what it keeps, what it removes, and its main tradeoff, with no implementation this week and no scheduled work: the first change and the other changes stay the evaluation's recommendation.
+  It names what it keeps, what it removes, and its main tradeoff.
 - **A public review that is sanitized.**
   No secret value, private address, or credential appears, a settings page is named in words, a failing item's consequence is in words, and the incident response is named for a leak.
 - **A report that gives both results and the configuration summary.**
@@ -371,7 +367,7 @@ A strong submission has:
   `REL-08` is cut on the release commit and its tag is protected.
   Its `**Checked QRs:**` lists each checked `QR-nn` or says `None` and closes with one link to the testing plan, its upgrade note says whether anything is required, and the `SPRINT-08` milestone is closed after any open issue is rescheduled.
 - **A Week 9 handoff another week can start from.**
-  It names the results, the configuration plan, the evaluation's goal sections and first change, the private repository and recordings folder, the `REL-08` tag, the final repository state, and the deck's evidence, and it schedules no configuration work.
+  It names the results, the configuration plan, the evaluation's goal sections and first change, the private repository and recordings folder, the `REL-08` tag, the final repository state, and the deck's evidence.
 - **One path and one identifier, everywhere.**
   The report, the guide, and the routers use `docs/configuration-plan.md` and `reports/week-08/cm-evaluation.md`, and the configuration plan and the evaluation use the same `CFG-nn`.
 
@@ -390,9 +386,8 @@ This week it also carries:
    Link both artifacts and restate neither.
 4. The `## Threshold review` section when a goal is still `Open` when the review starts, per [The Threshold Of Success](../requirements/planning-requirements.md#the-threshold-of-success).
 5. The `## Week 9 handoff` section: the results, the configuration plan, the evaluation's goal sections and first change, and the final repository state.
-   The section schedules no configuration work, because the evaluation schedules none.
    Name the private repository and the recordings folder, the `REL-08` tag, and the deck's evidence.
-6. The coverage table, with one row per deliverable and no row for the configuration plan or the evaluation, because the one `Configuration management` row points at its section:
+6. The coverage table, with one row per deliverable:
 
 | Deliverable               | Where                                                       |
 | ------------------------- | ----------------------------------------------------------- |
@@ -444,7 +439,7 @@ Keep the PDF to two pages plus a transcript appendix under item 9, and put nothi
 8. One line confirming that no private-only material was committed to the repository, and no participant identity was committed to it.
 9. The meeting transcript, if the customer refused to let you publish it.
 
-The PDF carries no participant identity and no configuration appendix.
+The PDF carries no participant identity.
 The production analytics and observability dashboards were submitted in the Week 6 wrapper; this week's wrapper does not repeat them.
 
 ### Submission Procedure
@@ -473,10 +468,9 @@ The production analytics and observability dashboards were submitted in the Week
 - [ ] The threshold's usability goal settled when the team has one ([Part 6](#part-6-record-the-verdict-and-settle-the-threshold)).
 - [ ] `docs/configuration-plan.md` with its `**Reviewed:**` date and its five groups ([Part 7](#part-7-write-the-configuration-plan)).
 - [ ] At least 8 `Active` `CFG-nn` items with at least one in each group, each with its `**Status:**`, `**Type:**`, `**Purpose:**`, `**Owner:**`, `**Where:**`, `**Connections:**`, and `**What good looks like:**` ([Part 7](#part-7-write-the-configuration-plan)).
-- [ ] A dropped item in place, the plan in the team's `AGENTS.md`, a missing configuration named in words, and no `**Baseline:**`, `**Properties:**`, `**Version:**`, connections table, or `## Dropped Items` section ([Part 7](#part-7-write-the-configuration-plan)).
+- [ ] A dropped item in place, the plan in the team's `AGENTS.md`, and a missing configuration named in words ([Part 7](#part-7-write-the-configuration-plan)).
 - [ ] `reports/week-08/cm-evaluation.md` with its `**Baseline:**`, its `**Reviewed:**`, its `## Method`, one section per local goal with `**Today:**`, `**A more convenient way:**`, `**Why:**`, and `**Tradeoffs:**`, its `## What We Could Not Judge` note, and its `## The First Change` paragraph ([Part 8](#part-8-write-the-goal-based-configuration-evaluation)).
-- [ ] The evaluation is goal-first and local, names the mechanism and the tradeoffs, records no change table, per-item verdict, cost table, or graph paragraph, and is public and sanitized ([Part 8](#part-8-write-the-goal-based-configuration-evaluation)).
-- [ ] The evaluation schedules no work: no configuration change is added to `SPRINT-09` from it ([Part 8](#part-8-write-the-goal-based-configuration-evaluation)).
+- [ ] The evaluation is goal-first and local, names the mechanism and the tradeoffs, and is public and sanitized ([Part 8](#part-8-write-the-goal-based-configuration-evaluation)).
 - [ ] The configuration terms in `docs/glossary.md` ([Part 9](#part-9-update-the-glossary-and-the-risk-register)).
 - [ ] The four configuration risks in `docs/risks.md`, each starting `**Status:** Open`, with the fallback as its `**Contingency:**` ([Part 9](#part-9-update-the-glossary-and-the-risk-register)).
 - [ ] Each Week 7 action point's outcome in `## Previous action points` ([Part 10](#part-10-carry-out-the-week-7-action-points-and-hold-the-sprint-review)).
