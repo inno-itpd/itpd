@@ -140,7 +140,7 @@ Access nobody has tried is access the meeting discovers, and the fix for a block
 
 The deployment is a build, a configuration, and a process that stays up.
 The method is to make the configuration reproducible, so the second deploy is the same deploy as the first.
-The configuration shape, the secrets, the built artefact, and this runbook are configuration items in [the configuration plan](../requirements/configuration-management-requirements.md#the-configuration-items), and the configuration review judges them by the same rules, per [Guide: Configuration Management](configuration-management.md).
+The configuration shape, the secrets, the built artifact, and this runbook are configuration items in [the configuration plan](../requirements/configuration-management-requirements.md#the-configuration-items), and the configuration review judges them by the same rules, per [Guide: Configuration Management](configuration-management.md).
 
 ### Keep The Shape In `.env.example`
 

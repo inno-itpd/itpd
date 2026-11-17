@@ -4,7 +4,7 @@ title: 'Design Assignment 8: the usability results and the configuration review'
 status: Done
 assignee: []
 created_date: '2026-11-16 20:21'
-updated_date: '2026-11-16 20:36'
+updated_date: '2026-11-17 11:51'
 labels: []
 dependencies: []
 references:
@@ -22,8 +22,8 @@ Week 8's materials need the Assignment 8 design written from `course/plans/a8-pl
 ## Acceptance Criteria
 <!-- AC:BEGIN -->
 - [x] #1 `requirements/configuration-management-requirements.md` owns the configuration plan, its five groups, its fields, the connections field, the goal-based evaluation with its tradeoffs and its first change, the public review, and the full example
-- [x] #2 `requirements/general-requirements.md`, `weekly-report-requirements.md`, `agent-instructions-requirements.md`, and `usability-testing-requirements.md` carry the `**Since: W8**` additions the plan lists, with `visibility-requirements.md` and `repository-requirements.md` unchanged
-- [x] #3 `assignments/assignment-8.md` carries the thirteen parts in the order the plan gives, as a delta against `requirements/`, in `assignment-7.md`'s shape
+- [x] #2 `requirements/general-requirements.md`, `weekly-report-requirements.md`, `agent-instructions-requirements.md`, `usability-testing-requirements.md`, and the planning example in `planning-requirements.md` carry the `**Since: W8**` additions the plan lists, with `visibility-requirements.md` and `repository-requirements.md` unchanged
+- [x] #3 assignments/assignment-8.md carries the thirteen parts in the order the plan gives, as a delta against requirements/, in assignment-7.md's shape
 - [x] #4 `guides/configuration-management.md` exists in the guide shape, and the planning and deployment guides point at it
 - [x] #5 `course/decisions/a8.md` records every decision, and `A7-DEC-022` is marked `Reversed by A8-DEC-009`
 - [x] #6 `course/syllabus.md`, `README.md`, `SKILL.md`, `course/rules.md`, `AGENTS.md`, and `TODO.md` follow the week, with the configuration plan in the `docs/` destination map and the `CFG-nn` convention recorded
@@ -59,13 +59,13 @@ Week 8's materials need the Assignment 8 design written from `course/plans/a8-pl
 <!-- SECTION:NOTES:BEGIN -->
 Followed `course/plans/a8-plan.md` end to end. The configuration plan's fields, the five groups, the eight-item minimum, the goal-first evaluation, and the public-review rule are in the new requirements file; the assignment is a delta against it.
 
-Two deliberate departures from the plan's Edited Files list: `requirements/planning-requirements.md` carries the example changes the plan's Changes To The Requirements section describes (the plan omitted it from Edited Files but the example audit requires it), and the weekly-report example gained a `## Week 9 handoff` section so the new coverage row's anchor resolves.
+The plan's Edited Files list was incomplete: it now names the new requirements file, the new guide, the existing requirements files the design changes, and the planning example. The weekly-report example also gained a `## Week 9 handoff` section inside a listed file, so it is not a file-list departure.
 
 The evaluation example cites only `CFG-01` to `CFG-09` and names the artifacts the plan does not carry in words, which is the rule the requirements file states; no out-of-range identifier appears.
 
-`AGENTS.md` is near the workspace instruction budget (64941 bytes against a 65536 total). The new rows were kept terse; a further round of rows will need a trim elsewhere.
+Reopened after the Assignment 8 review. Corrected: the `**Sprint Backlog:**` link now points at the sprint's GitHub milestone; the optional change updates the configuration plan only when the change alters what it records; `**Dropped:**` moved after the other `CFG-nn` fields to follow general rule 11; the evaluation stays at `reports/week-08/` for the week the review is held; the example's first change now says what it keeps, and the Method excludes the results of the passing quality tests rather than the tests; the Week 9 traceability rows cite the configuration plan once; the weekly-report example restores the transcript fallback; the plan's Edited Files, Week 9 enactment, requirements-change count, `not prescribed` wording, six `stay`/`stays` corrections, `artefact` spelling, `Dropped` field list, `must meet` wording, and duplicate `**Since: W8**` marker are fixed; the syllabus-objective criterion is relaxed because the students reflect and do not implement a change. `AGENTS.md` remains at 64941 bytes against the 65536 budget; TASK-172 trims it before Week 9. `GOALS.md` is left untracked by decision.
 
-Gates: `format:markdown:check`, `lint:markdown`, `test:markdown-format` (34), `test:markdown-rules` (34), `check:lectures` (8 decks match, PDF unchanged after the comment edits), `check:links` (4083 links, 0 errors), and `lint:actions` all pass.
+Gates: `format:markdown:check`, `lint:markdown`, `test:markdown-format` (34), `test:markdown-rules` (34), `check:lectures` (8 decks match, PDF unchanged after the comment edits), and `check:links` (4083 links, 0 errors) all pass.
 <!-- SECTION:NOTES:END -->
 
 ## Final Summary
@@ -84,4 +84,6 @@ What changed:
 - **Routers and schedule:** the syllabus's Week 8 class line, focus row, objectives, deliverables, catalog row, and Week 9 reflection citation; `README.md`, `SKILL.md`, `course/rules.md`, and `AGENTS.md` link the plan, the requirements, and the guide; `TODO.md`'s A8 lines are ticked; both stale `lecture-8.typ` comments are corrected with the PDF unchanged.
 
 Validation: `format:markdown:check`, `lint:markdown`, both plugin suites, `check:lectures`, `check:links` (4083 links, 0 errors), and `lint:actions` pass. The plan's contradiction, reversal, routing, cross-reference, depth, visibility, week, example, and identifier audits were walked by hand.
+
+Reviewed after the Assignment 8 review and reopened; the corrections are in the implementation notes, and TASK-172 tracks the AGENTS.md trim.
 <!-- SECTION:FINAL_SUMMARY:END -->

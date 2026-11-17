@@ -92,8 +92,6 @@ Who may see each item is in [Visibility Requirements](visibility-requirements.md
 22. In the run week a `## Usability test` section carries the results summary, the sanitized session links, the SUS and SEQ summary, the instrumentation comparison, the findings, the triage, and the `QR/QRT` result.
     `results.md` is the record and the report is the summary: the reflection week's report carries no separate usability results report, and the final reflection cites the `UT-nn` results.
 
-**Since: W8**
-
 23. In the review week the report's summary gives the `Active` configuration item count, the number of local goals, the first change and its tradeoff, and what the team keeps, and it links `docs/configuration-plan.md`, the evaluation, and the usability results.
     Immediately after `## Usability test`, a `## Configuration management` section carries the configuration plan's link, the evaluation's link, the baseline the evaluation reviewed, the `Active` item count, the local goals, the first change and its tradeoff, and what is kept.
     The configuration plan is the maintained record and the evaluation is the week's judgement, so the section links both and restates neither.
@@ -177,7 +175,7 @@ The Week 8 handoff is the design, the recruitment target of five participants, t
 | Week 6 open questions               | [reports/week-07/meeting-report.md](meeting-report.md#previous-open-questions)                                                                                                                       |
 | Sprint Review                       | [reports/week-07/meeting-report.md](meeting-report.md)                                                                                                                                               |
 | Meeting script                      | [reports/week-07/meeting-script.md](meeting-script.md)                                                                                                                                               |
-| Meeting transcript                  | [reports/week-07/meeting-transcript.md](meeting-transcript.md)                                                                                                                                       |
+| Meeting transcript                  | [reports/week-07/meeting-transcript.md](meeting-transcript.md), or one line saying why there is none                                                                                                 |
 | `REL-07`                            | [v0.7.0](https://github.com/<organization>/<repo>/releases/tag/v0.7.0), [the changelog](../../CHANGELOG.md), and [the plan's REL-07 block](../../docs/project-plan.md#rel-07)                        |
 | Sprint retrospective                | [reports/week-07/sprint-retrospective.md](sprint-retrospective.md)                                                                                                                                   |
 | AI usage                            | [reports/week-07/ai-usage.md](ai-usage.md)                                                                                                                                                           |
@@ -295,7 +293,7 @@ No deck is submitted with this report.
 | Week 7 open questions    | [reports/week-08/meeting-report.md](meeting-report.md#previous-open-questions)                                                                                                                 |
 | Sprint Review            | [reports/week-08/meeting-report.md](meeting-report.md)                                                                                                                                         |
 | Meeting script           | [reports/week-08/meeting-script.md](meeting-script.md)                                                                                                                                         |
-| Meeting transcript       | [reports/week-08/meeting-transcript.md](meeting-transcript.md)                                                                                                                                 |
+| Meeting transcript       | [reports/week-08/meeting-transcript.md](meeting-transcript.md), or one line saying why there is none                                                                                           |
 | Week 9 handoff           | [reports/week-08/README.md#week-9-handoff](#week-9-handoff)                                                                                                                                    |
 | Glossary                 | [docs/glossary.md](../../docs/glossary.md)                                                                                                                                                     |
 | Risk register            | [docs/risks.md](../../docs/risks.md)                                                                                                                                                           |

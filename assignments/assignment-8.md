@@ -73,7 +73,7 @@ This week:
    Only the product stories' points count: the results, the configuration, and the other task work carry none.
 3. Set `SPRINT-09`'s provisional goal, its `**Due:**` of `2026-11-28`, and its `**Sprint Backlog:**` once the sprint has issues.
    The provisional goal names the final repository state the configuration evaluation implies, the 7-minute deck, the reflection, and whatever else the team plans.
-   The seven sprint milestones already exist, so the field is the link to the plan's section, not a new milestone.
+   The seven sprint milestones already exist, so link `SPRINT-09`'s milestone; do not create a new milestone.
 4. Schedule in `SPRINT-08`: the sanitized session notes, the results, the findings, the triage, the `QR/QRT` verdict, the configuration plan, the configuration evaluation, the glossary and risk updates, the Sprint Review, and `REL-08`.
 5. Set the record's `**Run sprint:**` to the sprint the counted sessions ran in: `SPRINT-07` when every counted session ran before the Week 7 deadline of 15 November 23:59, `SPRINT-08` otherwise, and both when the sessions straddle the two.
    Each sprint is linked to its plan section.
@@ -192,7 +192,7 @@ This week:
 1. Write `docs/configuration-plan.md` with its `**Reviewed:**` date under its `#` heading, and its five groups: source control and release, checks, environments and secrets, dependencies and builds, and agent context and artifacts.
 2. Inventory at least 8 `Active` `CFG-nn` items, with at least one in each group, reading the repository rather than a memory of it: `.github/`, `docs/`, `reports/`, the root files, the package manifests, and the settings pages.
    A set of files is one item at its index or entry point, such as the functional requirements index or the architecture `README.md`.
-3. Give each item its `**Status:**` `Active`, its `**Type:**`, its `**Purpose:**` saying what breaks without it, its `**Owner:**` who keeps it true, its `**Where:**` as a path or a settings page in words, its `**Connections:**` with their kind and what breaks, and its `**What good looks like:**` stating the target and linking the course rule it applies.
+3. Give each item its `**Status:**` `Active`, its `**Type:**`, its `**Purpose:**` saying what breaks without it, its `**Owner:**` who keeps it true, its `**Where:**` as a path or a settings page in words, its `**Connections:**` with their kind and what breaks, and its `**What good looks like:**` stating the target and linking the course rule it must meet.
 4. Keep a removed item in its group with `**Status:**` `Dropped` and its `**Dropped:**` date and reason, so no identifier is reused and the history is readable in place.
    Do not add a `**Baseline:**`, a `**Properties:**`, a `**Version:**`, a connections table, or a `## Dropped Items` section.
 5. Name a configuration the team does not have in words in the evaluation, with no `CFG-nn` until it exists.

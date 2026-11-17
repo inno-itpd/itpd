@@ -266,7 +266,7 @@ A configuration task says `None: repository upkeep` in `### Requirements` becaus
 ### Enact Only What You Have Time For
 
 No change is required in the review week: a team that runs the usability sessions and the review in one week has no room for the implementation, and the evaluation is judged on its own evidence.
-A change the team does enact is a task issue, a pull request, the configuration plan update in that pull request, the green checks, and the release when the change is product-visible.
+A change the team does enact is a task issue, a pull request, the configuration plan update in that pull request when the change alters what it records, the green checks, and the release when the change is product-visible.
 It is extra evidence rather than a requirement, and no change is forced to fill the week.
 
 ### Keep The Plan True
@@ -296,7 +296,7 @@ A settings change that leaves the plan accurate needs no update, and the `**Revi
 - **A public review that names an address or a credential.**
   The product repository is public and permanent; name the property, keep the value in the Moodle submission, and follow the incident response for a leak.
 - **A configuration plan that is not updated when the configuration changes.**
-  A plan two changes old is believed, which is worse than absent; update it in the pull request that records the change.
+  A plan two changes old is believed, which is worse than absent; update it in the pull request that records the change when the change alters what it records.
 - **A `CFG-nn` reused or renumbered.**
   A dropped item keeps its identifier in place; renumbering the live items breaks every citation and every agent that learned the old anchor.
 - **A course-materials item the team "fixes" in the submodule.**

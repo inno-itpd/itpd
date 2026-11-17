@@ -274,7 +274,7 @@ The week has no 7-minute deck and no experiment: the deck is prepared in Week 9,
   - **Deliverables**:
     1. **Configuration Plan**: `docs/configuration-plan.md`, the maintained inventory of the configuration, with its five groups, at least 8 `Active` `CFG-nn` items, their fields, and their connections, per [Configuration Management Requirements](../requirements/configuration-management-requirements.md).
     2. **Goal-Based Configuration Evaluation**: `reports/week-08/cm-evaluation.md`, with its baseline, its method, one section per local goal, the tradeoffs, what the team could not judge, and the first change.
-       No implementation is required: a change the team enacts is a pull request that updates the configuration plan, with a release when it changes the product.
+       No implementation is required: a change the team enacts is a pull request that updates the configuration plan when the change alters what it records, with a release when it changes the product.
     3. **Usability Results**: `docs/usability-tests/ut-01/results.md`, the sanitized session notes under `docs/usability-tests/ut-01/sessions/`, the instrumentation comparison, the `QR/QRT` result in the testing plan, and the findings and their task issues.
     4. **Sprint, Release, Retrospective, And AI Usage**: `SPRINT-08` with its velocity, the results review with the customer, `REL-08`, the sprint retrospective, and the AI usage report.
   - **Submission Scope**: Team submission.

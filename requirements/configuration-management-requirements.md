@@ -28,7 +28,8 @@ The plan is maintained documentation and the evaluation is that week's evidence,
 1. The configuration plan is `docs/configuration-plan.md`.
    It is the maintained inventory of the configuration: what the items are, what each is for, how each is identified and owned, what each reads and what reads it, and where each lives.
    It stays current until the course ends, and it is the file a reader or an agent opens to find the configuration.
-2. The configuration review's evidence is `reports/week-NN/cm-evaluation.md`, written in the week the review is held, which is `reports/week-08/` for the week `UT-01` runs in.
+2. The configuration review's evidence is `reports/week-NN/cm-evaluation.md`, written in the week the review is held.
+   For Assignment 8 that is `reports/week-08/`.
    The evaluation is that week's judgement, and it is not maintained.
 3. `docs/configuration-plan.md` carries `**Reviewed:**` under its `#` heading: one date, the day the plan was last reviewed.
    The date advances when the plan is reviewed again, and a plan whose inventory changed without a review keeps its date.
@@ -70,16 +71,16 @@ An item the team cannot find, open, or read is still an item; a defect in the pr
    The heading is the identifier alone and the first line names the item, so the identifier and the name are both explicit, per [Identifier Rules](general-requirements.md#identifier-rules).
 7. An item carries these fields, in this order, as a bulleted list, per [Identifier Rules](general-requirements.md#identifier-rules):
 
-   | Field                       | What it says                                                                                                                                                                                                                                                     |
-   | --------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-   | `**Status:**`               | `Active` or `Dropped`                                                                                                                                                                                                                                            |
-   | `**Dropped:**`              | Only on a dropped item: the date and the reason it was removed                                                                                                                                                                                                   |
-   | `**Type:**`                 | A short phrase saying what kind of thing it is, such as `document`, `workflow`, `CI pipeline`, `setting`, `dependency`, `skill`, or `process`                                                                                                                    |
-   | `**Purpose:**`              | A short paragraph saying what it is for and what breaks without it                                                                                                                                                                                               |
-   | `**Owner:**`                | The person or role responsible for keeping it true                                                                                                                                                                                                               |
-   | `**Where:**`                | The file path, or the settings page in words                                                                                                                                                                                                                     |
-   | `**Connections:**`          | Its incident edges, each with its kind and what breaks when it does, per [The Connections](#the-connections)                                                                                                                                                     |
-   | `**What good looks like:**` | A short paragraph stating the target the item must meet, and the rule it applies, linked by its URL in the course repository so the link resolves from the repository and from an issue, per [What It States](agent-instructions-requirements.md#what-it-states) |
+   | Field                       | What it says                                                                                                                                                                                                                                                       |
+   | --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+   | `**Status:**`               | `Active` or `Dropped`                                                                                                                                                                                                                                              |
+   | `**Type:**`                 | A short phrase saying what kind of thing it is, such as `document`, `workflow`, `CI pipeline`, `setting`, `dependency`, `skill`, or `process`                                                                                                                      |
+   | `**Purpose:**`              | A short paragraph saying what it is for and what breaks without it                                                                                                                                                                                                 |
+   | `**Owner:**`                | The person or role responsible for keeping it true                                                                                                                                                                                                                 |
+   | `**Where:**`                | The file path, or the settings page in words                                                                                                                                                                                                                       |
+   | `**Connections:**`          | Its incident edges, each with its kind and what breaks when it does, per [The Connections](#the-connections)                                                                                                                                                       |
+   | `**What good looks like:**` | A short paragraph stating the target the item must meet and linking the rule it must meet by its URL in the course repository, so the link resolves from the repository and from an issue, per [What It States](agent-instructions-requirements.md#what-it-states) |
+   | `**Dropped:**`              | Only on a dropped item: the date and the reason it was removed                                                                                                                                                                                                     |
 
 8. The item records no `**Version:**` and the plan records no `**Baseline:**`, because the repository's history and the evaluation's baseline identify the state, and a copy of them in the plan is a second copy to keep true.
 9. A dropped item stays where it is, in its group, with `**Status:**` `Dropped` and its `**Dropped:**` date and reason, so no identifier is reused and a reader sees the history in place.
@@ -161,7 +162,7 @@ No separate improvement plan is required, because a plan beside an evaluation is
 1. The goal sections and the first change are the recommendation, and the evaluation is the review's deliverable.
 2. No implementation is required in the review week, and a change the team enacts is extra evidence rather than a requirement.
    A team that runs the review and the usability sessions in the same week is not penalised for having no time to enact a change.
-3. An optional change is the same work under the existing rules: a task issue, a pull request, the configuration plan updated in the pull request that records the change, the green checks, and the release when the change is product-visible, per [Releases](planning-requirements.md#releases).
+3. An optional change is the same work under the existing rules: a task issue, a pull request, the configuration plan updated in the pull request when the change alters what it records, the green checks, and the release when the change is product-visible, per [Releases](planning-requirements.md#releases).
 4. The first change and the other changes are added to the next sprint's backlog, and the next week's planning schedules them with the backlog's own priority.
    The evaluation gives no order beyond the first change.
 
@@ -330,7 +331,6 @@ The team's `AGENTS.md`.
 The local task tracker, `backlog/` and `TODO.md`.
 
 - **Status:** Dropped
-- **Dropped:** 2026-10-29, per [`DEC-011`](decisions.md#dec-011): the team moved its candidates to the GitHub project in Week 4, and a second tracker listed work that had already closed.
 - **Type:** process
 - **Purpose:** it kept the team's tasks in the repository before the GitHub project existed.
 - **Owner:** @ana
@@ -338,6 +338,7 @@ The local task tracker, `backlog/` and `TODO.md`.
 - **Connections:**
   - `cites` the task issue form it opened, which the team also stopped using.
 - **What good looks like:** it was excluded from the Markdown check, per [A Task Tracker In The Repository](https://github.com/inno-itpd/itpd/blob/main/requirements/local-task-tracking-requirements.md#a-task-tracker-in-the-repository).
+- **Dropped:** 2026-10-29, per [`DEC-011`](decisions.md#dec-011): the team moved its candidates to the GitHub project in Week 4, and a second tracker listed work that had already closed.
 ```
 
 From `reports/week-08/cm-evaluation.md`:
@@ -351,7 +352,7 @@ From `reports/week-08/cm-evaluation.md`:
 ## Method
 
 @ana and @cyd reviewed the repository on 19 November against `v0.7.0`, in four passes: the artifacts were grouped by the goal each serves, each group was read for what it costs to keep true, each group was checked against the rules its `**What good looks like:**` links, and the changes were proposed and traded off in the group that would make them.
-The product's behaviour, the quality requirement tests that were already passing, and the university's own VM settings were out of scope.
+The product's behaviour, the results of the quality requirement tests that were already passing, and the university's own VM settings were out of scope.
 
 ## Deciding What The Product Should Be
 
@@ -400,6 +401,6 @@ The risk is that a lost VM costs a redeploy from a linked repository during the 
 
 ## The First Change
 
-The team would make the check merge first: it is an afternoon's work, it removes one duplicated action pin and one setup block from two files, and it is the change the team can complete and review inside `SPRINT-09` while the others stay scheduled.
+The team would make the check merge first: it is an afternoon's work, it keeps the two checks and their separate signals, it removes one duplicated action pin and one setup block from two files, and it is the change the team can complete and review inside `SPRINT-09` while the others stay scheduled.
 Its main tradeoff is that a broken YAML stops both checks at once, which the team accepts because the two jobs fail independently once the file parses.
 ```
