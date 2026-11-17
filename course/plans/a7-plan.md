@@ -16,6 +16,11 @@ This plan reverses it in full: Week 7 and Week 8 carry no deck, Submission 7 car
 It also reverses [`A6-DEC-018`](../decisions/a6.md#a6-dec-018-week-7-uses-the-events-the-week-leaves)'s deck and presentation clauses in full, and relaxes its event-handoff clause in part: the table covers the metrics and the main flow, and the test adds the instrumentation it needs.
 The rest of Assignment 6's design stands.
 
+**Superseded by Week 8:** [`a8-plan.md`](a8-plan.md) designs Week 8 and writes the assignment this plan left for later, and it reverses [`A7-DEC-022`](../decisions/a7.md#a7-dec-022-the-week-8-workload) in full.
+The run week carries the results this plan designed and, beside them, the configuration review: the maintained plan at `docs/configuration-plan.md`, the goal-based evaluation at `reports/week-08/cm-evaluation.md` with its first change and its tradeoffs, and the changes added to the Week 9 backlog.
+No implementation is required in Week 8 and no separate improvement plan is, and the syllabus's Class 8 line follows the deck, which teaches configuration management for agentic development.
+The rest of the Week 7 design stands, and the `**Since: W8**` rules this plan hands over are not repeated here.
+
 Assignment 6 delivered the analytics plan and its metric tree, the events and instrumentation, the analytics backend and its two dashboards, the observability plan and its `SLI`s, the two observability dashboards, the two functional requirements and stories, the two architectural decision records and the container view, the observability requirement and its `deployed` test, the threshold review, `REL-06`, the Sprint Review and retrospective, and the AI usage report; [`a6-plan.md`](a6-plan.md) designs that and the completed [`assignment-6.md`](../../assignments/assignment-6.md) is the design.
 The Week 7 usability test design reads the events the Week 6 plan left, instruments what they do not cover, and adds the people and the evidence that the analytics cannot supply.
 

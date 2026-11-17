@@ -65,6 +65,7 @@ The runbook is the deliverable, and the two deployments are what it describes, s
 The four environments are the lecture's, and [Environments And Deployment](../requirements/repository-requirements.md#environments-and-deployment) names what each one is.
 The method is filling them in for this product before anything is deployed, because the deploy, the ports, and the checks all follow from the map.
 [Quality Requirement Tests](../requirements/quality-requirements-requirements.md#quality-requirement-tests) owns which test level runs where, and this step is how the map gets written down.
+The four environments are also configuration items in [the configuration plan](../requirements/configuration-management-requirements.md#the-configuration-items), and the week's configuration review judges them against the same rules, per [Guide: Configuration Management](configuration-management.md).
 
 ### Write The Map Down Before You Deploy
 
@@ -139,6 +140,7 @@ Access nobody has tried is access the meeting discovers, and the fix for a block
 
 The deployment is a build, a configuration, and a process that stays up.
 The method is to make the configuration reproducible, so the second deploy is the same deploy as the first.
+The configuration shape, the secrets, the built artefact, and this runbook are configuration items in [the configuration plan](../requirements/configuration-management-requirements.md#the-configuration-items), and the configuration review judges them by the same rules, per [Guide: Configuration Management](configuration-management.md).
 
 ### Keep The Shape In `.env.example`
 

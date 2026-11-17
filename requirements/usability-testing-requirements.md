@@ -342,6 +342,7 @@ Triage is how a finding becomes work rather than a paragraph: every finding is c
 
 1. Every finding is triaged: the team records its severity, whether it opens a task issue, and when the work is scheduled.
 2. When a significant finding exists, at least one becomes a task issue scheduled in the run week's sprint, which is `SPRINT-08` for `UT-01`.
+   A finding is significant when its `**Severity:**` is `Critical` or `Major`.
    No finding is forced when the test finds nothing significant.
 3. A finding that changes product behaviour and a defect are carried by a task issue that links the story and the `AC-nn` it serves and names the `FR-nnn` or `ADR-nnn` in `### Requirements`, per [The Issue Form](task-issues-requirements.md#the-issue-form).
    A defect names the `FR-nnn` or `ADR-nnn` and never says `None`.

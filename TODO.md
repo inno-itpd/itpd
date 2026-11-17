@@ -15,6 +15,7 @@
       No: an ADR's `**Addresses:**` list names the `FR-nnn` and `QR-nn` the decision accounts for, and it reaches the test through its `QR-nn`, per `A5-DEC-018`.
 - Next course iteration:
   - reports and changelog inside docs so that links to them resolve on the docs site
+  - good user stories are INVEST
 
 ## A1
 
@@ -335,7 +336,7 @@ Next: Week 3 is planning and the minimum usable product, and it has no assignmen
   - `docs/analytics.md` and `docs/observability.md` are the Week 6 maintained artifacts, in the destination map and the routers, per `A6-DEC-002` and `A6-DEC-016`.
 - [x] course/syllabus: decide the W6 maintained artifact
   - The Week 6 syllabus names both plans, the four dashboards, the two internal stories, the two ADRs, the requirement and its test, the threshold review, and `REL-06`.
-- [x] The deck is Week 7's, Submission 7 on 14 November carries it, and the Week 8 class presents it, per `A6-DEC-004`, `A6-DEC-024`, and `A6-DEC-025`.
+- [x] The 7-minute deck is Week 9's, submitted with Submission 9, rehearsed in the Week 10 class, and presented at the Week 11 final exam; `A6-DEC-004`, `A6-DEC-018`, `A6-DEC-024`, and `A6-DEC-025` are reversed, per `A7-DEC-013`.
 - [x] The four dashboards are the week's evidence, not features: `docs/features.md` carries the two internal capabilities, per `A6-DEC-019`.
 - [x] `course/plans/` has its row in `AGENTS.md`, and `course/decisions/a6.md` records the week's decisions.
 - [x] Counter-metric should be L1
@@ -347,9 +348,34 @@ Next: Week 3 is planning and the minimum usable product, and it has no assignmen
 ## A7
 
 - [ ] Add the production verification to the release record after the UAT (user acceptance testing) work
+  - Still open: the Week 7 test is a usability test, not a UAT, so no `**Checked UATs:**` field is added, per `A7-DEC-021`.
   - The release body carries no production check, and the plan's `REL-nn` block has none for now.
     During the deferral, the week report records the checked core task, per `A5-DEC-025`; `repository-requirements.md` rule 7 and Assignment 5's Part 3 item stay as written.
     Once UATs are designed, add `**Checked UATs:**` beside `**Checked QRs:**`, decide whether `repository-requirements.md` rule 7 stays in force, and where the check is recorded.
+
+## A8
+
+- [x] Configuration management
+  - [x] What is there now?
+        `docs/configuration-plan.md` inventories at least 8 `Active` `CFG-nn` items in five groups, with `**Status:**`, `**Dropped:**`, `**Type:**`, `**Purpose:**`, `**Owner:**`, `**Where:**`, `**Connections:**`, and `**What good looks like:**`, per `A8-DEC-005` and `A8-DEC-018`.
+  - [x] What is good?
+        The evaluation's goal sections state the artifacts that achieve each local goal today, per `A8-DEC-017`.
+  - [x] What is bad?
+        The goal sections name the mechanism and the tradeoffs, per `A8-DEC-017`.
+  - [x] How to improve?
+        The goal sections' `**A more convenient way:**` and the evaluation's `## The First Change`, per `A8-DEC-017`.
+
+- [x] Analyze the current repository configuration and determine purpose of each element.
+      The team writes the configuration plan; the plan's `**Purpose:**` and `**Connections:**` carry the element's purpose and edges.
+- [x] List problems with this configuration wrt goals and quality requirements.
+      The evaluation judges the local goals, not the items; a product defect is a risk or a task issue, not a configuration item, per `A8-DEC-002`.
+- [x] Suggest alternative configuration that better suits goals and quality requirements, with a justification.
+      The `**A more convenient way:**` and `**Tradeoffs:**` lines, with the first change and the Week 9 backlog, per `A8-DEC-017`.
+
+- [x] Write the requirements file, the guide, the assignment, and the decision log from the plan.
+      `requirements/configuration-management-requirements.md`, `guides/configuration-management.md`, `assignments/assignment-8.md`, and `course/decisions/a8.md`, per `A8-DEC-011`.
+- [x] Apply the syllabus, router, and `TODO.md` edits.
+      The syllabus follows the deck and the assignment, and the routers link the plan, the requirements, the guide, and the `CFG-nn` convention, per `A8-DEC-012` and `A8-DEC-013`.
 
 ## A2-2025 Tech Stack TODO
 

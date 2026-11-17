@@ -1,4 +1,4 @@
-// Usability testing, lecture 7 of the IT Product Development course.
+// Configuration management for agentic development, lecture 8 of the IT Product Development course.
 
 #let accent = rgb("#12507b")
 #let muted = luma(42%)
@@ -88,7 +88,7 @@
   - (Quiz) ITPD artifacts and their purpose
 ]
 
-// --- Usability testing ------------------------------------------------------
+// --- Agentic development ----------------------------------------------------
 
 #section("Agentic development")
 
