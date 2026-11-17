@@ -86,11 +86,18 @@ Who may see each item is in [Visibility Requirements](visibility-requirements.md
 
 **Since: W8**
 
-21. In the run week the report's summary gives the number of counted sessions, the aggregate completion and ease, the instrumentation comparison, the `QR/QRT` result, the findings, and the triage.
+21. In the run week the report's summary gives the number of counted sessions, the aggregate completion and ease, the instrumentation comparison, the `QR/QRT` result, the conclusion and its product response, the findings, and the triage.
+    When fewer than three counted sessions run, it gives the number of counted sessions and the declared shortfall instead of the aggregate, per [The Week 8 Execution](usability-testing-requirements.md#the-week-8-execution).
     It links the `results.md`, the sanitized session notes, the `QR/QRT`, the findings' task issues, the private repository that holds the test's telemetry export, the release, the retrospective, and the AI usage; it copies no raw participant data and states the `n=<count>` caveat.
     It follows rule 16 for the focus metric and the test traffic, and rules 7 and 8 for the contribution table and the repository evidence.
-22. In the run week a `## Usability test` section carries the results summary, the sanitized session links, the SUS and SEQ summary, the instrumentation comparison, the findings, the triage, and the `QR/QRT` result.
+22. In the run week a `## Usability test` section carries the results summary, the conclusion, the sanitized session links, the SUS and SEQ summary, the instrumentation comparison, the findings, the triage, and the `QR/QRT` result.
     `results.md` is the record and the report is the summary: the reflection week's report carries no separate usability results report, and the final reflection cites the `UT-nn` results.
+
+23. In the review week the report's summary gives the `Active` configuration item count, the number of local goals, the first change and its tradeoff, and what the team keeps, and it links `docs/configuration-plan.md`, the evaluation, and the usability results.
+    Immediately after `## Usability test`, a `## Configuration management` section carries the configuration plan's link, the evaluation's link, the baseline the evaluation reviewed, the `Active` item count, the local goals, the first change and its tradeoff, and what is kept.
+    The configuration plan is the maintained record and the evaluation is the week's judgement, so the section links both and restates neither.
+    The coverage table carries one `Configuration management` row that links the section's `#configuration-management` anchor, and neither artifact gets a row of its own.
+    The summary follows rule 16 for the focus metric and the test traffic, and it copies no raw participant data.
 
 **Recommended**
 
@@ -132,7 +139,7 @@ The focus metric still has no value, and the test traffic will be excluded from 
 ## Usability test
 
 The design is in [the `UT-01` record](../../docs/usability-tests/ut-01/README.md).
-The test runs one main booking task and two secondary tasks, with the pre-test, the SEQ after each task, the SUS after all tasks, and the open-ended post-test, in [the surveys](../../docs/usability-tests/ut-01/surveys.md).
+The test runs `Task 1`, the main booking task, and `Task 2` and `Task 3`, the two secondary tasks, with the pre-test, the SEQ after each task, the SUS after all tasks, and the open-ended post-test, in [the surveys](../../docs/usability-tests/ut-01/surveys.md).
 
 The test's instrumentation reuses the Week 6 booking events and adds a task-boundary event pair, sent to the staging scope with `source = "usability-test"` and the participant code; the verification run on 14 November confirmed that a session's events are read by that code.
 [The record's instrumentation section](../../docs/usability-tests/ut-01/README.md#instrumentation) says what the test observes and what it could not cover.
@@ -169,7 +176,7 @@ The Week 8 handoff is the design, the recruitment target of five participants, t
 | Week 6 open questions               | [reports/week-07/meeting-report.md](meeting-report.md#previous-open-questions)                                                                                                                       |
 | Sprint Review                       | [reports/week-07/meeting-report.md](meeting-report.md)                                                                                                                                               |
 | Meeting script                      | [reports/week-07/meeting-script.md](meeting-script.md)                                                                                                                                               |
-| Meeting transcript                  | [reports/week-07/meeting-transcript.md](meeting-transcript.md)                                                                                                                                       |
+| Meeting transcript                  | [reports/week-07/meeting-transcript.md](meeting-transcript.md), or one line saying why there is none                                                                                                 |
 | `REL-07`                            | [v0.7.0](https://github.com/<organization>/<repo>/releases/tag/v0.7.0), [the changelog](../../CHANGELOG.md), and [the plan's REL-07 block](../../docs/project-plan.md#rel-07)                        |
 | Sprint retrospective                | [reports/week-07/sprint-retrospective.md](sprint-retrospective.md)                                                                                                                                   |
 | AI usage                            | [reports/week-07/ai-usage.md](ai-usage.md)                                                                                                                                                           |
@@ -208,12 +215,14 @@ Meeting booking app.
 
 We ran the five `UT-01` sessions on 16 and 17 November, wrote the sanitized session notes and [the results](../../docs/usability-tests/ut-01/results.md), compared the test's instrumentation with the session records, triaged the two findings, and recorded [`QR-05 QRT-01`](../../docs/quality-requirements/qr/QR-05.md#qrt-01) as `Passes`.
 We fixed the checkout form's phone field and cut `REL-08` as [v0.8.0](https://github.com/<organization>/<repo>/releases/tag/v0.8.0).
-We also wrote the configuration management evaluation, the improvement plan, and its first implementation.
+We wrote [the configuration plan](../../docs/configuration-plan.md), which inventories eight `Active` items in the five groups, and [the configuration evaluation](cm-evaluation.md) of the four local goals our artifacts serve.
+The evaluation keeps deciding what the product should be as it is, merges the hand-written backlog mirror into the GitHub project, merges the two check workflows into one and proposes a seed script, and cuts the duplicated command list from `AGENTS.md`; its first change is the check merge, whose tradeoff is that a broken workflow file stops both checks at once.
+No configuration change was enacted this week, so `REL-08` carries the usability fix and no configuration change.
 
 ## Findings
 
-Five sessions ran, and three participants completed the main task unaided; one reached it with help, and one failed it at the checkout form.
-The SUS mean is 75.0 and the median is 80.0, with `n=5`, and the median main-task SEQ is 6.
+Five sessions ran, and three participants completed `Task 1` unaided; one reached it with help, and one failed it at the checkout form.
+The SUS mean is 75.0 and the median is 80.0, with `n=5`, and the median `Task 1` SEQ is 6.
 `QR-05 QRT-01` passes, and [the testing plan](../../docs/project-plan.md#quality-requirement-testing-plan) carries the row and its evidence.
 The `Major` finding is the checkout form's phone field, carried by [#57](https://github.com/<organization>/<repo>/issues/57) and fixed in `REL-08`; the `Minor` finding is the confirmation page's missing meeting link, carried by [#58](https://github.com/<organization>/<repo>/issues/58) and scheduled in `SPRINT-09`.
 The focus metric still has no value: a usability participant is not a paying customer, and the `UT-01` instrumentation is read separately; its pipeline events carry `source = "usability-test"`.
@@ -221,22 +230,41 @@ The focus metric still has no value: a usability participant is not a paying cus
 ## Usability test
 
 The results are in [docs/usability-tests/ut-01/results.md](../../docs/usability-tests/ut-01/results.md), and the sanitized session notes are beside it: [P-01](../../docs/usability-tests/ut-01/sessions/P-01.md) to [P-05](../../docs/usability-tests/ut-01/sessions/P-05.md).
-Five sessions ran, and the aggregate is three unaided completions of the main task, one assisted, and one failure.
-The main-task SEQ median is 6, and the secondary tasks' SEQ medians are 5 and 6.
-The instrumentation comparison reads the test's telemetry export, covers the main task end to end, and could not cover the reschedule, which the observation recorded.
+Five sessions ran, and the aggregate is three unaided completions of `Task 1`, one assisted, and one failure.
+The median SEQ is 6 for `Task 1`, 5 for `Task 2`, and 6 for `Task 3`.
+The instrumentation comparison reads the test's telemetry export, covers `Task 1` end to end, and could not cover the reschedule or the meeting link, which the observation recorded.
 
-| Participant                                               | Main task | Main SEQ | Secondary 1 | Sec 1 SEQ | Secondary 2 | Sec 2 SEQ | SUS |
-| --------------------------------------------------------- | --------- | -------- | ----------- | --------- | ----------- | --------- | --- |
-| [P-01](../../docs/usability-tests/ut-01/sessions/P-01.md) | Unaided   | 7        | Assisted    | 5         | Unaided     | 7         | 85  |
-| [P-02](../../docs/usability-tests/ut-01/sessions/P-02.md) | Unaided   | 6        | Unaided     | 6         | Unaided     | 6         | 80  |
-| [P-03](../../docs/usability-tests/ut-01/sessions/P-03.md) | Failed    | 2        | Failed      | 3         | Assisted    | 5         | 52  |
-| [P-04](../../docs/usability-tests/ut-01/sessions/P-04.md) | Unaided   | 7        | Unaided     | 5         | Unaided     | 6         | 88  |
-| [P-05](../../docs/usability-tests/ut-01/sessions/P-05.md) | Assisted  | 5        | Unaided     | 4         | Unaided     | 5         | 70  |
+`Task 1` is the main task, and `Task 2` and `Task 3` are the secondary tasks.
+
+| Participant                                               | Task 1   | Task 1 SEQ | Task 2   | Task 2 SEQ | Task 3   | Task 3 SEQ | SUS |
+| --------------------------------------------------------- | -------- | ---------- | -------- | ---------- | -------- | ---------- | --- |
+| [P-01](../../docs/usability-tests/ut-01/sessions/P-01.md) | Unaided  | 7          | Assisted | 5          | Unaided  | 7          | 85  |
+| [P-02](../../docs/usability-tests/ut-01/sessions/P-02.md) | Unaided  | 6          | Unaided  | 6          | Unaided  | 6          | 80  |
+| [P-03](../../docs/usability-tests/ut-01/sessions/P-03.md) | Failed   | 2          | Failed   | 3          | Assisted | 5          | 52  |
+| [P-04](../../docs/usability-tests/ut-01/sessions/P-04.md) | Unaided  | 7          | Unaided  | 5          | Unaided  | 6          | 88  |
+| [P-05](../../docs/usability-tests/ut-01/sessions/P-05.md) | Assisted | 5          | Unaided  | 4          | Unaided  | 5          | 70  |
 
 The two findings are [Finding 1](../../docs/usability-tests/ut-01/results.md#finding-1), the checkout form's phone field, and [Finding 2](../../docs/usability-tests/ut-01/results.md#finding-2), the confirmation page's missing meeting link.
 `Finding 1` is carried by [#57](https://github.com/<organization>/<repo>/issues/57) and fixed in `REL-08`; `Finding 2` is carried by [#58](https://github.com/<organization>/<repo>/issues/58) and scheduled in `SPRINT-09`.
 
+The conclusion answers the three research questions, names the testing plan's `Passes` verdict, and gives the product response.
+Four of five participants reached the confirmation, the checkout form's phone field is the main obstacle, and participants expected the meeting link on the confirmation page.
+The team changes the checkout form and the confirmation page, and commits to no other change.
+
 The private repository and the recordings folder are linked in the Moodle submission, and no raw data is copied into this report.
+
+## Configuration management
+
+The configuration plan is [docs/configuration-plan.md](../../docs/configuration-plan.md), and it inventories eight `Active` items in the five groups, each with its purpose, its owner, its location, its connections, and the rule it must meet.
+The evaluation judged the configuration at [v0.7.0](https://github.com/<organization>/<repo>/releases/tag/v0.7.0), and it is [reports/week-08/cm-evaluation.md](cm-evaluation.md).
+
+The four local goals are deciding what the product should be, specifying what it must do, verifying it, and keeping the context trustworthy.
+The team keeps the first as it is, merges the hand-written backlog mirror into the GitHub project, merges the Markdown and link checks into one workflow with two jobs and proposes a seed script that does not exist yet, and cuts the duplicated command list from `AGENTS.md`.
+
+The first change is the check merge: one workflow file, one checkout, and one action pin, whose main tradeoff is that a broken workflow file stops both checks at once.
+The evaluation also records what the team could not judge, the university VM's snapshot and backup policy, with the risk that a lost VM costs a redeploy during the week the deck is due.
+
+No configuration change was enacted this week, and the goal sections and the first change are the evaluation's recommendation rather than scheduled work.
 
 ## Threshold review
 
@@ -247,33 +275,46 @@ The private repository and the recordings folder are linked in the Moodle submis
 `[TOS-03](../../docs/threshold-of-success.md#tos-03)` is `Achieved`.
 No goal is `Open` after this review, and the team proposed no measure because the threshold is met.
 
+## Week 9 handoff
+
+The Week 9 deck cites [the results](../../docs/usability-tests/ut-01/results.md) and [the configuration plan](../../docs/configuration-plan.md) rather than repeating either.
+The evaluation's goal sections and its first change are the review's recommendation and schedule no work for Week 9.
+The private repository and the recordings folder stay open until the course is graded, and the `REL-08` tag is the state Week 9 starts from.
+
 ## Coverage
 
-| Deliverable          | Artifact                                                                                                                                                                                       |
-| -------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Usability results    | [docs/usability-tests/ut-01/results.md](../../docs/usability-tests/ut-01/results.md)                                                                                                           |
-| Sanitized sessions   | [P-01](../../docs/usability-tests/ut-01/sessions/P-01.md) to [P-05](../../docs/usability-tests/ut-01/sessions/P-05.md)                                                                         |
-| `QR-05` and its test | [QR-05](../../docs/quality-requirements/qr/QR-05.md) and [QRT-01](../../docs/quality-requirements/qr/QR-05.md#qrt-01)                                                                          |
-| Findings and triage  | [the findings](../../docs/usability-tests/ut-01/results.md#findings), [#57](https://github.com/<organization>/<repo>/issues/57), and [#58](https://github.com/<organization>/<repo>/issues/58) |
-| Threshold review     | [the threshold review](#threshold-review)                                                                                                                                                      |
-| CM evaluation        | [reports/week-08/cm-evaluation.md](cm-evaluation.md)                                                                                                                                           |
-| CM improvement plan  | [reports/week-08/cm-improvement-plan.md](cm-improvement-plan.md)                                                                                                                               |
-| CM implementation    | [the pull requests into `main`](https://github.com/<organization>/<repo>/pulls)                                                                                                                |
-| `REL-08`             | [v0.8.0](https://github.com/<organization>/<repo>/releases/tag/v0.8.0), [the changelog](../../CHANGELOG.md), and [the plan's REL-08 block](../../docs/project-plan.md#rel-08)                  |
-| Sprint retrospective | [reports/week-08/sprint-retrospective.md](sprint-retrospective.md)                                                                                                                             |
-| AI usage             | [reports/week-08/ai-usage.md](ai-usage.md)                                                                                                                                                     |
+| Deliverable              | Artifact                                                                                                                                                                                       |
+| ------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Sprint plan              | [docs/project-plan.md](../../docs/project-plan.md#sprint-08)                                                                                                                                   |
+| Usability results        | [docs/usability-tests/ut-01/results.md](../../docs/usability-tests/ut-01/results.md)                                                                                                           |
+| Sanitized sessions       | [P-01](../../docs/usability-tests/ut-01/sessions/P-01.md) to [P-05](../../docs/usability-tests/ut-01/sessions/P-05.md)                                                                         |
+| `QR-05` and its test     | [QR-05](../../docs/quality-requirements/qr/QR-05.md) and [QRT-01](../../docs/quality-requirements/qr/QR-05.md#qrt-01)                                                                          |
+| Findings and triage      | [the findings](../../docs/usability-tests/ut-01/results.md#findings), [#57](https://github.com/<organization>/<repo>/issues/57), and [#58](https://github.com/<organization>/<repo>/issues/58) |
+| Threshold review         | [the threshold review](#threshold-review)                                                                                                                                                      |
+| Configuration management | [the configuration management section](#configuration-management)                                                                                                                              |
+| `REL-08`                 | [v0.8.0](https://github.com/<organization>/<repo>/releases/tag/v0.8.0), [the changelog](../../CHANGELOG.md), and [the plan's REL-08 block](../../docs/project-plan.md#rel-08)                  |
+| Sprint retrospective     | [reports/week-08/sprint-retrospective.md](sprint-retrospective.md)                                                                                                                             |
+| AI usage                 | [reports/week-08/ai-usage.md](ai-usage.md)                                                                                                                                                     |
+| Week 7 action points     | [reports/week-08/meeting-report.md](meeting-report.md#previous-action-points)                                                                                                                  |
+| Week 7 open questions    | [reports/week-08/meeting-report.md](meeting-report.md#previous-open-questions)                                                                                                                 |
+| Sprint Review            | [reports/week-08/meeting-report.md](meeting-report.md)                                                                                                                                         |
+| Meeting script           | [reports/week-08/meeting-script.md](meeting-script.md)                                                                                                                                         |
+| Meeting transcript       | [reports/week-08/meeting-transcript.md](meeting-transcript.md), or one line saying why there is none                                                                                           |
+| Week 9 handoff           | [reports/week-08/README.md#week-9-handoff](#week-9-handoff)                                                                                                                                    |
+| Glossary                 | [docs/glossary.md](../../docs/glossary.md)                                                                                                                                                     |
+| Risk register            | [docs/risks.md](../../docs/risks.md)                                                                                                                                                           |
 
 ## Contribution
 
-| Contributor | Contribution                                                                                                                                                                                                                                                |
-| ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| @ana        | [the sessions and the sanitized notes](https://github.com/<organization>/<repo>/pull/61) and [the results](https://github.com/<organization>/<repo>/pull/62), reviewed by @bo                                                                               |
-| @bo         | [the triage and #57](https://github.com/<organization>/<repo>/issues/57), [the checkout fix](https://github.com/<organization>/<repo>/pull/63), and [the CM evaluation](https://github.com/<organization>/<repo>/pull/64), reviewed by @cyd                 |
-| @cyd        | [the private data handling](https://github.com/<organization>/<repo>/pull/61), [the CM improvement plan](https://github.com/<organization>/<repo>/pull/65), and [the CM implementation](https://github.com/<organization>/<repo>/pull/66), reviewed by @ana |
+| Contributor | Contribution                                                                                                                                                                                                                                           |
+| ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| @ana        | [the sessions and the sanitized notes](https://github.com/<organization>/<repo>/pull/61) and [the results](https://github.com/<organization>/<repo>/pull/62), reviewed by @bo                                                                          |
+| @bo         | [the triage and #57](https://github.com/<organization>/<repo>/issues/57), [the checkout fix](https://github.com/<organization>/<repo>/pull/63), and [the configuration evaluation](https://github.com/<organization>/<repo>/pull/64), reviewed by @cyd |
+| @cyd        | [the private data handling](https://github.com/<organization>/<repo>/pull/61) and [the configuration plan](https://github.com/<organization>/<repo>/pull/65), reviewed by @ana                                                                         |
 
 ## Repository evidence
 
-The merged pull requests for the sessions, the results, the fix, and the CM work, with the green Markdown, link, `actionlint`, and product-code CI checks on `main`.
+The merged pull requests for the sessions, the results, the fix, and the configuration work, with the green Markdown, link, `actionlint`, and product-code CI checks on `main`.
 
 ## Deviations
 
@@ -291,15 +332,18 @@ No private-only material was committed to this repository.
 **Required**
 
 1. Each week, write `reports/week-NN/ai-usage.md`.
-2. Name the tools you used and what you used them for: research, drafting, code, analysis, transcription, images, or anything else.
-3. Say what you did with the output: what you accepted, what you changed, what you rejected and why.
-4. If you used no AI tools, say so explicitly in one line.
+2. Name the tools you used and the kind of work you used them for: research, drafting, code, analysis, transcription, images, or anything else.
+3. Say how you used them: what you asked for, how you worked with what came back, and how you checked it before it went into an artifact.
+4. Say what worked: where a tool helped, and how you could tell.
+5. Say what did not work: where a tool was wrong, slow, or misleading, and what you did instead.
+6. If you used no AI tools, say so explicitly in one line.
    This is a valid answer and costs you nothing.
-5. In any artifact, generated text submitted unchecked, or filler passed off as analysis, reduces the week's grade.
+7. In any artifact, generated text submitted unchecked, or filler passed off as analysis, reduces the week's grade.
 
 The course allows AI tools.
 See [the course rules](../course/rules.md#ai-tools).
-The report exists so a reader can tell your own work from generated text, not to catch you using tools.
+The report is a short account of how the team worked with the tools, not an inventory of every output.
+It exists so a reader can see how the tools were used and what the team got from them, not to catch you using them.
 
 **Example**
 
@@ -310,20 +354,21 @@ The report exists so a reader can tell your own work from generated text, not to
 
 ChatGPT and Claude, both through the web UI.
 
-## What we used them for
+## How we used them
 
-Drafted the property list for the comparison table and summarised the Calendly and Cal.com docs.
+We asked Claude for the properties a booking tool should support and for a summary of the Calendly and Cal.com documentation, one property at a time, and checked every claim against the product's own documentation before it went into the comparison table.
+We used ChatGPT to draft the first paragraph of the value proposition.
 
-## What we did with the output
+## What worked
 
-Kept two properties from the draft.
-Rejected the rest: they described UI polish rather than the properties our users care about.
-Every claim in the comparison table was checked against the product's own documentation by hand.
+Asking for one property at a time gave short answers we could check, and two of them stayed in the table unchanged.
+The documentation summary was accurate on the three features we checked against the source.
 
-## What was not used
+## What did not work
 
-No AI output was used as a finding.
-No generated text was submitted unchecked.
+The value-proposition draft read like marketing copy and described a flow we had not designed, so we rewrote it by hand.
+One property came back that neither product supported, and it was plausible enough that we nearly kept it, so we stopped asking for whole lists.
+No generated text went into the comparison table unchecked, and no AI output was used as a research finding.
 ```
 
 ## Declaring Deviations

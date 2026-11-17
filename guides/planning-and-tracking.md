@@ -22,6 +22,7 @@ The threshold session of Step 1 and the risk session of Step 5 are the hours tha
   - [Give Every Unplanned Sprint A Provisional Goal](#give-every-unplanned-sprint-a-provisional-goal)
   - [Schedule With The Milestone, Not In The File](#schedule-with-the-milestone-not-in-the-file)
   - [Set The Velocity](#set-the-velocity)
+  - [Plan The Repository's Upkeep](#plan-the-repositorys-upkeep)
   - [Show The Sprint At Its Review](#show-the-sprint-at-its-review)
   - [Releases](#releases)
   - [Pick The Number From What A User Could Observe](#pick-the-number-from-what-a-user-could-observe)
@@ -229,6 +230,15 @@ Compute both by hand from the stories' `Story Points`, because a single-select f
 The sum is over the issues in the sprint's milestone, and it takes a minute; a generated total would be a second figure that drifts from the field it was made from.
 Below the actual, one sentence says what moved out of the sprint and where it went, because a lower number without the reason teaches the next planning nothing.
 The planned number is a forecast rather than a target, so the first sprint's actual is a fact to learn from rather than evidence against the team.
+
+### Plan The Repository's Upkeep
+
+The work that keeps the repository trustworthy is planned like any other work, and its home is [the configuration plan](../requirements/configuration-management-requirements.md#where-the-configuration-plan-and-the-review-live).
+A task that shortens a workflow, updates a pin policy, or fixes a stale runbook is an ordinary task issue.
+The configuration review's goal sections and its first change are a recommendation rather than scheduled work; a team that chooses to enact one opens an optional task issue only when the sprint has room for it, per [The Recommendation](../requirements/configuration-management-requirements.md#the-recommendation).
+
+A change that alters what the configuration plan records updates it in the same pull request, and a settings change that leaves the plan accurate needs no update.
+The method is in [Guide: Configuration Management](configuration-management.md).
 
 ### Show The Sprint At Its Review
 

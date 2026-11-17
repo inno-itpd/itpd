@@ -51,6 +51,11 @@ The team's instructions and the agent skill are two different files: [The Course
 3. It maps no artifact path to a requirements file.
    The router already holds that mapping, and a second copy goes stale.
 
+**Since: W8**
+
+4. Once `docs/configuration-plan.md` exists, the file links it in the repository layout, so an agent starting from the root finds the configuration plan.
+   The link is a path from the root, and the rule changes nothing else about the file, per [Configuration Management Requirements](configuration-management-requirements.md#where-the-configuration-plan-and-the-review-live).
+
 **Recommended**
 
 - Say why an off-limits file is off limits, beside the file, so an agent can tell when its change is the exception rather than a violation.

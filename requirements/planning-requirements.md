@@ -279,7 +279,7 @@ The steps that produce the set, from picturing failure to keeping the minimal se
 
 ## Full Example
 
-Both files of the meeting-booking example, after Week 8, trimmed to the milestone sections for Weeks 3, 5, and 6, the sprints they run over, the Week 7 and Week 8 sprints, the testing plan, and the threshold's goals.
+Both files of the meeting-booking example, after Week 8, trimmed to the milestone sections for Weeks 3, 5, and 6, the sprints they run over, the Week 7 to Week 9 sprints, the testing plan, and the threshold's goals.
 
 From `docs/project-plan.md`:
 
@@ -396,7 +396,7 @@ The `UT-01` usability test is designed and prepared, and the team's recruitment 
 
 ### SPRINT-08
 
-The usability sessions run, the results are analyzed, and the findings are triaged into the product backlog.
+The `UT-01` sessions have run, the results are written and triaged into the product backlog, and the configuration is reviewed against the goals its artifacts serve.
 
 - **Due:** 2026-11-21
 - **Sprint Backlog:** [the issues scheduled into SPRINT-08](https://github.com/<organization>/<repo>/milestone/6)
@@ -410,6 +410,16 @@ The usability sessions run, the results are analyzed, and the findings are triag
   - [QR-05](quality-requirements/qr/QR-05.md)
 
   The [testing plan](#quality-requirement-testing-plan) carries each test's result.
+
+The release carries the usability fix and no configuration change, so its upgrade note says no action is required beyond deploying it.
+
+### SPRINT-09
+
+The final repository state, the 7-minute deck, and the reflection.
+
+- **Due:** 2026-11-28
+
+#### REL-09
 
 ## Quality Requirement Testing Plan
 

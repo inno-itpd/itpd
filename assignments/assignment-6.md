@@ -388,12 +388,11 @@ The method is in [Close With The Retrospective](../guides/planning-and-tracking.
 
 The rules:
 
-- Name the tools you used, what for, and what you did with their output: [AI Usage Report](../requirements/weekly-report-requirements.md#ai-usage-report).
+- Name the tools, how you used them, and what worked and what did not: [AI Usage Report](../requirements/weekly-report-requirements.md#ai-usage-report).
 
 This week:
 
-1. Write `reports/week-06/ai-usage.md`, naming each tool, what you used it for, and what you accepted, changed, or rejected.
-2. If you used no AI tools, say so in one line.
+1. Write `reports/week-06/ai-usage.md`.
 
 ## What Good Looks Like
 

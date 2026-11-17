@@ -4,6 +4,7 @@ How to design a usability test a stranger can run, recruit the people it needs, 
 
 The rules are in [Usability Testing Requirements](../requirements/usability-testing-requirements.md): the record, the participants, the tasks, the protocol, the instruments, the instrumentation, the analysis, the consent, the private repository, the public evidence, the results, and the triage.
 The quality requirement the test serves is in [Quality Requirements](../requirements/quality-requirements-requirements.md), what a manual test must carry is in [Quality Requirement Tests](../requirements/quality-requirements-requirements.md#quality-requirement-tests), and the testing plan that records the verdict is in [Planning Requirements](../requirements/planning-requirements.md#quality-requirement-testing-plan).
+The test exists because the team's `Interaction Capability` quality requirement needs its test, so Step 1 commits the requirement before the design and Step 8 writes its file.
 Who may see each artifact is in [Visibility Requirements](../requirements/visibility-requirements.md), the events the product already records are in [Product Analytics Requirements](../requirements/analytics-requirements.md#the-events), the test's instrumentation is in [The Instrumentation](../requirements/usability-testing-requirements.md#the-instrumentation), and the staging deployment it runs against is in [Environments And Deployment](../requirements/repository-requirements.md#environments-and-deployment).
 This guide is the method: designing the test, preparing the data, running the sessions, analyzing the results, and learning from them.
 
@@ -16,7 +17,9 @@ Recruiting is the long pole and starts first, because three people outside the t
 - [Step 1: Write The Test Record And The Goal](#step-1-write-the-test-record-and-the-goal)
   - [Open The Group With Its Index Row](#open-the-group-with-its-index-row)
   - [State The Goal And The Questions](#state-the-goal-and-the-questions)
-  - [Name The Requirement The Test Serves](#name-the-requirement-the-test-serves)
+  - [Commit The Requirement The Test Serves](#commit-the-requirement-the-test-serves)
+  - [Choose One Interaction Capability Sub-Characteristic](#choose-one-interaction-capability-sub-characteristic)
+  - [Choose The Measure](#choose-the-measure)
 - [Step 2: Choose And Recruit The Participants](#step-2-choose-and-recruit-the-participants)
   - [Write The Profile Before You Recruit](#write-the-profile-before-you-recruit)
   - [Recruit Three, Aim For Five](#recruit-three-aim-for-five)
@@ -24,6 +27,7 @@ Recruiting is the long pole and starts first, because three people outside the t
   - [Replace Without Reusing A Code](#replace-without-reusing-a-code)
 - [Step 3: Write The Tasks And The Success Criteria](#step-3-write-the-tasks-and-the-success-criteria)
   - [Start The Main Task From The Product's Main Flow](#start-the-main-task-from-the-products-main-flow)
+  - [Write Each Task As Its Own Section](#write-each-task-as-its-own-section)
   - [Write The Scenario, Not The Steps](#write-the-scenario-not-the-steps)
   - [Write The Success Criterion Before The First Session](#write-the-success-criterion-before-the-first-session)
   - [Dry Run With A Teammate](#dry-run-with-a-teammate)
@@ -46,13 +50,13 @@ Recruiting is the long pole and starts first, because three people outside the t
   - [Draw The Evidence Map](#draw-the-evidence-map)
   - [Leave The Results A Stub](#leave-the-results-a-stub)
 - [Step 8: Write The Quality Requirement And Its Test](#step-8-write-the-quality-requirement-and-its-test)
-  - [Choose One Interaction Capability Sub-Characteristic](#choose-one-interaction-capability-sub-characteristic)
-  - [Choose The Measure](#choose-the-measure)
+  - [Write The Requirement File](#write-the-requirement-file)
   - [Write The Manual Test Around The Record](#write-the-manual-test-around-the-record)
 - [Step 9: Run The Sessions And Analyze The Results](#step-9-run-the-sessions-and-analyze-the-results)
   - [Run At Least Three Counted Sessions](#run-at-least-three-counted-sessions)
   - [Write The Sanitized Note After Every Session](#write-the-sanitized-note-after-every-session)
   - [Write The Results And The Findings](#write-the-results-and-the-findings)
+  - [Write The Conclusion](#write-the-conclusion)
 - [Step 10: Triage The Findings And Learn](#step-10-triage-the-findings-and-learn)
   - [Rate, Recommend, And Route](#rate-recommend-and-route)
   - [Record The Verdict And The Learning](#record-the-verdict-and-the-learning)
@@ -94,6 +98,10 @@ Create `docs/usability-tests/ut-01/` with the record in `README.md`, and let the
 The identifier is `UT-01`, the directory is `ut-01`, and the record's heading is `# UT-01: <title>`.
 The path is lowercase because a directory is kebab-case, and the identifier stays uppercase: they are different strings, and the record's heading carries the identifier.
 
+Keep the record's `**Design sprint:**` and `**Run sprint:**` set to the two sprints the plan schedules: `SPRINT-07` for the design and `SPRINT-08` for the run, `SPRINT-07` for the run when every counted session runs before the design week's deadline, and `SPRINT-09` only when the plan moves.
+When the sessions straddle `SPRINT-07` and `SPRINT-08`, the field names the sprint of the last counted session, the record says which sessions ran early, and the index lists both.
+The `**Status:**` is `Planned` from the first day and becomes `Completed` when the counted sessions and the results are recorded.
+
 ### State The Goal And The Questions
 
 Write the goal as one sentence a reader outside the course can follow: whether a representative participant can book and pay for a session without help.
@@ -102,15 +110,31 @@ A question about the participant's feelings that no measure reaches is cut now, 
 
 The questions decide the tasks and the measures: a question about finding a free slot is answered by the main task's completion, and a question about where the participant hesitates is answered by the observation and the SEQ.
 
-### Name The Requirement The Test Serves
+### Commit The Requirement The Test Serves
 
-Link the `QR-nn` the test serves, and write its `QRT-nn` with this test in `**Runs at:**`.
-The record and the test point at each other, and the requirement is what makes the test graded rather than optional.
-[Step 8](#step-8-write-the-quality-requirement-and-its-test) writes them, and the record's field is written first because the test cites the record.
+The test exists because the team's `Interaction Capability` quality requirement needs its test: the requirement is the reason the sessions are graded rather than optional.
+Commit three things now, before the tasks are written: the sub-characteristic, the measure the test reads, and the bar.
+Draft the requirement's outcome in one sentence and link the `QR-nn` the test serves under `## The Requirement`, using the next free identifier; the link resolves when [Step 8](#step-8-write-the-quality-requirement-and-its-test) writes the file and its `QRT-nn`, with this test in `**Runs at:**`.
+The record and the test point at each other, and the record's field is written first because the test cites the record.
 
-Keep the record's `**Design sprint:**` and `**Run sprint:**` set to the two sprints the plan schedules: `SPRINT-07` for the design and `SPRINT-08` for the run, `SPRINT-07` for the run when every counted session runs before the design week's deadline, and `SPRINT-09` only when the plan moves.
-When the sessions straddle `SPRINT-07` and `SPRINT-08`, the field names the sprint of the last counted session, the record says which sessions ran early, and the index lists both.
-The `**Status:**` is `Planned` from the first day and becomes `Completed` when the counted sessions and the results are recorded.
+The next two subsections make the choice, and the rest of the design carries it: Step 3's main task is the requirement's subject, Step 7's analysis plan reports the statistic the bar reads, and Step 8 writes the file.
+
+### Choose One Interaction Capability Sub-Characteristic
+
+The requirement uses `Interaction Capability` and one sub-characteristic the team chooses from `Learnability`, `Self-descriptiveness`, and `Operability`.
+Choose the one the test actually measures, and write one sentence saying why: `Self-descriptiveness` fits a participant who must recognise what to do without a label, `Learnability` fits a first-time task, and `Operability` fits the effort of the interaction.
+The next subsection chooses the measure that reads it.
+
+### Choose The Measure
+
+The team chooses the measure from the four the session records: the main task's completion and assistance, the time on task, the main task's SEQ, or the SUS.
+Choose the one that reads the sub-characteristic, and say why: `Self-descriptiveness` often reads on the main-task SEQ, `Learnability` on unaided completion or assistance, `Operability` on the time on task, and the SUS on the whole session's perceived usability; these are examples, not rules, and the team must say why its measure reads its sub-characteristic.
+A time measure is noisy with three to five participants, and a completion rate has a ceiling when everyone succeeds; say why the measure still tells you whether the product is usable.
+
+Set the bar now, using one of the statistics the analysis plan will report; it becomes the requirement's `Response Measure` in Step 8: for the SEQ, the main-task median SEQ against a bar (the example is at least five of seven); for completion and assistance, the main-task count or proportion that must reach `Unaided`; for the time, the main-task median time against a limit; and for the SUS, the mean or median against a bar.
+The four [measures](../requirements/general-requirements.md#measurement-terminology) are the menu, not the statistic: the bar reads the same statistic the analysis plan will report, so the verdict never needs a number the plan did not commit to.
+The measures the requirement does not read stay analysis results and are reported; the requirement reads one.
+The measure is not a target: set it at the value that tells you whether the product is usable, do not coach participants toward it, and do not change it after the data.
 
 ## Step 2: Choose And Recruit The Participants
 
@@ -167,6 +191,14 @@ Add two secondary tasks that cover adjacent flows the team wants to learn about,
 The secondary tasks are identical for every participant, in the same order, and the main task comes first.
 
 The materials call it a usability test task and never `core task`: the core task is the product's own term, and the test's task is this week's instrument.
+
+### Write Each Task As Its Own Section
+
+Give the tasks their numbers in the order they run: `Task 1` is the main task, and `Task 2` and `Task 3` are the secondary tasks, per [The Tasks](../requirements/usability-testing-requirements.md#the-tasks).
+Write each one as a `### Task 1` section under the record's `## The Tasks`, its first line naming the task and its role, followed by its `**Scenario:**`, `**Start point:**`, `**End state:**`, `**Time limit:**`, and `**Help rule:**` fields.
+
+A finding then names the task as `UT-01 Task 1`, so a reader can tell which of the three it came from without reading the whole record.
+The numbers are local to the test, like the participant codes: `Task 1` in `UT-01` and `Task 1` in `UT-02` are different tasks, and the test names which one.
 
 ### Write The Scenario, Not The Steps
 
@@ -331,7 +363,7 @@ The analysis plan is written before the first session, so the team cannot choose
 
 ### Fix The Measures Before The Data
 
-Write the per-participant table's columns, the main task's aggregate completion rate, the main task's median time, the median SEQ for each task, the SUS mean and median, the measure and bar the quality requirement uses, the thematic analysis, the severity rating, the instrumentation comparison and what it cannot cover, and the limitations, before the first session.
+Write the per-participant table's columns, `Task 1`'s aggregate completion rate, `Task 1`'s median time, the median SEQ for `Task 1`, `Task 2`, and `Task 3`, the SUS mean and median, the measure and bar Step 1 committed, the thematic analysis, the severity rating, the instrumentation comparison and what it cannot cover, and the limitations, before the first session.
 The list is the minimum every team reports.
 A team may add a measure its product needs, provided the plan names the measure, its statistic, and its scope before the first session; a measure added after the data is a measure chosen to flatter the result.
 The columns are what the team commits to reading.
@@ -356,38 +388,26 @@ The stub's headings are the results table, the findings, the limitations, and th
 ## Step 8: Write The Quality Requirement And Its Test
 
 The test's result is graded through a quality requirement, and the record is the test's procedure.
+Step 1 committed the sub-characteristic, the measure, and the bar; this step writes the requirement file, the manual test around the record, and the testing-plan row.
 [Quality Requirement Tests](../requirements/quality-requirements-requirements.md#quality-requirement-tests) owns the fields, the manual test, and the no-deviation rule.
 
-### Choose One Interaction Capability Sub-Characteristic
+### Write The Requirement File
 
-The requirement uses `Interaction Capability` and one sub-characteristic the team chooses from `Learnability`, `Self-descriptiveness`, and `Operability`.
-Choose the one the test actually measures, and write one sentence saying why: `Self-descriptiveness` fits a participant who must recognise what to do without a label, `Learnability` fits a first-time task, and `Operability` fits the effort of the interaction.
-The next subsection chooses the measure that reads it.
-
-### Choose The Measure
-
-The team chooses the measure from the four the session records: the main task's completion and assistance, the time on task, the main task's SEQ, or the SUS.
-Choose the one that reads the sub-characteristic, and say why: `Self-descriptiveness` often reads on the main-task SEQ, `Learnability` on unaided completion or assistance, `Operability` on the time on task, and the SUS on the whole session's perceived usability; these are examples, not rules, and the team must say why its measure reads its sub-characteristic.
-A time measure is noisy with three to five participants, and a completion rate has a ceiling when everyone succeeds; say why the measure still tells you whether the product is usable.
-
-The scenario reads a representative participant completing the main usability test task, in the staging deployment on the university network with seeded data, and its `Response` is the behaviour the chosen measure reads.
-The `Response Measure` is a real, countable criterion the team writes before the first session, and it uses one of the statistics the analysis plan reports: for the SEQ, the main-task median SEQ against a bar (the example is at least five of seven); for completion and assistance, the main-task count or proportion that must reach `Unaided`; for the time, the main-task median time against a limit; and for the SUS, the mean or median against a bar.
-The four [measures](../requirements/general-requirements.md#measurement-terminology) are the menu, not the statistic: the criterion reads the same statistic the plan reports, so the verdict never needs a number the plan did not commit to.
-The measures the requirement does not read stay analysis results and are reported; the requirement reads one.
-The measure is not a target: set it at the value that tells you whether the product is usable, do not coach participants toward it, and do not change it after the data.
-
+Write the `QR-nn` under `docs/quality-requirements/qr/`, with its outcome in one sentence, its pair, its two priorities, and its six-part scenario: [The Quality Requirement](../requirements/quality-requirements-requirements.md#the-quality-requirement) owns the fields and [The Quality Attribute Scenario](../requirements/quality-requirements-requirements.md#the-quality-attribute-scenario) owns the six parts.
+The scenario reads a representative participant completing the main usability test task, in the staging deployment on the university network with seeded data, and its `Response` is the behaviour the chosen measure reads; its `Response Measure` restates the bar Step 1 committed, and the file's one sentence says why the chosen sub-characteristic is what the test measures and why the measure reads it.
 Carry `**Business importance:** High`, so the requirement needs its test, and the team's own `**Technical risk:**`.
+Create the file in the same change as its row in the quality requirements index, per [The Quality Requirements Index](../requirements/quality-requirements-requirements.md#the-quality-requirements-index).
 
 ### Write The Manual Test Around The Record
 
-Write the `QRT-nn` at `manual`, name the `UT-nn` in `**Runs at:**`, and write `**Why Manual:**` saying why no command can judge the measure the team chose — whether the participant completes the task unaided, the participant's time on task, how the participant rates the main task on the SEQ, or the participant's own SUS responses — and that the test reads no `SLI`.
+Write the `QRT-nn` at `manual`, name the `UT-nn` in `**Runs at:**`, and write `**Why Manual:**` saying why no command can judge the measure Step 1 committed — whether the participant completes the task unaided, the participant's time on task, how the participant rates the main task on the SEQ, or the participant's own SUS responses — and that the test reads no `SLI`.
 The procedure runs the main task with at least three participants per the record and reads `results.md`, so the record is the procedure's source.
 The `**Pass when:**` restates the team's `Response Measure` and settles it.
 
 A manual test whose requirement is `Interaction Capability` and whose `**Runs at:**` names a `UT-nn` is the expected manual test for usability, and it needs no deviation; every other manual test keeps the deviation rule.
 
 In the design week the testing-plan row is `Not verified`, `None`, `Planned for sprint: SPRINT-08`, and `None`.
-In the run week it is `Passes` or `Fails` with `Checked: SPRINT-08` and the `results.md` evidence, and the index and matrix carry the requirement's row.
+In the run week it is `Passes` or `Fails` with `Checked: SPRINT-08` and the `results.md` evidence.
 
 ## Step 9: Run The Sessions And Analyze The Results
 
@@ -413,14 +433,26 @@ An anonymized quote names no person and no organization, and it appears only whe
 
 ### Write The Results And The Findings
 
-Write `results.md` with the main task's aggregate completion, the main task's median time, the median SEQ for each task, the SUS mean and median with `n=<count>`, every additional measure the plan named, the thematic analysis, the instrumentation comparison, the limitations, and the conclusion.
+Write `results.md` with `Task 1`'s aggregate completion, `Task 1`'s median time, the median SEQ for `Task 1`, `Task 2`, and `Task 3`, the SUS mean and median with `n=<count>`, every additional measure the plan named, the thematic analysis, the instrumentation comparison, the limitations, and the conclusion.
 The comparison names the instrumentation and says which task or question it could not cover.
 Link the sanitized notes it summarizes, and copy none of the raw data.
 
-Each finding is a `### Finding 1` section with its stability anchored on the heading, its severity, the tasks and participant codes it came from, the evidence, the recommendation, and the task issue when one is opened.
-Cite it as `docs/usability-tests/ut-01/results.md#finding-1`, and cite the test as `UT-01`.
+One section per finding, numbered `### Finding 1`, `### Finding 2`, and so on, each with its stability anchored on the heading, its severity, the task by its test and number and the participant codes it came from, the evidence, the recommendation, and the task issue when one is opened.
+A finding names its task as `UT-01 Task 1` with the participants' codes, so a reader knows which task produced it.
+Cite each finding by its own anchor, `docs/usability-tests/ut-01/results.md#finding-1` for the first and `docs/usability-tests/ut-01/results.md#finding-2` for the second, and cite the test as `UT-01`.
 
 Set the record's `**Status:**` to `Completed`, and update the index's `Results` cell to link `results.md`.
+
+### Write The Conclusion
+
+The conclusion is what the analysis means for the product: it answers the research questions the record states and says what the team will do about the answers.
+[The Results And Findings](../requirements/usability-testing-requirements.md#the-results-and-findings) owns what it must state, and the rule is more than a summary of the numbers.
+
+Answer each research question in the order the record asks it, and keep each answer to what the results support.
+Name the verdict the testing plan records in words, and link the plan's row rather than restating its fields.
+
+Then give the product response: for each change the team commits to, name the finding that carries it and the task issue that does the work; for each change it declines, give the reason and point at the triage or the `DEC-nn`.
+A test that finds nothing significant says that no product change follows and why, so the null result is a conclusion rather than an omission.
 
 ## Step 10: Triage The Findings And Learn
 
@@ -507,12 +539,16 @@ A private repository that outlives the course is participant data kept without a
   A session missing a measure is not a completed session; run the survey in every session, including a failed task's.
 - **A QR measure that is not one the record reports.**
   The requirement reads the completion and assistance, the time, the SEQ, or the SUS, and the same measure is in `results.md`; a measure outside the record cannot be settled by the sessions.
+- **A requirement chosen after the design.**
+  The sub-characteristic, the measure, and the bar are committed in Step 1 and the file is written in Step 8; a requirement written to fit a finished design describes the test rather than stating a claim the test must settle.
 - **A measure chosen after the data.**
   The measure and its bar are written before the first session; choosing them after the results flatters the finding.
 - **A task that names a button or a step.**
   The wording becomes the instruction, and the session tests the wording; name the goal and the start point only.
 - **A task that is a feature tour.**
   A tour shows what exists; a task shows whether a participant can do what they came for, so write the goal the target user has.
+- **A task without its number.**
+  A finding that names only "the main task" or "the first secondary task" reads differently in every document and has no anchor to link; write each task as `### Task 1` and cite it with the test, as `UT-01 Task 1`.
 - **A leading facilitator.**
   "Just click the date picker" is help the observation then misses; answer only the scenario's questions and record every hint.
 - **A guide who solves the task.**

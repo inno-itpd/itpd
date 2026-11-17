@@ -34,6 +34,12 @@ It is the short version of the requirements, states what is expected of you as a
    A decision is recorded in `docs/decisions.md` when it needs an entry, per [The Decision](decisions-requirements.md#the-decision), and otherwise in the one artifact it changes.
 10. An **action point** is a follow-up that came out of a meeting, with an owner and a week it falls due in, per [Meeting Report](customer-meetings-requirements.md#meeting-report).
 
+**Since: W8**
+
+A **configuration** is the files, settings, and processes that produce, check, store, and deliver the repository's artifacts and that an agent reads to find them.
+A **configuration item** is one such item, a **configuration plan** is the maintained record of them, and a **configuration review** is the judgement of that plan.
+Their rules are in [Configuration Management Requirements](configuration-management-requirements.md), and each is also a term the team may add to its own glossary, per [The Term](glossary-requirements.md#the-term).
+
 ## Measurement Terminology
 
 **Since: W7**
@@ -96,6 +102,7 @@ A quality requirement's **`Response Measure`** is its criterion, not its measure
    `QRT-nn` for quality requirement tests is introduced in Week 5, takes two digits, and is scoped to its `QR-nn`.
    `SLI-nn` for service level indicators is introduced in Week 6, and it takes two digits.
    `UT-nn` for usability tests is introduced in Week 7, and it takes two digits.
+   `CFG-nn` for configuration items is introduced in Week 8, and it takes two digits.
    A later family is introduced only by the requirement that first uses it.
 2. An identifier, once issued, is never changed, reused, or reassigned, including when the artifact is edited later in the course.
 3. Gaps in a sequence are expected and correct.
@@ -173,8 +180,20 @@ A quality requirement's **`Response Measure`** is its criterion, not its measure
 28. A participant is `P-01`, `P-02`, and so on: two digits, local to its `UT-nn`, assigned in the order the sessions are scheduled, cited as the pair `UT-01 P-01` or with the `UT-nn`'s path, and never reused, per [The Participants](usability-testing-requirements.md#the-participants).
     The code may appear in staging test telemetry, per [The Instrumentation](usability-testing-requirements.md#the-instrumentation), and its identity mapping stays private.
     There is no repository-wide `P-nn` family, no `UF-nn`, and no `FINDING-nn`.
-29. A finding is cited by `docs/usability-tests/ut-01/results.md#finding-1`, the anchor of its `### Finding 1` section, and not by an identifier, per [The Results And Findings](usability-testing-requirements.md#the-results-and-findings).
+29. A usability test task is `Task 1`, `Task 2`, or `Task 3`: a position in its test's task list rather than an identifier, so its number is not zero-padded and there is no `T-nn`, per [The Tasks](usability-testing-requirements.md#the-tasks).
+    The record writes each task as a `### Task 1` section under `## The Tasks`, its first line naming the task and its role, so its anchor is `#task-1`.
+    Cite a task as `UT-01 Task 1`, and link it as `ut-01/README.md#task-1`, or as `README.md#task-1` from the test's own directory.
+30. A finding is cited by `docs/usability-tests/ut-01/results.md#finding-1`, the anchor of its `### Finding 1` section, and not by an identifier, per [The Results And Findings](usability-testing-requirements.md#the-results-and-findings).
     A task issue created from a finding cites the finding that way in its description.
+
+**Since: W8**
+
+31. `CFG-nn` is the Week 8 family, and it takes two digits.
+    It is repository-wide, and its home is `docs/configuration-plan.md`, one section per item under the item's group.
+32. A `CFG-nn` section's heading is the identifier alone, such as `### CFG-01`, so its anchor is `#cfg-01`, and its first line names the item.
+    Its fields and its `**Status:**` values are the configuration-management requirements', per [The Configuration Items](configuration-management-requirements.md#the-configuration-items).
+33. A `CFG-nn` is cited as the identifier with the configuration plan's path or its heading anchor, such as `docs/configuration-plan.md#cfg-01`.
+    A dropped item keeps its identifier in place, per rule 11, and a configuration the team does not have yet carries no `CFG-nn`.
 
 **Example**
 
@@ -218,7 +237,10 @@ This is what makes the course a project rather than nine separate assignments.
 | Week 7 usability test design     | The `QR-nn` the test serves and its `UT-nn` record, per [The Test Record](usability-testing-requirements.md#the-test-record)                                                                                                                      |
 | Week 8 usability results         | The `UT-nn` record and the findings' task issues, per [The Results And Findings](usability-testing-requirements.md#the-results-and-findings) and [The Triage](usability-testing-requirements.md#the-triage)                                       |
 | Week 8 task issue                | The finding by its `results.md` path and anchor, per [The Issue Form](task-issues-requirements.md#the-issue-form)                                                                                                                                 |
-| Week 9 final reflection          | The `UT-nn` results, per [The Results And Findings](usability-testing-requirements.md#the-results-and-findings)                                                                                                                                   |
+| Week 8 configuration plan        | The course's configuration rules it judges, linked from each item's `**What good looks like:**`, and the team's `AGENTS.md` it records, per [The Configuration Items](configuration-management-requirements.md#the-configuration-items)           |
+| Week 8 configuration review      | The configuration plan's `CFG-nn` its goal sections name, and the `TOS-nn`, `QR-nn`, and `RISK-nn` those sections name, per [The Evaluation](configuration-management-requirements.md#the-evaluation)                                             |
+| Week 9 configuration change      | The evaluation's goal section that proposed it and the configuration plan it changes, per [The Evaluation](configuration-management-requirements.md#the-evaluation)                                                                               |
+| Week 9 final reflection          | The `UT-nn` results, per [The Results And Findings](usability-testing-requirements.md#the-results-and-findings), and the configuration plan                                                                                                       |
 | Any change a decision caused     | The decision's `DEC-nnn` when it has an entry, or its reason otherwise, per [What Cites It](decisions-requirements.md#what-cites-it)                                                                                                              |
 
 **Required**

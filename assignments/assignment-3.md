@@ -217,7 +217,7 @@ This week:
 
 The rules:
 
-- Name the tools you used, what for, and what you did with their output: [AI Usage Report](../requirements/weekly-report-requirements.md#ai-usage-report).
+- Name the tools, how you used them, and what worked and what did not: [AI Usage Report](../requirements/weekly-report-requirements.md#ai-usage-report).
 
 ## What Good Looks Like
 
