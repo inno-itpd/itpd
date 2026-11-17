@@ -46,6 +46,7 @@ The tools the course suggests, from meeting transcripts to a coding agent, are i
 By the end of this week you should be able to show a reader:
 
 - The `UT-01` results that say what the sessions found, with the minimum measures and the `n=<count>` caveat, or the qualitative record when fewer than three sessions run, per [Part 3](#part-3-write-the-results).
+- The `UT-01` conclusion that answers the research questions and names the product response, with the changes the team commits to and declines, per [Part 3](#part-3-write-the-results).
 - The sanitized session notes the results summarize, with no raw data and no identity in the product repository, per [Part 2](#part-2-run-the-sessions-and-write-the-sanitized-notes).
 - The findings, one numbered section each (`### Finding 1`, `### Finding 2`, and so on), with their fields, each triaged, per [Part 4](#part-4-write-the-findings) and [Part 5](#part-5-triage-the-findings-and-plan-the-fixes).
 - The `QR/QRT` verdict in the testing plan, and the threshold's usability goal settled when the team has one, per [Part 6](#part-6-record-the-verdict-and-settle-the-threshold).
@@ -120,10 +121,11 @@ This week:
 
 1. Write `docs/usability-tests/ut-01/results.md` with the per-participant table, the main task's aggregate completion, the median time on task, the median SEQ for each task, and the SUS mean and median with the `n=<count>` caveat.
    Add every additional measure the plan named, the thematic analysis, the instrumentation comparison, the limitations, and the conclusion.
-2. Write the instrumentation comparison from the test's telemetry export, and say which task or question it could not cover and how the observation covered it instead.
-3. Link the sanitized session notes the results summarize, and copy no raw data and no identity.
-4. When at least three counted sessions run, set the `UT-01` record's `**Status:**` to `Completed`, and link `results.md` from the index's `Results` cell.
-5. When fewer than three counted sessions run, follow [The Week 8 Execution](../requirements/usability-testing-requirements.md#the-week-8-execution): the `UT-01` record stays `Planned`, `results.md` carries the qualitative record without aggregates, the report declares the shortfall and says why, and the `QR/QRT` row follows Part 6.
+2. Write the conclusion per [The Results And Findings](../requirements/usability-testing-requirements.md#the-results-and-findings): answer each research question, name the `QR/QRT` verdict the testing plan records, and name the product response, with the changes the team commits to and the changes it declines.
+3. Write the instrumentation comparison from the test's telemetry export, and say which task or question it could not cover and how the observation covered it instead.
+4. Link the sanitized session notes the results summarize, and copy no raw data and no identity.
+5. When at least three counted sessions run, set the `UT-01` record's `**Status:**` to `Completed`, and link `results.md` from the index's `Results` cell.
+6. When fewer than three counted sessions run, follow [The Week 8 Execution](../requirements/usability-testing-requirements.md#the-week-8-execution): the `UT-01` record stays `Planned`, `results.md` carries the qualitative record without aggregates, the report declares the shortfall and says why, and the `QR/QRT` row follows Part 6.
    A shortfall is declared rather than presented as a result.
 
 The method is in [Step 9: Run The Sessions And Analyze The Results](../guides/usability-testing.md#step-9-run-the-sessions-and-analyze-the-results).
@@ -271,9 +273,9 @@ This week:
 
 1. Read `## Action points` in `reports/week-07/meeting-report.md`, carry out every action due by Week 8 and any action carried from an earlier report, carry each outcome into the artifact it changed, and record it in `## Previous action points` in `reports/week-08/meeting-report.md`.
 2. Put each row of `## Open questions` in the Week 7 report to the customer at the Sprint Review, or close it, and record the outcome in `## Previous open questions`.
-3. Hold the Week 8 Sprint Review and show the deployed production instance with the analytics and observability dashboards, the sanitized results, the `QR/QRT` result, the findings and their task issues, the threshold outcome, and the next steps.
+3. Hold the Week 8 Sprint Review and show the deployed production instance with the analytics and observability dashboards, the sanitized results, the conclusion and its product response, the `QR/QRT` result, the findings and their task issues, the threshold outcome, and the next steps.
    The week's usability results are the Sprint Review's subject; the configuration evaluation is not presented at the meeting and schedules no work.
-4. Write `reports/week-08/meeting-script.md` with the permission questions first, the results, the findings, the open questions, the next steps, and the read-back of the decisions and action points last.
+4. Write `reports/week-08/meeting-script.md` with the permission questions first, the results, the conclusion, the findings, the open questions, the next steps, and the read-back of the decisions and action points last.
 5. Write `reports/week-08/meeting-report.md` with the Sprint Review's feedback, a `DEC-nnn` for any decision, and at least two action points after Week 8, at least one of which is due in Week 9.
 6. Publish the transcript when the customer allows it, and say in one line why there is none when the meeting was not recorded or was held in writing.
 
@@ -347,6 +349,8 @@ A strong submission has:
 
 - **The `UT-01` results say what the sessions found.**
   The sample size and its limits come before the numbers, the minimum measures and the `n=<count>` caveat are present, the sanitized session notes are linked, and no raw data is copied; a shortfall is declared and no result is claimed.
+- **A conclusion that answers the questions and names the response.**
+  The conclusion answers each research question, names the verdict the testing plan records, and names the changes the team commits to and declines, with the findings and task issues that carry them; a test that finds nothing significant concludes that no product change follows and says why.
 - **Findings a triage can act on.**
   Each finding has a stable anchor, a severity with its reason, the sessions it came from, its evidence, and a recommendation; every finding is triaged, and a significant one is carried by a task issue scheduled in `SPRINT-08`.
 - **Fixes planned rather than promised.**
@@ -376,12 +380,12 @@ A strong submission has:
 Write `reports/week-08/README.md`, per [Weekly Public Report](../requirements/weekly-report-requirements.md#weekly-public-report).
 This week it also carries:
 
-1. In the summary, say what the sessions found: the number of counted sessions, the aggregate completion and ease, the instrumentation comparison, the `QR/QRT` result, and the key findings and their triage.
+1. In the summary, say what the sessions found and what the team concludes: the number of counted sessions, the aggregate completion and ease, the instrumentation comparison, the `QR/QRT` result, the conclusion and its product response, and the key findings and their triage.
    When fewer than three sessions ran, give the qualitative record instead of the aggregates, per [Part 3](#part-3-write-the-results).
    Say what the configuration review found: the `Active` configuration item count, the number of local goals, the first change and its tradeoff, and what the first change keeps.
    Link the results, the sanitized session notes, the `QR/QRT`, the task issues, the private repository, the configuration plan, the evaluation, `REL-08`, the retrospective, and the AI usage.
    State the `n=<count>` caveat when there are aggregates, copy no raw participant data, and point at `docs/project-plan.md#quality-requirement-testing-plan` for the rows that are not `Passes`.
-2. The `## Usability test` section: the results summary, the sanitized session links, the SUS and SEQ summary, the instrumentation comparison, the findings, the triage, and the `QR/QRT` result.
+2. The `## Usability test` section: the results summary, the conclusion, the sanitized session links, the SUS and SEQ summary, the instrumentation comparison, the findings, the triage, and the `QR/QRT` result.
 3. The `## Configuration management` section immediately after `## Usability test`: the configuration plan's link, the evaluation's link, the baseline the evaluation reviewed, the `Active` item count, the local goals, the first change and its tradeoff, and what is kept.
    Link both artifacts and restate neither.
 4. The `## Threshold review` section when a goal is still `Open` when the review starts, per [The Threshold Of Success](../requirements/planning-requirements.md#the-threshold-of-success).
@@ -460,6 +464,7 @@ The production analytics and observability dashboards were submitted in the Week
 - [ ] Each session run in person on the university network against staging, with the seed reset before each, and the instrumentation verified before the first counted one ([Part 2](#part-2-run-the-sessions-and-write-the-sanitized-notes)).
 - [ ] The raw text and the telemetry export in the private repository, the recordings in the cloud folder, and the sanitized `sessions/P-nn.md` notes written on the day with no identity ([Part 2](#part-2-run-the-sessions-and-write-the-sanitized-notes)).
 - [ ] `results.md` with the per-participant table, the aggregate completion, the medians, the SUS with `n=<count>`, every measure the plan named, the thematic analysis, the instrumentation comparison, the limitations, and the conclusion, or the qualitative record without aggregates ([Part 3](#part-3-write-the-results)).
+- [ ] The conclusion answering each research question and naming the product response, with the changes the team commits to and declines ([Part 3](#part-3-write-the-results)).
 - [ ] The `UT-01` record's `**Status:**` and the index updated ([Part 3](#part-3-write-the-results)).
 - [ ] One numbered section per finding (`### Finding 1`, `### Finding 2`, and so on), each with its severity, tasks and participant codes, evidence, recommendation, and task issue, cited by its own anchor, and sanitized ([Part 4](#part-4-write-the-findings)).
 - [ ] Every finding triaged, and a significant finding carried by a task issue scheduled in `SPRINT-08` ([Part 5](#part-5-triage-the-findings-and-plan-the-fixes)).

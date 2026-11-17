@@ -86,11 +86,11 @@ Who may see each item is in [Visibility Requirements](visibility-requirements.md
 
 **Since: W8**
 
-21. In the run week the report's summary gives the number of counted sessions, the aggregate completion and ease, the instrumentation comparison, the `QR/QRT` result, the findings, and the triage.
+21. In the run week the report's summary gives the number of counted sessions, the aggregate completion and ease, the instrumentation comparison, the `QR/QRT` result, the conclusion and its product response, the findings, and the triage.
     When fewer than three counted sessions run, it gives the number of counted sessions and the declared shortfall instead of the aggregate, per [The Week 8 Execution](usability-testing-requirements.md#the-week-8-execution).
     It links the `results.md`, the sanitized session notes, the `QR/QRT`, the findings' task issues, the private repository that holds the test's telemetry export, the release, the retrospective, and the AI usage; it copies no raw participant data and states the `n=<count>` caveat.
     It follows rule 16 for the focus metric and the test traffic, and rules 7 and 8 for the contribution table and the repository evidence.
-22. In the run week a `## Usability test` section carries the results summary, the sanitized session links, the SUS and SEQ summary, the instrumentation comparison, the findings, the triage, and the `QR/QRT` result.
+22. In the run week a `## Usability test` section carries the results summary, the conclusion, the sanitized session links, the SUS and SEQ summary, the instrumentation comparison, the findings, the triage, and the `QR/QRT` result.
     `results.md` is the record and the report is the summary: the reflection week's report carries no separate usability results report, and the final reflection cites the `UT-nn` results.
 
 23. In the review week the report's summary gives the `Active` configuration item count, the number of local goals, the first change and its tradeoff, and what the team keeps, and it links `docs/configuration-plan.md`, the evaluation, and the usability results.
@@ -244,6 +244,10 @@ The instrumentation comparison reads the test's telemetry export, covers the mai
 
 The two findings are [Finding 1](../../docs/usability-tests/ut-01/results.md#finding-1), the checkout form's phone field, and [Finding 2](../../docs/usability-tests/ut-01/results.md#finding-2), the confirmation page's missing meeting link.
 `Finding 1` is carried by [#57](https://github.com/<organization>/<repo>/issues/57) and fixed in `REL-08`; `Finding 2` is carried by [#58](https://github.com/<organization>/<repo>/issues/58) and scheduled in `SPRINT-09`.
+
+The conclusion answers the three research questions, names the testing plan's `Passes` verdict, and gives the product response.
+Four of five participants reached the confirmation, the checkout form's phone field is the main obstacle, and participants expected the meeting link on the confirmation page.
+The team changes the checkout form and the confirmation page, and commits to no other change.
 
 The private repository and the recordings folder are linked in the Moodle submission, and no raw data is copied into this report.
 

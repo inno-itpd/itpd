@@ -310,14 +310,20 @@ The public record is what a reader follows: it is sanitized, so it carries no id
 
 **Since: W8**
 
-The results are what the sessions found, and the findings are what the team decided each one means.
+The results are what the sessions found, the findings are what the team decided each one means, and the conclusion is what the team will do about them.
 `results.md` is the record, and the weekly report and every later citation link it rather than restating it.
 
 **Required**
 
 1. `results.md` is written in the run week, and it carries the minimum measures [The Analysis](#the-analysis) requires, including the SUS and SEQ summary with the `n=<count>` caveat, every additional measure the plan named, the qualitative findings with their severity and evidence, the instrumentation comparison, the limitations, and the conclusion.
-2. It links the sanitized session notes it summarizes, and it copies no raw data.
-3. `results.md` carries one section per finding, numbered `### Finding 1`, `### Finding 2`, and so on.
+2. The conclusion answers each research question in the record and states the product response.
+   A conclusion that commits to no product change says so and gives the reason, so a null result is a conclusion rather than an omission.
+   It names:
+   - the verdict the testing plan records for the `QR-nn`, in words, and links the plan's row;
+   - each change the team commits to, with the finding that carries it and, when one was opened, its task issue;
+   - any change the team declines, with the reason, citing the triage or the `DEC-nn` that records the decision.
+3. It links the sanitized session notes it summarizes, and it copies no raw data.
+4. `results.md` carries one section per finding, numbered `### Finding 1`, `### Finding 2`, and so on.
    The number is a position in the report rather than an identifier, so it is not zero-padded, and the number of findings is not fixed.
    Each section has a stable anchor and carries these fields:
 
@@ -329,10 +335,10 @@ The results are what the sessions found, and the findings are what the team deci
    | `**Recommendation:**` | What the team would change                                                                  |
    | `**Task issue:**`     | A link to the task issue that carries the work, or `None` when no issue was opened          |
 
-4. A finding is cited by its own anchor, such as `docs/usability-tests/ut-01/results.md#finding-2` for the second finding, and the citation names the finding rather than the test alone, per [Identifier Rules](general-requirements.md#identifier-rules).
-5. The SUS summary reports the mean, the median, and the count, because a small sample supports no claim about a population.
-6. The QR/QRT verdict is recorded in the testing plan, not in `results.md`: the results state what was found, and the plan's row records `Passes` or `Fails` with its `Checked` and `Evidence`, per [Quality Requirement Testing Plan](planning-requirements.md#quality-requirement-testing-plan).
-7. The record links `results.md`, and the record's `**Status:**` becomes `Completed` when the counted sessions and the results are recorded.
+5. A finding is cited by its own anchor, such as `docs/usability-tests/ut-01/results.md#finding-2` for the second finding, and the citation names the finding rather than the test alone, per [Identifier Rules](general-requirements.md#identifier-rules).
+6. The SUS summary reports the mean, the median, and the count, because a small sample supports no claim about a population.
+7. The QR/QRT verdict is recorded in the testing plan, not in `results.md`: the results state what was found, and the plan's row records `Passes` or `Fails` with its `Checked` and `Evidence`, per [Quality Requirement Testing Plan](planning-requirements.md#quality-requirement-testing-plan).
+8. The record links `results.md`, and the record's `**Status:**` becomes `Completed` when the counted sessions and the results are recorded.
 
 ## The Triage
 
@@ -592,7 +598,7 @@ The checkout form asks for a phone number that the product never uses.
 - **Tasks:** `UT-01 P-03`, `UT-01 P-05`.
 - **Evidence:** [P-03](sessions/P-03.md) and [P-05](sessions/P-05.md).
 - **Recommendation:** remove the field, or mark it optional and explain why it is asked.
-- **Task issue:** [#57](https://github.com/<organization>/<repo>/issues/57)
+- **Task issue:** [#57](https://github.com/<organization>/<repo>/issues/57), scheduled in `SPRINT-08`
 
 ### Finding 2
 
@@ -611,7 +617,12 @@ The sample supports no claim about the population, and the SUS is reported with 
 
 ## Conclusion
 
-The main task is usable for most participants, and the checkout form's phone field is the largest obstacle.
-The testing plan records [`QR-05 QRT-01`](../../quality-requirements/qr/QR-05.md#qrt-01) as `Passes`: the median main-task SEQ is 6, against the bar of at least five of seven the team set before the first session.
-The results also report that three participants completed the main task unaided.
+The main task is usable for most participants: four of five reached the confirmation, three of them unaided, and the failure and the main task's one help request both came at the checkout form's phone field, which the product never uses.
+Participants expected the meeting link on the confirmation page and found it only in the email.
+
+The [testing plan](../../project-plan.md#quality-requirement-testing-plan) records [`QR-05 QRT-01`](../../quality-requirements/qr/QR-05.md#qrt-01) as `Passes`: the median main-task SEQ is 6, against the bar of at least five of seven the team set before the first session.
+
+The team removes the unused phone field, with [Finding 1](#finding-1) carrying it and [#57](https://github.com/<organization>/<repo>/issues/57) scheduled in `SPRINT-08`.
+It shows the meeting link on the confirmation page, with [Finding 2](#finding-2) carrying it and [#58](https://github.com/<organization>/<repo>/issues/58) scheduled in `SPRINT-09`.
+No other change is committed this week.
 ```

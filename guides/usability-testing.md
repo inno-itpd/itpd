@@ -53,6 +53,7 @@ Recruiting is the long pole and starts first, because three people outside the t
   - [Run At Least Three Counted Sessions](#run-at-least-three-counted-sessions)
   - [Write The Sanitized Note After Every Session](#write-the-sanitized-note-after-every-session)
   - [Write The Results And The Findings](#write-the-results-and-the-findings)
+  - [Write The Conclusion](#write-the-conclusion)
 - [Step 10: Triage The Findings And Learn](#step-10-triage-the-findings-and-learn)
   - [Rate, Recommend, And Route](#rate-recommend-and-route)
   - [Record The Verdict And The Learning](#record-the-verdict-and-the-learning)
@@ -421,6 +422,17 @@ One section per finding, numbered `### Finding 1`, `### Finding 2`, and so on, e
 Cite each finding by its own anchor, `docs/usability-tests/ut-01/results.md#finding-1` for the first and `docs/usability-tests/ut-01/results.md#finding-2` for the second, and cite the test as `UT-01`.
 
 Set the record's `**Status:**` to `Completed`, and update the index's `Results` cell to link `results.md`.
+
+### Write The Conclusion
+
+The conclusion is what the analysis means for the product: it answers the research questions the record states and says what the team will do about the answers.
+[The Results And Findings](../requirements/usability-testing-requirements.md#the-results-and-findings) owns what it must state, and the rule is more than a summary of the numbers.
+
+Answer each research question in the order the record asks it, and keep each answer to what the results support.
+Name the verdict the testing plan records in words, and link the plan's row rather than restating its fields.
+
+Then give the product response: for each change the team commits to, name the finding that carries it and the task issue that does the work; for each change it declines, give the reason and point at the triage or the `DEC-nn`.
+A test that finds nothing significant says that no product change follows and why, so the null result is a conclusion rather than an omission.
 
 ## Step 10: Triage The Findings And Learn
 
