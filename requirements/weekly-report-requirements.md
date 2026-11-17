@@ -139,7 +139,7 @@ The focus metric still has no value, and the test traffic will be excluded from 
 ## Usability test
 
 The design is in [the `UT-01` record](../../docs/usability-tests/ut-01/README.md).
-The test runs `T-01`, the main booking task, and `T-02` and `T-03`, the two secondary tasks, with the pre-test, the SEQ after each task, the SUS after all tasks, and the open-ended post-test, in [the surveys](../../docs/usability-tests/ut-01/surveys.md).
+The test runs `Task 1`, the main booking task, and `Task 2` and `Task 3`, the two secondary tasks, with the pre-test, the SEQ after each task, the SUS after all tasks, and the open-ended post-test, in [the surveys](../../docs/usability-tests/ut-01/surveys.md).
 
 The test's instrumentation reuses the Week 6 booking events and adds a task-boundary event pair, sent to the staging scope with `source = "usability-test"` and the participant code; the verification run on 14 November confirmed that a session's events are read by that code.
 [The record's instrumentation section](../../docs/usability-tests/ut-01/README.md#instrumentation) says what the test observes and what it could not cover.
@@ -221,8 +221,8 @@ No configuration change was enacted this week, so `REL-08` carries the usability
 
 ## Findings
 
-Five sessions ran, and three participants completed `T-01` unaided; one reached it with help, and one failed it at the checkout form.
-The SUS mean is 75.0 and the median is 80.0, with `n=5`, and the median `T-01` SEQ is 6.
+Five sessions ran, and three participants completed `Task 1` unaided; one reached it with help, and one failed it at the checkout form.
+The SUS mean is 75.0 and the median is 80.0, with `n=5`, and the median `Task 1` SEQ is 6.
 `QR-05 QRT-01` passes, and [the testing plan](../../docs/project-plan.md#quality-requirement-testing-plan) carries the row and its evidence.
 The `Major` finding is the checkout form's phone field, carried by [#57](https://github.com/<organization>/<repo>/issues/57) and fixed in `REL-08`; the `Minor` finding is the confirmation page's missing meeting link, carried by [#58](https://github.com/<organization>/<repo>/issues/58) and scheduled in `SPRINT-09`.
 The focus metric still has no value: a usability participant is not a paying customer, and the `UT-01` instrumentation is read separately; its pipeline events carry `source = "usability-test"`.
@@ -230,19 +230,19 @@ The focus metric still has no value: a usability participant is not a paying cus
 ## Usability test
 
 The results are in [docs/usability-tests/ut-01/results.md](../../docs/usability-tests/ut-01/results.md), and the sanitized session notes are beside it: [P-01](../../docs/usability-tests/ut-01/sessions/P-01.md) to [P-05](../../docs/usability-tests/ut-01/sessions/P-05.md).
-Five sessions ran, and the aggregate is three unaided completions of `T-01`, one assisted, and one failure.
-The median SEQ is 6 for `T-01`, 5 for `T-02`, and 6 for `T-03`.
-The instrumentation comparison reads the test's telemetry export, covers `T-01` end to end, and could not cover the reschedule or the meeting link, which the observation recorded.
+Five sessions ran, and the aggregate is three unaided completions of `Task 1`, one assisted, and one failure.
+The median SEQ is 6 for `Task 1`, 5 for `Task 2`, and 6 for `Task 3`.
+The instrumentation comparison reads the test's telemetry export, covers `Task 1` end to end, and could not cover the reschedule or the meeting link, which the observation recorded.
 
-`T-01` is the main task, and `T-02` and `T-03` are the secondary tasks.
+`Task 1` is the main task, and `Task 2` and `Task 3` are the secondary tasks.
 
-| Participant                                               | T-01     | T-01 SEQ | T-02     | T-02 SEQ | T-03     | T-03 SEQ | SUS |
-| --------------------------------------------------------- | -------- | -------- | -------- | -------- | -------- | -------- | --- |
-| [P-01](../../docs/usability-tests/ut-01/sessions/P-01.md) | Unaided  | 7        | Assisted | 5        | Unaided  | 7        | 85  |
-| [P-02](../../docs/usability-tests/ut-01/sessions/P-02.md) | Unaided  | 6        | Unaided  | 6        | Unaided  | 6        | 80  |
-| [P-03](../../docs/usability-tests/ut-01/sessions/P-03.md) | Failed   | 2        | Failed   | 3        | Assisted | 5        | 52  |
-| [P-04](../../docs/usability-tests/ut-01/sessions/P-04.md) | Unaided  | 7        | Unaided  | 5        | Unaided  | 6        | 88  |
-| [P-05](../../docs/usability-tests/ut-01/sessions/P-05.md) | Assisted | 5        | Unaided  | 4        | Unaided  | 5        | 70  |
+| Participant                                               | Task 1   | Task 1 SEQ | Task 2   | Task 2 SEQ | Task 3   | Task 3 SEQ | SUS |
+| --------------------------------------------------------- | -------- | ---------- | -------- | ---------- | -------- | ---------- | --- |
+| [P-01](../../docs/usability-tests/ut-01/sessions/P-01.md) | Unaided  | 7          | Assisted | 5          | Unaided  | 7          | 85  |
+| [P-02](../../docs/usability-tests/ut-01/sessions/P-02.md) | Unaided  | 6          | Unaided  | 6          | Unaided  | 6          | 80  |
+| [P-03](../../docs/usability-tests/ut-01/sessions/P-03.md) | Failed   | 2          | Failed   | 3          | Assisted | 5          | 52  |
+| [P-04](../../docs/usability-tests/ut-01/sessions/P-04.md) | Unaided  | 7          | Unaided  | 5          | Unaided  | 6          | 88  |
+| [P-05](../../docs/usability-tests/ut-01/sessions/P-05.md) | Assisted | 5          | Unaided  | 4          | Unaided  | 5          | 70  |
 
 The two findings are [Finding 1](../../docs/usability-tests/ut-01/results.md#finding-1), the checkout form's phone field, and [Finding 2](../../docs/usability-tests/ut-01/results.md#finding-2), the confirmation page's missing meeting link.
 `Finding 1` is carried by [#57](https://github.com/<organization>/<repo>/issues/57) and fixed in `REL-08`; `Finding 2` is carried by [#58](https://github.com/<organization>/<repo>/issues/58) and scheduled in `SPRINT-09`.

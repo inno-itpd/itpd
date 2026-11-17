@@ -145,10 +145,10 @@ The tasks are what makes one participant's run comparable with another's.
 8. The time limit and the help rule are stated with the task, per [The Protocol](#the-protocol).
 9. The two secondary tasks cover adjacent flows the team wants to learn about, and their order is fixed across participants.
 10. A dry run with a teammate checks the wording and the time limit, is not evidence, and is not counted.
-11. The tasks are `T-01`, `T-02`, and `T-03`, numbered in their fixed run order with the main task first, per [Identifier Rules](general-requirements.md#identifier-rules).
-12. The record writes each task as `### T-01` under `## The Tasks`, its first line naming the task and its role, followed by its `**Scenario:**`, `**Start point:**`, `**End state:**`, `**Time limit:**`, and `**Help rule:**` fields.
+11. The tasks are `Task 1`, `Task 2`, and `Task 3`, numbered in their fixed run order with `Task 1` the main task; the number is not zero-padded, and the three tasks are fixed once the first session runs, per [Identifier Rules](general-requirements.md#identifier-rules).
+12. The record writes each task as `### Task 1` under `## The Tasks`, its first line naming the task and its role, followed by its `**Scenario:**`, `**Start point:**`, `**End state:**`, `**Time limit:**`, and `**Help rule:**` fields.
     The `Unaided`, `Assisted`, and `Failed` values that settle every task's success criterion are stated once for the test.
-13. Cite a task by its `T-nn` with its test, such as `UT-01 T-01`, per [Identifier Rules](general-requirements.md#identifier-rules).
+13. Cite a task by its test and its number, such as `UT-01 Task 1`, per [Identifier Rules](general-requirements.md#identifier-rules).
 
 ## The Protocol
 
@@ -237,9 +237,9 @@ The analysis plan is written before the first session, so the team cannot choose
 1. The analysis plan is written before the first session, and the record states it.
 2. The plan covers at least:
    - a per-participant table with each task's outcome and the assistance;
-   - `T-01`'s aggregate completion rate: the count or proportion that reached the end state, and the count or proportion that did so unaided;
-   - `T-01`'s median time on task;
-   - the median SEQ for each task: `T-01`, `T-02`, and `T-03`;
+   - `Task 1`'s aggregate completion rate: the count or proportion that reached the end state, and the count or proportion that did so unaided;
+   - `Task 1`'s median time on task;
+   - the median SEQ for each task: `Task 1`, `Task 2`, and `Task 3`;
    - the SUS mean and median, with `n=<count>`;
    - a thematic analysis of the notes, a severity rating, an instrumentation comparison, and a limitations section.
 3. The list in rule 2 is the minimum every team reports.
@@ -331,13 +331,13 @@ The results are what the sessions found, the findings are what the team decided 
    The number is a position in the report rather than an identifier, so it is not zero-padded, and the number of findings is not fixed.
    Each section has a stable anchor and carries these fields:
 
-   | Field                 | What it says                                                                                                                                                                           |
-   | --------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-   | `**Severity:**`       | `Critical`, `Major`, or `Minor`, with the reason for the rating                                                                                                                        |
-   | `**Tasks:**`          | The tasks and the participant codes the finding came from, the task as its pair `UT-01 T-01` and each participant as its pair, such as `UT-01 T-01` with `UT-01 P-03` and `UT-01 P-05` |
-   | `**Evidence:**`       | What was observed or measured, linked to the session notes or the aggregate table                                                                                                      |
-   | `**Recommendation:**` | What the team would change                                                                                                                                                             |
-   | `**Task issue:**`     | A link to the task issue that carries the work, or `None` when no issue was opened                                                                                                     |
+   | Field                 | What it says                                                                                                                                                                              |
+   | --------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+   | `**Severity:**`       | `Critical`, `Major`, or `Minor`, with the reason for the rating                                                                                                                           |
+   | `**Tasks:**`          | The tasks and the participant codes the finding came from, each task with its test and number and each participant as its pair, such as `UT-01 Task 1` with `UT-01 P-03` and `UT-01 P-05` |
+   | `**Evidence:**`       | What was observed or measured, linked to the session notes or the aggregate table                                                                                                         |
+   | `**Recommendation:**` | What the team would change                                                                                                                                                                |
+   | `**Task issue:**`     | A link to the task issue that carries the work, or `None` when no issue was opened                                                                                                        |
 
 5. A finding is cited by its own anchor, such as `docs/usability-tests/ut-01/results.md#finding-2` for the second finding, and the citation names the finding rather than the test alone, per [Identifier Rules](general-requirements.md#identifier-rules).
 6. The SUS summary reports the mean, the median, and the count, because a small sample supports no claim about a population.
@@ -429,7 +429,7 @@ A representative participant books and pays for a session without help, on first
 
 ## The Tasks
 
-### T-01
+### Task 1
 
 Main task: book and pay for one session.
 
@@ -439,7 +439,7 @@ Main task: book and pay for one session.
 - **Time limit:** five minutes.
 - **Help rule:** a hint, a pointer, or solving the step counts as help, and it is recorded in the note beside the task.
 
-### T-02
+### Task 2
 
 Secondary task: reschedule the booking.
 
@@ -449,7 +449,7 @@ Secondary task: reschedule the booking.
 - **Time limit:** three minutes.
 - **Help rule:** a hint, a pointer, or solving the step counts as help, and it is recorded in the note beside the task.
 
-### T-03
+### Task 3
 
 Secondary task: find the meeting link.
 
@@ -473,14 +473,14 @@ The completion and the assistance per task, the time on task, the SEQ per task, 
 
 ## Instrumentation
 
-The Week 6 `booking_page_viewed`, `slot_availability_checked`, `slot_selected`, `checkout_started`, `payment_succeeded`, and `booking_confirmed` events cover `T-01`, and during a session they carry `source=usability-test` and the `P-nn` code the session uses, so the funnel and the timings are read per session.
-The test adds `usability_task_started` and `usability_task_ended`, emitted by the frontend with `source=usability-test`, `participant_code`, and the task's `T-nn`, so the observer's timings and the funnel line up per task.
-The instrumentation does not record a reschedule or the meeting link, so `T-02`'s and `T-03`'s outcomes are read from the observation.
+The Week 6 `booking_page_viewed`, `slot_availability_checked`, `slot_selected`, `checkout_started`, `payment_succeeded`, and `booking_confirmed` events cover `Task 1`, and during a session they carry `source=usability-test` and the `P-nn` code the session uses, so the funnel and the timings are read per session.
+The test adds `usability_task_started` and `usability_task_ended`, emitted by the frontend with `source=usability-test`, `participant_code`, and the task, so the observer's timings and the funnel line up per task.
+The instrumentation does not record a reschedule or the meeting link, so `Task 2`'s and `Task 3`'s outcomes are read from the observation.
 The verification run on staging on 14 November confirmed that every event of a session reaches the staging event list, that the session is filtered by `participant_code`, and that the production scope receives none.
 
 ## Analysis Plan
 
-A per-participant table, the `T-01` aggregate completion, the `T-01` median time on task, the median SEQ for `T-01`, `T-02`, and `T-03`, the SUS mean and median, a thematic analysis, a severity per finding, the instrumentation comparison, and the limitations.
+A per-participant table, `Task 1`'s aggregate completion, `Task 1`'s median time on task, the median SEQ for `Task 1`, `Task 2`, and `Task 3`, the SUS mean and median, a thematic analysis, a severity per finding, the instrumentation comparison, and the limitations.
 
 ## Schedule
 
@@ -573,12 +573,12 @@ From `docs/usability-tests/ut-01/sessions/P-01.md`:
 - **Familiarity:** booked through Calendly and Cal.com before.
 - **Device:** the team's laptop.
 
-`T-01` was `Unaided` in 1 minute 40 seconds.
+`Task 1` was `Unaided` in 1 minute 40 seconds.
 The participant found the free slot, chose one, and paid without a hint.
-`T-02` was `Assisted`: the participant looked for the reschedule control in the confirmation email rather than the page, and the observer pointed at the page's section.
-`T-03` was `Unaided` in 20 seconds.
+`Task 2` was `Assisted`: the participant looked for the reschedule control in the confirmation email rather than the page, and the observer pointed at the page's section.
+`Task 3` was `Unaided` in 20 seconds.
 
-- **SEQ:** T-01 7, T-02 5, T-03 7.
+- **SEQ:** Task 1 7, Task 2 5, Task 3 7.
 - **SUS:** 85.
 - **Theme:** the confirmation page carries too many details for a reader looking for one thing.
 - **Quote:** "I expected the meeting link to be in the page, not in an email." (published with consent)
@@ -594,22 +594,22 @@ One participant did not complete the main task.
 
 ## The Results
 
-`T-01` is the main task, and `T-02` and `T-03` are the secondary tasks.
+`Task 1` is the main task, and `Task 2` and `Task 3` are the secondary tasks.
 
-| Participant              | T-01     | T-01 SEQ | T-02     | T-02 SEQ | T-03     | T-03 SEQ | SUS |
-| ------------------------ | -------- | -------- | -------- | -------- | -------- | -------- | --- |
-| [P-01](sessions/P-01.md) | Unaided  | 7        | Assisted | 5        | Unaided  | 7        | 85  |
-| [P-02](sessions/P-02.md) | Unaided  | 6        | Unaided  | 6        | Unaided  | 6        | 80  |
-| [P-03](sessions/P-03.md) | Failed   | 2        | Failed   | 3        | Assisted | 5        | 52  |
-| [P-04](sessions/P-04.md) | Unaided  | 7        | Unaided  | 5        | Unaided  | 6        | 88  |
-| [P-05](sessions/P-05.md) | Assisted | 5        | Unaided  | 4        | Unaided  | 5        | 70  |
+| Participant              | Task 1   | Task 1 SEQ | Task 2   | Task 2 SEQ | Task 3   | Task 3 SEQ | SUS |
+| ------------------------ | -------- | ---------- | -------- | ---------- | -------- | ---------- | --- |
+| [P-01](sessions/P-01.md) | Unaided  | 7          | Assisted | 5          | Unaided  | 7          | 85  |
+| [P-02](sessions/P-02.md) | Unaided  | 6          | Unaided  | 6          | Unaided  | 6          | 80  |
+| [P-03](sessions/P-03.md) | Failed   | 2          | Failed   | 3          | Assisted | 5          | 52  |
+| [P-04](sessions/P-04.md) | Unaided  | 7          | Unaided  | 5          | Unaided  | 6          | 88  |
+| [P-05](sessions/P-05.md) | Assisted | 5          | Unaided  | 4          | Unaided  | 5          | 70  |
 
-The aggregate completion rate is 4 of 5 unaided or assisted on `T-01` and 3 of 5 unaided.
-The median `T-01` SEQ is 6, the median `T-02` SEQ is 5, the median `T-03` SEQ is 6, and the median time on `T-01` is 2 minutes 10 seconds.
+The aggregate completion rate is 4 of 5 unaided or assisted on `Task 1` and 3 of 5 unaided.
+The median `Task 1` SEQ is 6, the median `Task 2` SEQ is 5, the median `Task 3` SEQ is 6, and the median time on `Task 1` is 2 minutes 10 seconds.
 The SUS mean is 75.0 and the median is 80.0, with `n=5`.
 
-The test's instrumentation covers `T-01` end to end, read per `P-nn` code, and the funnel's largest drop is between the slot list and the checkout form.
-`T-02` and `T-03` were read from the observation, because the test's instrumentation does not record a reschedule or the meeting link.
+The test's instrumentation covers `Task 1` end to end, read per `P-nn` code, and the funnel's largest drop is between the slot list and the checkout form.
+`Task 2` and `Task 3` were read from the observation, because the test's instrumentation does not record a reschedule or the meeting link.
 
 ## Findings
 
@@ -618,7 +618,7 @@ The test's instrumentation covers `T-01` end to end, read per `P-nn` code, and t
 The checkout form asks for a phone number that the product never uses.
 
 - **Severity:** Major: two participants stopped to look for the reason, and one abandoned the main task at that field.
-- **Tasks:** `UT-01 T-01` with `UT-01 P-03` and `UT-01 P-05`.
+- **Tasks:** `UT-01 Task 1` with `UT-01 P-03` and `UT-01 P-05`.
 - **Evidence:** [P-03](sessions/P-03.md) and [P-05](sessions/P-05.md).
 - **Recommendation:** remove the field, or mark it optional and explain why it is asked.
 - **Task issue:** [#57](https://github.com/<organization>/<repo>/issues/57), scheduled in `SPRINT-08`
@@ -628,7 +628,7 @@ The checkout form asks for a phone number that the product never uses.
 The confirmation page does not carry the meeting link.
 
 - **Severity:** Minor: the participants who looked for it found the link in the email, but they expected it on the page.
-- **Tasks:** `UT-01 T-03` with `UT-01 P-01`, `UT-01 P-02`, and `UT-01 P-04`.
+- **Tasks:** `UT-01 Task 3` with `UT-01 P-01`, `UT-01 P-02`, and `UT-01 P-04`.
 - **Evidence:** [P-01](sessions/P-01.md), [P-02](sessions/P-02.md), and [P-04](sessions/P-04.md).
 - **Recommendation:** show the meeting link on the confirmation page.
 - **Task issue:** [#58](https://github.com/<organization>/<repo>/issues/58), scheduled in `SPRINT-09`
@@ -640,10 +640,10 @@ The sample supports no claim about the population, and the SUS is reported with 
 
 ## Conclusion
 
-`T-01` is usable for most participants: four of five reached the confirmation, three of them unaided, and the failure and `T-01`'s one help request both came at the checkout form's phone field, which the product never uses.
+`Task 1` is usable for most participants: four of five reached the confirmation, three of them unaided, and the failure and `Task 1`'s one help request both came at the checkout form's phone field, which the product never uses.
 Participants expected the meeting link on the confirmation page and found it only in the email.
 
-The [testing plan](../../project-plan.md#quality-requirement-testing-plan) records [`QR-05 QRT-01`](../../quality-requirements/qr/QR-05.md#qrt-01) as `Passes`: the median `T-01` SEQ is 6, against the bar of at least five of seven the team set before the first session.
+The [testing plan](../../project-plan.md#quality-requirement-testing-plan) records [`QR-05 QRT-01`](../../quality-requirements/qr/QR-05.md#qrt-01) as `Passes`: the median `Task 1` SEQ is 6, against the bar of at least five of seven the team set before the first session.
 
 The team removes the unused phone field, with [Finding 1](#finding-1) carrying it and [#57](https://github.com/<organization>/<repo>/issues/57) scheduled in `SPRINT-08`.
 It shows the meeting link on the confirmation page, with [Finding 2](#finding-2) carrying it and [#58](https://github.com/<organization>/<repo>/issues/58) scheduled in `SPRINT-09`.

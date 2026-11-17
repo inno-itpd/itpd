@@ -102,7 +102,6 @@ A quality requirement's **`Response Measure`** is its criterion, not its measure
    `QRT-nn` for quality requirement tests is introduced in Week 5, takes two digits, and is scoped to its `QR-nn`.
    `SLI-nn` for service level indicators is introduced in Week 6, and it takes two digits.
    `UT-nn` for usability tests is introduced in Week 7, and it takes two digits.
-   `T-nn` for the tasks of a usability test is introduced with it, takes two digits, and is scoped to its `UT-nn`.
    `CFG-nn` for configuration items is introduced in Week 8, and it takes two digits.
    A later family is introduced only by the requirement that first uses it.
 2. An identifier, once issued, is never changed, reused, or reassigned, including when the artifact is edited later in the course.
@@ -181,12 +180,9 @@ A quality requirement's **`Response Measure`** is its criterion, not its measure
 28. A participant is `P-01`, `P-02`, and so on: two digits, local to its `UT-nn`, assigned in the order the sessions are scheduled, cited as the pair `UT-01 P-01` or with the `UT-nn`'s path, and never reused, per [The Participants](usability-testing-requirements.md#the-participants).
     The code may appear in staging test telemetry, per [The Instrumentation](usability-testing-requirements.md#the-instrumentation), and its identity mapping stays private.
     There is no repository-wide `P-nn` family, no `UF-nn`, and no `FINDING-nn`.
-29. A usability test task is `T-01`, `T-02`, and so on: two digits, local to its `UT-nn`, numbered within it in the order the tasks are written, with the main task first, and never renumbered or reused, per [The Tasks](usability-testing-requirements.md#the-tasks).
-    Its section is `### T-01` under the record's `## The Tasks`, its heading the identifier alone, so its anchor is `#t-01`, and its first line names the task and its role.
-    Cite a task as the pair `UT-01 T-01`, and link it as `ut-01/README.md#t-01`, or as `README.md#t-01` from the test's own directory.
-    A task edited before the first session keeps its identifier, a task removed before the first session retires its identifier, and a replacement takes the next free one; the three tasks are fixed after the first session.
-    This is an exception to rules 4 and 5, and to rules 10 to 12, as `AC-nn` is: a task carries no `**Status:**` field, and a retired task is not kept.
-    There is no repository-wide `T-nn` family.
+29. A usability test task is `Task 1`, `Task 2`, or `Task 3`: a position in its test's task list rather than an identifier, so its number is not zero-padded and there is no `T-nn`, per [The Tasks](usability-testing-requirements.md#the-tasks).
+    The record writes each task as a `### Task 1` section under `## The Tasks`, its first line naming the task and its role, so its anchor is `#task-1`.
+    Cite a task as `UT-01 Task 1`, and link it as `ut-01/README.md#task-1`, or as `README.md#task-1` from the test's own directory.
 30. A finding is cited by `docs/usability-tests/ut-01/results.md#finding-1`, the anchor of its `### Finding 1` section, and not by an identifier, per [The Results And Findings](usability-testing-requirements.md#the-results-and-findings).
     A task issue created from a finding cites the finding that way in its description.
 

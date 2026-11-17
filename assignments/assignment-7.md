@@ -115,7 +115,7 @@ The rules:
 
 - Every session records the pre-test, the think-aloud observation, the completion and assistance, the time, the SEQ after each task, the SUS after all tasks, and the open-ended post-test: [The Instruments](../requirements/usability-testing-requirements.md#the-instruments).
 - One main usability test task and two secondary tasks, each a scenario with no button, label, screen, step, or step count: [The Tasks](../requirements/usability-testing-requirements.md#the-tasks).
-- Each task is `T-01`, `T-02`, or `T-03`, written as its own section and cited with its test: [The Tasks](../requirements/usability-testing-requirements.md#the-tasks) and [Identifier Rules](../requirements/general-requirements.md#identifier-rules).
+- Each task is `Task 1`, `Task 2`, or `Task 3`, written as its own section and cited with its test: [The Tasks](../requirements/usability-testing-requirements.md#the-tasks) and [Identifier Rules](../requirements/general-requirements.md#identifier-rules).
 - The session order, the facilitator's rule, and the roles: [The Protocol](../requirements/usability-testing-requirements.md#the-protocol).
 - The main task is the product's main flow, and the test instruments it: [The Tasks](../requirements/usability-testing-requirements.md#the-tasks).
 - The test's instrumentation is the team's design: what it observes, which Week 6 events it reuses, what it adds, how a session is linked to its records, where the data goes, and the verification before the first session: [The Instrumentation](../requirements/usability-testing-requirements.md#the-instrumentation).
@@ -140,7 +140,7 @@ This week:
 
    Each item is answered from strongly disagree (1) to strongly agree (5), and the score is `SUS = 2.5 × (20 + sum(odd) - sum(even))`, computed from the responses as recorded; the even items are not reverse-coded before the formula.
 
-2. Write the record's `## The Tasks` section with `### T-01`, `### T-02`, and `### T-03`, the same three for every participant in that fixed order, each with its scenario, start point, end state, success criterion, time limit, and help rule.
+2. Write the record's `## The Tasks` section with `### Task 1`, `### Task 2`, and `### Task 3`, the same three for every participant in that fixed order, each with its scenario, start point, end state, success criterion, time limit, and help rule.
 3. Give every task an `Unaided`, `Assisted`, or `Failed` criterion, written before the first session, and a help rule that names what counts as help.
 4. Write the record's `## Measures` section: the completion and the assistance, the time on task, the SEQ after each task, the SUS and its score, and the test's instrumentation where it covers the task.
 5. Write the record's `## Instrumentation` section: what the test must observe for its tasks and research questions, the Week 6 events it reuses, the events or records it adds and where each is emitted, the environment, the store the data goes to, and how one session's records are told from another's.
@@ -195,7 +195,7 @@ This week:
 
 1. Write the new `QR-nn`, using the next free identifier, with the `Interaction Capability` characteristic and one sub-characteristic the team chooses, and one sentence saying why that sub-characteristic is what the test measures and why the measure the team chooses reads it.
 2. Carry `**Business importance:** High`, which requires its test, and the team's `**Technical risk:**`.
-3. Write the scenario: a representative participant completing `UT-01 T-01`, the main usability test task, in the staging deployment on the university network with seeded data, with its `Response` the behaviour the team's chosen measure reads.
+3. Write the scenario: a representative participant completing `UT-01 Task 1`, the main usability test task, in the staging deployment on the university network with seeded data, with its `Response` the behaviour the team's chosen measure reads.
    The team chooses the measure from the four the session records: the main task's completion and assistance, the time on task, the main task's SEQ, or the SUS.
    The criterion uses a statistic of that measure, and one the analysis plan reports: the main-task completion or assistance count or proportion, the main-task median time, the main-task median SEQ, or the SUS mean or median.
 4. Make the `Response Measure` a real, countable criterion the team writes before the first session, and the test settles it.
@@ -253,7 +253,7 @@ This week:
    Add any measure the product needs, with its statistic and scope, before the first session.
 2. Supply `results.md`'s headings: the results table, the findings, the limitations, and the conclusion.
    It carries no finding until the results are written.
-3. Write the findings template: `### Finding 1` with its `**Severity:**`, its `**Tasks:**` naming the task as `UT-01 T-01` with the participant codes it came from, its `**Evidence:**`, its `**Recommendation:**`, and its `**Task issue:**` fields.
+3. Write the findings template: `### Finding 1` with its `**Severity:**`, its `**Tasks:**` naming the task as `UT-01 Task 1` with the participant codes it came from, its `**Evidence:**`, its `**Recommendation:**`, and its `**Task issue:**` fields.
 4. Write the triage plan: every finding is triaged; when a significant finding exists, at least one becomes a task issue in `SPRINT-08`; a behaviour change or defect links the story and the `AC-nn` it serves and names the `FR-nnn` or `ADR-nnn`; the task issue cites the finding by `docs/usability-tests/ut-01/results.md#finding-1`.
 5. Finish the evidence map: the public record, the private text repository and the test's telemetry export, the cloud recordings folder, the Moodle wrapper, and the Week 8 report, with no item in two places and no raw participant data in the product repository.
 
@@ -393,7 +393,7 @@ Assume your weekly public report is read by someone who does not know your proje
 A strong submission has:
 
 - **A `UT-01` record a stranger can run.**
-  The goal and the research questions, the participant profile, a recruitment target of at least three representative participants aged 18 or older with five as the design target, the `T-01`, `T-02`, and `T-03` tasks, the same for every participant, the success criteria, the time limit, the fixed order, the no-label wording, the help rule, the facilitator and observer roles by GitHub username, the instrumentation, the staging environment with seeded data, in person on the university network, and the team's plan for arranging the sessions.
+  The goal and the research questions, the participant profile, a recruitment target of at least three representative participants aged 18 or older with five as the design target, the `Task 1`, `Task 2`, and `Task 3` tasks, the same for every participant, the success criteria, the time limit, the fixed order, the no-label wording, the help rule, the facilitator and observer roles by GitHub username, the instrumentation, the staging environment with seeded data, in person on the university network, and the team's plan for arranging the sessions.
 - **A consent and a data split a reviewer can check.**
   The durable consent and the required recording plus the sanitized public results for every counted session, the private text repository with the consent records, the identity mapping, the working analysis, the test's telemetry export, and the recordings folder link and access, the cloud recordings folder, the public sanitized record, the public link and the link-check exclusion, and the Moodle links, with no raw participant data and no private link without an exclusion in the product repository.
 - **Instruments a reader can answer.**
@@ -411,7 +411,7 @@ A strong submission has:
 - **A Week 8 handoff another week can start from.**
   A recruitment target of at least three participants with five as the design target, the participant profile, the team's plan for arranging the sessions, the private repository and the recordings folder ready, the instrumentation implemented and verified before the first session, the `results.md` stub and the findings and triage templates ready, and the `QR/QRT` row in `SPRINT-08`.
 - **One path and one identifier, everywhere.**
-  A `UT-01` record a reader can find from `docs/usability-tests/README.md`, the weekly report, the testing plan, the quality requirements index, and the guide, with the same path and the same identifier in each, and `T-01` to `T-03` named the same way in the record, the results, and the findings.
+  A `UT-01` record a reader can find from `docs/usability-tests/README.md`, the weekly report, the testing plan, the quality requirements index, and the guide, with the same path and the same identifier in each, and `Task 1` to `Task 3` named the same way in the record, the results, and the findings.
 
 ## Assignment Report In The Repository
 
@@ -483,7 +483,7 @@ The production analytics and observability dashboards are the Week 6 wrapper's; 
 - [ ] The design tasks scheduled in `SPRINT-07`, the instrumentation implementation in `SPRINT-07`, its verification in `SPRINT-07` or `SPRINT-08` before the first counted session and complete by the start of `SPRINT-09`, the sessions in the sprint of the last counted session, the results tasks in `SPRINT-08`, and each task issue carrying its `### Requirements`, its criteria, its `Responsible`, its `Accountable`, and its assignees ([Part 1](#part-1-refine-the-product-backlog-and-plan-the-sprint)).
 - [ ] `docs/usability-tests/README.md` with the `UT-01` row, and `docs/usability-tests/ut-01/README.md` with its heading, its status, its design and run sprints, its `**Dropped:**` field when dropped, and its parts ([Part 2](#part-2-write-the-ut-01-test-record)).
 - [ ] `surveys.md` with the pre-test, the SEQ after each task, the full ten SUS items and the formula, and the open-ended post-test ([Part 3](#part-3-write-the-surveys-the-task-protocol-and-the-instrumentation)).
-- [ ] The `T-01`, `T-02`, and `T-03` tasks, the same for every participant, with their scenarios, start points, end states, success criteria, time limits, help rules, fixed order, and no UI labels or steps ([Part 3](#part-3-write-the-surveys-the-task-protocol-and-the-instrumentation)).
+- [ ] The `Task 1`, `Task 2`, and `Task 3` tasks, the same for every participant, with their scenarios, start points, end states, success criteria, time limits, help rules, fixed order, and no UI labels or steps ([Part 3](#part-3-write-the-surveys-the-task-protocol-and-the-instrumentation)).
 - [ ] The record's `## Instrumentation` section with what the test observes, the Week 6 events it reuses, the events or records it adds, how a session is linked to its records, the environment, the store, and what the instrumentation cannot cover ([Part 3](#part-3-write-the-surveys-the-task-protocol-and-the-instrumentation)).
 - [ ] The instrumentation implemented and verified before the first counted session, with the implementation in `SPRINT-07` and the verification in `SPRINT-07` or `SPRINT-08`, complete by the start of `SPRINT-09`, and the verification recorded ([Part 3](#part-3-write-the-surveys-the-task-protocol-and-the-instrumentation)).
 - [ ] `sessions/README.md` with the facilitation script, the pre-test, the open-ended post-test, the no-help rule, the observation sheet, the roles by GitHub username, and the stop rule, and the dry run recorded as not counted ([Part 3](#part-3-write-the-surveys-the-task-protocol-and-the-instrumentation)).

@@ -440,7 +440,7 @@ A representative participant completing the product's main usability test task f
 - **Technical risk:** Medium
 
 `Self-descriptiveness` is what the test measures, because a participant who can tell what each screen expects finds the task easy on the SEQ.
-The team chose the main task's SEQ, on `UT-01 T-01`, as its measure; it records the completion and assistance, the time on task, and the SUS as analysis results.
+The team chose the main task's SEQ, on `UT-01 Task 1`, as its measure; it records the completion and assistance, the time on task, and the SUS as analysis results.
 
 ## Scenario
 
@@ -450,7 +450,7 @@ A representative participant who has not used the product before.
 
 ### Stimulus
 
-The participant is given the scenario of `UT-01 T-01` and the product's staging deployment.
+The participant is given the scenario of `UT-01 Task 1` and the product's staging deployment.
 
 ### Environment
 
@@ -458,30 +458,30 @@ The staging deployment on the university VM, reached from the university network
 
 ### Artifact
 
-The product's interface and `UT-01 T-01`.
+The product's interface and `UT-01 Task 1`.
 
 ### Response
 
-The participant rates `UT-01 T-01` on the SEQ after the attempt.
+The participant rates `UT-01 Task 1` on the SEQ after the attempt.
 
 ### Response Measure
 
-The median SEQ for `UT-01 T-01` is at least five of seven, the bar the team set before the first session.
+The median SEQ for `UT-01 Task 1` is at least five of seven, the bar the team set before the first session.
 
 ## QRT-01
 
-A representative participant finds `UT-01 T-01`, the main usability test task, easy on first use.
+A representative participant finds `UT-01 Task 1`, the main usability test task, easy on first use.
 
 - **Status:** Active
 - **Level:** manual
-- **Runs at:** [`UT-01`](../../usability-tests/ut-01/README.md), whose sessions run `UT-01 T-01` with at least three representative participants and record the results in [`results.md`](../../usability-tests/ut-01/results.md); it reads no `SLI`.
-- **Why Manual:** no command can judge how a representative participant rates `UT-01 T-01` on the SEQ, and it reads no `SLI`.
+- **Runs at:** [`UT-01`](../../usability-tests/ut-01/README.md), whose sessions run `UT-01 Task 1` with at least three representative participants and record the results in [`results.md`](../../usability-tests/ut-01/results.md); it reads no `SLI`.
+- **Why Manual:** no command can judge how a representative participant rates `UT-01 Task 1` on the SEQ, and it reads no `SLI`.
 
 ### Procedure
 
 1. Book the at least three sessions the `UT-01` record schedules, with participants who match its participant profile.
-2. Run `UT-01 T-01` in each session per the record's protocol, and record its SEQ in `sessions/P-nn.md`.
-3. Write the median SEQ for `UT-01 T-01` in `results.md`.
+2. Run `UT-01 Task 1` in each session per the record's protocol, and record its SEQ in `sessions/P-nn.md`.
+3. Write the median SEQ for `UT-01 Task 1` in `results.md`.
 
-**Pass when:** the median SEQ for `UT-01 T-01` is at least five of seven.
+**Pass when:** the median SEQ for `UT-01 Task 1` is at least five of seven.
 ```

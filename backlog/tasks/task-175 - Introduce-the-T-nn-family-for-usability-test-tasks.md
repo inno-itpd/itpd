@@ -5,7 +5,7 @@ status: Done
 assignee:
   - '@Danila Danko'
 created_date: '2026-11-17 15:17'
-updated_date: '2026-11-17 15:36'
+updated_date: '2026-11-17 16:08'
 labels: []
 dependencies: []
 modified_files:
@@ -73,6 +73,16 @@ The `**Tasks:**` field now names the task as `UT-01 T-01` with the participant p
 
 Recorded the decision as `A7-DEC-033` and added it to the A7 plan's decision list; the plan now says two identifier families and names the sections, the fields, and the pair citation in its identifier, task, and requirement-change bullets. Validation: `pnpm run format:markdown`, `format:markdown:check`, and `lint:markdown` pass; `test:markdown-format` and `test:markdown-rules` pass with 34 tests each; `check:lectures` passes with 8 decks; `check:links` reports 4142 total, 921 unique, 4140 OK, 0 errors, 2 excluded, and 1 redirect.
 <!-- SECTION:NOTES:END -->
+
+## Comments
+
+<!-- COMMENTS:BEGIN -->
+author: DeepSeek Harness
+created: 2026-11-17 16:08
+---
+Superseded in part by TASK-176: `A7-DEC-034` reverses `A7-DEC-033`, and the tasks are now `Task 1`, `Task 2`, and `Task 3`, positions in the test record rather than a `T-nn` family.
+---
+<!-- COMMENTS:END -->
 
 ## Final Summary
 
