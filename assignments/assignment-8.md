@@ -47,7 +47,7 @@ By the end of this week you should be able to show a reader:
 
 - A `UT-01` results record that says what the sessions found: at least three counted sessions, the per-participant table, the main task's aggregate completion and median time, the median SEQ for each task, the SUS mean and median with `n=<count>`, every measure the plan named, the thematic analysis, the instrumentation comparison, the limitations, and the conclusion.
 - The sanitized session notes the results summarize, with no raw data and no identity in the product repository.
-- The findings as `### Finding 1` sections with their severity, tasks and participant codes, evidence, recommendation, and task issue, and a triage that says what the team does with each one.
+- The findings, one numbered section each (`### Finding 1`, `### Finding 2`, and so on), with their severity, tasks and participant codes, evidence, recommendation, and task issue, and a triage that says what the team does with each finding.
 - The `QR/QRT` verdict in the testing plan, and the threshold's usability goal settled when the team has one.
 - The fixes planned: a landed fix in `REL-08`, and a later one moved to `SPRINT-09` with its reason.
 - `docs/configuration-plan.md`, the maintained inventory of the configuration: the five groups, at least 8 `Active` `CFG-nn` items with at least one in each group, each with its status, type, purpose, owner, location, connections, and target, and a dropped item in place.
@@ -127,13 +127,13 @@ The method is in [Step 9: Run The Sessions And Analyze The Results](../guides/us
 
 The rules:
 
-- Each finding is a `### Finding 1` section with its fields and a stable anchor: [The Results And Findings](../requirements/usability-testing-requirements.md#the-results-and-findings).
+- `results.md` carries one section per finding, numbered `### Finding 1`, `### Finding 2`, and so on, each with its fields and a stable anchor: [The Results And Findings](../requirements/usability-testing-requirements.md#the-results-and-findings).
 - A finding is cited by its path and anchor, not by an identifier: [Identifier Rules](../requirements/general-requirements.md#identifier-rules).
 
 This week:
 
-1. Write each finding as a `### Finding 1` section, numbered in the order the results present it, with `**Severity:**` `Critical`, `Major`, or `Minor` and the reason for the rating, `**Tasks:**` the tasks and participant codes it came from, such as `UT-01 P-01, UT-01 P-03`, `**Evidence:**` a link to the session notes or the aggregate table, `**Recommendation:**` what the team would change, and `**Task issue:**` a link to the issue that carries the work or `None`.
-2. Cite each finding as `docs/usability-tests/ut-01/results.md#finding-1`, and keep the number stable once the report or an issue cites it.
+1. Write one section per finding, numbered in the order the results present them (`### Finding 1`, then `### Finding 2`, and so on), with `**Severity:**` `Critical`, `Major`, or `Minor` and the reason for the rating, `**Tasks:**` the tasks and participant codes it came from, such as `UT-01 P-01, UT-01 P-03`, `**Evidence:**` a link to the session notes or the aggregate table, `**Recommendation:**` what the team would change, and `**Task issue:**` a link to the issue that carries the work or `None`.
+2. Cite each finding by its own anchor, so `Finding 2` is `docs/usability-tests/ut-01/results.md#finding-2`, and keep the number stable once the report or an issue cites it.
 3. Sanitize each finding: the participant codes are allowed, and a name, an address, or a quoted identity is not.
 
 The method is in [Step 10: Triage The Findings And Learn](../guides/usability-testing.md#step-10-triage-the-findings-and-learn).
@@ -331,7 +331,7 @@ A strong submission has:
 - **A `UT-01` results record that says what the sessions found.**
   At least three counted sessions, the per-participant table, the main task's aggregate completion and median time, the median SEQ for each task, the SUS mean and median with `n=<count>`, every measure the plan named, the thematic analysis, the instrumentation comparison and what it could not cover, the limitations, and the conclusion, with the sanitized notes linked and no raw data copied; when fewer than three sessions run, the fallback is declared and no result is claimed.
 - **Findings a triage can act on.**
-  Each as a `### Finding 1` section with its severity and the reason, its tasks and participant codes, its evidence, its recommendation, and its task issue, every finding triaged, and a significant finding carried by a task issue scheduled in `SPRINT-08`.
+  Each as its own numbered section (`### Finding 1`, `### Finding 2`, and so on), with its severity and the reason, its tasks and participant codes, its evidence, its recommendation, and its task issue, every finding triaged, and a significant finding carried by a task issue scheduled in `SPRINT-08`.
 - **Fixes planned rather than promised.**
   A landed fix is in `REL-08`, a fix that could not finish moved to `SPRINT-09` with its reason declared, and no fix was forced when the test found nothing significant.
 - **A verdict recorded where it is read.**
@@ -427,7 +427,7 @@ The production analytics and observability dashboards are the Week 6 wrapper's; 
 - [ ] At least three counted sessions run, with five as the design target, at the dates the team scheduled, in person on the university network against staging, with the seed reset before each, and the instrumentation verified before the first counted one ([Part 2](#part-2-run-the-sessions-and-write-the-sanitized-notes)).
 - [ ] The raw text and the telemetry export in the private repository, the recordings in the cloud folder, and the sanitized `sessions/P-nn.md` notes written on the day with no identity ([Part 2](#part-2-run-the-sessions-and-write-the-sanitized-notes)).
 - [ ] `docs/usability-tests/ut-01/results.md` with the per-participant table, the aggregate completion, the medians, the SUS with `n=<count>`, every measure the plan named, the thematic analysis, the instrumentation comparison, the limitations, and the conclusion, and the record's `**Status:**` and the index updated ([Part 3](#part-3-write-the-results)).
-- [ ] The `### Finding 1` sections with their severity, tasks and participant codes, evidence, recommendation, and task issue, each cited by its anchor and sanitized ([Part 4](#part-4-write-the-findings)).
+- [ ] One numbered section per finding (`### Finding 1`, `### Finding 2`, and so on), each with its severity, tasks and participant codes, evidence, recommendation, and task issue, cited by its own anchor, and sanitized ([Part 4](#part-4-write-the-findings)).
 - [ ] Every finding triaged, a significant finding carried by a task issue scheduled in `SPRINT-08`, the fixes planned with a landed one in `REL-08`, and a later one moved to `SPRINT-09` with its reason declared ([Part 5](#part-5-triage-the-findings-and-plan-the-fixes)).
 - [ ] The `QR/QRT` row recorded as `Passes` or `Fails` with `Checked: SPRINT-08` and the results as evidence, or `Not verified` or moved to `SPRINT-09` with a reason, and the threshold's usability goal settled when the team has one ([Part 6](#part-6-record-the-verdict-and-settle-the-threshold)).
 - [ ] `docs/configuration-plan.md` with its `**Reviewed:**` date, its five groups, at least 8 `Active` `CFG-nn` items with at least one in each, each with its status, type, purpose, owner, location, connections, and target, and a dropped item in place ([Part 7](#part-7-write-the-configuration-plan)).

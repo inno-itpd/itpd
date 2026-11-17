@@ -417,8 +417,8 @@ Write `results.md` with the main task's aggregate completion, the main task's me
 The comparison names the instrumentation and says which task or question it could not cover.
 Link the sanitized notes it summarizes, and copy none of the raw data.
 
-Each finding is a `### Finding 1` section with its stability anchored on the heading, its severity, the tasks and participant codes it came from, the evidence, the recommendation, and the task issue when one is opened.
-Cite it as `docs/usability-tests/ut-01/results.md#finding-1`, and cite the test as `UT-01`.
+One section per finding, numbered `### Finding 1`, `### Finding 2`, and so on, each with its stability anchored on the heading, its severity, the tasks and participant codes it came from, the evidence, the recommendation, and the task issue when one is opened.
+Cite each finding by its own anchor, `docs/usability-tests/ut-01/results.md#finding-1` for the first and `docs/usability-tests/ut-01/results.md#finding-2` for the second, and cite the test as `UT-01`.
 
 Set the record's `**Status:**` to `Completed`, and update the index's `Results` cell to link `results.md`.
 

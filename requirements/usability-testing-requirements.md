@@ -317,7 +317,9 @@ The results are what the sessions found, and the findings are what the team deci
 
 1. `results.md` is written in the run week, and it carries the minimum measures [The Analysis](#the-analysis) requires, including the SUS and SEQ summary with the `n=<count>` caveat, every additional measure the plan named, the qualitative findings with their severity and evidence, the instrumentation comparison, the limitations, and the conclusion.
 2. It links the sanitized session notes it summarizes, and it copies no raw data.
-3. Each finding is a `### Finding 1` section with a stable anchor, and it carries these fields:
+3. `results.md` carries one section per finding, numbered `### Finding 1`, `### Finding 2`, and so on.
+   The number is a position in the report rather than an identifier, so it is not zero-padded, and the number of findings is not fixed.
+   Each section has a stable anchor and carries these fields:
 
    | Field                 | What it says                                                                                |
    | --------------------- | ------------------------------------------------------------------------------------------- |
@@ -327,7 +329,7 @@ The results are what the sessions found, and the findings are what the team deci
    | `**Recommendation:**` | What the team would change                                                                  |
    | `**Task issue:**`     | A link to the task issue that carries the work, or `None` when no issue was opened          |
 
-4. A finding is cited by `docs/usability-tests/ut-01/results.md#finding-1`, and the citation names the finding rather than the test alone, per [Identifier Rules](general-requirements.md#identifier-rules).
+4. A finding is cited by its own anchor, such as `docs/usability-tests/ut-01/results.md#finding-2` for the second finding, and the citation names the finding rather than the test alone, per [Identifier Rules](general-requirements.md#identifier-rules).
 5. The SUS summary reports the mean, the median, and the count, because a small sample supports no claim about a population.
 6. The QR/QRT verdict is recorded in the testing plan, not in `results.md`: the results state what was found, and the plan's row records `Passes` or `Fails` with its `Checked` and `Evidence`, per [Quality Requirement Testing Plan](planning-requirements.md#quality-requirement-testing-plan).
 7. The record links `results.md`, and the record's `**Status:**` becomes `Completed` when the counted sessions and the results are recorded.

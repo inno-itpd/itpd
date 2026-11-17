@@ -241,7 +241,7 @@ The method is in [Step 2: Choose And Recruit The Participants](../guides/usabili
 The rules:
 
 - The analysis plan is written before the first session, and it covers at least the per-participant table, the main task's aggregate completion, the main task's median time, the median SEQ for each task, the SUS mean and median, the thematic analysis, the severity, the instrumentation comparison, and the limitations; a measure the product needs may be added before the first session: [The Analysis](../requirements/usability-testing-requirements.md#the-analysis).
-- `results.md` is the record of what was found, and each finding is a `### Finding 1` section cited by its anchor: [The Results And Findings](../requirements/usability-testing-requirements.md#the-results-and-findings).
+- `results.md` is the record of what was found, and each finding is its own numbered section (`### Finding 1`, `### Finding 2`, and so on) cited by its anchor: [The Results And Findings](../requirements/usability-testing-requirements.md#the-results-and-findings).
 - The public evidence and its sanitization: [The Public Evidence](../requirements/usability-testing-requirements.md#the-public-evidence).
 - A screenshot that is published is sanitized: [Screenshot Evidence](../requirements/visibility-requirements.md#screenshot-evidence).
 
