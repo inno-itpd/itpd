@@ -140,7 +140,7 @@ The rules:
 This week:
 
 1. Write one section per finding, numbered in the order the results present them (`### Finding 1`, then `### Finding 2`, and so on).
-   Give it `**Severity:**` `Critical`, `Major`, or `Minor` with the reason for the rating, `**Tasks:**` the tasks and participant codes it came from, such as `UT-01 P-01, UT-01 P-03`, and `**Evidence:**` a link to the session notes or the aggregate table.
+   Give it `**Severity:**` `Critical`, `Major`, or `Minor` with the reason for the rating, `**Tasks:**` the task as `UT-01 T-01` with the participant codes it came from, such as `UT-01 T-01` with `UT-01 P-03` and `UT-01 P-05`, and `**Evidence:**` a link to the session notes or the aggregate table.
    Add `**Recommendation:**` what the team would change, and `**Task issue:**` a link to the issue that carries the work or `None`.
 2. Cite each finding by its own anchor, so `Finding 2` is `docs/usability-tests/ut-01/results.md#finding-2`, and keep the number stable once the report or an issue cites it.
 3. Sanitize each finding: the participant codes are allowed, and a name, an address, or a quoted identity is not.
@@ -352,7 +352,7 @@ A strong submission has:
 - **A conclusion that answers the questions and names the response.**
   The conclusion answers each research question, names the verdict the testing plan records, and names the changes the team commits to and declines, with the findings and task issues that carry them; a test that finds nothing significant concludes that no product change follows and says why.
 - **Findings a triage can act on.**
-  Each finding has a stable anchor, a severity with its reason, the sessions it came from, its evidence, and a recommendation; every finding is triaged, and a significant one is carried by a task issue scheduled in `SPRINT-08`.
+  Each finding has a stable anchor, a severity with its reason, the task as `UT-01 T-01` and the participant codes it came from, its evidence, and a recommendation; every finding is triaged, and a significant one is carried by a task issue scheduled in `SPRINT-08`.
 - **Fixes planned rather than promised.**
   A landed fix is in `REL-08`, a fix that cannot finish moves to `SPRINT-09` with its reason declared, and no fix is forced when the test finds nothing significant.
 - **A verdict recorded where it is read.**
@@ -466,7 +466,7 @@ The production analytics and observability dashboards were submitted in the Week
 - [ ] `results.md` with the per-participant table, the aggregate completion, the medians, the SUS with `n=<count>`, every measure the plan named, the thematic analysis, the instrumentation comparison, the limitations, and the conclusion, or the qualitative record without aggregates ([Part 3](#part-3-write-the-results)).
 - [ ] The conclusion answering each research question and naming the product response, with the changes the team commits to and declines ([Part 3](#part-3-write-the-results)).
 - [ ] The `UT-01` record's `**Status:**` and the index updated ([Part 3](#part-3-write-the-results)).
-- [ ] One numbered section per finding (`### Finding 1`, `### Finding 2`, and so on), each with its severity, tasks and participant codes, evidence, recommendation, and task issue, cited by its own anchor, and sanitized ([Part 4](#part-4-write-the-findings)).
+- [ ] One numbered section per finding (`### Finding 1`, `### Finding 2`, and so on), each with its severity, its task as `UT-01 T-01` and participant codes, evidence, recommendation, and task issue, cited by its own anchor, and sanitized ([Part 4](#part-4-write-the-findings)).
 - [ ] Every finding triaged, and a significant finding carried by a task issue scheduled in `SPRINT-08` ([Part 5](#part-5-triage-the-findings-and-plan-the-fixes)).
 - [ ] The fixes planned, with a landed one in `REL-08` and a later one moved to `SPRINT-09` with its reason declared ([Part 5](#part-5-triage-the-findings-and-plan-the-fixes)).
 - [ ] The `QR/QRT` row recorded as `Passes` or `Fails` with `Checked: SPRINT-08` and the results as evidence, or `Not verified` or moved to `SPRINT-09` with a reason ([Part 6](#part-6-record-the-verdict-and-settle-the-threshold)).

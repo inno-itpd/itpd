@@ -24,6 +24,7 @@ Recruiting is the long pole and starts first, because three people outside the t
   - [Replace Without Reusing A Code](#replace-without-reusing-a-code)
 - [Step 3: Write The Tasks And The Success Criteria](#step-3-write-the-tasks-and-the-success-criteria)
   - [Start The Main Task From The Product's Main Flow](#start-the-main-task-from-the-products-main-flow)
+  - [Write Each Task As Its Own Section](#write-each-task-as-its-own-section)
   - [Write The Scenario, Not The Steps](#write-the-scenario-not-the-steps)
   - [Write The Success Criterion Before The First Session](#write-the-success-criterion-before-the-first-session)
   - [Dry Run With A Teammate](#dry-run-with-a-teammate)
@@ -168,6 +169,14 @@ Add two secondary tasks that cover adjacent flows the team wants to learn about,
 The secondary tasks are identical for every participant, in the same order, and the main task comes first.
 
 The materials call it a usability test task and never `core task`: the core task is the product's own term, and the test's task is this week's instrument.
+
+### Write Each Task As Its Own Section
+
+Give the tasks their `T-nn` identifiers in the order they run: `T-01` is the main task, and `T-02` and `T-03` are the secondary tasks, per [The Tasks](../requirements/usability-testing-requirements.md#the-tasks).
+Write each one as a `### T-01` section under the record's `## The Tasks`, its first line naming the task and its role, followed by its `**Scenario:**`, `**Start point:**`, `**End state:**`, `**Time limit:**`, and `**Help rule:**` fields.
+
+A finding then names the task as `UT-01 T-01`, so a reader can tell which of the three it came from without reading the whole record.
+The identifiers are local to the test, like the participant codes: `T-01` in `UT-01` and `T-01` in `UT-02` are different tasks, and only the pair tells them apart.
 
 ### Write The Scenario, Not The Steps
 
@@ -332,7 +341,7 @@ The analysis plan is written before the first session, so the team cannot choose
 
 ### Fix The Measures Before The Data
 
-Write the per-participant table's columns, the main task's aggregate completion rate, the main task's median time, the median SEQ for each task, the SUS mean and median, the measure and bar the quality requirement uses, the thematic analysis, the severity rating, the instrumentation comparison and what it cannot cover, and the limitations, before the first session.
+Write the per-participant table's columns, the `T-01` aggregate completion rate, the `T-01` median time, the median SEQ for `T-01`, `T-02`, and `T-03`, the SUS mean and median, the measure and bar the quality requirement uses, the thematic analysis, the severity rating, the instrumentation comparison and what it cannot cover, and the limitations, before the first session.
 The list is the minimum every team reports.
 A team may add a measure its product needs, provided the plan names the measure, its statistic, and its scope before the first session; a measure added after the data is a measure chosen to flatter the result.
 The columns are what the team commits to reading.
@@ -414,11 +423,12 @@ An anonymized quote names no person and no organization, and it appears only whe
 
 ### Write The Results And The Findings
 
-Write `results.md` with the main task's aggregate completion, the main task's median time, the median SEQ for each task, the SUS mean and median with `n=<count>`, every additional measure the plan named, the thematic analysis, the instrumentation comparison, the limitations, and the conclusion.
+Write `results.md` with the `T-01` aggregate completion, the `T-01` median time, the median SEQ for `T-01`, `T-02`, and `T-03`, the SUS mean and median with `n=<count>`, every additional measure the plan named, the thematic analysis, the instrumentation comparison, the limitations, and the conclusion.
 The comparison names the instrumentation and says which task or question it could not cover.
 Link the sanitized notes it summarizes, and copy none of the raw data.
 
-One section per finding, numbered `### Finding 1`, `### Finding 2`, and so on, each with its stability anchored on the heading, its severity, the tasks and participant codes it came from, the evidence, the recommendation, and the task issue when one is opened.
+One section per finding, numbered `### Finding 1`, `### Finding 2`, and so on, each with its stability anchored on the heading, its severity, the `T-nn` and participant codes it came from, the evidence, the recommendation, and the task issue when one is opened.
+A finding names its task as `UT-01 T-01` with the participants' codes, so a reader knows which task produced it.
 Cite each finding by its own anchor, `docs/usability-tests/ut-01/results.md#finding-1` for the first and `docs/usability-tests/ut-01/results.md#finding-2` for the second, and cite the test as `UT-01`.
 
 Set the record's `**Status:**` to `Completed`, and update the index's `Results` cell to link `results.md`.
@@ -525,6 +535,8 @@ A private repository that outlives the course is participant data kept without a
   The wording becomes the instruction, and the session tests the wording; name the goal and the start point only.
 - **A task that is a feature tour.**
   A tour shows what exists; a task shows whether a participant can do what they came for, so write the goal the target user has.
+- **A task without its identifier.**
+  A finding that names only "the main task" or "the first secondary task" cannot be cited or compared across tests; write each task as `### T-01` and cite it with the test, as `UT-01 T-01`.
 - **A leading facilitator.**
   "Just click the date picker" is help the observation then misses; answer only the scenario's questions and record every hint.
 - **A guide who solves the task.**
