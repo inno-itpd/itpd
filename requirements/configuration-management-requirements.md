@@ -27,6 +27,7 @@ The plan is maintained documentation and the evaluation is that week's evidence,
 
 1. The configuration plan is `docs/configuration-plan.md`.
    It is the maintained inventory of the configuration: what the items are, what each is for, how each is identified and owned, what each reads and what reads it, and where each lives.
+   It documents the configuration as it is and is not a plan of changes, and it schedules none.
    It stays current until the course ends, and it is the file a reader or an agent opens to find the configuration.
 2. The configuration review's evidence is `reports/week-NN/cm-evaluation.md`, written in the week the review is held.
    For Assignment 8 that is `reports/week-08/`.
@@ -155,6 +156,7 @@ A review that only reports missing items pushes a team to add configuration; the
 **Since: W8**
 
 The goal sections and the first change are the evaluation's recommendation.
+The recommendation is a judgement rather than a plan: it schedules no work and adds nothing to a backlog.
 No separate improvement plan is required, because a plan beside an evaluation is a second document to keep true, and the evaluation's goal sections already say what would change and why.
 
 **Required**
@@ -163,7 +165,7 @@ No separate improvement plan is required, because a plan beside an evaluation is
 2. No implementation is required in the review week, and a change the team enacts is extra evidence rather than a requirement.
    A team that runs the review and the usability sessions in the same week is not penalised for having no time to enact a change.
 3. An optional change is the same work under the existing rules: a task issue, a pull request, the configuration plan updated in the pull request when the change alters what it records, the green checks, and the release when the change is product-visible, per [Releases](planning-requirements.md#releases).
-4. The first change and the other changes are added to the next sprint's backlog, and the next week's planning schedules them with the backlog's own priority.
+4. The evaluation schedules no work: the first change and the other changes are a recommendation, not a backlog, and no task issue, sprint item, or implementation is required.
    The evaluation gives no order beyond the first change.
 
 ## The Public Review
@@ -401,6 +403,6 @@ The risk is that a lost VM costs a redeploy from a linked repository during the 
 
 ## The First Change
 
-The team would make the check merge first: it is an afternoon's work, it keeps the two checks and their separate signals, it removes one duplicated action pin and one setup block from two files, and it is the change the team can complete and review inside `SPRINT-09` while the others stay scheduled.
+The team would make the check merge first: it is an afternoon's work, it keeps the two checks and their separate signals, it removes one duplicated action pin and one setup block from two files, and it is the change the team could finish and review first while the others stay as proposals.
 Its main tradeoff is that a broken YAML stops both checks at once, which the team accepts because the two jobs fail independently once the file parses.
 ```

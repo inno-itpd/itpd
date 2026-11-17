@@ -4,7 +4,7 @@ title: 'Design Assignment 8: the usability results and the configuration review'
 status: Done
 assignee: []
 created_date: '2026-11-16 20:21'
-updated_date: '2026-11-17 11:51'
+updated_date: '2026-11-17 13:21'
 labels: []
 dependencies: []
 references:
@@ -66,6 +66,8 @@ The evaluation example cites only `CFG-01` to `CFG-09` and names the artifacts t
 Reopened after the Assignment 8 review. Corrected: the `**Sprint Backlog:**` link now points at the sprint's GitHub milestone; the optional change updates the configuration plan only when the change alters what it records; `**Dropped:**` moved after the other `CFG-nn` fields to follow general rule 11; the evaluation stays at `reports/week-08/` for the week the review is held; the example's first change now says what it keeps, and the Method excludes the results of the passing quality tests rather than the tests; the Week 9 traceability rows cite the configuration plan once; the weekly-report example restores the transcript fallback; the plan's Edited Files, Week 9 enactment, requirements-change count, `not prescribed` wording, six `stay`/`stays` corrections, `artefact` spelling, `Dropped` field list, `must meet` wording, and duplicate `**Since: W8**` marker are fixed; the syllabus-objective criterion is relaxed because the students reflect and do not implement a change. `AGENTS.md` remains at 64941 bytes against the 65536 budget; TASK-172 trims it before Week 9. `GOALS.md` is left untracked by decision.
 
 Gates: `format:markdown:check`, `lint:markdown`, `test:markdown-format` (34), `test:markdown-rules` (34), `check:lectures` (8 decks match, PDF unchanged after the comment edits), and `check:links` (4083 links, 0 errors) all pass.
+
+Reopened the design after the Assignment 8 review found the review still implying scheduled configuration work. The configuration plan is now documentation of the configuration as it is, not a change plan; the evaluation's goal sections and first change are a recommendation, and the evaluation schedules no work. The assignment, the configuration-management requirements and guide, the weekly-report example, the traceability row, the planning example and guide, the A8 decisions and plan, the A7 forward note, and `TODO.md` were corrected together. Gates: `format:markdown:check`, `lint:markdown`, both plugin suites, `check:links` (4122 links, 0 errors), and `check:lectures` (8 decks) pass.
 <!-- SECTION:NOTES:END -->
 
 ## Final Summary
@@ -86,4 +88,6 @@ What changed:
 Validation: `format:markdown:check`, `lint:markdown`, both plugin suites, `check:lectures`, `check:links` (4083 links, 0 errors), and `lint:actions` pass. The plan's contradiction, reversal, routing, cross-reference, depth, visibility, week, example, and identifier audits were walked by hand.
 
 Reviewed after the Assignment 8 review and reopened; the corrections are in the implementation notes, and TASK-172 tracks the AGENTS.md trim.
+
+Review correction: the configuration review is an evaluation, not a scheduled backlog. The configuration plan documents the configuration as it is, and the evaluation's first change is a recommendation that schedules no task issue, sprint item, or implementation. All materials that implied a Week 9 configuration backlog were aligned.
 <!-- SECTION:FINAL_SUMMARY:END -->

@@ -258,7 +258,7 @@ The team keeps the first as it is, merges the hand-written backlog mirror into t
 The first change is the check merge: one workflow file, one checkout, and one action pin, whose main tradeoff is that a broken workflow file stops both checks at once.
 The evaluation also records what the team could not judge, the university VM's snapshot and backup policy, with the risk that a lost VM costs a redeploy during the week the deck is due.
 
-No configuration change was enacted this week, and the goal sections and the first change are ready to schedule into `SPRINT-09`.
+No configuration change was enacted this week, and the goal sections and the first change are the evaluation's recommendation rather than scheduled work.
 
 ## Threshold review
 
@@ -272,7 +272,7 @@ No goal is `Open` after this review, and the team proposed no measure because th
 ## Week 9 handoff
 
 The Week 9 deck cites [the results](../../docs/usability-tests/ut-01/results.md) and [the configuration plan](../../docs/configuration-plan.md) rather than repeating either.
-The evaluation's first change and its other changes are ready to schedule into `SPRINT-09` alongside the deck, the final repository state, and the reflection.
+The evaluation's goal sections and its first change are the review's recommendation and schedule no work for Week 9.
 The private repository and the recordings folder stay open until the course is graded, and the `REL-08` tag is the state Week 9 starts from.
 No deck is submitted with this report.
 

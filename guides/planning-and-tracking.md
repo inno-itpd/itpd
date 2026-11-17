@@ -235,7 +235,7 @@ The planned number is a forecast rather than a target, so the first sprint's act
 
 The work that keeps the repository trustworthy is planned like any other work, and its home is [the configuration plan](../requirements/configuration-management-requirements.md#where-the-configuration-plan-and-the-review-live).
 A task that shortens a workflow, updates a pin policy, or fixes a stale runbook is an ordinary task issue.
-A change the configuration review would make is scheduled from the review's first change and its other goal sections, and an optional one is opened only if the sprint has room for it, per [The Recommendation](../requirements/configuration-management-requirements.md#the-recommendation).
+The configuration review's goal sections and its first change are a recommendation rather than scheduled work; a team that chooses to enact one opens an optional task issue only when the sprint has room for it, per [The Recommendation](../requirements/configuration-management-requirements.md#the-recommendation).
 
 A change that alters what the configuration plan records updates it in the same pull request, and a settings change that leaves the plan accurate needs no update.
 The method is in [Guide: Configuration Management](configuration-management.md).

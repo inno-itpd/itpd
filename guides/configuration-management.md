@@ -1,6 +1,6 @@
 # Guide: Configuration Management
 
-How to inventory the configuration a project depends on, judge it by the goals its artifacts serve, and turn that judgement into a first change the next sprint can schedule.
+How to inventory the configuration a project depends on, judge it by the goals its artifacts serve, and record the first change the team would make, without turning the review into a backlog.
 
 The rules are in [Configuration Management Requirements](../requirements/configuration-management-requirements.md): the plan, the items and their fields, the connections, the goal-based evaluation, the recommendation, and the public review.
 The criteria are the course's own: [Repository Requirements](../requirements/repository-requirements.md) for the delivery, [Agent Instructions Requirements](../requirements/agent-instructions-requirements.md) for the team's `AGENTS.md`, [General Requirements](../requirements/general-requirements.md) for the identifiers and the locations, and [Weekly Report Requirements](../requirements/weekly-report-requirements.md) for the report.
@@ -45,8 +45,8 @@ Take the inventory first and write the goal sections second, because the goals a
   - [Write For The Public From The Start](#write-for-the-public-from-the-start)
   - [Name The Private Setting, Not Its Value](#name-the-private-setting-not-its-value)
   - [Follow The Incident Response](#follow-the-incident-response)
-- [Step 8: Carry It Into Week 9](#step-8-carry-it-into-week-9)
-  - [Hand Off The Changes](#hand-off-the-changes)
+- [Step 8: Hand Off The Review](#step-8-hand-off-the-review)
+  - [Hand Off The Artifacts](#hand-off-the-artifacts)
   - [Enact Only What You Have Time For](#enact-only-what-you-have-time-for)
   - [Keep The Plan True](#keep-the-plan-true)
 - [Common Mistakes](#common-mistakes)
@@ -58,7 +58,7 @@ docs/configuration-plan.md          the inventory: Reviewed, the five groups, th
 reports/week-NN/cm-evaluation.md    the judgement: Baseline, Reviewed, Method, one section per local goal, what you could not judge, the first change
 docs/glossary.md                    the configuration terms, defined once
 docs/risks.md                       the configuration risks, with their mitigation and contingency
-docs/project-plan.md                the sprint that schedules the review, and the task issues the changes become
+docs/project-plan.md                the sprint that holds the review
 ```
 
 The plan is maintained and the evaluation is that week's evidence: the plan describes the configuration as it is, and the evaluation says what the team would change about it.
@@ -228,7 +228,7 @@ A team that finds the change not worth its tradeoff records that, and that sente
 ### Pick The First Change
 
 The one change the team would make first is `## The First Change`, in one paragraph: what it keeps, what it removes, and its main tradeoff.
-It is where the team would start rather than the largest change, and the other changes follow it into the next sprint's backlog without an order here.
+It is where the team would start rather than the largest change, and the other changes stay in their goal sections without an order or a schedule.
 Do not measure a maintenance cost, a token count, or a failure rate to justify it: the evidence is the team's own use, and a number invented to fill a cell is worse than a sentence a reader can check.
 
 ## Step 7: Publish The Sanitized Review
@@ -252,15 +252,16 @@ A credential you find in the history is not a finding to write about first.
 Revoke or rotate it, tell the instructor, remove it from the files and the history, and write the account privately, per [Sensitive-Data Incident Response](../requirements/repository-requirements.md#sensitive-data-incident-response).
 The public review then says what changed and not what was exposed.
 
-## Step 8: Carry It Into Week 9
+## Step 8: Hand Off The Review
 
-The review ends in work, and the work outlives the week.
+The review ends in a judgement, and the judgement outlives the week.
 [The Recommendation](../requirements/configuration-management-requirements.md#the-recommendation) owns what the recommendation is and what an optional change looks like.
 
-### Hand Off The Changes
+### Hand Off The Artifacts
 
-Put the first change and the other changes in the Week 9 handoff, side by side with the deck, the results, and the final repository state.
-The next sprint's planning turns each one into a task issue with its acceptance criteria, its milestone, and its `Responsible` and `Accountable`, per [The Issue Form](../requirements/task-issues-requirements.md#the-issue-form).
+Put the configuration plan and the evaluation in the Week 9 handoff, side by side with the deck, the results, and the final repository state.
+The first change and the other goal sections are the evaluation's recommendation: they schedule no work, and the next sprint's planning does not turn them into task issues on its own.
+A team that chooses to enact one does so as an optional change under the existing rules, per [The Recommendation](../requirements/configuration-management-requirements.md#the-recommendation).
 A configuration task says `None: repository upkeep` in `### Requirements` because it serves no functional requirement, and a change that alters the plan cites the item it changes.
 
 ### Enact Only What You Have Time For
@@ -281,6 +282,11 @@ A settings change that leaves the plan accurate needs no update, and the `**Revi
   A path is not a configuration item: write what breaks without it, because the purpose is what the evaluation judges.
 - **A configuration plan longer than the repository it describes.**
   A set of files is one item at its index; a plan of sixty items is a second repository, and nobody maintains it twice.
+- **A configuration plan that plans changes.**
+  The plan documents the configuration as it is; the changes are the evaluation's, and they schedule none.
+  A plan that lists intended improvements is a second roadmap to keep true.
+- **A review that becomes a backlog.**
+  The evaluation is a judgement, not scheduled work: its goal sections and first change are a recommendation, and a team that turns them into `SPRINT-09` task issues has added a plan the course does not ask for.
 - **A goal that is the project's goal.**
   The project's goal is what the product is for, and every artifact serves it, so nothing can be cut; a local goal is what a set of artifacts is for.
 - **A goal list copied from another team.**

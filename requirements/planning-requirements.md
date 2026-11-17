@@ -415,7 +415,7 @@ The release carries the usability fix and no configuration change, so its upgrad
 
 ### SPRINT-09
 
-The final repository state the configuration evaluation implies, the 7-minute deck, and the reflection.
+The final repository state, the 7-minute deck, and the reflection.
 
 - **Due:** 2026-11-28
 

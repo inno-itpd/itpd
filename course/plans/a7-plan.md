@@ -17,7 +17,7 @@ It also reverses [`A6-DEC-018`](../decisions/a6.md#a6-dec-018-week-7-uses-the-ev
 The rest of Assignment 6's design stands.
 
 **Superseded by Week 8:** [`a8-plan.md`](a8-plan.md) designs Week 8 and writes the assignment this plan left for later, and it reverses [`A7-DEC-022`](../decisions/a7.md#a7-dec-022-the-week-8-workload) in full.
-The run week carries the results this plan designed and, beside them, the configuration review: the maintained plan at `docs/configuration-plan.md`, the goal-based evaluation at `reports/week-08/cm-evaluation.md` with its first change and its tradeoffs, and the changes added to the Week 9 backlog.
+The run week carries the results this plan designed and, beside them, the configuration review: the maintained plan at `docs/configuration-plan.md` and the goal-based evaluation at `reports/week-08/cm-evaluation.md` with its local goals, its tradeoffs, and its first change, and the evaluation schedules no work.
 No implementation is required in Week 8 and no separate improvement plan is, and the syllabus's Class 8 line follows the deck, which teaches configuration management for agentic development.
 The rest of the Week 7 design stands, and the `**Since: W8**` rules this plan hands over are not repeated here.
 

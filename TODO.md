@@ -383,7 +383,7 @@ Next: Week 3 is planning and the minimum usable product, and it has no assignmen
 - [x] List problems with this configuration wrt goals and quality requirements.
       The evaluation judges the local goals, not the items; a product defect is a risk or a task issue, not a configuration item, per `A8-DEC-002`.
 - [x] Suggest alternative configuration that better suits goals and quality requirements, with a justification.
-      The `**A more convenient way:**` and `**Tradeoffs:**` lines, with the first change and the Week 9 backlog, per `A8-DEC-017`.
+      The `**A more convenient way:**` and `**Tradeoffs:**` lines, with the first change as a recommendation and no scheduled work, per `A8-DEC-017`.
 
 - [x] Write the requirements file, the guide, the assignment, and the decision log from the plan.
       `requirements/configuration-management-requirements.md`, `guides/configuration-management.md`, `assignments/assignment-8.md`, and `course/decisions/a8.md`, per `A8-DEC-011`.
