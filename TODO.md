@@ -16,6 +16,7 @@
 - Next course iteration:
   - reports and changelog inside docs so that links to them resolve on the docs site
   - good user stories are INVEST
+  - prune guides and requirements to leave out non-critical steps and details that can be inferred by students
 
 ## A1
 
