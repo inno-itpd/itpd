@@ -87,6 +87,7 @@ Who may see each item is in [Visibility Requirements](visibility-requirements.md
 **Since: W8**
 
 21. In the run week the report's summary gives the number of counted sessions, the aggregate completion and ease, the instrumentation comparison, the `QR/QRT` result, the findings, and the triage.
+    When fewer than three counted sessions run, it gives the number of counted sessions and the declared shortfall instead of the aggregate, per [The Week 8 Execution](usability-testing-requirements.md#the-week-8-execution).
     It links the `results.md`, the sanitized session notes, the `QR/QRT`, the findings' task issues, the private repository that holds the test's telemetry export, the release, the retrospective, and the AI usage; it copies no raw participant data and states the `n=<count>` caveat.
     It follows rule 16 for the focus metric and the test traffic, and rules 7 and 8 for the contribution table and the repository evidence.
 22. In the run week a `## Usability test` section carries the results summary, the sanitized session links, the SUS and SEQ summary, the instrumentation comparison, the findings, the triage, and the `QR/QRT` result.

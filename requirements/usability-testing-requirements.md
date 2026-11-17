@@ -365,6 +365,8 @@ The run week executes the design: the sessions run or have run, the data goes to
 1. At least three usability sessions run after the design is written and the instrumentation is verified, per [The Instrumentation](#the-instrumentation), at the dates the team schedules, and before the run week's results and report are written.
 2. The raw text and the test's telemetry export go to the private repository, the recordings go to the cloud folder, and the sanitized session notes and results go to `docs/usability-tests/ut-01/`.
 3. The record's `**Status:**` becomes `Completed`, and its `results.md` is written, per [The Results And Findings](#the-results-and-findings).
+   When fewer than three counted sessions run, the minimum in [The Analysis](#the-analysis) is reduced to the qualitative record.
+   The record stays `Planned`, `results.md` carries the per-participant table, the instrumentation comparison, the limitations, and the declared shortfall, with no aggregate statistic, and the report claims no result.
 4. The quality requirement's testing-plan row records `Passes` or `Fails` with `Checked: SPRINT-08` and the results as its evidence, per [Quality Requirement Testing Plan](planning-requirements.md#quality-requirement-testing-plan).
 5. The findings are triaged, and the task issues are scheduled, per [The Triage](#the-triage).
 6. The team's threshold-of-success usability goal, when it has one, is settled with its `**Outcome:**`, citing `UT-01`, per [The Threshold Of Success](planning-requirements.md#the-threshold-of-success).
