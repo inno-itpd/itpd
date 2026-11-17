@@ -327,15 +327,14 @@ The method is in [Close With The Retrospective](../guides/planning-and-tracking.
 
 The rules:
 
-- Name the tools you used, what for, and what you did with their output: [AI Usage Report](../requirements/weekly-report-requirements.md#ai-usage-report).
+- Name the tools, how you used them, and what worked and what did not: [AI Usage Report](../requirements/weekly-report-requirements.md#ai-usage-report).
 
 This week:
 
-1. Write `reports/week-08/ai-usage.md`, naming each tool, what you used it for, and what you accepted, changed, or rejected, with the reason for each rejection.
-2. If you used no AI tools, say so in one line.
-3. Say whether an agent was given any usability material, and if so, confirm it was given the sanitized note rather than the raw recording or the private notes.
+1. Write `reports/week-08/ai-usage.md`.
+2. Say whether an agent was given any usability material, and if so, confirm it was given the sanitized note rather than the raw recording or the private notes.
    Say whether an agent was given the configuration plan or the evaluation, and confirm it was the public, sanitized state.
-4. Write the Week 9 handoff in the report: the results, the configuration plan, the evaluation with its goal sections, its tradeoffs, and its first change, the final repository state, and the reflection.
+3. Write the Week 9 handoff in the report: the results, the configuration plan, the evaluation with its goal sections, its tradeoffs, and its first change, the final repository state, and the reflection.
    Add the private repository and the recordings folder still accessible, the `REL-08` tag, and the evidence the deck will cite.
 
 ## What Good Looks Like

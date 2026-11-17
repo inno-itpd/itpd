@@ -332,15 +332,18 @@ No private-only material was committed to this repository.
 **Required**
 
 1. Each week, write `reports/week-NN/ai-usage.md`.
-2. Name the tools you used and what you used them for: research, drafting, code, analysis, transcription, images, or anything else.
-3. Say what you did with the output: what you accepted, what you changed, what you rejected and why.
-4. If you used no AI tools, say so explicitly in one line.
+2. Name the tools you used and the kind of work you used them for: research, drafting, code, analysis, transcription, images, or anything else.
+3. Say how you used them: what you asked for, how you worked with what came back, and how you checked it before it went into an artifact.
+4. Say what worked: where a tool helped, and how you could tell.
+5. Say what did not work: where a tool was wrong, slow, or misleading, and what you did instead.
+6. If you used no AI tools, say so explicitly in one line.
    This is a valid answer and costs you nothing.
-5. In any artifact, generated text submitted unchecked, or filler passed off as analysis, reduces the week's grade.
+7. In any artifact, generated text submitted unchecked, or filler passed off as analysis, reduces the week's grade.
 
 The course allows AI tools.
 See [the course rules](../course/rules.md#ai-tools).
-The report exists so a reader can tell your own work from generated text, not to catch you using tools.
+The report is a short account of how the team worked with the tools, not an inventory of every output.
+It exists so a reader can see how the tools were used and what the team got from them, not to catch you using them.
 
 **Example**
 
@@ -351,20 +354,21 @@ The report exists so a reader can tell your own work from generated text, not to
 
 ChatGPT and Claude, both through the web UI.
 
-## What we used them for
+## How we used them
 
-Drafted the property list for the comparison table and summarised the Calendly and Cal.com docs.
+We asked Claude for the properties a booking tool should support and for a summary of the Calendly and Cal.com documentation, one property at a time, and checked every claim against the product's own documentation before it went into the comparison table.
+We used ChatGPT to draft the first paragraph of the value proposition.
 
-## What we did with the output
+## What worked
 
-Kept two properties from the draft.
-Rejected the rest: they described UI polish rather than the properties our users care about.
-Every claim in the comparison table was checked against the product's own documentation by hand.
+Asking for one property at a time gave short answers we could check, and two of them stayed in the table unchanged.
+The documentation summary was accurate on the three features we checked against the source.
 
-## What was not used
+## What did not work
 
-No AI output was used as a finding.
-No generated text was submitted unchecked.
+The value-proposition draft read like marketing copy and described a flow we had not designed, so we rewrote it by hand.
+One property came back that neither product supported, and it was plausible enough that we nearly kept it, so we stopped asking for whole lists.
+No generated text went into the comparison table unchecked, and no AI output was used as a research finding.
 ```
 
 ## Declaring Deviations

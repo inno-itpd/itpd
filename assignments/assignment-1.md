@@ -195,9 +195,9 @@ A customer who agrees with everything has not been tested.
 
 ## Part 8: Report On Your AI Usage
 
-Write `reports/week-01/ai-usage.md`: which tools, what for, and what you accepted, changed, or rejected.
+Write `reports/week-01/ai-usage.md`: which tools, how you used them, and what worked and what did not, per [AI Usage Report](../requirements/weekly-report-requirements.md#ai-usage-report).
 If you used none, write one line saying so.
-See [AI Tools](../course/rules.md#ai-tools).
+See also [AI Tools](../course/rules.md#ai-tools).
 
 ## What Good Looks Like
 

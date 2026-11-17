@@ -361,13 +361,12 @@ The method is in [Close With The Retrospective](../guides/planning-and-tracking.
 
 The rules:
 
-- Name the tools you used, what for, and what you did with their output: [AI Usage Report](../requirements/weekly-report-requirements.md#ai-usage-report).
+- Name the tools, how you used them, and what worked and what did not: [AI Usage Report](../requirements/weekly-report-requirements.md#ai-usage-report).
 
 This week:
 
-1. Write `reports/week-07/ai-usage.md`, naming each tool, what you used it for, and what you accepted, changed, or rejected, with the reason for each rejection.
-2. If you used no AI tools, say so in one line.
-3. Say whether an agent was given any usability material; if one was, confirm it was given the sanitized note rather than the raw recording or the private notes, and if none was, say so.
+1. Write `reports/week-07/ai-usage.md`.
+2. Say whether an agent was given any usability material; if one was, confirm it was given the sanitized note rather than the raw recording or the private notes, and if none was, say so.
 
 ## Part 14: Hand Off The Week 8 Execution
 
