@@ -235,6 +235,9 @@ Next: Week 3 is planning and the minimum usable product, and it has no assignmen
   - [ ] Move Scrum from week 4 to here
     - [ ] Mention PBI, sprints, SBI
     - [ ] Task priorities as issue fields
+- [ ] Assignment:
+  - [ ] Assign project manager role explicitly.
+        Despite Scrum's self-organizing team.
 
 ## A4
 
@@ -352,6 +355,16 @@ Next: Week 3 is planning and the minimum usable product, and it has no assignmen
   - The release body carries no production check, and the plan's `REL-nn` block has none for now.
     During the deferral, the week report records the checked core task, per `A5-DEC-025`; `repository-requirements.md` rule 7 and Assignment 5's Part 3 item stay as written.
     Once UATs are designed, add `**Checked UATs:**` beside `**Checked QRs:**`, decide whether `repository-requirements.md` rule 7 stays in force, and where the check is recorded.
+- [ ] Unequal engagement in the student team project
+  - [ ] Free-rider vs excluded person
+  - [ ] Why it's still a team project for 4 people?
+    - [ ] Assignments are still hard, even when using AI
+    - [ ] Telling AI what exactly to do
+  - [ ] Share phone number (someone may be inaccessible by Telegram)
+- [x] Mention that usability test results will be necessary later for product pitching
+  - The Week 9 deck cites `docs/usability-tests/ut-01/results.md`, and the results are Submission 8's, per `A7-DEC-018`.
+- [ ] How contaminated are docs with "core task"?
+  - Still open for the earlier weeks; the Week 7 usability materials say `main usability test task` and never `core task`, per `A7-DEC-008`.
 
 ## A8
 
@@ -376,6 +389,12 @@ Next: Week 3 is planning and the minimum usable product, and it has no assignmen
       `requirements/configuration-management-requirements.md`, `guides/configuration-management.md`, `assignments/assignment-8.md`, and `course/decisions/a8.md`, per `A8-DEC-011`.
 - [x] Apply the syllabus, router, and `TODO.md` edits.
       The syllabus follows the deck and the assignment, and the routers link the plan, the requirements, the guide, and the `CFG-nn` convention, per `A8-DEC-012` and `A8-DEC-013`.
+
+## A9
+
+- [ ] pitching
+- [ ] project transition in week 10 (same trick as in SWP)
+- [ ] interpret metrics - e.g. usability test results
 
 ## A2-2025 Tech Stack TODO
 
