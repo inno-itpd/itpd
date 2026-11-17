@@ -13,7 +13,7 @@ Week 7 ended with the `UT-01` design, the private home for the raw data, the `In
 This week the sessions run, or they already ran in Week 7, and the results become the week's first stream: the sanitized session notes, the aggregate table, the findings, the triage, the verdict, and the fixes the product backlog now carries.
 The second stream is the configuration review (the week's activity; its artifact is the configuration evaluation, `reports/week-08/cm-evaluation.md`): the team writes the maintained configuration plan, `docs/configuration-plan.md`, which documents the configuration as it is, and judges the configuration by the goals its artifacts serve.
 The deliverable is the evaluation, not a configuration change: no change is required this week, and the evaluation schedules none, because its first change and the other goal sections are a recommendation rather than a backlog.
-The full sprint still runs around both streams, and it carries no deck.
+The full sprint still runs around both streams.
 
 You hand in the `UT-01` results and the findings with their issues, and the configuration plan with its goal-based evaluation and its first change.
 
@@ -55,7 +55,7 @@ By the end of this week you should be able to show a reader:
 - The configuration terms in `docs/glossary.md` and the configuration risks in `docs/risks.md`, per [Part 9](#part-9-update-the-glossary-and-the-risk-register).
 - The results review held as the Sprint Review, with its script, report, transcript, `DEC-nn` entries, and action points, per [Part 10](#part-10-carry-out-the-week-7-action-points-and-hold-the-sprint-review).
 - `REL-08`, the sprint closed with its actual velocity, the retrospective, and the AI usage report, per [Part 11](#part-11-apply-the-review-run-the-sprints-testing-plan-rows-and-cut-rel-08), [Part 12](#part-12-close-the-sprint-and-hold-the-retrospective), and [Part 13](#part-13-report-on-your-ai-usage-and-hand-off-week-9).
-- The Week 9 handoff: the artifacts, the private repository and recordings folder, the `REL-08` tag, the final repository state, and the deck's evidence, with no deck submitted, per [Part 13](#part-13-report-on-your-ai-usage-and-hand-off-week-9).
+- The Week 9 handoff: the artifacts, the private repository and recordings folder, the `REL-08` tag, the final repository state, and the deck's evidence, per [Part 13](#part-13-report-on-your-ai-usage-and-hand-off-week-9).
 
 ## Part 1: Refine The Product Backlog And Plan The Sprint
 
@@ -339,7 +339,6 @@ This week:
 4. Write the Week 9 handoff in the report: the results, the configuration plan, the evaluation with its goal sections, its tradeoffs, and its first change, the final repository state, and the reflection.
    The handoff names no configuration work to schedule, because the evaluation schedules none.
    Add the private repository and the recordings folder still accessible, the `REL-08` tag, and the evidence the deck will cite.
-   No deck is submitted with this assignment, and the Week 9 assignment owns it.
 
 ## What Good Looks Like
 
@@ -369,7 +368,6 @@ A strong submission has:
   Its `**Checked QRs:**` lists each checked `QR-nn` or says `None` and closes with one link to the testing plan, its upgrade note says whether anything is required, and the `SPRINT-08` milestone is closed after any open issue is rescheduled.
 - **A Week 9 handoff another week can start from.**
   It names the results, the configuration plan, the evaluation's goal sections and first change, the private repository and recordings folder, the `REL-08` tag, the final repository state, and the deck's evidence, and it schedules no configuration work.
-  No deck is submitted.
 - **One path and one identifier, everywhere.**
   The report, the guide, and the routers use `docs/configuration-plan.md` and `reports/week-08/cm-evaluation.md`, and the configuration plan and the evaluation use the same `CFG-nn`.
 
@@ -442,7 +440,7 @@ Keep the PDF to two pages plus a transcript appendix under item 9, and put nothi
 8. One line confirming that no private-only material was committed to the repository, and no participant identity was committed to it.
 9. The meeting transcript, if the customer refused to let you publish it.
 
-The PDF carries no participant identity, no deck, and no configuration appendix.
+The PDF carries no participant identity and no configuration appendix.
 The production analytics and observability dashboards were submitted in the Week 6 wrapper; this week's wrapper does not repeat them.
 
 ### Submission Procedure
@@ -487,7 +485,7 @@ The production analytics and observability dashboards were submitted in the Week
 - [ ] `**Actual Velocity:**` set in `### SPRINT-08` ([Part 12](#part-12-close-the-sprint-and-hold-the-retrospective)).
 - [ ] `reports/week-08/sprint-retrospective.md` with its four sections, its carried actions, and any `Not done` action re-listed with `Carried: Yes` ([Part 12](#part-12-close-the-sprint-and-hold-the-retrospective)).
 - [ ] `reports/week-08/ai-usage.md`, including whether an agent was given the sanitized results and whether it was given the configuration plan ([Part 13](#part-13-report-on-your-ai-usage-and-hand-off-week-9)).
-- [ ] The Week 9 handoff written, with no deck submitted ([Part 13](#part-13-report-on-your-ai-usage-and-hand-off-week-9)).
+- [ ] The Week 9 handoff written ([Part 13](#part-13-report-on-your-ai-usage-and-hand-off-week-9)).
 - [ ] `reports/week-08/README.md` with the summary, the `## Usability test` and `## Configuration management` sections, the `## Week 9 handoff`, the coverage rows, and the `## Privacy` line ([Assignment Report In The Repository](#assignment-report-in-the-repository)).
 - [ ] Everything merged into `main`, with the permalink and the snapshot taken from that commit ([Submission Procedure](#submission-procedure)).
 - [ ] PDF ready with the permalink, the private repository and recordings folder links and access, the staging and production addresses, the staging analytics and observability credentials, and no participant identity ([Assignment Report On Moodle](#assignment-report-on-moodle)).

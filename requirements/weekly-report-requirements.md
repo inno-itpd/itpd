@@ -274,7 +274,6 @@ No goal is `Open` after this review, and the team proposed no measure because th
 The Week 9 deck cites [the results](../../docs/usability-tests/ut-01/results.md) and [the configuration plan](../../docs/configuration-plan.md) rather than repeating either.
 The evaluation's goal sections and its first change are the review's recommendation and schedule no work for Week 9.
 The private repository and the recordings folder stay open until the course is graded, and the `REL-08` tag is the state Week 9 starts from.
-No deck is submitted with this report.
 
 ## Coverage
 
