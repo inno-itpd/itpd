@@ -17,6 +17,7 @@
   - reports and changelog inside docs so that links to them resolve on the docs site
   - good user stories are INVEST
   - prune guides and requirements to leave out non-critical steps and details that can be inferred by students
+- [ ] Add a quiz (post-test) after each section before key takeaways
 
 ## A1
 
@@ -390,6 +391,7 @@ Next: Week 3 is planning and the minimum usable product, and it has no assignmen
       `requirements/configuration-management-requirements.md`, `guides/configuration-management.md`, `assignments/assignment-8.md`, and `course/decisions/a8.md`, per `A8-DEC-011`.
 - [x] Apply the syllabus, router, and `TODO.md` edits.
       The syllabus follows the deck and the assignment, and the routers link the plan, the requirements, the guide, and the `CFG-nn` convention, per `A8-DEC-012` and `A8-DEC-013`.
+- [ ] For usability tests, require a screen recording and the user's voiceover
 
 ## A9
 
