@@ -40,7 +40,7 @@ They explain the week; [the rules](#the-rules) are what your work is checked aga
 | 6    | [Product analytics and observability](lectures/lecture-6.pdf)              |
 | 7    | [Usability testing](lectures/lecture-7.pdf)                                |
 | 8    | [Configuration management for agentic development](lectures/lecture-8.pdf) |
-| 9    | [Presenting Project](lectures/lecture-9.pdf)                               |
+| 9    | [The Product Pitch Deck](lectures/lecture-9.pdf)                           |
 
 ## The Rules
 

@@ -1,27 +1,9 @@
-// Presenting Project, converted from tmp/itpd-2025/lectures/lecture-8.pdf.
-//
-// Conversion notes (numbers refer to slides in the export):
-// - All 37 slides keep their order, including the staged discussion and visual reveals.
-// - The current lecture layout changes fonts, headings, spacing, and image placement.
-//   Slide 1 uses the course title slide and identifies this as Lecture 9 in 2026.
-// - Slides 2–4 identify the 2025 logistics, extra points, and investor report as
-//   historical. Slide 2 directs students to the current syllabus for the schedule.
-//   The public deck omits the link to the 2025 grade report.
-// - Slides 3 and 7 expand MVP in the historical and teaching material. The
-//   export uses MVP for the pitching examples and 2025 awards, so that term stays.
-// - Slides 13–14 use editable Typst charts. Bar values are approximated from the
-//   export's geometry, which labels the axes but gives no exact values for the bars.
-//   The axis labels use a consistent lowercase k. Slide 14 clarifies the seasonal test.
-// - Slide 16 reports the export's attribution to John Adams as such.
-// - Slides 20–21, 24, 26, and 32 use labelled links for the original source URLs.
-// - Spelling, grammar, capitalization, and punctuation have been lightly edited
-//   throughout. Slides 12, 17, 18, 25, 30, and 35 also rephrase parts of the original
-//   explanation or simplify its emphasis. Slides 25 and 35 keep the crossed-out word.
+// Lecture 9 of IT Product Development.
 
 #let accent = rgb("#12507b")
 #let muted = luma(42%)
 
-#set document(title: "Presenting Project")
+#set document(title: "The Product Pitch Deck")
 #set page(
   width: 10in,
   height: 5.625in,
@@ -32,31 +14,36 @@
   },
 )
 
-#set text(font: "Liberation Sans", size: 15pt, lang: "en")
-#set par(leading: 0.65em, spacing: 1.05em)
-#set list(indent: 1.2em, body-indent: 0.45em, spacing: 0.7em)
+#set text(font: "Liberation Sans", size: 20pt, lang: "en")
+#set par(leading: 0.48em, spacing: 0.88em)
+#set list(indent: 1.2em, body-indent: 0.45em, spacing: 0.65em)
 #set heading(numbering: none)
 
 #show heading.where(level: 1): it => {
-  text(size: 22pt, weight: "bold", fill: accent)[#it.body]
+  text(size: 25pt, weight: "bold", fill: accent)[#it.body]
   v(3pt)
   line(length: 1.05in, stroke: 2pt + accent)
   v(4pt)
 }
 #show link: it => text(fill: accent)[#it]
 
-#let term(name) = text(weight: "bold", fill: accent)[#name:]
-#let note(body) = text(size: 0.9em, fill: muted)[#body]
-#let tag(body) = box(
-  fill: accent,
-  radius: 3pt,
-  inset: (x: 5pt, y: 1.5pt),
-  text(size: 10pt, weight: "bold", fill: white)[#body],
+#let note(body) = text(size: 14pt, fill: muted, body)
+
+#let takeaway(body) = block(
+  width: 100%, fill: rgb("#edf4f8"), inset: 14pt,
+  text(size: 24pt, fill: accent, weight: "bold", body),
 )
 
-#let slide(title, body, size: 15pt) = {
+#let rows(..cells) = grid(
+  columns: (145pt, 1fr),
+  column-gutter: 18pt,
+  row-gutter: 16pt,
+  align: top,
+  ..cells,
+)
+
+#let slide(title, body) = {
   pagebreak(weak: true)
-  set text(size: size)
   heading(level: 1, title)
   body
 }
@@ -73,7 +60,7 @@
   pagebreak(weak: true)
   v(1.3in)
   align(center)[
-    #text(size: 34pt, weight: "bold", fill: accent)[Presenting Project]
+    #text(size: 34pt, weight: "bold", fill: accent)[The Product Pitch Deck]
     #v(0.16in)
     #text(size: 20pt, fill: muted)[Lecture 9, IT Product Development]
   ]
@@ -83,359 +70,200 @@
   ]
 }
 
-#let two-columns(left, right, columns: (1fr, 1fr)) = grid(
-  columns: columns,
-  column-gutter: 20pt,
-  align: top,
-  left,
-  right,
+#let booking-result = grid(
+  columns: (auto, 1fr),
+  column-gutter: 18pt,
+  align: horizon,
+  text(size: 46pt, weight: "bold", fill: accent)[4 of 5],
+  [participants booked a consultation without help.],
 )
-
-#let visual(file, alt, width: 100%, height: auto) = image(
-  "images/lecture-9/" + file + ".jpg",
-  alt: alt,
-  width: width,
-  height: height,
-  fit: "contain",
-)
-
-#let source(url, name) = text(size: 10pt)[Source: #link(url)[#name]]
-
-#let sourced-visual(body, credit) = grid(
-  columns: 1,
-  row-gutter: 6pt,
-  align: center,
-  body,
-  credit,
-)
-
-#let three-act-diagram(width: 100%, height: auto) = visual(
-  "three-act-structure",
-  "Three-act structure. A first plot point leads from setup into rising action, a second leads to crisis, and falling action leads to resolution.",
-  width: width,
-  height: height,
-)
-
-#let skyfall-image = visual(
-  "skyfall",
-  "A silhouetted figure stands in the bright opening of a dark tunnel.",
-  height: 255pt,
-)
-#let skyfall-source = source("https://www.007.com/the-films/skyfall/", "Skyfall")
-#let scrum-diagram = visual(
-  "scrum-diagram",
-  "A dense Scrum process illustration with lanes, artifacts, sprint tasks, and handoffs.",
-  height: 272pt,
-)
-
-#let quarterly-chart() = {
-  let plot-width = 275pt
-  let plot-height = 180pt
-  let label-width = 42pt
-  let baseline = 200
-  let goal = 600
-  let scale = plot-height / (goal - baseline)
-  let quarters = (
-    ("Q1", 440, rgb("#eeff41")),
-    ("Q2", 560, black),
-    ("Q3", 320, rgb("#eeeeee")),
-    ("Q4", 580, rgb("#78909c")),
-  )
-  block(width: label-width + plot-width, height: plot-height + 32pt)[
-    #for tick in range(baseline, goal + 1, step: 100) {
-      let y = 8pt + (goal - tick) * scale
-      place(top + left, dx: label-width, dy: y, line(length: plot-width, stroke: 0.75pt + muted))
-      place(top + left, dy: y - 6pt, text(size: 11pt, fill: muted, "$" + str(tick) + "k"))
-    }
-    #for (i, (quarter, value, color)) in quarters.enumerate() {
-      let slot-width = plot-width / quarters.len()
-      let bar-height = (value - baseline) * scale
-      let x = label-width + i * slot-width
-      place(
-        top + left,
-        dx: x + (slot-width - 40pt) / 2,
-        dy: 8pt + plot-height - bar-height,
-        rect(width: 40pt, height: bar-height, fill: color, stroke: none, radius: 1pt),
-      )
-      place(
-        top + left,
-        dx: x,
-        dy: 16pt + plot-height,
-        box(width: slot-width, align(center, text(size: 11pt, fill: muted, quarter))),
-      )
-    }
-  ]
-}
-
-// --- Course status and investor report --------------------------------------
 
 #title-slide()
 
-// --- Discussion and pitch decks ---------------------------------------------
-
-#slide("Discussion")[
-  What happens to minimum viable products (MVPs) when you are done writing code?
+#slide("Agenda")[
+  - Audience and Goal
+  - The Opportunity
+  - The Story and Live Demo
+  - What the Evidence Supports
+  - How the Product Continues
 ]
 
-#slide("Discussion")[
-  What happens to MVPs when you are done writing code?
+#section("Audience and Goal")
 
-  Who decides whether the project continues?
+#slide("What Does a Pitch Deck Do?")[
+  A pitch deck gives the audience a reason to take a next step.
 
-  How do people judge the team's performance?
+  #rows(
+    [*Understand*], [Whose problem does the product solve?],
+    [*Believe*], [What makes the opportunity worth pursuing? Why can this team deliver?],
+    [*Act*], [What decision can the audience make today?],
+  )
+
+  #v(1fr)
+  #note[An early investor pitch can earn a follow-up meeting. #link("https://www.ycombinator.com/blog/practical-design-pitching")[Y Combinator on pitching]]
 ]
 
-#slide("Discussion")[
-  When do you think a presentation is appropriate?
+#slide("Your Final-Exam Audience")[
+  Your course instructors have heard your ideas as customers. At the final exam, they will hear your pitch as investors.
 
-  What is your approach to creating a presentation?
+  #takeaway[Why should we back a pilot?]
 
-  How do you make your presentation interesting?
-
-  Do you like making presentations?
+  Use your seven minutes to show the problem, demonstrate the working product, and explain what your evidence justifies.
 ]
 
-#slide("Pitch Deck")[
-  A pitch deck, also called a start-up or investor pitch deck, is a presentation that helps investors learn more about your business.
+#section("The Opportunity")
+
+#slide("What Investors Want to Know")[
+  #rows(
+    [*Pain*], [Who faces this problem? How often? What does it cost them?],
+    [*Alternatives*], [What do people do today? Why would they switch now?],
+    [*Reach*], [Who would adopt first? How many are there, and how can you reach them?],
+    [*Team*], [What has your team built or learned that makes it credible?],
+  )
+
+  #v(1fr)
+  #note[#link("https://sequoiacap.com/article/writing-a-business-plan")[Sequoia’s pitching guide]]
 ]
 
-#slide("Pitch Deck Approach")[
-  A good pitch deck is built around these elements.
+#slide("Booking a Consultation Takes Several Messages")[
+  An independent career coach offers a time. The client has a conflict. Both check their calendars again.
 
-  - Understandable explanations
-  - Focus on the opportunity
-  - Relatable examples
-  - Visuals
-  - Data
-  - Story structure
+  #takeaway[The client picks an available slot and gets a confirmation in one visit.]
+
+  The client books. The coach manages availability and could pay for the service.
+
+  #v(1fr)
+  #note[The booking app and its figures are illustrative throughout.]
 ]
 
-#slide("Understandable")[
-  Assume your audience is smart and has a short attention span.
+#slide("How Many Coaches Could We Reach?")[
+  #text(size: 38pt, weight: "bold", fill: accent)[About 80 coaches]
 
-  - Use their time well.
-  - Back up your claims.
-  - Explain unfamiliar IT vocabulary.
+  A regional directory lists that many independent coaches offering online consultations. It gives us a place to recruit. Willingness to try the app is still unknown.
+
+  *For your pitch* #linebreak()
+  Give one best-effort count or range for your first audience. Say where it came from, what it counts, and whom it leaves out.
 ]
 
-#slide("Understandable: explain data")[
-  #two-columns(
-    [Don’t just show this:],
-    quarterly-chart(),
+#section("The Story and Live Demo")
+
+#slide("Follow One Person Through the Story")[
+  #rows(
+    [*Problem*], [A client wants a consultation. Finding a time takes several messages.],
+    [*Product*], [Show that client choosing a time and receiving a confirmation.],
+    [*Next step*], [Use the test results to explain why the team wants to try this with working coaches.],
   )
 ]
 
-#slide("Understandable: explain data")[
-  #two-columns(
-    [
-      Our goal was *\$600k per quarter*.
+#slide("Give Each Slide One Job")[
+  Write a title the audience can repeat.
 
-      We ran a different version of the software each quarter. The colors indicate the versions.
+  #takeaway[Clients can book without messaging the coach.]
 
-      The black and blue bars show the best results.
+  Show the booking confirmation. Crop the screen so the time and status are legible. Explain unfamiliar terms aloud.
 
-      We’ll test those versions again in different periods to check for seasonal effects.
+  #v(1fr)
+  #note[#link("https://www.ycombinator.com/blog/guide-to-demo-day-pitches")[Y Combinator on slide design and delivery]]
+]
+
+#slide("Two Clients Try to Book the Same Slot")[
+  Demonstrate what happens when two clients choose 2:00 pm.
+
+  #grid(
+    columns: (1fr, 1fr), column-gutter: 16pt,
+    block(width: 100%, fill: rgb("#edf4f8"), inset: 15pt)[
+      First client #parbreak()
+      *2:00 pm confirmed*
     ],
-    quarterly-chart(),
-  )
-]
-
-#slide("Understandable: tools, frameworks, and abbreviations")[
-  If you mention a tool or framework, explain
-
-  - what it does
-  - why you chose it
-  - how it helped you
-
-  Expand each abbreviation the first time you use it.
-]
-
-#slide("Opportunity focused")[
-  #two-columns(
-    [
-      “Every problem is an opportunity in disguise.”
-
-      #note[Attributed to John Adams in the 2025 slides.]
+    block(width: 100%, fill: rgb("#edf4f8"), inset: 15pt)[
+      Second client #parbreak()
+      *Choose another time*
     ],
-    align(center, visual("john-adams", "Portrait of John Adams, the second US president.", height: 260pt)),
   )
+
+  The first booking stands. A quality requirement test can check whether that guarantee holds when both requests arrive together.
 ]
 
-#slide("Opportunity focused")[
-  You solved a problem and overcame challenges along the way.
-
-  Now the customer can do something they couldn't do before.
-
-  You learned lessons you can apply on future projects.
-]
-
-#slide("Relatable")[
-  Show the human problem your product solves.
-
-  Tell the story through the people involved.
-
-  Focus on the customer, the users, and your team.
-]
-
-#slide("Visual")[
-  Visual aids should support the message on the slide.
-
-  Make your slides match your product’s user interface.
-
-  Remove elements that distract from the message.
-]
-
-#slide("Visual")[
-  #two-columns(
-    [Imagine all your visuals being just as:],
-    skyfall-image,
-    columns: (0.65fr, 1fr),
+#slide("Explain a Technical Tradeoff")[
+  #rows(
+    [*Guarantee*], [Two clients cannot hold the same slot.],
+    [*How it works*], [The database accepts one reservation per slot. The app confirms only after it succeeds.],
+    [*Tradeoff*], [A client who loses their connection must wait to confirm.],
   )
-  #skyfall-source
+
+  Choose a tradeoff that affects users, reliability, or operating cost. Keep the architecture details ready for Q&A.
 ]
 
-#slide("Visual")[
-  #two-columns(
-    [
-      Imagine all your visuals being just as:
+#section("What the Evidence Supports")
 
-      - Clever
-      - Clean
-      - Calm
-      - Effective
-    ],
-    skyfall-image,
-    columns: (0.65fr, 1fr),
+#slide("What Did the Usability Test Show?")[
+  #booking-result
+
+  #v(1fr)
+  #note[Illustrative usability test of the booking app.]
+]
+
+#slide("What Did the Usability Test Show?")[
+  #booking-result
+
+  The fifth participant missed the time-zone control.
+
+  #takeaway[Make the time zone easier to find, then retest.]
+
+  A pilot can tell us whether coaches keep using the app in their regular work.
+]
+
+#slide("Give the Audience a Conclusion")[
+  #rows(
+    [*Context*], [Who did what, under which conditions?],
+    [*Meaning*], [What does the result support? Compare it with a baseline or target when you have one.],
+    [*Limit*], [What is still unknown, such as repeat use or willingness to pay?],
+    [*Decision*], [What will you change or test next?],
   )
-  #skyfall-source
+
+  #v(1fr)
+  #note[Use the same questions for product analytics and quality requirement tests.]
 ]
 
-#slide("Visual")[
-  #align(center, scrum-diagram)
-]
+#section("How the Product Continues")
 
-#slide("Visual: too many useless details")[
-  #align(center, scrum-diagram)
-]
-
-#slide("Visual: details that support the message")[
-  #sourced-visual(
-    visual(
-      "airbnb-business-model",
-      "An Airbnb pitch slide shows a ten percent commission, 84 million dollars in trips, a 25 dollar average fee, and 200 million dollars in projected revenue.",
-      height: 260pt,
-    ),
-    source("https://slidebean.com/blog/airbnb-pitch-deck", "Airbnb pitch deck"),
+#slide("Who Would Put Money Into This?")[
+  #rows(
+    [*Buyer*], [What would someone pay for? A coach might pay to have the team run the booking service.],
+    [*Sponsor*], [Which department would fund an internal tool? Show how it could save staff time or reduce errors.],
+    [*Investor*], [In a fundraising pitch, name the amount, what it buys, and the milestone it funds.],
   )
+
+  #v(1fr)
+  #note[#link("https://www.ycombinator.com/library/2u-how-to-build-your-seed-round-pitch-deck")[Y Combinator’s seed deck guide]]
 ]
 
-#slide("Data")[
-  “Show me the #strike[money] data.”
+#slide("What Would Sustain Your Product?")[
+  Explain who benefits enough to keep the product running.
 
-  #note[Adapted from a 1996 film.]
-
-  Use data to show what your project achieved.
-]
-
-#slide("Data")[
-  #sourced-visual(
-    visual(
-      "simple-mobile-tools",
-      "Simple Mobile Tools shows four of its apps and highlights over 70 million downloads, 24 apps, and a 4.6 average rating.",
-      height: 260pt,
-    ),
-    source("https://simplemobiletools.com/", "Simple Mobile Tools"),
+  #rows(
+    [*Open source*], [Creators can sell hosting or support, attract contributors, or share maintenance.],
+    [*Open core*], [Offer an open-source scheduler with a paid extension. Would coaching practices pay for shared calendars?],
+    [*Proprietary*], [A company could keep future versions private and fund them through an internal budget or subscriptions.],
   )
+
+  #v(1fr)
+  #note[#link("https://opensource.org/faq")[Open Source Initiative FAQ] · #link("https://gitlab.com/gitlab-com/content-sites/handbook/-/blob/228e22856732c6dd6c5ec83ed68b442681b76ce0/content/handbook/company/stewardship.md")[GitLab’s open-core model]]
 ]
 
-#slide("Data")[
-  Be prepared to explain how you
+#slide("What Would the Pilot Tell Us?")[
+  #takeaway[Five coaches use the MVP for four weeks of real consultations.]
 
-  - collected the data
-  - processed it
-  - interpreted the results
+  *Will clients book on their own?* Track the share of consultations they book unaided and when coaches step in.
+
+  *Will coaches keep using it?* Compare weekly use. Decide whether to expand the pilot or change the workflow.
 ]
 
-#slide("Is this enough?")[]
+#slide("Close With a Request the Panel Can Act On")[
+  #takeaway[“Could you introduce us to five independent coaches willing to try this for four weeks?”]
 
-#slide("Is this enough?")[
-  What makes a pitch deck interesting?
+  Ask for the introductions, access, or resources your pilot needs.
+
+  #v(1fr)
+  #note[At home, rehearse the seven-minute pitch with the live demo. Leave time for the evidence and the ask.]
 ]
-
-// --- Story structure and review ---------------------------------------------
-
-#slide("Story Structure")[
-  Story structure connects the elements of a pitch deck and keeps the audience interested.
-]
-
-#slide("Story Structure")[
-  “Humans think in stories and we try to make sense of the world by telling stories.”
-
-  #note[Yuval Noah Harari, historian]
-]
-
-#slide("Story Structure")[
-  #sourced-visual(
-    three-act-diagram(height: 260pt),
-    source("https://slidebean.com/blog/what-is-a-pitch-deck-presentation-meaning", "Pitch deck structure"),
-  )
-]
-
-#slide("Story Structure: Setup")[
-  #two-columns(
-    [
-      #term("Introduction") Describe your customer.
-
-      #term("Context") Describe the system as it is today.
-
-      #term("Problem") Introduce the problem.
-
-      #term("First plot point") Show what starts the project. The customer may have an idea and need help to realize it, or your team may propose the idea.
-    ],
-    three-act-diagram(),
-  )
-]
-
-#slide("Story Structure: Confrontation")[
-  #two-columns(
-    [
-      #term("Hero") The product.
-
-      #term("Helpers") Your team, the customer, and others who helped.
-
-      Describe how you built the product to solve the problem.
-
-      #term("Second plot point") Describe what enabled success, such as collecting data or gaining a new insight.
-    ],
-    three-act-diagram(),
-  )
-]
-
-#slide("Story Structure: Resolution")[
-  #two-columns(
-    [
-      #term("Demo") Show how your product solves the problem.
-
-      #term("Data") Show how well the product works and how much value it delivers.
-
-      #term("Sell") Ask for #strike[money] a grade.
-
-      You can also explain what each team member contributed.
-    ],
-    three-act-diagram(),
-  )
-]
-
-#slide("Review")[
-  How can you improve your presentation?
-
-  What is a pitch deck?
-
-  What are the components of a good pitch deck?
-
-  Which components will you use for your MVP presentation?
-
-  What is your favorite component, and why?
-]
-
-#section("Questions?")
