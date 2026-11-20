@@ -3,7 +3,7 @@
 #let accent = rgb("#12507b")
 #let muted = luma(42%)
 
-#set document(title: "The Product Pitch Deck")
+#set document(title: "The product pitch deck")
 #set page(
   width: 10in,
   height: 5.625in,
@@ -60,7 +60,7 @@
   pagebreak(weak: true)
   v(1.3in)
   align(center)[
-    #text(size: 34pt, weight: "bold", fill: accent)[The Product Pitch Deck]
+    #text(size: 34pt, weight: "bold", fill: accent)[The product pitch deck]
     #v(0.16in)
     #text(size: 20pt, fill: muted)[Lecture 9, IT Product Development]
   ]
@@ -120,52 +120,61 @@
 #title-slide()
 
 #slide("Agenda")[
-  - Audience and Goal
-  - The Opportunity
-  - The Story and Live Demo
-  - What the Evidence Supports
-  - How the Product Continues
+  - Audience and goal
+  - The opportunity
+  - The story and live demo
+  - What the evidence supports
+  - How the product continues
 
   #note[Our worked example is a fictional consultation booking app. All figures are illustrative.]
 ]
 
-#section("Audience and Goal")
+#section("Audience and goal")
+
+#slide("What is a pitch deck?")[
+  A pitch deck is a short set of slides that makes the case for a product and asks a particular audience to take a next step.
+
+  A team meeting an investor for the first time might want a second meeting. A team raising money might ask for funding to reach its next milestone.
+
+  #takeaway[What do you want this audience to do, and what evidence would give them a reason to say yes?]
+
+  #v(1fr)
+  #note[#link("https://www.ycombinator.com/blog/practical-design-pitching")[Y Combinator on pitching]]
+]
+
+#slide("Your final-exam audience")[
+  Your course instructors know the project as customers. At the final exam, they hear your seven-minute pitch as investors.
+
+  For this lecture, assume you want their help starting a *pilot*. A pilot is a limited trial in which a small group uses your product in its everyday work for a set period.
+
+  #takeaway[Would you introduce us to coaches who could try the app for four weeks of real bookings?]
+]
 
 #discussion(
   [Imagine a team has just shown you a client booking a consultation online. You know five coaches who could try the app.],
   [What else would you want to know before introducing the team?],
 )
 
-#slide("What Must the Pitch Answer?")[
+#slide("What must the pitch answer?")[
   #investor-questions
   #v(1fr)
   #note[#link("https://sequoiacap.com/article/writing-a-business-plan")[Sequoia’s pitching guide]]
 ]
 
-#slide("Your Final-Exam Audience")[
-  Your course instructors know the project as customers. At the final exam, they hear your seven-minute pitch as investors.
-
-  #takeaway[Why should we back a pilot?]
-
-  Open so someone hearing the pitch for the first time understands who books, what goes wrong today, and why a coach would try the app.
-
-  #v(1fr)
-  #note[An early investor pitch can earn a follow-up meeting. #link("https://www.ycombinator.com/blog/practical-design-pitching")[Y Combinator on pitching]]
-]
-
-#key-takeaways("Audience and Goal")[
+#key-takeaways("audience and goal")[
+  - Open so a first-time listener understands who books, what goes wrong today, and why a coach would try the app.
   - Give the panel one claim it can remember. “A client can confirm an appointment in one visit.”
   - Decide what action the evidence warrants. Here the panel could introduce the team to coaches for a pilot.
 ]
 
-#section("The Opportunity")
+#section("The opportunity")
 
 #discussion(
   [One coach schedules by message. Another already sends clients a booking link.],
   [Why would the second coach switch? What could make this a good time to change?],
 )
 
-#slide("Booking a Consultation Takes Several Messages")[
+#slide("Booking a consultation takes several messages")[
   An independent career coach offers a time. The client has a conflict. Both check their calendars again.
 
   #takeaway[The client picks an available slot and gets a confirmation in one visit.]
@@ -173,7 +182,7 @@
   The client books. The coach spends time arranging appointments and could pay for the service.
 ]
 
-#slide("Would a Coach Switch From Another Scheduler?")[
+#slide("Would a coach switch from another scheduler?")[
   A coach who already sends a booking link can offer the same one-visit experience.
 
   #rows(
@@ -184,7 +193,7 @@
   Until a coach reports a reason, switching is an assumption.
 ]
 
-#slide("How Many Coaches Could We Reach?")[
+#slide("How many coaches could we reach?")[
   #text(size: 38pt, weight: "bold", fill: accent)[About 80 coaches]
 
   A regional directory lists that many independent coaches offering online consultations. It gives us a place to recruit. Willingness to try the app is still unknown.
@@ -193,20 +202,20 @@
   Give one best-effort count or range for your first audience. Say where it came from, what it counts, and whom it leaves out.
 ]
 
-#key-takeaways("The Opportunity")[
+#key-takeaways("the opportunity")[
   - Name the person doing the work and the person who could pay for an improvement.
   - Compare your product with the best option available to that person. Explain what makes switching worthwhile and what makes the timing plausible.
   - Size the group you can reach first. Give the source and its limits.
 ]
 
-#section("The Story and Live Demo")
+#section("The story and live demo")
 
 #discussion(
   [A coach has one appointment left. Two clients choose it at the same time.],
   [What would you need to see to trust the coach’s calendar?],
 )
 
-#slide("Two Clients Try to Book the Same Slot")[
+#slide("Two clients try to book the same slot")[
   Follow the coach’s last 2:00 pm slot. Open it on two clients’ screens and submit both requests.
 
   #grid(
@@ -224,7 +233,7 @@
   Return to the coach’s calendar. Show the single reservation and who holds it.
 ]
 
-#slide("What Can the Audience Read From the Back Row?")[
+#slide("What can the audience read from the back row?")[
   #grid(
     columns: (1fr, 1fr), gutter: 18pt,
     [
@@ -253,7 +262,7 @@
   #note[#link("https://www.ycombinator.com/blog/guide-to-demo-day-pitches")[Y Combinator on slide design and delivery]]
 ]
 
-#slide("Why the Team Waits Before Confirming")[
+#slide("Why the team waits before confirming")[
   #rows(
     [*Risk*], [Both clients could see the slot as available before either finishes booking.],
     [*Decision*], [The database accepts one reservation per slot. A client sees confirmation only after the reservation succeeds.],
@@ -263,13 +272,13 @@
   Be ready to show how you tested simultaneous requests. That gives the panel evidence beyond the single run it saw.
 ]
 
-#key-takeaways("The Story and Live Demo")[
+#key-takeaways("the story and live demo")[
   - Follow one person through a workflow where the outcome matters.
   - Give each slide one claim. Show the detail that lets the audience check it.
   - Explain a team decision in plain language, including its cost. Keep the design and test evidence ready for questions.
 ]
 
-#section("What the Evidence Supports")
+#section("What the evidence supports")
 
 #slide("Discussion")[
   #booking-result
@@ -277,7 +286,7 @@
   #takeaway[What can we claim today? What would we still need to learn before a rollout?]
 ]
 
-#slide("What Did the Usability Test Show?")[
+#slide("What did the usability test show?")[
   #booking-result
 
   The fifth participant missed the time-zone control.
@@ -287,7 +296,7 @@
   Even if all five succeed next time, repeat use and willingness to pay remain open questions.
 ]
 
-#slide("Did the New Booking Flow Help?")[
+#slide("Did the new booking flow help?")[
   #pilot-chart
 
   How would you explain the change to the panel?
@@ -296,7 +305,7 @@
   #note[Hypothetical future pilot. These figures are for interpreting the chart.]
 ]
 
-#slide("Did the New Booking Flow Help?")[
+#slide("Did the new booking flow help?")[
   #pilot-chart
 
   #set text(size: 17pt)
@@ -308,20 +317,20 @@
   #note[Next test: compare both flows with the same coaches, assigning clients at random during the same period.]
 ]
 
-#key-takeaways("What the Evidence Supports")[
+#key-takeaways("what the evidence supports")[
   - Tell the panel who took part, what you counted, and how you calculated the measure.
   - Interpret the result against a baseline or target when you have one. Consider what else could explain the difference.
   - State what you learned and the next decision it supports. Apply this to usability, product analytics, and quality requirement tests.
 ]
 
-#section("How the Product Continues")
+#section("How the product continues")
 
 #discussion(
   [Suppose clients book successfully in week one. By week three, coaches have stopped sharing the link.],
   [Would you expand the pilot? What would you ask the coaches first?],
 )
 
-#slide("Who Would Put Money Into This?")[
+#slide("Who would put money into this?")[
   #rows(
     [*Buyer*], [What would someone pay for? Would a coach pay for managed hosting if it saved them time keeping the service running?],
     [*Sponsor*], [Which department would fund an internal tool? Show how it could save staff time or reduce errors.],
@@ -332,7 +341,7 @@
   #note[#link("https://www.ycombinator.com/library/2u-how-to-build-your-seed-round-pitch-deck")[Y Combinator’s seed deck guide]]
 ]
 
-#slide("What Would Sustain Your Product?")[
+#slide("What would sustain your product?")[
   Explain who benefits enough to keep the product running.
 
   #rows(
@@ -345,7 +354,7 @@
   #note[#link("https://opensource.org/faq")[Open Source Initiative FAQ] · #link("https://gitlab.com/gitlab-com/content-sites/handbook/-/blob/228e22856732c6dd6c5ec83ed68b442681b76ce0/content/handbook/company/stewardship.md")[GitLab’s open-core model]]
 ]
 
-#slide("What Would the Pilot Tell Us?")[
+#slide("What would the pilot tell us?")[
   #takeaway[Five coaches try the app for four weeks of real consultations.]
 
   Each week, count how many coaches share the link and what share of completed consultations clients booked unaided.
@@ -353,13 +362,13 @@
   If coaches stop sharing, ask about the last consultation they arranged another way. Investigate the obstacle before expanding. If use persists, ask whether the benefit justifies paying for the service.
 ]
 
-#slide("Rehearse With Someone New to the Project")[
+#slide("Rehearse with someone new to the project")[
   #investor-questions
   #v(1fr)
   #note[At home, time all seven minutes, including the live demo, evidence, and ask. Then have a listener answer these questions from memory.]
 ]
 
-#key-takeaways("How the Product Continues")[
+#key-takeaways("how the product continues")[
   - Explain who gains enough value to keep the product running.
   - Name the question a pilot could settle and how the answer would change your plans.
   - Close with a request the panel can act on.
