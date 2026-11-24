@@ -395,9 +395,17 @@ Next: Week 3 is planning and the minimum usable product, and it has no assignmen
 
 ## A9
 
-- [ ] pitching
-- [ ] project transition in week 10 (same trick as in SWP)
-- [ ] interpret metrics - e.g. usability test results
+- [ ] during the Sprint Review:
+  - [ ] discuss handoff with the customer
+  - [ ] write down what's missing in "Handoff preparation" in the report
+- [ ] before the demo day (before Dec. 4):
+  - [ ] conduct the handoff and write results in "Handoff" in the report
+  - [ ] submit the pitch deck
+  - [ ] submit the report
+- [ ] Report:
+  - [ ] handoff results ("Handoff preparation", "Handoff")
+  - [ ] lessons learned and from which problems you learned
+  - [ ] what would you do differently in the next project
 
 ## A2-2025 Tech Stack TODO
 
