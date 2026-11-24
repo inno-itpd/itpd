@@ -571,8 +571,6 @@ A private repository that outlives the course is participant data kept without a
   The time window, an opaque token, and the `P-nn` code are all allowed, and the record says which one; a link only the team knows cannot be reconstructed by a reader.
 - **A Week 7 result claimed.**
   The design week sets the recruitment target and the session plan; a result belongs to the run week's report and the results record.
-- **A Week 7 or Week 8 deck PDF.**
-  The deck is Week 9's, submitted with Submission 9, rehearsed in the Week 10 class, and presented at the Week 11 final exam.
 - **A `TOS-03` treated as required.**
   `TOS-03` is a full-example goal; a team without a usability goal is not penalised, and the required check is the quality requirement and its test.
 - **A `UT-01` without a `QR/QRT`.**

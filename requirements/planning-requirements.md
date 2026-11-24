@@ -417,7 +417,7 @@ The release carries the usability fix and no configuration change, so its upgrad
 
 The final repository state, the 7-minute deck, and the reflection.
 
-- **Due:** 2026-11-28
+- **Due:** 2026-12-03
 
 #### REL-09
 
