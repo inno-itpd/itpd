@@ -263,7 +263,9 @@ It is recorded before the session, in a form the team can show the instructors.
 **Required**
 
 1. Every counted session has a **durable consent** recorded before it: a signed form, an email, a Telegram message, or another record the team can show the instructors.
-2. The consent covers the participant's 18-or-older declaration, participation, the recording, the sanitized public results, the anonymized quotes, the private data repository, the recordings folder, the instructors' access, the tools used, the deletion of the tools' copies, the right to withdraw, and the deletion after grading.
+2. The consent covers the participant's 18-or-older declaration, participation, the recording, the sanitized public results, the anonymized quotes, the private data repository, the recordings folder, the instructors' access, the tools used, and the right to withdraw.
+   It promises that the team and instructors will delete all copies of private usability-test data they hold by the end of the semester, including copies held in tools they use.
+   The course deadline for the cleanup is in [Deleting Private Usability Data](visibility-requirements.md#deleting-private-usability-data).
 3. Consent to the recording and to the sanitized public results is required for a session to count.
    A participant who does not give either cannot take part, and the team recruits a replacement.
 4. Consent to an anonymized quote is separate and optional.
@@ -288,8 +290,8 @@ The repository that holds it is in [The Usability Data Repository](repository-re
 3. The recordings live in a team-owned cloud folder, such as the team's drive, shared with the instructors.
    They are never in the product repository and are not in the private repository.
 4. The product repository links the private repository in the test record and the weekly report, and the link is excluded from the link check because it needs authentication, per [Link Checking](repository-requirements.md#link-checking).
-5. The Moodle PDF carries the private repository link and access and the recordings folder link and access, per [Private Submission Wrapper](weekly-report-requirements.md#private-submission-wrapper).
-6. The private repository and the recordings stay until the course is graded; after the course is graded the team deletes the private repository, its history, and the recordings, and the sanitized public record stays.
+5. Follow [Private Submission Wrapper](weekly-report-requirements.md#private-submission-wrapper) for private access details.
+6. Follow [Deleting Private Usability Data](visibility-requirements.md#deleting-private-usability-data) for end-of-course cleanup.
 7. When an instructor cannot access GitHub, the team gives the private text data through a Moodle-only archive and declares the [deviation](weekly-report-requirements.md#declaring-deviations).
 8. A filtered text export of the test's instrumentation may be kept in the private repository when it carries no IP address, location, user agent, referrer, or free text.
    It may carry the participant link the record states, per [The Instrumentation](#the-instrumentation) and [Telemetry And Personal Data](visibility-requirements.md#telemetry-and-personal-data).
@@ -557,8 +559,8 @@ From `docs/usability-tests/ut-01/consent.md`, the clauses:
 - I agree that an anonymized quote from the session may be published, and I understand that this is optional and that I still take part without it.
 - I agree that the consent record, the identity mapping, and the raw notes are kept in the team's private usability-data repository, and that the recording is kept in the team's cloud recordings folder.
 - I agree that the course instructors can access the private usability-data repository and the recordings folder.
-- I understand that the team may use a survey form and a recorder, and that their copies are deleted after grading.
-- I understand that the recording, the raw notes, and the identity mapping are deleted after the course is graded.
+- I understand that the team may use a survey form and a recorder.
+- By the end of the semester, the team and course instructors will each delete all copies of my private usability-test data that they hold, including copies in the tools they use.
 - I understand that I may withdraw at any time, and that the team then removes my data and retires my participant code.
 
 Signature: ______________________ Date: ______________

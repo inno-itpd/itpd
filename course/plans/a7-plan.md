@@ -1,5 +1,7 @@
 # Plan: Assignment 7 — Usability Test Design And The Week 7 Release
 
+> [A9-DEC-019](../decisions/a9.md#a9-dec-019-private-usability-data-is-deleted-by-submission-10) supersedes this plan's post-grading deletion timing and related consent wording.
+
 This plan designs Assignment 7 as [`a6-plan.md`](a6-plan.md) designs Assignment 6: the `UT-01` test record, its surveys and consent, the test's instrumentation and its verification, the private usability-data repository and its separate recordings folder, the `Interaction Capability` requirement and its manual test, the Week 7 sprint and release, the Sprint Review, the retrospective, the AI usage report, and the Week 8 execution handoff.
 It states the week's scope and the contradictions the wider materials expose, with the resolution each takes, in [Scope And Contradictions](#scope-and-contradictions).
 

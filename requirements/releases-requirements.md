@@ -69,7 +69,7 @@ The sprint's `REL-nn` section, which records the tag, the day, and from `REL-05`
 1. Title the release with the tag, so the title and the tag match, for example `v0.1.0` in both.
    A nickname for the release may head its body; it does not go in the title.
 2. When you cut a release, move the included entries into a dated section, link the section to the release, and open a new empty `[Unreleased]`.
-3. Close the sprint's GitHub milestone once the release is cut, after moving each issue still open into a later sprint's milestone, per [Sprints](planning-requirements.md#sprints).
+3. Close the sprint's GitHub milestone following the sequence in [Sprints](planning-requirements.md#sprints).
 
 **Since: W5**
 
@@ -77,6 +77,22 @@ The sprint's `REL-nn` section, which records the tag, the day, and from `REL-05`
    It is written for the person who already runs the previous version and is deciding whether and how to move to this one, and it states whether the upgrade requires anything beyond deploying this version, or that it does not.
    It is the team's shape: neither a section nor a section title is required.
 5. The body ends with the line `[Full changelog](<absolute url>)`, which links the changelog's released section, and nothing comes after it.
+
+**Since: W9**
+
+Cut the protected tag for `REL-09` at the Sprint 9 close, after the review and any same-sprint rework.
+
+**Since: W10**
+
+Keep the `SPRINT-10` milestone open until the final close.
+By the handoff, `REL-10` must meet these conditions.
+
+- The GitHub release is published for the [protected SemVer tag](#versioning-and-tags) on the final product commit.
+- The release body links to the released changelog section on `main`, and the changelog heading links to the release or the tagged source tree.
+- The build deployed to the university VM matches the release tag.
+
+Finalize the [release block](planning-requirements.md#releases) from the available handoff evidence before merging the final report.
+Follow the [code freeze](repository-requirements.md#the-final-repository-state).
 
 **Recommended**
 
@@ -128,4 +144,31 @@ Known issue: the calendar sync retries every minute after a timeout; restart the
 Free slots are now shown per day, and booking confirmations leave through your own mail host.
 
 [Full changelog](https://github.com/<organization>/<repo>/blob/main/CHANGELOG.md#050---2026-10-29)
+```
+
+**Example**
+
+GitHub release body for the Sprint 9 release, `v0.9.0`:
+
+```markdown
+Meeting organizers can share a guest invite from the booking screen.
+Deploy v0.9.0 using the existing configuration.
+
+[Full changelog](https://github.com/<organization>/<repo>/blob/main/CHANGELOG.md#090---2026-11-29)
+```
+
+For `REL-10`, the released changelog heading can link to the tagged source tree.
+
+```markdown
+## [0.10.0](https://github.com/<organization>/<repo>/tree/v0.10.0) - 2026-12-04
+```
+
+The GitHub release body for `v0.10.0` links back to that heading on `main`.
+
+```markdown
+Cancelling a booking makes the slot available to other organizers.
+Deploy v0.10.0 using the existing configuration.
+Guests whose calendar link has expired can ask the organizer for a fresh invitation.
+
+[Full changelog](https://github.com/<organization>/<repo>/blob/main/CHANGELOG.md#0100---2026-12-04)
 ```

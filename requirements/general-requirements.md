@@ -40,6 +40,24 @@ A **configuration** is the files, settings, and processes that produce, check, s
 A **configuration item** is one such item, a **configuration plan** is the maintained record of them, and a **configuration review** is the judgement of that plan.
 Their rules are in [Configuration Management Requirements](configuration-management-requirements.md), and each is also a term the team may add to its own glossary, per [The Term](glossary-requirements.md#the-term).
 
+**Since: W9**
+
+- A **user acceptance test** checks an end-to-end user journey at a review.
+  The maintained **UAT record** is [`docs/user-acceptance-tests.md`](user-acceptance-tests-requirements.md#where-the-tests-live).
+- **Handoff preparation** is the Week 9 report's record of what the customer expects, what is ready, and what is missing.
+  See [Weekly Public Report](weekly-report-requirements.md#weekly-public-report).
+
+**Since: W10**
+
+- The **final report** is the Week 10 weekly report and the index of the final product evidence.
+  The **project reflection** is the team's separate lessons record.
+  See [Weekly Public Report](weekly-report-requirements.md#weekly-public-report) and [Project Reflection](weekly-report-requirements.md#project-reflection).
+- **Individual reflection and peer evaluation** is private Submission 11, per [Week 11](../course/syllabus.md#week-11-dec-4--dec-10-final-exam).
+- The **handoff** is the Sprint 10 review and its package, a [root-level artifact](customer-meetings-requirements.md#the-handoff) linked by the final report.
+- The **final release** is [`REL-10`](planning-requirements.md#releases).
+  The **code freeze** fixes the product at that release.
+  The **final repository state** includes the frozen product and final documentation, per [The Final Repository State](repository-requirements.md#the-final-repository-state).
+
 ## Measurement Terminology
 
 **Since: W7**
@@ -87,6 +105,11 @@ A quality requirement's **`Response Measure`** is its criterion, not its measure
 5. A formatting-only change is not a rewrite: whitespace, line breaks, list markers, heading levels, table alignment, or a link repointed at the same section after its anchor changed, with the words and their meaning unchanged.
    It may touch any earlier week's files, including meeting scripts and reports, and goes in a pull request of its own.
 
+**Since: W10**
+
+6. The root `handoff.md` is the exception to the two artifact locations, per [The Handoff](customer-meetings-requirements.md#the-handoff).
+7. Earlier weekly reports may receive the link cleanup described in [Deleting Private Usability Data](visibility-requirements.md#deleting-private-usability-data).
+
 ## Identifier Rules
 
 **Since: W1**
@@ -103,6 +126,7 @@ A quality requirement's **`Response Measure`** is its criterion, not its measure
    `SLI-nn` for service level indicators is introduced in Week 6, and it takes two digits.
    `UT-nn` for usability tests is introduced in Week 7, and it takes two digits.
    `CFG-nn` for configuration items is introduced in Week 8, and it takes two digits.
+   `UAT-nn` for user acceptance tests is introduced in Week 9, and it takes two digits.
    A later family is introduced only by the requirement that first uses it.
 2. An identifier, once issued, is never changed, reused, or reassigned, including when the artifact is edited later in the course.
 3. Gaps in a sequence are expected and correct.
@@ -195,6 +219,12 @@ A quality requirement's **`Response Measure`** is its criterion, not its measure
 33. A `CFG-nn` is cited as the identifier with the configuration plan's path or its heading anchor, such as `docs/configuration-plan.md#cfg-01`.
     A dropped item keeps its identifier in place, per rule 11, and a configuration the team does not have yet carries no `CFG-nn`.
 
+**Since: W9**
+
+34. `UAT-nn` is project-wide, uses two digits, and is headed `## UAT-nn`.
+    Never renumber or reuse it.
+    A dropped test keeps its heading and run history and uses `**Status:** Dropped` and `**Dropped:**` with the date and reason, per [The Test Record](user-acceptance-tests-requirements.md#the-test-record).
+
 **Example**
 
 A gap the kickoff dropped, in `docs/research/gap-analysis.md`, with its other fields left out:
@@ -216,32 +246,34 @@ The research you produce in Week 1 is the evidence base for the rest of the cour
 Later weeks cite your Week 1 identifiers rather than restating your findings.
 This is what makes the course a project rather than nine separate assignments.
 
-| Later work                       | Must cite                                                                                                                                                                                                                                         |
-| -------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Week 2 product vision            | The `VP-nn` its goal traces to, per [Goal](product-vision-requirements.md#goal)                                                                                                                                                                   |
-| Week 2 user stories              | The `VP-nn` in each story's `Value proposition` field, any origins in its `Traces to` list, and the `ASM-nn` of each assumption it rests on in its `Rests on` list, per [The Story](user-stories-requirements.md#the-story)                       |
-| Week 2 prototypes                | The `US-nn` or `GAP-nn` each one tested, and the `ASM-nn` when the risky part is an assumption, per [Where Prototypes Live](prototypes-requirements.md#where-prototypes-live)                                                                     |
-| Week 3 project plan              | The `TOS-nn` of each milestone's `**Advances:**` field and the `SPRINT-nn` of its `**Sprints:**` field, per [Milestones](planning-requirements.md#milestones)                                                                                     |
-| Week 3 threshold of success      | The customer's `DEC-nnn` behind each goal change or drop, per [The Threshold Of Success](planning-requirements.md#the-threshold-of-success)                                                                                                       |
-| Week 3 risks                     | The `DEC-nnn` of a decision that settled the risk or that its response passes, per [Checking And Settling](risks-requirements.md#checking-and-settling) and [Response](risks-requirements.md#response)                                            |
-| Every weekly report from Week 3  | The `REL-nn` of its week's release, linked to that release's plan section, such as `project-plan.md#rel-03`, per [Releases](planning-requirements.md#releases)                                                                                    |
-| Week 4 product vision            | The `TOS-nn` its goal links and `docs/architecture/README.md` as a whole, per [Goal](product-vision-requirements.md#goal) and [Where The Vision Lives](product-vision-requirements.md#where-the-vision-lives)                                     |
-| Week 4 functional requirements   | The origin each `**Traces to:**` entry names: a `US-nn`, a `DEC-nnn`, a `CON-nn`, or a meeting report; and the `ADR-nnn` that constrains it, per [The Functional Requirement](functional-requirements-requirements.md#the-functional-requirement) |
-| Week 4 architectural decisions   | The `FR-nnn` and `QR-nn` each `**Addresses:**` field names, and the `DEC-nnn` its `**Decision:**` documents, per [The Record](adr-requirements.md#the-record)                                                                                     |
-| Week 4 stories                   | The `FR-nnn` and `ADR-nnn` that specify it, in `### Specified by`, per [The Story](user-stories-requirements.md#the-story)                                                                                                                        |
-| Week 4 tasks                     | The `FR-nnn` and `ADR-nnn` the task works on, in `### Requirements`, per [The Issue Form](task-issues-requirements.md#the-issue-form)                                                                                                             |
-| Week 5 quality requirement tests | The `QR-nn` each test proves, per [Quality Requirement Tests](quality-requirements-requirements.md#quality-requirement-tests); its result is in [the testing plan](planning-requirements.md#quality-requirement-testing-plan)                     |
-| Week 5 feature documentation     | The `US-nn`, `FR-nnn`, and `ADR-nnn` each entry links, and the glossary term its opening sentence links at first use, per [The Feature Entry](features-requirements.md#the-feature-entry)                                                         |
-| Week 6 runtime tests             | The `SLI-nn` its `**Runs at:**` names, per [Quality Requirement Tests](quality-requirements-requirements.md#quality-requirement-tests)                                                                                                            |
-| Week 6 analytics plan            | The `VP-nn` its focus metric expresses, and the events each metric's `**Source:**` names, per [The Value And The Metrics](analytics-requirements.md#the-value-and-the-metrics)                                                                    |
-| Week 7 usability test design     | The `QR-nn` the test serves and its `UT-nn` record, per [The Test Record](usability-testing-requirements.md#the-test-record)                                                                                                                      |
-| Week 8 usability results         | The `UT-nn` record and the findings' task issues, per [The Results And Findings](usability-testing-requirements.md#the-results-and-findings) and [The Triage](usability-testing-requirements.md#the-triage)                                       |
-| Week 8 task issue                | The finding by its `results.md` path and anchor, per [The Issue Form](task-issues-requirements.md#the-issue-form)                                                                                                                                 |
-| Week 8 configuration plan        | The course's configuration rules it judges, linked from each item's `**What good looks like:**`, and the team's `AGENTS.md` it records, per [The Configuration Items](configuration-management-requirements.md#the-configuration-items)           |
-| Week 8 configuration review      | The configuration plan's `CFG-nn` its goal sections name, and the `TOS-nn`, `QR-nn`, and `RISK-nn` those sections name, per [The Evaluation](configuration-management-requirements.md#the-evaluation)                                             |
-| Week 9 configuration change      | The evaluation's goal section that proposed it and the configuration plan it changes, per [The Evaluation](configuration-management-requirements.md#the-evaluation)                                                                               |
-| Week 9 final reflection          | The `UT-nn` results, per [The Results And Findings](usability-testing-requirements.md#the-results-and-findings), and the configuration plan                                                                                                       |
-| Any change a decision caused     | The decision's `DEC-nnn` when it has an entry, or its reason otherwise, per [What Cites It](decisions-requirements.md#what-cites-it)                                                                                                              |
+| Later work                                  | Must cite                                                                                                                                                                                                                                         |
+| ------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Week 2 product vision                       | The `VP-nn` its goal traces to, per [Goal](product-vision-requirements.md#goal)                                                                                                                                                                   |
+| Week 2 user stories                         | The `VP-nn` in each story's `Value proposition` field, any origins in its `Traces to` list, and the `ASM-nn` of each assumption it rests on in its `Rests on` list, per [The Story](user-stories-requirements.md#the-story)                       |
+| Week 2 prototypes                           | The `US-nn` or `GAP-nn` each one tested, and the `ASM-nn` when the risky part is an assumption, per [Where Prototypes Live](prototypes-requirements.md#where-prototypes-live)                                                                     |
+| Week 3 project plan                         | The `TOS-nn` of each milestone's `**Advances:**` field and the `SPRINT-nn` of its `**Sprints:**` field, per [Milestones](planning-requirements.md#milestones)                                                                                     |
+| Week 3 threshold of success                 | The customer's `DEC-nnn` behind each goal change or drop, per [The Threshold Of Success](planning-requirements.md#the-threshold-of-success)                                                                                                       |
+| Week 3 risks                                | The `DEC-nnn` of a decision that settled the risk or that its response passes, per [Checking And Settling](risks-requirements.md#checking-and-settling) and [Response](risks-requirements.md#response)                                            |
+| Every weekly report from Week 3             | The `REL-nn` of its week's release, linked to that release's plan section, such as `project-plan.md#rel-03`, per [Releases](planning-requirements.md#releases)                                                                                    |
+| Week 4 product vision                       | The `TOS-nn` its goal links and `docs/architecture/README.md` as a whole, per [Goal](product-vision-requirements.md#goal) and [Where The Vision Lives](product-vision-requirements.md#where-the-vision-lives)                                     |
+| Week 4 functional requirements              | The origin each `**Traces to:**` entry names: a `US-nn`, a `DEC-nnn`, a `CON-nn`, or a meeting report; and the `ADR-nnn` that constrains it, per [The Functional Requirement](functional-requirements-requirements.md#the-functional-requirement) |
+| Week 4 architectural decisions              | The `FR-nnn` and `QR-nn` each `**Addresses:**` field names, and the `DEC-nnn` its `**Decision:**` documents, per [The Record](adr-requirements.md#the-record)                                                                                     |
+| Week 4 stories                              | The `FR-nnn` and `ADR-nnn` that specify it, in `### Specified by`, per [The Story](user-stories-requirements.md#the-story)                                                                                                                        |
+| Week 4 tasks                                | The `FR-nnn` and `ADR-nnn` the task works on, in `### Requirements`, per [The Issue Form](task-issues-requirements.md#the-issue-form)                                                                                                             |
+| Week 5 quality requirement tests            | The `QR-nn` each test proves, per [Quality Requirement Tests](quality-requirements-requirements.md#quality-requirement-tests); its result is in [the testing plan](planning-requirements.md#quality-requirement-testing-plan)                     |
+| Week 5 feature documentation                | The `US-nn`, `FR-nnn`, and `ADR-nnn` each entry links, and the glossary term its opening sentence links at first use, per [The Feature Entry](features-requirements.md#the-feature-entry)                                                         |
+| Week 6 runtime tests                        | The `SLI-nn` its `**Runs at:**` names, per [Quality Requirement Tests](quality-requirements-requirements.md#quality-requirement-tests)                                                                                                            |
+| Week 6 analytics plan                       | The `VP-nn` its focus metric expresses, and the events each metric's `**Source:**` names, per [The Value And The Metrics](analytics-requirements.md#the-value-and-the-metrics)                                                                    |
+| Week 7 usability test design                | The `QR-nn` the test serves and its `UT-nn` record, per [The Test Record](usability-testing-requirements.md#the-test-record)                                                                                                                      |
+| Week 8 usability results                    | The `UT-nn` record and the findings' task issues, per [The Results And Findings](usability-testing-requirements.md#the-results-and-findings) and [The Triage](usability-testing-requirements.md#the-triage)                                       |
+| Week 8 task issue                           | The finding by its `results.md` path and anchor, per [The Issue Form](task-issues-requirements.md#the-issue-form)                                                                                                                                 |
+| Week 8 configuration plan                   | The course's configuration rules it judges, linked from each item's `**What good looks like:**`, and the team's `AGENTS.md` it records, per [The Configuration Items](configuration-management-requirements.md#the-configuration-items)           |
+| Week 8 configuration review                 | The configuration plan's `CFG-nn` its goal sections name, and the `TOS-nn`, `QR-nn`, and `RISK-nn` those sections name, per [The Evaluation](configuration-management-requirements.md#the-evaluation)                                             |
+| Week 9 configuration change                 | The evaluation's goal section that proposed it and the configuration plan it changes, per [The Evaluation](configuration-management-requirements.md#the-evaluation)                                                                               |
+| Week 9 report (**Since: W9**)               | The Sprint 9 review, UAT record and run, handoff preparation, threshold review, `REL-09`, retrospective and AI usage report.                                                                                                                      |
+| Week 10 final report (**Since: W10**)       | The handoff and its Week 9 preparation, Sprint 10 meeting report, UAT record and re-run, `REL-10`, retrospective, AI usage report and project reflection.                                                                                         |
+| Week 10 project reflection (**Since: W10**) | The retrospectives, risks, configuration plan, and Week 8 `UT-01` results where they support a lesson.                                                                                                                                            |
+| Any change a decision caused                | The decision's `DEC-nnn` when it has an entry, or its reason otherwise, per [What Cites It](decisions-requirements.md#what-cites-it)                                                                                                              |
 
 **Required**
 

@@ -178,9 +178,13 @@ Record the reason like any other change: a customer's decision gets a `DEC-nnn`,
 
 ## Step 4: Write The Sprints And Their Releases
 
-Every submission week is a **sprint**, and the plan carries one section per sprint, in order, from the first to the last.
+For `SPRINT-09` and `SPRINT-10`, use [Closing The Final Sprints](final-sprints.md) for the reviews, releases and retrospectives.
+The final handoff uses the deployed MVP, and the [release blocks](../requirements/planning-requirements.md#releases) lead to the checked UATs.
+
+From `SPRINT-03` onward, the plan carries one section per sprint in order.
 Write them from near to far: the current sprint in concrete terms, the next one in its own words, and the rest at the level of direction.
-Each sprint is also a GitHub milestone, titled `SPRINT-nn: <focus>` and due on the week's hard deadline, and all seven exist on GitHub when the plan is written, per [Sprints](../requirements/planning-requirements.md#sprints).
+Each sprint is also a GitHub milestone titled `SPRINT-nn: <focus>`.
+Use [Sprints](../requirements/planning-requirements.md#sprints) for the initial milestones and the Week 9 addition.
 
 ### Refine Before You Plan
 

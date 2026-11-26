@@ -97,6 +97,10 @@ Keep the final two minutes for reading back the decisions and action points, so 
 
 ## Step 5: Run The Meeting
 
+For the final reviews, follow [Closing The Final Sprints](final-sprints.md).
+Record the customer's handoff expectations after the Week 9 UAT session.
+At the combined Week 10 review and handoff, record the test decisions and the separate acceptance decision.
+
 Assign the three roles before the meeting, per [Every Meeting](../requirements/customer-meetings-requirements.md#every-meeting).
 The whole team attends.
 

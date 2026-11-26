@@ -20,6 +20,7 @@ Use [General Requirements](general-requirements.md) for what an artifact is, [Vi
 - [Contributing](#contributing)
 - [Continuous Integration](#continuous-integration)
 - [Environments And Deployment](#environments-and-deployment)
+- [The Final Repository State](#the-final-repository-state)
 - [The Usability Data Repository](#the-usability-data-repository)
 - [The Course Materials As An Agent Skill](#the-course-materials-as-an-agent-skill)
 - [Recommended Throughout The Course](#recommended-throughout-the-course)
@@ -48,6 +49,11 @@ Use [General Requirements](general-requirements.md) for what an artifact is, [Vi
    See [Branch Protection](#branch-protection).
 8. Keep the repository reachable for the whole course.
    Do not archive, transfer, or rename it, do not delete the organization, and do not make it private.
+
+**Since: W10**
+
+After the course is fully graded, the team may make the product repository private only with the instructors' approval.
+The published licence and the submitted snapshot still apply.
 
 ### Licensing
 
@@ -80,6 +86,12 @@ In Week 1 it must contain:
 **Since: W3**
 
 The root `README.md` also links the product's setup and run instructions, which live in `docs/setup.md`.
+
+**Since: W10**
+
+Rewrite the root `README.md` for product users.
+Describe what the product does and link `docs/setup.md` and `docs/deployment.md`.
+End with `## Course information` containing the project name, team number, a note that the product was built for ITPD, and a link to the Week 10 report.
 
 ### Setup And Run Instructions
 
@@ -234,6 +246,12 @@ Both are built from the commit you are submitting, so that what a grader sees is
 
 6. Both the permalink and the snapshot must point at the same commit, and that commit must contain everything the assignment requires.
    Check the rendered permalink before you submit.
+
+**Since: W10**
+
+Record the tested `REL-10` tag and its commit in the final report.
+Use the final `main` commit for the wrapper's commit-hash permalink and snapshot.
+The final report and reflection merge after `REL-10`, which stays on the final product commit.
 
 ## Configuration And Sensitive Information
 
@@ -402,7 +420,7 @@ The deployment runbook is `docs/deployment.md`, and the local setup guide stays 
 5. Staging and production are separate deployments on the VM, on separate ports, with separate configuration and separate secrets.
    Staging represents production closely enough that a passing test there is the confidence that the requirement holds in production, and a test run against staging never writes production data.
 6. Deploy by hand, from a machine on the university network: the release candidate goes to staging first, and the same commit then goes to production.
-7. After each production deploy, verify the [core task](minimum-usable-product-requirements.md#the-candidate) on the deployed product from a machine on the university network, and record what you checked with the release.
+7. In Weeks 5–8, after each production deploy, verify the [core task](minimum-usable-product-requirements.md#the-candidate) on the deployed product from a machine on the university network, and record what you checked with the release.
    A deploy that fails its verification is rolled back to the previous release, and `docs/deployment.md` says how.
 8. `docs/deployment.md` is the deployment runbook: the four environments, the VM and access to it from the university network, the configuration, the manual deploy, the verification, and the rollback.
    It is not [Setup And Run Instructions](#setup-and-run-instructions): it links `docs/setup.md` for the build and the run, and repeats none of it.
@@ -424,6 +442,36 @@ The deployment runbook is `docs/deployment.md`, and the local setup guide stays 
 15. A staging test event never writes the production analytics scope, and the observability requirement's `deployed` test reads the product's staging endpoint and no production data.
 16. Neither backend is deployed by a workflow: the product CI cannot reach the university network, so the deployment stays manual, per [Continuous Integration](#continuous-integration).
 
+**Since: W9**
+
+Deploy the Sprint 9 build on the university VM for its review and record acceptance checks against the build tested, per [The Two Review Sessions](user-acceptance-tests-requirements.md#the-two-review-sessions).
+
+**Since: W10**
+
+For the handoff deployment, see [Cutting A Release](releases-requirements.md#cutting-a-release).
+A failed customer UAT alone does not trigger a rollback.
+Record unresolved failures as limitations in [the handoff](customer-meetings-requirements.md#the-handoff), and keep the release available until the planned shutdown.
+Shut down the university VM after the handoff and any final exam demo that uses it.
+Complete the shutdown before submitting Submission 10, including if the handoff could not take place.
+Grading uses the submitted evidence and repository snapshot.
+
+## The Final Repository State
+
+**Since: W10**
+
+**Required**
+
+1. Freeze product code at the final release tag.
+   Documentation, reports, the reflection, the changelog, and release blocks may still merge through the [Submission 10 deadline](../course/syllabus.md#week-10-nov-27--dec-3-final-release-and-handoff).
+   Stop all public repository changes at that deadline.
+   After the deadline, [approved changes to repository visibility](#repository-setup) are the only permitted changes.
+2. Merge all final pull requests and resolve any remaining open pull requests so none remains open.
+   Close the `SPRINT-09` and `SPRINT-10` milestones and follow the [final issue rules](issue-tracking-requirements.md#scheduling-an-issue).
+   Verify that the checks on the final `main` commit are green before taking the snapshot, and keep the final tag protected.
+3. Bring the documentation site, setup guide, deployment runbook, architecture, functional and quality requirements, tests and results, configuration plan, features, glossary, risks, team `AGENTS.md`, UAT record, and user-facing README up to date.
+4. Complete [Deleting Private Usability Data](visibility-requirements.md#deleting-private-usability-data) and record any approved privatisation in [the handoff](customer-meetings-requirements.md#the-handoff).
+   Take the [final snapshot](#permalinks-and-snapshots) after the final evidence and link cleanup have merged.
+
 ## The Usability Data Repository
 
 **Since: W7**
@@ -440,10 +488,10 @@ What may never be committed is in [Sensitive Information Reference](visibility-r
 4. The recordings live in a team-owned cloud folder shared with the instructors, and the private repository records the folder link and the access instructions.
    A recording is never committed to the product repository and never to the private repository.
 5. The product repository links the private repository, and the link is excluded from the link check because it needs authentication, per [Link Checking](#link-checking), with its reason in the link check's configuration such as `lychee.toml`.
-6. The Moodle PDF carries the private repository link and access and the recordings folder link and access, per [Private Submission Wrapper](weekly-report-requirements.md#private-submission-wrapper).
-7. The private repository, its history, and the recordings are deleted after the course is graded, and the sanitized public record stays.
+6. Follow [Private Submission Wrapper](weekly-report-requirements.md#private-submission-wrapper) for private access details.
+7. Follow [Deleting Private Usability Data](visibility-requirements.md#deleting-private-usability-data) for end-of-course cleanup.
 8. The repository's contents are covered by [Configuration And Sensitive Information](#configuration-and-sensitive-information) rather than a second list: it carries no secret and no credential, and the recordings are in the cloud folder rather than in its normal git history.
-9. The submission snapshot is the product repository, per [Permalinks And Snapshots](#permalinks-and-snapshots): the public test record is in it, and the private data is reached through the public link and the Moodle PDF, so no snapshot of the private repository is produced.
+9. The [submission snapshot](#permalinks-and-snapshots) contains the product repository and its sanitized test record.
 
 ## The Course Materials As An Agent Skill
 

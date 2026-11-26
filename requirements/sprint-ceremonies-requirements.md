@@ -30,20 +30,31 @@ The sprint's `### SPRINT-nn` section in `docs/project-plan.md` is the planning r
 4. Planning adds `**Planned Velocity:**` below `**Sprint Backlog:**`: the story points of the stories selected for the sprint.
 5. Compute that total by hand from the selected stories' `Story Points`, because a single-select field holds one option and cannot be added up.
 6. When the sprint closes, add `**Actual Velocity:**` below `**Planned Velocity:**`: the points of the stories the sprint completed, added the same way.
-7. Continue that line with one sentence saying what moved out of the sprint and into which sprint.
+7. Continue that line with one sentence saying where unfinished work went, per [Sprints](planning-requirements.md#sprints).
 8. Plan `SPRINT-04` first, and plan every later sprint the same way in its own week.
+
+**Since: W10**
+
+Plan Sprint 10 after the Sprint 9 review.
+Use the [final sprint close rule](planning-requirements.md#sprints) for the actual velocity sentence.
+
+**Recommended**
+
+Focus Sprint 10 on preparing the handoff and finishing existing work.
+Avoid scheduling new user stories.
 
 ## Product Backlog Refinement
 
 **Since: W4**
 
 The **product backlog** is the open issues that sit in no sprint's GitHub milestone, per [Scheduling An Issue](issue-tracking-requirements.md#scheduling-an-issue).
-Refinement is how it stays ready: the next two sprints' worth of it is made small enough, and understood well enough, to schedule, and each item stays in the backlog until its sprint is planned.
+Refinement makes items small enough and clear enough to schedule.
+Each item stays in the backlog until its sprint is planned.
 It produces no document, and its evidence is the estimate on each story.
 
 **Required**
 
-1. Before a sprint is planned, refine the next two sprints' worth of the product backlog until each item is ready to schedule, using the method in [Guide: Planning And Tracking](../guides/planning-and-tracking.md).
+1. During Weeks 4–8, refine the next two sprints' worth of the product backlog before planning, using the method in [Guide: Planning And Tracking](../guides/planning-and-tracking.md).
 2. Refinement produces no document: its evidence is the `Story Points` value on each story, per [Estimation](#estimation).
 3. A story is ready to schedule when its scope is settled, its acceptance criteria are runnable, per [Acceptance Criteria](user-stories-requirements.md#acceptance-criteria), and its `Story Points` is set.
 4. Refinement does not schedule an item: it stays in the product backlog, with no milestone, no `Responsible` value, no `Accountable` value, and no assignees, until its sprint's planning schedules it, per [Scheduling An Issue](issue-tracking-requirements.md#scheduling-an-issue) and [Sprint Planning](#sprint-planning).
@@ -54,6 +65,14 @@ It produces no document, and its evidence is the estimate on each story.
 **Recommended**
 
 - Refine each item against the stories already estimated, so a new `Story Points` value is a comparison rather than a guess.
+
+**Since: W9**
+
+At Sprint 9 planning, refine the Sprint 9 work and the work that may enter `SPRINT-10`.
+
+**Since: W10**
+
+Refine only work for the final sprint's backlog.
 
 ## Estimation
 
@@ -97,6 +116,15 @@ The weekly customer meeting is the Sprint Review: the sprint's result meets the 
 5. The meeting report is the review's record, and it carries the review's outcome.
 6. The meeting's schedule, its script, and its report are the rules in [Every Meeting](customer-meetings-requirements.md#every-meeting) and [Meeting Report](customer-meetings-requirements.md#meeting-report); this section adds no second schedule and no second record.
 
+**Since: W9**
+
+Discuss the recorded [quality plan results](weekly-report-requirements.md#quality-plan-results) and review the open [threshold goals](planning-requirements.md#the-threshold-of-success) at the Sprint 9 review.
+Follow the [final review meeting rules](customer-meetings-requirements.md#every-meeting) and the [UAT requirements](user-acceptance-tests-requirements.md#the-two-review-sessions).
+
+**Since: W10**
+
+Use the Sprint 10 review for [the handoff](customer-meetings-requirements.md#the-handoff) and check the threshold goals still open.
+
 ## Retrospective
 
 **Since: W4**
@@ -128,6 +156,18 @@ The file is written at the sprint's close, after `**Actual Velocity:**` is set, 
 
 - Keep each cell short, so the next retrospective is read rather than skimmed.
 - Write each action as a change the team can make in the next sprint, and make its `Reason` name the problem or root cause it answers.
+
+**Since: W9**
+
+Write the Sprint 9 retrospective at its close.
+
+**Since: W10**
+
+Write the final retrospective after the handoff and release, at the Sprint 10 close.
+Record the outcomes of Sprint 9 actions in `## Carried Actions`.
+With no later sprint, a `Not done` action stays there as `Outcome: Not done` and is not re-listed in `## Actions`, overriding rule 4.
+All new actions carry `Carried: No`.
+The project reflection may cite a retrospective as evidence for a lesson.
 
 ## Full Example
 

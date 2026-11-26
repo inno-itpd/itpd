@@ -25,6 +25,7 @@ The `course/decisions/` and `course/plans/` files are maintainer-facing.
 - `course/decisions/a6.md` — Assignment 6 (`A6-DEC`), and the `A5-DEC` entries it reverses.
 - `course/decisions/a7.md` — Assignment 7 (`A7-DEC`), and the earlier `A6-DEC` and `A7-DEC` clauses it reverses.
 - `course/decisions/a8.md` — Assignment 8 (`A8-DEC`), and the `A7-DEC-022` it reverses.
+- `course/decisions/a9.md` — Assignments 9 and 10 (`A9-DEC`), including the final sprints, UATs, handoff and assessment.
 - `course/plans/` — the design plan behind each assignment: scope, decisions, requirement changes, parts, and audits.
 
 - `requirements/general-requirements.md` — artifact and measurement terms, the `reports/week-NN/` vs `docs/` split, identifier families, and traceability.
@@ -58,6 +59,7 @@ The `course/decisions/` and `course/plans/` files are maintainer-facing.
 - `requirements/analytics-requirements.md` — `docs/analytics.md`: the focus metric and metric tree, events, the analytics pipeline, and dashboards.
 - `requirements/observability-requirements.md` — `docs/observability.md`: the signals, the `SLI-nn` sections and their fields, the observability pipeline, and dashboards.
 - `requirements/usability-testing-requirements.md` — `docs/usability-tests/`: the `UT-nn` record, participants, tasks, instruments, consent, results, and triage.
+- `requirements/user-acceptance-tests-requirements.md` — `docs/user-acceptance-tests.md`: the journeys, their run history and the two reviews.
 - `requirements/configuration-management-requirements.md` — `docs/configuration-plan.md` and the review: the `CFG-nn` groups, fields, connections, evaluation, and recommendation.
 
 - `guides/alternatives-research.md` — finding and evaluating alternatives.
@@ -73,6 +75,9 @@ The `course/decisions/` and `course/plans/` files are maintainer-facing.
 - `guides/usability-testing.md` — the test record, participants, instruments, sessions, results, triage, and retention.
 - `guides/configuration-management.md` — the review baseline, inventory, connections, goals, judgement, tradeoffs, publication, and handoff.
 
+- `guides/final-sprints.md` — the method for the final reviews, releases, handoff and submissions.
+
+- `exam/README.md` — the maintainer-owned exam page, blank until the exam materials are written.
 - `assignments/assignment-N.md` — learner-facing requirements for one week: deltas, paths, and evidence only.
 - `lectures/AGENTS.md` — the lecture decks, their build, the layout contract, and the conversion method; not student-facing.
 
@@ -193,7 +198,7 @@ A part may keep a small example beside the rule it illustrates, such as the boun
 ## Conventions
 
 - **Filenames** are kebab-case: `assignment-1.md`, `user-stories-requirements.md`.
-- **Weeks** are zero-padded: `reports/week-01/`, through `reports/week-09/`.
+- **Weeks** are zero-padded: `reports/week-01/`, through `reports/week-10/`.
 - **Identifiers** are zero-padded and stable; [Identifier Rules](requirements/general-requirements.md#identifier-rules) owns every family, its digits, scope, headings, dropped form, and the never-renumber rule.
 - **Headings** are Title Case in requirements files, guides, and assignments.
 - **Applicability markers**: every requirements file carries inline `**Since: WN**` markers, so a section can hold requirements that begin in different weeks.
@@ -234,10 +239,15 @@ A later assignment may extend this map, but should not silently move an entry.
 | W6   | `docs/analytics.md` and `docs/observability.md`                                                                                                                                                                                                                          |
 | W7   | `docs/usability-tests/` with its `README.md` index and its `ut-01/` record — `README.md`, `surveys.md`, `consent.md`, `sessions/`, `results.md`, and `images/` — plus the private `<organization>/<repo>-usability-data` repository and the recordings folder outside it |
 | W8   | `docs/configuration-plan.md`, the maintained inventory of the configuration and its `CFG-nn` items, with the review's evidence at `reports/week-08/cm-evaluation.md`                                                                                                     |
+| W9   | `docs/user-acceptance-tests.md`, the maintained `UAT-nn` journeys and their run history                                                                                                                                                                                  |
 
 Weekly reports live at `reports/week-NN/README.md` in every week, and the Moodle PDF is the private wrapper in every week.
 Meeting artifacts live at `reports/week-NN/meeting-report.md`, plus a `meeting-transcript.md` beside it when the meeting was recorded or held in writing.
 That shape is fixed; do not redesign it per week.
+The Week 9 report records the Sprint 9 UAT session, quality plan results, threshold review and handoff preparation.
+The Week 10 report is the final project report and links the project reflection at `reports/week-10/reflection.md`.
+The package `handoff.md` at the product repository root is an explicit exception to the artifact locations.
+The Sprint 10 review and handoff share one meeting script and report under `reports/week-10/`.
 
 Week 1 adds two more files beside them, both evidence rather than maintained documentation: `meeting-script.md` and `candidate-list.md`.
 They exist only because Week 1 is the week where the customer meeting and the alternatives search happen.
@@ -263,7 +273,7 @@ Before writing or editing an assignment:
 
 Use these words and do not invent local synonyms:
 
-`weekly report`, `weekly public report`, `supporting artifact`, `private-only artifact`, `external-but-indexed artifact`, `repository-resident artifact`, `deviation`, `customer`, `stakeholder`, `kickoff meeting`, `meeting report`, `meeting transcript`, `meeting script`, `decision`, `action point`, `open question`, `alternative`, `property`, `gap`, `value proposition`, `assumption`, `story issue`, `task issue`, `traces to`, `rests on`, `project plan`, `GitHub project`, `plan milestone`, `milestone`, `threshold of success`, `failure statement`, `success statement`, `risk register`, `proof of concept` (PoC), `minimum usable product` (MUP), `minimum viable product` (MVP), `product backlog`, `sprint`, `sprint backlog`, `release`, `PBI`, `SBI`, `story points`, `sprint retrospective`, `team number`, `functional requirement`, `functional requirements index`, `quality requirement`, `quality requirements index`, `quality requirement test`, `quality requirement testing plan`, `evidence`, `development environment`, `integration environment`, `staging environment`, `production environment`, `university VM`, `university network`, `deployed test`, `deployment runbook`, `architectural decision record`, `ADR index`, `architecturally significant requirement`, `quality attribute scenario`, `architectural driver`, `option`, `container`, `container view`, `container diagram`, `container responsibilities`, `issue type`, `one-time catch-up`, `sprint planning`, `product backlog refinement`, `sprint review`, `retrospective`, `velocity`, `glossary`, `feature`, `feature documentation`, `provenance`, `conformance`, `product analytics`, `observability`, `signal`, `measure`, `metric`, `statistic`, `instrument`, `counter-metric`, `focus metric`, `input metric`, `metric tree`, `event`, `instrumentation`, `SLI`, `service level indicator`, `analytics backend`, `observability backend`, `dashboard`, `telemetry`, `usability test`, `usability test task`, `usability test record`, `participant`, `participant profile`, `usability session`, `usability finding`, `consent`, `recording`, `SUS`, `SEQ`, `private usability-data repository`, `recordings folder`, `configuration`, `configuration management`, `configuration review`, `configuration plan`, `configuration evaluation`, `configuration item`, `baseline`, `upkeep`.
+`weekly report`, `weekly public report`, `supporting artifact`, `private-only artifact`, `external-but-indexed artifact`, `repository-resident artifact`, `deviation`, `customer`, `stakeholder`, `kickoff meeting`, `meeting report`, `meeting transcript`, `meeting script`, `decision`, `action point`, `open question`, `alternative`, `property`, `gap`, `value proposition`, `assumption`, `story issue`, `task issue`, `traces to`, `rests on`, `project plan`, `GitHub project`, `plan milestone`, `milestone`, `threshold of success`, `failure statement`, `success statement`, `risk register`, `proof of concept` (PoC), `minimum usable product` (MUP), `minimum viable product` (MVP), `product backlog`, `sprint`, `sprint backlog`, `release`, `PBI`, `SBI`, `story points`, `sprint retrospective`, `team number`, `functional requirement`, `functional requirements index`, `quality requirement`, `quality requirements index`, `quality requirement test`, `quality requirement testing plan`, `evidence`, `development environment`, `integration environment`, `staging environment`, `production environment`, `university VM`, `university network`, `deployed test`, `deployment runbook`, `architectural decision record`, `ADR index`, `architecturally significant requirement`, `quality attribute scenario`, `architectural driver`, `option`, `container`, `container view`, `container diagram`, `container responsibilities`, `issue type`, `one-time catch-up`, `sprint planning`, `product backlog refinement`, `sprint review`, `retrospective`, `velocity`, `glossary`, `feature`, `feature documentation`, `provenance`, `conformance`, `product analytics`, `observability`, `signal`, `measure`, `metric`, `statistic`, `instrument`, `counter-metric`, `focus metric`, `input metric`, `metric tree`, `event`, `instrumentation`, `SLI`, `service level indicator`, `analytics backend`, `observability backend`, `dashboard`, `telemetry`, `usability test`, `usability test task`, `usability test record`, `participant`, `participant profile`, `usability session`, `usability finding`, `consent`, `recording`, `SUS`, `SEQ`, `private usability-data repository`, `recordings folder`, `configuration`, `configuration management`, `configuration review`, `configuration plan`, `configuration evaluation`, `configuration item`, `baseline`, `upkeep`, `user acceptance test`, `UAT record`, `handoff`, `handoff preparation`, `code freeze`, `final report`, `project reflection`, `individual reflection and peer evaluation`, `final repository state`, `final release`, `pitch deck`.
 
 For `measure`, `metric`, `statistic`, and `instrument`, [Measurement Terminology](requirements/general-requirements.md#measurement-terminology) is the definition.
 

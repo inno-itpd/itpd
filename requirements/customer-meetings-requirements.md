@@ -15,6 +15,7 @@ These requirements define how a meeting is prepared and held, and the script, re
 - [Every Meeting](#every-meeting)
 - [The Kickoff](#the-kickoff)
 - [Showing Working Software](#showing-working-software)
+- [The Handoff](#the-handoff)
 - [Permission Questions](#permission-questions)
 - [Meeting Script](#meeting-script)
 - [Meeting Report](#meeting-report)
@@ -94,6 +95,21 @@ A Week 2 validation meeting.
 - The agenda that follows from them: show the prototype, the boundary, and the minimum usable product candidate each in its own part, the one we are least sure of first, and ask about each while it is shown.
 - The question whose answer would change the week: "Which of these stories would you miss first if it were not built?"
 
+**Since: W9**
+
+The final two weekly customer meetings are their respective Sprint Reviews.
+Both reviews require a live, in-person meeting, so rule 9's written fallback does not apply.
+Hold the Sprint 9 review in person by its [sprint deadline](../course/syllabus.md#week-9-nov-20--nov-26-project-pitching-and-sprint-9), including the days after the class week.
+Write the script before the meeting and the report after it.
+Schedule each review with enough time for post-meeting work.
+If it falls on the deadline day, declare the compressed schedule in the weekly report.
+
+**Since: W10**
+
+Hold the Sprint 10 review and handoff together, in person with the customer, by the [Sprint 10 deadline](../course/syllabus.md#week-10-nov-27--dec-3-final-release-and-handoff).
+Plan 60 minutes in place of the ordinary timebox.
+Use one script and one report in `reports/week-10/`.
+
 ## The Kickoff
 
 **Since: W1**
@@ -128,14 +144,14 @@ A Week 2 validation meeting.
 **Since: W6**
 
 5. Show the deployed product with the analytics dashboards, the observability dashboards, the observability `QRT`'s result, and, when a runtime `QRT-nn` was run, its result at its level; name the `SLI-nn` each runtime test read, per [The SLIs](observability-requirements.md#the-slis).
-   Present the threshold proposal, per [The Threshold Of Success](planning-requirements.md#the-threshold-of-success), and agree any threshold change with the customer's `DEC-nnn`, which the meeting report records in `## Decisions`, per [Meeting Report](#meeting-report).
+   When a threshold proposal review is due in Weeks 6–8, present the proposal, per [The Threshold Of Success](planning-requirements.md#the-threshold-of-success), and agree any threshold change with the customer's `DEC-nnn`, which the meeting report records in `## Decisions`, per [Meeting Report](#meeting-report).
 
 **Since: W7**
 
 6. The design week's Sprint Review, at the time arranged with the customer, shows the deployed production instance per rule 4 and the `UT-nn` design on staging: the research questions, the participant profile and recruitment target, the tasks, the instrumentation and its verification, the surveys, the consent and the private repository, the recordings folder, the session plan, and the `QR-nn` with its `QRT-nn`.
    It agrees the run week's execution plan with the customer.
    The customer is not a usability participant, and the meeting report records the feedback and any decision as a `DEC-nnn`, per [Meeting Report](#meeting-report).
-   The Week 10 in-class product presentation is not a customer meeting and is not covered by this file.
+   The Week 11 final-exam product presentation is not a customer meeting and is not covered by this file.
 
 **Since: W8**
 
@@ -151,6 +167,75 @@ A Week 3 meeting that shows working software.
 - The areas that follow from it: each finished story against its acceptance criteria, and the order of the next stories.
 - The agenda that follows from them: run each finished story and ask for its verdict, then the next stories.
 - The question whose answer would change the next week: "What did you expect to happen here that did not?"
+
+**Since: W9**
+
+Show the Sprint 9 increment on the university VM and run the Sprint 9 session in [The Two Review Sessions](user-acceptance-tests-requirements.md#the-two-review-sessions).
+Ask what the customer expects to receive at the handoff and record the answer for the Week 9 report.
+
+**Since: W10**
+
+Show the deployed `REL-10` and the handoff package.
+Follow the [handoff UAT session](user-acceptance-tests-requirements.md#the-two-review-sessions) and record the customer's verdict per [Meeting Report](#meeting-report).
+
+## The Handoff
+
+**Since: W10**
+
+**Required**
+
+Prepare the root `handoff.md` for the customer and complete it after the meeting.
+Link the Week 9 `#handoff-preparation` section and the Sprint 10 meeting report when available.
+Link the customer's handoff decision when given.
+If the handoff could not take place, mark it as missing and link the final report's declaration.
+Use a table with `Item`, `Status` and `Where it lives`.
+Link public evidence and refer to `## For customer` in the [Week 10 Moodle wrapper](weekly-report-requirements.md#private-submission-wrapper) for private values.
+Include each of these rows and any additional items agreed with the customer in Sprint 9.
+
+| Item                            | What to record or link                                                                                                                                                     |
+| ------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| MVP and `REL-10`                | The release and protected tag identifying the MVP.                                                                                                                         |
+| Repository                      | The product repository.                                                                                                                                                    |
+| Deployment instructions         | `docs/deployment.md`.                                                                                                                                                      |
+| Handoff UAT results             | The recorded session and reasons for each `Fail` or `Not run`, per [The Two Review Sessions](user-acceptance-tests-requirements.md#the-two-review-sessions).               |
+| Deployed data                   | How any export, access, retention and deletion will be handled.                                                                                                            |
+| Product documentation           | The user README, setup instructions and maintained documentation.                                                                                                          |
+| Dashboards and access           | Where to find private dashboard and backend details.                                                                                                                       |
+| Credentials                     | Where to find the private access values.                                                                                                                                   |
+| Limitations                     | The product's remaining limitations, including unresolved UAT failures, with workarounds where available.                                                                  |
+| Open issues                     | A single link to the product repository's Issues page.                                                                                                                     |
+| Private usability-data deletion | The team's deletion status under [Deleting Private Usability Data](visibility-requirements.md#deleting-private-usability-data), and any approved repository privatisation. |
+| Usability results               | The sanitized public results.                                                                                                                                              |
+
+`Limitations` describes what the product cannot do; `Open issues` points at the live tracker, so the handoff does not copy the open-issue list.
+You can include missing capabilities from unfinished `Must Have` user stories in `Limitations`.
+Do not list or link each open issue; the issues stay open and unscheduled, per [Scheduling An Issue](issue-tracking-requirements.md#scheduling-an-issue).
+
+**Example**
+
+From `handoff.md`:
+
+```markdown
+# Studio Booking handoff
+
+The customer accepted the MVP with the recorded UAT results in [DEC-049](docs/decisions.md#dec-049).
+See the [Sprint 10 review](reports/week-10/meeting-report.md) and the [Week 9 preparation](reports/week-09/README.md#handoff-preparation).
+
+| Item                            | Status                                      | Where it lives                                                                                                                                                                             |
+| ------------------------------- | ------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| MVP and REL-10                  | Delivered                                   | [Protected tag v0.10.0 and release](https://github.com/<organization>/<repo>/releases/tag/v0.10.0)                                                                                         |
+| Repository                      | Public during grading                       | [Product repository](https://github.com/<organization>/<repo>)                                                                                                                             |
+| Deployment instructions         | Delivered                                   | [docs/deployment.md](docs/deployment.md)                                                                                                                                                   |
+| Handoff UAT results             | Two passed, one failed                      | [Sprint 10 session](reports/week-10/meeting-report.md#user-acceptance-tests). UAT-04 failed because the calendar link expired.                                                             |
+| Deployed data                   | Synthetic records removed after the meeting | The team tested the export procedure in [docs/deployment.md](docs/deployment.md#export-data) with synthetic records. The team kept no export and removed the VM test data before shutdown. |
+| Product documentation           | Delivered                                   | [README.md](README.md) and [docs/setup.md](docs/setup.md)                                                                                                                                  |
+| Dashboards and access           | Provided privately                          | Week 10 Moodle wrapper, For customer. The university VM is now shut down.                                                                                                                  |
+| Credentials                     | Provided privately                          | Week 10 Moodle wrapper, For customer.                                                                                                                                                      |
+| Limitations                     | Open                                        | The calendar link can expire before the guest signs in. An organizer can send a fresh invitation.                                                                                          |
+| Open issues                     | Open and unscheduled                        | [Repository Issues page](https://github.com/<organization>/<repo>/issues).                                                                                                                 |
+| Private usability-data deletion | Team copies deleted                         | Dated confirmation in the Week 10 Moodle wrapper, For customer.                                                                                                                            |
+| Usability results               | Published                                   | [Sanitized usability results](docs/usability-tests/ut-01/results.md).                                                                                                                      |
+```
 
 ## Permission Questions
 
@@ -187,7 +272,7 @@ A Week 3 meeting that shows working software.
 6. Every question serves the target in `## Context`: an answer to it could change something the team will build, write, or ask next.
    A question no answer could change is cut, and at the kickoff it is replaced rather than kept to reach the per-area minimum.
 7. `## Agenda` covers the whole meeting.
-   The first part asks the [three permission questions](#permission-questions), the last part reads back the decisions and action points, and the timeboxes add up to the length you planned.
+   The first part asks the [three permission questions](#permission-questions), the last part reads back this meeting's decisions and action points, and the timeboxes add up to the length you planned.
    Every question appears in exactly one part.
 8. Each part names what you show in it: a link to the artifact, prototype, or screen you put in front of the customer, or says that nothing is shown.
 9. The script is preparation, so it is not rewritten after the meeting, apart from a [formatting-only change](general-requirements.md#where-artifacts-live-in-the-repository).
@@ -220,16 +305,17 @@ A Week 3 meeting that shows working software.
 
    Name people as [Sensitive Information Reference](visibility-requirements.md#sensitive-information-reference) says.
 
-   | Section                      | Which meetings                  | What belongs in it                                                                                                                                                                                                                                                        |
-   | ---------------------------- | ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-   | `## Metadata`                | Every meeting                   | Date, duration, who was there by GitHub username with the customer shown as `Customer`, what you presented, the answer to each of the three permission questions, a link to the transcript or `None` with the reason, and a link to the [meeting script](#meeting-script) |
-   | `## Previous action points`  | Every meeting after the kickoff | A table, one row per action point of an earlier report that is due by this meeting, or already carried out, and not yet closed                                                                                                                                            |
-   | `## Previous open questions` | Every meeting after the kickoff | A table, one row per open question of an earlier report that is not yet closed                                                                                                                                                                                            |
-   | `## Summary`                 | Every meeting                   | 3 to 5 bullets on what the meeting settled or changed, not on what was on the agenda                                                                                                                                                                                      |
-   | `## Decisions`               | Every meeting                   | A list of the decisions the meeting made                                                                                                                                                                                                                                  |
-   | `## Action points`           | Every meeting                   | A table, one row per action                                                                                                                                                                                                                                               |
-   | `## Open questions`          | Every meeting                   | A table, one row per question the meeting did not answer                                                                                                                                                                                                                  |
-   | `## Disagreements`           | Every meeting                   | A table, one row per place the customer did not agree with you                                                                                                                                                                                                            |
+   | Section                      | Which meetings                                 | What belongs in it                                                                                                                                                                                                                                                        |
+   | ---------------------------- | ---------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+   | `## Metadata`                | Every meeting                                  | Date, duration, who was there by GitHub username with the customer shown as `Customer`, what you presented, the answer to each of the three permission questions, a link to the transcript or `None` with the reason, and a link to the [meeting script](#meeting-script) |
+   | `## Previous action points`  | Every meeting after the kickoff                | A table, one row per action point of an earlier report that is due by this meeting, or already carried out, and not yet closed                                                                                                                                            |
+   | `## Previous open questions` | Every meeting after the kickoff                | A table, one row per open question of an earlier report that is not yet closed                                                                                                                                                                                            |
+   | `## Summary`                 | Every meeting                                  | 3 to 5 bullets on what the meeting settled or changed, not on what was on the agenda                                                                                                                                                                                      |
+   | `## User acceptance tests`   | Sprint 9 and Sprint 10 reviews (**Since: W9**) | The build tested and one result row per test, with actual runner and a link to its decision.                                                                                                                                                                              |
+   | `## Decisions`               | Every meeting                                  | A list of the decisions the meeting made                                                                                                                                                                                                                                  |
+   | `## Action points`           | Every meeting                                  | A table, one row per action                                                                                                                                                                                                                                               |
+   | `## Open questions`          | Every meeting                                  | A table, one row per question the meeting did not answer                                                                                                                                                                                                                  |
+   | `## Disagreements`           | Every meeting                                  | A table, one row per place the customer did not agree with you                                                                                                                                                                                                            |
 
 6. Each decision the meeting made has an entry in `docs/decisions.md`, per [Decision Requirements](decisions-requirements.md).
    `## Decisions` lists them, one bullet each, linking the entry with `DEC-nnn: <the decision>` as the link text, quoting the first line of the entry.
@@ -268,6 +354,17 @@ A Week 3 meeting that shows working software.
   A short check-in does not need the same volume as a two-hour review.
 - Keep each cell to a sentence or two.
   A cell nobody can argue with is a cell that says nothing.
+
+**Since: W9**
+
+Record each result under `## User acceptance tests` and use that heading as the UAT record's evidence target.
+Record the Sprint 9 story verdicts and the customer's handoff expectations.
+
+**Since: W10**
+
+Identify the tested SemVer tag and commit when available.
+Record the customer's acceptance or refusal as a separate `DEC-nnn` in `## Decisions`.
+If the customer gave no verdict, state that acceptance is pending.
 
 ## Meeting Transcript
 
@@ -500,7 +597,7 @@ From `reports/week-07/meeting-report.md`, the decisions and action points only:
 ## Summary
 
 - The customer agreed the `UT-01` design: one main booking task and two secondary tasks, five participants as the target, the test's instrumentation and its verification, and the staging deployment.
-- The consent must carry the deletion date, and the recordings folder must be shared before the first session.
+- The consent must explain when the data will be deleted, and the recordings folder must be shared before the first session.
 - The customer asked for the checkout friction to be shown in the results even when the test finds nothing else.
 
 ## Decisions
@@ -512,7 +609,7 @@ From `reports/week-07/meeting-report.md`, the decisions and action points only:
 | Action                                           | Owner | Due           |
 | ------------------------------------------------ | ----- | ------------- |
 | Share the recordings folder with the instructors | cyd   | End of Week 8 |
-| Add the deletion date to the consent             | ana   | End of Week 8 |
+| State the deletion timing in the consent         | ana   | End of Week 8 |
 ```
 
 From `reports/week-08/meeting-report.md`, the results review's summary:
@@ -532,6 +629,235 @@ From `reports/week-08/meeting-report.md`, the results review's summary:
 - Five sessions ran, three participants completed the main task unaided, and `QR-05 QRT-01` passes.
 - The customer agreed the checkout phone field is the first fix, and `REL-08` carries it.
 - The customer asked for the reschedule flow to be re-tested in `SPRINT-09` rather than fixed blind.
+```
+
+### Example Sprint 9 Review Script
+
+**Example**
+
+From `reports/week-09/meeting-script.md`.
+
+```markdown
+# Sprint 9 review script
+
+## Context
+
+- Booking organizers need to manage the slot and invitation from one schedule.
+- **Participants:** Customer, @sam, @lee and @kai.
+- **Format:** In person.
+- **Goal:** Check the Sprint 9 increment and agree on the handoff package.
+- **Materials:** Build `7f81db2`, the [UAT record](../../docs/user-acceptance-tests.md), and the [threshold goals](../../docs/threshold-of-success.md).
+
+## Agenda
+
+1. 5 minutes.
+   Ask the permission questions and confirm the build and roles.
+2. 30 minutes.
+   Show the deployed increment and use the UAT record for question 1.
+3. 20 minutes.
+   Show the [quality testing plan](../../docs/project-plan.md#quality-requirement-testing-plan) and open threshold goals, then ask question 2.
+4. 5 minutes.
+   Read back the decisions, action points and open questions.
+
+## Questions
+
+1. Open.
+   Starting from the test account, what happens in UAT-01, UAT-02, UAT-03?
+2. Open.
+   What do you expect to receive at the handoff, and which parts do you need access to?
+
+## Roles
+
+- @sam moderates, @lee records decisions and @kai observes.
+- Customer runs the tests, and @sam takes over live if the customer cannot access production.
+
+## Key improvements
+
+Rewrite "Does it work?" as "What happens to the slot after cancellation?" to ask about an observable outcome.
+```
+
+### Example Sprint 9 Review Report
+
+**Example**
+
+From `reports/week-09/meeting-report.md`.
+
+```markdown
+# Sprint 9 review report
+
+## Metadata
+
+- **Date:** 2026-11-28
+- **Duration:** 45 minutes
+- **Participants:** Customer, @sam, @lee and @kai, in person.
+- **Presented:** Build `7f81db2` and the Sprint 9 increment.
+- **Permissions:** No recording, no public transcript, and no private transcript sharing.
+- **Transcript:** None.
+  The customer declined recording.
+- **Script:** [meeting-script.md](meeting-script.md)
+
+## Previous action points
+
+None.
+
+## Previous open questions
+
+None.
+
+## Summary
+
+- The booking and guest-link journeys passed, and cancellation left slots unavailable.
+- The customer asked for deployment instructions, export steps and a list of known limitations.
+- The team reviewed the quality plan and checked the open threshold goals against their existing measures.
+
+## User acceptance tests
+
+Build tested: `7f81db2`.
+The customer's session lost access before `UAT-03`, so @sam ran it live and the customer judged the result.
+
+| Test                                                 | Runner   | Result | Observation                                       | Decision                                   |
+| ---------------------------------------------------- | -------- | ------ | ------------------------------------------------- | ------------------------------------------ |
+| [UAT-01](../../docs/user-acceptance-tests.md#uat-01) | Customer | Pass   | The booking appeared in the organizer's schedule. | [DEC-041](../../docs/decisions.md#dec-041) |
+| [UAT-02](../../docs/user-acceptance-tests.md#uat-02) | Customer | Pass   | The guest opened the meeting details.             | [DEC-042](../../docs/decisions.md#dec-042) |
+| [UAT-03](../../docs/user-acceptance-tests.md#uat-03) | Team     | Fail   | The cancelled slot stayed unavailable.            | [DEC-043](../../docs/decisions.md#dec-043) |
+
+## Decisions
+
+- [DEC-040: Drop the recurring-meetings goal](../../docs/decisions.md#dec-040)
+- [DEC-041: UAT-01 passed on 7f81db2](../../docs/decisions.md#dec-041)
+- [DEC-042: UAT-02 passed on 7f81db2](../../docs/decisions.md#dec-042)
+- [DEC-043: UAT-03 failed on 7f81db2](../../docs/decisions.md#dec-043)
+- [DEC-044: Replace the standalone link journey with the calendar invitation journey](../../docs/decisions.md#dec-044)
+- [DEC-045: Accept the Sprint 9 booking story](../../docs/decisions.md#dec-045)
+
+## Action points
+
+| Action                                                     | Owner | Due     |
+| ---------------------------------------------------------- | ----- | ------- |
+| Fix cancellation and prepare the calendar invitation test. | @sam  | Week 10 |
+
+## Open questions
+
+None.
+
+## Disagreements
+
+None.
+```
+
+### Example Sprint 10 Review And Handoff Script
+
+**Example**
+
+From `reports/week-10/meeting-script.md`.
+
+```markdown
+# Sprint 10 review and handoff script
+
+## Context
+
+- Booking organizers need to manage the slot and invitation from one schedule.
+- **Participants:** Customer, @sam, @lee and @kai.
+- **Format:** In person.
+- **Goal:** Check the MVP and obtain the customer's handoff decision.
+- **Materials:** Build `v0.10.0`, the [handoff package](../../handoff.md), the [UAT record](../../docs/user-acceptance-tests.md), and the [threshold goals](../../docs/threshold-of-success.md).
+
+## Agenda
+
+1. 5 minutes.
+   Ask the permission questions and confirm the deployed tag.
+2. 25 minutes.
+   Use the UAT record to check the three journeys in question 1.
+3. 20 minutes.
+   Walk through the package, review the remaining open threshold goals and ask question 2.
+4. 10 minutes.
+   Show the recorded outcomes and read back the acceptance decision, action points and the open-issues link.
+
+## Questions
+
+1. Open.
+   Starting from the test account, what happens in UAT-01, UAT-03, UAT-04?
+2. Closed.
+   Can you accept the handoff with these results and known limitations?
+
+## Roles
+
+- @sam moderates, @lee records decisions and @kai observes.
+- Customer runs the tests.
+  If access fails at the handoff, @sam runs the remaining tests live for the customer to judge.
+
+## Key improvements
+
+Rewrite "Does it work?" as "What happens to the slot after cancellation?" to ask about an observable outcome.
+```
+
+### Example Sprint 10 Review And Handoff Report
+
+**Example**
+
+From `reports/week-10/meeting-report.md`.
+
+```markdown
+# Sprint 10 review and handoff report
+
+## Metadata
+
+- **Date:** 2026-12-05
+- **Duration:** 60 minutes
+- **Participants:** Customer, @sam, @lee and @kai, in person.
+- **Presented:** Build `v0.10.0` and the handoff package.
+- **Permissions:** No recording, no public transcript, and no private transcript sharing.
+- **Transcript:** None.
+  The customer declined recording.
+- **Script:** [meeting-script.md](meeting-script.md)
+
+## Previous action points
+
+| Action                                                                                                   | Outcome                                                                                                          | Decision                                   |
+| -------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ------------------------------------------ |
+| [Fix cancellation and prepare the calendar invitation test.](../week-09/meeting-report.md#action-points) | The cancellation fix passed and the [replacement test](../../docs/user-acceptance-tests.md#uat-04) was prepared. | [DEC-047](../../docs/decisions.md#dec-047) |
+
+## Previous open questions
+
+None.
+
+## Summary
+
+- The customer checked the deployed MVP and observed the remaining tests after their session expired.
+- Two journeys passed, and the calendar invitation failure stays open.
+- The customer accepted the package with the recorded outcomes and the team checked the remaining open threshold goals.
+
+## User acceptance tests
+
+Build tested: `v0.10.0`.
+The customer's session expired after UAT-01, so the team ran the remaining journeys live for the customer to judge.
+
+| Test                                                 | Runner   | Result | Observation                                               | Decision                                   |
+| ---------------------------------------------------- | -------- | ------ | --------------------------------------------------------- | ------------------------------------------ |
+| [UAT-01](../../docs/user-acceptance-tests.md#uat-01) | Customer | Pass   | The booking appeared in the organizer's schedule.         | [DEC-046](../../docs/decisions.md#dec-046) |
+| [UAT-03](../../docs/user-acceptance-tests.md#uat-03) | Team     | Pass   | The cancelled slot became available.                      | [DEC-047](../../docs/decisions.md#dec-047) |
+| [UAT-04](../../docs/user-acceptance-tests.md#uat-04) | Team     | Fail   | The calendar link expired before the guest could open it. | [DEC-048](../../docs/decisions.md#dec-048) |
+
+## Decisions
+
+- [DEC-046: UAT-01 passed on v0.10.0](../../docs/decisions.md#dec-046)
+- [DEC-047: UAT-03 passed on v0.10.0](../../docs/decisions.md#dec-047)
+- [DEC-048: UAT-04 failed on v0.10.0](../../docs/decisions.md#dec-048)
+- [DEC-049: Accept the MVP handoff with the calendar invitation limitation](../../docs/decisions.md#dec-049)
+
+## Action points
+
+| Action                                         | Owner | Due     |
+| ---------------------------------------------- | ----- | ------- |
+| Shut down the university VM before submitting. | @lee  | Week 10 |
+
+## Open questions
+
+None.
+
+## Disagreements
+
+None.
 ```
 
 ### Example Meeting Transcript

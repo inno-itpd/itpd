@@ -165,7 +165,7 @@ The method is in [Step 3: Write The Tasks And The Success Criteria](../guides/us
 
 The rules:
 
-- A durable consent before every counted session, covering the 18-or-older declaration, the recording, the sanitized public results, the optional quotes, the private access, the tools used, the withdrawal, and the deletion after grading: [Consent And Recording](../requirements/usability-testing-requirements.md#consent-and-recording).
+- [Durable consent](../requirements/usability-testing-requirements.md#consent-and-recording) before every counted session.
 - One private `<organization>/<repo>-usability-data` repository, text only, with the team and the instructors as readers, and the recordings in a team-owned cloud folder: [The Private Data Repository](../requirements/usability-testing-requirements.md#the-private-data-repository) and [The Usability Data Repository](../requirements/repository-requirements.md#the-usability-data-repository).
 - The public record links the private repository, and the link is excluded from the link check because it needs authentication: [Link Checking](../requirements/repository-requirements.md#link-checking).
 - The private links and the participant identity are private-only: [Sensitive Information Reference](../requirements/visibility-requirements.md#sensitive-information-reference).
@@ -178,7 +178,7 @@ This week:
    When an instructor cannot access GitHub, the same text goes through a Moodle-only archive, and the deviation is declared.
 4. Create the team-owned cloud folder for the recordings, share it with the instructors, and record its link and the access instructions in the private repository.
 5. Link the private repository from the test record and the Week 7 report, and write the link-check exclusion with its reason beside it in the link check's configuration.
-6. Write the retention rule in the record: the private repository, its history, and the recordings are deleted after the course is graded, and the sanitized public record stays.
+6. Link the [retention and deletion requirements](../requirements/visibility-requirements.md#deleting-private-usability-data) from the test record.
 7. Keep the private repository's access instructions and the recordings folder link and access out of the product repository, for the Moodle wrapper, per [Assignment Report On Moodle](#assignment-report-on-moodle).
 
 The method is in [Step 5: Write The Consent And Create The Private Repository](../guides/usability-testing.md#step-5-write-the-consent-and-create-the-private-repository).

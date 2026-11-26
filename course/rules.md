@@ -7,7 +7,8 @@ Where it says "see", the linked file is the detailed version, and it wins if the
 
 ## The Short Version
 
-1. Your product repository is **public** and everything in it is readable by anyone, forever.
+1. Your product repository is **public** during the course.
+   See [Repository Setup](../requirements/repository-requirements.md#repository-setup) for approved privatisation after grading.
 2. Your **weekly report** in the repository is the submission.
    The Moodle PDF is a map that points at it.
    It counts only once it and the files it links are merged into `main`; see [Weekly Public Report](../requirements/weekly-report-requirements.md#weekly-public-report).
@@ -35,26 +36,22 @@ Unchecked generated text and filler reduce the week's grade; see [AI Usage Repor
 
 ## Deadlines And Submission
 
-- Every week has one team submission.
+- Each team submits one group assignment per week in Weeks 1–10.
+  [Week 9](syllabus.md#week-9-nov-20--nov-26-project-pitching-and-sprint-9) gives the Submission 9 deadline, and [Week 10](syllabus.md#week-10-nov-27--dec-3-final-release-and-handoff) gives the Submission 10 cutoff.
+  See the syllabus' [Late Submission Policy](syllabus.md#late-submission-policy).
+- Each group submission is a Moodle PDF and a repository snapshot (ZIP).
+  See [Private Submission Wrapper](../requirements/weekly-report-requirements.md#private-submission-wrapper) and [Permalinks And Snapshots](../requirements/repository-requirements.md#permalinks-and-snapshots).
+- The syllabus also covers [attendance](syllabus.md#attendance-policy), the [final exam and individual Submission 11](syllabus.md#week-11-dec-4--dec-10-final-exam), and the separate submission described on the [exam page](../exam/README.md).
 
-  The group submissions from Week 4 to Week 9 are due on **Saturday at 23:59**, with no soft deadline, except Week 6, which is due on **Sunday 8 November at 23:59**, and Week 7, which is due on **Sunday 15 November at 23:59**.
+## Final Sprints
 
-  Weeks 1 to 3 keep the soft and hard deadline pair their assignments record.
-
-  The Week 11 individual reflection keeps its own date.
-
-  The penalty after a hard deadline is in [the syllabus](syllabus.md#late-submission-policy).
-
-- One submission per team.
-  Every member's work is assessed through the team submission, and through the individual reflection at the end of the course.
-- The submission is a **PDF in Moodle** and a **repository snapshot (ZIP)**.
-  The PDF points at your repository; see [Private Submission Wrapper](../requirements/weekly-report-requirements.md#private-submission-wrapper) and [Permalinks And Snapshots](../requirements/repository-requirements.md#permalinks-and-snapshots).
-
-The syllabus also covers [attendance](syllabus.md#attendance-policy) and the [final exam](syllabus.md#week-11-dec-4--dec-10-final-exam-group-presentations-of-the-projects).
+Use [Closing The Final Sprints](../guides/final-sprints.md) to work through the [UATs](../requirements/user-acceptance-tests-requirements.md), the [handoff](../requirements/customer-meetings-requirements.md#the-handoff) and the [MVP release](../requirements/planning-requirements.md#releases).
+Follow the [code freeze and public repository cutoff](../requirements/repository-requirements.md#the-final-repository-state) and submit the [final report](../requirements/weekly-report-requirements.md#weekly-public-report) and [project reflection](../requirements/weekly-report-requirements.md#project-reflection).
+Complete [private usability-data deletion](../requirements/visibility-requirements.md#deleting-private-usability-data) for Submission 10.
 
 ## Accessibility
 
-Everything you submit must stay openable by your instructors until the course has been graded, and you check every link before you submit; see [Visibility Model](../requirements/visibility-requirements.md#visibility-model).
+Check each link before you submit and follow the [accessibility and retention requirements](../requirements/visibility-requirements.md#visibility-model).
 
 ## Where The Rules Live
 
@@ -92,6 +89,7 @@ Everything you submit must stay openable by your instructors until the course ha
 | [Observability Requirements](../requirements/observability-requirements.md)                       | The signals, the `SLI`s and their fields, the observability pipeline and its dashboards, and the collected data                                                                                                                                                                                                                        |
 | [Usability Testing Requirements](../requirements/usability-testing-requirements.md)               | The `UT-nn` test record, the participants and their profile, the tasks, the protocol, the instruments, the test's instrumentation, the consent, the private repository, the results, and the triage                                                                                                                                    |
 | [Configuration Management Requirements](../requirements/configuration-management-requirements.md) | The configuration plan and its `CFG-nn` items, the five groups, the connections, the goal-based evaluation with its tradeoffs and first change, the recommendation, and the public review                                                                                                                                              |
+| [User Acceptance Test Requirements](../requirements/user-acceptance-tests-requirements.md)        | The UAT record and the two customer review sessions                                                                                                                                                                                                                                                                                    |
 | [Guides](../guides/)                                                                              | How to actually do the work: alternatives, comparison and synthesis, the kickoff, stories and prototyping, validating with the customer, planning and tracking, quality and architecture, quality requirement tests, deployment and environments, product analytics and observability, usability testing, and configuration management |
 | [Assignments](../assignments/)                                                                    | What this particular week requires, and what you hand in                                                                                                                                                                                                                                                                               |
 

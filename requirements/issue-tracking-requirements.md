@@ -96,6 +96,22 @@ Scheduling is the single act that puts an issue into a sprint: the issue goes in
 2. A sprint's issue list is its GitHub milestone, which the plan's `**Sprint Backlog:**` field links, per [Sprints](planning-requirements.md#sprints).
 3. An issue in no milestone is unscheduled, and the open issues in no milestone are the product backlog, per [Product Backlog Refinement](sprint-ceremonies-requirements.md#product-backlog-refinement).
 
+**Since: W9**
+
+Schedule the UAT definitions and review sessions as task issues in their respective sprints.
+Maintain the tests themselves in the [UAT record](user-acceptance-tests-requirements.md#where-the-tests-live).
+At the Sprint 9 close, return every unfinished Sprint 9 issue to the unscheduled product backlog outside sprint and plan milestones.
+Clear its `Responsible` and `Accountable` fields and remove its assignees.
+Keep the issue open and retain its priority, including `MoSCoW` for a story.
+
+**Since: W10**
+
+Keep issues completed in Sprint 10 in its closed milestone.
+At the final close, leave every open issue open and remove its milestone.
+Clear its `Responsible` and `Accountable` fields and remove all assignees.
+Retain its priority, including `MoSCoW` for a story.
+The handoff links the repository's Issues page, per [The Handoff](customer-meetings-requirements.md#the-handoff).
+
 ## Assignees
 
 **Since: W3**

@@ -195,6 +195,9 @@ The Sprint Review shows the local product and the deployment plan in the meantim
 
 ## Step 5: Deploy To Production And Verify
 
+The steps below describe the Weeks 5–8 verification and release sequence.
+For the final reviews, follow [the Sprint 9 deployment](final-sprints.md#step-3-deploy-and-hold-the-sprint-9-review) and [the tagged MVP deployment and handoff](final-sprints.md#step-6-release-the-mvp-and-conduct-the-handoff).
+
 Production is the state the customer uses, so this step is about the same commit, one check, and a way back.
 
 ### Deploy The Commit Staging Passed
