@@ -18,6 +18,8 @@
   - good user stories are INVEST
   - prune guides and requirements to leave out non-critical steps and details that can be inferred by students
 - [ ] Add a quiz (post-test) after each section before key takeaways
+- [ ] Create all sprints in the first week when they're introduced (can be week 1)
+- [ ] don't mention mup and core task after they're delivered
 
 ## A1
 
