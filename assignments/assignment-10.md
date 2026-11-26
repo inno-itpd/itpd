@@ -33,9 +33,9 @@ Complete the requirements marked `**Since: W10**` in the linked sections and con
 
 ## Part 1: Plan Sprint 10, Schedule The Handoff, And Rewrite The README
 
-1. After the Sprint 9 review, plan `SPRINT-10` in `docs/project-plan.md#sprint-10` with a result-oriented goal, `**Due:**` of `2026-12-06`, `**Sprint Backlog:**` and `**Planned Velocity:**` of `0`; Sprint 10 implements no new user stories.
-   Apply the [Sprint 10 planning rules](../requirements/sprint-ceremonies-requirements.md#sprint-planning).
-   Schedule [task issues](../requirements/task-issues-requirements.md#the-issue-form) for UAT fixes, selected documentation, `REL-10`, the review and handoff, the UAT re-run, the final report, the reflection, the README rewrite, the final repository state, the retrospective and AI usage.
+1. After the Sprint 9 review, plan `SPRINT-10` in `docs/project-plan.md#sprint-10` with a result-oriented goal, `**Due:**` of `2026-12-06`, `**Sprint Backlog:**` and `**Planned Velocity:**`.
+   See [Sprint 10 planning](../requirements/sprint-ceremonies-requirements.md#sprint-planning) for the recommendation on new user stories.
+   Schedule [task issues](../requirements/task-issues-requirements.md#the-issue-form) for `REL-10`, the review and handoff, the UAT re-run, the final report, the reflection, the README rewrite, the final repository state, the retrospective and AI usage.
 2. Schedule the combined in-person review and handoff by 6 December, early enough to leave several hours after it for the handoff updates, checks and Moodle upload before 23:59; a handoff on 6 December itself needs its compressed schedule declared under `## Deviations`.
 3. Draft the root `README.md` rewrite for product users, per [Root README](../requirements/repository-requirements.md#root-readme).
    Create a placeholder `reports/week-10/README.md` carrying only its section headings and merge both before the handoff, so the `## Course information` link resolves; complete the report after the handoff.
@@ -67,7 +67,7 @@ Complete the requirements marked `**Since: W10**` in the linked sections and con
 2. Finalize the [`REL-10` block](../requirements/planning-requirements.md#releases) with `**Released:**`, `**Checked QRs:**` and `**Checked UATs:**`.
    Link each `QR-nn` and each checked `UAT-nn`, naming the UAT's sprint, and add the sentence after the checked QRs that links `## Quality Requirement Testing Plan`.
 3. Shut down the university VM after the handoff.
-   Record `**Actual Velocity:**` as `0` and say that there is no later sprint and unfinished work remains open in the unscheduled product backlog.
+   Record `**Actual Velocity:**` and say that there is no later sprint and unfinished work remains open in the unscheduled product backlog.
    Write `reports/week-10/sprint-retrospective.md` per [Retrospective](../requirements/sprint-ceremonies-requirements.md#retrospective), applying its final-sprint rule: a Sprint 9 action that is `Not done` stays in `## Carried Actions` with `Outcome: Not done` and is not re-listed in `## Actions`, and every new action is `Carried: No`.
    Write `reports/week-10/ai-usage.md` per [AI Usage Report](../requirements/weekly-report-requirements.md#ai-usage-report).
 4. Write the [final report](#assignment-report-in-the-repository).
@@ -82,7 +82,7 @@ Complete [Deleting Private Usability Data](../requirements/visibility-requiremen
 On `main`, replace each link to the deleted private repository or recordings folder with a deletion note and a link to the sanitized results, and remove link-check exclusions that existed only for those links.
 Merge the final report, reflection and supporting artifacts, merge or close every open pull request so none remains open, keep `main` green, and complete the [final repository state](../requirements/repository-requirements.md#the-final-repository-state).
 Close the `SPRINT-09` and `SPRINT-10` milestones, keeping the issues completed in `SPRINT-10` in the closed milestone.
-For every open issue, remove its milestone, clear `Responsible` and `Accountable`, remove all assignees, and leave it open and unscheduled, per the [final issue rules](../requirements/issue-tracking-requirements.md#scheduling-an-issue).
+For every open issue, remove its milestone, clear `Responsible` and `Accountable`, remove all assignees and keep its priority, per the [final issue rules](../requirements/issue-tracking-requirements.md#scheduling-an-issue).
 Link the repository's Issues page from `handoff.md` instead of listing each issue.
 Take the commit-hash permalink and snapshot from the final `main` commit and submit them with the Moodle wrapper as described below.
 
@@ -131,7 +131,7 @@ See the [Submission 10 wrapper example](../requirements/weekly-report-requiremen
 - Full commit-hash permalinks to `reports/week-10/README.md` and `reports/week-10/reflection.md` on final `main`.
 - Under `## For customer`, the production address used at the handoff and test access, the analytics and observability dashboard and backend addresses and credentials, observability query access, and any other private values agreed with the customer.
   Record the university VM shutdown.
-- Also under `## For customer`, the dated [confirmation of the team's private usability-data deletion](../requirements/weekly-report-requirements.md#private-submission-wrapper), in place of the private repository and recordings links and access instructions.
+- Also under `## For customer`, the dated [confirmation of the team's private usability-data deletion](../requirements/weekly-report-requirements.md#private-submission-wrapper).
 - A permitted private Sprint Review recording link accessible to instructors or the reason there is none, and any permitted private meeting transcript.
 - One line confirming no private-only material was committed.
 
@@ -144,12 +144,12 @@ See the [Submission 10 wrapper example](../requirements/weekly-report-requiremen
 
 ## Checklist
 
-- [ ] Sprint 10 planned with no new stories and a planned velocity of `0`, the user README rewritten and the in-person handoff scheduled ([Part 1](#part-1-plan-sprint-10-schedule-the-handoff-and-rewrite-the-readme)).
+- [ ] Sprint 10 planned with its planned velocity, the user README rewritten and the in-person handoff scheduled ([Part 1](#part-1-plan-sprint-10-schedule-the-handoff-and-rewrite-the-readme)).
 - [ ] Protected `REL-10` tag published and deployed before the review with the milestone still open, and `handoff.md` and the meeting script prepared ([Part 2](#part-2-cut-and-deploy-rel-10-and-write-the-sprint-10-script)).
 - [ ] Meeting report records the tested `REL-10` tag and commit, the three UAT outcomes, the customer's acceptance and follow-up on earlier action points and questions, with a transcript or the reason there is none ([Part 3](#part-3-conduct-the-handoff-and-re-run-the-uats)).
-- [ ] Handoff, UAT history, threshold goals and release block updated, including the limitations and Issues-page link, the VM shut down, and actual velocity `0`, retrospective and AI usage recorded ([Part 4](#part-4-record-the-handoff-results-and-write-the-final-report)).
+- [ ] Handoff, UAT history, threshold goals and release block updated, including the limitations and Issues-page link, the VM shut down, and actual velocity, retrospective and AI usage recorded ([Part 4](#part-4-record-the-handoff-results-and-write-the-final-report)).
 - [ ] Project reflection written and linked from the final report ([Part 5](#part-5-write-the-project-reflection)).
-- [ ] Final artifacts merged with no open pull request, both sprint milestones closed, and every open issue unscheduled with its fields and assignees cleared, with `main` green and the final tag protected ([Part 6](#part-6-close-sprint-10-and-submit-submission-10)).
+- [ ] Final artifacts merged with no open pull request, both sprint milestones closed, and every open issue unscheduled with assignments cleared and priority retained, with `main` green and the final tag protected ([Part 6](#part-6-close-sprint-10-and-submit-submission-10)).
 - [ ] Team-controlled private usability data deleted, earlier links replaced on `main` with their link-check exclusions removed, and sanitized results linked from the public handoff ([Part 6](#part-6-close-sprint-10-and-submit-submission-10)).
 - [ ] Final report includes the summary, handoff results, threshold results and evidence links ([Assignment Report In The Repository](#assignment-report-in-the-repository)).
 - [ ] Moodle PDF includes the private handoff details, the dated deletion confirmation in place of the private links, and review evidence ([Assignment Report On Moodle](#assignment-report-on-moodle)).

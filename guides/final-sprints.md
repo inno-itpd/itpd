@@ -29,6 +29,7 @@ See [Meeting Script](../requirements/customer-meetings-requirements.md#meeting-s
 ## Step 3: Deploy And Hold The Sprint 9 Review
 
 Confirm the build on the university VM and let the customer take the controls.
+If the customer cannot access production, take the controls during the meeting and run the tests live for them to observe and judge.
 Capture what they observe against each test's expected result, including a failure the team can already explain.
 Record its decision while the result is fresh.
 Compare open goals with their existing measures and read back the handoff expectations before the meeting ends.
@@ -46,7 +47,7 @@ If the review slips past the deadline, identify it as missing in Submission 9 an
 
 ## Step 5: Plan Sprint 10 And Schedule The Handoff
 
-Turn the acceptance failures, selected documentation work and final deliverables into tasks.
+Use the review findings and the work left in the product backlog to decide what you can finish before the handoff.
 Use the [Sprint 10 planning rules](../requirements/sprint-ceremonies-requirements.md#sprint-planning) for the backlog and velocities.
 Walk through the rewritten README as a new user would, starting at setup and following the deployment instructions.
 
@@ -100,7 +101,7 @@ Check the [Submission 10 cutoff](../course/syllabus.md#week-10-nov-27--dec-3-fin
 - **Making the handoff a separate meeting.**
   Use the Sprint 10 review to check the deployed product, walk through the package and record acceptance.
 - **Leaving open items in the final milestone.**
-  Clear their `Responsible` and `Accountable` fields and remove their assignees and milestone.
+  Clear their `Responsible` and `Accountable` fields, remove their assignees and milestone, and keep their priorities.
   See [Scheduling An Issue](../requirements/issue-tracking-requirements.md#scheduling-an-issue).
 - **Listing each open issue in the handoff.**
   Leave the issues open and unscheduled and link the repository's Issues page from the handoff.

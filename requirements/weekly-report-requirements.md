@@ -372,7 +372,7 @@ Studio Booking, Team 3.
 
 The Sprint 9 increment lets an organizer book and share a meeting.
 The review used `7f81db2`, the commit tagged `v0.9.0`.
-The customer passed the booking and guest-link tests and found that cancellation did not free the slot.
+The customer passed the booking and guest-link tests, then observed the team demonstrate that cancellation did not free the slot.
 The quality plan had a failed check for cancellation, and the threshold review left the installation goal open.
 The customer asked for deployment and export instructions and a list of known limitations.
 Sprint 10 will fix cancellation and prepare the handoff.
@@ -659,7 +659,8 @@ The Moodle PDF is the canonical private artifact for a week.
 
 For Submissions 9 and 10, include any permitted private Sprint Review recording or transcript and the privacy confirmation.
 Put the production address, dashboard and backend addresses, and credentials under `## For customer` in each wrapper.
-In Submission 9, put the private usability-data access details and the [deletion plan](visibility-requirements.md#deleting-private-usability-data) in that section.
+In Submission 9, include the [plan for deleting private usability data](visibility-requirements.md#deleting-private-usability-data).
+Instructors use the private usability-data access details from the earlier usability submissions.
 
 **Since: W10**
 
@@ -667,7 +668,6 @@ Link the final report and project reflection.
 Include the final commit-hash permalink and snapshot per [Permalinks And Snapshots](repository-requirements.md#permalinks-and-snapshots).
 Use `## For customer` for any additional private handoff values.
 Under `## For customer`, include a dated confirmation that the team completed its part of [Deleting Private Usability Data](visibility-requirements.md#deleting-private-usability-data).
-Use this confirmation in place of the private repository and recordings folder links and access instructions.
 
 **Example**
 
@@ -689,14 +689,13 @@ See [Assignment 1](../assignments/assignment-1.md#assignment-report-on-moodle) f
 Attach the ZIP for the same commit.
 The customer declined recording and there is no private transcript.
 No private-only material was committed to the repository.
+The team plans to delete its copies of private usability data before submitting Submission 10.
 
 ## For customer
 
 - Production: <university-network-production-url>, <test-account-and-credentials>.
 - Analytics dashboard and backend: <addresses-and-credentials>.
 - Observability dashboard, backend and query access: <addresses-and-credentials>.
-- Usability data and recordings: <private-links-and-access-instructions>.
-  The team plans to delete its copies before submitting Submission 10.
 ```
 
 ### Example Submission 10 Wrapper

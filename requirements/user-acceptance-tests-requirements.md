@@ -40,7 +40,8 @@ Keep each test under ten minutes.
 **Required**
 
 The customer runs the three initial tests on the build deployed to the university VM at the Sprint 9 review.
-If the customer cannot run the tests, reschedule within the review window or record the missing results and declare the deviation.
+If the customer cannot access production, the team runs the tests live on the deployed build during the meeting for the customer to observe and judge.
+If a test still cannot run, reschedule within the review window or record `Not run` with the reason and declare the deviation.
 Link the session from the Week 9 report.
 If same-sprint rework changes what `REL-09` contains, identify both the reviewed build and the released tag in that report.
 
@@ -118,10 +119,10 @@ Cancel a booking.
 
 **Expected result:** The slot becomes available again.
 
-| Sprint    | Date       | Runner   | Build     | Result | Evidence                                                                        | DEC-nnn                         |
-| --------- | ---------- | -------- | --------- | ------ | ------------------------------------------------------------------------------- | ------------------------------- |
-| SPRINT-09 | 2026-11-28 | Customer | `7f81db2` | Fail   | [Sprint 9 review](../reports/week-09/meeting-report.md#user-acceptance-tests)   | [DEC-043](decisions.md#dec-043) |
-| SPRINT-10 | 2026-12-05 | Team     | `v0.10.0` | Pass   | [Sprint 10 handoff](../reports/week-10/meeting-report.md#user-acceptance-tests) | [DEC-047](decisions.md#dec-047) |
+| Sprint    | Date       | Runner | Build     | Result | Evidence                                                                        | DEC-nnn                         |
+| --------- | ---------- | ------ | --------- | ------ | ------------------------------------------------------------------------------- | ------------------------------- |
+| SPRINT-09 | 2026-11-28 | Team   | `7f81db2` | Fail   | [Sprint 9 review](../reports/week-09/meeting-report.md#user-acceptance-tests)   | [DEC-043](decisions.md#dec-043) |
+| SPRINT-10 | 2026-12-05 | Team   | `v0.10.0` | Pass   | [Sprint 10 handoff](../reports/week-10/meeting-report.md#user-acceptance-tests) | [DEC-047](decisions.md#dec-047) |
 
 ## UAT-04
 

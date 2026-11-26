@@ -35,7 +35,6 @@ Complete the requirements marked `**Since: W9**` in the linked sections and cont
 2. Schedule the product stories, the three UATs and their live run, handoff preparation, quality plan results, threshold review, release, Week 9 report, retrospective and AI usage.
    Write the [task issues](../requirements/task-issues-requirements.md#the-issue-form) and schedule them per [Scheduling An Issue](../requirements/issue-tracking-requirements.md#scheduling-an-issue).
 3. Create the `SPRINT-10` milestone and `docs/project-plan.md#sprint-10` with a provisional goal, `**Due:**` of `2026-12-06`, and the empty `#### REL-10` section.
-   Leave work outside the final sprint's scope in the unscheduled product backlog.
 4. Schedule the in-person Sprint 9 review to take place by 29 November, and leave time afterwards for the release and report.
 
 ## Part 2: Define The UATs And Write The Sprint 9 Script
@@ -50,7 +49,8 @@ Complete the requirements marked `**Since: W9**` in the linked sections and cont
    Put only the ones this meeting has to settle with the customer on the agenda, per [Meeting Script](../requirements/customer-meetings-requirements.md#meeting-script).
 2. Deploy the Sprint 9 build to the university VM and hold the in-person review by 29 November, per [Showing Working Software](../requirements/customer-meetings-requirements.md#showing-working-software).
    Have the customer run the three UATs.
-   If the customer cannot run them, the Week 9 fallback in [The Two Review Sessions](../requirements/user-acceptance-tests-requirements.md#the-two-review-sessions) is to reschedule within the review window or record the missing results and declare the deviation.
+   If the customer cannot access production, the team runs the UATs live during the review for the customer to observe and judge.
+   If a test still cannot run, follow [The Two Review Sessions](../requirements/user-acceptance-tests-requirements.md#the-two-review-sessions).
 3. Discuss the recorded quality plan results, check every open threshold goal against its current measure, and ask what the customer expects at the handoff.
 4. Write `reports/week-09/meeting-report.md` per [Meeting Report](../requirements/customer-meetings-requirements.md#meeting-report).
    Record what happened to the earlier action points and open questions, and record each UAT run as its own `DEC-nnn` in `docs/decisions.md`.
@@ -67,7 +67,9 @@ Complete the requirements marked `**Since: W9**` in the linked sections and cont
    Then add the [release block](../requirements/planning-requirements.md#releases) with `**Released:**`, `**Checked QRs:**` and `**Checked UATs:**`, including the sentence after the checked QRs that links `## Quality Requirement Testing Plan`.
 3. Record `**Actual Velocity:**` and note where unfinished work will go per [Scheduling An Issue](../requirements/issue-tracking-requirements.md#scheduling-an-issue).
    Write `reports/week-09/sprint-retrospective.md` per [Retrospective](../requirements/sprint-ceremonies-requirements.md#retrospective) and `reports/week-09/ai-usage.md` per [AI Usage Report](../requirements/weekly-report-requirements.md#ai-usage-report).
-4. Merge the Week 9 report and its evidence, triage the remaining issues, close the milestone and submit Submission 9.
+4. Merge the Week 9 report and its evidence.
+   Return unfinished Sprint 9 issues to the unscheduled product backlog, clear their assignments and keep their priorities per [Scheduling An Issue](../requirements/issue-tracking-requirements.md#scheduling-an-issue).
+   Close the milestone and submit Submission 9.
 
 ## What Good Looks Like
 
@@ -112,7 +114,7 @@ See the [Submission 9 wrapper example](../requirements/weekly-report-requirement
 - Full commit-hash permalink to `reports/week-09/README.md`.
 - A permitted private Sprint Review recording link accessible to instructors or the reason there is none, and any permitted private meeting transcript.
 - Under `## For customer`, the production address and test access, the analytics and observability dashboard and backend addresses and credentials, and observability query access.
-- Also under `## For customer`, the private usability-data repository and recordings folder links and access instructions, and the [plan for deleting private usability data](../requirements/visibility-requirements.md#deleting-private-usability-data).
+- The [plan for deleting private usability data](../requirements/visibility-requirements.md#deleting-private-usability-data).
 - One line confirming no private-only material was committed to the repository.
 
 ### Submission Procedure

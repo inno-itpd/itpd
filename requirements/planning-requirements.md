@@ -474,7 +474,7 @@ The customer can book, share and cancel a meeting on the university VM.
 - **Sprint Backlog:** [Sprint 9 issues](https://github.com/<organization>/<repo>/milestone/7)
 - **Planned Velocity:** 5
 - **Actual Velocity:** 3.
-  The cancellation fix moved to SPRINT-10, and the recurring-meetings story returned to the product backlog.
+  The cancellation fix and the recurring-meetings story returned to the unscheduled product backlog.
 
 #### REL-09
 

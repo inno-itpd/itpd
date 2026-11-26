@@ -4,7 +4,7 @@ title: Implement Assignments 9 and 10 and the final handoff
 status: In Progress
 assignee: []
 created_date: '2026-11-26 12:08'
-updated_date: '2026-11-26 15:22'
+updated_date: '2026-11-26 15:53'
 labels: []
 dependencies: []
 references:
@@ -50,6 +50,8 @@ Give teams two separately graded final sprints and start-to-finish instructions 
 4. Audit the implemented final-sprint rules and examples against the plan, apply the revised open-issue instructions, and re-run the repository gates.
 
 5. Align Assignments 9 and 10 with the navigation and evidence prompts in Assignment 8. Link each checklist to its part or submission section, point to the existing report and meeting requirements, and spell out the private wrapper evidence. Run the repository gates and verify the new anchors.
+
+6. Apply the clarified final-sprint rules for live customer-observed UATs, backlog triage, handoff limitations and Submission 9 privacy. Align the requirements, assignments and examples, then validate.
 <!-- SECTION:PLAN:END -->
 
 ## Implementation Notes
@@ -72,4 +74,6 @@ Re-ran the full link check after the anchor rename: 4592 links resolved and no e
 Applied the Assignment 9 review. The assignment now names the Week 9 UAT fallback, records each UAT run as its own decision, gives the UAT index and run-row fields, states the changelog-before-release-body order and the checked-QRs testing-plan sentence, makes the quality bar outcome-based, adds the REL-10 heading to the provisional Sprint 10 section, and makes the held-review and deadline-day deviation wording conditional. Markdown format and lint, both 34-test fixture suites, the nine-deck check and the 4,595-link check (0 errors) passed.
 
 Scoped the final reviews' agenda: Assignments 9 and 10 now follow up on every due or carried earlier action point and open question but put only the ones the meeting must settle with the customer on the agenda. The meeting report still records an outcome for each, and the Meeting Script read-back is explicitly this meeting's decisions and action points. Markdown format and lint passed, and the offline link check resolved 4,598 links with 0 errors.
+
+Clarified that a teammate runs the deployed UATs live during the Sprint 9 review when the customer lacks production access. Sprint 9 triage returns unfinished issues to the unscheduled backlog and clears assignments while keeping priorities. Sprint 10 planning recommends avoiding new stories and uses ordinary velocity rules. The handoff can cite missing Must Have capabilities. Submission 9 uses earlier private usability-data access details and retains the deletion plan. Markdown format and lint, 68 fixture tests, nine lecture comparisons, and the 4,615-link check passed with zero errors.
 <!-- SECTION:NOTES:END -->

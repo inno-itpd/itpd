@@ -278,7 +278,7 @@ Weeks 4 to 10 have a hard deadline only.
 - **Class 9 (Nov 20)** teaches project pitching, including product demos, value and evidence.
 - Plan `SPRINT-09` and create the provisional `SPRINT-10` milestone and plan section.
 - Hold the Sprint 9 review in person by **Sunday 29 November 2026**.
-  Run the customer UATs, discuss quality plan results, review the open threshold goals and ask what the customer expects at the handoff.
+  Check the UATs with the customer, discuss quality plan results, review the open threshold goals and ask what the customer expects at the handoff.
 - Cut `REL-09` at the Sprint 9 close and record the retrospective and AI usage.
 - **Submission 9 and the Sprint 9 hard deadline are Sunday 29 November 2026 at 23:59.**
   Submit the Week 9 report with the UAT results, quality plan results, threshold review and handoff preparation, plus the Moodle wrapper and snapshot.
@@ -288,7 +288,7 @@ Weeks 4 to 10 have a hard deadline only.
 
 - **Class 10 (Nov 27)** covers the course review and final exam briefing.
 - `SPRINT-10` starts **Monday 30 November 2026**.
-  Plan the acceptance fixes, documentation and handoff work after the Sprint 9 review.
+  Plan Sprint 10 after the Sprint 9 review.
 - Cut and deploy `REL-10`, the MVP, before the in-person Sprint 10 review and handoff.
   Re-run the active UATs and review the remaining open threshold goals at the handoff.
 - Close the sprint with the final repository state, retrospective and AI usage report.

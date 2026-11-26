@@ -36,9 +36,12 @@ The sprint's `### SPRINT-nn` section in `docs/project-plan.md` is the planning r
 **Since: W10**
 
 Plan Sprint 10 after the Sprint 9 review.
-Schedule tasks for UAT fixes, selected documentation work and final sprint deliverables.
-Sprint 10 implements no new user stories.
-Record both velocities as `0` story points and use the [final sprint close rule](planning-requirements.md#sprints) for the actual velocity sentence.
+Use the [final sprint close rule](planning-requirements.md#sprints) for the actual velocity sentence.
+
+**Recommended**
+
+Focus Sprint 10 on preparing the handoff and finishing existing work.
+Avoid scheduling new user stories.
 
 ## Product Backlog Refinement
 

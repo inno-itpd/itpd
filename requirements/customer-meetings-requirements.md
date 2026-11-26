@@ -207,6 +207,7 @@ Include each of these rows and any additional items agreed with the customer in 
 | Usability results               | The sanitized public results.                                                                                                                                              |
 
 `Limitations` describes what the product cannot do; `Open issues` points at the live tracker, so the handoff does not copy the open-issue list.
+You can include missing capabilities from unfinished `Must Have` user stories in `Limitations`.
 Do not list or link each open issue; the issues stay open and unscheduled, per [Scheduling An Issue](issue-tracking-requirements.md#scheduling-an-issue).
 
 **Example**
@@ -665,7 +666,7 @@ From `reports/week-09/meeting-script.md`.
 ## Roles
 
 - @sam moderates, @lee records decisions and @kai observes.
-- Customer runs the tests.
+- Customer runs the tests, and @sam takes over live if the customer cannot access production.
 
 ## Key improvements
 
@@ -709,12 +710,13 @@ None.
 ## User acceptance tests
 
 Build tested: `7f81db2`.
+The customer's session lost access before `UAT-03`, so @sam ran it live and the customer judged the result.
 
 | Test                                                 | Runner   | Result | Observation                                       | Decision                                   |
 | ---------------------------------------------------- | -------- | ------ | ------------------------------------------------- | ------------------------------------------ |
 | [UAT-01](../../docs/user-acceptance-tests.md#uat-01) | Customer | Pass   | The booking appeared in the organizer's schedule. | [DEC-041](../../docs/decisions.md#dec-041) |
 | [UAT-02](../../docs/user-acceptance-tests.md#uat-02) | Customer | Pass   | The guest opened the meeting details.             | [DEC-042](../../docs/decisions.md#dec-042) |
-| [UAT-03](../../docs/user-acceptance-tests.md#uat-03) | Customer | Fail   | The cancelled slot stayed unavailable.            | [DEC-043](../../docs/decisions.md#dec-043) |
+| [UAT-03](../../docs/user-acceptance-tests.md#uat-03) | Team     | Fail   | The cancelled slot stayed unavailable.            | [DEC-043](../../docs/decisions.md#dec-043) |
 
 ## Decisions
 

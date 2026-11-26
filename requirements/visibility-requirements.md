@@ -102,7 +102,7 @@ The usability test's raw data identifies a person or can be joined to one, so it
 3. The recordings live in a team-owned cloud folder shared with the instructors, such as the team's drive.
    They are never in the product repository and never in the private repository, and the private repository records the folder link and the access instructions.
 4. The product repository links the private repository in the test record and the weekly report, and the link is excluded from the link check because it needs authentication, with the reason in the link check's configuration, per [Link Checking](repository-requirements.md#link-checking).
-5. While the data is retained, the Moodle PDF carries the private repository link and access and the recordings folder link and access, per [Private Submission Wrapper](weekly-report-requirements.md#private-submission-wrapper).
+5. The Week 7 and Week 8 Moodle PDFs carry the private repository and recordings folder links and access instructions, per [Private Submission Wrapper](weekly-report-requirements.md#private-submission-wrapper).
 6. The durable consent is recorded before every counted session, and it covers the recording and the sanitized public results, per [Consent And Recording](usability-testing-requirements.md#consent-and-recording).
 7. Restrict access to the team and instructors while the data is retained, and follow [Deleting Private Usability Data](#deleting-private-usability-data).
 8. When an instructor cannot access GitHub, the team gives the private text data through a Moodle-only archive and declares the [deviation](weekly-report-requirements.md#declaring-deviations).

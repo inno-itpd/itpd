@@ -100,15 +100,16 @@ Scheduling is the single act that puts an issue into a sprint: the issue goes in
 
 Schedule the UAT definitions and review sessions as task issues in their respective sprints.
 Maintain the tests themselves in the [UAT record](user-acceptance-tests-requirements.md#where-the-tests-live).
-At the Sprint 9 close, carry over only work needed for the UATs to pass and selected documentation issues.
-Return other unfinished issues to the unscheduled product backlog outside sprint and plan milestones.
-Clear their `Responsible` and `Accountable` fields and remove their assignees when they leave the milestone.
+At the Sprint 9 close, return every unfinished Sprint 9 issue to the unscheduled product backlog outside sprint and plan milestones.
+Clear its `Responsible` and `Accountable` fields and remove its assignees.
+Keep the issue open and retain its priority, including `MoSCoW` for a story.
 
 **Since: W10**
 
 Keep issues completed in Sprint 10 in its closed milestone.
 At the final close, leave every open issue open and remove its milestone.
 Clear its `Responsible` and `Accountable` fields and remove all assignees.
+Retain its priority, including `MoSCoW` for a story.
 The handoff links the repository's Issues page, per [The Handoff](customer-meetings-requirements.md#the-handoff).
 
 ## Assignees
