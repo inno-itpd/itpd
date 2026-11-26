@@ -110,10 +110,10 @@ See the [Submission 9 wrapper example](../requirements/weekly-report-requirement
 
 - Project, team number and member table with GitHub usernames, real names and university emails.
 - Full commit-hash permalink to `reports/week-09/README.md`.
+- A permitted private Sprint Review recording link accessible to instructors or the reason there is none, and any permitted private meeting transcript.
 - Under `## For customer`, the production address and test access, the analytics and observability dashboard and backend addresses and credentials, and observability query access.
 - Also under `## For customer`, the private usability-data repository and recordings folder links and access instructions, and the [plan for deleting private usability data](../requirements/visibility-requirements.md#deleting-private-usability-data).
-- A permitted private Sprint Review recording link accessible to instructors or the reason there is none, and any permitted private meeting transcript.
-- One line confirming no private-only material was committed.
+- One line confirming no private-only material was committed to the repository.
 
 ### Submission Procedure
 
