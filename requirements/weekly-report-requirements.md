@@ -6,6 +6,8 @@ Who may see each item is in [Visibility Requirements](visibility-requirements.md
 <h2>Table of contents</h2>
 
 - [Weekly Public Report](#weekly-public-report)
+  - [Example Week 09 Report](#example-week-09-report)
+  - [Example Week 10 Report](#example-week-10-report)
 - [Quality Plan Results](#quality-plan-results)
 - [Threshold Review](#threshold-review)
 - [Threshold Of Success Results](#threshold-of-success-results)
@@ -13,6 +15,8 @@ Who may see each item is in [Visibility Requirements](visibility-requirements.md
 - [AI Usage Report](#ai-usage-report)
 - [Declaring Deviations](#declaring-deviations)
 - [Private Submission Wrapper](#private-submission-wrapper)
+  - [Example Submission 9 Wrapper](#example-submission-9-wrapper)
+  - [Example Submission 10 Wrapper](#example-submission-10-wrapper)
 
 ## Weekly Public Report
 
@@ -542,10 +546,15 @@ After the table, give one status sentence per goal still `Open`.
 **Required**
 
 Write the public, sanitized project reflection in `reports/week-10/reflection.md` and link it from the final report.
-Use `## Lessons learned`, one `## Lesson N` section per lesson with `**Problem:**` and `**Lesson:**`, and `## What would we do differently` for changes the team would make if it started the project anew.
-Support lessons with the retrospectives, risks, configuration plan or Week 8 usability results where relevant.
-Record the team's [private usability-data deletion](visibility-requirements.md#deleting-private-usability-data) without exposing private data.
-Exclude individual ratings, team dynamics, the focus metric, and links to the analytics and observability pages.
+Use `## Lessons learned` to summarize what the team learned about how it ran the project.
+Give each lesson its own `## Lesson N` section with `**What happened:**`, `**Lesson:**` and `**Next time:**`.
+Describe a concrete experience, such as a practice that worked, a difficulty or a surprise, and explain what the team learned that it could apply to another project.
+Link relevant evidence from the project where available, such as meeting reports, retrospectives or the risk register.
+In `**Next time:**`, name a specific practice the team would keep, introduce earlier or change on another project.
+
+The public reflection may discuss shared working practices such as how the team prepared reviews, coordinated handoffs or shared responsibility.
+Keep interpersonal conflicts and individual ratings out of the public reflection.
+Use [Submission 11](../course/syllabus.md#week-11-dec-4--dec-10-final-exam) for individual reflection and peer evaluation.
 
 **Example**
 
@@ -554,20 +563,24 @@ Exclude individual ratings, team dynamics, the focus metric, and links to the an
 
 ## Lessons learned
 
-Test the same user journey through deployment and handoff.
-
 ## Lesson 1
 
-**Problem:** A cancellation appeared to succeed but left the slot unavailable, as the [Sprint 9 review](../week-09/meeting-report.md#user-acceptance-tests) showed.
+**What happened:** From Sprint 4 onward, we rotated who led customer reviews and prepared the agenda and demo together.
+When the scheduled lead was unavailable, another teammate ran the review using the shared agenda and demo steps.
+The [Sprint 6 retrospective](../week-06/sprint-retrospective.md) records how the review went.
 
-**Lesson:** Check the next organizer's view after cancellation, and keep deployment verification runnable from a fresh account.
-The [Sprint 10 retrospective](sprint-retrospective.md) records how the team made that check repeatable.
+**Lesson:** Rotating responsibility for customer meetings works when everyone knows what the customer expects to see and can run the demo.
 
-## What would we do differently
+**Next time:** Rotate who leads from the first customer review and prepare the agenda and demo together.
 
-Schedule a live cancellation check in the first release with booking, and keep synthetic accounts in the setup guide from the start.
-Document where usability tools keep private copies before the first session so the team can find them at closeout.
-The team deleted its copies as recorded in [handoff.md](../../handoff.md).
+## Lesson 2
+
+**What happened:** In the early sprints, we agreed on scope with the customer and left the exact acceptance checks until the review.
+The [Sprint 6 review](../week-06/meeting-report.md) surfaced expectations we had missed, and we had to make room for rework in Sprint 7.
+
+**Lesson:** Agreeing with the customer on how to verify an outcome gives us the information we need to scope and estimate the work.
+
+**Next time:** During backlog refinement, agree with the customer on how to verify each major outcome before scheduling the work.
 ```
 
 ## AI Usage Report

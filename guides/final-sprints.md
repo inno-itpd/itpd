@@ -77,9 +77,10 @@ Shut down the university VM after the handoff and check that the submitted evide
 
 ## Step 8: Write The Project Reflection
 
-Use a concrete problem from the project to explain each lesson.
-A failed cancellation check, for example, might lead you to test both the organizer's confirmation and the next user's view of the released slot.
-Use the [reflection requirements](../requirements/weekly-report-requirements.md#project-reflection) to turn the lessons into changes you would make from the start of another project.
+Look back through the meeting reports and retrospectives for moments that changed how you worked or showed why a practice was worth keeping.
+Ask what made the outcome possible and which part of the practice would help on another project.
+If preparing a customer review together made it easy for someone else to lead it, consider how you would set up that shared preparation from the first review.
+Use the [reflection requirements](../requirements/weekly-report-requirements.md#project-reflection) to connect each lesson to a concrete choice the team would make on its next project.
 
 ## Step 9: Close Sprint 10 And Submit The Final Snapshot
 

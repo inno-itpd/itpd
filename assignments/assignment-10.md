@@ -65,8 +65,6 @@ Complete the requirements marked `**Since: W10**` in the linked sections and con
 ## Part 5: Write The Project Reflection
 
 Write `reports/week-10/reflection.md`, per [Project Reflection](../requirements/weekly-report-requirements.md#project-reflection).
-Use `## Lessons learned`, one `## Lesson N` with `**Problem:**` and `**Lesson:**` per lesson, and `## What would we do differently`.
-Use the [Project Reflection example](../requirements/weekly-report-requirements.md#project-reflection) to record the private-data deletion.
 
 ## Part 6: Close Sprint 10 And Submit Submission 10
 
