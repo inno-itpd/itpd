@@ -57,18 +57,15 @@ If the exam demo uses the university VM, plan its shutdown around both events us
 
 ## Step 6: Release The MVP And Conduct The Handoff
 
-Work through the [Week 10 release sequence](../requirements/releases-requirements.md#cutting-a-release) before the meeting.
+One way to prepare [the Week 10 release](../requirements/releases-requirements.md#cutting-a-release) is to push the tag, merge the changelog with a link to the tagged source, publish the GitHub release with a link back to the changelog, then deploy the tagged build.
 Prepare the handoff package and write the script before the meeting.
 Put the tag, test accounts, start states and handoff items where the meeting roles can find them.
 Use the private wrapper for real access details.
 
 At the combined review and handoff, compare what you present with the customer's Sprint 9 expectations.
 Capture the deployed tag and commit while the VM is running.
-Run the [handoff UAT session](../requirements/user-acceptance-tests-requirements.md#the-two-review-sessions), review the still-open threshold goals and read back the results.
-If customer access fails, show the tests live and let the customer judge each result.
-If the release itself is unavailable, look for another meeting time before the cutoff.
-Record the actual runner, any failed or unrun test and its reason, and the customer's handoff decision.
-If the meeting cannot take place by the cutoff, use the [Submission 10 procedure](../assignments/assignment-10.md#submission-procedure).
+Use the [handoff UAT session](../requirements/user-acceptance-tests-requirements.md#the-two-review-sessions) for the checks and any fallbacks.
+Review the still-open threshold goals and read back the results and the customer's handoff decision.
 
 ## Step 7: Finish The Handoff Evidence
 

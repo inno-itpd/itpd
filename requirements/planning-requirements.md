@@ -199,7 +199,7 @@ The changelog, the tags, and the release titles follow [Release Requirements](re
 **Since: W10**
 
 9. `REL-10` is the final release and the minimum viable product (MVP).
-   Follow the [handoff release sequence](releases-requirements.md#cutting-a-release) and the [code freeze](repository-requirements.md#the-final-repository-state).
+   Follow the [Week 10 release requirements](releases-requirements.md#cutting-a-release) and the [code freeze](repository-requirements.md#the-final-repository-state).
 
 ## Quality Requirement Testing Plan
 

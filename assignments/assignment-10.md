@@ -42,17 +42,16 @@ Complete the requirements marked `**Since: W10**` in the linked sections and con
 
 ## Part 2: Cut And Deploy REL-10 And Write The Sprint 10 Script
 
-1. Follow the Week 10 sequence in [Cutting A Release](../requirements/releases-requirements.md#cutting-a-release) to tag, publish and deploy `REL-10` before the handoff.
-   Apply the code freeze in [The Final Repository State](../requirements/repository-requirements.md#the-final-repository-state).
-2. Prepare the root `handoff.md` with every row of the [handoff table](../requirements/customer-meetings-requirements.md#the-handoff) and any additional item agreed with the customer in Sprint 9, linking `reports/week-09/README.md#handoff-preparation`.
+1. Publish and deploy `REL-10` before the handoff per [Cutting A Release](../requirements/releases-requirements.md#cutting-a-release) and follow the [code freeze](../requirements/repository-requirements.md#the-final-repository-state).
+2. Prepare the root `handoff.md` per [The Handoff](../requirements/customer-meetings-requirements.md#the-handoff).
 3. Write `reports/week-10/meeting-script.md` per [Meeting Script](../requirements/customer-meetings-requirements.md#meeting-script), with a 60-minute agenda for the review, three active UATs and the handoff.
 
 ## Part 3: Conduct The Handoff And Re-Run The UATs
 
 1. Follow up on every earlier action point that is not yet closed and is due by this meeting or already carried out, and every open question, from `reports/week-09/meeting-report.md` and any earlier customer meeting.
    Put only the ones this meeting has to settle with the customer on the agenda, per [Meeting Script](../requirements/customer-meetings-requirements.md#meeting-script).
-2. Walk through `handoff.md` with the customer and check three active UATs on the deployed `REL-10`, per [The Two Review Sessions](../requirements/user-acceptance-tests-requirements.md#the-two-review-sessions).
-   If customer access fails, run the tests live for the customer to observe and judge; if `REL-10` itself is unavailable, arrange a new time within the review window instead of testing another build.
+2. Walk through `handoff.md` with the customer, rerun the three active UATs on the deployed `REL-10` and ask for the customer's handoff decision.
+   See [The Two Review Sessions](../requirements/user-acceptance-tests-requirements.md#the-two-review-sessions) for the UAT fallbacks.
 3. Review only the threshold goals still open, per [The Threshold Of Success](../requirements/planning-requirements.md#the-threshold-of-success).
 4. After the meeting, write `reports/week-10/meeting-report.md` per [Meeting Report](../requirements/customer-meetings-requirements.md#meeting-report).
    Record the build tested, what happened to the earlier action points and open questions, each UAT outcome and its runner, and the customer's handoff decision.
@@ -61,7 +60,6 @@ Complete the requirements marked `**Since: W10**` in the linked sections and con
 ## Part 4: Record The Handoff Results And Write The Final Report
 
 1. If the review took place, update the `SPRINT-10` column in `## The Tests` and add a run row for each active test in `docs/user-acceptance-tests.md` per [The Test Record](../requirements/user-acceptance-tests-requirements.md#the-test-record).
-   Use `Not run` with a reason for any journey the review could not check.
    Update `docs/threshold-of-success.md` with each reviewed goal's `**Status:**` and, once settled, its `**Outcome:**` linking the evidence.
    Complete `handoff.md` per [The Handoff](../requirements/customer-meetings-requirements.md#the-handoff).
 2. Finalize the [`REL-10` block](../requirements/planning-requirements.md#releases) with `**Released:**`, `**Checked QRs:**` and `**Checked UATs:**`.
@@ -149,7 +147,7 @@ See the [Submission 10 wrapper example](../requirements/weekly-report-requiremen
 ## Checklist
 
 - [ ] Sprint 10 planned with its planned velocity, the user README rewritten and the in-person handoff scheduled ([Part 1](#part-1-plan-sprint-10-schedule-the-handoff-and-rewrite-the-readme)).
-- [ ] `REL-10` published from its protected SemVer tag and deployed before the review with the milestone still open, and `handoff.md` and the meeting script prepared ([Part 2](#part-2-cut-and-deploy-rel-10-and-write-the-sprint-10-script)).
+- [ ] `REL-10` published and deployed before the handoff, with `handoff.md` and the meeting script prepared ([Part 2](#part-2-cut-and-deploy-rel-10-and-write-the-sprint-10-script)).
 - [ ] Meeting report records the available UAT evidence, the customer's handoff decision and follow-up on earlier action points and questions, with a transcript or the reason there is none ([Part 3](#part-3-conduct-the-handoff-and-re-run-the-uats)).
       If the meeting could not take place, the missing handoff is declared and linked ([Submission Procedure](#submission-procedure)).
 - [ ] Handoff, UAT record, threshold goals and release block updated from available evidence, including the limitations and Issues-page link, and actual velocity, retrospective and AI usage recorded ([Part 4](#part-4-record-the-handoff-results-and-write-the-final-report)).

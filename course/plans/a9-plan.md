@@ -7,6 +7,7 @@
 > [A9-DEC-023](../decisions/a9.md#a9-dec-023-unfinished-issues-return-to-the-backlog) supersedes this plan's Sprint 9 carryover limits and Sprint 10 scope and velocity rules.
 > [A9-DEC-024](../decisions/a9.md#a9-dec-024-submission-9-uses-earlier-usability-data-access) supersedes this plan's instructions for repeating private usability-data access details in Submission 9.
 > [A9-DEC-025](../decisions/a9.md#a9-dec-025-submission-10-records-the-handoff-outcome-and-verifies-the-final-commit) updates the missing-handoff procedure, university VM shutdown timing, final release sequence and CI evidence.
+> [A9-DEC-026](../decisions/a9.md#a9-dec-026-rel-10-must-be-ready-for-the-handoff) defines what must be ready before the handoff and leaves the `REL-10` release order to the team.
 
 This plan designs Assignment 9 and Assignment 10 as [`a8-plan.md`](a8-plan.md) designs Assignment 8: two sprints, `SPRINT-09` and `SPRINT-10`, two graded group submissions, two releases `REL-09` and `REL-10`, the user acceptance tests, the handoff, the final report, the project reflection, the individual reflection and peer evaluation, the final repository state, the two weekly reports, the two retrospectives, the two AI usage reports, and the two Moodle wrappers.
 It states the scope and the contradictions the wider materials expose, with the resolution each takes, in [Scope And Contradictions](#scope-and-contradictions).

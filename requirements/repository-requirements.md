@@ -251,7 +251,6 @@ Both are built from the commit you are submitting, so that what a grader sees is
 
 Record the tested `REL-10` tag and its commit in the final report.
 Use the final `main` commit for the wrapper's commit-hash permalink and snapshot.
-The released changelog sections and `REL-09` and `REL-10` blocks merge after their tags.
 The final report and reflection merge after `REL-10`, which stays on the final product commit.
 
 ## Configuration And Sensitive Information
@@ -449,7 +448,7 @@ Deploy the Sprint 9 build on the university VM for its review and record accepta
 
 **Since: W10**
 
-Deploy `REL-10` for the handoff.
+For the handoff deployment, see [Cutting A Release](releases-requirements.md#cutting-a-release).
 A failed customer UAT alone does not trigger a rollback.
 Record unresolved failures as limitations in [the handoff](customer-meetings-requirements.md#the-handoff), and keep the release available until the planned shutdown.
 Shut down the university VM after the handoff and any final exam demo that uses it.

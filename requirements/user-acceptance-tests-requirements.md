@@ -48,12 +48,13 @@ If same-sprint rework changes what `REL-09` contains, identify both the reviewed
 **Since: W10**
 
 Check three active tests on the deployed `REL-10` at the [handoff](customer-meetings-requirements.md#the-handoff).
-If the customer cannot access the app, the team runs the tests live for the customer to observe and judge.
-Record each actual runner and result.
-If `REL-10` is unavailable, arrange a new time within the review window.
+If the customer cannot access the deployed app, a teammate runs the tests live on `REL-10` for the customer to observe and judge.
+If the release is unavailable, reschedule within the review window if possible.
+For a review that took place, record the actual runners and results, including any `Not run` checks, per [The Test Record](#the-test-record).
 Record each `Fail` and `Not run` with its reason in `handoff.md` and in the Week 10 report's `## Deviations`.
 Ask the customer whether they accept the handoff with the recorded results and capture their verdict per [Meeting Report](customer-meetings-requirements.md#meeting-report).
 Link the Sprint 10 session from the final report.
+If the review could not take place, follow the [missing-handoff reporting rule](weekly-report-requirements.md#weekly-public-report) and link the declaration from the UAT index.
 
 ## Full Example
 
