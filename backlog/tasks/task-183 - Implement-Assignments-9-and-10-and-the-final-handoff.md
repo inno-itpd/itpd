@@ -1,10 +1,10 @@
 ---
 id: TASK-183
 title: Implement Assignments 9 and 10 and the final handoff
-status: In Progress
+status: Done
 assignee: []
 created_date: '2026-11-26 12:08'
-updated_date: '2026-11-26 16:02'
+updated_date: '2026-11-26 16:17'
 labels: []
 dependencies: []
 references:
@@ -26,12 +26,12 @@ Give teams two separately graded final sprints and start-to-finish instructions 
 - [x] #1 Assignments 9 and 10 and their routes cover the approved schedule, separate submissions, reviews, releases, and evidence.
 - [x] #2 Requirements and examples cover both UAT sessions, the handoff, reports, reflection, freeze, and final repository state.
 - [x] #3 The syllabus owns dates and points, the exam placeholder is blank, and scoped legacy corrections match the decision log.
-- [ ] #4 The plan audits and repository gates pass.
+- [x] #4 The plan audits and repository gates pass.
 <!-- AC:END -->
 
 ## Definition of Done
 <!-- DOD:BEGIN -->
-- [ ] #1 All acceptance criteria are satisfied
+- [x] #1 All acceptance criteria are satisfied
 - [x] #2 Changed Markdown files are formatted: `pnpm run format:markdown`
 - [x] #3 `pnpm run lint:markdown` passes
 - [x] #4 `pnpm run test:markdown-format` and `pnpm run test:markdown-rules` pass
@@ -80,4 +80,12 @@ Scoped the final reviews' agenda: Assignments 9 and 10 now follow up on every du
 Clarified that a teammate runs the deployed UATs live during the Sprint 9 review when the customer lacks production access. Sprint 9 triage returns unfinished issues to the unscheduled backlog and clears assignments while keeping priorities. Sprint 10 planning recommends avoiding new stories and uses ordinary velocity rules. The handoff can cite missing Must Have capabilities. Submission 9 uses earlier private usability-data access details and retains the deletion plan. Markdown format and lint, 68 fixture tests, nine lecture comparisons, and the 4,615-link check passed with zero errors.
 
 Implemented the Assignment 10 review under A9-DEC-025. The submission procedure covers a missed review, the meeting records the customer verdict separately from UAT results, and the VM can remain available through an exam demo before shutdown and submission. REL-10 uses the pushed SemVer tag URL in the changelog before release publication. The final report uses stable workflow links, the snapshot commit must be green, usability-test deletion is distinct from Sprint Review evidence, and Checked QRs covers Sprint 10 checks. Markdown format and lint, both 34-test fixture suites, all nine lecture comparisons, and the final 4,640-link check passed with zero errors. The live Moodle cutoff still requires the separate operational check already tracked by AC4.
+
+The course maintainer confirmed that Moodle Submission 10 closes on 6 December 2026 at 23:59, matching the syllabus and Assignment 10 and completing the cutoff audit. The repository gates passed at 4d4f7ec, including Markdown format and lint, both fixture suites (68 tests), all nine lecture comparisons, and the full link check (4,648 links passed, 2 excluded, 0 errors).
 <!-- SECTION:NOTES:END -->
+
+## Final Summary
+
+<!-- SECTION:FINAL_SUMMARY:BEGIN -->
+Published Assignments 9 and 10 with separate sprint submissions, customer acceptance tests, the final release and handoff, and final repository evidence. Completed the plan audits with the maintainer confirmation of the Moodle cutoff. Markdown, fixture, lecture and link checks passed.
+<!-- SECTION:FINAL_SUMMARY:END -->
