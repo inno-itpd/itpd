@@ -4,7 +4,7 @@ title: Implement Assignments 9 and 10 and the final handoff
 status: In Progress
 assignee: []
 created_date: '2026-11-26 12:08'
-updated_date: '2026-11-26 12:40'
+updated_date: '2026-11-26 12:49'
 labels: []
 dependencies: []
 references:
@@ -48,6 +48,8 @@ Give teams two separately graded final sprints and start-to-finish instructions 
 3. Audit the two-sprint model and run the Markdown, link, and lecture gates.
 
 4. Audit the implemented final-sprint rules and examples against the plan, apply the revised open-issue instructions, and re-run the repository gates.
+
+5. Align Assignments 9 and 10 with the navigation and evidence prompts in Assignment 8. Link each checklist to its part or submission section, point to the existing report and meeting requirements, and spell out the private wrapper evidence. Run the repository gates and verify the new anchors.
 <!-- SECTION:PLAN:END -->
 
 ## Implementation Notes
@@ -60,4 +62,6 @@ The course model and cross-example audit checked the dates, grading total, initi
 The documented Submission 10 cutoff matches the syllabus and assignment. The live Moodle cutoff could not be verified because no authenticated course administration connection was available. AC4 and the task remain open for that operational check.
 
 Audited both final assignments against the plan. Aligned the release and milestone order, updated the missing-review instructions and corrected the UAT and threshold examples. Open issues keep their handoff links and have their milestone, assignees, Responsible and Accountable cleared. The Markdown checks, 68 fixture tests, nine lecture comparisons, network link check and cross-example audit passed.
+
+Aligned both assignments with Assignment 8 through tables of contents, linked checklists, clearer report sections, meeting follow-up, and explicit Moodle evidence and deletion details. Markdown format and lint, 68 fixture tests, all nine lecture comparisons, and all local links and anchors passed. The full network link gate returned HTTP 503 for two existing GitHub example URLs in the Assignment 5 plan and TODO.md on both attempts.
 <!-- SECTION:NOTES:END -->

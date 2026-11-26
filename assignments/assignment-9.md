@@ -5,6 +5,19 @@
 Read the [course rules](../course/rules.md) and [Closing The Final Sprints](../guides/final-sprints.md).
 Complete the requirements marked `**Since: W9**` in the linked sections and continue the standing [repository](../requirements/repository-requirements.md) and [pull request](../requirements/pull-requests-requirements.md) requirements.
 
+<h2>Table of contents</h2>
+
+- [Objectives](#objectives)
+- [Part 1: Plan Sprint 9, Create Sprint 10, And Schedule The Review](#part-1-plan-sprint-9-create-sprint-10-and-schedule-the-review)
+- [Part 2: Define The UATs And Write The Sprint 9 Script](#part-2-define-the-uats-and-write-the-sprint-9-script)
+- [Part 3: Deploy The Candidate And Hold The Sprint 9 Review](#part-3-deploy-the-candidate-and-hold-the-sprint-9-review)
+- [Part 4: Record The Results, Cut REL-09, And Close Sprint 9](#part-4-record-the-results-cut-rel-09-and-close-sprint-9)
+- [What Good Looks Like](#what-good-looks-like)
+- [Assignment Report In The Repository](#assignment-report-in-the-repository)
+- [Assignment Report On Moodle](#assignment-report-on-moodle)
+  - [Submission Procedure](#submission-procedure)
+- [Checklist](#checklist)
+
 ## Objectives
 
 - Show the Sprint 9 increment and check the customer's main journeys on the university VM.
@@ -23,25 +36,28 @@ Complete the requirements marked `**Since: W9**` in the linked sections and cont
 
 ## Part 2: Define The UATs And Write The Sprint 9 Script
 
-1. Define `UAT-01` through `UAT-03` in `docs/user-acceptance-tests.md`, per [The Test Record](../requirements/user-acceptance-tests-requirements.md#the-test-record).
+1. Define exactly three initial tests, `UAT-01` through `UAT-03`, and index them in `docs/user-acceptance-tests.md` per [Where The Tests Live](../requirements/user-acceptance-tests-requirements.md#where-the-tests-live) and [The Test Record](../requirements/user-acceptance-tests-requirements.md#the-test-record).
 2. Write `reports/week-09/meeting-script.md` before the review, per [Meeting Script](../requirements/customer-meetings-requirements.md#meeting-script).
    Put the UATs and the handoff expectations question on the agenda.
 
 ## Part 3: Deploy The Candidate And Hold The Sprint 9 Review
 
-1. Deploy the Sprint 9 build to the university VM and hold the in-person review, per [Showing Working Software](../requirements/customer-meetings-requirements.md#showing-working-software).
-   Have the customer run the three UATs per [The Two Review Sessions](../requirements/user-acceptance-tests-requirements.md#the-two-review-sessions).
-2. Discuss the recorded quality plan results, check every open threshold goal against its current measure, and ask what the customer expects at the handoff.
-3. Write `reports/week-09/meeting-report.md` after the review, with each story verdict and each UAT outcome linked to its own decision.
+1. Follow up on the action points due and the questions still open from `reports/week-08/meeting-report.md` and any earlier customer meeting.
+2. Deploy the Sprint 9 build to the university VM and hold the in-person review, per [Showing Working Software](../requirements/customer-meetings-requirements.md#showing-working-software).
+   Have the customer run the three UATs and follow the [Sprint 9 review rules](../requirements/user-acceptance-tests-requirements.md#the-two-review-sessions) if the customer cannot run them.
+3. Discuss the recorded quality plan results, check every open threshold goal against its current measure, and ask what the customer expects at the handoff.
+4. Write `reports/week-09/meeting-report.md` per [Meeting Report](../requirements/customer-meetings-requirements.md#meeting-report).
+   Record what happened to the earlier action points and open questions, link the story verdicts and each UAT outcome to their `DEC-nnn` entries, and record the customer's handoff expectations.
    Publish the permitted sanitized transcript or record its absence, per [Meeting Transcript](../requirements/customer-meetings-requirements.md#meeting-transcript).
 
 ## Part 4: Record The Results, Cut REL-09, And Close Sprint 9
 
-1. Record the Sprint 9 runs in `docs/user-acceptance-tests.md` and update `docs/threshold-of-success.md` with the review outcomes.
+1. Record the Sprint 9 runs in `docs/user-acceptance-tests.md` with the reviewed build, the meeting evidence and the decisions.
+   Update `docs/threshold-of-success.md` with the review outcomes per [The Threshold Of Success](../requirements/planning-requirements.md#the-threshold-of-success).
 2. Merge the Sprint 9 product work and cut the protected `REL-09` tag at the close.
    Publish the [release body and changelog](../requirements/releases-requirements.md#cutting-a-release), then add the [release block](../requirements/planning-requirements.md#releases) with `**Released:**`, `**Checked QRs:**` and `**Checked UATs:**`.
 3. Record `**Actual Velocity:**` and note where unfinished work will go per [Scheduling An Issue](../requirements/issue-tracking-requirements.md#scheduling-an-issue).
-   Write `reports/week-09/sprint-retrospective.md` and `reports/week-09/ai-usage.md`.
+   Write `reports/week-09/sprint-retrospective.md` per [Retrospective](../requirements/sprint-ceremonies-requirements.md#retrospective) and `reports/week-09/ai-usage.md` per [AI Usage Report](../requirements/weekly-report-requirements.md#ai-usage-report).
 4. Merge the Week 9 report and its evidence, triage the remaining issues, close the milestone and submit Submission 9.
 
 ## What Good Looks Like
@@ -53,8 +69,13 @@ The quality plan table distinguishes failed checks from checks with no result.
 ## Assignment Report In The Repository
 
 Write `reports/week-09/README.md`, per [Weekly Public Report](../requirements/weekly-report-requirements.md#weekly-public-report).
-Include `## Quality plan results`, `## Threshold review` and `## Handoff preparation`.
-Link the threshold record from the review and include the following coverage rows.
+
+- `## Summary` covers the increment, the three UAT outcomes, the quality and threshold findings, the handoff preparation, and what Sprint 10 still needs.
+  If same-sprint rework changed the build, name the reviewed build and the released tag.
+- [`## Quality plan results`](../requirements/weekly-report-requirements.md#quality-plan-results) links the testing plan at `docs/project-plan.md#quality-requirement-testing-plan`.
+- [`## Threshold review`](../requirements/weekly-report-requirements.md#threshold-review) links each goal reviewed in `docs/threshold-of-success.md`.
+- `## Handoff preparation` links the Sprint 9 meeting report for what the customer expects, then records what is ready and what is missing.
+- `## Coverage` links the following evidence.
 
 | Deliverable          | Where                                                                                |
 | -------------------- | ------------------------------------------------------------------------------------ |
@@ -68,18 +89,21 @@ Link the threshold record from the review and include the following coverage row
 | Sprint retrospective | `reports/week-09/sprint-retrospective.md`                                            |
 | AI usage             | `reports/week-09/ai-usage.md`                                                        |
 
-Under `## Repository evidence`, link the merged pull requests and the latest green link, Markdown, workflow and product CI checks on `main`.
-Include `## Contribution`, `## Deviations` and `## Privacy` under the weekly report rules.
-Declare a deadline-day review and its compressed schedule in `## Deviations`.
+- Use `## Contribution` for the team contribution table.
+- Under `## Repository evidence`, link the merged pull requests and the latest green link, Markdown, workflow and product CI checks on `main`.
+- Under [`## Deviations`](../requirements/weekly-report-requirements.md#declaring-deviations), declare a deadline-day review and its compressed schedule, and any missing UAT results or missing review.
+- Include the weekly report's `## Privacy` confirmation.
 
 ## Assignment Report On Moodle
 
 Submit one PDF per [Private Submission Wrapper](../requirements/weekly-report-requirements.md#private-submission-wrapper).
+See the [Submission 9 wrapper example](../requirements/weekly-report-requirements.md#example-submission-9-wrapper).
 
 - Project, team number and member table with GitHub usernames, real names and university emails.
 - Full commit-hash permalink to `reports/week-09/README.md`.
-- Under `## For customer`, the production address, dashboard and backend addresses and credentials, test access, and private usability-data access and retention details.
-- Permitted private recording link or the reason there is none, and any private transcript.
+- Under `## For customer`, the production address and test access, the analytics and observability dashboard and backend addresses and credentials, and observability query access.
+- Also under `## For customer`, the private usability-data repository and recordings folder links, their access instructions, and the [post-grading deletion plan](../requirements/visibility-requirements.md#the-usability-data-repository).
+- A permitted private Sprint Review recording link accessible to instructors or the reason there is none, and any permitted private meeting transcript.
 - One line confirming no private-only material was committed.
 
 ### Submission Procedure
@@ -91,9 +115,10 @@ Submit one PDF per [Private Submission Wrapper](../requirements/weekly-report-re
 
 ## Checklist
 
-- [ ] Sprint 9 planned, Sprint 10 created provisionally and the review scheduled.
-- [ ] Three UATs defined and the meeting script written before the review.
-- [ ] Review, UAT runs, decisions and threshold outcomes recorded.
-- [ ] Handoff preparation and quality plan results written.
-- [ ] `REL-09` published and recorded, Sprint 9 closed, retrospective and AI usage recorded.
-- [ ] Week 9 report merged and Submission 9 submitted.
+- [ ] Sprint 9 planned, Sprint 10 created provisionally and the in-person review scheduled ([Part 1](#part-1-plan-sprint-9-create-sprint-10-and-schedule-the-review)).
+- [ ] `UAT-01` through `UAT-03` defined and the meeting script written before the review ([Part 2](#part-2-define-the-uats-and-write-the-sprint-9-script)).
+- [ ] Meeting report records the reviewed build, UAT outcomes, decisions, and follow-up on earlier action points and questions, with a transcript or the reason there is none ([Part 3](#part-3-deploy-the-candidate-and-hold-the-sprint-9-review)).
+- [ ] UAT history and threshold goals updated, `REL-09` published and recorded, and Sprint 9 closed with actual velocity, retrospective and AI usage ([Part 4](#part-4-record-the-results-cut-rel-09-and-close-sprint-9)).
+- [ ] Week 9 report includes the summary, quality plan results, threshold review, handoff preparation and evidence links ([Assignment Report In The Repository](#assignment-report-in-the-repository)).
+- [ ] Moodle PDF includes the private access details, deletion plan and review evidence ([Assignment Report On Moodle](#assignment-report-on-moodle)).
+- [ ] PDF and ZIP snapshot submitted with a permalink to the same `main` commit ([Submission Procedure](#submission-procedure)).
