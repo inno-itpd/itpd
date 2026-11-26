@@ -1,6 +1,10 @@
 # Assignment 9: Sprint 9 Acceptance Tests And Handoff Preparation
 
-**Submission 9.** See [Week 9 in the syllabus](../course/syllabus.md#week-9-nov-20--nov-26-project-pitching-and-sprint-9) for the deadline.
+**This week's deadline:**
+
+- Hard deadline: Sunday 29 November 2026, 23:59.
+
+See [Deadlines And Submission](../course/rules.md#deadlines-and-submission).
 
 Read the [course rules](../course/rules.md) and [Closing The Final Sprints](../guides/final-sprints.md).
 Complete the requirements marked `**Since: W9**` in the linked sections and continue the standing [repository](../requirements/repository-requirements.md) and [pull request](../requirements/pull-requests-requirements.md) requirements.

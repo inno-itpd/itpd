@@ -1,7 +1,10 @@
 # Assignment 10: The Final Release And Customer Handoff
 
-**Submission 10.** See [Week 10 in the syllabus](../course/syllabus.md#week-10-nov-27--dec-3-final-release-and-handoff) for the hard deadline.
-Submission 10 has no late submission window.
+**This week's deadline:**
+
+- Hard deadline: Sunday 6 December 2026, 23:59.
+
+See [Deadlines And Submission](../course/rules.md#deadlines-and-submission).
 
 Read the [course rules](../course/rules.md) and [Closing The Final Sprints](../guides/final-sprints.md).
 Complete the requirements marked `**Since: W10**` in the linked sections and continue the standing [repository](../requirements/repository-requirements.md) and [pull request](../requirements/pull-requests-requirements.md) requirements.
