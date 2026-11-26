@@ -30,7 +30,9 @@
 #let note(body) = text(size: 14pt, fill: muted, body)
 
 #let takeaway(body) = block(
-  width: 100%, fill: rgb("#edf4f8"), inset: 14pt,
+  width: 100%,
+  fill: rgb("#edf4f8"),
+  inset: 14pt,
   text(size: 24pt, fill: accent, weight: "bold", body),
 )
 
@@ -74,8 +76,7 @@
   columns: (auto, 1fr),
   column-gutter: 18pt,
   align: horizon,
-  text(size: 46pt, weight: "bold", fill: accent)[4 of 5],
-  [participants booked a consultation without help.],
+  text(size: 46pt, weight: "bold", fill: accent)[4 of 5], [participants booked a consultation without help.],
 )
 
 #let discussion(scenario, question) = slide("Discussion")[
@@ -111,7 +112,9 @@
 #let pilot-chart = [
   *Share of completed consultations booked without coach help*
   #grid(
-    columns: (auto, 1fr, auto), gutter: 12pt, align: horizon,
+    columns: (auto, 1fr, auto),
+    gutter: 12pt,
+    align: horizon,
     [Week 1 · original flow], booking-bar(60%), [6 of 10],
     [Week 2 · revised flow], booking-bar(90%), [9 of 10],
   )
@@ -132,9 +135,11 @@
 #section("Audience and goal")
 
 #slide("What is a pitch deck?")[
-  A pitch deck is a short set of slides that makes the case for a product and asks a particular audience to take a next step.
+  A *pitch deck* is a short set of slides that makes the case for a product and asks a particular *audience to take a next step*.
 
-  A team meeting an investor for the first time might want a second meeting. A team raising money might ask for funding to reach its next milestone.
+  - A team meeting an investor for the first time might want a second meeting.
+
+  - A team raising money might ask for funding to reach its next milestone.
 
   #takeaway[What do you want this audience to do, and what evidence would give them a reason to say yes?]
 
@@ -147,11 +152,17 @@
 
   For this lecture, assume you want their help starting a *pilot*. A pilot is a limited trial in which a small group uses your product in its everyday work for a set period.
 
+  ---
+
+  Possible team's question to the investors:
+
   #takeaway[Would you introduce us to coaches who could try the app for four weeks of real bookings?]
 ]
 
 #discussion(
-  [Imagine a team has just shown you a client booking a consultation online. You know five coaches who could try the app.],
+  [As an investor, imagine a team has just shown you a client booking a consultation online.
+
+    You know five coaches who could try the app.],
   [What else would you want to know before introducing the team?],
 )
 
@@ -186,8 +197,10 @@
   A coach who already sends a booking link can offer the same one-visit experience.
 
   #rows(
-    [*Reason to switch*], [Ask about the last booking the coach had to fix by hand. Could our app handle that case?],
-    [*Reason to act now*], [If renewal is approaching, the coach may be reviewing tools. Check the renewal date and ask what would justify a move.],
+    [*Reason to switch*],
+    [Ask about the last booking the coach had to fix by hand. Could our app handle that case?],
+    [*Reason to act now*],
+    [If renewal is approaching, the coach may be reviewing tools. Check the renewal date and ask what would justify a move.],
   )
 
   Until a coach reports a reason, switching is an assumption.
@@ -219,7 +232,8 @@
   Follow the coach’s last 2:00 pm slot. Open it on two clients’ screens and submit both requests.
 
   #grid(
-    columns: (1fr, 1fr), column-gutter: 16pt,
+    columns: (1fr, 1fr),
+    column-gutter: 16pt,
     block(width: 100%, fill: rgb("#edf4f8"), inset: 15pt)[
       First client #parbreak()
       *2:00 pm confirmed*
@@ -235,7 +249,8 @@
 
 #slide("What can the audience read from the back row?")[
   #grid(
-    columns: (1fr, 1fr), gutter: 18pt,
+    columns: (1fr, 1fr),
+    gutter: 18pt,
     [
       *Full booking screen*
       #block(width: 100%, stroke: 0.6pt + muted, inset: 9pt)[
@@ -243,9 +258,10 @@
         *Career consultations* #h(1fr) My bookings
 
         #line(length: 100%, stroke: 0.5pt + muted)
-        #grid(columns: (auto, 1fr), gutter: 12pt,
-          [Overview #linebreak() Calendar #linebreak() Settings],
-          [Upcoming appointment #parbreak() #confirmation],
+        #grid(
+          columns: (auto, 1fr),
+          gutter: 12pt,
+          [Overview #linebreak() Calendar #linebreak() Settings], [Upcoming appointment #parbreak() #confirmation],
         )
       ]
     ],
@@ -256,7 +272,9 @@
     ],
   )
 
-  The time, time zone, and confirmation status establish what the client booked. Use a crop that the panel can read while you speak.
+  The time, time zone, and confirmation status establish what the client booked. 
+  
+  Tip: Use a crop that the panel can read while you speak.
 
   #v(1fr)
   #note[#link("https://www.ycombinator.com/blog/guide-to-demo-day-pitches")[Y Combinator on slide design and delivery]]
@@ -264,9 +282,12 @@
 
 #slide("Why the team waits before confirming")[
   #rows(
-    [*Risk*], [Both clients could see the slot as available before either finishes booking.],
-    [*Decision*], [The database accepts one reservation per slot. A client sees confirmation only after the reservation succeeds.],
-    [*Cost*], [A client who loses their connection must wait to confirm.],
+    [*Risk*],
+    [Both clients could see the slot as available before either finishes booking.],
+    [*Decision*],
+    [The database accepts one reservation per slot. A client sees confirmation only after the reservation succeeds.],
+    [*Cost*],
+    [A client who loses their connection must wait to confirm.],
   )
 
   Be ready to show how you tested simultaneous requests. That gives the panel evidence beyond the single run it saw.
@@ -321,6 +342,10 @@
   - Tell the panel who took part, what you counted, and how you calculated the measure.
   - Interpret the result against a baseline or target when you have one. Consider what else could explain the difference.
   - State what you learned and the next decision it supports. Apply this to usability, product analytics, and quality requirement tests.
+  
+  ---
+  
+  Important: don't just show data, interpret it to your advantage.
 ]
 
 #section("How the product continues")
@@ -332,22 +357,30 @@
 
 #slide("Who would put money into this?")[
   #rows(
-    [*Buyer*], [What would someone pay for? Would a coach pay for managed hosting if it saved them time keeping the service running?],
-    [*Sponsor*], [Which department would fund an internal tool? Show how it could save staff time or reduce errors.],
-    [*Investor*], [In a fundraising pitch, name the amount, what it buys, and the milestone it funds.],
+    [*Buyer*],
+    [What would someone pay for? Would a coach pay for managed hosting if it saved them time keeping the service running?],
+    [*Sponsor*],
+    [Which department would fund an internal tool? Show how it could save staff time or reduce errors.],
+    [*Investor*],
+    [In a fundraising pitch, name the amount, what it buys, and the milestone it funds.],
   )
 
   #v(1fr)
-  #note[#link("https://www.ycombinator.com/library/2u-how-to-build-your-seed-round-pitch-deck")[Y Combinator’s seed deck guide]]
+  #note[#link(
+    "https://www.ycombinator.com/library/2u-how-to-build-your-seed-round-pitch-deck",
+  )[Y Combinator’s seed deck guide]]
 ]
 
 #slide("What would sustain your product?")[
   Explain who benefits enough to keep the product running.
 
   #rows(
-    [*Open source*], [Creators can sell hosting or support, attract contributors, or share maintenance.],
-    [*Open core*], [Offer an open-source scheduler with a paid extension. Would coaching practices pay for shared calendars?],
-    [*Proprietary*], [A company could keep future versions private and fund them through an internal budget or subscriptions.],
+    [*Open source*],
+    [Creators can sell hosting or support, attract contributors, or share maintenance.],
+    [*Open core*],
+    [Offer an open-source scheduler with a paid extension. Would coaching practices pay for shared calendars?],
+    [*Proprietary*],
+    [A company could keep future versions private and fund them through an internal budget or subscriptions.],
   )
 
   #v(1fr)

@@ -11,19 +11,21 @@ Materials for the **IT Product Development (ITPD)** course: what the course expe
 
 ## Assignments
 
-| Week                             | Hard deadline     | Deliverable                                                                                                                                                                                                                                                                                                                                  |
-| -------------------------------- | ----------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [1](assignments/assignment-1.md) | Fri 2 Oct, 23:59  | Initial project research: alternatives, comparison, gaps, value proposition                                                                                                                                                                                                                                                                  |
-| [2](assignments/assignment-2.md) | Sat 10 Oct, 23:59 | Requirements and prototyping: vision, user stories, prototypes, validation                                                                                                                                                                                                                                                                   |
-| [3](assignments/assignment-3.md) | Sat 17 Oct, 23:59 | Planning and the minimum usable product: plan, threshold, risks, Definition of Done, first release                                                                                                                                                                                                                                           |
-| [4](assignments/assignment-4.md) | Sat 24 Oct, 23:59 | Quality and architecture: quality and functional requirements, architectural decision records, drivers, glossary, retrospective, fourth release                                                                                                                                                                                              |
-| [5](assignments/assignment-5.md) | Sat 31 Oct, 23:59 | Testing and deployment: quality requirement tests and the testing plan, automated tests and CI checks, staging and production on the VM, Feature Documentation, the Week 5 release                                                                                                                                                           |
-| [6](assignments/assignment-6.md) | Sun 8 Nov, 23:59  | Product analytics and observability: the analytics plan and metric tree, the events, the four dashboards, the two internal stories, the two ADRs, the diagnosability requirement and its test, the threshold review, the Week 6 release                                                                                                      |
-| [7](assignments/assignment-7.md) | Sun 15 Nov, 23:59 | Usability test design: the `UT-01` record, the surveys, the tasks and protocol, the test's instrumentation and its verification, the consent, the private usability-data repository and the recordings folder, the `Interaction Capability` requirement and its manual test, the recruitment target and the session plan, the Week 7 release |
-| [8](assignments/assignment-8.md) | Sat 21 Nov, 23:59 | Usability results and the configuration review: the `UT-01` results, the sanitized sessions, the findings and their triage, the `QR/QRT` verdict, the configuration plan, the goal-based evaluation with its first change, and the Week 8 release                                                                                            |
+| Week                               | Hard deadline     | Deliverable                                                                                                                                                                                                                                                                                                                                  |
+| ---------------------------------- | ----------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [1](assignments/assignment-1.md)   | Fri 2 Oct, 23:59  | Initial project research: alternatives, comparison, gaps, value proposition                                                                                                                                                                                                                                                                  |
+| [2](assignments/assignment-2.md)   | Sat 10 Oct, 23:59 | Requirements and prototyping: vision, user stories, prototypes, validation                                                                                                                                                                                                                                                                   |
+| [3](assignments/assignment-3.md)   | Sat 17 Oct, 23:59 | Planning and the minimum usable product: plan, threshold, risks, Definition of Done, first release                                                                                                                                                                                                                                           |
+| [4](assignments/assignment-4.md)   | Sat 24 Oct, 23:59 | Quality and architecture: quality and functional requirements, architectural decision records, drivers, glossary, retrospective, fourth release                                                                                                                                                                                              |
+| [5](assignments/assignment-5.md)   | Sat 31 Oct, 23:59 | Testing and deployment: quality requirement tests and the testing plan, automated tests and CI checks, staging and production on the VM, Feature Documentation, the Week 5 release                                                                                                                                                           |
+| [6](assignments/assignment-6.md)   | Sun 8 Nov, 23:59  | Product analytics and observability: the analytics plan and metric tree, the events, the four dashboards, the two internal stories, the two ADRs, the diagnosability requirement and its test, the threshold review, the Week 6 release                                                                                                      |
+| [7](assignments/assignment-7.md)   | Sun 15 Nov, 23:59 | Usability test design: the `UT-01` record, the surveys, the tasks and protocol, the test's instrumentation and its verification, the consent, the private usability-data repository and the recordings folder, the `Interaction Capability` requirement and its manual test, the recruitment target and the session plan, the Week 7 release |
+| [8](assignments/assignment-8.md)   | Sat 21 Nov, 23:59 | Usability results and the configuration review: the `UT-01` results, the sanitized sessions, the findings and their triage, the `QR/QRT` verdict, the configuration plan, the goal-based evaluation with its first change, and the Week 8 release                                                                                            |
+| [9](assignments/assignment-9.md)   | Sun 29 Nov, 23:59 | Sprint 9 review, user acceptance tests, quality plan results, threshold review, handoff preparation and `REL-09`                                                                                                                                                                                                                             |
+| [10](assignments/assignment-10.md) | Sun 6 Dec, 23:59  | Final release and handoff, UAT re-run, final report, project reflection and final repository state                                                                                                                                                                                                                                           |
 
-Later assignments are added as the course runs.
-Each one adds the paths and evidence for its week, and changes nothing about the rules below.
+Assignment 10 is the final group assignment.
+See [Week 11 in the syllabus](course/syllabus.md#week-11-dec-4--dec-10-final-exam) for the final exam and the individual reflection and peer evaluation, Submission 11.
 
 ## Lectures
 
@@ -81,6 +83,7 @@ The assignments reference these rather than repeating them.
 | [Observability Requirements](requirements/observability-requirements.md)                       | The signals, the `SLI`s and their fields, the observability pipeline and its dashboards, and the collected data                                                                                     |
 | [Usability Testing Requirements](requirements/usability-testing-requirements.md)               | The `UT-nn` test record, the participants and their profile, the tasks, the protocol, the instruments, the test's instrumentation, the consent, the private repository, the results, and the triage |
 | [Configuration Management Requirements](requirements/configuration-management-requirements.md) | The configuration plan and its `CFG-nn` items, the five groups, the connections, the goal-based evaluation with its tradeoffs and first change, the recommendation, and the public review           |
+| [User Acceptance Test Requirements](requirements/user-acceptance-tests-requirements.md)        | The UAT record, user journeys and both customer review sessions                                                                                                                                     |
 
 ## The Guides
 
@@ -100,6 +103,7 @@ How to actually do the work.
 | [Product analytics and observability](guides/analytics-and-observability.md) | The metric tree, the events, the two pipelines, the four dashboards, the `SLI`s, and the threshold review                                         |
 | [Usability testing](guides/usability-testing.md)                             | The test record, the participants, the tasks, the instruments, the test's instrumentation, the consent, the sessions, the results, and the triage |
 | [Configuration management](guides/configuration-management.md)               | The review baseline, the inventory, the connections, the local goals, the judgement, the tradeoffs, the first change, and the handoff             |
+| [Closing The Final Sprints](guides/final-sprints.md)                         | Plan the final sprints, test and release the product, and hand it over                                                                            |
 
 ## Course Documents
 
@@ -108,9 +112,10 @@ None of them is a rule you can deviate from, so they live here rather than in `r
 
 | Document                                           | What it covers                                                            |
 | -------------------------------------------------- | ------------------------------------------------------------------------- |
-| [Syllabus](course/syllabus.md)                     | Weeks, dates, deliverables, grading weights, and course policies          |
+| [Syllabus](course/syllabus.md)                     | Weeks, dates, deliverables, assessment points, and course policies        |
 | [Course tooling](course/tooling.md)                | Tools the course suggests for transcripts, prototyping, and coding agents |
 | [Teams and projects](course/teams-and-projects.md) | Team numbers and their projects for the current term                      |
+| [Exam](exam/README.md)                             | Final exam and pitch deck materials                                       |
 
 ## How Your Repository Is Organised
 
@@ -130,4 +135,4 @@ Detailed content goes in dedicated files that the report links.
 Your repository is public and MIT-licensed.
 The Moodle submission is a PDF that points at it: a permalink to your week report at the exact commit you submitted, a permalink to the repository at that commit, the private material that must not be public, and a zip snapshot of that commit.
 
-One submission per team, due 23:59 on the date the syllabus gives.
+Each team submits once per group assignment on the date the syllabus gives.

@@ -30,8 +30,8 @@
   - [x] "due **Thursday at 23:59**, the night before the class"
     - Soft deadline - 23:59, Thursday.
       Hard deadline - Friday, 23:59
-  - [x] pitch decks (W5, W9) are Moodle attachments; submission channel marked for revision in the course/syllabus
-  - [x] Submission 10 is Moodle only, so it needs no repo path
+  - [x] The pitch deck is a separate Moodle submission under `A9-DEC-007`.
+  - [x] Submission 11 is individual and Moodle-only under `A9-DEC-013`.
 - [x] "See the course/syllabus" - course/syllabus added to this repo
 - [x] Repo structure differs from what's required in the assignment - justify in the report
   - We call this "deviations"
@@ -344,6 +344,7 @@ Next: Week 3 is planning and the minimum usable product, and it has no assignmen
 - [x] course/syllabus: decide the W6 maintained artifact
   - The Week 6 syllabus names both plans, the four dashboards, the two internal stories, the two ADRs, the requirement and its test, the threshold review, and `REL-06`.
 - [x] The 7-minute deck is Week 9's, submitted with Submission 9, rehearsed in the Week 10 class, and presented at the Week 11 final exam; `A6-DEC-004`, `A6-DEC-018`, `A6-DEC-024`, and `A6-DEC-025` are reversed, per `A7-DEC-013`.
+  - `A9-DEC-007` moves the pitch deck to a separate Moodle submission for the final exam.
 - [x] The four dashboards are the week's evidence, not features: `docs/features.md` carries the two internal capabilities, per `A6-DEC-019`.
 - [x] `course/plans/` has its row in `AGENTS.md`, and `course/decisions/a6.md` records the week's decisions.
 - [x] Counter-metric should be L1
@@ -354,11 +355,9 @@ Next: Week 3 is planning and the minimum usable product, and it has no assignmen
 
 ## A7
 
-- [ ] Add the production verification to the release record after the UAT (user acceptance testing) work
-  - Still open: the Week 7 test is a usability test, not a UAT, so no `**Checked UATs:**` field is added, per `A7-DEC-021`.
-  - The release body carries no production check, and the plan's `REL-nn` block has none for now.
-    During the deferral, the week report records the checked core task, per `A5-DEC-025`; `repository-requirements.md` rule 7 and Assignment 5's Part 3 item stay as written.
-    Once UATs are designed, add `**Checked UATs:**` beside `**Checked QRs:**`, decide whether `repository-requirements.md` rule 7 stays in force, and where the check is recorded.
+- [x] Add production UAT verification to the release record.
+      `A9-DEC-017` and `A9-DEC-018` add the UAT record and `**Checked UATs:**` for the final reviews.
+      Weeks 5–8 keep their deployment verification.
 - [ ] Unequal engagement in the student team project
   - [ ] Free-rider vs excluded person
   - [ ] Why it's still a team project for 4 people?
@@ -366,7 +365,8 @@ Next: Week 3 is planning and the minimum usable product, and it has no assignmen
     - [ ] Telling AI what exactly to do
   - [ ] Share phone number (someone may be inaccessible by Telegram)
 - [x] Mention that usability test results will be necessary later for product pitching
-  - The Week 9 deck cites `docs/usability-tests/ut-01/results.md`, and the results are Submission 8's, per `A7-DEC-018`.
+  - The results belong to Submission 8, per `A7-DEC-018`.
+    `A9-DEC-007` moves pitch deck instructions to the exam page.
 - [ ] How contaminated are docs with "core task"?
   - Still open for the earlier weeks; the Week 7 usability materials say `main usability test task` and never `core task`, per `A7-DEC-008`.
 
@@ -397,17 +397,11 @@ Next: Week 3 is planning and the minimum usable product, and it has no assignmen
 
 ## A9
 
-- [ ] during the Sprint Review:
-  - [ ] discuss handoff with the customer
-  - [ ] write down what's missing in "Handoff preparation" in the report
-- [ ] before the demo day (before Dec. 4):
-  - [ ] conduct the handoff and write results in "Handoff" in the report
-  - [ ] submit the pitch deck
-  - [ ] submit the report
-- [ ] Report:
-  - [ ] handoff results ("Handoff preparation", "Handoff")
-  - [ ] lessons learned and from which problems you learned
-  - [ ] what would you do differently in the next project
+- [x] Publish two sprints, submissions, reports, retrospectives and releases under `A9-DEC-001`, `A9-DEC-004`, `A9-DEC-010` and `A9-DEC-011`.
+- [x] Record the Sprint 9 UATs and handoff preparation, then re-run the UATs during the Sprint 10 handoff under `A9-DEC-003` and `A9-DEC-017`.
+- [x] Put the final report, project reflection and final repository state in Week 10, with `REL-10` as the MVP under `A9-DEC-002`, `A9-DEC-006` and `A9-DEC-015`.
+- [x] Route the separate Moodle deck to the exam placeholder and update the assessment under `A9-DEC-005`, `A9-DEC-007` and `A9-DEC-013`.
+      The exam page content is a separate maintainer task.
 
 ## A2-2025 Tech Stack TODO
 

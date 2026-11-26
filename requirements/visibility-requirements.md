@@ -71,6 +71,20 @@ The repository identifies people by GitHub username, and the customer as `Custom
 If the customer has a GitHub username and agrees to it being public, use the username instead.
 The mapping from username to real name and university email goes in the Moodle PDF, not in the repository.
 
+**Since: W9**
+
+| Item                                                                             | Where it goes                                                                                                                   |
+| -------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| Pitch deck                                                                       | Separate Moodle submission, per the [syllabus](../course/syllabus.md#week-11-dec-4--dec-10-final-exam), with no repository copy |
+| Sprint 9 and Sprint 10 meeting recordings                                        | Private storage, with any permitted recording link in Moodle only                                                               |
+| Week 9 report, Week 10 report, project reflection, handoff report and UAT record | Public, after sanitization                                                                                                      |
+
+**Since: W10**
+
+Keep raw participant data, private addresses, credentials and individual ratings out of the final report, project reflection, handoff and UAT record.
+Publish only a sanitized meeting report and any permitted sanitized transcript.
+Use [the wrapper's private section](weekly-report-requirements.md#private-submission-wrapper) for access details.
+
 ## The Usability Data Repository
 
 **Since: W7**
@@ -88,7 +102,10 @@ The usability test's raw data identifies a person or can be joined to one, so it
 4. The product repository links the private repository in the test record and the weekly report, and the link is excluded from the link check because it needs authentication, with the reason in the link check's configuration, per [Link Checking](repository-requirements.md#link-checking).
 5. The Moodle PDF carries the private repository link and access and the recordings folder link and access, per [Private Submission Wrapper](weekly-report-requirements.md#private-submission-wrapper).
 6. The durable consent is recorded before every counted session, and it covers the recording and the sanitized public results, per [Consent And Recording](usability-testing-requirements.md#consent-and-recording).
-7. The private repository and the recordings stay until the course is graded; after it is graded the team deletes the private repository, its history, and the recordings, and the sanitized public record stays.
+7. Keep the private repository and the recordings folder private and accessible to the team and the instructors until grading is complete.
+   After the instructors confirm that the course is fully graded, the team deletes the private repository, its history, and the recordings folder.
+   Keep the sanitized public record and keep the private data within the existing access group.
+   Record the retention and deletion plan in [the handoff](customer-meetings-requirements.md#the-handoff) and the [final wrappers](weekly-report-requirements.md#private-submission-wrapper).
 8. When an instructor cannot access GitHub, the team gives the private text data through a Moodle-only archive and declares the [deviation](weekly-report-requirements.md#declaring-deviations).
 9. The public record uses the participant codes `P-01`, `P-02`, and so on, and the raw notes, the consent records, and the identity mapping stay private, per [The Public Evidence](usability-testing-requirements.md#the-public-evidence).
 10. A session is counted only with its durable consent and its recording; an unrecorded or unconsented session is not evidence, per [Consent And Recording](usability-testing-requirements.md#consent-and-recording).

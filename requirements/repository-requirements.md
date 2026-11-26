@@ -20,6 +20,7 @@ Use [General Requirements](general-requirements.md) for what an artifact is, [Vi
 - [Contributing](#contributing)
 - [Continuous Integration](#continuous-integration)
 - [Environments And Deployment](#environments-and-deployment)
+- [The Final Repository State](#the-final-repository-state)
 - [The Usability Data Repository](#the-usability-data-repository)
 - [The Course Materials As An Agent Skill](#the-course-materials-as-an-agent-skill)
 - [Recommended Throughout The Course](#recommended-throughout-the-course)
@@ -48,6 +49,11 @@ Use [General Requirements](general-requirements.md) for what an artifact is, [Vi
    See [Branch Protection](#branch-protection).
 8. Keep the repository reachable for the whole course.
    Do not archive, transfer, or rename it, do not delete the organization, and do not make it private.
+
+**Since: W10**
+
+After the course is fully graded, the team may make the product repository private only with the instructors' approval.
+The published licence and the submitted snapshot still apply.
 
 ### Licensing
 
@@ -80,6 +86,12 @@ In Week 1 it must contain:
 **Since: W3**
 
 The root `README.md` also links the product's setup and run instructions, which live in `docs/setup.md`.
+
+**Since: W10**
+
+Rewrite the root `README.md` for product users.
+Describe what the product does and link `docs/setup.md` and `docs/deployment.md`.
+End with `## Course information` containing the project name, team number, a note that the product was built for ITPD, and a link to the Week 10 report.
 
 ### Setup And Run Instructions
 
@@ -234,6 +246,13 @@ Both are built from the commit you are submitting, so that what a grader sees is
 
 6. Both the permalink and the snapshot must point at the same commit, and that commit must contain everything the assignment requires.
    Check the rendered permalink before you submit.
+
+**Since: W10**
+
+Record the tested `REL-10` tag and its commit in the final report.
+Use the final `main` commit for the wrapper's commit-hash permalink and snapshot.
+The released changelog sections and `REL-09` and `REL-10` blocks merge after their tags.
+The final report and reflection merge after `REL-10`, which stays on the final product commit.
 
 ## Configuration And Sensitive Information
 
@@ -402,7 +421,7 @@ The deployment runbook is `docs/deployment.md`, and the local setup guide stays 
 5. Staging and production are separate deployments on the VM, on separate ports, with separate configuration and separate secrets.
    Staging represents production closely enough that a passing test there is the confidence that the requirement holds in production, and a test run against staging never writes production data.
 6. Deploy by hand, from a machine on the university network: the release candidate goes to staging first, and the same commit then goes to production.
-7. After each production deploy, verify the [core task](minimum-usable-product-requirements.md#the-candidate) on the deployed product from a machine on the university network, and record what you checked with the release.
+7. In Weeks 5–8, after each production deploy, verify the [core task](minimum-usable-product-requirements.md#the-candidate) on the deployed product from a machine on the university network, and record what you checked with the release.
    A deploy that fails its verification is rolled back to the previous release, and `docs/deployment.md` says how.
 8. `docs/deployment.md` is the deployment runbook: the four environments, the VM and access to it from the university network, the configuration, the manual deploy, the verification, and the rollback.
    It is not [Setup And Run Instructions](#setup-and-run-instructions): it links `docs/setup.md` for the build and the run, and repeats none of it.
@@ -423,6 +442,35 @@ The deployment runbook is `docs/deployment.md`, and the local setup guide stays 
     It links `docs/analytics.md` and `docs/observability.md`, and the two plans own the topology.
 15. A staging test event never writes the production analytics scope, and the observability requirement's `deployed` test reads the product's staging endpoint and no production data.
 16. Neither backend is deployed by a workflow: the product CI cannot reach the university network, so the deployment stays manual, per [Continuous Integration](#continuous-integration).
+
+**Since: W9**
+
+Deploy the Sprint 9 build on the university VM for its review and record acceptance checks against the build tested, per [The Two Review Sessions](user-acceptance-tests-requirements.md#the-two-review-sessions).
+
+**Since: W10**
+
+Deploy `REL-10` for the handoff.
+A failed customer UAT alone does not trigger a rollback.
+Record unresolved failures as known issues in [the handoff](customer-meetings-requirements.md#the-handoff), and keep the release available until the planned shutdown.
+Shut down the university VM after the handoff.
+Grading uses the submitted evidence and repository snapshot.
+
+## The Final Repository State
+
+**Since: W10**
+
+**Required**
+
+1. Freeze product code at the final release tag.
+   Documentation, reports, the reflection, the changelog, and release blocks may still merge through the [Submission 10 deadline](../course/syllabus.md#week-10-nov-27--dec-3-final-release-and-handoff).
+   Stop all public repository changes at that deadline.
+   The only later changes are [required private-data deletion](visibility-requirements.md#the-usability-data-repository) and any [approved change to repository visibility](#repository-setup).
+2. Merge all final pull requests and resolve any remaining open pull requests so none remains open.
+   Close the `SPRINT-09` and `SPRINT-10` milestones and follow the [final issue rules](issue-tracking-requirements.md#scheduling-an-issue).
+   Keep the default branch green and the final tag protected.
+3. Bring the documentation site, setup guide, deployment runbook, architecture, functional and quality requirements, tests and results, configuration plan, features, glossary, risks, team `AGENTS.md`, UAT record, and user-facing README up to date.
+4. Document the post-grading data deletion plan and any approved privatisation in [the handoff](customer-meetings-requirements.md#the-handoff).
+   Take the [final snapshot](#permalinks-and-snapshots) after the final evidence has merged.
 
 ## The Usability Data Repository
 

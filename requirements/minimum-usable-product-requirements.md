@@ -17,7 +17,7 @@ The stories it is made of, and their priorities, are in [User Story Requirements
 
 **Required**
 
-1. Record the candidate in the [weekly public report](weekly-report-requirements.md#weekly-public-report), under the heading the assignment names.
+1. In Weeks 2–8, record the candidate in the [weekly public report](weekly-report-requirements.md#weekly-public-report), under the heading the assignment names.
 2. The record gives the core task, then the `US-nn` of each story with its issue linked, and the `DEC-nnn` of the customer's verdict on it once they have given it.
 
 **Since: W3**

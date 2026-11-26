@@ -75,39 +75,52 @@ A sprint no milestone covers is still scheduled in its own GitHub milestone, per
 **Since: W3**
 
 A **sprint** is one submission week, with a timebox, a goal, a release of its own, and a GitHub milestone.
-Every week from Week 3 to Week 9 is a sprint, so the plan carries seven of them, `SPRINT-03` to `SPRINT-09`, and each is a GitHub milestone.
+The Week 3 plan starts with `SPRINT-03` to `SPRINT-09`.
 
 **Required**
 
 1. Each sprint is `SPRINT-nn` after its week number, per [Identifier Rules](general-requirements.md#identifier-rules), and the plan carries one `### SPRINT-nn` section per sprint, in sprint order, under `## Sprints`.
-2. Each sprint is a GitHub **milestone** titled `SPRINT-nn: <focus>`, such as `SPRINT-03: Pay at booking`, with the hard deadline of its week as the due date.
+2. Each sprint is a GitHub **milestone** titled `SPRINT-nn: <focus>`, such as `SPRINT-03: Pay at booking`, with the sprint's hard deadline as the due date.
    The focus is a short phrase, and the sprint's goal stays in the plan's section.
-   Create all seven milestones when the plan is written, so that scheduling an issue is assigning it to a milestone that already exists.
+   Create the milestones for `SPRINT-03` through `SPRINT-09` when the plan is written, so that scheduling an issue is assigning it to a milestone that already exists.
 3. A `### SPRINT-nn` section opens with the sprint's goal, in one sentence: what the sprint is for, stated as a result rather than as a list of tasks.
 4. A sprint the team has not planned yet states a **provisional** goal: one sentence, kept current until the sprint is planned, so the plan leaves no future week without direction.
 5. Under the goal, the section carries these fields, in this order, as a bulleted list, per [Identifier Rules](general-requirements.md#identifier-rules):
 
    | Field                 | What it says                                                                                                                                                                                                                                                                                     |
    | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-   | `**Due:**`            | The hard deadline of the sprint's week, from the syllabus, such as `2026-10-17`, the date its GitHub milestone carries.                                                                                                                                                                          |
+   | `**Due:**`            | The sprint's hard deadline, from the syllabus, such as `2026-10-17`, the date its GitHub milestone carries.                                                                                                                                                                                      |
    | `**Sprint Backlog:**` | A link to the sprint's GitHub milestone, such as `https://github.com/<organization>/<repo>/milestone/<number>`, which lists the issues scheduled into the sprint. The number is the one GitHub assigned to the milestone, not the sprint's number. The field appears once the sprint has issues. |
 
 6. The plan does not copy that list: scheduling is assigning an issue to its sprint's milestone, per [Scheduling An Issue](issue-tracking-requirements.md#scheduling-an-issue).
-7. Close the sprint's GitHub milestone once its release is cut, per [Releases](#releases).
-   An issue still open is first rescheduled into a later sprint's milestone, per [Scheduling An Issue](issue-tracking-requirements.md#scheduling-an-issue).
+7. In Weeks 3–8, close the sprint's GitHub milestone once its release is cut, per [Releases](#releases).
+   First reschedule any issue still open into a later sprint's milestone, per [Scheduling An Issue](issue-tracking-requirements.md#scheduling-an-issue).
 
 **Since: W4**
 
 8. The sprint's goal is set at planning and replaces the provisional one, per [Sprint Planning](sprint-ceremonies-requirements.md#sprint-planning).
 9. A planned sprint carries two more fields after `**Sprint Backlog:**`, in this order:
 
-   | Field                   | What it says                                                                                                                     |
-   | ----------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
-   | `**Planned Velocity:**` | The story points of the stories selected for the sprint, set at planning and computed by hand from their `Story Points` values.  |
-   | `**Actual Velocity:**`  | Added when the sprint closes: the story points of the completed stories, and one sentence on what moved out and to which sprint. |
+   | Field                   | What it says                                                                                                                    |
+   | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
+   | `**Planned Velocity:**` | The story points of the stories selected for the sprint, set at planning and computed by hand from their `Story Points` values. |
+   | `**Actual Velocity:**`  | Added at sprint close: the story points of the completed stories and one sentence on where unfinished work went.                |
 
    The velocity is computed by hand, because a single-select field holds one option and cannot be added up.
    [Estimation](sprint-ceremonies-requirements.md#estimation) says how a story's points are set.
+
+**Since: W9**
+
+10. Use the syllabus dates for [Sprint 9](../course/syllabus.md#week-9-nov-20--nov-26-project-pitching-and-sprint-9) and [Sprint 10](../course/syllabus.md#week-10-nov-27--dec-3-final-release-and-handoff).
+    Create the `SPRINT-10` GitHub milestone and its provisional plan section in Week 9, so the plan carries eight sprints.
+    Keep `SPRINT-10` outside the `MLS-nn` runs.
+11. Close the Sprint 9 milestone after its review and release and after triaging unfinished issues per [Scheduling An Issue](issue-tracking-requirements.md#scheduling-an-issue).
+
+**Since: W10**
+
+12. Plan `SPRINT-10` after the Sprint 9 review, per [Sprint Planning](sprint-ceremonies-requirements.md#sprint-planning).
+    In its `**Actual Velocity:**` sentence, state that there is no later sprint and identify the open items passed to the handoff.
+    Close Sprint 10 after the review, handoff and release, using the final issue disposition in [Scheduling An Issue](issue-tracking-requirements.md#scheduling-an-issue).
 
 **Example**
 
@@ -120,12 +133,26 @@ The fields of a planned sprint:
 - **Actual Velocity:** 5; the two remaining stories moved to SPRINT-04.
 ```
 
+**Example**
+
+The provisional section added in Week 9, before Sprint 10 planning:
+
+```markdown
+### SPRINT-10
+
+Provisional goal: The customer can take over the deployed product on a tagged release.
+
+- **Due:** 2026-12-06
+
+#### REL-10
+```
+
 ## Releases
 
 **Since: W3**
 
-A **release** is the sprint's stable state: the product as it stands when the sprint ends, tagged, so later work cites one commit rather than a moving week.
-Every sprint from Week 3 to Week 9 ends in one release, named `REL-nn` after its sprint: the MUP week is `REL-03`, and the last is `REL-09`.
+A **release** identifies the sprint's product version by a tag on a single commit.
+Each sprint from Week 3 to Week 10 has a release named `REL-nn` after its sprint.
 The changelog, the tags, and the release titles follow [Release Requirements](releases-requirements.md); this section says how a release belongs to its sprint and what its `REL-nn` section records.
 
 **Required**
@@ -140,8 +167,9 @@ The changelog, the tags, and the release titles follow [Release Requirements](re
 
    The tag is the team's choice under SemVer; the plan does not fix a numbering.
 
-4. Cut the release at the sprint's end, on the state after the customer meeting and any same-week rework: merge the sprint's pull requests, then push the tag on that commit.
-   Then merge what links the tag, in this order: the changelog's released section, this `REL-nn` section, and the week's report, so every link resolves the first time it is checked.
+4. For `REL-03` through `REL-09`, cut the release at the sprint's end on the state after the customer meeting and any same-week rework.
+   Merge the pull requests included in the release, then push the tag on that commit.
+   After tagging, merge the changelog's released section, this `REL-nn` section, and the week's report in that order so every link resolves the first time it is checked.
 5. The `REL-nn` section does not link the changelog, and the changelog does not mention `REL-nn`: the changelog's released section links the release, and the plan and the week's report make the link between the release and its sprint.
 
 **Since: W5**
@@ -156,6 +184,20 @@ The changelog, the tags, and the release titles follow [Release Requirements](re
    The block is an index of what was checked in the sprint, not a quality claim: the testing plan's rows carry each test's result, and its `Checked` column names the sprint of each test's last check.
    A sprint with no checked requirement says `None` in `**Checked QRs:**` and keeps the testing-plan sentence, because the plan still carries the planned and unverified rows.
    [Release Requirements](releases-requirements.md#cutting-a-release) owns the release body for whoever deploys it; the block is the release's technical record.
+
+**Since: W9**
+
+8. Add `**Checked UATs:**` after `**Checked QRs:**` in `REL-09` and `REL-10` only.
+   Link each checked UAT section and name its sprint, per [The Test Record](user-acceptance-tests-requirements.md#the-test-record).
+   The UAT record identifies the actual build and result.
+   If no test ran, write `None` and link the meeting evidence when available.
+   If the review could not take place, state that alongside `None`.
+   Cut `REL-09` at the Sprint 9 close, per [Cutting A Release](releases-requirements.md#cutting-a-release).
+
+**Since: W10**
+
+9. `REL-10` is the final release and the minimum viable product (MVP).
+   Follow the [handoff release sequence](releases-requirements.md#cutting-a-release) and the [code freeze](repository-requirements.md#the-final-repository-state).
 
 ## Quality Requirement Testing Plan
 
@@ -190,8 +232,8 @@ A test's definition is in [Quality Requirement Tests](quality-requirements-requi
 
 **Since: W3**
 
-The team meets on its own every week to hold the plan against what actually happened.
-That review is where the threshold of success and the risks are looked at; the weekly customer meeting is not the review point.
+The team meets on its own every week to review progress, the threshold of success and risks.
+The team review is separate from the Sprint Review with the customer.
 
 **Required**
 
@@ -277,9 +319,20 @@ The steps that produce the set, from picturing failure to keeping the minimal se
 12. Only the customer's `DEC-nnn` agreed at the Sprint Review moves the bar: the goal's `**Changed:**` cites it, per rule 3, and the meeting report records it in `## Decisions`, per [Meeting Report](customer-meetings-requirements.md#meeting-report).
 13. A goal whose measure is already settled at the review is set `Achieved` or `Missed` with its `**Outcome:**`, per rule 4, and a goal whose measure lands later stays `Open`.
 
+**Since: W9**
+
+At the Sprint 9 review, evaluate every `Open` goal against its existing measure.
+Record `Achieved` when the measure is met and `Missed` when the deadline has passed without achievement.
+A goal whose deadline is still ahead can remain `Open`.
+
+**Since: W10**
+
+At the handoff, apply the same check to the goals still `Open`.
+Report the final statuses per [Weekly Public Report](weekly-report-requirements.md#weekly-public-report).
+
 ## Full Example
 
-Both files of the meeting-booking example, after Week 8, trimmed to the milestone sections for Weeks 3, 5, and 6, the sprints they run over, the Week 7 to Week 9 sprints, the testing plan, and the threshold's goals.
+Both files of the meeting-booking example, after Week 10, trimmed to the milestone sections for Weeks 3, 5, and 6, the sprints they run over, the Week 7 to Week 10 sprints, the testing plan, and the threshold's goals.
 
 From `docs/project-plan.md`:
 
@@ -415,22 +468,54 @@ The release carries the usability fix and no configuration change, so its upgrad
 
 ### SPRINT-09
 
-The final repository state, the 7-minute deck, and the reflection.
+The customer can book, share and cancel a meeting on the university VM.
 
 - **Due:** 2026-11-29
+- **Sprint Backlog:** [Sprint 9 issues](https://github.com/<organization>/<repo>/milestone/7)
+- **Planned Velocity:** 5
+- **Actual Velocity:** 3.
+  The cancellation fix moved to SPRINT-10, and the recurring-meetings story returned to the product backlog.
 
 #### REL-09
 
+- **Released:** [v0.9.0](https://github.com/<organization>/<repo>/releases/tag/v0.9.0) on 2026-11-29.
+- **Checked QRs:**
+  - [QR-01](quality-requirements/qr/QR-01.md)
+- **Checked UATs:** [UAT-01](user-acceptance-tests.md#uat-01), [UAT-02](user-acceptance-tests.md#uat-02), and [UAT-03](user-acceptance-tests.md#uat-03), SPRINT-09.
+
+See [Quality Requirement Testing Plan](#quality-requirement-testing-plan).
+
+### SPRINT-10
+
+The customer can take over the released booking app with its limitations documented.
+
+- **Due:** 2026-12-06
+- **Sprint Backlog:** [Sprint 10 issues](https://github.com/<organization>/<repo>/milestone/8)
+- **Planned Velocity:** 0
+- **Actual Velocity:** 0.
+  There is no later sprint, and the calendar invitation and recurring-meetings issues are listed in [handoff.md](../handoff.md).
+
+#### REL-10
+
+- **Released:** [v0.10.0](https://github.com/<organization>/<repo>/releases/tag/v0.10.0) on 2026-12-04.
+- **Checked QRs:** None.
+- **Checked UATs:** [UAT-01](user-acceptance-tests.md#uat-01), [UAT-03](user-acceptance-tests.md#uat-03), and [UAT-04](user-acceptance-tests.md#uat-04), SPRINT-10.
+
+See [Quality Requirement Testing Plan](#quality-requirement-testing-plan).
+
 ## Quality Requirement Testing Plan
 
-| QR                                        | QRT                                                     | Status | Checked                 | Planned for sprint      | Evidence                                                                                          |
-| ----------------------------------------- | ------------------------------------------------------- | ------ | ----------------------- | ----------------------- | ------------------------------------------------------------------------------------------------- |
-| [QR-01](quality-requirements/qr/QR-01.md) | [QR-01 QRT-01](quality-requirements/qr/QR-01.md#qrt-01) | Passes | [SPRINT-06](#sprint-06) | [SPRINT-05](#sprint-05) | [the staging run in the Week 06 report](../reports/week-06/README.md#analytics-and-observability) |
-| [QR-02](quality-requirements/qr/QR-02.md) | [QR-02 QRT-01](quality-requirements/qr/QR-02.md#qrt-01) | Passes | [SPRINT-05](#sprint-05) | [SPRINT-05](#sprint-05) | [the CI run on `4c1e9ab`](...)                                                                    |
-| [QR-04](quality-requirements/qr/QR-04.md) | [QR-04 QRT-01](quality-requirements/qr/QR-04.md#qrt-01) | Passes | [SPRINT-06](#sprint-06) | [SPRINT-06](#sprint-06) | [the staging run in the Week 06 report](../reports/week-06/README.md#analytics-and-observability) |
-| [QR-05](quality-requirements/qr/QR-05.md) | [QR-05 QRT-01](quality-requirements/qr/QR-05.md#qrt-01) | Passes | [SPRINT-08](#sprint-08) | [SPRINT-08](#sprint-08) | [the usability results](usability-tests/ut-01/results.md#the-results)                             |
+| QR                                        | QRT                                                     | Status       | Checked                 | Planned for sprint      | Evidence                                                                    |
+| ----------------------------------------- | ------------------------------------------------------- | ------------ | ----------------------- | ----------------------- | --------------------------------------------------------------------------- |
+| [QR-01](quality-requirements/qr/QR-01.md) | [QR-01 QRT-01](quality-requirements/qr/QR-01.md#qrt-01) | Passes       | [SPRINT-09](#sprint-09) | [SPRINT-09](#sprint-09) | [Booking verification](...)                                                 |
+| [QR-01](quality-requirements/qr/QR-01.md) | [QR-01 QRT-02](quality-requirements/qr/QR-01.md#qrt-02) | Fails        | [SPRINT-09](#sprint-09) | [SPRINT-09](#sprint-09) | [Cancellation verification](...)                                            |
+| [QR-02](quality-requirements/qr/QR-02.md) | [QR-02 QRT-01](quality-requirements/qr/QR-02.md#qrt-01) | Passes       | [SPRINT-05](#sprint-05) | [SPRINT-05](#sprint-05) | [The CI run](...)                                                           |
+| [QR-02](quality-requirements/qr/QR-02.md) | [QR-02 QRT-02](quality-requirements/qr/QR-02.md#qrt-02) | Not verified | None                    | [SPRINT-09](#sprint-09) | None                                                                        |
+| [QR-04](quality-requirements/qr/QR-04.md) | [QR-04 QRT-01](quality-requirements/qr/QR-04.md#qrt-01) | Passes       | [SPRINT-06](#sprint-06) | [SPRINT-06](#sprint-06) | [The staging run](../reports/week-06/README.md#analytics-and-observability) |
+| [QR-05](quality-requirements/qr/QR-05.md) | [QR-05 QRT-01](quality-requirements/qr/QR-05.md#qrt-01) | Passes       | [SPRINT-08](#sprint-08) | [SPRINT-08](#sprint-08) | [The usability results](usability-tests/ut-01/results.md#the-results)       |
+| [QR-05](quality-requirements/qr/QR-05.md) | [QR-05 QRT-02](quality-requirements/qr/QR-05.md#qrt-02) | Dropped      | None                    | None                    | None                                                                        |
 
-The `QR-05` row read `Not verified`, `None`, `SPRINT-08`, and `None` during `SPRINT-07`, and the row above is its state after the sessions ran.
+The `QR-05 QRT-01` row read `Not verified`, `None`, `SPRINT-08`, and `None` during `SPRINT-07`, and the row above is its state after the sessions ran.
 
 ## Progress Monitoring
 
@@ -469,6 +554,26 @@ At least three participants outside the team complete the main usability test ta
 - **Status:** Achieved
 - **Measure:** at least three of five participants completed the main usability test task unaided, recorded in the Week 8 usability results, by the end of Week 8.
 - **Outcome:** three of the five participants completed the main usability test task unaided on 16 and 17 November 2026, recorded in [the usability results](usability-tests/ut-01/results.md#the-results).
+
+## TOS-04
+
+The customer installs the booking service on their own infrastructure.
+
+- **Status:** Open
+- **Measure:** One successful booking in the customer's installation by 12 December 2026.
+- **Changed:**
+  - Added the installation goal when the customer approved the handoff plan, per [DEC-039](decisions.md#dec-039).
+
+## TOS-05
+
+A customer uses a recurring-meeting workflow for a second booking.
+
+- **Status:** Dropped
+- **Measure:** One recurring booking completed by the end of Sprint 9.
+- **Changed:**
+  - Added the recurring-meetings goal with the customer's agreement, per [DEC-037](decisions.md#dec-037).
+- **Dropped:** 2026-11-28.
+  The customer agreed to defer the recurring-meetings scope, per [DEC-040](decisions.md#dec-040).
 
 ## Failure And Success Statements
 

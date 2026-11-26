@@ -56,7 +56,7 @@ By the end of this week you should be able to show a reader:
 - The configuration terms in `docs/glossary.md` and the configuration risks in `docs/risks.md`, per [Part 9](#part-9-update-the-glossary-and-the-risk-register).
 - The results review held as the Sprint Review, with its script, report, transcript, `DEC-nn` entries, and action points, per [Part 10](#part-10-carry-out-the-week-7-action-points-and-hold-the-sprint-review).
 - `REL-08`, the sprint closed with its actual velocity, the retrospective, and the AI usage report, per [Part 11](#part-11-apply-the-review-run-the-sprints-testing-plan-rows-and-cut-rel-08), [Part 12](#part-12-close-the-sprint-and-hold-the-retrospective), and [Part 13](#part-13-report-on-your-ai-usage-and-hand-off-week-9).
-- The Week 9 handoff: the artifacts, the private repository and recordings folder, the `REL-08` tag, the final repository state, and the deck's evidence, per [Part 13](#part-13-report-on-your-ai-usage-and-hand-off-week-9).
+- The Week 9 handoff: the artifacts, the private repository and recordings folder, the `REL-08` tag and the work Sprint 9 can pick up, per [Part 13](#part-13-report-on-your-ai-usage-and-hand-off-week-9).
 
 ## Part 1: Refine The Product Backlog And Plan The Sprint
 
@@ -72,9 +72,10 @@ This week:
 1. Refine the remaining product backlog until `SPRINT-09`'s items are ready to schedule, and leave those items unscheduled.
 2. Plan `SPRINT-08`: replace its provisional goal with the sprint's goal, set `**Due:**` to `2026-11-21`, link `**Sprint Backlog:**` to its GitHub milestone, and set `**Planned Velocity:**` to the story points of the stories you scheduled, computed by hand from their `Story Points`.
    Only the product stories' points count: the results, the configuration, and the other task work carry none.
-3. Set `SPRINT-09`'s provisional goal, its `**Due:**` of `2026-11-28`, and its `**Sprint Backlog:**` once the sprint has issues.
-   The provisional goal names the final repository state, the 7-minute deck, the reflection, and whatever else the team plans.
-   The seven sprint milestones already exist, so link `SPRINT-09`'s milestone; do not create a new milestone.
+3. Set `SPRINT-09`'s provisional goal, its `**Due:**` of `2026-11-29`, and its `**Sprint Backlog:**` once the sprint has issues.
+   The provisional goal names the Sprint 9 increment and what the team expects to check at its review.
+   Link the existing `SPRINT-09` milestone.
+   Create `SPRINT-10` in [Week 9](assignment-9.md).
 4. Schedule in `SPRINT-08`: the sanitized session notes, the results, the findings, the triage, the `QR/QRT` verdict, the configuration plan, the configuration evaluation, the glossary and risk updates, the Sprint Review, and `REL-08`.
 5. Set the `UT-01` record's `**Run sprint:**` to the sprint the counted sessions ran in: `SPRINT-07` when every counted session ran before the Week 7 deadline of 15 November 23:59, `SPRINT-08` otherwise.
    When the sessions straddle the two, write both, state which sessions ran in which sprint in the `UT-01` record, and list both in the index.
@@ -334,8 +335,8 @@ This week:
 1. Write `reports/week-08/ai-usage.md`.
 2. Say whether an agent was given any usability material, and if so, confirm it was given the sanitized note rather than the raw recording or the private notes.
    Say whether an agent was given the configuration plan or the evaluation, and confirm it was the public, sanitized state.
-3. Write the Week 9 handoff in the report: the results, the configuration plan, the evaluation with its goal sections, its tradeoffs, and its first change, the final repository state, and the reflection.
-   Add the private repository and the recordings folder still accessible, the `REL-08` tag, and the evidence the deck will cite.
+3. Write the Week 9 handoff in the report: the results, the configuration plan, the evaluation with its goal sections, its tradeoffs and its first change, and the work Sprint 9 can pick up.
+   Add the private repository and the recordings folder still accessible, the `REL-08` tag, and the evidence that Sprint 9 can use.
 
 ## What Good Looks Like
 
@@ -366,7 +367,7 @@ A strong submission has:
   `REL-08` is cut on the release commit and its tag is protected.
   Its `**Checked QRs:**` lists each checked `QR-nn` or says `None` and closes with one link to the testing plan, its upgrade note says whether anything is required, and the `SPRINT-08` milestone is closed after any open issue is rescheduled.
 - **A Week 9 handoff another week can start from.**
-  It names the results, the configuration plan, the evaluation's goal sections and first change, the private repository and recordings folder, the `REL-08` tag, the final repository state, and the deck's evidence.
+  It names the results, the configuration plan, the evaluation's goal sections and first change, the private repository and recordings folder, the `REL-08` tag and the work Sprint 9 can pick up.
 - **One path and one identifier, everywhere.**
   The report, the guide, and the routers use `docs/configuration-plan.md` and `reports/week-08/cm-evaluation.md`, and the configuration plan and the evaluation use the same `CFG-nn`.
 
@@ -384,8 +385,8 @@ This week it also carries:
 3. The `## Configuration management` section immediately after `## Usability test`: the configuration plan's link, the evaluation's link, the baseline the evaluation reviewed, the `Active` item count, the local goals, the first change and its tradeoff, and what is kept.
    Link both artifacts and restate neither.
 4. The `## Threshold review` section when a goal is still `Open` when the review starts, per [The Threshold Of Success](../requirements/planning-requirements.md#the-threshold-of-success).
-5. The `## Week 9 handoff` section: the results, the configuration plan, the evaluation's goal sections and first change, and the final repository state.
-   Name the private repository and the recordings folder, the `REL-08` tag, and the deck's evidence.
+5. The `## Week 9 handoff` section: the results, the configuration plan, the evaluation's goal sections and first change, and the work Sprint 9 can pick up.
+   Name the private repository and the recordings folder, the `REL-08` tag, and the evidence Sprint 9 can use.
 6. The coverage table, with one row per deliverable:
 
 | Deliverable               | Where                                                       |
@@ -450,7 +451,7 @@ The production analytics and observability dashboards were submitted in the Week
 ## Checklist
 
 - [ ] `SPRINT-08` planned with its goal, its `**Due:**` field, its `**Sprint Backlog:**` link, and its `**Planned Velocity:**` ([Part 1](#part-1-refine-the-product-backlog-and-plan-the-sprint)).
-- [ ] `SPRINT-09` given its provisional goal and its `**Due:**` of `2026-11-28` ([Part 1](#part-1-refine-the-product-backlog-and-plan-the-sprint)).
+- [ ] `SPRINT-09` given its provisional goal and its `**Due:**` of `2026-11-29` ([Part 1](#part-1-refine-the-product-backlog-and-plan-the-sprint)).
 - [ ] The results and configuration tasks scheduled in `SPRINT-08` ([Part 1](#part-1-refine-the-product-backlog-and-plan-the-sprint)).
 - [ ] The `UT-01` record's `**Run sprint:**` set, including which sessions ran in which sprint when they straddle ([Part 1](#part-1-refine-the-product-backlog-and-plan-the-sprint)).
 - [ ] Each task issue carrying its `### Requirements`, its criteria, its `**Responsible:**`, its `**Accountable:**`, and its assignees ([Part 1](#part-1-refine-the-product-backlog-and-plan-the-sprint)).

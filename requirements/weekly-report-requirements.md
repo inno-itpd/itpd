@@ -6,6 +6,10 @@ Who may see each item is in [Visibility Requirements](visibility-requirements.md
 <h2>Table of contents</h2>
 
 - [Weekly Public Report](#weekly-public-report)
+- [Quality Plan Results](#quality-plan-results)
+- [Threshold Review](#threshold-review)
+- [Threshold Of Success Results](#threshold-of-success-results)
+- [Project Reflection](#project-reflection)
 - [AI Usage Report](#ai-usage-report)
 - [Declaring Deviations](#declaring-deviations)
 - [Private Submission Wrapper](#private-submission-wrapper)
@@ -38,7 +42,7 @@ Who may see each item is in [Visibility Requirements](visibility-requirements.md
 
 **Since: W2**
 
-11. It records the minimum usable product candidate, per [Where The Candidate Lives](minimum-usable-product-requirements.md#where-the-candidate-lives).
+11. In Weeks 2–8, it records the minimum usable product candidate, per [Where The Candidate Lives](minimum-usable-product-requirements.md#where-the-candidate-lives).
 
 **Since: W3**
 
@@ -53,13 +57,13 @@ Who may see each item is in [Visibility Requirements](visibility-requirements.md
 
 **Since: W5**
 
-15. The report's summary points at `docs/project-plan.md#quality-requirement-testing-plan` for the tests that are not `Passes`, and copies none of the rows.
+15. In Weeks 5–8, the report's summary points at `docs/project-plan.md#quality-requirement-testing-plan` for the tests that are not `Passes`, and copies none of the rows.
 
 **Since: W6**
 
-16. The report's summary says whether the focus metric has a value yet and what it would need, links `docs/analytics.md` and `docs/observability.md`, and copies no chart or row from either page.
+16. In Weeks 6–8, the report's summary says whether the focus metric has a value yet and what it would need, links `docs/analytics.md` and `docs/observability.md`, and copies no chart or row from either page.
     It shows at least one analytics metric that its query computes, and it does not present test traffic as a value.
-17. When a threshold review is due, a `## Threshold review` section carries it, per [The Threshold Of Success](planning-requirements.md#the-threshold-of-success): one table, with one row per goal that is `Open` when the review starts, in `TOS-nn` order, with these columns, in this order:
+17. In Weeks 6–8, when a threshold proposal review is due, a `## Threshold review` section carries it, per [The Threshold Of Success](planning-requirements.md#the-threshold-of-success): one table, with one row per goal that is `Open` when the review starts, in `TOS-nn` order, with these columns, in this order:
 
     | Column                   | What it holds                                                                                                                                    |
     | ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -91,13 +95,37 @@ Who may see each item is in [Visibility Requirements](visibility-requirements.md
     It links the `results.md`, the sanitized session notes, the `QR/QRT`, the findings' task issues, the private repository that holds the test's telemetry export, the release, the retrospective, and the AI usage; it copies no raw participant data and states the `n=<count>` caveat.
     It follows rule 16 for the focus metric and the test traffic, and rules 7 and 8 for the contribution table and the repository evidence.
 22. In the run week a `## Usability test` section carries the results summary, the conclusion, the sanitized session links, the SUS and SEQ summary, the instrumentation comparison, the findings, the triage, and the `QR/QRT` result.
-    `results.md` is the record and the report is the summary: the reflection week's report carries no separate usability results report, and the final reflection cites the `UT-nn` results.
+    `results.md` is the record and the report is the summary: the Week 10 report carries no separate usability results section, and the project reflection links the Week 8 report where the results support a lesson.
 
 23. In the review week the report's summary gives the `Active` configuration item count, the number of local goals, the first change and its tradeoff, and what the team keeps, and it links `docs/configuration-plan.md`, the evaluation, and the usability results.
     Immediately after `## Usability test`, a `## Configuration management` section carries the configuration plan's link, the evaluation's link, the baseline the evaluation reviewed, the `Active` item count, the local goals, the first change and its tradeoff, and what is kept.
     The configuration plan is the maintained record and the evaluation is the week's judgement, so the section links both and restates neither.
     The coverage table carries one `Configuration management` row that links the section's `#configuration-management` anchor, and neither artifact gets a row of its own.
     The summary follows rule 16 for the focus metric and the test traffic, and it copies no raw participant data.
+
+**Since: W9**
+
+24. In `reports/week-09/README.md`, summarize the Sprint 9 increment, the three UAT outcomes, the quality plan and threshold findings, the handoff preparation, and the work remaining for Sprint 10.
+    Link the Sprint 9 meeting report, the UAT record and run, `REL-09`, the retrospective and the AI usage report.
+    Keep that report as the Submission 9 record once submitted.
+    The final report is written in Week 10 after the handoff.
+    Link the Week 8 report only where earlier usability evidence supports the work.
+25. In `## Handoff preparation`, record what the customer expects to receive, what is ready and what is missing, using the Sprint 9 review.
+26. Include [Quality Plan Results](#quality-plan-results) and [Threshold Review](#threshold-review).
+27. In Weeks 9 and 10, satisfy rule 12 by linking the meeting report for individual story verdicts and summarizing work that moved or remains open.
+
+**Since: W10**
+
+28. `reports/week-10/README.md` is both the weekly report and the final project report.
+    Use `## Summary`, `## Handoff results`, `## Threshold of success results`, `## Coverage`, `## Contribution`, `## Deviations` and `## Privacy`, in that order.
+    In the summary, name the MVP, the accepted handoff, the three UAT outcomes, the open work and the frozen product state.
+29. Link `handoff.md` once, from `## Handoff results`, and identify the tested tag and commit.
+    Link the Sprint 10 meeting report, the UAT record and re-run, `REL-10`, the retrospective, the AI usage report and the project reflection.
+    Reach the Week 9 preparation through the handoff package.
+    If the handoff could not take place, identify the missing deliverable and distinguish the released build from any tested build.
+30. Use [Threshold Of Success Results](#threshold-of-success-results) and put repository evidence in the coverage table.
+    The final report requires no screenshots and has no separate repository evidence section.
+    Leave the focus metric, analytics and observability pages, proposal table and repeated usability results in the earlier reports.
 
 **Recommended**
 
@@ -262,7 +290,7 @@ The four local goals are deciding what the product should be, specifying what it
 The team keeps the first as it is, merges the hand-written backlog mirror into the GitHub project, merges the Markdown and link checks into one workflow with two jobs and proposes a seed script that does not exist yet, and cuts the duplicated command list from `AGENTS.md`.
 
 The first change is the check merge: one workflow file, one checkout, and one action pin, whose main tradeoff is that a broken workflow file stops both checks at once.
-The evaluation also records what the team could not judge, the university VM's snapshot and backup policy, with the risk that a lost VM costs a redeploy during the week the deck is due.
+The evaluation also records what the team could not judge, the university VM's snapshot and backup policy, with the risk that a lost VM costs a redeploy near the deadline for the separate pitch deck submission.
 
 No configuration change was enacted this week, and the goal sections and the first change are the evaluation's recommendation rather than scheduled work.
 
@@ -277,7 +305,7 @@ No goal is `Open` after this review, and the team proposed no measure because th
 
 ## Week 9 handoff
 
-The Week 9 deck cites [the results](../../docs/usability-tests/ut-01/results.md) and [the configuration plan](../../docs/configuration-plan.md) rather than repeating either.
+The separate pitch deck cites [the results](../../docs/usability-tests/ut-01/results.md) and [the configuration plan](../../docs/configuration-plan.md) rather than repeating either.
 The evaluation's goal sections and its first change are the review's recommendation and schedule no work for Week 9.
 The private repository and the recordings folder stay open until the course is graded, and the `REL-08` tag is the state Week 9 starts from.
 
@@ -323,6 +351,221 @@ None.
 ## Privacy
 
 No private-only material was committed to this repository.
+```
+
+### Example Week 09 Report
+
+**Example**
+
+From `reports/week-09/README.md`.
+
+```markdown
+# Week 09 report
+
+Studio Booking, Team 3.
+
+## Summary
+
+The Sprint 9 increment lets an organizer book and share a meeting.
+The review used `7f81db2`, the commit tagged `v0.9.0`.
+The customer passed the booking and guest-link tests and found that cancellation did not free the slot.
+The quality plan had a failed check for cancellation, and the threshold review left the installation goal open.
+The customer asked for deployment and export instructions and a known-issues list.
+Sprint 10 will fix cancellation and prepare the handoff.
+
+## Quality plan results
+
+| Test         | Result       | Last check | Evidence                                                                    |
+| ------------ | ------------ | ---------- | --------------------------------------------------------------------------- |
+| QR-01 QRT-01 | Passes       | SPRINT-09  | [Testing plan](../../docs/project-plan.md#quality-requirement-testing-plan) |
+| QR-02 QRT-01 | Passes       | SPRINT-05  | [Testing plan](../../docs/project-plan.md#quality-requirement-testing-plan) |
+| QR-04 QRT-01 | Passes       | SPRINT-06  | [Testing plan](../../docs/project-plan.md#quality-requirement-testing-plan) |
+| QR-05 QRT-01 | Passes       | SPRINT-08  | [Testing plan](../../docs/project-plan.md#quality-requirement-testing-plan) |
+| QR-01 QRT-02 | Fails        | SPRINT-09  | [Testing plan](../../docs/project-plan.md#quality-requirement-testing-plan) |
+| QR-02 QRT-02 | Not verified | —          | [Testing plan](../../docs/project-plan.md#quality-requirement-testing-plan) |
+| QR-05 QRT-02 | Dropped      | —          | [Testing plan](../../docs/project-plan.md#quality-requirement-testing-plan) |
+
+## Threshold review
+
+| Goal                                                | Observed result                                                                                 | Status after review |
+| --------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ------------------- |
+| [TOS-04](../../docs/threshold-of-success.md#tos-04) | The customer's installation is scheduled after the handoff.                                     | Open                |
+| [TOS-05](../../docs/threshold-of-success.md#tos-05) | The customer removed the recurring-meetings goal in [DEC-040](../../docs/decisions.md#dec-040). | Dropped             |
+
+## Handoff preparation
+
+The customer expects access instructions, an export procedure and a list of known issues.
+The setup and deployment notes are ready.
+The export needs a dry run, and the known-issues list needs the final UAT results.
+
+## Coverage
+
+| Deliverable          | Evidence                                                                                                                                                                                                    |
+| -------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Sprint plan          | [docs/project-plan.md#sprint-09](../../docs/project-plan.md#sprint-09), [docs/project-plan.md#sprint-10](../../docs/project-plan.md#sprint-10)                                                              |
+| UAT record           | [docs/user-acceptance-tests.md](../../docs/user-acceptance-tests.md)                                                                                                                                        |
+| Sprint 9 UAT run     | [reports/week-09/meeting-report.md#user-acceptance-tests](meeting-report.md#user-acceptance-tests)                                                                                                          |
+| REL-09               | [docs/project-plan.md#rel-09](../../docs/project-plan.md#rel-09), [v0.9.0](https://github.com/<organization>/<repo>/releases/tag/v0.9.0), [Released changelog section](../../CHANGELOG.md#090---2026-11-29) |
+| Meeting script       | [reports/week-09/meeting-script.md](meeting-script.md)                                                                                                                                                      |
+| Meeting report       | [reports/week-09/meeting-report.md](meeting-report.md)                                                                                                                                                      |
+| Sprint retrospective | [reports/week-09/sprint-retrospective.md](sprint-retrospective.md)                                                                                                                                          |
+| AI usage             | [reports/week-09/ai-usage.md](ai-usage.md)                                                                                                                                                                  |
+| Meeting transcript   | None. The customer declined recording.                                                                                                                                                                      |
+
+## Contribution
+
+| GitHub username | Contribution                                                             |
+| --------------- | ------------------------------------------------------------------------ |
+| @sam            | [Product changes](https://github.com/<organization>/<repo>/pull/51)      |
+| @lee            | [Review evidence](https://github.com/<organization>/<repo>/pull/52)      |
+| @kai            | [Quality plan results](https://github.com/<organization>/<repo>/pull/53) |
+
+## Repository evidence
+
+[Merged pull requests](https://github.com/<organization>/<repo>/pulls?q=is%3Apr+is%3Amerged) and [green checks on main](https://github.com/<organization>/<repo>/actions/runs/180).
+
+## Deviations
+
+None.
+
+## Privacy
+
+No private-only material was committed to the repository.
+```
+
+### Example Week 10 Report
+
+**Example**
+
+From `reports/week-10/README.md`.
+
+```markdown
+# Week 10 final project report
+
+Studio Booking, Team 3.
+
+## Summary
+
+The customer accepted the MVP handoff on `v0.10.0`.
+UAT-01 and UAT-03 passed, and UAT-04 failed because the calendar link expired.
+The calendar invitation and recurring-meetings issues remain open.
+Product code is frozen at the tested release.
+
+## Handoff results
+
+The MVP was [v0.10.0](https://github.com/<organization>/<repo>/releases/tag/v0.10.0) at commit `4c190d8b5098839babe43110b2d4f36c69e324dd`.
+The [handoff package](../../handoff.md) records [the customer's acceptance](../../docs/decisions.md#dec-049) and links the Week 9 preparation.
+
+## Threshold of success results
+
+| Goal                                                | Final status | Final observed result                                                                 |
+| --------------------------------------------------- | ------------ | ------------------------------------------------------------------------------------- |
+| [TOS-01](../../docs/threshold-of-success.md#tos-01) | Achieved     | A paid booking was completed.                                                         |
+| [TOS-03](../../docs/threshold-of-success.md#tos-03) | Achieved     | See the [Week 8 report](../week-08/README.md#usability-test) for the achieved result. |
+| [TOS-02](../../docs/threshold-of-success.md#tos-02) | Missed       | The customer moved US-08 out of the candidate in Week 3.                              |
+| [TOS-04](../../docs/threshold-of-success.md#tos-04) | Open         | The customer's installation is scheduled for 10 December.                             |
+| [TOS-05](../../docs/threshold-of-success.md#tos-05) | Dropped      | The customer removed the recurring-meetings goal.                                     |
+
+[TOS-04](../../docs/threshold-of-success.md#tos-04) remains Open while the customer's installation is pending.
+
+## Coverage
+
+| Deliverable            | Evidence                                                                                                                                                                                                                                                                      |
+| ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Sprint plan            | [docs/project-plan.md#sprint-10](../../docs/project-plan.md#sprint-10)                                                                                                                                                                                                        |
+| UAT re-run             | [docs/user-acceptance-tests.md](../../docs/user-acceptance-tests.md), [reports/week-10/meeting-report.md#user-acceptance-tests](meeting-report.md#user-acceptance-tests)                                                                                                      |
+| REL-10                 | [docs/project-plan.md#rel-10](../../docs/project-plan.md#rel-10), [v0.10.0](https://github.com/<organization>/<repo>/releases/tag/v0.10.0), [Released changelog section](../../CHANGELOG.md#0100---2026-12-04)                                                                |
+| Project reflection     | [reports/week-10/reflection.md](reflection.md)                                                                                                                                                                                                                                |
+| User-facing README     | [README.md](../../README.md)                                                                                                                                                                                                                                                  |
+| Final repository state | [Closed sprint milestones](https://github.com/<organization>/<repo>/milestones?state=closed), [Open issues](https://github.com/<organization>/<repo>/issues?q=is%3Aissue+is%3Aopen), [Open pull requests](https://github.com/<organization>/<repo>/pulls?q=is%3Apr+is%3Aopen) |
+| Repository evidence    | [Merged pull requests](https://github.com/<organization>/<repo>/pulls?q=is%3Apr+is%3Amerged), [Green checks on main](https://github.com/<organization>/<repo>/actions/runs/190)                                                                                               |
+| Meeting script         | [reports/week-10/meeting-script.md](meeting-script.md)                                                                                                                                                                                                                        |
+| Meeting report         | [reports/week-10/meeting-report.md](meeting-report.md)                                                                                                                                                                                                                        |
+| Sprint retrospective   | [reports/week-10/sprint-retrospective.md](sprint-retrospective.md)                                                                                                                                                                                                            |
+| AI usage               | [reports/week-10/ai-usage.md](ai-usage.md)                                                                                                                                                                                                                                    |
+| Meeting transcript     | None. The customer declined recording.                                                                                                                                                                                                                                        |
+
+## Contribution
+
+| GitHub username | Contribution                                                                           |
+| --------------- | -------------------------------------------------------------------------------------- |
+| @sam            | [Cancellation fix](https://github.com/<organization>/<repo>/pull/61)                   |
+| @lee            | [Handoff evidence](https://github.com/<organization>/<repo>/pull/62)                   |
+| @kai            | [Deployment and export instructions](https://github.com/<organization>/<repo>/pull/63) |
+
+## Deviations
+
+UAT-04 failed because the guest's calendar link expired.
+[Issue #77](https://github.com/<organization>/<repo>/issues/77) remains open.
+
+## Privacy
+
+No private-only material was committed to the repository.
+The team will delete the private usability data after grading is confirmed, as recorded in the handoff package.
+```
+
+## Quality Plan Results
+
+**Since: W9**
+
+**Required**
+
+In the Week 9 report's `## Quality plan results`, give one table with one row per `QR-nn QRT-nn` pair.
+Group rows by `Passes`, `Fails`, `Not verified` and `Dropped`, in identifier order within each group.
+Give the result, last check and link to the [testing plan](planning-requirements.md#quality-requirement-testing-plan).
+
+## Threshold Review
+
+**Since: W9**
+
+**Required**
+
+In the Week 9 report's `## Threshold review`, give one table with a linked row per goal that was `Open` when the Sprint 9 review began.
+Give the observed result or evidence link and the status after the review, per [The Threshold Of Success](planning-requirements.md#the-threshold-of-success).
+
+## Threshold Of Success Results
+
+**Since: W10**
+
+**Required**
+
+In the Week 10 report's `## Threshold of success results`, give a table with one linked row per `TOS-nn`.
+Group rows by `Achieved`, `Missed`, `Open` and `Dropped`, and order by identifier within each group.
+Give each status and the final observed result when available.
+After the table, give one status sentence per goal still `Open`.
+
+## Project Reflection
+
+**Since: W10**
+
+**Required**
+
+Write the public, sanitized project reflection in `reports/week-10/reflection.md` and link it from the final report.
+Use `## Lessons learned`, one `## Lesson N` section per lesson with `**Problem:**` and `**Lesson:**`, and `## What would we do differently` for changes the team would make if it started the project anew.
+Support lessons with the retrospectives, risks, configuration plan or Week 8 usability results where relevant.
+Record the private-data retention and deletion plan without exposing private data.
+Exclude individual ratings, team dynamics, the focus metric, and links to the analytics and observability pages.
+
+**Example**
+
+```markdown
+# Project reflection
+
+## Lessons learned
+
+Test the same user journey through deployment and handoff.
+
+## Lesson 1
+
+**Problem:** A cancellation appeared to succeed but left the slot unavailable, as the [Sprint 9 review](../week-09/meeting-report.md#user-acceptance-tests) showed.
+
+**Lesson:** Check the next organizer's view after cancellation, and keep deployment verification runnable from a fresh account.
+The [Sprint 10 retrospective](sprint-retrospective.md) records how the team made that check repeatable.
+
+## What would we do differently
+
+Schedule a live cancellation check in the first release with booking, and keep synthetic accounts in the setup guide from the start.
+Keep private usability data restricted until grading is confirmed, then delete it as recorded in [handoff.md](../../handoff.md).
 ```
 
 ## AI Usage Report
@@ -397,6 +640,73 @@ The Moodle PDF is the canonical private artifact for a week.
 5. It stays short.
    It is a map, not a second copy of the repository.
 
+**Since: W9**
+
+For Submissions 9 and 10, include any permitted private recording or transcript and the privacy confirmation.
+Put the production address, dashboard and backend addresses, credentials and private usability-data access and retention details under `## For customer` in each wrapper.
+State the post-grading deletion plan and give the private-only items for that week.
+
+**Since: W10**
+
+Link the final report and project reflection.
+Include the final commit-hash permalink and snapshot per [Permalinks And Snapshots](repository-requirements.md#permalinks-and-snapshots).
+Use `## For customer` for any additional private handoff values.
+
 **Example**
 
-See [Assignment 1](../assignments/assignment-1.md#assignment-report-on-moodle) for the week-specific contents.
+See [Assignment 1](../assignments/assignment-1.md#assignment-report-on-moodle) for an early-week wrapper.
+
+### Example Submission 9 Wrapper
+
+```markdown
+# Studio Booking, Team 3, Submission 9
+
+| GitHub username | Real name            | University email   |
+| --------------- | -------------------- | ------------------ |
+| @sam            | <team member's name> | <university email> |
+| @lee            | <team member's name> | <university email> |
+| @kai            | <team member's name> | <university email> |
+
+[Week 9 report](https://github.com/<organization>/<repo>/blob/<submission-9-commit>/reports/week-09/README.md)
+
+Attach the ZIP for the same commit.
+The customer declined recording and there is no private transcript.
+No private-only material was committed to the repository.
+
+## For customer
+
+- Production: <university-network-production-url>, <test-account-and-credentials>.
+- Analytics dashboard and backend: <addresses-and-credentials>.
+- Observability dashboard, backend and query access: <addresses-and-credentials>.
+- Usability data and recordings: <private-links-and-access-instructions>.
+  Keep access restricted to the team and instructors, then delete both after grading is confirmed.
+```
+
+### Example Submission 10 Wrapper
+
+```markdown
+# Studio Booking, Team 3, Submission 10
+
+| GitHub username | Real name            | University email   |
+| --------------- | -------------------- | ------------------ |
+| @sam            | <team member's name> | <university email> |
+| @lee            | <team member's name> | <university email> |
+| @kai            | <team member's name> | <university email> |
+
+- [Final report](https://github.com/<organization>/<repo>/blob/<final-main-commit>/reports/week-10/README.md)
+- [Project reflection](https://github.com/<organization>/<repo>/blob/<final-main-commit>/reports/week-10/reflection.md)
+
+Attach the ZIP for the same final commit.
+The customer declined recording and there is no private transcript.
+No private-only material was committed to the repository.
+
+## For customer
+
+- Production used for the handoff: <university-network-production-url>, <test-account-and-credentials>.
+- Analytics dashboard and backend: <addresses-and-credentials>.
+- Observability dashboard, backend and query access: <addresses-and-credentials>.
+- The university VM was shut down after the handoff.
+- Usability data and recordings: <private-links-and-access-instructions>.
+  Keep access restricted to the team and instructors, then delete both after grading is confirmed.
+- Other handoff access values: <values-agreed-with-the-customer>.
+```

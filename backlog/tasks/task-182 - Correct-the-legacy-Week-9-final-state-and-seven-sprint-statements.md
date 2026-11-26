@@ -4,6 +4,7 @@ title: Correct the legacy Week 9 final-state and seven-sprint statements
 status: To Do
 assignee: []
 created_date: '2026-11-24 21:11'
+updated_date: '2026-11-26 12:16'
 labels: []
 dependencies: []
 references:
@@ -16,7 +17,9 @@ references:
   - guides/usability-testing.md
   - guides/configuration-management.md
   - requirements/general-requirements.md
-  - course/syllabus.md
+  - course/plans/a7-plan.md
+  - requirements/configuration-management-requirements.md
+  - requirements/weekly-report-requirements.md
 modified_files:
   - assignments/assignment-3.md
   - course/decisions/a3.md
@@ -25,7 +28,9 @@ modified_files:
   - guides/usability-testing.md
   - guides/configuration-management.md
   - requirements/general-requirements.md
-  - course/syllabus.md
+  - requirements/configuration-management-requirements.md
+  - requirements/weekly-report-requirements.md
+  - course/plans/a7-plan.md
 type: docs
 ordinal: 167000
 ---
@@ -33,18 +38,17 @@ ordinal: 167000
 ## Description
 
 <!-- SECTION:DESCRIPTION:BEGIN -->
-The two-sprint design moves the final repository state and the project reflection to Week 10, makes SPRINT-10 the eighth sprint, and submits the pitch deck only with Submission 10. Assignment 3, the A3/A7/A8 decision logs, two guides, the general-requirements traceability table, and the remaining Week 11 prose still state the one-sprint, seven-sprint, Week 9 design. The a9 implementation does not rewrite those past-week records, so this task corrects them afterwards and keeps the course materials consistent.
+Align the deferred older course materials with the two-sprint design in course/plans/a9-plan.md. The final state and project reflection are Week 10 work, SPRINT-10 is the eighth sprint, and the pitch deck is a separate Moodle submission. The A9 implementation already updates the syllabus, reversed decision statuses, Assignment 8, and the directly contradicted report and traceability passages.
 <!-- SECTION:DESCRIPTION:END -->
 
 ## Acceptance Criteria
 <!-- AC:BEGIN -->
-- [ ] #1 assignment-3.md and course/decisions/a3.md no longer state that the course has exactly seven sprints: they say SPRINT-03 to SPRINT-09 are created in Week 3 and SPRINT-10 is added in Week 9, with the planning sprints rule as the authority
-- [ ] #2 The a7.md and a8.md entries that place the reflection, the final repository state, the deck with Submission 9, or the Week 10 rehearsal in the old design carry a forward note or status pointing at the reversing A9-DEC entry, without rewriting the original decision
-- [ ] #3 guides/usability-testing.md points the final reflection at the Week 10 project reflection, not Week 9
-- [ ] #4 guides/configuration-management.md puts the final repository state in Week 10, not the Week 9 handoff
-- [ ] #5 general-requirements.md's Week 9 final reflection traceability row is replaced by a Week 10 project reflection row that cites the UT-nn results, the configuration plan, the retrospectives, and the risks
-- [ ] #6 The remaining Week 11 syllabus prose that the a9 renumbering leaves stale is corrected, and no submission number or deadline contradicts the a9 assessment
-- [ ] #7 format:markdown:check, lint:markdown, check:links, test:markdown-format, and test:markdown-rules pass
+- [ ] #1 Assignment 3 and the A3 log point to the planning rule for the initial milestones and the Week 9 addition of SPRINT-10.
+- [ ] #2 Remaining A7 and A8 historical statements point forward to the A9 design without rewriting original decisions or their already updated statuses.
+- [ ] #3 The usability-testing and configuration-management guides and configuration-management requirements place the reflection and final repository state in Week 10.
+- [ ] #4 The A7 plan carries a forward note for the two-sprint design, separate pitch deck submission and Week 10 final state.
+- [ ] #5 Correct any remaining legacy Week 9 and seven-sprint prose in the listed requirements, preserving the A9 report and traceability corrections.
+- [ ] #6 The Markdown and link gates pass.
 <!-- AC:END -->
 
 ## Definition of Done
