@@ -4,7 +4,7 @@ title: Implement Assignments 9 and 10 and the final handoff
 status: In Progress
 assignee: []
 created_date: '2026-11-26 12:08'
-updated_date: '2026-11-26 12:49'
+updated_date: '2026-11-26 13:54'
 labels: []
 dependencies: []
 references:
@@ -64,4 +64,8 @@ The documented Submission 10 cutoff matches the syllabus and assignment. The liv
 Audited both final assignments against the plan. Aligned the release and milestone order, updated the missing-review instructions and corrected the UAT and threshold examples. Open issues keep their handoff links and have their milestone, assignees, Responsible and Accountable cleared. The Markdown checks, 68 fixture tests, nine lecture comparisons, network link check and cross-example audit passed.
 
 Aligned both assignments with Assignment 8 through tables of contents, linked checklists, clearer report sections, meeting follow-up, and explicit Moodle evidence and deletion details. Markdown format and lint, 68 fixture tests, all nine lecture comparisons, and all local links and anchors passed. The full network link gate returned HTTP 503 for two existing GitHub example URLs in the Assignment 5 plan and TODO.md on both attempts.
+
+Revised the handoff issue rows under A9-DEC-021. The handoff keeps a `Limitations` row and replaces the per-issue open-issues list with one link to the repository's Issues page; the assignment, guide, repository rule, weekly-report examples and plan note now agree. Markdown format and lint, both fixture suites and the changed anchors passed; the network link check again found only the existing GitHub 503s in `course/plans/a5-plan.md` and `TODO.md`.
+
+Re-ran the full link check after the anchor rename: 4592 links resolved and no errors reported.
 <!-- SECTION:NOTES:END -->

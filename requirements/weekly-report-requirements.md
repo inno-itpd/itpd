@@ -374,7 +374,7 @@ The Sprint 9 increment lets an organizer book and share a meeting.
 The review used `7f81db2`, the commit tagged `v0.9.0`.
 The customer passed the booking and guest-link tests and found that cancellation did not free the slot.
 The quality plan had a failed check for cancellation, and the threshold review left the installation goal open.
-The customer asked for deployment and export instructions and a known-issues list.
+The customer asked for deployment and export instructions and a list of known limitations.
 Sprint 10 will fix cancellation and prepare the handoff.
 
 ## Quality plan results
@@ -398,9 +398,9 @@ Sprint 10 will fix cancellation and prepare the handoff.
 
 ## Handoff preparation
 
-The customer expects access instructions, an export procedure and a list of known issues.
+The customer expects access instructions, an export procedure and a list of known limitations.
 The setup and deployment notes are ready.
-The export needs a dry run, and the known-issues list needs the final UAT results.
+The export needs a dry run, and the limitations row needs the final UAT results.
 
 ## Coverage
 

@@ -403,6 +403,11 @@ Next: Week 3 is planning and the minimum usable product, and it has no assignmen
 - [x] Route the separate Moodle deck to the exam placeholder and update the assessment under `A9-DEC-005`, `A9-DEC-007` and `A9-DEC-013`.
       The exam page content is a separate maintainer task.
 
+## A10
+
+- [x] Keep the handoff's limitations and link the repository's Issues page instead of each open issue.
+      `A9-DEC-021`
+
 ## A2-2025 Tech Stack TODO
 
 `tmp/itpd-2025/assignments/assignment-2.md:34` carries an unresolved comment on the tech-stack line:

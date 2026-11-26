@@ -201,10 +201,13 @@ Include each of these rows and any additional items agreed with the customer in 
 | Product documentation           | The user README, setup instructions and maintained documentation.                                                                                                          |
 | Dashboards and access           | Where to find private dashboard and backend details.                                                                                                                       |
 | Credentials                     | Where to find the private access values.                                                                                                                                   |
-| Known issues                    | Remaining limitations, including unresolved UAT failures, with workarounds where available.                                                                                |
-| Open issues                     | Links to the open issues, per [Scheduling An Issue](issue-tracking-requirements.md#scheduling-an-issue).                                                                   |
+| Limitations                     | The product's remaining limitations, including unresolved UAT failures, with workarounds where available.                                                                  |
+| Open issues                     | A single link to the product repository's Issues page.                                                                                                                     |
 | Private usability-data deletion | The team's deletion status under [Deleting Private Usability Data](visibility-requirements.md#deleting-private-usability-data), and any approved repository privatisation. |
 | Usability results               | The sanitized public results.                                                                                                                                              |
+
+`Limitations` describes what the product cannot do; `Open issues` points at the live tracker, so the handoff does not copy the open-issue list.
+Do not list or link each open issue; the issues stay open and unscheduled, per [Scheduling An Issue](issue-tracking-requirements.md#scheduling-an-issue).
 
 **Example**
 
@@ -226,8 +229,8 @@ See the [Sprint 10 review](reports/week-10/meeting-report.md) and the [Week 9 pr
 | Product documentation           | Delivered                                   | [README.md](README.md) and [docs/setup.md](docs/setup.md)                                                                                                                                  |
 | Dashboards and access           | Provided privately                          | Week 10 Moodle wrapper, For customer. The university VM is now shut down.                                                                                                                  |
 | Credentials                     | Provided privately                          | Week 10 Moodle wrapper, For customer.                                                                                                                                                      |
-| Known issues                    | Open                                        | The calendar link can expire before the guest signs in. An organizer can send a fresh invitation.                                                                                          |
-| Open issues                     | Unscheduled                                 | [Issue #77](https://github.com/<organization>/<repo>/issues/77) and [Issue #74](https://github.com/<organization>/<repo>/issues/74).                                                       |
+| Limitations                     | Open                                        | The calendar link can expire before the guest signs in. An organizer can send a fresh invitation.                                                                                          |
+| Open issues                     | Open and unscheduled                        | [Repository Issues page](https://github.com/<organization>/<repo>/issues).                                                                                                                 |
 | Private usability-data deletion | Team copies deleted                         | Dated confirmation in the Week 10 Moodle wrapper, For customer.                                                                                                                            |
 | Usability results               | Published                                   | [Sanitized usability results](docs/usability-tests/ut-01/results.md).                                                                                                                      |
 ```
@@ -700,7 +703,7 @@ None.
 ## Summary
 
 - The booking and guest-link journeys passed, and cancellation left slots unavailable.
-- The customer asked for deployment instructions, export steps and a list of known issues.
+- The customer asked for deployment instructions, export steps and a list of known limitations.
 - The team reviewed the quality plan and checked the open threshold goals against their existing measures.
 
 ## User acceptance tests
@@ -763,14 +766,14 @@ From `reports/week-10/meeting-script.md`.
 3. 20 minutes.
    Walk through the package, review the remaining open threshold goals and ask question 2.
 4. 10 minutes.
-   Show the recorded outcomes and read back the acceptance decision, action points and open issues.
+   Show the recorded outcomes and read back the acceptance decision, action points and the open-issues link.
 
 ## Questions
 
 1. Open.
    Starting from the test account, what happens in UAT-01, UAT-03, UAT-04?
 2. Closed.
-   Can you accept the handoff with these results and known issues?
+   Can you accept the handoff with these results and known limitations?
 
 ## Roles
 

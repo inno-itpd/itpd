@@ -70,8 +70,8 @@ Record the actual runner, any failed or unrun test and its reason, and the separ
 ## Step 7: Finish The Handoff Evidence
 
 Complete the meeting report, handoff, UAT history and release record from the observed results.
-Link the unresolved failures from the final report's deviations and give any workaround in the handoff.
-Confirm the handoff's open-issue list during sprint closeout.
+Link the unresolved failures from the final report's deviations and give any workaround in the handoff's `Limitations` row.
+Check that the handoff's `Limitations` row is current and its `Open issues` link opens the product repository's tracker.
 Write the retrospective and AI usage report.
 Shut down the university VM after the handoff and check that the submitted evidence can be read without it.
 
@@ -100,8 +100,10 @@ Check the [Submission 10 cutoff](../course/syllabus.md#week-10-nov-27--dec-3-fin
 - **Making the handoff a separate meeting.**
   Use the Sprint 10 review to check the deployed product, walk through the package and record acceptance.
 - **Leaving open items in the final milestone.**
-  Clear their `Responsible` and `Accountable` fields, remove their assignees and milestone, and link the issues in the handoff.
+  Clear their `Responsible` and `Accountable` fields and remove their assignees and milestone.
   See [Scheduling An Issue](../requirements/issue-tracking-requirements.md#scheduling-an-issue).
+- **Listing each open issue in the handoff.**
+  Leave the issues open and unscheduled and link the repository's Issues page from the handoff.
 - **Making the final report a second handoff package.**
   Link it from `## Handoff results` and use the final threshold table for outcomes.
 - **Leaving private usability data or dead links at closeout.**

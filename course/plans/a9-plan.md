@@ -2,6 +2,7 @@
 
 > [A9-DEC-019](../decisions/a9.md#a9-dec-019-private-usability-data-is-deleted-by-submission-10) supersedes this plan's private usability-data retention, deletion and final access instructions.
 > [A9-DEC-020](../decisions/a9.md#a9-dec-020-the-project-reflection-captures-transferable-lessons) supersedes this plan's project reflection format, scope and deletion reporting.
+> [A9-DEC-021](../decisions/a9.md#a9-dec-021-the-handoff-keeps-limitations-and-links-the-issue-tracker) supersedes this plan's instructions for listing each open issue in the handoff and renames the handoff's known-issues row to `Limitations`.
 
 This plan designs Assignment 9 and Assignment 10 as [`a8-plan.md`](a8-plan.md) designs Assignment 8: two sprints, `SPRINT-09` and `SPRINT-10`, two graded group submissions, two releases `REL-09` and `REL-10`, the user acceptance tests, the handoff, the final report, the project reflection, the individual reflection and peer evaluation, the final repository state, the two weekly reports, the two retrospectives, the two AI usage reports, and the two Moodle wrappers.
 It states the scope and the contradictions the wider materials expose, with the resolution each takes, in [Scope And Contradictions](#scope-and-contradictions).

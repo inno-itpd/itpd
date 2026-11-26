@@ -451,7 +451,7 @@ Deploy the Sprint 9 build on the university VM for its review and record accepta
 
 Deploy `REL-10` for the handoff.
 A failed customer UAT alone does not trigger a rollback.
-Record unresolved failures as known issues in [the handoff](customer-meetings-requirements.md#the-handoff), and keep the release available until the planned shutdown.
+Record unresolved failures as limitations in [the handoff](customer-meetings-requirements.md#the-handoff), and keep the release available until the planned shutdown.
 Shut down the university VM after the handoff.
 Grading uses the submitted evidence and repository snapshot.
 

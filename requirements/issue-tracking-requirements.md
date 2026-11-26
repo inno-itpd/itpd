@@ -109,7 +109,7 @@ Clear their `Responsible` and `Accountable` fields and remove their assignees wh
 Keep issues completed in Sprint 10 in its closed milestone.
 At the final close, leave every open issue open and remove its milestone.
 Clear its `Responsible` and `Accountable` fields and remove all assignees.
-Link each open issue in [the handoff](customer-meetings-requirements.md#the-handoff).
+The handoff links the repository's Issues page, per [The Handoff](customer-meetings-requirements.md#the-handoff).
 
 ## Assignees
 

@@ -56,7 +56,7 @@ Complete the requirements marked `**Since: W10**` in the linked sections and con
 ## Part 4: Record The Handoff Results And Write The Final Report
 
 1. Update the run history in `docs/user-acceptance-tests.md` and the outcomes in `docs/threshold-of-success.md`.
-   Complete `handoff.md` with the acceptance decision, known issues, and each `Fail` or `Not run` outcome and its reason.
+   Complete `handoff.md` with the acceptance decision, the limitations, and each `Fail` or `Not run` outcome and its reason.
 2. Finalize the [`REL-10` block](../requirements/planning-requirements.md#releases) with `**Released:**`, `**Checked QRs:**` and `**Checked UATs:**`.
 3. Shut down the university VM after the handoff.
    Record `**Actual Velocity:**` and write `reports/week-10/sprint-retrospective.md` per [Retrospective](../requirements/sprint-ceremonies-requirements.md#retrospective) and `reports/week-10/ai-usage.md` per [AI Usage Report](../requirements/weekly-report-requirements.md#ai-usage-report).
@@ -70,12 +70,13 @@ Write `reports/week-10/reflection.md`, per [Project Reflection](../requirements/
 
 Complete [Deleting Private Usability Data](../requirements/visibility-requirements.md#deleting-private-usability-data) before submitting.
 Merge the final report, reflection and supporting artifacts and complete the [final repository state](../requirements/repository-requirements.md#the-final-repository-state).
-Close both sprint milestones and apply the [final issue rules](../requirements/issue-tracking-requirements.md#scheduling-an-issue) to open issues, with links to those issues in `handoff.md`.
+Close both sprint milestones and apply the [final issue rules](../requirements/issue-tracking-requirements.md#scheduling-an-issue) to open issues, leaving them open and unscheduled.
+Link the repository's Issues page from `handoff.md` instead of listing each issue.
 Take the commit-hash permalink and snapshot from the final `main` commit and submit them with the Moodle wrapper as described below.
 
 ## What Good Looks Like
 
-The handoff gives the customer a route from the MVP to the setup, deployment and known issues.
+The handoff gives the customer a route from the MVP to the setup instructions, deployment guide, limitations and the repository's Issues page.
 The UAT evidence identifies what ran on that tag, who ran it and what the customer accepted.
 The final snapshot lets a reader inspect the reports, open issues and release evidence after the VM shuts down.
 
@@ -134,9 +135,9 @@ See the [Submission 10 wrapper example](../requirements/weekly-report-requiremen
 - [ ] Sprint 10 planned, user README rewritten and the in-person handoff scheduled ([Part 1](#part-1-plan-sprint-10-schedule-the-handoff-and-rewrite-the-readme)).
 - [ ] Protected `REL-10` tag published and deployed before the review, with `handoff.md` and the meeting script prepared ([Part 2](#part-2-cut-and-deploy-rel-10-and-write-the-sprint-10-script)).
 - [ ] Meeting report records the three UAT outcomes, the customer's acceptance and follow-up on earlier action points and questions, with a transcript or the reason there is none ([Part 3](#part-3-conduct-the-handoff-and-re-run-the-uats)).
-- [ ] Handoff, UAT history, threshold goals and release block updated, VM shut down, and actual velocity, retrospective and AI usage recorded ([Part 4](#part-4-record-the-handoff-results-and-write-the-final-report)).
+- [ ] Handoff, UAT history, threshold goals and release block updated, including the limitations and Issues-page link, the VM shut down, and actual velocity, retrospective and AI usage recorded ([Part 4](#part-4-record-the-handoff-results-and-write-the-final-report)).
 - [ ] Project reflection written and linked from the final report ([Part 5](#part-5-write-the-project-reflection)).
-- [ ] Final artifacts merged, sprint milestones closed and remaining issues linked from the handoff ([Part 6](#part-6-close-sprint-10-and-submit-submission-10)).
+- [ ] Final artifacts merged, sprint milestones closed and final issue rules applied, with open issues left open and unscheduled ([Part 6](#part-6-close-sprint-10-and-submit-submission-10)).
 - [ ] Team-controlled private usability data deleted, earlier links cleaned up on `main`, and sanitized results linked from the public handoff ([Part 6](#part-6-close-sprint-10-and-submit-submission-10)).
 - [ ] Final report includes the summary, handoff results, threshold results and evidence links ([Assignment Report In The Repository](#assignment-report-in-the-repository)).
 - [ ] Moodle PDF includes the private handoff details, dated deletion confirmation and review evidence ([Assignment Report On Moodle](#assignment-report-on-moodle)).

@@ -119,7 +119,7 @@ The Week 3 plan starts with `SPRINT-03` to `SPRINT-09`.
 **Since: W10**
 
 12. Plan `SPRINT-10` after the Sprint 9 review, per [Sprint Planning](sprint-ceremonies-requirements.md#sprint-planning).
-    In its `**Actual Velocity:**` sentence, state that there is no later sprint and identify the open items passed to the handoff.
+    In its `**Actual Velocity:**` sentence, state that there is no later sprint and that unfinished work remains open in the unscheduled product backlog.
     Close Sprint 10 after the review, handoff and release, using the final issue disposition in [Scheduling An Issue](issue-tracking-requirements.md#scheduling-an-issue).
 
 **Example**
@@ -493,7 +493,7 @@ The customer can take over the released booking app with its limitations documen
 - **Sprint Backlog:** [Sprint 10 issues](https://github.com/<organization>/<repo>/milestone/8)
 - **Planned Velocity:** 0
 - **Actual Velocity:** 0.
-  There is no later sprint, and the calendar invitation and recurring-meetings issues are listed in [handoff.md](../handoff.md).
+  There is no later sprint, so unfinished work stays in the unscheduled product backlog.
 
 #### REL-10
 
