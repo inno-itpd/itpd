@@ -270,7 +270,7 @@ See the [Sprint 10 review](reports/week-10/meeting-report.md) and the [Week 9 pr
 6. Every question serves the target in `## Context`: an answer to it could change something the team will build, write, or ask next.
    A question no answer could change is cut, and at the kickoff it is replaced rather than kept to reach the per-area minimum.
 7. `## Agenda` covers the whole meeting.
-   The first part asks the [three permission questions](#permission-questions), the last part reads back the decisions and action points, and the timeboxes add up to the length you planned.
+   The first part asks the [three permission questions](#permission-questions), the last part reads back this meeting's decisions and action points, and the timeboxes add up to the length you planned.
    Every question appears in exactly one part.
 8. Each part names what you show in it: a link to the artifact, prototype, or screen you put in front of the customer, or says that nothing is shown.
 9. The script is preparation, so it is not rewritten after the meeting, apart from a [formatting-only change](general-requirements.md#where-artifacts-live-in-the-repository).

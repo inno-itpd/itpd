@@ -51,6 +51,7 @@ Complete the requirements marked `**Since: W10**` in the linked sections and con
 ## Part 3: Conduct The Handoff And Re-Run The UATs
 
 1. Follow up on every earlier action point that is not yet closed and is due by this meeting or already carried out, and every open question, from `reports/week-09/meeting-report.md` and any earlier customer meeting.
+   Put only the ones this meeting has to settle with the customer on the agenda, per [Meeting Script](../requirements/customer-meetings-requirements.md#meeting-script).
 2. Walk through `handoff.md` with the customer and check three active UATs on the deployed `REL-10`, per [The Two Review Sessions](../requirements/user-acceptance-tests-requirements.md#the-two-review-sessions).
    If customer access fails, run the tests live for the customer to observe and judge; if `REL-10` itself is unavailable, arrange a new time within the review window instead of testing another build.
 3. Review only the threshold goals still open, per [The Threshold Of Success](../requirements/planning-requirements.md#the-threshold-of-success).

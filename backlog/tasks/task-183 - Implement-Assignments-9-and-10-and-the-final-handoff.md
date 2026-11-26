@@ -4,7 +4,7 @@ title: Implement Assignments 9 and 10 and the final handoff
 status: In Progress
 assignee: []
 created_date: '2026-11-26 12:08'
-updated_date: '2026-11-26 14:14'
+updated_date: '2026-11-26 15:22'
 labels: []
 dependencies: []
 references:
@@ -70,4 +70,6 @@ Revised the handoff issue rows under A9-DEC-021. The handoff keeps a `Limitation
 Re-ran the full link check after the anchor rename: 4592 links resolved and no errors reported.
 
 Applied the Assignment 9 review. The assignment now names the Week 9 UAT fallback, records each UAT run as its own decision, gives the UAT index and run-row fields, states the changelog-before-release-body order and the checked-QRs testing-plan sentence, makes the quality bar outcome-based, adds the REL-10 heading to the provisional Sprint 10 section, and makes the held-review and deadline-day deviation wording conditional. Markdown format and lint, both 34-test fixture suites, the nine-deck check and the 4,595-link check (0 errors) passed.
+
+Scoped the final reviews' agenda: Assignments 9 and 10 now follow up on every due or carried earlier action point and open question but put only the ones the meeting must settle with the customer on the agenda. The meeting report still records an outcome for each, and the Meeting Script read-back is explicitly this meeting's decisions and action points. Markdown format and lint passed, and the offline link check resolved 4,598 links with 0 errors.
 <!-- SECTION:NOTES:END -->

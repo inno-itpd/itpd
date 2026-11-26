@@ -47,6 +47,7 @@ Complete the requirements marked `**Since: W9**` in the linked sections and cont
 ## Part 3: Deploy The Candidate And Hold The Sprint 9 Review
 
 1. Follow up on the action points due and the questions still open from `reports/week-08/meeting-report.md` and any earlier customer meeting.
+   Put only the ones this meeting has to settle with the customer on the agenda, per [Meeting Script](../requirements/customer-meetings-requirements.md#meeting-script).
 2. Deploy the Sprint 9 build to the university VM and hold the in-person review by 29 November, per [Showing Working Software](../requirements/customer-meetings-requirements.md#showing-working-software).
    Have the customer run the three UATs.
    If the customer cannot run them, the Week 9 fallback in [The Two Review Sessions](../requirements/user-acceptance-tests-requirements.md#the-two-review-sessions) is to reschedule within the review window or record the missing results and declare the deviation.
