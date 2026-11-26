@@ -84,9 +84,14 @@ Cut the protected tag for `REL-09` at the Sprint 9 close, after the review and a
 
 **Since: W10**
 
-Cut the protected tag for `REL-10` on the final product commit and deploy it before the handoff, while the milestone is open.
-Publish the release with the usual upgrade note and merge the changelog's released section after tagging.
-After the handoff, finalize the [release block](planning-requirements.md#releases) with the handoff checks before merging the final report.
+Keep the `SPRINT-10` milestone open until the final close and follow this order for `REL-10`.
+
+1. Push the protected SemVer tag on the final product commit.
+2. Merge the released changelog section with its heading linked to the tag's source tree on GitHub, such as `/tree/v0.10.0`.
+3. Publish the GitHub release for that tag with the upgrade note and the `Full changelog` link to the released heading on `main`.
+4. Deploy the tagged build to the university VM before the handoff.
+
+Finalize the [release block](planning-requirements.md#releases) from the available handoff evidence before merging the final report.
 Follow the [code freeze](repository-requirements.md#the-final-repository-state).
 
 **Recommended**
@@ -152,7 +157,13 @@ Deploy v0.9.0 using the existing configuration.
 [Full changelog](https://github.com/<organization>/<repo>/blob/main/CHANGELOG.md#090---2026-11-29)
 ```
 
-GitHub release body for the final release, `v0.10.0`:
+For `REL-10`, push `v0.10.0` and merge the changelog with its dated heading linked to that tag.
+
+```markdown
+## [0.10.0](https://github.com/<organization>/<repo>/tree/v0.10.0) - 2026-12-04
+```
+
+Then publish the GitHub release for `v0.10.0` with this body.
 
 ```markdown
 Cancelling a booking makes the slot available to other organizers.

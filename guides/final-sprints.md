@@ -53,10 +53,11 @@ Walk through the rewritten README as a new user would, starting at setup and fol
 
 Reserve time after the handoff for writing, reviews, CI and uploading.
 A deadline-day meeting leaves all those steps in the same window.
+If the exam demo uses the university VM, plan its shutdown around both events using [Environments And Deployment](../requirements/repository-requirements.md#environments-and-deployment).
 
 ## Step 6: Release The MVP And Conduct The Handoff
 
-Tag and deploy `REL-10` before the meeting using [Cutting A Release](../requirements/releases-requirements.md#cutting-a-release).
+Work through the [Week 10 release sequence](../requirements/releases-requirements.md#cutting-a-release) before the meeting.
 Prepare the handoff package and write the script before the meeting.
 Put the tag, test accounts, start states and handoff items where the meeting roles can find them.
 Use the private wrapper for real access details.
@@ -66,7 +67,8 @@ Capture the deployed tag and commit while the VM is running.
 Run the [handoff UAT session](../requirements/user-acceptance-tests-requirements.md#the-two-review-sessions), review the still-open threshold goals and read back the results.
 If customer access fails, show the tests live and let the customer judge each result.
 If the release itself is unavailable, look for another meeting time before the cutoff.
-Record the actual runner, any failed or unrun test and its reason, and the separate acceptance decision.
+Record the actual runner, any failed or unrun test and its reason, and the customer's handoff decision.
+If the meeting cannot take place by the cutoff, use the [Submission 10 procedure](../assignments/assignment-10.md#submission-procedure).
 
 ## Step 7: Finish The Handoff Evidence
 
@@ -74,7 +76,7 @@ Complete the meeting report, handoff, UAT history and release record from the ob
 Link the unresolved failures from the final report's deviations and give any workaround in the handoff's `Limitations` row.
 Check that the handoff's `Limitations` row is current and its `Open issues` link opens the product repository's tracker.
 Write the retrospective and AI usage report.
-Shut down the university VM after the handoff and check that the submitted evidence can be read without it.
+Before the VM shuts down, check that the submitted evidence will be readable without it.
 
 ## Step 8: Write The Project Reflection
 
@@ -85,8 +87,9 @@ Use the [reflection requirements](../requirements/weekly-report-requirements.md#
 
 ## Step 9: Close Sprint 10 And Submit The Final Snapshot
 
-Record the tested tag and product commit in the final report.
-After the final evidence merges and the branch is green, complete the [final repository state](../requirements/repository-requirements.md#the-final-repository-state).
+Record the tested tag and product commit in the final report when available.
+Link the workflow pages from the report so readers can reach the checks after the report merges.
+Complete the [final repository state](../requirements/repository-requirements.md#the-final-repository-state) and check the workflow runs for the final commit.
 Use the final `main` commit for the wrapper's permalinks and snapshot.
 Check the [Submission 10 cutoff](../course/syllabus.md#week-10-nov-27--dec-3-final-release-and-handoff) before uploading.
 

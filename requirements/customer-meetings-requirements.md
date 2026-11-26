@@ -176,7 +176,7 @@ Ask what the customer expects to receive at the handoff and record the answer fo
 **Since: W10**
 
 Show the deployed `REL-10` and the handoff package.
-Follow the [handoff UAT session](user-acceptance-tests-requirements.md#the-two-review-sessions) and record the customer's acceptance separately from the test decisions.
+Follow the [handoff UAT session](user-acceptance-tests-requirements.md#the-two-review-sessions) and record the customer's verdict per [Meeting Report](#meeting-report).
 
 ## The Handoff
 
@@ -185,8 +185,9 @@ Follow the [handoff UAT session](user-acceptance-tests-requirements.md#the-two-r
 **Required**
 
 Prepare the root `handoff.md` for the customer and complete it after the meeting.
-Link the Week 9 `#handoff-preparation` section and the Sprint 10 meeting report.
-Record the customer's acceptance as its own linked `DEC-nnn`.
+Link the Week 9 `#handoff-preparation` section and the Sprint 10 meeting report when available.
+Link the customer's handoff decision when given.
+If the handoff could not take place, mark it as missing and link the final report's declaration.
 Use a table with `Item`, `Status` and `Where it lives`.
 Link public evidence and refer to `## For customer` in the [Week 10 Moodle wrapper](weekly-report-requirements.md#private-submission-wrapper) for private values.
 Include each of these rows and any additional items agreed with the customer in Sprint 9.
@@ -361,7 +362,9 @@ Record the Sprint 9 story verdicts and the customer's handoff expectations.
 
 **Since: W10**
 
-Identify the deployed `REL-10` and record the acceptance as a separate decision in `## Decisions`.
+Identify the tested SemVer tag and commit when available.
+Record the customer's acceptance or refusal as a separate `DEC-nnn` in `## Decisions`.
+If the customer gave no verdict, state that acceptance is pending.
 
 ## Meeting Transcript
 
@@ -846,7 +849,7 @@ The customer's session expired after UAT-01, so the team ran the remaining journ
 
 | Action                                         | Owner | Due     |
 | ---------------------------------------------- | ----- | ------- |
-| Shut down the university VM after the handoff. | @lee  | Week 10 |
+| Shut down the university VM before submitting. | @lee  | Week 10 |
 
 ## Open questions
 

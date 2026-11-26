@@ -122,12 +122,15 @@ Who may see each item is in [Visibility Requirements](visibility-requirements.md
 
 28. `reports/week-10/README.md` is both the weekly report and the final project report.
     Use `## Summary`, `## Handoff results`, `## Threshold of success results`, `## Coverage`, `## Contribution`, `## Deviations` and `## Privacy`, in that order.
-    In the summary, name the MVP, the accepted handoff, the three UAT outcomes, the open work and the frozen product state.
-29. Link `handoff.md` once, from `## Handoff results`, and identify the tested tag and commit.
-    Link the Sprint 10 meeting report, the UAT record and re-run, `REL-10`, the retrospective, the AI usage report and the project reflection.
+    In the summary, name the MVP, the handoff result, available UAT outcomes, open work and the frozen product state.
+29. Link `handoff.md` once, from `## Handoff results`, and identify the tested tag and commit when available.
+    Link the UAT record, `REL-10`, the retrospective, the AI usage report and the project reflection.
+    Link the Sprint 10 meeting report and UAT session if the review took place.
     Reach the Week 9 preparation through the handoff package.
-    If the handoff could not take place, identify the missing deliverable and distinguish the released build from any tested build.
+    If the handoff could not take place, declare it under `## Deviations` with the reason and distinguish the released build from any tested build in `## Handoff results`.
 30. Use [Threshold Of Success Results](#threshold-of-success-results) and put repository evidence in the coverage table.
+    Link the workflow pages or the Actions list filtered to `main`.
+    Verify the checks on the final snapshot commit per [The Final Repository State](repository-requirements.md#the-final-repository-state).
     The final report requires no screenshots and has no separate repository evidence section.
     Leave the focus metric, analytics and observability pages, proposal table and repeated usability results in the earlier reports.
 
@@ -474,20 +477,20 @@ The [handoff package](../../handoff.md) records [the customer's acceptance](../.
 
 ## Coverage
 
-| Deliverable            | Evidence                                                                                                                                                                                                                                                                      |
-| ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Sprint plan            | [docs/project-plan.md#sprint-10](../../docs/project-plan.md#sprint-10)                                                                                                                                                                                                        |
-| UAT re-run             | [docs/user-acceptance-tests.md](../../docs/user-acceptance-tests.md), [reports/week-10/meeting-report.md#user-acceptance-tests](meeting-report.md#user-acceptance-tests)                                                                                                      |
-| REL-10                 | [docs/project-plan.md#rel-10](../../docs/project-plan.md#rel-10), [v0.10.0](https://github.com/<organization>/<repo>/releases/tag/v0.10.0), [Released changelog section](../../CHANGELOG.md#0100---2026-12-04)                                                                |
-| Project reflection     | [reports/week-10/reflection.md](reflection.md)                                                                                                                                                                                                                                |
-| User-facing README     | [README.md](../../README.md)                                                                                                                                                                                                                                                  |
-| Final repository state | [Closed sprint milestones](https://github.com/<organization>/<repo>/milestones?state=closed), [Open issues](https://github.com/<organization>/<repo>/issues?q=is%3Aissue+is%3Aopen), [Open pull requests](https://github.com/<organization>/<repo>/pulls?q=is%3Apr+is%3Aopen) |
-| Repository evidence    | [Merged pull requests](https://github.com/<organization>/<repo>/pulls?q=is%3Apr+is%3Amerged), [Green checks on main](https://github.com/<organization>/<repo>/actions/runs/190)                                                                                               |
-| Meeting script         | [reports/week-10/meeting-script.md](meeting-script.md)                                                                                                                                                                                                                        |
-| Meeting report         | [reports/week-10/meeting-report.md](meeting-report.md)                                                                                                                                                                                                                        |
-| Sprint retrospective   | [reports/week-10/sprint-retrospective.md](sprint-retrospective.md)                                                                                                                                                                                                            |
-| AI usage               | [reports/week-10/ai-usage.md](ai-usage.md)                                                                                                                                                                                                                                    |
-| Meeting transcript     | None. The customer declined recording.                                                                                                                                                                                                                                        |
+| Deliverable            | Evidence                                                                                                                                                                                                                                                                                       |
+| ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Sprint plan            | [docs/project-plan.md#sprint-10](../../docs/project-plan.md#sprint-10)                                                                                                                                                                                                                         |
+| UAT re-run             | [docs/user-acceptance-tests.md](../../docs/user-acceptance-tests.md), [reports/week-10/meeting-report.md#user-acceptance-tests](meeting-report.md#user-acceptance-tests)                                                                                                                       |
+| REL-10                 | [docs/project-plan.md#rel-10](../../docs/project-plan.md#rel-10), [v0.10.0 release](https://github.com/<organization>/<repo>/releases/tag/v0.10.0), [Tagged source](https://github.com/<organization>/<repo>/tree/v0.10.0), [Released changelog section](../../CHANGELOG.md#0100---2026-12-04) |
+| Project reflection     | [reports/week-10/reflection.md](reflection.md)                                                                                                                                                                                                                                                 |
+| User-facing README     | [README.md](../../README.md)                                                                                                                                                                                                                                                                   |
+| Final repository state | [Closed sprint milestones](https://github.com/<organization>/<repo>/milestones?state=closed), [Open issues](https://github.com/<organization>/<repo>/issues?q=is%3Aissue+is%3Aopen), [Open pull requests](https://github.com/<organization>/<repo>/pulls?q=is%3Apr+is%3Aopen)                  |
+| Repository evidence    | [Merged pull requests](https://github.com/<organization>/<repo>/pulls?q=is%3Apr+is%3Amerged), [Workflow runs on main](https://github.com/<organization>/<repo>/actions?query=branch%3Amain)                                                                                                    |
+| Meeting script         | [reports/week-10/meeting-script.md](meeting-script.md)                                                                                                                                                                                                                                         |
+| Meeting report         | [reports/week-10/meeting-report.md](meeting-report.md)                                                                                                                                                                                                                                         |
+| Sprint retrospective   | [reports/week-10/sprint-retrospective.md](sprint-retrospective.md)                                                                                                                                                                                                                             |
+| AI usage               | [reports/week-10/ai-usage.md](ai-usage.md)                                                                                                                                                                                                                                                     |
+| Meeting transcript     | None. The customer declined recording.                                                                                                                                                                                                                                                         |
 
 ## Contribution
 
@@ -667,6 +670,7 @@ Instructors use the private usability-data access details from the earlier usabi
 Link the final report and project reflection.
 Include the final commit-hash permalink and snapshot per [Permalinks And Snapshots](repository-requirements.md#permalinks-and-snapshots).
 Use `## For customer` for any additional private handoff values.
+Record the date of the [university VM shutdown](repository-requirements.md#environments-and-deployment) there.
 Under `## For customer`, include a dated confirmation that the team completed its part of [Deleting Private Usability Data](visibility-requirements.md#deleting-private-usability-data).
 
 **Example**
@@ -721,7 +725,7 @@ No private-only material was committed to the repository.
 - Production used for the handoff: <university-network-production-url>, <test-account-and-credentials>.
 - Analytics dashboard and backend: <addresses-and-credentials>.
 - Observability dashboard, backend and query access: <addresses-and-credentials>.
-- The university VM was shut down after the handoff.
+- The university VM was shut down on 2026-12-05.
 - On 2026-12-05, the team deleted the private usability-data repository and its history, the recordings folder, and all other copies of private usability-test data it controlled.
 - Other handoff access values: <values-agreed-with-the-customer>.
 ```

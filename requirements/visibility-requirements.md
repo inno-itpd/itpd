@@ -124,6 +124,8 @@ The usability test's raw data identifies a person or can be joined to one, so it
    Earlier submission snapshots and commit-hash permalinks may still contain the original links.
 4. Record the team's deletion date in the [Submission 10 Moodle wrapper](weekly-report-requirements.md#private-submission-wrapper) and point to the sanitized results from [the public handoff](customer-meetings-requirements.md#the-handoff).
 
+For Sprint Review recordings, follow [the private submission wrapper requirements](weekly-report-requirements.md#private-submission-wrapper).
+
 ## Screenshot Evidence
 
 **Since: W1**

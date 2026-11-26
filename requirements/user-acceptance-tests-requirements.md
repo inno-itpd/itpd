@@ -24,9 +24,9 @@ Link each test's section and give the result for each session or the reason the 
    Keep its section, identifier and run history, set its status to `Dropped`, and add `**Dropped:**` with the date and reason after the status.
    Give its replacement the next unused identifier.
 4. End the section with a run table whose columns are `Sprint`, `Date`, `Runner`, `Build`, `Result`, `Evidence`, and `DEC-nnn`.
-   Keep one row per run, including a row when a check could not run during the review.
+   Keep one row per run, including a `Not run` row for a check that could not run at a review that took place.
    Identify the actual runner as `Customer` or `Team` and the build by its tag or commit.
-   Record `Pass` or `Fail` against the expected result, or record `Not run` with the reason and use `—` for the runner.
+   Record `Pass` or `Fail` against the expected result, or record `Not run` with the reason and use `—` for the runner and for the build if none was available.
    Link the sanitized meeting report at `#user-acceptance-tests` and the separate `DEC-nnn` for each result.
    Cite the run by its sprint, test section and decision.
    If the review itself did not take place, link the weekly report's missing-review record from the index.
@@ -52,7 +52,7 @@ If the customer cannot access the app, the team runs the tests live for the cust
 Record each actual runner and result.
 If `REL-10` is unavailable, arrange a new time within the review window.
 Record each `Fail` and `Not run` with its reason in `handoff.md` and in the Week 10 report's `## Deviations`.
-The customer accepts the handoff with the recorded results, and the acceptance has its own decision.
+Ask the customer whether they accept the handoff with the recorded results and capture their verdict per [Meeting Report](customer-meetings-requirements.md#meeting-report).
 Link the Sprint 10 session from the final report.
 
 ## Full Example

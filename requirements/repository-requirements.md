@@ -452,7 +452,8 @@ Deploy the Sprint 9 build on the university VM for its review and record accepta
 Deploy `REL-10` for the handoff.
 A failed customer UAT alone does not trigger a rollback.
 Record unresolved failures as limitations in [the handoff](customer-meetings-requirements.md#the-handoff), and keep the release available until the planned shutdown.
-Shut down the university VM after the handoff.
+Shut down the university VM after the handoff and any final exam demo that uses it.
+Complete the shutdown before submitting Submission 10, including if the handoff could not take place.
 Grading uses the submitted evidence and repository snapshot.
 
 ## The Final Repository State
@@ -467,7 +468,7 @@ Grading uses the submitted evidence and repository snapshot.
    After the deadline, [approved changes to repository visibility](#repository-setup) are the only permitted changes.
 2. Merge all final pull requests and resolve any remaining open pull requests so none remains open.
    Close the `SPRINT-09` and `SPRINT-10` milestones and follow the [final issue rules](issue-tracking-requirements.md#scheduling-an-issue).
-   Keep the default branch green and the final tag protected.
+   Verify that the checks on the final `main` commit are green before taking the snapshot, and keep the final tag protected.
 3. Bring the documentation site, setup guide, deployment runbook, architecture, functional and quality requirements, tests and results, configuration plan, features, glossary, risks, team `AGENTS.md`, UAT record, and user-facing README up to date.
 4. Complete [Deleting Private Usability Data](visibility-requirements.md#deleting-private-usability-data) and record any approved privatisation in [the handoff](customer-meetings-requirements.md#the-handoff).
    Take the [final snapshot](#permalinks-and-snapshots) after the final evidence and link cleanup have merged.

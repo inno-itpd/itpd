@@ -170,7 +170,9 @@ The changelog, the tags, and the release titles follow [Release Requirements](re
 4. For `REL-03` through `REL-09`, cut the release at the sprint's end on the state after the customer meeting and any same-week rework.
    Merge the pull requests included in the release, then push the tag on that commit.
    After tagging, merge the changelog's released section, this `REL-nn` section, and the week's report in that order so every link resolves the first time it is checked.
-5. The `REL-nn` section does not link the changelog, and the changelog does not mention `REL-nn`: the changelog's released section links the release, and the plan and the week's report make the link between the release and its sprint.
+5. The `REL-nn` section does not link the changelog, and the changelog does not mention `REL-nn`.
+   The plan and the week's report link the release to its sprint.
+   See [Cutting A Release](releases-requirements.md#cutting-a-release) for the changelog link.
 
 **Since: W5**
 
