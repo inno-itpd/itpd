@@ -66,10 +66,11 @@ Complete the requirements marked `**Since: W10**` in the linked sections and con
 
 Write `reports/week-10/reflection.md`, per [Project Reflection](../requirements/weekly-report-requirements.md#project-reflection).
 Use `## Lessons learned`, one `## Lesson N` with `**Problem:**` and `**Lesson:**` per lesson, and `## What would we do differently`.
-Include the private-data retention and deletion plan in the public reflection using the [Project Reflection example](../requirements/weekly-report-requirements.md#project-reflection).
+Use the [Project Reflection example](../requirements/weekly-report-requirements.md#project-reflection) to record the private-data deletion.
 
 ## Part 6: Close Sprint 10 And Submit Submission 10
 
+Complete [Deleting Private Usability Data](../requirements/visibility-requirements.md#deleting-private-usability-data) before submitting.
 Merge the final report, reflection and supporting artifacts and complete the [final repository state](../requirements/repository-requirements.md#the-final-repository-state).
 Close both sprint milestones and apply the [final issue rules](../requirements/issue-tracking-requirements.md#scheduling-an-issue) to open issues, with links to those issues in `handoff.md`.
 Take the commit-hash permalink and snapshot from the final `main` commit and submit them with the Moodle wrapper as described below.
@@ -119,7 +120,7 @@ See the [Submission 10 wrapper example](../requirements/weekly-report-requiremen
 - Full commit-hash permalinks to `reports/week-10/README.md` and `reports/week-10/reflection.md` on final `main`.
 - Under `## For customer`, the production address used at the handoff and test access, the analytics and observability dashboard and backend addresses and credentials, observability query access, and any other private values agreed with the customer.
   Record the university VM shutdown.
-- Also under `## For customer`, the private usability-data repository and recordings folder links, their access instructions, and the [post-grading deletion plan](../requirements/visibility-requirements.md#the-usability-data-repository).
+- Also under `## For customer`, the dated [confirmation of the team's private usability-data deletion](../requirements/weekly-report-requirements.md#private-submission-wrapper).
 - A permitted private Sprint Review recording link accessible to instructors or the reason there is none, and any permitted private meeting transcript.
 - One line confirming no private-only material was committed.
 
@@ -138,6 +139,7 @@ See the [Submission 10 wrapper example](../requirements/weekly-report-requiremen
 - [ ] Handoff, UAT history, threshold goals and release block updated, VM shut down, and actual velocity, retrospective and AI usage recorded ([Part 4](#part-4-record-the-handoff-results-and-write-the-final-report)).
 - [ ] Project reflection written and linked from the final report ([Part 5](#part-5-write-the-project-reflection)).
 - [ ] Final artifacts merged, sprint milestones closed and remaining issues linked from the handoff ([Part 6](#part-6-close-sprint-10-and-submit-submission-10)).
+- [ ] Team-controlled private usability data deleted, earlier links cleaned up on `main`, and sanitized results linked from the public handoff ([Part 6](#part-6-close-sprint-10-and-submit-submission-10)).
 - [ ] Final report includes the summary, handoff results, threshold results and evidence links ([Assignment Report In The Repository](#assignment-report-in-the-repository)).
-- [ ] Moodle PDF includes the private access details, deletion plan and review evidence ([Assignment Report On Moodle](#assignment-report-on-moodle)).
+- [ ] Moodle PDF includes the private handoff details, dated deletion confirmation and review evidence ([Assignment Report On Moodle](#assignment-report-on-moodle)).
 - [ ] PDF and ZIP snapshot submitted with permalinks to the same final `main` commit ([Submission Procedure](#submission-procedure)).

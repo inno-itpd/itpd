@@ -464,13 +464,13 @@ Grading uses the submitted evidence and repository snapshot.
 1. Freeze product code at the final release tag.
    Documentation, reports, the reflection, the changelog, and release blocks may still merge through the [Submission 10 deadline](../course/syllabus.md#week-10-nov-27--dec-3-final-release-and-handoff).
    Stop all public repository changes at that deadline.
-   The only later changes are [required private-data deletion](visibility-requirements.md#the-usability-data-repository) and any [approved change to repository visibility](#repository-setup).
+   After the deadline, [approved changes to repository visibility](#repository-setup) are the only permitted changes.
 2. Merge all final pull requests and resolve any remaining open pull requests so none remains open.
    Close the `SPRINT-09` and `SPRINT-10` milestones and follow the [final issue rules](issue-tracking-requirements.md#scheduling-an-issue).
    Keep the default branch green and the final tag protected.
 3. Bring the documentation site, setup guide, deployment runbook, architecture, functional and quality requirements, tests and results, configuration plan, features, glossary, risks, team `AGENTS.md`, UAT record, and user-facing README up to date.
-4. Document the post-grading data deletion plan and any approved privatisation in [the handoff](customer-meetings-requirements.md#the-handoff).
-   Take the [final snapshot](#permalinks-and-snapshots) after the final evidence has merged.
+4. Complete [Deleting Private Usability Data](visibility-requirements.md#deleting-private-usability-data) and record any approved privatisation in [the handoff](customer-meetings-requirements.md#the-handoff).
+   Take the [final snapshot](#permalinks-and-snapshots) after the final evidence and link cleanup have merged.
 
 ## The Usability Data Repository
 
@@ -488,10 +488,10 @@ What may never be committed is in [Sensitive Information Reference](visibility-r
 4. The recordings live in a team-owned cloud folder shared with the instructors, and the private repository records the folder link and the access instructions.
    A recording is never committed to the product repository and never to the private repository.
 5. The product repository links the private repository, and the link is excluded from the link check because it needs authentication, per [Link Checking](#link-checking), with its reason in the link check's configuration such as `lychee.toml`.
-6. The Moodle PDF carries the private repository link and access and the recordings folder link and access, per [Private Submission Wrapper](weekly-report-requirements.md#private-submission-wrapper).
-7. The private repository, its history, and the recordings are deleted after the course is graded, and the sanitized public record stays.
+6. Follow [Private Submission Wrapper](weekly-report-requirements.md#private-submission-wrapper) for private access details.
+7. Follow [Deleting Private Usability Data](visibility-requirements.md#deleting-private-usability-data) for end-of-course cleanup.
 8. The repository's contents are covered by [Configuration And Sensitive Information](#configuration-and-sensitive-information) rather than a second list: it carries no secret and no credential, and the recordings are in the cloud folder rather than in its normal git history.
-9. The submission snapshot is the product repository, per [Permalinks And Snapshots](#permalinks-and-snapshots): the public test record is in it, and the private data is reached through the public link and the Moodle PDF, so no snapshot of the private repository is produced.
+9. The [submission snapshot](#permalinks-and-snapshots) contains the product repository and its sanitized test record.
 
 ## The Course Materials As An Agent Skill
 

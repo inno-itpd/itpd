@@ -8,6 +8,7 @@ Every artifact file links here rather than repeating where an item goes.
 - [Visibility Model](#visibility-model)
 - [Sensitive Information Reference](#sensitive-information-reference)
 - [The Usability Data Repository](#the-usability-data-repository)
+- [Deleting Private Usability Data](#deleting-private-usability-data)
 - [Screenshot Evidence](#screenshot-evidence)
 - [Telemetry And Personal Data](#telemetry-and-personal-data)
 
@@ -21,8 +22,9 @@ Every artifact file links here rather than repeating where an item goes.
    See [Repository Requirements](repository-requirements.md#licensing).
 3. Public artifacts must be viewable by instructors and your customer but must not be publicly editable.
 4. Private artifacts are shared through the Moodle submission, or through a private repository the instructors can access when the requirements allow it.
-   Every private link must be reachable by your instructors.
+   Make every private link you submit reachable by your instructors.
 5. Everything you submit stays openable by your instructors until the course has been graded.
+   [Deleting Private Usability Data](#deleting-private-usability-data) governs when access to private usability data ends.
 6. Open every link you submit before you submit it.
    If a link needs a login you do not control, say so next to the link.
 
@@ -100,15 +102,27 @@ The usability test's raw data identifies a person or can be joined to one, so it
 3. The recordings live in a team-owned cloud folder shared with the instructors, such as the team's drive.
    They are never in the product repository and never in the private repository, and the private repository records the folder link and the access instructions.
 4. The product repository links the private repository in the test record and the weekly report, and the link is excluded from the link check because it needs authentication, with the reason in the link check's configuration, per [Link Checking](repository-requirements.md#link-checking).
-5. The Moodle PDF carries the private repository link and access and the recordings folder link and access, per [Private Submission Wrapper](weekly-report-requirements.md#private-submission-wrapper).
+5. While the data is retained, the Moodle PDF carries the private repository link and access and the recordings folder link and access, per [Private Submission Wrapper](weekly-report-requirements.md#private-submission-wrapper).
 6. The durable consent is recorded before every counted session, and it covers the recording and the sanitized public results, per [Consent And Recording](usability-testing-requirements.md#consent-and-recording).
-7. Keep the private repository and the recordings folder private and accessible to the team and the instructors until grading is complete.
-   After the instructors confirm that the course is fully graded, the team deletes the private repository, its history, and the recordings folder.
-   Keep the sanitized public record and keep the private data within the existing access group.
-   Record the retention and deletion plan in [the handoff](customer-meetings-requirements.md#the-handoff) and the [final wrappers](weekly-report-requirements.md#private-submission-wrapper).
+7. Restrict access to the team and instructors while the data is retained, and follow [Deleting Private Usability Data](#deleting-private-usability-data).
 8. When an instructor cannot access GitHub, the team gives the private text data through a Moodle-only archive and declares the [deviation](weekly-report-requirements.md#declaring-deviations).
 9. The public record uses the participant codes `P-01`, `P-02`, and so on, and the raw notes, the consent records, and the identity mapping stay private, per [The Public Evidence](usability-testing-requirements.md#the-public-evidence).
 10. A session is counted only with its durable consent and its recording; an unrecorded or unconsented session is not evidence, per [Consent And Recording](usability-testing-requirements.md#consent-and-recording).
+
+## Deleting Private Usability Data
+
+**Since: W10**
+
+**Required**
+
+1. By the [Submission 10 deadline](../course/syllabus.md#week-10-nov-27--dec-3-final-release-and-handoff), the team deletes the private usability-data repository and its history, the recordings folder, and every other copy of private usability-test data it controls, including local clones, downloads, and copies in survey, recording, or telemetry tools.
+2. By the same deadline, the instructors delete every copy they control, including any Moodle-only archive they control.
+3. Keep the sanitized public usability record for grading.
+   In the final `main` commit, replace links to the deleted private repository or recordings folder with a brief deletion note and a link to the sanitized usability results.
+   This link cleanup may touch earlier weekly reports and maintained documentation.
+   Remove link-check exclusions that existed only for the retired links.
+   Earlier submission snapshots and commit-hash permalinks may still contain the original links.
+4. Record the team's deletion date in the [Submission 10 Moodle wrapper](weekly-report-requirements.md#private-submission-wrapper) and point to the sanitized results from [the public handoff](customer-meetings-requirements.md#the-handoff).
 
 ## Screenshot Evidence
 

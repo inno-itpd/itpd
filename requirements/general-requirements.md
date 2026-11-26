@@ -108,6 +108,7 @@ A quality requirement's **`Response Measure`** is its criterion, not its measure
 **Since: W10**
 
 6. The root `handoff.md` is the exception to the two artifact locations, per [The Handoff](customer-meetings-requirements.md#the-handoff).
+7. Earlier weekly reports may receive the link cleanup described in [Deleting Private Usability Data](visibility-requirements.md#deleting-private-usability-data).
 
 ## Identifier Rules
 

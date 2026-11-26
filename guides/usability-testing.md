@@ -63,7 +63,7 @@ Recruiting is the long pole and starts first, because three people outside the t
 - [Step 11: Keep The Data Private And Delete It](#step-11-keep-the-data-private-and-delete-it)
   - [Publish Only The Sanitized Record](#publish-only-the-sanitized-record)
   - [Keep The Links In The Moodle Wrapper](#keep-the-links-in-the-moodle-wrapper)
-  - [Delete After Grading](#delete-after-grading)
+  - [Delete Private Usability Data](#delete-private-usability-data)
 - [Common Mistakes](#common-mistakes)
 
 ## What You Produce
@@ -297,7 +297,7 @@ The consent is what makes a session evidence, and the private repository is wher
 ### Make The Consent Durable And Complete
 
 Write `consent.md` as the public template, and have every counted participant agree to it in a durable form before the session: a signed form, an email, a Telegram message, or another record the team can show the instructors.
-The consent covers the 18-or-older declaration, the participation, the recording, the sanitized public results, the anonymized quotes, the private repository, the recordings folder, the instructors' access, the tools used, the right to withdraw, and the deletion after grading.
+Use the [consent clauses](../requirements/usability-testing-requirements.md#consent-and-recording) to explain how the data is used and when it will be deleted.
 
 The recording and the sanitized public results are required for a session to count, and the anonymized quote is optional and separate.
 A participant who consents to the recording and the public results but not to a quote still counts, and the team publishes no quote from that session.
@@ -311,8 +311,7 @@ The layout is the team's choice; the contents are not.
 Create the team-owned cloud folder for the recordings, share it with the instructors, and record its link and the access instructions in the private repository.
 A recording is never in the product repository and never in the private repository, because a file that large and that private does not belong in either git history.
 
-The private repository and the recordings stay until the course is graded, and then the repository, its history, and the recordings are deleted.
-The consent says so, and the report repeats it once.
+Keep track of where the team stores or exports private data so you can find every copy at [closeout](#delete-private-usability-data).
 
 ### Link The Private Repository Without Breaking The Check
 
@@ -496,16 +495,16 @@ A quote appears only with the consent that covers it, and the aggregate data is 
 ### Keep The Links In The Moodle Wrapper
 
 The public record links the private repository, and the link is excluded from the link check because it needs authentication.
-The Moodle wrapper carries the private repository link and access and the recordings folder link and access, and it carries the member table and the privacy line.
+While the data is retained, use the Moodle wrapper to share the private repository and recordings folder links and access instructions.
 
 No raw participant data is in the product repository, and no private link is in a public file without its exclusion and its reason.
 
-### Delete After Grading
+### Delete Private Usability Data
 
-After the course is graded, delete the private repository, its history, and the recordings, and keep the sanitized public record.
-The consent states the deletion, and the record's retention rule is what makes the consent truthful.
-
-A private repository that outlives the course is participant data kept without a reason, and the retention rule is the one promise the team can always keep.
+Work through the locations where you stored or exported data, including local clones, cloud folders and tool exports.
+Check whether the tools keep a trash folder you can empty.
+Review the public repository for private links and link-check exclusions before you take the final snapshot.
+Follow [Deleting Private Usability Data](../requirements/visibility-requirements.md#deleting-private-usability-data) for the deadline and what to record.
 
 ## Common Mistakes
 
@@ -584,6 +583,6 @@ A private repository that outlives the course is participant data kept without a
 - **An overclaim from a small sample.**
   Five participants describe five people; state `n=<count>` and read the number as a description, not a population claim.
 - **A private repository with no deletion.**
-  The consent promises the deletion and the retention rule keeps it; a repository that outlives the course keeps participant data without a reason.
+  Set aside time before the final submission for [deletion and link cleanup](../requirements/visibility-requirements.md#deleting-private-usability-data).
 - **An agent given the raw private data.**
   The public note is written from the sanitized note, and the agent is given that, not the recording or the raw private notes; the team reviews what it writes before committing.

@@ -103,7 +103,8 @@ Check the [Submission 10 cutoff](../course/syllabus.md#week-10-nov-27--dec-3-fin
   See [Scheduling An Issue](../requirements/issue-tracking-requirements.md#scheduling-an-issue).
 - **Making the final report a second handoff package.**
   Link it from `## Handoff results` and use the final threshold table for outcomes.
-- **Making private data public or deleting it early.**
-  Keep the access details in Moodle and follow [the post-grading deletion rule](../requirements/visibility-requirements.md#the-usability-data-repository).
+- **Leaving private usability data or dead links at closeout.**
+  Check the repository, cloud folder, local copies and tools used for the test.
+  Once the data is deleted, use the sanitized results for the handoff and follow the [final cleanup rule](../requirements/visibility-requirements.md#deleting-private-usability-data).
 - **Committing a pitch deck or bringing a draft to the handoff.**
   Use the separate Moodle submission in [the syllabus](../course/syllabus.md#week-11-dec-4--dec-10-final-exam).

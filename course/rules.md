@@ -47,10 +47,11 @@ Unchecked generated text and filler reduce the week's grade; see [AI Usage Repor
 
 Use [Closing The Final Sprints](../guides/final-sprints.md) to work through the [UATs](../requirements/user-acceptance-tests-requirements.md), the [handoff](../requirements/customer-meetings-requirements.md#the-handoff) and the [MVP release](../requirements/planning-requirements.md#releases).
 Follow the [code freeze and public repository cutoff](../requirements/repository-requirements.md#the-final-repository-state) and submit the [final report](../requirements/weekly-report-requirements.md#weekly-public-report) and [project reflection](../requirements/weekly-report-requirements.md#project-reflection).
+Complete [private usability-data deletion](../requirements/visibility-requirements.md#deleting-private-usability-data) for Submission 10.
 
 ## Accessibility
 
-Everything you submit must stay openable by your instructors until the course has been graded, and you check every link before you submit; see [Visibility Model](../requirements/visibility-requirements.md#visibility-model).
+Check each link before you submit and follow the [accessibility and retention requirements](../requirements/visibility-requirements.md#visibility-model).
 
 ## Where The Rules Live
 

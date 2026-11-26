@@ -191,20 +191,20 @@ Use a table with `Item`, `Status` and `Where it lives`.
 Link public evidence and refer to `## For customer` in the [Week 10 Moodle wrapper](weekly-report-requirements.md#private-submission-wrapper) for private values.
 Include each of these rows and any additional items agreed with the customer in Sprint 9.
 
-| Item                                | What to record or link                                                                                                                                       |
-| ----------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| MVP and `REL-10`                    | The release and protected tag identifying the MVP.                                                                                                           |
-| Repository                          | The product repository.                                                                                                                                      |
-| Deployment instructions             | `docs/deployment.md`.                                                                                                                                        |
-| Handoff UAT results                 | The recorded session and reasons for each `Fail` or `Not run`, per [The Two Review Sessions](user-acceptance-tests-requirements.md#the-two-review-sessions). |
-| Deployed data                       | How any export, access, retention and deletion will be handled.                                                                                              |
-| Product documentation               | The user README, setup instructions and maintained documentation.                                                                                            |
-| Dashboards and access               | Where to find private dashboard and backend details.                                                                                                         |
-| Credentials                         | Where to find the private access values.                                                                                                                     |
-| Known issues                        | Remaining limitations, including unresolved UAT failures, with workarounds where available.                                                                  |
-| Open issues                         | Links to the open issues, per [Scheduling An Issue](issue-tracking-requirements.md#scheduling-an-issue).                                                     |
-| Private-data retention and deletion | The plan under [The Usability Data Repository](visibility-requirements.md#the-usability-data-repository), and any approved repository privatisation.         |
-| Access to private usability data    | Where the authorized readers can find access instructions until grading is complete.                                                                         |
+| Item                            | What to record or link                                                                                                                                                     |
+| ------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| MVP and `REL-10`                | The release and protected tag identifying the MVP.                                                                                                                         |
+| Repository                      | The product repository.                                                                                                                                                    |
+| Deployment instructions         | `docs/deployment.md`.                                                                                                                                                      |
+| Handoff UAT results             | The recorded session and reasons for each `Fail` or `Not run`, per [The Two Review Sessions](user-acceptance-tests-requirements.md#the-two-review-sessions).               |
+| Deployed data                   | How any export, access, retention and deletion will be handled.                                                                                                            |
+| Product documentation           | The user README, setup instructions and maintained documentation.                                                                                                          |
+| Dashboards and access           | Where to find private dashboard and backend details.                                                                                                                       |
+| Credentials                     | Where to find the private access values.                                                                                                                                   |
+| Known issues                    | Remaining limitations, including unresolved UAT failures, with workarounds where available.                                                                                |
+| Open issues                     | Links to the open issues, per [Scheduling An Issue](issue-tracking-requirements.md#scheduling-an-issue).                                                                   |
+| Private usability-data deletion | The team's deletion status under [Deleting Private Usability Data](visibility-requirements.md#deleting-private-usability-data), and any approved repository privatisation. |
+| Usability results               | The sanitized public results.                                                                                                                                              |
 
 **Example**
 
@@ -216,20 +216,20 @@ From `handoff.md`:
 The customer accepted the MVP with the recorded UAT results in [DEC-049](docs/decisions.md#dec-049).
 See the [Sprint 10 review](reports/week-10/meeting-report.md) and the [Week 9 preparation](reports/week-09/README.md#handoff-preparation).
 
-| Item                                | Status                                      | Where it lives                                                                                                                                                                             |
-| ----------------------------------- | ------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| MVP and REL-10                      | Delivered                                   | [Protected tag v0.10.0 and release](https://github.com/<organization>/<repo>/releases/tag/v0.10.0)                                                                                         |
-| Repository                          | Public during grading                       | [Product repository](https://github.com/<organization>/<repo>)                                                                                                                             |
-| Deployment instructions             | Delivered                                   | [docs/deployment.md](docs/deployment.md)                                                                                                                                                   |
-| Handoff UAT results                 | Two passed, one failed                      | [Sprint 10 session](reports/week-10/meeting-report.md#user-acceptance-tests). UAT-04 failed because the calendar link expired.                                                             |
-| Deployed data                       | Synthetic records removed after the meeting | The team tested the export procedure in [docs/deployment.md](docs/deployment.md#export-data) with synthetic records. The team kept no export and removed the VM test data before shutdown. |
-| Product documentation               | Delivered                                   | [README.md](README.md) and [docs/setup.md](docs/setup.md)                                                                                                                                  |
-| Dashboards and access               | Provided privately                          | Week 10 Moodle wrapper, For customer. The university VM is now shut down.                                                                                                                  |
-| Credentials                         | Provided privately                          | Week 10 Moodle wrapper, For customer.                                                                                                                                                      |
-| Known issues                        | Open                                        | The calendar link can expire before the guest signs in. An organizer can send a fresh invitation.                                                                                          |
-| Open issues                         | Unscheduled                                 | [Issue #77](https://github.com/<organization>/<repo>/issues/77) and [Issue #74](https://github.com/<organization>/<repo>/issues/74).                                                       |
-| Private-data retention and deletion | Awaiting grading confirmation               | The team and instructors retain private access until grading is confirmed. The team then deletes the private repository and recordings folder.                                             |
-| Access to private usability data    | Provided to authorized readers              | Week 10 Moodle wrapper, For customer.                                                                                                                                                      |
+| Item                            | Status                                      | Where it lives                                                                                                                                                                             |
+| ------------------------------- | ------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| MVP and REL-10                  | Delivered                                   | [Protected tag v0.10.0 and release](https://github.com/<organization>/<repo>/releases/tag/v0.10.0)                                                                                         |
+| Repository                      | Public during grading                       | [Product repository](https://github.com/<organization>/<repo>)                                                                                                                             |
+| Deployment instructions         | Delivered                                   | [docs/deployment.md](docs/deployment.md)                                                                                                                                                   |
+| Handoff UAT results             | Two passed, one failed                      | [Sprint 10 session](reports/week-10/meeting-report.md#user-acceptance-tests). UAT-04 failed because the calendar link expired.                                                             |
+| Deployed data                   | Synthetic records removed after the meeting | The team tested the export procedure in [docs/deployment.md](docs/deployment.md#export-data) with synthetic records. The team kept no export and removed the VM test data before shutdown. |
+| Product documentation           | Delivered                                   | [README.md](README.md) and [docs/setup.md](docs/setup.md)                                                                                                                                  |
+| Dashboards and access           | Provided privately                          | Week 10 Moodle wrapper, For customer. The university VM is now shut down.                                                                                                                  |
+| Credentials                     | Provided privately                          | Week 10 Moodle wrapper, For customer.                                                                                                                                                      |
+| Known issues                    | Open                                        | The calendar link can expire before the guest signs in. An organizer can send a fresh invitation.                                                                                          |
+| Open issues                     | Unscheduled                                 | [Issue #77](https://github.com/<organization>/<repo>/issues/77) and [Issue #74](https://github.com/<organization>/<repo>/issues/74).                                                       |
+| Private usability-data deletion | Team copies deleted                         | Dated confirmation in the Week 10 Moodle wrapper, For customer.                                                                                                                            |
+| Usability results               | Published                                   | [Sanitized usability results](docs/usability-tests/ut-01/results.md).                                                                                                                      |
 ```
 
 ## Permission Questions
@@ -590,7 +590,7 @@ From `reports/week-07/meeting-report.md`, the decisions and action points only:
 ## Summary
 
 - The customer agreed the `UT-01` design: one main booking task and two secondary tasks, five participants as the target, the test's instrumentation and its verification, and the staging deployment.
-- The consent must carry the deletion date, and the recordings folder must be shared before the first session.
+- The consent must explain when the data will be deleted, and the recordings folder must be shared before the first session.
 - The customer asked for the checkout friction to be shown in the results even when the test finds nothing else.
 
 ## Decisions
@@ -602,7 +602,7 @@ From `reports/week-07/meeting-report.md`, the decisions and action points only:
 | Action                                           | Owner | Due           |
 | ------------------------------------------------ | ----- | ------------- |
 | Share the recordings folder with the instructors | cyd   | End of Week 8 |
-| Add the deletion date to the consent             | ana   | End of Week 8 |
+| State the deletion timing in the consent         | ana   | End of Week 8 |
 ```
 
 From `reports/week-08/meeting-report.md`, the results review's summary:

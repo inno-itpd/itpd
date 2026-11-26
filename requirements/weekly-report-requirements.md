@@ -307,7 +307,7 @@ No goal is `Open` after this review, and the team proposed no measure because th
 
 The separate pitch deck cites [the results](../../docs/usability-tests/ut-01/results.md) and [the configuration plan](../../docs/configuration-plan.md) rather than repeating either.
 The evaluation's goal sections and its first change are the review's recommendation and schedule no work for Week 9.
-The private repository and the recordings folder stay open until the course is graded, and the `REL-08` tag is the state Week 9 starts from.
+The private repository and recordings folder remain available to the team and instructors until deletion, and Week 9 starts from the `REL-08` tag.
 
 ## Coverage
 
@@ -501,7 +501,8 @@ UAT-04 failed because the guest's calendar link expired.
 ## Privacy
 
 No private-only material was committed to the repository.
-The team will delete the private usability data after grading is confirmed, as recorded in the handoff package.
+The team deleted its copies of the private usability data.
+The handoff points to the sanitized results.
 ```
 
 ## Quality Plan Results
@@ -543,7 +544,7 @@ After the table, give one status sentence per goal still `Open`.
 Write the public, sanitized project reflection in `reports/week-10/reflection.md` and link it from the final report.
 Use `## Lessons learned`, one `## Lesson N` section per lesson with `**Problem:**` and `**Lesson:**`, and `## What would we do differently` for changes the team would make if it started the project anew.
 Support lessons with the retrospectives, risks, configuration plan or Week 8 usability results where relevant.
-Record the private-data retention and deletion plan without exposing private data.
+Record the team's [private usability-data deletion](visibility-requirements.md#deleting-private-usability-data) without exposing private data.
 Exclude individual ratings, team dynamics, the focus metric, and links to the analytics and observability pages.
 
 **Example**
@@ -565,7 +566,8 @@ The [Sprint 10 retrospective](sprint-retrospective.md) records how the team made
 ## What would we do differently
 
 Schedule a live cancellation check in the first release with booking, and keep synthetic accounts in the setup guide from the start.
-Keep private usability data restricted until grading is confirmed, then delete it as recorded in [handoff.md](../../handoff.md).
+Document where usability tools keep private copies before the first session so the team can find them at closeout.
+The team deleted its copies as recorded in [handoff.md](../../handoff.md).
 ```
 
 ## AI Usage Report
@@ -642,15 +644,17 @@ The Moodle PDF is the canonical private artifact for a week.
 
 **Since: W9**
 
-For Submissions 9 and 10, include any permitted private recording or transcript and the privacy confirmation.
-Put the production address, dashboard and backend addresses, credentials and private usability-data access and retention details under `## For customer` in each wrapper.
-State the post-grading deletion plan and give the private-only items for that week.
+For Submissions 9 and 10, include any permitted private Sprint Review recording or transcript and the privacy confirmation.
+Put the production address, dashboard and backend addresses, and credentials under `## For customer` in each wrapper.
+In Submission 9, put the private usability-data access details and the [deletion plan](visibility-requirements.md#deleting-private-usability-data) in that section.
 
 **Since: W10**
 
 Link the final report and project reflection.
 Include the final commit-hash permalink and snapshot per [Permalinks And Snapshots](repository-requirements.md#permalinks-and-snapshots).
 Use `## For customer` for any additional private handoff values.
+Under `## For customer`, include a dated confirmation that the team completed its part of [Deleting Private Usability Data](visibility-requirements.md#deleting-private-usability-data).
+Use this confirmation in place of the private repository and recordings folder links and access instructions.
 
 **Example**
 
@@ -679,7 +683,7 @@ No private-only material was committed to the repository.
 - Analytics dashboard and backend: <addresses-and-credentials>.
 - Observability dashboard, backend and query access: <addresses-and-credentials>.
 - Usability data and recordings: <private-links-and-access-instructions>.
-  Keep access restricted to the team and instructors, then delete both after grading is confirmed.
+  The team plans to delete its copies before submitting Submission 10.
 ```
 
 ### Example Submission 10 Wrapper
@@ -706,7 +710,6 @@ No private-only material was committed to the repository.
 - Analytics dashboard and backend: <addresses-and-credentials>.
 - Observability dashboard, backend and query access: <addresses-and-credentials>.
 - The university VM was shut down after the handoff.
-- Usability data and recordings: <private-links-and-access-instructions>.
-  Keep access restricted to the team and instructors, then delete both after grading is confirmed.
+- On 2026-12-05, the team deleted the private usability-data repository and its history, the recordings folder, and all other copies of private usability-test data it controlled.
 - Other handoff access values: <values-agreed-with-the-customer>.
 ```

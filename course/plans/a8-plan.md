@@ -4,6 +4,7 @@
 > Sprint 9 is due on 29 November, and the Week 8 handoff feeds its review and preparation for Sprint 10.
 > Week 9 adds the provisional Sprint 10 milestone, and Week 10 owns the final state and project reflection.
 > The pitch deck has a separate Moodle submission.
+> [A9-DEC-019](../decisions/a9.md#a9-dec-019-private-usability-data-is-deleted-by-submission-10) supersedes this plan's post-grading deletion timing.
 
 This plan designs Assignment 8 as [`a7-plan.md`](a7-plan.md) designs Assignment 7: the `UT-01` results, the sanitized sessions, the findings and their triage, the `QR/QRT` verdict, the planned fixes, the maintained configuration plan, the goal-based configuration evaluation with its first change and its tradeoffs, the Week 8 sprint and release, the Sprint Review, the retrospective, the AI usage report, and the Week 9 handoff.
 It states the week's scope and the contradictions the wider materials expose, with the resolution each takes, in [Scope And Contradictions](#scope-and-contradictions).

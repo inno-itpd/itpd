@@ -297,7 +297,7 @@ See [Permalinks And Snapshots](../requirements/repository-requirements.md#permal
 > [!IMPORTANT]
 > Verify every link before you submit, and open the permalink in a browser.
 > A permalink to the wrong commit is worse than a branch link, because it looks verified.
-> Everything you submit must stay reachable until the course has been graded.
+> Follow the course's [accessibility and retention requirements](../requirements/visibility-requirements.md#visibility-model).
 
 ### Submission Procedure
 
