@@ -4,7 +4,7 @@ title: Implement Assignments 9 and 10 and the final handoff
 status: In Progress
 assignee: []
 created_date: '2026-11-26 12:08'
-updated_date: '2026-11-26 13:54'
+updated_date: '2026-11-26 14:14'
 labels: []
 dependencies: []
 references:
@@ -68,4 +68,6 @@ Aligned both assignments with Assignment 8 through tables of contents, linked ch
 Revised the handoff issue rows under A9-DEC-021. The handoff keeps a `Limitations` row and replaces the per-issue open-issues list with one link to the repository's Issues page; the assignment, guide, repository rule, weekly-report examples and plan note now agree. Markdown format and lint, both fixture suites and the changed anchors passed; the network link check again found only the existing GitHub 503s in `course/plans/a5-plan.md` and `TODO.md`.
 
 Re-ran the full link check after the anchor rename: 4592 links resolved and no errors reported.
+
+Applied the Assignment 9 review. The assignment now names the Week 9 UAT fallback, records each UAT run as its own decision, gives the UAT index and run-row fields, states the changelog-before-release-body order and the checked-QRs testing-plan sentence, makes the quality bar outcome-based, adds the REL-10 heading to the provisional Sprint 10 section, and makes the held-review and deadline-day deviation wording conditional. Markdown format and lint, both 34-test fixture suites, the nine-deck check and the 4,595-link check (0 errors) passed.
 <!-- SECTION:NOTES:END -->
