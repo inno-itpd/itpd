@@ -98,14 +98,16 @@
 #section("From problem to first release")
 
 #discussion[
-  - Which feature was your team most eager to build at kickoff?
-  - What could you have learned about users’ existing workflow that would have made you leave that feature out of the first release?
+  Your team has an idea for making a common task easier. Some users already have a workaround they like.
+
+  - What would your team need to learn about the workaround before deciding there’s a problem worth solving?
+  - What might you learn that would make you leave the feature out of the first release?
 ]
 
 #week(1, "Find a problem worth solving",
   [Teams of three or four chose a project, set up a shared repository, compared alternatives, and met their customer at the kickoff.],
   [An alternative can be a tool, a workaround, or the way people already do the work. A gap matters when it gives a specific group of users a reason to switch.],
-  [A career coach and a client exchange several messages to find a time. The team compares that workflow with existing schedulers. For a coach who already shares a booking link, what would make switching worthwhile?],
+  [A career coach and a client exchange several messages to find a time. The team compares that workflow with existing schedulers. If you were a coach who already used a booking link, what would make you switch?],
 )
 
 #week(2, "Choose the first workflow",
@@ -121,8 +123,8 @@
 )
 
 #quiz[
-  - A user likes your prototype and says their current tool works fine. What would you ask about the last time they did the task to find out if there’s a problem worth solving?
-  - A teammate wants to add one more story to the first release. How would you decide whether the story belongs in the minimum usable product?
+  - A user likes your prototype and says their current tool works fine. What would you ask them about the last time they did the task? What would you listen for?
+  - A teammate wants to add one more story to the first release. How would your team decide whether the story belongs in the minimum usable product?
 ]
 
 #key-takeaways("from problem to first release")[
@@ -134,8 +136,10 @@
 #section("Quality, deployment, and measurement")
 
 #discussion[
-  - Imagine your demo goes perfectly and your first day in production goes badly. What failure would you most want to rule out for your product?
-  - How would you recreate the conditions for that failure on staging, and what would count as a pass?
+  Your demo went well. Before launch, your team has time to test one possible failure on staging.
+
+  - How would your team decide which failure to test for first?
+  - How would you reproduce the conditions that could cause it? What result would count as a pass?
 ]
 
 #week(4, "Decide what quality means",
@@ -157,8 +161,8 @@
 )
 
 #quiz[
-  - A workflow meets its response-time target on staging with one user. What would you change in the test before making the same claim about peak hours?
-  - After release, more users start the workflow and fewer finish it. Which product events and operational signals would you compare to investigate a possible slowdown?
+  - A workflow meets its response-time target with one user on staging. How would your team test whether it still meets the target at peak times?
+  - After a release, more users start a workflow and fewer finish it. Your team suspects a slowdown. Which product events and operational signals would you compare?
 ]
 
 #key-takeaways("quality, deployment, and measurement")[
@@ -170,8 +174,10 @@
 #section("Usability and configuration")
 
 #discussion[
-  - A participant completes a task after the moderator gives them a hint. What would you record about the session?
-  - What would you check about the test setup before inviting the next participant?
+  You’re moderating a usability test. A participant finishes the task after you give them a hint.
+
+  - What would you record about how the participant finished?
+  - Before the next session, what would you check about the task instructions or the test setup?
 ]
 
 #week(7, "Design the usability test",
@@ -187,8 +193,8 @@
 )
 
 #quiz[
-  - Every participant reaches the final step, and half need a hint to finish. What would you keep constant when retesting a fix, and what would you measure?
-  - You need to recreate staging for a retest. Where would you find the configuration and deployment steps, and how would you check that they work?
+  - Half the participants need a hint at the final step. When your team retests the fix, what would you keep the same? What would you measure?
+  - Your team needs to set up staging again for the retest. Where would you look for the configuration and deployment steps? How would you check that they work?
 ]
 
 #key-takeaways("usability and configuration")[
@@ -199,8 +205,10 @@
 #section("Acceptance and handoff")
 
 #discussion[
-  - It’s handoff day. Every user journey passes, and only the outgoing team knows how to deploy the product. Would you accept the handoff?
-  - What would you ask the receiving team to do on its own before you made that decision?
+  Imagine you’re the customer. Every user acceptance test passes. So far, only the student team knows how to deploy the product.
+
+  - Would you accept the handoff at this point? Why?
+  - Before you decide, what would you ask the people you’ve chosen to maintain the product to try without help from the student team?
 ]
 
 #week(9, "Check the customer’s journeys",
@@ -210,26 +218,28 @@
 )
 
 #week(10, "Release and hand over the product",
-  [Sprint 10 delivers `REL-10`, the minimum viable product (MVP). The team reruns the active journeys, records the customer’s handoff decision, and writes the final report and project reflection.],
-  [The receiving team needs evidence about the release it gets and enough access and documentation to deploy, operate, and maintain it.],
+  [Sprint 10 delivers `REL-10`, the minimum viable product (MVP). The student team reruns the active journeys, records the customer’s handoff decision, and writes the final report and project reflection.],
+  [The people the customer chooses to run and maintain the product need to know what was tested. They also need the access and instructions to deploy and support the release.],
   [Hand over the release, deployment instructions, dashboard access, and known limitations. The weekly customer meetings, from kickoff to handoff, show how the product changed as new evidence came in.],
 )
 
 #quiz[
-  - The customer accepted the journey on the previous build. What would you rerun and record on the handoff build after the fix?
-  - The receiving team can deploy the release. What access and instructions would they need to investigate a failed booking after handoff?
+  - A user acceptance test passed on an earlier build. Your team has since fixed a bug in that workflow. What would you rerun on the handoff build, and what would you record for the customer?
+  - The customer’s maintainers can deploy the release. What access and instructions would your team give them so they can investigate a failed booking after handoff?
 ]
 
 #key-takeaways("acceptance and handoff")[
   - Check the customer’s journeys on the release they will receive. Record the build, who ran the test, and the outcome.
-  - Give the receiving team the instructions and access to run the product, plus the known limitations it will inherit.
+  - Give the people who will maintain the product the instructions and access to run it. Tell them about its known limitations.
 ]
 
 #section("The pilot pitch and final exam")
 
 #discussion[
-  - The panel offers to introduce your team to five pilot users. Who would you want in that group, and what would you hope to learn from them?
-  - What result would make you revise the product before inviting anyone else?
+  Your team can recruit five people for a pilot.
+
+  - What could your team learn from a pilot that a usability session wouldn’t tell you? Who would you invite to find out?
+  - What result would make your team change the product before inviting more users?
 ]
 
 #slide("What can a pilot tell you?")[
@@ -241,7 +251,7 @@
 
   #v(1fr)
 
-  #example[Four of five participants booked unaided in a test session. Will coaches keep sharing the link after the first week? Will their clients book consultations without help?]
+  #example[Four of five participants booked unaided in a test session. The booking app team wants to answer two questions in the pilot. Do coaches keep sharing their links after the first week? Do their clients book without help?]
 ]
 
 #slide("Build the pitch from your project work")[
@@ -273,7 +283,7 @@
 
     *Success* · At least four coaches still share their links in week four, and at least 80% of completed consultations are booked without coach help during the trial.
 
-    *Request* · Could you introduce us to five coaches who would take part?
+    *Request* · Could you introduce us to five independent coaches who’d be willing to try the booking app?
   ]
 
   #note[Illustrative targets for the simulated exam pilot.]
@@ -297,8 +307,8 @@
 ]
 
 #quiz[
-  - Every participant finished the task in a usability session. A teammate wants to say users will come back every week. What can you claim now, and what would you measure in a pilot to support that prediction?
-  - A panelist says, “We can help.” What single action would you ask for, and how would it help answer your pilot question?
+  - Everyone finished the task in a usability session. A teammate wants to tell the panel that users will come back every week. What can your team say based on the session? What would you measure in a pilot to see whether users come back?
+  - During your pitch, a panelist says, “We can help.” What one action would you ask the panelist to take? How would it help your team answer its pilot question?
 ]
 
 #key-takeaways("the pilot pitch and final exam")[
