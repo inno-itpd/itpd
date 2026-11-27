@@ -57,6 +57,8 @@
 #let week(number, title, work, principle, worked-example) = slide("Week " + str(number) + " · " + title)[
   #work
 
+  ---
+
   #principle
 
   #v(1fr)
