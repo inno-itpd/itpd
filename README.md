@@ -32,17 +32,18 @@ See [Week 11 in the syllabus](course/syllabus.md#week-11-dec-4--dec-10-final-exa
 The slides from each class.
 They explain the week; [the rules](#the-rules) are what your work is checked against.
 
-| Week | Lecture                                                                    |
-| ---- | -------------------------------------------------------------------------- |
-| 1    | [Course introduction](lectures/lecture-1.pdf)                              |
-| 2    | [Requirements and prototyping](lectures/lecture-2.pdf)                     |
-| 3    | [Goals, Planning, Tracking](lectures/lecture-3.pdf)                        |
-| 4    | [Quality, Architecture & Agile](lectures/lecture-4.pdf)                    |
-| 5    | [Testing and automation](lectures/lecture-5.pdf)                           |
-| 6    | [Product analytics and observability](lectures/lecture-6.pdf)              |
-| 7    | [Usability testing](lectures/lecture-7.pdf)                                |
-| 8    | [Configuration management for agentic development](lectures/lecture-8.pdf) |
-| 9    | [The product pitch deck](lectures/lecture-9.pdf)                           |
+| Week | Lecture                                                                       |
+| ---- | ----------------------------------------------------------------------------- |
+| 1    | [Course introduction](lectures/lecture-1.pdf)                                 |
+| 2    | [Requirements and prototyping](lectures/lecture-2.pdf)                        |
+| 3    | [Goals, Planning, Tracking](lectures/lecture-3.pdf)                           |
+| 4    | [Quality, Architecture & Agile](lectures/lecture-4.pdf)                       |
+| 5    | [Testing and automation](lectures/lecture-5.pdf)                              |
+| 6    | [Product analytics and observability](lectures/lecture-6.pdf)                 |
+| 7    | [Usability testing](lectures/lecture-7.pdf)                                   |
+| 8    | [Configuration management for agentic development](lectures/lecture-8.pdf)    |
+| 9    | [The product pitch deck](lectures/lecture-9.pdf)                              |
+| 10   | [From the first customer meeting to the pilot pitch](lectures/lecture-10.pdf) |
 
 ## The Rules
 
