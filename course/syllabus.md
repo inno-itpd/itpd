@@ -300,7 +300,7 @@ Weeks 4 to 10 have a hard deadline only.
 ### Week 11: Dec 4 – Dec 10 (Final Exam)
 
 - The **final exam** is on **Friday 4 December 2026**.
-  Teams present their projects with a seven-minute product pitch, a live demonstration, architectural defense and Q&A.
+  Teams give a seven-minute product pitch with a live demonstration, followed by five minutes of Q&A.
   Teams demoing on the university VM follow the [shutdown rule](../requirements/repository-requirements.md#environments-and-deployment).
 - Submit the pitch deck separately in Moodle by **Thursday 3 December 2026 at 23:59**.
   Keep it out of the product repository and present it at the exam.
