@@ -247,56 +247,42 @@
   #set par(leading: 0.35em)
 
   #pitch-rows(
-    [*Problem and opportunity · 4*], [Use the kickoff, alternatives, and vision to explain who struggles today and why they would try your product.],
-    [*Live demo · 4*], [Choose one realistic journey from the product you built. Show the outcome the pilot users care about.],
-    [*Evidence · 3*], [Use one relevant result. Say what you checked, under what conditions, and what you learned.],
-    [*Pilot plan and request · 4*], [Use an open question to choose the participants, duration, and success criterion. Ask the panel for one action.],
-    [*Quality and architecture · 2*], [Explain one quality requirement, the architectural decision that addresses it, and the tradeoff.],
-    [*Panel Q&A · 3*], [Use the decisions and evidence to explain why you changed course and what remains uncertain.],
+    [*User problem and opportunity*], [Show who faces the problem, what it costs them, and what they do today. Explain why they would try your product and how you would reach them.],
+    [*Live demo*], [Follow one user through a realistic workflow. Show the outcome that matters to them.],
+    [*Quality requirement and architectural decision*], [Explain one quality requirement that matters for the workflow in the pilot. Explain the decision that addresses it and the tradeoff for the pilot.],
+    [*Evidence*], [Give one result that supports the pilot. Say what you checked, under what conditions, what you found, and what remains uncertain.],
+    [*Pilot plan and request*], [Use an open question that the pilot should answer to choose the participants, duration, and success criterion. Ask the panel for one action.],
   )
 
   #v(1fr)
-  #note[#link(course + "exam/README.md#grading")[Final exam rubric]]
+  #note[#link(course + "exam/README.md#what-to-cover-in-your-pitch")[What to cover in your pitch] · #link(course + "exam/README.md#grading")[Final exam rubric]]
 ]
 
 #slide("Ask the panel for a pilot")[
   #set text(size: 19pt)
 
-  Ask for one action the panel can take. Explain who will participate, how long the pilot will run, and what result will guide your next decision.
+  Open by telling the panel whom they represent. Choose a role that can act on your request. End by asking for one specific action.
 
   #v(1fr)
   #example[
-    *Request* · Could you introduce us to five independent coaches willing to share their booking links for four weeks?
+    *Panel role* · Lead of a local coaching network.
 
-    *Trial* · Our team will onboard the coaches and handle support.
+    *Trial* · Five independent coaches share their booking links with clients for four weeks. Our team onboards the coaches and handles support.
 
     *Success* · At least four coaches still share their links in week four, and at least 80% of completed consultations are booked without coach help during the trial.
+
+    *Request* · Could you introduce us to five coaches who would take part?
   ]
 
   #note[Illustrative targets for the simulated exam pilot.]
 ]
 
-// Allow four minutes for teams to write, then hear two examples.
-
-#slide("Use one result from your own project")[
-  Pick a result you can point to in your repository. Take four minutes to finish these three sentences with your team.
-
-  #example[
-    We observed … under … conditions.
-
-    We still need to learn …
-
-    We’re asking … to help us test it by …
-  ]
-
-  Ask another team whether your proposed pilot would answer the question you named.
-]
-
 #slide("Final exam briefing")[
-  #set text(size: 19pt)
+  #set text(size: 18pt)
 
-  - *Thursday, 3 December, 23:59* · Submit the pitch deck separately in Moodle, including any slides for Q&A. Present that version and keep the deck out of the product repository.
-  - *Friday, 4 December* · Seven minutes for the pitch with a live demo, followed by five minutes of panel Q&A. Everyone speaks during the pitch.
+  - *Thursday, 3 December, 23:59* · Submit the pitch deck separately in Moodle, including any slides for Q&A. Present that exact deck and keep it out of the product repository.
+  - *Friday, 4 December* · Seven minutes for the pitch with a live demo. Every team member speaks during the pitch. Follow the #link(course + "requirements/repository-requirements.md#environments-and-deployment")[shutdown rule] if you demo on the university VM.
+  - *Panel Q&A* · Five minutes after the pitch. The panel chooses its questions during the session. Your team decides who answers each one.
   - *Sunday, 6 December, 23:59* · Submission 10 and customer handoff are due. Build the pitch from evidence available on exam day.
 
   #v(1fr)
