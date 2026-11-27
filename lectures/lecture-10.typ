@@ -243,7 +243,7 @@
   - Whose help would you need?
 ]
 
-#slide("Your final exam pitch")[
+#slide("The goal of your final exam pitch")[
   One next step is a *pilot*, a limited trial in which people use your product in their usual setting.
 
   The final exam simulates asking for help to run that trial. In your pitch and live demo, make the case for one specific action the panel could take to help.
@@ -263,34 +263,34 @@
   #example[Four of five usability participants booked unaided. The booking app team wants to see whether coaches keep sharing their links and whether clients book without coach help in everyday use.]
 ]
 
-#slide("What would a booking app pilot look like?")[
-  #set text(size: 19pt)
-
-  #example[
-    *Panel role* · Lead of a local coaching network
-
-    *Trial* · Five independent coaches share booking links with real clients for four weeks. The team handles onboarding and support.
-
-    *Success* · At least four coaches still share their links in week four. At least 80% of completed consultations were booked without coach help.
-
-    *Request* · Could you introduce us to five coaches who would try the app with their clients?
-  ]
-]
-
-#slide("What would help the panel say yes?")[
+#slide("Final exam pitch structure")[
   #set text(size: 16pt)
   #set par(leading: 0.35em)
 
   #pitch-rows(
     [*User problem and opportunity*], [Who has the problem, what does it cost them, and what do they do today? Why would they try your product, and how would you reach them?],
-    [*Live demo*], [Can you show one user going through a realistic workflow and reaching an outcome that matters to them?],
-    [*Quality requirement and architectural decision*], [What quality requirement matters for that workflow in the pilot? What decision addresses it, and what tradeoff does it bring?],
-    [*Evidence*], [What result supports your case? What did you check, under what conditions, and what’s still uncertain?],
-    [*Pilot plan and request*], [Who would take part, who would support them, and for how long? What would count as success, and what do you need from the panel?],
+    [*Live demo*], [What workflow would pilot users carry out? What outcome makes it worth trying?],
+    [*Quality requirement and architectural decision*], [What pilot condition puts that outcome at risk? What measurable requirement applies? How does your decision help meet it, and what tradeoff does it bring?],
+    [*Evidence*], [What did you check, what did you find, and what remains uncertain? You can present a quality test result separately from the demo.],
+    [*Pilot plan and request*], [Who takes part, who supports them, and for how long? What counts as success? How would the panel’s action let users try that workflow?],
   )
 
   #v(1fr)
   #note[#link(course + "exam/README.md#what-to-cover-in-your-pitch")[What to cover in your pitch] · #link(course + "exam/README.md#grading")[Final exam rubric]]
+]
+
+#slide("From demo to pilot request in the booking app")[
+  #set text(size: 16pt)
+  #set par(leading: 0.35em)
+
+  #pitch-rows(
+    [*Live demo*], [A client books a consultation through a coach’s link and receives confirmation.],
+    [*Quality requirement*], [In the pilot, two clients could request the last slot at once. At most one should receive confirmation.],
+    [*Architectural decision*], [The database accepts one reservation per slot. The app waits for the reservation to succeed before confirming it, so a lost connection can delay confirmation.],
+    [*Pilot plan*], [Five coaches share booking links with real clients for four weeks. The team handles onboarding and support.],
+    [*Success*], [At least four coaches still share their links in week four. At least 80% of completed consultations were booked without coach help.],
+    [*Request to the coaching network lead*], [Could you introduce us to five coaches who would try the app with their clients?],
+  )
 ]
 
 #slide("Deck submission and exam day")[

@@ -38,30 +38,33 @@ The order is suggested, and you can combine or reorder topics to suit your pitch
    Start with one concrete situation that shows who has the problem and what it costs them.
    Explain what those users do today, why they would try your product, and how you could reach the first group.
 2. **Live demo.**
-   Follow one user through a realistic workflow and show the outcome that matters to them.
+   Show one realistic workflow that proposed pilot users would carry out and the outcome that makes it worth trying.
 3. **Evidence and pilot readiness.**
 
    - **Quality requirement and architectural decision.**
-     Pick one quality requirement that matters when pilot users try the workflow you demonstrated.
-     In plain language, explain what the product needs to do under those conditions, what is at risk for users, and how one architectural decision your team made addresses that risk.
-     Explain the tradeoff you accepted and what it means for the pilot.
+     Describe one realistic pilot condition that could put the outcome of the demonstrated workflow at risk.
+     In plain language, state one measurable quality requirement for that condition.
+     Explain how one architectural decision your team made helps meet the requirement and what its tradeoff means for pilot users.
    - **Evidence.**
      Present a result that supports your case for the pilot.
      Say what you checked, under what conditions, what you found, and what remains uncertain.
      A result from testing your chosen quality requirement can serve as this evidence.
+     You can present that result separately from the live demo.
 
 4. **Pilot plan and request.**
    Say who would take part, for how long, and what they would do.
    Explain who would run and support the pilot, what you still need to learn, and how you would judge success.
-   End by asking the panel for one specific action.
+   End by asking the panel for one specific action and explain how it would let pilot users try the workflow in their usual setting.
 
-**Example of connecting the demo to the pilot.**
-In the museum audio guide demo, a visitor downloads the tour and plays one stop with the phone in airplane mode.
-For the pilot, visitors need to be able to play every stop after downloading the tour, even where the exhibit has poor reception.
+**Example of connecting the demo to the pilot request.**
+In the museum audio guide demo, a visitor downloads the tour and plays the narration at one exhibit stop.
+In the exhibit, poor reception could interrupt the tour.
+After downloading it, visitors must be able to play every stop without a connection.
 The team stores the full tour on the phone so it can play offline.
 Visitors need time to download it and enough space to store it.
 In a test on two phones, every stop played in airplane mode after the full download.
 The pilot would check whether visitors can complete the download before entering the exhibit.
+The team asks the museum visitor services lead to have entrance staff invite visitors to try the guide for one exhibit.
 
 ## Rehearsal Tips
 
@@ -88,12 +91,12 @@ Keep the deck out of the product repository.
 
 ## Grading
 
-| Criterion                                      | Points | What the panel assesses                                                                                                             |
-| ---------------------------------------------- | -----: | ----------------------------------------------------------------------------------------------------------------------------------- |
-| User problem and opportunity                   |      2 | A specific user group, its current workflow, and a credible reason to try the product.                                              |
-| Live demo                                      |      4 | A realistic workflow and an outcome that matters to the proposed pilot users.                                                       |
-| Quality requirement and architectural decision |      4 | A quality requirement relevant to the demonstrated workflow and the pilot, the decision that addresses it, and the tradeoff.        |
-| Evidence                                       |      3 | A relevant result, how the team obtained it, and what the team can conclude from it.                                                |
-| Pilot plan and request                         |      4 | A plausible group, duration, and success criterion, plus a specific request that fits the panel's role.                             |
-| Panel Q&A                                      |      3 | Clear, direct answers that explain the team's reasoning, use evidence where relevant, and acknowledge uncertainty where it matters. |
-| **Total**                                      | **20** |                                                                                                                                     |
+| Criterion                                      | Points | What the panel assesses                                                                                                                                      |
+| ---------------------------------------------- | -----: | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| User problem and opportunity                   |      2 | A specific user group, its current workflow, and a credible reason to try the product.                                                                       |
+| Live demo                                      |      4 | A workflow proposed pilot users would carry out, with an outcome that makes it worth trying.                                                                 |
+| Quality requirement and architectural decision |      4 | A measurable requirement for the demonstrated workflow under a realistic pilot condition, the decision that helps meet it, and its tradeoff for pilot users. |
+| Evidence                                       |      3 | A relevant result, how the team obtained it, and what the team can conclude from it.                                                                         |
+| Pilot plan and request                         |      4 | A plausible group, duration, and success criterion, plus a specific action the panel can take to let pilot users try the workflow.                           |
+| Panel Q&A                                      |      3 | Clear, direct answers that explain the team's reasoning, use evidence where relevant, and acknowledge uncertainty where it matters.                          |
+| **Total**                                      | **20** |                                                                                                                                                              |
