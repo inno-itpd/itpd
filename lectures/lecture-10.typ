@@ -115,7 +115,7 @@
 )
 
 #week(7, "Design the usability test",
-  [Teams planned representative participants, realistic tasks, measures, consent, and how to record sessions. They tried the test setup before the first session.],
+  [Teams planned representative participants, realistic tasks, measures, consent, and how to record sessions. They adapted instrumentation to the test and tried the test setup before the first session.],
   [Agreeing on tasks and success criteria ahead of time gave participants comparable conditions and the team a way to interpret the results.],
   [Give each participant the coach’s link and ask them to book a consultation. Record whether they finish without help and where they hesitate.],
 )
