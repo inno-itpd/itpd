@@ -236,60 +236,64 @@
 #section("The pilot pitch and final exam")
 
 #discussion[
-  Your team can recruit five people for a pilot.
+  Your customer has given you feedback on the latest release. In a usability test, participants tried the main workflow.
 
-  - What could your team learn from a pilot that a usability session wouldn’t tell you? Who would you invite to find out?
-  - What result would make your team change the product before inviting more users?
+  - What would you still want to learn before offering the product to more users?
+  - What could you try next to find out? 
+  - Whose help would you need?
+]
+
+#slide("Your final exam pitch")[
+  One next step is a *pilot*, a limited trial in which people use your product in their usual setting.
+
+  The final exam simulates asking for help to run that trial. In your pitch and live demo, make the case for one specific action the panel could take to help.
+
+  Choose a role for the panel that can act on your request. Tell them whom they represent when you open, then make your request when you close.
 ]
 
 #slide("What can a pilot tell you?")[
   #set text(size: 19pt)
 
   - *Customer reviews* help settle the scope and check whether the product supports the journeys the customer cares about.
-  - *Usability sessions* show where participants can complete a task unaided and where they need help.
+  - *Usability sessions* show what participants can do unaided and where they need help.
   - *A pilot* shows how people use the product in their normal work over time.
 
   #v(1fr)
 
-  #example[Four of five participants booked unaided in a test session. The booking app team wants to answer two questions in the pilot. Do coaches keep sharing their links after the first week? Do their clients book without help?]
+  #example[Four of five usability participants booked unaided. The booking app team wants to see whether coaches keep sharing their links and whether clients book without coach help in everyday use.]
 ]
 
-#slide("Build the pitch from your project work")[
+#slide("What would a booking app pilot look like?")[
+  #set text(size: 19pt)
+
+  #example[
+    *Panel role* · Lead of a local coaching network
+
+    *Trial* · Five independent coaches share booking links with real clients for four weeks. The team handles onboarding and support.
+
+    *Success* · At least four coaches still share their links in week four. At least 80% of completed consultations were booked without coach help.
+
+    *Request* · Could you introduce us to five coaches who would try the app with their clients?
+  ]
+]
+
+#slide("What would help the panel say yes?")[
   #set text(size: 16pt)
   #set par(leading: 0.35em)
 
   #pitch-rows(
-    [*User problem and opportunity*], [Show who faces the problem, what it costs them, and what they do today. Explain why they would try your product and how you would reach them.],
-    [*Live demo*], [Follow one user through a realistic workflow. Show the outcome that matters to them.],
-    [*Quality requirement and architectural decision*], [Explain one quality requirement that matters for the workflow in the pilot. Explain the decision that addresses it and the tradeoff for the pilot.],
-    [*Evidence*], [Give one result that supports the pilot. Say what you checked, under what conditions, what you found, and what remains uncertain.],
-    [*Pilot plan and request*], [Use an open question that the pilot should answer to choose the participants, duration, and success criterion. Ask the panel for one action.],
+    [*User problem and opportunity*], [Who has the problem, what does it cost them, and what do they do today? Why would they try your product, and how would you reach them?],
+    [*Live demo*], [Can you show one user going through a realistic workflow and reaching an outcome that matters to them?],
+    [*Quality requirement and architectural decision*], [What quality requirement matters for that workflow in the pilot? What decision addresses it, and what tradeoff does it bring?],
+    [*Evidence*], [What result supports your case? What did you check, under what conditions, and what’s still uncertain?],
+    [*Pilot plan and request*], [Who would take part, who would support them, and for how long? What would count as success, and what do you need from the panel?],
   )
 
   #v(1fr)
   #note[#link(course + "exam/README.md#what-to-cover-in-your-pitch")[What to cover in your pitch] · #link(course + "exam/README.md#grading")[Final exam rubric]]
 ]
 
-#slide("Ask the panel for a pilot")[
-  #set text(size: 19pt)
-
-  Open by telling the panel whom they represent. Choose a role that can act on your request. End by asking for one specific action.
-
-  #v(1fr)
-  #example[
-    *Panel role* · Lead of a local coaching network.
-
-    *Trial* · Five independent coaches share their booking links with clients for four weeks. Our team onboards the coaches and handles support.
-
-    *Success* · At least four coaches still share their links in week four, and at least 80% of completed consultations are booked without coach help during the trial.
-
-    *Request* · Could you introduce us to five independent coaches who’d be willing to try the booking app?
-  ]
-
-  #note[Illustrative targets for the simulated exam pilot.]
-]
-
-#slide("Final exam briefing")[
+#slide("Deck submission and exam day")[
   #set text(size: 18pt)
 
   - *Thursday, 3 December, 23:59* · Submit the pitch deck separately in Moodle, including any slides for Q&A. Present that exact deck and keep it out of the product repository.
@@ -303,17 +307,16 @@
   #note[
     #link(course + "exam/README.md")[Final exam instructions]
     · #link(course + "assignments/assignment-10.md")[Assignment 10]
-    · #link(course + "lectures/lecture-9.pdf")[Lecture 9, The product pitch deck]
+    · #link(course + "lectures/lecture-9.pdf")[Pitch examples in Lecture 9]
   ]
 ]
 
 #quiz[
-  - Everyone finished the task in a usability session. A teammate wants to tell the panel that users will come back every week. What can your team say based on the session? What would you measure in a pilot to see whether users come back?
-  - During your pitch, a panelist says, “We can help.” What one action would you ask the panelist to take? How would it help your team answer its pilot question?
+  - Everyone finished the task in a usability session. A teammate wants to tell the panel that users will come back every week. What can you say based on the session? What would you measure in a pilot to see whether users come back?
 ]
 
 #key-takeaways("the pilot pitch and final exam")[
-  - Tell the panel what you observed and under what conditions. Demo a journey that matters to the people you want in the pilot.
-  - Pick one open question. Define who will take part, how long they’ll use the product, and what result will guide your next decision.
+  - Show a workflow that matters to your pilot users. Tell the panel what you observed and under what conditions.
+  - Use an open question to decide who should take part, how long the pilot should run, and what result would guide your next decision.
   - Ask the panel for one action that makes the pilot possible. Be ready to explain an architectural tradeoff in Q&A.
 ]
