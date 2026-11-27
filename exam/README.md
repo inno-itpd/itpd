@@ -19,9 +19,9 @@ The pilot is a simulation for the exam.
 Pitch as if the panel could agree to your request and the pilot could go ahead.
 
 Choose a role that fits the help you need, and tell the panel whom it represents at the start of your pitch.
-An instructor could host a Debugging Gym trial in one lab section.
-A running club organizer could invite runners to try the Running Coach App.
-A platform lead could approve a limited Modular LLM Gateway trial with a test workload.
+A library manager could host a tool-lending kiosk trial at one branch.
+A museum visitor services lead could invite visitors to try a mobile audio guide for one exhibit.
+A grocery store manager could approve a stock-counting app trial in one aisle.
 An investor or internal sponsor could fund a specific pilot expense.
 
 ## Suggested Pitch Structure
@@ -46,9 +46,9 @@ In plain language, describe the risk for pilot users, the decision, and the trad
 If you present a test result, say what you checked, under what conditions, and what you found.
 
 **Example.**
-A Debugging Gym team might explain that instructors should only be able to view submissions from their own lab sections.
-The team could enforce section membership on the server for every submission view.
-That design makes access depend on keeping section membership current.
+A museum audio guide team might require visitors to be able to play every stop's audio after downloading the tour, even if their phone loses connectivity.
+The team could store the full tour on the phone before the visit begins.
+This lets visitors listen offline, but it adds an upfront download and uses storage on their phones.
 
 **Recommended.**
 Rehearse the full pitch with the live demo and speaker handoffs.

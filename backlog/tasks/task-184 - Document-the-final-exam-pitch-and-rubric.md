@@ -4,7 +4,7 @@ title: Document the final exam pitch and rubric
 status: Done
 assignee: []
 created_date: '2026-11-27 08:00'
-updated_date: '2026-11-27 08:00'
+updated_date: '2026-11-27 08:10'
 labels: []
 dependencies: []
 references:
@@ -50,6 +50,11 @@ Write the student-facing exam instructions, align the syllabus format, and verif
 
 <!-- SECTION:NOTES:BEGIN -->
 The exam uses a simulated pilot with a role chosen to fit the request. The seven-minute pitch includes the live demo, participation from every member, and one quality requirement linked to an architectural decision. The panel chooses its questions during five minutes of Q&A. The submitted deck is the exam-day deck. Verified the 17 + 3 point split and the matching syllabus format. Markdown formatting and lint passed, both Markdown fixture suites passed (68 tests), all nine lecture decks matched their sources, and the full link check reported zero errors.
+
+Replaced course-project examples in `exam/README.md` with fictional pilots for a library tool-lending kiosk, a museum audio guide, and a grocery stock-counting app to avoid giving teams an advantage based on their assigned project.
+The museum example illustrates offline playback, storing the full tour on the phone, and the resulting download and storage costs.
+Checked the new scenarios against all six projects in `lectures/lecture-1.typ`.
+`pnpm run format:markdown:check`, `pnpm run lint:markdown`, and `git diff --check` passed for this follow-up.
 <!-- SECTION:NOTES:END -->
 
 ## Final Summary
