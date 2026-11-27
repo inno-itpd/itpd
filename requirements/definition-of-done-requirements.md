@@ -69,6 +69,7 @@ A **task** is done when every item below holds.
 **Since: W3**
 
 A **pull request** is the change that closes one task issue, and the list says what it must meet.
+The [Pull Request Checklist](pull-requests-requirements.md#pull-request-checklist) prompts authors and reviewers to record their checks in the pull request.
 
 **Required**
 

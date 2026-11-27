@@ -34,18 +34,17 @@ It is created in Week 3, with the first release, and stays current for the rest 
 
 1. Maintain `CHANGELOG.md` following [Keep a Changelog](https://keepachangelog.com/).
 2. Keep an `[Unreleased]` section during development, with an entry for every notable change, grouped under `Added`, `Changed`, `Deprecated`, `Removed`, `Fixed`, and `Security`.
-3. Add a changelog line to the pull request template: either the change is notable and the entry is updated, or it is not notable.
 
 **Since: W5**
 
-4. The changelog records notable changes only: a change someone running or using the previous version would have to act on, or would notice in behaviour, security, or compatibility.
+3. The changelog records notable changes only: a change someone running or using the previous version would have to act on, or would notice in behaviour, security, or compatibility.
    A change to how the product is installed, configured, deployed, or run, a required migration, a raised runtime or dependency minimum, a deprecation, a removal, or a security fix is notable; a test, a workflow, an internal refactor, a tooling change, and the act of deploying are not.
    The sprint's checked requirements are recorded in the plan's `REL-nn` block, per [Releases](planning-requirements.md#releases).
 
 **Compile the changelog from pull requests, not from commits.**
 A commit message records what the team judged important at that moment, and that judgement is usually about the code rather than the product: a rename, a refactor, a fix for a bug nobody outside the team could reach.
 A changelog is a curated summary for the people who use and operate the product, so it answers a different question.
-The pull request is where the team already writes down what changed and why, which is why the pull request template asks for the changelog line.
+Record the changelog outcome for each change using the [Pull Request Checklist](pull-requests-requirements.md#pull-request-checklist).
 
 ## Versioning And Tags
 

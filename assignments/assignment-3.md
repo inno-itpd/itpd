@@ -121,6 +121,7 @@ This week:
 3. Create the two issue fields with their options, each single-select and `Public`, pinned to the issue types the team uses.
 4. Create the GitHub project: set it `Public`, give it a description that links the repository, and add a table view over the two fields, the assignees, and the milestone, grouped or sorted by `Milestone`.
 5. Schedule every issue the plan carries by assigning it to its sprint's GitHub milestone, with the two values and the same two members as assignees, at minimum the `SPRINT-03` set, which belongs to `MLS-03`.
+6. Update `.github/pull_request_template.md` with the Week 3 [Pull Request Checklist](../requirements/pull-requests-requirements.md#pull-request-checklist).
 
 ## Part 5: Build The Minimum Usable Product
 
@@ -307,6 +308,7 @@ A transcript under item 5 goes in an appendix, which the two pages do not count.
 - [ ] `docs/risks.md` with 3+ risks and the summary table ([Part 2](#part-2-write-the-project-plan-and-name-the-risks)).
 - [ ] The stack recorded as a `DEC-nnn`, `.gitignore` extended, and the stack's ecosystem added to `.github/dependabot.yml` ([Part 3](#part-3-decide-the-stack)).
 - [ ] `docs/definition-of-done.md` and `CONTRIBUTING.md` ([Part 4](#part-4-define-done-and-the-workflow)).
+- [ ] `.github/pull_request_template.md` updated with the Week 3 checklist ([Part 4](#part-4-define-done-and-the-workflow)).
 - [ ] The `Responsible` and `Accountable` fields created and `Public` ([Part 4](#part-4-define-done-and-the-workflow)).
 - [ ] The public GitHub project with its table view over the fields, the assignees, and the milestone ([Part 4](#part-4-define-done-and-the-workflow)).
 - [ ] Every issue the plan schedules is in its sprint's GitHub milestone, carries the two values, and has both members as assignees, at minimum the `SPRINT-03` set ([Part 4](#part-4-define-done-and-the-workflow)).

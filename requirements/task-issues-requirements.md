@@ -116,6 +116,7 @@ A scheduled task also carries its `Priority`, and [Estimation](sprint-ceremonies
    The rework on a story the customer rejected is a new task issue whose `Story` field names the story and each failed `AC-nn`, and whose description cites the rejection's `DEC-nnn`; a closed task is not reopened.
 3. Before approving a pull request, the reviewer ticks each of its task's acceptance criteria in the task issue.
    Merge the pull request only when every box is ticked.
+   From Week 3, the reviewer confirms this step in the [Pull Request Checklist](pull-requests-requirements.md#pull-request-checklist).
 4. A task closes as completed when its pull request merges.
    A task whose pull request was closed without merging, or that the team abandoned, is closed as not planned, with a comment that gives the reason and links the pull request when there is one.
 
