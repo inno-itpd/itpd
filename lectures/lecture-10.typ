@@ -54,13 +54,13 @@
 #let quiz(body) = slide("Quiz", body)
 #let key-takeaways(topic, body) = slide("Key takeaways (" + topic + ")", body)
 
-#let week(number, title, work, timing, booking) = slide("Week " + str(number) + " · " + title)[
+#let week(number, title, work, principle, worked-example) = slide("Week " + str(number) + " · " + title)[
   #work
 
-  #timing
+  #principle
 
   #v(1fr)
-  #example(booking)
+  #example(worked-example)
 ]
 
 #let pitch-rows(..cells) = grid(
@@ -95,140 +95,130 @@
 #section("From problem to first release")
 
 #discussion[
-  #example[What did your team believe in Week 1 that changed after someone saw or used the product?]
-
-  What did you observe, and which decision did it change?
+  - Which feature was your team most eager to build at kickoff?
+  - What could you have learned about users’ existing workflow that would have made you leave that feature out of the first release?
 ]
 
 #week(1, "Find a problem worth solving",
   [Teams of three or four chose a project, set up a shared repository, compared alternatives, and met their customer at the kickoff.],
-  [The comparison gave teams a gap and a value proposition to discuss before they chose what to build.],
+  [An alternative can be a tool, a workaround, or the way people already do the work. A gap matters when it gives a specific group of users a reason to switch.],
   [A career coach and a client exchange several messages to find a time. The team compares that workflow with existing schedulers. For a coach who already shares a booking link, what would make switching worthwhile?],
 )
 
 #week(2, "Choose the first workflow",
   [Teams wrote the product vision, prioritized stories with acceptance criteria, prototyped a risky assumption, and proposed a minimum usable product (MUP).],
-  [The customer could react to a concrete workflow while changing it still cost little.],
+  [A prototype gives the customer a workflow to react to while it is cheap to change. Use that feedback to test the assumption most likely to change the scope.],
   [The customer says coaches use Google Calendar, which gives the calendar story a specific acceptance criterion. The proposed first workflow is smaller: open a booking link, select a slot, pay, and get confirmation.],
 )
 
 #week(3, "Release a working slice",
   [Teams set their threshold of success, made a project plan and risk register, and cut the first release, `REL-03`.],
-  [A working slice gave the customer something to try. The weekly meetings could now review each new increment against the project’s goals.],
+  [A working release lets the customer try the whole workflow. The threshold of success defines what evidence would show the product is solving enough of the problem.],
   [From a clean checkout, the team can show a client going from the coach’s link to a paid, confirmed booking. A later goal is to observe a real paid booking on the deployed product.],
 )
 
 #quiz[
-  A coach already shares a booking link. Your team thinks the coach would switch tools if clients could pay while booking.
-
-  - What could you show the coach in a prototype to test that assumption?
-  - What would you expect to work end to end in the first release?
+  - A user likes your prototype and says their current tool works fine. What would you ask about the last time they did the task to find out if there’s a problem worth solving?
+  - A teammate wants to add one more story to the first release. How would you decide whether the story belongs in the minimum usable product?
 ]
 
 #key-takeaways("from problem to first release")[
-  - Use the alternatives and the customer kickoff to explain whose problem you’re solving and why they would switch.
-  - Walk the coach through a prototype of booking with payment. Ask how it would change their work today.
-  - Use the first release to try the workflow end to end, from opening the link to getting confirmation for a paid booking.
+  - Base the value proposition on a problem users face with the alternatives they use today.
+  - Use a prototype to test an assumption that could change the scope of the first release.
+  - Ship one complete workflow that produces a useful outcome. Define what evidence would show that outcome matters in practice.
 ]
 
 #section("Quality, deployment, and measurement")
 
 #discussion[
-  The booking demo works when one client uses it. Now two clients try to pay for the last available slot.
-
-  #example[What should happen, and what evidence would convince you that the deployed product handles it?]
+  - Imagine your demo goes perfectly and your first day in production goes badly. What failure would you most want to rule out for your product?
+  - How would you recreate the conditions for that failure on staging, and what would count as a pass?
 ]
 
 #week(4, "Decide what quality means",
   [Teams wrote functional and quality requirements, drew the container view, and recorded architectural decisions.],
-  [The first release gave them a concrete workflow to examine. They could name what might go wrong and explain how their design addressed it.],
+  [Start with a failure users would notice. State what the system should do under those conditions and explain how an architectural decision helps meet that target.],
   [Even when two clients submit together, at most one should get confirmation. The database accepts one reservation per slot and the app waits for it to succeed. If a client loses their connection, confirmation has to wait.],
 )
 
 #week(5, "Check it and deploy it",
   [Teams set up CI and automated checks, wrote quality requirement tests, deployed to staging and production, and documented how to deploy.],
-  [A deployed build gave the customer something they could reach. The tests gave teams a repeatable way to check a quality target under known conditions.],
+  [A repeatable quality requirement test specifies the setup, the conditions, and what counts as a pass. Run it where the conditions you care about can be reproduced.],
   [Send two simultaneous requests for the last slot on staging. Check whether only one client receives confirmation and the coach’s calendar shows a single reservation.],
 )
 
 #week(6, "Measure what happens in use",
   [Teams instrumented the deployed product, chose a focus metric and operational signals, built dashboards, and reviewed the threshold of success.],
-  [Analytics could show how people used the workflow. Observability could show how the service behaved while they used it.],
+  [Product analytics shows how people use the product. A focus metric connects that behavior to a product goal. Observability helps explain how the service behaved at the time.],
   [Count completed paid bookings per active coach per week. Keep smoke tests and usability sessions out of that count. Track how long the free-slot request takes to help investigate slow responses.],
 )
 
 #quiz[
-  The team wants to check whether the last slot can be double-booked and find out how often coaches get paid bookings.
-
-  - What would you run on staging to check the first question?
-  - What would you count in production to answer the second?
+  - A workflow meets its response-time target on staging with one user. What would you change in the test before making the same claim about peak hours?
+  - After release, more users start the workflow and fewer finish it. Which product events and operational signals would you compare to investigate a possible slowdown?
 ]
 
 #key-takeaways("quality, deployment, and measurement")[
-  - State the quality target, then connect it to a design decision and a repeatable test.
-  - Check that only one reservation and confirmation succeed when two clients request the same slot on staging.
-  - Count paid bookings per active coach per week in production. Use operational signals to investigate how the service behaved.
+  - Tie an architectural decision to the quality target it helps meet and the tradeoff it brings.
+  - Define the conditions and pass criterion for a repeatable test. Run it in an environment that can reproduce those conditions.
+  - Use product analytics to see what users did and observability to investigate how the service behaved.
 ]
 
 #section("Usability, acceptance, and handoff")
 
 #discussion[
-  You’re taking over the booking app. You’ve seen a successful demo and will be responsible for the next release.
-
-  #example[What would you want to see before accepting the release, and what would you need to run it afterward?]
+  - It’s handoff day. Every user journey passes, and only the outgoing team knows how to deploy the product. Would you accept the handoff?
+  - What would you ask the receiving team to do on its own before you made that decision?
 ]
 
 #week(7, "Design the usability test",
   [Teams planned representative participants, realistic tasks, measures, consent, and how to record sessions. They adapted instrumentation to the test and tried the test setup before the first session.],
-  [Agreeing on tasks and success criteria ahead of time gave participants comparable conditions and the team a way to interpret the results.],
+  [Give representative participants a realistic goal and observe how they try to reach it. Define what counts as success before the first session so you can compare results.],
   [Give each participant the coach’s link and ask them to book a consultation. Record whether they finish without help and where they hesitate.],
 )
 
 #week(8, "Use the findings",
   [Teams analyzed the usability sessions, recorded findings, and decided what to fix or investigate. They also reviewed the configuration used to build, check, and deliver the product.],
-  [The sessions gave teams observed problems to act on. By now, they had used the delivery setup and agent instructions long enough to judge how well they served the project.],
+  [Use what participants actually did to decide what to fix and retest. Review whether the team can reproduce the environments and delivery steps the next run depends on.],
   [Four of five participants booked unaided. The fifth missed the time-zone control. Make it easier to find and retest. For the configuration review, check whether staging can be set up again for the retest.],
 )
 
 #week(9, "Check the customer’s journeys",
   [The Sprint 9 review checks user journeys with the customer on a deployed build and revisits quality results and open goals. The sprint closes with `REL-09`.],
-  [The review leaves time to fix issues and lets the team ask what the customer will need at handoff.],
+  [A user acceptance test checks whether a deployed build supports a journey the customer depends on. Running it in Sprint 9 leaves time to fix failures before handoff.],
   [Check a journey the customer cares about, such as moving a booking without emailing the coach. Record which build was tested, who ran the journey, and what happened.],
 )
 
 #week(10, "Release and hand over the product",
   [Sprint 10 delivers `REL-10`, the minimum viable product (MVP). The team reruns the active journeys, records the customer’s handoff decision, and writes the final report and project reflection.],
-  [The customer needs evidence about the version they receive and enough information to run it and follow up on open work.],
+  [The receiving team needs evidence about the release it gets and enough access and documentation to deploy, operate, and maintain it.],
   [Hand over the release, deployment instructions, dashboard access, and known limitations. The weekly customer meetings, from kickoff to handoff, show how the product changed as new evidence came in.],
 )
 
 #quiz[
-  One participant missed the time-zone control. You make it easier to find after the Sprint 9 review.
-
-  - How would you check whether the change helped users?
-  - What would you record when the customer checks the booking journey on the handoff build?
+  - Every participant reaches the final step, and half need a hint to finish. What would you keep constant when retesting a fix, and what would you measure?
+  - The customer accepted the journey on the previous build. What would you rerun and record on the handoff build after the fix?
 ]
 
 #key-takeaways("usability, acceptance, and handoff")[
-  - Give participants a realistic task and observe where they hesitate. Retest the changed workflow without coaching them through it.
-  - Record who checked each customer journey, the build they used, and the outcome.
-  - Give the customer the release, the information needed to run it, and the known limitations.
+  - Watch representative users attempt a realistic task unaided. Use the same success criteria when you retest a fix.
+  - Check the customer’s journeys on the release they will receive. Record the build, who ran the test, and the outcome.
+  - Give the receiving team the instructions and access to run the product, plus the known limitations it will inherit.
 ]
 
 #section("The pilot pitch and final exam")
 
 #discussion[
-  Four of five usability test participants booked without help. The panel can introduce the team to coaches who might try the app in their work.
-
-  #example[What would the panel need to hear before making those introductions?]
+  - The panel offers to introduce your team to five pilot users. Who would you want in that group, and what would you hope to learn from them?
+  - What result would make you revise the product before inviting anyone else?
 ]
 
-#slide("What do you need more users to learn?")[
+#slide("What can a pilot tell you?")[
   #set text(size: 19pt)
 
-  - *Customer reviews* helped settle the scope and check the journeys the customer cared about.
-  - *Usability sessions* showed where participants could complete the task and where they needed help.
-  - *A pilot* can show whether the workflow holds up with more people using it in their normal work over time.
+  - *Customer reviews* help settle the scope and check whether the product supports the journeys the customer cares about.
+  - *Usability sessions* show where participants can complete a task unaided and where they need help.
+  - *A pilot* shows how people use the product in their normal work over time.
 
   #v(1fr)
 
@@ -255,14 +245,16 @@
 #slide("Ask the panel for a pilot")[
   #set text(size: 19pt)
 
-  *Panel role* · A sponsor who can introduce the team to independent career coaches.
-
-  *Trial* · Five coaches share their links with clients for four weeks. The team onboards the coaches and handles support.
-
-  *Success* · At least four coaches still share the link in week four, and at least 80% of completed consultations are booked without coach help during the trial.
+  Ask for one action the panel can take. Explain who will participate, how long the pilot will run, and what result will guide your next decision.
 
   #v(1fr)
-  #example[Could you introduce us to five independent coaches willing to try this for four weeks?]
+  #example[
+    *Request* · Could you introduce us to five independent coaches willing to share their booking links for four weeks?
+
+    *Trial* · Our team will onboard the coaches and handle support.
+
+    *Success* · At least four coaches still share their links in week four, and at least 80% of completed consultations are booked without coach help during the trial.
+  ]
 
   #note[Illustrative targets for the simulated exam pilot.]
 ]
@@ -300,15 +292,12 @@
 ]
 
 #quiz[
-  A panelist says, “Four of five participants booked unaided, so coaches will keep sharing their links.”
-
-  - What does the result actually tell you?
-  - What would you measure during the pilot to check whether coaches keep sharing their links?
+  - Every participant finished the task in a usability session. A teammate wants to say users will come back every week. What can you claim now, and what would you measure in a pilot to support that prediction?
+  - A panelist says, “We can help.” What single action would you ask for, and how would it help answer your pilot question?
 ]
 
 #key-takeaways("the pilot pitch and final exam")[
-  - Explain what you observed. Four of five participants booked unaided in a test session.
-  - Design the pilot around what you still need to learn. Check how many coaches still share their links in week four.
-  - Rehearse one live journey that matters to the pilot users.
-  - Ask the panel for one specific action and be ready to explain a quality tradeoff in Q&A.
+  - Tell the panel what you observed and under what conditions. Demo a journey that matters to the people you want in the pilot.
+  - Pick one open question. Define who will take part, how long they’ll use the product, and what result will guide your next decision.
+  - Ask the panel for one action that makes the pilot possible. Be ready to explain an architectural tradeoff in Q&A.
 ]
