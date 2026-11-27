@@ -44,6 +44,16 @@
   body
 }
 
+#let section(title) = {
+  pagebreak(weak: true)
+  v(1.55in)
+  align(center)[#text(size: 32pt, weight: "bold", fill: accent)[#title]]
+}
+
+#let discussion(body) = slide("Discussion", body)
+#let quiz(body) = slide("Quiz", body)
+#let key-takeaways(topic, body) = slide("Key takeaways (" + topic + ")", body)
+
 #let week(number, title, work, timing, booking) = slide("Week " + str(number) + " · " + title)[
   #work
 
@@ -60,23 +70,35 @@
   ..cells,
 )
 
-// Opening discussion. Ask for one assumption that changed during the project.
-
-#align(center)[
-  #v(40pt)
-  #text(size: 34pt, weight: "bold", fill: accent)[
-    From the first customer meeting #linebreak()
-    to the pilot pitch
+#let title-slide() = {
+  v(1.15in)
+  align(center)[
+    #text(size: 34pt, weight: "bold", fill: accent)[From the first customer meeting #linebreak() to the pilot pitch]
+    #v(0.16in)
+    #text(size: 20pt, fill: muted)[Lecture 10, IT Product Development]
   ]
+  v(1.2in)
+  align(center)[#text(size: 14pt, fill: muted)[Innopolis University, 2026]]
+}
 
-  #text(size: 19pt, fill: muted)[Lecture 10, IT Product Development · Innopolis University, 2026]
+#title-slide()
+
+#slide("Agenda")[
+  - From problem to first release
+  - Quality, deployment, and measurement
+  - Usability, acceptance, and handoff
+  - The pilot pitch and final exam
+
+  #note[The consultation booking app and its results are fictional.]
 ]
 
-#v(1fr)
+#section("From problem to first release")
 
-#example[What did your team believe in Week 1 that changed after someone saw or used the product?]
+#discussion[
+  #example[What did your team believe in Week 1 that changed after someone saw or used the product?]
 
-#note[The consultation booking app and its results are fictional.]
+  What did you observe, and which decision did it change?
+]
 
 #week(1, "Find a problem worth solving",
   [Teams of three or four chose a project, set up a shared repository, compared alternatives, and met their customer at the kickoff.],
@@ -96,6 +118,27 @@
   [From a clean checkout, the team can show a client going from the coach’s link to a paid, confirmed booking. A later goal is to observe a real paid booking on the deployed product.],
 )
 
+#quiz[
+  A coach already shares a booking link. Your team thinks the coach would switch tools if clients could pay while booking.
+
+  - What could you show the coach in a prototype to test that assumption?
+  - What would you expect to work end to end in the first release?
+]
+
+#key-takeaways("from problem to first release")[
+  - Use the alternatives and the customer kickoff to explain whose problem you’re solving and why they would switch.
+  - Walk the coach through a prototype of booking with payment. Ask how it would change their work today.
+  - Use the first release to try the workflow end to end, from opening the link to getting confirmation for a paid booking.
+]
+
+#section("Quality, deployment, and measurement")
+
+#discussion[
+  The booking demo works when one client uses it. Now two clients try to pay for the last available slot.
+
+  #example[What should happen, and what evidence would convince you that the deployed product handles it?]
+]
+
 #week(4, "Decide what quality means",
   [Teams wrote functional and quality requirements, drew the container view, and recorded architectural decisions.],
   [The first release gave them a concrete workflow to examine. They could name what might go wrong and explain how their design addressed it.],
@@ -113,6 +156,27 @@
   [Analytics could show how people used the workflow. Observability could show how the service behaved while they used it.],
   [Count completed paid bookings per active coach per week. Keep smoke tests and usability sessions out of that count. Track how long the free-slot request takes to help investigate slow responses.],
 )
+
+#quiz[
+  The team wants to check whether the last slot can be double-booked and find out how often coaches get paid bookings.
+
+  - What would you run on staging to check the first question?
+  - What would you count in production to answer the second?
+]
+
+#key-takeaways("quality, deployment, and measurement")[
+  - State the quality target, then connect it to a design decision and a repeatable test.
+  - Check that only one reservation and confirmation succeed when two clients request the same slot on staging.
+  - Count paid bookings per active coach per week in production. Use operational signals to investigate how the service behaved.
+]
+
+#section("Usability, acceptance, and handoff")
+
+#discussion[
+  You’re taking over the booking app. You’ve seen a successful demo and will be responsible for the next release.
+
+  #example[What would you want to see before accepting the release, and what would you need to run it afterward?]
+]
 
 #week(7, "Design the usability test",
   [Teams planned representative participants, realistic tasks, measures, consent, and how to record sessions. They adapted instrumentation to the test and tried the test setup before the first session.],
@@ -137,6 +201,27 @@
   [The customer needs evidence about the version they receive and enough information to run it and follow up on open work.],
   [Hand over the release, deployment instructions, dashboard access, and known limitations. The weekly customer meetings, from kickoff to handoff, show how the product changed as new evidence came in.],
 )
+
+#quiz[
+  One participant missed the time-zone control. You make it easier to find after the Sprint 9 review.
+
+  - How would you check whether the change helped users?
+  - What would you record when the customer checks the booking journey on the handoff build?
+]
+
+#key-takeaways("usability, acceptance, and handoff")[
+  - Give participants a realistic task and observe where they hesitate. Retest the changed workflow without coaching them through it.
+  - Record who checked each customer journey, the build they used, and the outcome.
+  - Give the customer the release, the information needed to run it, and the known limitations.
+]
+
+#section("The pilot pitch and final exam")
+
+#discussion[
+  Four of five usability test participants booked without help. The panel can introduce the team to coaches who might try the app in their work.
+
+  #example[What would the panel need to hear before making those introductions?]
+]
 
 #slide("What do you need more users to learn?")[
   #set text(size: 19pt)
@@ -212,4 +297,18 @@
     · #link(course + "assignments/assignment-10.md")[Assignment 10]
     · #link(course + "lectures/lecture-9.pdf")[Lecture 9, The product pitch deck]
   ]
+]
+
+#quiz[
+  A panelist says, “Four of five participants booked unaided, so coaches will keep sharing their links.”
+
+  - What does the result actually tell you?
+  - What would you measure during the pilot to check whether coaches keep sharing their links?
+]
+
+#key-takeaways("the pilot pitch and final exam")[
+  - Explain what you observed. Four of five participants booked unaided in a test session.
+  - Design the pilot around what you still need to learn. Check how many coaches still share their links in week four.
+  - Rehearse one live journey that matters to the pilot users.
+  - Ask the panel for one specific action and be ready to explain a quality tradeoff in Q&A.
 ]
