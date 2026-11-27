@@ -90,9 +90,9 @@ Keep the deck out of the product repository.
 
 | Criterion                                      | Points | What the panel assesses                                                                                                             |
 | ---------------------------------------------- | -----: | ----------------------------------------------------------------------------------------------------------------------------------- |
-| User problem and opportunity                   |      4 | A specific user group, its current workflow, and a credible reason to try the product.                                              |
+| User problem and opportunity                   |      2 | A specific user group, its current workflow, and a credible reason to try the product.                                              |
 | Live demo                                      |      4 | A realistic workflow and an outcome that matters to the proposed pilot users.                                                       |
-| Quality requirement and architectural decision |      2 | A quality requirement relevant to the demonstrated workflow and the pilot, the decision that addresses it, and the tradeoff.        |
+| Quality requirement and architectural decision |      4 | A quality requirement relevant to the demonstrated workflow and the pilot, the decision that addresses it, and the tradeoff.        |
 | Evidence                                       |      3 | A relevant result, how the team obtained it, and what the team can conclude from it.                                                |
 | Pilot plan and request                         |      4 | A plausible group, duration, and success criterion, plus a specific request that fits the panel's role.                             |
 | Panel Q&A                                      |      3 | Clear, direct answers that explain the team's reasoning, use evidence where relevant, and acknowledge uncertainty where it matters. |
