@@ -18,8 +18,8 @@ See [Week 11 in the syllabus](../course/syllabus.md#week-11-dec-4--dec-10-final-
 ## Your Audience And Goal
 
 Persuade the panel to take one specific step that would help your team run a pilot with more users.
-The pilot is a simulation for the exam.
-Pitch as if the panel could agree to your request and the pilot could go ahead.
+A pilot is a limited trial in which people use the product in their usual setting.
+The exam simulates the decision to run that trial, so pitch as if the panel could agree to your request.
 
 Choose a role for the panel that can act on your pilot request.
 At the start of your pitch, tell panel members whom they represent.
@@ -29,38 +29,55 @@ At the start of your pitch, tell panel members whom they represent.
 - A **grocery store manager** could approve a stock-counting app trial in one aisle.
 - An **investor or internal sponsor** could fund a specific pilot expense.
 
-## Required Pitch Content
+## What To Cover In Your Pitch
 
-Explain one quality requirement that matters to your proposed pilot and one architectural decision your team made to address it.
-In plain language, describe the risk for pilot users, the decision, and the tradeoff you accepted.
-You can include this explanation when you present your evidence or wherever it fits your pitch.
-If you present a test result, say what you checked, under what conditions, and what you found.
+Cover all the topics below within your seven minutes.
+The order is suggested, and you can combine or reorder topics to suit your pitch.
 
-**Example.**
-A museum audio guide team might require visitors to be able to play every stop's audio after downloading the tour, even if their phone loses connectivity.
-The team could store the full tour on the phone before the visit begins.
-This lets visitors listen offline, but it adds an upfront download and uses storage on their phones.
-
-## Suggested Pitch Structure
-
-1. **User and problem.**
+1. **User problem and opportunity.**
    Start with one concrete situation that shows who has the problem and what it costs them.
-2. **Opportunity.**
    Explain what those users do today, why they would try your product, and how you could reach the first group.
-3. **Live demo.**
+2. **Live demo.**
    Follow one user through a realistic workflow and show the outcome that matters to them.
-4. **Evidence and pilot readiness.**
-   Present a result that supports your case.
-   Explain how you obtained it, what it shows, and what remains uncertain.
-5. **Pilot plan and request.**
+3. **Evidence and pilot readiness.**
+
+   - **Quality requirement and architectural decision.**
+     Pick one quality requirement that matters when pilot users try the workflow you demonstrated.
+     In plain language, explain what the product needs to do under those conditions, what is at risk for users, and how one architectural decision your team made addresses that risk.
+     Explain the tradeoff you accepted and what it means for the pilot.
+   - **Evidence.**
+     Present a result that supports your case for the pilot.
+     Say what you checked, under what conditions, what you found, and what remains uncertain.
+     A result from testing your chosen quality requirement can serve as this evidence.
+
+4. **Pilot plan and request.**
    Say who would take part, for how long, and what they would do.
-   Explain who would run and support the pilot, how you would judge the result, and what action you want the panel to take.
+   Explain who would run and support the pilot, what you still need to learn, and how you would judge success.
+   End by asking the panel for one specific action.
+
+**Example of connecting the demo to the pilot.**
+In the museum audio guide demo, a visitor downloads the tour and plays one stop with the phone in airplane mode.
+For the pilot, visitors need to be able to play every stop after downloading the tour, even where the exhibit has poor reception.
+The team stores the full tour on the phone so it can play offline.
+Visitors need time to download it and enough space to store it.
+In a test on two phones, every stop played in airplane mode after the full download.
+The pilot would check whether visitors can complete the download before entering the exhibit.
 
 ## Rehearsal Tips
 
 Rehearse the full pitch with the live demo and speaker handoffs.
 Use prepared accounts and sample data, and make the outcome readable from the back of the room.
 See [Lecture 9, The Product Pitch Deck](../lectures/lecture-9.pdf) for examples of demos, evidence, and pilot requests.
+
+## Preparing For Panel Q&A
+
+Prepare for questions your panel might ask before agreeing to the pilot.
+
+- Why did you choose this design?
+- Which pilot conditions did your tests or observations cover?
+- How would you support users if the tradeoff caused problems during the pilot?
+
+You can prepare backup slides with details that would help you answer likely questions, such as a small diagram or a test result.
 
 ## Pitch Deck Submission
 
@@ -75,8 +92,8 @@ Keep the deck out of the product repository.
 | ---------------------------------------------- | -----: | ----------------------------------------------------------------------------------------------------------------------------------- |
 | User problem and opportunity                   |      4 | A specific user group, its current workflow, and a credible reason to try the product.                                              |
 | Live demo                                      |      4 | A realistic workflow and an outcome that matters to the proposed pilot users.                                                       |
+| Quality requirement and architectural decision |      2 | A quality requirement relevant to the demonstrated workflow and the pilot, the decision that addresses it, and the tradeoff.        |
 | Evidence                                       |      3 | A relevant result, how the team obtained it, and what the team can conclude from it.                                                |
 | Pilot plan and request                         |      4 | A plausible group, duration, and success criterion, plus a specific request that fits the panel's role.                             |
-| Quality requirement and architectural decision |      2 | A quality requirement relevant to the pilot, the architectural decision that addresses it, and the tradeoff involved.               |
 | Panel Q&A                                      |      3 | Clear, direct answers that explain the team's reasoning, use evidence where relevant, and acknowledge uncertainty where it matters. |
 | **Total**                                      | **20** |                                                                                                                                     |
