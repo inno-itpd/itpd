@@ -86,7 +86,8 @@
 #slide("Agenda")[
   - From problem to first release
   - Quality, deployment, and measurement
-  - Usability, acceptance, and handoff
+  - Usability and configuration
+  - Acceptance and handoff
   - The pilot pitch and final exam
 
   #note[The consultation booking app and its results are fictional.]
@@ -164,11 +165,11 @@
   - Use product analytics to see what users did and observability to investigate how the service behaved.
 ]
 
-#section("Usability, acceptance, and handoff")
+#section("Usability and configuration")
 
 #discussion[
-  - It’s handoff day. Every user journey passes, and only the outgoing team knows how to deploy the product. Would you accept the handoff?
-  - What would you ask the receiving team to do on its own before you made that decision?
+  - A participant completes a task after the moderator gives them a hint. What would you record about the session?
+  - What would you check about the test setup before inviting the next participant?
 ]
 
 #week(7, "Design the usability test",
@@ -183,6 +184,23 @@
   [Four of five participants booked unaided. The fifth missed the time-zone control. Make it easier to find and retest. For the configuration review, check whether staging can be set up again for the retest.],
 )
 
+#quiz[
+  - Every participant reaches the final step, and half need a hint to finish. What would you keep constant when retesting a fix, and what would you measure?
+  - You need to recreate staging for a retest. Where would you find the configuration and deployment steps, and how would you check that they work?
+]
+
+#key-takeaways("usability and configuration")[
+  - Watch representative users attempt a realistic task unaided. Use the same success criteria when you retest a fix.
+  - Check that the team can reproduce the environment and delivery steps the retest depends on.
+]
+
+#section("Acceptance and handoff")
+
+#discussion[
+  - It’s handoff day. Every user journey passes, and only the outgoing team knows how to deploy the product. Would you accept the handoff?
+  - What would you ask the receiving team to do on its own before you made that decision?
+]
+
 #week(9, "Check the customer’s journeys",
   [The Sprint 9 review checks user journeys with the customer on a deployed build and revisits quality results and open goals. The sprint closes with `REL-09`.],
   [A user acceptance test checks whether a deployed build supports a journey the customer depends on. Running it in Sprint 9 leaves time to fix failures before handoff.],
@@ -196,12 +214,11 @@
 )
 
 #quiz[
-  - Every participant reaches the final step, and half need a hint to finish. What would you keep constant when retesting a fix, and what would you measure?
   - The customer accepted the journey on the previous build. What would you rerun and record on the handoff build after the fix?
+  - The receiving team can deploy the release. What access and instructions would they need to investigate a failed booking after handoff?
 ]
 
-#key-takeaways("usability, acceptance, and handoff")[
-  - Watch representative users attempt a realistic task unaided. Use the same success criteria when you retest a fix.
+#key-takeaways("acceptance and handoff")[
   - Check the customer’s journeys on the release they will receive. Record the build, who ran the test, and the outcome.
   - Give the receiving team the instructions and access to run the product, plus the known limitations it will inherit.
 ]
