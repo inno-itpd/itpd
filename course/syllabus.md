@@ -20,6 +20,7 @@ The course is designed to prepare students for the Industrial Project course and
   - [Week 10: Nov 27 – Dec 3 (Final Release And Handoff)](#week-10-nov-27--dec-3-final-release-and-handoff)
   - [Week 11: Dec 4 – Dec 10 (Final Exam)](#week-11-dec-4--dec-10-final-exam)
 - [4. Assessment \& Submission Catalog](#4-assessment--submission-catalog)
+  - [Group Submissions](#group-submissions)
   - [Other Assessment Components](#other-assessment-components)
 - [5. Grading Policy \& Evaluation Scheme](#5-grading-policy--evaluation-scheme)
 - [6. Course Policies](#6-course-policies)
