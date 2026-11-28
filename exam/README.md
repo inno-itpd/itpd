@@ -1,7 +1,7 @@
 # Final Exam
 
 - The final exam is on **Friday 4 December 2026**.
-- Submit the [pitch deck](#pitch-deck-submission) separately in Moodle by **Thursday 3 December 2026 at 23:59**.
+- Submit your [exam materials](#pitch-deck-and-demo-submission) separately in Moodle by **Thursday 3 December 2026 at 23:59**.
 
 See [Week 11 in the syllabus](../course/syllabus.md#week-11-dec-4--dec-10-final-exam) for the full schedule.
 
@@ -89,8 +89,9 @@ Prepare for questions your panel might ask before agreeing to the pilot.
 
 You can prepare backup slides with details that would help you answer likely questions, such as a small diagram or a test result.
 
-## Pitch Deck Submission
+## Pitch Deck And Demo Submission
 
+Submit a prerecorded product demo together with your pitch deck in Moodle.
 Include any slides you plan to use during panel Q&A in the deck you submit.
 Present the exact deck you submitted.
 Revisions after submission are prohibited.
