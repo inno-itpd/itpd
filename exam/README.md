@@ -38,6 +38,7 @@ The order is suggested, and you can combine or reorder topics to suit your pitch
 1. **User problem and opportunity.**
    Start with one concrete situation that shows who has the problem and what it costs them.
    Explain what those users do today, why they would try your product, and how you could reach the first group.
+   If you have a source, you can use it to estimate how many people you could reach that way.
 2. **Live demo.**
    Show one realistic workflow that proposed pilot users would carry out and the outcome that makes it worth trying.
 3. **Evidence and pilot readiness.**
@@ -71,7 +72,8 @@ Each time, one client got a confirmation and one appointment appeared on the coa
 
 What we still don't know is what the other client does next.
 Do they pick another time, or do they go back to messaging the coach?
-We'll help the coaches set up their links and check each week how many clients who miss a slot book another one on their own.
+We'll help the coaches set up their links.
+If fewer than half the clients who miss a slot book another one on their own, we'll revise that step before inviting more coaches.
 Could you introduce us to five independent coaches willing to share their booking links with clients for four weeks?"
 
 ## Rehearsal Tips
