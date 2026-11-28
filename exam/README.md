@@ -25,7 +25,7 @@ Choose a role for the panel that can act on your pilot request.
 At the start of your pitch, tell panel members whom they represent.
 
 - A **library manager** could host a tool-lending kiosk trial at one branch.
-- A **museum visitor services lead** could invite visitors to try a mobile audio guide for one exhibit.
+- An **investor who knows independent coaches** could introduce the meeting booking team to coaches willing to try the app.
 - A **grocery store manager** could approve a stock-counting app trial in one aisle.
 - An **investor or internal sponsor** could fund a specific pilot expense.
 
@@ -56,15 +56,22 @@ The order is suggested, and you can combine or reorder topics to suit your pitch
    Explain who would run and support the pilot, what you still need to learn, and how you would judge success.
    End by asking the panel for one specific action and explain how it would let pilot users try the workflow in their usual setting.
 
-**Example of connecting the demo to the pilot request.**
-In the museum audio guide demo, a visitor downloads the tour and plays the narration at one exhibit stop.
-In the exhibit, poor reception could interrupt the tour.
-After downloading it, visitors must be able to play every stop without a connection.
-The team stores the full tour on the phone so it can play offline.
-Visitors need time to download it and enough space to store it.
-In a test on two phones, every stop played in airplane mode after the full download.
-The pilot would check whether visitors can complete the download before entering the exhibit.
-The team asks the museum visitor services lead to have entrance staff invite visitors to try the guide for one exhibit.
+**Example pitch excerpt for the meeting booking app (illustrative figures).**
+
+"An independent coach and a client can exchange several messages before they find a time that works.
+Watch what happens when two clients open the coach's booking link and both choose the last Friday slot.
+One sees a confirmation, the other is prompted to choose another time, and the coach's calendar shows one appointment.
+
+The coach can only meet one of them, so exactly one client should get a confirmation every time.
+The database lets us reserve the slot once, and we wait until it's reserved before we tell a client it's theirs.
+If their connection drops, they may have to wait to find out whether they got it.
+We tried this 20 times on staging, sending both requests at the same moment.
+Each time, one client got a confirmation and one appointment appeared on the coach's calendar.
+
+What we still don't know is what the other client does next.
+Do they pick another time, or do they go back to messaging the coach?
+We'll help the coaches set up their links and check each week how many clients who miss a slot book another one on their own.
+Could you introduce us to five independent coaches willing to share their booking links with clients for four weeks?"
 
 ## Rehearsal Tips
 
