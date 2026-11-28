@@ -20,6 +20,7 @@ See [Week 11 in the syllabus](../course/syllabus.md#week-11-dec-4--dec-10-final-
 Persuade the panel to take one specific step that would help your team run a pilot with more users.
 A pilot is a limited trial in which people use the product in their usual setting.
 The exam simulates the decision to run that trial, so pitch as if the panel could agree to your request.
+If your work with the customer helps explain why you're asking for this pilot, briefly say what you learned.
 
 Choose a role for the panel that can act on your pilot request.
 At the start of your pitch, tell panel members whom they represent.
