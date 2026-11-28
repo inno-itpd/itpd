@@ -148,13 +148,13 @@
 ]
 
 #slide("Your final-exam audience")[
-  Your course instructors know the project as customers. At the final exam, they hear your seven-minute pitch as investors.
+  Choose a role for the panel that can act on your pilot request. In the booking app example, the panel represents investors who know independent coaches.
 
   For this lecture, assume you want their help starting a *pilot*. A pilot is a limited trial in which a small group uses your product in its everyday work for a set period.
 
   ---
 
-  Possible team's question to the investors:
+  The booking team asks:
 
   #takeaway[Would you introduce us to coaches who could try the app for four weeks of real bookings?]
 ]
@@ -212,13 +212,13 @@
   A regional directory lists that many independent coaches offering online consultations. It gives us a place to recruit. Willingness to try the app is still unknown.
 
   *For your pitch* #linebreak()
-  Give one best-effort count or range for your first audience. Say where it came from, what it counts, and whom it leaves out.
+  Explain how you could reach your first users. If you give a count or range, say where it came from, what it counts, and whom it leaves out.
 ]
 
 #key-takeaways("the opportunity")[
   - Name the person doing the work and the person who could pay for an improvement.
   - Compare your product with the best option available to that person. Explain what makes switching worthwhile and what makes the timing plausible.
-  - Size the group you can reach first. Give the source and its limits.
+  - Identify a group you can reach first. If you estimate its size, give the source and its limits.
 ]
 
 #section("The story and live demo")

@@ -77,7 +77,7 @@ The `course/decisions/` and `course/plans/` files are maintainer-facing.
 
 - `guides/final-sprints.md` — the method for the final reviews, releases, handoff and submissions.
 
-- `exam/README.md` — the maintainer-owned exam page, blank until the exam materials are written.
+- `exam/README.md` — the final exam format, pitch and submission requirements, worked example, and grading rubric.
 - `assignments/assignment-N.md` — learner-facing requirements for one week: deltas, paths, and evidence only.
 - `lectures/AGENTS.md` — the lecture decks, their build, the layout contract, and the conversion method; not student-facing.
 

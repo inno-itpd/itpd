@@ -296,7 +296,7 @@
 #slide("Deck submission and exam day")[
   #set text(size: 18pt)
 
-  - *Thursday, 3 December, 23:59* · Submit the pitch deck separately in Moodle, including any slides for Q&A. Present that exact deck and keep it out of the product repository.
+  - *Thursday, 3 December, 23:59* · Submit the #link(course + "exam/README.md#pitch-deck-and-demo-submission")[pitch deck and prerecorded product demo] together in Moodle.
   - *Friday, 4 December* · Final exam
     - *Product pitch and live demo (7 minutes)* · Every team member speaks during the pitch. Follow the #link(course + "requirements/repository-requirements.md#environments-and-deployment")[shutdown rule] if you demo on the university VM.
     - *Panel Q&A (5 minutes)* · The panel chooses its questions during the session. Your team decides who answers each one.

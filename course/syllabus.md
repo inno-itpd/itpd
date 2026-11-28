@@ -300,11 +300,8 @@ Weeks 4 to 10 have a hard deadline only.
 ### Week 11: Dec 4 – Dec 10 (Final Exam)
 
 - The **final exam** is on **Friday 4 December 2026**.
-  Teams give a seven-minute product pitch with a live demonstration, followed by five minutes of Q&A.
-  Teams demoing on the university VM follow the [shutdown rule](../requirements/repository-requirements.md#environments-and-deployment).
-- Submit the pitch deck separately in Moodle by **Thursday 3 December 2026 at 23:59**.
-  Keep it out of the product repository and present it at the exam.
-  See the [exam page](../exam/README.md) for the deck instructions.
+  See the [exam format](../exam/README.md#exam-format) and [grading criteria](../exam/README.md#grading) for the team pitch, live demo, and panel Q&A.
+- Submit the [exam materials](../exam/README.md#pitch-deck-and-demo-submission) separately in Moodle by **Thursday 3 December 2026 at 23:59**.
 - **Submission 11** is the **individual reflection and peer evaluation**.
   Submit it privately in Moodle after the final exam by **Sunday 6 December 2026 at 23:59**.
   It is available only to members of teams that presented at the final exam and is independent of Submission 10.

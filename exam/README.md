@@ -1,7 +1,7 @@
 # Final Exam
 
-- The final exam is on **Friday 4 December 2026**.
-- Submit your [exam materials](#pitch-deck-and-demo-submission) separately in Moodle by **Thursday 3 December 2026 at 23:59**.
+- **By Thursday 3 December 2026 at 23:59**, submit your team's [pitch deck and prerecorded product demo](#pitch-deck-and-demo-submission) together in Moodle.
+- **On Friday 4 December 2026**, present the submitted deck, demonstrate your product live, and answer the panel's questions.
 
 See [Week 11 in the syllabus](../course/syllabus.md#week-11-dec-4--dec-10-final-exam) for the full schedule.
 
@@ -60,7 +60,10 @@ The order is suggested, and you can combine or reorder topics to suit your pitch
 
 **Example pitch excerpt for the meeting booking app (illustrative figures).**
 
-"An independent coach and a client can exchange several messages before they find a time that works.
+"Imagine you run a network of independent coaches.
+We'd like your help recruiting five coaches for a four-week pilot.
+
+An independent coach and a client can exchange several messages before they find a time that works.
 Watch what happens when two clients open the coach's booking link and both choose the last Friday slot.
 One sees a confirmation, the other is prompted to choose another time, and the coach's calendar shows one appointment.
 
@@ -81,6 +84,7 @@ Could you introduce us to five independent coaches willing to share their bookin
 Rehearse the full pitch with the live demo and speaker handoffs.
 Use prepared accounts and sample data, and make the outcome readable from the back of the room.
 See [Lecture 9, The Product Pitch Deck](../lectures/lecture-9.pdf) for examples of demos, evidence, and pilot requests.
+[Lecture 10](../lectures/lecture-10.pdf) shows how to use a result from your project to explain what you still need to learn in a pilot.
 
 ## Preparing For Panel Q&A
 
