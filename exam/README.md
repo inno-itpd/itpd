@@ -86,6 +86,7 @@ Prepare for questions your panel might ask before agreeing to the pilot.
 - Why did you choose this design?
 - Which pilot conditions did your tests or observations cover?
 - How would you support users if the tradeoff caused problems during the pilot?
+- If the pilot succeeds, who might help keep the product running, and why would that be worthwhile for them?
 
 You can prepare backup slides with details that would help you answer likely questions, such as a small diagram or a test result.
 
